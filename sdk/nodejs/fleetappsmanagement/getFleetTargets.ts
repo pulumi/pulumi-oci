@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetTargets = oci.FleetAppsManagement.getFleetTargets({
+ * const testFleetTargets = oci.fleetappsmanagement.getFleetTargets({
  *     fleetId: testFleet.id,
  *     displayName: fleetTargetDisplayName,
  *     product: fleetTargetProduct,
@@ -117,7 +117,7 @@ export interface GetFleetTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetTargets = oci.FleetAppsManagement.getFleetTargets({
+ * const testFleetTargets = oci.fleetappsmanagement.getFleetTargets({
  *     fleetId: testFleet.id,
  *     displayName: fleetTargetDisplayName,
  *     product: fleetTargetProduct,
@@ -147,8 +147,8 @@ export interface GetFleetTargetsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetTargetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetTargetsFilterArgs>[] | undefined>;
     /**
      * Unique Fleet identifier.
      */
@@ -156,17 +156,17 @@ export interface GetFleetTargetsOutputArgs {
     /**
      * Product Name.
      */
-    product?: pulumi.Input<string>;
+    product?: pulumi.Input<string | undefined>;
     /**
      * Resource Display Name.
      */
-    resourceDisplayName?: pulumi.Input<string>;
+    resourceDisplayName?: pulumi.Input<string | undefined>;
     /**
      * Resource Identifier
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return fleets whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

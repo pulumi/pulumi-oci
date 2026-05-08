@@ -141,15 +141,15 @@ export interface SubscriptionMappingState {
     /**
      * OCID of the compartment. Always a tenancy OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
      */
-    isExplicitlyAssigned?: pulumi.Input<boolean>;
+    isExplicitlyAssigned?: pulumi.Input<boolean | undefined>;
     /**
      * Lifecycle state of the subscriptionMapping.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * OCID of Subscription.
      *
@@ -157,19 +157,19 @@ export interface SubscriptionMappingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * Date-time when subscription mapping was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Date-time when subscription mapping was terminated.
      */
-    timeTerminated?: pulumi.Input<string>;
+    timeTerminated?: pulumi.Input<string | undefined>;
     /**
      * Date-time when subscription mapping was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**

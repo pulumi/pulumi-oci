@@ -23,29 +23,29 @@ class ConfigArgs:
     def __init__(__self__, *,
                  apm_domain_id: pulumi.Input[_builtins.str],
                  config_type: pulumi.Input[_builtins.str],
-                 agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 attach_install_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input['ConfigConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_agents_with_attribute_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 options: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input['ConfigOverridesArgs']] = None,
-                 process_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
-                 run_as_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional['ConfigConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional['ConfigOverridesArgs']] = None,
+                 process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
+                 run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Config resource.
 
@@ -154,271 +154,271 @@ class ConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentVersion")
-    def agent_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the referenced agent bundle.
         """
         return pulumi.get(self, "agent_version")
 
     @agent_version.setter
-    def agent_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_version", value)
 
     @_builtins.property
     @pulumi.getter(name="attachInstallDir")
-    def attach_install_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attach_install_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The directory owned by runAsUser.
         """
         return pulumi.get(self, "attach_install_dir")
 
     @attach_install_dir.setter
-    def attach_install_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attach_install_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attach_install_dir", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input['ConfigConfigArgs']]:
+    def config(self) -> pulumi.Input[Optional['ConfigConfigArgs']]:
         """
         (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input['ConfigConfigArgs']]):
+    def config(self, value: pulumi.Input[Optional['ConfigConfigArgs']]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional string that describes what the options are intended or used for.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]]:
         """
         (Updatable) A list of dimensions for the metric. This variable should not be used.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="filterId")
-    def filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         """
         return pulumi.get(self, "filter_id")
 
     @filter_id.setter
-    def filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_id", value)
 
     @_builtins.property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The string that defines the Span Filter expression.
         """
         return pulumi.get(self, "filter_text")
 
     @filter_text.setter
-    def filter_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_text", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         """
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter(name="inUseBies")
-    def in_use_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
+    def in_use_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
         """
         The list of configuration items that reference the span filter.
         """
         return pulumi.get(self, "in_use_bies")
 
     @in_use_bies.setter
-    def in_use_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
+    def in_use_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
         pulumi.set(self, "in_use_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="matchAgentsWithAttributeValue")
-    def match_agents_with_attribute_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_agents_with_attribute_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
         """
         return pulumi.get(self, "match_agents_with_attribute_value")
 
     @match_agents_with_attribute_value.setter
-    def match_agents_with_attribute_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_agents_with_attribute_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_agents_with_attribute_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]]:
         """
         (Updatable) The list of metrics in this group.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_dry_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "opc_dry_run")
 
     @opc_dry_run.setter
-    def opc_dry_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_dry_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def options(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The options are stored here as JSON.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def options(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input['ConfigOverridesArgs']]:
+    def overrides(self) -> pulumi.Input[Optional['ConfigOverridesArgs']]:
         """
         (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
         """
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input['ConfigOverridesArgs']]):
+    def overrides(self, value: pulumi.Input[Optional['ConfigOverridesArgs']]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="processFilters")
-    def process_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def process_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         """
         return pulumi.get(self, "process_filters")
 
     @process_filters.setter
-    def process_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def process_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "process_filters", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="runAsUser")
-    def run_as_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_as_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OS user that should be used to discover Java processes.
         """
         return pulumi.get(self, "run_as_user")
 
     @run_as_user.setter
-    def run_as_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_as_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_as_user", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
 
@@ -429,44 +429,44 @@ class ConfigArgs:
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
 
 @pulumi.input_type
 class _ConfigState:
     def __init__(__self__, *,
-                 agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 attach_install_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input['ConfigConfigArgs']] = None,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_agents_with_attribute_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_agents_with_attribute_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 options: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input['ConfigOverridesArgs']] = None,
-                 process_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
-                 run_as_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_by: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional['ConfigConfigArgs']] = None,
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_agents_with_attribute_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional['ConfigOverridesArgs']] = None,
+                 process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
+                 run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_by: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
 
@@ -571,331 +571,331 @@ class _ConfigState:
 
     @_builtins.property
     @pulumi.getter(name="agentVersion")
-    def agent_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the referenced agent bundle.
         """
         return pulumi.get(self, "agent_version")
 
     @agent_version.setter
-    def agent_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_version", value)
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM Domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="attachInstallDir")
-    def attach_install_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attach_install_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The directory owned by runAsUser.
         """
         return pulumi.get(self, "attach_install_dir")
 
     @attach_install_dir.setter
-    def attach_install_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attach_install_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attach_install_dir", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input['ConfigConfigArgs']]:
+    def config(self) -> pulumi.Input[Optional['ConfigConfigArgs']]:
         """
         (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input['ConfigConfigArgs']]):
+    def config(self, value: pulumi.Input[Optional['ConfigConfigArgs']]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="configType")
-    def config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of configuration item.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
-    def config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional string that describes what the options are intended or used for.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]]:
         """
         (Updatable) A list of dimensions for the metric. This variable should not be used.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For optimistic concurrency control. See `if-match`.
         """
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter(name="filterId")
-    def filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         """
         return pulumi.get(self, "filter_id")
 
     @filter_id.setter
-    def filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_id", value)
 
     @_builtins.property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The string that defines the Span Filter expression.
         """
         return pulumi.get(self, "filter_text")
 
     @filter_text.setter
-    def filter_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_text", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         """
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter(name="inUseBies")
-    def in_use_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
+    def in_use_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]]:
         """
         The list of configuration items that reference the span filter.
         """
         return pulumi.get(self, "in_use_bies")
 
     @in_use_bies.setter
-    def in_use_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
+    def in_use_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigInUseByArgs']]]]):
         pulumi.set(self, "in_use_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="matchAgentsWithAttributeKeys")
-    def match_agents_with_attribute_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def match_agents_with_attribute_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
         """
         return pulumi.get(self, "match_agents_with_attribute_keys")
 
     @match_agents_with_attribute_keys.setter
-    def match_agents_with_attribute_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def match_agents_with_attribute_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "match_agents_with_attribute_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="matchAgentsWithAttributeValue")
-    def match_agents_with_attribute_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_agents_with_attribute_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
         """
         return pulumi.get(self, "match_agents_with_attribute_value")
 
     @match_agents_with_attribute_value.setter
-    def match_agents_with_attribute_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_agents_with_attribute_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_agents_with_attribute_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]]:
         """
         (Updatable) The list of metrics in this group.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_dry_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "opc_dry_run")
 
     @opc_dry_run.setter
-    def opc_dry_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_dry_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def options(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The options are stored here as JSON.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def options(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input['ConfigOverridesArgs']]:
+    def overrides(self) -> pulumi.Input[Optional['ConfigOverridesArgs']]:
         """
         (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
         """
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input['ConfigOverridesArgs']]):
+    def overrides(self, value: pulumi.Input[Optional['ConfigOverridesArgs']]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="processFilters")
-    def process_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def process_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         """
         return pulumi.get(self, "process_filters")
 
     @process_filters.setter
-    def process_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def process_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "process_filters", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="runAsUser")
-    def run_as_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_as_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OS user that should be used to discover Java processes.
         """
         return pulumi.get(self, "run_as_user")
 
     @run_as_user.setter
-    def run_as_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_as_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_as_user", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
 
@@ -906,43 +906,43 @@ class _ConfigState:
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         return pulumi.get(self, "updated_by")
 
     @updated_by.setter
-    def updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_by", value)
 
 
@@ -952,31 +952,31 @@ class Config(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 attach_install_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_agents_with_attribute_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 options: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
-                 process_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
-                 run_as_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+                 process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+                 run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
@@ -1040,11 +1040,11 @@ class Config(pulumi.CustomResource):
             rules=[{
                 "display_name": config_rules_display_name,
                 "filter_text": config_rules_filter_text,
-                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans,
-                "is_enabled": config_rules_is_enabled,
-                "priority": config_rules_priority,
-                "satisfied_response_time": config_rules_satisfied_response_time,
-                "tolerating_response_time": config_rules_tolerating_response_time,
+                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans == "true",
+                "is_enabled": config_rules_is_enabled == "true",
+                "priority": int(config_rules_priority),
+                "satisfied_response_time": int(config_rules_satisfied_response_time),
+                "tolerating_response_time": int(config_rules_tolerating_response_time),
             }],
             run_as_user=config_run_as_user,
             service_name=test_service["name"])
@@ -1159,11 +1159,11 @@ class Config(pulumi.CustomResource):
             rules=[{
                 "display_name": config_rules_display_name,
                 "filter_text": config_rules_filter_text,
-                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans,
-                "is_enabled": config_rules_is_enabled,
-                "priority": config_rules_priority,
-                "satisfied_response_time": config_rules_satisfied_response_time,
-                "tolerating_response_time": config_rules_tolerating_response_time,
+                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans == "true",
+                "is_enabled": config_rules_is_enabled == "true",
+                "priority": int(config_rules_priority),
+                "satisfied_response_time": int(config_rules_satisfied_response_time),
+                "tolerating_response_time": int(config_rules_tolerating_response_time),
             }],
             run_as_user=config_run_as_user,
             service_name=test_service["name"])
@@ -1193,31 +1193,31 @@ class Config(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 attach_install_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_agents_with_attribute_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 options: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
-                 process_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
-                 run_as_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+                 process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+                 run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1272,37 +1272,37 @@ class Config(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            attach_install_dir: Optional[pulumi.Input[_builtins.str]] = None,
-            config: Optional[pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
-            config_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-            filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            group: Optional[pulumi.Input[_builtins.str]] = None,
-            in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
-            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            match_agents_with_attribute_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            match_agents_with_attribute_value: Optional[pulumi.Input[_builtins.str]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-            options: Optional[pulumi.Input[_builtins.str]] = None,
-            overrides: Optional[pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
-            process_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
-            run_as_user: Optional[pulumi.Input[_builtins.str]] = None,
-            service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_by: Optional[pulumi.Input[_builtins.str]] = None) -> 'Config':
+            agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            match_agents_with_attribute_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+            options: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+            process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+            run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_by: pulumi.Input[Optional[_builtins.str]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
+ * const testIdentityProviderGroups = oci.identity.getIdentityProviderGroups({
  *     identityProviderId: testIdentityProvider.id,
  *     name: identityProviderGroupName,
  *     state: identityProviderGroupState,
@@ -91,7 +91,7 @@ export interface GetIdentityProviderGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
+ * const testIdentityProviderGroups = oci.identity.getIdentityProviderGroups({
  *     identityProviderId: testIdentityProvider.id,
  *     name: identityProviderGroupName,
  *     state: identityProviderGroupState,
@@ -112,7 +112,7 @@ export function getIdentityProviderGroupsOutput(args: GetIdentityProviderGroupsO
  * A collection of arguments for invoking getIdentityProviderGroups.
  */
 export interface GetIdentityProviderGroupsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIdentityProviderGroupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIdentityProviderGroupsFilterArgs>[] | undefined>;
     /**
      * The OCID of the identity provider.
      */
@@ -120,9 +120,9 @@ export interface GetIdentityProviderGroupsOutputArgs {
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

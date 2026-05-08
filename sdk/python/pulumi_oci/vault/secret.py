@@ -25,16 +25,16 @@ class SecretArgs:
                  key_id: pulumi.Input[_builtins.str],
                  secret_name: pulumi.Input[_builtins.str],
                  vault_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_auto_generation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 replication_config: Optional[pulumi.Input['SecretReplicationConfigArgs']] = None,
-                 rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
-                 secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
-                 secret_generation_context: Optional[pulumi.Input['SecretSecretGenerationContextArgs']] = None,
-                 secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_config: pulumi.Input[Optional['SecretReplicationConfigArgs']] = None,
+                 rotation_config: pulumi.Input[Optional['SecretRotationConfigArgs']] = None,
+                 secret_content: pulumi.Input[Optional['SecretSecretContentArgs']] = None,
+                 secret_generation_context: pulumi.Input[Optional['SecretSecretGenerationContextArgs']] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
         """
         The set of arguments for constructing a Secret resource.
 
@@ -136,154 +136,154 @@ class SecretArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the secret. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="enableAutoGeneration")
-    def enable_auto_generation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_auto_generation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         """
         return pulumi.get(self, "enable_auto_generation")
 
     @enable_auto_generation.setter
-    def enable_auto_generation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_auto_generation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_auto_generation", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationConfig")
-    def replication_config(self) -> Optional[pulumi.Input['SecretReplicationConfigArgs']]:
+    def replication_config(self) -> pulumi.Input[Optional['SecretReplicationConfigArgs']]:
         """
         (Updatable) Defines the configuration that enables cross-region secret replication.
         """
         return pulumi.get(self, "replication_config")
 
     @replication_config.setter
-    def replication_config(self, value: Optional[pulumi.Input['SecretReplicationConfigArgs']]):
+    def replication_config(self, value: pulumi.Input[Optional['SecretReplicationConfigArgs']]):
         pulumi.set(self, "replication_config", value)
 
     @_builtins.property
     @pulumi.getter(name="rotationConfig")
-    def rotation_config(self) -> Optional[pulumi.Input['SecretRotationConfigArgs']]:
+    def rotation_config(self) -> pulumi.Input[Optional['SecretRotationConfigArgs']]:
         """
         (Updatable) Defines the frequency of the rotation and the information about the target system
         """
         return pulumi.get(self, "rotation_config")
 
     @rotation_config.setter
-    def rotation_config(self, value: Optional[pulumi.Input['SecretRotationConfigArgs']]):
+    def rotation_config(self, value: pulumi.Input[Optional['SecretRotationConfigArgs']]):
         pulumi.set(self, "rotation_config", value)
 
     @_builtins.property
     @pulumi.getter(name="secretContent")
-    def secret_content(self) -> Optional[pulumi.Input['SecretSecretContentArgs']]:
+    def secret_content(self) -> pulumi.Input[Optional['SecretSecretContentArgs']]:
         """
         (Updatable) The content of the secret and metadata to help identify it.
         """
         return pulumi.get(self, "secret_content")
 
     @secret_content.setter
-    def secret_content(self, value: Optional[pulumi.Input['SecretSecretContentArgs']]):
+    def secret_content(self, value: pulumi.Input[Optional['SecretSecretContentArgs']]):
         pulumi.set(self, "secret_content", value)
 
     @_builtins.property
     @pulumi.getter(name="secretGenerationContext")
-    def secret_generation_context(self) -> Optional[pulumi.Input['SecretSecretGenerationContextArgs']]:
+    def secret_generation_context(self) -> pulumi.Input[Optional['SecretSecretGenerationContextArgs']]:
         """
         (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         """
         return pulumi.get(self, "secret_generation_context")
 
     @secret_generation_context.setter
-    def secret_generation_context(self, value: Optional[pulumi.Input['SecretSecretGenerationContextArgs']]):
+    def secret_generation_context(self, value: pulumi.Input[Optional['SecretSecretGenerationContextArgs']]):
         pulumi.set(self, "secret_generation_context", value)
 
     @_builtins.property
     @pulumi.getter(name="secretRules")
-    def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
+    def secret_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
         """
         (Updatable) A list of rules to control how the secret is used and managed.
         """
         return pulumi.get(self, "secret_rules")
 
     @secret_rules.setter
-    def secret_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]):
+    def secret_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]):
         pulumi.set(self, "secret_rules", value)
 
 
 @pulumi.input_type
 class _SecretState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_version_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_auto_generation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_generation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_rotation_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 next_rotation_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_config: Optional[pulumi.Input['SecretReplicationConfigArgs']] = None,
-                 rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
-                 rotation_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
-                 secret_generation_context: Optional[pulumi.Input['SecretSecretGenerationContextArgs']] = None,
-                 secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
-                 source_region_informations: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_current_version_expiry: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_generation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 next_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_config: pulumi.Input[Optional['SecretReplicationConfigArgs']] = None,
+                 rotation_config: pulumi.Input[Optional['SecretRotationConfigArgs']] = None,
+                 rotation_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_content: pulumi.Input[Optional['SecretSecretContentArgs']] = None,
+                 secret_generation_context: pulumi.Input[Optional['SecretSecretGenerationContextArgs']] = None,
+                 secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
+                 source_region_informations: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_current_version_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Secret resources.
 
@@ -373,307 +373,307 @@ class _SecretState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where you want to create the secret.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentVersionNumber")
-    def current_version_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_version_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version number of the secret version that's currently in use.
         """
         return pulumi.get(self, "current_version_number")
 
     @current_version_number.setter
-    def current_version_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_version_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the secret. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="enableAutoGeneration")
-    def enable_auto_generation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_auto_generation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
         """
         return pulumi.get(self, "enable_auto_generation")
 
     @enable_auto_generation.setter
-    def enable_auto_generation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_auto_generation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_auto_generation", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoGenerationEnabled")
-    def is_auto_generation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_generation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The value of this flag determines whether or not secret content will be generated automatically.
         """
         return pulumi.get(self, "is_auto_generation_enabled")
 
     @is_auto_generation_enabled.setter
-    def is_auto_generation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_generation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_generation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isReplica")
-    def is_replica(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_replica(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the secret is a source or replica secret.
         """
         return pulumi.get(self, "is_replica")
 
     @is_replica.setter
-    def is_replica(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_replica(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_replica", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastRotationTime")
-    def last_rotation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_rotation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "last_rotation_time")
 
     @last_rotation_time.setter
-    def last_rotation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_rotation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_rotation_time", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state of the secret.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="nextRotationTime")
-    def next_rotation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_rotation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "next_rotation_time")
 
     @next_rotation_time.setter
-    def next_rotation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_rotation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_rotation_time", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationConfig")
-    def replication_config(self) -> Optional[pulumi.Input['SecretReplicationConfigArgs']]:
+    def replication_config(self) -> pulumi.Input[Optional['SecretReplicationConfigArgs']]:
         """
         (Updatable) Defines the configuration that enables cross-region secret replication.
         """
         return pulumi.get(self, "replication_config")
 
     @replication_config.setter
-    def replication_config(self, value: Optional[pulumi.Input['SecretReplicationConfigArgs']]):
+    def replication_config(self, value: pulumi.Input[Optional['SecretReplicationConfigArgs']]):
         pulumi.set(self, "replication_config", value)
 
     @_builtins.property
     @pulumi.getter(name="rotationConfig")
-    def rotation_config(self) -> Optional[pulumi.Input['SecretRotationConfigArgs']]:
+    def rotation_config(self) -> pulumi.Input[Optional['SecretRotationConfigArgs']]:
         """
         (Updatable) Defines the frequency of the rotation and the information about the target system
         """
         return pulumi.get(self, "rotation_config")
 
     @rotation_config.setter
-    def rotation_config(self, value: Optional[pulumi.Input['SecretRotationConfigArgs']]):
+    def rotation_config(self, value: pulumi.Input[Optional['SecretRotationConfigArgs']]):
         pulumi.set(self, "rotation_config", value)
 
     @_builtins.property
     @pulumi.getter(name="rotationStatus")
-    def rotation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rotation_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the status of the secret rotation
         """
         return pulumi.get(self, "rotation_status")
 
     @rotation_status.setter
-    def rotation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rotation_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rotation_status", value)
 
     @_builtins.property
     @pulumi.getter(name="secretContent")
-    def secret_content(self) -> Optional[pulumi.Input['SecretSecretContentArgs']]:
+    def secret_content(self) -> pulumi.Input[Optional['SecretSecretContentArgs']]:
         """
         (Updatable) The content of the secret and metadata to help identify it.
         """
         return pulumi.get(self, "secret_content")
 
     @secret_content.setter
-    def secret_content(self, value: Optional[pulumi.Input['SecretSecretContentArgs']]):
+    def secret_content(self, value: pulumi.Input[Optional['SecretSecretContentArgs']]):
         pulumi.set(self, "secret_content", value)
 
     @_builtins.property
     @pulumi.getter(name="secretGenerationContext")
-    def secret_generation_context(self) -> Optional[pulumi.Input['SecretSecretGenerationContextArgs']]:
+    def secret_generation_context(self) -> pulumi.Input[Optional['SecretSecretGenerationContextArgs']]:
         """
         (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         """
         return pulumi.get(self, "secret_generation_context")
 
     @secret_generation_context.setter
-    def secret_generation_context(self, value: Optional[pulumi.Input['SecretSecretGenerationContextArgs']]):
+    def secret_generation_context(self, value: pulumi.Input[Optional['SecretSecretGenerationContextArgs']]):
         pulumi.set(self, "secret_generation_context", value)
 
     @_builtins.property
     @pulumi.getter(name="secretName")
-    def secret_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         """
         return pulumi.get(self, "secret_name")
 
     @secret_name.setter
-    def secret_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_name", value)
 
     @_builtins.property
     @pulumi.getter(name="secretRules")
-    def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
+    def secret_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
         """
         (Updatable) A list of rules to control how the secret is used and managed.
         """
         return pulumi.get(self, "secret_rules")
 
     @secret_rules.setter
-    def secret_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]):
+    def secret_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]):
         pulumi.set(self, "secret_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceRegionInformations")
-    def source_region_informations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]]:
+    def source_region_informations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]]:
         """
         Details for the source that the source secret has.
         """
         return pulumi.get(self, "source_region_informations")
 
     @source_region_informations.setter
-    def source_region_informations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]]):
+    def source_region_informations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSourceRegionInformationArgs']]]]):
         pulumi.set(self, "source_region_informations", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the secret.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
-    def time_of_current_version_expiry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_current_version_expiry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @time_of_current_version_expiry.setter
-    def time_of_current_version_expiry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_current_version_expiry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_current_version_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the vault where you want to create the secret.
 
@@ -684,7 +684,7 @@ class _SecretState:
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
 
@@ -694,20 +694,20 @@ class Secret(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_auto_generation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 replication_config: Optional[pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-                 rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
-                 secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-                 secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
-                 secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
+                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
+                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+                 secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
@@ -785,20 +785,20 @@ class Secret(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_auto_generation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 replication_config: Optional[pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-                 rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
-                 secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-                 secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
-                 secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
+                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
+                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+                 secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -852,32 +852,32 @@ class Secret(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_version_number: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_auto_generation: Optional[pulumi.Input[_builtins.bool]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_generation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_rotation_time: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            next_rotation_time: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_config: Optional[pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-            rotation_config: Optional[pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
-            rotation_status: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_content: Optional[pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-            secret_generation_context: Optional[pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
-            secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
-            source_region_informations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_current_version_expiry: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Secret':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_generation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            next_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
+            rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
+            rotation_status: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
+            secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+            secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
+            source_region_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_current_version_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Secret':
         """
         Get an existing Secret resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

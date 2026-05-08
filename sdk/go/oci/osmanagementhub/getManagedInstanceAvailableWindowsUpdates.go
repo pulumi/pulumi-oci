@@ -31,12 +31,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetManagedInstanceAvailableWindowsUpdates(ctx, &osmanagementhub.GetManagedInstanceAvailableWindowsUpdatesArgs{
 //				ManagedInstanceId:   testManagedInstance.Id,
-//				ClassificationTypes: managedInstanceAvailableWindowsUpdateClassificationType,
+//				ClassificationTypes: pulumi.ToArray(managedInstanceAvailableWindowsUpdateClassificationType),
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				DisplayName:         pulumi.StringRef(managedInstanceAvailableWindowsUpdateDisplayName),
 //				DisplayNameContains: pulumi.StringRef(managedInstanceAvailableWindowsUpdateDisplayNameContains),
 //				IsInstallable:       pulumi.StringRef(managedInstanceAvailableWindowsUpdateIsInstallable),
-//				Names:               managedInstanceAvailableWindowsUpdateName,
+//				Names:               pulumi.ToArray(managedInstanceAvailableWindowsUpdateName),
 //			}, nil)
 //			if err != nil {
 //				return err

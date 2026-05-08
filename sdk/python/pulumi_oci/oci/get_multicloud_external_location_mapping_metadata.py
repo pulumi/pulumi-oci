@@ -152,11 +152,11 @@ def get_multicloud_external_location_mapping_metadata(compartment_id: Optional[_
         limit=pulumi.get(__ret__, 'limit'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_names=pulumi.get(__ret__, 'subscription_service_names'))
-def get_multicloud_external_location_mapping_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict']]]]] = None,
-                                                             limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                             subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             subscription_service_names: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
+def get_multicloud_external_location_mapping_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict']]]]] = None,
+                                                             limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                             subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             subscription_service_names: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudExternalLocationMappingMetadataResult]:
     """
     This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.

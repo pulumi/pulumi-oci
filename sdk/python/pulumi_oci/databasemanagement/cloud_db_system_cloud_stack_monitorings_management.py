@@ -21,8 +21,8 @@ class CloudDbSystemCloudStackMonitoringsManagementArgs:
     def __init__(__self__, *,
                  cloud_db_system_id: pulumi.Input[_builtins.str],
                  enable_cloud_stack_monitoring: pulumi.Input[_builtins.bool],
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudDbSystemCloudStackMonitoringsManagement resource.
 
@@ -72,36 +72,36 @@ class CloudDbSystemCloudStackMonitoringsManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The status of the associated service.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
 @pulumi.input_type
 class _CloudDbSystemCloudStackMonitoringsManagementState:
     def __init__(__self__, *,
-                 cloud_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_cloud_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_cloud_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbSystemCloudStackMonitoringsManagement resources.
 
@@ -125,19 +125,19 @@ class _CloudDbSystemCloudStackMonitoringsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="cloudDbSystemId")
-    def cloud_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         """
         return pulumi.get(self, "cloud_db_system_id")
 
     @cloud_db_system_id.setter
-    def cloud_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableCloudStackMonitoring")
-    def enable_cloud_stack_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_cloud_stack_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -148,31 +148,31 @@ class _CloudDbSystemCloudStackMonitoringsManagementState:
         return pulumi.get(self, "enable_cloud_stack_monitoring")
 
     @enable_cloud_stack_monitoring.setter
-    def enable_cloud_stack_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_cloud_stack_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_cloud_stack_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The status of the associated service.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
@@ -182,10 +182,10 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_cloud_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_cloud_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Db System Cloud Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -203,8 +203,8 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_stack_monitorings_management = oci.databasemanagement.CloudDbSystemCloudStackMonitoringsManagement("test_cloud_db_system_cloud_stack_monitorings_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring,
-            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled,
+            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring == "true",
+            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled == "true",
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
 
@@ -242,8 +242,8 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_stack_monitorings_management = oci.databasemanagement.CloudDbSystemCloudStackMonitoringsManagement("test_cloud_db_system_cloud_stack_monitorings_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring,
-            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled,
+            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring == "true",
+            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled == "true",
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
 
@@ -263,10 +263,10 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_cloud_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_cloud_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -294,10 +294,10 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_cloud_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudDbSystemCloudStackMonitoringsManagement':
+            cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_cloud_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudDbSystemCloudStackMonitoringsManagement':
         """
         Get an existing CloudDbSystemCloudStackMonitoringsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

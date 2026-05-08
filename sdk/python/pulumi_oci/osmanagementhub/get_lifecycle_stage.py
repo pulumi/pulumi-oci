@@ -264,7 +264,7 @@ def get_lifecycle_stage(lifecycle_stage_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
+    test_lifecycle_stage = oci.osmanagementhub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_lifecycle_stage(lifecycle_stage_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-def get_lifecycle_stage_output(lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_lifecycle_stage_output(lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLifecycleStageResult]:
     """
     This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -307,7 +307,7 @@ def get_lifecycle_stage_output(lifecycle_stage_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
+    test_lifecycle_stage = oci.osmanagementhub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
 
 

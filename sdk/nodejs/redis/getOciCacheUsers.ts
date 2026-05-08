@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheUsers = oci.Redis.getOciCacheUsers({
+ * const testOciCacheUsers = oci.redis.getOciCacheUsers({
  *     compartmentId: compartmentId,
  *     name: ociCacheUserName,
  *     state: ociCacheUserState,
@@ -91,7 +91,7 @@ export interface GetOciCacheUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheUsers = oci.Redis.getOciCacheUsers({
+ * const testOciCacheUsers = oci.redis.getOciCacheUsers({
  *     compartmentId: compartmentId,
  *     name: ociCacheUserName,
  *     state: ociCacheUserState,
@@ -116,14 +116,14 @@ export interface GetOciCacheUsersOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheUsersFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheUsersFilterArgs>[] | undefined>;
     /**
      * A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

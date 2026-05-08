@@ -192,59 +192,59 @@ export interface RecommendationState {
     /**
      * The unique OCID associated with the category.
      */
-    categoryId?: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Text describing the recommendation.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The estimated cost savings, in dollars, for the recommendation.
      */
-    estimatedCostSaving?: pulumi.Input<number>;
+    estimatedCostSaving?: pulumi.Input<number | undefined>;
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The level of importance assigned to the recommendation.
      */
-    importance?: pulumi.Input<string>;
+    importance?: pulumi.Input<string | undefined>;
     /**
      * The name of the profile level.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId?: pulumi.Input<string>;
+    recommendationId?: pulumi.Input<string | undefined>;
     /**
      * An array of `ResourceCount` objects grouped by the status of the resource actions.
      */
-    resourceCounts?: pulumi.Input<pulumi.Input<inputs.Optimizer.RecommendationResourceCount>[]>;
+    resourceCounts?: pulumi.Input<pulumi.Input<inputs.Optimizer.RecommendationResourceCount>[] | undefined>;
     /**
      * The recommendation's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of the recommendation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      */
-    supportedLevels?: pulumi.Input<pulumi.Input<inputs.Optimizer.RecommendationSupportedLevel>[]>;
+    supportedLevels?: pulumi.Input<pulumi.Input<inputs.Optimizer.RecommendationSupportedLevel>[] | undefined>;
     /**
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      */
-    timeStatusBegin?: pulumi.Input<string>;
+    timeStatusBegin?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -254,11 +254,11 @@ export interface RecommendationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStatusEnd?: pulumi.Input<string>;
+    timeStatusEnd?: pulumi.Input<string | undefined>;
     /**
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -282,5 +282,5 @@ export interface RecommendationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStatusEnd?: pulumi.Input<string>;
+    timeStatusEnd?: pulumi.Input<string | undefined>;
 }

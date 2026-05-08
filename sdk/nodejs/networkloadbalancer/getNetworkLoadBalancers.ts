@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancers = oci.NetworkLoadBalancer.getNetworkLoadBalancers({
+ * const testNetworkLoadBalancers = oci.networkloadbalancer.getNetworkLoadBalancers({
  *     compartmentId: compartmentId,
  *     displayName: networkLoadBalancerDisplayName,
  *     state: networkLoadBalancerState,
@@ -90,7 +90,7 @@ export interface GetNetworkLoadBalancersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancers = oci.NetworkLoadBalancer.getNetworkLoadBalancers({
+ * const testNetworkLoadBalancers = oci.networkloadbalancer.getNetworkLoadBalancers({
  *     compartmentId: compartmentId,
  *     displayName: networkLoadBalancerDisplayName,
  *     state: networkLoadBalancerState,
@@ -118,10 +118,10 @@ export interface GetNetworkLoadBalancersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetNetworkLoadBalancersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetNetworkLoadBalancersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -129,7 +129,7 @@ def get_trail_sequence(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=test_deployment["id"],
+    test_trail_sequence = oci.goldengate.get_trail_sequence(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file["id"],
         display_name=trail_sequence_display_name,
         trail_sequence_id=test_trail_sequence_oci_golden_gate_trail_sequence["id"])
@@ -157,10 +157,10 @@ def get_trail_sequence(deployment_id: Optional[_builtins.str] = None,
         time_last_fetched=pulumi.get(__ret__, 'time_last_fetched'),
         trail_file_id=pulumi.get(__ret__, 'trail_file_id'),
         trail_sequence_id=pulumi.get(__ret__, 'trail_sequence_id'))
-def get_trail_sequence_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                              trail_file_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              trail_sequence_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_trail_sequence_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                              trail_file_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              trail_sequence_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTrailSequenceResult]:
     """
     This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -173,7 +173,7 @@ def get_trail_sequence_output(deployment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=test_deployment["id"],
+    test_trail_sequence = oci.goldengate.get_trail_sequence(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file["id"],
         display_name=trail_sequence_display_name,
         trail_sequence_id=test_trail_sequence_oci_golden_gate_trail_sequence["id"])

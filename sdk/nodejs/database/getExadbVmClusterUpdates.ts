@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdates = oci.Database.getExadbVmClusterUpdates({
+ * const testExadbVmClusterUpdates = oci.database.getExadbVmClusterUpdates({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateType: exadbVmClusterUpdateUpdateType,
  *     version: exadbVmClusterUpdateVersion,
@@ -87,7 +87,7 @@ export interface GetExadbVmClusterUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdates = oci.Database.getExadbVmClusterUpdates({
+ * const testExadbVmClusterUpdates = oci.database.getExadbVmClusterUpdates({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateType: exadbVmClusterUpdateUpdateType,
  *     version: exadbVmClusterUpdateVersion,
@@ -112,13 +112,13 @@ export interface GetExadbVmClusterUpdatesOutputArgs {
      * The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
      */
     exadbVmClusterId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClusterUpdatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClusterUpdatesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given update type exactly.
      */
-    updateType?: pulumi.Input<string>;
+    updateType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given update version exactly.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

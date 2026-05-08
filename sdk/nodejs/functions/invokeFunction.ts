@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     invokeFunctionBody: invokeFunctionInvokeFunctionBody,
  *     fnIntent: invokeFunctionFnIntent,
  *     fnInvokeType: invokeFunctionFnInvokeType,
- *     isDryRun: invokeFunctionIsDryRun,
+ *     isDryRun: invokeFunctionIsDryRun === "true",
  *     base64EncodeContent: false,
  * });
  * ```
@@ -152,43 +152,43 @@ export interface InvokeFunctionState {
     /**
      * Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
      */
-    fnIntent?: pulumi.Input<string>;
+    fnIntent?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      */
-    fnInvokeType?: pulumi.Input<string>;
+    fnInvokeType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
      */
-    functionId?: pulumi.Input<string>;
+    functionId?: pulumi.Input<string | undefined>;
     /**
      * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    inputBodySourcePath?: pulumi.Input<string>;
-    invokeEndpoint?: pulumi.Input<string>;
+    inputBodySourcePath?: pulumi.Input<string | undefined>;
+    invokeEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      */
-    invokeFunctionBody?: pulumi.Input<string>;
+    invokeFunctionBody?: pulumi.Input<string | undefined>;
     /**
      * The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      */
-    invokeFunctionBodyBase64Encoded?: pulumi.Input<string>;
+    invokeFunctionBodyBase64Encoded?: pulumi.Input<string | undefined>;
     /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
      */
-    isDryRun?: pulumi.Input<boolean>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -198,15 +198,15 @@ export interface InvokeFunctionArgs {
     /**
      * Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
      */
-    fnIntent?: pulumi.Input<string>;
+    fnIntent?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      */
-    fnInvokeType?: pulumi.Input<string>;
+    fnInvokeType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
      */
@@ -217,17 +217,17 @@ export interface InvokeFunctionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    inputBodySourcePath?: pulumi.Input<string>;
+    inputBodySourcePath?: pulumi.Input<string | undefined>;
     /**
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      */
-    invokeFunctionBody?: pulumi.Input<string>;
+    invokeFunctionBody?: pulumi.Input<string | undefined>;
     /**
      * The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      */
-    invokeFunctionBodyBase64Encoded?: pulumi.Input<string>;
+    invokeFunctionBodyBase64Encoded?: pulumi.Input<string | undefined>;
     /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
      */
-    isDryRun?: pulumi.Input<boolean>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
 }

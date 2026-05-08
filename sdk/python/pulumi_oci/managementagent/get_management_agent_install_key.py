@@ -251,7 +251,7 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
+    test_management_agent_install_key = oci.managementagent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[_
         time_created=pulumi.get(__ret__, 'time_created'),
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_management_agent_install_key_output(management_agent_install_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_agent_install_key_output(management_agent_install_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentInstallKeyResult]:
     """
     This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
@@ -293,7 +293,7 @@ def get_management_agent_install_key_output(management_agent_install_key_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
+    test_management_agent_install_key = oci.managementagent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
     ```
 
 

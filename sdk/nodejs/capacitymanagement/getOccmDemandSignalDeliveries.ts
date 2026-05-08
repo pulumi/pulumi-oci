@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignalDeliveries = oci.CapacityManagement.getOccmDemandSignalDeliveries({
+ * const testOccmDemandSignalDeliveries = oci.capacitymanagement.getOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     id: occmDemandSignalDeliveryId,
  *     occmDemandSignalItemId: testOccmDemandSignalItem.id,
@@ -83,7 +83,7 @@ export interface GetOccmDemandSignalDeliveriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignalDeliveries = oci.CapacityManagement.getOccmDemandSignalDeliveries({
+ * const testOccmDemandSignalDeliveries = oci.capacitymanagement.getOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     id: occmDemandSignalDeliveryId,
  *     occmDemandSignalItemId: testOccmDemandSignalItem.id,
@@ -108,13 +108,13 @@ export interface GetOccmDemandSignalDeliveriesOutputArgs {
      * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccmDemandSignalDeliveriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccmDemandSignalDeliveriesFilterArgs>[] | undefined>;
     /**
      * A query parameter to filter the list of demand signals based on it's OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A query parameter to filter the list of demand signal items based on it's OCID.
      */
-    occmDemandSignalItemId?: pulumi.Input<string>;
+    occmDemandSignalItemId?: pulumi.Input<string | undefined>;
 }

@@ -114,7 +114,7 @@ def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_key_versions = oci.Kms.get_key_versions(key_id=test_key["id"],
+    test_key_versions = oci.kms.get_key_versions(key_id=test_key["id"],
         management_endpoint=key_version_management_endpoint)
     ```
 
@@ -135,9 +135,9 @@ def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs'
         key_id=pulumi.get(__ret__, 'key_id'),
         key_versions=pulumi.get(__ret__, 'key_versions'),
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'))
-def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]]]] = None,
-                            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+def get_key_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]]]] = None,
+                            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyVersionsResult]:
     """
     This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
@@ -156,7 +156,7 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_key_versions = oci.Kms.get_key_versions(key_id=test_key["id"],
+    test_key_versions = oci.kms.get_key_versions(key_id=test_key["id"],
         management_endpoint=key_version_management_endpoint)
     ```
 

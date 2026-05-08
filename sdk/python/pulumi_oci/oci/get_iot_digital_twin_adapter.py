@@ -255,7 +255,7 @@ def get_iot_digital_twin_adapter(digital_twin_adapter_id: Optional[_builtins.str
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_iot_digital_twin_adapter_output(digital_twin_adapter_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iot_digital_twin_adapter_output(digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinAdapterResult]:
     """
     This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.

@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     contentModerationConfig: {
- *         shouldEnableOnInput: agentEndpointContentModerationConfigShouldEnableOnInput,
- *         shouldEnableOnOutput: agentEndpointContentModerationConfigShouldEnableOnOutput,
+ *         shouldEnableOnInput: agentEndpointContentModerationConfigShouldEnableOnInput === "true",
+ *         shouldEnableOnOutput: agentEndpointContentModerationConfigShouldEnableOnOutput === "true",
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -49,7 +49,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     humanInputConfig: {
- *         shouldEnableHumanInput: agentEndpointHumanInputConfigShouldEnableHumanInput,
+ *         shouldEnableHumanInput: agentEndpointHumanInputConfigShouldEnableHumanInput === "true",
  *     },
  *     metadata: agentEndpointMetadata,
  *     outputConfig: {
@@ -59,7 +59,7 @@ import * as utilities from "../utilities";
  *             outputLocationType: agentEndpointOutputConfigOutputLocationOutputLocationType,
  *             prefix: agentEndpointOutputConfigOutputLocationPrefix,
  *         },
- *         retentionPeriodInMinutes: agentEndpointOutputConfigRetentionPeriodInMinutes,
+ *         retentionPeriodInMinutes: Number(agentEndpointOutputConfigRetentionPeriodInMinutes),
  *     },
  *     provisionedCapacityConfig: {
  *         provisionedCapacityId: testProvisionedCapacity.id,
@@ -73,12 +73,12 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     sessionConfig: {
- *         idleTimeoutInSeconds: agentEndpointSessionConfigIdleTimeoutInSeconds,
+ *         idleTimeoutInSeconds: Number(agentEndpointSessionConfigIdleTimeoutInSeconds),
  *     },
- *     shouldEnableCitation: agentEndpointShouldEnableCitation,
- *     shouldEnableMultiLanguage: agentEndpointShouldEnableMultiLanguage,
- *     shouldEnableSession: agentEndpointShouldEnableSession,
- *     shouldEnableTrace: agentEndpointShouldEnableTrace,
+ *     shouldEnableCitation: agentEndpointShouldEnableCitation === "true",
+ *     shouldEnableMultiLanguage: agentEndpointShouldEnableMultiLanguage === "true",
+ *     shouldEnableSession: agentEndpointShouldEnableSession === "true",
+ *     shouldEnableTrace: agentEndpointShouldEnableTrace === "true",
  * });
  * ```
  *
@@ -289,71 +289,71 @@ export interface AgentAgentEndpointState {
     /**
      * The OCID of the agent that this endpoint is associated with.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
      */
-    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointContentModerationConfig>;
+    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointContentModerationConfig | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the endpoint.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
      */
-    guardrailConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfig>;
+    guardrailConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfig | undefined>;
     /**
      * (Updatable) Human Input Configuration for an AgentEndpoint.
      */
-    humanInputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointHumanInputConfig>;
+    humanInputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointHumanInputConfig | undefined>;
     /**
      * A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Key-value pairs to allow additional configurations.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration to store results generated by agent.
      */
-    outputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointOutputConfig>;
+    outputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointOutputConfig | undefined>;
     /**
      * (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
      */
-    provisionedCapacityConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfig>;
+    provisionedCapacityConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfig | undefined>;
     /**
      * (Updatable) Session Configuration on AgentEndpoint.
      */
-    sessionConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointSessionConfig>;
+    sessionConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointSessionConfig | undefined>;
     /**
      * (Updatable) Whether to show citations in the chat result.
      */
-    shouldEnableCitation?: pulumi.Input<boolean>;
+    shouldEnableCitation?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to enable multi-language for chat.
      */
-    shouldEnableMultiLanguage?: pulumi.Input<boolean>;
+    shouldEnableMultiLanguage?: pulumi.Input<boolean | undefined>;
     /**
      * Whether or not to enable Session-based chat.
      */
-    shouldEnableSession?: pulumi.Input<boolean>;
+    shouldEnableSession?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to show traces in the chat result.
      *
@@ -361,23 +361,23 @@ export interface AgentAgentEndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldEnableTrace?: pulumi.Input<boolean>;
+    shouldEnableTrace?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the endpoint.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -395,59 +395,59 @@ export interface AgentAgentEndpointArgs {
     /**
      * (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
      */
-    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointContentModerationConfig>;
+    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointContentModerationConfig | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the endpoint.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
      */
-    guardrailConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfig>;
+    guardrailConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfig | undefined>;
     /**
      * (Updatable) Human Input Configuration for an AgentEndpoint.
      */
-    humanInputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointHumanInputConfig>;
+    humanInputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointHumanInputConfig | undefined>;
     /**
      * (Updatable) Key-value pairs to allow additional configurations.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration to store results generated by agent.
      */
-    outputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointOutputConfig>;
+    outputConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointOutputConfig | undefined>;
     /**
      * (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
      */
-    provisionedCapacityConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfig>;
+    provisionedCapacityConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfig | undefined>;
     /**
      * (Updatable) Session Configuration on AgentEndpoint.
      */
-    sessionConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointSessionConfig>;
+    sessionConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointSessionConfig | undefined>;
     /**
      * (Updatable) Whether to show citations in the chat result.
      */
-    shouldEnableCitation?: pulumi.Input<boolean>;
+    shouldEnableCitation?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to enable multi-language for chat.
      */
-    shouldEnableMultiLanguage?: pulumi.Input<boolean>;
+    shouldEnableMultiLanguage?: pulumi.Input<boolean | undefined>;
     /**
      * Whether or not to enable Session-based chat.
      */
-    shouldEnableSession?: pulumi.Input<boolean>;
+    shouldEnableSession?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to show traces in the chat result.
      *
@@ -455,5 +455,5 @@ export interface AgentAgentEndpointArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldEnableTrace?: pulumi.Input<boolean>;
+    shouldEnableTrace?: pulumi.Input<boolean | undefined>;
 }

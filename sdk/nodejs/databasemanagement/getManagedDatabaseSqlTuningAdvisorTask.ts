@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTask = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTask({
+ * const testManagedDatabaseSqlTuningAdvisorTask = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTask({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlTuningAdvisorTaskName,
  *     status: managedDatabaseSqlTuningAdvisorTaskStatus,
@@ -95,7 +95,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTaskResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTask = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTask({
+ * const testManagedDatabaseSqlTuningAdvisorTask = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTask({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlTuningAdvisorTaskName,
  *     status: managedDatabaseSqlTuningAdvisorTaskStatus,
@@ -126,17 +126,17 @@ export interface GetManagedDatabaseSqlTuningAdvisorTaskOutputArgs {
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The optional greater than or equal to query parameter to filter the timestamp.
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter the timestamp.
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

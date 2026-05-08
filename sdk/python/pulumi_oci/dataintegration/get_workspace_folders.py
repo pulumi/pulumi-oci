@@ -154,7 +154,7 @@ def get_workspace_folders(aggregator_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=test_workspace["id"],
+    test_workspace_folders = oci.dataintegration.get_workspace_folders(workspace_id=test_workspace["id"],
         aggregator_key=workspace_folder_aggregator_key,
         fields=workspace_folder_fields,
         identifiers=workspace_folder_identifier,
@@ -191,13 +191,13 @@ def get_workspace_folders(aggregator_key: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceFoldersFilterArgs', 'GetWorkspaceFoldersFilterArgsDict']]]]] = None,
-                                 identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_folders_output(aggregator_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceFoldersFilterArgs', 'GetWorkspaceFoldersFilterArgsDict']]]]] = None,
+                                 identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceFoldersResult]:
     """
     This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
@@ -210,7 +210,7 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=test_workspace["id"],
+    test_workspace_folders = oci.dataintegration.get_workspace_folders(workspace_id=test_workspace["id"],
         aggregator_key=workspace_folder_aggregator_key,
         fields=workspace_folder_fields,
         identifiers=workspace_folder_identifier,

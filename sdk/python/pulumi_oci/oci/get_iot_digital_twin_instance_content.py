@@ -83,7 +83,7 @@ def get_iot_digital_twin_instance_content(digital_twin_instance_id: Optional[_bu
     import pulumi_oci as oci
 
     test_digital_twin_instance_content = oci.oci.get_iot_digital_twin_instance_content(digital_twin_instance_id=test_digital_twin_instance["id"],
-        should_include_metadata=digital_twin_instance_content_should_include_metadata)
+        should_include_metadata=digital_twin_instance_content_should_include_metadata == "true")
     ```
 
 
@@ -100,8 +100,8 @@ def get_iot_digital_twin_instance_content(digital_twin_instance_id: Optional[_bu
         digital_twin_instance_id=pulumi.get(__ret__, 'digital_twin_instance_id'),
         id=pulumi.get(__ret__, 'id'),
         should_include_metadata=pulumi.get(__ret__, 'should_include_metadata'))
-def get_iot_digital_twin_instance_content_output(digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 should_include_metadata: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_iot_digital_twin_instance_content_output(digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 should_include_metadata: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinInstanceContentResult]:
     """
     This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
@@ -116,7 +116,7 @@ def get_iot_digital_twin_instance_content_output(digital_twin_instance_id: Optio
     import pulumi_oci as oci
 
     test_digital_twin_instance_content = oci.oci.get_iot_digital_twin_instance_content(digital_twin_instance_id=test_digital_twin_instance["id"],
-        should_include_metadata=digital_twin_instance_content_should_include_metadata)
+        should_include_metadata=digital_twin_instance_content_should_include_metadata == "true")
     ```
 
 

@@ -86,7 +86,7 @@ def get_average_carbon_emission(sku_part_number: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_average_carbon_emission = oci.MeteringComputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
+    test_average_carbon_emission = oci.meteringcomputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
     ```
 
 
@@ -101,7 +101,7 @@ def get_average_carbon_emission(sku_part_number: Optional[_builtins.str] = None,
         average_carbon_emission=pulumi.get(__ret__, 'average_carbon_emission'),
         id=pulumi.get(__ret__, 'id'),
         sku_part_number=pulumi.get(__ret__, 'sku_part_number'))
-def get_average_carbon_emission_output(sku_part_number: Optional[pulumi.Input[_builtins.str]] = None,
+def get_average_carbon_emission_output(sku_part_number: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAverageCarbonEmissionResult]:
     """
     This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -114,7 +114,7 @@ def get_average_carbon_emission_output(sku_part_number: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_average_carbon_emission = oci.MeteringComputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
+    test_average_carbon_emission = oci.meteringcomputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
     ```
 
 

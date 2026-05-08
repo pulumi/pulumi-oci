@@ -226,9 +226,9 @@ def get_sql_firewall_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policies = oci.DataSafe.get_sql_firewall_policies(compartment_id=compartment_id,
+    test_sql_firewall_policies = oci.datasafe.get_sql_firewall_policies(compartment_id=compartment_id,
         access_level=sql_firewall_policy_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree == "true",
         db_user_name=test_user["name"],
         display_name=sql_firewall_policy_display_name,
         security_policy_id=test_security_policy["id"],
@@ -287,18 +287,18 @@ def get_sql_firewall_policies(access_level: Optional[_builtins.str] = None,
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         violation_action=pulumi.get(__ret__, 'violation_action'))
-def get_sql_firewall_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     db_user_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlFirewallPoliciesFilterArgs', 'GetSqlFirewallPoliciesFilterArgsDict']]]]] = None,
-                                     security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     sql_firewall_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     violation_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_firewall_policies_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     db_user_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallPoliciesFilterArgs', 'GetSqlFirewallPoliciesFilterArgsDict']]]]] = None,
+                                     security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     sql_firewall_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     violation_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallPoliciesResult]:
     """
     This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -324,9 +324,9 @@ def get_sql_firewall_policies_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policies = oci.DataSafe.get_sql_firewall_policies(compartment_id=compartment_id,
+    test_sql_firewall_policies = oci.datasafe.get_sql_firewall_policies(compartment_id=compartment_id,
         access_level=sql_firewall_policy_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree == "true",
         db_user_name=test_user["name"],
         display_name=sql_firewall_policy_display_name,
         security_policy_id=test_security_policy["id"],

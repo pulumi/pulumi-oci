@@ -396,7 +396,7 @@ def get_compute_host(compute_host_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host = oci.Core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
+    test_compute_host = oci.core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
     ```
 
 
@@ -437,7 +437,7 @@ def get_compute_host(compute_host_id: Optional[_builtins.str] = None,
         time_configuration_check=pulumi.get(__ret__, 'time_configuration_check'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_compute_host_output(compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_host_output(compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeHostResult]:
     """
     This data source provides details about a specific Compute Host resource in Oracle Cloud Infrastructure Core service.
@@ -450,7 +450,7 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host = oci.Core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
+    test_compute_host = oci.core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
     ```
 
 

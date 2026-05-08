@@ -31,10 +31,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAssociationAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAssociationAnalytics({
+ * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,
@@ -149,10 +149,10 @@ export interface GetSecurityAssessmentTemplateAssociationAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAssociationAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAssociationAnalytics({
+ * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,
@@ -181,7 +181,7 @@ export interface GetSecurityAssessmentTemplateAssociationAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -189,22 +189,22 @@ export interface GetSecurityAssessmentTemplateAssociationAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs>[] | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment of type TEMPLATE.
      */
-    templateAssessmentId?: pulumi.Input<string>;
+    templateAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment of type TEMPLATE_BASELINE.
      */
-    templateBaselineAssessmentId?: pulumi.Input<string>;
+    templateBaselineAssessmentId?: pulumi.Input<string | undefined>;
 }

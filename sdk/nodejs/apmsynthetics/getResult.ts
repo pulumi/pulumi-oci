@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResult = oci.ApmSynthetics.getResult({
+ * const testResult = oci.apmsynthetics.getResult({
  *     apmDomainId: testApmDomain.id,
  *     executionTime: resultExecutionTime,
  *     monitorId: testMonitor.id,
@@ -114,7 +114,7 @@ export interface GetResultResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResult = oci.ApmSynthetics.getResult({
+ * const testResult = oci.apmsynthetics.getResult({
  *     apmDomainId: testApmDomain.id,
  *     executionTime: resultExecutionTime,
  *     monitorId: testMonitor.id,

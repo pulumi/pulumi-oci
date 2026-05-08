@@ -24,15 +24,15 @@ class NetworkFirewallArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_configuration: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_configuration: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewall resource.
 
@@ -117,133 +117,133 @@ class NetworkFirewallArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv4address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv4 address for the Network Firewall.
         """
         return pulumi.get(self, "ipv4address")
 
     @ipv4address.setter
-    def ipv4address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4address", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv6 address for the Network Firewall.
         """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
-    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6address", value)
 
     @_builtins.property
     @pulumi.getter(name="natConfiguration")
-    def nat_configuration(self) -> Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]:
+    def nat_configuration(self) -> pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']]:
         """
         (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         """
         return pulumi.get(self, "nat_configuration")
 
     @nat_configuration.setter
-    def nat_configuration(self, value: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]):
+    def nat_configuration(self, value: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']]):
         pulumi.set(self, "nat_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_configuration: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_configuration: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewall resources.
 
@@ -306,163 +306,163 @@ class _NetworkFirewallState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv4address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv4 address for the Network Firewall.
         """
         return pulumi.get(self, "ipv4address")
 
     @ipv4address.setter
-    def ipv4address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4address", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv6 address for the Network Firewall.
         """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
-    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6address", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="natConfiguration")
-    def nat_configuration(self) -> Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]:
+    def nat_configuration(self) -> pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']]:
         """
         (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         """
         return pulumi.get(self, "nat_configuration")
 
     @nat_configuration.setter
-    def nat_configuration(self, value: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]):
+    def nat_configuration(self, value: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']]):
         pulumi.set(self, "nat_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Network Firewall.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 
@@ -473,43 +473,43 @@ class _NetworkFirewallState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -519,18 +519,18 @@ class NetworkFirewall(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -561,7 +561,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
             nat_configuration={
-                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
             shape=network_firewall_shape)
@@ -630,7 +630,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
             nat_configuration={
-                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
             shape=network_firewall_shape)
@@ -660,18 +660,18 @@ class NetworkFirewall(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -714,23 +714,23 @@ class NetworkFirewall(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ipv4address: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewall':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewall':
         """
         Get an existing NetworkFirewall resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

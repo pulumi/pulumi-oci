@@ -277,95 +277,95 @@ export interface CatalogItemState {
     /**
      * Catalog result payload.
      */
-    catalogResultPayloads?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogResultPayload>[]>;
+    catalogResultPayloads?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogResultPayload>[] | undefined>;
     /**
      * Catalog source payload.
      */
-    catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
+    catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
      */
-    cloneCatalogItemTrigger?: pulumi.Input<number>;
+    cloneCatalogItemTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
      */
-    configSourceType?: pulumi.Input<string>;
+    configSourceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the CatalogItem.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The CatalogItem name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The details of lifecycle state CatalogItem.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The catalog listing Id.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * The catalog package version.
      */
-    listingVersion?: pulumi.Input<string>;
+    listingVersion?: pulumi.Input<string | undefined>;
     /**
      * Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Short description about the catalog item.
      */
-    shortDescription?: pulumi.Input<string>;
+    shortDescription?: pulumi.Input<string | undefined>;
     /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */
-    shouldListPublicItems?: pulumi.Input<boolean>;
+    shouldListPublicItems?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the CatalogItem.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the CatalogItem was last checked by backfill job, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeBackfillLastChecked?: pulumi.Input<string>;
+    timeBackfillLastChecked?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CatalogItem was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CatalogItem was last checked, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeLastChecked?: pulumi.Input<string>;
+    timeLastChecked?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CatalogItem was released, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeReleased?: pulumi.Input<string>;
+    timeReleased?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CatalogItem was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Version description about the catalog item.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -375,11 +375,11 @@ export interface CatalogItemArgs {
     /**
      * Catalog source payload.
      */
-    catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
+    catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
      */
-    cloneCatalogItemTrigger?: pulumi.Input<number>;
+    cloneCatalogItemTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -391,7 +391,7 @@ export interface CatalogItemArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the CatalogItem.
      */
@@ -403,15 +403,15 @@ export interface CatalogItemArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The catalog listing Id.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * The catalog package version.
      */
-    listingVersion?: pulumi.Input<string>;
+    listingVersion?: pulumi.Input<string | undefined>;
     /**
      * Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
      */
@@ -419,13 +419,13 @@ export interface CatalogItemArgs {
     /**
      * (Updatable) Short description about the catalog item.
      */
-    shortDescription?: pulumi.Input<string>;
+    shortDescription?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CatalogItem was released, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeReleased?: pulumi.Input<string>;
+    timeReleased?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Version description about the catalog item.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
 }

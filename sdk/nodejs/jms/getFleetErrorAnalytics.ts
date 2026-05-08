@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrorAnalytics = oci.Jms.getFleetErrorAnalytics({
+ * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetFleetErrorAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrorAnalytics = oci.Jms.getFleetErrorAnalytics({
+ * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -98,10 +98,10 @@ export interface GetFleetErrorAnalyticsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetErrorAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetErrorAnalyticsFilterArgs>[] | undefined>;
 }

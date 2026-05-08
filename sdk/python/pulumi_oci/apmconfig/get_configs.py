@@ -174,7 +174,7 @@ def get_configs(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=test_apm_domain["id"],
+    test_configs = oci.apmconfig.get_configs(apm_domain_id=test_apm_domain["id"],
         config_type=config_config_type,
         defined_tag_equals=config_defined_tag_equals,
         defined_tag_exists=config_defined_tag_exists,
@@ -219,15 +219,15 @@ def get_configs(apm_domain_id: Optional[_builtins.str] = None,
         freeform_tag_exists=pulumi.get(__ret__, 'freeform_tag_exists'),
         id=pulumi.get(__ret__, 'id'),
         options_group=pulumi.get(__ret__, 'options_group'))
-def get_configs_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       config_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       defined_tag_equals: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                       defined_tag_exists: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]]]] = None,
-                       freeform_tag_equals: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                       freeform_tag_exists: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                       options_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_configs_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       config_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       defined_tag_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                       defined_tag_exists: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]]]] = None,
+                       freeform_tag_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                       freeform_tag_exists: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                       options_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigsResult]:
     """
     This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
@@ -240,7 +240,7 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=test_apm_domain["id"],
+    test_configs = oci.apmconfig.get_configs(apm_domain_id=test_apm_domain["id"],
         config_type=config_config_type,
         defined_tag_equals=config_defined_tag_equals,
         defined_tag_exists=config_defined_tag_exists,

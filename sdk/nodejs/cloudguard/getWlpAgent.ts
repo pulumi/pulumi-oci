@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWlpAgent = oci.CloudGuard.getWlpAgent({
+ * const testWlpAgent = oci.cloudguard.getWlpAgent({
  *     wlpAgentId: testWlpAgentOciCloudGuardWlpAgent.id,
  * });
  * ```
@@ -103,7 +103,7 @@ export interface GetWlpAgentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWlpAgent = oci.CloudGuard.getWlpAgent({
+ * const testWlpAgent = oci.cloudguard.getWlpAgent({
  *     wlpAgentId: testWlpAgentOciCloudGuardWlpAgent.id,
  * });
  * ```

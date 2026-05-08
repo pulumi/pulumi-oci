@@ -137,7 +137,7 @@ def get_deployment_upgrades(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=compartment_id,
+    test_deployment_upgrades = oci.goldengate.get_deployment_upgrades(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         display_name=deployment_upgrade_display_name,
         state=deployment_upgrade_state)
@@ -166,11 +166,11 @@ def get_deployment_upgrades(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_deployment_upgrades_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   deployment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentUpgradesFilterArgs', 'GetDeploymentUpgradesFilterArgsDict']]]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deployment_upgrades_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentUpgradesFilterArgs', 'GetDeploymentUpgradesFilterArgsDict']]]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentUpgradesResult]:
     """
     This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
@@ -183,7 +183,7 @@ def get_deployment_upgrades_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrades = oci.GoldenGate.get_deployment_upgrades(compartment_id=compartment_id,
+    test_deployment_upgrades = oci.goldengate.get_deployment_upgrades(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         display_name=deployment_upgrade_display_name,
         state=deployment_upgrade_state)

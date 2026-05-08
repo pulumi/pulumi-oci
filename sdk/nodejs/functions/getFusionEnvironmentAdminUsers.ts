@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentAdminUsers = oci.Functions.getFusionEnvironmentAdminUsers({
+ * const testFusionEnvironmentAdminUsers = oci.functions.getFusionEnvironmentAdminUsers({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetFusionEnvironmentAdminUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentAdminUsers = oci.Functions.getFusionEnvironmentAdminUsers({
+ * const testFusionEnvironmentAdminUsers = oci.functions.getFusionEnvironmentAdminUsers({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getFusionEnvironmentAdminUsersOutput(args: GetFusionEnvironmentA
  * A collection of arguments for invoking getFusionEnvironmentAdminUsers.
  */
 export interface GetFusionEnvironmentAdminUsersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentAdminUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentAdminUsersFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */

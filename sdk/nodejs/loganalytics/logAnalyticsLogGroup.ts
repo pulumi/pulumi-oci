@@ -158,23 +158,23 @@ export interface LogAnalyticsLogGroupState {
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
@@ -182,15 +182,15 @@ export interface LogAnalyticsLogGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -204,11 +204,11 @@ export interface LogAnalyticsLogGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
@@ -216,7 +216,7 @@ export interface LogAnalyticsLogGroupArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *

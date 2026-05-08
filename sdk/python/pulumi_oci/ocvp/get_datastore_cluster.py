@@ -251,7 +251,7 @@ def get_datastore_cluster(datastore_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_cluster = oci.Ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
+    test_datastore_cluster = oci.ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_datastore_cluster(datastore_cluster_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_datastore_cluster_output(datastore_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_datastore_cluster_output(datastore_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastoreClusterResult]:
     """
     This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -293,7 +293,7 @@ def get_datastore_cluster_output(datastore_cluster_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_cluster = oci.Ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
+    test_datastore_cluster = oci.ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
     ```
 
 

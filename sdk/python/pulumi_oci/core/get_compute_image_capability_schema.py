@@ -189,7 +189,7 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
+    test_compute_image_capability_schema = oci.core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
         is_merge_enabled=compute_image_capability_schema_is_merge_enabled)
     ```
 
@@ -216,8 +216,8 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
         is_merge_enabled=pulumi.get(__ret__, 'is_merge_enabled'),
         schema_data=pulumi.get(__ret__, 'schema_data'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_compute_image_capability_schema_output(compute_image_capability_schema_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               is_merge_enabled: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compute_image_capability_schema_output(compute_image_capability_schema_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               is_merge_enabled: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeImageCapabilitySchemaResult]:
     """
     This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -230,7 +230,7 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
+    test_compute_image_capability_schema = oci.core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
         is_merge_enabled=compute_image_capability_schema_is_merge_enabled)
     ```
 

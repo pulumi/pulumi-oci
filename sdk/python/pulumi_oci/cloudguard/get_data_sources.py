@@ -186,9 +186,9 @@ def get_data_sources(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=compartment_id,
+    test_data_sources = oci.cloudguard.get_data_sources(compartment_id=compartment_id,
         access_level=data_source_access_level,
-        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree == "true",
         data_source_feed_provider=data_source_data_source_feed_provider,
         display_name=data_source_display_name,
         logging_query_type=data_source_logging_query_type,
@@ -227,14 +227,14 @@ def get_data_sources(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         logging_query_type=pulumi.get(__ret__, 'logging_query_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                            data_source_feed_provider: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourcesFilterArgs', 'GetDataSourcesFilterArgsDict']]]]] = None,
-                            logging_query_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_data_sources_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                            data_source_feed_provider: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSourcesFilterArgs', 'GetDataSourcesFilterArgsDict']]]]] = None,
+                            logging_query_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourcesResult]:
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
@@ -263,9 +263,9 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=compartment_id,
+    test_data_sources = oci.cloudguard.get_data_sources(compartment_id=compartment_id,
         access_level=data_source_access_level,
-        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree == "true",
         data_source_feed_provider=data_source_data_source_feed_provider,
         display_name=data_source_display_name,
         logging_query_type=data_source_logging_query_type,

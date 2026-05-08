@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodes = oci.Database.getDbNodes({
+ * const testDbNodes = oci.database.getDbNodes({
  *     compartmentId: compartmentId,
  *     dbServerId: testDbServer.id,
  *     dbSystemId: testDbSystem.id,
@@ -104,7 +104,7 @@ export interface GetDbNodesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodes = oci.Database.getDbNodes({
+ * const testDbNodes = oci.database.getDbNodes({
  *     compartmentId: compartmentId,
  *     dbServerId: testDbServer.id,
  *     dbSystemId: testDbSystem.id,
@@ -136,18 +136,18 @@ export interface GetDbNodesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      */
-    dbServerId?: pulumi.Input<string>;
+    dbServerId?: pulumi.Input<string | undefined>;
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
-    dbSystemId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodesFilterArgs>[]>;
+    dbSystemId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
 }

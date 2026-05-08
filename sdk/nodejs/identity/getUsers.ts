@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getUsers({
+ * const testUsers = oci.identity.getUsers({
  *     compartmentId: tenancyOcid,
  *     externalIdentifier: userExternalIdentifier,
  *     identityProviderId: testIdentityProvider.id,
@@ -114,7 +114,7 @@ export interface GetUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getUsers({
+ * const testUsers = oci.identity.getUsers({
  *     compartmentId: tenancyOcid,
  *     externalIdentifier: userExternalIdentifier,
  *     identityProviderId: testIdentityProvider.id,
@@ -146,18 +146,18 @@ export interface GetUsersOutputArgs {
     /**
      * The id of a user in the identity provider.
      */
-    externalIdentifier?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetUsersFilterArgs>[]>;
+    externalIdentifier?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetUsersFilterArgs>[] | undefined>;
     /**
      * The id of the identity provider.
      */
-    identityProviderId?: pulumi.Input<string>;
+    identityProviderId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

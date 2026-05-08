@@ -160,30 +160,30 @@ export interface GetWlmsWlsDomainsOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return WebLogic domains based on the type of middleware of the WebLogic domain.
      */
-    middlewareType?: pulumi.Input<string>;
+    middlewareType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return domains based on the patch readiness status.
      */
-    patchReadinessStatus?: pulumi.Input<string>;
+    patchReadinessStatus?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return WebLogic domains based on the WebLogic version.
      */
-    weblogicVersion?: pulumi.Input<string>;
+    weblogicVersion?: pulumi.Input<string | undefined>;
 }

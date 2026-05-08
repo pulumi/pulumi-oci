@@ -23,15 +23,15 @@ class ExadataInsightArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  entity_source: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infra_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_sync_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadataInsight resource.
 
@@ -97,100 +97,100 @@ class ExadataInsightArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_bridge_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OPSI Enterprise Manager Bridge OCID
         """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @enterprise_manager_bridge_id.setter
-    def enterprise_manager_bridge_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_bridge_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_bridge_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_entity_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Entity Unique Identifier
         """
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @enterprise_manager_entity_identifier.setter
-    def enterprise_manager_entity_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_entity_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_entity_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Unique Identifier
         """
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @enterprise_manager_identifier.setter
-    def enterprise_manager_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfraId")
-    def exadata_infra_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infra_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         """
         return pulumi.get(self, "exadata_infra_id")
 
     @exadata_infra_id.setter
-    def exadata_infra_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infra_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infra_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoSyncEnabled")
-    def is_auto_sync_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_sync_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         """
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @is_auto_sync_enabled.setter
-    def is_auto_sync_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_sync_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_sync_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="memberVmClusterDetails")
-    def member_vm_cluster_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
+    def member_vm_cluster_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
         return pulumi.get(self, "member_vm_cluster_details")
 
     @member_vm_cluster_details.setter
-    def member_vm_cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
+    def member_vm_cluster_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
         pulumi.set(self, "member_vm_cluster_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 
@@ -201,41 +201,41 @@ class ExadataInsightArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _ExadataInsightState:
     def __init__(__self__, *,
-                 chargeback_plan_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infra_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infra_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_rack_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_sync_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_virtualized_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 chargeback_plan_details: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infra_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_rack_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_virtualized_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataInsight resources.
 
@@ -328,274 +328,274 @@ class _ExadataInsightState:
 
     @_builtins.property
     @pulumi.getter(name="chargebackPlanDetails")
-    def chargeback_plan_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]:
+    def chargeback_plan_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]:
         """
         Object containing chargeback plan details
         """
         return pulumi.get(self, "chargeback_plan_details")
 
     @chargeback_plan_details.setter
-    def chargeback_plan_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]):
+    def chargeback_plan_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]):
         pulumi.set(self, "chargeback_plan_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier of Exadata insight
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_bridge_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OPSI Enterprise Manager Bridge OCID
         """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @enterprise_manager_bridge_id.setter
-    def enterprise_manager_bridge_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_bridge_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_bridge_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_entity_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Entity Display Name
         """
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @enterprise_manager_entity_display_name.setter
-    def enterprise_manager_entity_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_entity_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_entity_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_entity_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Entity Unique Identifier
         """
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @enterprise_manager_entity_identifier.setter
-    def enterprise_manager_entity_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_entity_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_entity_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_entity_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Entity Name
         """
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @enterprise_manager_entity_name.setter
-    def enterprise_manager_entity_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_entity_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_entity_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Entity Type
         """
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @enterprise_manager_entity_type.setter
-    def enterprise_manager_entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enterprise_manager_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise Manager Unique Identifier
         """
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @enterprise_manager_identifier.setter
-    def enterprise_manager_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enterprise_manager_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enterprise_manager_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Source of the Exadata system.
         """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
-    def entity_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_source", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataDisplayName")
-    def exadata_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the Exadata system. The name does not have to be unique.
         """
         return pulumi.get(self, "exadata_display_name")
 
     @exadata_display_name.setter
-    def exadata_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfraId")
-    def exadata_infra_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infra_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         """
         return pulumi.get(self, "exadata_infra_id")
 
     @exadata_infra_id.setter
-    def exadata_infra_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infra_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infra_id", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfraResourceType")
-    def exadata_infra_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infra_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "exadata_infra_resource_type")
 
     @exadata_infra_resource_type.setter
-    def exadata_infra_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infra_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infra_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataName")
-    def exadata_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         """
         return pulumi.get(self, "exadata_name")
 
     @exadata_name.setter
-    def exadata_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataRackType")
-    def exadata_rack_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_rack_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Exadata rack type.
         """
         return pulumi.get(self, "exadata_rack_type")
 
     @exadata_rack_type.setter
-    def exadata_rack_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_rack_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_rack_type", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataShape")
-    def exadata_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "exadata_shape")
 
     @exadata_shape.setter
-    def exadata_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataType")
-    def exadata_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operations Insights internal representation of the the Exadata system type.
         """
         return pulumi.get(self, "exadata_type")
 
     @exadata_type.setter
-    def exadata_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoSyncEnabled")
-    def is_auto_sync_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_sync_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         """
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @is_auto_sync_enabled.setter
-    def is_auto_sync_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_sync_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_sync_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVirtualizedExadata")
-    def is_virtualized_exadata(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_virtualized_exadata(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         true if virtualization is used in the Exadata system
         """
         return pulumi.get(self, "is_virtualized_exadata")
 
     @is_virtualized_exadata.setter
-    def is_virtualized_exadata(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_virtualized_exadata(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_virtualized_exadata", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="memberVmClusterDetails")
-    def member_vm_cluster_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
+    def member_vm_cluster_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]:
         return pulumi.get(self, "member_vm_cluster_details")
 
     @member_vm_cluster_details.setter
-    def member_vm_cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
+    def member_vm_cluster_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]]):
         pulumi.set(self, "member_vm_cluster_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Exadata insight.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 
@@ -606,55 +606,55 @@ class _ExadataInsightState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusDetails")
-    def status_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
         """
         return pulumi.get(self, "status_details")
 
     @status_details.setter
-    def status_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_details", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -664,17 +664,17 @@ class ExadataInsight(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infra_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_sync_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -703,7 +703,7 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
+            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled == "true",
             member_vm_cluster_details=[{
                 "compartment_id": compartment_id,
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
@@ -720,7 +720,7 @@ class ExadataInsight(pulumi.CustomResource):
                     },
                     "connection_details": {
                         "host_name": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_host_name,
-                        "port": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -739,7 +739,7 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_autonomous_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_autonomous_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_freeform_tags,
-                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled,
+                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled == "true",
                     "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_system_tags,
@@ -759,9 +759,9 @@ class ExadataInsight(pulumi.CustomResource):
                         "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                            "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port),
                         }],
-                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -851,7 +851,7 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
+            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled == "true",
             member_vm_cluster_details=[{
                 "compartment_id": compartment_id,
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
@@ -868,7 +868,7 @@ class ExadataInsight(pulumi.CustomResource):
                     },
                     "connection_details": {
                         "host_name": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_host_name,
-                        "port": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -887,7 +887,7 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_autonomous_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_autonomous_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_freeform_tags,
-                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled,
+                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled == "true",
                     "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_system_tags,
@@ -907,9 +907,9 @@ class ExadataInsight(pulumi.CustomResource):
                         "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                            "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port),
                         }],
-                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -964,17 +964,17 @@ class ExadataInsight(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_entity_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 enterprise_manager_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infra_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_sync_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1026,34 +1026,34 @@ class ExadataInsight(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            chargeback_plan_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enterprise_manager_entity_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enterprise_manager_entity_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            enterprise_manager_entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enterprise_manager_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-            enterprise_manager_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_infra_id: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_infra_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_rack_type: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_type: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_sync_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_virtualized_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_details: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExadataInsight':
+            chargeback_plan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infra_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_rack_type: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_virtualized_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_details: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExadataInsight':
         """
         Get an existing ExadataInsight resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

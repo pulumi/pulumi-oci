@@ -145,7 +145,7 @@ def get_service_environment(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=compartment_id,
+    test_service_environment = oci.servicemanagerproxy.get_service_environment(compartment_id=compartment_id,
         service_environment_id=test_service_environment_oci_service_manager_proxy_service_environment["id"])
     ```
 
@@ -170,8 +170,8 @@ def get_service_environment(compartment_id: Optional[_builtins.str] = None,
         service_environment_id=pulumi.get(__ret__, 'service_environment_id'),
         status=pulumi.get(__ret__, 'status'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_service_environment_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   service_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_environment_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   service_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceEnvironmentResult]:
     """
     This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
@@ -184,7 +184,7 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=compartment_id,
+    test_service_environment = oci.servicemanagerproxy.get_service_environment(compartment_id=compartment_id,
         service_environment_id=test_service_environment_oci_service_manager_proxy_service_environment["id"])
     ```
 

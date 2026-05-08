@@ -95,7 +95,7 @@ def get_cluster_public_api_endpoint_decommission_status(cluster_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_public_api_endpoint_decommission_status = oci.ContainerEngine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
+    test_cluster_public_api_endpoint_decommission_status = oci.containerengine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
     ```
 
 
@@ -111,7 +111,7 @@ def get_cluster_public_api_endpoint_decommission_status(cluster_id: Optional[_bu
         id=pulumi.get(__ret__, 'id'),
         status=pulumi.get(__ret__, 'status'),
         time_decommission_rollback_deadline=pulumi.get(__ret__, 'time_decommission_rollback_deadline'))
-def get_cluster_public_api_endpoint_decommission_status_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cluster_public_api_endpoint_decommission_status_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterPublicApiEndpointDecommissionStatusResult]:
     """
     This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
@@ -124,7 +124,7 @@ def get_cluster_public_api_endpoint_decommission_status_output(cluster_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_public_api_endpoint_decommission_status = oci.ContainerEngine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
+    test_cluster_public_api_endpoint_decommission_status = oci.containerengine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
     ```
 
 

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntry({
+ * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntry({
  *     databaseTableAccessEntryKey: securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });
@@ -153,7 +153,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntry({
+ * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntry({
  *     databaseTableAccessEntryKey: securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });

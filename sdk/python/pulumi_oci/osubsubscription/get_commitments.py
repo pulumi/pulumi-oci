@@ -125,7 +125,7 @@ def get_commitments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OsubSubscription.get_commitments(compartment_id=compartment_id,
+    test_commitments = oci.osubsubscription.get_commitments(compartment_id=compartment_id,
         subscribed_service_id=test_service["id"],
         x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
         x_one_origin_region=commitment_x_one_origin_region)
@@ -154,11 +154,11 @@ def get_commitments(compartment_id: Optional[_builtins.str] = None,
         subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'),
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-def get_commitments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
-                           subscribed_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           x_one_origin_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_commitments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
+                           subscribed_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           x_one_gateway_subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentsResult]:
     """
     This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
@@ -171,7 +171,7 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OsubSubscription.get_commitments(compartment_id=compartment_id,
+    test_commitments = oci.osubsubscription.get_commitments(compartment_id=compartment_id,
         subscribed_service_id=test_service["id"],
         x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
         x_one_origin_region=commitment_x_one_origin_region)

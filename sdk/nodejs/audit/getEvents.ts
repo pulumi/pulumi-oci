@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.Audit.getEvents({
+ * const testAuditEvents = oci.audit.getEvents({
  *     compartmentId: compartmentId,
  *     endTime: auditEventEndTime,
  *     startTime: auditEventStartTime,
@@ -90,7 +90,7 @@ export interface GetEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.Audit.getEvents({
+ * const testAuditEvents = oci.audit.getEvents({
  *     compartmentId: compartmentId,
  *     endTime: auditEventEndTime,
  *     startTime: auditEventStartTime,
@@ -121,7 +121,7 @@ export interface GetEventsOutputArgs {
      * For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z` will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all events processed between January 1, 2017 and January 31, 2017. You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
      */
     endTime: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Audit.GetEventsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Audit.GetEventsFilterArgs>[] | undefined>;
     /**
      * Returns events that were processed at or after this start date and time, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalog = oci.ServiceCatalog.getServiceCatalog({
+ * const testServiceCatalog = oci.servicecatalog.getServiceCatalog({
  *     serviceCatalogId: testServiceCatalogOciServiceCatalogServiceCatalog.id,
  * });
  * ```
@@ -94,7 +94,7 @@ export interface GetServiceCatalogResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalog = oci.ServiceCatalog.getServiceCatalog({
+ * const testServiceCatalog = oci.servicecatalog.getServiceCatalog({
  *     serviceCatalogId: testServiceCatalogOciServiceCatalogServiceCatalog.id,
  * });
  * ```

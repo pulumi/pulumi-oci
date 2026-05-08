@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicies = oci.FleetAppsManagement.getCompliancePolicies({
+ * const testCompliancePolicies = oci.fleetappsmanagement.getCompliancePolicies({
  *     compartmentId: compartmentId,
  *     displayName: compliancePolicyDisplayName,
  *     id: compliancePolicyId,
@@ -109,7 +109,7 @@ export interface GetCompliancePoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicies = oci.FleetAppsManagement.getCompliancePolicies({
+ * const testCompliancePolicies = oci.fleetappsmanagement.getCompliancePolicies({
  *     compartmentId: compartmentId,
  *     displayName: compliancePolicyDisplayName,
  *     id: compliancePolicyId,
@@ -138,22 +138,22 @@ export interface GetCompliancePoliciesOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCompliancePoliciesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCompliancePoliciesFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Platform Configurations whose type matches the given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

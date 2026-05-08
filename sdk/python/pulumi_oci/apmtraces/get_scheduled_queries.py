@@ -105,7 +105,7 @@ def get_scheduled_queries(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_queries = oci.ApmTraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_queries = oci.apmtraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
         display_name=scheduled_query_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_scheduled_queries(apm_domain_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         scheduled_query_collections=pulumi.get(__ret__, 'scheduled_query_collections'))
-def get_scheduled_queries_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledQueriesFilterArgs', 'GetScheduledQueriesFilterArgsDict']]]]] = None,
+def get_scheduled_queries_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledQueriesFilterArgs', 'GetScheduledQueriesFilterArgsDict']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledQueriesResult]:
     """
     This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
@@ -141,7 +141,7 @@ def get_scheduled_queries_output(apm_domain_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_queries = oci.ApmTraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_queries = oci.apmtraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
         display_name=scheduled_query_display_name)
     ```
 

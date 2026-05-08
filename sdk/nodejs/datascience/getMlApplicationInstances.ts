@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationInstances = oci.DataScience.getMlApplicationInstances({
+ * const testMlApplicationInstances = oci.datascience.getMlApplicationInstances({
  *     compartmentId: compartmentId,
  *     displayName: mlApplicationInstanceDisplayName,
  *     mlApplicationId: testMlApplication.id,
@@ -100,7 +100,7 @@ export interface GetMlApplicationInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationInstances = oci.DataScience.getMlApplicationInstances({
+ * const testMlApplicationInstances = oci.datascience.getMlApplicationInstances({
  *     compartmentId: compartmentId,
  *     displayName: mlApplicationInstanceDisplayName,
  *     mlApplicationId: testMlApplication.id,
@@ -130,14 +130,14 @@ export interface GetMlApplicationInstancesOutputArgs {
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationInstancesFilterArgs>[] | undefined>;
     /**
      * unique MlApplication identifier
      */
-    mlApplicationId?: pulumi.Input<string>;
+    mlApplicationId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

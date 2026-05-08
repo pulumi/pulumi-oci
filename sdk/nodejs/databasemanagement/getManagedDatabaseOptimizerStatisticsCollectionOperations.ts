@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
+ * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
  *     filterBy: managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
@@ -110,7 +110,7 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
+ * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
  *     filterBy: managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
@@ -139,13 +139,13 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOutput
     /**
      * The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    endTimeLessThanOrEqualTo?: pulumi.Input<string>;
+    endTimeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The parameter used to filter the optimizer statistics operations. Any property of the OptimizerStatisticsCollectionOperationSummary can be used to define the filter condition. The allowed conditional operators are AND or OR, and the allowed binary operators are are >, < and =. Any other operator is regarded invalid. Example: jobName=<replace with job name> AND status=<replace with status>
      */
-    filterBy?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    filterBy?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -153,9 +153,9 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOutput
     /**
      * The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    startTimeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    startTimeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The filter types of the optimizer statistics tasks.
      */
-    taskType?: pulumi.Input<string>;
+    taskType?: pulumi.Input<string | undefined>;
 }

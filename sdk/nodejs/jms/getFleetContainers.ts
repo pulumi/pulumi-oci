@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetContainers = oci.Jms.getFleetContainers({
+ * const testFleetContainers = oci.jms.getFleetContainers({
  *     fleetId: testFleet.id,
  *     applicationName: testApplication.name,
  *     displayName: fleetContainerDisplayName,
@@ -128,7 +128,7 @@ export interface GetFleetContainersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetContainers = oci.Jms.getFleetContainers({
+ * const testFleetContainers = oci.jms.getFleetContainers({
  *     fleetId: testFleet.id,
  *     applicationName: testApplication.name,
  *     displayName: fleetContainerDisplayName,
@@ -162,12 +162,12 @@ export interface GetFleetContainersOutputArgs {
     /**
      * The name of the application.
      */
-    applicationName?: pulumi.Input<string>;
+    applicationName?: pulumi.Input<string | undefined>;
     /**
      * The display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetContainersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetContainersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -175,21 +175,21 @@ export interface GetFleetContainersOutputArgs {
     /**
      * The security status of the Java Runtime.
      */
-    jreSecurityStatus?: pulumi.Input<string>;
+    jreSecurityStatus?: pulumi.Input<string | undefined>;
     /**
      * The version of the related Java Runtime.
      */
-    jreVersion?: pulumi.Input<string>;
+    jreVersion?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * If specified, only containers with a start time later than or equal to this parameter will be included in the response (formatted according to RFC3339).
      */
-    timeStartedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeStartedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * If specified, only containers with a start time earlier than or equal to this parameter will be included in the response (formatted according to RFC3339).
      */
-    timeStartedLessThanOrEqualTo?: pulumi.Input<string>;
+    timeStartedLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

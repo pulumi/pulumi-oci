@@ -131,7 +131,7 @@ def get_monitored_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=compartment_id,
+    test_monitored_resources = oci.stackmonitoring.get_monitored_resources(compartment_id=compartment_id,
         name=monitored_resource_name,
         status=monitored_resource_status,
         work_request_id=test_work_request["id"])
@@ -160,11 +160,11 @@ def get_monitored_resources(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   work_request_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_monitored_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   work_request_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourcesResult]:
     """
     This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -177,7 +177,7 @@ def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=compartment_id,
+    test_monitored_resources = oci.stackmonitoring.get_monitored_resources(compartment_id=compartment_id,
         name=monitored_resource_name,
         status=monitored_resource_status,
         work_request_id=test_work_request["id"])

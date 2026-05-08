@@ -32,7 +32,7 @@ import (
 //			_, err := optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
 //				CompartmentId:           compartmentId,
 //				CompartmentIdInSubtree:  resourceActionCompartmentIdInSubtree,
-//				ChildTenancyIds:         resourceActionChildTenancyIds,
+//				ChildTenancyIds:         pulumi.ToArray(resourceActionChildTenancyIds),
 //				IncludeOrganization:     pulumi.BoolRef(resourceActionIncludeOrganization),
 //				IncludeResourceMetadata: pulumi.BoolRef(resourceActionIncludeResourceMetadata),
 //				Name:                    pulumi.StringRef(resourceActionName),

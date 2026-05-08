@@ -108,7 +108,7 @@ def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_jobs = oci.Lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_jobs = oci.lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
         state=object_storage_link_sync_job_state)
     ```
 
@@ -129,9 +129,9 @@ def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Un
         object_storage_link_id=pulumi.get(__ret__, 'object_storage_link_id'),
         state=pulumi.get(__ret__, 'state'),
         sync_job_collections=pulumi.get(__ret__, 'sync_job_collections'))
-def get_file_storage_object_storage_link_sync_jobs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict']]]]] = None,
-                                                          object_storage_link_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_storage_object_storage_link_sync_jobs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict']]]]] = None,
+                                                          object_storage_link_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageObjectStorageLinkSyncJobsResult]:
     """
     This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -144,7 +144,7 @@ def get_file_storage_object_storage_link_sync_jobs_output(filters: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_jobs = oci.Lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_jobs = oci.lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
         state=object_storage_link_sync_job_state)
     ```
 

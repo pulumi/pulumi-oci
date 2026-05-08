@@ -105,8 +105,8 @@ def get_compliance_record_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_record_counts = oci.FleetAppsManagement.get_compliance_record_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree)
+    test_compliance_record_counts = oci.fleetappsmanagement.get_compliance_record_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree == "true")
     ```
 
 
@@ -126,9 +126,9 @@ def get_compliance_record_counts(compartment_id: Optional[_builtins.str] = None,
         compliance_record_aggregation_collections=pulumi.get(__ret__, 'compliance_record_aggregation_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compliance_record_counts_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict']]]]] = None,
+def get_compliance_record_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict']]]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComplianceRecordCountsResult]:
     """
     This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -141,8 +141,8 @@ def get_compliance_record_counts_output(compartment_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_record_counts = oci.FleetAppsManagement.get_compliance_record_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree)
+    test_compliance_record_counts = oci.fleetappsmanagement.get_compliance_record_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree == "true")
     ```
 
 

@@ -358,7 +358,7 @@ def get_repository(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.DevOps.get_repository(repository_id=test_repository_oci_devops_repository["id"],
+    test_repository = oci.devops.get_repository(repository_id=test_repository_oci_devops_repository["id"],
         fields=repository_fields)
     ```
 
@@ -399,8 +399,8 @@ def get_repository(fields: Optional[Sequence[_builtins.str]] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trigger_build_events=pulumi.get(__ret__, 'trigger_build_events'))
-def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                          repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                          repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryResult]:
     """
     This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
@@ -413,7 +413,7 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.DevOps.get_repository(repository_id=test_repository_oci_devops_repository["id"],
+    test_repository = oci.devops.get_repository(repository_id=test_repository_oci_devops_repository["id"],
         fields=repository_fields)
     ```
 

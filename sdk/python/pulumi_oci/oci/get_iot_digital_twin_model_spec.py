@@ -85,7 +85,7 @@ def get_iot_digital_twin_model_spec(digital_twin_model_id: Optional[_builtins.st
     return AwaitableGetIotDigitalTwinModelSpecResult(
         digital_twin_model_id=pulumi.get(__ret__, 'digital_twin_model_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_iot_digital_twin_model_spec_output(digital_twin_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iot_digital_twin_model_spec_output(digital_twin_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinModelSpecResult]:
     """
     This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.

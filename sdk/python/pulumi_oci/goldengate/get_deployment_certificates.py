@@ -111,7 +111,7 @@ def get_deployment_certificates(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificates = oci.GoldenGate.get_deployment_certificates(deployment_id=test_deployment["id"],
+    test_deployment_certificates = oci.goldengate.get_deployment_certificates(deployment_id=test_deployment["id"],
         state=deployment_certificate_state)
     ```
 
@@ -132,9 +132,9 @@ def get_deployment_certificates(deployment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deployment_certificates_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentCertificatesResult]:
     """
     This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
@@ -147,7 +147,7 @@ def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificates = oci.GoldenGate.get_deployment_certificates(deployment_id=test_deployment["id"],
+    test_deployment_certificates = oci.goldengate.get_deployment_certificates(deployment_id=test_deployment["id"],
         state=deployment_certificate_state)
     ```
 

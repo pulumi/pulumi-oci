@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
+ * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -125,11 +125,11 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
+ * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -158,30 +158,30 @@ export interface GetOperationsInsightsPrivateEndpointsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOperationsInsightsPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOperationsInsightsPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
      */
-    isUsedForRacDbs?: pulumi.Input<boolean>;
+    isUsedForRacDbs?: pulumi.Input<boolean | undefined>;
     /**
      * Unique Operations Insights PrivateEndpoint identifier
      */
-    opsiPrivateEndpointId?: pulumi.Input<string>;
+    opsiPrivateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

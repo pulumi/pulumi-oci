@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmClusters = oci.Database.getAutonomousVmClusters({
+ * const testAutonomousVmClusters = oci.database.getAutonomousVmClusters({
  *     compartmentId: compartmentId,
  *     displayName: autonomousVmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
@@ -100,7 +100,7 @@ export interface GetAutonomousVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmClusters = oci.Database.getAutonomousVmClusters({
+ * const testAutonomousVmClusters = oci.database.getAutonomousVmClusters({
  *     compartmentId: compartmentId,
  *     displayName: autonomousVmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
@@ -130,14 +130,14 @@ export interface GetAutonomousVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the given Exadata Infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousVmClustersFilterArgs>[]>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousVmClustersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

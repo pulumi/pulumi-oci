@@ -24,10 +24,10 @@ class AutomaticDrConfigurationArgs:
                  display_name: pulumi.Input[_builtins.str],
                  dr_protection_group_id: pulumi.Input[_builtins.str],
                  members: pulumi.Input[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]],
-                 default_failover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_switchover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 default_failover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_switchover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AutomaticDrConfiguration resource.
 
@@ -89,72 +89,72 @@ class AutomaticDrConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultFailoverDrPlanId")
-    def default_failover_dr_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_failover_dr_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "default_failover_dr_plan_id")
 
     @default_failover_dr_plan_id.setter
-    def default_failover_dr_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_failover_dr_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_failover_dr_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSwitchoverDrPlanId")
-    def default_switchover_dr_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_switchover_dr_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "default_switchover_dr_plan_id")
 
     @default_switchover_dr_plan_id.setter
-    def default_switchover_dr_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_switchover_dr_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_switchover_dr_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _AutomaticDrConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_failover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_switchover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 last_automatic_dr_execution_submit_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_automatic_dr_execution_submit_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_automatic_dr_execution_submit_attempt: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_failover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_switchover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_automatic_dr_execution_submit_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_automatic_dr_execution_submit_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_automatic_dr_execution_submit_attempt: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomaticDrConfiguration resources.
 
@@ -210,194 +210,194 @@ class _AutomaticDrConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultFailoverDrPlanId")
-    def default_failover_dr_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_failover_dr_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "default_failover_dr_plan_id")
 
     @default_failover_dr_plan_id.setter
-    def default_failover_dr_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_failover_dr_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_failover_dr_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSwitchoverDrPlanId")
-    def default_switchover_dr_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_switchover_dr_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "default_switchover_dr_plan_id")
 
     @default_switchover_dr_plan_id.setter
-    def default_switchover_dr_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_switchover_dr_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_switchover_dr_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the Automatic DR configuration being created.  Example: `Automatic DR Configuration`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="drProtectionGroupId")
-    def dr_protection_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dr_protection_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the DR protection group to which this Automatic DR configuration belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
     @dr_protection_group_id.setter
-    def dr_protection_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dr_protection_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dr_protection_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lastAutomaticDrExecutionSubmitDetails")
-    def last_automatic_dr_execution_submit_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_automatic_dr_execution_submit_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
         """
         return pulumi.get(self, "last_automatic_dr_execution_submit_details")
 
     @last_automatic_dr_execution_submit_details.setter
-    def last_automatic_dr_execution_submit_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_automatic_dr_execution_submit_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_automatic_dr_execution_submit_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lastAutomaticDrExecutionSubmitStatus")
-    def last_automatic_dr_execution_submit_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_automatic_dr_execution_submit_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of most recent attempt to submit Automatic DR plan execution.
         """
         return pulumi.get(self, "last_automatic_dr_execution_submit_status")
 
     @last_automatic_dr_execution_submit_status.setter
-    def last_automatic_dr_execution_submit_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_automatic_dr_execution_submit_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_automatic_dr_execution_submit_status", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the Automatic DR configuration's current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]]:
         """
         (Updatable) A list of members for Automatic DR configuration.
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutomaticDrConfigurationMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Automatic DR configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastAutomaticDrExecutionSubmitAttempt")
-    def time_last_automatic_dr_execution_submit_attempt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_automatic_dr_execution_submit_attempt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
         """
         return pulumi.get(self, "time_last_automatic_dr_execution_submit_attempt")
 
     @time_last_automatic_dr_execution_submit_attempt.setter
-    def time_last_automatic_dr_execution_submit_attempt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_automatic_dr_execution_submit_attempt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_automatic_dr_execution_submit_attempt", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -407,13 +407,13 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_failover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_switchover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+                 default_failover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_switchover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -432,8 +432,8 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
             members=[{
                 "member_id": test_member["id"],
                 "member_type": automatic_dr_configuration_members_member_type,
-                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled,
-                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled,
+                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled == "true",
+                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled == "true",
             }],
             default_failover_dr_plan_id=test_dr_plan["id"],
             default_switchover_dr_plan_id=test_dr_plan["id"],
@@ -487,8 +487,8 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
             members=[{
                 "member_id": test_member["id"],
                 "member_type": automatic_dr_configuration_members_member_type,
-                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled,
-                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled,
+                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled == "true",
+                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled == "true",
             }],
             default_failover_dr_plan_id=test_dr_plan["id"],
             default_switchover_dr_plan_id=test_dr_plan["id"],
@@ -524,13 +524,13 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_failover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_switchover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+                 default_failover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_switchover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -572,22 +572,22 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_failover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_switchover_dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            last_automatic_dr_execution_submit_details: Optional[pulumi.Input[_builtins.str]] = None,
-            last_automatic_dr_execution_submit_status: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_automatic_dr_execution_submit_attempt: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutomaticDrConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_failover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_switchover_dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_automatic_dr_execution_submit_details: pulumi.Input[Optional[_builtins.str]] = None,
+            last_automatic_dr_execution_submit_status: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_automatic_dr_execution_submit_attempt: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomaticDrConfiguration':
         """
         Get an existing AutomaticDrConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

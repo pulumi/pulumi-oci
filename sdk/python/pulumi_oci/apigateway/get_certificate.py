@@ -258,7 +258,7 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
+    test_certificate = oci.apigateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
     ```
 
 
@@ -288,7 +288,7 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_not_valid_after=pulumi.get(__ret__, 'time_not_valid_after'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_certificate_output(certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateResult]:
     """
     This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
@@ -301,7 +301,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
+    test_certificate = oci.apigateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppFirewalls = oci.Waf.getFirewalls({
+ * const testWebAppFirewalls = oci.waf.getFirewalls({
  *     compartmentId: compartmentId,
  *     displayName: webAppFirewallDisplayName,
  *     id: webAppFirewallId,
@@ -106,7 +106,7 @@ export interface GetFirewallsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppFirewalls = oci.Waf.getFirewalls({
+ * const testWebAppFirewalls = oci.waf.getFirewalls({
  *     compartmentId: compartmentId,
  *     displayName: webAppFirewallDisplayName,
  *     id: webAppFirewallId,
@@ -138,18 +138,18 @@ export interface GetFirewallsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetFirewallsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetFirewallsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
      */
-    webAppFirewallPolicyId?: pulumi.Input<string>;
+    webAppFirewallPolicyId?: pulumi.Input<string | undefined>;
 }

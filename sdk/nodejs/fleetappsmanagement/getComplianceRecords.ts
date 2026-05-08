@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecords = oci.FleetAppsManagement.getComplianceRecords({
+ * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,
@@ -137,9 +137,9 @@ export interface GetComplianceRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecords = oci.FleetAppsManagement.getComplianceRecords({
+ * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,
@@ -175,30 +175,30 @@ export interface GetComplianceRecordsOutputArgs {
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Target Compliance State.
      */
-    complianceState?: pulumi.Input<string>;
+    complianceState?: pulumi.Input<string | undefined>;
     /**
      * Entity identifier.Ex:FleetId
      */
-    entityId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetComplianceRecordsFilterArgs>[]>;
+    entityId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetComplianceRecordsFilterArgs>[] | undefined>;
     /**
      * Product Name.
      */
-    productName?: pulumi.Input<string>;
+    productName?: pulumi.Input<string | undefined>;
     /**
      * ProductStack name.
      */
-    productStack?: pulumi.Input<string>;
+    productStack?: pulumi.Input<string | undefined>;
     /**
      * Resource identifier.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * Unique target name
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
 }

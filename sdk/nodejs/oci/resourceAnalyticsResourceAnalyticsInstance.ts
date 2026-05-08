@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired,
+ *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired === "true",
  *     licenseModel: resourceAnalyticsInstanceLicenseModel,
  *     nsgIds: resourceAnalyticsInstanceNsgIds,
  * });
@@ -222,55 +222,55 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceState {
     /**
      * Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
      */
-    adwAdminPassword?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword>;
+    adwAdminPassword?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
      */
-    adwId?: pulumi.Input<string>;
+    adwId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the ResourceAnalyticsInstance instance.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Require mutual TLS (mTLS) when authenticating connections to the ADW database.
      */
-    isMutualTlsRequired?: pulumi.Input<boolean>;
+    isMutualTlsRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle license model that applies to the ADW instance.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.  Example: `["ocid...", "ocid..."]`
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
      */
-    oacId?: pulumi.Input<string>;
+    oacId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the ResourceAnalyticsInstance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      *
@@ -278,19 +278,19 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,31 +308,31 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the ResourceAnalyticsInstance instance.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Require mutual TLS (mTLS) when authenticating connections to the ADW database.
      */
-    isMutualTlsRequired?: pulumi.Input<boolean>;
+    isMutualTlsRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle license model that applies to the ADW instance.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.  Example: `["ocid...", "ocid..."]`
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      *

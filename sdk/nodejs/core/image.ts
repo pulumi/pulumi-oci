@@ -282,27 +282,27 @@ export interface ImageState {
     /**
      * Oracle Cloud Agent features supported on the image.
      */
-    agentFeatures?: pulumi.Input<pulumi.Input<inputs.Core.ImageAgentFeature>[]>;
+    agentFeatures?: pulumi.Input<pulumi.Input<inputs.Core.ImageAgentFeature>[] | undefined>;
     /**
      * The OCID of the image originally used to launch the instance.
      */
-    baseImageId?: pulumi.Input<string>;
+    baseImageId?: pulumi.Input<string | undefined>;
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      */
-    billableSizeInGbs?: pulumi.Input<string>;
+    billableSizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment you want the image to be created in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      */
-    createImageAllowed?: pulumi.Input<boolean>;
+    createImageAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -310,16 +310,16 @@ export interface ImageState {
      *
      * Example: `My Oracle Linux image`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    imageSourceDetails?: pulumi.Input<inputs.Core.ImageImageSourceDetails>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    imageSourceDetails?: pulumi.Input<inputs.Core.ImageImageSourceDetails | undefined>;
     /**
      * The OCID of the instance you want to use as the basis for the image.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -331,35 +331,35 @@ export interface ImageState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    launchMode?: pulumi.Input<string>;
+    launchMode?: pulumi.Input<string | undefined>;
     /**
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    launchOptions?: pulumi.Input<pulumi.Input<inputs.Core.ImageLaunchOption>[]>;
+    launchOptions?: pulumi.Input<pulumi.Input<inputs.Core.ImageLaunchOption>[] | undefined>;
     /**
      * The listing type of the image. The default value is "NONE".
      */
-    listingType?: pulumi.Input<string>;
+    listingType?: pulumi.Input<string | undefined>;
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * The image's operating system version.  Example: `7.2`
      */
-    operatingSystemVersion?: pulumi.Input<string>;
+    operatingSystemVersion?: pulumi.Input<string | undefined>;
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      */
-    sizeInMbs?: pulumi.Input<string>;
+    sizeInMbs?: pulumi.Input<string | undefined>;
     /**
      * The current state of the image.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -373,7 +373,7 @@ export interface ImageArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -381,16 +381,16 @@ export interface ImageArgs {
      *
      * Example: `My Oracle Linux image`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    imageSourceDetails?: pulumi.Input<inputs.Core.ImageImageSourceDetails>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    imageSourceDetails?: pulumi.Input<inputs.Core.ImageImageSourceDetails | undefined>;
     /**
      * The OCID of the instance you want to use as the basis for the image.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -402,5 +402,5 @@ export interface ImageArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    launchMode?: pulumi.Input<string>;
+    launchMode?: pulumi.Input<string | undefined>;
 }

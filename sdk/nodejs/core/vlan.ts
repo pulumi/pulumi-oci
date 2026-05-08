@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     },
  *     nsgIds: vlanNsgIds,
  *     routeTableId: testRouteTable.id,
- *     vlanTag: vlanVlanTag,
+ *     vlanTag: Number(vlanVlanTag),
  * });
  * ```
  *
@@ -202,7 +202,7 @@ export interface VlanState {
      *
      * Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
      *
@@ -210,43 +210,43 @@ export interface VlanState {
      *
      * Example: `192.0.2.0/24`
      */
-    cidrBlock?: pulumi.Input<string>;
+    cidrBlock?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VLAN.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add all VNICs in the VLAN to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default route table.
      */
-    routeTableId?: pulumi.Input<string>;
+    routeTableId?: pulumi.Input<string | undefined>;
     /**
      * The VLAN's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the VLAN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
     /**
      * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle. 
      *
@@ -254,7 +254,7 @@ export interface VlanState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vlanTag?: pulumi.Input<number>;
+    vlanTag?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -270,7 +270,7 @@ export interface VlanArgs {
      *
      * Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
      *
@@ -286,23 +286,23 @@ export interface VlanArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add all VNICs in the VLAN to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default route table.
      */
-    routeTableId?: pulumi.Input<string>;
+    routeTableId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the VLAN.
      */
@@ -314,5 +314,5 @@ export interface VlanArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vlanTag?: pulumi.Input<number>;
+    vlanTag?: pulumi.Input<number | undefined>;
 }

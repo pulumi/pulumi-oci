@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundleVersions = oci.Secrets.getSecretbundleVersions({
+ * const testSecretbundleVersions = oci.secrets.getSecretbundleVersions({
  *     secretId: testSecret.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetSecretbundleVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundleVersions = oci.Secrets.getSecretbundleVersions({
+ * const testSecretbundleVersions = oci.secrets.getSecretbundleVersions({
  *     secretId: testSecret.id,
  * });
  * ```
@@ -87,7 +87,7 @@ export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutpu
  * A collection of arguments for invoking getSecretbundleVersions.
  */
 export interface GetSecretbundleVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Secrets.GetSecretbundleVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Secrets.GetSecretbundleVersionsFilterArgs>[] | undefined>;
     /**
      * The OCID of the secret.
      */

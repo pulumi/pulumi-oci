@@ -23,7 +23,7 @@ class MaskDataArgs:
     def __init__(__self__, *,
                  masking_policy_id: pulumi.Input[_builtins.str],
                  target_id: pulumi.Input[_builtins.str],
-                 target_credentials: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']] = None):
+                 target_credentials: pulumi.Input[Optional['MaskDataTargetCredentialsArgs']] = None):
         """
         The set of arguments for constructing a MaskData resource.
         """
@@ -52,20 +52,20 @@ class MaskDataArgs:
 
     @_builtins.property
     @pulumi.getter(name="targetCredentials")
-    def target_credentials(self) -> Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]:
+    def target_credentials(self) -> pulumi.Input[Optional['MaskDataTargetCredentialsArgs']]:
         return pulumi.get(self, "target_credentials")
 
     @target_credentials.setter
-    def target_credentials(self, value: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]):
+    def target_credentials(self, value: pulumi.Input[Optional['MaskDataTargetCredentialsArgs']]):
         pulumi.set(self, "target_credentials", value)
 
 
 @pulumi.input_type
 class _MaskDataState:
     def __init__(__self__, *,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_credentials: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_credentials: pulumi.Input[Optional['MaskDataTargetCredentialsArgs']] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskData resources.
         """
@@ -78,29 +78,29 @@ class _MaskDataState:
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCredentials")
-    def target_credentials(self) -> Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]:
+    def target_credentials(self) -> pulumi.Input[Optional['MaskDataTargetCredentialsArgs']]:
         return pulumi.get(self, "target_credentials")
 
     @target_credentials.setter
-    def target_credentials(self, value: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]):
+    def target_credentials(self, value: pulumi.Input[Optional['MaskDataTargetCredentialsArgs']]):
         pulumi.set(self, "target_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
 
@@ -110,9 +110,9 @@ class MaskData(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a MaskData resource with the given unique name, props, and options.
@@ -144,9 +144,9 @@ class MaskData(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -173,9 +173,9 @@ class MaskData(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskData':
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskData':
         """
         Get an existing MaskData resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

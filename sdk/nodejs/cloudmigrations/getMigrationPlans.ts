@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlans = oci.CloudMigrations.getMigrationPlans({
+ * const testMigrationPlans = oci.cloudmigrations.getMigrationPlans({
  *     compartmentId: compartmentId,
  *     displayName: migrationPlanDisplayName,
  *     migrationId: testMigration.id,
@@ -108,7 +108,7 @@ export interface GetMigrationPlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlans = oci.CloudMigrations.getMigrationPlans({
+ * const testMigrationPlans = oci.cloudmigrations.getMigrationPlans({
  *     compartmentId: compartmentId,
  *     displayName: migrationPlanDisplayName,
  *     migrationId: testMigration.id,
@@ -137,22 +137,22 @@ export interface GetMigrationPlansOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationPlansFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationPlansFilterArgs>[] | undefined>;
     /**
      * Unique migration identifier
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * Unique migration plan identifier
      */
-    migrationPlanId?: pulumi.Input<string>;
+    migrationPlanId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the migration plan.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

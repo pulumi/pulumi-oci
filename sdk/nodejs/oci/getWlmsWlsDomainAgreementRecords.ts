@@ -84,7 +84,7 @@ export function getWlmsWlsDomainAgreementRecordsOutput(args: GetWlmsWlsDomainAgr
  * A collection of arguments for invoking getWlmsWlsDomainAgreementRecords.
  */
 export interface GetWlmsWlsDomainAgreementRecordsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainAgreementRecordsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainAgreementRecordsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
      */

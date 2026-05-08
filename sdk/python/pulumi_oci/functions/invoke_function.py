@@ -20,13 +20,13 @@ __all__ = ['InvokeFunctionArgs', 'InvokeFunction']
 class InvokeFunctionArgs:
     def __init__(__self__, *,
                  function_id: pulumi.Input[_builtins.str],
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fn_intent: Optional[pulumi.Input[_builtins.str]] = None,
-                 fn_invoke_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_body_source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None):
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fn_intent: pulumi.Input[Optional[_builtins.str]] = None,
+                 fn_invoke_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_body_source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body_base64_encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a InvokeFunction resource.
 
@@ -72,43 +72,43 @@ class InvokeFunctionArgs:
 
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
-    def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def base64_encode_content(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
-    def base64_encode_content(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def base64_encode_content(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "base64_encode_content", value)
 
     @_builtins.property
     @pulumi.getter(name="fnIntent")
-    def fn_intent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fn_intent(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         """
         return pulumi.get(self, "fn_intent")
 
     @fn_intent.setter
-    def fn_intent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fn_intent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fn_intent", value)
 
     @_builtins.property
     @pulumi.getter(name="fnInvokeType")
-    def fn_invoke_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fn_invoke_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         """
         return pulumi.get(self, "fn_invoke_type")
 
     @fn_invoke_type.setter
-    def fn_invoke_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fn_invoke_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fn_invoke_type", value)
 
     @_builtins.property
     @pulumi.getter(name="inputBodySourcePath")
-    def input_body_source_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_body_source_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 
@@ -118,59 +118,59 @@ class InvokeFunctionArgs:
         return pulumi.get(self, "input_body_source_path")
 
     @input_body_source_path.setter
-    def input_body_source_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_body_source_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_body_source_path", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBody")
-    def invoke_function_body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_function_body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         return pulumi.get(self, "invoke_function_body")
 
     @invoke_function_body.setter
-    def invoke_function_body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_function_body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_function_body", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
-    def invoke_function_body_base64_encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_function_body_base64_encoded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         """
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 
     @invoke_function_body_base64_encoded.setter
-    def invoke_function_body_base64_encoded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_function_body_base64_encoded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_function_body_base64_encoded", value)
 
     @_builtins.property
     @pulumi.getter(name="isDryRun")
-    def is_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         return pulumi.get(self, "is_dry_run")
 
     @is_dry_run.setter
-    def is_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dry_run", value)
 
 
 @pulumi.input_type
 class _InvokeFunctionState:
     def __init__(__self__, *,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 fn_intent: Optional[pulumi.Input[_builtins.str]] = None,
-                 fn_invoke_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_body_source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None):
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 fn_intent: pulumi.Input[Optional[_builtins.str]] = None,
+                 fn_invoke_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_body_source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body_base64_encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering InvokeFunction resources.
 
@@ -210,67 +210,67 @@ class _InvokeFunctionState:
 
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
-    def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def base64_encode_content(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
-    def base64_encode_content(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def base64_encode_content(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "base64_encode_content", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="fnIntent")
-    def fn_intent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fn_intent(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         """
         return pulumi.get(self, "fn_intent")
 
     @fn_intent.setter
-    def fn_intent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fn_intent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fn_intent", value)
 
     @_builtins.property
     @pulumi.getter(name="fnInvokeType")
-    def fn_invoke_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fn_invoke_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         """
         return pulumi.get(self, "fn_invoke_type")
 
     @fn_invoke_type.setter
-    def fn_invoke_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fn_invoke_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fn_invoke_type", value)
 
     @_builtins.property
     @pulumi.getter(name="functionId")
-    def function_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def function_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
-    def function_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def function_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "function_id", value)
 
     @_builtins.property
     @pulumi.getter(name="inputBodySourcePath")
-    def input_body_source_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_body_source_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 
@@ -280,52 +280,52 @@ class _InvokeFunctionState:
         return pulumi.get(self, "input_body_source_path")
 
     @input_body_source_path.setter
-    def input_body_source_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_body_source_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_body_source_path", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeEndpoint")
-    def invoke_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "invoke_endpoint")
 
     @invoke_endpoint.setter
-    def invoke_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBody")
-    def invoke_function_body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_function_body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         return pulumi.get(self, "invoke_function_body")
 
     @invoke_function_body.setter
-    def invoke_function_body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_function_body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_function_body", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
-    def invoke_function_body_base64_encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_function_body_base64_encoded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         """
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 
     @invoke_function_body_base64_encoded.setter
-    def invoke_function_body_base64_encoded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_function_body_base64_encoded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_function_body_base64_encoded", value)
 
     @_builtins.property
     @pulumi.getter(name="isDryRun")
-    def is_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         return pulumi.get(self, "is_dry_run")
 
     @is_dry_run.setter
-    def is_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dry_run", value)
 
 
@@ -335,14 +335,14 @@ class InvokeFunction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fn_intent: Optional[pulumi.Input[_builtins.str]] = None,
-                 fn_invoke_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_body_source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fn_intent: pulumi.Input[Optional[_builtins.str]] = None,
+                 fn_invoke_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_body_source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body_base64_encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
@@ -363,7 +363,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
-            is_dry_run=invoke_function_is_dry_run,
+            is_dry_run=invoke_function_is_dry_run == "true",
             base64_encode_content=False)
         ```
 
@@ -411,7 +411,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
-            is_dry_run=invoke_function_is_dry_run,
+            is_dry_run=invoke_function_is_dry_run == "true",
             base64_encode_content=False)
         ```
 
@@ -435,14 +435,14 @@ class InvokeFunction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fn_intent: Optional[pulumi.Input[_builtins.str]] = None,
-                 fn_invoke_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_body_source_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fn_intent: pulumi.Input[Optional[_builtins.str]] = None,
+                 fn_invoke_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_body_source_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_function_body_base64_encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -474,16 +474,16 @@ class InvokeFunction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            fn_intent: Optional[pulumi.Input[_builtins.str]] = None,
-            fn_invoke_type: Optional[pulumi.Input[_builtins.str]] = None,
-            function_id: Optional[pulumi.Input[_builtins.str]] = None,
-            input_body_source_path: Optional[pulumi.Input[_builtins.str]] = None,
-            invoke_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            invoke_function_body: Optional[pulumi.Input[_builtins.str]] = None,
-            invoke_function_body_base64_encoded: Optional[pulumi.Input[_builtins.str]] = None,
-            is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None) -> 'InvokeFunction':
+            base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            fn_intent: pulumi.Input[Optional[_builtins.str]] = None,
+            fn_invoke_type: pulumi.Input[Optional[_builtins.str]] = None,
+            function_id: pulumi.Input[Optional[_builtins.str]] = None,
+            input_body_source_path: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_function_body: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_function_body_base64_encoded: pulumi.Input[Optional[_builtins.str]] = None,
+            is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None) -> 'InvokeFunction':
         """
         Get an existing InvokeFunction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

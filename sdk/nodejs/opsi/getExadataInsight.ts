@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsight = oci.Opsi.getExadataInsight({
+ * const testExadataInsight = oci.opsi.getExadataInsight({
  *     exadataInsightId: testExadataInsightOciOpsiExadataInsight.id,
  * });
  * ```
@@ -169,7 +169,7 @@ export interface GetExadataInsightResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsight = oci.Opsi.getExadataInsight({
+ * const testExadataInsight = oci.opsi.getExadataInsight({
  *     exadataInsightId: testExadataInsightOciOpsiExadataInsight.id,
  * });
  * ```

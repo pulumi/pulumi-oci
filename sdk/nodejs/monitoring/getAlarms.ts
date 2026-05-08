@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarms = oci.Monitoring.getAlarms({
+ * const testAlarms = oci.monitoring.getAlarms({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmCompartmentIdInSubtree === "true",
  *     displayName: alarmDisplayName,
  *     state: alarmState,
  * });
@@ -113,9 +113,9 @@ export interface GetAlarmsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarms = oci.Monitoring.getAlarms({
+ * const testAlarms = oci.monitoring.getAlarms({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmCompartmentIdInSubtree === "true",
  *     displayName: alarmDisplayName,
  *     state: alarmState,
  * });
@@ -143,14 +143,14 @@ export interface GetAlarmsOutputArgs {
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmsFilterArgs>[] | undefined>;
     /**
      * A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

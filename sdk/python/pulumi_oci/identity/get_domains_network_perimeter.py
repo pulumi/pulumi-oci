@@ -314,7 +314,7 @@ def get_domains_network_perimeter(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
+    test_network_perimeter = oci.identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
         network_perimeter_id=test_network_perimeter_oci_identity_domains_network_perimeter["id"],
         attribute_sets=["all"],
         attributes="",
@@ -364,12 +364,12 @@ def get_domains_network_perimeter(attribute_sets: Optional[Sequence[_builtins.st
         schemas=pulumi.get(__ret__, 'schemas'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-def get_domains_network_perimeter_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                         attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                         network_perimeter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_network_perimeter_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                         attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                         network_perimeter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsNetworkPerimeterResult]:
     """
     This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -382,7 +382,7 @@ def get_domains_network_perimeter_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
+    test_network_perimeter = oci.identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
         network_perimeter_id=test_network_perimeter_oci_identity_domains_network_perimeter["id"],
         attribute_sets=["all"],
         attributes="",

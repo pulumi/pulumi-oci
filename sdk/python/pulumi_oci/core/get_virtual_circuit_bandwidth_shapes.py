@@ -98,7 +98,7 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[Union['GetVi
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
+    test_virtual_circuit_bandwidth_shapes = oci.core.get_virtual_circuit_bandwidth_shapes(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[Union['GetVi
         id=pulumi.get(__ret__, 'id'),
         provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
         virtual_circuit_bandwidth_shapes=pulumi.get(__ret__, 'virtual_circuit_bandwidth_shapes'))
-def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitBandwidthShapesFilterArgs', 'GetVirtualCircuitBandwidthShapesFilterArgsDict']]]]] = None,
-                                                provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_circuit_bandwidth_shapes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitBandwidthShapesFilterArgs', 'GetVirtualCircuitBandwidthShapesFilterArgsDict']]]]] = None,
+                                                provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitBandwidthShapesResult]:
     """
     This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
@@ -132,7 +132,7 @@ def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
+    test_virtual_circuit_bandwidth_shapes = oci.core.get_virtual_circuit_bandwidth_shapes(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
 
 

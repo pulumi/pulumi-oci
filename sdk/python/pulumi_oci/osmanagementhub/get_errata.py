@@ -184,7 +184,7 @@ def get_errata(advisory_severities: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
+    test_errata = oci.osmanagementhub.get_errata(compartment_id=compartment_id,
         names=errata_name)
     ```
 
@@ -222,16 +222,16 @@ def get_errata(advisory_severities: Optional[Sequence[_builtins.str]] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         time_issue_date_end=pulumi.get(__ret__, 'time_issue_date_end'),
         time_issue_date_start=pulumi.get(__ret__, 'time_issue_date_start'))
-def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                      advisory_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                      classification_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetErrataFilterArgs', 'GetErrataFilterArgsDict']]]]] = None,
-                      name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                      os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      time_issue_date_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      time_issue_date_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_errata_output(advisory_severities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                      advisory_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                      classification_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetErrataFilterArgs', 'GetErrataFilterArgsDict']]]]] = None,
+                      name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                      os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      time_issue_date_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      time_issue_date_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetErrataResult]:
     """
     This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -244,7 +244,7 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
+    test_errata = oci.osmanagementhub.get_errata(compartment_id=compartment_id,
         names=errata_name)
     ```
 

@@ -115,7 +115,7 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_snapshot = oci.opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
         awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
@@ -142,10 +142,10 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    awr_source_database_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                                    time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_awr_hub_awr_snapshot_output(awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    awr_source_database_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                                    time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubAwrSnapshotResult]:
     """
     This data source provides details about a specific Awr Hub Awr Snapshot resource in Oracle Cloud Infrastructure Opsi service.
@@ -159,7 +159,7 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_snapshot = oci.opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
         awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)

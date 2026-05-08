@@ -221,95 +221,95 @@ export interface ComputeGpuMemoryFabricState {
     /**
      * Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
      */
-    additionalData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalData?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The total number of available bare metal hosts located in this compute GPU memory fabric.
      */
-    availableHostCount?: pulumi.Input<string>;
+    availableHostCount?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compute GPU memory fabric.
      */
-    computeGpuMemoryFabricId?: pulumi.Input<string>;
+    computeGpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
      */
-    computeHpcIslandId?: pulumi.Input<string>;
+    computeHpcIslandId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
      */
-    computeLocalBlockId?: pulumi.Input<string>;
+    computeLocalBlockId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
-    computeNetworkBlockId?: pulumi.Input<string>;
+    computeNetworkBlockId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
      */
-    currentFirmwareBundleId?: pulumi.Input<string>;
+    currentFirmwareBundleId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The health state of the GPU memory fabric
      */
-    fabricHealth?: pulumi.Input<string>;
+    fabricHealth?: pulumi.Input<string | undefined>;
     /**
      * The reason for updating firmware bundle version of the GPU memory fabric.
      */
-    firmwareUpdateReason?: pulumi.Input<string>;
+    firmwareUpdateReason?: pulumi.Input<string | undefined>;
     /**
      * The state of Memory Fabric Firmware update
      */
-    firmwareUpdateState?: pulumi.Input<string>;
+    firmwareUpdateState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The total number of healthy bare metal hosts located in this compute GPU memory fabric.
      */
-    healthyHostCount?: pulumi.Input<string>;
+    healthyHostCount?: pulumi.Input<string | undefined>;
     /**
      * The host platform identifier used for bundle queries
      */
-    hostPlatformName?: pulumi.Input<string>;
+    hostPlatformName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
      */
-    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences>;
+    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences | undefined>;
     /**
      * The lifecycle state of the GPU memory fabric
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The switch platform identifier used for bundle queries
      */
-    switchPlatformName?: pulumi.Input<string>;
+    switchPlatformName?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
      */
-    targetFirmwareBundleId?: pulumi.Input<string>;
+    targetFirmwareBundleId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The total number of bare metal hosts located in this compute GPU memory fabric.
      */
-    totalHostCount?: pulumi.Input<string>;
+    totalHostCount?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -319,7 +319,7 @@ export interface ComputeGpuMemoryFabricArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compute GPU memory fabric.
      */
@@ -327,17 +327,17 @@ export interface ComputeGpuMemoryFabricArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
      */
-    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences>;
+    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences | undefined>;
 }

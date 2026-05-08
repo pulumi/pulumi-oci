@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalClusterInstances = oci.DatabaseManagement.getExternalClusterInstances({
+ * const testExternalClusterInstances = oci.databasemanagement.getExternalClusterInstances({
  *     compartmentId: compartmentId,
  *     displayName: externalClusterInstanceDisplayName,
  *     externalClusterId: testExternalCluster.id,
@@ -91,7 +91,7 @@ export interface GetExternalClusterInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalClusterInstances = oci.DatabaseManagement.getExternalClusterInstances({
+ * const testExternalClusterInstances = oci.databasemanagement.getExternalClusterInstances({
  *     compartmentId: compartmentId,
  *     displayName: externalClusterInstanceDisplayName,
  *     externalClusterId: testExternalCluster.id,
@@ -116,14 +116,14 @@ export interface GetExternalClusterInstancesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      */
-    externalClusterId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalClusterInstancesFilterArgs>[]>;
+    externalClusterId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalClusterInstancesFilterArgs>[] | undefined>;
 }

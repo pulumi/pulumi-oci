@@ -134,8 +134,8 @@ def get_security_attribute_namespaces(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespaces = oci.SecurityAttribute.get_security_attribute_namespaces(compartment_id=compartment_id,
-        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree,
+    test_security_attribute_namespaces = oci.securityattribute.get_security_attribute_namespaces(compartment_id=compartment_id,
+        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree == "true",
         name=security_attribute_namespace_name,
         state=security_attribute_namespace_state)
     ```
@@ -163,11 +163,11 @@ def get_security_attribute_namespaces(compartment_id: Optional[_builtins.str] = 
         name=pulumi.get(__ret__, 'name'),
         security_attribute_namespaces=pulumi.get(__ret__, 'security_attribute_namespaces'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_attribute_namespaces_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict']]]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_attribute_namespaces_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict']]]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributeNamespacesResult]:
     """
     This data source provides the list of Security Attribute Namespaces in Oracle Cloud Infrastructure Security Attribute service.
@@ -180,8 +180,8 @@ def get_security_attribute_namespaces_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespaces = oci.SecurityAttribute.get_security_attribute_namespaces(compartment_id=compartment_id,
-        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree,
+    test_security_attribute_namespaces = oci.securityattribute.get_security_attribute_namespaces(compartment_id=compartment_id,
+        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree == "true",
         name=security_attribute_namespace_name,
         state=security_attribute_namespace_state)
     ```

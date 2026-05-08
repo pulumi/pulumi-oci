@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRunHistory = oci.Database.getDatabaseMaintenanceRunHistory({
+ * const testMaintenanceRunHistory = oci.database.getDatabaseMaintenanceRunHistory({
  *     maintenanceRunHistoryId: testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id,
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetDatabaseMaintenanceRunHistoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRunHistory = oci.Database.getDatabaseMaintenanceRunHistory({
+ * const testMaintenanceRunHistory = oci.database.getDatabaseMaintenanceRunHistory({
  *     maintenanceRunHistoryId: testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id,
  * });
  * ```

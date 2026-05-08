@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionInDays: mysqlBackupRetentionInDays,
+ *     retentionInDays: Number(mysqlBackupRetentionInDays),
  *     softDelete: mysqlBackupSoftDelete,
  * });
  * ```
@@ -270,114 +270,114 @@ export interface MysqlBackupState {
     /**
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      */
-    backupSizeInGbs?: pulumi.Input<number>;
+    backupSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The type of backup.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * Backup validation details.
      */
-    backupValidationDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupBackupValidationDetail>[]>;
+    backupValidationDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupBackupValidationDetail>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the DB System the Backup is associated with.
      */
-    dbSystemId?: pulumi.Input<string>;
-    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[]>;
+    dbSystemId?: pulumi.Input<string | undefined>;
+    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[] | undefined>;
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
-    dbSystemSnapshots?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshot>[]>;
+    dbSystemSnapshots?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshot>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-supplied description for the backup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-supplied display name for the backup.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Encrypt data details.
      */
-    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData>;
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the immediate source DB system backup from which this DB system backup was copied.
      */
-    immediateSourceBackupId?: pulumi.Input<string>;
+    immediateSourceBackupId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The MySQL server version of the DB System used for backup.
      */
-    mysqlVersion?: pulumi.Input<string>;
+    mysqlVersion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the original source DB system backup from which this DB system backup was copied.
      */
-    originalSourceBackupId?: pulumi.Input<string>;
+    originalSourceBackupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of days to retain this backup.
      */
-    retentionInDays?: pulumi.Input<number>;
+    retentionInDays?: pulumi.Input<number | undefined>;
     /**
      * The shape of the DB System instance used for backup.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
      */
-    softDelete?: pulumi.Input<string>;
+    softDelete?: pulumi.Input<string | undefined>;
     /**
      * Details of backup source in the cloud.
      */
-    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails | undefined>;
     /**
      * The state of the backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeCopyCreated?: pulumi.Input<string>;
+    timeCopyCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the backup record was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the backup was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
-    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[]>;
+    timeUpdated?: pulumi.Input<string | undefined>;
+    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[] | undefined>;
     /**
      * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
      * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
      */
-    validateTrigger?: pulumi.Input<number>;
+    validateTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -387,52 +387,52 @@ export interface MysqlBackupArgs {
     /**
      * The type of backup.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DB System the Backup is associated with.
      */
-    dbSystemId?: pulumi.Input<string>;
-    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[]>;
+    dbSystemId?: pulumi.Input<string | undefined>;
+    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-supplied description for the backup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-supplied display name for the backup.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Encrypt data details.
      */
-    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData>;
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Number of days to retain this backup.
      */
-    retentionInDays?: pulumi.Input<number>;
+    retentionInDays?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
      */
-    softDelete?: pulumi.Input<string>;
+    softDelete?: pulumi.Input<string | undefined>;
     /**
      * Details of backup source in the cloud.
      */
-    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
-    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[]>;
+    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails | undefined>;
+    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[] | undefined>;
     /**
      * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
      * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
      */
-    validateTrigger?: pulumi.Input<number>;
+    validateTrigger?: pulumi.Input<number | undefined>;
 }

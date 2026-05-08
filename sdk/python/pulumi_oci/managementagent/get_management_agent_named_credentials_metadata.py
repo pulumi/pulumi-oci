@@ -94,7 +94,7 @@ def get_management_agent_named_credentials_metadata(compartment_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_named_credentials_metadata = oci.ManagementAgent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
+    test_management_agent_named_credentials_metadata = oci.managementagent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
         management_agent_id=test_management_agent["id"])
     ```
 
@@ -113,8 +113,8 @@ def get_management_agent_named_credentials_metadata(compartment_id: Optional[_bu
         id=pulumi.get(__ret__, 'id'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_management_agent_named_credentials_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                           management_agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_named_credentials_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                           management_agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentNamedCredentialsMetadataResult]:
     """
     This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
@@ -127,7 +127,7 @@ def get_management_agent_named_credentials_metadata_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_named_credentials_metadata = oci.ManagementAgent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
+    test_management_agent_named_credentials_metadata = oci.managementagent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
         management_agent_id=test_management_agent["id"])
     ```
 

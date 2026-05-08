@@ -51,7 +51,7 @@ class ManagedInstanceDetachProfileManagementArgs:
 @pulumi.input_type
 class _ManagedInstanceDetachProfileManagementState:
     def __init__(__self__, *,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceDetachProfileManagement resources.
 
@@ -66,7 +66,7 @@ class _ManagedInstanceDetachProfileManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 
@@ -77,7 +77,7 @@ class _ManagedInstanceDetachProfileManagementState:
         return pulumi.get(self, "managed_instance_id")
 
     @managed_instance_id.setter
-    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_id", value)
 
 
@@ -87,7 +87,7 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -172,7 +172,7 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,7 +195,7 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedInstanceDetachProfileManagement':
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedInstanceDetachProfileManagement':
         """
         Get an existing ManagedInstanceDetachProfileManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

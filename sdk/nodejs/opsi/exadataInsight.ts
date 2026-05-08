@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoSyncEnabled: exadataInsightIsAutoSyncEnabled,
+ *     isAutoSyncEnabled: exadataInsightIsAutoSyncEnabled === "true",
  *     memberVmClusterDetails: [{
  *         compartmentId: compartmentId,
  *         dbmPrivateEndpointId: testPrivateEndpoint.id,
@@ -50,7 +50,7 @@ import * as utilities from "../utilities";
  *             },
  *             connectionDetails: {
  *                 hostName: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsHostName,
- *                 port: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort,
+ *                 port: Number(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort),
  *                 protocol: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsProtocol,
  *                 serviceName: testService.name,
  *             },
@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *             deploymentType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDeploymentType,
  *             entitySource: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsEntitySource,
  *             freeformTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsFreeformTags,
- *             isAdvancedFeaturesEnabled: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled,
+ *             isAdvancedFeaturesEnabled: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled === "true",
  *             managementAgentId: testManagementAgent.id,
  *             opsiPrivateEndpointId: testPrivateEndpoint.id,
  *             systemTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsSystemTags,
@@ -89,9 +89,9 @@ import * as utilities from "../utilities";
  *                 hostName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName,
  *                 hosts: [{
  *                     hostIp: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp,
- *                     port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort,
+ *                     port: Number(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort),
  *                 }],
- *                 port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort,
+ *                 port: Number(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort),
  *                 protocol: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol,
  *                 serviceName: testService.name,
  *             },
@@ -357,86 +357,86 @@ export interface ExadataInsightState {
     /**
      * Object containing chargeback plan details
      */
-    chargebackPlanDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightChargebackPlanDetail>[]>;
+    chargebackPlanDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightChargebackPlanDetail>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier of Exadata insight
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    enterpriseManagerEntityDisplayName?: pulumi.Input<string>;
+    enterpriseManagerEntityDisplayName?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    enterpriseManagerEntityIdentifier?: pulumi.Input<string>;
+    enterpriseManagerEntityIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Name
      */
-    enterpriseManagerEntityName?: pulumi.Input<string>;
+    enterpriseManagerEntityName?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Type
      */
-    enterpriseManagerEntityType?: pulumi.Input<string>;
+    enterpriseManagerEntityType?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    enterpriseManagerIdentifier?: pulumi.Input<string>;
+    enterpriseManagerIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the Exadata system.
      */
-    entitySource?: pulumi.Input<string>;
+    entitySource?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
-    exadataDisplayName?: pulumi.Input<string>;
+    exadataDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    exadataInfraId?: pulumi.Input<string>;
-    exadataInfraResourceType?: pulumi.Input<string>;
+    exadataInfraId?: pulumi.Input<string | undefined>;
+    exadataInfraResourceType?: pulumi.Input<string | undefined>;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
-    exadataName?: pulumi.Input<string>;
+    exadataName?: pulumi.Input<string | undefined>;
     /**
      * Exadata rack type.
      */
-    exadataRackType?: pulumi.Input<string>;
-    exadataShape?: pulumi.Input<string>;
+    exadataRackType?: pulumi.Input<string | undefined>;
+    exadataShape?: pulumi.Input<string | undefined>;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
-    exadataType?: pulumi.Input<string>;
+    exadataType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      */
-    isAutoSyncEnabled?: pulumi.Input<boolean>;
+    isAutoSyncEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * true if virtualization is used in the Exadata system
      */
-    isVirtualizedExadata?: pulumi.Input<boolean>;
+    isVirtualizedExadata?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
-    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
+    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[] | undefined>;
     /**
      * The current state of the Exadata insight.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      *
@@ -444,23 +444,23 @@ export interface ExadataInsightState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
      */
-    statusDetails?: pulumi.Input<string>;
+    statusDetails?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -474,19 +474,19 @@ export interface ExadataInsightArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    enterpriseManagerEntityIdentifier?: pulumi.Input<string>;
+    enterpriseManagerEntityIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    enterpriseManagerIdentifier?: pulumi.Input<string>;
+    enterpriseManagerIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the Exadata system.
      */
@@ -494,16 +494,16 @@ export interface ExadataInsightArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    exadataInfraId?: pulumi.Input<string>;
+    exadataInfraId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      */
-    isAutoSyncEnabled?: pulumi.Input<boolean>;
-    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
+    isAutoSyncEnabled?: pulumi.Input<boolean | undefined>;
+    memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[] | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      *
@@ -511,5 +511,5 @@ export interface ExadataInsightArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

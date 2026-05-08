@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
+ * const testExadataInfrastructureDownloadConfigFile = oci.database.getExadataInfrastructureDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     base64EncodeContent: false,
  * });
@@ -69,7 +69,7 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
+ * const testExadataInfrastructureDownloadConfigFile = oci.database.getExadataInfrastructureDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     base64EncodeContent: false,
  * });
@@ -90,7 +90,7 @@ export interface GetExadataInfrastructureDownloadConfigFileOutputArgs {
     /**
      * Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

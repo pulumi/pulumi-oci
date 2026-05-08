@@ -148,7 +148,7 @@ def get_managed_instance_installed_packages(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_packages = oci.OsManagementHub.get_managed_instance_installed_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_packages = oci.osmanagementhub.get_managed_instance_installed_packages(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_installed_package_display_name,
         display_name_contains=managed_instance_installed_package_display_name_contains,
@@ -185,13 +185,13 @@ def get_managed_instance_installed_packages(compartment_id: Optional[_builtins.s
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         time_install_date_end=pulumi.get(__ret__, 'time_install_date_end'),
         time_install_date_start=pulumi.get(__ret__, 'time_install_date_start'))
-def get_managed_instance_installed_packages_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceInstalledPackagesFilterArgs', 'GetManagedInstanceInstalledPackagesFilterArgsDict']]]]] = None,
-                                                   managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   time_install_date_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   time_install_date_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_instance_installed_packages_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceInstalledPackagesFilterArgs', 'GetManagedInstanceInstalledPackagesFilterArgsDict']]]]] = None,
+                                                   managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   time_install_date_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   time_install_date_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceInstalledPackagesResult]:
     """
     This data source provides the list of Managed Instance Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -204,7 +204,7 @@ def get_managed_instance_installed_packages_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_packages = oci.OsManagementHub.get_managed_instance_installed_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_packages = oci.osmanagementhub.get_managed_instance_installed_packages(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_installed_package_display_name,
         display_name_contains=managed_instance_installed_package_display_name_contains,

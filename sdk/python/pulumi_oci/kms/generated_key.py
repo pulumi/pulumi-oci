@@ -25,8 +25,8 @@ class GeneratedKeyArgs:
                  include_plaintext_key: pulumi.Input[_builtins.bool],
                  key_id: pulumi.Input[_builtins.str],
                  key_shape: pulumi.Input['GeneratedKeyKeyShapeArgs'],
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a GeneratedKey resource.
 
@@ -100,19 +100,19 @@ class GeneratedKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def associated_data(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def associated_data(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def logging_context(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
 
@@ -123,22 +123,22 @@ class GeneratedKeyArgs:
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def logging_context(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "logging_context", value)
 
 
 @pulumi.input_type
 class _GeneratedKeyState:
     def __init__(__self__, *,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ciphertext: Optional[pulumi.Input[_builtins.str]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_plaintext_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_shape: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plaintext: Optional[pulumi.Input[_builtins.str]] = None,
-                 plaintext_checksum: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_shape: pulumi.Input[Optional['GeneratedKeyKeyShapeArgs']] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plaintext: pulumi.Input[Optional[_builtins.str]] = None,
+                 plaintext_checksum: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GeneratedKey resources.
 
@@ -177,79 +177,79 @@ class _GeneratedKeyState:
 
     @_builtins.property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def associated_data(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def associated_data(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def ciphertext(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ciphertext(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The encrypted data encryption key generated from a master encryption key.
         """
         return pulumi.get(self, "ciphertext")
 
     @ciphertext.setter
-    def ciphertext(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ciphertext(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ciphertext", value)
 
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crypto_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
-    def crypto_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crypto_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crypto_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="includePlaintextKey")
-    def include_plaintext_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_plaintext_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the generated key is also returned unencrypted.
         """
         return pulumi.get(self, "include_plaintext_key")
 
     @include_plaintext_key.setter
-    def include_plaintext_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_plaintext_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_plaintext_key", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the master encryption key to encrypt the generated data encryption key with.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyShape")
-    def key_shape(self) -> Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']]:
+    def key_shape(self) -> pulumi.Input[Optional['GeneratedKeyKeyShapeArgs']]:
         """
         The cryptographic properties of a key.
         """
         return pulumi.get(self, "key_shape")
 
     @key_shape.setter
-    def key_shape(self, value: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']]):
+    def key_shape(self, value: pulumi.Input[Optional['GeneratedKeyKeyShapeArgs']]):
         pulumi.set(self, "key_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def logging_context(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
 
@@ -260,31 +260,31 @@ class _GeneratedKeyState:
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def logging_context(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "logging_context", value)
 
     @_builtins.property
     @pulumi.getter
-    def plaintext(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plaintext(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
         return pulumi.get(self, "plaintext")
 
     @plaintext.setter
-    def plaintext(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plaintext(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plaintext", value)
 
     @_builtins.property
     @pulumi.getter(name="plaintextChecksum")
-    def plaintext_checksum(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plaintext_checksum(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
         return pulumi.get(self, "plaintext_checksum")
 
     @plaintext_checksum.setter
-    def plaintext_checksum(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plaintext_checksum(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plaintext_checksum", value)
 
 
@@ -294,12 +294,12 @@ class GeneratedKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_plaintext_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
@@ -317,11 +317,11 @@ class GeneratedKey(pulumi.CustomResource):
 
         test_generated_key = oci.kms.GeneratedKey("test_generated_key",
             crypto_endpoint=generated_key_crypto_endpoint,
-            include_plaintext_key=generated_key_include_plaintext_key,
+            include_plaintext_key=generated_key_include_plaintext_key == "true",
             key_id=test_key["id"],
             key_shape={
                 "algorithm": generated_key_key_shape_algorithm,
-                "length": generated_key_key_shape_length,
+                "length": int(generated_key_key_shape_length),
                 "curve_id": test_curve["id"],
             },
             associated_data=generated_key_associated_data,
@@ -368,11 +368,11 @@ class GeneratedKey(pulumi.CustomResource):
 
         test_generated_key = oci.kms.GeneratedKey("test_generated_key",
             crypto_endpoint=generated_key_crypto_endpoint,
-            include_plaintext_key=generated_key_include_plaintext_key,
+            include_plaintext_key=generated_key_include_plaintext_key == "true",
             key_id=test_key["id"],
             key_shape={
                 "algorithm": generated_key_key_shape_algorithm,
-                "length": generated_key_key_shape_length,
+                "length": int(generated_key_key_shape_length),
                 "curve_id": test_curve["id"],
             },
             associated_data=generated_key_associated_data,
@@ -399,12 +399,12 @@ class GeneratedKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_plaintext_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -441,15 +441,15 @@ class GeneratedKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ciphertext: Optional[pulumi.Input[_builtins.str]] = None,
-            crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            include_plaintext_key: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-            logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            plaintext: Optional[pulumi.Input[_builtins.str]] = None,
-            plaintext_checksum: Optional[pulumi.Input[_builtins.str]] = None) -> 'GeneratedKey':
+            associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+            logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            plaintext: pulumi.Input[Optional[_builtins.str]] = None,
+            plaintext_checksum: pulumi.Input[Optional[_builtins.str]] = None) -> 'GeneratedKey':
         """
         Get an existing GeneratedKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -310,8 +310,8 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
-        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
+    test_cluster = oci.containerengine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file == "true")
     ```
 
 
@@ -347,8 +347,8 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       should_include_oidc_config_file: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       should_include_oidc_config_file: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -361,8 +361,8 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
-        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
+    test_cluster = oci.containerengine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file == "true")
     ```
 
 

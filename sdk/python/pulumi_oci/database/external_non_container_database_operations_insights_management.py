@@ -79,9 +79,9 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
 @pulumi.input_type
 class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
     def __init__(__self__, *,
-                 enable_operations_insights: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_operations_insights: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalNonContainerDatabaseOperationsInsightsManagement resources.
 
@@ -101,7 +101,7 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableOperationsInsights")
-    def enable_operations_insights(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_operations_insights(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
 
@@ -111,31 +111,31 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
         return pulumi.get(self, "enable_operations_insights")
 
     @enable_operations_insights.setter
-    def enable_operations_insights(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_operations_insights(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_operations_insights", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseConnectorId")
-    def external_database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
         return pulumi.get(self, "external_database_connector_id")
 
     @external_database_connector_id.setter
-    def external_database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalNonContainerDatabaseId")
-    def external_non_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_non_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "external_non_container_database_id")
 
     @external_non_container_database_id.setter
-    def external_non_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_non_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_non_container_database_id", value)
 
 
@@ -145,9 +145,9 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_operations_insights: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_operations_insights: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
@@ -231,9 +231,9 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_operations_insights: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_operations_insights: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,9 +262,9 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_operations_insights: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalNonContainerDatabaseOperationsInsightsManagement':
+            enable_operations_insights: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalNonContainerDatabaseOperationsInsightsManagement':
         """
         Get an existing ExternalNonContainerDatabaseOperationsInsightsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

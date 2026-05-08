@@ -121,7 +121,7 @@ def get_scripts(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
+    test_scripts = oci.apmsynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
         content_type=script_content_type,
         display_name=script_display_name)
     ```
@@ -146,10 +146,10 @@ def get_scripts(apm_domain_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         script_collections=pulumi.get(__ret__, 'script_collections'))
-def get_scripts_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       content_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
+def get_scripts_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       content_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptsResult]:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -162,7 +162,7 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
+    test_scripts = oci.apmsynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
         content_type=script_content_type,
         display_name=script_display_name)
     ```

@@ -130,14 +130,14 @@ export interface GetDbmulticloudOracleDbGcpIdentityConnectorsOutputArgs {
     /**
      * A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

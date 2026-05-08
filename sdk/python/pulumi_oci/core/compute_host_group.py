@@ -25,9 +25,9 @@ class ComputeHostGroupArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  is_targeted_placement_required: pulumi.Input[_builtins.bool],
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ComputeHostGroup resource.
 
@@ -108,55 +108,55 @@ class ComputeHostGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]:
         """
         (Updatable) A list of HostGroupConfiguration objects
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ComputeHostGroupState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_targeted_placement_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_targeted_placement_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeHostGroup resources.
 
@@ -201,79 +201,79 @@ class _ComputeHostGroupState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains host group.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]:
         """
         (Updatable) A list of HostGroupConfiguration objects
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isTargetedPlacementRequired")
-    def is_targeted_placement_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_targeted_placement_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A flag that allows customers to restrict placement for hosts attached to the group. If true, the only way to place on hosts is to target the specific host group.
 
@@ -284,55 +284,55 @@ class _ComputeHostGroupState:
         return pulumi.get(self, "is_targeted_placement_required")
 
     @is_targeted_placement_required.setter
-    def is_targeted_placement_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_targeted_placement_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_targeted_placement_required", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the host group
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the host group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the host group was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -342,13 +342,13 @@ class ComputeHostGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_targeted_placement_required: Optional[pulumi.Input[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_targeted_placement_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
@@ -368,7 +368,7 @@ class ComputeHostGroup(pulumi.CustomResource):
             availability_domain=compute_host_group_availability_domain,
             compartment_id=compartment_id,
             display_name=compute_host_group_display_name,
-            is_targeted_placement_required=compute_host_group_is_targeted_placement_required,
+            is_targeted_placement_required=compute_host_group_is_targeted_placement_required == "true",
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "recycle_level": compute_host_group_configurations_recycle_level,
@@ -430,7 +430,7 @@ class ComputeHostGroup(pulumi.CustomResource):
             availability_domain=compute_host_group_availability_domain,
             compartment_id=compartment_id,
             display_name=compute_host_group_display_name,
-            is_targeted_placement_required=compute_host_group_is_targeted_placement_required,
+            is_targeted_placement_required=compute_host_group_is_targeted_placement_required == "true",
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "recycle_level": compute_host_group_configurations_recycle_level,
@@ -469,13 +469,13 @@ class ComputeHostGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_targeted_placement_required: Optional[pulumi.Input[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_targeted_placement_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -514,17 +514,17 @@ class ComputeHostGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_targeted_placement_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeHostGroup':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostGroupConfigurationArgs', 'ComputeHostGroupConfigurationArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_targeted_placement_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeHostGroup':
         """
         Get an existing ComputeHostGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

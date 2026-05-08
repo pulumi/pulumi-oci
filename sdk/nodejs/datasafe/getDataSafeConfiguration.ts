@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafeConfiguration = oci.DataSafe.getDataSafeConfiguration({
+ * const testDataSafeConfiguration = oci.datasafe.getDataSafeConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -92,7 +92,7 @@ export interface GetDataSafeConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafeConfiguration = oci.DataSafe.getDataSafeConfiguration({
+ * const testDataSafeConfiguration = oci.datasafe.getDataSafeConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```

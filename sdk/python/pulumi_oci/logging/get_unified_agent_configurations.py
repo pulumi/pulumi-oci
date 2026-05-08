@@ -154,10 +154,10 @@ def get_unified_agent_configurations(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=compartment_id,
+    test_unified_agent_configurations = oci.logging.get_unified_agent_configurations(compartment_id=compartment_id,
         display_name=unified_agent_configuration_display_name,
         group_id=test_group["id"],
-        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree == "true",
         log_id=test_log["id"],
         state=unified_agent_configuration_state)
     ```
@@ -191,13 +191,13 @@ def get_unified_agent_configurations(compartment_id: Optional[_builtins.str] = N
         log_id=pulumi.get(__ret__, 'log_id'),
         state=pulumi.get(__ret__, 'state'),
         unified_agent_configuration_collections=pulumi.get(__ret__, 'unified_agent_configuration_collections'))
-def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]]]] = None,
-                                            group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                            log_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_unified_agent_configurations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]]]] = None,
+                                            group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            log_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAgentConfigurationsResult]:
     """
     This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
@@ -210,10 +210,10 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=compartment_id,
+    test_unified_agent_configurations = oci.logging.get_unified_agent_configurations(compartment_id=compartment_id,
         display_name=unified_agent_configuration_display_name,
         group_id=test_group["id"],
-        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree == "true",
         log_id=test_log["id"],
         state=unified_agent_configuration_state)
     ```

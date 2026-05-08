@@ -203,7 +203,7 @@ def get_nat_gateway(nat_gateway_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
+    test_nat_gateway = oci.core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_nat_gateway(nat_gateway_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_nat_gateway_output(nat_gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNatGatewayResult]:
     """
     This data source provides details about a specific Nat Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -241,7 +241,7 @@ def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
+    test_nat_gateway = oci.core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
     ```
 
 

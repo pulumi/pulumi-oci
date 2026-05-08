@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnicAttachments = oci.Core.getVnicAttachments({
+ * const testVnicAttachments = oci.core.getVnicAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: vnicAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -104,7 +104,7 @@ export interface GetVnicAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnicAttachments = oci.Core.getVnicAttachments({
+ * const testVnicAttachments = oci.core.getVnicAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: vnicAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -130,18 +130,18 @@ export interface GetVnicAttachmentsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVnicAttachmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVnicAttachmentsFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the VNIC.
      */
-    vnicId?: pulumi.Input<string>;
+    vnicId?: pulumi.Input<string | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
+ * const testRemotePeeringConnections = oci.core.getRemotePeeringConnections({
  *     compartmentId: compartmentId,
  *     drgId: testDrg.id,
  * });
@@ -82,7 +82,7 @@ export interface GetRemotePeeringConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
+ * const testRemotePeeringConnections = oci.core.getRemotePeeringConnections({
  *     compartmentId: compartmentId,
  *     drgId: testDrg.id,
  * });
@@ -108,6 +108,6 @@ export interface GetRemotePeeringConnectionsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetRemotePeeringConnectionsFilterArgs>[]>;
+    drgId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetRemotePeeringConnectionsFilterArgs>[] | undefined>;
 }

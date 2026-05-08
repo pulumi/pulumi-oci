@@ -181,35 +181,35 @@ export interface SecurityRecipeState {
     /**
      * (Updatable) The OCID of the compartment in which to create the recipe
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The recipe's description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The recipe's display name.
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The owner of the recipe
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of security policy IDs to include in the recipe
      *
@@ -217,19 +217,19 @@ export interface SecurityRecipeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityPolicies?: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current lifecycle state of the recipe
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the recipe was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the recipe was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -243,11 +243,11 @@ export interface SecurityRecipeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The recipe's description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The recipe's display name.
      *
@@ -259,7 +259,7 @@ export interface SecurityRecipeArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The list of security policy IDs to include in the recipe
      *

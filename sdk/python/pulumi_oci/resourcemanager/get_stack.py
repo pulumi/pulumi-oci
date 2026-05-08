@@ -206,7 +206,7 @@ def get_stack(stack_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack = oci.ResourceManager.get_stack(stack_id=test_stack_oci_resourcemanager_stack["id"])
+    test_stack = oci.resourcemanager.get_stack(stack_id=test_stack_oci_resourcemanager_stack["id"])
     ```
 
 
@@ -231,7 +231,7 @@ def get_stack(stack_id: Optional[_builtins.str] = None,
         terraform_version=pulumi.get(__ret__, 'terraform_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'))
-def get_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stack_output(stack_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStackResult]:
     """
     This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -246,7 +246,7 @@ def get_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack = oci.ResourceManager.get_stack(stack_id=test_stack_oci_resourcemanager_stack["id"])
+    test_stack = oci.resourcemanager.get_stack(stack_id=test_stack_oci_resourcemanager_stack["id"])
     ```
 
 

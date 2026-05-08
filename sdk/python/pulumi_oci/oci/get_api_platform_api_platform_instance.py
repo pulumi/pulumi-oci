@@ -242,7 +242,7 @@ def get_api_platform_api_platform_instance(api_platform_instance_id: Optional[_b
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         uris=pulumi.get(__ret__, 'uris'))
-def get_api_platform_api_platform_instance_output(api_platform_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_api_platform_api_platform_instance_output(api_platform_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiPlatformApiPlatformInstanceResult]:
     """
     This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.

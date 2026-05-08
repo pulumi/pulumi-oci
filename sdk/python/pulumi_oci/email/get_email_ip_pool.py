@@ -237,7 +237,7 @@ def get_email_ip_pool(email_ip_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_ip_pool = oci.Email.get_email_ip_pool(email_ip_pool_id=test_email_ip_pool_oci_email_email_ip_pool["id"])
+    test_email_ip_pool = oci.email.get_email_ip_pool(email_ip_pool_id=test_email_ip_pool_oci_email_email_ip_pool["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_email_ip_pool(email_ip_pool_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_email_ip_pool_output(email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_email_ip_pool_output(email_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailIpPoolResult]:
     """
     This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
@@ -278,7 +278,7 @@ def get_email_ip_pool_output(email_ip_pool_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_email_ip_pool = oci.Email.get_email_ip_pool(email_ip_pool_id=test_email_ip_pool_oci_email_email_ip_pool["id"])
+    test_email_ip_pool = oci.email.get_email_ip_pool(email_ip_pool_id=test_email_ip_pool_oci_email_email_ip_pool["id"])
     ```
 
 

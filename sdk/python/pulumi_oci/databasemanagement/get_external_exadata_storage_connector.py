@@ -282,7 +282,7 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
+    test_external_exadata_storage_connector = oci.databasemanagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
 
 
@@ -314,7 +314,7 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_external_exadata_storage_connector_output(external_exadata_storage_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_exadata_storage_connector_output(external_exadata_storage_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageConnectorResult]:
     """
     This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -327,7 +327,7 @@ def get_external_exadata_storage_connector_output(external_exadata_storage_conne
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
+    test_external_exadata_storage_connector = oci.databasemanagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
 
 

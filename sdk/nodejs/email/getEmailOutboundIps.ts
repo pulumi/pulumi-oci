@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailOutboundIps = oci.Email.getEmailOutboundIps({
+ * const testEmailOutboundIps = oci.email.getEmailOutboundIps({
  *     compartmentId: compartmentId,
  *     assignmentState: emailOutboundIpAssignmentState,
  *     outboundIp: emailOutboundIpOutboundIp,
@@ -97,7 +97,7 @@ export interface GetEmailOutboundIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailOutboundIps = oci.Email.getEmailOutboundIps({
+ * const testEmailOutboundIps = oci.email.getEmailOutboundIps({
  *     compartmentId: compartmentId,
  *     assignmentState: emailOutboundIpAssignmentState,
  *     outboundIp: emailOutboundIpOutboundIp,
@@ -123,18 +123,18 @@ export interface GetEmailOutboundIpsOutputArgs {
     /**
      * Filter returned list by specified assignment state.
      */
-    assignmentState?: pulumi.Input<string>;
+    assignmentState?: pulumi.Input<string | undefined>;
     /**
      * The OCID for the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailOutboundIpsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailOutboundIpsFilterArgs>[] | undefined>;
     /**
      * The outbound IP address assigned to the tenancy.
      */
-    outboundIp?: pulumi.Input<string>;
+    outboundIp?: pulumi.Input<string | undefined>;
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

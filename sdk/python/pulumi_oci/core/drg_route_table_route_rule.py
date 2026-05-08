@@ -108,15 +108,15 @@ class DrgRouteTableRouteRuleArgs:
 @pulumi.input_type
 class _DrgRouteTableRouteRuleState:
     def __init__(__self__, *,
-                 attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_blackhole: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_conflict: Optional[pulumi.Input[_builtins.bool]] = None,
-                 next_hop_drg_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_provenance: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_blackhole: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_conflict: pulumi.Input[Optional[_builtins.bool]] = None,
+                 next_hop_drg_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_provenance: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
 
@@ -161,19 +161,19 @@ class _DrgRouteTableRouteRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Additional properties for the route, computed by the service.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 
@@ -183,12 +183,12 @@ class _DrgRouteTableRouteRuleState:
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationType")
-    def destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
         * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
@@ -196,12 +196,12 @@ class _DrgRouteTableRouteRuleState:
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
-    def destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_type", value)
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
-    def drg_route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 
@@ -211,36 +211,36 @@ class _DrgRouteTableRouteRuleState:
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
-    def drg_route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isBlackhole")
-    def is_blackhole(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_blackhole(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         """
         return pulumi.get(self, "is_blackhole")
 
     @is_blackhole.setter
-    def is_blackhole(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_blackhole(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_blackhole", value)
 
     @_builtins.property
     @pulumi.getter(name="isConflict")
-    def is_conflict(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_conflict(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates that the route was not imported due to a conflict between route rules.
         """
         return pulumi.get(self, "is_conflict")
 
     @is_conflict.setter
-    def is_conflict(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_conflict(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_conflict", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHopDrgAttachmentId")
-    def next_hop_drg_attachment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_hop_drg_attachment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
 
@@ -250,31 +250,31 @@ class _DrgRouteTableRouteRuleState:
         return pulumi.get(self, "next_hop_drg_attachment_id")
 
     @next_hop_drg_attachment_id.setter
-    def next_hop_drg_attachment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_hop_drg_attachment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_hop_drg_attachment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="routeProvenance")
-    def route_provenance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_provenance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
         """
         return pulumi.get(self, "route_provenance")
 
     @route_provenance.setter
-    def route_provenance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_provenance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_provenance", value)
 
     @_builtins.property
     @pulumi.getter(name="routeType")
-    def route_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         """
         return pulumi.get(self, "route_type")
 
     @route_type.setter
-    def route_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_type", value)
 
 
@@ -284,10 +284,10 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop_drg_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop_drg_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
@@ -387,10 +387,10 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop_drg_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop_drg_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -427,15 +427,15 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            destination: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_blackhole: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_conflict: Optional[pulumi.Input[_builtins.bool]] = None,
-            next_hop_drg_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            route_provenance: Optional[pulumi.Input[_builtins.str]] = None,
-            route_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DrgRouteTableRouteRule':
+            attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_blackhole: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_conflict: pulumi.Input[Optional[_builtins.bool]] = None,
+            next_hop_drg_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            route_provenance: pulumi.Input[Optional[_builtins.str]] = None,
+            route_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'DrgRouteTableRouteRule':
         """
         Get an existing DrgRouteTableRouteRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

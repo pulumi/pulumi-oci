@@ -127,11 +127,11 @@ export interface LogAnalyticsUnprocessedDataBucketManagementState {
     /**
      * Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * Flag that specifies if this configuration is enabled or not.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
@@ -139,15 +139,15 @@ export interface LogAnalyticsUnprocessedDataBucketManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The time when this record is created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -161,7 +161,7 @@ export interface LogAnalyticsUnprocessedDataBucketManagementArgs {
     /**
      * Flag that specifies if this configuration is enabled or not.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbHome = oci.DatabaseManagement.getExternalDbHome({
+ * const testExternalDbHome = oci.databasemanagement.getExternalDbHome({
  *     externalDbHomeId: testExternalDbHomeOciDatabaseManagementExternalDbHome.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetExternalDbHomeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbHome = oci.DatabaseManagement.getExternalDbHome({
+ * const testExternalDbHome = oci.databasemanagement.getExternalDbHome({
  *     externalDbHomeId: testExternalDbHomeOciDatabaseManagementExternalDbHome.id,
  * });
  * ```

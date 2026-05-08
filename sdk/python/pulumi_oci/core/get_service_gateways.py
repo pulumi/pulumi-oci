@@ -125,7 +125,7 @@ def get_service_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=compartment_id,
+    test_service_gateways = oci.core.get_service_gateways(compartment_id=compartment_id,
         state=service_gateway_state,
         vcn_id=test_vcn["id"])
     ```
@@ -150,10 +150,10 @@ def get_service_gateways(compartment_id: Optional[_builtins.str] = None,
         service_gateways=pulumi.get(__ret__, 'service_gateways'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_service_gateways_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_gateways_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGatewaysResult]:
     """
     This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
@@ -167,7 +167,7 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=compartment_id,
+    test_service_gateways = oci.core.get_service_gateways(compartment_id=compartment_id,
         state=service_gateway_state,
         vcn_id=test_vcn["id"])
     ```

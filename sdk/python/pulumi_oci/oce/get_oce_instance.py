@@ -380,7 +380,7 @@ def get_oce_instance(oce_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
+    test_oce_instance = oci.oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
     ```
 
 
@@ -420,7 +420,7 @@ def get_oce_instance(oce_instance_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_schedule=pulumi.get(__ret__, 'upgrade_schedule'),
         waf_primary_domain=pulumi.get(__ret__, 'waf_primary_domain'))
-def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oce_instance_output(oce_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOceInstanceResult]:
     """
     This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
@@ -433,7 +433,7 @@ def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
+    test_oce_instance = oci.oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
     ```
 
 

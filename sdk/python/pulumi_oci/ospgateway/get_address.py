@@ -403,7 +403,7 @@ def get_address(address_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+    test_address = oci.ospgateway.get_address(address_id=test_addres["id"],
         compartment_id=compartment_id,
         osp_home_region=address_osp_home_region)
     ```
@@ -451,9 +451,9 @@ def get_address(address_id: Optional[_builtins.str] = None,
         state_inscription=pulumi.get(__ret__, 'state_inscription'),
         street_name=pulumi.get(__ret__, 'street_name'),
         street_number=pulumi.get(__ret__, 'street_number'))
-def get_address_output(address_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
+def get_address_output(address_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressResult]:
     """
     This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -466,7 +466,7 @@ def get_address_output(address_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+    test_address = oci.ospgateway.get_address(address_id=test_addres["id"],
         compartment_id=compartment_id,
         osp_home_region=address_osp_home_region)
     ```

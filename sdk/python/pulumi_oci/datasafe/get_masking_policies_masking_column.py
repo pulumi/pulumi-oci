@@ -262,7 +262,7 @@ def get_masking_policies_masking_column(masking_column_key: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
+    test_masking_policies_masking_column = oci.datasafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
 
@@ -295,8 +295,8 @@ def get_masking_policies_masking_column(masking_column_key: Optional[_builtins.s
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_masking_policies_masking_column_output(masking_column_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                               masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_masking_policies_masking_column_output(masking_column_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                               masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnResult]:
     """
     This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -309,7 +309,7 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
+    test_masking_policies_masking_column = oci.datasafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
 

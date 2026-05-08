@@ -24,10 +24,10 @@ class HttpRedirectArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  domain: pulumi.Input[_builtins.str],
                  target: pulumi.Input['HttpRedirectTargetArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 response_code: Optional[pulumi.Input[_builtins.int]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 response_code: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a HttpRedirect resource.
 
@@ -89,65 +89,65 @@ class HttpRedirectArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="responseCode")
-    def response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
         """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
-    def response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "response_code", value)
 
 
 @pulumi.input_type
 class _HttpRedirectState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input['HttpRedirectTargetArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional['HttpRedirectTargetArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpRedirect resources.
 
@@ -182,110 +182,110 @@ class _HttpRedirectState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The domain from which traffic will be redirected.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="responseCode")
-    def response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
         """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
-    def response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "response_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the HTTP Redirect.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['HttpRedirectTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['HttpRedirectTargetArgs']]:
         """
         (Updatable) The redirect target object including all the redirect data.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['HttpRedirectTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['HttpRedirectTargetArgs']]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the policy was created, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -295,13 +295,13 @@ class HttpRedirect(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target: Optional[pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -325,7 +325,7 @@ class HttpRedirect(pulumi.CustomResource):
                 "path": http_redirect_target_path,
                 "protocol": http_redirect_target_protocol,
                 "query": http_redirect_target_query,
-                "port": http_redirect_target_port,
+                "port": int(http_redirect_target_port),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -334,7 +334,7 @@ class HttpRedirect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=http_redirect_response_code)
+            response_code=int(http_redirect_response_code))
         ```
 
         ## Import
@@ -384,7 +384,7 @@ class HttpRedirect(pulumi.CustomResource):
                 "path": http_redirect_target_path,
                 "protocol": http_redirect_target_protocol,
                 "query": http_redirect_target_query,
-                "port": http_redirect_target_port,
+                "port": int(http_redirect_target_port),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -393,7 +393,7 @@ class HttpRedirect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=http_redirect_response_code)
+            response_code=int(http_redirect_response_code))
         ```
 
         ## Import
@@ -420,13 +420,13 @@ class HttpRedirect(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target: Optional[pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -461,15 +461,15 @@ class HttpRedirect(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            response_code: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'HttpRedirect':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            response_code: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'HttpRedirect':
         """
         Get an existing HttpRedirect resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

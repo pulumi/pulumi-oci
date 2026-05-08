@@ -112,7 +112,7 @@ def get_distributed_database_distributed_database_raft_metric(distributed_databa
         distributed_database_id=pulumi.get(__ret__, 'distributed_database_id'),
         id=pulumi.get(__ret__, 'id'),
         raft_metrics=pulumi.get(__ret__, 'raft_metrics'))
-def get_distributed_database_distributed_database_raft_metric_output(distributed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_distributed_database_distributed_database_raft_metric_output(distributed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedDatabaseRaftMetricResult]:
     """
     This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.

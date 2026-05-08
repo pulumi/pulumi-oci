@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemShapes = oci.Database.getDbSystemShapes({
+ * const testDbSystemShapes = oci.database.getDbSystemShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemShapeAvailabilityDomain,
  *     shapeAttribute: dbSystemShapeShapeAttribute,
@@ -81,7 +81,7 @@ export interface GetDbSystemShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemShapes = oci.Database.getDbSystemShapes({
+ * const testDbSystemShapes = oci.database.getDbSystemShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemShapeAvailabilityDomain,
  *     shapeAttribute: dbSystemShapeShapeAttribute,
@@ -105,14 +105,14 @@ export interface GetDbSystemShapesOutputArgs {
     /**
      * The name of the Availability Domain.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemShapesFilterArgs>[] | undefined>;
     /**
      * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
      */
-    shapeAttribute?: pulumi.Input<string>;
+    shapeAttribute?: pulumi.Input<string | undefined>;
 }

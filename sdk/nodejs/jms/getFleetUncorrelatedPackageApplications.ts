@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetUncorrelatedPackageApplications = oci.Jms.getFleetUncorrelatedPackageApplications({
+ * const testFleetUncorrelatedPackageApplications = oci.jms.getFleetUncorrelatedPackageApplications({
  *     fleetId: testFleet.id,
  *     packageName: fleetUncorrelatedPackageApplicationPackageName,
  *     applicationId: testApplication.id,
@@ -102,7 +102,7 @@ export interface GetFleetUncorrelatedPackageApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetUncorrelatedPackageApplications = oci.Jms.getFleetUncorrelatedPackageApplications({
+ * const testFleetUncorrelatedPackageApplications = oci.jms.getFleetUncorrelatedPackageApplications({
  *     fleetId: testFleet.id,
  *     packageName: fleetUncorrelatedPackageApplicationPackageName,
  *     applicationId: testApplication.id,
@@ -132,8 +132,8 @@ export interface GetFleetUncorrelatedPackageApplicationsOutputArgs {
     /**
      * The Fleet-unique identifier of the application.
      */
-    applicationId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetUncorrelatedPackageApplicationsFilterArgs>[]>;
+    applicationId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetUncorrelatedPackageApplicationsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -141,7 +141,7 @@ export interface GetFleetUncorrelatedPackageApplicationsOutputArgs {
     /**
      * The Fleet-unique identifier of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of a Java package.
      */
@@ -149,9 +149,9 @@ export interface GetFleetUncorrelatedPackageApplicationsOutputArgs {
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

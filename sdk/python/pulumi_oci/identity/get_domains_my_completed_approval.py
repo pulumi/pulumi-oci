@@ -366,7 +366,7 @@ def get_domains_my_completed_approval(authorization: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
+    test_my_completed_approval = oci.identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
         my_completed_approval_id=test_my_completed_approval_oci_identity_domains_my_completed_approval["id"],
         authorization=my_completed_approval_authorization,
         resource_type_schema_version=my_completed_approval_resource_type_schema_version)
@@ -414,10 +414,10 @@ def get_domains_my_completed_approval(authorization: Optional[_builtins.str] = N
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-def get_domains_my_completed_approval_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                             my_completed_approval_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_completed_approval_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                             my_completed_approval_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyCompletedApprovalResult]:
     """
     This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -430,7 +430,7 @@ def get_domains_my_completed_approval_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
+    test_my_completed_approval = oci.identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
         my_completed_approval_id=test_my_completed_approval_oci_identity_domains_my_completed_approval["id"],
         authorization=my_completed_approval_authorization,
         resource_type_schema_version=my_completed_approval_resource_type_schema_version)

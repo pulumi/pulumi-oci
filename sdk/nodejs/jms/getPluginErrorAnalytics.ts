@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrorAnalytics = oci.Jms.getPluginErrorAnalytics({
+ * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetPluginErrorAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrorAnalytics = oci.Jms.getPluginErrorAnalytics({
+ * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -98,10 +98,10 @@ export interface GetPluginErrorAnalyticsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetPluginErrorAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetPluginErrorAnalyticsFilterArgs>[] | undefined>;
 }

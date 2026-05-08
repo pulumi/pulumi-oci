@@ -177,12 +177,12 @@ def get_dbmulticloud_oracle_db_gcp_key_rings(compartment_id: Optional[_builtins.
         oracle_db_gcp_key_ring_id=pulumi.get(__ret__, 'oracle_db_gcp_key_ring_id'),
         oracle_db_gcp_key_ring_summary_collections=pulumi.get(__ret__, 'oracle_db_gcp_key_ring_summary_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_dbmulticloud_oracle_db_gcp_key_rings_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict']]]]] = None,
-                                                    oracle_db_gcp_connector_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    oracle_db_gcp_key_ring_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dbmulticloud_oracle_db_gcp_key_rings_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict']]]]] = None,
+                                                    oracle_db_gcp_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    oracle_db_gcp_key_ring_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbGcpKeyRingsResult]:
     """
     This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.

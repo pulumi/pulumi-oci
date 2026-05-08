@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefaultConfiguration = oci.Psql.getDefaultConfiguration({
+ * const testDefaultConfiguration = oci.psql.getDefaultConfiguration({
  *     defaultConfigurationId: testDefaultConfigurationOciPsqlDefaultConfiguration.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetDefaultConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefaultConfiguration = oci.Psql.getDefaultConfiguration({
+ * const testDefaultConfiguration = oci.psql.getDefaultConfiguration({
  *     defaultConfigurationId: testDefaultConfigurationOciPsqlDefaultConfiguration.id,
  * });
  * ```
@@ -139,7 +139,7 @@ export interface GetDefaultConfigurationOutputArgs {
     /**
      * Indicates the collection of compatible shapes for this configuration.
      */
-    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A unique identifier for the configuration.
      */
@@ -147,5 +147,5 @@ export interface GetDefaultConfigurationOutputArgs {
     /**
      * The name of the shape for the configuration.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }

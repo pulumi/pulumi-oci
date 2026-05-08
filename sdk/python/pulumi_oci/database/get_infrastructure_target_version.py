@@ -122,7 +122,7 @@ def get_infrastructure_target_version(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=compartment_id,
+    test_infrastructure_target_version = oci.database.get_infrastructure_target_version(compartment_id=compartment_id,
         target_resource_id=test_target_resource["id"],
         target_resource_type=infrastructure_target_version_target_resource_type)
     ```
@@ -146,9 +146,9 @@ def get_infrastructure_target_version(compartment_id: Optional[_builtins.str] = 
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'),
         target_storage_version_history_entries=pulumi.get(__ret__, 'target_storage_version_history_entries'))
-def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             target_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             target_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_infrastructure_target_version_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             target_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             target_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInfrastructureTargetVersionResult]:
     """
     This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
@@ -162,7 +162,7 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=compartment_id,
+    test_infrastructure_target_version = oci.database.get_infrastructure_target_version(compartment_id=compartment_id,
         target_resource_id=test_target_resource["id"],
         target_resource_type=infrastructure_target_version_target_resource_type)
     ```

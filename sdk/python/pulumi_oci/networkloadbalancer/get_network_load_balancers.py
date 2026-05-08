@@ -124,7 +124,7 @@ def get_network_load_balancers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=compartment_id,
+    test_network_load_balancers = oci.networkloadbalancer.get_network_load_balancers(compartment_id=compartment_id,
         display_name=network_load_balancer_display_name,
         state=network_load_balancer_state)
     ```
@@ -149,10 +149,10 @@ def get_network_load_balancers(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network_load_balancer_collections=pulumi.get(__ret__, 'network_load_balancer_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict']]]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_network_load_balancers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict']]]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancersResult]:
     """
     This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -165,7 +165,7 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=compartment_id,
+    test_network_load_balancers = oci.networkloadbalancer.get_network_load_balancers(compartment_id=compartment_id,
         display_name=network_load_balancer_display_name,
         state=network_load_balancer_state)
     ```

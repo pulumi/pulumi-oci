@@ -96,18 +96,18 @@ class FleetPropertyInitArgs:
 @pulumi.input_type
 class _FleetPropertyState:
     def __init__(__self__, *,
-                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 selection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 value_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 selection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FleetProperty resources.
 
@@ -155,127 +155,127 @@ class _FleetPropertyState:
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyId")
-    def property_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
-    def property_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_id", value)
 
     @_builtins.property
     @pulumi.getter(name="selectionType")
-    def selection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def selection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Text selection of the property.
         """
         return pulumi.get(self, "selection_type")
 
     @selection_type.setter
-    def selection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def selection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "selection_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the FleetProperty.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value of the Property.
 
@@ -286,19 +286,19 @@ class _FleetPropertyState:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Format of the value.
         """
         return pulumi.get(self, "value_type")
 
     @value_type.setter
-    def value_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value_type", value)
 
 
@@ -308,10 +308,10 @@ class FleetProperty(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -395,10 +395,10 @@ class FleetProperty(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -438,18 +438,18 @@ class FleetProperty(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            property_id: Optional[pulumi.Input[_builtins.str]] = None,
-            selection_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None,
-            value_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'FleetProperty':
+            allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            selection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None,
+            value_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'FleetProperty':
         """
         Get an existing FleetProperty resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -24,19 +24,19 @@ class StorageObjectArgs:
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  object: pulumi.Input[_builtins.str],
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_all_object_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 opc_sse_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None):
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri_details: pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a StorageObject resource.
 
@@ -129,67 +129,67 @@ class StorageObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_control(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
-    def cache_control(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_control(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_control", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="contentDisposition")
-    def content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
         """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
-    def content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="contentEncoding")
-    def content_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
         """
         return pulumi.get(self, "content_encoding")
 
     @content_encoding.setter
-    def content_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="contentLanguage")
-    def content_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
         """
         return pulumi.get(self, "content_language")
 
     @content_language.setter
-    def content_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_language", value)
 
     @_builtins.property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
 
@@ -198,36 +198,36 @@ class StorageObjectArgs:
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
-    def content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_md5", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteAllObjectVersions")
-    def delete_all_object_versions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_all_object_versions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
         """
         return pulumi.get(self, "delete_all_object_versions")
 
     @delete_all_object_versions.setter
-    def delete_all_object_versions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_all_object_versions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_all_object_versions", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Optional user-defined metadata key and value.
         Note: All specified keys must be in lower case.
@@ -235,36 +235,36 @@ class StorageObjectArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="opcSseKmsKeyId")
-    def opc_sse_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_sse_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         """
         return pulumi.get(self, "opc_sse_kms_key_id")
 
     @opc_sse_kms_key_id.setter
-    def opc_sse_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_sse_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_sse_kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceUriDetails")
-    def source_uri_details(self) -> Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]:
+    def source_uri_details(self) -> pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]:
         """
         Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
         Note: To enable object copy, you must authorize the service to manage objects on your behalf.
@@ -272,45 +272,45 @@ class StorageObjectArgs:
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
-    def source_uri_details(self, value: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]):
+    def source_uri_details(self, value: pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]):
         pulumi.set(self, "source_uri_details", value)
 
     @_builtins.property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
-    def storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_tier", value)
 
 
 @pulumi.input_type
 class _StorageObjectState:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_all_object_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_sse_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri_details: pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StorageObject resources.
 
@@ -379,91 +379,91 @@ class _StorageObjectState:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_control(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
-    def cache_control(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_control(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_control", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="contentDisposition")
-    def content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
         """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
-    def content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="contentEncoding")
-    def content_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
         """
         return pulumi.get(self, "content_encoding")
 
     @content_encoding.setter
-    def content_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="contentLanguage")
-    def content_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
         """
         return pulumi.get(self, "content_language")
 
     @content_language.setter
-    def content_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_language", value)
 
     @_builtins.property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_length(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The content length of the body.
         """
         return pulumi.get(self, "content_length")
 
     @content_length.setter
-    def content_length(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_length(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
 
@@ -472,36 +472,36 @@ class _StorageObjectState:
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
-    def content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_md5", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteAllObjectVersions")
-    def delete_all_object_versions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_all_object_versions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
         """
         return pulumi.get(self, "delete_all_object_versions")
 
     @delete_all_object_versions.setter
-    def delete_all_object_versions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_all_object_versions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_all_object_versions", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Optional user-defined metadata key and value.
         Note: All specified keys must be in lower case.
@@ -509,60 +509,60 @@ class _StorageObjectState:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="opcSseKmsKeyId")
-    def opc_sse_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_sse_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         """
         return pulumi.get(self, "opc_sse_kms_key_id")
 
     @opc_sse_kms_key_id.setter
-    def opc_sse_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_sse_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_sse_kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceUriDetails")
-    def source_uri_details(self) -> Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]:
+    def source_uri_details(self) -> pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]:
         """
         Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
         Note: To enable object copy, you must authorize the service to manage objects on your behalf.
@@ -570,46 +570,46 @@ class _StorageObjectState:
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
-    def source_uri_details(self, value: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]):
+    def source_uri_details(self, value: pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]):
         pulumi.set(self, "source_uri_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
-    def storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
@@ -619,22 +619,22 @@ class StorageObject(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_all_object_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_sse_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri_details: Optional[pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri_details: pulumi.Input[Optional[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -667,7 +667,7 @@ class StorageObject(pulumi.CustomResource):
             content_encoding=object_content_encoding,
             content_language=object_content_language,
             content_type=object_content_type,
-            delete_all_object_versions=object_delete_all_object_versions,
+            delete_all_object_versions=object_delete_all_object_versions == "true",
             metadata=object_metadata,
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)
@@ -742,7 +742,7 @@ class StorageObject(pulumi.CustomResource):
             content_encoding=object_content_encoding,
             content_language=object_content_language,
             content_type=object_content_type,
-            delete_all_object_versions=object_delete_all_object_versions,
+            delete_all_object_versions=object_delete_all_object_versions == "true",
             metadata=object_metadata,
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)
@@ -772,22 +772,22 @@ class StorageObject(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_all_object_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_sse_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_uri_details: Optional[pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_uri_details: pulumi.Input[Optional[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -833,26 +833,26 @@ class StorageObject(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-            content_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-            content_language: Optional[pulumi.Input[_builtins.str]] = None,
-            content_length: Optional[pulumi.Input[_builtins.str]] = None,
-            content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-            content_type: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_all_object_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            object: Optional[pulumi.Input[_builtins.str]] = None,
-            opc_sse_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            source_uri_details: Optional[pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'StorageObject':
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            content_language: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_uri_details: pulumi.Input[Optional[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'StorageObject':
         """
         Get an existing StorageObject resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

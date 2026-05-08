@@ -125,7 +125,7 @@ def get_network_address_lists(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=compartment_id,
+    test_network_address_lists = oci.waf.get_network_address_lists(compartment_id=compartment_id,
         display_name=network_address_list_display_name,
         id=network_address_list_id,
         states=network_address_list_state)
@@ -153,11 +153,11 @@ def get_network_address_lists(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network_address_list_collections=pulumi.get(__ret__, 'network_address_list_collections'),
         states=pulumi.get(__ret__, 'states'))
-def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict']]]]] = None,
-                                     id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_network_address_lists_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict']]]]] = None,
+                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkAddressListsResult]:
     """
     This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
@@ -170,7 +170,7 @@ def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=compartment_id,
+    test_network_address_lists = oci.waf.get_network_address_lists(compartment_id=compartment_id,
         display_name=network_address_list_display_name,
         id=network_address_list_id,
         states=network_address_list_state)

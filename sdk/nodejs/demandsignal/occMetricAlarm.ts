@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
  *     frequency: occMetricAlarmFrequency,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  *     resourceConfiguration: {
  *         resource: occMetricAlarmResourceConfigurationResource,
  *         usageType: occMetricAlarmResourceConfigurationUsageType,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *         shape: occMetricAlarmResourceConfigurationShape,
  *         storageType: occMetricAlarmResourceConfigurationStorageType,
  *     },
- *     threshold: occMetricAlarmThreshold,
+ *     threshold: Number(occMetricAlarmThreshold),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -227,51 +227,51 @@ export interface OccMetricAlarmState {
     /**
      * Compartment OCID in which the alarm is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description for the alarm.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Human-readable name for the alarm.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Frequency at which notifications should be sent.
      */
-    frequency?: pulumi.Input<string>;
+    frequency?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Alarm active status.
      */
-    isActive?: pulumi.Input<boolean>;
+    isActive?: pulumi.Input<boolean | undefined>;
     /**
      * Configuration for a given 'resource'
      */
-    resourceConfiguration?: pulumi.Input<inputs.DemandSignal.OccMetricAlarmResourceConfiguration>;
+    resourceConfiguration?: pulumi.Input<inputs.DemandSignal.OccMetricAlarmResourceConfiguration | undefined>;
     /**
      * (Updatable) The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of topic OCIDs for notifications.
      */
-    subscribers?: pulumi.Input<pulumi.Input<string>[]>;
+    subscribers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Threshold at which alarm must be triggered.
      */
-    threshold?: pulumi.Input<number>;
+    threshold?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Units in which threshold is being stored.
      *
@@ -279,15 +279,15 @@ export interface OccMetricAlarmState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    thresholdType?: pulumi.Input<string>;
+    thresholdType?: pulumi.Input<string | undefined>;
     /**
      * Creation timestamp (RFC 3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Last update timestamp (RFC 3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -301,11 +301,11 @@ export interface OccMetricAlarmArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description for the alarm.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Human-readable name for the alarm.
      */
@@ -313,7 +313,7 @@ export interface OccMetricAlarmArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Frequency at which notifications should be sent.
      */
@@ -329,11 +329,11 @@ export interface OccMetricAlarmArgs {
     /**
      * (Updatable) The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of topic OCIDs for notifications.
      */
-    subscribers?: pulumi.Input<pulumi.Input<string>[]>;
+    subscribers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Threshold at which alarm must be triggered.
      */
@@ -345,5 +345,5 @@ export interface OccMetricAlarmArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    thresholdType?: pulumi.Input<string>;
+    thresholdType?: pulumi.Input<string | undefined>;
 }

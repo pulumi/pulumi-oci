@@ -312,7 +312,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.AiLanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
+    test_job = oci.ailanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
         total_documents=pulumi.get(__ret__, 'total_documents'),
         ttl_in_days=pulumi.get(__ret__, 'ttl_in_days'),
         warnings_count=pulumi.get(__ret__, 'warnings_count'))
-def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_output(job_id: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobResult]:
     """
     This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
@@ -359,7 +359,7 @@ def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.AiLanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
+    test_job = oci.ailanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
     ```
 
 

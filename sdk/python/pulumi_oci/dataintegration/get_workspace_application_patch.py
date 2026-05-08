@@ -323,7 +323,7 @@ def get_workspace_application_patch(application_key: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
+    test_workspace_application_patch = oci.dataintegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
         patch_key=workspace_application_patch_patch_key,
         workspace_id=test_workspace["id"])
     ```
@@ -365,9 +365,9 @@ def get_workspace_application_patch(application_key: Optional[_builtins.str] = N
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         time_patched=pulumi.get(__ret__, 'time_patched'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_patch_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                           patch_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                           workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_patch_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                           patch_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                           workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationPatchResult]:
     """
     This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
@@ -380,7 +380,7 @@ def get_workspace_application_patch_output(application_key: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
+    test_workspace_application_patch = oci.dataintegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
         patch_key=workspace_application_patch_patch_key,
         workspace_id=test_workspace["id"])
     ```

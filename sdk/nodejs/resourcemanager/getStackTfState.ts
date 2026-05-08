@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStackTfState = oci.ResourceManager.getStackTfState({
+ * const testStackTfState = oci.resourcemanager.getStackTfState({
  *     stackId: testStack.id,
  * });
  * ```
@@ -71,7 +71,7 @@ export interface GetStackTfStateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStackTfState = oci.ResourceManager.getStackTfState({
+ * const testStackTfState = oci.resourcemanager.getStackTfState({
  *     stackId: testStack.id,
  * });
  * ```

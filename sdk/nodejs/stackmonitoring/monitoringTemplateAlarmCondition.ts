@@ -26,8 +26,8 @@ import * as utilities from "../utilities";
  *         query: monitoringTemplateAlarmConditionConditionsQuery,
  *         severity: monitoringTemplateAlarmConditionConditionsSeverity,
  *         body: monitoringTemplateAlarmConditionConditionsBody,
- *         shouldAppendNote: monitoringTemplateAlarmConditionConditionsShouldAppendNote,
- *         shouldAppendUrl: monitoringTemplateAlarmConditionConditionsShouldAppendUrl,
+ *         shouldAppendNote: monitoringTemplateAlarmConditionConditionsShouldAppendNote === "true",
+ *         shouldAppendUrl: monitoringTemplateAlarmConditionConditionsShouldAppendUrl === "true",
  *         triggerDelay: monitoringTemplateAlarmConditionConditionsTriggerDelay,
  *     }],
  *     metricName: testMetric.name,
@@ -215,35 +215,35 @@ export interface MonitoringTemplateAlarmConditionState {
     /**
      * (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
      */
-    compositeType?: pulumi.Input<string>;
+    compositeType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of defined monitoring template.
      */
-    conditionType?: pulumi.Input<string>;
+    conditionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Monitoring template conditions.
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoringTemplateAlarmConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoringTemplateAlarmConditionCondition>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The metric name.
      */
-    metricName?: pulumi.Input<string>;
+    metricName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      */
-    monitoringTemplateId?: pulumi.Input<string>;
+    monitoringTemplateId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The resource group OCID.
      *
@@ -251,27 +251,27 @@ export interface MonitoringTemplateAlarmConditionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the monitoring template
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The current status of the monitoring template i.e. whether it is Published or Unpublished
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the alarm condition was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the alarm condition was updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -281,7 +281,7 @@ export interface MonitoringTemplateAlarmConditionArgs {
     /**
      * (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
      */
-    compositeType?: pulumi.Input<string>;
+    compositeType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of defined monitoring template.
      */
@@ -293,11 +293,11 @@ export interface MonitoringTemplateAlarmConditionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The metric name.
      */

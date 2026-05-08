@@ -157,10 +157,10 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
+    test_container_repositories = oci.artifacts.get_container_repositories(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_repository_compartment_id_in_subtree == "true",
         display_name=container_repository_display_name,
-        is_public=container_repository_is_public,
+        is_public=container_repository_is_public == "true",
         repository_id=test_repository["id"],
         state=container_repository_state)
     ```
@@ -194,13 +194,13 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
         is_public=pulumi.get(__ret__, 'is_public'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_container_repositories_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerRepositoriesFilterArgs', 'GetContainerRepositoriesFilterArgsDict']]]]] = None,
-                                      is_public: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      repository_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerRepositoriesFilterArgs', 'GetContainerRepositoriesFilterArgsDict']]]]] = None,
+                                      is_public: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      repository_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerRepositoriesResult]:
     """
     This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
@@ -213,10 +213,10 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
+    test_container_repositories = oci.artifacts.get_container_repositories(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_repository_compartment_id_in_subtree == "true",
         display_name=container_repository_display_name,
-        is_public=container_repository_is_public,
+        is_public=container_repository_is_public == "true",
         repository_id=test_repository["id"],
         state=container_repository_state)
     ```

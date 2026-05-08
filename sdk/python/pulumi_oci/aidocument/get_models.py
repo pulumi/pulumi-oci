@@ -138,7 +138,7 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+    test_models = oci.aidocument.get_models(compartment_id=compartment_id,
         display_name=model_display_name,
         id=model_id,
         project_id=test_project["id"],
@@ -170,12 +170,12 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
         model_collections=pulumi.get(__ret__, 'model_collections'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_models_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_models_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelsResult]:
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
@@ -188,7 +188,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+    test_models = oci.aidocument.get_models(compartment_id=compartment_id,
         display_name=model_display_name,
         id=model_id,
         project_id=test_project["id"],

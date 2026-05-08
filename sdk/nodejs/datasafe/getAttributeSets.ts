@@ -30,15 +30,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSets = oci.DataSafe.getAttributeSets({
+ * const testAttributeSets = oci.datasafe.getAttributeSets({
  *     compartmentId: compartmentId,
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined,
+ *     isUserDefined: attributeSetIsUserDefined === "true",
  *     state: attributeSetState,
  * });
  * ```
@@ -167,15 +167,15 @@ export interface GetAttributeSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSets = oci.DataSafe.getAttributeSets({
+ * const testAttributeSets = oci.datasafe.getAttributeSets({
  *     compartmentId: compartmentId,
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined,
+ *     isUserDefined: attributeSetIsUserDefined === "true",
  *     state: attributeSetState,
  * });
  * ```
@@ -203,15 +203,15 @@ export interface GetAttributeSetsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only attribute set resources that matches the specified attribute set OCID query param.
      */
-    attributeSetId?: pulumi.Input<string>;
+    attributeSetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only attribute set resources that matches the specified attribute set type query param.
      */
-    attributeSetType?: pulumi.Input<string>;
+    attributeSetType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -219,22 +219,22 @@ export interface GetAttributeSetsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAttributeSetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAttributeSetsFilterArgs>[] | undefined>;
     /**
      * A filter to return attribute set resources that are in use by other associated resources.
      */
-    inUse?: pulumi.Input<string>;
+    inUse?: pulumi.Input<string | undefined>;
     /**
      * A filter to return user defined or seeded attribute set resources that matches the specified is user defined query param. A true value indicates user defined attribute set.
      */
-    isUserDefined?: pulumi.Input<boolean>;
+    isUserDefined?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of an attribute set.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

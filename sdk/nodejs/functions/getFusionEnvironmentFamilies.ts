@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilies = oci.Functions.getFusionEnvironmentFamilies({
+ * const testFusionEnvironmentFamilies = oci.functions.getFusionEnvironmentFamilies({
  *     compartmentId: compartmentId,
  *     displayName: fusionEnvironmentFamilyDisplayName,
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
@@ -97,7 +97,7 @@ export interface GetFusionEnvironmentFamiliesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilies = oci.Functions.getFusionEnvironmentFamilies({
+ * const testFusionEnvironmentFamilies = oci.functions.getFusionEnvironmentFamilies({
  *     compartmentId: compartmentId,
  *     displayName: fusionEnvironmentFamilyDisplayName,
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
@@ -127,14 +127,14 @@ export interface GetFusionEnvironmentFamiliesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentFamiliesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentFamiliesFilterArgs>[] | undefined>;
     /**
      * The ID of the fusion environment family in which to list resources.
      */
-    fusionEnvironmentFamilyId?: pulumi.Input<string>;
+    fusionEnvironmentFamilyId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

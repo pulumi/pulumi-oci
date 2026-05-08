@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestionSettings = oci.Identity.getDomainsSecurityQuestionSettings({
+ * const testSecurityQuestionSettings = oci.identity.getDomainsSecurityQuestionSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
@@ -102,7 +102,7 @@ export interface GetDomainsSecurityQuestionSettingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestionSettings = oci.Identity.getDomainsSecurityQuestionSettings({
+ * const testSecurityQuestionSettings = oci.identity.getDomainsSecurityQuestionSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
@@ -130,16 +130,16 @@ export interface GetDomainsSecurityQuestionSettingsOutputArgs {
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
-    compartmentId?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -147,5 +147,5 @@ export interface GetDomainsSecurityQuestionSettingsOutputArgs {
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
 }

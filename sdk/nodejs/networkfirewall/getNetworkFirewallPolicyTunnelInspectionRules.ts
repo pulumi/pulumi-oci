@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRules = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRules({
+ * const testNetworkFirewallPolicyTunnelInspectionRules = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyTunnelInspectionRuleDisplayName,
- *     tunnelInspectionRulePriorityOrder: networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder,
+ *     tunnelInspectionRulePriorityOrder: Number(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder),
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRules = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRules({
+ * const testNetworkFirewallPolicyTunnelInspectionRules = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyTunnelInspectionRuleDisplayName,
- *     tunnelInspectionRulePriorityOrder: networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder,
+ *     tunnelInspectionRulePriorityOrder: Number(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder),
  * });
  * ```
  */
@@ -105,8 +105,8 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRulesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs>[] | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -114,5 +114,5 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRulesOutputArgs {
     /**
      * Unique priority order for Tunnel Inspection rules in the network firewall policy.
      */
-    tunnelInspectionRulePriorityOrder?: pulumi.Input<number>;
+    tunnelInspectionRulePriorityOrder?: pulumi.Input<number | undefined>;
 }

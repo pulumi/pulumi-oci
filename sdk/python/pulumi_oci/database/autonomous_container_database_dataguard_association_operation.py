@@ -73,9 +73,9 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
 @pulumi.input_type
 class _AutonomousContainerDatabaseDataguardAssociationOperationState:
     def __init__(__self__, *,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseDataguardAssociationOperation resources.
 
@@ -92,38 +92,38 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_dataguard_association_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
         """
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
-    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_dataguard_association_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_dataguard_association_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseId")
-    def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
-    def autonomous_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
         return pulumi.get(self, "operation")
 
     @operation.setter
-    def operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation", value)
 
 
@@ -133,9 +133,9 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Container Database Dataguard Association Operation resource in Oracle Cloud Infrastructure Database service.
@@ -208,9 +208,9 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -239,9 +239,9 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            operation: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousContainerDatabaseDataguardAssociationOperation':
+            autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousContainerDatabaseDataguardAssociationOperation':
         """
         Get an existing AutonomousContainerDatabaseDataguardAssociationOperation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

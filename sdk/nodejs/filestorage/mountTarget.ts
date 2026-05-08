@@ -65,19 +65,19 @@ import * as utilities from "../utilities";
  *     hostnameLabel: mountTargetHostnameLabel,
  *     idmapType: mountTargetIdmapType,
  *     ipAddress: mountTargetIpAddress,
- *     isLockOverride: mountTargetIsLockOverride,
+ *     isLockOverride: mountTargetIsLockOverride === "true",
  *     kerberos: {
  *         kerberosRealm: mountTargetKerberosKerberosRealm,
- *         backupKeyTabSecretVersion: mountTargetKerberosBackupKeyTabSecretVersion,
- *         currentKeyTabSecretVersion: mountTargetKerberosCurrentKeyTabSecretVersion,
- *         isKerberosEnabled: mountTargetKerberosIsKerberosEnabled,
+ *         backupKeyTabSecretVersion: Number(mountTargetKerberosBackupKeyTabSecretVersion),
+ *         currentKeyTabSecretVersion: Number(mountTargetKerberosCurrentKeyTabSecretVersion),
+ *         isKerberosEnabled: mountTargetKerberosIsKerberosEnabled === "true",
  *         keyTabSecretId: testSecret.id,
  *     },
  *     ldapIdmap: {
- *         cacheLifetimeSeconds: mountTargetLdapIdmapCacheLifetimeSeconds,
- *         cacheRefreshIntervalSeconds: mountTargetLdapIdmapCacheRefreshIntervalSeconds,
+ *         cacheLifetimeSeconds: Number(mountTargetLdapIdmapCacheLifetimeSeconds),
+ *         cacheRefreshIntervalSeconds: Number(mountTargetLdapIdmapCacheRefreshIntervalSeconds),
  *         groupSearchBase: mountTargetLdapIdmapGroupSearchBase,
- *         negativeCacheLifetimeSeconds: mountTargetLdapIdmapNegativeCacheLifetimeSeconds,
+ *         negativeCacheLifetimeSeconds: Number(mountTargetLdapIdmapNegativeCacheLifetimeSeconds),
  *         outboundConnector1id: testOutboundConnector1.id,
  *         outboundConnector2id: testOutboundConnector2.id,
  *         schemaType: mountTargetLdapIdmapSchemaType,
@@ -337,27 +337,27 @@ export interface MountTargetState {
     /**
      * The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
      */
-    exportSetId?: pulumi.Input<string>;
+    exportSetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
@@ -369,67 +369,67 @@ export interface MountTargetState {
      *
      * Example: `files-1`
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The method used to map a Unix UID to secondary groups, if any.
      */
-    idmapType?: pulumi.Input<string>;
+    idmapType?: pulumi.Input<string | undefined>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to override locks (if any exist).
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Kerberos details needed to create configuration.
      */
-    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
+    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos | undefined>;
     /**
      * (Updatable) Mount target details about the LDAP ID mapping configuration.
      */
-    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap>;
+    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[] | undefined>;
     /**
      * The OCIDs of the IPv6 addresses associated with this mount target.
      */
-    mountTargetIpv6ids?: pulumi.Input<pulumi.Input<string>[]>;
+    mountTargetIpv6ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    observedThroughput?: pulumi.Input<string>;
+    observedThroughput?: pulumi.Input<string | undefined>;
     /**
      * The OCIDs of the private IP addresses associated with this mount target.
      */
-    privateIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    privateIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    requestedThroughput?: pulumi.Input<string>;
+    requestedThroughput?: pulumi.Input<string | undefined>;
     /**
      * * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    reservedStorageCapacity?: pulumi.Input<string>;
+    reservedStorageCapacity?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the mount target.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
      *
@@ -437,19 +437,19 @@ export interface MountTargetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeBillingCycleEnd?: pulumi.Input<string>;
+    timeBillingCycleEnd?: pulumi.Input<string | undefined>;
     /**
      * The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -467,15 +467,15 @@ export interface MountTargetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
@@ -487,43 +487,43 @@ export interface MountTargetArgs {
      *
      * Example: `files-1`
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The method used to map a Unix UID to secondary groups, if any.
      */
-    idmapType?: pulumi.Input<string>;
+    idmapType?: pulumi.Input<string | undefined>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to override locks (if any exist).
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Kerberos details needed to create configuration.
      */
-    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
+    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos | undefined>;
     /**
      * (Updatable) Mount target details about the LDAP ID mapping configuration.
      */
-    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap>;
+    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[] | undefined>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    requestedThroughput?: pulumi.Input<string>;
+    requestedThroughput?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
      *

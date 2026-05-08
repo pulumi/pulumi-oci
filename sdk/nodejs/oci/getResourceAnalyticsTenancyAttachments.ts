@@ -109,17 +109,17 @@ export function getResourceAnalyticsTenancyAttachmentsOutput(args?: GetResourceA
  * A collection of arguments for invoking getResourceAnalyticsTenancyAttachments.
  */
 export interface GetResourceAnalyticsTenancyAttachmentsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetResourceAnalyticsTenancyAttachmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetResourceAnalyticsTenancyAttachmentsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
      */
-    resourceAnalyticsInstanceId?: pulumi.Input<string>;
+    resourceAnalyticsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

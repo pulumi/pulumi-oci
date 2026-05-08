@@ -34,7 +34,7 @@ import (
 //				CompartmentIdInSubtree: recommendationCompartmentIdInSubtree,
 //				CategoryId:             pulumi.StringRef(testCategory.Id),
 //				CategoryName:           pulumi.StringRef(testCategory.Name),
-//				ChildTenancyIds:        recommendationChildTenancyIds,
+//				ChildTenancyIds:        pulumi.ToArray(recommendationChildTenancyIds),
 //				IncludeOrganization:    pulumi.BoolRef(recommendationIncludeOrganization),
 //				Name:                   pulumi.StringRef(recommendationName),
 //				State:                  pulumi.StringRef(recommendationState),

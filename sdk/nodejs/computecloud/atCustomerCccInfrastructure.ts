@@ -236,63 +236,63 @@ export interface AtCustomerCccInfrastructureState {
     /**
      * (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      */
-    cccUpgradeScheduleId?: pulumi.Input<string>;
+    cccUpgradeScheduleId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A message describing the current connection state in more detail.
      */
-    connectionDetails?: pulumi.Input<string>;
+    connectionDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      */
-    connectionState?: pulumi.Input<string>;
+    connectionState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    infrastructureInventories?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory>[]>;
+    infrastructureInventories?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory>[] | undefined>;
     /**
      * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    infrastructureNetworkConfigurations?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>[]>;
+    infrastructureNetworkConfigurations?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>[] | undefined>;
     /**
      * A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      */
-    provisioningFingerprint?: pulumi.Input<string>;
+    provisioningFingerprint?: pulumi.Input<string | undefined>;
     /**
      * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      */
-    provisioningPin?: pulumi.Input<string>;
+    provisioningPin?: pulumi.Input<string | undefined>;
     /**
      * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      */
-    shortName?: pulumi.Input<string>;
+    shortName?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Compute Cloud@Customer infrastructure.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
      *
@@ -300,23 +300,23 @@ export interface AtCustomerCccInfrastructureState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      */
-    upgradeInformations?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation>[]>;
+    upgradeInformations?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation>[] | undefined>;
 }
 
 /**
@@ -326,7 +326,7 @@ export interface AtCustomerCccInfrastructureArgs {
     /**
      * (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      */
-    cccUpgradeScheduleId?: pulumi.Input<string>;
+    cccUpgradeScheduleId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
      */
@@ -334,19 +334,19 @@ export interface AtCustomerCccInfrastructureArgs {
     /**
      * (Updatable) A message describing the current connection state in more detail.
      */
-    connectionDetails?: pulumi.Input<string>;
+    connectionDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      */
-    connectionState?: pulumi.Input<string>;
+    connectionState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
@@ -354,7 +354,7 @@ export interface AtCustomerCccInfrastructureArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
      *

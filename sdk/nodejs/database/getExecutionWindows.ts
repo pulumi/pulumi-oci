@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionWindows = oci.Database.getExecutionWindows({
+ * const testExecutionWindows = oci.database.getExecutionWindows({
  *     compartmentId: compartmentId,
  *     displayName: executionWindowDisplayName,
  *     executionResourceId: testResource.id,
@@ -100,7 +100,7 @@ export interface GetExecutionWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionWindows = oci.Database.getExecutionWindows({
+ * const testExecutionWindows = oci.database.getExecutionWindows({
  *     compartmentId: compartmentId,
  *     displayName: executionWindowDisplayName,
  *     executionResourceId: testResource.id,
@@ -130,14 +130,14 @@ export interface GetExecutionWindowsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given resource id exactly.
      */
-    executionResourceId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExecutionWindowsFilterArgs>[]>;
+    executionResourceId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExecutionWindowsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

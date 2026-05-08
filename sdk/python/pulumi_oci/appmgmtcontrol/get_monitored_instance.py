@@ -179,7 +179,7 @@ def get_monitored_instance(monitored_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=test_monitored_instance_oci_appmgmt_control_monitored_instance["id"])
+    test_monitored_instance = oci.appmgmtcontrol.get_monitored_instance(monitored_instance_id=test_monitored_instance_oci_appmgmt_control_monitored_instance["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_monitored_instance(monitored_instance_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_monitored_instance_output(monitored_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredInstanceResult]:
     """
     This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -215,7 +215,7 @@ def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=test_monitored_instance_oci_appmgmt_control_monitored_instance["id"])
+    test_monitored_instance = oci.appmgmtcontrol.get_monitored_instance(monitored_instance_id=test_monitored_instance_oci_appmgmt_control_monitored_instance["id"])
     ```
 
 

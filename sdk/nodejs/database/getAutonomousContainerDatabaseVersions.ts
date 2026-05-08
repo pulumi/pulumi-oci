@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseVersions = oci.Database.getAutonomousContainerDatabaseVersions({
+ * const testAutonomousContainerDatabaseVersions = oci.database.getAutonomousContainerDatabaseVersions({
  *     compartmentId: compartmentId,
  *     serviceComponent: autonomousContainerDatabaseVersionServiceComponent,
  * });
@@ -74,7 +74,7 @@ export interface GetAutonomousContainerDatabaseVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseVersions = oci.Database.getAutonomousContainerDatabaseVersions({
+ * const testAutonomousContainerDatabaseVersions = oci.database.getAutonomousContainerDatabaseVersions({
  *     compartmentId: compartmentId,
  *     serviceComponent: autonomousContainerDatabaseVersionServiceComponent,
  * });
@@ -97,7 +97,7 @@ export interface GetAutonomousContainerDatabaseVersionsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseVersionsFilterArgs>[] | undefined>;
     /**
      * The service component to use, either ADBD or EXACC.
      */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindow = oci.StackMonitoring.getMaintenanceWindow({
+ * const testMaintenanceWindow = oci.stackmonitoring.getMaintenanceWindow({
  *     maintenanceWindowId: testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetMaintenanceWindowResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindow = oci.StackMonitoring.getMaintenanceWindow({
+ * const testMaintenanceWindow = oci.stackmonitoring.getMaintenanceWindow({
  *     maintenanceWindowId: testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id,
  * });
  * ```

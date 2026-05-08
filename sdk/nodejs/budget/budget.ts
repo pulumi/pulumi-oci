@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBudget = new oci.budget.Budget("test_budget", {
- *     amount: budgetAmount,
+ *     amount: Number(budgetAmount),
  *     compartmentId: tenancyOcid,
  *     resetPeriod: budgetResetPeriod,
- *     budgetProcessingPeriodStartOffset: budgetBudgetProcessingPeriodStartOffset,
+ *     budgetProcessingPeriodStartOffset: Number(budgetBudgetProcessingPeriodStartOffset),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -259,77 +259,77 @@ export interface BudgetState {
     /**
      * The actual spend in currency for the current budget cycle.
      */
-    actualSpend?: pulumi.Input<number>;
+    actualSpend?: pulumi.Input<number | undefined>;
     /**
      * The total number of alert rules in the budget.
      */
-    alertRuleCount?: pulumi.Input<number>;
+    alertRuleCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
      */
-    amount?: pulumi.Input<number>;
+    amount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      */
-    budgetProcessingPeriodStartOffset?: pulumi.Input<number>;
+    budgetProcessingPeriodStartOffset?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the budget.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    endDate?: pulumi.Input<string>;
+    endDate?: pulumi.Input<string | undefined>;
     /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
-    forecastedSpend?: pulumi.Input<number>;
+    forecastedSpend?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
-    processingPeriodType?: pulumi.Input<string>;
+    processingPeriodType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      */
-    resetPeriod?: pulumi.Input<string>;
+    resetPeriod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    startDate?: pulumi.Input<string>;
+    startDate?: pulumi.Input<string | undefined>;
     /**
      * The current state of the budget.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
      * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
-    targetCompartmentId?: pulumi.Input<string>;
+    targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The type of target on which the budget is applied.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
      *
@@ -337,23 +337,23 @@ export interface BudgetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targets?: pulumi.Input<pulumi.Input<string>[]>;
+    targets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The time that the budget was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time that the budget spend was last computed.
      */
-    timeSpendComputed?: pulumi.Input<string>;
+    timeSpendComputed?: pulumi.Input<string | undefined>;
     /**
      * The time that the budget was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The version of the budget. Starts from 1 and increments by 1.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -367,7 +367,7 @@ export interface BudgetArgs {
     /**
      * (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      */
-    budgetProcessingPeriodStartOffset?: pulumi.Input<number>;
+    budgetProcessingPeriodStartOffset?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -375,27 +375,27 @@ export interface BudgetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the budget.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    endDate?: pulumi.Input<string>;
+    endDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
-    processingPeriodType?: pulumi.Input<string>;
+    processingPeriodType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      */
@@ -403,21 +403,21 @@ export interface BudgetArgs {
     /**
      * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    startDate?: pulumi.Input<string>;
+    startDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
      * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
-    targetCompartmentId?: pulumi.Input<string>;
+    targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The type of target on which the budget is applied.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
      *
@@ -425,5 +425,5 @@ export interface BudgetArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targets?: pulumi.Input<pulumi.Input<string>[]>;
+    targets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

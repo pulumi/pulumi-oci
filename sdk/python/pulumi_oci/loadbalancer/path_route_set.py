@@ -23,7 +23,7 @@ class PathRouteSetArgs:
     def __init__(__self__, *,
                  load_balancer_id: pulumi.Input[_builtins.str],
                  path_routes: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PathRouteSet resource.
 
@@ -62,24 +62,24 @@ class PathRouteSetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _PathRouteSetState:
     def __init__(__self__, *,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PathRouteSet resources.
 
@@ -98,47 +98,47 @@ class _PathRouteSetState:
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pathRoutes")
-    def path_routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]]:
+    def path_routes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]]:
         """
         (Updatable) The set of path route rules.
         """
         return pulumi.get(self, "path_routes")
 
     @path_routes.setter
-    def path_routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]]):
+    def path_routes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]]):
         pulumi.set(self, "path_routes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -148,9 +148,9 @@ class PathRouteSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -251,9 +251,9 @@ class PathRouteSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -281,10 +281,10 @@ class PathRouteSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            path_routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'PathRouteSet':
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'PathRouteSet':
         """
         Get an existing PathRouteSet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

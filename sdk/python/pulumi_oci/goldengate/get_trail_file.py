@@ -122,7 +122,7 @@ def get_trail_file(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_file = oci.GoldenGate.get_trail_file(deployment_id=test_deployment["id"],
+    test_trail_file = oci.goldengate.get_trail_file(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file_oci_golden_gate_trail_file["id"],
         display_name=trail_file_display_name)
     ```
@@ -146,9 +146,9 @@ def get_trail_file(deployment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         time_last_fetched=pulumi.get(__ret__, 'time_last_fetched'),
         trail_file_id=pulumi.get(__ret__, 'trail_file_id'))
-def get_trail_file_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          trail_file_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_trail_file_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          trail_file_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTrailFileResult]:
     """
     This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -161,7 +161,7 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_file = oci.GoldenGate.get_trail_file(deployment_id=test_deployment["id"],
+    test_trail_file = oci.goldengate.get_trail_file(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file_oci_golden_gate_trail_file["id"],
         display_name=trail_file_display_name)
     ```

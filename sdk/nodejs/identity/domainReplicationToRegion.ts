@@ -116,7 +116,7 @@ export interface DomainReplicationToRegionState {
     /**
      * The OCID of the domain
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
      *
@@ -124,7 +124,7 @@ export interface DomainReplicationToRegionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicaRegion?: pulumi.Input<string>;
+    replicaRegion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -142,5 +142,5 @@ export interface DomainReplicationToRegionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicaRegion?: pulumi.Input<string>;
+    replicaRegion?: pulumi.Input<string | undefined>;
 }

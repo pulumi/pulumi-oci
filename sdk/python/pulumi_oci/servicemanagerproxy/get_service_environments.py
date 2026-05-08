@@ -132,7 +132,7 @@ def get_service_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=compartment_id,
+    test_service_environments = oci.servicemanagerproxy.get_service_environments(compartment_id=compartment_id,
         display_name=service_environment_display_name,
         service_environment_id=test_service_environment["id"],
         service_environment_type=service_environment_service_environment_type)
@@ -163,11 +163,11 @@ def get_service_environments(compartment_id: Optional[_builtins.str] = None,
         service_environment_collections=pulumi.get(__ret__, 'service_environment_collections'),
         service_environment_id=pulumi.get(__ret__, 'service_environment_id'),
         service_environment_type=pulumi.get(__ret__, 'service_environment_type'))
-def get_service_environments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
-                                    service_environment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    service_environment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_environments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
+                                    service_environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    service_environment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:
     """
     This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
@@ -181,7 +181,7 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=compartment_id,
+    test_service_environments = oci.servicemanagerproxy.get_service_environments(compartment_id=compartment_id,
         display_name=service_environment_display_name,
         service_environment_id=test_service_environment["id"],
         service_environment_type=service_environment_service_environment_type)

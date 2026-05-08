@@ -115,7 +115,7 @@ def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_recommended_scheduled_actions = oci.Database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
+    test_scheduling_policy_recommended_scheduled_actions = oci.database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
         scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_policy_target_resource_id=test_resource["id"])
     ```
@@ -140,10 +140,10 @@ def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequen
         recommended_scheduled_actions_collections=pulumi.get(__ret__, 'recommended_scheduled_actions_collections'),
         scheduling_policy_id=pulumi.get(__ret__, 'scheduling_policy_id'),
         scheduling_policy_target_resource_id=pulumi.get(__ret__, 'scheduling_policy_target_resource_id'))
-def get_scheduling_policy_recommended_scheduled_actions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict']]]]] = None,
-                                                               plan_intent: Optional[pulumi.Input[_builtins.str]] = None,
-                                                               scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                               scheduling_policy_target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduling_policy_recommended_scheduled_actions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict']]]]] = None,
+                                                               plan_intent: pulumi.Input[Optional[_builtins.str]] = None,
+                                                               scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                               scheduling_policy_target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPolicyRecommendedScheduledActionsResult]:
     """
     This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
@@ -156,7 +156,7 @@ def get_scheduling_policy_recommended_scheduled_actions_output(filters: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_recommended_scheduled_actions = oci.Database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
+    test_scheduling_policy_recommended_scheduled_actions = oci.database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
         scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_policy_target_resource_id=test_resource["id"])
     ```

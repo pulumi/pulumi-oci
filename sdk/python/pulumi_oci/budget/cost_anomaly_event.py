@@ -20,9 +20,9 @@ __all__ = ['CostAnomalyEventArgs', 'CostAnomalyEvent']
 class CostAnomalyEventArgs:
     def __init__(__self__, *,
                  cost_anomaly_event_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 feedback_response: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CostAnomalyEvent resource.
 
@@ -57,31 +57,31 @@ class CostAnomalyEventArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="feedbackResponse")
-    def feedback_response(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feedback_response(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The feedback response for the cost anomaly event.
         """
         return pulumi.get(self, "feedback_response")
 
     @feedback_response.setter
-    def feedback_response(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feedback_response(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feedback_response", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
 
@@ -92,31 +92,31 @@ class CostAnomalyEventArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _CostAnomalyEventState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_anomaly_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_anomaly_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_impact: Optional[pulumi.Input[_builtins.float]] = None,
-                 cost_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_monitor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cost_variance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 feedback_response: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 root_cause_detail: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_resource_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_anomaly_event_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_anomaly_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_impact: pulumi.Input[Optional[_builtins.float]] = None,
+                 cost_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_monitor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cost_variance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 root_cause_detail: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_resource_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_anomaly_event_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CostAnomalyEvent resources.
 
@@ -182,127 +182,127 @@ class _CostAnomalyEventState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="costAnomalyEventId")
-    def cost_anomaly_event_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_anomaly_event_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique costAnomalyEventId OCID.
         """
         return pulumi.get(self, "cost_anomaly_event_id")
 
     @cost_anomaly_event_id.setter
-    def cost_anomaly_event_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_anomaly_event_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_anomaly_event_id", value)
 
     @_builtins.property
     @pulumi.getter(name="costAnomalyName")
-    def cost_anomaly_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_anomaly_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the associated cost monitor.
         """
         return pulumi.get(self, "cost_anomaly_name")
 
     @cost_anomaly_name.setter
-    def cost_anomaly_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_anomaly_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_anomaly_name", value)
 
     @_builtins.property
     @pulumi.getter(name="costImpact")
-    def cost_impact(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cost_impact(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The cost impact of the detected anomaly.
         """
         return pulumi.get(self, "cost_impact")
 
     @cost_impact.setter
-    def cost_impact(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cost_impact(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cost_impact", value)
 
     @_builtins.property
     @pulumi.getter(name="costMonitorId")
-    def cost_monitor_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_monitor_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the associated cost monitor.
         """
         return pulumi.get(self, "cost_monitor_id")
 
     @cost_monitor_id.setter
-    def cost_monitor_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_monitor_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_monitor_id", value)
 
     @_builtins.property
     @pulumi.getter(name="costMonitorName")
-    def cost_monitor_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_monitor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the associated cost monitor.
         """
         return pulumi.get(self, "cost_monitor_name")
 
     @cost_monitor_name.setter
-    def cost_monitor_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_monitor_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_monitor_name", value)
 
     @_builtins.property
     @pulumi.getter(name="costMonitorType")
-    def cost_monitor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_monitor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of cost monitor
         """
         return pulumi.get(self, "cost_monitor_type")
 
     @cost_monitor_type.setter
-    def cost_monitor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_monitor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_monitor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="costVariancePercentage")
-    def cost_variance_percentage(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cost_variance_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The cost variance percentage of the detected anomaly.
         """
         return pulumi.get(self, "cost_variance_percentage")
 
     @cost_variance_percentage.setter
-    def cost_variance_percentage(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cost_variance_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cost_variance_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="feedbackResponse")
-    def feedback_response(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feedback_response(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The feedback response for the cost anomaly event.
         """
         return pulumi.get(self, "feedback_response")
 
     @feedback_response.setter
-    def feedback_response(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feedback_response(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feedback_response", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
 
@@ -313,91 +313,91 @@ class _CostAnomalyEventState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="rootCauseDetail")
-    def root_cause_detail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_cause_detail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The root cause details of the cost anomaly event.
         """
         return pulumi.get(self, "root_cause_detail")
 
     @root_cause_detail.setter
-    def root_cause_detail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_cause_detail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_cause_detail", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the cost anomaly event.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceFilter")
-    def target_resource_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
         """
         return pulumi.get(self, "target_resource_filter")
 
     @target_resource_filter.setter
-    def target_resource_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAnomalyEventDate")
-    def time_anomaly_event_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_anomaly_event_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The event date of the anomaly event.
         """
         return pulumi.get(self, "time_anomaly_event_date")
 
     @time_anomaly_event_date.setter
-    def time_anomaly_event_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_anomaly_event_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_anomaly_event_date", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The created time of the cost anomaly event.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The updated time of the cost anomaly event.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -407,10 +407,10 @@ class CostAnomalyEvent(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cost_anomaly_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 feedback_response: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
@@ -478,10 +478,10 @@ class CostAnomalyEvent(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cost_anomaly_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 feedback_response: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -521,24 +521,24 @@ class CostAnomalyEvent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_anomaly_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_anomaly_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_impact: Optional[pulumi.Input[_builtins.float]] = None,
-            cost_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_monitor_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cost_variance_percentage: Optional[pulumi.Input[_builtins.float]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            feedback_response: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            root_cause_detail: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_resource_filter: Optional[pulumi.Input[_builtins.str]] = None,
-            time_anomaly_event_date: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'CostAnomalyEvent':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_anomaly_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_impact: pulumi.Input[Optional[_builtins.float]] = None,
+            cost_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_monitor_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_variance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            root_cause_detail: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_resource_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            time_anomaly_event_date: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'CostAnomalyEvent':
         """
         Get an existing CostAnomalyEvent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

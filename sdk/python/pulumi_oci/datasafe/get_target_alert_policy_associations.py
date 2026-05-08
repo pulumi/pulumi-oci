@@ -222,16 +222,16 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_target_alert_policy_associations_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                alert_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetAlertPolicyAssociationsFilterArgs', 'GetTargetAlertPolicyAssociationsFilterArgsDict']]]]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                target_alert_policy_association_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                alert_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetAlertPolicyAssociationsFilterArgs', 'GetTargetAlertPolicyAssociationsFilterArgsDict']]]]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                target_alert_policy_association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
     """
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.

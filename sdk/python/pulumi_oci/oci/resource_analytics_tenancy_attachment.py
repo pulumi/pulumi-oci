@@ -21,7 +21,7 @@ class ResourceAnalyticsTenancyAttachmentArgs:
     def __init__(__self__, *,
                  resource_analytics_instance_id: pulumi.Input[_builtins.str],
                  tenancy_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResourceAnalyticsTenancyAttachment resource.
 
@@ -68,29 +68,29 @@ class ResourceAnalyticsTenancyAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the tenancy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 
 @pulumi.input_type
 class _ResourceAnalyticsTenancyAttachmentState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_reporting_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsTenancyAttachment resources.
 
@@ -129,79 +129,79 @@ class _ResourceAnalyticsTenancyAttachmentState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the tenancy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isReportingTenancy")
-    def is_reporting_tenancy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reporting_tenancy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
         """
         return pulumi.get(self, "is_reporting_tenancy")
 
     @is_reporting_tenancy.setter
-    def is_reporting_tenancy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reporting_tenancy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reporting_tenancy", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
-    def resource_analytics_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_analytics_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
         """
         return pulumi.get(self, "resource_analytics_instance_id")
 
     @resource_analytics_instance_id.setter
-    def resource_analytics_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_analytics_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_analytics_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the TenancyAttachment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
 
@@ -212,31 +212,31 @@ class _ResourceAnalyticsTenancyAttachmentState:
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -246,9 +246,9 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
@@ -339,9 +339,9 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -374,15 +374,15 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            is_reporting_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ResourceAnalyticsTenancyAttachment':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ResourceAnalyticsTenancyAttachment':
         """
         Get an existing ResourceAnalyticsTenancyAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

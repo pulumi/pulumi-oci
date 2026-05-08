@@ -25,13 +25,13 @@ class OnPremiseVantagePointWorkerArgs:
                  on_premise_vantage_point_id: pulumi.Input[_builtins.str],
                  resource_principal_token_public_key: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.str],
-                 configuration_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 worker_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OnPremiseVantagePointWorker resource.
 
@@ -120,79 +120,79 @@ class OnPremiseVantagePointWorkerArgs:
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Configuration details of the On-premise VP worker.
         """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
-    def configuration_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Priority of the On-premise VP worker to schedule monitors.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enables or disables the On-premise VP worker.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="workerType")
-    def worker_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def worker_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the On-premise VP worker.
 
@@ -203,35 +203,35 @@ class OnPremiseVantagePointWorkerArgs:
         return pulumi.get(self, "worker_type")
 
     @worker_type.setter
-    def worker_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def worker_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "worker_type", value)
 
 
 @pulumi.input_type
 class _OnPremiseVantagePointWorkerState:
     def __init__(__self__, *,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 geo_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]] = None,
-                 monitor_lists: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 opvp_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 opvp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_principal_token_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_sync_up: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_details: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]] = None,
-                 worker_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 geo_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_infos: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]] = None,
+                 monitor_lists: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 opvp_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 opvp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_principal_token_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_sync_up: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_details: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]] = None,
+                 worker_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OnPremiseVantagePointWorker resources.
 
@@ -309,259 +309,259 @@ class _OnPremiseVantagePointWorkerState:
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Configuration details of the On-premise VP worker.
         """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
-    def configuration_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="geoInfo")
-    def geo_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def geo_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Geographical information of the On-premise VP worker.
         """
         return pulumi.get(self, "geo_info")
 
     @geo_info.setter
-    def geo_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def geo_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "geo_info", value)
 
     @_builtins.property
     @pulumi.getter(name="identityInfos")
-    def identity_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]]:
+    def identity_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]]:
         """
         Domain details of the On-premise VP worker.
         """
         return pulumi.get(self, "identity_infos")
 
     @identity_infos.setter
-    def identity_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]]):
+    def identity_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]]):
         pulumi.set(self, "identity_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorLists")
-    def monitor_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]]:
+    def monitor_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]]:
         """
         Monitors list assigned to the On-premise VP worker.
         """
         return pulumi.get(self, "monitor_lists")
 
     @monitor_lists.setter
-    def monitor_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]]):
+    def monitor_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]]):
         pulumi.set(self, "monitor_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onPremiseVantagePointId")
-    def on_premise_vantage_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_premise_vantage_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the On-premise vantage point.
         """
         return pulumi.get(self, "on_premise_vantage_point_id")
 
     @on_premise_vantage_point_id.setter
-    def on_premise_vantage_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_premise_vantage_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_premise_vantage_point_id", value)
 
     @_builtins.property
     @pulumi.getter(name="opvpId")
-    def opvp_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opvp_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
         """
         return pulumi.get(self, "opvp_id")
 
     @opvp_id.setter
-    def opvp_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opvp_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opvp_id", value)
 
     @_builtins.property
     @pulumi.getter(name="opvpName")
-    def opvp_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opvp_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         On-premise vantage point name.
         """
         return pulumi.get(self, "opvp_name")
 
     @opvp_name.setter
-    def opvp_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opvp_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opvp_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Priority of the On-premise VP worker to schedule monitors.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePrincipalTokenPublicKey")
-    def resource_principal_token_public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_principal_token_public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         public key for resource Principal Token based validation to be used in further calls.
         """
         return pulumi.get(self, "resource_principal_token_public_key")
 
     @resource_principal_token_public_key.setter
-    def resource_principal_token_public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_principal_token_public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_principal_token_public_key", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeId")
-    def runtime_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runtime_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The runtime assigned id of the On-premise VP worker.
         """
         return pulumi.get(self, "runtime_id")
 
     @runtime_id.setter
-    def runtime_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runtime_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runtime_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enables or disables the On-premise VP worker.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastSyncUp")
-    def time_last_sync_up(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_sync_up(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_last_sync_up")
 
     @time_last_sync_up.setter
-    def time_last_sync_up(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_sync_up(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_sync_up", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image version of the On-premise VP worker.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDetails")
-    def version_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]]:
+    def version_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]]:
         """
         Image version details of the On-premise VP worker.
         """
         return pulumi.get(self, "version_details")
 
     @version_details.setter
-    def version_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]]):
+    def version_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]]]):
         pulumi.set(self, "version_details", value)
 
     @_builtins.property
     @pulumi.getter(name="workerType")
-    def worker_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def worker_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the On-premise VP worker.
 
@@ -572,7 +572,7 @@ class _OnPremiseVantagePointWorkerState:
         return pulumi.get(self, "worker_type")
 
     @worker_type.setter
-    def worker_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def worker_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "worker_type", value)
 
 
@@ -582,17 +582,17 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_principal_token_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_principal_token_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 worker_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -621,7 +621,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=on_premise_vantage_point_worker_priority,
+            priority=int(on_premise_vantage_point_worker_priority),
             status=on_premise_vantage_point_worker_status,
             worker_type=on_premise_vantage_point_worker_worker_type)
         ```
@@ -686,7 +686,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=on_premise_vantage_point_worker_priority,
+            priority=int(on_premise_vantage_point_worker_priority),
             status=on_premise_vantage_point_worker_status,
             worker_type=on_premise_vantage_point_worker_worker_type)
         ```
@@ -715,17 +715,17 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_principal_token_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_principal_token_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 worker_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -775,28 +775,28 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_details: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            geo_info: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]]] = None,
-            monitor_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-            opvp_id: Optional[pulumi.Input[_builtins.str]] = None,
-            opvp_name: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_principal_token_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            runtime_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_sync_up: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            version_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict']]]]] = None,
-            worker_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'OnPremiseVantagePointWorker':
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            geo_info: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]]] = None,
+            monitor_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            opvp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            opvp_name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_principal_token_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_sync_up: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict']]]]] = None,
+            worker_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'OnPremiseVantagePointWorker':
         """
         Get an existing OnPremiseVantagePointWorker resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

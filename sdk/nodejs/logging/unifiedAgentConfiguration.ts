@@ -166,51 +166,51 @@ export interface UnifiedAgentConfigurationState {
     /**
      * (Updatable) The OCID of the compartment that the resource belongs to.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * State of unified agent service configuration.
      */
-    configurationState?: pulumi.Input<string>;
+    configurationState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Groups using the configuration.
      */
-    groupAssociation?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationGroupAssociation>;
+    groupAssociation?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationGroupAssociation | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Top level Unified Agent service configuration object.
      */
-    serviceConfiguration?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfiguration>;
+    serviceConfiguration?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfiguration | undefined>;
     /**
      * The pipeline state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time the resource was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time the resource was last modified.
      */
-    timeLastModified?: pulumi.Input<string>;
+    timeLastModified?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -224,7 +224,7 @@ export interface UnifiedAgentConfigurationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
@@ -236,11 +236,11 @@ export interface UnifiedAgentConfigurationArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Groups using the configuration.
      */
-    groupAssociation?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationGroupAssociation>;
+    groupAssociation?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationGroupAssociation | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */

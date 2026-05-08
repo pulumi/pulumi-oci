@@ -357,7 +357,7 @@ def get_media_asset(media_asset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
+    test_media_asset = oci.mediaservices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
     ```
 
 
@@ -395,7 +395,7 @@ def get_media_asset(media_asset_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_media_asset_output(media_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_media_asset_output(media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaAssetResult]:
     """
     This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
@@ -408,7 +408,7 @@ def get_media_asset_output(media_asset_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
+    test_media_asset = oci.mediaservices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
     ```
 
 

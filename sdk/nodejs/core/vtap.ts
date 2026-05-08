@@ -39,8 +39,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isVtapEnabled: vtapIsVtapEnabled,
- *     maxPacketSize: vtapMaxPacketSize,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
+ *     maxPacketSize: Number(vtapMaxPacketSize),
  *     sourcePrivateEndpointIp: vtapSourcePrivateEndpointIp,
  *     sourcePrivateEndpointSubnetId: testSubnet.id,
  *     sourceType: vtapSourceType,
@@ -261,85 +261,85 @@ export interface VtapState {
     /**
      * (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    captureFilterId?: pulumi.Input<string>;
+    captureFilterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
      */
-    encapsulationProtocol?: pulumi.Input<string>;
+    encapsulationProtocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
      * * `TRUE` directs the VTAP to start mirroring traffic.
      * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
-    isVtapEnabled?: pulumi.Input<boolean>;
+    isVtapEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The VTAP's current running state.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum size of the packets to be included in the filter.
      */
-    maxPacketSize?: pulumi.Input<number>;
+    maxPacketSize?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      */
-    sourceId?: pulumi.Input<string>;
+    sourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The IP Address of the source private endpoint.
      */
-    sourcePrivateEndpointIp?: pulumi.Input<string>;
+    sourcePrivateEndpointIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      */
-    sourcePrivateEndpointSubnetId?: pulumi.Input<string>;
+    sourcePrivateEndpointSubnetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The source type for the VTAP.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * The VTAP's administrative lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The IP address of the destination resource where mirrored packets are sent.
      */
-    targetIp?: pulumi.Input<string>;
+    targetIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target type for the VTAP.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      */
-    trafficMode?: pulumi.Input<string>;
+    trafficMode?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
      *
@@ -347,7 +347,7 @@ export interface VtapState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vxlanNetworkIdentifier?: pulumi.Input<string>;
+    vxlanNetworkIdentifier?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -365,29 +365,29 @@ export interface VtapArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
      */
-    encapsulationProtocol?: pulumi.Input<string>;
+    encapsulationProtocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
      * * `TRUE` directs the VTAP to start mirroring traffic.
      * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
-    isVtapEnabled?: pulumi.Input<boolean>;
+    isVtapEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The maximum size of the packets to be included in the filter.
      */
-    maxPacketSize?: pulumi.Input<number>;
+    maxPacketSize?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      */
@@ -395,31 +395,31 @@ export interface VtapArgs {
     /**
      * (Updatable) The IP Address of the source private endpoint.
      */
-    sourcePrivateEndpointIp?: pulumi.Input<string>;
+    sourcePrivateEndpointIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      */
-    sourcePrivateEndpointSubnetId?: pulumi.Input<string>;
+    sourcePrivateEndpointSubnetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The source type for the VTAP.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The IP address of the destination resource where mirrored packets are sent.
      */
-    targetIp?: pulumi.Input<string>;
+    targetIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target type for the VTAP.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      */
-    trafficMode?: pulumi.Input<string>;
+    trafficMode?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      */
@@ -431,5 +431,5 @@ export interface VtapArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vxlanNetworkIdentifier?: pulumi.Input<string>;
+    vxlanNetworkIdentifier?: pulumi.Input<string | undefined>;
 }

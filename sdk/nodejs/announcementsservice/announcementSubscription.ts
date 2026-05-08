@@ -206,39 +206,39 @@ export interface AnnouncementSubscriptionState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the announcement subscription. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
      */
-    filterGroups?: pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroups>;
+    filterGroups?: pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroups | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      */
-    onsTopicId?: pulumi.Input<string>;
+    onsTopicId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      *
@@ -246,23 +246,23 @@ export interface AnnouncementSubscriptionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    preferredTimeZone?: pulumi.Input<string>;
+    preferredTimeZone?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the announcement subscription.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -276,11 +276,11 @@ export interface AnnouncementSubscriptionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the announcement subscription. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -288,11 +288,11 @@ export interface AnnouncementSubscriptionArgs {
     /**
      * A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
      */
-    filterGroups?: pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroups>;
+    filterGroups?: pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroups | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      */
@@ -300,7 +300,7 @@ export interface AnnouncementSubscriptionArgs {
     /**
      * (Updatable) (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      *
@@ -308,5 +308,5 @@ export interface AnnouncementSubscriptionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    preferredTimeZone?: pulumi.Input<string>;
+    preferredTimeZone?: pulumi.Input<string | undefined>;
 }

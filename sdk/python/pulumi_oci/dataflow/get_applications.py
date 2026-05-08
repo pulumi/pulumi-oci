@@ -147,7 +147,7 @@ def get_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=compartment_id,
+    test_applications = oci.dataflow.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         display_name_starts_with=application_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],
@@ -180,12 +180,12 @@ def get_applications(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
         spark_version=pulumi.get(__ret__, 'spark_version'))
-def get_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name_starts_with: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationsFilterArgs', 'GetApplicationsFilterArgsDict']]]]] = None,
-                            owner_principal_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            spark_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_applications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApplicationsFilterArgs', 'GetApplicationsFilterArgsDict']]]]] = None,
+                            owner_principal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            spark_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationsResult]:
     """
     This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
@@ -198,7 +198,7 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=compartment_id,
+    test_applications = oci.dataflow.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         display_name_starts_with=application_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],

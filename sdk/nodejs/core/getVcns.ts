@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcns = oci.Core.getVcns({
+ * const testVcns = oci.core.getVcns({
  *     compartmentId: compartmentId,
  *     displayName: vcnDisplayName,
  *     state: vcnState,
@@ -98,7 +98,7 @@ export interface GetVcnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcns = oci.Core.getVcns({
+ * const testVcns = oci.core.getVcns({
  *     compartmentId: compartmentId,
  *     displayName: vcnDisplayName,
  *     state: vcnState,
@@ -126,10 +126,10 @@ export interface GetVcnsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVcnsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVcnsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

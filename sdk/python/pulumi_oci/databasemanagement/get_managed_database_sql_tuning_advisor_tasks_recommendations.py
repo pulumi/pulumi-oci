@@ -139,7 +139,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
@@ -172,12 +172,12 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
         sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
         sql_tuning_advisor_task_recommendation_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_recommendation_collections'))
-def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(execution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]]]] = None,
-                                                                         managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                         sql_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                         sql_tuning_advisor_task_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(execution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]]]] = None,
+                                                                         managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                         opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                         sql_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                         sql_tuning_advisor_task_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult]:
     """
     This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
@@ -191,7 +191,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(executi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],

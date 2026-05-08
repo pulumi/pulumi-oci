@@ -115,9 +115,9 @@ def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rules = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rules = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_tunnel_inspection_rule_display_name,
-        tunnel_inspection_rule_priority_order=network_firewall_policy_tunnel_inspection_rule_tunnel_inspection_rule_priority_order)
+        tunnel_inspection_rule_priority_order=int(network_firewall_policy_tunnel_inspection_rule_tunnel_inspection_rule_priority_order))
     ```
 
 
@@ -140,10 +140,10 @@ def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[_
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         tunnel_inspection_rule_priority_order=pulumi.get(__ret__, 'tunnel_inspection_rule_priority_order'),
         tunnel_inspection_rule_summary_collections=pulumi.get(__ret__, 'tunnel_inspection_rule_summary_collections'))
-def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]]]] = None,
-                                                               network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                               tunnel_inspection_rule_priority_order: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]]]] = None,
+                                                               network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                               tunnel_inspection_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRulesResult]:
     """
     This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
@@ -156,9 +156,9 @@ def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rules = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rules = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_tunnel_inspection_rule_display_name,
-        tunnel_inspection_rule_priority_order=network_firewall_policy_tunnel_inspection_rule_tunnel_inspection_rule_priority_order)
+        tunnel_inspection_rule_priority_order=int(network_firewall_policy_tunnel_inspection_rule_tunnel_inspection_rule_priority_order))
     ```
 
 

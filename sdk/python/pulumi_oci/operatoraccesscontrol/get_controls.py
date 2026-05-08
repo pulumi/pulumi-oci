@@ -134,7 +134,7 @@ def get_controls(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=compartment_id,
+    test_operator_controls = oci.operatoraccesscontrol.get_controls(compartment_id=compartment_id,
         display_name=operator_control_display_name,
         resource_type=operator_control_resource_type,
         state=operator_control_state)
@@ -163,11 +163,11 @@ def get_controls(compartment_id: Optional[_builtins.str] = None,
         operator_control_collections=pulumi.get(__ret__, 'operator_control_collections'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_controls_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict']]]]] = None,
-                        resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_controls_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict']]]]] = None,
+                        resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlsResult]:
     """
     This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
@@ -180,7 +180,7 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=compartment_id,
+    test_operator_controls = oci.operatoraccesscontrol.get_controls(compartment_id=compartment_id,
         display_name=operator_control_display_name,
         resource_type=operator_control_resource_type,
         state=operator_control_state)

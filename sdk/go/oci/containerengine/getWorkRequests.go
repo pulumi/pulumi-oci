@@ -34,7 +34,7 @@ import (
 //				ClusterId:     pulumi.StringRef(testCluster.Id),
 //				ResourceId:    pulumi.StringRef(testResource.Id),
 //				ResourceType:  pulumi.StringRef(workRequestResourceType),
-//				Statuses:      workRequestStatus,
+//				Statuses:      pulumi.ToArray(workRequestStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

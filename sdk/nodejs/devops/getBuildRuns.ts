@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildRuns = oci.DevOps.getBuildRuns({
+ * const testBuildRuns = oci.devops.getBuildRuns({
  *     buildPipelineId: testBuildPipeline.id,
  *     compartmentId: compartmentId,
  *     displayName: buildRunDisplayName,
@@ -117,7 +117,7 @@ export interface GetBuildRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildRuns = oci.DevOps.getBuildRuns({
+ * const testBuildRuns = oci.devops.getBuildRuns({
  *     buildPipelineId: testBuildPipeline.id,
  *     compartmentId: compartmentId,
  *     displayName: buildRunDisplayName,
@@ -148,26 +148,26 @@ export interface GetBuildRunsOutputArgs {
     /**
      * Unique build pipeline identifier.
      */
-    buildPipelineId?: pulumi.Input<string>;
+    buildPipelineId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetBuildRunsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetBuildRunsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single resource by ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * unique project identifier
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only build runs that matches the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

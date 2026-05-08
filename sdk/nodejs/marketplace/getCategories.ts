@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Marketplace.getCategories({
+ * const testCategories = oci.marketplace.getCategories({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetCategoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Marketplace.getCategories({
+ * const testCategories = oci.marketplace.getCategories({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -91,6 +91,6 @@ export interface GetCategoriesOutputArgs {
     /**
      * The unique identifier for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetCategoriesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetCategoriesFilterArgs>[] | undefined>;
 }

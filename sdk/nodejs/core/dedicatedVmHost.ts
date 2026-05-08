@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
  *     placementConstraintDetails: {
  *         type: dedicatedVmHostPlacementConstraintDetailsType,
  *         computeBareMetalHostId: testComputeBareMetalHost.id,
@@ -227,32 +227,32 @@ export interface DedicatedVmHostState {
     /**
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
-    capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[]>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
+    capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[] | undefined>;
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
      */
-    capacityConfig?: pulumi.Input<string>;
+    capacityConfig?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      */
-    computeBareMetalHostId?: pulumi.Input<string>;
+    computeBareMetalHostId?: pulumi.Input<string | undefined>;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
      */
-    dedicatedVmHostShape?: pulumi.Input<string>;
+    dedicatedVmHostShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
      *
@@ -260,43 +260,43 @@ export interface DedicatedVmHostState {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
      */
-    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The details for providing placement constraints.
      */
-    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
+    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails | undefined>;
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */
-    remainingMemoryInGbs?: pulumi.Input<number>;
+    remainingMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * The current available OCPUs of the dedicated VM host.
      */
-    remainingOcpus?: pulumi.Input<number>;
+    remainingOcpus?: pulumi.Input<number | undefined>;
     /**
      * The current state of the dedicated VM host.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */
-    totalMemoryInGbs?: pulumi.Input<number>;
+    totalMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * The current total OCPUs of the dedicated VM host.
      */
-    totalOcpus?: pulumi.Input<number>;
+    totalOcpus?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -310,7 +310,7 @@ export interface DedicatedVmHostArgs {
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
      */
-    capacityConfig?: pulumi.Input<string>;
+    capacityConfig?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
@@ -322,11 +322,11 @@ export interface DedicatedVmHostArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
      *
@@ -334,17 +334,17 @@ export interface DedicatedVmHostArgs {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
      */
-    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The details for providing placement constraints.
      */
-    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
+    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails | undefined>;
 }

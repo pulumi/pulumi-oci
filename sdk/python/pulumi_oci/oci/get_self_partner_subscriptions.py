@@ -129,9 +129,9 @@ def get_self_partner_subscriptions(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'),
         listing_subscriptions_collections=pulumi.get(__ret__, 'listing_subscriptions_collections'))
-def get_self_partner_subscriptions_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSelfPartnerSubscriptionsFilterArgs', 'GetSelfPartnerSubscriptionsFilterArgsDict']]]]] = None,
-                                          listing_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_self_partner_subscriptions_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSelfPartnerSubscriptionsFilterArgs', 'GetSelfPartnerSubscriptionsFilterArgsDict']]]]] = None,
+                                          listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfPartnerSubscriptionsResult]:
     """
     This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.

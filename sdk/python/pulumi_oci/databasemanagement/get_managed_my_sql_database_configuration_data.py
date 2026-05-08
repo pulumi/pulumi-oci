@@ -95,7 +95,7 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_configuration_data = oci.databasemanagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Un
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_configuration_data_collections=pulumi.get(__ret__, 'my_sql_configuration_data_collections'))
-def get_managed_my_sql_database_configuration_data_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict']]]]] = None,
-                                                          managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_configuration_data_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict']]]]] = None,
+                                                          managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseConfigurationDataResult]:
     """
     This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
@@ -126,7 +126,7 @@ def get_managed_my_sql_database_configuration_data_output(filters: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_configuration_data = oci.databasemanagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

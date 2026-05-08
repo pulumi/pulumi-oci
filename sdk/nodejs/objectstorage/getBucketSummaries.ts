@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuckets = oci.ObjectStorage.getBucketSummaries({
+ * const testBuckets = oci.objectstorage.getBucketSummaries({
  *     compartmentId: compartmentId,
  *     namespace: bucketNamespace,
  * });
@@ -96,7 +96,7 @@ export interface GetBucketSummariesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuckets = oci.ObjectStorage.getBucketSummaries({
+ * const testBuckets = oci.objectstorage.getBucketSummaries({
  *     compartmentId: compartmentId,
  *     namespace: bucketNamespace,
  * });
@@ -119,7 +119,7 @@ export interface GetBucketSummariesOutputArgs {
      * The ID of the compartment in which to list buckets.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetBucketSummariesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetBucketSummariesFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */

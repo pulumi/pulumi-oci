@@ -25,17 +25,17 @@ class InstanceArgs:
                  object_storage_namespace: pulumi.Input[_builtins.str],
                  tenancy_id: pulumi.Input[_builtins.str],
                  tenancy_name: pulumi.Input[_builtins.str],
-                 add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_usage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None):
+                 add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -164,127 +164,127 @@ class InstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="addOnFeatures")
-    def add_on_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def add_on_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) a list of add-on features for the ocm instance
         """
         return pulumi.get(self, "add_on_features")
 
     @add_on_features.setter
-    def add_on_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def add_on_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "add_on_features", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OceInstance description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="drRegion")
-    def dr_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dr_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) disaster recovery paired ragion name
         """
         return pulumi.get(self, "dr_region")
 
     @dr_region.setter
-    def dr_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dr_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dr_region", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceAccessType")
-    def instance_access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flag indicating whether the instance access is private or public
         """
         return pulumi.get(self, "instance_access_type")
 
     @instance_access_type.setter
-    def instance_access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_access_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceLicenseType")
-    def instance_license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
         """
         return pulumi.get(self, "instance_license_type")
 
     @instance_license_type.setter
-    def instance_license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_license_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceUsageType")
-    def instance_usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_usage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Instance type based on its usage
         """
         return pulumi.get(self, "instance_usage_type")
 
     @instance_usage_type.setter
-    def instance_usage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_usage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_usage_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OceInstance Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeSchedule")
-    def upgrade_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         """
         return pulumi.get(self, "upgrade_schedule")
 
     @upgrade_schedule.setter
-    def upgrade_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="wafPrimaryDomain")
-    def waf_primary_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def waf_primary_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
 
@@ -295,39 +295,39 @@ class InstanceArgs:
         return pulumi.get(self, "waf_primary_domain")
 
     @waf_primary_domain.setter
-    def waf_primary_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def waf_primary_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "waf_primary_domain", value)
 
 
 @pulumi.input_type
 class _InstanceState:
     def __init__(__self__, *,
-                 add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 admin_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_tenancy: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_usage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None):
+                 add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_tenancy: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
 
@@ -417,307 +417,307 @@ class _InstanceState:
 
     @_builtins.property
     @pulumi.getter(name="addOnFeatures")
-    def add_on_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def add_on_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) a list of add-on features for the ocm instance
         """
         return pulumi.get(self, "add_on_features")
 
     @add_on_features.setter
-    def add_on_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def add_on_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "add_on_features", value)
 
     @_builtins.property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Admin Email for Notification
         """
         return pulumi.get(self, "admin_email")
 
     @admin_email.setter
-    def admin_email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_email", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OceInstance description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="drRegion")
-    def dr_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dr_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) disaster recovery paired ragion name
         """
         return pulumi.get(self, "dr_region")
 
     @dr_region.setter
-    def dr_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dr_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dr_region", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique GUID identifier that is immutable on creation
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identity Cloud Service access token identifying a stripe and service administrator user
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsTenancy")
-    def idcs_tenancy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_tenancy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS Tenancy Identifier
         """
         return pulumi.get(self, "idcs_tenancy")
 
     @idcs_tenancy.setter
-    def idcs_tenancy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_tenancy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_tenancy", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceAccessType")
-    def instance_access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flag indicating whether the instance access is private or public
         """
         return pulumi.get(self, "instance_access_type")
 
     @instance_access_type.setter
-    def instance_access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_access_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceLicenseType")
-    def instance_license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
         """
         return pulumi.get(self, "instance_license_type")
 
     @instance_license_type.setter
-    def instance_license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_license_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceUsageType")
-    def instance_usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_usage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Instance type based on its usage
         """
         return pulumi.get(self, "instance_usage_type")
 
     @instance_usage_type.setter
-    def instance_usage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_usage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_usage_type", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details of the current state of the instance lifecycle
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OceInstance Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageNamespace")
-    def object_storage_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Object Storage Namespace of Tenancy
         """
         return pulumi.get(self, "object_storage_namespace")
 
     @object_storage_namespace.setter
-    def object_storage_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def service(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def service(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the instance lifecycle.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
-    def state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_message", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy Identifier
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyName")
-    def tenancy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy Name
         """
         return pulumi.get(self, "tenancy_name")
 
     @tenancy_name.setter
-    def tenancy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the OceInstance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the OceInstance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeSchedule")
-    def upgrade_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         """
         return pulumi.get(self, "upgrade_schedule")
 
     @upgrade_schedule.setter
-    def upgrade_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="wafPrimaryDomain")
-    def waf_primary_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def waf_primary_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
 
@@ -728,7 +728,7 @@ class _InstanceState:
         return pulumi.get(self, "waf_primary_domain")
 
     @waf_primary_domain.setter
-    def waf_primary_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def waf_primary_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "waf_primary_domain", value)
 
 
@@ -738,23 +738,23 @@ class Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 admin_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_usage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
@@ -895,23 +895,23 @@ class Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 admin_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dr_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_usage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -971,32 +971,32 @@ class Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            admin_email: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dr_region: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guid: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_tenancy: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_access_type: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_license_type: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_usage_type: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_storage_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            service: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            state_message: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None) -> 'Instance':
+            add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_tenancy: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            service: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None) -> 'Instance':
         """
         Get an existing Instance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

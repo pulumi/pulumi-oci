@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.Optimizer.getProfiles({
+ * const testProfiles = oci.optimizer.getProfiles({
  *     compartmentId: compartmentId,
  *     name: profileName,
  *     state: profileState,
@@ -90,7 +90,7 @@ export interface GetProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.Optimizer.getProfiles({
+ * const testProfiles = oci.optimizer.getProfiles({
  *     compartmentId: compartmentId,
  *     name: profileName,
  *     state: profileState,
@@ -115,13 +115,13 @@ export interface GetProfilesOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetProfilesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetProfilesFilterArgs>[] | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

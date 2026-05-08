@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
+ * const testManagedDatabaseSqlPlanBaselineJobs = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlPlanBaselineJobName,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
@@ -84,7 +84,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
+ * const testManagedDatabaseSqlPlanBaselineJobs = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlPlanBaselineJobName,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
@@ -105,7 +105,7 @@ export function getManagedDatabaseSqlPlanBaselineJobsOutput(args: GetManagedData
  * A collection of arguments for invoking getManagedDatabaseSqlPlanBaselineJobs.
  */
 export interface GetManagedDatabaseSqlPlanBaselineJobsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -113,9 +113,9 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsOutputArgs {
     /**
      * A filter to return the SQL plan baseline jobs that match the name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

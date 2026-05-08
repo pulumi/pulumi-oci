@@ -111,7 +111,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics_evaluate = oci.stackmonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[{
             "evaluation_data_points": [{
                 "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
@@ -144,9 +144,9 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
-def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             items: Optional[pulumi.Input[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
-                                             resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_baselineable_metrics_evaluate_output(baselineable_metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             items: pulumi.Input[Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
+                                             resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
     """
     This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -159,7 +159,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics_evaluate = oci.stackmonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[{
             "evaluation_data_points": [{
                 "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,

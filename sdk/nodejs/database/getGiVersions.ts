@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersions = oci.Database.getGiVersions({
+ * const testGiVersions = oci.database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,
@@ -95,7 +95,7 @@ export interface GetGiVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersions = oci.Database.getGiVersions({
+ * const testGiVersions = oci.database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,
@@ -123,22 +123,22 @@ export interface GetGiVersionsOutputArgs {
     /**
      * The target availability domain. Only passed if the limit is AD-specific.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetGiVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetGiVersionsFilterArgs>[] | undefined>;
     /**
      * If provided, filters the results for the specified resource Id.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the given shape.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * If provided and applicable, return the results based on the shapeAttribute provided
      */
-    shapeAttribute?: pulumi.Input<string>;
+    shapeAttribute?: pulumi.Input<string | undefined>;
 }

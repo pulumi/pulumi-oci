@@ -183,9 +183,9 @@ def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
+    test_maintenance_runs = oci.database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
-        is_local_adg=maintenance_run_is_local_adg,
+        is_local_adg=maintenance_run_is_local_adg == "true",
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,
@@ -228,15 +228,15 @@ def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
-def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]]]] = None,
-                                is_local_adg: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                maintenance_subtype: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                maintenance_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_maintenance_runs_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]]]] = None,
+                                is_local_adg: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                maintenance_subtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceRunsResult]:
     """
     This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
@@ -249,9 +249,9 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
+    test_maintenance_runs = oci.database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
-        is_local_adg=maintenance_run_is_local_adg,
+        is_local_adg=maintenance_run_is_local_adg == "true",
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,

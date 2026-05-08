@@ -128,7 +128,7 @@ def get_managed_instance_snaps(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_snaps = oci.OsManagementHub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_snaps = oci.osmanagementhub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         name=managed_instance_snap_name,
         name_contains=managed_instance_snap_name_contains)
@@ -157,11 +157,11 @@ def get_managed_instance_snaps(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         snap_collections=pulumi.get(__ret__, 'snap_collections'))
-def get_managed_instance_snaps_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict']]]]] = None,
-                                      managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_instance_snaps_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict']]]]] = None,
+                                      managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceSnapsResult]:
     """
     This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
@@ -174,7 +174,7 @@ def get_managed_instance_snaps_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_snaps = oci.OsManagementHub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_snaps = oci.osmanagementhub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         name=managed_instance_snap_name,
         name_contains=managed_instance_snap_name_contains)

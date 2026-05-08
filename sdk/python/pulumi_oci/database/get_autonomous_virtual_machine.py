@@ -215,7 +215,7 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
+    test_autonomous_virtual_machine = oci.database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[_buil
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         state=pulumi.get(__ret__, 'state'),
         vm_name=pulumi.get(__ret__, 'vm_name'))
-def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVirtualMachineResult]:
     """
     This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
@@ -254,7 +254,7 @@ def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
+    test_autonomous_virtual_machine = oci.database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
     ```
 
 

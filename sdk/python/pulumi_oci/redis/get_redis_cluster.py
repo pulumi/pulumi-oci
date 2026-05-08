@@ -396,7 +396,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
+    test_redis_cluster = oci.redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
     ```
 
 
@@ -437,7 +437,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_redis_cluster_output(redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRedisClusterResult]:
     """
     This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -450,7 +450,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
+    test_redis_cluster = oci.redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
     ```
 
 

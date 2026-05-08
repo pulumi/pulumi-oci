@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemMediaWorkflow = oci.MediaServices.getSystemMediaWorkflow({
+ * const testSystemMediaWorkflow = oci.mediaservices.getSystemMediaWorkflow({
  *     compartmentId: compartmentId,
  *     name: systemMediaWorkflowName,
  * });
@@ -75,7 +75,7 @@ export interface GetSystemMediaWorkflowResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemMediaWorkflow = oci.MediaServices.getSystemMediaWorkflow({
+ * const testSystemMediaWorkflow = oci.mediaservices.getSystemMediaWorkflow({
  *     compartmentId: compartmentId,
  *     name: systemMediaWorkflowName,
  * });
@@ -97,9 +97,9 @@ export interface GetSystemMediaWorkflowOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources with their system defined, unique name matching the given name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

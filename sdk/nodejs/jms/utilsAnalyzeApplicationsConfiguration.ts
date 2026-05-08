@@ -112,11 +112,11 @@ export interface UtilsAnalyzeApplicationsConfigurationState {
     /**
      * (Updatable) The name of the bucket used for analyzing applications.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Object Storage namespace used for analyzing applications.
      *
@@ -124,7 +124,7 @@ export interface UtilsAnalyzeApplicationsConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -134,7 +134,7 @@ export interface UtilsAnalyzeApplicationsConfigurationArgs {
     /**
      * (Updatable) The name of the bucket used for analyzing applications.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
@@ -146,5 +146,5 @@ export interface UtilsAnalyzeApplicationsConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }

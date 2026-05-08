@@ -75,7 +75,7 @@ class GeneratedKeyKeyShapeArgsDict(TypedDict):
     * RSA: 256, 384, or 512
     * ECDSA: 32, 48, or 66
     """
-    curve_id: NotRequired[pulumi.Input[_builtins.str]]
+    curve_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Supported curve IDs for ECDSA keys.
     """
@@ -85,7 +85,7 @@ class GeneratedKeyKeyShapeArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[_builtins.str],
                  length: pulumi.Input[_builtins.int],
-                 curve_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 curve_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         :param pulumi.Input[_builtins.int] length: The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -128,39 +128,39 @@ class GeneratedKeyKeyShapeArgs:
 
     @_builtins.property
     @pulumi.getter(name="curveId")
-    def curve_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def curve_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Supported curve IDs for ECDSA keys.
         """
         return pulumi.get(self, "curve_id")
 
     @curve_id.setter
-    def curve_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def curve_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "curve_id", value)
 
 
 class KeyAutoKeyRotationDetailsArgsDict(TypedDict):
-    last_rotation_message: NotRequired[pulumi.Input[_builtins.str]]
+    last_rotation_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The last execution status message of auto key rotation.
     """
-    last_rotation_status: NotRequired[pulumi.Input[_builtins.str]]
+    last_rotation_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The status of last execution of auto key rotation.
     """
-    rotation_interval_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    rotation_interval_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
     """
-    time_of_last_rotation: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_last_rotation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
     """
-    time_of_next_rotation: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_next_rotation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
     """
-    time_of_schedule_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_schedule_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
     """
@@ -168,12 +168,12 @@ class KeyAutoKeyRotationDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class KeyAutoKeyRotationDetailsArgs:
     def __init__(__self__, *,
-                 last_rotation_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_rotation_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_of_last_rotation: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_next_rotation: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_schedule_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 last_rotation_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_rotation_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_of_last_rotation: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_next_rotation: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_schedule_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] last_rotation_message: (Updatable) The last execution status message of auto key rotation.
         :param pulumi.Input[_builtins.str] last_rotation_status: (Updatable) The status of last execution of auto key rotation.
@@ -197,74 +197,74 @@ class KeyAutoKeyRotationDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="lastRotationMessage")
-    def last_rotation_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_rotation_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The last execution status message of auto key rotation.
         """
         return pulumi.get(self, "last_rotation_message")
 
     @last_rotation_message.setter
-    def last_rotation_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_rotation_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_rotation_message", value)
 
     @_builtins.property
     @pulumi.getter(name="lastRotationStatus")
-    def last_rotation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_rotation_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of last execution of auto key rotation.
         """
         return pulumi.get(self, "last_rotation_status")
 
     @last_rotation_status.setter
-    def last_rotation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_rotation_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_rotation_status", value)
 
     @_builtins.property
     @pulumi.getter(name="rotationIntervalInDays")
-    def rotation_interval_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rotation_interval_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
         """
         return pulumi.get(self, "rotation_interval_in_days")
 
     @rotation_interval_in_days.setter
-    def rotation_interval_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rotation_interval_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rotation_interval_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastRotation")
-    def time_of_last_rotation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_rotation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
         """
         return pulumi.get(self, "time_of_last_rotation")
 
     @time_of_last_rotation.setter
-    def time_of_last_rotation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_rotation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_rotation", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfNextRotation")
-    def time_of_next_rotation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_next_rotation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
         """
         return pulumi.get(self, "time_of_next_rotation")
 
     @time_of_next_rotation.setter
-    def time_of_next_rotation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_next_rotation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_next_rotation", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfScheduleStart")
-    def time_of_schedule_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_schedule_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
         """
         return pulumi.get(self, "time_of_schedule_start")
 
     @time_of_schedule_start.setter
-    def time_of_schedule_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_schedule_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_schedule_start", value)
 
 
@@ -297,11 +297,11 @@ class KeyExternalKeyReferenceArgs:
 
 
 class KeyExternalKeyReferenceDetailArgsDict(TypedDict):
-    external_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    external_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
     """
-    external_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    external_key_version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Key version ID associated with the external key.
     """
@@ -309,8 +309,8 @@ class KeyExternalKeyReferenceDetailArgsDict(TypedDict):
 @pulumi.input_type
 class KeyExternalKeyReferenceDetailArgs:
     def __init__(__self__, *,
-                 external_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 external_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
@@ -322,26 +322,26 @@ class KeyExternalKeyReferenceDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="externalKeyId")
-    def external_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         """
         return pulumi.get(self, "external_key_id")
 
     @external_key_id.setter
-    def external_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyVersionId")
-    def external_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key version ID associated with the external key.
         """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
-    def external_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_version_id", value)
 
 
@@ -357,7 +357,7 @@ class KeyKeyShapeArgsDict(TypedDict):
     * RSA: 256, 384, or 512
     * ECDSA: 32, 48, or 66
     """
-    curve_id: NotRequired[pulumi.Input[_builtins.str]]
+    curve_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Supported curve IDs for ECDSA keys.
     """
@@ -367,7 +367,7 @@ class KeyKeyShapeArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[_builtins.str],
                  length: pulumi.Input[_builtins.int],
-                 curve_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 curve_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         :param pulumi.Input[_builtins.int] length: The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -410,19 +410,19 @@ class KeyKeyShapeArgs:
 
     @_builtins.property
     @pulumi.getter(name="curveId")
-    def curve_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def curve_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Supported curve IDs for ECDSA keys.
         """
         return pulumi.get(self, "curve_id")
 
     @curve_id.setter
-    def curve_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def curve_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "curve_id", value)
 
 
 class KeyReplicaDetailArgsDict(TypedDict):
-    replication_id: NotRequired[pulumi.Input[_builtins.str]]
+    replication_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ReplicationId associated with a key operation
     """
@@ -430,7 +430,7 @@ class KeyReplicaDetailArgsDict(TypedDict):
 @pulumi.input_type
 class KeyReplicaDetailArgs:
     def __init__(__self__, *,
-                 replication_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 replication_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] replication_id: ReplicationId associated with a key operation
         """
@@ -439,14 +439,14 @@ class KeyReplicaDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="replicationId")
-    def replication_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ReplicationId associated with a key operation
         """
         return pulumi.get(self, "replication_id")
 
     @replication_id.setter
-    def replication_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_id", value)
 
 
@@ -459,7 +459,7 @@ class KeyRestoreFromFileArgsDict(TypedDict):
     """
     Key backup file content.
     """
-    content_md5: NotRequired[pulumi.Input[_builtins.str]]
+    content_md5: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) content md5 hashed value of key's backup file
     """
@@ -469,7 +469,7 @@ class KeyRestoreFromFileArgs:
     def __init__(__self__, *,
                  content_length: pulumi.Input[_builtins.str],
                  restore_key_from_file_details: pulumi.Input[_builtins.str],
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] content_length: (Updatable) content length of key's backup binary file
         :param pulumi.Input[_builtins.str] restore_key_from_file_details: Key backup file content.
@@ -506,14 +506,14 @@ class KeyRestoreFromFileArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) content md5 hashed value of key's backup file
         """
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
-    def content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_md5", value)
 
 
@@ -522,19 +522,19 @@ class KeyRestoreFromObjectStoreArgsDict(TypedDict):
     """
     (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the bucket where key was backed up
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace of the bucket where key was backed up
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Object containing the backup
     """
-    uri: NotRequired[pulumi.Input[_builtins.str]]
+    uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Pre-authenticated-request-uri of the backup
     """
@@ -543,10 +543,10 @@ class KeyRestoreFromObjectStoreArgsDict(TypedDict):
 class KeyRestoreFromObjectStoreArgs:
     def __init__(__self__, *,
                  destination: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] destination: (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Name of the bucket where key was backed up
@@ -578,59 +578,59 @@ class KeyRestoreFromObjectStoreArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the bucket where key was backed up
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace of the bucket where key was backed up
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Object containing the backup
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter
-    def uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pre-authenticated-request-uri of the backup
         """
         return pulumi.get(self, "uri")
 
     @uri.setter
-    def uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uri", value)
 
 
 class KeyVersionExternalKeyReferenceDetailArgsDict(TypedDict):
-    external_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    external_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
     """
-    external_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    external_key_version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Key version ID associated with the external key.
     """
@@ -638,8 +638,8 @@ class KeyVersionExternalKeyReferenceDetailArgsDict(TypedDict):
 @pulumi.input_type
 class KeyVersionExternalKeyReferenceDetailArgs:
     def __init__(__self__, *,
-                 external_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 external_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
@@ -651,31 +651,31 @@ class KeyVersionExternalKeyReferenceDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="externalKeyId")
-    def external_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         """
         return pulumi.get(self, "external_key_id")
 
     @external_key_id.setter
-    def external_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyVersionId")
-    def external_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key version ID associated with the external key.
         """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
-    def external_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_version_id", value)
 
 
 class KeyVersionReplicaDetailArgsDict(TypedDict):
-    replication_id: NotRequired[pulumi.Input[_builtins.str]]
+    replication_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ReplicationId associated with a key version operation
     """
@@ -683,7 +683,7 @@ class KeyVersionReplicaDetailArgsDict(TypedDict):
 @pulumi.input_type
 class KeyVersionReplicaDetailArgs:
     def __init__(__self__, *,
-                 replication_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 replication_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] replication_id: ReplicationId associated with a key version operation
         """
@@ -692,14 +692,14 @@ class KeyVersionReplicaDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="replicationId")
-    def replication_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ReplicationId associated with a key version operation
         """
         return pulumi.get(self, "replication_id")
 
     @replication_id.setter
-    def replication_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_id", value)
 
 
@@ -836,19 +836,19 @@ class VaultExternalKeyManagerMetadataOauthMetadataArgs:
 
 
 class VaultExternalKeyManagerMetadataSummaryArgsDict(TypedDict):
-    external_vault_endpoint_url: NotRequired[pulumi.Input[_builtins.str]]
+    external_vault_endpoint_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     URL of the vault on external key manager.
     """
-    oauth_metadata_summaries: NotRequired[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict']]]]
+    oauth_metadata_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]]
     """
     Summary about authorization to be returned to the customer as a response.
     """
-    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the private endpoint.
     """
-    vendor: NotRequired[pulumi.Input[_builtins.str]]
+    vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Vendor of the external key manager.
     """
@@ -856,10 +856,10 @@ class VaultExternalKeyManagerMetadataSummaryArgsDict(TypedDict):
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataSummaryArgs:
     def __init__(__self__, *,
-                 external_vault_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 oauth_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]] = None,
-                 private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vendor: Optional[pulumi.Input[_builtins.str]] = None):
+                 external_vault_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 oauth_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]] = None,
+                 private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] external_vault_endpoint_url: URL of the vault on external key manager.
         :param pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]] oauth_metadata_summaries: Summary about authorization to be returned to the customer as a response.
@@ -877,59 +877,59 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="externalVaultEndpointUrl")
-    def external_vault_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_vault_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL of the vault on external key manager.
         """
         return pulumi.get(self, "external_vault_endpoint_url")
 
     @external_vault_endpoint_url.setter
-    def external_vault_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_vault_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_vault_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="oauthMetadataSummaries")
-    def oauth_metadata_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]:
+    def oauth_metadata_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]:
         """
         Summary about authorization to be returned to the customer as a response.
         """
         return pulumi.get(self, "oauth_metadata_summaries")
 
     @oauth_metadata_summaries.setter
-    def oauth_metadata_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]):
+    def oauth_metadata_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]):
         pulumi.set(self, "oauth_metadata_summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the private endpoint.
         """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
-    def private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def vendor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Vendor of the external key manager.
         """
         return pulumi.get(self, "vendor")
 
     @vendor.setter
-    def vendor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vendor", value)
 
 
 class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict(TypedDict):
-    client_app_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_app_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the client app created in IDP.
     """
-    idcs_account_name_url: NotRequired[pulumi.Input[_builtins.str]]
+    idcs_account_name_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Base URL of the IDCS account where confidential client app is created.
     """
@@ -937,8 +937,8 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict(TypedDi
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
     def __init__(__self__, *,
-                 client_app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_account_name_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_account_name_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] client_app_id: ID of the client app created in IDP.
         :param pulumi.Input[_builtins.str] idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
@@ -950,31 +950,31 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientAppId")
-    def client_app_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_app_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the client app created in IDP.
         """
         return pulumi.get(self, "client_app_id")
 
     @client_app_id.setter
-    def client_app_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_app_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_app_id", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccountNameUrl")
-    def idcs_account_name_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_account_name_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base URL of the IDCS account where confidential client app is created.
         """
         return pulumi.get(self, "idcs_account_name_url")
 
     @idcs_account_name_url.setter
-    def idcs_account_name_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_account_name_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_account_name_url", value)
 
 
 class VaultReplicaDetailArgsDict(TypedDict):
-    replication_id: NotRequired[pulumi.Input[_builtins.str]]
+    replication_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ReplicationId associated with a vault operation
     """
@@ -982,7 +982,7 @@ class VaultReplicaDetailArgsDict(TypedDict):
 @pulumi.input_type
 class VaultReplicaDetailArgs:
     def __init__(__self__, *,
-                 replication_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 replication_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] replication_id: ReplicationId associated with a vault operation
         """
@@ -991,14 +991,14 @@ class VaultReplicaDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="replicationId")
-    def replication_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ReplicationId associated with a vault operation
         """
         return pulumi.get(self, "replication_id")
 
     @replication_id.setter
-    def replication_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_id", value)
 
 
@@ -1011,7 +1011,7 @@ class VaultRestoreFromFileArgsDict(TypedDict):
     """
     Vault backup file content
     """
-    content_md5: NotRequired[pulumi.Input[_builtins.str]]
+    content_md5: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) content md5 hashed value of vault's backup file
     """
@@ -1021,7 +1021,7 @@ class VaultRestoreFromFileArgs:
     def __init__(__self__, *,
                  content_length: pulumi.Input[_builtins.str],
                  restore_vault_from_file_details: pulumi.Input[_builtins.str],
-                 content_md5: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_md5: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] content_length: content length of vault's backup binary file
         :param pulumi.Input[_builtins.str] restore_vault_from_file_details: Vault backup file content
@@ -1058,14 +1058,14 @@ class VaultRestoreFromFileArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) content md5 hashed value of vault's backup file
         """
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
-    def content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_md5", value)
 
 
@@ -1074,19 +1074,19 @@ class VaultRestoreFromObjectStoreArgsDict(TypedDict):
     """
     (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the bucket where vault was backed up
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace of the bucket where vault was backed up
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Object containing the backup
     """
-    uri: NotRequired[pulumi.Input[_builtins.str]]
+    uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
     """
@@ -1095,10 +1095,10 @@ class VaultRestoreFromObjectStoreArgsDict(TypedDict):
 class VaultRestoreFromObjectStoreArgs:
     def __init__(__self__, *,
                  destination: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] destination: (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Name of the bucket where vault was backed up
@@ -1130,50 +1130,50 @@ class VaultRestoreFromObjectStoreArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the bucket where vault was backed up
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace of the bucket where vault was backed up
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Object containing the backup
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter
-    def uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
         return pulumi.get(self, "uri")
 
     @uri.setter
-    def uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uri", value)
 
 

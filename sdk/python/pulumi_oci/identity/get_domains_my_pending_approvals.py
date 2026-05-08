@@ -194,12 +194,12 @@ def get_domains_my_pending_approvals(authorization: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
-        my_pending_approval_count=my_pending_approval_my_pending_approval_count,
+    test_my_pending_approvals = oci.identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
+        my_pending_approval_count=int(my_pending_approval_my_pending_approval_count),
         my_pending_approval_filter=my_pending_approval_my_pending_approval_filter,
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version,
-        start_index=my_pending_approval_start_index)
+        start_index=int(my_pending_approval_start_index))
     ```
 
 
@@ -238,15 +238,15 @@ def get_domains_my_pending_approvals(authorization: Optional[_builtins.str] = No
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_my_pending_approvals_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                            my_pending_approval_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                            my_pending_approval_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_my_pending_approvals_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                            my_pending_approval_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                            my_pending_approval_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyPendingApprovalsResult]:
     """
     This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
@@ -259,12 +259,12 @@ def get_domains_my_pending_approvals_output(authorization: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
-        my_pending_approval_count=my_pending_approval_my_pending_approval_count,
+    test_my_pending_approvals = oci.identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
+        my_pending_approval_count=int(my_pending_approval_my_pending_approval_count),
         my_pending_approval_filter=my_pending_approval_my_pending_approval_filter,
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version,
-        start_index=my_pending_approval_start_index)
+        start_index=int(my_pending_approval_start_index))
     ```
 
 

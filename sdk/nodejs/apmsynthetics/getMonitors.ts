@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitors = oci.ApmSynthetics.getMonitors({
+ * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,
@@ -128,11 +128,11 @@ export interface GetMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitors = oci.ApmSynthetics.getMonitors({
+ * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,
@@ -166,30 +166,30 @@ export interface GetMonitorsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetMonitorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetMonitorsFilterArgs>[] | undefined>;
     /**
      * A filter to return the monitors whose maintenance window is currently active.
      */
-    isMaintenanceWindowActive?: pulumi.Input<boolean>;
+    isMaintenanceWindowActive?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return the monitors whose maintenance window is set.
      */
-    isMaintenanceWindowSet?: pulumi.Input<boolean>;
+    isMaintenanceWindowSet?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      */
-    monitorType?: pulumi.Input<string>;
+    monitorType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only monitors using scriptId.
      */
-    scriptId?: pulumi.Input<string>;
+    scriptId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only monitors that match the status given.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The name of the public or dedicated vantage point.
      */
-    vantagePoint?: pulumi.Input<string>;
+    vantagePoint?: pulumi.Input<string | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Limits.getServices({
+ * const testServices = oci.limits.getServices({
  *     compartmentId: tenancyOcid,
  *     subscriptionId: subscriptionOcid,
  * });
@@ -76,7 +76,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Limits.getServices({
+ * const testServices = oci.limits.getServices({
  *     compartmentId: tenancyOcid,
  *     subscriptionId: subscriptionOcid,
  * });
@@ -99,9 +99,9 @@ export interface GetServicesOutputArgs {
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetServicesFilterArgs>[] | undefined>;
     /**
      * The subscription OCID assigned to the tenant.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

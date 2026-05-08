@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnections = oci.Core.getIpsecConnections({
+ * const testIpSecConnections = oci.core.getIpsecConnections({
  *     compartmentId: compartmentId,
  *     cpeId: testCpe.id,
  *     drgId: testDrg.id,
@@ -92,7 +92,7 @@ export interface GetIpsecConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnections = oci.Core.getIpsecConnections({
+ * const testIpSecConnections = oci.core.getIpsecConnections({
  *     compartmentId: compartmentId,
  *     cpeId: testCpe.id,
  *     drgId: testDrg.id,
@@ -120,10 +120,10 @@ export interface GetIpsecConnectionsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
      */
-    cpeId?: pulumi.Input<string>;
+    cpeId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionsFilterArgs>[]>;
+    drgId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionsFilterArgs>[] | undefined>;
 }

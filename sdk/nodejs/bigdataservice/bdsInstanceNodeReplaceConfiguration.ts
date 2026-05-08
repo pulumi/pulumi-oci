@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testBdsInstanceNodeReplaceConfiguration = new oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
- *     durationInMinutes: bdsInstanceNodeReplaceConfigurationDurationInMinutes,
+ *     durationInMinutes: Number(bdsInstanceNodeReplaceConfigurationDurationInMinutes),
  *     levelTypeDetails: {
  *         levelType: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType,
  *         nodeHostName: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeHostName,
@@ -170,39 +170,39 @@ export interface BdsInstanceNodeReplaceConfigurationState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
      */
-    durationInMinutes?: pulumi.Input<number>;
+    durationInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
      */
-    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeReplaceConfigurationLevelTypeDetails>;
+    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeReplaceConfigurationLevelTypeDetails | undefined>;
     /**
      * (Updatable) Type of compute instance health metric to use for node replacement
      */
-    metricType?: pulumi.Input<string>;
+    metricType?: pulumi.Input<string | undefined>;
     /**
      * The state of the NodeReplaceConfiguration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -220,7 +220,7 @@ export interface BdsInstanceNodeReplaceConfigurationArgs {
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
      */

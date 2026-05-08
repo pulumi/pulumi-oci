@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableMaintenanceScheduleStartTimes = oci.Lustre.getFileStorageAvailableMaintenanceScheduleStartTimes({
+ * const testAvailableMaintenanceScheduleStartTimes = oci.lustre.getFileStorageAvailableMaintenanceScheduleStartTimes({
  *     availabilityDomain: availableMaintenanceScheduleStartTimeAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     dayOfWeek: availableMaintenanceScheduleStartTimeDayOfWeek,
@@ -88,7 +88,7 @@ export interface GetFileStorageAvailableMaintenanceScheduleStartTimesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableMaintenanceScheduleStartTimes = oci.Lustre.getFileStorageAvailableMaintenanceScheduleStartTimes({
+ * const testAvailableMaintenanceScheduleStartTimes = oci.lustre.getFileStorageAvailableMaintenanceScheduleStartTimes({
  *     availabilityDomain: availableMaintenanceScheduleStartTimeAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     dayOfWeek: availableMaintenanceScheduleStartTimeDayOfWeek,
@@ -115,18 +115,18 @@ export interface GetFileStorageAvailableMaintenanceScheduleStartTimesOutputArgs 
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Day of the week filter
      */
-    dayOfWeek?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs>[]>;
+    dayOfWeek?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }

@@ -150,7 +150,7 @@ def get_volume_backups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+    test_volume_backups = oci.core.get_volume_backups(compartment_id=compartment_id,
         display_name=volume_backup_display_name,
         source_volume_backup_id=test_volume_backup["id"],
         state=volume_backup_state,
@@ -183,12 +183,12 @@ def get_volume_backups(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         volume_backups=pulumi.get(__ret__, 'volume_backups'),
         volume_id=pulumi.get(__ret__, 'volume_id'))
-def get_volume_backups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]]]] = None,
-                              source_volume_backup_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              volume_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_backups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]]]] = None,
+                              source_volume_backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupsResult]:
     """
     This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
@@ -201,7 +201,7 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+    test_volume_backups = oci.core.get_volume_backups(compartment_id=compartment_id,
         display_name=volume_backup_display_name,
         source_volume_backup_id=test_volume_backup["id"],
         state=volume_backup_state,

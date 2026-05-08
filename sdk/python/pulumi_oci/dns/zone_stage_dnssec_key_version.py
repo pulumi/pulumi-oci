@@ -21,7 +21,7 @@ class ZoneStageDnssecKeyVersionArgs:
     def __init__(__self__, *,
                  predecessor_dnssec_key_version_uuid: pulumi.Input[_builtins.str],
                  zone_id: pulumi.Input[_builtins.str],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ZoneStageDnssecKeyVersion resource.
 
@@ -68,23 +68,23 @@ class ZoneStageDnssecKeyVersionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ZoneStageDnssecKeyVersionState:
     def __init__(__self__, *,
-                 predecessor_dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 predecessor_dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ZoneStageDnssecKeyVersion resources.
 
@@ -105,31 +105,31 @@ class _ZoneStageDnssecKeyVersionState:
 
     @_builtins.property
     @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
-    def predecessor_dnssec_key_version_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def predecessor_dnssec_key_version_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UUID of the `DnssecKeyVersion` for which a new successor should be generated.
         """
         return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
 
     @predecessor_dnssec_key_version_uuid.setter
-    def predecessor_dnssec_key_version_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def predecessor_dnssec_key_version_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "predecessor_dnssec_key_version_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target zone.
 
@@ -140,7 +140,7 @@ class _ZoneStageDnssecKeyVersionState:
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
-    def zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
 
 
@@ -150,9 +150,9 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 predecessor_dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 predecessor_dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Zone Stage Dnssec Key Version resource in Oracle Cloud Infrastructure DNS service.
@@ -243,9 +243,9 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 predecessor_dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 predecessor_dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -272,9 +272,9 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            predecessor_dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ZoneStageDnssecKeyVersion':
+            predecessor_dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ZoneStageDnssecKeyVersion':
         """
         Get an existing ZoneStageDnssecKeyVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

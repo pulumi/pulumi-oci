@@ -119,15 +119,15 @@ export interface ManagedInstanceGroupInstallWindowsUpdatesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The type of Windows updates to be applied.
      */
-    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -145,5 +145,5 @@ export interface ManagedInstanceGroupInstallWindowsUpdatesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }

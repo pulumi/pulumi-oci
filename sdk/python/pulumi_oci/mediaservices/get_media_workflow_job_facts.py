@@ -125,7 +125,7 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkf
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=test_media_workflow_job["id"],
+    test_media_workflow_job_facts = oci.mediaservices.get_media_workflow_job_facts(media_workflow_job_id=test_media_workflow_job["id"],
         key=media_workflow_job_fact_key,
         type=media_workflow_job_fact_type)
     ```
@@ -150,10 +150,10 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkf
         media_workflow_job_fact_collections=pulumi.get(__ret__, 'media_workflow_job_fact_collections'),
         media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]]]] = None,
-                                        key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        media_workflow_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_media_workflow_job_facts_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]]]] = None,
+                                        key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowJobFactsResult]:
     """
     > **_NOTE:_** This data source has been deprecated and is no longer supported.
@@ -167,7 +167,7 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_facts = oci.MediaServices.get_media_workflow_job_facts(media_workflow_job_id=test_media_workflow_job["id"],
+    test_media_workflow_job_facts = oci.mediaservices.get_media_workflow_job_facts(media_workflow_job_id=test_media_workflow_job["id"],
         key=media_workflow_job_fact_key,
         type=media_workflow_job_fact_type)
     ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLinkSyncJobs = oci.Lustre.getFileStorageObjectStorageLinkSyncJobs({
+ * const testObjectStorageLinkSyncJobs = oci.lustre.getFileStorageObjectStorageLinkSyncJobs({
  *     objectStorageLinkId: testObjectStorageLink.id,
  *     state: objectStorageLinkSyncJobState,
  * });
@@ -77,7 +77,7 @@ export interface GetFileStorageObjectStorageLinkSyncJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLinkSyncJobs = oci.Lustre.getFileStorageObjectStorageLinkSyncJobs({
+ * const testObjectStorageLinkSyncJobs = oci.lustre.getFileStorageObjectStorageLinkSyncJobs({
  *     objectStorageLinkId: testObjectStorageLink.id,
  *     state: objectStorageLinkSyncJobState,
  * });
@@ -96,7 +96,7 @@ export function getFileStorageObjectStorageLinkSyncJobsOutput(args: GetFileStora
  * A collection of arguments for invoking getFileStorageObjectStorageLinkSyncJobs.
  */
 export interface GetFileStorageObjectStorageLinkSyncJobsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageObjectStorageLinkSyncJobsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageObjectStorageLinkSyncJobsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
      */
@@ -104,5 +104,5 @@ export interface GetFileStorageObjectStorageLinkSyncJobsOutputArgs {
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

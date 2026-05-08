@@ -24,16 +24,16 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
                  privileged_operation_lists: pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]],
                  reason_summary: pulumi.Input[_builtins.str],
                  resource_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 duration_in_hrs: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reason_detail: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 sub_resource_name_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ticket_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApiaccesscontrolPrivilegedApiRequest resource.
 
@@ -117,115 +117,115 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="durationInHrs")
-    def duration_in_hrs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_in_hrs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in hours for which access is sought on the target resource.
         """
         return pulumi.get(self, "duration_in_hrs")
 
     @duration_in_hrs.setter
-    def duration_in_hrs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_in_hrs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_in_hrs", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Request.
         """
         return pulumi.get(self, "notification_topic_id")
 
     @notification_topic_id.setter
-    def notification_topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_topic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reasonDetail")
-    def reason_detail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reason_detail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reason in detail for which the operator is requesting access on the target resource.
         """
         return pulumi.get(self, "reason_detail")
 
     @reason_detail.setter
-    def reason_detail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reason_detail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reason_detail", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Priority assigned to the access request by the operator
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter(name="subResourceNameLists")
-    def sub_resource_name_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sub_resource_name_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The subresource names requested for approval.
         """
         return pulumi.get(self, "sub_resource_name_lists")
 
     @sub_resource_name_lists.setter
-    def sub_resource_name_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sub_resource_name_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sub_resource_name_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ticketNumbers")
-    def ticket_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ticket_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
         """
         return pulumi.get(self, "ticket_numbers")
 
     @ticket_numbers.setter
-    def ticket_numbers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ticket_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ticket_numbers", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRequestedForFutureAccess")
-    def time_requested_for_future_access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_requested_for_future_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
 
@@ -236,43 +236,43 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
         return pulumi.get(self, "time_requested_for_future_access")
 
     @time_requested_for_future_access.setter
-    def time_requested_for_future_access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_requested_for_future_access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_requested_for_future_access", value)
 
 
 @pulumi.input_type
 class _ApiaccesscontrolPrivilegedApiRequestState:
     def __init__(__self__, *,
-                 approver_details: Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]] = None,
-                 closure_comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration_in_hrs: Optional[pulumi.Input[_builtins.int]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_approvers_required: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileged_api_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 privileged_api_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 privileged_operation_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]] = None,
-                 reason_detail: Optional[pulumi.Input[_builtins.str]] = None,
-                 reason_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 requested_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 sub_resource_name_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ticket_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 approver_details: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]] = None,
+                 closure_comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_approvers_required: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileged_api_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 privileged_api_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]] = None,
+                 reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+                 reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiaccesscontrolPrivilegedApiRequest resources.
 
@@ -374,343 +374,343 @@ class _ApiaccesscontrolPrivilegedApiRequestState:
 
     @_builtins.property
     @pulumi.getter(name="approverDetails")
-    def approver_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]]:
+    def approver_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]]:
         """
         Contains the approver details who have approved the privilegedApi Request during the initial request.
         """
         return pulumi.get(self, "approver_details")
 
     @approver_details.setter
-    def approver_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]]):
+    def approver_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]]]):
         pulumi.set(self, "approver_details", value)
 
     @_builtins.property
     @pulumi.getter(name="closureComment")
-    def closure_comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def closure_comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The comment entered by the operator while closing the request.
         """
         return pulumi.get(self, "closure_comment")
 
     @closure_comment.setter
-    def closure_comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def closure_comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "closure_comment", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the privilegedApi control. The name must be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="durationInHrs")
-    def duration_in_hrs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_in_hrs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in hours for which access is sought on the target resource.
         """
         return pulumi.get(self, "duration_in_hrs")
 
     @duration_in_hrs.setter
-    def duration_in_hrs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_in_hrs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_in_hrs", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         entityType of resource for which the AccessRequest is applicable
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         more in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Request.
         """
         return pulumi.get(self, "notification_topic_id")
 
     @notification_topic_id.setter
-    def notification_topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_topic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfApproversRequired")
-    def number_of_approvers_required(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_approvers_required(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of approvers required to approve an privilegedApi request.
         """
         return pulumi.get(self, "number_of_approvers_required")
 
     @number_of_approvers_required.setter
-    def number_of_approvers_required(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_approvers_required(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_approvers_required", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegedApiControlId")
-    def privileged_api_control_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privileged_api_control_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the privilegedApi control governing the target resource.
         """
         return pulumi.get(self, "privileged_api_control_id")
 
     @privileged_api_control_id.setter
-    def privileged_api_control_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privileged_api_control_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privileged_api_control_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegedApiControlName")
-    def privileged_api_control_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privileged_api_control_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the privilegedApi control governing the target resource.
         """
         return pulumi.get(self, "privileged_api_control_name")
 
     @privileged_api_control_name.setter
-    def privileged_api_control_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privileged_api_control_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privileged_api_control_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegedOperationLists")
-    def privileged_operation_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]]:
+    def privileged_operation_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]]:
         """
         List of api names, attributes for which approval is sought by the user.
         """
         return pulumi.get(self, "privileged_operation_lists")
 
     @privileged_operation_lists.setter
-    def privileged_operation_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]]):
+    def privileged_operation_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]]]):
         pulumi.set(self, "privileged_operation_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="reasonDetail")
-    def reason_detail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reason_detail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reason in detail for which the operator is requesting access on the target resource.
         """
         return pulumi.get(self, "reason_detail")
 
     @reason_detail.setter
-    def reason_detail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reason_detail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reason_detail", value)
 
     @_builtins.property
     @pulumi.getter(name="reasonSummary")
-    def reason_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reason_summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Summary comment by the operator creating the access request.
         """
         return pulumi.get(self, "reason_summary")
 
     @reason_summary.setter
-    def reason_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reason_summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reason_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="requestId")
-    def request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is an automatic identifier generated by the system which is easier for human comprehension.
         """
         return pulumi.get(self, "request_id")
 
     @request_id.setter
-    def request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="requestedBies")
-    def requested_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def requested_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Users who has created this privilegedApiRequest.
         """
         return pulumi.get(self, "requested_bies")
 
     @requested_bies.setter
-    def requested_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def requested_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "requested_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target resource associated with the access request. The operator raises an access request to get approval to access the target resource.
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         resourceName for which the PrivilegedApiRequest is applicable
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         resourceType for which the AccessRequest is applicable
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Priority assigned to the access request by the operator
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the PrivilegedApiRequest.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateDetails")
-    def state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "state_details")
 
     @state_details.setter
-    def state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="subResourceNameLists")
-    def sub_resource_name_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sub_resource_name_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The subresource names requested for approval.
         """
         return pulumi.get(self, "sub_resource_name_lists")
 
     @sub_resource_name_lists.setter
-    def sub_resource_name_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sub_resource_name_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sub_resource_name_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ticketNumbers")
-    def ticket_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ticket_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
         """
         return pulumi.get(self, "ticket_numbers")
 
     @ticket_numbers.setter
-    def ticket_numbers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ticket_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ticket_numbers", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the privilegedApi request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRequestedForFutureAccess")
-    def time_requested_for_future_access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_requested_for_future_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
 
@@ -721,19 +721,19 @@ class _ApiaccesscontrolPrivilegedApiRequestState:
         return pulumi.get(self, "time_requested_for_future_access")
 
     @time_requested_for_future_access.setter
-    def time_requested_for_future_access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_requested_for_future_access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_requested_for_future_access", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the privilegedApi request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -743,19 +743,19 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 duration_in_hrs: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 privileged_operation_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
-                 reason_detail: Optional[pulumi.Input[_builtins.str]] = None,
-                 reason_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 sub_resource_name_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ticket_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+                 reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+                 reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
@@ -782,7 +782,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            duration_in_hrs=privileged_api_request_duration_in_hrs,
+            duration_in_hrs=int(privileged_api_request_duration_in_hrs),
             freeform_tags={
                 "Department": "Finance",
             },
@@ -854,7 +854,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            duration_in_hrs=privileged_api_request_duration_in_hrs,
+            duration_in_hrs=int(privileged_api_request_duration_in_hrs),
             freeform_tags={
                 "Department": "Finance",
             },
@@ -890,19 +890,19 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 duration_in_hrs: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 privileged_operation_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
-                 reason_detail: Optional[pulumi.Input[_builtins.str]] = None,
-                 reason_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 sub_resource_name_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ticket_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+                 reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+                 reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -958,36 +958,36 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approver_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict']]]]] = None,
-            closure_comment: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            duration_in_hrs: Optional[pulumi.Input[_builtins.int]] = None,
-            entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-            number_of_approvers_required: Optional[pulumi.Input[_builtins.int]] = None,
-            privileged_api_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-            privileged_api_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-            privileged_operation_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
-            reason_detail: Optional[pulumi.Input[_builtins.str]] = None,
-            reason_summary: Optional[pulumi.Input[_builtins.str]] = None,
-            request_id: Optional[pulumi.Input[_builtins.str]] = None,
-            requested_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            sub_resource_name_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ticket_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ApiaccesscontrolPrivilegedApiRequest':
+            approver_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict']]]]] = None,
+            closure_comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+            entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_approvers_required: pulumi.Input[Optional[_builtins.int]] = None,
+            privileged_api_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+            privileged_api_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+            reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+            reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            requested_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApiaccesscontrolPrivilegedApiRequest':
         """
         Get an existing ApiaccesscontrolPrivilegedApiRequest resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  *     dnssecState: zoneDnssecState,
  *     externalDownstreams: [{
  *         address: zoneExternalDownstreamsAddress,
- *         port: zoneExternalDownstreamsPort,
+ *         port: Number(zoneExternalDownstreamsPort),
  *         tsigKeyId: testTsigKey.id,
  *     }],
  *     externalMasters: [{
  *         address: zoneExternalMastersAddress,
- *         port: zoneExternalMastersPort,
+ *         port: Number(zoneExternalMastersPort),
  *         tsigKeyId: testTsigKey.id,
  *     }],
  *     freeformTags: zoneFreeformTags,
@@ -256,17 +256,17 @@ export interface ZoneState {
     /**
      * (Updatable) The OCID of the compartment containing the zone.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * DNSSEC configuration data.
      */
-    dnssecConfigs?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneDnssecConfig>[]>;
+    dnssecConfigs?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneDnssecConfig>[] | undefined>;
     /**
      * (Updatable) The state of DNSSEC on the zone.
      *
@@ -282,66 +282,66 @@ export interface ZoneState {
      *
      * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      */
-    dnssecState?: pulumi.Input<string>;
+    dnssecState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[]>;
+    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[] | undefined>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalMaster>[]>;
+    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalMaster>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    isProtected?: pulumi.Input<boolean>;
+    isProtected?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the zone.
      */
-    name?: pulumi.Input<string>;
-    nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneNameserver>[]>;
+    name?: pulumi.Input<string | undefined>;
+    nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneNameserver>[] | undefined>;
     /**
      * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
      */
-    resolutionMode?: pulumi.Input<string>;
+    resolutionMode?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    self?: pulumi.Input<string>;
+    self?: pulumi.Input<string | undefined>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    serial?: pulumi.Input<number>;
+    serial?: pulumi.Input<number | undefined>;
     /**
      * The current state of the zone resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneZoneTransferServer>[]>;
+    zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneZoneTransferServer>[] | undefined>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *
@@ -351,7 +351,7 @@ export interface ZoneState {
      *
      * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      */
-    zoneType?: pulumi.Input<string>;
+    zoneType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -367,7 +367,7 @@ export interface ZoneArgs {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The state of DNSSEC on the zone.
      *
@@ -383,37 +383,37 @@ export interface ZoneArgs {
      *
      * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      */
-    dnssecState?: pulumi.Input<string>;
+    dnssecState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[]>;
+    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[] | undefined>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalMaster>[]>;
+    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalMaster>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the zone.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
      */
-    resolutionMode?: pulumi.Input<string>;
+    resolutionMode?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *

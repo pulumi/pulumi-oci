@@ -262,11 +262,11 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+    test_masking_policies_masking_columns = oci.datasafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policies_masking_column_column_name,
         data_types=masking_policies_masking_column_data_type,
-        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
-        is_seed_required=masking_policies_masking_column_is_seed_required,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
+        is_seed_required=masking_policies_masking_column_is_seed_required == "true",
         masking_column_groups=masking_policies_masking_column_masking_column_group,
         masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
         objects=masking_policies_masking_column_object,
@@ -339,22 +339,22 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[_builti
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
-def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                data_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]]]] = None,
-                                                is_masking_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                is_seed_required: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                masking_column_groups: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                masking_column_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                object_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_updated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                time_updated_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_policies_masking_columns_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                data_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]]]] = None,
+                                                is_masking_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                is_seed_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                masking_column_groups: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                masking_column_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_updated_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                time_updated_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnsResult]:
     """
     This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -367,11 +367,11 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+    test_masking_policies_masking_columns = oci.datasafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policies_masking_column_column_name,
         data_types=masking_policies_masking_column_data_type,
-        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
-        is_seed_required=masking_policies_masking_column_is_seed_required,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
+        is_seed_required=masking_policies_masking_column_is_seed_required == "true",
         masking_column_groups=masking_policies_masking_column_masking_column_group,
         masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
         objects=masking_policies_masking_column_object,

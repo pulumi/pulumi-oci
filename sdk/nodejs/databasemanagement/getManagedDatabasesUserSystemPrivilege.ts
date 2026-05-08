@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivilege = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivilege({
+ * const testManagedDatabasesUserSystemPrivilege = oci.databasemanagement.getManagedDatabasesUserSystemPrivilege({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,
@@ -81,7 +81,7 @@ export interface GetManagedDatabasesUserSystemPrivilegeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivilege = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivilege({
+ * const testManagedDatabasesUserSystemPrivilege = oci.databasemanagement.getManagedDatabasesUserSystemPrivilege({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,
@@ -108,7 +108,7 @@ export interface GetManagedDatabasesUserSystemPrivilegeOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

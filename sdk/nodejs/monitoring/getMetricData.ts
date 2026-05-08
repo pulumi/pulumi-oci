@@ -25,11 +25,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricData = oci.Monitoring.getMetricData({
+ * const testMetricData = oci.monitoring.getMetricData({
  *     compartmentId: compartmentId,
  *     namespace: metricDataNamespace,
  *     query: metricDataQuery,
- *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree === "true",
  *     endTime: metricDataEndTime,
  *     resolution: metricDataResolution,
  *     resourceGroup: metricDataResourceGroup,
@@ -152,11 +152,11 @@ export interface GetMetricDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricData = oci.Monitoring.getMetricData({
+ * const testMetricData = oci.monitoring.getMetricData({
  *     compartmentId: compartmentId,
  *     namespace: metricDataNamespace,
  *     query: metricDataQuery,
- *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree === "true",
  *     endTime: metricDataEndTime,
  *     resolution: metricDataResolution,
  *     resourceGroup: metricDataResourceGroup,
@@ -190,12 +190,12 @@ export interface GetMetricDataOutputArgs {
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
      */
-    endTime?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricDataFilterArgs>[]>;
+    endTime?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricDataFilterArgs>[] | undefined>;
     /**
      * The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
      */
@@ -215,13 +215,13 @@ export interface GetMetricDataOutputArgs {
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
      */
-    resolution?: pulumi.Input<string>;
+    resolution?: pulumi.Input<string | undefined>;
     /**
      * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
      */
-    startTime?: pulumi.Input<string>;
+    startTime?: pulumi.Input<string | undefined>;
 }

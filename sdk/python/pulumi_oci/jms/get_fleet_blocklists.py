@@ -124,7 +124,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[Union['GetFleetBlocklistsFil
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
+    test_fleet_blocklists = oci.jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
         managed_instance_id=fleet_blocklist_managed_instance_id,
         operation=fleet_blocklist_operation)
     ```
@@ -149,10 +149,10 @@ def get_fleet_blocklists(filters: Optional[Sequence[Union['GetFleetBlocklistsFil
         items=pulumi.get(__ret__, 'items'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         operation=pulumi.get(__ret__, 'operation'))
-def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetBlocklistsFilterArgs', 'GetFleetBlocklistsFilterArgsDict']]]]] = None,
-                                fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                operation: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_blocklists_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetBlocklistsFilterArgs', 'GetFleetBlocklistsFilterArgsDict']]]]] = None,
+                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetBlocklistsResult]:
     """
     This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
@@ -165,7 +165,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
+    test_fleet_blocklists = oci.jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
         managed_instance_id=fleet_blocklist_managed_instance_id,
         operation=fleet_blocklist_operation)
     ```

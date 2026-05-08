@@ -190,7 +190,7 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point = oci.apmsynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point_oci_apm_synthetics_on_premise_vantage_point["id"])
     ```
 
@@ -217,8 +217,8 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         workers_summaries=pulumi.get(__ret__, 'workers_summaries'))
-def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_on_premise_vantage_point_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointResult]:
     """
     This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -231,7 +231,7 @@ def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point = oci.apmsynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point_oci_apm_synthetics_on_premise_vantage_point["id"])
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuits = oci.Core.getVirtualCircuits({
+ * const testVirtualCircuits = oci.core.getVirtualCircuits({
  *     compartmentId: compartmentId,
  *     displayName: virtualCircuitDisplayName,
  *     state: virtualCircuitState,
@@ -90,7 +90,7 @@ export interface GetVirtualCircuitsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuits = oci.Core.getVirtualCircuits({
+ * const testVirtualCircuits = oci.core.getVirtualCircuits({
  *     compartmentId: compartmentId,
  *     displayName: virtualCircuitDisplayName,
  *     state: virtualCircuitState,
@@ -118,10 +118,10 @@ export interface GetVirtualCircuitsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

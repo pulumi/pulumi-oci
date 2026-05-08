@@ -546,7 +546,7 @@ def get_database(database_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=database_id)
+    test_database = oci.database.get_database(database_id=database_id)
     ```
 
 
@@ -601,7 +601,7 @@ def get_database(database_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseResult]:
     """
     This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
@@ -614,7 +614,7 @@ def get_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=database_id)
+    test_database = oci.database.get_database(database_id=database_id)
     ```
 
 

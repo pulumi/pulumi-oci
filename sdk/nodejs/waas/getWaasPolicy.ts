@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicy = oci.Waas.getWaasPolicy({
+ * const testWaasPolicy = oci.waas.getWaasPolicy({
  *     waasPolicyId: testWaasPolicyOciWaasWaasPolicy.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetWaasPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicy = oci.Waas.getWaasPolicy({
+ * const testWaasPolicy = oci.waas.getWaasPolicy({
  *     waasPolicyId: testWaasPolicyOciWaasWaasPolicy.id,
  * });
  * ```

@@ -110,7 +110,7 @@ export interface UnsetUserAssessmentBaselineState {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the user assessment.
      *
@@ -118,7 +118,7 @@ export interface UnsetUserAssessmentBaselineState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userAssessmentId?: pulumi.Input<string>;
+    userAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,7 +128,7 @@ export interface UnsetUserAssessmentBaselineArgs {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the user assessment.
      *

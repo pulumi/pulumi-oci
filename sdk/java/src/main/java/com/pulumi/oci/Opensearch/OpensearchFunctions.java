@@ -55,8 +55,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -157,8 +157,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -301,8 +301,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -343,8 +343,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -427,8 +427,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -469,8 +469,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -511,8 +511,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -557,8 +557,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -603,8 +603,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -695,8 +695,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -750,8 +750,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -804,8 +804,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -858,8 +858,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -912,8 +912,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -966,8 +966,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1020,8 +1020,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1071,8 +1071,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1122,8 +1122,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1173,8 +1173,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1224,8 +1224,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1275,8 +1275,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1326,8 +1326,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1377,8 +1377,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1428,8 +1428,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1479,8 +1479,8 @@ public final class OpensearchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opensearch.OpensearchFunctions;
      * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

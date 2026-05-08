@@ -107,7 +107,7 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
+    test_cluster_credential_rotation_status = oci.containerengine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[_builtins.str] =
         status=pulumi.get(__ret__, 'status'),
         status_details=pulumi.get(__ret__, 'status_details'),
         time_auto_completion_scheduled=pulumi.get(__ret__, 'time_auto_completion_scheduled'))
-def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cluster_credential_rotation_status_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterCredentialRotationStatusResult]:
     """
     This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
@@ -137,7 +137,7 @@ def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
+    test_cluster_credential_rotation_status = oci.containerengine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
     ```
 
 

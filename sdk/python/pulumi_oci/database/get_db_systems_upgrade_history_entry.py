@@ -201,7 +201,7 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entry = oci.database.get_db_systems_upgrade_history_entry(db_system_id=test_db_system["id"],
         upgrade_history_entry_id=test_upgrade_history_entry["id"])
     ```
 
@@ -229,8 +229,8 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[_builtins.str] =
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
-def get_db_systems_upgrade_history_entry_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                upgrade_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_systems_upgrade_history_entry_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                upgrade_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntryResult]:
     """
     This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -243,7 +243,7 @@ def get_db_systems_upgrade_history_entry_output(db_system_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entry = oci.database.get_db_systems_upgrade_history_entry(db_system_id=test_db_system["id"],
         upgrade_history_entry_id=test_upgrade_history_entry["id"])
     ```
 

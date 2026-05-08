@@ -128,7 +128,7 @@ def get_managed_database_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=compartment_id,
+    test_managed_database_groups = oci.databasemanagement.get_managed_database_groups(compartment_id=compartment_id,
         id=managed_database_group_id,
         name=managed_database_group_name,
         state=managed_database_group_state)
@@ -156,11 +156,11 @@ def get_managed_database_groups(compartment_id: Optional[_builtins.str] = None,
         managed_database_group_collections=pulumi.get(__ret__, 'managed_database_group_collections'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseGroupsFilterArgs', 'GetManagedDatabaseGroupsFilterArgsDict']]]]] = None,
-                                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseGroupsFilterArgs', 'GetManagedDatabaseGroupsFilterArgsDict']]]]] = None,
+                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseGroupsResult]:
     """
     This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
@@ -176,7 +176,7 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=compartment_id,
+    test_managed_database_groups = oci.databasemanagement.get_managed_database_groups(compartment_id=compartment_id,
         id=managed_database_group_id,
         name=managed_database_group_name,
         state=managed_database_group_state)

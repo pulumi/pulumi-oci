@@ -124,7 +124,7 @@ def get_bds_instance_resource_principal_configurations(bds_instance_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configurations = oci.BigDataService.get_bds_instance_resource_principal_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configurations = oci.bigdataservice.get_bds_instance_resource_principal_configurations(bds_instance_id=test_bds_instance["id"],
         display_name=bds_instance_resource_principal_configuration_display_name,
         state=bds_instance_resource_principal_configuration_state)
     ```
@@ -149,10 +149,10 @@ def get_bds_instance_resource_principal_configurations(bds_instance_id: Optional
         id=pulumi.get(__ret__, 'id'),
         resource_principal_configurations=pulumi.get(__ret__, 'resource_principal_configurations'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instance_resource_principal_configurations_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceResourcePrincipalConfigurationsFilterArgs', 'GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict']]]]] = None,
-                                                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_resource_principal_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceResourcePrincipalConfigurationsFilterArgs', 'GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict']]]]] = None,
+                                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceResourcePrincipalConfigurationsResult]:
     """
     This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
@@ -165,7 +165,7 @@ def get_bds_instance_resource_principal_configurations_output(bds_instance_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configurations = oci.BigDataService.get_bds_instance_resource_principal_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configurations = oci.bigdataservice.get_bds_instance_resource_principal_configurations(bds_instance_id=test_bds_instance["id"],
         display_name=bds_instance_resource_principal_configuration_display_name,
         state=bds_instance_resource_principal_configuration_state)
     ```

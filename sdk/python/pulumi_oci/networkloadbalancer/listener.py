@@ -23,12 +23,12 @@ class ListenerArgs:
                  network_load_balancer_id: pulumi.Input[_builtins.str],
                  port: pulumi.Input[_builtins.int],
                  protocol: pulumi.Input[_builtins.str],
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ppv2enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 l3ip_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None):
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Listener resource.
 
@@ -114,67 +114,67 @@ class ListenerArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isPpv2enabled")
-    def is_ppv2enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ppv2enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Property to enable/disable PPv2 feature for this listener.
         """
         return pulumi.get(self, "is_ppv2enabled")
 
     @is_ppv2enabled.setter
-    def is_ppv2enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ppv2enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ppv2enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="l3ipIdleTimeout")
-    def l3ip_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def l3ip_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
         """
         return pulumi.get(self, "l3ip_idle_timeout")
 
     @l3ip_idle_timeout.setter
-    def l3ip_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def l3ip_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "l3ip_idle_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpIdleTimeout")
-    def tcp_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def tcp_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
         """
         return pulumi.get(self, "tcp_idle_timeout")
 
     @tcp_idle_timeout.setter
-    def tcp_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def tcp_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "tcp_idle_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="udpIdleTimeout")
-    def udp_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def udp_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
 
@@ -185,23 +185,23 @@ class ListenerArgs:
         return pulumi.get(self, "udp_idle_timeout")
 
     @udp_idle_timeout.setter
-    def udp_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def udp_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "udp_idle_timeout", value)
 
 
 @pulumi.input_type
 class _ListenerState:
     def __init__(__self__, *,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ppv2enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 l3ip_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None):
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
 
@@ -243,115 +243,115 @@ class _ListenerState:
 
     @_builtins.property
     @pulumi.getter(name="defaultBackendSetName")
-    def default_backend_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_backend_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         """
         return pulumi.get(self, "default_backend_set_name")
 
     @default_backend_set_name.setter
-    def default_backend_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_backend_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_backend_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isPpv2enabled")
-    def is_ppv2enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ppv2enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Property to enable/disable PPv2 feature for this listener.
         """
         return pulumi.get(self, "is_ppv2enabled")
 
     @is_ppv2enabled.setter
-    def is_ppv2enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ppv2enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ppv2enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="l3ipIdleTimeout")
-    def l3ip_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def l3ip_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
         """
         return pulumi.get(self, "l3ip_idle_timeout")
 
     @l3ip_idle_timeout.setter
-    def l3ip_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def l3ip_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "l3ip_idle_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkLoadBalancerId")
-    def network_load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
-    def network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The communication port for the listener.  Example: `80`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpIdleTimeout")
-    def tcp_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def tcp_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
         """
         return pulumi.get(self, "tcp_idle_timeout")
 
     @tcp_idle_timeout.setter
-    def tcp_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def tcp_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "tcp_idle_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="udpIdleTimeout")
-    def udp_idle_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def udp_idle_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
 
@@ -362,7 +362,7 @@ class _ListenerState:
         return pulumi.get(self, "udp_idle_timeout")
 
     @udp_idle_timeout.setter
-    def udp_idle_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def udp_idle_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "udp_idle_timeout", value)
 
 
@@ -372,16 +372,16 @@ class Listener(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ppv2enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 l3ip_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -401,13 +401,13 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             name=listener_name,
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled,
-            l3ip_idle_timeout=listener_l3ip_idle_timeout,
-            tcp_idle_timeout=listener_tcp_idle_timeout,
-            udp_idle_timeout=listener_udp_idle_timeout)
+            is_ppv2enabled=listener_is_ppv2enabled == "true",
+            l3ip_idle_timeout=int(listener_l3ip_idle_timeout),
+            tcp_idle_timeout=int(listener_tcp_idle_timeout),
+            udp_idle_timeout=int(listener_udp_idle_timeout))
         ```
 
         ## Import
@@ -460,13 +460,13 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             name=listener_name,
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled,
-            l3ip_idle_timeout=listener_l3ip_idle_timeout,
-            tcp_idle_timeout=listener_tcp_idle_timeout,
-            udp_idle_timeout=listener_udp_idle_timeout)
+            is_ppv2enabled=listener_is_ppv2enabled == "true",
+            l3ip_idle_timeout=int(listener_l3ip_idle_timeout),
+            tcp_idle_timeout=int(listener_tcp_idle_timeout),
+            udp_idle_timeout=int(listener_udp_idle_timeout))
         ```
 
         ## Import
@@ -493,16 +493,16 @@ class Listener(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ppv2enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 l3ip_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -540,16 +540,16 @@ class Listener(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-            is_ppv2enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            l3ip_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            tcp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None) -> 'Listener':
+            default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None) -> 'Listener':
         """
         Get an existing Listener resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbooks = oci.FleetAppsManagement.getRunbooks({
+ * const testRunbooks = oci.fleetappsmanagement.getRunbooks({
  *     compartmentId: compartmentId,
  *     displayName: runbookDisplayName,
  *     id: runbookId,
@@ -126,7 +126,7 @@ export interface GetRunbooksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbooks = oci.FleetAppsManagement.getRunbooks({
+ * const testRunbooks = oci.fleetappsmanagement.getRunbooks({
  *     compartmentId: compartmentId,
  *     displayName: runbookDisplayName,
  *     id: runbookId,
@@ -159,30 +159,30 @@ export interface GetRunbooksOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbooksFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbooksFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Runbook by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return runbooks whose operation matches the given lifecycle operation.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * A filter to return runbooks whose platform matches the given platform.
      */
-    platform?: pulumi.Input<string>;
+    platform?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return runbooks whose type matches the given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

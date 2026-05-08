@@ -25,9 +25,9 @@ class DedicatedVantagePointArgs:
                  display_name: pulumi.Input[_builtins.str],
                  dvp_stack_details: pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'],
                  region: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DedicatedVantagePoint resource.
 
@@ -104,31 +104,31 @@ class DedicatedVantagePointArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the dedicated vantage point.
 
@@ -139,24 +139,24 @@ class DedicatedVantagePointArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _DedicatedVantagePointState:
     def __init__(__self__, *,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dvp_stack_details: Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dvp_stack_details: pulumi.Input[Optional['DedicatedVantagePointDvpStackDetailsArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DedicatedVantagePoint resources.
 
@@ -201,103 +201,103 @@ class _DedicatedVantagePointState:
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dvpStackDetails")
-    def dvp_stack_details(self) -> Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']]:
+    def dvp_stack_details(self) -> pulumi.Input[Optional['DedicatedVantagePointDvpStackDetailsArgs']]:
         """
         (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 
     @dvp_stack_details.setter
-    def dvp_stack_details(self, value: Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']]):
+    def dvp_stack_details(self, value: pulumi.Input[Optional['DedicatedVantagePointDvpStackDetailsArgs']]):
         pulumi.set(self, "dvp_stack_details", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]]:
+    def monitor_status_count_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]]:
         """
         Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         """
         return pulumi.get(self, "monitor_status_count_maps")
 
     @monitor_status_count_maps.setter
-    def monitor_status_count_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]]):
+    def monitor_status_count_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]]):
         pulumi.set(self, "monitor_status_count_maps", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique permanent name of the dedicated vantage point. This is the same as the displayName.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the region.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the dedicated vantage point.
 
@@ -308,31 +308,31 @@ class _DedicatedVantagePointState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -342,13 +342,13 @@ class DedicatedVantagePoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dvp_stack_details: Optional[pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -469,13 +469,13 @@ class DedicatedVantagePoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dvp_stack_details: Optional[pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -514,17 +514,17 @@ class DedicatedVantagePoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dvp_stack_details: Optional[pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DedicatedVantagePoint':
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DedicatedVantagePoint':
         """
         Get an existing DedicatedVantagePoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

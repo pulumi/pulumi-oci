@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitions = oci.FleetAppsManagement.getSchedulerDefinitions({
+ * const testSchedulerDefinitions = oci.fleetappsmanagement.getSchedulerDefinitions({
  *     compartmentId: compartmentId,
  *     displayName: schedulerDefinitionDisplayName,
  *     fleetId: testFleet.id,
@@ -160,7 +160,7 @@ export interface GetSchedulerDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitions = oci.FleetAppsManagement.getSchedulerDefinitions({
+ * const testSchedulerDefinitions = oci.fleetappsmanagement.getSchedulerDefinitions({
  *     compartmentId: compartmentId,
  *     displayName: schedulerDefinitionDisplayName,
  *     fleetId: testFleet.id,
@@ -201,46 +201,46 @@ export interface GetSchedulerDefinitionsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerDefinitionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerDefinitionsFilterArgs>[] | undefined>;
     /**
      * unique Fleet identifier
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier or OCID for listing a single Schedule Definition by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
      */
-    maintenanceWindowId?: pulumi.Input<string>;
+    maintenanceWindowId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only dchedule definitions whose assocaited product matches the given product
      */
-    product?: pulumi.Input<string>;
+    product?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
      */
-    runbookId?: pulumi.Input<string>;
+    runbookId?: pulumi.Input<string | undefined>;
     /**
      * RunbookVersion Name filter
      */
-    runbookVersionName?: pulumi.Input<string>;
+    runbookVersionName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Scheduled Time
      */
-    timeScheduledGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeScheduledGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Scheduled Time
      */
-    timeScheduledLessThan?: pulumi.Input<string>;
+    timeScheduledLessThan?: pulumi.Input<string | undefined>;
 }

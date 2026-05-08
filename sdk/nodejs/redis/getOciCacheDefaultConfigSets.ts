@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheDefaultConfigSets = oci.Redis.getOciCacheDefaultConfigSets({
+ * const testOciCacheDefaultConfigSets = oci.redis.getOciCacheDefaultConfigSets({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheDefaultConfigSetDisplayName,
  *     id: ociCacheDefaultConfigSetId,
@@ -103,7 +103,7 @@ export interface GetOciCacheDefaultConfigSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheDefaultConfigSets = oci.Redis.getOciCacheDefaultConfigSets({
+ * const testOciCacheDefaultConfigSets = oci.redis.getOciCacheDefaultConfigSets({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheDefaultConfigSetDisplayName,
  *     id: ociCacheDefaultConfigSetId,
@@ -135,18 +135,18 @@ export interface GetOciCacheDefaultConfigSetsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheDefaultConfigSetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheDefaultConfigSetsFilterArgs>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
      */
-    softwareVersion?: pulumi.Input<string>;
+    softwareVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

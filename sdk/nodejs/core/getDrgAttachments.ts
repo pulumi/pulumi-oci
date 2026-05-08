@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgAttachments = oci.Core.getDrgAttachments({
+ * const testDrgAttachments = oci.core.getDrgAttachments({
  *     compartmentId: compartmentId,
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,
@@ -144,7 +144,7 @@ export interface GetDrgAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgAttachments = oci.Core.getDrgAttachments({
+ * const testDrgAttachments = oci.core.getDrgAttachments({
  *     compartmentId: compartmentId,
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,
@@ -178,7 +178,7 @@ export interface GetDrgAttachmentsOutputArgs {
     /**
      * The type for the network resource attached to the DRG.
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -186,26 +186,26 @@ export interface GetDrgAttachmentsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
+    drgId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */
-    drgRouteTableId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgAttachmentsFilterArgs>[]>;
+    drgRouteTableId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgAttachmentsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

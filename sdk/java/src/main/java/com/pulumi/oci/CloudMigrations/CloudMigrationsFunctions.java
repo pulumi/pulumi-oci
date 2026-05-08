@@ -64,8 +64,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -148,8 +148,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -274,8 +274,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -316,8 +316,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -358,8 +358,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -400,8 +400,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -442,8 +442,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -484,8 +484,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -529,8 +529,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -574,8 +574,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -619,8 +619,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -664,8 +664,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -709,8 +709,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -754,8 +754,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -799,8 +799,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -841,8 +841,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -883,8 +883,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -925,8 +925,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -967,8 +967,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1009,8 +1009,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1055,8 +1055,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1101,8 +1101,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1147,8 +1147,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1193,8 +1193,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1239,8 +1239,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1285,8 +1285,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1331,8 +1331,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1377,8 +1377,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1423,8 +1423,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1469,8 +1469,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1515,8 +1515,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1561,8 +1561,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1653,8 +1653,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1699,8 +1699,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1745,8 +1745,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1791,8 +1791,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1836,8 +1836,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1881,8 +1881,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1926,8 +1926,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1971,8 +1971,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2016,8 +2016,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2061,8 +2061,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2106,8 +2106,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2148,8 +2148,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2190,8 +2190,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2232,8 +2232,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2274,8 +2274,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2316,8 +2316,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2361,8 +2361,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2406,8 +2406,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2451,8 +2451,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2496,8 +2496,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2541,8 +2541,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2586,8 +2586,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2631,8 +2631,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2673,8 +2673,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2715,8 +2715,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2757,8 +2757,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2799,8 +2799,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2841,8 +2841,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2886,8 +2886,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2931,8 +2931,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2976,8 +2976,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3021,8 +3021,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3066,8 +3066,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3111,8 +3111,8 @@ public final class CloudMigrationsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
      * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

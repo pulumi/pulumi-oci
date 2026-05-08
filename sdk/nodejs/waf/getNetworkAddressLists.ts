@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkAddressLists = oci.Waf.getNetworkAddressLists({
+ * const testNetworkAddressLists = oci.waf.getNetworkAddressLists({
  *     compartmentId: compartmentId,
  *     displayName: networkAddressListDisplayName,
  *     id: networkAddressListId,
@@ -96,7 +96,7 @@ export interface GetNetworkAddressListsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkAddressLists = oci.Waf.getNetworkAddressLists({
+ * const testNetworkAddressLists = oci.waf.getNetworkAddressLists({
  *     compartmentId: compartmentId,
  *     displayName: networkAddressListDisplayName,
  *     id: networkAddressListId,
@@ -126,14 +126,14 @@ export interface GetNetworkAddressListsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetNetworkAddressListsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetNetworkAddressListsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -254,7 +254,7 @@ def get_dbmulticloud_oracle_db_azure_vault_association(oracle_db_azure_vault_ass
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dbmulticloud_oracle_db_azure_vault_association_output(oracle_db_azure_vault_association_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_azure_vault_association_output(oracle_db_azure_vault_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureVaultAssociationResult]:
     """
     This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.

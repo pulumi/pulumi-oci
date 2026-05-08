@@ -95,7 +95,7 @@ def get_db_system_compute_performances(db_system_shape: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
+    test_db_system_compute_performances = oci.database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
     ```
 
 
@@ -112,8 +112,8 @@ def get_db_system_compute_performances(db_system_shape: Optional[_builtins.str] 
         db_system_shape=pulumi.get(__ret__, 'db_system_shape'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]]]] = None,
+def get_db_system_compute_performances_output(db_system_shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
     """
     This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
+    test_db_system_compute_performances = oci.database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
     ```
 
 

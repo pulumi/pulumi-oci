@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitments = oci.OsubSubscription.getCommitments({
+ * const testCommitments = oci.osubsubscription.getCommitments({
  *     compartmentId: compartmentId,
  *     subscribedServiceId: testService.id,
  *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,
@@ -88,7 +88,7 @@ export interface GetCommitmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitments = oci.OsubSubscription.getCommitments({
+ * const testCommitments = oci.osubsubscription.getCommitments({
  *     compartmentId: compartmentId,
  *     subscribedServiceId: testService.id,
  *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,
@@ -115,7 +115,7 @@ export interface GetCommitmentsOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubSubscription.GetCommitmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubSubscription.GetCommitmentsFilterArgs>[] | undefined>;
     /**
      * This param is used to get the commitments for a particular subscribed service
      */
@@ -123,9 +123,9 @@ export interface GetCommitmentsOutputArgs {
     /**
      * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
      */
-    xOneGatewaySubscriptionId?: pulumi.Input<string>;
+    xOneGatewaySubscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

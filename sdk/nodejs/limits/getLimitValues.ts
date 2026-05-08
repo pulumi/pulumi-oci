@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitValues = oci.Limits.getLimitValues({
+ * const testLimitValues = oci.limits.getLimitValues({
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,
@@ -120,7 +120,7 @@ export interface GetLimitValuesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitValues = oci.Limits.getLimitValues({
+ * const testLimitValues = oci.limits.getLimitValues({
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,
@@ -152,7 +152,7 @@ export interface GetLimitValuesOutputArgs {
     /**
      * Filter entries by availability domain. This implies that only AD-specific values are returned.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
@@ -160,16 +160,16 @@ export interface GetLimitValuesOutputArgs {
     /**
      * External cloud provider location
      */
-    externalLocation?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetLimitValuesFilterArgs>[]>;
+    externalLocation?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetLimitValuesFilterArgs>[] | undefined>;
     /**
      * Optional field, can be used to see a specific resource limit value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter entries by scope type.
      */
-    scopeType?: pulumi.Input<string>;
+    scopeType?: pulumi.Input<string | undefined>;
     /**
      * The target service name.
      */
@@ -177,5 +177,5 @@ export interface GetLimitValuesOutputArgs {
     /**
      * The subscription OCID assigned to the tenant.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

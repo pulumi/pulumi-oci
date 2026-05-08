@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = oci.AiDocument.getModel({
+ * const testModel = oci.aidocument.getModel({
  *     modelId: testModelOciAiDocumentModel.id,
  * });
  * ```
@@ -180,7 +180,7 @@ export interface GetModelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = oci.AiDocument.getModel({
+ * const testModel = oci.aidocument.getModel({
  *     modelId: testModelOciAiDocumentModel.id,
  * });
  * ```

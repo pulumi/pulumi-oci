@@ -22,8 +22,8 @@ __all__ = ['ManagedInstancesUpdatePackagesManagementArgs', 'ManagedInstancesUpda
 class ManagedInstancesUpdatePackagesManagementArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstancesUpdatePackagesManagement resource.
 
@@ -51,35 +51,35 @@ class ManagedInstancesUpdatePackagesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="updateTypes")
-    def update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The types of updates to be applied.
         """
         return pulumi.get(self, "update_types")
 
     @update_types.setter
-    def update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstancesUpdatePackagesManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstancesUpdatePackagesManagement resources.
 
@@ -96,38 +96,38 @@ class _ManagedInstancesUpdatePackagesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTypes")
-    def update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The types of updates to be applied.
         """
         return pulumi.get(self, "update_types")
 
     @update_types.setter
-    def update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instances Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -232,9 +232,9 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -259,9 +259,9 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstancesUpdatePackagesManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstancesUpdatePackagesManagement':
         """
         Get an existing ManagedInstancesUpdatePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

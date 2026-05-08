@@ -103,7 +103,7 @@ def get_vaults(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
+    test_vaults = oci.kms.get_vaults(compartment_id=compartment_id)
     ```
 
 
@@ -120,8 +120,8 @@ def get_vaults(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         vaults=pulumi.get(__ret__, 'vaults'))
-def get_vaults_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict']]]]] = None,
+def get_vaults_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict']]]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultsResult]:
     """
     This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
@@ -139,7 +139,7 @@ def get_vaults_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
+    test_vaults = oci.kms.get_vaults(compartment_id=compartment_id)
     ```
 
 

@@ -284,7 +284,7 @@ def get_database_software_image(database_software_image_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
+    test_database_software_image = oci.database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
 
 
@@ -316,7 +316,7 @@ def get_database_software_image(database_software_image_id: Optional[_builtins.s
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_database_software_image_output(database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_software_image_output(database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSoftwareImageResult]:
     """
     This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
@@ -329,7 +329,7 @@ def get_database_software_image_output(database_software_image_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
+    test_database_software_image = oci.database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
 
 

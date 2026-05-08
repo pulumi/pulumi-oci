@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackup = oci.BigDataService.getBdsInstanceNodeBackup({
+ * const testBdsInstanceNodeBackup = oci.bigdataservice.getBdsInstanceNodeBackup({
  *     bdsInstanceId: testBdsInstance.id,
  *     nodeBackupId: testBackup.id,
  * });
@@ -97,7 +97,7 @@ export interface GetBdsInstanceNodeBackupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackup = oci.BigDataService.getBdsInstanceNodeBackup({
+ * const testBdsInstanceNodeBackup = oci.bigdataservice.getBdsInstanceNodeBackup({
  *     bdsInstanceId: testBdsInstance.id,
  *     nodeBackupId: testBackup.id,
  * });

@@ -137,7 +137,7 @@ def get_agent_data_sources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.GenerativeAi.get_agent_data_sources(compartment_id=compartment_id,
+    test_data_sources = oci.generativeai.get_agent_data_sources(compartment_id=compartment_id,
         display_name=data_source_display_name,
         knowledge_base_id=test_knowledge_base["id"],
         state=data_source_state)
@@ -166,11 +166,11 @@ def get_agent_data_sources(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         knowledge_base_id=pulumi.get(__ret__, 'knowledge_base_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_agent_data_sources_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentDataSourcesFilterArgs', 'GetAgentDataSourcesFilterArgsDict']]]]] = None,
-                                  knowledge_base_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_data_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentDataSourcesFilterArgs', 'GetAgentDataSourcesFilterArgsDict']]]]] = None,
+                                  knowledge_base_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataSourcesResult]:
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -183,7 +183,7 @@ def get_agent_data_sources_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.GenerativeAi.get_agent_data_sources(compartment_id=compartment_id,
+    test_data_sources = oci.generativeai.get_agent_data_sources(compartment_id=compartment_id,
         display_name=data_source_display_name,
         knowledge_base_id=test_knowledge_base["id"],
         state=data_source_state)

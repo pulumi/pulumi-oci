@@ -30,12 +30,12 @@ import * as utilities from "../utilities";
  *         targetResourceFqdn: sessionTargetResourceDetailsTargetResourceFqdn,
  *         targetResourceId: testTargetResource.id,
  *         targetResourceOperatingSystemUserName: testUser.name,
- *         targetResourcePort: sessionTargetResourceDetailsTargetResourcePort,
+ *         targetResourcePort: Number(sessionTargetResourceDetailsTargetResourcePort),
  *         targetResourcePrivateIpAddress: sessionTargetResourceDetailsTargetResourcePrivateIpAddress,
  *     },
  *     displayName: sessionDisplayName,
  *     keyType: sessionKeyType,
- *     sessionTtlInSeconds: sessionSessionTtlInSeconds,
+ *     sessionTtlInSeconds: Number(sessionSessionTtlInSeconds),
  * });
  * ```
  *
@@ -197,59 +197,59 @@ export interface SessionState {
     /**
      * The unique identifier (OCID) of the bastion on which to create this session.
      */
-    bastionId?: pulumi.Input<string>;
+    bastionId?: pulumi.Input<string | undefined>;
     /**
      * The name of the bastion that is hosting this session.
      */
-    bastionName?: pulumi.Input<string>;
+    bastionName?: pulumi.Input<string | undefined>;
     /**
      * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
      */
-    bastionPublicHostKeyInfo?: pulumi.Input<string>;
+    bastionPublicHostKeyInfo?: pulumi.Input<string | undefined>;
     /**
      * The username that the session uses to connect to the target resource.
      */
-    bastionUserName?: pulumi.Input<string>;
+    bastionUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the session.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Public key details for a bastion session.
      */
-    keyDetails?: pulumi.Input<inputs.Bastion.SessionKeyDetails>;
+    keyDetails?: pulumi.Input<inputs.Bastion.SessionKeyDetails | undefined>;
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      */
-    keyType?: pulumi.Input<string>;
+    keyType?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current session state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The amount of time the session can remain active.
      */
-    sessionTtlInSeconds?: pulumi.Input<number>;
+    sessionTtlInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The connection message for the session.
      */
-    sshMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    sshMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the session.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Details about a bastion session's target resource.
      */
-    targetResourceDetails?: pulumi.Input<inputs.Bastion.SessionTargetResourceDetails>;
+    targetResourceDetails?: pulumi.Input<inputs.Bastion.SessionTargetResourceDetails | undefined>;
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -263,7 +263,7 @@ export interface SessionArgs {
     /**
      * (Updatable) The name of the session.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Public key details for a bastion session.
      */
@@ -271,11 +271,11 @@ export interface SessionArgs {
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      */
-    keyType?: pulumi.Input<string>;
+    keyType?: pulumi.Input<string | undefined>;
     /**
      * The amount of time the session can remain active.
      */
-    sessionTtlInSeconds?: pulumi.Input<number>;
+    sessionTtlInSeconds?: pulumi.Input<number | undefined>;
     /**
      * Details about a bastion session's target resource.
      */

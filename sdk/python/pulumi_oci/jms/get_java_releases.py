@@ -147,7 +147,7 @@ def get_java_releases(family_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_releases = oci.Jms.get_java_releases(family_version=java_release_family_version,
+    test_java_releases = oci.jms.get_java_releases(family_version=java_release_family_version,
         jre_security_status=java_release_jre_security_status,
         license_type=java_release_license_type,
         release_type=java_release_release_type,
@@ -180,12 +180,12 @@ def get_java_releases(family_version: Optional[_builtins.str] = None,
         license_type=pulumi.get(__ret__, 'license_type'),
         release_type=pulumi.get(__ret__, 'release_type'),
         release_version=pulumi.get(__ret__, 'release_version'))
-def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]]]] = None,
-                             jre_security_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             license_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             release_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             release_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_releases_output(family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]]]] = None,
+                             jre_security_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             release_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             release_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaReleasesResult]:
     """
     This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
@@ -198,7 +198,7 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_java_releases = oci.Jms.get_java_releases(family_version=java_release_family_version,
+    test_java_releases = oci.jms.get_java_releases(family_version=java_release_family_version,
         jre_security_status=java_release_jre_security_status,
         license_type=java_release_license_type,
         release_type=java_release_release_type,

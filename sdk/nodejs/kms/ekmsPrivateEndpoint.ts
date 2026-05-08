@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     port: ekmsPrivateEndpointPort,
+ *     port: Number(ekmsPrivateEndpointPort),
  * });
  * ```
  *
@@ -196,43 +196,43 @@ export interface EkmsPrivateEndpointState {
     /**
      * CABundle to validate TLS certificate of the external key manager system in PEM format
      */
-    caBundle?: pulumi.Input<string>;
+    caBundle?: pulumi.Input<string | undefined>;
     /**
      * Compartment identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name of the EKMS private endpoint resource being created.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * External private IP to connect to from this EKMS private endpoint
      */
-    externalKeyManagerIp?: pulumi.Input<string>;
+    externalKeyManagerIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The port of the external key manager system
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
      */
-    privateEndpointIp?: pulumi.Input<string>;
+    privateEndpointIp?: pulumi.Input<string | undefined>;
     /**
      * The current state of the EKMS private endpoint resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of subnet in which the EKMS private endpoint is to be created 
      *
@@ -240,15 +240,15 @@ export interface EkmsPrivateEndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -266,7 +266,7 @@ export interface EkmsPrivateEndpointArgs {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name of the EKMS private endpoint resource being created.
      */
@@ -278,11 +278,11 @@ export interface EkmsPrivateEndpointArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The port of the external key manager system
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The OCID of subnet in which the EKMS private endpoint is to be created 
      *

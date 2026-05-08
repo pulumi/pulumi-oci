@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworks = oci.Database.getVmClusterNetworks({
+ * const testVmClusterNetworks = oci.database.getVmClusterNetworks({
  *     compartmentId: compartmentId,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     displayName: vmClusterNetworkDisplayName,
@@ -100,7 +100,7 @@ export interface GetVmClusterNetworksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworks = oci.Database.getVmClusterNetworks({
+ * const testVmClusterNetworks = oci.database.getVmClusterNetworks({
  *     compartmentId: compartmentId,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     displayName: vmClusterNetworkDisplayName,
@@ -130,14 +130,14 @@ export interface GetVmClusterNetworksOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     exadataInfrastructureId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterNetworksFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterNetworksFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -168,11 +168,11 @@ def get_detector_recipes(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=compartment_id,
+    test_detector_recipes = oci.cloudguard.get_detector_recipes(compartment_id=compartment_id,
         access_level=detector_recipe_access_level,
-        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree == "true",
         display_name=detector_recipe_display_name,
-        resource_metadata_only=detector_recipe_resource_metadata_only,
+        resource_metadata_only=detector_recipe_resource_metadata_only == "true",
         state=detector_recipe_state)
     ```
 
@@ -205,13 +205,13 @@ def get_detector_recipes(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
         state=pulumi.get(__ret__, 'state'))
-def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDetectorRecipesFilterArgs', 'GetDetectorRecipesFilterArgsDict']]]]] = None,
-                                resource_metadata_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_detector_recipes_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDetectorRecipesFilterArgs', 'GetDetectorRecipesFilterArgsDict']]]]] = None,
+                                resource_metadata_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectorRecipesResult]:
     """
     This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -238,11 +238,11 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=compartment_id,
+    test_detector_recipes = oci.cloudguard.get_detector_recipes(compartment_id=compartment_id,
         access_level=detector_recipe_access_level,
-        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree == "true",
         display_name=detector_recipe_display_name,
-        resource_metadata_only=detector_recipe_resource_metadata_only,
+        resource_metadata_only=detector_recipe_resource_metadata_only == "true",
         state=detector_recipe_state)
     ```
 

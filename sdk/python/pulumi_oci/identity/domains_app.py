@@ -25,98 +25,98 @@ class DomainsAppArgs:
                  display_name: pulumi.Input[_builtins.str],
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 access_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
-                 all_url_schemes_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_access_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
-                 allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
-                 app_icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_signon_policy: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']] = None,
-                 app_thumbnail: Optional[pulumi.Input[_builtins.str]] = None,
-                 apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
-                 as_opc_service: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']] = None,
-                 attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audience: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 bypass_consent: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
-                 client_ip_checking: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_kmsi_token_authentication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 home_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_token_enc_algo: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
-                 idp_policy: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']] = None,
-                 is_alias_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enterprise_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_form_fill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kerberos_realm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_login_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mobile_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multicloud_service_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_client: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_obligation_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_radius_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_saml_service_provider: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unmanaged_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_web_tier_policy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 landing_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 linking_callback_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_logo_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
-                 radius_policy: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']] = None,
-                 redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 refresh_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 saml_service_provider: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
-                 secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
-                 service_type_urn: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_type_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_in_my_apps: Optional[pulumi.Input[_builtins.bool]] = None,
-                 signon_policy: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
-                 terms_of_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 terms_of_use: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']] = None,
-                 trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
-                 trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None):
+                 access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
+                 all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
+                 app_icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_signon_policy: pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']] = None,
+                 app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
+                 as_opc_service: pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audience: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
+                 client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
+                 idp_policy: pulumi.Input[Optional['DomainsAppIdpPolicyArgs']] = None,
+                 is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kerberos_realm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_login_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mobile_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multicloud_service_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_client: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_obligation_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_radius_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_saml_service_provider: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unmanaged_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_web_tier_policy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 landing_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 linking_callback_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_logout_redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
+                 radius_policy: pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']] = None,
+                 redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 saml_service_provider: pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
+                 secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
+                 service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+                 signon_policy: pulumi.Input[Optional['DomainsAppSignonPolicyArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
+                 terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 terms_of_use: pulumi.Input[Optional['DomainsAppTermsOfUseArgs']] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
+                 trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None):
         """
         The set of arguments for constructing a DomainsApp resource.
 
@@ -1263,7 +1263,7 @@ class DomainsAppArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTokenExpiry")
-    def access_token_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def access_token_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 
@@ -1279,12 +1279,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "access_token_expiry")
 
     @access_token_expiry.setter
-    def access_token_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def access_token_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "access_token_expiry", value)
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
 
@@ -1300,12 +1300,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="aliasApps")
-    def alias_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
+    def alias_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
         """
         (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
 
@@ -1323,12 +1323,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "alias_apps")
 
     @alias_apps.setter
-    def alias_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]):
+    def alias_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]):
         pulumi.set(self, "alias_apps", value)
 
     @_builtins.property
     @pulumi.getter(name="allUrlSchemesAllowed")
-    def all_url_schemes_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def all_url_schemes_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
 
@@ -1344,12 +1344,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @all_url_schemes_allowed.setter
-    def all_url_schemes_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def all_url_schemes_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "all_url_schemes_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="allowAccessControl")
-    def allow_access_control(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_access_control(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
 
@@ -1365,12 +1365,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allow_access_control")
 
     @allow_access_control.setter
-    def allow_access_control(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_access_control(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="allowOffline")
-    def allow_offline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_offline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
 
@@ -1386,12 +1386,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allow_offline")
 
     @allow_offline.setter
-    def allow_offline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_offline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_offline", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedGrants")
-    def allowed_grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_grants(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
 
@@ -1408,12 +1408,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allowed_grants")
 
     @allowed_grants.setter
-    def allowed_grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_grants(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_grants", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedOperations")
-    def allowed_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
 
@@ -1430,12 +1430,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allowed_operations")
 
     @allowed_operations.setter
-    def allowed_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedScopes")
-    def allowed_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
+    def allowed_scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
         """
         (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
 
@@ -1453,12 +1453,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allowed_scopes")
 
     @allowed_scopes.setter
-    def allowed_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]):
+    def allowed_scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]):
         pulumi.set(self, "allowed_scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedTags")
-    def allowed_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
+    def allowed_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
         """
         (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
 
@@ -1477,12 +1477,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "allowed_tags")
 
     @allowed_tags.setter
-    def allowed_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]):
+    def allowed_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]):
         pulumi.set(self, "allowed_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="appIcon")
-    def app_icon(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_icon(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application icon.
 
@@ -1498,12 +1498,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "app_icon")
 
     @app_icon.setter
-    def app_icon(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_icon(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_icon", value)
 
     @_builtins.property
     @pulumi.getter(name="appSignonPolicy")
-    def app_signon_policy(self) -> Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]:
+    def app_signon_policy(self) -> pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']]:
         """
         (Updatable) App Sign-on Policy.
 
@@ -1518,12 +1518,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "app_signon_policy")
 
     @app_signon_policy.setter
-    def app_signon_policy(self, value: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]):
+    def app_signon_policy(self, value: pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']]):
         pulumi.set(self, "app_signon_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="appThumbnail")
-    def app_thumbnail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_thumbnail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application thumbnail.
 
@@ -1539,12 +1539,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "app_thumbnail")
 
     @app_thumbnail.setter
-    def app_thumbnail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_thumbnail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_thumbnail", value)
 
     @_builtins.property
     @pulumi.getter(name="appsNetworkPerimeters")
-    def apps_network_perimeters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
+    def apps_network_perimeters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
         """
         (Updatable) Network Perimeter
 
@@ -1561,12 +1561,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "apps_network_perimeters")
 
     @apps_network_perimeters.setter
-    def apps_network_perimeters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]):
+    def apps_network_perimeters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]):
         pulumi.set(self, "apps_network_perimeters", value)
 
     @_builtins.property
     @pulumi.getter(name="asOpcService")
-    def as_opc_service(self) -> Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]:
+    def as_opc_service(self) -> pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']]:
         """
         (Updatable) OPCService facet of the application.
 
@@ -1583,12 +1583,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "as_opc_service")
 
     @as_opc_service.setter
-    def as_opc_service(self, value: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]):
+    def as_opc_service(self, value: pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']]):
         pulumi.set(self, "as_opc_service", value)
 
     @_builtins.property
     @pulumi.getter(name="attrRenderingMetadatas")
-    def attr_rendering_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
+    def attr_rendering_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
         """
         (Updatable) Label for the attribute to be shown in the UI.
 
@@ -1605,36 +1605,36 @@ class DomainsAppArgs:
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @attr_rendering_metadatas.setter
-    def attr_rendering_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]):
+    def attr_rendering_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]):
         pulumi.set(self, "attr_rendering_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def audience(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audience(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
 
@@ -1651,24 +1651,24 @@ class DomainsAppArgs:
         return pulumi.get(self, "audience")
 
     @audience.setter
-    def audience(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audience(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audience", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="bypassConsent")
-    def bypass_consent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def bypass_consent(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that consent should be skipped for all scopes
 
@@ -1687,12 +1687,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "bypass_consent")
 
     @bypass_consent.setter
-    def bypass_consent(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def bypass_consent(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "bypass_consent", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
+    def certificates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
         """
         (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
 
@@ -1710,12 +1710,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "certificates")
 
     @certificates.setter
-    def certificates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]):
+    def certificates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]):
         pulumi.set(self, "certificates", value)
 
     @_builtins.property
     @pulumi.getter(name="clientIpChecking")
-    def client_ip_checking(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_ip_checking(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Network Perimeters checking mode
 
@@ -1734,12 +1734,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "client_ip_checking")
 
     @client_ip_checking.setter
-    def client_ip_checking(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_ip_checking(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_ip_checking", value)
 
     @_builtins.property
     @pulumi.getter(name="clientType")
-    def client_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
 
@@ -1756,12 +1756,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "client_type")
 
     @client_type.setter
-    def client_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_type", value)
 
     @_builtins.property
     @pulumi.getter(name="contactEmailAddress")
-    def contact_email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contact_email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Contact Email Address
 
@@ -1779,12 +1779,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "contact_email_address")
 
     @contact_email_address.setter
-    def contact_email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contact_email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contact_email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="delegatedServiceNames")
-    def delegated_service_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def delegated_service_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
 
@@ -1803,12 +1803,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "delegated_service_names")
 
     @delegated_service_names.setter
-    def delegated_service_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def delegated_service_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "delegated_service_names", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the application.
 
@@ -1825,12 +1825,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
-    def disable_kmsi_token_authentication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_kmsi_token_authentication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the application is allowed to be access using kmsi token.
 
@@ -1848,12 +1848,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @disable_kmsi_token_authentication.setter
-    def disable_kmsi_token_authentication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_kmsi_token_authentication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_kmsi_token_authentication", value)
 
     @_builtins.property
     @pulumi.getter(name="errorPageUrl")
-    def error_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
 
@@ -1870,24 +1870,24 @@ class DomainsAppArgs:
         return pulumi.get(self, "error_page_url")
 
     @error_page_url.setter
-    def error_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="homePageUrl")
-    def home_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Home Page URL
 
@@ -1905,12 +1905,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "home_page_url")
 
     @home_page_url.setter
-    def home_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_page_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def icon(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) URL of application icon.
 
@@ -1926,12 +1926,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "icon")
 
     @icon.setter
-    def icon(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon", value)
 
     @_builtins.property
     @pulumi.getter(name="idTokenEncAlgo")
-    def id_token_enc_algo(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id_token_enc_algo(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Encryption Alogrithm to use for encrypting ID token.
 
@@ -1950,12 +1950,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "id_token_enc_algo")
 
     @id_token_enc_algo.setter
-    def id_token_enc_algo(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id_token_enc_algo(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id_token_enc_algo", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviders")
-    def identity_providers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
+    def identity_providers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
         """
         (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
 
@@ -1971,12 +1971,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "identity_providers")
 
     @identity_providers.setter
-    def identity_providers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]):
+    def identity_providers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]):
         pulumi.set(self, "identity_providers", value)
 
     @_builtins.property
     @pulumi.getter(name="idpPolicy")
-    def idp_policy(self) -> Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]:
+    def idp_policy(self) -> pulumi.Input[Optional['DomainsAppIdpPolicyArgs']]:
         """
         (Updatable) IDP Policy.
 
@@ -1993,12 +1993,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "idp_policy")
 
     @idp_policy.setter
-    def idp_policy(self, value: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]):
+    def idp_policy(self, value: pulumi.Input[Optional['DomainsAppIdpPolicyArgs']]):
         pulumi.set(self, "idp_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="isAliasApp")
-    def is_alias_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_alias_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, this App is an AliasApp and it cannot be granted to an end-user directly.
 
@@ -2014,12 +2014,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_alias_app")
 
     @is_alias_app.setter
-    def is_alias_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_alias_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_alias_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnterpriseApp")
-    def is_enterprise_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enterprise_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
 
@@ -2037,12 +2037,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_enterprise_app")
 
     @is_enterprise_app.setter
-    def is_enterprise_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enterprise_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enterprise_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isFormFill")
-    def is_form_fill(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_form_fill(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as FormFill Application
 
@@ -2058,12 +2058,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_form_fill")
 
     @is_form_fill.setter
-    def is_form_fill(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_form_fill(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_form_fill", value)
 
     @_builtins.property
     @pulumi.getter(name="isKerberosRealm")
-    def is_kerberos_realm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kerberos_realm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that this App supports Kerberos Authentication
 
@@ -2079,12 +2079,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_kerberos_realm")
 
     @is_kerberos_realm.setter
-    def is_kerberos_realm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kerberos_realm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kerberos_realm", value)
 
     @_builtins.property
     @pulumi.getter(name="isLoginTarget")
-    def is_login_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_login_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App allows runtime services to log end users into this App automatically.
 
@@ -2100,12 +2100,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_login_target")
 
     @is_login_target.setter
-    def is_login_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_login_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_login_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isMobileTarget")
-    def is_mobile_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_mobile_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
 
@@ -2121,12 +2121,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_mobile_target")
 
     @is_mobile_target.setter
-    def is_mobile_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_mobile_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_mobile_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isMulticloudServiceApp")
-    def is_multicloud_service_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multicloud_service_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates the app is used for multicloud service integration.
 
@@ -2144,12 +2144,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_multicloud_service_app")
 
     @is_multicloud_service_app.setter
-    def is_multicloud_service_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multicloud_service_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multicloud_service_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isOauthClient")
-    def is_oauth_client(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oauth_client(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as an OAuth Client
 
@@ -2165,12 +2165,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_oauth_client")
 
     @is_oauth_client.setter
-    def is_oauth_client(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oauth_client(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oauth_client", value)
 
     @_builtins.property
     @pulumi.getter(name="isOauthResource")
-    def is_oauth_resource(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oauth_resource(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that this application acts as an OAuth Resource.
 
@@ -2186,12 +2186,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_oauth_resource")
 
     @is_oauth_resource.setter
-    def is_oauth_resource(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oauth_resource(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oauth_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="isObligationCapable")
-    def is_obligation_capable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_obligation_capable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
 
@@ -2208,12 +2208,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_obligation_capable")
 
     @is_obligation_capable.setter
-    def is_obligation_capable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_obligation_capable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_obligation_capable", value)
 
     @_builtins.property
     @pulumi.getter(name="isRadiusApp")
-    def is_radius_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_radius_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as an Radius App
 
@@ -2231,12 +2231,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_radius_app")
 
     @is_radius_app.setter
-    def is_radius_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_radius_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_radius_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isSamlServiceProvider")
-    def is_saml_service_provider(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_saml_service_provider(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, then this App acts as a SAML Service Provider.
 
@@ -2252,12 +2252,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_saml_service_provider")
 
     @is_saml_service_provider.setter
-    def is_saml_service_provider(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_saml_service_provider(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_saml_service_provider", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnmanagedApp")
-    def is_unmanaged_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unmanaged_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
 
@@ -2273,12 +2273,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_unmanaged_app")
 
     @is_unmanaged_app.setter
-    def is_unmanaged_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unmanaged_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unmanaged_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isWebTierPolicy")
-    def is_web_tier_policy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_web_tier_policy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, the webtier policy is active
 
@@ -2294,12 +2294,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "is_web_tier_policy")
 
     @is_web_tier_policy.setter
-    def is_web_tier_policy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_web_tier_policy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_web_tier_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="landingPageUrl")
-    def landing_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def landing_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
 
@@ -2315,12 +2315,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "landing_page_url")
 
     @landing_page_url.setter
-    def landing_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def landing_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "landing_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="linkingCallbackUrl")
-    def linking_callback_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def linking_callback_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the callback URL for the social linking operation.
 
@@ -2339,12 +2339,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "linking_callback_url")
 
     @linking_callback_url.setter
-    def linking_callback_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def linking_callback_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "linking_callback_url", value)
 
     @_builtins.property
     @pulumi.getter(name="loginMechanism")
-    def login_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def login_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
 
@@ -2361,12 +2361,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "login_mechanism")
 
     @login_mechanism.setter
-    def login_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def login_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "login_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="loginPageUrl")
-    def login_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def login_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
 
@@ -2383,12 +2383,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "login_page_url")
 
     @login_page_url.setter
-    def login_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def login_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "login_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutPageUrl")
-    def logout_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logout_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
 
@@ -2407,12 +2407,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "logout_page_url")
 
     @logout_page_url.setter
-    def logout_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logout_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logout_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutUri")
-    def logout_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logout_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
 
@@ -2429,12 +2429,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "logout_uri")
 
     @logout_uri.setter
-    def logout_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logout_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logout_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 
@@ -2451,12 +2451,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -2473,12 +2473,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="postLogoutRedirectUris")
-    def post_logout_redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def post_logout_redirect_uris(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
 
@@ -2495,12 +2495,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @post_logout_redirect_uris.setter
-    def post_logout_redirect_uris(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def post_logout_redirect_uris(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "post_logout_redirect_uris", value)
 
     @_builtins.property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privacy_policy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Privacy Policy URL
 
@@ -2518,12 +2518,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
-    def privacy_policy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privacy_policy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privacy_policy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="productLogoUrl")
-    def product_logo_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_logo_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application Logo URL
 
@@ -2541,12 +2541,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "product_logo_url")
 
     @product_logo_url.setter
-    def product_logo_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_logo_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_logo_url", value)
 
     @_builtins.property
     @pulumi.getter(name="productName")
-    def product_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Product Name
 
@@ -2564,12 +2564,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "product_name")
 
     @product_name.setter
-    def product_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_name", value)
 
     @_builtins.property
     @pulumi.getter(name="protectableSecondaryAudiences")
-    def protectable_secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
+    def protectable_secondary_audiences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
         """
         (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 
@@ -2589,12 +2589,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @protectable_secondary_audiences.setter
-    def protectable_secondary_audiences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]):
+    def protectable_secondary_audiences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]):
         pulumi.set(self, "protectable_secondary_audiences", value)
 
     @_builtins.property
     @pulumi.getter(name="radiusPolicy")
-    def radius_policy(self) -> Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]:
+    def radius_policy(self) -> pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']]:
         """
         (Updatable) RADIUS Policy assigned to this application.
 
@@ -2611,12 +2611,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "radius_policy")
 
     @radius_policy.setter
-    def radius_policy(self, value: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]):
+    def radius_policy(self, value: pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']]):
         pulumi.set(self, "radius_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUris")
-    def redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def redirect_uris(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
 
@@ -2633,12 +2633,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "redirect_uris")
 
     @redirect_uris.setter
-    def redirect_uris(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def redirect_uris(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "redirect_uris", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTokenExpiry")
-    def refresh_token_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh_token_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
 
@@ -2654,24 +2654,24 @@ class DomainsAppArgs:
         return pulumi.get(self, "refresh_token_expiry")
 
     @refresh_token_expiry.setter
-    def refresh_token_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh_token_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh_token_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="samlServiceProvider")
-    def saml_service_provider(self) -> Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]:
+    def saml_service_provider(self) -> pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']]:
         """
         (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
 
@@ -2687,12 +2687,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "saml_service_provider")
 
     @saml_service_provider.setter
-    def saml_service_provider(self, value: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]):
+    def saml_service_provider(self, value: pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']]):
         pulumi.set(self, "saml_service_provider", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
         """
         (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
 
@@ -2710,12 +2710,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryAudiences")
-    def secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_audiences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 
@@ -2734,12 +2734,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "secondary_audiences")
 
     @secondary_audiences.setter
-    def secondary_audiences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_audiences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_audiences", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceParams")
-    def service_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
+    def service_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
         """
         (Updatable) Custom attribute that is required to compute other attribute values during app creation.
 
@@ -2756,12 +2756,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "service_params")
 
     @service_params.setter
-    def service_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]):
+    def service_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]):
         pulumi.set(self, "service_params", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTypeUrn")
-    def service_type_urn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type_urn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
 
@@ -2778,12 +2778,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "service_type_urn")
 
     @service_type_urn.setter
-    def service_type_urn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type_urn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type_urn", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTypeVersion")
-    def service_type_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
 
@@ -2800,12 +2800,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "service_type_version")
 
     @service_type_version.setter
-    def service_type_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type_version", value)
 
     @_builtins.property
     @pulumi.getter(name="showInMyApps")
-    def show_in_my_apps(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def show_in_my_apps(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
 
@@ -2823,12 +2823,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "show_in_my_apps")
 
     @show_in_my_apps.setter
-    def show_in_my_apps(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def show_in_my_apps(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "show_in_my_apps", value)
 
     @_builtins.property
     @pulumi.getter(name="signonPolicy")
-    def signon_policy(self) -> Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]:
+    def signon_policy(self) -> pulumi.Input[Optional['DomainsAppSignonPolicyArgs']]:
         """
         (Updatable) Sign-on Policy.
 
@@ -2845,12 +2845,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "signon_policy")
 
     @signon_policy.setter
-    def signon_policy(self, value: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]):
+    def signon_policy(self, value: pulumi.Input[Optional['DomainsAppSignonPolicyArgs']]):
         pulumi.set(self, "signon_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -2867,12 +2867,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfServiceUrl")
-    def terms_of_service_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def terms_of_service_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Terms of Service URL
 
@@ -2890,12 +2890,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "terms_of_service_url")
 
     @terms_of_service_url.setter
-    def terms_of_service_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def terms_of_service_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "terms_of_service_url", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfUse")
-    def terms_of_use(self) -> Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]:
+    def terms_of_use(self) -> pulumi.Input[Optional['DomainsAppTermsOfUseArgs']]:
         """
         (Updatable) Terms Of Use.
 
@@ -2912,12 +2912,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "terms_of_use")
 
     @terms_of_use.setter
-    def terms_of_use(self, value: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]):
+    def terms_of_use(self, value: pulumi.Input[Optional['DomainsAppTermsOfUseArgs']]):
         pulumi.set(self, "terms_of_use", value)
 
     @_builtins.property
     @pulumi.getter(name="trustPolicies")
-    def trust_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
+    def trust_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
         """
         (Updatable) Trust Policies.
 
@@ -2933,12 +2933,12 @@ class DomainsAppArgs:
         return pulumi.get(self, "trust_policies")
 
     @trust_policies.setter
-    def trust_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]):
+    def trust_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]):
         pulumi.set(self, "trust_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="trustScope")
-    def trust_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
 
@@ -2957,291 +2957,291 @@ class DomainsAppArgs:
         return pulumi.get(self, "trust_scope")
 
     @trust_scope.setter
-    def trust_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
         """
         (Updatable) This extension provides attributes for database service facet of an App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app")
 
     @urnietfparamsscimschemasoracleidcsextensiondbcs_app.setter
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
         """
         (Updatable) This extension defines the Enterprise App related attributes.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionenterprise_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
         """
         (Updatable) This extension provides attributes for Form-Fill facet of App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
         """
         (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template.setter
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
         """
         (Updatable) Kerberos Realm
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp")
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
         """
         (Updatable) Managed App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmanagedapp_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp")
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app")
 
     @urnietfparamsscimschemasoracleidcsextensionopc_service_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionradius_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
         """
         (Updatable) Requestable App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
         """
         (Updatable) This extension defines attributes related to the Service Providers configuration.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app")
 
     @urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
         """
         (Updatable) WebTier Policy
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app")
 
     @urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", value)
 
 
 @pulumi.input_type
 class _DomainsAppState:
     def __init__(__self__, *,
-                 access_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]] = None,
-                 alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
-                 all_url_schemes_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_access_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
-                 allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
-                 app_icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_signon_policy: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']] = None,
-                 app_thumbnail: Optional[pulumi.Input[_builtins.str]] = None,
-                 apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
-                 as_opc_service: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']] = None,
-                 attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audience: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 based_on_template: Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']] = None,
-                 bypass_consent: Optional[pulumi.Input[_builtins.bool]] = None,
-                 callback_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
-                 client_ip_checking: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_kmsi_token_authentication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 editable_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]] = None,
-                 error_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 granted_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]] = None,
-                 grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]] = None,
-                 hashed_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 home_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_token_enc_algo: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
-                 idp_policy: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']] = None,
-                 infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_alias_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_database_service: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enterprise_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_form_fill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kerberos_realm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_login_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_managed_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mobile_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multicloud_service_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_client: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_obligation_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_opc_service: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_radius_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_saml_service_provider: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unmanaged_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_web_tier_policy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 landing_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 linking_callback_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]]] = None,
-                 meter_as_opc_service: Optional[pulumi.Input[_builtins.bool]] = None,
-                 migrated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_logo_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
-                 radius_policy: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']] = None,
-                 ready_to_upgrade: Optional[pulumi.Input[_builtins.bool]] = None,
-                 redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 refresh_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 saml_service_provider: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
-                 secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
-                 service_type_urn: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_type_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_in_my_apps: Optional[pulumi.Input[_builtins.bool]] = None,
-                 signon_policy: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 terms_of_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 terms_of_use: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']] = None,
-                 trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
-                 trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
-                 user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None):
+                 access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 accounts: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAccountArgs']]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
+                 all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
+                 app_icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_signon_policy: pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']] = None,
+                 app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
+                 as_opc_service: pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audience: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 based_on_template: pulumi.Input[Optional['DomainsAppBasedOnTemplateArgs']] = None,
+                 bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
+                 callback_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
+                 client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_properties: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 editable_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]] = None,
+                 error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 granted_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]] = None,
+                 grants: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantArgs']]]] = None,
+                 hashed_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
+                 idp_policy: pulumi.Input[Optional['DomainsAppIdpPolicyArgs']] = None,
+                 infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_database_service: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kerberos_realm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_login_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_managed_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mobile_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multicloud_service_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_client: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_obligation_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_radius_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_saml_service_provider: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unmanaged_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_web_tier_policy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 landing_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 linking_callback_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppMetaArgs']]]] = None,
+                 meter_as_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
+                 migrated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_logout_redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
+                 radius_policy: pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']] = None,
+                 ready_to_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
+                 redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 saml_service_provider: pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
+                 secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
+                 service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+                 signon_policy: pulumi.Input[Optional['DomainsAppSignonPolicyArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 terms_of_use: pulumi.Input[Optional['DomainsAppTermsOfUseArgs']] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
+                 trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
+                 user_roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsApp resources.
 
@@ -4651,7 +4651,7 @@ class _DomainsAppState:
 
     @_builtins.property
     @pulumi.getter(name="accessTokenExpiry")
-    def access_token_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def access_token_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 
@@ -4667,12 +4667,12 @@ class _DomainsAppState:
         return pulumi.get(self, "access_token_expiry")
 
     @access_token_expiry.setter
-    def access_token_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def access_token_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "access_token_expiry", value)
 
     @_builtins.property
     @pulumi.getter
-    def accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]]]:
+    def accounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAccountArgs']]]]:
         """
         (Updatable) Accounts of App
 
@@ -4689,12 +4689,12 @@ class _DomainsAppState:
         return pulumi.get(self, "accounts")
 
     @accounts.setter
-    def accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]]]):
+    def accounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAccountArgs']]]]):
         pulumi.set(self, "accounts", value)
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
 
@@ -4710,12 +4710,12 @@ class _DomainsAppState:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="adminRoles")
-    def admin_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]]:
+    def admin_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]]:
         """
         (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
 
@@ -4731,12 +4731,12 @@ class _DomainsAppState:
         return pulumi.get(self, "admin_roles")
 
     @admin_roles.setter
-    def admin_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]]):
+    def admin_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]]):
         pulumi.set(self, "admin_roles", value)
 
     @_builtins.property
     @pulumi.getter(name="aliasApps")
-    def alias_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
+    def alias_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
         """
         (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
 
@@ -4754,12 +4754,12 @@ class _DomainsAppState:
         return pulumi.get(self, "alias_apps")
 
     @alias_apps.setter
-    def alias_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]):
+    def alias_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]):
         pulumi.set(self, "alias_apps", value)
 
     @_builtins.property
     @pulumi.getter(name="allUrlSchemesAllowed")
-    def all_url_schemes_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def all_url_schemes_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
 
@@ -4775,12 +4775,12 @@ class _DomainsAppState:
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @all_url_schemes_allowed.setter
-    def all_url_schemes_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def all_url_schemes_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "all_url_schemes_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="allowAccessControl")
-    def allow_access_control(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_access_control(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
 
@@ -4796,12 +4796,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allow_access_control")
 
     @allow_access_control.setter
-    def allow_access_control(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_access_control(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="allowOffline")
-    def allow_offline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_offline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
 
@@ -4817,12 +4817,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allow_offline")
 
     @allow_offline.setter
-    def allow_offline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_offline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_offline", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedGrants")
-    def allowed_grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_grants(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
 
@@ -4839,12 +4839,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allowed_grants")
 
     @allowed_grants.setter
-    def allowed_grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_grants(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_grants", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedOperations")
-    def allowed_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
 
@@ -4861,12 +4861,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allowed_operations")
 
     @allowed_operations.setter
-    def allowed_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedScopes")
-    def allowed_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
+    def allowed_scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
         """
         (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
 
@@ -4884,12 +4884,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allowed_scopes")
 
     @allowed_scopes.setter
-    def allowed_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]):
+    def allowed_scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]):
         pulumi.set(self, "allowed_scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedTags")
-    def allowed_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
+    def allowed_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
         """
         (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
 
@@ -4908,12 +4908,12 @@ class _DomainsAppState:
         return pulumi.get(self, "allowed_tags")
 
     @allowed_tags.setter
-    def allowed_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]):
+    def allowed_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]):
         pulumi.set(self, "allowed_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="appIcon")
-    def app_icon(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_icon(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application icon.
 
@@ -4929,12 +4929,12 @@ class _DomainsAppState:
         return pulumi.get(self, "app_icon")
 
     @app_icon.setter
-    def app_icon(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_icon(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_icon", value)
 
     @_builtins.property
     @pulumi.getter(name="appSignonPolicy")
-    def app_signon_policy(self) -> Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]:
+    def app_signon_policy(self) -> pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']]:
         """
         (Updatable) App Sign-on Policy.
 
@@ -4949,12 +4949,12 @@ class _DomainsAppState:
         return pulumi.get(self, "app_signon_policy")
 
     @app_signon_policy.setter
-    def app_signon_policy(self, value: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]):
+    def app_signon_policy(self, value: pulumi.Input[Optional['DomainsAppAppSignonPolicyArgs']]):
         pulumi.set(self, "app_signon_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="appThumbnail")
-    def app_thumbnail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_thumbnail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application thumbnail.
 
@@ -4970,12 +4970,12 @@ class _DomainsAppState:
         return pulumi.get(self, "app_thumbnail")
 
     @app_thumbnail.setter
-    def app_thumbnail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_thumbnail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_thumbnail", value)
 
     @_builtins.property
     @pulumi.getter(name="appsNetworkPerimeters")
-    def apps_network_perimeters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
+    def apps_network_perimeters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
         """
         (Updatable) Network Perimeter
 
@@ -4992,12 +4992,12 @@ class _DomainsAppState:
         return pulumi.get(self, "apps_network_perimeters")
 
     @apps_network_perimeters.setter
-    def apps_network_perimeters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]):
+    def apps_network_perimeters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]):
         pulumi.set(self, "apps_network_perimeters", value)
 
     @_builtins.property
     @pulumi.getter(name="asOpcService")
-    def as_opc_service(self) -> Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]:
+    def as_opc_service(self) -> pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']]:
         """
         (Updatable) OPCService facet of the application.
 
@@ -5014,12 +5014,12 @@ class _DomainsAppState:
         return pulumi.get(self, "as_opc_service")
 
     @as_opc_service.setter
-    def as_opc_service(self, value: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]):
+    def as_opc_service(self, value: pulumi.Input[Optional['DomainsAppAsOpcServiceArgs']]):
         pulumi.set(self, "as_opc_service", value)
 
     @_builtins.property
     @pulumi.getter(name="attrRenderingMetadatas")
-    def attr_rendering_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
+    def attr_rendering_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
         """
         (Updatable) Label for the attribute to be shown in the UI.
 
@@ -5036,36 +5036,36 @@ class _DomainsAppState:
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @attr_rendering_metadatas.setter
-    def attr_rendering_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]):
+    def attr_rendering_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]):
         pulumi.set(self, "attr_rendering_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def audience(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audience(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
 
@@ -5082,24 +5082,24 @@ class _DomainsAppState:
         return pulumi.get(self, "audience")
 
     @audience.setter
-    def audience(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audience(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audience", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="basedOnTemplate")
-    def based_on_template(self) -> Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']]:
+    def based_on_template(self) -> pulumi.Input[Optional['DomainsAppBasedOnTemplateArgs']]:
         """
         (Updatable) Application template on which the application is based.
 
@@ -5114,12 +5114,12 @@ class _DomainsAppState:
         return pulumi.get(self, "based_on_template")
 
     @based_on_template.setter
-    def based_on_template(self, value: Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']]):
+    def based_on_template(self, value: pulumi.Input[Optional['DomainsAppBasedOnTemplateArgs']]):
         pulumi.set(self, "based_on_template", value)
 
     @_builtins.property
     @pulumi.getter(name="bypassConsent")
-    def bypass_consent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def bypass_consent(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that consent should be skipped for all scopes
 
@@ -5138,12 +5138,12 @@ class _DomainsAppState:
         return pulumi.get(self, "bypass_consent")
 
     @bypass_consent.setter
-    def bypass_consent(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def bypass_consent(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "bypass_consent", value)
 
     @_builtins.property
     @pulumi.getter(name="callbackServiceUrl")
-    def callback_service_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def callback_service_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Callback Service URL
 
@@ -5160,12 +5160,12 @@ class _DomainsAppState:
         return pulumi.get(self, "callback_service_url")
 
     @callback_service_url.setter
-    def callback_service_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def callback_service_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "callback_service_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
+    def certificates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
         """
         (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
 
@@ -5183,12 +5183,12 @@ class _DomainsAppState:
         return pulumi.get(self, "certificates")
 
     @certificates.setter
-    def certificates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]):
+    def certificates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]):
         pulumi.set(self, "certificates", value)
 
     @_builtins.property
     @pulumi.getter(name="clientIpChecking")
-    def client_ip_checking(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_ip_checking(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Network Perimeters checking mode
 
@@ -5207,12 +5207,12 @@ class _DomainsAppState:
         return pulumi.get(self, "client_ip_checking")
 
     @client_ip_checking.setter
-    def client_ip_checking(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_ip_checking(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_ip_checking", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
 
@@ -5230,12 +5230,12 @@ class _DomainsAppState:
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="clientType")
-    def client_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
 
@@ -5252,12 +5252,12 @@ class _DomainsAppState:
         return pulumi.get(self, "client_type")
 
     @client_type.setter
-    def client_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_type", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudControlProperties")
-    def cloud_control_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]]:
+    def cloud_control_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]]:
         """
         (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
 
@@ -5276,12 +5276,12 @@ class _DomainsAppState:
         return pulumi.get(self, "cloud_control_properties")
 
     @cloud_control_properties.setter
-    def cloud_control_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]]):
+    def cloud_control_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]]):
         pulumi.set(self, "cloud_control_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -5298,12 +5298,12 @@ class _DomainsAppState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="contactEmailAddress")
-    def contact_email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contact_email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Contact Email Address
 
@@ -5321,12 +5321,12 @@ class _DomainsAppState:
         return pulumi.get(self, "contact_email_address")
 
     @contact_email_address.setter
-    def contact_email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contact_email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contact_email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="delegatedServiceNames")
-    def delegated_service_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def delegated_service_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
 
@@ -5345,12 +5345,12 @@ class _DomainsAppState:
         return pulumi.get(self, "delegated_service_names")
 
     @delegated_service_names.setter
-    def delegated_service_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def delegated_service_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "delegated_service_names", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -5367,12 +5367,12 @@ class _DomainsAppState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the application.
 
@@ -5389,12 +5389,12 @@ class _DomainsAppState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
-    def disable_kmsi_token_authentication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_kmsi_token_authentication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the application is allowed to be access using kmsi token.
 
@@ -5412,12 +5412,12 @@ class _DomainsAppState:
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @disable_kmsi_token_authentication.setter
-    def disable_kmsi_token_authentication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_kmsi_token_authentication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_kmsi_token_authentication", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 
@@ -5434,12 +5434,12 @@ class _DomainsAppState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -5456,12 +5456,12 @@ class _DomainsAppState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="editableAttributes")
-    def editable_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]]:
+    def editable_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]]:
         """
         (Updatable) App attributes editable by subject
 
@@ -5481,12 +5481,12 @@ class _DomainsAppState:
         return pulumi.get(self, "editable_attributes")
 
     @editable_attributes.setter
-    def editable_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]]):
+    def editable_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]]):
         pulumi.set(self, "editable_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="errorPageUrl")
-    def error_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
 
@@ -5503,24 +5503,24 @@ class _DomainsAppState:
         return pulumi.get(self, "error_page_url")
 
     @error_page_url.setter
-    def error_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="grantedAppRoles")
-    def granted_app_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]]:
+    def granted_app_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]]:
         """
         (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 
@@ -5538,12 +5538,12 @@ class _DomainsAppState:
         return pulumi.get(self, "granted_app_roles")
 
     @granted_app_roles.setter
-    def granted_app_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]]):
+    def granted_app_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]]):
         pulumi.set(self, "granted_app_roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]]:
+    def grants(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantArgs']]]]:
         """
         (Updatable) Grants assigned to the app
 
@@ -5560,12 +5560,12 @@ class _DomainsAppState:
         return pulumi.get(self, "grants")
 
     @grants.setter
-    def grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]]):
+    def grants(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppGrantArgs']]]]):
         pulumi.set(self, "grants", value)
 
     @_builtins.property
     @pulumi.getter(name="hashedClientSecret")
-    def hashed_client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hashed_client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
 
@@ -5584,12 +5584,12 @@ class _DomainsAppState:
         return pulumi.get(self, "hashed_client_secret")
 
     @hashed_client_secret.setter
-    def hashed_client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hashed_client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hashed_client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="homePageUrl")
-    def home_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Home Page URL
 
@@ -5607,12 +5607,12 @@ class _DomainsAppState:
         return pulumi.get(self, "home_page_url")
 
     @home_page_url.setter
-    def home_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_page_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def icon(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) URL of application icon.
 
@@ -5628,12 +5628,12 @@ class _DomainsAppState:
         return pulumi.get(self, "icon")
 
     @icon.setter
-    def icon(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon", value)
 
     @_builtins.property
     @pulumi.getter(name="idTokenEncAlgo")
-    def id_token_enc_algo(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id_token_enc_algo(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Encryption Alogrithm to use for encrypting ID token.
 
@@ -5652,12 +5652,12 @@ class _DomainsAppState:
         return pulumi.get(self, "id_token_enc_algo")
 
     @id_token_enc_algo.setter
-    def id_token_enc_algo(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id_token_enc_algo(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id_token_enc_algo", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -5672,24 +5672,24 @@ class _DomainsAppState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -5704,12 +5704,12 @@ class _DomainsAppState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -5726,12 +5726,12 @@ class _DomainsAppState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -5747,12 +5747,12 @@ class _DomainsAppState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviders")
-    def identity_providers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
+    def identity_providers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
         """
         (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
 
@@ -5768,12 +5768,12 @@ class _DomainsAppState:
         return pulumi.get(self, "identity_providers")
 
     @identity_providers.setter
-    def identity_providers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]):
+    def identity_providers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]):
         pulumi.set(self, "identity_providers", value)
 
     @_builtins.property
     @pulumi.getter(name="idpPolicy")
-    def idp_policy(self) -> Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]:
+    def idp_policy(self) -> pulumi.Input[Optional['DomainsAppIdpPolicyArgs']]:
         """
         (Updatable) IDP Policy.
 
@@ -5790,12 +5790,12 @@ class _DomainsAppState:
         return pulumi.get(self, "idp_policy")
 
     @idp_policy.setter
-    def idp_policy(self, value: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]):
+    def idp_policy(self, value: pulumi.Input[Optional['DomainsAppIdpPolicyArgs']]):
         pulumi.set(self, "idp_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def infrastructure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def infrastructure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App is an internal infrastructure App.
 
@@ -5811,12 +5811,12 @@ class _DomainsAppState:
         return pulumi.get(self, "infrastructure")
 
     @infrastructure.setter
-    def infrastructure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def infrastructure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "infrastructure", value)
 
     @_builtins.property
     @pulumi.getter(name="isAliasApp")
-    def is_alias_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_alias_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, this App is an AliasApp and it cannot be granted to an end-user directly.
 
@@ -5832,12 +5832,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_alias_app")
 
     @is_alias_app.setter
-    def is_alias_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_alias_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_alias_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isDatabaseService")
-    def is_database_service(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_database_service(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as database service Application
 
@@ -5853,12 +5853,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_database_service")
 
     @is_database_service.setter
-    def is_database_service(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_database_service(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_database_service", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnterpriseApp")
-    def is_enterprise_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enterprise_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
 
@@ -5876,12 +5876,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_enterprise_app")
 
     @is_enterprise_app.setter
-    def is_enterprise_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enterprise_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enterprise_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isFormFill")
-    def is_form_fill(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_form_fill(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as FormFill Application
 
@@ -5897,12 +5897,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_form_fill")
 
     @is_form_fill.setter
-    def is_form_fill(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_form_fill(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_form_fill", value)
 
     @_builtins.property
     @pulumi.getter(name="isKerberosRealm")
-    def is_kerberos_realm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kerberos_realm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that this App supports Kerberos Authentication
 
@@ -5918,12 +5918,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_kerberos_realm")
 
     @is_kerberos_realm.setter
-    def is_kerberos_realm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kerberos_realm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kerberos_realm", value)
 
     @_builtins.property
     @pulumi.getter(name="isLoginTarget")
-    def is_login_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_login_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App allows runtime services to log end users into this App automatically.
 
@@ -5939,12 +5939,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_login_target")
 
     @is_login_target.setter
-    def is_login_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_login_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_login_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isManagedApp")
-    def is_managed_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
 
@@ -5960,12 +5960,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_managed_app")
 
     @is_managed_app.setter
-    def is_managed_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isMobileTarget")
-    def is_mobile_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_mobile_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
 
@@ -5981,12 +5981,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_mobile_target")
 
     @is_mobile_target.setter
-    def is_mobile_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_mobile_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_mobile_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isMulticloudServiceApp")
-    def is_multicloud_service_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multicloud_service_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates the app is used for multicloud service integration.
 
@@ -6004,12 +6004,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_multicloud_service_app")
 
     @is_multicloud_service_app.setter
-    def is_multicloud_service_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multicloud_service_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multicloud_service_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isOauthClient")
-    def is_oauth_client(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oauth_client(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as an OAuth Client
 
@@ -6025,12 +6025,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_oauth_client")
 
     @is_oauth_client.setter
-    def is_oauth_client(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oauth_client(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oauth_client", value)
 
     @_builtins.property
     @pulumi.getter(name="isOauthResource")
-    def is_oauth_resource(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oauth_resource(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that this application acts as an OAuth Resource.
 
@@ -6046,12 +6046,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_oauth_resource")
 
     @is_oauth_resource.setter
-    def is_oauth_resource(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oauth_resource(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oauth_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="isObligationCapable")
-    def is_obligation_capable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_obligation_capable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
 
@@ -6068,12 +6068,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_obligation_capable")
 
     @is_obligation_capable.setter
-    def is_obligation_capable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_obligation_capable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_obligation_capable", value)
 
     @_builtins.property
     @pulumi.getter(name="isOpcService")
-    def is_opc_service(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_opc_service(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application is an Oracle Public Cloud service-instance.
 
@@ -6089,12 +6089,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_opc_service")
 
     @is_opc_service.setter
-    def is_opc_service(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_opc_service(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_opc_service", value)
 
     @_builtins.property
     @pulumi.getter(name="isRadiusApp")
-    def is_radius_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_radius_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this application acts as an Radius App
 
@@ -6112,12 +6112,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_radius_app")
 
     @is_radius_app.setter
-    def is_radius_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_radius_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_radius_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isSamlServiceProvider")
-    def is_saml_service_provider(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_saml_service_provider(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, then this App acts as a SAML Service Provider.
 
@@ -6133,12 +6133,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_saml_service_provider")
 
     @is_saml_service_provider.setter
-    def is_saml_service_provider(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_saml_service_provider(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_saml_service_provider", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnmanagedApp")
-    def is_unmanaged_app(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unmanaged_app(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
 
@@ -6154,12 +6154,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_unmanaged_app")
 
     @is_unmanaged_app.setter
-    def is_unmanaged_app(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unmanaged_app(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unmanaged_app", value)
 
     @_builtins.property
     @pulumi.getter(name="isWebTierPolicy")
-    def is_web_tier_policy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_web_tier_policy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, the webtier policy is active
 
@@ -6175,12 +6175,12 @@ class _DomainsAppState:
         return pulumi.get(self, "is_web_tier_policy")
 
     @is_web_tier_policy.setter
-    def is_web_tier_policy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_web_tier_policy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_web_tier_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="landingPageUrl")
-    def landing_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def landing_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
 
@@ -6196,12 +6196,12 @@ class _DomainsAppState:
         return pulumi.get(self, "landing_page_url")
 
     @landing_page_url.setter
-    def landing_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def landing_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "landing_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="linkingCallbackUrl")
-    def linking_callback_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def linking_callback_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the callback URL for the social linking operation.
 
@@ -6220,12 +6220,12 @@ class _DomainsAppState:
         return pulumi.get(self, "linking_callback_url")
 
     @linking_callback_url.setter
-    def linking_callback_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def linking_callback_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "linking_callback_url", value)
 
     @_builtins.property
     @pulumi.getter(name="loginMechanism")
-    def login_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def login_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
 
@@ -6242,12 +6242,12 @@ class _DomainsAppState:
         return pulumi.get(self, "login_mechanism")
 
     @login_mechanism.setter
-    def login_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def login_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "login_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="loginPageUrl")
-    def login_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def login_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
 
@@ -6264,12 +6264,12 @@ class _DomainsAppState:
         return pulumi.get(self, "login_page_url")
 
     @login_page_url.setter
-    def login_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def login_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "login_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutPageUrl")
-    def logout_page_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logout_page_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
 
@@ -6288,12 +6288,12 @@ class _DomainsAppState:
         return pulumi.get(self, "logout_page_url")
 
     @logout_page_url.setter
-    def logout_page_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logout_page_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logout_page_url", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutUri")
-    def logout_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logout_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
 
@@ -6310,12 +6310,12 @@ class _DomainsAppState:
         return pulumi.get(self, "logout_uri")
 
     @logout_uri.setter
-    def logout_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logout_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logout_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -6332,12 +6332,12 @@ class _DomainsAppState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter(name="meterAsOpcService")
-    def meter_as_opc_service(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def meter_as_opc_service(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
 
@@ -6355,12 +6355,12 @@ class _DomainsAppState:
         return pulumi.get(self, "meter_as_opc_service")
 
     @meter_as_opc_service.setter
-    def meter_as_opc_service(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def meter_as_opc_service(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "meter_as_opc_service", value)
 
     @_builtins.property
     @pulumi.getter
-    def migrated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def migrated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
 
@@ -6376,12 +6376,12 @@ class _DomainsAppState:
         return pulumi.get(self, "migrated")
 
     @migrated.setter
-    def migrated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def migrated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "migrated", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 
@@ -6398,12 +6398,12 @@ class _DomainsAppState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -6420,12 +6420,12 @@ class _DomainsAppState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="postLogoutRedirectUris")
-    def post_logout_redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def post_logout_redirect_uris(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
 
@@ -6442,12 +6442,12 @@ class _DomainsAppState:
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @post_logout_redirect_uris.setter
-    def post_logout_redirect_uris(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def post_logout_redirect_uris(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "post_logout_redirect_uris", value)
 
     @_builtins.property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privacy_policy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Privacy Policy URL
 
@@ -6465,12 +6465,12 @@ class _DomainsAppState:
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
-    def privacy_policy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privacy_policy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privacy_policy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="productLogoUrl")
-    def product_logo_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_logo_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Application Logo URL
 
@@ -6488,12 +6488,12 @@ class _DomainsAppState:
         return pulumi.get(self, "product_logo_url")
 
     @product_logo_url.setter
-    def product_logo_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_logo_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_logo_url", value)
 
     @_builtins.property
     @pulumi.getter(name="productName")
-    def product_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Product Name
 
@@ -6511,12 +6511,12 @@ class _DomainsAppState:
         return pulumi.get(self, "product_name")
 
     @product_name.setter
-    def product_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_name", value)
 
     @_builtins.property
     @pulumi.getter(name="protectableSecondaryAudiences")
-    def protectable_secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
+    def protectable_secondary_audiences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
         """
         (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 
@@ -6536,12 +6536,12 @@ class _DomainsAppState:
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @protectable_secondary_audiences.setter
-    def protectable_secondary_audiences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]):
+    def protectable_secondary_audiences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]):
         pulumi.set(self, "protectable_secondary_audiences", value)
 
     @_builtins.property
     @pulumi.getter(name="radiusPolicy")
-    def radius_policy(self) -> Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]:
+    def radius_policy(self) -> pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']]:
         """
         (Updatable) RADIUS Policy assigned to this application.
 
@@ -6558,12 +6558,12 @@ class _DomainsAppState:
         return pulumi.get(self, "radius_policy")
 
     @radius_policy.setter
-    def radius_policy(self, value: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]):
+    def radius_policy(self, value: pulumi.Input[Optional['DomainsAppRadiusPolicyArgs']]):
         pulumi.set(self, "radius_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="readyToUpgrade")
-    def ready_to_upgrade(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ready_to_upgrade(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
 
@@ -6579,12 +6579,12 @@ class _DomainsAppState:
         return pulumi.get(self, "ready_to_upgrade")
 
     @ready_to_upgrade.setter
-    def ready_to_upgrade(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ready_to_upgrade(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ready_to_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUris")
-    def redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def redirect_uris(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
 
@@ -6601,12 +6601,12 @@ class _DomainsAppState:
         return pulumi.get(self, "redirect_uris")
 
     @redirect_uris.setter
-    def redirect_uris(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def redirect_uris(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "redirect_uris", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTokenExpiry")
-    def refresh_token_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh_token_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
 
@@ -6622,24 +6622,24 @@ class _DomainsAppState:
         return pulumi.get(self, "refresh_token_expiry")
 
     @refresh_token_expiry.setter
-    def refresh_token_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh_token_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh_token_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="samlServiceProvider")
-    def saml_service_provider(self) -> Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]:
+    def saml_service_provider(self) -> pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']]:
         """
         (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
 
@@ -6655,12 +6655,12 @@ class _DomainsAppState:
         return pulumi.get(self, "saml_service_provider")
 
     @saml_service_provider.setter
-    def saml_service_provider(self, value: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]):
+    def saml_service_provider(self, value: pulumi.Input[Optional['DomainsAppSamlServiceProviderArgs']]):
         pulumi.set(self, "saml_service_provider", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -6677,12 +6677,12 @@ class _DomainsAppState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
         """
         (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
 
@@ -6700,12 +6700,12 @@ class _DomainsAppState:
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryAudiences")
-    def secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_audiences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 
@@ -6724,12 +6724,12 @@ class _DomainsAppState:
         return pulumi.get(self, "secondary_audiences")
 
     @secondary_audiences.setter
-    def secondary_audiences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_audiences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_audiences", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceParams")
-    def service_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
+    def service_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
         """
         (Updatable) Custom attribute that is required to compute other attribute values during app creation.
 
@@ -6746,12 +6746,12 @@ class _DomainsAppState:
         return pulumi.get(self, "service_params")
 
     @service_params.setter
-    def service_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]):
+    def service_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]):
         pulumi.set(self, "service_params", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTypeUrn")
-    def service_type_urn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type_urn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
 
@@ -6768,12 +6768,12 @@ class _DomainsAppState:
         return pulumi.get(self, "service_type_urn")
 
     @service_type_urn.setter
-    def service_type_urn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type_urn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type_urn", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTypeVersion")
-    def service_type_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
 
@@ -6790,12 +6790,12 @@ class _DomainsAppState:
         return pulumi.get(self, "service_type_version")
 
     @service_type_version.setter
-    def service_type_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type_version", value)
 
     @_builtins.property
     @pulumi.getter(name="showInMyApps")
-    def show_in_my_apps(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def show_in_my_apps(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
 
@@ -6813,12 +6813,12 @@ class _DomainsAppState:
         return pulumi.get(self, "show_in_my_apps")
 
     @show_in_my_apps.setter
-    def show_in_my_apps(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def show_in_my_apps(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "show_in_my_apps", value)
 
     @_builtins.property
     @pulumi.getter(name="signonPolicy")
-    def signon_policy(self) -> Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]:
+    def signon_policy(self) -> pulumi.Input[Optional['DomainsAppSignonPolicyArgs']]:
         """
         (Updatable) Sign-on Policy.
 
@@ -6835,12 +6835,12 @@ class _DomainsAppState:
         return pulumi.get(self, "signon_policy")
 
     @signon_policy.setter
-    def signon_policy(self, value: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]):
+    def signon_policy(self, value: pulumi.Input[Optional['DomainsAppSignonPolicyArgs']]):
         pulumi.set(self, "signon_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -6857,12 +6857,12 @@ class _DomainsAppState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -6879,12 +6879,12 @@ class _DomainsAppState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfServiceUrl")
-    def terms_of_service_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def terms_of_service_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Terms of Service URL
 
@@ -6902,12 +6902,12 @@ class _DomainsAppState:
         return pulumi.get(self, "terms_of_service_url")
 
     @terms_of_service_url.setter
-    def terms_of_service_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def terms_of_service_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "terms_of_service_url", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfUse")
-    def terms_of_use(self) -> Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]:
+    def terms_of_use(self) -> pulumi.Input[Optional['DomainsAppTermsOfUseArgs']]:
         """
         (Updatable) Terms Of Use.
 
@@ -6924,12 +6924,12 @@ class _DomainsAppState:
         return pulumi.get(self, "terms_of_use")
 
     @terms_of_use.setter
-    def terms_of_use(self, value: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]):
+    def terms_of_use(self, value: pulumi.Input[Optional['DomainsAppTermsOfUseArgs']]):
         pulumi.set(self, "terms_of_use", value)
 
     @_builtins.property
     @pulumi.getter(name="trustPolicies")
-    def trust_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
+    def trust_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
         """
         (Updatable) Trust Policies.
 
@@ -6945,12 +6945,12 @@ class _DomainsAppState:
         return pulumi.get(self, "trust_policies")
 
     @trust_policies.setter
-    def trust_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]):
+    def trust_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]):
         pulumi.set(self, "trust_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="trustScope")
-    def trust_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
 
@@ -6969,168 +6969,168 @@ class _DomainsAppState:
         return pulumi.get(self, "trust_scope")
 
     @trust_scope.setter
-    def trust_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
         """
         (Updatable) This extension provides attributes for database service facet of an App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app")
 
     @urnietfparamsscimschemasoracleidcsextensiondbcs_app.setter
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
         """
         (Updatable) This extension defines the Enterprise App related attributes.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionenterprise_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
         """
         (Updatable) This extension provides attributes for Form-Fill facet of App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
         """
         (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template.setter
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
         """
         (Updatable) Kerberos Realm
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp")
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
         """
         (Updatable) Managed App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmanagedapp_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp")
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app")
 
     @urnietfparamsscimschemasoracleidcsextensionopc_service_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
         """
         (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionradius_app_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
         """
         (Updatable) Requestable App
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
         """
         (Updatable) This extension defines attributes related to the Service Providers configuration.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app")
 
     @urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
         """
         (Updatable) WebTier Policy
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app")
 
     @urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app.setter
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self, value: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self, value: pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", value)
 
     @_builtins.property
     @pulumi.getter(name="userRoles")
-    def user_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]]:
+    def user_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]]:
         """
         (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
 
@@ -7146,7 +7146,7 @@ class _DomainsAppState:
         return pulumi.get(self, "user_roles")
 
     @user_roles.setter
-    def user_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]]):
+    def user_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]]):
         pulumi.set(self, "user_roles", value)
 
 
@@ -7156,102 +7156,102 @@ class DomainsApp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
-                 all_url_schemes_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_access_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-                 allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
-                 app_icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_signon_policy: Optional[pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
-                 app_thumbnail: Optional[pulumi.Input[_builtins.str]] = None,
-                 apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-                 as_opc_service: Optional[pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-                 attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audience: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 based_on_template: Optional[pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
-                 bypass_consent: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
-                 client_ip_checking: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_kmsi_token_authentication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 home_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_token_enc_algo: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-                 idp_policy: Optional[pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
-                 is_alias_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enterprise_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_form_fill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kerberos_realm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_login_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mobile_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multicloud_service_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_client: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_obligation_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_radius_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_saml_service_provider: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unmanaged_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_web_tier_policy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 landing_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 linking_callback_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_logo_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-                 radius_policy: Optional[pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
-                 redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 refresh_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 saml_service_provider: Optional[pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
-                 secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
-                 service_type_urn: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_type_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_in_my_apps: Optional[pulumi.Input[_builtins.bool]] = None,
-                 signon_policy: Optional[pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
-                 terms_of_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 terms_of_use: Optional[pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-                 trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
-                 trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
+                 access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+                 all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+                 app_icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+                 app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
+                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audience: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+                 bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+                 client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
+                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+                 is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kerberos_realm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_login_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mobile_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multicloud_service_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_client: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_obligation_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_radius_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_saml_service_provider: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unmanaged_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_web_tier_policy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 landing_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 linking_callback_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_logout_redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
+                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+                 redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+                 secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+                 service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+                 terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+                 trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -7275,14 +7275,14 @@ class DomainsApp(pulumi.CustomResource):
             display_name=app_display_name,
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:App"],
-            access_token_expiry=app_access_token_expiry,
-            active=app_active,
+            access_token_expiry=int(app_access_token_expiry),
+            active=app_active == "true",
             alias_apps=[{
                 "value": app_alias_apps_value,
             }],
-            all_url_schemes_allowed=app_all_url_schemes_allowed,
-            allow_access_control=app_allow_access_control,
-            allow_offline=app_allow_offline,
+            all_url_schemes_allowed=app_all_url_schemes_allowed == "true",
+            allow_access_control=app_allow_access_control == "true",
+            allow_offline=app_allow_offline == "true",
             allowed_grants=app_allowed_grants,
             allowed_operations=app_allowed_operations,
             allowed_scopes=[{
@@ -7308,23 +7308,23 @@ class DomainsApp(pulumi.CustomResource):
                 "datatype": app_attr_rendering_metadata_datatype,
                 "helptext": app_attr_rendering_metadata_helptext,
                 "label": app_attr_rendering_metadata_label,
-                "max_length": app_attr_rendering_metadata_max_length,
-                "max_size": app_attr_rendering_metadata_max_size,
-                "min_length": app_attr_rendering_metadata_min_length,
-                "min_size": app_attr_rendering_metadata_min_size,
-                "order": app_attr_rendering_metadata_order,
-                "read_only": app_attr_rendering_metadata_read_only,
+                "max_length": int(app_attr_rendering_metadata_max_length),
+                "max_size": int(app_attr_rendering_metadata_max_size),
+                "min_length": int(app_attr_rendering_metadata_min_length),
+                "min_size": int(app_attr_rendering_metadata_min_size),
+                "order": int(app_attr_rendering_metadata_order),
+                "read_only": app_attr_rendering_metadata_read_only == "true",
                 "regexp": app_attr_rendering_metadata_regexp,
-                "required": app_attr_rendering_metadata_required,
+                "required": app_attr_rendering_metadata_required == "true",
                 "section": app_attr_rendering_metadata_section,
-                "visible": app_attr_rendering_metadata_visible,
+                "visible": app_attr_rendering_metadata_visible == "true",
                 "widget": app_attr_rendering_metadata_widget,
             }],
             attribute_sets=["all"],
             attributes="",
             audience=app_audience,
             authorization=app_authorization,
-            bypass_consent=app_bypass_consent,
+            bypass_consent=app_bypass_consent == "true",
             certificates=[{
                 "cert_alias": app_certificates_cert_alias,
             }],
@@ -7333,9 +7333,9 @@ class DomainsApp(pulumi.CustomResource):
             contact_email_address=app_contact_email_address,
             delegated_service_names=app_delegated_service_names,
             description=app_description,
-            disable_kmsi_token_authentication=app_disable_kmsi_token_authentication,
+            disable_kmsi_token_authentication=app_disable_kmsi_token_authentication == "true",
             error_page_url=app_error_page_url,
-            force_delete=app_force_delete,
+            force_delete=app_force_delete == "true",
             home_page_url=app_home_page_url,
             icon=app_icon,
             id=app_id,
@@ -7346,20 +7346,20 @@ class DomainsApp(pulumi.CustomResource):
             idp_policy={
                 "value": app_idp_policy_value,
             },
-            is_alias_app=app_is_alias_app,
-            is_enterprise_app=app_is_enterprise_app,
-            is_form_fill=app_is_form_fill,
-            is_kerberos_realm=app_is_kerberos_realm,
-            is_login_target=app_is_login_target,
-            is_mobile_target=app_is_mobile_target,
-            is_multicloud_service_app=app_is_multicloud_service_app,
-            is_oauth_client=app_is_oauth_client,
-            is_oauth_resource=app_is_oauth_resource,
-            is_obligation_capable=app_is_obligation_capable,
-            is_radius_app=app_is_radius_app,
-            is_saml_service_provider=app_is_saml_service_provider,
-            is_unmanaged_app=app_is_unmanaged_app,
-            is_web_tier_policy=app_is_web_tier_policy,
+            is_alias_app=app_is_alias_app == "true",
+            is_enterprise_app=app_is_enterprise_app == "true",
+            is_form_fill=app_is_form_fill == "true",
+            is_kerberos_realm=app_is_kerberos_realm == "true",
+            is_login_target=app_is_login_target == "true",
+            is_mobile_target=app_is_mobile_target == "true",
+            is_multicloud_service_app=app_is_multicloud_service_app == "true",
+            is_oauth_client=app_is_oauth_client == "true",
+            is_oauth_resource=app_is_oauth_resource == "true",
+            is_obligation_capable=app_is_obligation_capable == "true",
+            is_radius_app=app_is_radius_app == "true",
+            is_saml_service_provider=app_is_saml_service_provider == "true",
+            is_unmanaged_app=app_is_unmanaged_app == "true",
+            is_web_tier_policy=app_is_web_tier_policy == "true",
             landing_page_url=app_landing_page_url,
             linking_callback_url=app_linking_callback_url,
             login_mechanism=app_login_mechanism,
@@ -7379,7 +7379,7 @@ class DomainsApp(pulumi.CustomResource):
                 "value": app_radius_policy_value,
             },
             redirect_uris=app_redirect_uris,
-            refresh_token_expiry=app_refresh_token_expiry,
+            refresh_token_expiry=int(app_refresh_token_expiry),
             resource_type_schema_version=app_resource_type_schema_version,
             saml_service_provider={
                 "value": app_saml_service_provider_value,
@@ -7388,7 +7388,7 @@ class DomainsApp(pulumi.CustomResource):
                 "value": app_scopes_value,
                 "description": app_scopes_description,
                 "display_name": app_scopes_display_name,
-                "requires_consent": app_scopes_requires_consent,
+                "requires_consent": app_scopes_requires_consent == "true",
             }],
             secondary_audiences=["secondaryAudiences"],
             service_params=[{
@@ -7397,7 +7397,7 @@ class DomainsApp(pulumi.CustomResource):
             }],
             service_type_urn=app_service_type_urn,
             service_type_version=app_service_type_version,
-            show_in_my_apps=app_show_in_my_apps,
+            show_in_my_apps=app_show_in_my_apps == "true",
             signon_policy={
                 "value": app_signon_policy_value,
             },
@@ -7431,14 +7431,14 @@ class DomainsApp(pulumi.CustomResource):
                 "domain_name": "domainName",
             },
             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app={
-                "allow_authz_decision_ttl": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_decision_ttl,
+                "allow_authz_decision_ttl": int(app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_decision_ttl),
                 "allow_authz_policy": {
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_policy_value,
                 },
                 "app_resources": [{
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_app_resources_value,
                 }],
-                "deny_authz_decision_ttl": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_decision_ttl,
+                "deny_authz_decision_ttl": int(app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_decision_ttl),
                 "deny_authz_policy": {
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_policy_value,
                 },
@@ -7452,7 +7452,7 @@ class DomainsApp(pulumi.CustomResource):
                     "form_url_match_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_form_fill_url_match_form_url_match_type,
                 }],
                 "form_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_form_type,
-                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_reveal_password_on_form,
+                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_reveal_password_on_form == "true",
                 "user_name_form_expression": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_user_name_form_expression,
                 "user_name_form_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_user_name_form_template,
             },
@@ -7465,51 +7465,51 @@ class DomainsApp(pulumi.CustomResource):
                     "form_url_match_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_form_fill_url_match_form_url_match_type,
                 }],
                 "form_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_form_type,
-                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_reveal_password_on_form,
-                "sync_from_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_sync_from_template,
+                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_reveal_password_on_form == "true",
+                "sync_from_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_sync_from_template == "true",
                 "user_name_form_expression": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_user_name_form_expression,
                 "user_name_form_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_user_name_form_template,
             },
             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app={
                 "default_encryption_salt_type": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_default_encryption_salt_type,
                 "master_key": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_master_key,
-                "max_renewable_age": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_renewable_age,
-                "max_ticket_life": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_ticket_life,
+                "max_renewable_age": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_renewable_age),
+                "max_ticket_life": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_ticket_life),
                 "realm_name": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_realm_name,
                 "supported_encryption_salt_types": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_supported_encryption_salt_types,
-                "ticket_flags": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_ticket_flags,
+                "ticket_flags": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_ticket_flags),
             },
             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app={
-                "admin_consent_granted": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_admin_consent_granted,
+                "admin_consent_granted": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_admin_consent_granted == "true",
                 "bundle_configuration_properties": [{
                     "icf_type": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_icf_type,
                     "name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_name,
-                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_required,
-                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_confidential,
+                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_required == "true",
+                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_confidential == "true",
                     "display_name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_display_name,
                     "help_message": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_help_message,
-                    "order": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_order,
+                    "order": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_order),
                     "values": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_value,
                 }],
                 "bundle_pool_configuration": {
-                    "max_idle": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_idle,
-                    "max_objects": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_objects,
-                    "max_wait": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_wait,
-                    "min_evictable_idle_time_millis": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_evictable_idle_time_millis,
-                    "min_idle": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_idle,
+                    "max_idle": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_idle),
+                    "max_objects": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_objects),
+                    "max_wait": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_wait),
+                    "min_evictable_idle_time_millis": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_evictable_idle_time_millis),
+                    "min_idle": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_idle),
                 },
-                "connected": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_connected,
-                "enable_auth_sync_new_user_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_auth_sync_new_user_notification,
-                "enable_sync": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync,
-                "enable_sync_summary_report_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync_summary_report_notification,
+                "connected": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_connected == "true",
+                "enable_auth_sync_new_user_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_auth_sync_new_user_notification == "true",
+                "enable_sync": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync == "true",
+                "enable_sync_summary_report_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync_summary_report_notification == "true",
                 "flat_file_bundle_configuration_properties": [{
                     "icf_type": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_icf_type,
                     "name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_name,
-                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_required,
-                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_confidential,
+                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_required == "true",
+                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_confidential == "true",
                     "display_name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_display_name,
                     "help_message": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_help_message,
-                    "order": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_order,
+                    "order": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_order),
                     "values": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_value,
                 }],
                 "flat_file_connector_bundle": {
@@ -7517,7 +7517,7 @@ class DomainsApp(pulumi.CustomResource):
                     "display": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_connector_bundle_display,
                     "well_known_id": test_well_known["id"],
                 },
-                "is_authoritative": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_is_authoritative,
+                "is_authoritative": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_is_authoritative == "true",
                 "three_legged_oauth_credential": {
                     "access_token": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_three_legged_oauth_credential_access_token,
                     "access_token_expiry": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_three_legged_oauth_credential_access_token_expiry,
@@ -7533,10 +7533,10 @@ class DomainsApp(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionradius_app_app={
                 "client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_client_ip,
-                "include_group_in_response": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_include_group_in_response,
+                "include_group_in_response": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_include_group_in_response == "true",
                 "port": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_port,
                 "secret_key": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_secret_key,
-                "capture_client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_capture_client_ip,
+                "capture_client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_capture_client_ip == "true",
                 "country_code_response_attribute_id": "1",
                 "end_user_ip_attribute": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_end_user_ip_attribute,
                 "group_membership_radius_attribute": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_membership_radius_attribute,
@@ -7544,18 +7544,18 @@ class DomainsApp(pulumi.CustomResource):
                     "value": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_membership_to_return_value,
                 }],
                 "group_name_format": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_name_format,
-                "password_and_otp_together": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_password_and_otp_together,
+                "password_and_otp_together": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_password_and_otp_together == "true",
                 "radius_vendor_specific_id": "radiusVendorSpecificId",
                 "response_format": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_response_format,
                 "response_format_delimiter": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_response_format_delimiter,
                 "type_of_radius_app": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_type_of_radius_app,
             },
             urnietfparamsscimschemasoracleidcsextensionrequestable_app={
-                "requestable": app_urnietfparamsscimschemasoracleidcsextensionrequestable_app_requestable,
+                "requestable": app_urnietfparamsscimschemasoracleidcsextensionrequestable_app_requestable == "true",
             },
             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app={
                 "assertion_consumer_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_assertion_consumer_url,
-                "encrypt_assertion": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encrypt_assertion,
+                "encrypt_assertion": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encrypt_assertion == "true",
                 "encryption_algorithm": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encryption_algorithm,
                 "encryption_certificate": "encryptionCertificate",
                 "federation_protocol": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_federation_protocol,
@@ -7566,11 +7566,11 @@ class DomainsApp(pulumi.CustomResource):
                     "group_name": "groupName",
                 }],
                 "hok_acs_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_acs_url,
-                "hok_required": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_required,
-                "include_signing_cert_in_signature": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_include_signing_cert_in_signature,
+                "hok_required": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_required == "true",
+                "include_signing_cert_in_signature": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_include_signing_cert_in_signature == "true",
                 "key_encryption_algorithm": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_key_encryption_algorithm,
                 "logout_binding": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_binding,
-                "logout_enabled": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_enabled,
+                "logout_enabled": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_enabled == "true",
                 "logout_request_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_request_url,
                 "logout_response_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_response_url,
                 "metadata": "metadata",
@@ -7589,7 +7589,7 @@ class DomainsApp(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app={
-                "resource_ref": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_resource_ref,
+                "resource_ref": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_resource_ref == "true",
                 "web_tier_policy_az_control": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_web_tier_policy_az_control,
                 "web_tier_policy_json": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_web_tier_policy_json,
             })
@@ -8510,14 +8510,14 @@ class DomainsApp(pulumi.CustomResource):
             display_name=app_display_name,
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:App"],
-            access_token_expiry=app_access_token_expiry,
-            active=app_active,
+            access_token_expiry=int(app_access_token_expiry),
+            active=app_active == "true",
             alias_apps=[{
                 "value": app_alias_apps_value,
             }],
-            all_url_schemes_allowed=app_all_url_schemes_allowed,
-            allow_access_control=app_allow_access_control,
-            allow_offline=app_allow_offline,
+            all_url_schemes_allowed=app_all_url_schemes_allowed == "true",
+            allow_access_control=app_allow_access_control == "true",
+            allow_offline=app_allow_offline == "true",
             allowed_grants=app_allowed_grants,
             allowed_operations=app_allowed_operations,
             allowed_scopes=[{
@@ -8543,23 +8543,23 @@ class DomainsApp(pulumi.CustomResource):
                 "datatype": app_attr_rendering_metadata_datatype,
                 "helptext": app_attr_rendering_metadata_helptext,
                 "label": app_attr_rendering_metadata_label,
-                "max_length": app_attr_rendering_metadata_max_length,
-                "max_size": app_attr_rendering_metadata_max_size,
-                "min_length": app_attr_rendering_metadata_min_length,
-                "min_size": app_attr_rendering_metadata_min_size,
-                "order": app_attr_rendering_metadata_order,
-                "read_only": app_attr_rendering_metadata_read_only,
+                "max_length": int(app_attr_rendering_metadata_max_length),
+                "max_size": int(app_attr_rendering_metadata_max_size),
+                "min_length": int(app_attr_rendering_metadata_min_length),
+                "min_size": int(app_attr_rendering_metadata_min_size),
+                "order": int(app_attr_rendering_metadata_order),
+                "read_only": app_attr_rendering_metadata_read_only == "true",
                 "regexp": app_attr_rendering_metadata_regexp,
-                "required": app_attr_rendering_metadata_required,
+                "required": app_attr_rendering_metadata_required == "true",
                 "section": app_attr_rendering_metadata_section,
-                "visible": app_attr_rendering_metadata_visible,
+                "visible": app_attr_rendering_metadata_visible == "true",
                 "widget": app_attr_rendering_metadata_widget,
             }],
             attribute_sets=["all"],
             attributes="",
             audience=app_audience,
             authorization=app_authorization,
-            bypass_consent=app_bypass_consent,
+            bypass_consent=app_bypass_consent == "true",
             certificates=[{
                 "cert_alias": app_certificates_cert_alias,
             }],
@@ -8568,9 +8568,9 @@ class DomainsApp(pulumi.CustomResource):
             contact_email_address=app_contact_email_address,
             delegated_service_names=app_delegated_service_names,
             description=app_description,
-            disable_kmsi_token_authentication=app_disable_kmsi_token_authentication,
+            disable_kmsi_token_authentication=app_disable_kmsi_token_authentication == "true",
             error_page_url=app_error_page_url,
-            force_delete=app_force_delete,
+            force_delete=app_force_delete == "true",
             home_page_url=app_home_page_url,
             icon=app_icon,
             id=app_id,
@@ -8581,20 +8581,20 @@ class DomainsApp(pulumi.CustomResource):
             idp_policy={
                 "value": app_idp_policy_value,
             },
-            is_alias_app=app_is_alias_app,
-            is_enterprise_app=app_is_enterprise_app,
-            is_form_fill=app_is_form_fill,
-            is_kerberos_realm=app_is_kerberos_realm,
-            is_login_target=app_is_login_target,
-            is_mobile_target=app_is_mobile_target,
-            is_multicloud_service_app=app_is_multicloud_service_app,
-            is_oauth_client=app_is_oauth_client,
-            is_oauth_resource=app_is_oauth_resource,
-            is_obligation_capable=app_is_obligation_capable,
-            is_radius_app=app_is_radius_app,
-            is_saml_service_provider=app_is_saml_service_provider,
-            is_unmanaged_app=app_is_unmanaged_app,
-            is_web_tier_policy=app_is_web_tier_policy,
+            is_alias_app=app_is_alias_app == "true",
+            is_enterprise_app=app_is_enterprise_app == "true",
+            is_form_fill=app_is_form_fill == "true",
+            is_kerberos_realm=app_is_kerberos_realm == "true",
+            is_login_target=app_is_login_target == "true",
+            is_mobile_target=app_is_mobile_target == "true",
+            is_multicloud_service_app=app_is_multicloud_service_app == "true",
+            is_oauth_client=app_is_oauth_client == "true",
+            is_oauth_resource=app_is_oauth_resource == "true",
+            is_obligation_capable=app_is_obligation_capable == "true",
+            is_radius_app=app_is_radius_app == "true",
+            is_saml_service_provider=app_is_saml_service_provider == "true",
+            is_unmanaged_app=app_is_unmanaged_app == "true",
+            is_web_tier_policy=app_is_web_tier_policy == "true",
             landing_page_url=app_landing_page_url,
             linking_callback_url=app_linking_callback_url,
             login_mechanism=app_login_mechanism,
@@ -8614,7 +8614,7 @@ class DomainsApp(pulumi.CustomResource):
                 "value": app_radius_policy_value,
             },
             redirect_uris=app_redirect_uris,
-            refresh_token_expiry=app_refresh_token_expiry,
+            refresh_token_expiry=int(app_refresh_token_expiry),
             resource_type_schema_version=app_resource_type_schema_version,
             saml_service_provider={
                 "value": app_saml_service_provider_value,
@@ -8623,7 +8623,7 @@ class DomainsApp(pulumi.CustomResource):
                 "value": app_scopes_value,
                 "description": app_scopes_description,
                 "display_name": app_scopes_display_name,
-                "requires_consent": app_scopes_requires_consent,
+                "requires_consent": app_scopes_requires_consent == "true",
             }],
             secondary_audiences=["secondaryAudiences"],
             service_params=[{
@@ -8632,7 +8632,7 @@ class DomainsApp(pulumi.CustomResource):
             }],
             service_type_urn=app_service_type_urn,
             service_type_version=app_service_type_version,
-            show_in_my_apps=app_show_in_my_apps,
+            show_in_my_apps=app_show_in_my_apps == "true",
             signon_policy={
                 "value": app_signon_policy_value,
             },
@@ -8666,14 +8666,14 @@ class DomainsApp(pulumi.CustomResource):
                 "domain_name": "domainName",
             },
             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app={
-                "allow_authz_decision_ttl": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_decision_ttl,
+                "allow_authz_decision_ttl": int(app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_decision_ttl),
                 "allow_authz_policy": {
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_allow_authz_policy_value,
                 },
                 "app_resources": [{
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_app_resources_value,
                 }],
-                "deny_authz_decision_ttl": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_decision_ttl,
+                "deny_authz_decision_ttl": int(app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_decision_ttl),
                 "deny_authz_policy": {
                     "value": app_urnietfparamsscimschemasoracleidcsextensionenterprise_app_app_deny_authz_policy_value,
                 },
@@ -8687,7 +8687,7 @@ class DomainsApp(pulumi.CustomResource):
                     "form_url_match_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_form_fill_url_match_form_url_match_type,
                 }],
                 "form_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_form_type,
-                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_reveal_password_on_form,
+                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_reveal_password_on_form == "true",
                 "user_name_form_expression": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_user_name_form_expression,
                 "user_name_form_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_app_user_name_form_template,
             },
@@ -8700,51 +8700,51 @@ class DomainsApp(pulumi.CustomResource):
                     "form_url_match_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_form_fill_url_match_form_url_match_type,
                 }],
                 "form_type": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_form_type,
-                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_reveal_password_on_form,
-                "sync_from_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_sync_from_template,
+                "reveal_password_on_form": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_reveal_password_on_form == "true",
+                "sync_from_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_sync_from_template == "true",
                 "user_name_form_expression": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_user_name_form_expression,
                 "user_name_form_template": app_urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template_user_name_form_template,
             },
             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app={
                 "default_encryption_salt_type": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_default_encryption_salt_type,
                 "master_key": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_master_key,
-                "max_renewable_age": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_renewable_age,
-                "max_ticket_life": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_ticket_life,
+                "max_renewable_age": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_renewable_age),
+                "max_ticket_life": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_max_ticket_life),
                 "realm_name": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_realm_name,
                 "supported_encryption_salt_types": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_supported_encryption_salt_types,
-                "ticket_flags": app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_ticket_flags,
+                "ticket_flags": int(app_urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app_ticket_flags),
             },
             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app={
-                "admin_consent_granted": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_admin_consent_granted,
+                "admin_consent_granted": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_admin_consent_granted == "true",
                 "bundle_configuration_properties": [{
                     "icf_type": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_icf_type,
                     "name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_name,
-                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_required,
-                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_confidential,
+                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_required == "true",
+                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_confidential == "true",
                     "display_name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_display_name,
                     "help_message": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_help_message,
-                    "order": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_order,
+                    "order": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_order),
                     "values": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_configuration_properties_value,
                 }],
                 "bundle_pool_configuration": {
-                    "max_idle": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_idle,
-                    "max_objects": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_objects,
-                    "max_wait": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_wait,
-                    "min_evictable_idle_time_millis": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_evictable_idle_time_millis,
-                    "min_idle": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_idle,
+                    "max_idle": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_idle),
+                    "max_objects": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_objects),
+                    "max_wait": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_max_wait),
+                    "min_evictable_idle_time_millis": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_evictable_idle_time_millis),
+                    "min_idle": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_bundle_pool_configuration_min_idle),
                 },
-                "connected": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_connected,
-                "enable_auth_sync_new_user_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_auth_sync_new_user_notification,
-                "enable_sync": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync,
-                "enable_sync_summary_report_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync_summary_report_notification,
+                "connected": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_connected == "true",
+                "enable_auth_sync_new_user_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_auth_sync_new_user_notification == "true",
+                "enable_sync": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync == "true",
+                "enable_sync_summary_report_notification": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_enable_sync_summary_report_notification == "true",
                 "flat_file_bundle_configuration_properties": [{
                     "icf_type": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_icf_type,
                     "name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_name,
-                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_required,
-                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_confidential,
+                    "required": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_required == "true",
+                    "confidential": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_confidential == "true",
                     "display_name": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_display_name,
                     "help_message": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_help_message,
-                    "order": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_order,
+                    "order": int(app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_order),
                     "values": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_bundle_configuration_properties_value,
                 }],
                 "flat_file_connector_bundle": {
@@ -8752,7 +8752,7 @@ class DomainsApp(pulumi.CustomResource):
                     "display": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_flat_file_connector_bundle_display,
                     "well_known_id": test_well_known["id"],
                 },
-                "is_authoritative": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_is_authoritative,
+                "is_authoritative": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_is_authoritative == "true",
                 "three_legged_oauth_credential": {
                     "access_token": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_three_legged_oauth_credential_access_token,
                     "access_token_expiry": app_urnietfparamsscimschemasoracleidcsextensionmanagedapp_app_three_legged_oauth_credential_access_token_expiry,
@@ -8768,10 +8768,10 @@ class DomainsApp(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionradius_app_app={
                 "client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_client_ip,
-                "include_group_in_response": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_include_group_in_response,
+                "include_group_in_response": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_include_group_in_response == "true",
                 "port": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_port,
                 "secret_key": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_secret_key,
-                "capture_client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_capture_client_ip,
+                "capture_client_ip": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_capture_client_ip == "true",
                 "country_code_response_attribute_id": "1",
                 "end_user_ip_attribute": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_end_user_ip_attribute,
                 "group_membership_radius_attribute": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_membership_radius_attribute,
@@ -8779,18 +8779,18 @@ class DomainsApp(pulumi.CustomResource):
                     "value": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_membership_to_return_value,
                 }],
                 "group_name_format": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_group_name_format,
-                "password_and_otp_together": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_password_and_otp_together,
+                "password_and_otp_together": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_password_and_otp_together == "true",
                 "radius_vendor_specific_id": "radiusVendorSpecificId",
                 "response_format": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_response_format,
                 "response_format_delimiter": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_response_format_delimiter,
                 "type_of_radius_app": app_urnietfparamsscimschemasoracleidcsextensionradius_app_app_type_of_radius_app,
             },
             urnietfparamsscimschemasoracleidcsextensionrequestable_app={
-                "requestable": app_urnietfparamsscimschemasoracleidcsextensionrequestable_app_requestable,
+                "requestable": app_urnietfparamsscimschemasoracleidcsextensionrequestable_app_requestable == "true",
             },
             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app={
                 "assertion_consumer_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_assertion_consumer_url,
-                "encrypt_assertion": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encrypt_assertion,
+                "encrypt_assertion": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encrypt_assertion == "true",
                 "encryption_algorithm": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_encryption_algorithm,
                 "encryption_certificate": "encryptionCertificate",
                 "federation_protocol": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_federation_protocol,
@@ -8801,11 +8801,11 @@ class DomainsApp(pulumi.CustomResource):
                     "group_name": "groupName",
                 }],
                 "hok_acs_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_acs_url,
-                "hok_required": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_required,
-                "include_signing_cert_in_signature": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_include_signing_cert_in_signature,
+                "hok_required": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_hok_required == "true",
+                "include_signing_cert_in_signature": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_include_signing_cert_in_signature == "true",
                 "key_encryption_algorithm": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_key_encryption_algorithm,
                 "logout_binding": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_binding,
-                "logout_enabled": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_enabled,
+                "logout_enabled": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_enabled == "true",
                 "logout_request_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_request_url,
                 "logout_response_url": app_urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app_logout_response_url,
                 "metadata": "metadata",
@@ -8824,7 +8824,7 @@ class DomainsApp(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app={
-                "resource_ref": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_resource_ref,
+                "resource_ref": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_resource_ref == "true",
                 "web_tier_policy_az_control": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_web_tier_policy_az_control,
                 "web_tier_policy_json": app_urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app_web_tier_policy_json,
             })
@@ -8854,102 +8854,102 @@ class DomainsApp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
-                 all_url_schemes_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_access_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-                 allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
-                 app_icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_signon_policy: Optional[pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
-                 app_thumbnail: Optional[pulumi.Input[_builtins.str]] = None,
-                 apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-                 as_opc_service: Optional[pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-                 attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audience: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 based_on_template: Optional[pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
-                 bypass_consent: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
-                 client_ip_checking: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_kmsi_token_authentication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 home_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_token_enc_algo: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-                 idp_policy: Optional[pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
-                 is_alias_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enterprise_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_form_fill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kerberos_realm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_login_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mobile_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multicloud_service_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_client: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oauth_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_obligation_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_radius_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_saml_service_provider: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unmanaged_app: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_web_tier_policy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 landing_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 linking_callback_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 logout_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_logo_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-                 radius_policy: Optional[pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
-                 redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 refresh_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 saml_service_provider: Optional[pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
-                 secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
-                 service_type_urn: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_type_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_in_my_apps: Optional[pulumi.Input[_builtins.bool]] = None,
-                 signon_policy: Optional[pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
-                 terms_of_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 terms_of_use: Optional[pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-                 trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
-                 trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
+                 access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+                 all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+                 app_icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+                 app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
+                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audience: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+                 bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+                 client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
+                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+                 is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kerberos_realm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_login_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mobile_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multicloud_service_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_client: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oauth_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_obligation_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_radius_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_saml_service_provider: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unmanaged_app: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_web_tier_policy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 landing_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 linking_callback_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_logout_redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
+                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+                 redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+                 secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+                 service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+                 terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+                 trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -9099,128 +9099,128 @@ class DomainsApp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-            accounts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict']]]]] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            admin_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict']]]]] = None,
-            alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
-            all_url_schemes_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            allow_access_control: Optional[pulumi.Input[_builtins.bool]] = None,
-            allow_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-            allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-            allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
-            app_icon: Optional[pulumi.Input[_builtins.str]] = None,
-            app_signon_policy: Optional[pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
-            app_thumbnail: Optional[pulumi.Input[_builtins.str]] = None,
-            apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-            as_opc_service: Optional[pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-            attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            audience: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            based_on_template: Optional[pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
-            bypass_consent: Optional[pulumi.Input[_builtins.bool]] = None,
-            callback_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-            certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
-            client_ip_checking: Optional[pulumi.Input[_builtins.str]] = None,
-            client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            client_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_control_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict']]]]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            contact_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-            delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disable_kmsi_token_authentication: Optional[pulumi.Input[_builtins.bool]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            editable_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict']]]]] = None,
-            error_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-            force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            granted_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]]] = None,
-            grants: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict']]]]] = None,
-            hashed_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            home_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-            icon: Optional[pulumi.Input[_builtins.str]] = None,
-            id_token_enc_algo: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-            idp_policy: Optional[pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
-            infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_alias_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_database_service: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_enterprise_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_form_fill: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_kerberos_realm: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_login_target: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_managed_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_mobile_target: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_multicloud_service_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_oauth_client: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_oauth_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_obligation_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_opc_service: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_radius_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_saml_service_provider: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unmanaged_app: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_web_tier_policy: Optional[pulumi.Input[_builtins.bool]] = None,
-            landing_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-            linking_callback_url: Optional[pulumi.Input[_builtins.str]] = None,
-            login_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-            login_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-            logout_page_url: Optional[pulumi.Input[_builtins.str]] = None,
-            logout_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict']]]]] = None,
-            meter_as_opc_service: Optional[pulumi.Input[_builtins.bool]] = None,
-            migrated: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-            product_logo_url: Optional[pulumi.Input[_builtins.str]] = None,
-            product_name: Optional[pulumi.Input[_builtins.str]] = None,
-            protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-            radius_policy: Optional[pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
-            ready_to_upgrade: Optional[pulumi.Input[_builtins.bool]] = None,
-            redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            refresh_token_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            saml_service_provider: Optional[pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
-            secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
-            service_type_urn: Optional[pulumi.Input[_builtins.str]] = None,
-            service_type_version: Optional[pulumi.Input[_builtins.str]] = None,
-            show_in_my_apps: Optional[pulumi.Input[_builtins.bool]] = None,
-            signon_policy: Optional[pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            terms_of_service_url: Optional[pulumi.Input[_builtins.str]] = None,
-            terms_of_use: Optional[pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-            trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
-            trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
-            user_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict']]]]] = None) -> 'DomainsApp':
+            access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+            accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict']]]]] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            admin_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict']]]]] = None,
+            alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+            all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
+            allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
+            allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+            app_icon: pulumi.Input[Optional[_builtins.str]] = None,
+            app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+            app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
+            apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
+            as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
+            attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            audience: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+            bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
+            callback_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+            client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
+            client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            client_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_control_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict']]]]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            editable_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict']]]]] = None,
+            error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+            force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            granted_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]]] = None,
+            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict']]]]] = None,
+            hashed_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+            icon: pulumi.Input[Optional[_builtins.str]] = None,
+            id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
+            idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+            infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_database_service: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_kerberos_realm: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_login_target: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_managed_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_mobile_target: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multicloud_service_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oauth_client: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oauth_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_obligation_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_radius_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_saml_service_provider: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unmanaged_app: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_web_tier_policy: pulumi.Input[Optional[_builtins.bool]] = None,
+            landing_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+            linking_callback_url: pulumi.Input[Optional[_builtins.str]] = None,
+            login_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+            logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
+            logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict']]]]] = None,
+            meter_as_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
+            migrated: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            post_logout_redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+            product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
+            product_name: pulumi.Input[Optional[_builtins.str]] = None,
+            protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
+            radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+            ready_to_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
+            redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+            secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+            service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
+            service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
+            show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+            signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
+            terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
+            trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+            trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
+            user_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict']]]]] = None) -> 'DomainsApp':
         """
         Get an existing DomainsApp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

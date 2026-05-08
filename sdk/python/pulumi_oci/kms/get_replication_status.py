@@ -97,7 +97,7 @@ def get_replication_status(management_endpoint: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_status = oci.Kms.get_replication_status(replication_id=test_replication["id"],
+    test_replication_status = oci.kms.get_replication_status(replication_id=test_replication["id"],
         management_endpoint=replication_status_management_endpoint)
     ```
 
@@ -116,8 +116,8 @@ def get_replication_status(management_endpoint: Optional[_builtins.str] = None,
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
         replica_details=pulumi.get(__ret__, 'replica_details'),
         replication_id=pulumi.get(__ret__, 'replication_id'))
-def get_replication_status_output(management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                  replication_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_status_output(management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                  replication_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationStatusResult]:
     """
     This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
@@ -133,7 +133,7 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_status = oci.Kms.get_replication_status(replication_id=test_replication["id"],
+    test_replication_status = oci.kms.get_replication_status(replication_id=test_replication["id"],
         management_endpoint=replication_status_management_endpoint)
     ```
 

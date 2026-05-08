@@ -120,7 +120,7 @@ def get_db_system_connection_detail(db_system_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
+    test_db_system_connection_detail = oci.psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
     ```
 
 
@@ -138,7 +138,7 @@ def get_db_system_connection_detail(db_system_id: Optional[_builtins.str] = None
         instance_endpoints=pulumi.get(__ret__, 'instance_endpoints'),
         primary_db_endpoints=pulumi.get(__ret__, 'primary_db_endpoints'),
         reader_endpoints=pulumi.get(__ret__, 'reader_endpoints'))
-def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_system_connection_detail_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemConnectionDetailResult]:
     """
     This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
@@ -151,7 +151,7 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
+    test_db_system_connection_detail = oci.psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
     ```
 
 

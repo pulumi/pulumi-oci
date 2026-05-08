@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
+ * const testSoftwareSources = oci.osmanagementhub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
  *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
@@ -27,8 +27,8 @@ import * as utilities from "../utilities";
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
- *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
- *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux === "true",
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed === "true",
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -201,7 +201,7 @@ export interface GetSoftwareSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
+ * const testSoftwareSources = oci.osmanagementhub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
  *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
@@ -210,8 +210,8 @@ export interface GetSoftwareSourcesResult {
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
- *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
- *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux === "true",
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed === "true",
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -250,62 +250,62 @@ export interface GetSoftwareSourcesOutputArgs {
     /**
      * A filter to return only instances whose architecture type matches the given architecture.
      */
-    archTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    archTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source in a non-OCI environment for a tenancy.
      */
-    availabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
-    availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
-    availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A multi filter to return resources that do not contains the given display names.
      */
-    displayNameNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcesFilterArgs>[]>;
+    displayNameNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcesFilterArgs>[] | undefined>;
     /**
      * Indicates whether the software source is mandatory for the Autonomous Linux service.
      */
-    isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+    isMandatoryForAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return software sources which can be synced to a management station.
      */
-    isMirrorSyncAllowed?: pulumi.Input<boolean>;
+    isMirrorSyncAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+    osFamilies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
     /**
      * The type of the software source.
      */
-    softwareSourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only software sources whose state matches the given state.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the given vendor name.
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }

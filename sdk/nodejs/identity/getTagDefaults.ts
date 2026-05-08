@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagDefaults = oci.Identity.getTagDefaults({
+ * const testTagDefaults = oci.identity.getTagDefaults({
  *     compartmentId: compartmentId,
  *     id: tagDefaultId,
  *     state: tagDefaultState,
@@ -97,7 +97,7 @@ export interface GetTagDefaultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagDefaults = oci.Identity.getTagDefaults({
+ * const testTagDefaults = oci.identity.getTagDefaults({
  *     compartmentId: compartmentId,
  *     id: tagDefaultId,
  *     state: tagDefaultState,
@@ -124,18 +124,18 @@ export interface GetTagDefaultsOutputArgs {
     /**
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagDefaultsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagDefaultsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the specified OCID exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tag definition.
      */
-    tagDefinitionId?: pulumi.Input<string>;
+    tagDefinitionId?: pulumi.Input<string | undefined>;
 }

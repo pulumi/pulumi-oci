@@ -170,12 +170,12 @@ def get_batch_batch_job_pools(batch_context_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_batch_batch_job_pools_output(batch_context_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBatchBatchJobPoolsFilterArgs', 'GetBatchBatchJobPoolsFilterArgsDict']]]]] = None,
-                                     id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_batch_batch_job_pools_output(batch_context_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchJobPoolsFilterArgs', 'GetBatchBatchJobPoolsFilterArgsDict']]]]] = None,
+                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchJobPoolsResult]:
     """
     This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.

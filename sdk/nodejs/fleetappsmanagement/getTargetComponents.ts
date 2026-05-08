@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetComponents = oci.FleetAppsManagement.getTargetComponents({
+ * const testTargetComponents = oci.fleetappsmanagement.getTargetComponents({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,
@@ -98,7 +98,7 @@ export interface GetTargetComponentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetComponents = oci.FleetAppsManagement.getTargetComponents({
+ * const testTargetComponents = oci.fleetappsmanagement.getTargetComponents({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,
@@ -127,21 +127,21 @@ export interface GetTargetComponentsOutputArgs {
      * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetTargetComponentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetTargetComponentsFilterArgs>[] | undefined>;
     /**
      * Target Component Name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Patch severity.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * Target identifier.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Target name.
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
 }

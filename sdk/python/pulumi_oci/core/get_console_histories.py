@@ -137,7 +137,7 @@ def get_console_histories(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=compartment_id,
+    test_console_histories = oci.core.get_console_histories(compartment_id=compartment_id,
         availability_domain=console_history_availability_domain,
         instance_id=test_instance["id"],
         state=console_history_state)
@@ -166,11 +166,11 @@ def get_console_histories(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_console_histories_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]]]] = None,
-                                 instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_console_histories_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]]]] = None,
+                                 instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConsoleHistoriesResult]:
     """
     This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
@@ -183,7 +183,7 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=compartment_id,
+    test_console_histories = oci.core.get_console_histories(compartment_id=compartment_id,
         availability_domain=console_history_availability_domain,
         instance_id=test_instance["id"],
         state=console_history_state)

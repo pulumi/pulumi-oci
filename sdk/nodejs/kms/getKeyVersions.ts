@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyVersions = oci.Kms.getKeyVersions({
+ * const testKeyVersions = oci.kms.getKeyVersions({
  *     keyId: testKey.id,
  *     managementEndpoint: keyVersionManagementEndpoint,
  * });
@@ -89,7 +89,7 @@ export interface GetKeyVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyVersions = oci.Kms.getKeyVersions({
+ * const testKeyVersions = oci.kms.getKeyVersions({
  *     keyId: testKey.id,
  *     managementEndpoint: keyVersionManagementEndpoint,
  * });
@@ -108,7 +108,7 @@ export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulu
  * A collection of arguments for invoking getKeyVersions.
  */
 export interface GetKeyVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Kms.GetKeyVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Kms.GetKeyVersionsFilterArgs>[] | undefined>;
     /**
      * The OCID of the key.
      */

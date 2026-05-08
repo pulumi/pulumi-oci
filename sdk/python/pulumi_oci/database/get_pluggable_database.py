@@ -357,7 +357,7 @@ def get_pluggable_database(pluggable_database_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
+    test_pluggable_database = oci.database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
     ```
 
 
@@ -397,7 +397,7 @@ def get_pluggable_database(pluggable_database_id: Optional[_builtins.str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         tde_wallet_password=pulumi.get(__ret__, 'tde_wallet_password'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pluggable_database_output(pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabaseResult]:
     """
     This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -410,7 +410,7 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
+    test_pluggable_database = oci.database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
     ```
 
 

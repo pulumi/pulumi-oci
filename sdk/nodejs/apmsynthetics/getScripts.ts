@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScripts = oci.ApmSynthetics.getScripts({
+ * const testScripts = oci.apmsynthetics.getScripts({
  *     apmDomainId: testApmDomain.id,
  *     contentType: scriptContentType,
  *     displayName: scriptDisplayName,
@@ -87,7 +87,7 @@ export interface GetScriptsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScripts = oci.ApmSynthetics.getScripts({
+ * const testScripts = oci.apmsynthetics.getScripts({
  *     apmDomainId: testApmDomain.id,
  *     contentType: scriptContentType,
  *     displayName: scriptDisplayName,
@@ -115,10 +115,10 @@ export interface GetScriptsOutputArgs {
     /**
      * A filter to return only resources that match the content type given.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetScriptsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetScriptsFilterArgs>[] | undefined>;
 }

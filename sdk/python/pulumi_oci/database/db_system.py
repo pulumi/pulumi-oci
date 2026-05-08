@@ -28,44 +28,44 @@ class DbSystemArgs:
                  shape: pulumi.Input[_builtins.str],
                  ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  subnet_id: pulumi.Input[_builtins.str],
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
-                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_options: Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_collection_options: pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']] = None,
+                 data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_options: pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 reco_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
 
@@ -340,19 +340,19 @@ class DbSystemArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSubnetId")
-    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
 
@@ -361,57 +361,57 @@ class DbSystemArgs:
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
-    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of compute servers for the DB system.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -430,120 +430,120 @@ class DbSystemArgs:
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']]:
         """
         (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStoragePercentage")
-    def data_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
-    def data_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemOptions")
-    def db_system_options(self) -> Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']]:
+    def db_system_options(self) -> pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']]:
         """
         The DB system options.
         """
         return pulumi.get(self, "db_system_options")
 
     @db_system_options.setter
-    def db_system_options(self, value: Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']]):
+    def db_system_options(self, value: pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']]):
         pulumi.set(self, "db_system_options", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="diskRedundancy")
-    def disk_redundancy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk_redundancy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
         """
         return pulumi.get(self, "disk_redundancy")
 
     @disk_redundancy.setter
-    def disk_redundancy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk_redundancy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk_redundancy", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fault_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 
@@ -558,84 +558,84 @@ class DbSystemArgs:
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
-    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fault_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']]:
+    def maintenance_window_details(self) -> pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
-    def maintenance_window_details(self, value: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']]):
+    def maintenance_window_details(self, value: pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']]):
         pulumi.set(self, "maintenance_window_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
-    def node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -643,30 +643,30 @@ class DbSystemArgs:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchAction")
-    def os_patch_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_patch_action")
 
     @os_patch_action.setter
-    def os_patch_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_action", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchDbNodeId")
-    def os_patch_db_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_db_node_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_patch_db_node_id")
 
     @os_patch_db_node_id.setter
-    def os_patch_db_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_db_node_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_db_node_id", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchTrigger")
-    def os_patch_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def os_patch_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
 
@@ -677,208 +677,208 @@ class DbSystemArgs:
         return pulumi.get(self, "os_patch_trigger")
 
     @os_patch_trigger.setter
-    def os_patch_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def os_patch_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "os_patch_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDbSystemId")
-    def primary_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "primary_db_system_id")
 
     @primary_db_system_id.setter
-    def primary_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpV6")
-    def private_ip_v6(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_v6(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         """
         return pulumi.get(self, "private_ip_v6")
 
     @private_ip_v6.setter
-    def private_ip_v6(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_v6(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_v6", value)
 
     @_builtins.property
     @pulumi.getter(name="recoStorageSizeInGb")
-    def reco_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reco_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         """
         return pulumi.get(self, "reco_storage_size_in_gb")
 
     @reco_storage_size_in_gb.setter
-    def reco_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reco_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reco_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDbSystemId")
-    def source_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "source_db_system_id")
 
     @source_db_system_id.setter
-    def source_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sparseDiskgroup")
-    def sparse_diskgroup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sparse_diskgroup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         """
         return pulumi.get(self, "sparse_diskgroup")
 
     @sparse_diskgroup.setter
-    def sparse_diskgroup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sparse_diskgroup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sparse_diskgroup", value)
 
     @_builtins.property
     @pulumi.getter(name="storageVolumePerformanceMode")
-    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_volume_performance_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         """
         return pulumi.get(self, "storage_volume_performance_mode")
 
     @storage_volume_performance_mode.setter
-    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_volume_performance_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_volume_performance_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
 @pulumi.input_type
 class _DbSystemState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
-                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_home: Optional[pulumi.Input['DbSystemDbHomeArgs']] = None,
-                 db_system_options: Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_patch_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 maintenance_window_details: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']] = None,
-                 maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_dns_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_collection_options: pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']] = None,
+                 data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_home: pulumi.Input[Optional['DbSystemDbHomeArgs']] = None,
+                 db_system_options: pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 maintenance_window_details: pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']] = None,
+                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 point_in_time_data_disk_clone_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 reco_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scan_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
 
@@ -1123,31 +1123,31 @@ class _DbSystemState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain where the DB system is located.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSubnetId")
-    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
 
@@ -1156,69 +1156,69 @@ class _DbSystemState:
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
-    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of compute servers for the DB system.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -1237,60 +1237,60 @@ class _DbSystemState:
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']]:
         """
         (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['DbSystemDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStoragePercentage")
-    def data_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
-    def data_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="dbHome")
-    def db_home(self) -> Optional[pulumi.Input['DbSystemDbHomeArgs']]:
+    def db_home(self) -> pulumi.Input[Optional['DbSystemDbHomeArgs']]:
         """
         (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
 
@@ -1299,72 +1299,72 @@ class _DbSystemState:
         return pulumi.get(self, "db_home")
 
     @db_home.setter
-    def db_home(self, value: Optional[pulumi.Input['DbSystemDbHomeArgs']]):
+    def db_home(self, value: pulumi.Input[Optional['DbSystemDbHomeArgs']]):
         pulumi.set(self, "db_home", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemOptions")
-    def db_system_options(self) -> Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']]:
+    def db_system_options(self) -> pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']]:
         """
         The DB system options.
         """
         return pulumi.get(self, "db_system_options")
 
     @db_system_options.setter
-    def db_system_options(self, value: Optional[pulumi.Input['DbSystemDbSystemOptionsArgs']]):
+    def db_system_options(self, value: pulumi.Input[Optional['DbSystemDbSystemOptionsArgs']]):
         pulumi.set(self, "db_system_options", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="diskRedundancy")
-    def disk_redundancy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk_redundancy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
         """
         return pulumi.get(self, "disk_redundancy")
 
     @disk_redundancy.setter
-    def disk_redundancy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk_redundancy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk_redundancy", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fault_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 
@@ -1379,24 +1379,24 @@ class _DbSystemState:
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
-    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fault_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 
@@ -1407,168 +1407,168 @@ class _DbSystemState:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]:
+    def iorm_config_caches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]:
         """
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
-    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]):
+    def iorm_config_caches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
-    def last_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastPatchHistoryEntryId")
-    def last_patch_history_entry_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_patch_history_entry_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         """
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @last_patch_history_entry_id.setter
-    def last_patch_history_entry_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_patch_history_entry_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_patch_history_entry_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number configured for the listener on the DB system.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']]:
+    def maintenance_window_details(self) -> pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
-    def maintenance_window_details(self, value: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']]):
+    def maintenance_window_details(self, value: pulumi.Input[Optional['DbSystemMaintenanceWindowDetailsArgs']]):
         pulumi.set(self, "maintenance_window_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]]:
+    def maintenance_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]]:
         """
         The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
-    def maintenance_windows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]]):
+    def maintenance_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]]):
         pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Memory allocated to the DB system, in gigabytes.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
-    def next_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
-    def node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -1576,30 +1576,30 @@ class _DbSystemState:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchAction")
-    def os_patch_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_patch_action")
 
     @os_patch_action.setter
-    def os_patch_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_action", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchDbNodeId")
-    def os_patch_db_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_db_node_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_patch_db_node_id")
 
     @os_patch_db_node_id.setter
-    def os_patch_db_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_db_node_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_db_node_id", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchTrigger")
-    def os_patch_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def os_patch_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
 
@@ -1610,144 +1610,144 @@ class _DbSystemState:
         return pulumi.get(self, "os_patch_trigger")
 
     @os_patch_trigger.setter
-    def os_patch_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def os_patch_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "os_patch_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="osVersion")
-    def os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The most recent OS Patch Version applied on the DB system.
         """
         return pulumi.get(self, "os_version")
 
     @os_version.setter
-    def os_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_version", value)
 
     @_builtins.property
     @pulumi.getter(name="pointInTimeDataDiskCloneTimestamp")
-    def point_in_time_data_disk_clone_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def point_in_time_data_disk_clone_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "point_in_time_data_disk_clone_timestamp")
 
     @point_in_time_data_disk_clone_timestamp.setter
-    def point_in_time_data_disk_clone_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def point_in_time_data_disk_clone_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "point_in_time_data_disk_clone_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDbSystemId")
-    def primary_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "primary_db_system_id")
 
     @primary_db_system_id.setter
-    def primary_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpV6")
-    def private_ip_v6(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_v6(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         """
         return pulumi.get(self, "private_ip_v6")
 
     @private_ip_v6.setter
-    def private_ip_v6(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_v6(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_v6", value)
 
     @_builtins.property
     @pulumi.getter(name="recoStorageSizeInGb")
-    def reco_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reco_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         """
         return pulumi.get(self, "reco_storage_size_in_gb")
 
     @reco_storage_size_in_gb.setter
-    def reco_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reco_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reco_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
-    def scan_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         """
         return pulumi.get(self, "scan_dns_name")
 
     @scan_dns_name.setter
-    def scan_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanDnsRecordId")
-    def scan_dns_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_dns_record_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         """
         return pulumi.get(self, "scan_dns_record_id")
 
     @scan_dns_record_id.setter
-    def scan_dns_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_dns_record_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_dns_record_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanIpIds")
-    def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scan_ip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
-    def scan_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scan_ip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scan_ip_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="scanIpv6ids")
-    def scan_ipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scan_ipv6ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ipv6ids")
 
     @scan_ipv6ids.setter
-    def scan_ipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scan_ipv6ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scan_ipv6ids", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
         * For virtual machine shapes, the number of CPU cores and memory
@@ -1758,84 +1758,84 @@ class _DbSystemState:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDbSystemId")
-    def source_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "source_db_system_id")
 
     @source_db_system_id.setter
-    def source_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sparseDiskgroup")
-    def sparse_diskgroup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sparse_diskgroup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         """
         return pulumi.get(self, "sparse_diskgroup")
 
     @sparse_diskgroup.setter
-    def sparse_diskgroup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sparse_diskgroup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sparse_diskgroup", value)
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ssh_public_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
         """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
-    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ssh_public_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_public_keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the DB system.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageVolumePerformanceMode")
-    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_volume_performance_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         """
         return pulumi.get(self, "storage_volume_performance_mode")
 
     @storage_volume_performance_mode.setter
-    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_volume_performance_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_volume_performance_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 
@@ -1848,100 +1848,100 @@ class _DbSystemState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the DB system was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database version of the DB system.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
-    def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
-    def vip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vip_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def vipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vipv6ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vipv6ids")
 
     @vipv6ids.setter
-    def vipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vipv6ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vipv6ids", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the zone the DB system is associated with.
         """
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
-    def zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
 
 
@@ -1951,51 +1951,51 @@ class DbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
-                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
-                 db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
+                 data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_home: pulumi.Input[Optional[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+                 db_system_options: pulumi.Input[Optional[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 reco_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.
@@ -2209,51 +2209,51 @@ class DbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
-                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
-                 db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
+                 data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_home: pulumi.Input[Optional[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+                 db_system_options: pulumi.Input[Optional[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_patch_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 reco_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2353,72 +2353,72 @@ class DbSystem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-            data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
-            data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-            database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-            db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
-            db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict']]]]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_patch_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-            maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemMaintenanceWindowArgs', 'DbSystemMaintenanceWindowArgsDict']]]]] = None,
-            memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            node_count: Optional[pulumi.Input[_builtins.int]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
-            os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-            os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            os_version: Optional[pulumi.Input[_builtins.str]] = None,
-            point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-            reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-            scan_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_dns_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scan_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
-            ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbSystem':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            data_collection_options: pulumi.Input[Optional[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
+            data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            db_home: pulumi.Input[Optional[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+            db_system_options: pulumi.Input[Optional[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict']]]]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+            maintenance_window_details: pulumi.Input[Optional[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemMaintenanceWindowArgs', 'DbSystemMaintenanceWindowArgsDict']]]]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            os_patch_action: pulumi.Input[Optional[_builtins.str]] = None,
+            os_patch_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+            os_patch_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            point_in_time_data_disk_clone_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+            reco_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scan_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+            ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbSystem':
         """
         Get an existing DbSystem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaRelease = oci.Jms.getJavaRelease({
+ * const testJavaRelease = oci.jms.getJavaRelease({
  *     releaseVersion: javaReleaseReleaseVersion,
  * });
  * ```
@@ -115,7 +115,7 @@ export interface GetJavaReleaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaRelease = oci.Jms.getJavaRelease({
+ * const testJavaRelease = oci.jms.getJavaRelease({
  *     releaseVersion: javaReleaseReleaseVersion,
  * });
  * ```

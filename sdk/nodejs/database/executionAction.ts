@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  *     executionWindowId: testExecutionWindow.id,
  *     actionMembers: [{
  *         memberId: testMember.id,
- *         memberOrder: executionActionActionMembersMemberOrder,
- *         estimatedTimeInMins: executionActionActionMembersEstimatedTimeInMins,
+ *         memberOrder: Number(executionActionActionMembersMemberOrder),
+ *         estimatedTimeInMins: Number(executionActionActionMembersEstimatedTimeInMins),
  *         status: executionActionActionMembersStatus,
- *         totalTimeTakenInMins: executionActionActionMembersTotalTimeTakenInMins,
+ *         totalTimeTakenInMins: Number(executionActionActionMembersTotalTimeTakenInMins),
  *     }],
  *     actionParams: executionActionActionParams,
  *     compartmentId: compartmentId,
@@ -213,43 +213,43 @@ export interface ExecutionActionState {
     /**
      * (Updatable) List of action members of this execution action.
      */
-    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ExecutionActionActionMember>[]>;
+    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ExecutionActionActionMember>[] | undefined>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The action type of the execution action being performed
      */
-    actionType?: pulumi.Input<string>;
+    actionType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Description of the execution action.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the execution action. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The estimated time of the execution action in minutes.
      */
-    estimatedTimeInMins?: pulumi.Input<number>;
+    estimatedTimeInMins?: pulumi.Input<number | undefined>;
     /**
      * The priority order of the execution action.
      */
-    executionActionOrder?: pulumi.Input<number>;
+    executionActionOrder?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
      */
-    executionWindowId?: pulumi.Input<string>;
+    executionWindowId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -257,31 +257,31 @@ export interface ExecutionActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
      */
-    lifecycleSubstate?: pulumi.Input<string>;
+    lifecycleSubstate?: pulumi.Input<string | undefined>;
     /**
      * The current state of the execution action. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the execution action was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The last date and time that the execution action was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The total time taken by corresponding resource activity in minutes.
      */
-    totalTimeTakenInMins?: pulumi.Input<number>;
+    totalTimeTakenInMins?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -291,11 +291,11 @@ export interface ExecutionActionArgs {
     /**
      * (Updatable) List of action members of this execution action.
      */
-    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ExecutionActionActionMember>[]>;
+    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ExecutionActionActionMember>[] | undefined>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The action type of the execution action being performed
      */
@@ -303,11 +303,11 @@ export interface ExecutionActionArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
      */
@@ -319,5 +319,5 @@ export interface ExecutionActionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

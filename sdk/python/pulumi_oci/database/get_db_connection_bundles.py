@@ -147,7 +147,7 @@ def get_db_connection_bundles(associated_resource_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_connection_bundles = oci.Database.get_db_connection_bundles(compartment_id=compartment_id,
+    test_db_connection_bundles = oci.database.get_db_connection_bundles(compartment_id=compartment_id,
         associated_resource_id=test_resource["id"],
         db_connection_bundle_type=db_connection_bundle_db_connection_bundle_type,
         display_name=db_connection_bundle_display_name,
@@ -180,12 +180,12 @@ def get_db_connection_bundles(associated_resource_id: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_db_connection_bundles_output(associated_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     db_connection_bundle_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_connection_bundles_output(associated_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     db_connection_bundle_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbConnectionBundlesResult]:
     """
     This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
@@ -198,7 +198,7 @@ def get_db_connection_bundles_output(associated_resource_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_db_connection_bundles = oci.Database.get_db_connection_bundles(compartment_id=compartment_id,
+    test_db_connection_bundles = oci.database.get_db_connection_bundles(compartment_id=compartment_id,
         associated_resource_id=test_resource["id"],
         db_connection_bundle_type=db_connection_bundle_db_connection_bundle_type,
         display_name=db_connection_bundle_display_name,

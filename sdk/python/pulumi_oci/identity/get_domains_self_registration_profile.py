@@ -522,7 +522,7 @@ def get_domains_self_registration_profile(attribute_sets: Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+    test_self_registration_profile = oci.identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
         self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",
@@ -588,12 +588,12 @@ def get_domains_self_registration_profile(attribute_sets: Optional[Sequence[_bui
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         user_attributes=pulumi.get(__ret__, 'user_attributes'))
-def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                 attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 self_registration_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_self_registration_profile_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                 attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 self_registration_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSelfRegistrationProfileResult]:
     """
     This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -606,7 +606,7 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+    test_self_registration_profile = oci.identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
         self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",

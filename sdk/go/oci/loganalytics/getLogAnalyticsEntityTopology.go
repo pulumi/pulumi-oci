@@ -33,7 +33,7 @@ import (
 //				LogAnalyticsEntityId: testLogAnalyticsEntity.Id,
 //				Namespace:            logAnalyticsEntityTopologyNamespace,
 //				Context:              pulumi.StringRef(logAnalyticsEntityTopologyContext),
-//				MetadataEquals:       logAnalyticsEntityTopologyMetadataEquals,
+//				MetadataEquals:       pulumi.ToArray(logAnalyticsEntityTopologyMetadataEquals),
 //				State:                pulumi.StringRef(logAnalyticsEntityTopologyState),
 //			}, nil)
 //			if err != nil {

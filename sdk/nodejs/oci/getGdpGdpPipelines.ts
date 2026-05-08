@@ -113,14 +113,14 @@ export interface GetGdpGdpPipelinesOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
      */
-    env?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetGdpGdpPipelinesFilterArgs>[]>;
+    env?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetGdpGdpPipelinesFilterArgs>[] | undefined>;
 }

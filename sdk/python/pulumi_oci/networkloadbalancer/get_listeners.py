@@ -95,7 +95,7 @@ def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
+    test_listeners = oci.networkloadbalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'Ge
         id=pulumi.get(__ret__, 'id'),
         listener_collections=pulumi.get(__ret__, 'listener_collections'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
-def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]]]] = None,
-                         network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listeners_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]]]] = None,
+                         network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListenersResult]:
     """
     This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -126,7 +126,7 @@ def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
+    test_listeners = oci.networkloadbalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 

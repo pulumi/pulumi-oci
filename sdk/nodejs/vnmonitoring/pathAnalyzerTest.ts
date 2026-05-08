@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         vlanId: testVlan.id,
  *         vnicId: testVnicAttachment.id,
  *     },
- *     protocol: pathAnalyzerTestProtocol,
+ *     protocol: Number(pathAnalyzerTestProtocol),
  *     sourceEndpoint: {
  *         type: pathAnalyzerTestSourceEndpointType,
  *         address: pathAnalyzerTestSourceEndpointAddress,
@@ -56,13 +56,13 @@ import * as utilities from "../utilities";
  *     },
  *     protocolParameters: {
  *         type: pathAnalyzerTestProtocolParametersType,
- *         destinationPort: pathAnalyzerTestProtocolParametersDestinationPort,
- *         icmpCode: pathAnalyzerTestProtocolParametersIcmpCode,
- *         icmpType: pathAnalyzerTestProtocolParametersIcmpType,
- *         sourcePort: pathAnalyzerTestProtocolParametersSourcePort,
+ *         destinationPort: Number(pathAnalyzerTestProtocolParametersDestinationPort),
+ *         icmpCode: Number(pathAnalyzerTestProtocolParametersIcmpCode),
+ *         icmpType: Number(pathAnalyzerTestProtocolParametersIcmpType),
+ *         sourcePort: Number(pathAnalyzerTestProtocolParametersSourcePort),
  *     },
  *     queryOptions: {
- *         isBiDirectionalAnalysis: pathAnalyzerTestQueryOptionsIsBiDirectionalAnalysis,
+ *         isBiDirectionalAnalysis: pathAnalyzerTestQueryOptionsIsBiDirectionalAnalysis === "true",
  *     },
  * });
  * ```
@@ -222,55 +222,55 @@ export interface PathAnalyzerTestState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestDestinationEndpoint>;
+    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestDestinationEndpoint | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
      */
-    protocol?: pulumi.Input<number>;
+    protocol?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestProtocolParameters>;
+    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestProtocolParameters | undefined>;
     /**
      * (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestQueryOptions>;
+    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestQueryOptions | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestSourceEndpoint>;
+    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestSourceEndpoint | undefined>;
     /**
      * The current state of the `PathAnalyzerTest` resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -284,7 +284,7 @@ export interface PathAnalyzerTestArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
@@ -292,11 +292,11 @@ export interface PathAnalyzerTestArgs {
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
      */
@@ -304,11 +304,11 @@ export interface PathAnalyzerTestArgs {
     /**
      * (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestProtocolParameters>;
+    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestProtocolParameters | undefined>;
     /**
      * (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestQueryOptions>;
+    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalyzerTestQueryOptions | undefined>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */

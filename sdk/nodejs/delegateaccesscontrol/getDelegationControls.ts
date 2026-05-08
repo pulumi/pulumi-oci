@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationControls = oci.DelegateAccessControl.getDelegationControls({
+ * const testDelegationControls = oci.delegateaccesscontrol.getDelegationControls({
  *     compartmentId: compartmentId,
  *     displayName: delegationControlDisplayName,
  *     resourceId: testResource.id,
@@ -107,7 +107,7 @@ export interface GetDelegationControlsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationControls = oci.DelegateAccessControl.getDelegationControls({
+ * const testDelegationControls = oci.delegateaccesscontrol.getDelegationControls({
  *     compartmentId: compartmentId,
  *     displayName: delegationControlDisplayName,
  *     resourceId: testResource.id,
@@ -139,18 +139,18 @@ export interface GetDelegationControlsOutputArgs {
     /**
      * A filter to return Delegation Control resources that match the given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegationControlsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegationControlsFilterArgs>[] | undefined>;
     /**
      * A filter to return Delegation Control resources that match the given resource ID.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Delegation Control resources whose lifecycleState matches the given Delegation Control lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

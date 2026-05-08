@@ -165,7 +165,7 @@ def get_instances(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=compartment_id,
+    test_instances = oci.core.get_instances(compartment_id=compartment_id,
         availability_domain=instance_availability_domain,
         capacity_reservation_id=test_capacity_reservation["id"],
         compute_cluster_id=test_compute_cluster["id"],
@@ -202,13 +202,13 @@ def get_instances(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         instances=pulumi.get(__ret__, 'instances'),
         state=pulumi.get(__ret__, 'state'))
-def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         capacity_reservation_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         compute_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict']]]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_instances_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         capacity_reservation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         compute_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict']]]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancesResult]:
     """
     This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
@@ -226,7 +226,7 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=compartment_id,
+    test_instances = oci.core.get_instances(compartment_id=compartment_id,
         availability_domain=instance_availability_domain,
         capacity_reservation_id=test_capacity_reservation["id"],
         compute_cluster_id=test_compute_cluster["id"],

@@ -198,27 +198,27 @@ export interface EventState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Provides additional information for a management station event.
      */
-    datas?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventData>[]>;
+    datas?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventData>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details of an event.
      */
-    eventDetails?: pulumi.Input<string>;
+    eventDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
      */
-    eventId?: pulumi.Input<string>;
+    eventId?: pulumi.Input<string | undefined>;
     /**
      * Summary of the event.
      */
-    eventSummary?: pulumi.Input<string>;
+    eventSummary?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -226,43 +226,43 @@ export interface EventState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether the event occurred on a resource that is managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * Describes the current state of the event in more detail. For example, the  message can provide actionable information for a resource in the 'FAILED' state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance or resource where the event occurred.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the event.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Provides information about the system architecture and operating system.
      */
-    systemDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventSystemDetail>[]>;
+    systemDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventSystemDetail>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Event was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the event occurred.
      */
-    timeOccurred?: pulumi.Input<string>;
+    timeOccurred?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the event was updated (in [RFC 3339](https://tools.ietf.org/html/rfc3339) format). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Event type:
      * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
@@ -276,7 +276,7 @@ export interface EventState {
      * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
      * * `REBOOT` - Reboot
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -286,11 +286,11 @@ export interface EventArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
      */
@@ -302,5 +302,5 @@ export interface EventArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

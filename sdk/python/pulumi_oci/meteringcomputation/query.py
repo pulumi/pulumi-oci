@@ -60,8 +60,8 @@ class QueryArgs:
 @pulumi.input_type
 class _QueryState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional['QueryQueryDefinitionArgs']] = None):
         """
         Input properties used for looking up and filtering Query resources.
 
@@ -75,26 +75,26 @@ class _QueryState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="queryDefinition")
-    def query_definition(self) -> Optional[pulumi.Input['QueryQueryDefinitionArgs']]:
+    def query_definition(self) -> pulumi.Input[Optional['QueryQueryDefinitionArgs']]:
         """
         (Updatable) The common fields for queries.
         """
         return pulumi.get(self, "query_definition")
 
     @query_definition.setter
-    def query_definition(self, value: Optional[pulumi.Input['QueryQueryDefinitionArgs']]):
+    def query_definition(self, value: pulumi.Input[Optional['QueryQueryDefinitionArgs']]):
         pulumi.set(self, "query_definition", value)
 
 
@@ -104,8 +104,8 @@ class Query(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -126,7 +126,7 @@ class Query(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": query_query_definition_display_name,
                 "report_query": {
@@ -146,7 +146,7 @@ class Query(pulumi.CustomResource):
                         "namespace": query_query_definition_report_query_group_by_tag_namespace,
                         "value": query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time == "true",
                     "query_type": query_query_definition_report_query_query_type,
                     "time_usage_ended": query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": query_query_definition_report_query_time_usage_started,
@@ -194,7 +194,7 @@ class Query(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": query_query_definition_display_name,
                 "report_query": {
@@ -214,7 +214,7 @@ class Query(pulumi.CustomResource):
                         "namespace": query_query_definition_report_query_group_by_tag_namespace,
                         "value": query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time == "true",
                     "query_type": query_query_definition_report_query_query_type,
                     "time_usage_ended": query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": query_query_definition_report_query_time_usage_started,
@@ -247,8 +247,8 @@ class Query(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,8 +274,8 @@ class Query(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None) -> 'Query':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            query_definition: pulumi.Input[Optional[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None) -> 'Query':
         """
         Get an existing Query resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

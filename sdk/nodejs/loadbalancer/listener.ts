@@ -24,12 +24,12 @@ import * as utilities from "../utilities";
  *     defaultBackendSetName: testBackendSet.name,
  *     loadBalancerId: testLoadBalancer.id,
  *     name: listenerName,
- *     port: listenerPort,
+ *     port: Number(listenerPort),
  *     protocol: listenerProtocol,
  *     connectionConfiguration: {
  *         idleTimeoutInSeconds: listenerConnectionConfigurationIdleTimeoutInSeconds,
  *         backendTcpProxyProtocolOptions: listenerConnectionConfigurationBackendTcpProxyProtocolOptions,
- *         backendTcpProxyProtocolVersion: listenerConnectionConfigurationBackendTcpProxyProtocolVersion,
+ *         backendTcpProxyProtocolVersion: Number(listenerConnectionConfigurationBackendTcpProxyProtocolVersion),
  *     },
  *     hostnameNames: [testHostname.name],
  *     pathRouteSetName: testPathRouteSet.name,
@@ -37,14 +37,14 @@ import * as utilities from "../utilities";
  *     ruleSetNames: [testRuleSet.name],
  *     sslConfiguration: {
  *         certificateName: testCertificate.name,
- *         hasSessionResumption: listenerSslConfigurationHasSessionResumption,
+ *         hasSessionResumption: listenerSslConfigurationHasSessionResumption === "true",
  *         certificateIds: listenerSslConfigurationCertificateIds,
  *         cipherSuiteName: listenerSslConfigurationCipherSuiteName,
  *         protocols: listenerSslConfigurationProtocols,
  *         serverOrderPreference: listenerSslConfigurationServerOrderPreference,
  *         trustedCertificateAuthorityIds: listenerSslConfigurationTrustedCertificateAuthorityIds,
- *         verifyDepth: listenerSslConfigurationVerifyDepth,
- *         verifyPeerCertificate: listenerSslConfigurationVerifyPeerCertificate,
+ *         verifyDepth: Number(listenerSslConfigurationVerifyDepth),
+ *         verifyPeerCertificate: listenerSslConfigurationVerifyPeerCertificate === "true",
  *     },
  * });
  * ```
@@ -201,23 +201,23 @@ export interface ListenerState {
     /**
      * (Updatable) Configuration details for the connection between the client and backend servers.
      */
-    connectionConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerConnectionConfiguration>;
+    connectionConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerConnectionConfiguration | undefined>;
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
-    defaultBackendSetName?: pulumi.Input<string>;
+    defaultBackendSetName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of hostname resource names.
      */
-    hostnameNames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostnameNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
      *
@@ -225,30 +225,30 @@ export interface ListenerState {
      *
      * Example: `examplePathRouteSet`
      */
-    pathRouteSetName?: pulumi.Input<string>;
+    pathRouteSetName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
      */
-    routingPolicyName?: pulumi.Input<string>;
+    routingPolicyName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
      */
-    ruleSetNames?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleSetNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration>;
-    state?: pulumi.Input<string>;
+    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -258,7 +258,7 @@ export interface ListenerArgs {
     /**
      * (Updatable) Configuration details for the connection between the client and backend servers.
      */
-    connectionConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerConnectionConfiguration>;
+    connectionConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerConnectionConfiguration | undefined>;
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
@@ -266,7 +266,7 @@ export interface ListenerArgs {
     /**
      * (Updatable) An array of hostname resource names.
      */
-    hostnameNames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostnameNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
      */
@@ -274,7 +274,7 @@ export interface ListenerArgs {
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
      *
@@ -282,7 +282,7 @@ export interface ListenerArgs {
      *
      * Example: `examplePathRouteSet`
      */
-    pathRouteSetName?: pulumi.Input<string>;
+    pathRouteSetName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
@@ -294,15 +294,15 @@ export interface ListenerArgs {
     /**
      * (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
      */
-    routingPolicyName?: pulumi.Input<string>;
+    routingPolicyName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
      */
-    ruleSetNames?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleSetNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration>;
+    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration | undefined>;
 }

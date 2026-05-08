@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicyAssignments = oci.Core.getVolumeBackupPolicyAssignments({
+ * const testVolumeBackupPolicyAssignments = oci.core.getVolumeBackupPolicyAssignments({
  *     assetId: testVolume.id,
  * });
  * ```
@@ -74,7 +74,7 @@ export interface GetVolumeBackupPolicyAssignmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicyAssignments = oci.Core.getVolumeBackupPolicyAssignments({
+ * const testVolumeBackupPolicyAssignments = oci.core.getVolumeBackupPolicyAssignments({
  *     assetId: testVolume.id,
  * });
  * ```
@@ -95,5 +95,5 @@ export interface GetVolumeBackupPolicyAssignmentsOutputArgs {
      * The OCID of an asset (e.g. a volume).
      */
     assetId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupPolicyAssignmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupPolicyAssignmentsFilterArgs>[] | undefined>;
 }

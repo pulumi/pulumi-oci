@@ -137,15 +137,15 @@ export interface NetworkFirewallPolicyApplicationGroupState {
     /**
      * (Updatable) Collection of application names.
      */
-    apps?: pulumi.Input<pulumi.Input<string>[]>;
+    apps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The description of the application group. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the application group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      *
@@ -153,15 +153,15 @@ export interface NetworkFirewallPolicyApplicationGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this application group belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Count of total applications in the given application group.
      */
-    totalApps?: pulumi.Input<number>;
+    totalApps?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -175,11 +175,11 @@ export interface NetworkFirewallPolicyApplicationGroupArgs {
     /**
      * (Updatable) The description of the application group. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the application group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      *

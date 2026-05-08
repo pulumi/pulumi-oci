@@ -24,11 +24,11 @@ class BackendSetArgs:
                  health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
                  load_balancer_id: pulumi.Input[_builtins.str],
                  policy: pulumi.Input[_builtins.str],
-                 backend_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
-                 ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None):
+                 backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']] = None,
+                 ssl_configuration: pulumi.Input[Optional['BackendSetSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a BackendSet resource.
 
@@ -129,7 +129,7 @@ class BackendSetArgs:
 
     @_builtins.property
     @pulumi.getter(name="backendMaxConnections")
-    def backend_max_connections(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backend_max_connections(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
 
@@ -140,12 +140,12 @@ class BackendSetArgs:
         return pulumi.get(self, "backend_max_connections")
 
     @backend_max_connections.setter
-    def backend_max_connections(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backend_max_connections(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backend_max_connections", value)
 
     @_builtins.property
     @pulumi.getter(name="lbCookieSessionPersistenceConfiguration")
-    def lb_cookie_session_persistence_configuration(self) -> Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]:
+    def lb_cookie_session_persistence_configuration(self) -> pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']]:
         """
         (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
 
@@ -166,12 +166,12 @@ class BackendSetArgs:
         return pulumi.get(self, "lb_cookie_session_persistence_configuration")
 
     @lb_cookie_session_persistence_configuration.setter
-    def lb_cookie_session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
+    def lb_cookie_session_persistence_configuration(self, value: pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "lb_cookie_session_persistence_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
@@ -182,12 +182,12 @@ class BackendSetArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceConfiguration")
-    def session_persistence_configuration(self) -> Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']]:
+    def session_persistence_configuration(self) -> pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']]:
         """
         (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
 
@@ -206,12 +206,12 @@ class BackendSetArgs:
         return pulumi.get(self, "session_persistence_configuration")
 
     @session_persistence_configuration.setter
-    def session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']]):
+    def session_persistence_configuration(self, value: pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "session_persistence_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="sslConfiguration")
-    def ssl_configuration(self) -> Optional[pulumi.Input['BackendSetSslConfigurationArgs']]:
+    def ssl_configuration(self) -> pulumi.Input[Optional['BackendSetSslConfigurationArgs']]:
         """
         (Updatable) The load balancer's SSL handling configuration details.
 
@@ -220,23 +220,23 @@ class BackendSetArgs:
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
-    def ssl_configuration(self, value: Optional[pulumi.Input['BackendSetSslConfigurationArgs']]):
+    def ssl_configuration(self, value: pulumi.Input[Optional['BackendSetSslConfigurationArgs']]):
         pulumi.set(self, "ssl_configuration", value)
 
 
 @pulumi.input_type
 class _BackendSetState:
     def __init__(__self__, *,
-                 backend_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 backends: Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]] = None,
-                 health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
-                 lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
-                 ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 backends: pulumi.Input[Optional[Sequence[pulumi.Input['BackendSetBackendArgs']]]] = None,
+                 health_checker: pulumi.Input[Optional['BackendSetHealthCheckerArgs']] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']] = None,
+                 ssl_configuration: pulumi.Input[Optional['BackendSetSslConfigurationArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BackendSet resources.
 
@@ -309,7 +309,7 @@ class _BackendSetState:
 
     @_builtins.property
     @pulumi.getter(name="backendMaxConnections")
-    def backend_max_connections(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backend_max_connections(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
 
@@ -320,36 +320,36 @@ class _BackendSetState:
         return pulumi.get(self, "backend_max_connections")
 
     @backend_max_connections.setter
-    def backend_max_connections(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backend_max_connections(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backend_max_connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def backends(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]]:
+    def backends(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BackendSetBackendArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "backends")
 
     @backends.setter
-    def backends(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]]):
+    def backends(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BackendSetBackendArgs']]]]):
         pulumi.set(self, "backends", value)
 
     @_builtins.property
     @pulumi.getter(name="healthChecker")
-    def health_checker(self) -> Optional[pulumi.Input['BackendSetHealthCheckerArgs']]:
+    def health_checker(self) -> pulumi.Input[Optional['BackendSetHealthCheckerArgs']]:
         """
         (Updatable) The health check policy's configuration details.
         """
         return pulumi.get(self, "health_checker")
 
     @health_checker.setter
-    def health_checker(self, value: Optional[pulumi.Input['BackendSetHealthCheckerArgs']]):
+    def health_checker(self, value: pulumi.Input[Optional['BackendSetHealthCheckerArgs']]):
         pulumi.set(self, "health_checker", value)
 
     @_builtins.property
     @pulumi.getter(name="lbCookieSessionPersistenceConfiguration")
-    def lb_cookie_session_persistence_configuration(self) -> Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]:
+    def lb_cookie_session_persistence_configuration(self) -> pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']]:
         """
         (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
 
@@ -370,24 +370,24 @@ class _BackendSetState:
         return pulumi.get(self, "lb_cookie_session_persistence_configuration")
 
     @lb_cookie_session_persistence_configuration.setter
-    def lb_cookie_session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
+    def lb_cookie_session_persistence_configuration(self, value: pulumi.Input[Optional['BackendSetLbCookieSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "lb_cookie_session_persistence_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
@@ -398,24 +398,24 @@ class _BackendSetState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
         """
         return pulumi.get(self, "policy")
 
     @policy.setter
-    def policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceConfiguration")
-    def session_persistence_configuration(self) -> Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']]:
+    def session_persistence_configuration(self) -> pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']]:
         """
         (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
 
@@ -434,12 +434,12 @@ class _BackendSetState:
         return pulumi.get(self, "session_persistence_configuration")
 
     @session_persistence_configuration.setter
-    def session_persistence_configuration(self, value: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']]):
+    def session_persistence_configuration(self, value: pulumi.Input[Optional['BackendSetSessionPersistenceConfigurationArgs']]):
         pulumi.set(self, "session_persistence_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="sslConfiguration")
-    def ssl_configuration(self) -> Optional[pulumi.Input['BackendSetSslConfigurationArgs']]:
+    def ssl_configuration(self) -> pulumi.Input[Optional['BackendSetSslConfigurationArgs']]:
         """
         (Updatable) The load balancer's SSL handling configuration details.
 
@@ -448,16 +448,16 @@ class _BackendSetState:
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
-    def ssl_configuration(self, value: Optional[pulumi.Input['BackendSetSslConfigurationArgs']]):
+    def ssl_configuration(self, value: pulumi.Input[Optional['BackendSetSslConfigurationArgs']]):
         pulumi.set(self, "ssl_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -467,14 +467,14 @@ class BackendSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backend_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-                 lb_cookie_session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-                 ssl_configuration: Optional[pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+                 backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -497,31 +497,31 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.loadbalancer.BackendSet("test_backend_set",
             health_checker={
                 "protocol": backend_set_health_checker_protocol,
-                "interval_ms": backend_set_health_checker_interval_ms,
-                "is_force_plain_text": backend_set_health_checker_is_force_plain_text,
-                "port": backend_set_health_checker_port,
+                "interval_ms": int(backend_set_health_checker_interval_ms),
+                "is_force_plain_text": backend_set_health_checker_is_force_plain_text == "true",
+                "port": int(backend_set_health_checker_port),
                 "response_body_regex": backend_set_health_checker_response_body_regex,
-                "retries": backend_set_health_checker_retries,
-                "return_code": backend_set_health_checker_return_code,
-                "timeout_in_millis": backend_set_health_checker_timeout_in_millis,
+                "retries": int(backend_set_health_checker_retries),
+                "return_code": int(backend_set_health_checker_return_code),
+                "timeout_in_millis": int(backend_set_health_checker_timeout_in_millis),
                 "url_path": backend_set_health_checker_url_path,
             },
             load_balancer_id=test_load_balancer["id"],
             name=backend_set_name,
             policy=backend_set_policy,
-            backend_max_connections=backend_set_backend_max_connections,
+            backend_max_connections=int(backend_set_backend_max_connections),
             lb_cookie_session_persistence_configuration={
                 "cookie_name": backend_set_lb_cookie_session_persistence_configuration_cookie_name,
-                "disable_fallback": backend_set_lb_cookie_session_persistence_configuration_disable_fallback,
+                "disable_fallback": backend_set_lb_cookie_session_persistence_configuration_disable_fallback == "true",
                 "domain": backend_set_lb_cookie_session_persistence_configuration_domain,
-                "is_http_only": backend_set_lb_cookie_session_persistence_configuration_is_http_only,
-                "is_secure": backend_set_lb_cookie_session_persistence_configuration_is_secure,
-                "max_age_in_seconds": backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds,
+                "is_http_only": backend_set_lb_cookie_session_persistence_configuration_is_http_only == "true",
+                "is_secure": backend_set_lb_cookie_session_persistence_configuration_is_secure == "true",
+                "max_age_in_seconds": int(backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds),
                 "path": backend_set_lb_cookie_session_persistence_configuration_path,
             },
             session_persistence_configuration={
                 "cookie_name": backend_set_session_persistence_configuration_cookie_name,
-                "disable_fallback": backend_set_session_persistence_configuration_disable_fallback,
+                "disable_fallback": backend_set_session_persistence_configuration_disable_fallback == "true",
             },
             ssl_configuration={
                 "certificate_ids": backend_set_ssl_configuration_certificate_ids,
@@ -530,8 +530,8 @@ class BackendSet(pulumi.CustomResource):
                 "protocols": backend_set_ssl_configuration_protocols,
                 "server_order_preference": backend_set_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": backend_set_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": backend_set_ssl_configuration_verify_depth,
-                "verify_peer_certificate": backend_set_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(backend_set_ssl_configuration_verify_depth),
+                "verify_peer_certificate": backend_set_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
@@ -621,31 +621,31 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.loadbalancer.BackendSet("test_backend_set",
             health_checker={
                 "protocol": backend_set_health_checker_protocol,
-                "interval_ms": backend_set_health_checker_interval_ms,
-                "is_force_plain_text": backend_set_health_checker_is_force_plain_text,
-                "port": backend_set_health_checker_port,
+                "interval_ms": int(backend_set_health_checker_interval_ms),
+                "is_force_plain_text": backend_set_health_checker_is_force_plain_text == "true",
+                "port": int(backend_set_health_checker_port),
                 "response_body_regex": backend_set_health_checker_response_body_regex,
-                "retries": backend_set_health_checker_retries,
-                "return_code": backend_set_health_checker_return_code,
-                "timeout_in_millis": backend_set_health_checker_timeout_in_millis,
+                "retries": int(backend_set_health_checker_retries),
+                "return_code": int(backend_set_health_checker_return_code),
+                "timeout_in_millis": int(backend_set_health_checker_timeout_in_millis),
                 "url_path": backend_set_health_checker_url_path,
             },
             load_balancer_id=test_load_balancer["id"],
             name=backend_set_name,
             policy=backend_set_policy,
-            backend_max_connections=backend_set_backend_max_connections,
+            backend_max_connections=int(backend_set_backend_max_connections),
             lb_cookie_session_persistence_configuration={
                 "cookie_name": backend_set_lb_cookie_session_persistence_configuration_cookie_name,
-                "disable_fallback": backend_set_lb_cookie_session_persistence_configuration_disable_fallback,
+                "disable_fallback": backend_set_lb_cookie_session_persistence_configuration_disable_fallback == "true",
                 "domain": backend_set_lb_cookie_session_persistence_configuration_domain,
-                "is_http_only": backend_set_lb_cookie_session_persistence_configuration_is_http_only,
-                "is_secure": backend_set_lb_cookie_session_persistence_configuration_is_secure,
-                "max_age_in_seconds": backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds,
+                "is_http_only": backend_set_lb_cookie_session_persistence_configuration_is_http_only == "true",
+                "is_secure": backend_set_lb_cookie_session_persistence_configuration_is_secure == "true",
+                "max_age_in_seconds": int(backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds),
                 "path": backend_set_lb_cookie_session_persistence_configuration_path,
             },
             session_persistence_configuration={
                 "cookie_name": backend_set_session_persistence_configuration_cookie_name,
-                "disable_fallback": backend_set_session_persistence_configuration_disable_fallback,
+                "disable_fallback": backend_set_session_persistence_configuration_disable_fallback == "true",
             },
             ssl_configuration={
                 "certificate_ids": backend_set_ssl_configuration_certificate_ids,
@@ -654,8 +654,8 @@ class BackendSet(pulumi.CustomResource):
                 "protocols": backend_set_ssl_configuration_protocols,
                 "server_order_preference": backend_set_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": backend_set_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": backend_set_ssl_configuration_verify_depth,
-                "verify_peer_certificate": backend_set_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(backend_set_ssl_configuration_verify_depth),
+                "verify_peer_certificate": backend_set_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
@@ -686,14 +686,14 @@ class BackendSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backend_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-                 lb_cookie_session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-                 ssl_configuration: Optional[pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+                 backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -729,16 +729,16 @@ class BackendSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backend_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-            backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]]] = None,
-            health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-            lb_cookie_session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy: Optional[pulumi.Input[_builtins.str]] = None,
-            session_persistence_configuration: Optional[pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-            ssl_configuration: Optional[pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'BackendSet':
+            backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]]] = None,
+            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+            lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy: pulumi.Input[Optional[_builtins.str]] = None,
+            session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'BackendSet':
         """
         Get an existing BackendSet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

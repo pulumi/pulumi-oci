@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomain = oci.Email.getEmailDomain({
+ * const testEmailDomain = oci.email.getEmailDomain({
  *     emailDomainId: testEmailDomainOciEmailEmailDomain.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetEmailDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomain = oci.Email.getEmailDomain({
+ * const testEmailDomain = oci.email.getEmailDomain({
  *     emailDomainId: testEmailDomainOciEmailEmailDomain.id,
  * });
  * ```

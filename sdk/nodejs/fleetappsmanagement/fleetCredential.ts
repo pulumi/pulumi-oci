@@ -198,47 +198,47 @@ export interface FleetCredentialState {
     /**
      * Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credential specific Details.
      */
-    entitySpecifics?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
+    entitySpecifics?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecifics | undefined>;
     /**
      * Unique Fleet identifier.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credential Details.
      */
-    password?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialPassword>;
+    password?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialPassword | undefined>;
     /**
      * The current state of the FleetCredential.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credential Details.
      */
-    user?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialUser>;
+    user?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialUser | undefined>;
 }
 
 /**

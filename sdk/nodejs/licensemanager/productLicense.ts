@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testProductLicense = new oci.licensemanager.ProductLicense("test_product_license", {
  *     compartmentId: compartmentId,
  *     displayName: productLicenseDisplayName,
- *     isVendorOracle: productLicenseIsVendorOracle,
+ *     isVendorOracle: productLicenseIsVendorOracle === "true",
  *     licenseUnit: productLicenseLicenseUnit,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -240,79 +240,79 @@ export interface ProductLicenseState {
     /**
      * The number of active license records associated with the product license.
      */
-    activeLicenseRecordCount?: pulumi.Input<number>;
+    activeLicenseRecordCount?: pulumi.Input<number | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the product license.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The image details associated with the product license.
      */
-    images?: pulumi.Input<pulumi.Input<inputs.LicenseManager.ProductLicenseImage>[]>;
+    images?: pulumi.Input<pulumi.Input<inputs.LicenseManager.ProductLicenseImage>[] | undefined>;
     /**
      * Specifies whether or not the product license is oversubscribed.
      */
-    isOverSubscribed?: pulumi.Input<boolean>;
+    isOverSubscribed?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies if the license unit count is unlimited.
      */
-    isUnlimited?: pulumi.Input<boolean>;
+    isUnlimited?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies if the product license vendor is Oracle or a third party.
      */
-    isVendorOracle?: pulumi.Input<boolean>;
+    isVendorOracle?: pulumi.Input<boolean | undefined>;
     /**
      * The product license unit.
      */
-    licenseUnit?: pulumi.Input<string>;
+    licenseUnit?: pulumi.Input<string | undefined>;
     /**
      * The current product license state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The current product license status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Status description for the current product license status.
      */
-    statusDescription?: pulumi.Input<string>;
+    statusDescription?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      */
-    totalActiveLicenseUnitCount?: pulumi.Input<number>;
+    totalActiveLicenseUnitCount?: pulumi.Input<number | undefined>;
     /**
      * The number of license records associated with the product license.
      */
-    totalLicenseRecordCount?: pulumi.Input<number>;
+    totalLicenseRecordCount?: pulumi.Input<number | undefined>;
     /**
      * The number of license units consumed. Updated after each allocation run.
      */
-    totalLicenseUnitsConsumed?: pulumi.Input<number>;
+    totalLicenseUnitsConsumed?: pulumi.Input<number | undefined>;
     /**
      * The product license vendor name, for example: Microsoft, RHEL, and so on. 
      *
@@ -320,7 +320,7 @@ export interface ProductLicenseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -334,7 +334,7 @@ export interface ProductLicenseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the product license.
      */
@@ -342,11 +342,11 @@ export interface ProductLicenseArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The image details associated with the product license.
      */
-    images?: pulumi.Input<pulumi.Input<inputs.LicenseManager.ProductLicenseImage>[]>;
+    images?: pulumi.Input<pulumi.Input<inputs.LicenseManager.ProductLicenseImage>[] | undefined>;
     /**
      * Specifies if the product license vendor is Oracle or a third party.
      */
@@ -362,5 +362,5 @@ export interface ProductLicenseArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }

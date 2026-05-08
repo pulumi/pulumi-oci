@@ -132,7 +132,7 @@ def get_log_analytics_category(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
+    test_log_analytics_category = oci.loganalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
 
@@ -154,8 +154,8 @@ def get_log_analytics_category(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         type=pulumi.get(__ret__, 'type'))
-def get_log_analytics_category_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                      namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_category_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsCategoryResult]:
     """
     This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -168,7 +168,7 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
+    test_log_analytics_category = oci.loganalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
 

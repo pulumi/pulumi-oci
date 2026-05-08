@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetrics = oci.Monitoring.getMetrics({
+ * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,
@@ -139,9 +139,9 @@ export interface GetMetricsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetrics = oci.Monitoring.getMetrics({
+ * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,
@@ -175,28 +175,28 @@ export interface GetMetricsOutputArgs {
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
-    dimensionFilters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricsFilterArgs>[]>;
+    dimensionFilters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricsFilterArgs>[] | undefined>;
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
      *
      * Example - group by namespace: `[ "namespace" ]`
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

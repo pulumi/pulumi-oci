@@ -168,23 +168,23 @@ export interface ReplicationPolicyState {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
      */
-    deleteObjectInDestinationBucket?: pulumi.Input<string>;
+    deleteObjectInDestinationBucket?: pulumi.Input<string | undefined>;
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      */
-    destinationBucketName?: pulumi.Input<string>;
+    destinationBucketName?: pulumi.Input<string | undefined>;
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
      */
-    destinationRegionName?: pulumi.Input<string>;
+    destinationRegionName?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      *
@@ -192,23 +192,23 @@ export interface ReplicationPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A human-readable description of the status.
      */
-    statusMessage?: pulumi.Input<string>;
+    statusMessage?: pulumi.Input<string | undefined>;
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Changes made to the source bucket before this time has been replicated.
      */
-    timeLastSync?: pulumi.Input<string>;
+    timeLastSync?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -222,7 +222,7 @@ export interface ReplicationPolicyArgs {
     /**
      * @deprecated The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
      */
-    deleteObjectInDestinationBucket?: pulumi.Input<string>;
+    deleteObjectInDestinationBucket?: pulumi.Input<string | undefined>;
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      */
@@ -234,7 +234,7 @@ export interface ReplicationPolicyArgs {
     /**
      * The name of the policy. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      *

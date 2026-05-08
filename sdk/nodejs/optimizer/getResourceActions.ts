@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceActions = oci.Optimizer.getResourceActions({
+ * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeOrganization: resourceActionIncludeOrganization === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -167,12 +167,12 @@ export interface GetResourceActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceActions = oci.Optimizer.getResourceActions({
+ * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeOrganization: resourceActionIncludeOrganization === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -213,7 +213,7 @@ export interface GetResourceActionsOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -224,7 +224,7 @@ export interface GetResourceActionsOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetResourceActionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetResourceActionsFilterArgs>[] | undefined>;
     /**
      * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
      *
@@ -232,33 +232,33 @@ export interface GetResourceActionsOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    includeOrganization?: pulumi.Input<boolean>;
+    includeOrganization?: pulumi.Input<boolean | undefined>;
     /**
      * Supplement additional resource information in extended metadata response.
      */
-    includeResourceMetadata?: pulumi.Input<boolean>;
+    includeResourceMetadata?: pulumi.Input<boolean | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId?: pulumi.Input<string>;
+    recommendationId?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the recommendation name specified.
      */
-    recommendationName?: pulumi.Input<string>;
+    recommendationName?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the resource type specified.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns recommendations that match the status specified.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

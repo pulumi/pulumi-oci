@@ -124,7 +124,7 @@ def get_oneoff_patches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=compartment_id,
+    test_oneoff_patches = oci.database.get_oneoff_patches(compartment_id=compartment_id,
         display_name=oneoff_patch_display_name,
         state=oneoff_patch_state)
     ```
@@ -149,10 +149,10 @@ def get_oneoff_patches(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         oneoff_patches=pulumi.get(__ret__, 'oneoff_patches'),
         state=pulumi.get(__ret__, 'state'))
-def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOneoffPatchesFilterArgs', 'GetOneoffPatchesFilterArgsDict']]]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oneoff_patches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOneoffPatchesFilterArgs', 'GetOneoffPatchesFilterArgsDict']]]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOneoffPatchesResult]:
     """
     This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
@@ -165,7 +165,7 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=compartment_id,
+    test_oneoff_patches = oci.database.get_oneoff_patches(compartment_id=compartment_id,
         display_name=oneoff_patch_display_name,
         state=oneoff_patch_state)
     ```

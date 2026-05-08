@@ -470,15 +470,15 @@ export interface DomainsIdentitySettingState {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -492,7 +492,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -506,7 +506,7 @@ export interface DomainsIdentitySettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -520,7 +520,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      *
@@ -535,7 +535,7 @@ export interface DomainsIdentitySettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    emitLockedMessageWhenUserIsLocked?: pulumi.Input<boolean>;
+    emitLockedMessageWhenUserIsLocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -548,7 +548,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -560,11 +560,11 @@ export interface DomainsIdentitySettingState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -576,7 +576,7 @@ export interface DomainsIdentitySettingState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -590,7 +590,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -603,11 +603,11 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ID of the resource
      */
-    identitySettingId?: pulumi.Input<string>;
+    identitySettingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -621,7 +621,7 @@ export interface DomainsIdentitySettingState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingMeta>[] | undefined>;
     /**
      * (Updatable) Whether to allow users to update their own profile.
      *
@@ -634,7 +634,7 @@ export interface DomainsIdentitySettingState {
      * * type: complex
      * * uniqueness: none
      */
-    myProfile?: pulumi.Input<inputs.Identity.DomainsIdentitySettingMyProfile>;
+    myProfile?: pulumi.Input<inputs.Identity.DomainsIdentitySettingMyProfile | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -648,7 +648,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of Posix Gid settings.
      *
@@ -661,7 +661,7 @@ export interface DomainsIdentitySettingState {
      * * type: complex
      * * uniqueness: none
      */
-    posixGid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixGid>;
+    posixGid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixGid | undefined>;
     /**
      * (Updatable) A list of Posix Uid settings.
      *
@@ -674,7 +674,7 @@ export interface DomainsIdentitySettingState {
      * * type: complex
      * * uniqueness: none
      */
-    posixUid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixUid>;
+    posixUid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixUid | undefined>;
     /**
      * (Updatable) Indicates whether the primary email is required.
      *
@@ -689,7 +689,7 @@ export interface DomainsIdentitySettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    primaryEmailRequired?: pulumi.Input<boolean>;
+    primaryEmailRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
      *
@@ -704,11 +704,11 @@ export interface DomainsIdentitySettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    removeInvalidEmails?: pulumi.Input<boolean>;
+    removeInvalidEmails?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) **Added In:** 2302092332
      *
@@ -721,7 +721,7 @@ export interface DomainsIdentitySettingState {
      * * type: boolean
      * * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
      */
-    returnInactiveOverLockedMessage?: pulumi.Input<boolean>;
+    returnInactiveOverLockedMessage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -735,7 +735,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -749,7 +749,7 @@ export interface DomainsIdentitySettingState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -763,7 +763,7 @@ export interface DomainsIdentitySettingState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tokens and their expiry length.
      *
@@ -775,7 +775,7 @@ export interface DomainsIdentitySettingState {
      * * type: complex
      * * uniqueness: none
      */
-    tokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingToken>[]>;
+    tokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingToken>[] | undefined>;
     /**
      * (Updatable) Indicates whether a user is allowed to change their own recovery email.
      *
@@ -792,7 +792,7 @@ export interface DomainsIdentitySettingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userAllowedToSetRecoveryEmail?: pulumi.Input<boolean>;
+    userAllowedToSetRecoveryEmail?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -802,15 +802,15 @@ export interface DomainsIdentitySettingArgs {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      *
@@ -825,7 +825,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    emitLockedMessageWhenUserIsLocked?: pulumi.Input<boolean>;
+    emitLockedMessageWhenUserIsLocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -838,7 +838,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -859,7 +859,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    myProfile?: pulumi.Input<inputs.Identity.DomainsIdentitySettingMyProfile>;
+    myProfile?: pulumi.Input<inputs.Identity.DomainsIdentitySettingMyProfile | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -873,7 +873,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of Posix Gid settings.
      *
@@ -886,7 +886,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    posixGid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixGid>;
+    posixGid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixGid | undefined>;
     /**
      * (Updatable) A list of Posix Uid settings.
      *
@@ -899,7 +899,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    posixUid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixUid>;
+    posixUid?: pulumi.Input<inputs.Identity.DomainsIdentitySettingPosixUid | undefined>;
     /**
      * (Updatable) Indicates whether the primary email is required.
      *
@@ -914,11 +914,11 @@ export interface DomainsIdentitySettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    primaryEmailRequired?: pulumi.Input<boolean>;
+    primaryEmailRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) **Added In:** 2302092332
      *
@@ -931,7 +931,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: boolean
      * * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
      */
-    returnInactiveOverLockedMessage?: pulumi.Input<boolean>;
+    returnInactiveOverLockedMessage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -959,7 +959,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingTag>[] | undefined>;
     /**
      * (Updatable) A list of tokens and their expiry length.
      *
@@ -971,7 +971,7 @@ export interface DomainsIdentitySettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingToken>[]>;
+    tokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentitySettingToken>[] | undefined>;
     /**
      * (Updatable) Indicates whether a user is allowed to change their own recovery email.
      *
@@ -988,5 +988,5 @@ export interface DomainsIdentitySettingArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userAllowedToSetRecoveryEmail?: pulumi.Input<boolean>;
+    userAllowedToSetRecoveryEmail?: pulumi.Input<boolean | undefined>;
 }

@@ -164,10 +164,10 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedules = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
+    test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)
@@ -205,14 +205,14 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[_builtins.str] 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 ccc_upgrade_schedule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAtCustomerCccUpgradeSchedulesFilterArgs', 'GetAtCustomerCccUpgradeSchedulesFilterArgsDict']]]]] = None,
-                                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_at_customer_ccc_upgrade_schedules_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 ccc_upgrade_schedule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAtCustomerCccUpgradeSchedulesFilterArgs', 'GetAtCustomerCccUpgradeSchedulesFilterArgsDict']]]]] = None,
+                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccUpgradeSchedulesResult]:
     """
     This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -225,10 +225,10 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedules = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
+    test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)

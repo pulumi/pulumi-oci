@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployment = oci.ApiGateway.getDeployment({
+ * const testDeployment = oci.apigateway.getDeployment({
  *     deploymentId: testDeploymentOciApigatewayDeployment.id,
  * });
  * ```
@@ -117,7 +117,7 @@ export interface GetDeploymentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployment = oci.ApiGateway.getDeployment({
+ * const testDeployment = oci.apigateway.getDeployment({
  *     deploymentId: testDeploymentOciApigatewayDeployment.id,
  * });
  * ```

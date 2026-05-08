@@ -20,12 +20,12 @@ __all__ = ['AutonomousDatabaseSaasAdminUserArgs', 'AutonomousDatabaseSaasAdminUs
 class AutonomousDatabaseSaasAdminUserArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[_builtins.str],
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseSaasAdminUser resource.
 
@@ -69,67 +69,67 @@ class AutonomousDatabaseSaasAdminUserArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
-    def access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
         """
         return pulumi.get(self, "duration")
 
     @duration.setter
-    def duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersionNumber")
-    def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secret_version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
         """
         return pulumi.get(self, "secret_version_number")
 
     @secret_version_number.setter
-    def secret_version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secret_version_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secret_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSaasAdminUserEnabled")
-    def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_saas_admin_user_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
@@ -140,20 +140,20 @@ class AutonomousDatabaseSaasAdminUserArgs:
         return pulumi.get(self, "time_saas_admin_user_enabled")
 
     @time_saas_admin_user_enabled.setter
-    def time_saas_admin_user_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_saas_admin_user_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_saas_admin_user_enabled", value)
 
 
 @pulumi.input_type
 class _AutonomousDatabaseSaasAdminUserState:
     def __init__(__self__, *,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseSaasAdminUser resources.
 
@@ -186,79 +186,79 @@ class _AutonomousDatabaseSaasAdminUserState:
 
     @_builtins.property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
-    def access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_type", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
         """
         return pulumi.get(self, "duration")
 
     @duration.setter
-    def duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersionNumber")
-    def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secret_version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
         """
         return pulumi.get(self, "secret_version_number")
 
     @secret_version_number.setter
-    def secret_version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secret_version_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secret_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSaasAdminUserEnabled")
-    def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_saas_admin_user_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
@@ -269,7 +269,7 @@ class _AutonomousDatabaseSaasAdminUserState:
         return pulumi.get(self, "time_saas_admin_user_enabled")
 
     @time_saas_admin_user_enabled.setter
-    def time_saas_admin_user_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_saas_admin_user_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_saas_admin_user_enabled", value)
 
 
@@ -279,13 +279,13 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
@@ -302,7 +302,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             autonomous_database_id=test_autonomous_database["id"],
             password=autonomous_database_saas_admin_user_password,
             access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
+            duration=int(autonomous_database_saas_admin_user_duration))
         ```
 
         ## Import
@@ -345,7 +345,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             autonomous_database_id=test_autonomous_database["id"],
             password=autonomous_database_saas_admin_user_password,
             access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
+            duration=int(autonomous_database_saas_admin_user_duration))
         ```
 
         ## Import
@@ -368,13 +368,13 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -405,13 +405,13 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_type: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            duration: Optional[pulumi.Input[_builtins.int]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-            time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousDatabaseSaasAdminUser':
+            access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            duration: pulumi.Input[Optional[_builtins.int]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+            time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousDatabaseSaasAdminUser':
         """
         Get an existing AutonomousDatabaseSaasAdminUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

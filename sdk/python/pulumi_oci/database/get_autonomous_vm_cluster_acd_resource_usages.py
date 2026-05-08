@@ -105,7 +105,7 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_vm_cluster_acd_resource_usages = oci.database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id)
     ```
 
@@ -126,9 +126,9 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
+def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -141,7 +141,7 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_vm_cluster_acd_resource_usages = oci.database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id)
     ```
 

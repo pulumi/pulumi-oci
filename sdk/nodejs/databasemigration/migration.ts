@@ -34,8 +34,8 @@ import * as utilities from "../utilities";
  *         value: migrationAdvancedParametersValue,
  *     }],
  *     advisorSettings: {
- *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors,
- *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor,
+ *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors === "true",
+ *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor === "true",
  *     },
  *     assessmentId: testAssessment.id,
  *     bulkIncludeExcludeData: migrationBulkIncludeExcludeData,
@@ -68,16 +68,16 @@ import * as utilities from "../utilities";
  *     displayName: migrationDisplayName,
  *     excludeObjects: [{
  *         object: migrationExcludeObjectsObject,
- *         isOmitExcludedTableFromReplication: migrationExcludeObjectsIsOmitExcludedTableFromReplication,
+ *         isOmitExcludedTableFromReplication: migrationExcludeObjectsIsOmitExcludedTableFromReplication === "true",
  *         owner: migrationExcludeObjectsOwner,
  *         schema: migrationExcludeObjectsSchema,
  *         type: migrationExcludeObjectsType,
  *     }],
  *     freeformTags: migrationFreeformTags,
  *     ggsDetails: {
- *         acceptableLag: migrationGgsDetailsAcceptableLag,
+ *         acceptableLag: Number(migrationGgsDetailsAcceptableLag),
  *         extract: {
- *             longTransDuration: migrationGgsDetailsExtractLongTransDuration,
+ *             longTransDuration: Number(migrationGgsDetailsExtractLongTransDuration),
  *             performanceProfile: migrationGgsDetailsExtractPerformanceProfile,
  *         },
  *         replicat: {
@@ -92,10 +92,10 @@ import * as utilities from "../utilities";
  *         },
  *         url: migrationHubDetailsUrl,
  *         vaultId: testVault.id,
- *         acceptableLag: migrationHubDetailsAcceptableLag,
+ *         acceptableLag: Number(migrationHubDetailsAcceptableLag),
  *         computeId: testCompute.id,
  *         extract: {
- *             longTransDuration: migrationHubDetailsExtractLongTransDuration,
+ *             longTransDuration: Number(migrationHubDetailsExtractLongTransDuration),
  *             performanceProfile: migrationHubDetailsExtractPerformanceProfile,
  *         },
  *         replicat: {
@@ -104,7 +104,7 @@ import * as utilities from "../utilities";
  *     },
  *     includeObjects: [{
  *         object: migrationIncludeObjectsObject,
- *         isOmitExcludedTableFromReplication: migrationIncludeObjectsIsOmitExcludedTableFromReplication,
+ *         isOmitExcludedTableFromReplication: migrationIncludeObjectsIsOmitExcludedTableFromReplication === "true",
  *         owner: migrationIncludeObjectsOwner,
  *         schema: migrationIncludeObjectsSchema,
  *         type: migrationIncludeObjectsType,
@@ -115,9 +115,9 @@ import * as utilities from "../utilities";
  *         dataPumpParameters: {
  *             estimate: migrationInitialLoadSettingsDataPumpParametersEstimate,
  *             excludeParameters: migrationInitialLoadSettingsDataPumpParametersExcludeParameters,
- *             exportParallelismDegree: migrationInitialLoadSettingsDataPumpParametersExportParallelismDegree,
- *             importParallelismDegree: migrationInitialLoadSettingsDataPumpParametersImportParallelismDegree,
- *             isCluster: migrationInitialLoadSettingsDataPumpParametersIsCluster,
+ *             exportParallelismDegree: Number(migrationInitialLoadSettingsDataPumpParametersExportParallelismDegree),
+ *             importParallelismDegree: Number(migrationInitialLoadSettingsDataPumpParametersImportParallelismDegree),
+ *             isCluster: migrationInitialLoadSettingsDataPumpParametersIsCluster === "true",
  *             tableExistsAction: migrationInitialLoadSettingsDataPumpParametersTableExistsAction,
  *         },
  *         exportDirectoryObject: {
@@ -129,9 +129,9 @@ import * as utilities from "../utilities";
  *             name: migrationInitialLoadSettingsImportDirectoryObjectName,
  *             path: migrationInitialLoadSettingsImportDirectoryObjectPath,
  *         },
- *         isConsistent: migrationInitialLoadSettingsIsConsistent,
- *         isIgnoreExistingObjects: migrationInitialLoadSettingsIsIgnoreExistingObjects,
- *         isTzUtc: migrationInitialLoadSettingsIsTzUtc,
+ *         isConsistent: migrationInitialLoadSettingsIsConsistent === "true",
+ *         isIgnoreExistingObjects: migrationInitialLoadSettingsIsIgnoreExistingObjects === "true",
+ *         isTzUtc: migrationInitialLoadSettingsIsTzUtc === "true",
  *         metadataRemaps: [{
  *             newValue: migrationInitialLoadSettingsMetadataRemapsNewValue,
  *             oldValue: migrationInitialLoadSettingsMetadataRemapsOldValue,
@@ -141,9 +141,9 @@ import * as utilities from "../utilities";
  *         tablespaceDetails: {
  *             targetType: migrationInitialLoadSettingsTablespaceDetailsTargetType,
  *             blockSizeInKbs: migrationInitialLoadSettingsTablespaceDetailsBlockSizeInKbs,
- *             extendSizeInMbs: migrationInitialLoadSettingsTablespaceDetailsExtendSizeInMbs,
- *             isAutoCreate: migrationInitialLoadSettingsTablespaceDetailsIsAutoCreate,
- *             isBigFile: migrationInitialLoadSettingsTablespaceDetailsIsBigFile,
+ *             extendSizeInMbs: Number(migrationInitialLoadSettingsTablespaceDetailsExtendSizeInMbs),
+ *             isAutoCreate: migrationInitialLoadSettingsTablespaceDetailsIsAutoCreate === "true",
+ *             isBigFile: migrationInitialLoadSettingsTablespaceDetailsIsBigFile === "true",
  *             remapTarget: migrationInitialLoadSettingsTablespaceDetailsRemapTarget,
  *         },
  *     },
@@ -406,111 +406,111 @@ export interface MigrationState {
     /**
      * (Updatable) List of Migration Parameter objects.
      */
-    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[]>;
+    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[] | undefined>;
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
-    advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings>;
+    advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    assessmentId?: pulumi.Input<string>;
+    assessmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
-    bulkIncludeExcludeData?: pulumi.Input<string>;
+    bulkIncludeExcludeData?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional additional properties for data transfer.
      */
-    dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails | undefined>;
     /**
      * (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      */
-    databaseCombination?: pulumi.Input<string>;
+    databaseCombination?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationExcludeObject>[]>;
+    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationExcludeObject>[] | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    executingJobId?: pulumi.Input<string>;
+    executingJobId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional settings for Oracle GoldenGate processes
      */
-    ggsDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetails>;
+    ggsDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetails | undefined>;
     /**
      * (Updatable) Details about Oracle GoldenGate Microservices.
      */
-    hubDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetails>;
+    hubDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetails | undefined>;
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationIncludeObject>[]>;
+    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationIncludeObject>[] | undefined>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
-    initialLoadSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettings>;
+    initialLoadSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettings | undefined>;
     /**
      * Additional status related to the execution and current state of the Migration.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceContainerDatabaseConnectionId?: pulumi.Input<string>;
+    sourceContainerDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceDatabaseConnectionId?: pulumi.Input<string>;
+    sourceDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceStandbyDatabaseConnectionId?: pulumi.Input<string>;
+    sourceStandbyDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Migration resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    targetDatabaseConnectionId?: pulumi.Input<string>;
+    targetDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeLastMigration?: pulumi.Input<string>;
+    timeLastMigration?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
      *
@@ -518,11 +518,11 @@ export interface MigrationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * You can optionally pause a migration after a job phase. This property allows you to optionally specify the phase after which you can pause the migration.
      */
-    waitAfter?: pulumi.Input<string>;
+    waitAfter?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -532,19 +532,19 @@ export interface MigrationArgs {
     /**
      * (Updatable) List of Migration Parameter objects.
      */
-    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[]>;
+    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[] | undefined>;
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
-    advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings>;
+    advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    assessmentId?: pulumi.Input<string>;
+    assessmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
-    bulkIncludeExcludeData?: pulumi.Input<string>;
+    bulkIncludeExcludeData?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
@@ -552,7 +552,7 @@ export interface MigrationArgs {
     /**
      * (Updatable) Optional additional properties for data transfer.
      */
-    dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails | undefined>;
     /**
      * (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      */
@@ -560,55 +560,55 @@ export interface MigrationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationExcludeObject>[]>;
+    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationExcludeObject>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional settings for Oracle GoldenGate processes
      */
-    ggsDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetails>;
+    ggsDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetails | undefined>;
     /**
      * (Updatable) Details about Oracle GoldenGate Microservices.
      */
-    hubDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetails>;
+    hubDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetails | undefined>;
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationIncludeObject>[]>;
+    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationIncludeObject>[] | undefined>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
-    initialLoadSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettings>;
+    initialLoadSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettings | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceContainerDatabaseConnectionId?: pulumi.Input<string>;
+    sourceContainerDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceDatabaseConnectionId?: pulumi.Input<string>;
+    sourceDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceStandbyDatabaseConnectionId?: pulumi.Input<string>;
+    sourceStandbyDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    targetDatabaseConnectionId?: pulumi.Input<string>;
+    targetDatabaseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
      *

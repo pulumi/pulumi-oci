@@ -24,11 +24,11 @@ class WorkspaceImportRequestArgs:
                  bucket: pulumi.Input[_builtins.str],
                  file_name: pulumi.Input[_builtins.str],
                  workspace_id: pulumi.Input[_builtins.str],
-                 are_data_asset_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
-                 object_key_for_import: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
+                 object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceImportRequest resource.
 
@@ -101,85 +101,85 @@ class WorkspaceImportRequestArgs:
 
     @_builtins.property
     @pulumi.getter(name="areDataAssetReferencesIncluded")
-    def are_data_asset_references_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_data_asset_references_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This field controls if the data asset references will be included during import.
         """
         return pulumi.get(self, "are_data_asset_references_included")
 
     @are_data_asset_references_included.setter
-    def are_data_asset_references_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_data_asset_references_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_data_asset_references_included", value)
 
     @_builtins.property
     @pulumi.getter(name="importConflictResolution")
-    def import_conflict_resolution(self) -> Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]:
+    def import_conflict_resolution(self) -> pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']]:
         """
         Import Objects Conflict resolution.
         """
         return pulumi.get(self, "import_conflict_resolution")
 
     @import_conflict_resolution.setter
-    def import_conflict_resolution(self, value: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]):
+    def import_conflict_resolution(self, value: pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']]):
         pulumi.set(self, "import_conflict_resolution", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeyForImport")
-    def object_key_for_import(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_key_for_import(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key of the object inside which all the objects will be imported
         """
         return pulumi.get(self, "object_key_for_import")
 
     @object_key_for_import.setter
-    def object_key_for_import(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_key_for_import(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_key_for_import", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region of the object storage (if using object storage of different region)
         """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
-    def object_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
-    def object_storage_tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_tenancy_id", value)
 
 
 @pulumi.input_type
 class _WorkspaceImportRequestState:
     def __init__(__self__, *,
-                 are_data_asset_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
-                 imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_key_for_import: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_imported_object_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
+                 imported_objects: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_imported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceImportRequest resources.
 
@@ -242,199 +242,199 @@ class _WorkspaceImportRequestState:
 
     @_builtins.property
     @pulumi.getter(name="areDataAssetReferencesIncluded")
-    def are_data_asset_references_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_data_asset_references_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This field controls if the data asset references will be included during import.
         """
         return pulumi.get(self, "are_data_asset_references_included")
 
     @are_data_asset_references_included.setter
-    def are_data_asset_references_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_data_asset_references_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_data_asset_references_included", value)
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Object Storage bucket where the object will be imported from.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the user who initiated import request.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def error_messages(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Contains key of the error
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def error_messages(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the zip file to be imported.
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
     @_builtins.property
     @pulumi.getter(name="importConflictResolution")
-    def import_conflict_resolution(self) -> Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]:
+    def import_conflict_resolution(self) -> pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']]:
         """
         Import Objects Conflict resolution.
         """
         return pulumi.get(self, "import_conflict_resolution")
 
     @import_conflict_resolution.setter
-    def import_conflict_resolution(self, value: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']]):
+    def import_conflict_resolution(self, value: pulumi.Input[Optional['WorkspaceImportRequestImportConflictResolutionArgs']]):
         pulumi.set(self, "import_conflict_resolution", value)
 
     @_builtins.property
     @pulumi.getter(name="importedObjects")
-    def imported_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]]:
+    def imported_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]]:
         """
         The array of imported object details.
         """
         return pulumi.get(self, "imported_objects")
 
     @imported_objects.setter
-    def imported_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]]):
+    def imported_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]]):
         pulumi.set(self, "imported_objects", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Import object request key
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the import request.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeyForImport")
-    def object_key_for_import(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_key_for_import(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key of the object inside which all the objects will be imported
         """
         return pulumi.get(self, "object_key_for_import")
 
     @object_key_for_import.setter
-    def object_key_for_import(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_key_for_import(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_key_for_import", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region of the object storage (if using object storage of different region)
         """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
-    def object_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
-    def object_storage_tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Import Objects request status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended_in_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time at which the request was completely processed.
         """
         return pulumi.get(self, "time_ended_in_millis")
 
     @time_ended_in_millis.setter
-    def time_ended_in_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended_in_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended_in_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started_in_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time at which the request started getting processed.
         """
         return pulumi.get(self, "time_started_in_millis")
 
     @time_started_in_millis.setter
-    def time_started_in_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started_in_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started_in_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="totalImportedObjectCount")
-    def total_imported_object_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_imported_object_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of objects that are imported.
         """
         return pulumi.get(self, "total_imported_object_count")
 
     @total_imported_object_count.setter
-    def total_imported_object_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_imported_object_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_imported_object_count", value)
 
     @_builtins.property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workspace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace ID.
 
@@ -445,7 +445,7 @@ class _WorkspaceImportRequestState:
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
-    def workspace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workspace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workspace_id", value)
 
 
@@ -455,14 +455,14 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_data_asset_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
-                 object_key_for_import: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+                 object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -482,7 +482,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=workspace_import_request_bucket,
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
-            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included == "true",
             import_conflict_resolution={
                 "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
                 "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,
@@ -541,7 +541,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=workspace_import_request_bucket,
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
-            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included == "true",
             import_conflict_resolution={
                 "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
                 "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,
@@ -576,14 +576,14 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_data_asset_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
-                 object_key_for_import: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+                 object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -626,23 +626,23 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            are_data_asset_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            file_name: Optional[pulumi.Input[_builtins.str]] = None,
-            import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
-            imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_key_for_import: Optional[pulumi.Input[_builtins.str]] = None,
-            object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-            object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            total_imported_object_count: Optional[pulumi.Input[_builtins.int]] = None,
-            workspace_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'WorkspaceImportRequest':
+            are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+            imported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            total_imported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceImportRequest':
         """
         Get an existing WorkspaceImportRequest resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

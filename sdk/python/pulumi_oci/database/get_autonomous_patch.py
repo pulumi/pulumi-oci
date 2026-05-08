@@ -191,7 +191,7 @@ def get_autonomous_patch(autonomous_patch_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
+    test_autonomous_patch = oci.database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_autonomous_patch(autonomous_patch_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'),
         year=pulumi.get(__ret__, 'year'))
-def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_patch_output(autonomous_patch_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousPatchResult]:
     """
     This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
@@ -228,7 +228,7 @@ def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
+    test_autonomous_patch = oci.database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusters = oci.Database.getExadbVmClusters({
+ * const testExadbVmClusters = oci.database.getExadbVmClusters({
  *     compartmentId: compartmentId,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exadbVmClusterDisplayName,
@@ -110,7 +110,7 @@ export interface GetExadbVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusters = oci.Database.getExadbVmClusters({
+ * const testExadbVmClusters = oci.database.getExadbVmClusters({
  *     compartmentId: compartmentId,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exadbVmClusterDisplayName,
@@ -138,7 +138,7 @@ export interface GetExadbVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the given cluster placement group ID exactly.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -146,14 +146,14 @@ export interface GetExadbVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
      */
-    exascaleDbStorageVaultId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClustersFilterArgs>[]>;
+    exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClustersFilterArgs>[] | undefined>;
     /**
      * A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

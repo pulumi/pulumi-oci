@@ -246,7 +246,7 @@ def get_runbook_version(runbook_version_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_version = oci.FleetAppsManagement.get_runbook_version(runbook_version_id=test_runbook_version_oci_fleet_apps_management_runbook_version["id"])
+    test_runbook_version = oci.fleetappsmanagement.get_runbook_version(runbook_version_id=test_runbook_version_oci_fleet_apps_management_runbook_version["id"])
     ```
 
 
@@ -275,7 +275,7 @@ def get_runbook_version(runbook_version_id: Optional[_builtins.str] = None,
         tasks=pulumi.get(__ret__, 'tasks'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_runbook_version_output(runbook_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_runbook_version_output(runbook_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbookVersionResult]:
     """
     This data source provides details about a specific Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -288,7 +288,7 @@ def get_runbook_version_output(runbook_version_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_version = oci.FleetAppsManagement.get_runbook_version(runbook_version_id=test_runbook_version_oci_fleet_apps_management_runbook_version["id"])
+    test_runbook_version = oci.fleetappsmanagement.get_runbook_version(runbook_version_id=test_runbook_version_oci_fleet_apps_management_runbook_version["id"])
     ```
 
 

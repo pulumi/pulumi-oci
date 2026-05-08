@@ -203,7 +203,7 @@ def get_stream(stream_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream = oci.Streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
+    test_stream = oci.streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_stream(stream_id: Optional[_builtins.str] = None,
         stream_id=pulumi.get(__ret__, 'stream_id'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_stream_output(stream_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stream_output(stream_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamResult]:
     """
     This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
@@ -241,7 +241,7 @@ def get_stream_output(stream_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream = oci.Streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
+    test_stream = oci.streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
     ```
 
 

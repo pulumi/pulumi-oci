@@ -302,7 +302,7 @@ def get_vnic(vnic_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
+    test_vnic = oci.core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
     ```
 
 
@@ -335,7 +335,7 @@ def get_vnic(vnic_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_vnic_output(vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vnic_output(vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVnicResult]:
     """
     This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
@@ -351,7 +351,7 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
+    test_vnic = oci.core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
     ```
 
 

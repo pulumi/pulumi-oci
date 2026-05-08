@@ -138,8 +138,8 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameters = oci.databasemanagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         opc_named_credential_id=managed_databases_database_parameter_opc_named_credential_id,
         source=managed_databases_database_parameter_source)
@@ -171,12 +171,12 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[Union['
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         source=pulumi.get(__ret__, 'source'))
-def get_managed_databases_database_parameters_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabasesDatabaseParametersFilterArgs', 'GetManagedDatabasesDatabaseParametersFilterArgsDict']]]]] = None,
-                                                     is_allowed_values_included: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                     managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_databases_database_parameters_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabasesDatabaseParametersFilterArgs', 'GetManagedDatabasesDatabaseParametersFilterArgsDict']]]]] = None,
+                                                     is_allowed_values_included: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                     managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParametersResult]:
     """
     This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
@@ -189,8 +189,8 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameters = oci.databasemanagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         opc_named_credential_id=managed_databases_database_parameter_opc_named_credential_id,
         source=managed_databases_database_parameter_source)

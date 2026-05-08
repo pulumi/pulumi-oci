@@ -348,7 +348,7 @@ def get_budget(budget_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budget = oci.Budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
+    test_budget = oci.budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
     ```
 
 
@@ -385,7 +385,7 @@ def get_budget(budget_id: Optional[_builtins.str] = None,
         time_spend_computed=pulumi.get(__ret__, 'time_spend_computed'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_budget_output(budget_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_budget_output(budget_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBudgetResult]:
     """
     This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
@@ -398,7 +398,7 @@ def get_budget_output(budget_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budget = oci.Budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
+    test_budget = oci.budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
     ```
 
 

@@ -294,7 +294,7 @@ def get_dbmulticloud_oracle_db_aws_identity_connector(oracle_db_aws_identity_con
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dbmulticloud_oracle_db_aws_identity_connector_output(oracle_db_aws_identity_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_aws_identity_connector_output(oracle_db_aws_identity_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAwsIdentityConnectorResult]:
     """
     This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.

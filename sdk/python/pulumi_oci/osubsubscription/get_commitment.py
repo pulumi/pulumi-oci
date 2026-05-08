@@ -163,7 +163,7 @@ def get_commitment(commitment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
+    test_commitment = oci.osubsubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
         x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
         x_one_origin_region=commitment_x_one_origin_region)
     ```
@@ -191,9 +191,9 @@ def get_commitment(commitment_id: Optional[_builtins.str] = None,
         used_amount=pulumi.get(__ret__, 'used_amount'),
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-def get_commitment_output(commitment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          x_one_origin_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_commitment_output(commitment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          x_one_gateway_subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentResult]:
     """
     This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Osub Subscription service.
@@ -206,7 +206,7 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
+    test_commitment = oci.osubsubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
         x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
         x_one_origin_region=commitment_x_one_origin_region)
     ```

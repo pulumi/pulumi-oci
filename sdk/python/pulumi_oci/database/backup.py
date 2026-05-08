@@ -23,8 +23,8 @@ class BackupArgs:
     def __init__(__self__, *,
                  database_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None):
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Backup resource.
 
@@ -72,51 +72,51 @@ class BackupArgs:
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInYears")
-    def retention_period_in_years(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_years(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retention_period_in_years")
 
     @retention_period_in_years.setter
-    def retention_period_in_years(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_years(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_years", value)
 
 
 @pulumi.input_type
 class _BackupState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]] = None,
-                 is_using_oracle_managed_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None,
-                 secondary_kms_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_expiry_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]] = None,
+                 is_using_oracle_managed_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None,
+                 secondary_kms_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_expiry_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
 
@@ -197,76 +197,76 @@ class _BackupState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain where the database backup is stored.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationType")
-    def backup_destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_destination_type")
 
     @backup_destination_type.setter
-    def backup_destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_destination_type", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSizeInGbs")
-    def database_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def database_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The size of the database in gigabytes at the time the backup was taken.
         """
         return pulumi.get(self, "database_size_in_gbs")
 
     @database_size_in_gbs.setter
-    def database_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def database_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "database_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
 
@@ -277,208 +277,208 @@ class _BackupState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
-    def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]:
+    def encryption_key_location_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]:
         """
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
 
     @encryption_key_location_details.setter
-    def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]):
+    def encryption_key_location_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]):
         pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isUsingOracleManagedKeys")
-    def is_using_oracle_managed_keys(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_using_oracle_managed_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_using_oracle_managed_keys")
 
     @is_using_oracle_managed_keys.setter
-    def is_using_oracle_managed_keys(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_using_oracle_managed_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_using_oracle_managed_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_wallet_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
-    def key_store_wallet_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_wallet_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_wallet_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInYears")
-    def retention_period_in_years(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_years(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "retention_period_in_years")
 
     @retention_period_in_years.setter
-    def retention_period_in_years(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_years(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_years", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryKmsKeyIds")
-    def secondary_kms_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_kms_key_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "secondary_kms_key_ids")
 
     @secondary_kms_key_ids.setter
-    def secondary_kms_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_kms_key_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_kms_key_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shape of the backup's source database.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup was completed.
         """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
-    def time_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeExpiryScheduled")
-    def time_expiry_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_expiry_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_expiry_scheduled")
 
     @time_expiry_scheduled.setter
-    def time_expiry_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_expiry_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_expiry_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup started.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of backup.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the backup's source database
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -488,10 +488,10 @@ class Backup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
@@ -579,10 +579,10 @@ class Backup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -631,31 +631,31 @@ class Backup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]]] = None,
-            is_using_oracle_managed_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None,
-            secondary_kms_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_expiry_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'Backup':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            is_using_oracle_managed_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None,
+            secondary_kms_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expiry_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Backup':
         """
         Get an existing Backup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

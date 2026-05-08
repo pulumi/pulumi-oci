@@ -25,9 +25,9 @@ class ManagementApplianceArgs:
                  connections: pulumi.Input[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]],
                  display_name: pulumi.Input[_builtins.str],
                  sddc_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementAppliance resource.
 
@@ -108,63 +108,63 @@ class ManagementApplianceArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSshKeys")
-    def public_ssh_keys(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ssh_keys(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
         """
         return pulumi.get(self, "public_ssh_keys")
 
     @public_ssh_keys.setter
-    def public_ssh_keys(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ssh_keys(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ssh_keys", value)
 
 
 @pulumi.input_type
 class _ManagementApplianceState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration: Optional[pulumi.Input['ManagementApplianceConfigurationArgs']] = None,
-                 connections: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 heartbeat_connection_states: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_configuration_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional['ManagementApplianceConfigurationArgs']] = None,
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 heartbeat_connection_states: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_configuration_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementAppliance resources.
 
@@ -233,151 +233,151 @@ class _ManagementApplianceState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment in OCI, that this appliance is going to be created in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
-    def compute_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
         """
         return pulumi.get(self, "compute_instance_id")
 
     @compute_instance_id.setter
-    def compute_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input['ManagementApplianceConfigurationArgs']]:
+    def configuration(self) -> pulumi.Input[Optional['ManagementApplianceConfigurationArgs']]:
         """
         (Updatable) Configuration of management appliance.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input['ManagementApplianceConfigurationArgs']]):
+    def configuration(self, value: pulumi.Input[Optional['ManagementApplianceConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]]:
+    def connections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]]:
         """
         (Updatable) Array of connections for management appliance.
         """
         return pulumi.get(self, "connections")
 
     @connections.setter
-    def connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]]):
+    def connections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]]]):
         pulumi.set(self, "connections", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="heartbeatConnectionStates")
-    def heartbeat_connection_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]]:
+    def heartbeat_connection_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]]:
         """
         Current states of connections.
         """
         return pulumi.get(self, "heartbeat_connection_states")
 
     @heartbeat_connection_states.setter
-    def heartbeat_connection_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]]):
+    def heartbeat_connection_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]]):
         pulumi.set(self, "heartbeat_connection_states", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
         """
         return pulumi.get(self, "plugin_version")
 
     @plugin_version.setter
-    def plugin_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_version", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSshKeys")
-    def public_ssh_keys(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ssh_keys(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
         """
         return pulumi.get(self, "public_ssh_keys")
 
     @public_ssh_keys.setter
-    def public_ssh_keys(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ssh_keys(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ssh_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="sddcId")
-    def sddc_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sddc_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in. 
 
@@ -388,79 +388,79 @@ class _ManagementApplianceState:
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
-    def sddc_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sddc_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sddc_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current state of the management appliance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConfigurationUpdated")
-    def time_configuration_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_configuration_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_configuration_updated")
 
     @time_configuration_updated.setter
-    def time_configuration_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_configuration_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_configuration_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastHeartbeat")
-    def time_last_heartbeat(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_heartbeat(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_heartbeat")
 
     @time_last_heartbeat.setter
-    def time_last_heartbeat(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_heartbeat(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_heartbeat", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -470,13 +470,13 @@ class ManagementAppliance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-                 connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -494,8 +494,8 @@ class ManagementAppliance(pulumi.CustomResource):
 
         test_management_appliance = oci.ocvp.ManagementAppliance("test_management_appliance",
             configuration={
-                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled,
-                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled,
+                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled == "true",
+                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled == "true",
                 "metrics": management_appliance_configuration_metrics,
                 "support_bundle_bucket_id": test_bucket["id"],
             },
@@ -559,8 +559,8 @@ class ManagementAppliance(pulumi.CustomResource):
 
         test_management_appliance = oci.ocvp.ManagementAppliance("test_management_appliance",
             configuration={
-                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled,
-                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled,
+                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled == "true",
+                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled == "true",
                 "metrics": management_appliance_configuration_metrics,
                 "support_bundle_bucket_id": test_bucket["id"],
             },
@@ -603,13 +603,13 @@ class ManagementAppliance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-                 connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -656,25 +656,25 @@ class ManagementAppliance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration: Optional[pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-            connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            heartbeat_connection_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
-            sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_configuration_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementAppliance':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
+            connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            heartbeat_connection_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None,
+            sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_configuration_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagementAppliance':
         """
         Get an existing ManagementAppliance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

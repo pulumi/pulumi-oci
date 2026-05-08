@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
+ * const testMonitoredResourceTypes = oci.stackmonitoring.getMonitoredResourceTypes({
  *     compartmentId: compartmentId,
  *     excludeFields: monitoredResourceTypeExcludeFields,
  *     fields: monitoredResourceTypeFields,
- *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes === "true",
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
  *     resourceCategory: monitoredResourceTypeResourceCategory,
@@ -150,11 +150,11 @@ export interface GetMonitoredResourceTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
+ * const testMonitoredResourceTypes = oci.stackmonitoring.getMonitoredResourceTypes({
  *     compartmentId: compartmentId,
  *     excludeFields: monitoredResourceTypeExcludeFields,
  *     fields: monitoredResourceTypeFields,
- *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes === "true",
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
  *     resourceCategory: monitoredResourceTypeResourceCategory,
@@ -190,36 +190,36 @@ export interface GetMonitoredResourceTypesOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
+    excludeFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
      *
      * MonitoredResourceType Id, name and compartment will be added by default.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourceTypesFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourceTypesFilterArgs>[] | undefined>;
     /**
      * A filter to exclude system resource types. If set to true, system resource types will be excluded.
      */
-    isExcludeSystemTypes?: pulumi.Input<boolean>;
+    isExcludeSystemTypes?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return monitored resource types that has the matching namespace.
      */
-    metricNamespace?: pulumi.Input<string>;
+    metricNamespace?: pulumi.Input<string | undefined>;
     /**
      * A filter to return monitored resource types that match exactly with the resource type name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with matching resource category.
      */
-    resourceCategory?: pulumi.Input<string>;
+    resourceCategory?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with matching source type.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that matches with lifecycleState given.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

@@ -105,7 +105,7 @@ def get_report_metadata(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report_metadata = oci.FleetAppsManagement.get_report_metadata(compartment_id=compartment_id,
+    test_report_metadata = oci.fleetappsmanagement.get_report_metadata(compartment_id=compartment_id,
         report_name=report_name)
     ```
 
@@ -126,9 +126,9 @@ def get_report_metadata(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         report_metadata_collections=pulumi.get(__ret__, 'report_metadata_collections'),
         report_name=pulumi.get(__ret__, 'report_name'))
-def get_report_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict']]]]] = None,
-                               report_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_report_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict']]]]] = None,
+                               report_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportMetadataResult]:
     """
     This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -141,7 +141,7 @@ def get_report_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_report_metadata = oci.FleetAppsManagement.get_report_metadata(compartment_id=compartment_id,
+    test_report_metadata = oci.fleetappsmanagement.get_report_metadata(compartment_id=compartment_id,
         report_name=report_name)
     ```
 

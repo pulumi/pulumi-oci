@@ -229,7 +229,7 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activity = oci.functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
         scheduled_activity_id=test_scheduled_activity["id"])
     ```
 
@@ -259,8 +259,8 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[_b
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_scheduled_start=pulumi.get(__ret__, 'time_scheduled_start'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     scheduled_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_scheduled_activity_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     scheduled_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -273,7 +273,7 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activity = oci.functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
         scheduled_activity_id=test_scheduled_activity["id"])
     ```
 

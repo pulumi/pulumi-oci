@@ -100,7 +100,7 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
+    test_allowed_domain_license_types = oci.identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
     ```
 
 
@@ -117,8 +117,8 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[_builti
         current_license_type_name=pulumi.get(__ret__, 'current_license_type_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_allowed_domain_license_types_output(current_license_type_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]]]] = None,
+def get_allowed_domain_license_types_output(current_license_type_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
     """
     This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
@@ -136,7 +136,7 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
+    test_allowed_domain_license_types = oci.identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
     ```
 
 

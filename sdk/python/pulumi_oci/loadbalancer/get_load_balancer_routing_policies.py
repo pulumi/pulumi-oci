@@ -95,7 +95,7 @@ def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoad
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policies = oci.LoadBalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
+    test_load_balancer_routing_policies = oci.loadbalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoad
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         routing_policies=pulumi.get(__ret__, 'routing_policies'))
-def get_load_balancer_routing_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict']]]]] = None,
-                                              load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_load_balancer_routing_policies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict']]]]] = None,
+                                              load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancerRoutingPoliciesResult]:
     """
     This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_load_balancer_routing_policies_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policies = oci.LoadBalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
+    test_load_balancer_routing_policies = oci.loadbalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
     ```
 
 

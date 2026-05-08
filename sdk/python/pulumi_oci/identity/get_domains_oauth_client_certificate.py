@@ -378,7 +378,7 @@ def get_domains_oauth_client_certificate(authorization: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+    test_oauth_client_certificate = oci.identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
         o_auth_client_certificate_id=test_certificate["id"],
         authorization=oauth_client_certificate_authorization,
         resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
@@ -427,10 +427,10 @@ def get_domains_oauth_client_certificate(authorization: Optional[_builtins.str] 
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         x509base64certificate=pulumi.get(__ret__, 'x509base64certificate'))
-def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                o_auth_client_certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_oauth_client_certificate_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                o_auth_client_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOauthClientCertificateResult]:
     """
     This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -443,7 +443,7 @@ def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+    test_oauth_client_certificate = oci.identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
         o_auth_client_certificate_id=test_certificate["id"],
         authorization=oauth_client_certificate_authorization,
         resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)

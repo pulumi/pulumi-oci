@@ -22,7 +22,7 @@ class ListingPackageAgreementArgs:
                  agreement_id: pulumi.Input[_builtins.str],
                  listing_id: pulumi.Input[_builtins.str],
                  package_version: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ListingPackageAgreement resource.
 
@@ -75,28 +75,28 @@ class ListingPackageAgreementArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the compartment, required in gov regions.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
 
 @pulumi.input_type
 class _ListingPackageAgreementState:
     def __init__(__self__, *,
-                 agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 author: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 prompt: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None):
+                 agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 author: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 prompt: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ListingPackageAgreement resources.
 
@@ -128,98 +128,98 @@ class _ListingPackageAgreementState:
 
     @_builtins.property
     @pulumi.getter(name="agreementId")
-    def agreement_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agreement_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the agreement.
         """
         return pulumi.get(self, "agreement_id")
 
     @agreement_id.setter
-    def agreement_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agreement_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agreement_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def author(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def author(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Who authored the agreement.
         """
         return pulumi.get(self, "author")
 
     @author.setter
-    def author(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def author(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "author", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the compartment, required in gov regions.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content URL of the agreement.
         """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
-    def content_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_url", value)
 
     @_builtins.property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the listing.
         """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
-    def listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the package. Package versions are unique within a listing.
         """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
-    def package_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def prompt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prompt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Textual prompt to read and accept the agreement.
         """
         return pulumi.get(self, "prompt")
 
     @prompt.setter
-    def prompt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prompt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prompt", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
         """
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
 
@@ -229,10 +229,10 @@ class ListingPackageAgreement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides details about a specific Listing Package Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -310,10 +310,10 @@ class ListingPackageAgreement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -347,14 +347,14 @@ class ListingPackageAgreement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-            author: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            content_url: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            package_version: Optional[pulumi.Input[_builtins.str]] = None,
-            prompt: Optional[pulumi.Input[_builtins.str]] = None,
-            signature: Optional[pulumi.Input[_builtins.str]] = None) -> 'ListingPackageAgreement':
+            agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+            author: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content_url: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_version: pulumi.Input[Optional[_builtins.str]] = None,
+            prompt: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None) -> 'ListingPackageAgreement':
         """
         Get an existing ListingPackageAgreement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

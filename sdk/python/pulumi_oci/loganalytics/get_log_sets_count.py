@@ -83,7 +83,7 @@ def get_log_sets_count(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
+    test_log_sets_count = oci.loganalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
 
 
@@ -98,7 +98,7 @@ def get_log_sets_count(namespace: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         log_sets_count=pulumi.get(__ret__, 'log_sets_count'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_sets_count_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_sets_count_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogSetsCountResult]:
     """
     This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -111,7 +111,7 @@ def get_log_sets_count_output(namespace: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
+    test_log_sets_count = oci.loganalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
 
 

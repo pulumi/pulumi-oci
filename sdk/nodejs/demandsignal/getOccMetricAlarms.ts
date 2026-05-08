@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccMetricAlarms = oci.DemandSignal.getOccMetricAlarms({
+ * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  * });
  * ```
  */
@@ -90,10 +90,10 @@ export interface GetOccMetricAlarmsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccMetricAlarms = oci.DemandSignal.getOccMetricAlarms({
+ * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  * });
  * ```
  */
@@ -118,10 +118,10 @@ export interface GetOccMetricAlarmsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DemandSignal.GetOccMetricAlarmsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DemandSignal.GetOccMetricAlarmsFilterArgs>[] | undefined>;
     /**
      * Filter to list only active or inactive alarms.
      */
-    isActive?: pulumi.Input<boolean>;
+    isActive?: pulumi.Input<boolean | undefined>;
 }

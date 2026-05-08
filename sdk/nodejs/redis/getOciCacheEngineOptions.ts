@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheEngineOptions = oci.Redis.getOciCacheEngineOptions({
+ * const testOciCacheEngineOptions = oci.redis.getOciCacheEngineOptions({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetOciCacheEngineOptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheEngineOptions = oci.Redis.getOciCacheEngineOptions({
+ * const testOciCacheEngineOptions = oci.redis.getOciCacheEngineOptions({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetOciCacheEngineOptionsOutputArgs {
      * The unique identifier for the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheEngineOptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheEngineOptionsFilterArgs>[] | undefined>;
 }

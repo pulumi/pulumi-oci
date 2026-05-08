@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  * const testBackend = new oci.networkloadbalancer.Backend("test_backend", {
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
- *     port: backendPort,
+ *     port: Number(backendPort),
  *     ipAddress: backendIpAddress,
- *     isBackup: backendIsBackup,
- *     isDrain: backendIsDrain,
- *     isOffline: backendIsOffline,
+ *     isBackup: backendIsBackup === "true",
+ *     isDrain: backendIsDrain === "true",
+ *     isOffline: backendIsOffline === "true",
  *     name: backendName,
  *     targetId: testTarget.id,
- *     weight: backendWeight,
+ *     weight: Number(backendWeight),
  * });
  * ```
  *
@@ -170,39 +170,39 @@ export interface BackendState {
     /**
      * The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
      */
-    backendSetName?: pulumi.Input<string>;
+    backendSetName?: pulumi.Input<string | undefined>;
     /**
      * The IP address of the backend server. Example: `10.0.0.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
      */
-    isBackup?: pulumi.Input<boolean>;
+    isBackup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      */
-    isDrain?: pulumi.Input<boolean>;
+    isDrain?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    isOffline?: pulumi.Input<boolean>;
+    isOffline?: pulumi.Input<boolean | undefined>;
     /**
      * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    networkLoadBalancerId?: pulumi.Input<string>;
+    networkLoadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3` 
      *
@@ -210,7 +210,7 @@ export interface BackendState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -224,23 +224,23 @@ export interface BackendArgs {
     /**
      * The IP address of the backend server. Example: `10.0.0.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
      */
-    isBackup?: pulumi.Input<boolean>;
+    isBackup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      */
-    isDrain?: pulumi.Input<boolean>;
+    isDrain?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    isOffline?: pulumi.Input<boolean>;
+    isOffline?: pulumi.Input<boolean | undefined>;
     /**
      * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
@@ -252,7 +252,7 @@ export interface BackendArgs {
     /**
      * The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3` 
      *
@@ -260,5 +260,5 @@ export interface BackendArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }

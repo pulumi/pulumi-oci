@@ -29,14 +29,14 @@ class AssessmentArgs:
                  network_speed_megabit_per_second: pulumi.Input[_builtins.str],
                  source_database_connection: pulumi.Input['AssessmentSourceDatabaseConnectionArgs'],
                  target_database_connection: pulumi.Input['AssessmentTargetDatabaseConnectionArgs'],
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None):
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None):
         """
         The set of arguments for constructing a Assessment resource.
 
@@ -180,127 +180,127 @@ class AssessmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
-    def bulk_include_exclude_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bulk_include_exclude_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         """
         return pulumi.get(self, "bulk_include_exclude_data")
 
     @bulk_include_exclude_data.setter
-    def bulk_include_exclude_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bulk_include_exclude_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bulk_include_exclude_data", value)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of assessment creation.
         """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
-    def creation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeObjects")
-    def exclude_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]:
+    def exclude_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]:
         """
         Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         """
         return pulumi.get(self, "exclude_objects")
 
     @exclude_objects.setter
-    def exclude_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]):
+    def exclude_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]):
         pulumi.set(self, "exclude_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="includeObjects")
-    def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]:
+    def include_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]:
         """
         Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         """
         return pulumi.get(self, "include_objects")
 
     @include_objects.setter
-    def include_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]):
+    def include_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]):
         pulumi.set(self, "include_objects", value)
 
 
 @pulumi.input_type
 class _AssessmentState:
     def __init__(__self__, *,
-                 acceptable_downtime: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessment_migration_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_expectation: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None,
-                 is_cdb_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_speed_megabit_per_second: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection: Optional[pulumi.Input['AssessmentSourceDatabaseConnectionArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_database_connection: Optional[pulumi.Input['AssessmentTargetDatabaseConnectionArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 acceptable_downtime: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessment_migration_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_expectation: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None,
+                 is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection: pulumi.Input[Optional['AssessmentSourceDatabaseConnectionArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_connection: pulumi.Input[Optional['AssessmentTargetDatabaseConnectionArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Assessment resources.
 
@@ -377,278 +377,278 @@ class _AssessmentState:
 
     @_builtins.property
     @pulumi.getter(name="acceptableDowntime")
-    def acceptable_downtime(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def acceptable_downtime(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Time allowed for the application downtime.
         """
         return pulumi.get(self, "acceptable_downtime")
 
     @acceptable_downtime.setter
-    def acceptable_downtime(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def acceptable_downtime(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "acceptable_downtime", value)
 
     @_builtins.property
     @pulumi.getter(name="assessmentMigrationType")
-    def assessment_migration_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessment_migration_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The migration type of the migration to be performed.
         """
         return pulumi.get(self, "assessment_migration_type")
 
     @assessment_migration_type.setter
-    def assessment_migration_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessment_migration_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessment_migration_type", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
-    def bulk_include_exclude_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bulk_include_exclude_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         """
         return pulumi.get(self, "bulk_include_exclude_data")
 
     @bulk_include_exclude_data.setter
-    def bulk_include_exclude_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bulk_include_exclude_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bulk_include_exclude_data", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of assessment creation.
         """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
-    def creation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCombination")
-    def database_combination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_combination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         """
         return pulumi.get(self, "database_combination")
 
     @database_combination.setter
-    def database_combination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_combination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_combination", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseDataSize")
-    def database_data_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_data_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The size of a source database.
         """
         return pulumi.get(self, "database_data_size")
 
     @database_data_size.setter
-    def database_data_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_data_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_data_size", value)
 
     @_builtins.property
     @pulumi.getter(name="ddlExpectation")
-    def ddl_expectation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ddl_expectation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) DDL expectation values.
         """
         return pulumi.get(self, "ddl_expectation")
 
     @ddl_expectation.setter
-    def ddl_expectation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ddl_expectation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ddl_expectation", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeObjects")
-    def exclude_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]:
+    def exclude_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]:
         """
         Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         """
         return pulumi.get(self, "exclude_objects")
 
     @exclude_objects.setter
-    def exclude_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]):
+    def exclude_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]]):
         pulumi.set(self, "exclude_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="includeObjects")
-    def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]:
+    def include_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]:
         """
         Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         """
         return pulumi.get(self, "include_objects")
 
     @include_objects.setter
-    def include_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]):
+    def include_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]):
         pulumi.set(self, "include_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="isCdbSupported")
-    def is_cdb_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cdb_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if CDB should be defined, false otherwise.
         """
         return pulumi.get(self, "is_cdb_supported")
 
     @is_cdb_supported.setter
-    def is_cdb_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cdb_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cdb_supported", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationId")
-    def migration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "migration_id")
 
     @migration_id.setter
-    def migration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSpeedMegabitPerSecond")
-    def network_speed_megabit_per_second(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_speed_megabit_per_second(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A network speed in Megabits per second.
         """
         return pulumi.get(self, "network_speed_megabit_per_second")
 
     @network_speed_megabit_per_second.setter
-    def network_speed_megabit_per_second(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_speed_megabit_per_second(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_speed_megabit_per_second", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabaseConnection")
-    def source_database_connection(self) -> Optional[pulumi.Input['AssessmentSourceDatabaseConnectionArgs']]:
+    def source_database_connection(self) -> pulumi.Input[Optional['AssessmentSourceDatabaseConnectionArgs']]:
         """
         (Updatable) Source Assessment Connection object
         """
         return pulumi.get(self, "source_database_connection")
 
     @source_database_connection.setter
-    def source_database_connection(self, value: Optional[pulumi.Input['AssessmentSourceDatabaseConnectionArgs']]):
+    def source_database_connection(self, value: pulumi.Input[Optional['AssessmentSourceDatabaseConnectionArgs']]):
         pulumi.set(self, "source_database_connection", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Assessment resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseConnection")
-    def target_database_connection(self) -> Optional[pulumi.Input['AssessmentTargetDatabaseConnectionArgs']]:
+    def target_database_connection(self) -> pulumi.Input[Optional['AssessmentTargetDatabaseConnectionArgs']]:
         """
         (Updatable) Target Assessment Connection object
         """
         return pulumi.get(self, "target_database_connection")
 
     @target_database_connection.setter
-    def target_database_connection(self, value: Optional[pulumi.Input['AssessmentTargetDatabaseConnectionArgs']]):
+    def target_database_connection(self, value: pulumi.Input[Optional['AssessmentTargetDatabaseConnectionArgs']]):
         pulumi.set(self, "target_database_connection", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -658,22 +658,22 @@ class Assessment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acceptable_downtime: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_expectation: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
-                 network_speed_megabit_per_second: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection: Optional[pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
-                 target_database_connection: Optional[pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+                 acceptable_downtime: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_expectation: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+                 network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
+                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Assessment resource in Oracle Cloud Infrastructure Database Migration service.
@@ -717,7 +717,7 @@ class Assessment(pulumi.CustomResource):
             display_name=assessment_display_name,
             exclude_objects=[{
                 "object": assessment_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": assessment_exclude_objects_owner,
                 "schema": assessment_exclude_objects_schema,
                 "type": assessment_exclude_objects_type,
@@ -725,7 +725,7 @@ class Assessment(pulumi.CustomResource):
             freeform_tags=assessment_freeform_tags,
             include_objects=[{
                 "object": assessment_include_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": assessment_include_objects_owner,
                 "schema": assessment_include_objects_schema,
                 "type": assessment_include_objects_type,
@@ -808,7 +808,7 @@ class Assessment(pulumi.CustomResource):
             display_name=assessment_display_name,
             exclude_objects=[{
                 "object": assessment_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": assessment_exclude_objects_owner,
                 "schema": assessment_exclude_objects_schema,
                 "type": assessment_exclude_objects_type,
@@ -816,7 +816,7 @@ class Assessment(pulumi.CustomResource):
             freeform_tags=assessment_freeform_tags,
             include_objects=[{
                 "object": assessment_include_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": assessment_include_objects_owner,
                 "schema": assessment_include_objects_schema,
                 "type": assessment_include_objects_type,
@@ -847,22 +847,22 @@ class Assessment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acceptable_downtime: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_expectation: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
-                 network_speed_megabit_per_second: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection: Optional[pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
-                 target_database_connection: Optional[pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+                 acceptable_downtime: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_expectation: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+                 network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
+                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -921,29 +921,29 @@ class Assessment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acceptable_downtime: Optional[pulumi.Input[_builtins.str]] = None,
-            assessment_migration_type: Optional[pulumi.Input[_builtins.str]] = None,
-            bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-            database_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-            ddl_expectation: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
-            is_cdb_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_speed_megabit_per_second: Optional[pulumi.Input[_builtins.str]] = None,
-            source_database_connection: Optional[pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_database_connection: Optional[pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Assessment':
+            acceptable_downtime: pulumi.Input[Optional[_builtins.str]] = None,
+            assessment_migration_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+            database_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+            ddl_expectation: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+            is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Assessment':
         """
         Get an existing Assessment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

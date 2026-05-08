@@ -191,7 +191,7 @@ def get_domain(domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Tenantmanagercontrolplane.get_domain(domain_id=test_domain_oci_tenantmanagercontrolplane_domain["id"])
+    test_domain = oci.tenantmanagercontrolplane.get_domain(domain_id=test_domain_oci_tenantmanagercontrolplane_domain["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_domain(domain_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         txt_record=pulumi.get(__ret__, 'txt_record'))
-def get_domain_output(domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domain_output(domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainResult]:
     """
     This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -228,7 +228,7 @@ def get_domain_output(domain_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Tenantmanagercontrolplane.get_domain(domain_id=test_domain_oci_tenantmanagercontrolplane_domain["id"])
+    test_domain = oci.tenantmanagercontrolplane.get_domain(domain_id=test_domain_oci_tenantmanagercontrolplane_domain["id"])
     ```
 
 

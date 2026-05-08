@@ -100,7 +100,7 @@ def get_subscription_redeemable_user(subscription_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_user = oci.UsageProxy.get_subscription_redeemable_user(subscription_id=test_subscription["id"],
+    test_subscription_redeemable_user = oci.usageproxy.get_subscription_redeemable_user(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 
@@ -120,8 +120,8 @@ def get_subscription_redeemable_user(subscription_id: Optional[_builtins.str] = 
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_redeemable_user_output(subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedeemableUserResult]:
     """
     This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -134,7 +134,7 @@ def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_user = oci.UsageProxy.get_subscription_redeemable_user(subscription_id=test_subscription["id"],
+    test_subscription_redeemable_user = oci.usageproxy.get_subscription_redeemable_user(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 

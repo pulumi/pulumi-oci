@@ -314,7 +314,7 @@ def get_domains_security_question(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
+    test_security_question = oci.identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
         security_question_id=test_security_question_oci_identity_domains_security_question["id"],
         attribute_sets=["all"],
         attributes="",
@@ -364,12 +364,12 @@ def get_domains_security_question(attribute_sets: Optional[Sequence[_builtins.st
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         type=pulumi.get(__ret__, 'type'))
-def get_domains_security_question_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                         attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                         resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         security_question_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_security_question_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                         attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                         resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         security_question_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSecurityQuestionResult]:
     """
     This data source provides details about a specific Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -382,7 +382,7 @@ def get_domains_security_question_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
+    test_security_question = oci.identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
         security_question_id=test_security_question_oci_identity_domains_security_question["id"],
         attribute_sets=["all"],
         attributes="",

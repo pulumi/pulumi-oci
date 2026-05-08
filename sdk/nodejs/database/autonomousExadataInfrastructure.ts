@@ -35,14 +35,14 @@ import * as utilities from "../utilities";
  *     },
  *     licenseModel: autonomousExadataInfrastructureLicenseModel,
  *     maintenanceWindowDetails: {
- *         customActionTimeoutInMins: autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins,
+ *         customActionTimeoutInMins: Number(autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
  *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: autonomousExadataInfrastructureMaintenanceWindowDetailsHoursOfDay,
- *         isCustomActionTimeoutEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
- *         isMonthlyPatchingEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
- *         leadTimeInWeeks: autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks,
+ *         isCustomActionTimeoutEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled === "true",
+ *         isMonthlyPatchingEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled === "true",
+ *         leadTimeInWeeks: Number(autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks),
  *         months: [{
  *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsMonthsName,
  *         }],
@@ -268,73 +268,73 @@ export interface AutonomousExadataInfrastructureState {
      *
      * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
      */
-    compartmentId?: pulumi.Input<string>;
-    createAsync?: pulumi.Input<boolean>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    createAsync?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The host name for the Autonomous Exadata Infrastructure node.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails>;
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindow>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      */
-    scanDnsName?: pulumi.Input<string>;
+    scanDnsName?: pulumi.Input<string | undefined>;
     /**
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Autonomous Exadata Infrastructure.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
      *
@@ -347,15 +347,15 @@ export interface AutonomousExadataInfrastructureState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous Exadata Infrastructure was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -372,36 +372,36 @@ export interface AutonomousExadataInfrastructureArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
      */
     compartmentId: pulumi.Input<string>;
-    createAsync?: pulumi.Input<boolean>;
+    createAsync?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails>;
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
      */

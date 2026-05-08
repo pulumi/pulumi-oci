@@ -66,8 +66,8 @@ class RedisClusterDetachOciCacheUserArgs:
 @pulumi.input_type
 class _RedisClusterDetachOciCacheUserState:
     def __init__(__self__, *,
-                 oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterDetachOciCacheUser resources.
 
@@ -85,19 +85,19 @@ class _RedisClusterDetachOciCacheUserState:
 
     @_builtins.property
     @pulumi.getter(name="ociCacheUsers")
-    def oci_cache_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def oci_cache_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         """
         return pulumi.get(self, "oci_cache_users")
 
     @oci_cache_users.setter
-    def oci_cache_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def oci_cache_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "oci_cache_users", value)
 
     @_builtins.property
     @pulumi.getter(name="redisClusterId")
-    def redis_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 
@@ -108,7 +108,7 @@ class _RedisClusterDetachOciCacheUserState:
         return pulumi.get(self, "redis_cluster_id")
 
     @redis_cluster_id.setter
-    def redis_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_cluster_id", value)
 
 
@@ -118,8 +118,8 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Redis Cluster Detach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
@@ -199,8 +199,8 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -226,8 +226,8 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RedisClusterDetachOciCacheUser':
+            oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RedisClusterDetachOciCacheUser':
         """
         Get an existing RedisClusterDetachOciCacheUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

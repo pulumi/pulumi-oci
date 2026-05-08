@@ -151,7 +151,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DevOps.get_connections(compartment_id=compartment_id,
+    test_connections = oci.devops.get_connections(compartment_id=compartment_id,
         connection_type=connection_connection_type,
         display_name=connection_display_name,
         id=connection_id,
@@ -187,13 +187,13 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_connections_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           connection_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_connections_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           connection_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
     This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
@@ -206,7 +206,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DevOps.get_connections(compartment_id=compartment_id,
+    test_connections = oci.devops.get_connections(compartment_id=compartment_id,
         connection_type=connection_connection_type,
         display_name=connection_display_name,
         id=connection_id,

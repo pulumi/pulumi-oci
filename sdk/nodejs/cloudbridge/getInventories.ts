@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventories = oci.CloudBridge.getInventories({
+ * const testInventories = oci.cloudbridge.getInventories({
  *     compartmentId: compartmentId,
  *     state: inventoryState,
  * });
@@ -80,7 +80,7 @@ export interface GetInventoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventories = oci.CloudBridge.getInventories({
+ * const testInventories = oci.cloudbridge.getInventories({
  *     compartmentId: compartmentId,
  *     state: inventoryState,
  * });
@@ -103,9 +103,9 @@ export interface GetInventoriesOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetInventoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetInventoriesFilterArgs>[] | undefined>;
     /**
      * A filter to return inventory if the lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

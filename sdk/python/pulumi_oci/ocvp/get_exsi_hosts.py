@@ -191,12 +191,12 @@ def get_exsi_hosts(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+    test_esxi_hosts = oci.ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only,
-        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
+        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```
@@ -236,15 +236,15 @@ def get_exsi_hosts(cluster_id: Optional[_builtins.str] = None,
         is_swap_billing_only=pulumi.get(__ret__, 'is_swap_billing_only'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compute_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExsiHostsFilterArgs', 'GetExsiHostsFilterArgsDict']]]]] = None,
-                          is_billing_donors_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                          is_swap_billing_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                          sddc_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_exsi_hosts_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compute_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExsiHostsFilterArgs', 'GetExsiHostsFilterArgsDict']]]]] = None,
+                          is_billing_donors_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                          is_swap_billing_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                          sddc_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExsiHostsResult]:
     """
     This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -265,12 +265,12 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+    test_esxi_hosts = oci.ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only,
-        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
+        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```

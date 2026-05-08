@@ -165,8 +165,8 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameter = oci.databasemanagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         source=managed_databases_database_parameter_source)
     ```
@@ -196,10 +196,10 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
         source=pulumi.get(__ret__, 'source'))
-def get_managed_databases_database_parameter_output(is_allowed_values_included: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                    managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_databases_database_parameter_output(is_allowed_values_included: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                    managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParameterResult]:
     """
     This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -212,8 +212,8 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameter = oci.databasemanagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         source=managed_databases_database_parameter_source)
     ```

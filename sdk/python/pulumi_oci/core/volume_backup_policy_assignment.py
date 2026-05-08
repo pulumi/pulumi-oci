@@ -21,7 +21,7 @@ class VolumeBackupPolicyAssignmentArgs:
     def __init__(__self__, *,
                  asset_id: pulumi.Input[_builtins.str],
                  policy_id: pulumi.Input[_builtins.str],
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
 
@@ -64,7 +64,7 @@ class VolumeBackupPolicyAssignmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="xrcKmsKeyId")
-    def xrc_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xrc_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
 
@@ -75,17 +75,17 @@ class VolumeBackupPolicyAssignmentArgs:
         return pulumi.get(self, "xrc_kms_key_id")
 
     @xrc_kms_key_id.setter
-    def xrc_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xrc_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
 @pulumi.input_type
 class _VolumeBackupPolicyAssignmentState:
     def __init__(__self__, *,
-                 asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
 
@@ -109,43 +109,43 @@ class _VolumeBackupPolicyAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="assetId")
-    def asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the volume or volume group to assign the policy to.
         """
         return pulumi.get(self, "asset_id")
 
     @asset_id.setter
-    def asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the volume backup policy to assign to the volume.
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="xrcKmsKeyId")
-    def xrc_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xrc_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
 
@@ -156,7 +156,7 @@ class _VolumeBackupPolicyAssignmentState:
         return pulumi.get(self, "xrc_kms_key_id")
 
     @xrc_kms_key_id.setter
-    def xrc_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xrc_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
@@ -166,9 +166,9 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
@@ -263,9 +263,9 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -293,10 +293,10 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeBackupPolicyAssignment':
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeBackupPolicyAssignment':
         """
         Get an existing VolumeBackupPolicyAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

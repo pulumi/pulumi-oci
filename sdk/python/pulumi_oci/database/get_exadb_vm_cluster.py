@@ -589,7 +589,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster = oci.Database.get_exadb_vm_cluster(exadb_vm_cluster_id=test_exadb_vm_cluster_oci_database_exadb_vm_cluster["id"])
+    test_exadb_vm_cluster = oci.database.get_exadb_vm_cluster(exadb_vm_cluster_id=test_exadb_vm_cluster_oci_database_exadb_vm_cluster["id"])
     ```
 
 
@@ -646,7 +646,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_exadb_vm_cluster_output(exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterResult]:
     """
     This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -659,7 +659,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster = oci.Database.get_exadb_vm_cluster(exadb_vm_cluster_id=test_exadb_vm_cluster_oci_database_exadb_vm_cluster["id"])
+    test_exadb_vm_cluster = oci.database.get_exadb_vm_cluster(exadb_vm_cluster_id=test_exadb_vm_cluster_oci_database_exadb_vm_cluster["id"])
     ```
 
 

@@ -157,7 +157,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"],
@@ -194,13 +194,13 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
         compute_network_block_id=pulumi.get(__ret__, 'compute_network_block_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  compute_capacity_topology_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  compute_hpc_island_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  compute_local_block_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  compute_network_block_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict']]]]] = None,
+def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  compute_capacity_topology_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  compute_hpc_island_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  compute_local_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  compute_network_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict']]]]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeBareMetalHostsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
@@ -213,7 +213,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"],

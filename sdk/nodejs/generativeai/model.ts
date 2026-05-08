@@ -208,75 +208,75 @@ export interface ModelState {
     /**
      * The OCID of the base model that's used for fine-tuning.
      */
-    baseModelId?: pulumi.Input<string>;
+    baseModelId?: pulumi.Input<string | undefined>;
     /**
      * Describes what this model can be used for.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Details about fine-tuning a custom model.
      */
-    fineTuneDetails?: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetails>;
+    fineTuneDetails?: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetails | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Whether a model is supported long-term. Only applicable to base models.
      */
-    isLongTermSupported?: pulumi.Input<boolean>;
+    isLongTermSupported?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state of the model in more detail that can provide actionable information.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Model metrics during the creation of a new model.
      */
-    modelMetrics?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.ModelModelMetric>[]>;
+    modelMetrics?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.ModelModelMetric>[] | undefined>;
     /**
      * The lifecycle state of the model.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the model was created in the format of an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
      */
-    timeDeprecated?: pulumi.Input<string>;
+    timeDeprecated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the model was updated in the format of an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The provider of the model.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the model.
      *
@@ -284,7 +284,7 @@ export interface ModelState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -302,15 +302,15 @@ export interface ModelArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Details about fine-tuning a custom model.
      */
@@ -318,11 +318,11 @@ export interface ModelArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The provider of the model.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the model.
      *
@@ -330,5 +330,5 @@ export interface ModelArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

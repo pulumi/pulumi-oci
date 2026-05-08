@@ -25,11 +25,11 @@ class ConnectorArgs:
                  display_name: pulumi.Input[_builtins.str],
                  source: pulumi.Input['ConnectorSourceArgs'],
                  target: pulumi.Input['ConnectorTargetArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]] = None):
         """
         The set of arguments for constructing a Connector resource.
 
@@ -112,43 +112,43 @@ class ConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 
@@ -159,39 +159,39 @@ class ConnectorArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def tasks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]]:
+    def tasks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]]:
         """
         (Updatable) The list of tasks.
         """
         return pulumi.get(self, "tasks")
 
     @tasks.setter
-    def tasks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]]):
+    def tasks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]]):
         pulumi.set(self, "tasks", value)
 
 
 @pulumi.input_type
 class _ConnectorState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input['ConnectorSourceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input['ConnectorTargetArgs']] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional['ConnectorSourceArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional['ConnectorTargetArgs']] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connector resources.
 
@@ -245,103 +245,103 @@ class _ConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecyle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         """
         return pulumi.get(self, "lifecyle_details")
 
     @lifecyle_details.setter
-    def lifecyle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecyle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecyle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['ConnectorSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['ConnectorSourceArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['ConnectorSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['ConnectorSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 
@@ -352,67 +352,67 @@ class _ConnectorState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['ConnectorTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['ConnectorTargetArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['ConnectorTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['ConnectorTargetArgs']]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter
-    def tasks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]]:
+    def tasks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]]:
         """
         (Updatable) The list of tasks.
         """
         return pulumi.get(self, "tasks")
 
     @tasks.setter
-    def tasks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]]]):
+    def tasks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskArgs']]]]):
         pulumi.set(self, "tasks", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -422,15 +422,15 @@ class Connector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -496,11 +496,11 @@ class Connector(pulumi.CustomResource):
             },
             target={
                 "kind": service_connector_target_kind,
-                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
-                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
-                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
-                "batch_size_in_num": service_connector_target_batch_size_in_num,
-                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
+                "batch_rollover_size_in_mbs": int(service_connector_target_batch_rollover_size_in_mbs),
+                "batch_rollover_time_in_ms": int(service_connector_target_batch_rollover_time_in_ms),
+                "batch_size_in_kbs": int(service_connector_target_batch_size_in_kbs),
+                "batch_size_in_num": int(service_connector_target_batch_size_in_num),
+                "batch_time_in_sec": int(service_connector_target_batch_time_in_sec),
                 "bucket": service_connector_target_bucket,
                 "compartment_id": compartment_id,
                 "dimensions": [{
@@ -511,7 +511,7 @@ class Connector(pulumi.CustomResource):
                     },
                     "name": service_connector_target_dimensions_name,
                 }],
-                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging == "true",
                 "function_id": test_function["id"],
                 "log_group_id": test_log_group["id"],
                 "log_source_identifier": service_connector_target_log_source_identifier,
@@ -531,8 +531,8 @@ class Connector(pulumi.CustomResource):
             },
             tasks=[{
                 "kind": service_connector_tasks_kind,
-                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
-                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
+                "batch_size_in_kbs": int(service_connector_tasks_batch_size_in_kbs),
+                "batch_time_in_sec": int(service_connector_tasks_batch_time_in_sec),
                 "condition": service_connector_tasks_condition,
                 "function_id": test_function["id"],
             }])
@@ -633,11 +633,11 @@ class Connector(pulumi.CustomResource):
             },
             target={
                 "kind": service_connector_target_kind,
-                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
-                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
-                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
-                "batch_size_in_num": service_connector_target_batch_size_in_num,
-                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
+                "batch_rollover_size_in_mbs": int(service_connector_target_batch_rollover_size_in_mbs),
+                "batch_rollover_time_in_ms": int(service_connector_target_batch_rollover_time_in_ms),
+                "batch_size_in_kbs": int(service_connector_target_batch_size_in_kbs),
+                "batch_size_in_num": int(service_connector_target_batch_size_in_num),
+                "batch_time_in_sec": int(service_connector_target_batch_time_in_sec),
                 "bucket": service_connector_target_bucket,
                 "compartment_id": compartment_id,
                 "dimensions": [{
@@ -648,7 +648,7 @@ class Connector(pulumi.CustomResource):
                     },
                     "name": service_connector_target_dimensions_name,
                 }],
-                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging == "true",
                 "function_id": test_function["id"],
                 "log_group_id": test_log_group["id"],
                 "log_source_identifier": service_connector_target_log_source_identifier,
@@ -668,8 +668,8 @@ class Connector(pulumi.CustomResource):
             },
             tasks=[{
                 "kind": service_connector_tasks_kind,
-                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
-                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
+                "batch_size_in_kbs": int(service_connector_tasks_batch_size_in_kbs),
+                "batch_time_in_sec": int(service_connector_tasks_batch_time_in_sec),
                 "condition": service_connector_tasks_condition,
                 "function_id": test_function["id"],
             }])
@@ -699,15 +699,15 @@ class Connector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -749,20 +749,20 @@ class Connector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Connector':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connector':
         """
         Get an existing Connector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

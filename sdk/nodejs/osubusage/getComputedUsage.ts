@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OsubUsage.getComputedUsage({
+ * const testComputedUsage = oci.osubusage.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
  *     fields: computedUsageFields,
@@ -177,7 +177,7 @@ export interface GetComputedUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OsubUsage.getComputedUsage({
+ * const testComputedUsage = oci.osubusage.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
  *     fields: computedUsageFields,
@@ -210,9 +210,9 @@ export interface GetComputedUsageOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

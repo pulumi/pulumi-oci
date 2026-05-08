@@ -115,11 +115,11 @@ export interface LifecycleStageAttachManagedInstancesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * The details about the managed instances.
      */
-    managedInstanceDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails>;
+    managedInstanceDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails | undefined>;
 }
 
 /**

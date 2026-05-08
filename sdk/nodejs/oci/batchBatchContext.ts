@@ -23,14 +23,14 @@ import * as utilities from "../utilities";
  * const testBatchContext = new oci.oci.BatchBatchContext("test_batch_context", {
  *     compartmentId: compartmentId,
  *     fleets: [{
- *         maxConcurrentTasks: batchContextFleetsMaxConcurrentTasks,
+ *         maxConcurrentTasks: Number(batchContextFleetsMaxConcurrentTasks),
  *         name: batchContextFleetsName,
  *         shape: {
- *             memoryInGbs: batchContextFleetsShapeMemoryInGbs,
- *             ocpus: batchContextFleetsShapeOcpus,
+ *             memoryInGbs: Number(batchContextFleetsShapeMemoryInGbs),
+ *             ocpus: Number(batchContextFleetsShapeOcpus),
  *             shapeName: testBatchContextShapes.batchContextShapeCollection[0].items[0].name,
  *             type: batchContextFleetsShapeType,
- *             diskSizeInGbs: batchContextFleetsShapeDiskSizeInGbs,
+ *             diskSizeInGbs: Number(batchContextFleetsShapeDiskSizeInGbs),
  *         },
  *         type: batchContextFleetsType,
  *     }],
@@ -51,13 +51,13 @@ import * as utilities from "../utilities";
  *         tagKey: batchContextJobPriorityConfigurationsTagKey,
  *         tagNamespace: batchContextJobPriorityConfigurationsTagNamespace,
  *         values: batchContextJobPriorityConfigurationsValues,
- *         weight: batchContextJobPriorityConfigurationsWeight,
+ *         weight: Number(batchContextJobPriorityConfigurationsWeight),
  *     }],
  *     loggingConfiguration: {
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *         type: batchContextLoggingConfigurationType,
- *         isJobTaskEventsPropagationEnabled: batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled,
+ *         isJobTaskEventsPropagationEnabled: batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled === "true",
  *     },
  * });
  * ```
@@ -230,47 +230,47 @@ export interface BatchBatchContextState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Summarized information about the batch context.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
      */
-    entitlements?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    entitlements?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of fleet configurations related to the batch context.
      */
-    fleets?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextFleet>[]>;
+    fleets?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextFleet>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of job priority configurations related to the batch context.
      */
-    jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[]>;
+    jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[] | undefined>;
     /**
      * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Logging configuration of the batch context.
      */
-    loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration>;
+    loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration | undefined>;
     /**
      * Network configuration of the batch context.
      */
-    network?: pulumi.Input<inputs.oci.BatchBatchContextNetwork>;
+    network?: pulumi.Input<inputs.oci.BatchBatchContextNetwork | undefined>;
     /**
      * (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -278,19 +278,19 @@ export interface BatchBatchContextState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -304,19 +304,19 @@ export interface BatchBatchContextArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Summarized information about the batch context.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
      */
-    entitlements?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    entitlements?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of fleet configurations related to the batch context.
      */
@@ -324,15 +324,15 @@ export interface BatchBatchContextArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of job priority configurations related to the batch context.
      */
-    jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[]>;
+    jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[] | undefined>;
     /**
      * (Updatable) Logging configuration of the batch context.
      */
-    loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration>;
+    loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration | undefined>;
     /**
      * Network configuration of the batch context.
      */
@@ -344,5 +344,5 @@ export interface BatchBatchContextArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

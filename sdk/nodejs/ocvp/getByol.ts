@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByol = oci.Ocvp.getByol({
+ * const testByol = oci.ocvp.getByol({
  *     byolId: testByolOciOcvpByol.id,
  * });
  * ```
@@ -125,7 +125,7 @@ export interface GetByolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByol = oci.Ocvp.getByol({
+ * const testByol = oci.ocvp.getByol({
  *     byolId: testByolOciOcvpByol.id,
  * });
  * ```

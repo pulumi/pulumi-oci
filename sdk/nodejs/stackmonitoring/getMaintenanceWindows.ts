@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.StackMonitoring.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.stackmonitoring.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     lifecycleDetails: maintenanceWindowLifecycleDetails,
  *     name: maintenanceWindowName,
@@ -97,7 +97,7 @@ export interface GetMaintenanceWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.StackMonitoring.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.stackmonitoring.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     lifecycleDetails: maintenanceWindowLifecycleDetails,
  *     name: maintenanceWindowName,
@@ -124,17 +124,17 @@ export interface GetMaintenanceWindowsOutputArgs {
      * The ID of the compartment in which data is listed.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMaintenanceWindowsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMaintenanceWindowsFilterArgs>[] | undefined>;
     /**
      * A filter to return maintenance windows with matching lifecycleDetails.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A filter to return maintenance windows that match exact resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only maintenance windows with matching lifecycleState.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

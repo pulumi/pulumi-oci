@@ -30,8 +30,8 @@ class DbmulticloudOracleDbGcpIdentityConnectorArgs:
                  issuer_url: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
                  resource_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbGcpIdentityConnector resource.
 
@@ -179,50 +179,50 @@ class DbmulticloudOracleDbGcpIdentityConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _DbmulticloudOracleDbGcpIdentityConnectorState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gcp_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]] = None,
-                 gcp_resource_service_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuer_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gcp_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]] = None,
+                 gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbGcpIdentityConnector resources.
 
@@ -288,163 +288,163 @@ class _DbmulticloudOracleDbGcpIdentityConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Oracle DB GCP Identity Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle DB Google GCP Identity Connector resource name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpIdentityConnectivityStatus")
-    def gcp_identity_connectivity_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gcp_identity_connectivity_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current Connectivity status of GCP Identity Connector resource.
         """
         return pulumi.get(self, "gcp_identity_connectivity_status")
 
     @gcp_identity_connectivity_status.setter
-    def gcp_identity_connectivity_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gcp_identity_connectivity_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gcp_identity_connectivity_status", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpLocation")
-    def gcp_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gcp_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GCP Location.
         """
         return pulumi.get(self, "gcp_location")
 
     @gcp_location.setter
-    def gcp_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gcp_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gcp_location", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpNodes")
-    def gcp_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]]:
+    def gcp_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]]:
         """
         List of All VMs where GCP Identity Connector is configured for this VMCluster.
         """
         return pulumi.get(self, "gcp_nodes")
 
     @gcp_nodes.setter
-    def gcp_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]]):
+    def gcp_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs']]]]):
         pulumi.set(self, "gcp_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpResourceServiceAgentId")
-    def gcp_resource_service_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gcp_resource_service_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the GCP resource service agent.
         """
         return pulumi.get(self, "gcp_resource_service_agent_id")
 
     @gcp_resource_service_agent_id.setter
-    def gcp_resource_service_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gcp_resource_service_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gcp_resource_service_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpWorkloadIdentityPoolId")
-    def gcp_workload_identity_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gcp_workload_identity_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the cloud GCP Workload Identity Pool.
         """
         return pulumi.get(self, "gcp_workload_identity_pool_id")
 
     @gcp_workload_identity_pool_id.setter
-    def gcp_workload_identity_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gcp_workload_identity_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gcp_workload_identity_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="gcpWorkloadIdentityProviderId")
-    def gcp_workload_identity_provider_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gcp_workload_identity_provider_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the GCP Workload Identity Provider.
         """
         return pulumi.get(self, "gcp_workload_identity_provider_id")
 
     @gcp_workload_identity_provider_id.setter
-    def gcp_workload_identity_provider_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gcp_workload_identity_provider_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gcp_workload_identity_provider_id", value)
 
     @_builtins.property
     @pulumi.getter(name="issuerUrl")
-    def issuer_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OIDC token issuer Url
         """
         return pulumi.get(self, "issuer_url")
 
     @issuer_url.setter
-    def issuer_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer_url", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the current lifecycle state in more detail.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Project id of the customer project.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
 
@@ -455,55 +455,55 @@ class _DbmulticloudOracleDbGcpIdentityConnectorState:
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the GCP Identity Connector resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Oracle DB GCP Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Oracle DB GCP Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -513,17 +513,17 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gcp_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_resource_service_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuer_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -646,17 +646,17 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gcp_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_resource_service_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gcp_workload_identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuer_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -712,24 +712,24 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gcp_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
-            gcp_location: Optional[pulumi.Input[_builtins.str]] = None,
-            gcp_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict']]]]] = None,
-            gcp_resource_service_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            gcp_workload_identity_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            gcp_workload_identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-            issuer_url: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbmulticloudOracleDbGcpIdentityConnector':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gcp_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict']]]]] = None,
+            gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+            issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbmulticloudOracleDbGcpIdentityConnector':
         """
         Get an existing DbmulticloudOracleDbGcpIdentityConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

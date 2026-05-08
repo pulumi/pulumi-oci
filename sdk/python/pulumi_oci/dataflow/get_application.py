@@ -480,7 +480,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
+    test_application = oci.dataflow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
 
 
@@ -528,7 +528,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
-def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_application_output(application_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationResult]:
     """
     This data source provides details about a specific Application resource in Oracle Cloud Infrastructure Data Flow service.
@@ -541,7 +541,7 @@ def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
+    test_application = oci.dataflow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
 
 

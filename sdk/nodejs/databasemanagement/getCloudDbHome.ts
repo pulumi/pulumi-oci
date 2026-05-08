@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHome = oci.DatabaseManagement.getCloudDbHome({
+ * const testCloudDbHome = oci.databasemanagement.getCloudDbHome({
  *     cloudDbHomeId: testCloudDbHomeOciDatabaseManagementCloudDbHome.id,
  * });
  * ```
@@ -114,7 +114,7 @@ export interface GetCloudDbHomeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHome = oci.DatabaseManagement.getCloudDbHome({
+ * const testCloudDbHome = oci.databasemanagement.getCloudDbHome({
  *     cloudDbHomeId: testCloudDbHomeOciDatabaseManagementCloudDbHome.id,
  * });
  * ```

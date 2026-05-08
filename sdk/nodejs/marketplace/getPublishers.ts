@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublishers = oci.Marketplace.getPublishers({
+ * const testPublishers = oci.marketplace.getPublishers({
  *     compartmentId: compartmentId,
  *     publisherId: testPublisher.id,
  * });
@@ -75,7 +75,7 @@ export interface GetPublishersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublishers = oci.Marketplace.getPublishers({
+ * const testPublishers = oci.marketplace.getPublishers({
  *     compartmentId: compartmentId,
  *     publisherId: testPublisher.id,
  * });
@@ -98,10 +98,10 @@ export interface GetPublishersOutputArgs {
     /**
      * The unique identifier for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetPublishersFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetPublishersFilterArgs>[] | undefined>;
     /**
      * Limit results to just this publisher.
      */
-    publisherId?: pulumi.Input<string>;
+    publisherId?: pulumi.Input<string | undefined>;
 }

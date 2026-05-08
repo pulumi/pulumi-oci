@@ -228,7 +228,7 @@ def get_db_node_snapshot(dbnode_snapshot_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshot = oci.Database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
+    test_db_node_snapshot = oci.database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_db_node_snapshot(dbnode_snapshot_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         volumes=pulumi.get(__ret__, 'volumes'))
-def get_db_node_snapshot_output(dbnode_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_node_snapshot_output(dbnode_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeSnapshotResult]:
     """
     This data source provides details about a specific Db Node Snapshot resource in Oracle Cloud Infrastructure Database service.
@@ -268,7 +268,7 @@ def get_db_node_snapshot_output(dbnode_snapshot_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshot = oci.Database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
+    test_db_node_snapshot = oci.database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
     ```
 
 

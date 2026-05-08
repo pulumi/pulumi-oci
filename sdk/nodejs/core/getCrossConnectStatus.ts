@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectStatus = oci.Core.getCrossConnectStatus({
+ * const testCrossConnectStatus = oci.core.getCrossConnectStatus({
  *     crossConnectId: testCrossConnect.id,
  * });
  * ```
@@ -82,7 +82,7 @@ export interface GetCrossConnectStatusResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectStatus = oci.Core.getCrossConnectStatus({
+ * const testCrossConnectStatus = oci.core.getCrossConnectStatus({
  *     crossConnectId: testCrossConnect.id,
  * });
  * ```

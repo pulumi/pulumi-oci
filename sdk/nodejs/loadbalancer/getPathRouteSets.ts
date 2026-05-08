@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathRouteSets = oci.LoadBalancer.getPathRouteSets({
+ * const testPathRouteSets = oci.loadbalancer.getPathRouteSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetPathRouteSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathRouteSets = oci.LoadBalancer.getPathRouteSets({
+ * const testPathRouteSets = oci.loadbalancer.getPathRouteSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: 
  * A collection of arguments for invoking getPathRouteSets.
  */
 export interface GetPathRouteSetsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetPathRouteSetsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetPathRouteSetsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
      */

@@ -108,7 +108,7 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=test_drg_route_table["id"],
+    test_drg_route_table_route_rules = oci.core.get_drg_route_table_route_rules(drg_route_table_id=test_drg_route_table["id"],
         route_type=drg_route_table_route_rule_route_type)
     ```
 
@@ -129,9 +129,9 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[_builtins.str] 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         route_type=pulumi.get(__ret__, 'route_type'))
-def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteTableRouteRulesFilterArgs', 'GetDrgRouteTableRouteRulesFilterArgsDict']]]]] = None,
-                                           route_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_drg_route_table_route_rules_output(drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgRouteTableRouteRulesFilterArgs', 'GetDrgRouteTableRouteRulesFilterArgsDict']]]]] = None,
+                                           route_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteTableRouteRulesResult]:
     """
     This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
@@ -144,7 +144,7 @@ def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=test_drg_route_table["id"],
+    test_drg_route_table_route_rules = oci.core.get_drg_route_table_route_rules(drg_route_table_id=test_drg_route_table["id"],
         route_type=drg_route_table_route_rule_route_type)
     ```
 

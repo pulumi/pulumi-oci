@@ -108,7 +108,7 @@ export interface SetSecurityAssessmentBaselineState {
     /**
      * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
-    assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the security assessment.
      *
@@ -116,7 +116,7 @@ export interface SetSecurityAssessmentBaselineState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -126,7 +126,7 @@ export interface SetSecurityAssessmentBaselineArgs {
     /**
      * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
-    assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the security assessment.
      *

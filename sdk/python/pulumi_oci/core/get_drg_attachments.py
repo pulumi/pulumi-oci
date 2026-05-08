@@ -188,7 +188,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+    test_drg_attachments = oci.core.get_drg_attachments(compartment_id=compartment_id,
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],
@@ -233,15 +233,15 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
         network_id=pulumi.get(__ret__, 'network_id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               drg_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               drg_route_table_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgAttachmentsFilterArgs', 'GetDrgAttachmentsFilterArgsDict']]]]] = None,
-                               network_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               drg_route_table_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgAttachmentsFilterArgs', 'GetDrgAttachmentsFilterArgsDict']]]]] = None,
+                               network_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgAttachmentsResult]:
     """
     This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
@@ -259,7 +259,7 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+    test_drg_attachments = oci.core.get_drg_attachments(compartment_id=compartment_id,
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],

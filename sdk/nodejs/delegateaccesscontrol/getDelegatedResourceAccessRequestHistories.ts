@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequestHistories = oci.DelegateAccessControl.getDelegatedResourceAccessRequestHistories({
+ * const testDelegatedResourceAccessRequestHistories = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestHistories({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDelegatedResourceAccessRequestHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequestHistories = oci.DelegateAccessControl.getDelegatedResourceAccessRequestHistories({
+ * const testDelegatedResourceAccessRequestHistories = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestHistories({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetDelegatedResourceAccessRequestHistoriesOutputArgs {
      * Unique Delegated Resource Access Request identifier
      */
     delegatedResourceAccessRequestId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegatedResourceAccessRequestHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegatedResourceAccessRequestHistoriesFilterArgs>[] | undefined>;
 }

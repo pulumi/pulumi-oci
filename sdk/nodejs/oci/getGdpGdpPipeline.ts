@@ -176,7 +176,7 @@ export interface GetGdpGdpPipelineOutputArgs {
     /**
      * The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
      */
-    env?: pulumi.Input<string>;
+    env?: pulumi.Input<string | undefined>;
     /**
      * Unique pipeline identifier.
      */

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationTopics = oci.Ons.getNotificationTopics({
+ * const testNotificationTopics = oci.ons.getNotificationTopics({
  *     compartmentId: compartmentId,
  *     id: notificationTopicId,
  *     name: notificationTopicName,
@@ -97,7 +97,7 @@ export interface GetNotificationTopicsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationTopics = oci.Ons.getNotificationTopics({
+ * const testNotificationTopics = oci.ons.getNotificationTopics({
  *     compartmentId: compartmentId,
  *     id: notificationTopicId,
  *     name: notificationTopicName,
@@ -124,17 +124,17 @@ export interface GetNotificationTopicsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ons.GetNotificationTopicsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ons.GetNotificationTopicsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

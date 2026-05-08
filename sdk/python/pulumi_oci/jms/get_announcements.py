@@ -115,7 +115,7 @@ def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterAr
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+    test_announcements = oci.jms.get_announcements(summary_contains=announcement_summary_contains,
         time_end=announcement_time_end,
         time_start=announcement_time_start)
     ```
@@ -140,10 +140,10 @@ def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterAr
         summary_contains=pulumi.get(__ret__, 'summary_contains'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
-                             summary_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_announcements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
+                             summary_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
@@ -156,7 +156,7 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+    test_announcements = oci.jms.get_announcements(summary_contains=announcement_summary_contains,
         time_end=announcement_time_end,
         time_start=announcement_time_start)
     ```

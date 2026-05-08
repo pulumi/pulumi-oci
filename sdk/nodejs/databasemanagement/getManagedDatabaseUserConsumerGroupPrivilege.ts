@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserConsumerGroupPrivilege = oci.DatabaseManagement.getManagedDatabaseUserConsumerGroupPrivilege({
+ * const testManagedDatabaseUserConsumerGroupPrivilege = oci.databasemanagement.getManagedDatabaseUserConsumerGroupPrivilege({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserConsumerGroupPrivilegeName,
@@ -81,7 +81,7 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserConsumerGroupPrivilege = oci.DatabaseManagement.getManagedDatabaseUserConsumerGroupPrivilege({
+ * const testManagedDatabaseUserConsumerGroupPrivilege = oci.databasemanagement.getManagedDatabaseUserConsumerGroupPrivilege({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserConsumerGroupPrivilegeName,
@@ -108,7 +108,7 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegeOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

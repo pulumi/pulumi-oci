@@ -112,7 +112,7 @@ export interface ManagedInstanceAttachProfileManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
      *
@@ -120,7 +120,7 @@ export interface ManagedInstanceAttachProfileManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistrations = oci.GoldenGate.getDatabaseRegistrations({
+ * const testDatabaseRegistrations = oci.goldengate.getDatabaseRegistrations({
  *     compartmentId: compartmentId,
  *     displayName: databaseRegistrationDisplayName,
  *     state: databaseRegistrationState,
@@ -92,7 +92,7 @@ export interface GetDatabaseRegistrationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistrations = oci.GoldenGate.getDatabaseRegistrations({
+ * const testDatabaseRegistrations = oci.goldengate.getDatabaseRegistrations({
  *     compartmentId: compartmentId,
  *     displayName: databaseRegistrationDisplayName,
  *     state: databaseRegistrationState,
@@ -120,10 +120,10 @@ export interface GetDatabaseRegistrationsOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDatabaseRegistrationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDatabaseRegistrationsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

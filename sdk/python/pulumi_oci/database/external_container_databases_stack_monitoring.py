@@ -81,9 +81,9 @@ class ExternalContainerDatabasesStackMonitoringArgs:
 @pulumi.input_type
 class _ExternalContainerDatabasesStackMonitoringState:
     def __init__(__self__, *,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalContainerDatabasesStackMonitoring resources.
 
@@ -104,7 +104,7 @@ class _ExternalContainerDatabasesStackMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="enableStackMonitoring")
-    def enable_stack_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_stack_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
 
@@ -115,31 +115,31 @@ class _ExternalContainerDatabasesStackMonitoringState:
         return pulumi.get(self, "enable_stack_monitoring")
 
     @enable_stack_monitoring.setter
-    def enable_stack_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_stack_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_stack_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="externalContainerDatabaseId")
-    def external_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "external_container_database_id")
 
     @external_container_database_id.setter
-    def external_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseConnectorId")
-    def external_database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
         return pulumi.get(self, "external_database_connector_id")
 
     @external_database_connector_id.setter
-    def external_database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_connector_id", value)
 
 
@@ -149,9 +149,9 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
@@ -234,9 +234,9 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -265,9 +265,9 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalContainerDatabasesStackMonitoring':
+            enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalContainerDatabasesStackMonitoring':
         """
         Get an existing ExternalContainerDatabasesStackMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

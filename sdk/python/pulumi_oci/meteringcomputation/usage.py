@@ -25,13 +25,13 @@ class UsageArgs:
                  tenant_id: pulumi.Input[_builtins.str],
                  time_usage_ended: pulumi.Input[_builtins.str],
                  time_usage_started: pulumi.Input[_builtins.str],
-                 compartment_depth: Optional[pulumi.Input[_builtins.float]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 forecast: Optional[pulumi.Input['UsageForecastArgs']] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 forecast: pulumi.Input[Optional['UsageForecastArgs']] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Usage resource.
 
@@ -124,104 +124,104 @@ class UsageArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def compartment_depth(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The compartment depth level.
         """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
-    def compartment_depth(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def compartment_depth(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "compartment_depth", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filter object for query usage.
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def forecast(self) -> Optional[pulumi.Input['UsageForecastArgs']]:
+    def forecast(self) -> pulumi.Input[Optional['UsageForecastArgs']]:
         """
         Forecast configuration of usage/cost.
         """
         return pulumi.get(self, "forecast")
 
     @forecast.setter
-    def forecast(self, value: Optional[pulumi.Input['UsageForecastArgs']]):
+    def forecast(self, value: pulumi.Input[Optional['UsageForecastArgs']]):
         pulumi.set(self, "forecast", value)
 
     @_builtins.property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def group_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
-    def group_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def group_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]:
+    def group_by_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]:
         """
         GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
-    def group_by_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]):
+    def group_by_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]):
         pulumi.set(self, "group_by_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_aggregate_by_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
-    def is_aggregate_by_time(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_aggregate_by_time(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_aggregate_by_time", value)
 
     @_builtins.property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         return pulumi.get(self, "query_type")
 
     @query_type.setter
-    def query_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_type", value)
 
 
 @pulumi.input_type
 class _UsageState:
     def __init__(__self__, *,
-                 compartment_depth: Optional[pulumi.Input[_builtins.float]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 forecast: Optional[pulumi.Input['UsageForecastArgs']] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemArgs']]]] = None,
-                 query_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 forecast: pulumi.Input[Optional['UsageForecastArgs']] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['UsageItemArgs']]]] = None,
+                 query_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Usage resources.
 
@@ -269,139 +269,139 @@ class _UsageState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def compartment_depth(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The compartment depth level.
         """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
-    def compartment_depth(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def compartment_depth(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "compartment_depth", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filter object for query usage.
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def forecast(self) -> Optional[pulumi.Input['UsageForecastArgs']]:
+    def forecast(self) -> pulumi.Input[Optional['UsageForecastArgs']]:
         """
         Forecast configuration of usage/cost.
         """
         return pulumi.get(self, "forecast")
 
     @forecast.setter
-    def forecast(self, value: Optional[pulumi.Input['UsageForecastArgs']]):
+    def forecast(self, value: pulumi.Input[Optional['UsageForecastArgs']]):
         pulumi.set(self, "forecast", value)
 
     @_builtins.property
     @pulumi.getter
-    def granularity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def granularity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         """
         return pulumi.get(self, "granularity")
 
     @granularity.setter
-    def granularity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def granularity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "granularity", value)
 
     @_builtins.property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def group_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
-    def group_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def group_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]:
+    def group_by_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]:
         """
         GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
-    def group_by_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]):
+    def group_by_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageGroupByTagArgs']]]]):
         pulumi.set(self, "group_by_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_aggregate_by_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
-    def is_aggregate_by_time(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_aggregate_by_time(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_aggregate_by_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageItemArgs']]]]:
         """
         A list of usage items.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         return pulumi.get(self, "query_type")
 
     @query_type.setter
-    def query_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_type", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenant ID.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_usage_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage end time.
         """
         return pulumi.get(self, "time_usage_ended")
 
     @time_usage_ended.setter
-    def time_usage_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_usage_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_usage_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_usage_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage start time.
 
@@ -412,7 +412,7 @@ class _UsageState:
         return pulumi.get(self, "time_usage_started")
 
     @time_usage_started.setter
-    def time_usage_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_usage_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_usage_started", value)
 
 
@@ -422,17 +422,17 @@ class Usage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_depth: Optional[pulumi.Input[_builtins.float]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 forecast: pulumi.Input[Optional[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -466,7 +466,7 @@ class Usage(pulumi.CustomResource):
                 "namespace": usage_group_by_tag_namespace,
                 "value": usage_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_is_aggregate_by_time,
+            is_aggregate_by_time=usage_is_aggregate_by_time == "true",
             query_type=usage_query_type)
         ```
 
@@ -531,7 +531,7 @@ class Usage(pulumi.CustomResource):
                 "namespace": usage_group_by_tag_namespace,
                 "value": usage_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_is_aggregate_by_time,
+            is_aggregate_by_time=usage_is_aggregate_by_time == "true",
             query_type=usage_query_type)
         ```
 
@@ -555,17 +555,17 @@ class Usage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_depth: Optional[pulumi.Input[_builtins.float]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 forecast: pulumi.Input[Optional[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -605,18 +605,18 @@ class Usage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_depth: Optional[pulumi.Input[_builtins.float]] = None,
-            filter: Optional[pulumi.Input[_builtins.str]] = None,
-            forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
-            granularity: Optional[pulumi.Input[_builtins.str]] = None,
-            group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
-            is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict']]]]] = None,
-            query_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_usage_started: Optional[pulumi.Input[_builtins.str]] = None) -> 'Usage':
+            compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            forecast: pulumi.Input[Optional[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
+            granularity: pulumi.Input[Optional[_builtins.str]] = None,
+            group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
+            is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict']]]]] = None,
+            query_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_started: pulumi.Input[Optional[_builtins.str]] = None) -> 'Usage':
         """
         Get an existing Usage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

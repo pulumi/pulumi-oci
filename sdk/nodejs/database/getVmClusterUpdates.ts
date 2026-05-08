@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterUpdates = oci.Database.getVmClusterUpdates({
+ * const testVmClusterUpdates = oci.database.getVmClusterUpdates({
  *     vmClusterId: testVmCluster.id,
  *     state: vmClusterUpdateState,
  *     updateType: vmClusterUpdateUpdateType,
@@ -87,7 +87,7 @@ export interface GetVmClusterUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterUpdates = oci.Database.getVmClusterUpdates({
+ * const testVmClusterUpdates = oci.database.getVmClusterUpdates({
  *     vmClusterId: testVmCluster.id,
  *     state: vmClusterUpdateState,
  *     updateType: vmClusterUpdateUpdateType,
@@ -108,15 +108,15 @@ export function getVmClusterUpdatesOutput(args: GetVmClusterUpdatesOutputArgs, o
  * A collection of arguments for invoking getVmClusterUpdates.
  */
 export interface GetVmClusterUpdatesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterUpdatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterUpdatesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given update type exactly.
      */
-    updateType?: pulumi.Input<string>;
+    updateType?: pulumi.Input<string | undefined>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

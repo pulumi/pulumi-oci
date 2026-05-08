@@ -342,7 +342,7 @@ def get_job_run(job_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_run = oci.DataScience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
+    test_job_run = oci.datascience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
     ```
 
 
@@ -379,7 +379,7 @@ def get_job_run(job_run_id: Optional[_builtins.str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_job_run_output(job_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_run_output(job_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobRunResult]:
     """
     This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -392,7 +392,7 @@ def get_job_run_output(job_run_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_run = oci.DataScience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
+    test_job_run = oci.datascience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
     ```
 
 

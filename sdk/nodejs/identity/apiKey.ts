@@ -146,23 +146,23 @@ export interface ApiKeyState {
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      */
-    fingerprint?: pulumi.Input<string>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    inactiveStatus?: pulumi.Input<string>;
+    inactiveStatus?: pulumi.Input<string | undefined>;
     /**
      * The public key.  Must be an RSA key in PEM format.
      */
-    keyValue?: pulumi.Input<string>;
+    keyValue?: pulumi.Input<string | undefined>;
     /**
      * The API key's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user.
      *
@@ -170,7 +170,7 @@ export interface ApiKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**

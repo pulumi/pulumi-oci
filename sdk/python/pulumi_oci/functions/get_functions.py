@@ -125,7 +125,7 @@ def get_functions(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+    test_functions = oci.functions.get_functions(application_id=test_application["id"],
         display_name=function_display_name,
         id=function_id,
         state=function_state)
@@ -153,11 +153,11 @@ def get_functions(application_id: Optional[_builtins.str] = None,
         functions=pulumi.get(__ret__, 'functions'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_functions_output(application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict']]]]] = None,
-                         id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_functions_output(application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict']]]]] = None,
+                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFunctionsResult]:
     """
     This data source provides the list of Functions in Oracle Cloud Infrastructure Functions service.
@@ -170,7 +170,7 @@ def get_functions_output(application_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+    test_functions = oci.functions.get_functions(application_id=test_application["id"],
         display_name=function_display_name,
         id=function_id,
         state=function_state)

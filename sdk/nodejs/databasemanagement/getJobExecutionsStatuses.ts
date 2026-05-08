@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
+ * const testJobExecutionsStatuses = oci.databasemanagement.getJobExecutionsStatuses({
  *     compartmentId: compartmentId,
  *     endTime: jobExecutionsStatusEndTime,
  *     startTime: jobExecutionsStatusStartTime,
@@ -105,7 +105,7 @@ export interface GetJobExecutionsStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
+ * const testJobExecutionsStatuses = oci.databasemanagement.getJobExecutionsStatuses({
  *     compartmentId: compartmentId,
  *     endTime: jobExecutionsStatusEndTime,
  *     startTime: jobExecutionsStatusStartTime,
@@ -142,23 +142,23 @@ export interface GetJobExecutionsStatusesOutputArgs {
      * The end time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
     endTime: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetJobExecutionsStatusesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetJobExecutionsStatusesFilterArgs>[] | undefined>;
     /**
      * The identifier of the resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
-    managedDatabaseGroupId?: pulumi.Input<string>;
+    managedDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
-    managedDatabaseId?: pulumi.Input<string>;
+    managedDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The start time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */

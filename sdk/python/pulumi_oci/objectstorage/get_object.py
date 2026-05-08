@@ -304,7 +304,7 @@ def get_object(base64_encode_content: Optional[_builtins.bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+    test_object = oci.objectstorage.get_object(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object,
         http_response_cache_control=object_http_response_cache_control,
@@ -371,18 +371,18 @@ def get_object(base64_encode_content: Optional[_builtins.bool] = None,
         object=pulumi.get(__ret__, 'object'),
         storage_tier=pulumi.get(__ret__, 'storage_tier'),
         version_id=pulumi.get(__ret__, 'version_id'))
-def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                      bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                      content_length_limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                      http_response_cache_control: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      http_response_content_disposition: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      http_response_content_encoding: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      http_response_content_language: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      http_response_content_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      http_response_expires: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                      object: Optional[pulumi.Input[_builtins.str]] = None,
-                      version_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_object_output(base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                      bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                      content_length_limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                      http_response_cache_control: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      http_response_content_disposition: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      http_response_content_encoding: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      http_response_content_language: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      http_response_content_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      http_response_expires: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                      object: pulumi.Input[Optional[_builtins.str]] = None,
+                      version_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectResult]:
     """
     This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -395,7 +395,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+    test_object = oci.objectstorage.get_object(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object,
         http_response_cache_control=object_http_response_cache_control,

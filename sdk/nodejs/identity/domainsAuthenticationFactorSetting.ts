@@ -735,19 +735,19 @@ export interface DomainsAuthenticationFactorSettingState {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource
      */
-    authenticationFactorSettingId?: pulumi.Input<string>;
+    authenticationFactorSettingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      *
@@ -762,7 +762,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    autoEnrollEmailFactorDisabled?: pulumi.Input<boolean>;
+    autoEnrollEmailFactorDisabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
      *
@@ -775,7 +775,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    bypassCodeEnabled?: pulumi.Input<boolean>;
+    bypassCodeEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      *
@@ -788,7 +788,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    bypassCodeSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingBypassCodeSettings>;
+    bypassCodeSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingBypassCodeSettings | undefined>;
     /**
      * (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      *
@@ -801,7 +801,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    clientAppSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingClientAppSettings>;
+    clientAppSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingClientAppSettings | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -815,7 +815,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
      *
@@ -829,7 +829,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    compliancePolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingCompliancePolicy>[]>;
+    compliancePolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingCompliancePolicy>[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -843,7 +843,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -857,7 +857,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
      *
@@ -872,7 +872,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    emailEnabled?: pulumi.Input<boolean>;
+    emailEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      *
@@ -887,7 +887,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    emailSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEmailSettings>;
+    emailSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEmailSettings | undefined>;
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      *
@@ -900,7 +900,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    endpointRestrictions?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEndpointRestrictions>;
+    endpointRestrictions?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEndpointRestrictions | undefined>;
     /**
      * (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
      *
@@ -915,7 +915,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    fidoAuthenticatorEnabled?: pulumi.Input<boolean>;
+    fidoAuthenticatorEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
      *
@@ -930,7 +930,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    hideBackupFactorEnabled?: pulumi.Input<boolean>;
+    hideBackupFactorEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -942,11 +942,11 @@ export interface DomainsAuthenticationFactorSettingState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -958,7 +958,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -972,7 +972,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -985,7 +985,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Settings related to the use of a user's profile details from the identity store
      *
@@ -998,7 +998,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    identityStoreSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings>;
+    identityStoreSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1012,7 +1012,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingMeta>[] | undefined>;
     /**
      * (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      *
@@ -1027,7 +1027,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    mfaEnabledCategory?: pulumi.Input<string>;
+    mfaEnabledCategory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      *
@@ -1044,7 +1044,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    mfaEnrollmentType?: pulumi.Input<string>;
+    mfaEnrollmentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Settings related to the Mobile App Notification channel, such as pull
      *
@@ -1059,7 +1059,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    notificationSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingNotificationSettings>;
+    notificationSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingNotificationSettings | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1073,7 +1073,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      *
@@ -1088,7 +1088,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    phoneCallEnabled?: pulumi.Input<boolean>;
+    phoneCallEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      *
@@ -1101,11 +1101,11 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    pushEnabled?: pulumi.Input<boolean>;
+    pushEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1119,7 +1119,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If true, indicates that Security Questions are enabled for authentication
      *
@@ -1132,7 +1132,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    securityQuestionsEnabled?: pulumi.Input<boolean>;
+    securityQuestionsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      *
@@ -1145,7 +1145,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    smsEnabled?: pulumi.Input<boolean>;
+    smsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1159,7 +1159,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1173,7 +1173,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Settings related to third-party factor
      *
@@ -1188,7 +1188,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    thirdPartyFactor?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor>;
+    thirdPartyFactor?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      *
@@ -1201,7 +1201,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    totpEnabled?: pulumi.Input<boolean>;
+    totpEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      *
@@ -1214,15 +1214,15 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    totpSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTotpSettings>;
+    totpSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTotpSettings | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      */
-    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>;
+    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      */
-    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>;
+    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
      *
@@ -1237,7 +1237,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * * type: string
      * * uniqueness: none
      */
-    userEnrollmentDisabledFactors?: pulumi.Input<pulumi.Input<string>[]>;
+    userEnrollmentDisabledFactors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
      *
@@ -1256,7 +1256,7 @@ export interface DomainsAuthenticationFactorSettingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    yubicoOtpEnabled?: pulumi.Input<boolean>;
+    yubicoOtpEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -1266,11 +1266,11 @@ export interface DomainsAuthenticationFactorSettingArgs {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource
      */
@@ -1278,7 +1278,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      *
@@ -1293,7 +1293,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    autoEnrollEmailFactorDisabled?: pulumi.Input<boolean>;
+    autoEnrollEmailFactorDisabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
      *
@@ -1361,7 +1361,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    emailEnabled?: pulumi.Input<boolean>;
+    emailEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      *
@@ -1376,7 +1376,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    emailSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEmailSettings>;
+    emailSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingEmailSettings | undefined>;
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      *
@@ -1404,7 +1404,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    fidoAuthenticatorEnabled?: pulumi.Input<boolean>;
+    fidoAuthenticatorEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
      *
@@ -1419,7 +1419,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    hideBackupFactorEnabled?: pulumi.Input<boolean>;
+    hideBackupFactorEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1436,7 +1436,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    identityStoreSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings>;
+    identityStoreSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings | undefined>;
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      *
@@ -1482,7 +1482,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      *
@@ -1497,7 +1497,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    phoneCallEnabled?: pulumi.Input<boolean>;
+    phoneCallEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      *
@@ -1514,7 +1514,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1568,7 +1568,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingTag>[] | undefined>;
     /**
      * (Updatable) Settings related to third-party factor
      *
@@ -1583,7 +1583,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    thirdPartyFactor?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor>;
+    thirdPartyFactor?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor | undefined>;
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      *
@@ -1613,11 +1613,11 @@ export interface DomainsAuthenticationFactorSettingArgs {
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      */
-    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>;
+    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      */
-    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>;
+    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings | undefined>;
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
      *
@@ -1632,7 +1632,7 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    userEnrollmentDisabledFactors?: pulumi.Input<pulumi.Input<string>[]>;
+    userEnrollmentDisabledFactors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
      *
@@ -1651,5 +1651,5 @@ export interface DomainsAuthenticationFactorSettingArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    yubicoOtpEnabled?: pulumi.Input<boolean>;
+    yubicoOtpEnabled?: pulumi.Input<boolean | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeReplaceConfiguration = oci.BigDataService.getBdsInstanceNodeReplaceConfiguration({
+ * const testBdsInstanceNodeReplaceConfiguration = oci.bigdataservice.getBdsInstanceNodeReplaceConfiguration({
  *     bdsInstanceId: testBdsInstance.id,
  *     nodeReplaceConfigurationId: testConfiguration.id,
  * });
@@ -99,7 +99,7 @@ export interface GetBdsInstanceNodeReplaceConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeReplaceConfiguration = oci.BigDataService.getBdsInstanceNodeReplaceConfiguration({
+ * const testBdsInstanceNodeReplaceConfiguration = oci.bigdataservice.getBdsInstanceNodeReplaceConfiguration({
  *     bdsInstanceId: testBdsInstance.id,
  *     nodeReplaceConfigurationId: testConfiguration.id,
  * });

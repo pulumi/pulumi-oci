@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitionScheduledFleets = oci.FleetAppsManagement.getSchedulerDefinitionScheduledFleets({
+ * const testSchedulerDefinitionScheduledFleets = oci.fleetappsmanagement.getSchedulerDefinitionScheduledFleets({
  *     schedulerDefinitionId: testSchedulerDefinition.id,
  *     displayName: schedulerDefinitionScheduledFleetDisplayName,
  * });
@@ -77,7 +77,7 @@ export interface GetSchedulerDefinitionScheduledFleetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitionScheduledFleets = oci.FleetAppsManagement.getSchedulerDefinitionScheduledFleets({
+ * const testSchedulerDefinitionScheduledFleets = oci.fleetappsmanagement.getSchedulerDefinitionScheduledFleets({
  *     schedulerDefinitionId: testSchedulerDefinition.id,
  *     displayName: schedulerDefinitionScheduledFleetDisplayName,
  * });
@@ -99,8 +99,8 @@ export interface GetSchedulerDefinitionScheduledFleetsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerDefinitionScheduledFleetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerDefinitionScheduledFleetsFilterArgs>[] | undefined>;
     /**
      * unique SchedulerDefinition identifier
      */

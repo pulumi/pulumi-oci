@@ -88,7 +88,7 @@ def get_importable_agent_entities(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=compartment_id)
+    test_importable_agent_entities = oci.opsi.get_importable_agent_entities(compartment_id=compartment_id)
     ```
 
 
@@ -103,7 +103,7 @@ def get_importable_agent_entities(compartment_id: Optional[_builtins.str] = None
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_importable_agent_entities_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_importable_agent_entities_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImportableAgentEntitiesResult]:
     """
     This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
@@ -120,7 +120,7 @@ def get_importable_agent_entities_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=compartment_id)
+    test_importable_agent_entities = oci.opsi.get_importable_agent_entities(compartment_id=compartment_id)
     ```
 
 

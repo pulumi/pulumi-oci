@@ -156,7 +156,7 @@ def get_fleet_drs_file(drs_file_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
+    test_fleet_drs_file = oci.jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
         fleet_id=test_fleet["id"])
     ```
 
@@ -180,8 +180,8 @@ def get_fleet_drs_file(drs_file_key: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_default=pulumi.get(__ret__, 'is_default'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_fleet_drs_file_output(drs_file_key: Optional[pulumi.Input[_builtins.str]] = None,
-                              fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_drs_file_output(drs_file_key: pulumi.Input[Optional[_builtins.str]] = None,
+                              fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetDrsFileResult]:
     """
     This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
@@ -194,7 +194,7 @@ def get_fleet_drs_file_output(drs_file_key: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
+    test_fleet_drs_file = oci.jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
         fleet_id=test_fleet["id"])
     ```
 

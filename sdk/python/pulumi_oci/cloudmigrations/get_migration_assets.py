@@ -134,7 +134,7 @@ def get_migration_assets(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=migration_asset_display_name,
+    test_migration_assets = oci.cloudmigrations.get_migration_assets(display_name=migration_asset_display_name,
         migration_asset_id=test_migration_asset["id"],
         migration_id=test_migration["id"],
         state=migration_asset_state)
@@ -163,11 +163,11 @@ def get_migration_assets(display_name: Optional[_builtins.str] = None,
         migration_asset_id=pulumi.get(__ret__, 'migration_asset_id'),
         migration_id=pulumi.get(__ret__, 'migration_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]]]] = None,
-                                migration_asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                migration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_migration_assets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]]]] = None,
+                                migration_asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                migration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationAssetsResult]:
     """
     This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -180,7 +180,7 @@ def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=migration_asset_display_name,
+    test_migration_assets = oci.cloudmigrations.get_migration_assets(display_name=migration_asset_display_name,
         migration_asset_id=test_migration_asset["id"],
         migration_id=test_migration["id"],
         state=migration_asset_state)

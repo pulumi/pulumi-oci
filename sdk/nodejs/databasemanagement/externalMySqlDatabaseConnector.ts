@@ -29,10 +29,10 @@ import * as utilities from "../utilities";
  *         hostName: externalMySqlDatabaseConnectorConnectorDetailsHostName,
  *         macsAgentId: testAgent.id,
  *         networkProtocol: externalMySqlDatabaseConnectorConnectorDetailsNetworkProtocol,
- *         port: externalMySqlDatabaseConnectorConnectorDetailsPort,
+ *         port: Number(externalMySqlDatabaseConnectorConnectorDetailsPort),
  *         sslSecretId: testSecret.id,
  *     },
- *     isTestConnectionParam: externalMySqlDatabaseConnectorIsTestConnectionParam,
+ *     isTestConnectionParam: externalMySqlDatabaseConnectorIsTestConnectionParam === "true",
  * });
  * ```
  *
@@ -246,7 +246,7 @@ export interface ExternalMySqlDatabaseConnectorState {
     /**
      * Oracle Cloud Infrastructure Services associated with this connector.
      */
-    associatedServices?: pulumi.Input<string>;
+    associatedServices?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
      *
@@ -254,87 +254,87 @@ export interface ExternalMySqlDatabaseConnectorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    checkConnectionStatusTrigger?: pulumi.Input<number>;
+    checkConnectionStatusTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) OCID of compartment for the External MySQL Database.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Connection Status
      */
-    connectionStatus?: pulumi.Input<string>;
+    connectionStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Create Details of external database connector.
      */
-    connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails>;
+    connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails | undefined>;
     /**
      * Connector Type.
      */
-    connectorType?: pulumi.Input<string>;
+    connectorType?: pulumi.Input<string | undefined>;
     /**
      * Credential type used to connect to database.
      */
-    credentialType?: pulumi.Input<string>;
+    credentialType?: pulumi.Input<string | undefined>;
     /**
      * OCID of MySQL Database resource
      */
-    externalDatabaseId?: pulumi.Input<string>;
+    externalDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * Host name for Connector.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * Parameter indicating whether database connection needs to be tested.
      */
-    isTestConnectionParam?: pulumi.Input<boolean>;
+    isTestConnectionParam?: pulumi.Input<boolean | undefined>;
     /**
      * Agent Id of the MACS agent.
      */
-    macsAgentId?: pulumi.Input<string>;
+    macsAgentId?: pulumi.Input<string | undefined>;
     /**
      * External MySQL Database Connector Name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Network Protocol.
      */
-    networkProtocol?: pulumi.Input<string>;
+    networkProtocol?: pulumi.Input<string | undefined>;
     /**
      * Connector port.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * Name of MySQL Database.
      */
-    sourceDatabase?: pulumi.Input<string>;
+    sourceDatabase?: pulumi.Input<string | undefined>;
     /**
      * Type of MySQL Database.
      */
-    sourceDatabaseType?: pulumi.Input<string>;
+    sourceDatabaseType?: pulumi.Input<string | undefined>;
     /**
      * OCID of the SSL secret, if TCPS with SSL is used to connect to database.
      */
-    sslSecretId?: pulumi.Input<string>;
+    sslSecretId?: pulumi.Input<string | undefined>;
     /**
      * Name of the SSL secret, if TCPS with SSL is used to connect to database.
      */
-    sslSecretName?: pulumi.Input<string>;
+    sslSecretName?: pulumi.Input<string | undefined>;
     /**
      * Indicates lifecycle  state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time when connection status was last updated.
      */
-    timeConnectionStatusUpdated?: pulumi.Input<string>;
+    timeConnectionStatusUpdated?: pulumi.Input<string | undefined>;
     /**
      * Connector creation time.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Connector update time.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -348,7 +348,7 @@ export interface ExternalMySqlDatabaseConnectorArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    checkConnectionStatusTrigger?: pulumi.Input<number>;
+    checkConnectionStatusTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) OCID of compartment for the External MySQL Database.
      */

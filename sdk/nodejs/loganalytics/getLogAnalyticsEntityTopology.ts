@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
+ * const testLogAnalyticsEntityTopology = oci.loganalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
  *     context: logAnalyticsEntityTopologyContext,
@@ -98,7 +98,7 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
+ * const testLogAnalyticsEntityTopology = oci.loganalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
  *     context: logAnalyticsEntityTopologyContext,
@@ -126,8 +126,8 @@ export interface GetLogAnalyticsEntityTopologyOutputArgs {
     /**
      * A filter to return log analytics entity toplogy whose context matches the specified string.
      */
-    context?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityTopologyFilterArgs>[]>;
+    context?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityTopologyFilterArgs>[] | undefined>;
     /**
      * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      */
@@ -135,7 +135,7 @@ export interface GetLogAnalyticsEntityTopologyOutputArgs {
     /**
      * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
      */
-    metadataEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    metadataEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -143,5 +143,5 @@ export interface GetLogAnalyticsEntityTopologyOutputArgs {
     /**
      * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

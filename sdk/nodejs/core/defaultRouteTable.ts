@@ -87,24 +87,24 @@ export class DefaultRouteTable extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DefaultRouteTable resources.
  */
 export interface DefaultRouteTableState {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    manageDefaultResourceId?: pulumi.Input<string>;
-    routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[]>;
-    state?: pulumi.Input<string>;
-    timeCreated?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    manageDefaultResourceId?: pulumi.Input<string | undefined>;
+    routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DefaultRouteTable resource.
  */
 export interface DefaultRouteTableArgs {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     manageDefaultResourceId: pulumi.Input<string>;
-    routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[]>;
+    routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[] | undefined>;
 }

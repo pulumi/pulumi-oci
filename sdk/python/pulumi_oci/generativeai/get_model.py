@@ -258,7 +258,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.GenerativeAi.get_model(model_id=test_model_oci_generative_ai_model["id"])
+    test_model = oci.generativeai.get_model(model_id=test_model_oci_generative_ai_model["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         vendor=pulumi.get(__ret__, 'vendor'),
         version=pulumi.get(__ret__, 'version'))
-def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_output(model_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelResult]:
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
@@ -304,7 +304,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.GenerativeAi.get_model(model_id=test_model_oci_generative_ai_model["id"])
+    test_model = oci.generativeai.get_model(model_id=test_model_oci_generative_ai_model["id"])
     ```
 
 

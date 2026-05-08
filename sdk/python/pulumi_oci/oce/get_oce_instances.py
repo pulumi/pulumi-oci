@@ -134,7 +134,7 @@ def get_oce_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=compartment_id,
+    test_oce_instances = oci.oce.get_oce_instances(compartment_id=compartment_id,
         display_name=oce_instance_display_name,
         state=oce_instance_state,
         tenancy_id=test_tenancy["id"])
@@ -163,11 +163,11 @@ def get_oce_instances(compartment_id: Optional[_builtins.str] = None,
         oce_instances=pulumi.get(__ret__, 'oce_instances'),
         state=pulumi.get(__ret__, 'state'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-def get_oce_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOceInstancesFilterArgs', 'GetOceInstancesFilterArgsDict']]]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             tenancy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oce_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOceInstancesFilterArgs', 'GetOceInstancesFilterArgsDict']]]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOceInstancesResult]:
     """
     This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
@@ -180,7 +180,7 @@ def get_oce_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=compartment_id,
+    test_oce_instances = oci.oce.get_oce_instances(compartment_id=compartment_id,
         display_name=oce_instance_display_name,
         state=oce_instance_state,
         tenancy_id=test_tenancy["id"])

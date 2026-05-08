@@ -132,19 +132,19 @@ export interface AssessmentAssessorActionState {
     /**
      * The OCID of the Assessment
      */
-    assessmentId?: pulumi.Input<string>;
+    assessmentId?: pulumi.Input<string | undefined>;
     /**
      * The Accessor Action
      */
-    assessorAction?: pulumi.Input<string>;
+    assessorAction?: pulumi.Input<string | undefined>;
     /**
      * The name of the Assessor
      */
-    assessorName?: pulumi.Input<string>;
+    assessorName?: pulumi.Input<string | undefined>;
     /**
      * Array of name-value details for assessor action.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentAssessorActionItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentAssessorActionItem>[] | undefined>;
 }
 
 /**

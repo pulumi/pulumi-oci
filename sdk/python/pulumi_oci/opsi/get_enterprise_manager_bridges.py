@@ -136,8 +136,8 @@ def get_enterprise_manager_bridges(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
-        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+    test_enterprise_manager_bridges = oci.opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree == "true",
         display_name=enterprise_manager_bridge_display_name,
         id=enterprise_manager_bridge_id,
         states=enterprise_manager_bridge_state)
@@ -168,12 +168,12 @@ def get_enterprise_manager_bridges(compartment_id: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'))
-def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnterpriseManagerBridgesFilterArgs', 'GetEnterpriseManagerBridgesFilterArgsDict']]]]] = None,
-                                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_enterprise_manager_bridges_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEnterpriseManagerBridgesFilterArgs', 'GetEnterpriseManagerBridgesFilterArgsDict']]]]] = None,
+                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnterpriseManagerBridgesResult]:
     """
     This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
@@ -187,8 +187,8 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
-        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+    test_enterprise_manager_bridges = oci.opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree == "true",
         display_name=enterprise_manager_bridge_display_name,
         id=enterprise_manager_bridge_id,
         states=enterprise_manager_bridge_state)

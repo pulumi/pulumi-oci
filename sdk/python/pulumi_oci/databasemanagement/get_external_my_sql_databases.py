@@ -108,7 +108,7 @@ def get_external_my_sql_databases(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_databases = oci.DatabaseManagement.get_external_my_sql_databases(compartment_id=compartment_id,
+    test_external_my_sql_databases = oci.databasemanagement.get_external_my_sql_databases(compartment_id=compartment_id,
         name=external_my_sql_database_name)
     ```
 
@@ -129,9 +129,9 @@ def get_external_my_sql_databases(compartment_id: Optional[_builtins.str] = None
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_external_my_sql_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict']]]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_my_sql_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict']]]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabasesResult]:
     """
     This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
@@ -144,7 +144,7 @@ def get_external_my_sql_databases_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_databases = oci.DatabaseManagement.get_external_my_sql_databases(compartment_id=compartment_id,
+    test_external_my_sql_databases = oci.databasemanagement.get_external_my_sql_databases(compartment_id=compartment_id,
         name=external_my_sql_database_name)
     ```
 

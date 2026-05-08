@@ -66,8 +66,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
 @pulumi.input_type
 class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     def __init__(__self__, *,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_warehouse_wallet_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseDownloadWarehouseWallet resources.
 
@@ -85,19 +85,19 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operations_insights_warehouse_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Ops Insights Warehouse identifier
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
-    def operations_insights_warehouse_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operations_insights_warehouse_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operations_insights_warehouse_id", value)
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
-    def operations_insights_warehouse_wallet_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operations_insights_warehouse_wallet_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User provided ADW wallet password for the Ops Insights Warehouse.
 
@@ -108,7 +108,7 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 
     @operations_insights_warehouse_wallet_password.setter
-    def operations_insights_warehouse_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operations_insights_warehouse_wallet_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operations_insights_warehouse_wallet_password", value)
 
 
@@ -118,8 +118,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_warehouse_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
@@ -207,8 +207,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_warehouse_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -236,8 +236,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
-            operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None) -> 'OperationsInsightsWarehouseDownloadWarehouseWallet':
+            operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+            operations_insights_warehouse_wallet_password: pulumi.Input[Optional[_builtins.str]] = None) -> 'OperationsInsightsWarehouseDownloadWarehouseWallet':
         """
         Get an existing OperationsInsightsWarehouseDownloadWarehouseWallet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

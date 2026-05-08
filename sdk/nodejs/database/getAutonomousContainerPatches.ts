@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
+ * const testAutonomousContainerPatches = oci.database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,
@@ -84,7 +84,7 @@ export interface GetAutonomousContainerPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
+ * const testAutonomousContainerPatches = oci.database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,
@@ -112,10 +112,10 @@ export interface GetAutonomousContainerPatchesOutputArgs {
     /**
      * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
      */
-    autonomousPatchType?: pulumi.Input<string>;
+    autonomousPatchType?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerPatchesFilterArgs>[] | undefined>;
 }

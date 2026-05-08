@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Tenantmanagercontrolplane.getDomains({
+ * const testDomains = oci.tenantmanagercontrolplane.getDomains({
  *     compartmentId: compartmentId,
  *     domainId: testDomain.id,
  *     name: domainName,
@@ -101,7 +101,7 @@ export interface GetDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Tenantmanagercontrolplane.getDomains({
+ * const testDomains = oci.tenantmanagercontrolplane.getDomains({
  *     compartmentId: compartmentId,
  *     domainId: testDomain.id,
  *     name: domainName,
@@ -133,18 +133,18 @@ export interface GetDomainsOutputArgs {
     /**
      * The domain OCID.
      */
-    domainId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetDomainsFilterArgs>[]>;
+    domainId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetDomainsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that exactly match the name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The status of the domain.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

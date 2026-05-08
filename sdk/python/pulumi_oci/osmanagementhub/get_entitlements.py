@@ -125,7 +125,7 @@ def get_entitlements(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_entitlements = oci.OsManagementHub.get_entitlements(compartment_id=compartment_id,
+    test_entitlements = oci.osmanagementhub.get_entitlements(compartment_id=compartment_id,
         csi=entitlement_csi,
         vendor_name=entitlement_vendor_name)
     ```
@@ -150,10 +150,10 @@ def get_entitlements(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-def get_entitlements_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            csi: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEntitlementsFilterArgs', 'GetEntitlementsFilterArgsDict']]]]] = None,
-                            vendor_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_entitlements_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            csi: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEntitlementsFilterArgs', 'GetEntitlementsFilterArgsDict']]]]] = None,
+                            vendor_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntitlementsResult]:
     """
     This data source provides the list of Entitlements in Oracle Cloud Infrastructure Os Management Hub service.
@@ -167,7 +167,7 @@ def get_entitlements_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_entitlements = oci.OsManagementHub.get_entitlements(compartment_id=compartment_id,
+    test_entitlements = oci.osmanagementhub.get_entitlements(compartment_id=compartment_id,
         csi=entitlement_csi,
         vendor_name=entitlement_vendor_name)
     ```

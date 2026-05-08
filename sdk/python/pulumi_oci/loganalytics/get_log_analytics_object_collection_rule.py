@@ -454,7 +454,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
+    test_log_analytics_object_collection_rule = oci.loganalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
         namespace=log_analytics_object_collection_rule_namespace)
     ```
 
@@ -503,8 +503,8 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone=pulumi.get(__ret__, 'timezone'))
-def get_log_analytics_object_collection_rule_output(log_analytics_object_collection_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_object_collection_rule_output(log_analytics_object_collection_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRuleResult]:
     """
     This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -517,7 +517,7 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
+    test_log_analytics_object_collection_rule = oci.loganalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
         namespace=log_analytics_object_collection_rule_namespace)
     ```
 

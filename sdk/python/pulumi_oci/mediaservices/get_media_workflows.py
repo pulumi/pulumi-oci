@@ -125,7 +125,7 @@ def get_media_workflows(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=compartment_id,
+    test_media_workflows = oci.mediaservices.get_media_workflows(compartment_id=compartment_id,
         display_name=media_workflow_display_name,
         id=media_workflow_id,
         state=media_workflow_state)
@@ -153,11 +153,11 @@ def get_media_workflows(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         media_workflow_collections=pulumi.get(__ret__, 'media_workflow_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_media_workflows_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowsFilterArgs', 'GetMediaWorkflowsFilterArgsDict']]]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_media_workflows_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowsFilterArgs', 'GetMediaWorkflowsFilterArgsDict']]]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowsResult]:
     """
     This data source provides the list of Media Workflows in Oracle Cloud Infrastructure Media Services service.
@@ -170,7 +170,7 @@ def get_media_workflows_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=compartment_id,
+    test_media_workflows = oci.mediaservices.get_media_workflows(compartment_id=compartment_id,
         display_name=media_workflow_display_name,
         id=media_workflow_id,
         state=media_workflow_state)

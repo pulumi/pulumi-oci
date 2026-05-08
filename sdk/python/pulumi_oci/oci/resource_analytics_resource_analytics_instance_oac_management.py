@@ -23,8 +23,8 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
     def __init__(__self__, *,
                  enable_oac: pulumi.Input[_builtins.bool],
                  resource_analytics_instance_id: pulumi.Input[_builtins.str],
-                 attachment_details: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_details: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource.
         """
@@ -55,31 +55,31 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
-    def attachment_details(self) -> Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
+    def attachment_details(self) -> pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
         return pulumi.get(self, "attachment_details")
 
     @attachment_details.setter
-    def attachment_details(self, value: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]):
+    def attachment_details(self, value: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]):
         pulumi.set(self, "attachment_details", value)
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
 
 @pulumi.input_type
 class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     def __init__(__self__, *,
-                 attachment_details: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_oac: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_details: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_oac: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstanceOacManagement resources.
         """
@@ -96,47 +96,47 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
 
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
-    def attachment_details(self) -> Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
+    def attachment_details(self) -> pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
         return pulumi.get(self, "attachment_details")
 
     @attachment_details.setter
-    def attachment_details(self, value: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]):
+    def attachment_details(self, value: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]):
         pulumi.set(self, "attachment_details", value)
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="enableOac")
-    def enable_oac(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_oac(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "enable_oac")
 
     @enable_oac.setter
-    def enable_oac(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_oac(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_oac", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
-    def resource_analytics_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_analytics_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "resource_analytics_instance_id")
 
     @resource_analytics_instance_id.setter
-    def resource_analytics_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_analytics_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_analytics_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -146,10 +146,10 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_details: Optional[pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_oac: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_details: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_oac: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource with the given unique name, props, and options.
@@ -181,10 +181,10 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_details: Optional[pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_oac: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_details: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_oac: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -213,11 +213,11 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_details: Optional[pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
-            attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_oac: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'ResourceAnalyticsResourceAnalyticsInstanceOacManagement':
+            attachment_details: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']]] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_oac: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'ResourceAnalyticsResourceAnalyticsInstanceOacManagement':
         """
         Get an existing ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

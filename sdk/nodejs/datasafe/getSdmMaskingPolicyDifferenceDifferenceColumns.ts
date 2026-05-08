@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSdmMaskingPolicyDifferenceDifferenceColumns = oci.DataSafe.getSdmMaskingPolicyDifferenceDifferenceColumns({
+ * const testSdmMaskingPolicyDifferenceDifferenceColumns = oci.datasafe.getSdmMaskingPolicyDifferenceDifferenceColumns({
  *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.id,
  *     columnNames: sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
  *     differenceType: sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType,
@@ -127,7 +127,7 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSdmMaskingPolicyDifferenceDifferenceColumns = oci.DataSafe.getSdmMaskingPolicyDifferenceDifferenceColumns({
+ * const testSdmMaskingPolicyDifferenceDifferenceColumns = oci.datasafe.getSdmMaskingPolicyDifferenceDifferenceColumns({
  *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.id,
  *     columnNames: sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
  *     differenceType: sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType,
@@ -159,24 +159,24 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs {
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the SDM masking policy difference columns that match the specified difference type
      */
-    differenceType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs>[]>;
+    differenceType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the SDM masking policy difference columns that match the specified planned action.
      */
-    plannedAction?: pulumi.Input<string>;
+    plannedAction?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the SDM masking policy difference.
      */
@@ -184,5 +184,5 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs {
     /**
      * A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
      */
-    syncStatus?: pulumi.Input<string>;
+    syncStatus?: pulumi.Input<string | undefined>;
 }

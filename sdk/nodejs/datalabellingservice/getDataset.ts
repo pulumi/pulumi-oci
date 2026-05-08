@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataset = oci.DataLabellingService.getDataset({
+ * const testDataset = oci.datalabellingservice.getDataset({
  *     datasetId: testDatasetOciDataLabelingServiceDataset.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetDatasetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataset = oci.DataLabellingService.getDataset({
+ * const testDataset = oci.datalabellingservice.getDataset({
  *     datasetId: testDatasetOciDataLabelingServiceDataset.id,
  * });
  * ```

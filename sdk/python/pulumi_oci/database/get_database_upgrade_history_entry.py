@@ -215,7 +215,7 @@ def get_database_upgrade_history_entry(database_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_database_upgrade_history_entry = oci.Database.get_database_upgrade_history_entry(database_id=test_database["id"],
+    test_database_upgrade_history_entry = oci.database.get_database_upgrade_history_entry(database_id=test_database["id"],
         upgrade_history_entry_id=test_upgrade_history_entry["id"])
     ```
 
@@ -244,8 +244,8 @@ def get_database_upgrade_history_entry(database_id: Optional[_builtins.str] = No
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
-def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              upgrade_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_upgrade_history_entry_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              upgrade_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseUpgradeHistoryEntryResult]:
     """
     This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -258,7 +258,7 @@ def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_database_upgrade_history_entry = oci.Database.get_database_upgrade_history_entry(database_id=test_database["id"],
+    test_database_upgrade_history_entry = oci.database.get_database_upgrade_history_entry(database_id=test_database["id"],
         upgrade_history_entry_id=test_upgrade_history_entry["id"])
     ```
 

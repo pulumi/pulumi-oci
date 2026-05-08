@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemsUpgradeHistoryEntries = oci.Database.getDbSystemsUpgradeHistoryEntries({
+ * const testDbSystemsUpgradeHistoryEntries = oci.database.getDbSystemsUpgradeHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     state: dbSystemsUpgradeHistoryEntryState,
  *     upgradeAction: dbSystemsUpgradeHistoryEntryUpgradeAction,
@@ -84,7 +84,7 @@ export interface GetDbSystemsUpgradeHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemsUpgradeHistoryEntries = oci.Database.getDbSystemsUpgradeHistoryEntries({
+ * const testDbSystemsUpgradeHistoryEntries = oci.database.getDbSystemsUpgradeHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     state: dbSystemsUpgradeHistoryEntryState,
  *     upgradeAction: dbSystemsUpgradeHistoryEntryUpgradeAction,
@@ -109,13 +109,13 @@ export interface GetDbSystemsUpgradeHistoryEntriesOutputArgs {
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemsUpgradeHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemsUpgradeHistoryEntriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only upgrade history entries that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
      */
-    upgradeAction?: pulumi.Input<string>;
+    upgradeAction?: pulumi.Input<string | undefined>;
 }

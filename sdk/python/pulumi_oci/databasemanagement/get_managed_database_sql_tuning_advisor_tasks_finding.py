@@ -157,7 +157,7 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id=test_begin_exec["id"],
         end_exec_id=test_end_exec["id"],
@@ -200,14 +200,14 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
         search_period=pulumi.get(__ret__, 'search_period'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
         stats_hash_filter=pulumi.get(__ret__, 'stats_hash_filter'))
-def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 end_exec_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 finding_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 index_hash_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                 search_period: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 sql_tuning_advisor_task_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                 stats_hash_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 end_exec_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 finding_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 index_hash_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                 search_period: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 sql_tuning_advisor_task_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                 stats_hash_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
@@ -220,7 +220,7 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id=test_begin_exec["id"],
         end_exec_id=test_end_exec["id"],

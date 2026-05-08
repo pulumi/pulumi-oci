@@ -193,7 +193,7 @@ def get_view(scope: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_view = oci.Dns.get_view(view_id=test_view_oci_dns_view["id"],
+    test_view = oci.dns.get_view(view_id=test_view_oci_dns_view["id"],
         scope="PRIVATE")
     ```
 
@@ -220,8 +220,8 @@ def get_view(scope: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         view_id=pulumi.get(__ret__, 'view_id'))
-def get_view_output(scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    view_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_view_output(scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetViewResult]:
     """
     This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
@@ -238,7 +238,7 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[_builtins.str]]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_view = oci.Dns.get_view(view_id=test_view_oci_dns_view["id"],
+    test_view = oci.dns.get_view(view_id=test_view_oci_dns_view["id"],
         scope="PRIVATE")
     ```
 

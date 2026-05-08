@@ -60,9 +60,9 @@ class NamespaceStorageArchivalConfigArgs:
 @pulumi.input_type
 class _NamespaceStorageArchivalConfigState:
     def __init__(__self__, *,
-                 archiving_configuration: Optional[pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs']] = None,
-                 is_archiving_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 archiving_configuration: pulumi.Input[Optional['NamespaceStorageArchivalConfigArchivingConfigurationArgs']] = None,
+                 is_archiving_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceStorageArchivalConfig resources.
 
@@ -79,38 +79,38 @@ class _NamespaceStorageArchivalConfigState:
 
     @_builtins.property
     @pulumi.getter(name="archivingConfiguration")
-    def archiving_configuration(self) -> Optional[pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs']]:
+    def archiving_configuration(self) -> pulumi.Input[Optional['NamespaceStorageArchivalConfigArchivingConfigurationArgs']]:
         """
         (Updatable) This is the configuration for data archiving in object storage
         """
         return pulumi.get(self, "archiving_configuration")
 
     @archiving_configuration.setter
-    def archiving_configuration(self, value: Optional[pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs']]):
+    def archiving_configuration(self, value: pulumi.Input[Optional['NamespaceStorageArchivalConfigArchivingConfigurationArgs']]):
         pulumi.set(self, "archiving_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="isArchivingEnabled")
-    def is_archiving_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_archiving_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This indicates if old data can be archived for a tenancy
         """
         return pulumi.get(self, "is_archiving_enabled")
 
     @is_archiving_enabled.setter
-    def is_archiving_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_archiving_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_archiving_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -120,8 +120,8 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 archiving_configuration: Optional[pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -197,8 +197,8 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 archiving_configuration: Optional[pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -225,9 +225,9 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            archiving_configuration: Optional[pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
-            is_archiving_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceStorageArchivalConfig':
+            archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+            is_archiving_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceStorageArchivalConfig':
         """
         Get an existing NamespaceStorageArchivalConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

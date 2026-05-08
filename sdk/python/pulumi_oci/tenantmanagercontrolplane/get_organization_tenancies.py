@@ -95,7 +95,7 @@ def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganization
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancies = oci.Tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
+    test_organization_tenancies = oci.tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganization
         id=pulumi.get(__ret__, 'id'),
         organization_id=pulumi.get(__ret__, 'organization_id'),
         organization_tenancy_collections=pulumi.get(__ret__, 'organization_tenancy_collections'))
-def get_organization_tenancies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict']]]]] = None,
-                                      organization_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_organization_tenancies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict']]]]] = None,
+                                      organization_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationTenanciesResult]:
     """
     This data source provides the list of Organization Tenancies in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -126,7 +126,7 @@ def get_organization_tenancies_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancies = oci.Tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
+    test_organization_tenancies = oci.tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
     ```
 
 

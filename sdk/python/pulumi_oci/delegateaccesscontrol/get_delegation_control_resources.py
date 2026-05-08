@@ -95,7 +95,7 @@ def get_delegation_control_resources(delegation_control_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control_resources = oci.DelegateAccessControl.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
+    test_delegation_control_resources = oci.delegateaccesscontrol.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_delegation_control_resources(delegation_control_id: Optional[_builtins.s
         delegation_control_resource_collections=pulumi.get(__ret__, 'delegation_control_resource_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_delegation_control_resources_output(delegation_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict']]]]] = None,
+def get_delegation_control_resources_output(delegation_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict']]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationControlResourcesResult]:
     """
     This data source provides the list of Delegation Control Resources in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -126,7 +126,7 @@ def get_delegation_control_resources_output(delegation_control_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control_resources = oci.DelegateAccessControl.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
+    test_delegation_control_resources = oci.delegateaccesscontrol.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
     ```
 
 

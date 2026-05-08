@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplicationPackages = oci.ServiceCatalog.getPrivateApplicationPackages({
+ * const testPrivateApplicationPackages = oci.servicecatalog.getPrivateApplicationPackages({
  *     privateApplicationId: testPrivateApplication.id,
  *     displayName: privateApplicationPackageDisplayName,
  *     packageTypes: privateApplicationPackagePackageType,
@@ -97,7 +97,7 @@ export interface GetPrivateApplicationPackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplicationPackages = oci.ServiceCatalog.getPrivateApplicationPackages({
+ * const testPrivateApplicationPackages = oci.servicecatalog.getPrivateApplicationPackages({
  *     privateApplicationId: testPrivateApplication.id,
  *     displayName: privateApplicationPackageDisplayName,
  *     packageTypes: privateApplicationPackagePackageType,
@@ -123,12 +123,12 @@ export interface GetPrivateApplicationPackagesOutputArgs {
     /**
      * Exact match name filter.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetPrivateApplicationPackagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetPrivateApplicationPackagesFilterArgs>[] | undefined>;
     /**
      * Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
      */
-    packageTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    packageTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for the private application.
      */
@@ -136,5 +136,5 @@ export interface GetPrivateApplicationPackagesOutputArgs {
     /**
      * The unique identifier for the private application package.
      */
-    privateApplicationPackageId?: pulumi.Input<string>;
+    privateApplicationPackageId?: pulumi.Input<string | undefined>;
 }

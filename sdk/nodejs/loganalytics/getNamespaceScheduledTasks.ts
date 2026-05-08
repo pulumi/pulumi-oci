@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceScheduledTasks = oci.LogAnalytics.getNamespaceScheduledTasks({
+ * const testNamespaceScheduledTasks = oci.loganalytics.getNamespaceScheduledTasks({
  *     compartmentId: compartmentId,
  *     namespace: namespaceScheduledTaskNamespace,
  *     displayName: namespaceScheduledTaskDisplayName,
@@ -117,7 +117,7 @@ export interface GetNamespaceScheduledTasksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceScheduledTasks = oci.LogAnalytics.getNamespaceScheduledTasks({
+ * const testNamespaceScheduledTasks = oci.loganalytics.getNamespaceScheduledTasks({
  *     compartmentId: compartmentId,
  *     namespace: namespaceScheduledTaskNamespace,
  *     displayName: namespaceScheduledTaskDisplayName,
@@ -151,8 +151,8 @@ export interface GetNamespaceScheduledTasksOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceScheduledTasksFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceScheduledTasksFilterArgs>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -160,7 +160,7 @@ export interface GetNamespaceScheduledTasksOutputArgs {
     /**
      * The target service to use for filtering.
      */
-    targetService?: pulumi.Input<string>;
+    targetService?: pulumi.Input<string | undefined>;
     /**
      * Required parameter to specify schedule task type.
      */
@@ -168,5 +168,5 @@ export interface GetNamespaceScheduledTasksOutputArgs {
     /**
      * A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
 }

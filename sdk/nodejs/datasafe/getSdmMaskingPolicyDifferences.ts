@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSdmMaskingPolicyDifferences = oci.DataSafe.getSdmMaskingPolicyDifferences({
+ * const testSdmMaskingPolicyDifferences = oci.datasafe.getSdmMaskingPolicyDifferences({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree === "true",
  *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
  *     displayName: sdmMaskingPolicyDifferenceDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -124,9 +124,9 @@ export interface GetSdmMaskingPolicyDifferencesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSdmMaskingPolicyDifferences = oci.DataSafe.getSdmMaskingPolicyDifferences({
+ * const testSdmMaskingPolicyDifferences = oci.datasafe.getSdmMaskingPolicyDifferences({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree === "true",
  *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
  *     displayName: sdmMaskingPolicyDifferenceDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -160,26 +160,26 @@ export interface GetSdmMaskingPolicyDifferencesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Valid value is ACCESSIBLE. Default is ACCESSIBLE. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment).
      */
-    differenceAccessLevel?: pulumi.Input<string>;
+    differenceAccessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSdmMaskingPolicyDifferencesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSdmMaskingPolicyDifferencesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified masking policy OCID.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle states.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -211,8 +211,8 @@ def get_database_insights(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=database_insight_compartment_id_in_subtree,
+    test_database_insights = oci.opsi.get_database_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=database_insight_compartment_id_in_subtree == "true",
         database_ids=test_database["id"],
         database_types=database_insight_database_type,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
@@ -267,18 +267,18 @@ def get_database_insights(compartment_id: Optional[_builtins.str] = None,
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 database_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 database_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 enterprise_manager_bridge_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 exadata_insight_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseInsightsFilterArgs', 'GetDatabaseInsightsFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 opsi_private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_database_insights_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 database_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 database_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 enterprise_manager_bridge_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 exadata_insight_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseInsightsFilterArgs', 'GetDatabaseInsightsFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 opsi_private_endpoint_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseInsightsResult]:
     """
     This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
@@ -292,8 +292,8 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=database_insight_compartment_id_in_subtree,
+    test_database_insights = oci.opsi.get_database_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=database_insight_compartment_id_in_subtree == "true",
         database_ids=test_database["id"],
         database_types=database_insight_database_type,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],

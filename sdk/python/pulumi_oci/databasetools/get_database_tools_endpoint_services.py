@@ -137,7 +137,7 @@ def get_database_tools_endpoint_services(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=compartment_id,
+    test_database_tools_endpoint_services = oci.databasetools.get_database_tools_endpoint_services(compartment_id=compartment_id,
         display_name=database_tools_endpoint_service_display_name,
         name=database_tools_endpoint_service_name,
         state=database_tools_endpoint_service_state)
@@ -166,11 +166,11 @@ def get_database_tools_endpoint_services(compartment_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsEndpointServicesFilterArgs', 'GetDatabaseToolsEndpointServicesFilterArgsDict']]]]] = None,
-                                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_tools_endpoint_services_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsEndpointServicesFilterArgs', 'GetDatabaseToolsEndpointServicesFilterArgsDict']]]]] = None,
+                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsEndpointServicesResult]:
     """
     This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
@@ -183,7 +183,7 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=compartment_id,
+    test_database_tools_endpoint_services = oci.databasetools.get_database_tools_endpoint_services(compartment_id=compartment_id,
         display_name=database_tools_endpoint_service_display_name,
         name=database_tools_endpoint_service_name,
         state=database_tools_endpoint_service_state)

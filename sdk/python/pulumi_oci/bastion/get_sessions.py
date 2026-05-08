@@ -131,7 +131,7 @@ def get_sessions(bastion_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=test_bastion["id"],
+    test_sessions = oci.bastion.get_sessions(bastion_id=test_bastion["id"],
         display_name=session_display_name,
         session_id=test_session["id"],
         session_lifecycle_state=session_session_lifecycle_state)
@@ -160,11 +160,11 @@ def get_sessions(bastion_id: Optional[_builtins.str] = None,
         session_id=pulumi.get(__ret__, 'session_id'),
         session_lifecycle_state=pulumi.get(__ret__, 'session_lifecycle_state'),
         sessions=pulumi.get(__ret__, 'sessions'))
-def get_sessions_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSessionsFilterArgs', 'GetSessionsFilterArgsDict']]]]] = None,
-                        session_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        session_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sessions_output(bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSessionsFilterArgs', 'GetSessionsFilterArgsDict']]]]] = None,
+                        session_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        session_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSessionsResult]:
     """
     This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
@@ -177,7 +177,7 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=test_bastion["id"],
+    test_sessions = oci.bastion.get_sessions(bastion_id=test_bastion["id"],
         display_name=session_display_name,
         session_id=test_session["id"],
         session_lifecycle_state=session_session_lifecycle_state)

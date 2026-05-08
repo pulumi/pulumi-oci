@@ -112,8 +112,8 @@ def get_managed_kafka_kafka_cluster_config_versions(filters: Optional[Sequence[U
         id=pulumi.get(__ret__, 'id'),
         kafka_cluster_config_id=pulumi.get(__ret__, 'kafka_cluster_config_id'),
         kafka_cluster_config_version_collections=pulumi.get(__ret__, 'kafka_cluster_config_version_collections'))
-def get_managed_kafka_kafka_cluster_config_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict']]]]] = None,
-                                                           kafka_cluster_config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_kafka_kafka_cluster_config_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict']]]]] = None,
+                                                           kafka_cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClusterConfigVersionsResult]:
     """
     This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.

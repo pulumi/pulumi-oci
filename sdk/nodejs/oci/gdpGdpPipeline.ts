@@ -42,10 +42,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isApprovalNeeded: gdpPipelineIsApprovalNeeded,
- *     isChunkingEnabled: gdpPipelineIsChunkingEnabled,
- *     isFileOverrideInDestinationEnabled: gdpPipelineIsFileOverrideInDestinationEnabled,
- *     isScanningEnabled: gdpPipelineIsScanningEnabled,
+ *     isApprovalNeeded: gdpPipelineIsApprovalNeeded === "true",
+ *     isChunkingEnabled: gdpPipelineIsChunkingEnabled === "true",
+ *     isFileOverrideInDestinationEnabled: gdpPipelineIsFileOverrideInDestinationEnabled === "true",
+ *     isScanningEnabled: gdpPipelineIsScanningEnabled === "true",
  *     serviceLogGroupId: testLogGroup.id,
  * });
  * ```
@@ -271,98 +271,98 @@ export interface GdpGdpPipelineState {
     /**
      * (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
      */
-    approvalKeyVaultId?: pulumi.Input<string>;
+    approvalKeyVaultId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authorization information about the pipeline being configured.
      */
-    authorizationDetails?: pulumi.Input<string>;
+    authorizationDetails?: pulumi.Input<string | undefined>;
     /**
      * Configuration information about the buckets used for this pipeline.
      */
-    bucketDetails?: pulumi.Input<pulumi.Input<inputs.oci.GdpGdpPipelineBucketDetail>[]>;
+    bucketDetails?: pulumi.Input<pulumi.Input<inputs.oci.GdpGdpPipelineBucketDetail>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Short field input by customer for a description of the data pipeline use-case.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Pipeline short name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
      */
-    env?: pulumi.Input<string>;
+    env?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
      */
-    fileTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    fileTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Determines whether file transfers need to go through an approval workflow.
      */
-    isApprovalNeeded?: pulumi.Input<boolean>;
+    isApprovalNeeded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
      */
-    isChunkingEnabled?: pulumi.Input<boolean>;
+    isChunkingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
      */
-    isFileOverrideInDestinationEnabled?: pulumi.Input<boolean>;
+    isFileOverrideInDestinationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Determines whether GDP Scanning should be enabled for the pipeline.
      */
-    isScanningEnabled?: pulumi.Input<boolean>;
+    isScanningEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional details about the current state of the pipeline.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * OCID of the peered pipeline. This null for SENDER pipeline.
      */
-    peeredGdpPipelineId?: pulumi.Input<string>;
+    peeredGdpPipelineId?: pulumi.Input<string | undefined>;
     /**
      * Public region name where the peered pipeline exists.
      */
-    peeringRegion?: pulumi.Input<string>;
+    peeringRegion?: pulumi.Input<string | undefined>;
     /**
      * Type of pipeline. Can be SENDER or RECEIVER.
      */
-    pipelineType?: pulumi.Input<string>;
+    pipelineType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) the OCID of the service log group.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    serviceLogGroupId?: pulumi.Input<string>;
+    serviceLogGroupId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pipeline.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the pipeline was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the pipeline was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -372,11 +372,11 @@ export interface GdpGdpPipelineArgs {
     /**
      * (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
      */
-    approvalKeyVaultId?: pulumi.Input<string>;
+    approvalKeyVaultId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authorization information about the pipeline being configured.
      */
-    authorizationDetails?: pulumi.Input<string>;
+    authorizationDetails?: pulumi.Input<string | undefined>;
     /**
      * Configuration information about the buckets used for this pipeline.
      */
@@ -388,11 +388,11 @@ export interface GdpGdpPipelineArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Short field input by customer for a description of the data pipeline use-case.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Pipeline short name.
      */
@@ -400,31 +400,31 @@ export interface GdpGdpPipelineArgs {
     /**
      * The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
      */
-    env?: pulumi.Input<string>;
+    env?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
      */
-    fileTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    fileTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Determines whether file transfers need to go through an approval workflow.
      */
-    isApprovalNeeded?: pulumi.Input<boolean>;
+    isApprovalNeeded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
      */
-    isChunkingEnabled?: pulumi.Input<boolean>;
+    isChunkingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
      */
-    isFileOverrideInDestinationEnabled?: pulumi.Input<boolean>;
+    isFileOverrideInDestinationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Determines whether GDP Scanning should be enabled for the pipeline.
      */
-    isScanningEnabled?: pulumi.Input<boolean>;
+    isScanningEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Public region name where the peered pipeline exists.
      */
@@ -439,9 +439,9 @@ export interface GdpGdpPipelineArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    serviceLogGroupId?: pulumi.Input<string>;
+    serviceLogGroupId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pipeline.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

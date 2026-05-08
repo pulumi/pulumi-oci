@@ -32,15 +32,15 @@ __all__ = [
 ]
 
 class PrivateApplicationLogoArgsDict(TypedDict):
-    content_url: NotRequired[pulumi.Input[_builtins.str]]
+    content_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The content URL of the uploaded data.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the private application.
     """
-    mime_type: NotRequired[pulumi.Input[_builtins.str]]
+    mime_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The MIME type of the uploaded data.
     """
@@ -48,9 +48,9 @@ class PrivateApplicationLogoArgsDict(TypedDict):
 @pulumi.input_type
 class PrivateApplicationLogoArgs:
     def __init__(__self__, *,
-                 content_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 mime_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 mime_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] content_url: The content URL of the uploaded data.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the private application.
@@ -65,38 +65,38 @@ class PrivateApplicationLogoArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content URL of the uploaded data.
         """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
-    def content_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_url", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the private application.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mime_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MIME type of the uploaded data.
         """
         return pulumi.get(self, "mime_type")
 
     @mime_type.setter
-    def mime_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mime_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mime_type", value)
 
 

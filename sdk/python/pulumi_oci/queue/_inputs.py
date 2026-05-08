@@ -24,23 +24,23 @@ __all__ = [
 ]
 
 class QueueCapabilityArgsDict(TypedDict):
-    is_primary_consumer_group_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_primary_consumer_group_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
     """
-    primary_consumer_group_dead_letter_queue_delivery_count: NotRequired[pulumi.Input[_builtins.int]]
+    primary_consumer_group_dead_letter_queue_delivery_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
     """
-    primary_consumer_group_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    primary_consumer_group_display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
     """
-    primary_consumer_group_filter: NotRequired[pulumi.Input[_builtins.str]]
+    primary_consumer_group_filter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
     """
@@ -48,11 +48,11 @@ class QueueCapabilityArgsDict(TypedDict):
 @pulumi.input_type
 class QueueCapabilityArgs:
     def __init__(__self__, *,
-                 is_primary_consumer_group_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 primary_consumer_group_dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_consumer_group_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_consumer_group_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_primary_consumer_group_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 primary_consumer_group_dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_consumer_group_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_consumer_group_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_primary_consumer_group_enabled: (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
         :param pulumi.Input[_builtins.int] primary_consumer_group_dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
@@ -73,62 +73,62 @@ class QueueCapabilityArgs:
 
     @_builtins.property
     @pulumi.getter(name="isPrimaryConsumerGroupEnabled")
-    def is_primary_consumer_group_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary_consumer_group_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
         """
         return pulumi.get(self, "is_primary_consumer_group_enabled")
 
     @is_primary_consumer_group_enabled.setter
-    def is_primary_consumer_group_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary_consumer_group_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary_consumer_group_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryConsumerGroupDeadLetterQueueDeliveryCount")
-    def primary_consumer_group_dead_letter_queue_delivery_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def primary_consumer_group_dead_letter_queue_delivery_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
         """
         return pulumi.get(self, "primary_consumer_group_dead_letter_queue_delivery_count")
 
     @primary_consumer_group_dead_letter_queue_delivery_count.setter
-    def primary_consumer_group_dead_letter_queue_delivery_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def primary_consumer_group_dead_letter_queue_delivery_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "primary_consumer_group_dead_letter_queue_delivery_count", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryConsumerGroupDisplayName")
-    def primary_consumer_group_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_consumer_group_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
         """
         return pulumi.get(self, "primary_consumer_group_display_name")
 
     @primary_consumer_group_display_name.setter
-    def primary_consumer_group_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_consumer_group_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_consumer_group_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryConsumerGroupFilter")
-    def primary_consumer_group_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_consumer_group_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
         """
         return pulumi.get(self, "primary_consumer_group_filter")
 
     @primary_consumer_group_filter.setter
-    def primary_consumer_group_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_consumer_group_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_consumer_group_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 

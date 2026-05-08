@@ -21,17 +21,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAsset = new oci.cloudmigrations.TargetAsset("test_target_asset", {
- *     isExcludedFromExecution: targetAssetIsExcludedFromExecution,
+ *     isExcludedFromExecution: targetAssetIsExcludedFromExecution === "true",
  *     migrationPlanId: testMigrationPlan.id,
  *     type: targetAssetType,
- *     blockVolumesPerformance: targetAssetBlockVolumesPerformance,
+ *     blockVolumesPerformance: Number(targetAssetBlockVolumesPerformance),
  *     msLicense: targetAssetMsLicense,
  *     preferredShapeType: targetAssetPreferredShapeType,
  *     userSpec: {
  *         agentConfig: {
- *             areAllPluginsDisabled: targetAssetUserSpecAgentConfigAreAllPluginsDisabled,
- *             isManagementDisabled: targetAssetUserSpecAgentConfigIsManagementDisabled,
- *             isMonitoringDisabled: targetAssetUserSpecAgentConfigIsMonitoringDisabled,
+ *             areAllPluginsDisabled: targetAssetUserSpecAgentConfigAreAllPluginsDisabled === "true",
+ *             isManagementDisabled: targetAssetUserSpecAgentConfigIsManagementDisabled === "true",
+ *             isMonitoringDisabled: targetAssetUserSpecAgentConfigIsMonitoringDisabled === "true",
  *             pluginsConfigs: [{
  *                 desiredState: targetAssetUserSpecAgentConfigPluginsConfigDesiredState,
  *                 name: targetAssetUserSpecAgentConfigPluginsConfigName,
@@ -41,8 +41,8 @@ import * as utilities from "../utilities";
  *         capacityReservationId: testCapacityReservation.id,
  *         compartmentId: compartmentId,
  *         createVnicDetails: {
- *             assignPrivateDnsRecord: targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord,
- *             assignPublicIp: targetAssetUserSpecCreateVnicDetailsAssignPublicIp,
+ *             assignPrivateDnsRecord: targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *             assignPublicIp: targetAssetUserSpecCreateVnicDetailsAssignPublicIp === "true",
  *             definedTags: {
  *                 "foo-namespace.bar-key": "value",
  *             },
@@ -53,7 +53,7 @@ import * as utilities from "../utilities";
  *             hostnameLabel: targetAssetUserSpecCreateVnicDetailsHostnameLabel,
  *             nsgIds: targetAssetUserSpecCreateVnicDetailsNsgIds,
  *             privateIp: targetAssetUserSpecCreateVnicDetailsPrivateIp,
- *             skipSourceDestCheck: targetAssetUserSpecCreateVnicDetailsSkipSourceDestCheck,
+ *             skipSourceDestCheck: targetAssetUserSpecCreateVnicDetailsSkipSourceDestCheck === "true",
  *             subnetId: testSubnet.id,
  *             vlanId: testVlan.id,
  *         },
@@ -68,14 +68,14 @@ import * as utilities from "../utilities";
  *         },
  *         hostnameLabel: targetAssetUserSpecHostnameLabel,
  *         instanceOptions: {
- *             areLegacyImdsEndpointsDisabled: targetAssetUserSpecInstanceOptionsAreLegacyImdsEndpointsDisabled,
+ *             areLegacyImdsEndpointsDisabled: targetAssetUserSpecInstanceOptionsAreLegacyImdsEndpointsDisabled === "true",
  *         },
  *         ipxeScript: targetAssetUserSpecIpxeScript,
- *         isPvEncryptionInTransitEnabled: targetAssetUserSpecIsPvEncryptionInTransitEnabled,
+ *         isPvEncryptionInTransitEnabled: targetAssetUserSpecIsPvEncryptionInTransitEnabled === "true",
  *         preemptibleInstanceConfig: {
  *             preemptionAction: {
  *                 type: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionType,
- *                 preserveBootVolume: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
+ *                 preserveBootVolume: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPreserveBootVolume === "true",
  *             },
  *         },
  *         shape: targetAssetUserSpecShape,
@@ -290,83 +290,83 @@ export interface TargetAssetState {
     /**
      * (Updatable) Performance of the block volumes.
      */
-    blockVolumesPerformance?: pulumi.Input<number>;
+    blockVolumesPerformance?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Messages about the compatibility issues.
      */
-    compatibilityMessages?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetCompatibilityMessage>[]>;
+    compatibilityMessages?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetCompatibilityMessage>[] | undefined>;
     /**
      * Created resource identifier
      */
-    createdResourceId?: pulumi.Input<string>;
+    createdResourceId?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Cost estimation description
      */
-    estimatedCosts?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetEstimatedCost>[]>;
+    estimatedCosts?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetEstimatedCost>[] | undefined>;
     /**
      * (Updatable) A boolean indicating whether the asset should be migrated.
      */
-    isExcludedFromExecution?: pulumi.Input<boolean>;
+    isExcludedFromExecution?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Description of the migration asset.
      */
-    migrationAssets?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetMigrationAsset>[]>;
+    migrationAssets?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetMigrationAsset>[] | undefined>;
     /**
      * OCID of the associated migration plan.
      */
-    migrationPlanId?: pulumi.Input<string>;
+    migrationPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Microsoft license for the VM configuration.
      */
-    msLicense?: pulumi.Input<string>;
+    msLicense?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Preferred VM shape type that you provide.
      */
-    preferredShapeType?: pulumi.Input<string>;
+    preferredShapeType?: pulumi.Input<string | undefined>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    recommendedSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpec>[]>;
+    recommendedSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpec>[] | undefined>;
     /**
      * The current state of the target asset.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    testSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpec>[]>;
+    testSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpec>[] | undefined>;
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      */
-    timeAssessed?: pulumi.Input<string>;
+    timeAssessed?: pulumi.Input<string | undefined>;
     /**
      * The time when the target asset was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of target asset.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    userSpec?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec>;
+    userSpec?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec | undefined>;
 }
 
 /**
@@ -376,7 +376,7 @@ export interface TargetAssetArgs {
     /**
      * (Updatable) Performance of the block volumes.
      */
-    blockVolumesPerformance?: pulumi.Input<number>;
+    blockVolumesPerformance?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A boolean indicating whether the asset should be migrated.
      */
@@ -388,19 +388,19 @@ export interface TargetAssetArgs {
     /**
      * (Updatable) Microsoft license for the VM configuration.
      */
-    msLicense?: pulumi.Input<string>;
+    msLicense?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Preferred VM shape type that you provide.
      */
-    preferredShapeType?: pulumi.Input<string>;
+    preferredShapeType?: pulumi.Input<string | undefined>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    recommendedSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpec>[]>;
+    recommendedSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpec>[] | undefined>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    testSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpec>[]>;
+    testSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpec>[] | undefined>;
     /**
      * (Updatable) The type of target asset.
      */
@@ -408,5 +408,5 @@ export interface TargetAssetArgs {
     /**
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    userSpec?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec>;
+    userSpec?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec | undefined>;
 }

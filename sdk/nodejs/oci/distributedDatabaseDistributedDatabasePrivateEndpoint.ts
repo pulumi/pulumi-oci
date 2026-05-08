@@ -221,47 +221,47 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointState {
     /**
      * (Updatable) Identifier of the compartment where private endpoint is to be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) DistributedDatabasePrivateEndpoint description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Private endpoint display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
-    globallyDistributedAutonomousDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase>[]>;
+    globallyDistributedAutonomousDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase>[] | undefined>;
     /**
      * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
-    globallyDistributedDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase>[]>;
+    globallyDistributedDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase>[] | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IP address of the Private Endpoint.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * The identifier of the proxy compute instance.
      */
-    proxyComputeInstanceId?: pulumi.Input<string>;
+    proxyComputeInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
      *
@@ -269,31 +269,31 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    reinstateProxyInstanceTrigger?: pulumi.Input<number>;
+    reinstateProxyInstanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * Lifecycle states for private endpoint.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the customer subnet against which private endpoint is to be created.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the DistributedDatabasePrivateEndpoint was first created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the VCN in which subnet exists.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -307,11 +307,11 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) DistributedDatabasePrivateEndpoint description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Private endpoint display name.
      */
@@ -319,11 +319,11 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
      *
@@ -331,7 +331,7 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    reinstateProxyInstanceTrigger?: pulumi.Input<number>;
+    reinstateProxyInstanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * Identifier of the customer subnet against which private endpoint is to be created.
      */

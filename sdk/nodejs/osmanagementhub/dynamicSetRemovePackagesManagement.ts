@@ -126,19 +126,19 @@ export interface DynamicSetRemovePackagesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
      */
-    dynamicSetId?: pulumi.Input<string>;
+    dynamicSetId?: pulumi.Input<string | undefined>;
     /**
      * The list of managed instance OCIDs to be attached/detached.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of package names.
      */
-    packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    packageNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRemovePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRemovePackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -152,7 +152,7 @@ export interface DynamicSetRemovePackagesManagementArgs {
     /**
      * The list of managed instance OCIDs to be attached/detached.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of package names.
      */
@@ -160,5 +160,5 @@ export interface DynamicSetRemovePackagesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRemovePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRemovePackagesManagementWorkRequestDetails | undefined>;
 }

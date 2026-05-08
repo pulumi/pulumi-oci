@@ -27,9 +27,9 @@ class JavaDownloadsJavaDownloadTokenArgs:
                  java_version: pulumi.Input[_builtins.str],
                  license_types: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  time_expires: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaDownloadToken resource.
 
@@ -138,62 +138,62 @@ class JavaDownloadsJavaDownloadTokenArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The token default attribute.
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
 
 @pulumi.input_type
 class _JavaDownloadsJavaDownloadTokenState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]] = None,
-                 license_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_expires: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_used: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]] = None,
+                 license_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_expires: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_used: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JavaDownloadsJavaDownloadToken resources.
 
@@ -259,175 +259,175 @@ class _JavaDownloadsJavaDownloadTokenState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]]:
+    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]]:
         """
         An authorized principal.
         """
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]]):
+    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User provided description of the JavaDownloadToken.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User provided display name of the JavaDownloadToken.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The token default attribute.
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
     @_builtins.property
     @pulumi.getter(name="javaVersion")
-    def java_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def java_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Java version associated with the token.
         """
         return pulumi.get(self, "java_version")
 
     @java_version.setter
-    def java_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def java_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "java_version", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBies")
-    def last_updated_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]]:
+    def last_updated_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]]:
         """
         An authorized principal.
         """
         return pulumi.get(self, "last_updated_bies")
 
     @last_updated_bies.setter
-    def last_updated_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]]):
+    def last_updated_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]]):
         pulumi.set(self, "last_updated_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseTypes")
-    def license_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def license_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The license type(s) associated with the JavaDownloadToken.
         """
         return pulumi.get(self, "license_types")
 
     @license_types.setter
-    def license_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def license_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "license_types", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible lifecycle substates.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the JavaDownloadToken.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_expires(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Expiry time of the token.
 
@@ -438,43 +438,43 @@ class _JavaDownloadsJavaDownloadTokenState:
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
-    def time_expires(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_expires(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_expires", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastUsed")
-    def time_last_used(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_used(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_last_used")
 
     @time_last_used.setter
-    def time_last_used(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_used(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_used", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Uniquely generated value for the JavaDownloadToken.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -484,15 +484,15 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_expires: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_expires: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -522,7 +522,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=java_download_token_is_default)
+            is_default=java_download_token_is_default == "true")
         ```
 
         ## Import
@@ -580,7 +580,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=java_download_token_is_default)
+            is_default=java_download_token_is_default == "true")
         ```
 
         ## Import
@@ -603,15 +603,15 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_expires: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_expires: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -661,24 +661,24 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenCreatedByArgs', 'JavaDownloadsJavaDownloadTokenCreatedByArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-            java_version: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs', 'JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict']]]]] = None,
-            license_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_expires: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_used: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None) -> 'JavaDownloadsJavaDownloadToken':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenCreatedByArgs', 'JavaDownloadsJavaDownloadTokenCreatedByArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            java_version: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs', 'JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict']]]]] = None,
+            license_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expires: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_used: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> 'JavaDownloadsJavaDownloadToken':
         """
         Get an existing JavaDownloadsJavaDownloadToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

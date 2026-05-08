@@ -722,7 +722,7 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=test_domain["url"],
+    test_password_policy = oci.identity.get_domains_password_policy(idcs_endpoint=test_domain["url"],
         password_policy_id=test_policy["id"],
         attribute_sets=[],
         attributes="",
@@ -806,12 +806,12 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[_builtins.str]
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         user_name_disallowed=pulumi.get(__ret__, 'user_name_disallowed'))
-def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                       password_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_password_policy_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                       password_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsPasswordPolicyResult]:
     """
     This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -824,7 +824,7 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=test_domain["url"],
+    test_password_policy = oci.identity.get_domains_password_policy(idcs_endpoint=test_domain["url"],
         password_policy_id=test_policy["id"],
         attribute_sets=[],
         attributes="",

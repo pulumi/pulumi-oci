@@ -141,7 +141,7 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
+    test_domains = oci.tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
         domain_id=test_domain["id"],
         name=domain_name,
         state=domain_state,
@@ -174,12 +174,12 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       domain_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       domain_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsResult]:
     """
     This data source provides the list of Domains in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -192,7 +192,7 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
+    test_domains = oci.tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
         domain_id=test_domain["id"],
         name=domain_name,
         state=domain_state,

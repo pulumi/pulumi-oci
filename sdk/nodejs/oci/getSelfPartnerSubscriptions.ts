@@ -99,8 +99,8 @@ export interface GetSelfPartnerSubscriptionsOutputArgs {
     /**
      * A filter to return only resources that match the given name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetSelfPartnerSubscriptionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetSelfPartnerSubscriptionsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the listing.
      */

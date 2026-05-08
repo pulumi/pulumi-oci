@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * const testDbSystemsUpgrade = new oci.database.DbSystemsUpgrade("test_db_systems_upgrade", {
  *     action: dbSystemsUpgradeAction,
  *     dbSystemId: testDbSystem.id,
- *     isSnapshotRetentionDaysForceUpdated: dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated,
+ *     isSnapshotRetentionDaysForceUpdated: dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated === "true",
  *     newGiVersion: dbSystemsUpgradeNewGiVersion,
- *     snapshotRetentionPeriodInDays: dbSystemsUpgradeSnapshotRetentionPeriodInDays,
+ *     snapshotRetentionPeriodInDays: Number(dbSystemsUpgradeSnapshotRetentionPeriodInDays),
  * });
  * ```
  *
@@ -397,159 +397,159 @@ export interface DbSystemsUpgradeState {
     /**
      * The operating system upgrade action.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The name of the availability domain that the DB system is located in.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      */
-    backupSubnetId?: pulumi.Input<string>;
+    backupSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    clusterName?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The number of CPU cores enabled on the DB system.
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
      */
-    dataStoragePercentage?: pulumi.Input<number>;
+    dataStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The Oracle Database edition that applies to all the databases on the DB system.
      */
-    databaseEdition?: pulumi.Input<string>;
+    databaseEdition?: pulumi.Input<string | undefined>;
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The DB system options.
      */
-    dbSystemOptions?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeDbSystemOption>[]>;
+    dbSystemOptions?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeDbSystemOption>[] | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      */
-    diskRedundancy?: pulumi.Input<string>;
+    diskRedundancy?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The domain name for the DB system.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * List of the Fault Domains in which this DB system is provisioned.
      */
-    faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    faultDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for the DB system.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCache>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCache>[] | undefined>;
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */
-    isSnapshotRetentionDaysForceUpdated?: pulumi.Input<boolean>;
+    isSnapshotRetentionDaysForceUpdated?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    lastPatchHistoryEntryId?: pulumi.Input<string>;
+    lastPatchHistoryEntryId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The port number configured for the listener on the DB system.
      */
-    listenerPort?: pulumi.Input<number>;
+    listenerPort?: pulumi.Input<number | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeMaintenanceWindow>[] | undefined>;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    newGiVersion?: pulumi.Input<string>;
-    newOsVersion?: pulumi.Input<string>;
+    newGiVersion?: pulumi.Input<string | undefined>;
+    newOsVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    pointInTimeDataDiskCloneTimestamp?: pulumi.Input<string>;
+    pointInTimeDataDiskCloneTimestamp?: pulumi.Input<string | undefined>;
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
-    recoStorageSizeInGb?: pulumi.Input<number>;
+    recoStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    scanDnsName?: pulumi.Input<string>;
+    scanDnsName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    scanDnsRecordId?: pulumi.Input<string>;
+    scanDnsRecordId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    scanIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    scanIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The shape of the DB system. The shape determines resources to allocate to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      *
@@ -557,47 +557,47 @@ export interface DbSystemsUpgradeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    snapshotRetentionPeriodInDays?: pulumi.Input<number>;
+    snapshotRetentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    sourceDbSystemId?: pulumi.Input<string>;
+    sourceDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
      */
-    sparseDiskgroup?: pulumi.Input<boolean>;
+    sparseDiskgroup?: pulumi.Input<boolean | undefined>;
     /**
      * The public key portion of one or more key pairs used for SSH access to the DB system.
      */
-    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the DB system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the DB system was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database version of the DB system.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    vipIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vipIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the zone the DB system is associated with.
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -615,12 +615,12 @@ export interface DbSystemsUpgradeArgs {
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */
-    isSnapshotRetentionDaysForceUpdated?: pulumi.Input<boolean>;
+    isSnapshotRetentionDaysForceUpdated?: pulumi.Input<boolean | undefined>;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    newGiVersion?: pulumi.Input<string>;
-    newOsVersion?: pulumi.Input<string>;
+    newGiVersion?: pulumi.Input<string | undefined>;
+    newOsVersion?: pulumi.Input<string | undefined>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      *
@@ -628,5 +628,5 @@ export interface DbSystemsUpgradeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    snapshotRetentionPeriodInDays?: pulumi.Input<number>;
+    snapshotRetentionPeriodInDays?: pulumi.Input<number | undefined>;
 }

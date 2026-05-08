@@ -26,12 +26,12 @@ class BdsInstanceIdentityConfigurationArgs:
                  confidential_application_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  identity_domain_id: pulumi.Input[_builtins.str],
-                 activate_iam_user_sync_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 activate_upst_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_user_sync_configuration_details: Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']] = None,
-                 refresh_confidential_application_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_upst_token_exchange_keytab_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 upst_configuration_details: Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']] = None):
+                 activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_user_sync_configuration_details: pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']] = None,
+                 refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 upst_configuration_details: pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']] = None):
         """
         The set of arguments for constructing a BdsInstanceIdentityConfiguration resource.
 
@@ -131,55 +131,55 @@ class BdsInstanceIdentityConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="activateIamUserSyncConfigurationTrigger")
-    def activate_iam_user_sync_configuration_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activate_iam_user_sync_configuration_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
         """
         return pulumi.get(self, "activate_iam_user_sync_configuration_trigger")
 
     @activate_iam_user_sync_configuration_trigger.setter
-    def activate_iam_user_sync_configuration_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activate_iam_user_sync_configuration_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activate_iam_user_sync_configuration_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="activateUpstConfigurationTrigger")
-    def activate_upst_configuration_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activate_upst_configuration_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
         """
         return pulumi.get(self, "activate_upst_configuration_trigger")
 
     @activate_upst_configuration_trigger.setter
-    def activate_upst_configuration_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activate_upst_configuration_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activate_upst_configuration_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="iamUserSyncConfigurationDetails")
-    def iam_user_sync_configuration_details(self) -> Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]:
+    def iam_user_sync_configuration_details(self) -> pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]:
         """
         (Updatable) Details for activating/updating an IAM user sync configuration
         """
         return pulumi.get(self, "iam_user_sync_configuration_details")
 
     @iam_user_sync_configuration_details.setter
-    def iam_user_sync_configuration_details(self, value: Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]):
+    def iam_user_sync_configuration_details(self, value: pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]):
         pulumi.set(self, "iam_user_sync_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshConfidentialApplicationTrigger")
-    def refresh_confidential_application_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_confidential_application_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         """
         return pulumi.get(self, "refresh_confidential_application_trigger")
 
     @refresh_confidential_application_trigger.setter
-    def refresh_confidential_application_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_confidential_application_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_confidential_application_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshUpstTokenExchangeKeytabTrigger")
-    def refresh_upst_token_exchange_keytab_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_upst_token_exchange_keytab_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
 
@@ -190,41 +190,41 @@ class BdsInstanceIdentityConfigurationArgs:
         return pulumi.get(self, "refresh_upst_token_exchange_keytab_trigger")
 
     @refresh_upst_token_exchange_keytab_trigger.setter
-    def refresh_upst_token_exchange_keytab_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_upst_token_exchange_keytab_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_upst_token_exchange_keytab_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="upstConfigurationDetails")
-    def upst_configuration_details(self) -> Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]:
+    def upst_configuration_details(self) -> pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]:
         """
         (Updatable) Details for activating/updating UPST config on the cluster
         """
         return pulumi.get(self, "upst_configuration_details")
 
     @upst_configuration_details.setter
-    def upst_configuration_details(self, value: Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]):
+    def upst_configuration_details(self, value: pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]):
         pulumi.set(self, "upst_configuration_details", value)
 
 
 @pulumi.input_type
 class _BdsInstanceIdentityConfigurationState:
     def __init__(__self__, *,
-                 activate_iam_user_sync_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 activate_upst_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_user_sync_configuration_details: Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']] = None,
-                 iam_user_sync_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]] = None,
-                 identity_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_confidential_application_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_upst_token_exchange_keytab_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 upst_configuration_details: Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']] = None,
-                 upst_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]] = None):
+                 activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_user_sync_configuration_details: pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']] = None,
+                 iam_user_sync_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]] = None,
+                 identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upst_configuration_details: pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']] = None,
+                 upst_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceIdentityConfiguration resources.
 
@@ -284,127 +284,127 @@ class _BdsInstanceIdentityConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="activateIamUserSyncConfigurationTrigger")
-    def activate_iam_user_sync_configuration_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activate_iam_user_sync_configuration_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
         """
         return pulumi.get(self, "activate_iam_user_sync_configuration_trigger")
 
     @activate_iam_user_sync_configuration_trigger.setter
-    def activate_iam_user_sync_configuration_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activate_iam_user_sync_configuration_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activate_iam_user_sync_configuration_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="activateUpstConfigurationTrigger")
-    def activate_upst_configuration_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activate_upst_configuration_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
         """
         return pulumi.get(self, "activate_upst_configuration_trigger")
 
     @activate_upst_configuration_trigger.setter
-    def activate_upst_configuration_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activate_upst_configuration_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activate_upst_configuration_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base-64 encoded password for the cluster admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="confidentialApplicationId")
-    def confidential_application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confidential_application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identity domain confidential application ID for the identity config, required for creating identity configuration
         """
         return pulumi.get(self, "confidential_application_id")
 
     @confidential_application_id.setter
-    def confidential_application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confidential_application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confidential_application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Display name of the identity configuration, required for creating identity configuration.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="iamUserSyncConfigurationDetails")
-    def iam_user_sync_configuration_details(self) -> Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]:
+    def iam_user_sync_configuration_details(self) -> pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]:
         """
         (Updatable) Details for activating/updating an IAM user sync configuration
         """
         return pulumi.get(self, "iam_user_sync_configuration_details")
 
     @iam_user_sync_configuration_details.setter
-    def iam_user_sync_configuration_details(self, value: Optional[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]):
+    def iam_user_sync_configuration_details(self, value: pulumi.Input[Optional['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs']]):
         pulumi.set(self, "iam_user_sync_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="iamUserSyncConfigurations")
-    def iam_user_sync_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]]:
+    def iam_user_sync_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]]:
         """
         Information about the IAM user sync configuration.
         """
         return pulumi.get(self, "iam_user_sync_configurations")
 
     @iam_user_sync_configurations.setter
-    def iam_user_sync_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]]):
+    def iam_user_sync_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs']]]]):
         pulumi.set(self, "iam_user_sync_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomainId")
-    def identity_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identity domain OCID to use for identity config, required for creating identity configuration
         """
         return pulumi.get(self, "identity_domain_id")
 
     @identity_domain_id.setter
-    def identity_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshConfidentialApplicationTrigger")
-    def refresh_confidential_application_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_confidential_application_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         """
         return pulumi.get(self, "refresh_confidential_application_trigger")
 
     @refresh_confidential_application_trigger.setter
-    def refresh_confidential_application_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_confidential_application_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_confidential_application_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshUpstTokenExchangeKeytabTrigger")
-    def refresh_upst_token_exchange_keytab_trigger(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_upst_token_exchange_keytab_trigger(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
 
@@ -415,67 +415,67 @@ class _BdsInstanceIdentityConfigurationState:
         return pulumi.get(self, "refresh_upst_token_exchange_keytab_trigger")
 
     @refresh_upst_token_exchange_keytab_trigger.setter
-    def refresh_upst_token_exchange_keytab_trigger(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_upst_token_exchange_keytab_trigger(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_upst_token_exchange_keytab_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lifecycle state of the UPST config
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="upstConfigurationDetails")
-    def upst_configuration_details(self) -> Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]:
+    def upst_configuration_details(self) -> pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]:
         """
         (Updatable) Details for activating/updating UPST config on the cluster
         """
         return pulumi.get(self, "upst_configuration_details")
 
     @upst_configuration_details.setter
-    def upst_configuration_details(self, value: Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]):
+    def upst_configuration_details(self, value: pulumi.Input[Optional['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']]):
         pulumi.set(self, "upst_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="upstConfigurations")
-    def upst_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]]:
+    def upst_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]]:
         """
         Information about the UPST configuration.
         """
         return pulumi.get(self, "upst_configurations")
 
     @upst_configurations.setter
-    def upst_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]]):
+    def upst_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]]):
         pulumi.set(self, "upst_configurations", value)
 
 
@@ -485,17 +485,17 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_iam_user_sync_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 activate_upst_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_user_sync_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
-                 identity_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_confidential_application_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_upst_token_exchange_keytab_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 upst_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
+                 activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_user_sync_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
+                 identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 upst_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -518,7 +518,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],
@@ -580,7 +580,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],
@@ -612,17 +612,17 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_iam_user_sync_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 activate_upst_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_user_sync_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
-                 identity_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_confidential_application_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_upst_token_exchange_keytab_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-                 upst_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
+                 activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_user_sync_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
+                 identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+                 upst_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -670,22 +670,22 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate_iam_user_sync_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-            activate_upst_configuration_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            confidential_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_user_sync_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
-            iam_user_sync_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict']]]]] = None,
-            identity_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_confidential_application_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_upst_token_exchange_keytab_trigger: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            upst_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
-            upst_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationArgsDict']]]]] = None) -> 'BdsInstanceIdentityConfiguration':
+            activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            confidential_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_user_sync_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict']]] = None,
+            iam_user_sync_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict']]]]] = None,
+            identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upst_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
+            upst_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationArgsDict']]]]] = None) -> 'BdsInstanceIdentityConfiguration':
         """
         Get an existing BdsInstanceIdentityConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

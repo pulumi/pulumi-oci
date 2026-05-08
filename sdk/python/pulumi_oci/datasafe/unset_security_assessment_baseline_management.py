@@ -66,8 +66,8 @@ class UnsetSecurityAssessmentBaselineManagementArgs:
 @pulumi.input_type
 class _UnsetSecurityAssessmentBaselineManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnsetSecurityAssessmentBaselineManagement resources.
 
@@ -85,7 +85,7 @@ class _UnsetSecurityAssessmentBaselineManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID where the assessment resides.
 
@@ -96,19 +96,19 @@ class _UnsetSecurityAssessmentBaselineManagementState:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
-    def security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the security assessment.
         """
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
-    def security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_assessment_id", value)
 
 
@@ -118,8 +118,8 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Unset Security Assessment Baseline management resource in Oracle Cloud Infrastructure Data Safe service.
@@ -201,8 +201,8 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,8 +228,8 @@ class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UnsetSecurityAssessmentBaselineManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UnsetSecurityAssessmentBaselineManagement':
         """
         Get an existing UnsetSecurityAssessmentBaselineManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -190,75 +190,75 @@ export interface MaskingReportManagementState {
     /**
      * The OCID of the compartment that contains the masking report.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the temporary tables created during the masking operation were dropped after masking.
      */
-    isDropTempTablesEnabled?: pulumi.Input<boolean>;
+    isDropTempTablesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if redo logging was enabled during the masking operation.
      */
-    isRedoLoggingEnabled?: pulumi.Input<boolean>;
+    isRedoLoggingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if statistics gathering was enabled during the masking operation.
      */
-    isRefreshStatsEnabled?: pulumi.Input<boolean>;
+    isRefreshStatsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the masking policy.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the masking work request that resulted in this masking report.
      */
-    maskingWorkRequestId?: pulumi.Input<string>;
+    maskingWorkRequestId?: pulumi.Input<string | undefined>;
     /**
      * Indicates if parallel execution was enabled during the masking operation.
      */
-    parallelDegree?: pulumi.Input<string>;
+    parallelDegree?: pulumi.Input<string | undefined>;
     /**
      * Indicates how invalid objects were recompiled post the masking operation.
      */
-    recompile?: pulumi.Input<string>;
+    recompile?: pulumi.Input<string | undefined>;
     /**
      * The current state of the masking report.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target database masked.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    timeMaskingFinished?: pulumi.Input<string>;
+    timeMaskingFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    timeMaskingStarted?: pulumi.Input<string>;
+    timeMaskingStarted?: pulumi.Input<string | undefined>;
     /**
      * The total number of masked columns.
      */
-    totalMaskedColumns?: pulumi.Input<string>;
+    totalMaskedColumns?: pulumi.Input<string | undefined>;
     /**
      * The total number of unique objects (tables and editioning views) that contain the masked columns.
      */
-    totalMaskedObjects?: pulumi.Input<string>;
+    totalMaskedObjects?: pulumi.Input<string | undefined>;
     /**
      * The total number of unique schemas that contain the masked columns.
      */
-    totalMaskedSchemas?: pulumi.Input<string>;
+    totalMaskedSchemas?: pulumi.Input<string | undefined>;
     /**
      * The total number of unique sensitive types associated with the masked columns.
      */
-    totalMaskedSensitiveTypes?: pulumi.Input<string>;
+    totalMaskedSensitiveTypes?: pulumi.Input<string | undefined>;
     /**
      * The total number of masked values.
      */
-    totalMaskedValues?: pulumi.Input<string>;
+    totalMaskedValues?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -268,13 +268,13 @@ export interface MaskingReportManagementArgs {
     /**
      * The OCID of the compartment that contains the masking report.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the masking policy.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target database masked.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

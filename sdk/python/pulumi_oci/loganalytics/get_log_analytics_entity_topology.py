@@ -138,7 +138,7 @@ def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_topology = oci.loganalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
         context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,
@@ -171,12 +171,12 @@ def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
         metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_log_analytics_entity_topology_output(context: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]]]] = None,
-                                             log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             metadata_equals: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_log_analytics_entity_topology_output(context: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]]]] = None,
+                                             log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             metadata_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityTopologyResult]:
     """
     This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -189,7 +189,7 @@ def get_log_analytics_entity_topology_output(context: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_topology = oci.loganalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
         context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,

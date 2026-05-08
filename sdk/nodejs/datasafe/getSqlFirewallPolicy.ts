@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicy = oci.DataSafe.getSqlFirewallPolicy({
+ * const testSqlFirewallPolicy = oci.datasafe.getSqlFirewallPolicy({
  *     sqlFirewallPolicyId: testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id,
  * });
  * ```
@@ -138,7 +138,7 @@ export interface GetSqlFirewallPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicy = oci.DataSafe.getSqlFirewallPolicy({
+ * const testSqlFirewallPolicy = oci.datasafe.getSqlFirewallPolicy({
  *     sqlFirewallPolicyId: testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id,
  * });
  * ```

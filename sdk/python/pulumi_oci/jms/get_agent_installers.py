@@ -131,7 +131,7 @@ def get_agent_installers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_installers = oci.Jms.get_agent_installers(compartment_id=compartment_id,
+    test_agent_installers = oci.jms.get_agent_installers(compartment_id=compartment_id,
         fleet_id=test_fleet["id"],
         os_family=agent_installer_os_family,
         platform_architecture=agent_installer_platform_architecture)
@@ -160,11 +160,11 @@ def get_agent_installers(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         platform_architecture=pulumi.get(__ret__, 'platform_architecture'))
-def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]]]] = None,
-                                fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                platform_architecture: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_installers_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]]]] = None,
+                                fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                platform_architecture: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentInstallersResult]:
     """
     This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
@@ -177,7 +177,7 @@ def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_installers = oci.Jms.get_agent_installers(compartment_id=compartment_id,
+    test_agent_installers = oci.jms.get_agent_installers(compartment_id=compartment_id,
         fleet_id=test_fleet["id"],
         os_family=agent_installer_os_family,
         platform_architecture=agent_installer_platform_architecture)

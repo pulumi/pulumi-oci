@@ -25,16 +25,16 @@ class CloudExadataInfrastructureArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  shape: pulumi.Input[_builtins.str],
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
-                 database_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+                 database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_window: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructure resource.
 
@@ -132,115 +132,115 @@ class CloudExadataInfrastructureArgs:
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]:
         """
         (Updatable) Customer contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseServerType")
-    def database_server_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_server_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database server type of the Exadata infrastructure.
         """
         return pulumi.get(self, "database_server_type")
 
     @database_server_type.setter
-    def database_server_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_server_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_server_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']]:
+    def maintenance_window(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
-    def maintenance_window(self, value: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']]):
+    def maintenance_window(self, value: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
 
     @storage_count.setter
-    def storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="storageServerType")
-    def storage_server_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_server_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The storage server type of the Exadata infrastructure.
         """
         return pulumi.get(self, "storage_server_type")
 
     @storage_server_type.setter
-    def storage_server_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_server_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_server_type", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 
@@ -251,53 +251,53 @@ class CloudExadataInfrastructureArgs:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
 
 @pulumi.input_type
 class _CloudExadataInfrastructureState:
     def __init__(__self__, *,
-                 activated_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 additional_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 available_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 database_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exascale_configs: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_scheduling_policy_associated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
-                 max_cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_db_node_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 monthly_db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 activated_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 additional_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 available_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
+                 max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 monthly_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructure resources.
 
@@ -429,439 +429,439 @@ class _CloudExadataInfrastructureState:
 
     @_builtins.property
     @pulumi.getter(name="activatedStorageCount")
-    def activated_storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def activated_storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The requested number of additional storage servers activated for the Exadata infrastructure.
         """
         return pulumi.get(self, "activated_storage_count")
 
     @activated_storage_count.setter
-    def activated_storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def activated_storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "activated_storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalStorageCount")
-    def additional_storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def additional_storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The requested number of additional storage servers for the Exadata infrastructure.
         """
         return pulumi.get(self, "additional_storage_count")
 
     @additional_storage_count.setter
-    def additional_storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def additional_storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "additional_storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain where the cloud Exadata infrastructure is located.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageSizeInGbs")
-    def available_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def available_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
         return pulumi.get(self, "available_storage_size_in_gbs")
 
     @available_storage_size_in_gbs.setter
-    def available_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def available_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "available_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCount")
-    def cpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of CPU cores allocated.
         """
         return pulumi.get(self, "cpu_count")
 
     @cpu_count.setter
-    def cpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]:
         """
         (Updatable) Customer contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseServerType")
-    def database_server_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_server_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database server type of the Exadata infrastructure.
         """
         return pulumi.get(self, "database_server_type")
 
     @database_server_type.setter
-    def database_server_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_server_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_server_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_node_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
-    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_node_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_node_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbServerVersion")
-    def db_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "db_server_version")
 
     @db_server_version.setter
-    def db_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedFileSystemConfigurations")
-    def defined_file_system_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]:
+    def defined_file_system_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]:
         """
         Details of the file system configuration of the Exadata infrastructure.
         """
         return pulumi.get(self, "defined_file_system_configurations")
 
     @defined_file_system_configurations.setter
-    def defined_file_system_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]):
+    def defined_file_system_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]):
         pulumi.set(self, "defined_file_system_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exascaleConfigs")
-    def exascale_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]:
+    def exascale_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]:
         """
         The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         """
         return pulumi.get(self, "exascale_configs")
 
     @exascale_configs.setter
-    def exascale_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]):
+    def exascale_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]):
         pulumi.set(self, "exascale_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isSchedulingPolicyAssociated")
-    def is_scheduling_policy_associated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scheduling_policy_associated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the infrastructure is using granular maintenance scheduling preference.
         """
         return pulumi.get(self, "is_scheduling_policy_associated")
 
     @is_scheduling_policy_associated.setter
-    def is_scheduling_policy_associated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scheduling_policy_associated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scheduling_policy_associated", value)
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
-    def last_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']]:
+    def maintenance_window(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
-    def maintenance_window(self, value: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']]):
+    def maintenance_window(self, value: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="maxCpuCount")
-    def max_cpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_cpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of CPU cores available.
         """
         return pulumi.get(self, "max_cpu_count")
 
     @max_cpu_count.setter
-    def max_cpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_cpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_cpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDataStorageInTbs")
-    def max_data_storage_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_data_storage_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total available DATA disk group size.
         """
         return pulumi.get(self, "max_data_storage_in_tbs")
 
     @max_data_storage_in_tbs.setter
-    def max_data_storage_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_data_storage_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_data_storage_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDbNodeStorageInGbs")
-    def max_db_node_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_db_node_storage_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total local node storage available in GBs.
         """
         return pulumi.get(self, "max_db_node_storage_in_gbs")
 
     @max_db_node_storage_in_gbs.setter
-    def max_db_node_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_db_node_storage_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_db_node_storage_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemoryInGbs")
-    def max_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total memory available in GBs.
         """
         return pulumi.get(self, "max_memory_in_gbs")
 
     @max_memory_in_gbs.setter
-    def max_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The memory allocated in GBs.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyDbServerVersion")
-    def monthly_db_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monthly_db_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "monthly_db_server_version")
 
     @monthly_db_server_version.setter
-    def monthly_db_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monthly_db_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monthly_db_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyStorageServerVersion")
-    def monthly_storage_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monthly_storage_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "monthly_storage_server_version")
 
     @monthly_storage_server_version.setter
-    def monthly_storage_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monthly_storage_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monthly_storage_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
-    def next_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of the cloud Exadata infrastructure resource.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the cloud Exadata infrastructure resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "storage_count")
 
     @storage_count.setter
-    def storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="storageServerType")
-    def storage_server_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_server_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The storage server type of the Exadata infrastructure.
         """
         return pulumi.get(self, "storage_server_type")
 
     @storage_server_type.setter
-    def storage_server_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_server_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_server_type", value)
 
     @_builtins.property
     @pulumi.getter(name="storageServerVersion")
-    def storage_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "storage_server_version")
 
     @storage_server_version.setter
-    def storage_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 
@@ -872,43 +872,43 @@ class _CloudExadataInfrastructureState:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the cloud Exadata infrastructure resource was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="totalStorageSizeInGbs")
-    def total_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
         return pulumi.get(self, "total_storage_size_in_gbs")
 
     @total_storage_size_in_gbs.setter
-    def total_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_storage_size_in_gbs", value)
 
 
@@ -918,20 +918,20 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
-                 database_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -953,7 +953,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             display_name=cloud_exadata_infrastructure_display_name,
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
-            compute_count=cloud_exadata_infrastructure_compute_count,
+            compute_count=int(cloud_exadata_infrastructure_compute_count),
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
@@ -963,14 +963,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window={
-                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 }],
                 "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_months_name,
                 }],
@@ -978,7 +978,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "preference": cloud_exadata_infrastructure_maintenance_window_preference,
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
-            storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_count=int(cloud_exadata_infrastructure_storage_count),
             storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```
@@ -1039,7 +1039,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             display_name=cloud_exadata_infrastructure_display_name,
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
-            compute_count=cloud_exadata_infrastructure_compute_count,
+            compute_count=int(cloud_exadata_infrastructure_compute_count),
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
@@ -1049,14 +1049,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window={
-                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 }],
                 "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_months_name,
                 }],
@@ -1064,7 +1064,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "preference": cloud_exadata_infrastructure_maintenance_window_preference,
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
-            storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_count=int(cloud_exadata_infrastructure_storage_count),
             storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```
@@ -1093,20 +1093,20 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
-                 database_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1174,46 +1174,46 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activated_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            additional_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            available_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
-            data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            database_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-            db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exascale_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_scheduling_policy_associated: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
-            max_cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            max_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            max_db_node_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            max_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            monthly_db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            monthly_storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            storage_server_type: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            total_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None) -> 'CloudExadataInfrastructure':
+            activated_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            additional_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            available_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+            data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+            max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            monthly_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            monthly_storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None) -> 'CloudExadataInfrastructure':
         """
         Get an existing CloudExadataInfrastructure resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -84,7 +84,7 @@ def get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_se
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server_open_alert_history = oci.databasemanagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_se
         alerts=pulumi.get(__ret__, 'alerts'),
         cloud_exadata_storage_server_id=pulumi.get(__ret__, 'cloud_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_cloud_exadata_storage_server_open_alert_history_output(cloud_exadata_storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_storage_server_open_alert_history_output(cloud_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageServerOpenAlertHistoryResult]:
     """
     This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
@@ -112,7 +112,7 @@ def get_cloud_exadata_storage_server_open_alert_history_output(cloud_exadata_sto
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server_open_alert_history = oci.databasemanagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
     ```
 
 

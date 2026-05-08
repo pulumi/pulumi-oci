@@ -120,17 +120,17 @@ class FleetCredentialInitArgs:
 @pulumi.input_type
 class _FleetCredentialState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_specifics: Optional[pulumi.Input['FleetCredentialEntitySpecificsArgs']] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input['FleetCredentialPasswordArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 user: Optional[pulumi.Input['FleetCredentialUserArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_specifics: pulumi.Input[Optional['FleetCredentialEntitySpecificsArgs']] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional['FleetCredentialPasswordArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 user: pulumi.Input[Optional['FleetCredentialUserArgs']] = None):
         """
         Input properties used for looking up and filtering FleetCredential resources.
 
@@ -171,134 +171,134 @@ class _FleetCredentialState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySpecifics")
-    def entity_specifics(self) -> Optional[pulumi.Input['FleetCredentialEntitySpecificsArgs']]:
+    def entity_specifics(self) -> pulumi.Input[Optional['FleetCredentialEntitySpecificsArgs']]:
         """
         (Updatable) Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
     @entity_specifics.setter
-    def entity_specifics(self, value: Optional[pulumi.Input['FleetCredentialEntitySpecificsArgs']]):
+    def entity_specifics(self, value: pulumi.Input[Optional['FleetCredentialEntitySpecificsArgs']]):
         pulumi.set(self, "entity_specifics", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input['FleetCredentialPasswordArgs']]:
+    def password(self) -> pulumi.Input[Optional['FleetCredentialPasswordArgs']]:
         """
         (Updatable) Credential Details.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input['FleetCredentialPasswordArgs']]):
+    def password(self, value: pulumi.Input[Optional['FleetCredentialPasswordArgs']]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the FleetCredential.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def user(self) -> Optional[pulumi.Input['FleetCredentialUserArgs']]:
+    def user(self) -> pulumi.Input[Optional['FleetCredentialUserArgs']]:
         """
         (Updatable) Credential Details.
         """
         return pulumi.get(self, "user")
 
     @user.setter
-    def user(self, value: Optional[pulumi.Input['FleetCredentialUserArgs']]):
+    def user(self, value: pulumi.Input[Optional['FleetCredentialUserArgs']]):
         pulumi.set(self, "user", value)
 
 
@@ -308,12 +308,12 @@ class FleetCredential(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_specifics: Optional[pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
-                 user: Optional[pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_specifics: pulumi.Input[Optional[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
+                 user: pulumi.Input[Optional[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -447,12 +447,12 @@ class FleetCredential(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_specifics: Optional[pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
-                 user: Optional[pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_specifics: pulumi.Input[Optional[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
+                 user: pulumi.Input[Optional[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -495,17 +495,17 @@ class FleetCredential(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_specifics: Optional[pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            user: Optional[pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None) -> 'FleetCredential':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_specifics: pulumi.Input[Optional[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            user: pulumi.Input[Optional[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None) -> 'FleetCredential':
         """
         Get an existing FleetCredential resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

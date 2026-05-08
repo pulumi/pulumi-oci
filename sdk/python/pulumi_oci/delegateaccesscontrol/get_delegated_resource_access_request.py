@@ -468,7 +468,7 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request = oci.DelegateAccessControl.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request = oci.delegateaccesscontrol.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
     ```
 
 
@@ -515,7 +515,7 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
         time_access_requested=pulumi.get(__ret__, 'time_access_requested'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_delegated_resource_access_request_output(delegated_resource_access_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_delegated_resource_access_request_output(delegated_resource_access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestResult]:
     """
     This data source provides details about a specific Delegated Resource Access Request resource in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -528,7 +528,7 @@ def get_delegated_resource_access_request_output(delegated_resource_access_reque
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request = oci.DelegateAccessControl.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request = oci.delegateaccesscontrol.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
     ```
 
 

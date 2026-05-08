@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
+ * const testAlertPolicyRule = oci.datasafe.getAlertPolicyRule({
  *     alertPolicyId: testAlertPolicy.id,
  *     ruleKey: alertPolicyRuleRuleKey,
  * });
@@ -86,7 +86,7 @@ export interface GetAlertPolicyRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
+ * const testAlertPolicyRule = oci.datasafe.getAlertPolicyRule({
  *     alertPolicyId: testAlertPolicy.id,
  *     ruleKey: alertPolicyRuleRuleKey,
  * });

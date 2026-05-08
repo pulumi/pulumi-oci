@@ -110,9 +110,9 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering MonitorPluginManagement resources.
  */
 export interface MonitorPluginManagementState {
-    compartmentId?: pulumi.Input<string>;
-    monitoredInstanceDescription?: pulumi.Input<string>;
-    monitoredInstanceDisplayName?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    monitoredInstanceDescription?: pulumi.Input<string | undefined>;
+    monitoredInstanceDisplayName?: pulumi.Input<string | undefined>;
     /**
      * OCID of monitored instance.
      *
@@ -120,9 +120,9 @@ export interface MonitorPluginManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    monitoredInstanceId?: pulumi.Input<string>;
-    monitoredInstanceManagementAgentId?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    monitoredInstanceId?: pulumi.Input<string | undefined>;
+    monitoredInstanceManagementAgentId?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**

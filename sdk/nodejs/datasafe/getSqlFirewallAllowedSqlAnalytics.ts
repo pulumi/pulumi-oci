@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallAllowedSqlAnalytics = oci.DataSafe.getSqlFirewallAllowedSqlAnalytics({
+ * const testSqlFirewallAllowedSqlAnalytics = oci.datasafe.getSqlFirewallAllowedSqlAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallAllowedSqlAnalyticGroupBy,
  *     scimQuery: sqlFirewallAllowedSqlAnalyticScimQuery,
  * });
@@ -123,10 +123,10 @@ export interface GetSqlFirewallAllowedSqlAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallAllowedSqlAnalytics = oci.DataSafe.getSqlFirewallAllowedSqlAnalytics({
+ * const testSqlFirewallAllowedSqlAnalytics = oci.datasafe.getSqlFirewallAllowedSqlAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallAllowedSqlAnalyticGroupBy,
  *     scimQuery: sqlFirewallAllowedSqlAnalyticScimQuery,
  * });
@@ -151,7 +151,7 @@ export interface GetSqlFirewallAllowedSqlAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -159,16 +159,16 @@ export interface GetSqlFirewallAllowedSqlAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallAllowedSqlAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallAllowedSqlAnalyticsFilterArgs>[] | undefined>;
     /**
      * The group by parameter to summarize the allowed SQL aggregation.
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
 }

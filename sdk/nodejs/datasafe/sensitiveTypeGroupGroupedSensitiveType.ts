@@ -118,16 +118,16 @@ export interface SensitiveTypeGroupGroupedSensitiveTypeState {
     /**
      * List of sensitive type id summary objects present in the sensitive type group.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypeItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypeItem>[] | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation>[] | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sensitiveTypeGroupId?: pulumi.Input<string>;
+    sensitiveTypeGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,7 +137,7 @@ export interface SensitiveTypeGroupGroupedSensitiveTypeArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation>[] | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -73,9 +73,9 @@ class ShapeManagementArgs:
 @pulumi.input_type
 class _ShapeManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ShapeManagement resources.
 
@@ -92,38 +92,38 @@ class _ShapeManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment containing the image.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Image to which the shape should be added.
         """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compatible shape that is to be added to the compatible shapes list for the image.
         """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
 
@@ -133,9 +133,9 @@ class ShapeManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
@@ -176,9 +176,9 @@ class ShapeManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -207,9 +207,9 @@ class ShapeManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ShapeManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ShapeManagement':
         """
         Get an existing ShapeManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

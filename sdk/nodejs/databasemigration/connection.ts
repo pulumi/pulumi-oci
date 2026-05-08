@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     freeformTags: connectionFreeformTags,
  *     host: connectionHost,
  *     nsgIds: connectionNsgIds,
- *     port: connectionPort,
+ *     port: Number(connectionPort),
  *     replicationPassword: connectionReplicationPassword,
  *     replicationUsername: connectionReplicationUsername,
  *     securityProtocol: connectionSecurityProtocol,
@@ -406,163 +406,163 @@ export interface ConnectionState {
     /**
      * (Updatable) An array of name-value pair attribute entries.
      */
-    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionAdditionalAttribute>[]>;
+    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionAdditionalAttribute>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines the type of connection. For example, ORACLE.
      */
-    connectionType?: pulumi.Input<string>;
+    connectionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the database being referenced.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the database being referenced.
      */
-    databaseName?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the database system being referenced.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The IP Address of the host.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * List of ingress IP addresses from where to connect to this connection's privateIp.
      */
-    ingressIps?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionIngressIp>[]>;
+    ingressIps?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionIngressIp>[] | undefined>;
     /**
      * (Updatable) The OCID of the key used in cryptographic operations.
      */
-    keyId?: pulumi.Input<string>;
+    keyId?: pulumi.Input<string | undefined>;
     /**
      * The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The port to be used for the connection.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
-    replicationPassword?: pulumi.Input<string>;
+    replicationPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    replicationUsername?: pulumi.Input<string>;
+    replicationUsername?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security Type for MySQL.
      */
-    securityProtocol?: pulumi.Input<string>;
+    securityProtocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the host the SSH key is valid for.
      */
-    sshHost?: pulumi.Input<string>;
+    sshHost?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Private SSH key string.
      */
-    sshKey?: pulumi.Input<string>;
+    sshKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Sudo location
      */
-    sshSudoLocation?: pulumi.Input<string>;
+    sshSudoLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    sshUser?: pulumi.Input<string>;
+    sshUser?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
      */
-    sslCa?: pulumi.Input<string>;
+    sslCa?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      */
-    sslCert?: pulumi.Input<string>;
+    sslCert?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
-    sslCrl?: pulumi.Input<string>;
+    sslCrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      */
-    sslKey?: pulumi.Input<string>;
+    sslKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SSL modes for MySQL.
      */
-    sslMode?: pulumi.Input<string>;
+    sslMode?: pulumi.Input<string | undefined>;
     /**
      * The Connection's current lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure resource ID.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      */
-    technologyType?: pulumi.Input<string>;
+    technologyType?: pulumi.Input<string | undefined>;
     /**
      * The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure resource ID.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
      *
@@ -570,7 +570,7 @@ export interface ConnectionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    wallet?: pulumi.Input<string>;
+    wallet?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -580,7 +580,7 @@ export interface ConnectionArgs {
     /**
      * (Updatable) An array of name-value pair attribute entries.
      */
-    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionAdditionalAttribute>[]>;
+    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.ConnectionAdditionalAttribute>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
@@ -588,7 +588,7 @@ export interface ConnectionArgs {
     /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines the type of connection. For example, ORACLE.
      */
@@ -596,23 +596,23 @@ export interface ConnectionArgs {
     /**
      * (Updatable) The OCID of the database being referenced.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the database being referenced.
      */
-    databaseName?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the database system being referenced.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
@@ -620,11 +620,11 @@ export interface ConnectionArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The IP Address of the host.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the key used in cryptographic operations.
      */
@@ -632,7 +632,7 @@ export interface ConnectionArgs {
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
@@ -640,59 +640,59 @@ export interface ConnectionArgs {
     /**
      * (Updatable) The port to be used for the connection.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
-    replicationPassword?: pulumi.Input<string>;
+    replicationPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    replicationUsername?: pulumi.Input<string>;
+    replicationUsername?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security Type for MySQL.
      */
-    securityProtocol?: pulumi.Input<string>;
+    securityProtocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the host the SSH key is valid for.
      */
-    sshHost?: pulumi.Input<string>;
+    sshHost?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Private SSH key string.
      */
-    sshKey?: pulumi.Input<string>;
+    sshKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Sudo location
      */
-    sshSudoLocation?: pulumi.Input<string>;
+    sshSudoLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    sshUser?: pulumi.Input<string>;
+    sshUser?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
      */
-    sslCa?: pulumi.Input<string>;
+    sslCa?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      */
-    sslCert?: pulumi.Input<string>;
+    sslCert?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
-    sslCrl?: pulumi.Input<string>;
+    sslCrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      */
-    sslKey?: pulumi.Input<string>;
+    sslKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SSL modes for MySQL.
      */
-    sslMode?: pulumi.Input<string>;
+    sslMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure resource ID.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      */
@@ -712,5 +712,5 @@ export interface ConnectionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    wallet?: pulumi.Input<string>;
+    wallet?: pulumi.Input<string | undefined>;
 }

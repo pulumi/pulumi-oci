@@ -211,59 +211,59 @@ export interface ImportedModelState {
     /**
      * Specifies the intended use or supported capabilities of the imported model.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The compartment OCID from which the model is imported.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
      */
-    dataSource?: pulumi.Input<inputs.GenerativeAi.ImportedModelDataSource>;
+    dataSource?: pulumi.Input<inputs.GenerativeAi.ImportedModelDataSource | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the imported model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the imported model.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current state of the imported model, providing more detailed and actionable context.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Represents a model imported into the system based on an external data source, such as Hugging Face or Object Storage.
      */
-    previousState?: pulumi.Input<string>;
+    previousState?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the imported model.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the imported model was created in the format of an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the imported model was updated in the format of an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The provider of the imported model.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the imported model.
      *
@@ -271,7 +271,7 @@ export interface ImportedModelState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -281,7 +281,7 @@ export interface ImportedModelArgs {
     /**
      * Specifies the intended use or supported capabilities of the imported model.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The compartment OCID from which the model is imported.
      */
@@ -293,23 +293,23 @@ export interface ImportedModelArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the imported model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the imported model.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The provider of the imported model.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the imported model.
      *
@@ -317,5 +317,5 @@ export interface ImportedModelArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

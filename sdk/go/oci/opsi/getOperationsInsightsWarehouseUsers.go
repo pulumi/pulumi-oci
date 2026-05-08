@@ -34,7 +34,7 @@ import (
 //				CompartmentId:                 pulumi.StringRef(compartmentId),
 //				DisplayName:                   pulumi.StringRef(operationsInsightsWarehouseUserDisplayName),
 //				Id:                            pulumi.StringRef(operationsInsightsWarehouseUserId),
-//				States:                        operationsInsightsWarehouseUserState,
+//				States:                        pulumi.ToArray(operationsInsightsWarehouseUserState),
 //			}, nil)
 //			if err != nil {
 //				return err

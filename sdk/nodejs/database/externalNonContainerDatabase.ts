@@ -225,47 +225,47 @@ export interface ExternalNonContainerDatabaseState {
     /**
      * The character set of the external database.
      */
-    characterSet?: pulumi.Input<string>;
+    characterSet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database configuration
      */
-    databaseConfiguration?: pulumi.Input<string>;
+    databaseConfiguration?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    databaseEdition?: pulumi.Input<string>;
+    databaseEdition?: pulumi.Input<string | undefined>;
     /**
      * The configuration of the Database Management service.
      */
-    databaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseDatabaseManagementConfig>[]>;
+    databaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseDatabaseManagementConfig>[] | undefined>;
     /**
      * The Oracle Database version.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      */
-    dbId?: pulumi.Input<string>;
+    dbId?: pulumi.Input<string | undefined>;
     /**
      * The database packs licensed for the external Oracle Database.
      */
-    dbPacks?: pulumi.Input<string>;
+    dbPacks?: pulumi.Input<string | undefined>;
     /**
      * The `DB_UNIQUE_NAME` of the external database.
      */
-    dbUniqueName?: pulumi.Input<string>;
+    dbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      *
@@ -273,39 +273,39 @@ export interface ExternalNonContainerDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The national character of the external database.
      */
-    ncharacterSet?: pulumi.Input<string>;
+    ncharacterSet?: pulumi.Input<string | undefined>;
     /**
      * The configuration of Operations Insights for the external database
      */
-    operationsInsightsConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig>[]>;
+    operationsInsightsConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig>[] | undefined>;
     /**
      * The configuration of Stack Monitoring for the external database.
      */
-    stackMonitoringConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig>[]>;
+    stackMonitoringConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig>[] | undefined>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -319,7 +319,7 @@ export interface ExternalNonContainerDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
      */
@@ -331,5 +331,5 @@ export interface ExternalNonContainerDatabaseArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

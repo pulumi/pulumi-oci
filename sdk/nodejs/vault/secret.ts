@@ -251,103 +251,103 @@ export interface SecretState {
     /**
      * (Updatable) The OCID of the compartment where you want to create the secret.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The version number of the secret version that's currently in use.
      */
-    currentVersionNumber?: pulumi.Input<string>;
+    currentVersionNumber?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the secret. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
      */
-    enableAutoGeneration?: pulumi.Input<boolean>;
+    enableAutoGeneration?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The value of this flag determines whether or not secret content will be generated automatically.
      */
-    isAutoGenerationEnabled?: pulumi.Input<boolean>;
+    isAutoGenerationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A Boolean value that indicates whether the secret is a source or replica secret.
      */
-    isReplica?: pulumi.Input<boolean>;
+    isReplica?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
-    keyId?: pulumi.Input<string>;
+    keyId?: pulumi.Input<string | undefined>;
     /**
      * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    lastRotationTime?: pulumi.Input<string>;
+    lastRotationTime?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    nextRotationTime?: pulumi.Input<string>;
+    nextRotationTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines the configuration that enables cross-region secret replication.
      */
-    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig>;
+    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig | undefined>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */
-    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig>;
+    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig | undefined>;
     /**
      * Additional information about the status of the secret rotation
      */
-    rotationStatus?: pulumi.Input<string>;
+    rotationStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
-    secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent>;
+    secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent | undefined>;
     /**
      * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
      */
-    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext>;
+    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext | undefined>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    secretName?: pulumi.Input<string>;
+    secretName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of rules to control how the secret is used and managed.
      */
-    secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[]>;
+    secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[] | undefined>;
     /**
      * Details for the source that the source secret has.
      */
-    sourceRegionInformations?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSourceRegionInformation>[]>;
+    sourceRegionInformations?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSourceRegionInformation>[] | undefined>;
     /**
      * The current lifecycle state of the secret.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeOfCurrentVersionExpiry?: pulumi.Input<string>;
+    timeOfCurrentVersionExpiry?: pulumi.Input<string | undefined>;
     /**
      * An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the vault where you want to create the secret.
      *
@@ -355,7 +355,7 @@ export interface SecretState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -369,19 +369,19 @@ export interface SecretArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the secret. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
      */
-    enableAutoGeneration?: pulumi.Input<boolean>;
+    enableAutoGeneration?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
@@ -389,23 +389,23 @@ export interface SecretArgs {
     /**
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defines the configuration that enables cross-region secret replication.
      */
-    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig>;
+    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig | undefined>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */
-    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig>;
+    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig | undefined>;
     /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
-    secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent>;
+    secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent | undefined>;
     /**
      * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
      */
-    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext>;
+    secretGenerationContext?: pulumi.Input<inputs.Vault.SecretSecretGenerationContext | undefined>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
@@ -413,7 +413,7 @@ export interface SecretArgs {
     /**
      * (Updatable) A list of rules to control how the secret is used and managed.
      */
-    secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[]>;
+    secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[] | undefined>;
     /**
      * The OCID of the vault where you want to create the secret.
      *

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.CertificatesManagement.getCertificates({
+ * const testCertificates = oci.certificatesmanagement.getCertificates({
  *     certificateId: testCertificate.id,
  *     compartmentId: compartmentId,
  *     issuerCertificateAuthorityId: testCertificateAuthority.id,
@@ -113,7 +113,7 @@ export interface GetCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.CertificatesManagement.getCertificates({
+ * const testCertificates = oci.certificatesmanagement.getCertificates({
  *     certificateId: testCertificate.id,
  *     compartmentId: compartmentId,
  *     issuerCertificateAuthorityId: testCertificateAuthority.id,
@@ -142,22 +142,22 @@ export interface GetCertificatesOutputArgs {
     /**
      * The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificatesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificatesFilterArgs>[] | undefined>;
     /**
      * The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
      */
-    issuerCertificateAuthorityId?: pulumi.Input<string>;
+    issuerCertificateAuthorityId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the specified name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

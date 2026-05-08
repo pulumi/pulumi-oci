@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testSubscriptionAcknowledgmentConfiguration = new oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration", {
  *     compartmentId: compartmentId,
- *     isAcknowledged: subscriptionAcknowledgmentConfigurationIsAcknowledged,
+ *     isAcknowledged: subscriptionAcknowledgmentConfigurationIsAcknowledged === "true",
  * });
  * ```
  *
@@ -120,11 +120,11 @@ export interface UtilsSubscriptionAcknowledgmentConfigurationState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
      */
-    acknowledgedBy?: pulumi.Input<string>;
+    acknowledgedBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Flag to determine whether the subscription was acknowledged or not.
      *
@@ -132,11 +132,11 @@ export interface UtilsSubscriptionAcknowledgmentConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isAcknowledged?: pulumi.Input<boolean>;
+    isAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time the subscription was acknowledged (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeAcknowledged?: pulumi.Input<string>;
+    timeAcknowledged?: pulumi.Input<string | undefined>;
 }
 
 /**

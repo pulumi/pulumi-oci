@@ -275,20 +275,20 @@ export interface ManagementAgentState {
     /**
      * The current availability status of managementAgent
      */
-    availabilityStatus?: pulumi.Input<string>;
+    availabilityStatus?: pulumi.Input<string | undefined>;
     /**
      * Compartment owning this DataSource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * list of dataSources associated with the agent
      */
-    dataSourceLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceList>[]>;
-    dataSourceSummaryLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceSummaryList>[]>;
+    dataSourceLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceList>[] | undefined>;
+    dataSourceSummaryLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceSummaryList>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
      *
@@ -301,100 +301,100 @@ export interface ManagementAgentState {
      *
      * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
      */
-    deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
+    deployPluginsIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) New displayName of Agent.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Management Agent host machine name
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Host resource ocid
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * agent install key identifier
      */
-    installKeyId?: pulumi.Input<string>;
+    installKeyId?: pulumi.Input<string | undefined>;
     /**
      * Path where Management Agent is installed
      */
-    installPath?: pulumi.Input<string>;
+    installPath?: pulumi.Input<string | undefined>;
     /**
      * The install type, either AGENT or GATEWAY
      */
-    installType?: pulumi.Input<string>;
+    installType?: pulumi.Input<string | undefined>;
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      */
-    isAgentAutoUpgradable?: pulumi.Input<boolean>;
+    isAgentAutoUpgradable?: pulumi.Input<boolean | undefined>;
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
-    isCustomerDeployed?: pulumi.Input<boolean>;
-    latestSupportedVersion?: pulumi.Input<string>;
+    isCustomerDeployed?: pulumi.Input<boolean | undefined>;
+    latestSupportedVersion?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Unique Management Agent identifier
      */
-    managedAgentId?: pulumi.Input<string>;
+    managedAgentId?: pulumi.Input<string | undefined>;
     /**
      * Additional properties for this Management Agent
      */
-    managementAgentProperties?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentManagementAgentProperty>[]>;
+    managementAgentProperties?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentManagementAgentProperty>[] | undefined>;
     /**
      * Platform Name
      */
-    platformName?: pulumi.Input<string>;
+    platformName?: pulumi.Input<string | undefined>;
     /**
      * Platform Type
      */
-    platformType?: pulumi.Input<string>;
+    platformType?: pulumi.Input<string | undefined>;
     /**
      * Platform Version
      */
-    platformVersion?: pulumi.Input<string>;
+    platformVersion?: pulumi.Input<string | undefined>;
     /**
      * list of managementAgentPlugins associated with the agent
      */
-    pluginLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentPluginList>[]>;
+    pluginLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentPluginList>[] | undefined>;
     /**
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      */
-    resourceArtifactVersion?: pulumi.Input<string>;
+    resourceArtifactVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of managementAgent
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      */
-    timeLastHeartbeat?: pulumi.Input<string>;
+    timeLastHeartbeat?: pulumi.Input<string | undefined>;
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Management Agent Version
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -404,7 +404,7 @@ export interface ManagementAgentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
      *
@@ -417,15 +417,15 @@ export interface ManagementAgentArgs {
      *
      * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
      */
-    deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
+    deployPluginsIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) New displayName of Agent.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique Management Agent identifier
      */

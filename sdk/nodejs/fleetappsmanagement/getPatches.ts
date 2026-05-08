@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatches = oci.FleetAppsManagement.getPatches({
+ * const testPatches = oci.fleetappsmanagement.getPatches({
  *     compartmentId: compartmentId,
  *     id: patchId,
  *     name: patchName,
  *     patchTypeId: testPatchType.id,
  *     productId: testProduct.id,
- *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied,
+ *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied === "true",
  *     state: patchState,
  *     timeReleasedGreaterThanOrEqualTo: patchTimeReleasedGreaterThanOrEqualTo,
  *     timeReleasedLessThan: patchTimeReleasedLessThan,
@@ -151,13 +151,13 @@ export interface GetPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatches = oci.FleetAppsManagement.getPatches({
+ * const testPatches = oci.fleetappsmanagement.getPatches({
  *     compartmentId: compartmentId,
  *     id: patchId,
  *     name: patchName,
  *     patchTypeId: testPatchType.id,
  *     productId: testProduct.id,
- *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied,
+ *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied === "true",
  *     state: patchState,
  *     timeReleasedGreaterThanOrEqualTo: patchTimeReleasedGreaterThanOrEqualTo,
  *     timeReleasedLessThan: patchTimeReleasedLessThan,
@@ -192,46 +192,46 @@ export interface GetPatchesOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPatchesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPatchesFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Patch by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Patch Type platformConfigurationId associated with the Patch.
      */
-    patchTypeId?: pulumi.Input<string>;
+    patchTypeId?: pulumi.Input<string | undefined>;
     /**
      * Product platformConfigurationId associated with the Patch.
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Filter patch based on compliance policy rules for the Product.
      */
-    shouldCompliancePolicyRulesBeApplied?: pulumi.Input<boolean>;
+    shouldCompliancePolicyRulesBeApplied?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the Patch.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return patches whose release date is greater than or equal to the given date.
      */
-    timeReleasedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeReleasedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return patches whose release date is less than the given date.
      */
-    timeReleasedLessThan?: pulumi.Input<string>;
+    timeReleasedLessThan?: pulumi.Input<string | undefined>;
     /**
      * DefinedBy type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Product version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  *
  * const testGeneratedKey = new oci.kms.GeneratedKey("test_generated_key", {
  *     cryptoEndpoint: generatedKeyCryptoEndpoint,
- *     includePlaintextKey: generatedKeyIncludePlaintextKey,
+ *     includePlaintextKey: generatedKeyIncludePlaintextKey === "true",
  *     keyId: testKey.id,
  *     keyShape: {
  *         algorithm: generatedKeyKeyShapeAlgorithm,
- *         length: generatedKeyKeyShapeLength,
+ *         length: Number(generatedKeyKeyShapeLength),
  *         curveId: testCurve.id,
  *     },
  *     associatedData: generatedKeyAssociatedData,
@@ -165,27 +165,27 @@ export interface GeneratedKeyState {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The encrypted data encryption key generated from a master encryption key.
      */
-    ciphertext?: pulumi.Input<string>;
+    ciphertext?: pulumi.Input<string | undefined>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
-    cryptoEndpoint?: pulumi.Input<string>;
+    cryptoEndpoint?: pulumi.Input<string | undefined>;
     /**
      * If true, the generated key is also returned unencrypted.
      */
-    includePlaintextKey?: pulumi.Input<boolean>;
+    includePlaintextKey?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the master encryption key to encrypt the generated data encryption key with.
      */
-    keyId?: pulumi.Input<string>;
+    keyId?: pulumi.Input<string | undefined>;
     /**
      * The cryptographic properties of a key.
      */
-    keyShape?: pulumi.Input<inputs.Kms.GeneratedKeyKeyShape>;
+    keyShape?: pulumi.Input<inputs.Kms.GeneratedKeyKeyShape | undefined>;
     /**
      * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
      *
@@ -193,15 +193,15 @@ export interface GeneratedKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    plaintext?: pulumi.Input<string>;
+    plaintext?: pulumi.Input<string | undefined>;
     /**
      * The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    plaintextChecksum?: pulumi.Input<string>;
+    plaintextChecksum?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -211,7 +211,7 @@ export interface GeneratedKeyArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
@@ -235,5 +235,5 @@ export interface GeneratedKeyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataInfrastructure = oci.DatabaseManagement.getCloudExadataInfrastructure({
+ * const testCloudExadataInfrastructure = oci.databasemanagement.getCloudExadataInfrastructure({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id,
  * });
  * ```
@@ -146,7 +146,7 @@ export interface GetCloudExadataInfrastructureResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataInfrastructure = oci.DatabaseManagement.getCloudExadataInfrastructure({
+ * const testCloudExadataInfrastructure = oci.databasemanagement.getCloudExadataInfrastructure({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id,
  * });
  * ```

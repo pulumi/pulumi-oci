@@ -175,31 +175,31 @@ export interface FusionEnvironmentServiceAttachmentState {
     /**
      * Compartment Identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Service Attachment Display name, can be renamed
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
-    fusionEnvironmentId?: pulumi.Input<string>;
+    fusionEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
      */
-    isSkuBased?: pulumi.Input<boolean>;
+    isSkuBased?: pulumi.Input<boolean | undefined>;
     /**
      * The service instance OCID of the instance being attached
      */
-    serviceInstanceId?: pulumi.Input<string>;
+    serviceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Type of the ServiceInstance being attached.
      *
@@ -207,23 +207,23 @@ export interface FusionEnvironmentServiceAttachmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    serviceInstanceType?: pulumi.Input<string>;
+    serviceInstanceType?: pulumi.Input<string | undefined>;
     /**
      * Public URL
      */
-    serviceUrl?: pulumi.Input<string>;
+    serviceUrl?: pulumi.Input<string | undefined>;
     /**
      * The current state of the ServiceInstance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -233,7 +233,7 @@ export interface FusionEnvironmentServiceAttachmentArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * unique FusionEnvironment identifier
      */

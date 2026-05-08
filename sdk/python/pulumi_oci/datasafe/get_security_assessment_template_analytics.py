@@ -219,12 +219,12 @@ def get_security_assessment_template_analytics(access_level: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_analytics = oci.DataSafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_analytics = oci.datasafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree,
-        is_compared=security_assessment_template_analytic_is_compared,
-        is_compliant=security_assessment_template_analytic_is_compliant,
-        is_group=security_assessment_template_analytic_is_group,
+        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree == "true",
+        is_compared=security_assessment_template_analytic_is_compared == "true",
+        is_compliant=security_assessment_template_analytic_is_compliant == "true",
+        is_group=security_assessment_template_analytic_is_group == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],
@@ -272,17 +272,17 @@ def get_security_assessment_template_analytics(access_level: Optional[_builtins.
         template_analytics_collections=pulumi.get(__ret__, 'template_analytics_collections'),
         template_assessment_id=pulumi.get(__ret__, 'template_assessment_id'),
         template_baseline_assessment_id=pulumi.get(__ret__, 'template_baseline_assessment_id'))
-def get_security_assessment_template_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentTemplateAnalyticsFilterArgs', 'GetSecurityAssessmentTemplateAnalyticsFilterArgsDict']]]]] = None,
-                                                      is_compared: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                      is_compliant: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                      is_group: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                      target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      template_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      template_baseline_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_template_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentTemplateAnalyticsFilterArgs', 'GetSecurityAssessmentTemplateAnalyticsFilterArgsDict']]]]] = None,
+                                                      is_compared: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                      is_compliant: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                      is_group: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                      target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      template_assessment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      template_baseline_assessment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentTemplateAnalyticsResult]:
     """
     This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -308,12 +308,12 @@ def get_security_assessment_template_analytics_output(access_level: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_analytics = oci.DataSafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_analytics = oci.datasafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree,
-        is_compared=security_assessment_template_analytic_is_compared,
-        is_compliant=security_assessment_template_analytic_is_compliant,
-        is_group=security_assessment_template_analytic_is_group,
+        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree == "true",
+        is_compared=security_assessment_template_analytic_is_compared == "true",
+        is_compliant=security_assessment_template_analytic_is_compliant == "true",
+        is_group=security_assessment_template_analytic_is_group == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],

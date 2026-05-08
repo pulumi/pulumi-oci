@@ -173,7 +173,7 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"],
+    test_sdm_masking_policy_difference_difference_columns = oci.datasafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"],
         column_names=sdm_masking_policy_difference_difference_column_column_name,
         difference_type=sdm_masking_policy_difference_difference_column_difference_type,
         objects=sdm_masking_policy_difference_difference_column_object,
@@ -214,14 +214,14 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
         sdm_masking_policy_difference_column_collections=pulumi.get(__ret__, 'sdm_masking_policy_difference_column_collections'),
         sdm_masking_policy_difference_id=pulumi.get(__ret__, 'sdm_masking_policy_difference_id'),
         sync_status=pulumi.get(__ret__, 'sync_status'))
-def get_sdm_masking_policy_difference_difference_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                                difference_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]]]] = None,
-                                                                objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                                planned_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                                sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                sync_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sdm_masking_policy_difference_difference_columns_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                                difference_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]]]] = None,
+                                                                objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                                planned_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                                sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                sync_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsResult]:
     """
     This data source provides the list of Sdm Masking Policy Difference Difference Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -234,7 +234,7 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"],
+    test_sdm_masking_policy_difference_difference_columns = oci.datasafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"],
         column_names=sdm_masking_policy_difference_difference_column_column_name,
         difference_type=sdm_masking_policy_difference_difference_column_difference_type,
         objects=sdm_masking_policy_difference_difference_column_object,

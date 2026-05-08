@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     osFamily: managedInstanceGroupOsFamily,
  *     vendorName: managedInstanceGroupVendorName,
  *     autonomousSettings: {
- *         isDataCollectionAuthorized: managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized,
+ *         isDataCollectionAuthorized: managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized === "true",
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -253,83 +253,83 @@ export interface ManagedInstanceGroupState {
     /**
      * The CPU architecture type of the managed instances that will be attached to this group.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
-    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
+    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether the Autonomous Linux service manages the group.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * The location of managed instances attached to the group. If no location is provided, the default is on premises.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The number of managed instances in the group.
      */
-    managedInstanceCount?: pulumi.Input<number>;
+    managedInstanceCount?: pulumi.Input<number | undefined>;
     /**
      * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      */
-    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    notificationTopicId?: pulumi.Input<string>;
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * The operating system type of the managed instances that will be attached to this group.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * The number of scheduled jobs pending against the managed instance group.
      */
-    pendingJobCount?: pulumi.Input<number>;
+    pendingJobCount?: pulumi.Input<number | undefined>;
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      */
-    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of software sources that the managed instance group will use.
      */
-    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupSoftwareSource>[]>;
+    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupSoftwareSource>[] | undefined>;
     /**
      * The current state of the managed instance group.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeModified?: pulumi.Input<string>;
+    timeModified?: pulumi.Input<string | undefined>;
     /**
      * The vendor of the operating system that will be used by the managed instances in the group. 
      *
@@ -337,7 +337,7 @@ export interface ManagedInstanceGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -351,7 +351,7 @@ export interface ManagedInstanceGroupArgs {
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
-    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
+    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      */
@@ -359,11 +359,11 @@ export interface ManagedInstanceGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
@@ -371,19 +371,19 @@ export interface ManagedInstanceGroupArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The location of managed instances attached to the group. If no location is provided, the default is on premises.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      */
-    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    notificationTopicId?: pulumi.Input<string>;
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * The operating system type of the managed instances that will be attached to this group.
      */
@@ -391,7 +391,7 @@ export interface ManagedInstanceGroupArgs {
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      */
-    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The vendor of the operating system that will be used by the managed instances in the group. 
      *

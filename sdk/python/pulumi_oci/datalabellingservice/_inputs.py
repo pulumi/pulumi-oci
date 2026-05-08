@@ -44,7 +44,7 @@ class DatasetDatasetFormatDetailsArgsDict(TypedDict):
     """
     The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
     """
-    text_file_type_metadata: NotRequired[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict']]
+    text_file_type_metadata: NotRequired[pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]]
     """
     Metadata for files with text content.
     """
@@ -53,7 +53,7 @@ class DatasetDatasetFormatDetailsArgsDict(TypedDict):
 class DatasetDatasetFormatDetailsArgs:
     def __init__(__self__, *,
                  format_type: pulumi.Input[_builtins.str],
-                 text_file_type_metadata: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']] = None):
+                 text_file_type_metadata: pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] format_type: The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         :param pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs'] text_file_type_metadata: Metadata for files with text content.
@@ -76,14 +76,14 @@ class DatasetDatasetFormatDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="textFileTypeMetadata")
-    def text_file_type_metadata(self) -> Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]:
+    def text_file_type_metadata(self) -> pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]:
         """
         Metadata for files with text content.
         """
         return pulumi.get(self, "text_file_type_metadata")
 
     @text_file_type_metadata.setter
-    def text_file_type_metadata(self, value: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]):
+    def text_file_type_metadata(self, value: pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]):
         pulumi.set(self, "text_file_type_metadata", value)
 
 
@@ -96,19 +96,19 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict(TypedDict):
     """
     It defines the format type of text files.
     """
-    column_delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    column_delimiter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A column delimiter
     """
-    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    column_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of a selected column.
     """
-    escape_character: NotRequired[pulumi.Input[_builtins.str]]
+    escape_character: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An escape character.
     """
-    line_delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    line_delimiter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A line delimiter.
     """
@@ -118,10 +118,10 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
     def __init__(__self__, *,
                  column_index: pulumi.Input[_builtins.int],
                  format_type: pulumi.Input[_builtins.str],
-                 column_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 escape_character: Optional[pulumi.Input[_builtins.str]] = None,
-                 line_delimiter: Optional[pulumi.Input[_builtins.str]] = None):
+                 column_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 escape_character: pulumi.Input[Optional[_builtins.str]] = None,
+                 line_delimiter: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] column_index: The index of a selected column. This is a zero-based index.
         :param pulumi.Input[_builtins.str] format_type: It defines the format type of text files.
@@ -167,50 +167,50 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="columnDelimiter")
-    def column_delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A column delimiter
         """
         return pulumi.get(self, "column_delimiter")
 
     @column_delimiter.setter
-    def column_delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_delimiter", value)
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of a selected column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter(name="escapeCharacter")
-    def escape_character(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def escape_character(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An escape character.
         """
         return pulumi.get(self, "escape_character")
 
     @escape_character.setter
-    def escape_character(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def escape_character(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "escape_character", value)
 
     @_builtins.property
     @pulumi.getter(name="lineDelimiter")
-    def line_delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line_delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A line delimiter.
         """
         return pulumi.get(self, "line_delimiter")
 
     @line_delimiter.setter
-    def line_delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line_delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line_delimiter", value)
 
 
@@ -227,7 +227,7 @@ class DatasetDatasetSourceDetailsArgsDict(TypedDict):
     """
     The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
     """
@@ -238,7 +238,7 @@ class DatasetDatasetSourceDetailsArgs:
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  source_type: pulumi.Input[_builtins.str],
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: The object storage bucket that contains the dataset data source.
         :param pulumi.Input[_builtins.str] namespace: The namespace of the bucket that contains the dataset data source.
@@ -289,14 +289,14 @@ class DatasetDatasetSourceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
@@ -352,7 +352,7 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgsDict(TypedDict):
     """
     Name of import format
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Version of import format
     """
@@ -361,7 +361,7 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgsDict(TypedDict):
 class DatasetInitialImportDatasetConfigurationImportFormatArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: Name of import format
         :param pulumi.Input[_builtins.str] version: Version of import format
@@ -384,14 +384,14 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of import format
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 

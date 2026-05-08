@@ -151,27 +151,27 @@ export interface CustomerSecretKeyState {
     /**
      * (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    inactiveState?: pulumi.Input<string>;
+    inactiveState?: pulumi.Input<string | undefined>;
     /**
      * The secret key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The secret key's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeExpires?: pulumi.Input<string>;
+    timeExpires?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user.
      *
@@ -179,7 +179,7 @@ export interface CustomerSecretKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**

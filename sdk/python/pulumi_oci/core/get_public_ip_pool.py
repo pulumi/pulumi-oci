@@ -155,7 +155,7 @@ def get_public_ip_pool(public_ip_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
+    test_public_ip_pool = oci.core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_public_ip_pool(public_ip_pool_id: Optional[_builtins.str] = None,
         public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_public_ip_pool_output(public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpPoolResult]:
     """
     This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -189,7 +189,7 @@ def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
+    test_public_ip_pool = oci.core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
     ```
 
 

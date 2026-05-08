@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResolverEndpoint = new oci.dns.ResolverEndpoint("test_resolver_endpoint", {
- *     isForwarding: resolverEndpointIsForwarding,
- *     isListening: resolverEndpointIsListening,
+ *     isForwarding: resolverEndpointIsForwarding === "true",
+ *     isListening: resolverEndpointIsListening === "true",
  *     name: resolverEndpointName,
  *     resolverId: testResolver.id,
  *     subnetId: testSubnet.id,
@@ -203,51 +203,51 @@ export interface ResolverEndpointState {
     /**
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
-    forwardingAddress?: pulumi.Input<string>;
+    forwardingAddress?: pulumi.Input<string | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
-    isForwarding?: pulumi.Input<boolean>;
+    isForwarding?: pulumi.Input<boolean | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      */
-    isListening?: pulumi.Input<boolean>;
+    isListening?: pulumi.Input<boolean | undefined>;
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      */
-    listeningAddress?: pulumi.Input<string>;
+    listeningAddress?: pulumi.Input<string | undefined>;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the target resolver.
      */
-    resolverId?: pulumi.Input<string>;
+    resolverId?: pulumi.Input<string | undefined>;
     /**
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    self?: pulumi.Input<string>;
+    self?: pulumi.Input<string | undefined>;
     /**
      * The current state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *
@@ -255,15 +255,15 @@ export interface ResolverEndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -273,11 +273,11 @@ export interface ResolverEndpointArgs {
     /**
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
-    forwardingAddress?: pulumi.Input<string>;
+    forwardingAddress?: pulumi.Input<string | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
@@ -289,15 +289,15 @@ export interface ResolverEndpointArgs {
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      */
-    listeningAddress?: pulumi.Input<string>;
+    listeningAddress?: pulumi.Input<string | undefined>;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the target resolver.
      */
@@ -305,7 +305,7 @@ export interface ResolverEndpointArgs {
     /**
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageRecalledDataSize = oci.LogAnalytics.getNamespaceStorageRecalledDataSize({
+ * const testNamespaceStorageRecalledDataSize = oci.loganalytics.getNamespaceStorageRecalledDataSize({
  *     namespace: namespaceStorageRecalledDataSizeNamespace,
  *     timeDataEnded: namespaceStorageRecalledDataSizeTimeDataEnded,
  *     timeDataStarted: namespaceStorageRecalledDataSizeTimeDataStarted,
@@ -86,7 +86,7 @@ export interface GetNamespaceStorageRecalledDataSizeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageRecalledDataSize = oci.LogAnalytics.getNamespaceStorageRecalledDataSize({
+ * const testNamespaceStorageRecalledDataSize = oci.loganalytics.getNamespaceStorageRecalledDataSize({
  *     namespace: namespaceStorageRecalledDataSizeNamespace,
  *     timeDataEnded: namespaceStorageRecalledDataSizeTimeDataEnded,
  *     timeDataStarted: namespaceStorageRecalledDataSizeTimeDataStarted,
@@ -113,9 +113,9 @@ export interface GetNamespaceStorageRecalledDataSizeOutputArgs {
     /**
      * This is the end of the time range for recalled data
      */
-    timeDataEnded?: pulumi.Input<string>;
+    timeDataEnded?: pulumi.Input<string | undefined>;
     /**
      * This is the start of the time range for recalled data
      */
-    timeDataStarted?: pulumi.Input<string>;
+    timeDataStarted?: pulumi.Input<string | undefined>;
 }

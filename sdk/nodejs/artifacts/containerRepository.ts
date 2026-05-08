@@ -29,8 +29,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isImmutable: containerRepositoryIsImmutable,
- *     isPublic: containerRepositoryIsPublic,
+ *     isImmutable: containerRepositoryIsImmutable === "true",
+ *     isPublic: containerRepositoryIsPublic === "true",
  *     readme: {
  *         content: containerRepositoryReadmeContent,
  *         format: containerRepositoryReadmeFormat,
@@ -211,71 +211,71 @@ export interface ContainerRepositoryState {
     /**
      * Total storage size in GBs that will be charged.
      */
-    billableSizeInGbs?: pulumi.Input<string>;
+    billableSizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The id of the user or principal that created the resource.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The container repository name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Total number of images.
      */
-    imageCount?: pulumi.Input<number>;
+    imageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      */
-    isImmutable?: pulumi.Input<boolean>;
+    isImmutable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * Total number of layers.
      */
-    layerCount?: pulumi.Input<number>;
+    layerCount?: pulumi.Input<number | undefined>;
     /**
      * Total storage in bytes consumed by layers.
      */
-    layersSizeInBytes?: pulumi.Input<string>;
+    layersSizeInBytes?: pulumi.Input<string | undefined>;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Container repository readme.
      */
-    readme?: pulumi.Input<inputs.Artifacts.ContainerRepositoryReadme>;
+    readme?: pulumi.Input<inputs.Artifacts.ContainerRepositoryReadme | undefined>;
     /**
      * The current state of the container repository.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      */
-    timeLastPushed?: pulumi.Input<string>;
+    timeLastPushed?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -289,7 +289,7 @@ export interface ContainerRepositoryArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The container repository name.
      */
@@ -297,17 +297,17 @@ export interface ContainerRepositoryArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      */
-    isImmutable?: pulumi.Input<boolean>;
+    isImmutable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Container repository readme.
      */
-    readme?: pulumi.Input<inputs.Artifacts.ContainerRepositoryReadme>;
+    readme?: pulumi.Input<inputs.Artifacts.ContainerRepositoryReadme | undefined>;
 }

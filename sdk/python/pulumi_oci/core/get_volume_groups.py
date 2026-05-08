@@ -138,7 +138,7 @@ def get_volume_groups(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+    test_volume_groups = oci.core.get_volume_groups(compartment_id=compartment_id,
         availability_domain=volume_group_availability_domain,
         display_name=volume_group_display_name,
         state=volume_group_state)
@@ -167,11 +167,11 @@ def get_volume_groups(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         volume_groups=pulumi.get(__ret__, 'volume_groups'))
-def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeGroupsFilterArgs', 'GetVolumeGroupsFilterArgsDict']]]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_groups_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeGroupsFilterArgs', 'GetVolumeGroupsFilterArgsDict']]]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupsResult]:
     """
     This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
@@ -185,7 +185,7 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+    test_volume_groups = oci.core.get_volume_groups(compartment_id=compartment_id,
         availability_domain=volume_group_availability_domain,
         display_name=volume_group_display_name,
         state=volume_group_state)

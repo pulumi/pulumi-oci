@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
+ * const testSummarizeResourceInventory = oci.jms.getSummarizeResourceInventory({
  *     compartmentId: compartmentId,
  *     timeEnd: summarizeResourceInventoryTimeEnd,
  *     timeStart: summarizeResourceInventoryTimeStart,
@@ -93,7 +93,7 @@ export interface GetSummarizeResourceInventoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
+ * const testSummarizeResourceInventory = oci.jms.getSummarizeResourceInventory({
  *     compartmentId: compartmentId,
  *     timeEnd: summarizeResourceInventoryTimeEnd,
  *     timeStart: summarizeResourceInventoryTimeStart,
@@ -117,13 +117,13 @@ export interface GetSummarizeResourceInventoryOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

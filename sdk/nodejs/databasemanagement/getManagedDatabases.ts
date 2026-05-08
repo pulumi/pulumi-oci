@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
+ * const testManagedDatabases = oci.databasemanagement.getManagedDatabases({
  *     compartmentId: compartmentId,
  *     deploymentType: managedDatabaseDeploymentType,
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
@@ -123,7 +123,7 @@ export interface GetManagedDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
+ * const testManagedDatabases = oci.databasemanagement.getManagedDatabases({
  *     compartmentId: compartmentId,
  *     deploymentType: managedDatabaseDeploymentType,
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
@@ -157,22 +157,22 @@ export interface GetManagedDatabasesOutputArgs {
     /**
      * A filter to return Managed Databases of the specified deployment type.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    externalExadataInfrastructureId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesFilterArgs>[]>;
+    externalExadataInfrastructureId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesFilterArgs>[] | undefined>;
     /**
      * The identifier of the resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Managed Databases with the specified management option.
      */
-    managementOption?: pulumi.Input<string>;
+    managementOption?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

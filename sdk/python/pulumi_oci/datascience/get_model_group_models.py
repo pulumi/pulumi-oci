@@ -148,7 +148,7 @@ def get_model_group_models(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_models = oci.DataScience.get_model_group_models(compartment_id=compartment_id,
+    test_model_group_models = oci.datascience.get_model_group_models(compartment_id=compartment_id,
         model_group_id=test_model_group["id"],
         created_by=model_group_model_created_by,
         display_name=model_group_model_display_name,
@@ -184,13 +184,13 @@ def get_model_group_models(compartment_id: Optional[_builtins.str] = None,
         model_group_id=pulumi.get(__ret__, 'model_group_id'),
         model_group_models=pulumi.get(__ret__, 'model_group_models'),
         state=pulumi.get(__ret__, 'state'))
-def get_model_group_models_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelGroupModelsFilterArgs', 'GetModelGroupModelsFilterArgsDict']]]]] = None,
-                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_group_models_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelGroupModelsFilterArgs', 'GetModelGroupModelsFilterArgsDict']]]]] = None,
+                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  model_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelGroupModelsResult]:
     """
     This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
@@ -203,7 +203,7 @@ def get_model_group_models_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_models = oci.DataScience.get_model_group_models(compartment_id=compartment_id,
+    test_model_group_models = oci.datascience.get_model_group_models(compartment_id=compartment_id,
         model_group_id=test_model_group["id"],
         created_by=model_group_model_created_by,
         display_name=model_group_model_display_name,

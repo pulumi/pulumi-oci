@@ -140,7 +140,7 @@ def get_self_subscription_token(subscription_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         token=pulumi.get(__ret__, 'token'))
-def get_self_subscription_token_output(subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_self_subscription_token_output(subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfSubscriptionTokenResult]:
     """
     This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.

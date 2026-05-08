@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutomaticDrConfiguration = oci.DisasterRecovery.getAutomaticDrConfiguration({
+ * const testAutomaticDrConfiguration = oci.disasterrecovery.getAutomaticDrConfiguration({
  *     automaticDrConfigurationId: testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id,
  * });
  * ```
@@ -124,7 +124,7 @@ export interface GetAutomaticDrConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutomaticDrConfiguration = oci.DisasterRecovery.getAutomaticDrConfiguration({
+ * const testAutomaticDrConfiguration = oci.disasterrecovery.getAutomaticDrConfiguration({
  *     automaticDrConfigurationId: testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id,
  * });
  * ```

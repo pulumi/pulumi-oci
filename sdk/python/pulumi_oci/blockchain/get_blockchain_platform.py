@@ -387,7 +387,7 @@ def get_blockchain_platform(blockchain_platform_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
+    test_blockchain_platform = oci.blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
     ```
 
 
@@ -428,7 +428,7 @@ def get_blockchain_platform(blockchain_platform_id: Optional[_builtins.str] = No
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_ocpu_capacity=pulumi.get(__ret__, 'total_ocpu_capacity'))
-def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_blockchain_platform_output(blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockchainPlatformResult]:
     """
     This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -441,7 +441,7 @@ def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
+    test_blockchain_platform = oci.blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
     ```
 
 

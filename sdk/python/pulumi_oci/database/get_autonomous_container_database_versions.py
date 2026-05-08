@@ -105,7 +105,7 @@ def get_autonomous_container_database_versions(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=compartment_id,
+    test_autonomous_container_database_versions = oci.database.get_autonomous_container_database_versions(compartment_id=compartment_id,
         service_component=autonomous_container_database_version_service_component)
     ```
 
@@ -126,9 +126,9 @@ def get_autonomous_container_database_versions(compartment_id: Optional[_builtin
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         service_component=pulumi.get(__ret__, 'service_component'))
-def get_autonomous_container_database_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]]]] = None,
-                                                      service_component: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_container_database_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]]]] = None,
+                                                      service_component: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
     """
     This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
@@ -141,7 +141,7 @@ def get_autonomous_container_database_versions_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=compartment_id,
+    test_autonomous_container_database_versions = oci.database.get_autonomous_container_database_versions(compartment_id=compartment_id,
         service_component=autonomous_container_database_version_service_component)
     ```
 

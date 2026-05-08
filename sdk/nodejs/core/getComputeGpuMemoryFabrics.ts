@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryFabrics = oci.Core.getComputeGpuMemoryFabrics({
+ * const testComputeGpuMemoryFabrics = oci.core.getComputeGpuMemoryFabrics({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryFabricAvailabilityDomain,
  *     computeGpuMemoryFabricHealth: computeGpuMemoryFabricComputeGpuMemoryFabricHealth,
@@ -128,7 +128,7 @@ export interface GetComputeGpuMemoryFabricsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryFabrics = oci.Core.getComputeGpuMemoryFabrics({
+ * const testComputeGpuMemoryFabrics = oci.core.getComputeGpuMemoryFabrics({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryFabricAvailabilityDomain,
  *     computeGpuMemoryFabricHealth: computeGpuMemoryFabricComputeGpuMemoryFabricHealth,
@@ -162,7 +162,7 @@ export interface GetComputeGpuMemoryFabricsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -170,26 +170,26 @@ export interface GetComputeGpuMemoryFabricsOutputArgs {
     /**
      * A filter to return ComputeGpuMemoryFabricSummary resources that match the given fabric health.
      */
-    computeGpuMemoryFabricHealth?: pulumi.Input<string>;
+    computeGpuMemoryFabricHealth?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the listings that matches the given GPU memory fabric id.
      */
-    computeGpuMemoryFabricId?: pulumi.Input<string>;
+    computeGpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return ComputeGpuMemoryFabricSummary resources that match the given lifecycle state.
      */
-    computeGpuMemoryFabricLifecycleState?: pulumi.Input<string>;
+    computeGpuMemoryFabricLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
      */
-    computeHpcIslandId?: pulumi.Input<string>;
+    computeHpcIslandId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute network block.
      */
-    computeNetworkBlockId?: pulumi.Input<string>;
+    computeNetworkBlockId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryFabricsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryFabricsFilterArgs>[] | undefined>;
 }

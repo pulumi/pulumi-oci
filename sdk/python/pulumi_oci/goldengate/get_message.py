@@ -84,7 +84,7 @@ def get_message(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_message = oci.GoldenGate.get_message(deployment_id=test_deployment["id"])
+    test_message = oci.goldengate.get_message(deployment_id=test_deployment["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_message(deployment_id: Optional[_builtins.str] = None,
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_message_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_message_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMessageResult]:
     """
     This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -112,7 +112,7 @@ def get_message_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_message = oci.GoldenGate.get_message(deployment_id=test_deployment["id"])
+    test_message = oci.goldengate.get_message(deployment_id=test_deployment["id"])
     ```
 
 

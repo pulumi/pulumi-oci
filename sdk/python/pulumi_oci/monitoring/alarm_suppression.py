@@ -25,12 +25,12 @@ class AlarmSuppressionInitArgs:
                  display_name: pulumi.Input[_builtins.str],
                  time_suppress_from: pulumi.Input[_builtins.str],
                  time_suppress_until: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 level: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None):
         """
         The set of arguments for constructing a AlarmSuppression resource.
 
@@ -128,19 +128,19 @@ class AlarmSuppressionInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -151,12 +151,12 @@ class AlarmSuppressionInitArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
@@ -165,24 +165,24 @@ class AlarmSuppressionInitArgs:
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
 
@@ -191,39 +191,39 @@ class AlarmSuppressionInitArgs:
         return pulumi.get(self, "level")
 
     @level.setter
-    def level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "level", value)
 
     @_builtins.property
     @pulumi.getter(name="suppressionConditions")
-    def suppression_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
+    def suppression_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
         """
         Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         """
         return pulumi.get(self, "suppression_conditions")
 
     @suppression_conditions.setter
-    def suppression_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
+    def suppression_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
         pulumi.set(self, "suppression_conditions", value)
 
 
 @pulumi.input_type
 class _AlarmSuppressionState:
     def __init__(__self__, *,
-                 alarm_suppression_target: Optional[pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 level: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_suppress_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_suppress_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 alarm_suppression_target: pulumi.Input[Optional['AlarmSuppressionAlarmSuppressionTargetArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AlarmSuppression resources.
 
@@ -285,43 +285,43 @@ class _AlarmSuppressionState:
 
     @_builtins.property
     @pulumi.getter(name="alarmSuppressionTarget")
-    def alarm_suppression_target(self) -> Optional[pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs']]:
+    def alarm_suppression_target(self) -> pulumi.Input[Optional['AlarmSuppressionAlarmSuppressionTargetArgs']]:
         """
         The target of the alarm suppression.
         """
         return pulumi.get(self, "alarm_suppression_target")
 
     @alarm_suppression_target.setter
-    def alarm_suppression_target(self, value: Optional[pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs']]):
+    def alarm_suppression_target(self, value: pulumi.Input[Optional['AlarmSuppressionAlarmSuppressionTargetArgs']]):
         pulumi.set(self, "alarm_suppression_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -332,12 +332,12 @@ class _AlarmSuppressionState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
@@ -346,36 +346,36 @@ class _AlarmSuppressionState:
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
 
@@ -384,60 +384,60 @@ class _AlarmSuppressionState:
         return pulumi.get(self, "level")
 
     @level.setter
-    def level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "level", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the alarm suppression.  Example: `DELETED`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="suppressionConditions")
-    def suppression_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
+    def suppression_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
         """
         Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         """
         return pulumi.get(self, "suppression_conditions")
 
     @suppression_conditions.setter
-    def suppression_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
+    def suppression_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
         pulumi.set(self, "suppression_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSuppressFrom")
-    def time_suppress_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_suppress_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         """
         return pulumi.get(self, "time_suppress_from")
 
     @time_suppress_from.setter
-    def time_suppress_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_suppress_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_suppress_from", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSuppressUntil")
-    def time_suppress_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_suppress_until(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
 
@@ -448,19 +448,19 @@ class _AlarmSuppressionState:
         return pulumi.get(self, "time_suppress_until")
 
     @time_suppress_until.setter
-    def time_suppress_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_suppress_until(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_suppress_until", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm suppression was last updated (deleted). Format defined by RFC3339.  Example: `2018-02-03T01:02:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -470,16 +470,16 @@ class AlarmSuppression(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 level: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
-                 time_suppress_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_suppress_until: Optional[pulumi.Input[_builtins.str]] = None,
+                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+                 time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
@@ -510,7 +510,7 @@ class AlarmSuppression(pulumi.CustomResource):
                 "target_type": alarm_suppression_alarm_suppression_target_target_type,
                 "alarm_id": test_alarm["id"],
                 "compartment_id": compartment_id,
-                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree,
+                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree == "true",
             },
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
@@ -600,7 +600,7 @@ class AlarmSuppression(pulumi.CustomResource):
                 "target_type": alarm_suppression_alarm_suppression_target_target_type,
                 "alarm_id": test_alarm["id"],
                 "compartment_id": compartment_id,
-                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree,
+                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree == "true",
             },
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
@@ -645,16 +645,16 @@ class AlarmSuppression(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 level: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
-                 time_suppress_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_suppress_until: Optional[pulumi.Input[_builtins.str]] = None,
+                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+                 time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -696,20 +696,20 @@ class AlarmSuppression(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            level: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_suppress_from: Optional[pulumi.Input[_builtins.str]] = None,
-            time_suppress_until: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AlarmSuppression':
+            alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            level: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
+            time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AlarmSuppression':
         """
         Get an existing AlarmSuppression resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

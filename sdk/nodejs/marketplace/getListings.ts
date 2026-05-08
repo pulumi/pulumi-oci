@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListings = oci.Marketplace.getListings({
+ * const testListings = oci.marketplace.getListings({
  *     categories: listingCategory,
  *     compartmentId: compartmentId,
  *     imageId: testImage.id,
- *     isFeatured: listingIsFeatured,
+ *     isFeatured: listingIsFeatured === "true",
  *     listingId: testListing.id,
  *     listingTypes: listingListingTypes,
  *     names: listingName,
@@ -175,11 +175,11 @@ export interface GetListingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListings = oci.Marketplace.getListings({
+ * const testListings = oci.marketplace.getListings({
  *     categories: listingCategory,
  *     compartmentId: compartmentId,
  *     imageId: testImage.id,
- *     isFeatured: listingIsFeatured,
+ *     isFeatured: listingIsFeatured === "true",
  *     listingId: testListing.id,
  *     listingTypes: listingListingTypes,
  *     names: listingName,
@@ -216,46 +216,46 @@ export interface GetListingsOutputArgs {
     /**
      * Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
      */
-    categories?: pulumi.Input<pulumi.Input<string>[]>;
+    categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingsFilterArgs>[] | undefined>;
     /**
      * The image identifier of the listing.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
      */
-    isFeatured?: pulumi.Input<boolean>;
+    isFeatured?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier for the listing.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * The type of the listing.
      */
-    listingTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    listingTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the listing.
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The operating system of the listing.
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only packages that match the given package type exactly.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * Name of the pricing type. If multiple pricing types are provided, then any listing with one or more matching pricing models will be returned.
      */
-    pricings?: pulumi.Input<pulumi.Input<string>[]>;
+    pricings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Limit results to just this publisher.
      */
-    publisherId?: pulumi.Input<string>;
+    publisherId?: pulumi.Input<string | undefined>;
 }

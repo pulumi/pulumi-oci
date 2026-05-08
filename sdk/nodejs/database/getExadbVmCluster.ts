@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmCluster = oci.Database.getExadbVmCluster({
+ * const testExadbVmCluster = oci.database.getExadbVmCluster({
  *     exadbVmClusterId: testExadbVmClusterOciDatabaseExadbVmCluster.id,
  * });
  * ```
@@ -233,7 +233,7 @@ export interface GetExadbVmClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmCluster = oci.Database.getExadbVmCluster({
+ * const testExadbVmCluster = oci.database.getExadbVmCluster({
  *     exadbVmClusterId: testExadbVmClusterOciDatabaseExadbVmCluster.id,
  * });
  * ```

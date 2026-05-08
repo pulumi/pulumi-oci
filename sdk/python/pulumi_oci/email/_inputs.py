@@ -42,23 +42,23 @@ __all__ = [
 ]
 
 class EmailDomainLockArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Lock type.
     """
@@ -66,11 +66,11 @@ class EmailDomainLockArgsDict(TypedDict):
 @pulumi.input_type
 class EmailDomainLockArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -91,83 +91,83 @@ class EmailDomainLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lock type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class EmailIpPoolLockArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Lock type.
     """
@@ -175,11 +175,11 @@ class EmailIpPoolLockArgsDict(TypedDict):
 @pulumi.input_type
 class EmailIpPoolLockArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
         :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -200,83 +200,83 @@ class EmailIpPoolLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lock type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class EmailIpPoolOutboundIpsResponseArgsDict(TypedDict):
-    assignment_state: NotRequired[pulumi.Input[_builtins.str]]
+    assignment_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The assignment state of the public IP address.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
     """
-    outbound_ip: NotRequired[pulumi.Input[_builtins.str]]
+    outbound_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The public IP address assigned to the tenancy.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the IpPool.
     """
-    time_unassigned: NotRequired[pulumi.Input[_builtins.str]]
+    time_unassigned: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
     """
@@ -284,11 +284,11 @@ class EmailIpPoolOutboundIpsResponseArgsDict(TypedDict):
 @pulumi.input_type
 class EmailIpPoolOutboundIpsResponseArgs:
     def __init__(__self__, *,
-                 assignment_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 outbound_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_unassigned: Optional[pulumi.Input[_builtins.str]] = None):
+                 assignment_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 outbound_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_unassigned: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] assignment_state: The assignment state of the public IP address.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
@@ -309,83 +309,83 @@ class EmailIpPoolOutboundIpsResponseArgs:
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
-    def assignment_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assignment_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The assignment state of the public IP address.
         """
         return pulumi.get(self, "assignment_state")
 
     @assignment_state.setter
-    def assignment_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assignment_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assignment_state", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundIp")
-    def outbound_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def outbound_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IP address assigned to the tenancy.
         """
         return pulumi.get(self, "outbound_ip")
 
     @outbound_ip.setter
-    def outbound_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def outbound_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "outbound_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the IpPool.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUnassigned")
-    def time_unassigned(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_unassigned(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_unassigned")
 
     @time_unassigned.setter
-    def time_unassigned(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_unassigned(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_unassigned", value)
 
 
 class EmailReturnPathLockArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The lock compartment ID.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Lock type.
     """
@@ -393,11 +393,11 @@ class EmailReturnPathLockArgsDict(TypedDict):
 @pulumi.input_type
 class EmailReturnPathLockArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The lock compartment ID.
         :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -418,83 +418,83 @@ class EmailReturnPathLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lock type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class SenderLockArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compartment that contains the sender.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Lock type.
     """
@@ -502,11 +502,11 @@ class SenderLockArgsDict(TypedDict):
 @pulumi.input_type
 class SenderLockArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the sender.
         :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -527,62 +527,62 @@ class SenderLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the sender.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lock type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 

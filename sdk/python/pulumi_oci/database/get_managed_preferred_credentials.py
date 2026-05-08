@@ -95,7 +95,7 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[Union['GetManag
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
+    test_managed_database_preferred_credentials = oci.database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[Union['GetManag
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         preferred_credential_collections=pulumi.get(__ret__, 'preferred_credential_collections'))
-def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedPreferredCredentialsFilterArgs', 'GetManagedPreferredCredentialsFilterArgsDict']]]]] = None,
-                                             managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_preferred_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedPreferredCredentialsFilterArgs', 'GetManagedPreferredCredentialsFilterArgsDict']]]]] = None,
+                                             managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedPreferredCredentialsResult]:
     """
     This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
@@ -126,7 +126,7 @@ def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
+    test_managed_database_preferred_credentials = oci.database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
     ```
 
 

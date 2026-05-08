@@ -153,8 +153,8 @@ def get_listing_resource_version(listing_id: Optional[_builtins.str] = None,
         listing_resource_version=pulumi.get(__ret__, 'listing_resource_version'),
         resource_version=pulumi.get(__ret__, 'resource_version'),
         time_published=pulumi.get(__ret__, 'time_published'))
-def get_listing_resource_version_output(listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        resource_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listing_resource_version_output(listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        resource_version: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingResourceVersionResult]:
     """
     Use this data source to access information about an existing resource.

@@ -33,7 +33,7 @@ import (
 //				Ciphertext:     decryptedDataCiphertext,
 //				CryptoEndpoint: decryptedDataCryptoEndpoint,
 //				KeyId:          testKey.Id,
-//				AssociatedData: decryptedDataAssociatedData,
+//				AssociatedData: pulumi.ToMap(decryptedDataAssociatedData),
 //			}, nil)
 //			if err != nil {
 //				return err

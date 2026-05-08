@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRatecards = oci.OneSubsription.getRatecards({
+ * const testRatecards = oci.onesubsription.getRatecards({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     partNumber: ratecardPartNumber,
@@ -100,7 +100,7 @@ export interface GetRatecardsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRatecards = oci.OneSubsription.getRatecards({
+ * const testRatecards = oci.onesubsription.getRatecards({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     partNumber: ratecardPartNumber,
@@ -129,11 +129,11 @@ export interface GetRatecardsOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetRatecardsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetRatecardsFilterArgs>[] | undefined>;
     /**
      * This param is used to get the rate card(s) filterd by the partNumber
      */
-    partNumber?: pulumi.Input<string>;
+    partNumber?: pulumi.Input<string | undefined>;
     /**
      * Line level Subscription Id
      */
@@ -141,9 +141,9 @@ export interface GetRatecardsOutputArgs {
     /**
      * This param is used to get the rate card(s) whose effective start date starts on or after a particular date
      */
-    timeFrom?: pulumi.Input<string>;
+    timeFrom?: pulumi.Input<string | undefined>;
     /**
      * This param is used to get the rate card(s) whose effective end date ends on or before a particular date
      */
-    timeTo?: pulumi.Input<string>;
+    timeTo?: pulumi.Input<string | undefined>;
 }

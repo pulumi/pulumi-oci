@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatformPatches = oci.Blockchain.getBlockchainPlatformPatches({
+ * const testBlockchainPlatformPatches = oci.blockchain.getBlockchainPlatformPatches({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetBlockchainPlatformPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatformPatches = oci.Blockchain.getBlockchainPlatformPatches({
+ * const testBlockchainPlatformPatches = oci.blockchain.getBlockchainPlatformPatches({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetBlockchainPlatformPatchesOutputArgs {
      * Unique service identifier.
      */
     blockchainPlatformId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetBlockchainPlatformPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetBlockchainPlatformPatchesFilterArgs>[] | undefined>;
 }

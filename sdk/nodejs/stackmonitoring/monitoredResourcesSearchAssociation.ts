@@ -158,35 +158,35 @@ export interface MonitoredResourcesSearchAssociationState {
     /**
      * Association type filter to search associated resources.
      */
-    associationType?: pulumi.Input<string>;
+    associationType?: pulumi.Input<string | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    destinationResourceId?: pulumi.Input<string>;
+    destinationResourceId?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    destinationResourceName?: pulumi.Input<string>;
+    destinationResourceName?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Type.
      */
-    destinationResourceType?: pulumi.Input<string>;
+    destinationResourceType?: pulumi.Input<string | undefined>;
     /**
      * List of Monitored Resource Associations.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchAssociationItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchAssociationItem>[] | undefined>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    sourceResourceId?: pulumi.Input<string>;
+    sourceResourceId?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    sourceResourceName?: pulumi.Input<string>;
+    sourceResourceName?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Type. 
      *
@@ -194,7 +194,7 @@ export interface MonitoredResourcesSearchAssociationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceResourceType?: pulumi.Input<string>;
+    sourceResourceType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -204,7 +204,7 @@ export interface MonitoredResourcesSearchAssociationArgs {
     /**
      * Association type filter to search associated resources.
      */
-    associationType?: pulumi.Input<string>;
+    associationType?: pulumi.Input<string | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -212,23 +212,23 @@ export interface MonitoredResourcesSearchAssociationArgs {
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    destinationResourceId?: pulumi.Input<string>;
+    destinationResourceId?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    destinationResourceName?: pulumi.Input<string>;
+    destinationResourceName?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Type.
      */
-    destinationResourceType?: pulumi.Input<string>;
+    destinationResourceType?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    sourceResourceId?: pulumi.Input<string>;
+    sourceResourceId?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    sourceResourceName?: pulumi.Input<string>;
+    sourceResourceName?: pulumi.Input<string | undefined>;
     /**
      * Source Monitored Resource Type. 
      *
@@ -236,5 +236,5 @@ export interface MonitoredResourcesSearchAssociationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceResourceType?: pulumi.Input<string>;
+    sourceResourceType?: pulumi.Input<string | undefined>;
 }

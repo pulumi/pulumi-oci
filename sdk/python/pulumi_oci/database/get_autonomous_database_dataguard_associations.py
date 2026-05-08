@@ -98,7 +98,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_dataguard_associations = oci.database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
         autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_database_dataguard_associations_output(autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
+def get_autonomous_database_dataguard_associations_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -129,7 +129,7 @@ def get_autonomous_database_dataguard_associations_output(autonomous_database_id
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_dataguard_associations = oci.database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

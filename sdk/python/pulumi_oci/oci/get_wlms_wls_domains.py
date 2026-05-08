@@ -204,14 +204,14 @@ def get_wlms_wls_domains(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         weblogic_version=pulumi.get(__ret__, 'weblogic_version'),
         wls_domain_collections=pulumi.get(__ret__, 'wls_domain_collections'))
-def get_wlms_wls_domains_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict']]]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                middleware_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                patch_readiness_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                weblogic_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_wlms_wls_domains_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict']]]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                middleware_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                patch_readiness_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                weblogic_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainsResult]:
     """
     This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.

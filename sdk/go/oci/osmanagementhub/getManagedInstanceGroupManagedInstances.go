@@ -33,7 +33,7 @@ import (
 //				ManagedInstanceGroupId: testManagedInstanceGroup.Id,
 //				CompartmentId:          pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree: pulumi.BoolRef(managedInstanceGroupManagedInstanceCompartmentIdInSubtree),
-//				DisplayNames:           managedInstanceGroupManagedInstanceDisplayName,
+//				DisplayNames:           pulumi.ToArray(managedInstanceGroupManagedInstanceDisplayName),
 //				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupManagedInstanceDisplayNameContains),
 //				ManagedInstanceId:      pulumi.StringRef(testManagedInstance.Id),
 //			}, nil)

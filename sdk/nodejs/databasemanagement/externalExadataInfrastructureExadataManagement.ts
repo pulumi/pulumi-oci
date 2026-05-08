@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalExadataInfrastructureExadataManagement = new oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management", {
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
- *     enableExadata: enableExadata,
+ *     enableExadata: enableExadata === "true",
  *     licenseModel: externalExadataInfrastructureExadataManagementLicenseModel,
  * });
  * ```
@@ -118,15 +118,15 @@ export interface ExternalExadataInfrastructureExadataManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableExadata?: pulumi.Input<boolean>;
+    enableExadata?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    externalExadataInfrastructureId?: pulumi.Input<string>;
+    externalExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -148,5 +148,5 @@ export interface ExternalExadataInfrastructureExadataManagementArgs {
     /**
      * The Oracle license model.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }

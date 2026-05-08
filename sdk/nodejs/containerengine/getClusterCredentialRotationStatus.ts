@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterCredentialRotationStatus = oci.ContainerEngine.getClusterCredentialRotationStatus({
+ * const testClusterCredentialRotationStatus = oci.containerengine.getClusterCredentialRotationStatus({
  *     clusterId: testCluster.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetClusterCredentialRotationStatusResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterCredentialRotationStatus = oci.ContainerEngine.getClusterCredentialRotationStatus({
+ * const testClusterCredentialRotationStatus = oci.containerengine.getClusterCredentialRotationStatus({
  *     clusterId: testCluster.id,
  * });
  * ```

@@ -167,49 +167,49 @@ export interface DrgRouteTableRouteRuleState {
     /**
      * Additional properties for the route, computed by the service.
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      *
      * Potential values:
      * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
      */
-    destinationType?: pulumi.Input<string>;
+    destinationType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      *
      * Potential values:
      * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
-    drgRouteTableId?: pulumi.Input<string>;
+    drgRouteTableId?: pulumi.Input<string | undefined>;
     /**
      * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      */
-    isBlackhole?: pulumi.Input<boolean>;
+    isBlackhole?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates that the route was not imported due to a conflict between route rules.
      */
-    isConflict?: pulumi.Input<boolean>;
+    isConflict?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    nextHopDrgAttachmentId?: pulumi.Input<string>;
+    nextHopDrgAttachmentId?: pulumi.Input<string | undefined>;
     /**
      * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      */
-    routeProvenance?: pulumi.Input<string>;
+    routeProvenance?: pulumi.Input<string | undefined>;
     /**
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      */
-    routeType?: pulumi.Input<string>;
+    routeType?: pulumi.Input<string | undefined>;
 }
 
 /**

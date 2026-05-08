@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFaultDomains = oci.Identity.getFaultDomains({
+ * const testFaultDomains = oci.identity.getFaultDomains({
  *     availabilityDomain: faultDomainAvailabilityDomain,
  *     compartmentId: compartmentId,
  * });
@@ -84,7 +84,7 @@ export interface GetFaultDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFaultDomains = oci.Identity.getFaultDomains({
+ * const testFaultDomains = oci.identity.getFaultDomains({
  *     availabilityDomain: faultDomainAvailabilityDomain,
  *     compartmentId: compartmentId,
  * });
@@ -111,5 +111,5 @@ export interface GetFaultDomainsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetFaultDomainsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetFaultDomainsFilterArgs>[] | undefined>;
 }

@@ -22,12 +22,12 @@ __all__ = ['InstanceConfigurationArgs', 'InstanceConfiguration']
 class InstanceConfigurationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstanceConfiguration resource.
 
@@ -80,64 +80,64 @@ class InstanceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDetails")
-    def instance_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']]:
+    def instance_details(self) -> pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]:
         return pulumi.get(self, "instance_details")
 
     @instance_details.setter
-    def instance_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']]):
+    def instance_details(self, value: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]):
         pulumi.set(self, "instance_details", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
 
@@ -158,22 +158,22 @@ class InstanceConfigurationArgs:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
 
 @pulumi.input_type
 class _InstanceConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deferred_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deferred_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstanceConfiguration resources.
 
@@ -221,88 +221,88 @@ class _InstanceConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deferredFields")
-    def deferred_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deferred_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
         """
         return pulumi.get(self, "deferred_fields")
 
     @deferred_fields.setter
-    def deferred_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deferred_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deferred_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDetails")
-    def instance_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']]:
+    def instance_details(self) -> pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]:
         return pulumi.get(self, "instance_details")
 
     @instance_details.setter
-    def instance_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']]):
+    def instance_details(self, value: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]):
         pulumi.set(self, "instance_details", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
 
@@ -323,19 +323,19 @@ class _InstanceConfigurationState:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -345,13 +345,13 @@ class InstanceConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_details: Optional[pulumi.Input[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -384,10 +384,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "type": instance_configuration_instance_details_block_volumes_attach_details_type,
                         "device": instance_configuration_instance_details_block_volumes_attach_details_device,
                         "display_name": instance_configuration_instance_details_block_volumes_attach_details_display_name,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only,
-                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable,
-                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap,
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
+                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only == "true",
+                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable == "true",
+                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap == "true",
                     },
                     "create_details": {
                         "autotune_policies": [{
@@ -409,7 +409,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "freeform_tags": {
                             "Department": "Finance",
                         },
-                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
+                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled == "true",
                         "is_reservations_enabled": instance_configuration_instance_details_block_volumes_create_details_is_reservations_enabled,
                         "kms_key_id": test_key["id"],
                         "size_in_gbs": instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
@@ -424,16 +424,16 @@ class InstanceConfiguration(pulumi.CustomResource):
                 }],
                 "launch_details": {
                     "agent_config": {
-                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled,
-                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled,
-                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled,
+                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled == "true",
+                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled == "true",
+                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled == "true",
                         "plugins_configs": [{
                             "desired_state": instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state,
                             "name": instance_configuration_instance_details_launch_details_agent_config_plugins_config_name,
                         }],
                     },
                     "availability_config": {
-                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred,
+                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred == "true",
                         "recovery_action": instance_configuration_instance_details_launch_details_availability_config_recovery_action,
                     },
                     "availability_domain": instance_configuration_instance_details_launch_details_availability_domain,
@@ -442,9 +442,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "compartment_id": compartment_id,
                     "compute_cluster_id": test_compute_cluster["id"],
                     "create_vnic_details": {
-                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
-                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
+                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
+                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record == "true",
+                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip == "true",
                         "defined_tags": {
                             "Operations.CostCenter": "42",
                         },
@@ -462,7 +462,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "private_ip": instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
                         "private_ip_id": test_private_ip["id"],
                         "security_attributes": instance_configuration_instance_details_launch_details_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check,
+                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check == "true",
                         "subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_subnet_cidr,
                         "subnet_id": test_subnet["id"],
                     },
@@ -477,17 +477,17 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "Department": "Finance",
                     },
                     "instance_options": {
-                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
                     },
                     "ipxe_script": instance_configuration_instance_details_launch_details_ipxe_script,
-                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled,
-                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled,
+                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled == "true",
+                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled == "true",
                     "launch_mode": instance_configuration_instance_details_launch_details_launch_mode,
                     "launch_options": {
                         "boot_volume_type": instance_configuration_instance_details_launch_details_launch_options_boot_volume_type,
                         "firmware": instance_configuration_instance_details_launch_details_launch_options_firmware,
-                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
+                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
                         "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
                         "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
                     },
@@ -502,22 +502,22 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "platform_config": {
                         "type": instance_configuration_instance_details_launch_details_platform_config_type,
-                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
+                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled == "true",
                         "config_map": instance_configuration_instance_details_launch_details_platform_config_config_map,
-                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
-                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
-                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled,
-                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled,
-                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled,
+                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled == "true",
+                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
+                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled == "true",
+                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled == "true",
+                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled == "true",
+                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
+                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
                         "numa_nodes_per_socket": instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
-                        "percentage_of_cores_enabled": instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled,
+                        "percentage_of_cores_enabled": int(instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
                     },
                     "preemptible_instance_config": {
                         "preemption_action": {
                             "type": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type,
-                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                         },
                     },
                     "preferred_maintenance_action": instance_configuration_instance_details_launch_details_preferred_maintenance_action,
@@ -526,10 +526,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "shape_config": {
                         "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
                         "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
-                        "nvmes": instance_configuration_instance_details_launch_details_shape_config_nvmes,
+                        "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
                         "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
                         "resource_management": instance_configuration_instance_details_launch_details_shape_config_resource_management,
-                        "vcpus": instance_configuration_instance_details_launch_details_shape_config_vcpus,
+                        "vcpus": int(instance_configuration_instance_details_launch_details_shape_config_vcpus),
                     },
                     "source_details": {
                         "source_type": instance_configuration_instance_details_launch_details_source_details_source_type,
@@ -552,10 +552,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "type": instance_configuration_instance_details_options_block_volumes_attach_details_type,
                             "device": instance_configuration_instance_details_options_block_volumes_attach_details_device,
                             "display_name": instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only,
-                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable,
-                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap,
+                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
+                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only == "true",
+                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable == "true",
+                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap == "true",
                         },
                         "create_details": {
                             "autotune_policies": [{
@@ -573,7 +573,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "freeform_tags": {
                                 "Department": "Finance",
                             },
-                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled,
+                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled == "true",
                             "is_reservations_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_reservations_enabled,
                             "kms_key_id": test_key["id"],
                             "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
@@ -588,9 +588,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     }],
                     "launch_details": {
                         "agent_config": {
-                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled,
-                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled,
-                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled,
+                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled == "true",
+                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled == "true",
+                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled == "true",
                             "plugins_configs": [{
                                 "desired_state": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
                                 "name": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
@@ -605,9 +605,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "compartment_id": compartment_id,
                         "compute_cluster_id": test_compute_cluster["id"],
                         "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
-                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
+                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
+                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record == "true",
+                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip == "true",
                             "defined_tags": {
                                 "Operations.CostCenter": "42",
                             },
@@ -625,7 +625,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "private_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
                             "private_ip_id": test_private_ip["id"],
                             "security_attributes": instance_configuration_instance_details_options_launch_details_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
+                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check == "true",
                             "subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_subnet_cidr,
                             "subnet_id": test_subnet["id"],
                         },
@@ -640,17 +640,17 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         "instance_options": {
-                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
                         },
                         "ipxe_script": instance_configuration_instance_details_options_launch_details_ipxe_script,
-                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled,
+                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled == "true",
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled == "true",
                         "launch_mode": instance_configuration_instance_details_options_launch_details_launch_mode,
                         "launch_options": {
                             "boot_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
                             "firmware": instance_configuration_instance_details_options_launch_details_launch_options_firmware,
-                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
+                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
+                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
                             "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
                             "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
                         },
@@ -665,21 +665,21 @@ class InstanceConfiguration(pulumi.CustomResource):
                         },
                         "platform_config": {
                             "type": instance_configuration_instance_details_options_launch_details_platform_config_type,
-                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled,
-                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled,
-                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled,
-                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled,
-                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled,
-                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled,
+                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled == "true",
+                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled == "true",
+                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
+                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled == "true",
+                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled == "true",
+                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled == "true",
+                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
+                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
                             "numa_nodes_per_socket": instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
-                            "percentage_of_cores_enabled": instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled,
+                            "percentage_of_cores_enabled": int(instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled),
                         },
                         "preemptible_instance_config": {
                             "preemption_action": {
                                 "type": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
-                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                             },
                         },
                         "preferred_maintenance_action": instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
@@ -688,10 +688,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "shape_config": {
                             "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
                             "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
-                            "nvmes": instance_configuration_instance_details_options_launch_details_shape_config_nvmes,
+                            "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
                             "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
                             "resource_management": instance_configuration_instance_details_options_launch_details_shape_config_resource_management,
-                            "vcpus": instance_configuration_instance_details_options_launch_details_shape_config_vcpus,
+                            "vcpus": int(instance_configuration_instance_details_options_launch_details_shape_config_vcpus),
                         },
                         "source_details": {
                             "source_type": instance_configuration_instance_details_options_launch_details_source_details_source_type,
@@ -709,9 +709,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "secondary_vnics": [{
                         "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip,
-                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
-                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
+                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
+                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
+                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                             "defined_tags": {
                                 "Operations.CostCenter": "42",
                             },
@@ -729,18 +729,18 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "private_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
                             "private_ip_id": test_private_ip["id"],
                             "security_attributes": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                             "subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_subnet_cidr,
                             "subnet_id": test_subnet["id"],
                         },
                         "display_name": instance_configuration_instance_details_options_secondary_vnics_display_name,
-                        "nic_index": instance_configuration_instance_details_options_secondary_vnics_nic_index,
+                        "nic_index": int(instance_configuration_instance_details_options_secondary_vnics_nic_index),
                     }],
                 }],
                 "secondary_vnics": [{
                     "create_vnic_details": {
-                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
-                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip,
+                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
+                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                         "defined_tags": {
                             "Operations.CostCenter": "42",
                         },
@@ -758,12 +758,12 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "private_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip,
                         "private_ip_id": test_private_ip["id"],
                         "security_attributes": instance_configuration_instance_details_secondary_vnics_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                         "subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_subnet_cidr,
                         "subnet_id": test_subnet["id"],
                     },
                     "display_name": instance_configuration_instance_details_secondary_vnics_display_name,
-                    "nic_index": instance_configuration_instance_details_secondary_vnics_nic_index,
+                    "nic_index": int(instance_configuration_instance_details_secondary_vnics_nic_index),
                 }],
             },
             instance_id=test_instance["id"],
@@ -839,10 +839,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "type": instance_configuration_instance_details_block_volumes_attach_details_type,
                         "device": instance_configuration_instance_details_block_volumes_attach_details_device,
                         "display_name": instance_configuration_instance_details_block_volumes_attach_details_display_name,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only,
-                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable,
-                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap,
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
+                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only == "true",
+                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable == "true",
+                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap == "true",
                     },
                     "create_details": {
                         "autotune_policies": [{
@@ -864,7 +864,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "freeform_tags": {
                             "Department": "Finance",
                         },
-                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
+                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled == "true",
                         "is_reservations_enabled": instance_configuration_instance_details_block_volumes_create_details_is_reservations_enabled,
                         "kms_key_id": test_key["id"],
                         "size_in_gbs": instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
@@ -879,16 +879,16 @@ class InstanceConfiguration(pulumi.CustomResource):
                 }],
                 "launch_details": {
                     "agent_config": {
-                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled,
-                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled,
-                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled,
+                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled == "true",
+                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled == "true",
+                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled == "true",
                         "plugins_configs": [{
                             "desired_state": instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state,
                             "name": instance_configuration_instance_details_launch_details_agent_config_plugins_config_name,
                         }],
                     },
                     "availability_config": {
-                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred,
+                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred == "true",
                         "recovery_action": instance_configuration_instance_details_launch_details_availability_config_recovery_action,
                     },
                     "availability_domain": instance_configuration_instance_details_launch_details_availability_domain,
@@ -897,9 +897,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "compartment_id": compartment_id,
                     "compute_cluster_id": test_compute_cluster["id"],
                     "create_vnic_details": {
-                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
-                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
+                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
+                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record == "true",
+                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip == "true",
                         "defined_tags": {
                             "Operations.CostCenter": "42",
                         },
@@ -917,7 +917,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "private_ip": instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
                         "private_ip_id": test_private_ip["id"],
                         "security_attributes": instance_configuration_instance_details_launch_details_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check,
+                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check == "true",
                         "subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_subnet_cidr,
                         "subnet_id": test_subnet["id"],
                     },
@@ -932,17 +932,17 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "Department": "Finance",
                     },
                     "instance_options": {
-                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
                     },
                     "ipxe_script": instance_configuration_instance_details_launch_details_ipxe_script,
-                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled,
-                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled,
+                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled == "true",
+                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled == "true",
                     "launch_mode": instance_configuration_instance_details_launch_details_launch_mode,
                     "launch_options": {
                         "boot_volume_type": instance_configuration_instance_details_launch_details_launch_options_boot_volume_type,
                         "firmware": instance_configuration_instance_details_launch_details_launch_options_firmware,
-                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
+                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
                         "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
                         "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
                     },
@@ -957,22 +957,22 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "platform_config": {
                         "type": instance_configuration_instance_details_launch_details_platform_config_type,
-                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
+                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled == "true",
                         "config_map": instance_configuration_instance_details_launch_details_platform_config_config_map,
-                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
-                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
-                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled,
-                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled,
-                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled,
+                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled == "true",
+                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
+                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled == "true",
+                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled == "true",
+                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled == "true",
+                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
+                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
                         "numa_nodes_per_socket": instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
-                        "percentage_of_cores_enabled": instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled,
+                        "percentage_of_cores_enabled": int(instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
                     },
                     "preemptible_instance_config": {
                         "preemption_action": {
                             "type": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type,
-                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                         },
                     },
                     "preferred_maintenance_action": instance_configuration_instance_details_launch_details_preferred_maintenance_action,
@@ -981,10 +981,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "shape_config": {
                         "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
                         "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
-                        "nvmes": instance_configuration_instance_details_launch_details_shape_config_nvmes,
+                        "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
                         "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
                         "resource_management": instance_configuration_instance_details_launch_details_shape_config_resource_management,
-                        "vcpus": instance_configuration_instance_details_launch_details_shape_config_vcpus,
+                        "vcpus": int(instance_configuration_instance_details_launch_details_shape_config_vcpus),
                     },
                     "source_details": {
                         "source_type": instance_configuration_instance_details_launch_details_source_details_source_type,
@@ -1007,10 +1007,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "type": instance_configuration_instance_details_options_block_volumes_attach_details_type,
                             "device": instance_configuration_instance_details_options_block_volumes_attach_details_device,
                             "display_name": instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only,
-                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable,
-                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap,
+                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
+                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only == "true",
+                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable == "true",
+                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap == "true",
                         },
                         "create_details": {
                             "autotune_policies": [{
@@ -1028,7 +1028,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "freeform_tags": {
                                 "Department": "Finance",
                             },
-                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled,
+                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled == "true",
                             "is_reservations_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_reservations_enabled,
                             "kms_key_id": test_key["id"],
                             "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
@@ -1043,9 +1043,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     }],
                     "launch_details": {
                         "agent_config": {
-                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled,
-                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled,
-                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled,
+                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled == "true",
+                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled == "true",
+                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled == "true",
                             "plugins_configs": [{
                                 "desired_state": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
                                 "name": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
@@ -1060,9 +1060,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "compartment_id": compartment_id,
                         "compute_cluster_id": test_compute_cluster["id"],
                         "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
-                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
+                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
+                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record == "true",
+                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip == "true",
                             "defined_tags": {
                                 "Operations.CostCenter": "42",
                             },
@@ -1080,7 +1080,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "private_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
                             "private_ip_id": test_private_ip["id"],
                             "security_attributes": instance_configuration_instance_details_options_launch_details_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
+                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check == "true",
                             "subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_subnet_cidr,
                             "subnet_id": test_subnet["id"],
                         },
@@ -1095,17 +1095,17 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         "instance_options": {
-                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
                         },
                         "ipxe_script": instance_configuration_instance_details_options_launch_details_ipxe_script,
-                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled,
+                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled == "true",
+                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled == "true",
                         "launch_mode": instance_configuration_instance_details_options_launch_details_launch_mode,
                         "launch_options": {
                             "boot_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
                             "firmware": instance_configuration_instance_details_options_launch_details_launch_options_firmware,
-                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
+                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
+                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
                             "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
                             "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
                         },
@@ -1120,21 +1120,21 @@ class InstanceConfiguration(pulumi.CustomResource):
                         },
                         "platform_config": {
                             "type": instance_configuration_instance_details_options_launch_details_platform_config_type,
-                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled,
-                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled,
-                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled,
-                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled,
-                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled,
-                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled,
+                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled == "true",
+                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled == "true",
+                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
+                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled == "true",
+                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled == "true",
+                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled == "true",
+                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
+                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
                             "numa_nodes_per_socket": instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
-                            "percentage_of_cores_enabled": instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled,
+                            "percentage_of_cores_enabled": int(instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled),
                         },
                         "preemptible_instance_config": {
                             "preemption_action": {
                                 "type": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
-                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                             },
                         },
                         "preferred_maintenance_action": instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
@@ -1143,10 +1143,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "shape_config": {
                             "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
                             "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
-                            "nvmes": instance_configuration_instance_details_options_launch_details_shape_config_nvmes,
+                            "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
                             "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
                             "resource_management": instance_configuration_instance_details_options_launch_details_shape_config_resource_management,
-                            "vcpus": instance_configuration_instance_details_options_launch_details_shape_config_vcpus,
+                            "vcpus": int(instance_configuration_instance_details_options_launch_details_shape_config_vcpus),
                         },
                         "source_details": {
                             "source_type": instance_configuration_instance_details_options_launch_details_source_details_source_type,
@@ -1164,9 +1164,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "secondary_vnics": [{
                         "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip,
-                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
-                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
+                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
+                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
+                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                             "defined_tags": {
                                 "Operations.CostCenter": "42",
                             },
@@ -1184,18 +1184,18 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "private_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
                             "private_ip_id": test_private_ip["id"],
                             "security_attributes": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                             "subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_subnet_cidr,
                             "subnet_id": test_subnet["id"],
                         },
                         "display_name": instance_configuration_instance_details_options_secondary_vnics_display_name,
-                        "nic_index": instance_configuration_instance_details_options_secondary_vnics_nic_index,
+                        "nic_index": int(instance_configuration_instance_details_options_secondary_vnics_nic_index),
                     }],
                 }],
                 "secondary_vnics": [{
                     "create_vnic_details": {
-                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
-                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip,
+                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
+                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                         "defined_tags": {
                             "Operations.CostCenter": "42",
                         },
@@ -1213,12 +1213,12 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "private_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip,
                         "private_ip_id": test_private_ip["id"],
                         "security_attributes": instance_configuration_instance_details_secondary_vnics_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                         "subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_subnet_cidr,
                         "subnet_id": test_subnet["id"],
                     },
                     "display_name": instance_configuration_instance_details_secondary_vnics_display_name,
-                    "nic_index": instance_configuration_instance_details_secondary_vnics_nic_index,
+                    "nic_index": int(instance_configuration_instance_details_secondary_vnics_nic_index),
                 }],
             },
             instance_id=test_instance["id"],
@@ -1249,13 +1249,13 @@ class InstanceConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_details: Optional[pulumi.Input[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1286,15 +1286,15 @@ class InstanceConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deferred_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_details: Optional[pulumi.Input[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'InstanceConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deferred_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstanceConfiguration':
         """
         Get an existing InstanceConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

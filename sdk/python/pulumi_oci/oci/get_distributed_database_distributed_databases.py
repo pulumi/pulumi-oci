@@ -183,13 +183,13 @@ def get_distributed_database_distributed_databases(compartment_id: Optional[_bui
         metadata=pulumi.get(__ret__, 'metadata'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_distributed_database_distributed_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          db_deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDistributedDatabaseDistributedDatabasesFilterArgs', 'GetDistributedDatabaseDistributedDatabasesFilterArgsDict']]]]] = None,
-                                                          metadata: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_distributed_database_distributed_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          db_deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDistributedDatabaseDistributedDatabasesFilterArgs', 'GetDistributedDatabaseDistributedDatabasesFilterArgsDict']]]]] = None,
+                                                          metadata: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          private_endpoint_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedDatabasesResult]:
     """
     This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.

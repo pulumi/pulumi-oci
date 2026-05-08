@@ -251,10 +251,10 @@ def get_patch_management(compartment_id: Optional[_builtins.str] = None,
         time_enabled=pulumi.get(__ret__, 'time_enabled'),
         time_started_greater_than_or_equal_to=pulumi.get(__ret__, 'time_started_greater_than_or_equal_to'),
         time_started_less_than=pulumi.get(__ret__, 'time_started_less_than'))
-def get_patch_management_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                database_release: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_started_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_started_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_patch_management_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                database_release: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_started_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_started_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPatchManagementResult]:
     """
     This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.

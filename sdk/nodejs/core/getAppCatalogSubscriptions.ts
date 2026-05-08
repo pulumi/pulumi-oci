@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
+ * const testAppCatalogSubscriptions = oci.core.getAppCatalogSubscriptions({
  *     compartmentId: compartmentId,
  *     listingId: testListing.id,
  * });
@@ -80,7 +80,7 @@ export interface GetAppCatalogSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
+ * const testAppCatalogSubscriptions = oci.core.getAppCatalogSubscriptions({
  *     compartmentId: compartmentId,
  *     listingId: testListing.id,
  * });
@@ -103,9 +103,9 @@ export interface GetAppCatalogSubscriptionsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetAppCatalogSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetAppCatalogSubscriptionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the listings that matches the given listing id.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
 }

@@ -108,7 +108,7 @@ def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManag
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
+    test_management_agent_data_sources = oci.managementagent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
         name=management_agent_data_source_name)
     ```
 
@@ -129,9 +129,9 @@ def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManag
         id=pulumi.get(__ret__, 'id'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         name=pulumi.get(__ret__, 'name'))
-def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
-                                             management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_data_sources_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
+                                             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentDataSourcesResult]:
     """
     This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
@@ -144,7 +144,7 @@ def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
+    test_management_agent_data_sources = oci.managementagent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
         name=management_agent_data_source_name)
     ```
 

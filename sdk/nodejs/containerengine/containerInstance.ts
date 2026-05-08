@@ -34,20 +34,20 @@ import * as utilities from "../utilities";
  *         healthChecks: [{
  *             healthCheckType: containerInstanceContainersHealthChecksHealthCheckType,
  *             failureAction: containerInstanceContainersHealthChecksFailureAction,
- *             failureThreshold: containerInstanceContainersHealthChecksFailureThreshold,
+ *             failureThreshold: Number(containerInstanceContainersHealthChecksFailureThreshold),
  *             headers: [{
  *                 name: containerInstanceContainersHealthChecksHeadersName,
  *                 value: containerInstanceContainersHealthChecksHeadersValue,
  *             }],
- *             initialDelayInSeconds: containerInstanceContainersHealthChecksInitialDelayInSeconds,
- *             intervalInSeconds: containerInstanceContainersHealthChecksIntervalInSeconds,
+ *             initialDelayInSeconds: Number(containerInstanceContainersHealthChecksInitialDelayInSeconds),
+ *             intervalInSeconds: Number(containerInstanceContainersHealthChecksIntervalInSeconds),
  *             name: containerInstanceContainersHealthChecksName,
  *             path: containerInstanceContainersHealthChecksPath,
- *             port: containerInstanceContainersHealthChecksPort,
- *             successThreshold: containerInstanceContainersHealthChecksSuccessThreshold,
- *             timeoutInSeconds: containerInstanceContainersHealthChecksTimeoutInSeconds,
+ *             port: Number(containerInstanceContainersHealthChecksPort),
+ *             successThreshold: Number(containerInstanceContainersHealthChecksSuccessThreshold),
+ *             timeoutInSeconds: Number(containerInstanceContainersHealthChecksTimeoutInSeconds),
  *         }],
- *         isResourcePrincipalDisabled: containerInstanceContainersIsResourcePrincipalDisabled,
+ *         isResourcePrincipalDisabled: containerInstanceContainersIsResourcePrincipalDisabled === "true",
  *         resourceConfig: {
  *             memoryLimitInGbs: containerInstanceContainersResourceConfigMemoryLimitInGbs,
  *             vcpusLimit: containerInstanceContainersResourceConfigVcpusLimit,
@@ -57,17 +57,17 @@ import * as utilities from "../utilities";
  *                 addCapabilities: containerInstanceContainersSecurityContextCapabilitiesAddCapabilities,
  *                 dropCapabilities: containerInstanceContainersSecurityContextCapabilitiesDropCapabilities,
  *             },
- *             isNonRootUserCheckEnabled: containerInstanceContainersSecurityContextIsNonRootUserCheckEnabled,
- *             isRootFileSystemReadonly: containerInstanceContainersSecurityContextIsRootFileSystemReadonly,
- *             runAsGroup: containerInstanceContainersSecurityContextRunAsGroup,
- *             runAsUser: containerInstanceContainersSecurityContextRunAsUser,
+ *             isNonRootUserCheckEnabled: containerInstanceContainersSecurityContextIsNonRootUserCheckEnabled === "true",
+ *             isRootFileSystemReadonly: containerInstanceContainersSecurityContextIsRootFileSystemReadonly === "true",
+ *             runAsGroup: Number(containerInstanceContainersSecurityContextRunAsGroup),
+ *             runAsUser: Number(containerInstanceContainersSecurityContextRunAsUser),
  *             securityContextType: containerInstanceContainersSecurityContextSecurityContextType,
  *         },
  *         volumeMounts: [{
  *             mountPath: containerInstanceContainersVolumeMountsMountPath,
  *             volumeName: containerInstanceContainersVolumeMountsVolumeName,
- *             isReadOnly: containerInstanceContainersVolumeMountsIsReadOnly,
- *             partition: containerInstanceContainersVolumeMountsPartition,
+ *             isReadOnly: containerInstanceContainersVolumeMountsIsReadOnly === "true",
+ *             partition: Number(containerInstanceContainersVolumeMountsPartition),
  *             subPath: containerInstanceContainersVolumeMountsSubPath,
  *         }],
  *         workingDirectory: containerInstanceContainersWorkingDirectory,
@@ -83,10 +83,10 @@ import * as utilities from "../utilities";
  *         displayName: containerInstanceVnicsDisplayName,
  *         freeformTags: containerInstanceVnicsFreeformTags,
  *         hostnameLabel: containerInstanceVnicsHostnameLabel,
- *         isPublicIpAssigned: containerInstanceVnicsIsPublicIpAssigned,
+ *         isPublicIpAssigned: containerInstanceVnicsIsPublicIpAssigned === "true",
  *         nsgIds: containerInstanceVnicsNsgIds,
  *         privateIp: containerInstanceVnicsPrivateIp,
- *         skipSourceDestCheck: containerInstanceVnicsSkipSourceDestCheck,
+ *         skipSourceDestCheck: containerInstanceVnicsSkipSourceDestCheck === "true",
  *     }],
  *     containerRestartPolicy: containerInstanceContainerRestartPolicy,
  *     definedTags: {
@@ -344,63 +344,63 @@ export interface ContainerInstanceState {
     /**
      * The availability domain where the container instance runs.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The number of containers on the container instance.
      */
-    containerCount?: pulumi.Input<number>;
+    containerCount?: pulumi.Input<number | undefined>;
     /**
      * Container restart policy
      */
-    containerRestartPolicy?: pulumi.Input<string>;
+    containerRestartPolicy?: pulumi.Input<string | undefined>;
     /**
      * The containers to create on this container instance.
      */
-    containers?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[]>;
+    containers?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
-    dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig>;
+    dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig | undefined>;
     /**
      * The fault domain where the container instance runs.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
-    gracefulShutdownTimeoutInSeconds?: pulumi.Input<string>;
+    gracefulShutdownTimeoutInSeconds?: pulumi.Input<string | undefined>;
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      */
-    imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[]>;
+    imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[] | undefined>;
     /**
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The size and amount of resources available to the container instance.
      */
-    shapeConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig>;
+    shapeConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceShapeConfig | undefined>;
     /**
      * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -408,33 +408,33 @@ export interface ContainerInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The networks available to containers on this container instance.
      */
-    vnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVnic>[]>;
+    vnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVnic>[] | undefined>;
     /**
      * The number of volumes that are attached to the container instance.
      */
-    volumeCount?: pulumi.Input<number>;
+    volumeCount?: pulumi.Input<number | undefined>;
     /**
      * A volume is a directory with data that is accessible across multiple containers in a container instance.
      *
      * You can attach up to 32 volumes to single container instance.
      */
-    volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[]>;
+    volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[] | undefined>;
 }
 
 /**
@@ -452,7 +452,7 @@ export interface ContainerInstanceArgs {
     /**
      * Container restart policy
      */
-    containerRestartPolicy?: pulumi.Input<string>;
+    containerRestartPolicy?: pulumi.Input<string | undefined>;
     /**
      * The containers to create on this container instance.
      */
@@ -460,31 +460,31 @@ export interface ContainerInstanceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
-    dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig>;
+    dnsConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceDnsConfig | undefined>;
     /**
      * The fault domain where the container instance runs.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
-    gracefulShutdownTimeoutInSeconds?: pulumi.Input<string>;
+    gracefulShutdownTimeoutInSeconds?: pulumi.Input<string | undefined>;
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      */
-    imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[]>;
+    imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[] | undefined>;
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
@@ -500,7 +500,7 @@ export interface ContainerInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The networks available to containers on this container instance.
      */
@@ -510,5 +510,5 @@ export interface ContainerInstanceArgs {
      *
      * You can attach up to 32 volumes to single container instance.
      */
-    volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[]>;
+    volumes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolume>[] | undefined>;
 }

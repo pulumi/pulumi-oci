@@ -167,9 +167,9 @@ def get_containers(container_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_containers = oci.DataScience.get_containers(container_name=test_container["name"],
+    test_containers = oci.datascience.get_containers(container_name=test_container["name"],
         display_name=container_display_name,
-        is_latest=container_is_latest,
+        is_latest=container_is_latest == "true",
         state=container_state,
         tag_query_param=container_tag_query_param,
         target_workload=container_target_workload,
@@ -208,14 +208,14 @@ def get_containers(container_name: Optional[_builtins.str] = None,
         tag_query_param=pulumi.get(__ret__, 'tag_query_param'),
         target_workload=pulumi.get(__ret__, 'target_workload'),
         usage_query_param=pulumi.get(__ret__, 'usage_query_param'))
-def get_containers_output(container_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict']]]]] = None,
-                          is_latest: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          tag_query_param: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          target_workload: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          usage_query_param: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_containers_output(container_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict']]]]] = None,
+                          is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          tag_query_param: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          target_workload: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          usage_query_param: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainersResult]:
     """
     This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
@@ -228,9 +228,9 @@ def get_containers_output(container_name: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_containers = oci.DataScience.get_containers(container_name=test_container["name"],
+    test_containers = oci.datascience.get_containers(container_name=test_container["name"],
         display_name=container_display_name,
-        is_latest=container_is_latest,
+        is_latest=container_is_latest == "true",
         state=container_state,
         tag_query_param=container_tag_query_param,
         target_workload=container_target_workload,

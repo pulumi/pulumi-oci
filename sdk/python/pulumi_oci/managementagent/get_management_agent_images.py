@@ -128,7 +128,7 @@ def get_management_agent_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+    test_management_agent_images = oci.managementagent.get_management_agent_images(compartment_id=compartment_id,
         install_type=management_agent_image_install_type,
         name=management_agent_image_name,
         state=management_agent_image_state)
@@ -157,11 +157,11 @@ def get_management_agent_images(compartment_id: Optional[_builtins.str] = None,
         management_agent_images=pulumi.get(__ret__, 'management_agent_images'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]]]] = None,
-                                       install_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]]]] = None,
+                                       install_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentImagesResult]:
     """
     This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
@@ -174,7 +174,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+    test_management_agent_images = oci.managementagent.get_management_agent_images(compartment_id=compartment_id,
         install_type=management_agent_image_install_type,
         name=management_agent_image_name,
         state=management_agent_image_state)

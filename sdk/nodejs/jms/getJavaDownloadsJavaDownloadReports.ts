@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
+ * const testJavaDownloadReports = oci.jms.getJavaDownloadsJavaDownloadReports({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadReportDisplayName,
  *     javaDownloadReportId: testJavaDownloadReport.id,
@@ -97,7 +97,7 @@ export interface GetJavaDownloadsJavaDownloadReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
+ * const testJavaDownloadReports = oci.jms.getJavaDownloadsJavaDownloadReports({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadReportDisplayName,
  *     javaDownloadReportId: testJavaDownloadReport.id,
@@ -127,14 +127,14 @@ export interface GetJavaDownloadsJavaDownloadReportsOutputArgs {
     /**
      * A filter to return only resources that match the display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadReportsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadReportsFilterArgs>[] | undefined>;
     /**
      * Unique Java download report identifier.
      */
-    javaDownloadReportId?: pulumi.Input<string>;
+    javaDownloadReportId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

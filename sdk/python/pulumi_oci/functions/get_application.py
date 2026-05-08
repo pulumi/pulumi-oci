@@ -264,7 +264,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.Functions.get_application(application_id=test_application_oci_functions_application["id"])
+    test_application = oci.functions.get_application(application_id=test_application_oci_functions_application["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trace_configs=pulumi.get(__ret__, 'trace_configs'))
-def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_application_output(application_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationResult]:
     """
     This data source provides details about a specific Application resource in Oracle Cloud Infrastructure Functions service.
@@ -307,7 +307,7 @@ def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.Functions.get_application(application_id=test_application_oci_functions_application["id"])
+    test_application = oci.functions.get_application(application_id=test_application_oci_functions_application["id"])
     ```
 
 

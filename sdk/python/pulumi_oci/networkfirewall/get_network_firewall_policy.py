@@ -203,7 +203,7 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
+    test_network_firewall_policy = oci.networkfirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[_builtins.s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_output(network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyResult]:
     """
     This data source provides details about a specific Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -241,7 +241,7 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
+    test_network_firewall_policy = oci.networkfirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
 
 

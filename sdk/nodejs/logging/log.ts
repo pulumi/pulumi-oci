@@ -41,8 +41,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: logIsEnabled,
- *     retentionDuration: logRetentionDuration,
+ *     isEnabled: logIsEnabled === "true",
+ *     retentionDuration: Number(logRetentionDuration),
  * });
  * ```
  *
@@ -202,35 +202,35 @@ export interface LogState {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Log object configuration.
      */
-    configuration?: pulumi.Input<inputs.Logging.LogConfiguration>;
+    configuration?: pulumi.Input<inputs.Logging.LogConfiguration | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) OCID of a log group to work with.
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * The logType that the log object is for, whether custom or service.
      */
-    logType?: pulumi.Input<string>;
+    logType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
@@ -238,23 +238,23 @@ export interface LogState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionDuration?: pulumi.Input<number>;
+    retentionDuration?: pulumi.Input<number | undefined>;
     /**
      * The pipeline state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy.
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * Time the resource was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time the resource was last modified.
      */
-    timeLastModified?: pulumi.Input<string>;
+    timeLastModified?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -264,11 +264,11 @@ export interface LogArgs {
     /**
      * Log object configuration.
      */
-    configuration?: pulumi.Input<inputs.Logging.LogConfiguration>;
+    configuration?: pulumi.Input<inputs.Logging.LogConfiguration | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
@@ -276,11 +276,11 @@ export interface LogArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) OCID of a log group to work with.
      */
@@ -296,5 +296,5 @@ export interface LogArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionDuration?: pulumi.Input<number>;
+    retentionDuration?: pulumi.Input<number | undefined>;
 }

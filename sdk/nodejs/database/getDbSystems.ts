@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Database.getDbSystems({
+ * const testDbSystems = oci.database.getDbSystems({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemAvailabilityDomain,
  *     backupId: testBackup.id,
@@ -115,7 +115,7 @@ export interface GetDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Database.getDbSystems({
+ * const testDbSystems = oci.database.getDbSystems({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemAvailabilityDomain,
  *     backupId: testBackup.id,
@@ -143,11 +143,11 @@ export interface GetDbSystemsOutputArgs {
     /**
      * A filter to return only resources that match the given availability domain exactly.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -155,10 +155,10 @@ export interface GetDbSystemsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -52,16 +52,16 @@ class ModelTestingDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    namespace_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
     """
@@ -70,10 +70,10 @@ class ModelTestingDatasetArgsDict(TypedDict):
 class ModelTestingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -104,47 +104,47 @@ class ModelTestingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
-    def namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "namespace_name")
 
     @namespace_name.setter
-    def namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -153,16 +153,16 @@ class ModelTrainingDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    namespace_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
     """
@@ -171,10 +171,10 @@ class ModelTrainingDatasetArgsDict(TypedDict):
 class ModelTrainingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -205,47 +205,47 @@ class ModelTrainingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
-    def namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "namespace_name")
 
     @namespace_name.setter
-    def namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -254,16 +254,16 @@ class ModelValidationDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    namespace_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
 
@@ -275,10 +275,10 @@ class ModelValidationDatasetArgsDict(TypedDict):
 class ModelValidationDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -312,40 +312,40 @@ class ModelValidationDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
-    def namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "namespace_name")
 
     @namespace_name.setter
-    def namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
 
@@ -355,12 +355,12 @@ class ModelValidationDatasetArgs:
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
 class StreamGroupStreamOverlapArgsDict(TypedDict):
-    overlapping_streams: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    overlapping_streams: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of streamSource OCIDs.
     """
@@ -368,7 +368,7 @@ class StreamGroupStreamOverlapArgsDict(TypedDict):
 @pulumi.input_type
 class StreamGroupStreamOverlapArgs:
     def __init__(__self__, *,
-                 overlapping_streams: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 overlapping_streams: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] overlapping_streams: (Updatable) List of streamSource OCIDs.
         """
@@ -377,14 +377,14 @@ class StreamGroupStreamOverlapArgs:
 
     @_builtins.property
     @pulumi.getter(name="overlappingStreams")
-    def overlapping_streams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def overlapping_streams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of streamSource OCIDs.
         """
         return pulumi.get(self, "overlapping_streams")
 
     @overlapping_streams.setter
-    def overlapping_streams(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def overlapping_streams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "overlapping_streams", value)
 
 
@@ -395,15 +395,15 @@ class StreamJobFeatureArgsDict(TypedDict):
     * OBJECT_TRACKING: Object tracking feature(OT).
     * FACE_DETECTION: Face detection feature(FD).
     """
-    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    max_results: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of results to return.
     """
-    should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
+    should_return_landmarks: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether or not return face landmarks.
     """
-    tracking_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgsDict']]]]
+    tracking_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]]
     """
     (Updatable) List of details of what to track.
     """
@@ -412,9 +412,9 @@ class StreamJobFeatureArgsDict(TypedDict):
 class StreamJobFeatureArgs:
     def __init__(__self__, *,
                  feature_type: pulumi.Input[_builtins.str],
-                 max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 should_return_landmarks: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tracking_types: Optional[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]] = None):
+                 max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 should_return_landmarks: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tracking_types: pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] feature_type: (Updatable) The feature of video analysis. Allowed values are:
                * OBJECT_TRACKING: Object tracking feature(OT).
@@ -447,67 +447,67 @@ class StreamJobFeatureArgs:
 
     @_builtins.property
     @pulumi.getter(name="maxResults")
-    def max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of results to return.
         """
         return pulumi.get(self, "max_results")
 
     @max_results.setter
-    def max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldReturnLandmarks")
-    def should_return_landmarks(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_return_landmarks(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not return face landmarks.
         """
         return pulumi.get(self, "should_return_landmarks")
 
     @should_return_landmarks.setter
-    def should_return_landmarks(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_return_landmarks(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_return_landmarks", value)
 
     @_builtins.property
     @pulumi.getter(name="trackingTypes")
-    def tracking_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]:
+    def tracking_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]:
         """
         (Updatable) List of details of what to track.
         """
         return pulumi.get(self, "tracking_types")
 
     @tracking_types.setter
-    def tracking_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]):
+    def tracking_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]):
         pulumi.set(self, "tracking_types", value)
 
 
 class StreamJobFeatureTrackingTypeArgsDict(TypedDict):
-    biometric_store_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    biometric_store_compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) compartment Id of biometric compartment.
     """
-    biometric_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    biometric_store_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Which biometric store user wants to do face recognition
     """
-    detection_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    detection_model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The detection model OCID.
     """
-    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    max_results: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of results to return.
     """
-    objects: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    objects: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of the objects to be tracked.
     """
-    should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
+    should_return_landmarks: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether or not return face landmarks.
     """
-    tracking_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    tracking_model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The tracking model OCID.
     """
@@ -515,13 +515,13 @@ class StreamJobFeatureTrackingTypeArgsDict(TypedDict):
 @pulumi.input_type
 class StreamJobFeatureTrackingTypeArgs:
     def __init__(__self__, *,
-                 biometric_store_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 biometric_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 detection_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 objects: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 should_return_landmarks: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tracking_model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 biometric_store_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 biometric_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 detection_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 objects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_return_landmarks: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tracking_model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] biometric_store_compartment_id: (Updatable) compartment Id of biometric compartment.
         :param pulumi.Input[_builtins.str] biometric_store_id: (Updatable) Which biometric store user wants to do face recognition
@@ -548,86 +548,86 @@ class StreamJobFeatureTrackingTypeArgs:
 
     @_builtins.property
     @pulumi.getter(name="biometricStoreCompartmentId")
-    def biometric_store_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def biometric_store_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) compartment Id of biometric compartment.
         """
         return pulumi.get(self, "biometric_store_compartment_id")
 
     @biometric_store_compartment_id.setter
-    def biometric_store_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def biometric_store_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "biometric_store_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="biometricStoreId")
-    def biometric_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def biometric_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Which biometric store user wants to do face recognition
         """
         return pulumi.get(self, "biometric_store_id")
 
     @biometric_store_id.setter
-    def biometric_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def biometric_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "biometric_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionModelId")
-    def detection_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detection_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The detection model OCID.
         """
         return pulumi.get(self, "detection_model_id")
 
     @detection_model_id.setter
-    def detection_model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detection_model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detection_model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maxResults")
-    def max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of results to return.
         """
         return pulumi.get(self, "max_results")
 
     @max_results.setter
-    def max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_results", value)
 
     @_builtins.property
     @pulumi.getter
-    def objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of the objects to be tracked.
         """
         return pulumi.get(self, "objects")
 
     @objects.setter
-    def objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "objects", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldReturnLandmarks")
-    def should_return_landmarks(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_return_landmarks(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not return face landmarks.
         """
         return pulumi.get(self, "should_return_landmarks")
 
     @should_return_landmarks.setter
-    def should_return_landmarks(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_return_landmarks(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_return_landmarks", value)
 
     @_builtins.property
     @pulumi.getter(name="trackingModelId")
-    def tracking_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tracking_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The tracking model OCID.
         """
         return pulumi.get(self, "tracking_model_id")
 
     @tracking_model_id.setter
-    def tracking_model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tracking_model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tracking_model_id", value)
 
 
@@ -650,7 +650,7 @@ class StreamJobStreamOutputLocationArgsDict(TypedDict):
     """
     (Updatable) The Object Storage folder name.
     """
-    obo_token: NotRequired[pulumi.Input[_builtins.str]]
+    obo_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Object storage output location
     """
@@ -662,7 +662,7 @@ class StreamJobStreamOutputLocationArgs:
                  namespace: pulumi.Input[_builtins.str],
                  output_location_type: pulumi.Input[_builtins.str],
                  prefix: pulumi.Input[_builtins.str],
-                 obo_token: Optional[pulumi.Input[_builtins.str]] = None):
+                 obo_token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The Object Storage bucket name.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace.
@@ -731,14 +731,14 @@ class StreamJobStreamOutputLocationArgs:
 
     @_builtins.property
     @pulumi.getter(name="oboToken")
-    def obo_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def obo_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Object storage output location
         """
         return pulumi.get(self, "obo_token")
 
     @obo_token.setter
-    def obo_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def obo_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "obo_token", value)
 
 
@@ -756,7 +756,7 @@ class StreamSourceStreamSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) Details about a stream Connection type
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
     """
@@ -767,7 +767,7 @@ class StreamSourceStreamSourceDetailsArgs:
                  camera_url: pulumi.Input[_builtins.str],
                  source_type: pulumi.Input[_builtins.str],
                  stream_network_access_details: pulumi.Input['StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs'],
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] camera_url: (Updatable) url of camera
         :param pulumi.Input[_builtins.str] source_type: (Updatable) Type of source Allowed values are:
@@ -820,14 +820,14 @@ class StreamSourceStreamSourceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 

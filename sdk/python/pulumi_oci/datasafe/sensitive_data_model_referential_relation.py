@@ -25,7 +25,7 @@ class SensitiveDataModelReferentialRelationArgs:
                  parent: pulumi.Input['SensitiveDataModelReferentialRelationParentArgs'],
                  relation_type: pulumi.Input[_builtins.str],
                  sensitive_data_model_id: pulumi.Input[_builtins.str],
-                 is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SensitiveDataModelReferentialRelation resource.
 
@@ -100,27 +100,27 @@ class SensitiveDataModelReferentialRelationArgs:
 
     @_builtins.property
     @pulumi.getter(name="isSensitive")
-    def is_sensitive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
         """
         return pulumi.get(self, "is_sensitive")
 
     @is_sensitive.setter
-    def is_sensitive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sensitive", value)
 
 
 @pulumi.input_type
 class _SensitiveDataModelReferentialRelationState:
     def __init__(__self__, *,
-                 child: Optional[pulumi.Input['SensitiveDataModelReferentialRelationChildArgs']] = None,
-                 is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent: Optional[pulumi.Input['SensitiveDataModelReferentialRelationParentArgs']] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 child: pulumi.Input[Optional['SensitiveDataModelReferentialRelationChildArgs']] = None,
+                 is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent: pulumi.Input[Optional['SensitiveDataModelReferentialRelationParentArgs']] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModelReferentialRelation resources.
 
@@ -153,67 +153,67 @@ class _SensitiveDataModelReferentialRelationState:
 
     @_builtins.property
     @pulumi.getter
-    def child(self) -> Optional[pulumi.Input['SensitiveDataModelReferentialRelationChildArgs']]:
+    def child(self) -> pulumi.Input[Optional['SensitiveDataModelReferentialRelationChildArgs']]:
         """
         columnsInfo object has details of column group with schema details.
         """
         return pulumi.get(self, "child")
 
     @child.setter
-    def child(self, value: Optional[pulumi.Input['SensitiveDataModelReferentialRelationChildArgs']]):
+    def child(self, value: pulumi.Input[Optional['SensitiveDataModelReferentialRelationChildArgs']]):
         pulumi.set(self, "child", value)
 
     @_builtins.property
     @pulumi.getter(name="isSensitive")
-    def is_sensitive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
         """
         return pulumi.get(self, "is_sensitive")
 
     @is_sensitive.setter
-    def is_sensitive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sensitive", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def parent(self) -> Optional[pulumi.Input['SensitiveDataModelReferentialRelationParentArgs']]:
+    def parent(self) -> pulumi.Input[Optional['SensitiveDataModelReferentialRelationParentArgs']]:
         """
         columnsInfo object has details of column group with schema details.
         """
         return pulumi.get(self, "parent")
 
     @parent.setter
-    def parent(self, value: Optional[pulumi.Input['SensitiveDataModelReferentialRelationParentArgs']]):
+    def parent(self, value: pulumi.Input[Optional['SensitiveDataModelReferentialRelationParentArgs']]):
         pulumi.set(self, "parent", value)
 
     @_builtins.property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def relation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         """
         return pulumi.get(self, "relation_type")
 
     @relation_type.setter
-    def relation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def relation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "relation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveDataModelId")
-    def sensitive_data_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_data_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the sensitive data model.
 
@@ -224,19 +224,19 @@ class _SensitiveDataModelReferentialRelationState:
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
-    def sensitive_data_model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_data_model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_data_model_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the referential relation.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -246,11 +246,11 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
-                 is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parent: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+                 is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
@@ -285,7 +285,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
             },
             relation_type=sensitive_data_model_referential_relation_relation_type,
             sensitive_data_model_id=test_sensitive_data_model["id"],
-            is_sensitive=sensitive_data_model_referential_relation_is_sensitive)
+            is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true")
         ```
 
         ## Import
@@ -348,7 +348,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
             },
             relation_type=sensitive_data_model_referential_relation_relation_type,
             sensitive_data_model_id=test_sensitive_data_model["id"],
-            is_sensitive=sensitive_data_model_referential_relation_is_sensitive)
+            is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true")
         ```
 
         ## Import
@@ -375,11 +375,11 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
-                 is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parent: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+                 is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -414,13 +414,13 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            child: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
-            is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            parent: Optional[pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
-            relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'SensitiveDataModelReferentialRelation':
+            child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+            is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveDataModelReferentialRelation':
         """
         Get an existing SensitiveDataModelReferentialRelation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

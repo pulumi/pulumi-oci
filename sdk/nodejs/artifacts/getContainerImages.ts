@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImages = oci.Artifacts.getContainerImages({
+ * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned,
+ *     isVersioned: containerImageIsVersioned === "true",
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,
@@ -148,13 +148,13 @@ export interface GetContainerImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImages = oci.Artifacts.getContainerImages({
+ * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned,
+ *     isVersioned: containerImageIsVersioned === "true",
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,
@@ -190,38 +190,38 @@ export interface GetContainerImagesOutputArgs {
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerImagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerImagesFilterArgs>[] | undefined>;
     /**
      * The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
      */
-    imageDigest?: pulumi.Input<string>;
+    imageDigest?: pulumi.Input<string | undefined>;
     /**
      * A filter to return a container image summary only for the specified container image OCID.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return container images based on whether there are any associated versions.
      */
-    isVersioned?: pulumi.Input<boolean>;
+    isVersioned?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return container images only for the specified container repository OCID.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
      */
-    repositoryName?: pulumi.Input<string>;
+    repositoryName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return container images that match the version.  Example: `foo` or `foo*`
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

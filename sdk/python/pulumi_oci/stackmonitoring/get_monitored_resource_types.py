@@ -195,10 +195,10 @@ def get_monitored_resource_types(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+    test_monitored_resource_types = oci.stackmonitoring.get_monitored_resource_types(compartment_id=compartment_id,
         exclude_fields=monitored_resource_type_exclude_fields,
         fields=monitored_resource_type_fields,
-        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types == "true",
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
         resource_category=monitored_resource_type_resource_category,
@@ -246,16 +246,16 @@ def get_monitored_resource_types(compartment_id: Optional[_builtins.str] = None,
         resource_category=pulumi.get(__ret__, 'resource_category'),
         source_type=pulumi.get(__ret__, 'source_type'),
         status=pulumi.get(__ret__, 'status'))
-def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        exclude_fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredResourceTypesFilterArgs', 'GetMonitoredResourceTypesFilterArgsDict']]]]] = None,
-                                        is_exclude_system_types: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        metric_namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        resource_category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        source_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_monitored_resource_types_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        exclude_fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourceTypesFilterArgs', 'GetMonitoredResourceTypesFilterArgsDict']]]]] = None,
+                                        is_exclude_system_types: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        metric_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        resource_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        source_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTypesResult]:
     """
     This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -273,10 +273,10 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+    test_monitored_resource_types = oci.stackmonitoring.get_monitored_resource_types(compartment_id=compartment_id,
         exclude_fields=monitored_resource_type_exclude_fields,
         fields=monitored_resource_type_fields,
-        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types == "true",
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
         resource_category=monitored_resource_type_resource_category,

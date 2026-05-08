@@ -170,10 +170,10 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
-        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
+    test_operations_insights_private_endpoints = oci.opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree == "true",
         display_name=operations_insights_private_endpoint_display_name,
-        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
         opsi_private_endpoint_id=test_private_endpoint["id"],
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -211,14 +211,14 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[_builtins
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         states=pulumi.get(__ret__, 'states'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_operations_insights_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOperationsInsightsPrivateEndpointsFilterArgs', 'GetOperationsInsightsPrivateEndpointsFilterArgsDict']]]]] = None,
-                                                     is_used_for_rac_dbs: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                     opsi_private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                     vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_operations_insights_private_endpoints_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOperationsInsightsPrivateEndpointsFilterArgs', 'GetOperationsInsightsPrivateEndpointsFilterArgsDict']]]]] = None,
+                                                     is_used_for_rac_dbs: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                     opsi_private_endpoint_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                     vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointsResult]:
     """
     This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
@@ -231,10 +231,10 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
-        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
+    test_operations_insights_private_endpoints = oci.opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree == "true",
         display_name=operations_insights_private_endpoint_display_name,
-        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
         opsi_private_endpoint_id=test_private_endpoint["id"],
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])

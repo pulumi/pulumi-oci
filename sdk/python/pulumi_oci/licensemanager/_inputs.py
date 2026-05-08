@@ -32,15 +32,15 @@ class ProductLicenseImageArgsDict(TypedDict):
     """
     (Updatable) Image package version.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The image ID associated with the product license.
     """
-    listing_name: NotRequired[pulumi.Input[_builtins.str]]
+    listing_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The listing name associated with the product license.
     """
-    publisher: NotRequired[pulumi.Input[_builtins.str]]
+    publisher: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The image publisher.
     """
@@ -50,9 +50,9 @@ class ProductLicenseImageArgs:
     def __init__(__self__, *,
                  listing_id: pulumi.Input[_builtins.str],
                  package_version: pulumi.Input[_builtins.str],
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 publisher: Optional[pulumi.Input[_builtins.str]] = None):
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 publisher: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] listing_id: (Updatable) Marketplace image listing ID.
         :param pulumi.Input[_builtins.str] package_version: (Updatable) Image package version.
@@ -95,38 +95,38 @@ class ProductLicenseImageArgs:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image ID associated with the product license.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingName")
-    def listing_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listing name associated with the product license.
         """
         return pulumi.get(self, "listing_name")
 
     @listing_name.setter
-    def listing_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def publisher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def publisher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image publisher.
         """
         return pulumi.get(self, "publisher")
 
     @publisher.setter
-    def publisher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def publisher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "publisher", value)
 
 

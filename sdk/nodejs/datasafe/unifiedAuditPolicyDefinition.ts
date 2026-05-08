@@ -174,59 +174,59 @@ export interface UnifiedAuditPolicyDefinitionState {
     /**
      * The category to which the unified audit policy belongs in the target database.
      */
-    auditPolicyCategory?: pulumi.Input<string>;
+    auditPolicyCategory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the unified audit policy definition.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Signifies whether the unified audit policy definition is seeded or not.
      */
-    isSeeded?: pulumi.Input<boolean>;
+    isSeeded?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the current state of the unified audit policy definition.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The definition of the unified audit policy to be provisioned in the target database.
      */
-    policyDefinitionStatement?: pulumi.Input<string>;
+    policyDefinitionStatement?: pulumi.Input<string | undefined>;
     /**
      * The unified audit policy name in the target database.
      */
-    policyName?: pulumi.Input<string>;
+    policyName?: pulumi.Input<string | undefined>;
     /**
      * The current state of the unified audit policy definition.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the unified audit policy was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the unified audit policy was updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the unified audit policy definition resource.
      *
@@ -234,7 +234,7 @@ export interface UnifiedAuditPolicyDefinitionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    unifiedAuditPolicyDefinitionId?: pulumi.Input<string>;
+    unifiedAuditPolicyDefinitionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -244,23 +244,23 @@ export interface UnifiedAuditPolicyDefinitionArgs {
     /**
      * (Updatable) The OCID of the compartment containing the unified audit policy definition.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the unified audit policy definition resource.
      *

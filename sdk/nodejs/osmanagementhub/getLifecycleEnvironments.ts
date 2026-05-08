@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
+ * const testLifecycleEnvironments = oci.osmanagementhub.getLifecycleEnvironments({
  *     archType: lifecycleEnvironmentArchType,
  *     compartmentId: compartmentId,
  *     displayNames: lifecycleEnvironmentDisplayName,
@@ -147,7 +147,7 @@ export interface GetLifecycleEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
+ * const testLifecycleEnvironments = oci.osmanagementhub.getLifecycleEnvironments({
  *     archType: lifecycleEnvironmentArchType,
  *     compartmentId: compartmentId,
  *     displayNames: lifecycleEnvironmentDisplayName,
@@ -184,38 +184,38 @@ export interface GetLifecycleEnvironmentsOutputArgs {
     /**
      * A filter to return only profiles that match the given archType.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetLifecycleEnvironmentsFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetLifecycleEnvironmentsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      */
-    lifecycleEnvironmentId?: pulumi.Input<string>;
+    lifecycleEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose location does not match the given value.
      */
-    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources whose location matches the given value.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the lifecycle environments that match the display name given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

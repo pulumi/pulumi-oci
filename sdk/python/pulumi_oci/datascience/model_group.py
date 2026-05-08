@@ -24,15 +24,15 @@ class ModelGroupArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  create_type: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 member_model_entries: Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']] = None,
-                 model_group_clone_source_details: Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']] = None,
-                 model_group_details: Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']] = None,
-                 model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 member_model_entries: pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']] = None,
+                 model_group_details: pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']] = None,
+                 model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelGroup resource.
 
@@ -113,103 +113,103 @@ class ModelGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the modelGroup.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="memberModelEntries")
-    def member_model_entries(self) -> Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']]:
+    def member_model_entries(self) -> pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']]:
         """
         List of member models (inferenceKey & modelId) to be associated with the model group.
         """
         return pulumi.get(self, "member_model_entries")
 
     @member_model_entries.setter
-    def member_model_entries(self, value: Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']]):
+    def member_model_entries(self, value: pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']]):
         pulumi.set(self, "member_model_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupCloneSourceDetails")
-    def model_group_clone_source_details(self) -> Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']]:
+    def model_group_clone_source_details(self) -> pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']]:
         """
         Model Group clone source details.
         """
         return pulumi.get(self, "model_group_clone_source_details")
 
     @model_group_clone_source_details.setter
-    def model_group_clone_source_details(self, value: Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']]):
+    def model_group_clone_source_details(self, value: pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']]):
         pulumi.set(self, "model_group_clone_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupDetails")
-    def model_group_details(self) -> Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']]:
+    def model_group_details(self) -> pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']]:
         """
         The model group details.
         """
         return pulumi.get(self, "model_group_details")
 
     @model_group_details.setter
-    def model_group_details(self, value: Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']]):
+    def model_group_details(self, value: pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']]):
         pulumi.set(self, "model_group_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupVersionHistoryId")
-    def model_group_version_history_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_group_version_history_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
         """
         return pulumi.get(self, "model_group_version_history_id")
 
     @model_group_version_history_id.setter
-    def model_group_version_history_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_group_version_history_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_group_version_history_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionLabel")
-    def version_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An additional description of the lifecycle state of the model group.
 
@@ -220,34 +220,34 @@ class ModelGroupArgs:
         return pulumi.get(self, "version_label")
 
     @version_label.setter
-    def version_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_label", value)
 
 
 @pulumi.input_type
 class _ModelGroupState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 member_model_entries: Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']] = None,
-                 model_group_clone_source_details: Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']] = None,
-                 model_group_details: Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']] = None,
-                 model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_group_version_history_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 member_model_entries: pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']] = None,
+                 model_group_details: pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']] = None,
+                 model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_group_version_history_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_model_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelGroup resources.
 
@@ -322,247 +322,247 @@ class _ModelGroupState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createType")
-    def create_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the model group create operation.
         """
         return pulumi.get(self, "create_type")
 
     @create_type.setter
-    def create_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the modelGroup.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the modelGroup.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the lifecycle state of the model group.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="memberModelEntries")
-    def member_model_entries(self) -> Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']]:
+    def member_model_entries(self) -> pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']]:
         """
         List of member models (inferenceKey & modelId) to be associated with the model group.
         """
         return pulumi.get(self, "member_model_entries")
 
     @member_model_entries.setter
-    def member_model_entries(self, value: Optional[pulumi.Input['ModelGroupMemberModelEntriesArgs']]):
+    def member_model_entries(self, value: pulumi.Input[Optional['ModelGroupMemberModelEntriesArgs']]):
         pulumi.set(self, "member_model_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupCloneSourceDetails")
-    def model_group_clone_source_details(self) -> Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']]:
+    def model_group_clone_source_details(self) -> pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']]:
         """
         Model Group clone source details.
         """
         return pulumi.get(self, "model_group_clone_source_details")
 
     @model_group_clone_source_details.setter
-    def model_group_clone_source_details(self, value: Optional[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsArgs']]):
+    def model_group_clone_source_details(self, value: pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsArgs']]):
         pulumi.set(self, "model_group_clone_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupDetails")
-    def model_group_details(self) -> Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']]:
+    def model_group_details(self) -> pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']]:
         """
         The model group details.
         """
         return pulumi.get(self, "model_group_details")
 
     @model_group_details.setter
-    def model_group_details(self, value: Optional[pulumi.Input['ModelGroupModelGroupDetailsArgs']]):
+    def model_group_details(self, value: pulumi.Input[Optional['ModelGroupModelGroupDetailsArgs']]):
         pulumi.set(self, "model_group_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupVersionHistoryId")
-    def model_group_version_history_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_group_version_history_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
         """
         return pulumi.get(self, "model_group_version_history_id")
 
     @model_group_version_history_id.setter
-    def model_group_version_history_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_group_version_history_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_group_version_history_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupVersionHistoryName")
-    def model_group_version_history_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_group_version_history_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the model group version history to which the model group is associated.
         """
         return pulumi.get(self, "model_group_version_history_name")
 
     @model_group_version_history_name.setter
-    def model_group_version_history_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_group_version_history_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_group_version_history_name", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceModelGroupId")
-    def source_model_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_model_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group used for the clone operation.
         """
         return pulumi.get(self, "source_model_group_id")
 
     @source_model_group_id.setter
-    def source_model_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_model_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_model_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the modelGroup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier assigned to each version of the model group. It would be auto-incremented number generated by service.
         """
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionLabel")
-    def version_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An additional description of the lifecycle state of the model group.
 
@@ -573,7 +573,7 @@ class _ModelGroupState:
         return pulumi.get(self, "version_label")
 
     @version_label.setter
-    def version_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_label", value)
 
 
@@ -583,18 +583,18 @@ class ModelGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 member_model_entries: Optional[pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-                 model_group_clone_source_details: Optional[pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-                 model_group_details: Optional[pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
-                 model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
+                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+                 model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
@@ -808,18 +808,18 @@ class ModelGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 member_model_entries: Optional[pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-                 model_group_clone_source_details: Optional[pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-                 model_group_details: Optional[pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
-                 model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
+                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+                 model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -866,27 +866,27 @@ class ModelGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            member_model_entries: Optional[pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-            model_group_clone_source_details: Optional[pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-            model_group_details: Optional[pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
-            model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-            model_group_version_history_name: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version_label: Optional[pulumi.Input[_builtins.str]] = None) -> 'ModelGroup':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
+            model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
+            model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+            model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_group_version_history_name: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_model_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version_label: pulumi.Input[Optional[_builtins.str]] = None) -> 'ModelGroup':
         """
         Get an existing ModelGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

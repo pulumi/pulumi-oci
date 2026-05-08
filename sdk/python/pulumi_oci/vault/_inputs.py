@@ -40,7 +40,7 @@ class SecretReplicationConfigArgsDict(TypedDict):
     """
     (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
     """
-    is_write_forward_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_write_forward_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
     """
@@ -49,7 +49,7 @@ class SecretReplicationConfigArgsDict(TypedDict):
 class SecretReplicationConfigArgs:
     def __init__(__self__, *,
                  replication_targets: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]],
-                 is_write_forward_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_write_forward_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]] replication_targets: (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
         :param pulumi.Input[_builtins.bool] is_write_forward_enabled: (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
@@ -72,14 +72,14 @@ class SecretReplicationConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="isWriteForwardEnabled")
-    def is_write_forward_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_write_forward_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
         """
         return pulumi.get(self, "is_write_forward_enabled")
 
     @is_write_forward_enabled.setter
-    def is_write_forward_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_write_forward_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_write_forward_enabled", value)
 
 
@@ -154,11 +154,11 @@ class SecretRotationConfigArgsDict(TypedDict):
     """
     (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
     """
-    is_scheduled_rotation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_scheduled_rotation_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
     """
-    rotation_interval: NotRequired[pulumi.Input[_builtins.str]]
+    rotation_interval: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
     """
@@ -167,8 +167,8 @@ class SecretRotationConfigArgsDict(TypedDict):
 class SecretRotationConfigArgs:
     def __init__(__self__, *,
                  target_system_details: pulumi.Input['SecretRotationConfigTargetSystemDetailsArgs'],
-                 is_scheduled_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rotation_interval: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_scheduled_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rotation_interval: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['SecretRotationConfigTargetSystemDetailsArgs'] target_system_details: (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
         :param pulumi.Input[_builtins.bool] is_scheduled_rotation_enabled: (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
@@ -194,26 +194,26 @@ class SecretRotationConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="isScheduledRotationEnabled")
-    def is_scheduled_rotation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scheduled_rotation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
         """
         return pulumi.get(self, "is_scheduled_rotation_enabled")
 
     @is_scheduled_rotation_enabled.setter
-    def is_scheduled_rotation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scheduled_rotation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scheduled_rotation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="rotationInterval")
-    def rotation_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rotation_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
         """
         return pulumi.get(self, "rotation_interval")
 
     @rotation_interval.setter
-    def rotation_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rotation_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rotation_interval", value)
 
 
@@ -222,11 +222,11 @@ class SecretRotationConfigTargetSystemDetailsArgsDict(TypedDict):
     """
     (Updatable) Unique identifier of the target system that Vault Secret connects to.
     """
-    adb_id: NotRequired[pulumi.Input[_builtins.str]]
+    adb_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
     """
-    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    function_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
     """
@@ -235,8 +235,8 @@ class SecretRotationConfigTargetSystemDetailsArgsDict(TypedDict):
 class SecretRotationConfigTargetSystemDetailsArgs:
     def __init__(__self__, *,
                  target_system_type: pulumi.Input[_builtins.str],
-                 adb_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 adb_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] target_system_type: (Updatable) Unique identifier of the target system that Vault Secret connects to.
         :param pulumi.Input[_builtins.str] adb_id: (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
@@ -262,26 +262,26 @@ class SecretRotationConfigTargetSystemDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="adbId")
-    def adb_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adb_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
         """
         return pulumi.get(self, "adb_id")
 
     @adb_id.setter
-    def adb_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adb_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adb_id", value)
 
     @_builtins.property
     @pulumi.getter(name="functionId")
-    def function_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def function_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
         """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
-    def function_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def function_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "function_id", value)
 
 
@@ -290,15 +290,15 @@ class SecretSecretContentArgsDict(TypedDict):
     """
     (Updatable) The base64-encoded content of the secret.
     """
-    content: NotRequired[pulumi.Input[_builtins.str]]
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64-encoded content of the secret.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
     """
-    stage: NotRequired[pulumi.Input[_builtins.str]]
+    stage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
     """
@@ -307,9 +307,9 @@ class SecretSecretContentArgsDict(TypedDict):
 class SecretSecretContentArgs:
     def __init__(__self__, *,
                  content_type: pulumi.Input[_builtins.str],
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stage: Optional[pulumi.Input[_builtins.str]] = None):
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stage: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] content_type: (Updatable) The base64-encoded content of the secret.
         :param pulumi.Input[_builtins.str] content: (Updatable) The base64-encoded content of the secret.
@@ -338,38 +338,38 @@ class SecretSecretContentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64-encoded content of the secret.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def stage(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stage(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         """
         return pulumi.get(self, "stage")
 
     @stage.setter
-    def stage(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stage(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stage", value)
 
 
@@ -382,11 +382,11 @@ class SecretSecretGenerationContextArgsDict(TypedDict):
     """
     (Updatable) Name of the predefined secret generation type.
     """
-    passphrase_length: NotRequired[pulumi.Input[_builtins.int]]
+    passphrase_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Length of the passphrase to be generated
     """
-    secret_template: NotRequired[pulumi.Input[_builtins.str]]
+    secret_template: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
     """
@@ -396,8 +396,8 @@ class SecretSecretGenerationContextArgs:
     def __init__(__self__, *,
                  generation_template: pulumi.Input[_builtins.str],
                  generation_type: pulumi.Input[_builtins.str],
-                 passphrase_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 secret_template: Optional[pulumi.Input[_builtins.str]] = None):
+                 passphrase_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 secret_template: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] generation_template: (Updatable) Name of random bytes generation template for generating random byte type secret.
         :param pulumi.Input[_builtins.str] generation_type: (Updatable) Name of the predefined secret generation type.
@@ -437,26 +437,26 @@ class SecretSecretGenerationContextArgs:
 
     @_builtins.property
     @pulumi.getter(name="passphraseLength")
-    def passphrase_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def passphrase_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Length of the passphrase to be generated
         """
         return pulumi.get(self, "passphrase_length")
 
     @passphrase_length.setter
-    def passphrase_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def passphrase_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "passphrase_length", value)
 
     @_builtins.property
     @pulumi.getter(name="secretTemplate")
-    def secret_template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_template(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
         """
         return pulumi.get(self, "secret_template")
 
     @secret_template.setter
-    def secret_template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_template", value)
 
 
@@ -465,19 +465,19 @@ class SecretSecretRuleArgsDict(TypedDict):
     """
     (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
     """
-    is_enforced_on_deleted_secret_versions: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enforced_on_deleted_secret_versions: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
     """
-    is_secret_content_retrieval_blocked_on_expiry: NotRequired[pulumi.Input[_builtins.bool]]
+    is_secret_content_retrieval_blocked_on_expiry: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
     """
-    secret_version_expiry_interval: NotRequired[pulumi.Input[_builtins.str]]
+    secret_version_expiry_interval: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
     """
-    time_of_absolute_expiry: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_absolute_expiry: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
     """
@@ -486,10 +486,10 @@ class SecretSecretRuleArgsDict(TypedDict):
 class SecretSecretRuleArgs:
     def __init__(__self__, *,
                  rule_type: pulumi.Input[_builtins.str],
-                 is_enforced_on_deleted_secret_versions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_secret_content_retrieval_blocked_on_expiry: Optional[pulumi.Input[_builtins.bool]] = None,
-                 secret_version_expiry_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_absolute_expiry: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_enforced_on_deleted_secret_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secret_content_retrieval_blocked_on_expiry: pulumi.Input[Optional[_builtins.bool]] = None,
+                 secret_version_expiry_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_absolute_expiry: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] rule_type: (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
         :param pulumi.Input[_builtins.bool] is_enforced_on_deleted_secret_versions: (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -521,63 +521,63 @@ class SecretSecretRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")
-    def is_enforced_on_deleted_secret_versions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enforced_on_deleted_secret_versions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
         """
         return pulumi.get(self, "is_enforced_on_deleted_secret_versions")
 
     @is_enforced_on_deleted_secret_versions.setter
-    def is_enforced_on_deleted_secret_versions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enforced_on_deleted_secret_versions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enforced_on_deleted_secret_versions", value)
 
     @_builtins.property
     @pulumi.getter(name="isSecretContentRetrievalBlockedOnExpiry")
-    def is_secret_content_retrieval_blocked_on_expiry(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_secret_content_retrieval_blocked_on_expiry(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
         """
         return pulumi.get(self, "is_secret_content_retrieval_blocked_on_expiry")
 
     @is_secret_content_retrieval_blocked_on_expiry.setter
-    def is_secret_content_retrieval_blocked_on_expiry(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_secret_content_retrieval_blocked_on_expiry(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_secret_content_retrieval_blocked_on_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersionExpiryInterval")
-    def secret_version_expiry_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_version_expiry_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         """
         return pulumi.get(self, "secret_version_expiry_interval")
 
     @secret_version_expiry_interval.setter
-    def secret_version_expiry_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_version_expiry_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_version_expiry_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfAbsoluteExpiry")
-    def time_of_absolute_expiry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_absolute_expiry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_absolute_expiry")
 
     @time_of_absolute_expiry.setter
-    def time_of_absolute_expiry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_absolute_expiry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_absolute_expiry", value)
 
 
 class SecretSourceRegionInformationArgsDict(TypedDict):
-    source_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    source_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the source region KMS key.
     """
-    source_region: NotRequired[pulumi.Input[_builtins.str]]
+    source_region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the source's region.
     """
-    source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    source_vault_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the source region's Vault.
     """
@@ -585,9 +585,9 @@ class SecretSourceRegionInformationArgsDict(TypedDict):
 @pulumi.input_type
 class SecretSourceRegionInformationArgs:
     def __init__(__self__, *,
-                 source_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 source_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_vault_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] source_key_id: The OCID of the source region KMS key.
         :param pulumi.Input[_builtins.str] source_region: The name of the source's region.
@@ -602,38 +602,38 @@ class SecretSourceRegionInformationArgs:
 
     @_builtins.property
     @pulumi.getter(name="sourceKeyId")
-    def source_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the source region KMS key.
         """
         return pulumi.get(self, "source_key_id")
 
     @source_key_id.setter
-    def source_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceRegion")
-    def source_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the source's region.
         """
         return pulumi.get(self, "source_region")
 
     @source_region.setter
-    def source_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_region", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVaultId")
-    def source_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the source region's Vault.
         """
         return pulumi.get(self, "source_vault_id")
 
     @source_vault_id.setter
-    def source_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_vault_id", value)
 
 

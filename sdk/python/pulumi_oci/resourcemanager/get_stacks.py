@@ -129,7 +129,7 @@ def get_stacks(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+    test_stacks = oci.resourcemanager.get_stacks(compartment_id=compartment_id,
         display_name=stack_display_name,
         id=stack_id,
         state=stack_state)
@@ -157,11 +157,11 @@ def get_stacks(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         stacks=pulumi.get(__ret__, 'stacks'),
         state=pulumi.get(__ret__, 'state'))
-def get_stacks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStacksFilterArgs', 'GetStacksFilterArgsDict']]]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stacks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStacksFilterArgs', 'GetStacksFilterArgsDict']]]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStacksResult]:
     """
     This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
@@ -178,7 +178,7 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+    test_stacks = oci.resourcemanager.get_stacks(compartment_id=compartment_id,
         display_name=stack_display_name,
         id=stack_id,
         state=stack_state)

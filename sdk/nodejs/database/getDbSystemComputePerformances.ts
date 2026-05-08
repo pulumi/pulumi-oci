@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemComputePerformances = oci.Database.getDbSystemComputePerformances({
+ * const testDbSystemComputePerformances = oci.database.getDbSystemComputePerformances({
  *     dbSystemShape: dbSystemComputePerformanceDbSystemShape,
  * });
  * ```
@@ -68,7 +68,7 @@ export interface GetDbSystemComputePerformancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemComputePerformances = oci.Database.getDbSystemComputePerformances({
+ * const testDbSystemComputePerformances = oci.database.getDbSystemComputePerformances({
  *     dbSystemShape: dbSystemComputePerformanceDbSystemShape,
  * });
  * ```
@@ -89,6 +89,6 @@ export interface GetDbSystemComputePerformancesOutputArgs {
     /**
      * If provided, filters the results to the set of database versions which are supported for the given shape.
      */
-    dbSystemShape?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemComputePerformancesFilterArgs>[]>;
+    dbSystemShape?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemComputePerformancesFilterArgs>[] | undefined>;
 }

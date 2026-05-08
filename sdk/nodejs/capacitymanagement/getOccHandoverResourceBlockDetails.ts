@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlockDetails = oci.CapacityManagement.getOccHandoverResourceBlockDetails({
+ * const testOccHandoverResourceBlockDetails = oci.capacitymanagement.getOccHandoverResourceBlockDetails({
  *     occHandoverResourceBlockId: testOccHandoverResourceBlock.id,
  *     hostId: testHost.id,
  * });
@@ -74,7 +74,7 @@ export interface GetOccHandoverResourceBlockDetailsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlockDetails = oci.CapacityManagement.getOccHandoverResourceBlockDetails({
+ * const testOccHandoverResourceBlockDetails = oci.capacitymanagement.getOccHandoverResourceBlockDetails({
  *     occHandoverResourceBlockId: testOccHandoverResourceBlock.id,
  *     hostId: testHost.id,
  * });
@@ -93,11 +93,11 @@ export function getOccHandoverResourceBlockDetailsOutput(args: GetOccHandoverRes
  * A collection of arguments for invoking getOccHandoverResourceBlockDetails.
  */
 export interface GetOccHandoverResourceBlockDetailsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccHandoverResourceBlockDetailsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccHandoverResourceBlockDetailsFilterArgs>[] | undefined>;
     /**
      * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
      */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
+ * const testWorkRequests = oci.containerengine.getWorkRequests({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     resourceId: testResource.id,
@@ -101,7 +101,7 @@ export interface GetWorkRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
+ * const testWorkRequests = oci.containerengine.getWorkRequests({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     resourceId: testResource.id,
@@ -129,22 +129,22 @@ export interface GetWorkRequestsOutputArgs {
     /**
      * The OCID of the cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetWorkRequestsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetWorkRequestsFilterArgs>[] | undefined>;
     /**
      * The OCID of the resource associated with a work request
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * Type of the resource associated with a work request
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A work request status to filter on. Can have multiple parameters of this name.
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

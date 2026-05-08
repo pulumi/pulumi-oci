@@ -248,83 +248,83 @@ export interface JobState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      */
-    completedDocuments?: pulumi.Input<number>;
+    completedDocuments?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A short description of the job.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      */
-    failedDocuments?: pulumi.Input<number>;
+    failedDocuments?: pulumi.Input<number | undefined>;
     /**
      * input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
      */
-    inputConfiguration?: pulumi.Input<inputs.AiLanguage.JobInputConfiguration>;
+    inputConfiguration?: pulumi.Input<inputs.AiLanguage.JobInputConfiguration | undefined>;
     /**
      * document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
      */
-    inputLocation?: pulumi.Input<inputs.AiLanguage.JobInputLocation>;
+    inputLocation?: pulumi.Input<inputs.AiLanguage.JobInputLocation | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
      */
-    modelMetadataDetails?: pulumi.Input<pulumi.Input<inputs.AiLanguage.JobModelMetadataDetail>[]>;
+    modelMetadataDetails?: pulumi.Input<pulumi.Input<inputs.AiLanguage.JobModelMetadataDetail>[] | undefined>;
     /**
      * Object storage output location to write inference results
      */
-    outputLocation?: pulumi.Input<inputs.AiLanguage.JobOutputLocation>;
+    outputLocation?: pulumi.Input<inputs.AiLanguage.JobOutputLocation | undefined>;
     /**
      * Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
      */
-    pendingDocuments?: pulumi.Input<number>;
+    pendingDocuments?: pulumi.Input<number | undefined>;
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
      */
-    percentComplete?: pulumi.Input<number>;
+    percentComplete?: pulumi.Input<number | undefined>;
     /**
      * The current state of the Job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Job accepted time.
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * Job finished time.
      */
-    timeCompleted?: pulumi.Input<string>;
+    timeCompleted?: pulumi.Input<string | undefined>;
     /**
      * Job started time.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      */
-    totalDocuments?: pulumi.Input<number>;
+    totalDocuments?: pulumi.Input<number | undefined>;
     /**
      * Time to live duration in days for Job. Job will be available till max 90 days.
      */
-    ttlInDays?: pulumi.Input<number>;
+    ttlInDays?: pulumi.Input<number | undefined>;
     /**
      * warnings count
      */
-    warningsCount?: pulumi.Input<number>;
+    warningsCount?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -338,15 +338,15 @@ export interface JobArgs {
     /**
      * (Updatable) A short description of the job.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
      */
-    inputConfiguration?: pulumi.Input<inputs.AiLanguage.JobInputConfiguration>;
+    inputConfiguration?: pulumi.Input<inputs.AiLanguage.JobInputConfiguration | undefined>;
     /**
      * document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
      */

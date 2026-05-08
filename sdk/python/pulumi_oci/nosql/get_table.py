@@ -289,7 +289,7 @@ def get_table(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_table = oci.Nosql.get_table(table_name_or_id=test_table_name_or["id"],
+    test_table = oci.nosql.get_table(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id)
     ```
 
@@ -324,8 +324,8 @@ def get_table(compartment_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_expiration=pulumi.get(__ret__, 'time_of_expiration'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_table_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_table_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTableResult]:
     """
     This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -338,7 +338,7 @@ def get_table_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_table = oci.Nosql.get_table(table_name_or_id=test_table_name_or["id"],
+    test_table = oci.nosql.get_table(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id)
     ```
 

@@ -46,22 +46,22 @@ import * as utilities from "../utilities";
  *             preemptibleNodeConfig: {
  *                 preemptionAction: {
  *                     type: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType,
- *                     isPreserveBootVolume: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume,
+ *                     isPreserveBootVolume: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume === "true",
  *                 },
  *             },
  *         }],
- *         size: nodePoolNodeConfigDetailsSize,
+ *         size: Number(nodePoolNodeConfigDetailsSize),
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
  *         freeformTags: {
  *             Department: "Finance",
  *         },
- *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
+ *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled === "true",
  *         kmsKeyId: testKey.id,
  *         nodePoolPodNetworkOptionDetails: {
  *             cniType: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsCniType,
- *             maxPodsPerNode: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
+ *             maxPodsPerNode: Number(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode),
  *             podNsgIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
  *             podSubnetIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
  *         },
@@ -69,14 +69,14 @@ import * as utilities from "../utilities";
  *     },
  *     nodeEvictionNodePoolSettings: {
  *         evictionGraceDuration: nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
- *         isForceActionAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration,
- *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
+ *         isForceActionAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration === "true",
+ *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration === "true",
  *     },
  *     nodeImageName: testImage.name,
  *     nodeMetadata: nodePoolNodeMetadata,
  *     nodePoolCyclingDetails: {
  *         cycleModes: nodePoolNodePoolCyclingDetailsCycleModes,
- *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
+ *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled === "true",
  *         maximumSurge: nodePoolNodePoolCyclingDetailsMaximumSurge,
  *         maximumUnavailable: nodePoolNodePoolCyclingDetailsMaximumUnavailable,
  *     },
@@ -89,13 +89,13 @@ import * as utilities from "../utilities";
  *         sourceType: nodePoolNodeSourceDetailsSourceType,
  *         bootVolumeSizeInGbs: nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
  *     },
- *     quantityPerSubnet: nodePoolQuantityPerSubnet,
+ *     quantityPerSubnet: Number(nodePoolQuantityPerSubnet),
  *     secondaryVnics: [{
  *         createVnicDetails: {
  *             subnetId: testSubnet.id,
  *             applicationResources: nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources,
- *             assignIpv6ip: nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
- *             assignPublicIp: nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp,
+ *             assignIpv6ip: nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip === "true",
+ *             assignPublicIp: nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp === "true",
  *             definedTags: {
  *                 "Operations.CostCenter": "42",
  *             },
@@ -103,16 +103,16 @@ import * as utilities from "../utilities";
  *             freeformTags: {
  *                 Department: "Finance",
  *             },
- *             ipCount: nodePoolSecondaryVnicsCreateVnicDetailsIpCount,
+ *             ipCount: Number(nodePoolSecondaryVnicsCreateVnicDetailsIpCount),
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6address: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
  *                 ipv6subnetCidr: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
  *             nsgIds: nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
- *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+ *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck === "true",
  *         },
  *         displayName: nodePoolSecondaryVnicsDisplayName,
- *         nicIndex: nodePoolSecondaryVnicsNicIndex,
+ *         nicIndex: Number(nodePoolSecondaryVnicsNicIndex),
  *     }],
  *     sshPublicKey: nodePoolSshPublicKey,
  *     subnetIds: nodePoolSubnetIds,
@@ -351,103 +351,103 @@ export interface NodePoolState {
     /**
      * The OCID of the cluster to which this node pool is attached.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which the node pool exists.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
-    initialNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolInitialNodeLabel>[]>;
+    initialNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolInitialNodeLabel>[] | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      */
-    kubernetesVersion?: pulumi.Input<string>;
+    kubernetesVersion?: pulumi.Input<string | undefined>;
     /**
      * Details about the state of the node.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
      */
-    networkLaunchType?: pulumi.Input<string>;
+    networkLaunchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
-    nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails | undefined>;
     /**
      * (Updatable) Node Eviction Details configuration
      */
-    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
+    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings | undefined>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    nodeImageId?: pulumi.Input<string>;
+    nodeImageId?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      *
      * @deprecated The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    nodeImageName?: pulumi.Input<string>;
+    nodeImageName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
-    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
+    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails | undefined>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
-    nodeShape?: pulumi.Input<string>;
+    nodeShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      */
-    nodeShapeConfig?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeShapeConfig>;
+    nodeShapeConfig?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeShapeConfig | undefined>;
     /**
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      */
-    nodeSourceDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeSourceDetails>;
+    nodeSourceDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeSourceDetails | undefined>;
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      */
-    nodeSources?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNodeSource>[]>;
+    nodeSources?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNodeSource>[] | undefined>;
     /**
      * The nodes in the node pool.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNode>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNode>[] | undefined>;
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
-    quantityPerSubnet?: pulumi.Input<number>;
+    quantityPerSubnet?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of secondary vnics to attach to nodes
      */
-    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[]>;
+    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[] | undefined>;
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
-    sshPublicKey?: pulumi.Input<string>;
+    sshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
      *
@@ -455,7 +455,7 @@ export interface NodePoolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -473,55 +473,55 @@ export interface NodePoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
-    initialNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolInitialNodeLabel>[]>;
+    initialNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolInitialNodeLabel>[] | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      */
-    kubernetesVersion?: pulumi.Input<string>;
+    kubernetesVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
      */
-    networkLaunchType?: pulumi.Input<string>;
+    networkLaunchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
-    nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails | undefined>;
     /**
      * (Updatable) Node Eviction Details configuration
      */
-    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
+    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings | undefined>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    nodeImageId?: pulumi.Input<string>;
+    nodeImageId?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      *
      * @deprecated The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    nodeImageName?: pulumi.Input<string>;
+    nodeImageName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
-    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
+    nodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodePoolCyclingDetails | undefined>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
@@ -529,23 +529,23 @@ export interface NodePoolArgs {
     /**
      * (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      */
-    nodeShapeConfig?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeShapeConfig>;
+    nodeShapeConfig?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeShapeConfig | undefined>;
     /**
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      */
-    nodeSourceDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeSourceDetails>;
+    nodeSourceDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeSourceDetails | undefined>;
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
-    quantityPerSubnet?: pulumi.Input<number>;
+    quantityPerSubnet?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of secondary vnics to attach to nodes
      */
-    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[]>;
+    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[] | undefined>;
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
-    sshPublicKey?: pulumi.Input<string>;
+    sshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
      *
@@ -553,5 +553,5 @@ export interface NodePoolArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

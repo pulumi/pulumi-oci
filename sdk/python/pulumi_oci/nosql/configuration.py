@@ -23,8 +23,8 @@ class ConfigurationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  environment: pulumi.Input[_builtins.str],
-                 is_opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key: Optional[pulumi.Input['ConfigurationKmsKeyArgs']] = None):
+                 is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key: pulumi.Input[Optional['ConfigurationKmsKeyArgs']] = None):
         """
         The set of arguments for constructing a Configuration resource.
 
@@ -66,36 +66,36 @@ class ConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOpcDryRun")
-    def is_opc_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_opc_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "is_opc_dry_run")
 
     @is_opc_dry_run.setter
-    def is_opc_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_opc_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKey")
-    def kms_key(self) -> Optional[pulumi.Input['ConfigurationKmsKeyArgs']]:
+    def kms_key(self) -> pulumi.Input[Optional['ConfigurationKmsKeyArgs']]:
         """
         (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
         """
         return pulumi.get(self, "kms_key")
 
     @kms_key.setter
-    def kms_key(self, value: Optional[pulumi.Input['ConfigurationKmsKeyArgs']]):
+    def kms_key(self, value: pulumi.Input[Optional['ConfigurationKmsKeyArgs']]):
         pulumi.set(self, "kms_key", value)
 
 
 @pulumi.input_type
 class _ConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key: Optional[pulumi.Input['ConfigurationKmsKeyArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key: pulumi.Input[Optional['ConfigurationKmsKeyArgs']] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
 
@@ -115,50 +115,50 @@ class _ConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The tenancy's OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def environment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service environment type.
         """
         return pulumi.get(self, "environment")
 
     @environment.setter
-    def environment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment", value)
 
     @_builtins.property
     @pulumi.getter(name="isOpcDryRun")
-    def is_opc_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_opc_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "is_opc_dry_run")
 
     @is_opc_dry_run.setter
-    def is_opc_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_opc_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKey")
-    def kms_key(self) -> Optional[pulumi.Input['ConfigurationKmsKeyArgs']]:
+    def kms_key(self) -> pulumi.Input[Optional['ConfigurationKmsKeyArgs']]:
         """
         (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
         """
         return pulumi.get(self, "kms_key")
 
     @kms_key.setter
-    def kms_key(self, value: Optional[pulumi.Input['ConfigurationKmsKeyArgs']]):
+    def kms_key(self, value: pulumi.Input[Optional['ConfigurationKmsKeyArgs']]):
         pulumi.set(self, "kms_key", value)
 
 
@@ -168,10 +168,10 @@ class Configuration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key: Optional[pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -207,7 +207,7 @@ class Configuration(pulumi.CustomResource):
         test_configuration = oci.nosql.Configuration("test_configuration",
             compartment_id=compartment_id,
             environment="HOSTED",
-            is_opc_dry_run=configuration_is_opc_dry_run,
+            is_opc_dry_run=configuration_is_opc_dry_run == "true",
             kms_key={
                 "id": configuration_kms_key_id,
                 "kms_vault_id": test_vault["id"],
@@ -270,7 +270,7 @@ class Configuration(pulumi.CustomResource):
         test_configuration = oci.nosql.Configuration("test_configuration",
             compartment_id=compartment_id,
             environment="HOSTED",
-            is_opc_dry_run=configuration_is_opc_dry_run,
+            is_opc_dry_run=configuration_is_opc_dry_run == "true",
             kms_key={
                 "id": configuration_kms_key_id,
                 "kms_vault_id": test_vault["id"],
@@ -301,10 +301,10 @@ class Configuration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key: Optional[pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -332,10 +332,10 @@ class Configuration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            environment: Optional[pulumi.Input[_builtins.str]] = None,
-            is_opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-            kms_key: Optional[pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None) -> 'Configuration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            environment: pulumi.Input[Optional[_builtins.str]] = None,
+            is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None) -> 'Configuration':
         """
         Get an existing Configuration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

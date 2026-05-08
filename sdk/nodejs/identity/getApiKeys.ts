@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getApiKeys({
+ * const testApiKeys = oci.identity.getApiKeys({
  *     userId: testUser.id,
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetApiKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getApiKeys({
+ * const testApiKeys = oci.identity.getApiKeys({
  *     userId: testUser.id,
  * });
  * ```
@@ -93,7 +93,7 @@ export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getApiKeys.
  */
 export interface GetApiKeysOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetApiKeysFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetApiKeysFilterArgs>[] | undefined>;
     /**
      * The OCID of the user.
      */

@@ -215,7 +215,7 @@ def get_batch_batch_job_pool(batch_job_pool_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_batch_batch_job_pool_output(batch_job_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_batch_batch_job_pool_output(batch_job_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchJobPoolResult]:
     """
     This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.

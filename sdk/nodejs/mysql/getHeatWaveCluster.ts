@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHeatWaveCluster = oci.Mysql.getHeatWaveCluster({
+ * const testHeatWaveCluster = oci.mysql.getHeatWaveCluster({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -92,7 +92,7 @@ export interface GetHeatWaveClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHeatWaveCluster = oci.Mysql.getHeatWaveCluster({
+ * const testHeatWaveCluster = oci.mysql.getHeatWaveCluster({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```

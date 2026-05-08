@@ -129,19 +129,19 @@ export interface UiPasswordState {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    inactiveStatus?: pulumi.Input<string>;
+    inactiveStatus?: pulumi.Input<string | undefined>;
     /**
      * The user's password for the Console.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The password's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user.
      *
@@ -149,7 +149,7 @@ export interface UiPasswordState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**

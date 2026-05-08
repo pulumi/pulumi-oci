@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     name: newsReportName,
  *     newsFrequency: newsReportNewsFrequency,
  *     onsTopicId: testOnsTopic.id,
- *     areChildCompartmentsIncluded: newsReportAreChildCompartmentsIncluded,
+ *     areChildCompartmentsIncluded: newsReportAreChildCompartmentsIncluded === "true",
  *     dayOfWeek: newsReportDayOfWeek,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -252,67 +252,67 @@ export interface NewsReportState {
     /**
      * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
      */
-    areChildCompartmentsIncluded?: pulumi.Input<boolean>;
+    areChildCompartmentsIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Content types that the news report can handle.
      */
-    contentTypes?: pulumi.Input<inputs.Opsi.NewsReportContentTypes>;
+    contentTypes?: pulumi.Input<inputs.Opsi.NewsReportContentTypes | undefined>;
     /**
      * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
      */
-    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeek?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the news report.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Language of the news report.
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Match rule used for tag filters.
      */
-    matchRule?: pulumi.Input<string>;
+    matchRule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The news report name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) News report frequency.
      */
-    newsFrequency?: pulumi.Input<string>;
+    newsFrequency?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
      */
-    onsTopicId?: pulumi.Input<string>;
+    onsTopicId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the news report.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
      *
@@ -320,15 +320,15 @@ export interface NewsReportState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    tagFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the news report was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -338,7 +338,7 @@ export interface NewsReportArgs {
     /**
      * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
      */
-    areChildCompartmentsIncluded?: pulumi.Input<boolean>;
+    areChildCompartmentsIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
@@ -350,11 +350,11 @@ export interface NewsReportArgs {
     /**
      * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
      */
-    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeek?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the news report.
      */
@@ -362,7 +362,7 @@ export interface NewsReportArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Language of the news report.
      */
@@ -370,11 +370,11 @@ export interface NewsReportArgs {
     /**
      * (Updatable) Match rule used for tag filters.
      */
-    matchRule?: pulumi.Input<string>;
+    matchRule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The news report name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) News report frequency.
      */
@@ -386,7 +386,7 @@ export interface NewsReportArgs {
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
      *
@@ -394,5 +394,5 @@ export interface NewsReportArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    tagFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -218,7 +218,7 @@ def get_default_configuration(compatible_shapes: Optional[Sequence[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
+    test_default_configuration = oci.psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
     ```
 
 
@@ -248,9 +248,9 @@ def get_default_configuration(compatible_shapes: Optional[Sequence[_builtins.str
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_default_configuration_output(compatible_shapes: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                     default_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_default_configuration_output(compatible_shapes: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                     default_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefaultConfigurationResult]:
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
@@ -263,7 +263,7 @@ def get_default_configuration_output(compatible_shapes: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
+    test_default_configuration = oci.psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
     ```
 
 

@@ -203,8 +203,8 @@ def get_container_signatures(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
+    test_container_image_signatures = oci.artifacts.get_container_signatures(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree == "true",
         display_name=container_image_signature_display_name,
         image_digest=container_image_signature_image_digest,
         image_id=test_image["id"],
@@ -256,17 +256,17 @@ def get_container_signatures(compartment_id: Optional[_builtins.str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_name=pulumi.get(__ret__, 'repository_name'),
         signing_algorithm=pulumi.get(__ret__, 'signing_algorithm'))
-def get_container_signatures_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerSignaturesFilterArgs', 'GetContainerSignaturesFilterArgsDict']]]]] = None,
-                                    image_digest: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    kms_key_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    kms_key_version_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    repository_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    repository_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    signing_algorithm: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_container_signatures_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerSignaturesFilterArgs', 'GetContainerSignaturesFilterArgsDict']]]]] = None,
+                                    image_digest: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    kms_key_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    kms_key_version_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    repository_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    repository_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    signing_algorithm: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerSignaturesResult]:
     """
     This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
@@ -279,8 +279,8 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
+    test_container_image_signatures = oci.artifacts.get_container_signatures(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree == "true",
         display_name=container_image_signature_display_name,
         image_digest=container_image_signature_image_digest,
         image_id=test_image["id"],

@@ -124,11 +124,11 @@ export interface CatalogAssociationState {
     /**
      * Identifier of the entity being associated with service catalog.
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * The type of the entity that is associated with the service catalog.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the service catalog.
      *
@@ -136,11 +136,11 @@ export interface CatalogAssociationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    serviceCatalogId?: pulumi.Input<string>;
+    serviceCatalogId?: pulumi.Input<string | undefined>;
     /**
      * Timestamp of when the resource was associated with service catalog.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface CatalogAssociationArgs {
     /**
      * The type of the entity that is associated with the service catalog.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the service catalog.
      *

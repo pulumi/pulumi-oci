@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignalCatalogResources = oci.CapacityManagement.getOccmDemandSignalCatalogResources({
+ * const testOccmDemandSignalCatalogResources = oci.capacitymanagement.getOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     demandSignalNamespace: occmDemandSignalCatalogResourceDemandSignalNamespace,
  *     name: occmDemandSignalCatalogResourceName,
@@ -87,7 +87,7 @@ export interface GetOccmDemandSignalCatalogResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignalCatalogResources = oci.CapacityManagement.getOccmDemandSignalCatalogResources({
+ * const testOccmDemandSignalCatalogResources = oci.capacitymanagement.getOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     demandSignalNamespace: occmDemandSignalCatalogResourceDemandSignalNamespace,
  *     name: occmDemandSignalCatalogResourceName,
@@ -115,10 +115,10 @@ export interface GetOccmDemandSignalCatalogResourcesOutputArgs {
     /**
      * A query parameter to filter the list of demand signal catalog resources based on the namespace.
      */
-    demandSignalNamespace?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccmDemandSignalCatalogResourcesFilterArgs>[]>;
+    demandSignalNamespace?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccmDemandSignalCatalogResourcesFilterArgs>[] | undefined>;
     /**
      * A query parameter to filter the list of demand signal catalog resource based on the resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

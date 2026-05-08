@@ -33,7 +33,7 @@ import (
 //			_, err := osmanagementhub.GetManagedInstanceGroupInstalledPackages(ctx, &osmanagementhub.GetManagedInstanceGroupInstalledPackagesArgs{
 //				ManagedInstanceGroupId: testManagedInstanceGroup.Id,
 //				CompartmentId:          pulumi.StringRef(compartmentId),
-//				DisplayNames:           managedInstanceGroupInstalledPackageDisplayName,
+//				DisplayNames:           pulumi.ToArray(managedInstanceGroupInstalledPackageDisplayName),
 //				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupInstalledPackageDisplayNameContains),
 //				TimeInstallDateEnd:     pulumi.StringRef(managedInstanceGroupInstalledPackageTimeInstallDateEnd),
 //				TimeInstallDateStart:   pulumi.StringRef(managedInstanceGroupInstalledPackageTimeInstallDateStart),

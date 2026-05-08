@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaInstance = oci.Oda.getOdaInstance({
+ * const testOdaInstance = oci.oda.getOdaInstance({
  *     odaInstanceId: testOdaInstanceOciOdaOdaInstance.id,
  * });
  * ```
@@ -148,7 +148,7 @@ export interface GetOdaInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaInstance = oci.Oda.getOdaInstance({
+ * const testOdaInstance = oci.oda.getOdaInstance({
  *     odaInstanceId: testOdaInstanceOciOdaOdaInstance.id,
  * });
  * ```

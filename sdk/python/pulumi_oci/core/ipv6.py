@@ -19,16 +19,16 @@ __all__ = ['Ipv6Args', 'Ipv6']
 @pulumi.input_type
 class Ipv6Args:
     def __init__(__self__, *,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Ipv6 resource.
 
@@ -72,79 +72,79 @@ class Ipv6Args:
 
     @_builtins.property
     @pulumi.getter(name="cidrPrefixLength")
-    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cidr_prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Length of cidr range. Optional field to specify flexible cidr.
         """
         return pulumi.get(self, "cidr_prefix_length")
 
     @cidr_prefix_length.setter
-    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cidr_prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
-    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
-    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6subnet_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter
-    def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifetime(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
         * Ephemeral
@@ -153,36 +153,36 @@ class Ipv6Args:
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
-    def lifetime(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifetime(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifetime", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
 
@@ -193,27 +193,27 @@ class Ipv6Args:
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
 @pulumi.input_type
 class _Ipv6State:
     def __init__(__self__, *,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Ipv6 resources.
 
@@ -269,103 +269,103 @@ class _Ipv6State:
 
     @_builtins.property
     @pulumi.getter(name="cidrPrefixLength")
-    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cidr_prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Length of cidr range. Optional field to specify flexible cidr.
         """
         return pulumi.get(self, "cidr_prefix_length")
 
     @cidr_prefix_length.setter
-    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cidr_prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipState")
-    def ip_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         """
         return pulumi.get(self, "ip_state")
 
     @ip_state.setter
-    def ip_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_state", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
-    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
-    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6subnet_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter
-    def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifetime(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
         * Ephemeral
@@ -374,60 +374,60 @@ class _Ipv6State:
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
-    def lifetime(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifetime(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifetime", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
 
@@ -438,7 +438,7 @@ class _Ipv6State:
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
@@ -448,16 +448,16 @@ class Ipv6(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
@@ -474,7 +474,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
-            cidr_prefix_length=ipv6_cidr_prefix_length,
+            cidr_prefix_length=int(ipv6_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -539,7 +539,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
-            cidr_prefix_length=ipv6_cidr_prefix_length,
+            cidr_prefix_length=int(ipv6_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -579,16 +579,16 @@ class Ipv6(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -622,20 +622,20 @@ class Ipv6(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_state: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-            route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vnic_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Ipv6':
+            cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Ipv6':
         """
         Get an existing Ipv6 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

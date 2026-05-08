@@ -49,8 +49,8 @@ class MaskingPoliciesApplyDifferenceToMaskingColumnsArgs:
 @pulumi.input_type
 class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
     def __init__(__self__, *,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPoliciesApplyDifferenceToMaskingColumns resources.
         """
@@ -61,20 +61,20 @@ class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sdmMaskingPolicyDifferenceId")
-    def sdm_masking_policy_difference_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sdm_masking_policy_difference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "sdm_masking_policy_difference_id")
 
     @sdm_masking_policy_difference_id.setter
-    def sdm_masking_policy_difference_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sdm_masking_policy_difference_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sdm_masking_policy_difference_id", value)
 
 
@@ -84,8 +84,8 @@ class MaskingPoliciesApplyDifferenceToMaskingColumns(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a MaskingPoliciesApplyDifferenceToMaskingColumns resource with the given unique name, props, and options.
@@ -117,8 +117,8 @@ class MaskingPoliciesApplyDifferenceToMaskingColumns(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -144,8 +144,8 @@ class MaskingPoliciesApplyDifferenceToMaskingColumns(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskingPoliciesApplyDifferenceToMaskingColumns':
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskingPoliciesApplyDifferenceToMaskingColumns':
         """
         Get an existing MaskingPoliciesApplyDifferenceToMaskingColumns resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

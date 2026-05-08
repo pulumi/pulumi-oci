@@ -241,7 +241,7 @@ def get_bds_instance_identity_configuration(bds_instance_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configuration = oci.BigDataService.get_bds_instance_identity_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configuration = oci.bigdataservice.get_bds_instance_identity_configuration(bds_instance_id=test_bds_instance["id"],
         identity_configuration_id=test_configuration["id"])
     ```
 
@@ -274,8 +274,8 @@ def get_bds_instance_identity_configuration(bds_instance_id: Optional[_builtins.
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upst_configuration_details=pulumi.get(__ret__, 'upst_configuration_details'),
         upst_configurations=pulumi.get(__ret__, 'upst_configurations'))
-def get_bds_instance_identity_configuration_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   identity_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_identity_configuration_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   identity_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceIdentityConfigurationResult]:
     """
     This data source provides details about a specific Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -288,7 +288,7 @@ def get_bds_instance_identity_configuration_output(bds_instance_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configuration = oci.BigDataService.get_bds_instance_identity_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configuration = oci.bigdataservice.get_bds_instance_identity_configuration(bds_instance_id=test_bds_instance["id"],
         identity_configuration_id=test_configuration["id"])
     ```
 

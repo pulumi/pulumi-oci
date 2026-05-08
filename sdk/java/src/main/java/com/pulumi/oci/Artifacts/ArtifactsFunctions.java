@@ -61,8 +61,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -103,8 +103,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -145,8 +145,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -187,8 +187,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -229,8 +229,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -271,8 +271,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -313,8 +313,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -355,8 +355,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -397,8 +397,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -439,8 +439,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -481,8 +481,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -523,8 +523,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -742,8 +742,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -793,8 +793,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -844,8 +844,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -895,8 +895,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -946,8 +946,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -993,8 +993,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1040,8 +1040,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1087,8 +1087,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1134,8 +1134,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1181,8 +1181,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1223,8 +1223,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1265,8 +1265,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1307,8 +1307,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1349,8 +1349,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1391,8 +1391,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1442,8 +1442,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1493,8 +1493,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1544,8 +1544,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1595,8 +1595,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1646,8 +1646,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1688,8 +1688,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1730,8 +1730,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1772,8 +1772,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1814,8 +1814,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1856,8 +1856,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1905,8 +1905,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1954,8 +1954,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2003,8 +2003,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2052,8 +2052,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2101,8 +2101,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2147,8 +2147,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2193,8 +2193,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2239,8 +2239,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2285,8 +2285,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2331,8 +2331,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2373,8 +2373,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2415,8 +2415,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2457,8 +2457,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2499,8 +2499,8 @@ public final class ArtifactsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
      * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

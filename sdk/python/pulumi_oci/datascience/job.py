@@ -23,20 +23,20 @@ class JobArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
-                 job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
-                 job_node_configuration_details: Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_configuration_details: pulumi.Input[Optional['JobJobConfigurationDetailsArgs']] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']] = None,
+                 job_log_configuration_details: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']] = None,
+                 job_node_configuration_details: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Job resource.
 
@@ -118,19 +118,19 @@ class JobArgs:
 
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
-    def artifact_content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_length(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content length of the body.
 
@@ -141,180 +141,180 @@ class JobArgs:
         return pulumi.get(self, "artifact_content_length")
 
     @artifact_content_length.setter
-    def artifact_content_length(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_length(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_related_job_runs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Delete all related JobRuns upon deletion of the Job.
         """
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
-    def delete_related_job_runs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_related_job_runs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_related_job_runs", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the job.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="jobArtifact")
-    def job_artifact(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_artifact(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
         """
         return pulumi.get(self, "job_artifact")
 
     @job_artifact.setter
-    def job_artifact(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_artifact(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_artifact", value)
 
     @_builtins.property
     @pulumi.getter(name="jobConfigurationDetails")
-    def job_configuration_details(self) -> Optional[pulumi.Input['JobJobConfigurationDetailsArgs']]:
+    def job_configuration_details(self) -> pulumi.Input[Optional['JobJobConfigurationDetailsArgs']]:
         """
         The job configuration details
         """
         return pulumi.get(self, "job_configuration_details")
 
     @job_configuration_details.setter
-    def job_configuration_details(self, value: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']]):
+    def job_configuration_details(self, value: pulumi.Input[Optional['JobJobConfigurationDetailsArgs']]):
         pulumi.set(self, "job_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobEnvironmentConfigurationDetails")
-    def job_environment_configuration_details(self) -> Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']]:
+    def job_environment_configuration_details(self) -> pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']]:
         """
         Environment configuration to capture job runtime dependencies.
         """
         return pulumi.get(self, "job_environment_configuration_details")
 
     @job_environment_configuration_details.setter
-    def job_environment_configuration_details(self, value: Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']]):
+    def job_environment_configuration_details(self, value: pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']]):
         pulumi.set(self, "job_environment_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
-    def job_infrastructure_configuration_details(self) -> Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']]:
+    def job_infrastructure_configuration_details(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']]:
         """
         (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         """
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @job_infrastructure_configuration_details.setter
-    def job_infrastructure_configuration_details(self, value: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']]):
+    def job_infrastructure_configuration_details(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']]):
         pulumi.set(self, "job_infrastructure_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobLogConfigurationDetails")
-    def job_log_configuration_details(self) -> Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]:
+    def job_log_configuration_details(self) -> pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']]:
         """
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_details")
 
     @job_log_configuration_details.setter
-    def job_log_configuration_details(self, value: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]):
+    def job_log_configuration_details(self, value: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']]):
         pulumi.set(self, "job_log_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobNodeConfigurationDetails")
-    def job_node_configuration_details(self) -> Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']]:
+    def job_node_configuration_details(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']]:
         """
         The job node configuration details
         """
         return pulumi.get(self, "job_node_configuration_details")
 
     @job_node_configuration_details.setter
-    def job_node_configuration_details(self, value: Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']]):
+    def job_node_configuration_details(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']]):
         pulumi.set(self, "job_node_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
+    def job_storage_mount_configuration_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
         """
         (Updatable) Collection of JobStorageMountConfigurationDetails.
         """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @job_storage_mount_configuration_details_lists.setter
-    def job_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
+    def job_storage_mount_configuration_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
         pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
 
 
 @pulumi.input_type
 class _JobState:
     def __init__(__self__, *,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 empty_artifact: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
-                 job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
-                 job_node_configuration_details: Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 empty_artifact: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_configuration_details: pulumi.Input[Optional['JobJobConfigurationDetailsArgs']] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']] = None,
+                 job_log_configuration_details: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']] = None,
+                 job_node_configuration_details: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Job resources.
 
@@ -392,19 +392,19 @@ class _JobState:
 
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
-    def artifact_content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_length(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content length of the body.
 
@@ -415,250 +415,250 @@ class _JobState:
         return pulumi.get(self, "artifact_content_length")
 
     @artifact_content_length.setter
-    def artifact_content_length(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_length(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "artifact_content_md5")
 
     @artifact_content_md5.setter
-    def artifact_content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_md5", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "artifact_last_modified")
 
     @artifact_last_modified.setter
-    def artifact_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_last_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_related_job_runs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Delete all related JobRuns upon deletion of the Job.
         """
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
-    def delete_related_job_runs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_related_job_runs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_related_job_runs", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the job.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emptyArtifact")
-    def empty_artifact(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def empty_artifact(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "empty_artifact")
 
     @empty_artifact.setter
-    def empty_artifact(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def empty_artifact(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "empty_artifact", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="jobArtifact")
-    def job_artifact(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_artifact(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
         """
         return pulumi.get(self, "job_artifact")
 
     @job_artifact.setter
-    def job_artifact(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_artifact(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_artifact", value)
 
     @_builtins.property
     @pulumi.getter(name="jobConfigurationDetails")
-    def job_configuration_details(self) -> Optional[pulumi.Input['JobJobConfigurationDetailsArgs']]:
+    def job_configuration_details(self) -> pulumi.Input[Optional['JobJobConfigurationDetailsArgs']]:
         """
         The job configuration details
         """
         return pulumi.get(self, "job_configuration_details")
 
     @job_configuration_details.setter
-    def job_configuration_details(self, value: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']]):
+    def job_configuration_details(self, value: pulumi.Input[Optional['JobJobConfigurationDetailsArgs']]):
         pulumi.set(self, "job_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobEnvironmentConfigurationDetails")
-    def job_environment_configuration_details(self) -> Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']]:
+    def job_environment_configuration_details(self) -> pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']]:
         """
         Environment configuration to capture job runtime dependencies.
         """
         return pulumi.get(self, "job_environment_configuration_details")
 
     @job_environment_configuration_details.setter
-    def job_environment_configuration_details(self, value: Optional[pulumi.Input['JobJobEnvironmentConfigurationDetailsArgs']]):
+    def job_environment_configuration_details(self, value: pulumi.Input[Optional['JobJobEnvironmentConfigurationDetailsArgs']]):
         pulumi.set(self, "job_environment_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
-    def job_infrastructure_configuration_details(self) -> Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']]:
+    def job_infrastructure_configuration_details(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']]:
         """
         (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         """
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @job_infrastructure_configuration_details.setter
-    def job_infrastructure_configuration_details(self, value: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']]):
+    def job_infrastructure_configuration_details(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']]):
         pulumi.set(self, "job_infrastructure_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobLogConfigurationDetails")
-    def job_log_configuration_details(self) -> Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]:
+    def job_log_configuration_details(self) -> pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']]:
         """
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_details")
 
     @job_log_configuration_details.setter
-    def job_log_configuration_details(self, value: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]):
+    def job_log_configuration_details(self, value: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']]):
         pulumi.set(self, "job_log_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobNodeConfigurationDetails")
-    def job_node_configuration_details(self) -> Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']]:
+    def job_node_configuration_details(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']]:
         """
         The job node configuration details
         """
         return pulumi.get(self, "job_node_configuration_details")
 
     @job_node_configuration_details.setter
-    def job_node_configuration_details(self, value: Optional[pulumi.Input['JobJobNodeConfigurationDetailsArgs']]):
+    def job_node_configuration_details(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']]):
         pulumi.set(self, "job_node_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
+    def job_storage_mount_configuration_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
         """
         (Updatable) Collection of JobStorageMountConfigurationDetails.
         """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @job_storage_mount_configuration_details_lists.setter
-    def job_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
+    def job_storage_mount_configuration_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
         pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the job.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the job.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -668,22 +668,22 @@ class Job(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-                 job_node_configuration_details: Optional[pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
@@ -719,11 +719,11 @@ class Job(pulumi.CustomResource):
                     "commands": job_job_configuration_details_startup_probe_details_command,
                     "job_probe_check_type": job_job_configuration_details_startup_probe_details_job_probe_check_type,
                     "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
-                    "failure_threshold": job_job_configuration_details_startup_probe_details_failure_threshold,
-                    "initial_delay_in_seconds": job_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                    "failure_threshold": int(job_job_configuration_details_startup_probe_details_failure_threshold),
+                    "initial_delay_in_seconds": int(job_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
-                    "period_in_seconds": job_job_configuration_details_startup_probe_details_period_in_seconds,
+                    "period_in_seconds": int(job_job_configuration_details_startup_probe_details_period_in_seconds),
                 },
             },
             job_environment_configuration_details={
@@ -736,7 +736,7 @@ class Job(pulumi.CustomResource):
             },
             job_infrastructure_configuration_details={
                 "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
-                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(job_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                 "job_shape_config_details": {
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -745,8 +745,8 @@ class Job(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             job_log_configuration_details={
-                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
-                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation == "true",
+                "enable_logging": job_job_log_configuration_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -766,9 +766,9 @@ class Job(pulumi.CustomResource):
                         "startup_probe_details": {
                             "commands": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
                             "job_probe_check_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
-                            "failure_threshold": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
-                            "initial_delay_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
-                            "period_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                            "failure_threshold": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold),
+                            "initial_delay_in_seconds": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
+                            "period_in_seconds": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds),
                         },
                     },
                     "job_environment_configuration_details": {
@@ -781,7 +781,7 @@ class Job(pulumi.CustomResource):
                     },
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
-                        "block_storage_size_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "block_storage_size_in_gbs": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                         "job_shape_config_details": {
                             "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -789,8 +789,8 @@ class Job(pulumi.CustomResource):
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],
                     },
-                    "minimum_success_replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas,
-                    "replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_replicas,
+                    "minimum_success_replicas": int(job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas),
+                    "replicas": int(job_job_node_configuration_details_job_node_group_configuration_details_list_replicas),
                 }],
                 "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
                 "startup_order": job_job_node_configuration_details_startup_order,
@@ -879,11 +879,11 @@ class Job(pulumi.CustomResource):
                     "commands": job_job_configuration_details_startup_probe_details_command,
                     "job_probe_check_type": job_job_configuration_details_startup_probe_details_job_probe_check_type,
                     "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
-                    "failure_threshold": job_job_configuration_details_startup_probe_details_failure_threshold,
-                    "initial_delay_in_seconds": job_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                    "failure_threshold": int(job_job_configuration_details_startup_probe_details_failure_threshold),
+                    "initial_delay_in_seconds": int(job_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
-                    "period_in_seconds": job_job_configuration_details_startup_probe_details_period_in_seconds,
+                    "period_in_seconds": int(job_job_configuration_details_startup_probe_details_period_in_seconds),
                 },
             },
             job_environment_configuration_details={
@@ -896,7 +896,7 @@ class Job(pulumi.CustomResource):
             },
             job_infrastructure_configuration_details={
                 "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
-                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(job_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                 "job_shape_config_details": {
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -905,8 +905,8 @@ class Job(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             job_log_configuration_details={
-                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
-                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation == "true",
+                "enable_logging": job_job_log_configuration_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -926,9 +926,9 @@ class Job(pulumi.CustomResource):
                         "startup_probe_details": {
                             "commands": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
                             "job_probe_check_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
-                            "failure_threshold": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
-                            "initial_delay_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
-                            "period_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                            "failure_threshold": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold),
+                            "initial_delay_in_seconds": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
+                            "period_in_seconds": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds),
                         },
                     },
                     "job_environment_configuration_details": {
@@ -941,7 +941,7 @@ class Job(pulumi.CustomResource):
                     },
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
-                        "block_storage_size_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "block_storage_size_in_gbs": int(job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                         "job_shape_config_details": {
                             "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -949,8 +949,8 @@ class Job(pulumi.CustomResource):
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],
                     },
-                    "minimum_success_replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas,
-                    "replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_replicas,
+                    "minimum_success_replicas": int(job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas),
+                    "replicas": int(job_job_node_configuration_details_job_node_group_configuration_details_list_replicas),
                 }],
                 "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
                 "startup_order": job_job_node_configuration_details_startup_order,
@@ -991,22 +991,22 @@ class Job(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-                 job_node_configuration_details: Optional[pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1053,29 +1053,29 @@ class Job(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            empty_artifact: Optional[pulumi.Input[_builtins.bool]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            job_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-            job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-            job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-            job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-            job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-            job_node_configuration_details: Optional[pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-            job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Job':
+            artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            empty_artifact: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+            job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+            job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+            job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+            job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
+            job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Job':
         """
         Get an existing Job resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

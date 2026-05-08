@@ -173,44 +173,44 @@ export interface StreamDistributionChannelState {
     /**
      * (Updatable) Compartment Identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique domain name of the Distribution Channel.
      */
-    domainName?: pulumi.Input<string>;
+    domainName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[] | undefined>;
     /**
      * The current state of the Stream Distribution Channel.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -224,7 +224,7 @@ export interface StreamDistributionChannelArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
      */
@@ -232,10 +232,10 @@ export interface StreamDistributionChannelArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[] | undefined>;
 }

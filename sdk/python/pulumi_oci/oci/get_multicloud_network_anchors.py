@@ -201,10 +201,10 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree,
+        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
@@ -252,18 +252,18 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
         should_fetch_vcn_name=pulumi.get(__ret__, 'should_fetch_vcn_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
-def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                          network_anchor_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          network_anchor_oci_subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          network_anchor_oci_vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          should_fetch_vcn_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          subscription_service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_multicloud_network_anchors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                          network_anchor_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          network_anchor_oci_subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          network_anchor_oci_vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          should_fetch_vcn_name: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          subscription_service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudNetworkAnchorsResult]:
     """
     This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
@@ -283,10 +283,10 @@ def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree,
+        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 

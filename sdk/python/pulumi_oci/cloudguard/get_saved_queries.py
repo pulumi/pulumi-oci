@@ -131,9 +131,9 @@ def get_saved_queries(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_queries = oci.CloudGuard.get_saved_queries(compartment_id=compartment_id,
+    test_saved_queries = oci.cloudguard.get_saved_queries(compartment_id=compartment_id,
         access_level=saved_query_access_level,
-        compartment_id_in_subtree=saved_query_compartment_id_in_subtree,
+        compartment_id_in_subtree=saved_query_compartment_id_in_subtree == "true",
         display_name=saved_query_display_name)
     ```
 
@@ -160,11 +160,11 @@ def get_saved_queries(access_level: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         saved_query_collections=pulumi.get(__ret__, 'saved_query_collections'))
-def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]]]] = None,
+def get_saved_queries_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSavedQueriesResult]:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
@@ -177,9 +177,9 @@ def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_queries = oci.CloudGuard.get_saved_queries(compartment_id=compartment_id,
+    test_saved_queries = oci.cloudguard.get_saved_queries(compartment_id=compartment_id,
         access_level=saved_query_access_level,
-        compartment_id_in_subtree=saved_query_compartment_id_in_subtree,
+        compartment_id_in_subtree=saved_query_compartment_id_in_subtree == "true",
         display_name=saved_query_display_name)
     ```
 

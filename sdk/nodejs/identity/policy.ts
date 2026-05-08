@@ -201,51 +201,51 @@ export interface PolicyState {
     /**
      * @deprecated The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    ETag?: pulumi.Input<string>;
+    ETag?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    inactiveState?: pulumi.Input<string>;
+    inactiveState?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    lastUpdateETag?: pulumi.Input<string>;
+    lastUpdateETag?: pulumi.Input<string | undefined>;
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    policyHash?: pulumi.Input<string>;
+    policyHash?: pulumi.Input<string | undefined>;
     /**
      * The policy's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
      */
-    statements?: pulumi.Input<pulumi.Input<string>[]>;
+    statements?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
      *
@@ -253,7 +253,7 @@ export interface PolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versionDate?: pulumi.Input<string>;
+    versionDate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -267,7 +267,7 @@ export interface PolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
      */
@@ -275,11 +275,11 @@ export interface PolicyArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
      */
@@ -291,5 +291,5 @@ export interface PolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versionDate?: pulumi.Input<string>;
+    versionDate?: pulumi.Input<string | undefined>;
 }

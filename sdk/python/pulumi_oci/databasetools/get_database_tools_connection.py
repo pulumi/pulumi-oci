@@ -348,7 +348,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
+    test_database_tools_connection = oci.databasetools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
     ```
 
 
@@ -385,7 +385,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[_builti
         url=pulumi.get(__ret__, 'url'),
         user_name=pulumi.get(__ret__, 'user_name'),
         user_passwords=pulumi.get(__ret__, 'user_passwords'))
-def get_database_tools_connection_output(database_tools_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_tools_connection_output(database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsConnectionResult]:
     """
     This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
@@ -398,7 +398,7 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
+    test_database_tools_connection = oci.databasetools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
     ```
 
 

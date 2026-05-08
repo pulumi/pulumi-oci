@@ -134,7 +134,7 @@ def get_email_outbound_ips(assignment_state: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_outbound_ips = oci.Email.get_email_outbound_ips(compartment_id=compartment_id,
+    test_email_outbound_ips = oci.email.get_email_outbound_ips(compartment_id=compartment_id,
         assignment_state=email_outbound_ip_assignment_state,
         outbound_ip=email_outbound_ip_outbound_ip,
         state=email_outbound_ip_state)
@@ -163,11 +163,11 @@ def get_email_outbound_ips(assignment_state: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         outbound_ip=pulumi.get(__ret__, 'outbound_ip'),
         state=pulumi.get(__ret__, 'state'))
-def get_email_outbound_ips_output(assignment_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict']]]]] = None,
-                                  outbound_ip: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_email_outbound_ips_output(assignment_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict']]]]] = None,
+                                  outbound_ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailOutboundIpsResult]:
     """
     This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
@@ -180,7 +180,7 @@ def get_email_outbound_ips_output(assignment_state: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_email_outbound_ips = oci.Email.get_email_outbound_ips(compartment_id=compartment_id,
+    test_email_outbound_ips = oci.email.get_email_outbound_ips(compartment_id=compartment_id,
         assignment_state=email_outbound_ip_assignment_state,
         outbound_ip=email_outbound_ip_outbound_ip,
         state=email_outbound_ip_state)

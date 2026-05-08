@@ -115,7 +115,7 @@ def get_run_log(base64_encode_content: Optional[_builtins.bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=run_log_name,
+    test_run_log = oci.dataflow.get_run_log(name=run_log_name,
         run_id=test_run["id"])
     ```
 
@@ -139,9 +139,9 @@ def get_run_log(base64_encode_content: Optional[_builtins.bool] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         run_id=pulumi.get(__ret__, 'run_id'))
-def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                       name: Optional[pulumi.Input[_builtins.str]] = None,
-                       run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_run_log_output(base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                       name: pulumi.Input[Optional[_builtins.str]] = None,
+                       run_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunLogResult]:
     """
     This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
@@ -154,7 +154,7 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=run_log_name,
+    test_run_log = oci.dataflow.get_run_log(name=run_log_name,
         run_id=test_run["id"])
     ```
 

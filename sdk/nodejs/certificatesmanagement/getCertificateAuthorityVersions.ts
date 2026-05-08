@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateAuthorityVersions = oci.CertificatesManagement.getCertificateAuthorityVersions({
+ * const testCertificateAuthorityVersions = oci.certificatesmanagement.getCertificateAuthorityVersions({
  *     certificateAuthorityId: testCertificateAuthority.id,
  *     versionNumber: certificateAuthorityVersionVersionNumber,
  * });
@@ -82,7 +82,7 @@ export interface GetCertificateAuthorityVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateAuthorityVersions = oci.CertificatesManagement.getCertificateAuthorityVersions({
+ * const testCertificateAuthorityVersions = oci.certificatesmanagement.getCertificateAuthorityVersions({
  *     certificateAuthorityId: testCertificateAuthority.id,
  *     versionNumber: certificateAuthorityVersionVersionNumber,
  * });
@@ -105,9 +105,9 @@ export interface GetCertificateAuthorityVersionsOutputArgs {
      * The OCID of the certificate authority (CA).
      */
     certificateAuthorityId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificateAuthorityVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificateAuthorityVersionsFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
      */
-    versionNumber?: pulumi.Input<string>;
+    versionNumber?: pulumi.Input<string | undefined>;
 }

@@ -818,7 +818,7 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+    test_identity_provider = oci.identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
         identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",
@@ -910,12 +910,12 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[_builtins.st
         urnietfparamsscimschemasoracleidcsextensionx509identity_providers=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionx509identity_providers'),
         user_mapping_method=pulumi.get(__ret__, 'user_mapping_method'),
         user_mapping_store_attribute=pulumi.get(__ret__, 'user_mapping_store_attribute'))
-def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                         attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                         identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_identity_provider_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                         attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                         identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsIdentityProviderResult]:
     """
     This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -928,7 +928,7 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+    test_identity_provider = oci.identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
         identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",

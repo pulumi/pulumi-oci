@@ -103,7 +103,7 @@ def get_object_lifecycle_policy(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+    test_object_lifecycle_policy = oci.objectstorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
         namespace=object_lifecycle_policy_namespace)
     ```
 
@@ -123,8 +123,8 @@ def get_object_lifecycle_policy(bucket: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         rules=pulumi.get(__ret__, 'rules'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                                       namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_object_lifecycle_policy_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectLifecyclePolicyResult]:
     """
     This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -137,7 +137,7 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+    test_object_lifecycle_policy = oci.objectstorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
         namespace=object_lifecycle_policy_namespace)
     ```
 

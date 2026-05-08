@@ -26,11 +26,11 @@ import * as utilities from "../utilities";
  *     version: bdsInstancePatchActionVersion,
  *     patchingConfig: {
  *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
- *         batchSize: bdsInstancePatchActionPatchingConfigBatchSize,
- *         toleranceThresholdPerBatch: bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch,
- *         toleranceThresholdPerDomain: bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain,
- *         waitTimeBetweenBatchInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
- *         waitTimeBetweenDomainInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
+ *         batchSize: Number(bdsInstancePatchActionPatchingConfigBatchSize),
+ *         toleranceThresholdPerBatch: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch),
+ *         toleranceThresholdPerDomain: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain),
+ *         waitTimeBetweenBatchInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
+ *         waitTimeBetweenDomainInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
  *     },
  * });
  * ```
@@ -135,15 +135,15 @@ export interface BdsInstancePatchActionState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
+    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig | undefined>;
     /**
      * The version of the patch to be installed.
      *
@@ -151,7 +151,7 @@ export interface BdsInstancePatchActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface BdsInstancePatchActionArgs {
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
+    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig | undefined>;
     /**
      * The version of the patch to be installed.
      *

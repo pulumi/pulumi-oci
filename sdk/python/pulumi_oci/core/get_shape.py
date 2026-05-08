@@ -131,11 +131,11 @@ def get_shape(availability_domain: Optional[_builtins.str] = None,
         image_id=pulumi.get(__ret__, 'image_id'),
         shape=pulumi.get(__ret__, 'shape'),
         shapes=pulumi.get(__ret__, 'shapes'))
-def get_shape_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]]]] = None,
-                     image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_shape_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]]]] = None,
+                     image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapeResult]:
     """
     Use this data source to access information about an existing resource.

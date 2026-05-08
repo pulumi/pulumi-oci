@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     lockDurationDetails: {
- *         lockDuration: snapshotLockDurationDetailsLockDuration,
+ *         lockDuration: Number(snapshotLockDurationDetailsLockDuration),
  *         lockMode: snapshotLockDurationDetailsLockMode,
- *         coolOffDuration: snapshotLockDurationDetailsCoolOffDuration,
+ *         coolOffDuration: Number(snapshotLockDurationDetailsCoolOffDuration),
  *     },
  *     locks: [{
  *         type: snapshotLocksType,
@@ -229,40 +229,40 @@ export interface SnapshotState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The time when this snapshot will be deleted.
      */
-    expirationTime?: pulumi.Input<string>;
+    expirationTime?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */
-    fileSystemId?: pulumi.Input<string>;
+    fileSystemId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
      */
-    filesystemSnapshotPolicyId?: pulumi.Input<string>;
+    filesystemSnapshotPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    isCloneSource?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isCloneSource?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for setting a retention date or legal hold.
      */
-    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails>;
+    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[] | undefined>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *
@@ -274,38 +274,38 @@ export interface SnapshotState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    provenanceId?: pulumi.Input<string>;
+    provenanceId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
      * * If the snapshot is created in the original file system directory.
      * * If the snapshot is cloned from a file system.
      * * If the snapshot is replicated from a file system.
      */
-    snapshotTime?: pulumi.Input<string>;
+    snapshotTime?: pulumi.Input<string | undefined>;
     /**
      * Specifies the generation type of the snapshot.
      */
-    snapshotType?: pulumi.Input<string>;
+    snapshotType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the snapshot.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
      */
-    timeLocked?: pulumi.Input<string>;
+    timeLocked?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -315,11 +315,11 @@ export interface SnapshotArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The time when this snapshot will be deleted.
      */
-    expirationTime?: pulumi.Input<string>;
+    expirationTime?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */
@@ -327,16 +327,16 @@ export interface SnapshotArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Details for setting a retention date or legal hold.
      */
-    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails>;
+    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[] | undefined>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *
@@ -348,5 +348,5 @@ export interface SnapshotArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

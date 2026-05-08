@@ -209,43 +209,43 @@ export interface FleetAdvancedFeatureConfigurationState {
     /**
      * (Updatable) AdvancedUsageTracking configuration
      */
-    advancedUsageTracking?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking>;
+    advancedUsageTracking?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking | undefined>;
     /**
      * (Updatable) Bucket name required to store JFR and related data.
      */
-    analyticBucketName?: pulumi.Input<string>;
+    analyticBucketName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Namespace for the Fleet advanced feature.
      */
-    analyticNamespace?: pulumi.Input<string>;
+    analyticNamespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) CryptoEventAnalysis configuration
      */
-    cryptoEventAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis>;
+    cryptoEventAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) JavaMigrationAnalysis configuration
      */
-    javaMigrationAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis>;
+    javaMigrationAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis | undefined>;
     /**
      * (Updatable) JfrRecording configuration
      */
-    jfrRecording?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording>;
+    jfrRecording?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording | undefined>;
     /**
      * (Updatable) Enable lifecycle management and set post action configurations.
      */
-    lcm?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcm>;
+    lcm?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcm | undefined>;
     /**
      * (Updatable) Performance tuning analysis configuration
      */
-    performanceTuningAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis>;
+    performanceTuningAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis | undefined>;
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastModified?: pulumi.Input<string>;
+    timeLastModified?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -255,19 +255,19 @@ export interface FleetAdvancedFeatureConfigurationArgs {
     /**
      * (Updatable) AdvancedUsageTracking configuration
      */
-    advancedUsageTracking?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking>;
+    advancedUsageTracking?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking | undefined>;
     /**
      * (Updatable) Bucket name required to store JFR and related data.
      */
-    analyticBucketName?: pulumi.Input<string>;
+    analyticBucketName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Namespace for the Fleet advanced feature.
      */
-    analyticNamespace?: pulumi.Input<string>;
+    analyticNamespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) CryptoEventAnalysis configuration
      */
-    cryptoEventAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis>;
+    cryptoEventAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -275,17 +275,17 @@ export interface FleetAdvancedFeatureConfigurationArgs {
     /**
      * (Updatable) JavaMigrationAnalysis configuration
      */
-    javaMigrationAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis>;
+    javaMigrationAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis | undefined>;
     /**
      * (Updatable) JfrRecording configuration
      */
-    jfrRecording?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording>;
+    jfrRecording?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording | undefined>;
     /**
      * (Updatable) Enable lifecycle management and set post action configurations.
      */
-    lcm?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcm>;
+    lcm?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcm | undefined>;
     /**
      * (Updatable) Performance tuning analysis configuration
      */
-    performanceTuningAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis>;
+    performanceTuningAnalysis?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis | undefined>;
 }

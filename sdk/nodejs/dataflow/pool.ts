@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  * const testPool = new oci.dataflow.Pool("test_pool", {
  *     compartmentId: compartmentId,
  *     configurations: [{
- *         max: poolConfigurationsMax,
- *         min: poolConfigurationsMin,
+ *         max: Number(poolConfigurationsMax),
+ *         min: Number(poolConfigurationsMin),
  *         shape: poolConfigurationsShape,
  *         shapeConfig: {
  *             memoryInGbs: poolConfigurationsShapeConfigMemoryInGbs,
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     idleTimeoutInMinutes: poolIdleTimeoutInMinutes,
+ *     idleTimeoutInMinutes: Number(poolIdleTimeoutInMinutes),
  *     schedules: [{
  *         dayOfWeek: poolSchedulesDayOfWeek,
- *         startTime: poolSchedulesStartTime,
- *         stopTime: poolSchedulesStopTime,
+ *         startTime: Number(poolSchedulesStartTime),
+ *         stopTime: Number(poolSchedulesStopTime),
  *     }],
  * });
  * ```
@@ -216,51 +216,51 @@ export interface PoolState {
     /**
      * (Updatable) The OCID of a compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of PoolConfig items.
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolConfiguration>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      */
-    idleTimeoutInMinutes?: pulumi.Input<number>;
+    idleTimeoutInMinutes?: pulumi.Input<number | undefined>;
     /**
      * The detailed messages about the lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      */
-    ownerUserName?: pulumi.Input<string>;
+    ownerUserName?: pulumi.Input<string | undefined>;
     /**
      * A collection of metrics related to a particular pool.
      */
-    poolMetrics?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolPoolMetric>[]>;
+    poolMetrics?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolPoolMetric>[] | undefined>;
     /**
      * (Updatable) A list of schedules for pool to auto start and stop.
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[] | undefined>;
     /**
      * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
      *
@@ -268,15 +268,15 @@ export interface PoolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -294,11 +294,11 @@ export interface PoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
@@ -306,15 +306,15 @@ export interface PoolArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      */
-    idleTimeoutInMinutes?: pulumi.Input<number>;
+    idleTimeoutInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of schedules for pool to auto start and stop.
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolSchedule>[] | undefined>;
     /**
      * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
      *
@@ -322,5 +322,5 @@ export interface PoolArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

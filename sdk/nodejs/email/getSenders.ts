@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSenders = oci.Email.getSenders({
+ * const testSenders = oci.email.getSenders({
  *     compartmentId: compartmentId,
  *     domain: senderDomain,
  *     emailAddress: senderEmailAddress,
@@ -107,7 +107,7 @@ export interface GetSendersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSenders = oci.Email.getSenders({
+ * const testSenders = oci.email.getSenders({
  *     compartmentId: compartmentId,
  *     domain: senderDomain,
  *     emailAddress: senderEmailAddress,
@@ -139,18 +139,18 @@ export interface GetSendersOutputArgs {
     /**
      * A filter to only return resources that match the given domain exactly.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The email address of the approved sender.
      */
-    emailAddress?: pulumi.Input<string>;
+    emailAddress?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given IpPool resource exactly.
      */
-    emailIpPoolId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetSendersFilterArgs>[]>;
+    emailIpPoolId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetSendersFilterArgs>[] | undefined>;
     /**
      * The current state of a sender.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -24,66 +24,66 @@ class DeployStageArgs:
                  deploy_pipeline_id: pulumi.Input[_builtins.str],
                  deploy_stage_predecessor_collection: pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'],
                  deploy_stage_type: pulumi.Input[_builtins.str],
-                 approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
-                 are_hooks_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
-                 blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
-                 canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
-                 command_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deploy_environment_id_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_environment_id_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_image_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 function_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
-                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 helm_command_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_debug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_uninstall_on_stage_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_validation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
-                 max_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_blue_green_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_cluster_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 release_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
-                 rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
-                 set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
-                 set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
-                 should_cleanup_on_fail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_not_wait: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reset_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reuse_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_crds: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_render_subchart_notes: Optional[pulumi.Input[_builtins.bool]] = None,
-                 test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_shift_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
+                 approval_policy: pulumi.Input[Optional['DeployStageApprovalPolicyArgs']] = None,
+                 are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 blue_backend_ips: pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']] = None,
+                 blue_green_strategy: pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']] = None,
+                 canary_strategy: pulumi.Input[Optional['DeployStageCanaryStrategyArgs']] = None,
+                 command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 container_config: pulumi.Input[Optional['DeployStageContainerConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_policy: pulumi.Input[Optional['DeployStageFailurePolicyArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 green_backend_ips: pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']] = None,
+                 helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_debug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']] = None,
+                 max_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_blue_green_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rollback_policy: pulumi.Input[Optional['DeployStageRollbackPolicyArgs']] = None,
+                 rollout_policy: pulumi.Input[Optional['DeployStageRolloutPolicyArgs']] = None,
+                 set_string: pulumi.Input[Optional['DeployStageSetStringArgs']] = None,
+                 set_values: pulumi.Input[Optional['DeployStageSetValuesArgs']] = None,
+                 should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_criteria: pulumi.Input[Optional['DeployStageWaitCriteriaArgs']] = None):
         """
         The set of arguments for constructing a DeployStage resource.
 
@@ -313,798 +313,798 @@ class DeployStageArgs:
 
     @_builtins.property
     @pulumi.getter(name="approvalPolicy")
-    def approval_policy(self) -> Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]:
+    def approval_policy(self) -> pulumi.Input[Optional['DeployStageApprovalPolicyArgs']]:
         """
         (Updatable) Specifies the approval policy.
         """
         return pulumi.get(self, "approval_policy")
 
     @approval_policy.setter
-    def approval_policy(self, value: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]):
+    def approval_policy(self, value: pulumi.Input[Optional['DeployStageApprovalPolicyArgs']]):
         pulumi.set(self, "approval_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="areHooksEnabled")
-    def are_hooks_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_hooks_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         """
         return pulumi.get(self, "are_hooks_enabled")
 
     @are_hooks_enabled.setter
-    def are_hooks_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_hooks_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_hooks_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="blueBackendIps")
-    def blue_backend_ips(self) -> Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]:
+    def blue_backend_ips(self) -> pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']]:
         """
         (Updatable) Collection of backend environment IP addresses.
         """
         return pulumi.get(self, "blue_backend_ips")
 
     @blue_backend_ips.setter
-    def blue_backend_ips(self, value: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]):
+    def blue_backend_ips(self, value: pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']]):
         pulumi.set(self, "blue_backend_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="blueGreenStrategy")
-    def blue_green_strategy(self) -> Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]:
+    def blue_green_strategy(self) -> pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']]:
         """
         Specifies the required blue green release strategy for OKE deployment.
         """
         return pulumi.get(self, "blue_green_strategy")
 
     @blue_green_strategy.setter
-    def blue_green_strategy(self, value: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]):
+    def blue_green_strategy(self, value: pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']]):
         pulumi.set(self, "blue_green_strategy", value)
 
     @_builtins.property
     @pulumi.getter(name="canaryStrategy")
-    def canary_strategy(self) -> Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]:
+    def canary_strategy(self) -> pulumi.Input[Optional['DeployStageCanaryStrategyArgs']]:
         """
         Specifies the required canary release strategy for OKE deployment.
         """
         return pulumi.get(self, "canary_strategy")
 
     @canary_strategy.setter
-    def canary_strategy(self, value: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]):
+    def canary_strategy(self, value: pulumi.Input[Optional['DeployStageCanaryStrategyArgs']]):
         pulumi.set(self, "canary_strategy", value)
 
     @_builtins.property
     @pulumi.getter(name="commandSpecDeployArtifactId")
-    def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def command_spec_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the artifact that contains the command specification.
         """
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @command_spec_deploy_artifact_id.setter
-    def command_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def command_spec_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "command_spec_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         """
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @compute_instance_group_blue_green_deployment_deploy_stage_id.setter
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_blue_green_deployment_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
-    def compute_instance_group_canary_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_canary_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A compute instance group canary stage OCID for load balancer.
         """
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @compute_instance_group_canary_deploy_stage_id.setter
-    def compute_instance_group_canary_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_canary_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_canary_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         """
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @compute_instance_group_canary_traffic_shift_deploy_stage_id.setter
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
-    def compute_instance_group_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A compute instance group environment OCID for rolling deployment.
         """
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @compute_instance_group_deploy_environment_id.setter
-    def compute_instance_group_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="containerConfig")
-    def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
+    def container_config(self) -> pulumi.Input[Optional['DeployStageContainerConfigArgs']]:
         """
         (Updatable) Specifies the container configuration.
         """
         return pulumi.get(self, "container_config")
 
     @container_config.setter
-    def container_config(self, value: Optional[pulumi.Input['DeployStageContainerConfigArgs']]):
+    def container_config(self, value: pulumi.Input[Optional['DeployStageContainerConfigArgs']]):
         pulumi.set(self, "container_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactId")
-    def deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 
     @deploy_artifact_id.setter
-    def deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactIds")
-    def deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deploy_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of file artifact OCIDs to deploy.
         """
         return pulumi.get(self, "deploy_artifact_ids")
 
     @deploy_artifact_ids.setter
-    def deploy_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deploy_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deploy_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="deployEnvironmentIdA")
-    def deploy_environment_id_a(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_environment_id_a(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First compute instance group environment OCID for deployment.
         """
         return pulumi.get(self, "deploy_environment_id_a")
 
     @deploy_environment_id_a.setter
-    def deploy_environment_id_a(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_environment_id_a(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_environment_id_a", value)
 
     @_builtins.property
     @pulumi.getter(name="deployEnvironmentIdB")
-    def deploy_environment_id_b(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_environment_id_b(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Second compute instance group environment OCID for deployment.
         """
         return pulumi.get(self, "deploy_environment_id_b")
 
     @deploy_environment_id_b.setter
-    def deploy_environment_id_b(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_environment_id_b(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_environment_id_b", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
-    def deployment_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_spec_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the artifact that contains the deployment specification.
         """
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @deployment_spec_deploy_artifact_id.setter
-    def deployment_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_spec_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_spec_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional description about the deployment stage.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dockerImageDeployArtifactId")
-    def docker_image_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def docker_image_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Docker image artifact OCID.
         """
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @docker_image_deploy_artifact_id.setter
-    def docker_image_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def docker_image_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "docker_image_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="failurePolicy")
-    def failure_policy(self) -> Optional[pulumi.Input['DeployStageFailurePolicyArgs']]:
+    def failure_policy(self) -> pulumi.Input[Optional['DeployStageFailurePolicyArgs']]:
         """
         (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
         """
         return pulumi.get(self, "failure_policy")
 
     @failure_policy.setter
-    def failure_policy(self, value: Optional[pulumi.Input['DeployStageFailurePolicyArgs']]):
+    def failure_policy(self, value: pulumi.Input[Optional['DeployStageFailurePolicyArgs']]):
         pulumi.set(self, "failure_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="functionDeployEnvironmentId")
-    def function_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def function_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Function environment OCID.
         """
         return pulumi.get(self, "function_deploy_environment_id")
 
     @function_deploy_environment_id.setter
-    def function_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def function_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "function_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="functionTimeoutInSeconds")
-    def function_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def function_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for execution of the Function. Value in seconds.
         """
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @function_timeout_in_seconds.setter
-    def function_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def function_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "function_timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="greenBackendIps")
-    def green_backend_ips(self) -> Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]:
+    def green_backend_ips(self) -> pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']]:
         """
         (Updatable) Collection of backend environment IP addresses.
         """
         return pulumi.get(self, "green_backend_ips")
 
     @green_backend_ips.setter
-    def green_backend_ips(self, value: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]):
+    def green_backend_ips(self, value: pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']]):
         pulumi.set(self, "green_backend_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="helmChartDeployArtifactId")
-    def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def helm_chart_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Helm chart artifact OCID.
         """
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @helm_chart_deploy_artifact_id.setter
-    def helm_chart_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def helm_chart_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "helm_chart_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="helmCommandArtifactIds")
-    def helm_command_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def helm_command_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of Helm command artifact OCIDs.
         """
         return pulumi.get(self, "helm_command_artifact_ids")
 
     @helm_command_artifact_ids.setter
-    def helm_command_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def helm_command_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "helm_command_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="isAsync")
-    def is_async(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_async(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         """
         return pulumi.get(self, "is_async")
 
     @is_async.setter
-    def is_async(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_async(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_async", value)
 
     @_builtins.property
     @pulumi.getter(name="isDebugEnabled")
-    def is_debug_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_debug_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
         """
         return pulumi.get(self, "is_debug_enabled")
 
     @is_debug_enabled.setter
-    def is_debug_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_debug_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_debug_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceEnabled")
-    def is_force_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         """
         return pulumi.get(self, "is_force_enabled")
 
     @is_force_enabled.setter
-    def is_force_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isUninstallOnStageDelete")
-    def is_uninstall_on_stage_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_uninstall_on_stage_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Uninstall the Helm chart release on deleting the stage.
         """
         return pulumi.get(self, "is_uninstall_on_stage_delete")
 
     @is_uninstall_on_stage_delete.setter
-    def is_uninstall_on_stage_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_uninstall_on_stage_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_uninstall_on_stage_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="isValidationEnabled")
-    def is_validation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_validation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag specifies whether the invoked function should be validated.
         """
         return pulumi.get(self, "is_validation_enabled")
 
     @is_validation_enabled.setter
-    def is_validation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_validation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_validation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
-    def kubernetes_manifest_deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def kubernetes_manifest_deploy_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of Kubernetes manifest artifact OCIDs.
         """
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @kubernetes_manifest_deploy_artifact_ids.setter
-    def kubernetes_manifest_deploy_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def kubernetes_manifest_deploy_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "kubernetes_manifest_deploy_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerConfig")
-    def load_balancer_config(self) -> Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]:
+    def load_balancer_config(self) -> pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']]:
         """
         (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         """
         return pulumi.get(self, "load_balancer_config")
 
     @load_balancer_config.setter
-    def load_balancer_config(self, value: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]):
+    def load_balancer_config(self, value: pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']]):
         pulumi.set(self, "load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHistory")
-    def max_history(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_history(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         """
         return pulumi.get(self, "max_history")
 
     @max_history.setter
-    def max_history(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_history(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_history", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemoryInMbs")
-    def max_memory_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_memory_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum usable memory for the Function (in MB).
         """
         return pulumi.get(self, "max_memory_in_mbs")
 
     @max_memory_in_mbs.setter
-    def max_memory_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_memory_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_memory_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
-    def oke_blue_green_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_blue_green_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the upstream OKE blue-green deployment stage in this pipeline.
         """
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @oke_blue_green_deploy_stage_id.setter
-    def oke_blue_green_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_blue_green_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_blue_green_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeCanaryDeployStageId")
-    def oke_canary_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_canary_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of an upstream OKE canary deployment stage in this pipeline.
         """
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @oke_canary_deploy_stage_id.setter
-    def oke_canary_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_canary_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_canary_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
-    def oke_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         """
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @oke_canary_traffic_shift_deploy_stage_id.setter
-    def oke_canary_traffic_shift_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_canary_traffic_shift_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_canary_traffic_shift_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
-    def oke_cluster_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_cluster_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Kubernetes cluster environment OCID for deployment.
         """
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @oke_cluster_deploy_environment_id.setter
-    def oke_cluster_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_cluster_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_cluster_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="productionLoadBalancerConfig")
-    def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
+    def production_load_balancer_config(self) -> pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']]:
         """
         Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "production_load_balancer_config")
 
     @production_load_balancer_config.setter
-    def production_load_balancer_config(self, value: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]):
+    def production_load_balancer_config(self, value: pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']]):
         pulumi.set(self, "production_load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def purpose(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purpose(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The purpose of running this Helm stage
         """
         return pulumi.get(self, "purpose")
 
     @purpose.setter
-    def purpose(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purpose(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purpose", value)
 
     @_builtins.property
     @pulumi.getter(name="releaseName")
-    def release_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def release_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         """
         return pulumi.get(self, "release_name")
 
     @release_name.setter
-    def release_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def release_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "release_name", value)
 
     @_builtins.property
     @pulumi.getter(name="rollbackPolicy")
-    def rollback_policy(self) -> Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]:
+    def rollback_policy(self) -> pulumi.Input[Optional['DeployStageRollbackPolicyArgs']]:
         """
         (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         """
         return pulumi.get(self, "rollback_policy")
 
     @rollback_policy.setter
-    def rollback_policy(self, value: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]):
+    def rollback_policy(self, value: pulumi.Input[Optional['DeployStageRollbackPolicyArgs']]):
         pulumi.set(self, "rollback_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="rolloutPolicy")
-    def rollout_policy(self) -> Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]:
+    def rollout_policy(self) -> pulumi.Input[Optional['DeployStageRolloutPolicyArgs']]:
         """
         (Updatable) Description of rollout policy for load balancer traffic shift stage.
         """
         return pulumi.get(self, "rollout_policy")
 
     @rollout_policy.setter
-    def rollout_policy(self, value: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]):
+    def rollout_policy(self, value: pulumi.Input[Optional['DeployStageRolloutPolicyArgs']]):
         pulumi.set(self, "rollout_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="setString")
-    def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
+    def set_string(self) -> pulumi.Input[Optional['DeployStageSetStringArgs']]:
         """
         (Updatable) Specifies the name and value pairs to set helm values.
         """
         return pulumi.get(self, "set_string")
 
     @set_string.setter
-    def set_string(self, value: Optional[pulumi.Input['DeployStageSetStringArgs']]):
+    def set_string(self, value: pulumi.Input[Optional['DeployStageSetStringArgs']]):
         pulumi.set(self, "set_string", value)
 
     @_builtins.property
     @pulumi.getter(name="setValues")
-    def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
+    def set_values(self) -> pulumi.Input[Optional['DeployStageSetValuesArgs']]:
         """
         (Updatable) Specifies the name and value pairs to set helm values.
         """
         return pulumi.get(self, "set_values")
 
     @set_values.setter
-    def set_values(self, value: Optional[pulumi.Input['DeployStageSetValuesArgs']]):
+    def set_values(self, value: pulumi.Input[Optional['DeployStageSetValuesArgs']]):
         pulumi.set(self, "set_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCleanupOnFail")
-    def should_cleanup_on_fail(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_cleanup_on_fail(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         """
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @should_cleanup_on_fail.setter
-    def should_cleanup_on_fail(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_cleanup_on_fail(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_cleanup_on_fail", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldNotWait")
-    def should_not_wait(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_not_wait(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
         """
         return pulumi.get(self, "should_not_wait")
 
     @should_not_wait.setter
-    def should_not_wait(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_not_wait(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_not_wait", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldResetValues")
-    def should_reset_values(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_reset_values(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
         """
         return pulumi.get(self, "should_reset_values")
 
     @should_reset_values.setter
-    def should_reset_values(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_reset_values(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_reset_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldReuseValues")
-    def should_reuse_values(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_reuse_values(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
         """
         return pulumi.get(self, "should_reuse_values")
 
     @should_reuse_values.setter
-    def should_reuse_values(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_reuse_values(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_reuse_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipCrds")
-    def should_skip_crds(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_skip_crds(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         """
         return pulumi.get(self, "should_skip_crds")
 
     @should_skip_crds.setter
-    def should_skip_crds(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_skip_crds(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_skip_crds", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
-    def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_skip_render_subchart_notes(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         """
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @should_skip_render_subchart_notes.setter
-    def should_skip_render_subchart_notes(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_skip_render_subchart_notes(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_skip_render_subchart_notes", value)
 
     @_builtins.property
     @pulumi.getter(name="testLoadBalancerConfig")
-    def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
+    def test_load_balancer_config(self) -> pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']]:
         """
         (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "test_load_balancer_config")
 
     @test_load_balancer_config.setter
-    def test_load_balancer_config(self, value: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]):
+    def test_load_balancer_config(self, value: pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']]):
         pulumi.set(self, "test_load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficShiftTarget")
-    def traffic_shift_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def traffic_shift_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the target or destination backend set.
         """
         return pulumi.get(self, "traffic_shift_target")
 
     @traffic_shift_target.setter
-    def traffic_shift_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def traffic_shift_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "traffic_shift_target", value)
 
     @_builtins.property
     @pulumi.getter(name="valuesArtifactIds")
-    def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of values.yaml file artifact OCIDs.
         """
         return pulumi.get(self, "values_artifact_ids")
 
     @values_artifact_ids.setter
-    def values_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="waitCriteria")
-    def wait_criteria(self) -> Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]:
+    def wait_criteria(self) -> pulumi.Input[Optional['DeployStageWaitCriteriaArgs']]:
         """
         (Updatable) Specifies wait criteria for the Wait stage.
         """
         return pulumi.get(self, "wait_criteria")
 
     @wait_criteria.setter
-    def wait_criteria(self, value: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]):
+    def wait_criteria(self, value: pulumi.Input[Optional['DeployStageWaitCriteriaArgs']]):
         pulumi.set(self, "wait_criteria", value)
 
 
 @pulumi.input_type
 class _DeployStageState:
     def __init__(__self__, *,
-                 approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
-                 are_hooks_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
-                 blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
-                 canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
-                 command_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deploy_environment_id_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_environment_id_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_predecessor_collection: Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']] = None,
-                 deploy_stage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_image_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 function_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
-                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 helm_command_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_debug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_uninstall_on_stage_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_validation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
-                 max_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_blue_green_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_cluster_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 release_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
-                 rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
-                 set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
-                 set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
-                 should_cleanup_on_fail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_not_wait: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reset_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reuse_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_crds: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_render_subchart_notes: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_shift_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
+                 approval_policy: pulumi.Input[Optional['DeployStageApprovalPolicyArgs']] = None,
+                 are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 blue_backend_ips: pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']] = None,
+                 blue_green_strategy: pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']] = None,
+                 canary_strategy: pulumi.Input[Optional['DeployStageCanaryStrategyArgs']] = None,
+                 command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 container_config: pulumi.Input[Optional['DeployStageContainerConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_predecessor_collection: pulumi.Input[Optional['DeployStageDeployStagePredecessorCollectionArgs']] = None,
+                 deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_policy: pulumi.Input[Optional['DeployStageFailurePolicyArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 green_backend_ips: pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']] = None,
+                 helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_debug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_config: pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']] = None,
+                 max_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_blue_green_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rollback_policy: pulumi.Input[Optional['DeployStageRollbackPolicyArgs']] = None,
+                 rollout_policy: pulumi.Input[Optional['DeployStageRolloutPolicyArgs']] = None,
+                 set_string: pulumi.Input[Optional['DeployStageSetStringArgs']] = None,
+                 set_values: pulumi.Input[Optional['DeployStageSetValuesArgs']] = None,
+                 should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_criteria: pulumi.Input[Optional['DeployStageWaitCriteriaArgs']] = None):
         """
         Input properties used for looking up and filtering DeployStage resources.
 
@@ -1322,842 +1322,842 @@ class _DeployStageState:
 
     @_builtins.property
     @pulumi.getter(name="approvalPolicy")
-    def approval_policy(self) -> Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]:
+    def approval_policy(self) -> pulumi.Input[Optional['DeployStageApprovalPolicyArgs']]:
         """
         (Updatable) Specifies the approval policy.
         """
         return pulumi.get(self, "approval_policy")
 
     @approval_policy.setter
-    def approval_policy(self, value: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]):
+    def approval_policy(self, value: pulumi.Input[Optional['DeployStageApprovalPolicyArgs']]):
         pulumi.set(self, "approval_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="areHooksEnabled")
-    def are_hooks_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_hooks_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         """
         return pulumi.get(self, "are_hooks_enabled")
 
     @are_hooks_enabled.setter
-    def are_hooks_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_hooks_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_hooks_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="blueBackendIps")
-    def blue_backend_ips(self) -> Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]:
+    def blue_backend_ips(self) -> pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']]:
         """
         (Updatable) Collection of backend environment IP addresses.
         """
         return pulumi.get(self, "blue_backend_ips")
 
     @blue_backend_ips.setter
-    def blue_backend_ips(self, value: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]):
+    def blue_backend_ips(self, value: pulumi.Input[Optional['DeployStageBlueBackendIpsArgs']]):
         pulumi.set(self, "blue_backend_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="blueGreenStrategy")
-    def blue_green_strategy(self) -> Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]:
+    def blue_green_strategy(self) -> pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']]:
         """
         Specifies the required blue green release strategy for OKE deployment.
         """
         return pulumi.get(self, "blue_green_strategy")
 
     @blue_green_strategy.setter
-    def blue_green_strategy(self, value: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]):
+    def blue_green_strategy(self, value: pulumi.Input[Optional['DeployStageBlueGreenStrategyArgs']]):
         pulumi.set(self, "blue_green_strategy", value)
 
     @_builtins.property
     @pulumi.getter(name="canaryStrategy")
-    def canary_strategy(self) -> Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]:
+    def canary_strategy(self) -> pulumi.Input[Optional['DeployStageCanaryStrategyArgs']]:
         """
         Specifies the required canary release strategy for OKE deployment.
         """
         return pulumi.get(self, "canary_strategy")
 
     @canary_strategy.setter
-    def canary_strategy(self, value: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]):
+    def canary_strategy(self, value: pulumi.Input[Optional['DeployStageCanaryStrategyArgs']]):
         pulumi.set(self, "canary_strategy", value)
 
     @_builtins.property
     @pulumi.getter(name="commandSpecDeployArtifactId")
-    def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def command_spec_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the artifact that contains the command specification.
         """
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @command_spec_deploy_artifact_id.setter
-    def command_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def command_spec_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "command_spec_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         """
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @compute_instance_group_blue_green_deployment_deploy_stage_id.setter
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_blue_green_deployment_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
-    def compute_instance_group_canary_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_canary_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A compute instance group canary stage OCID for load balancer.
         """
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @compute_instance_group_canary_deploy_stage_id.setter
-    def compute_instance_group_canary_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_canary_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_canary_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         """
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @compute_instance_group_canary_traffic_shift_deploy_stage_id.setter
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
-    def compute_instance_group_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_group_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A compute instance group environment OCID for rolling deployment.
         """
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @compute_instance_group_deploy_environment_id.setter
-    def compute_instance_group_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_group_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_group_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="containerConfig")
-    def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
+    def container_config(self) -> pulumi.Input[Optional['DeployStageContainerConfigArgs']]:
         """
         (Updatable) Specifies the container configuration.
         """
         return pulumi.get(self, "container_config")
 
     @container_config.setter
-    def container_config(self, value: Optional[pulumi.Input['DeployStageContainerConfigArgs']]):
+    def container_config(self, value: pulumi.Input[Optional['DeployStageContainerConfigArgs']]):
         pulumi.set(self, "container_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactId")
-    def deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 
     @deploy_artifact_id.setter
-    def deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactIds")
-    def deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deploy_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of file artifact OCIDs to deploy.
         """
         return pulumi.get(self, "deploy_artifact_ids")
 
     @deploy_artifact_ids.setter
-    def deploy_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deploy_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deploy_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="deployEnvironmentIdA")
-    def deploy_environment_id_a(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_environment_id_a(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First compute instance group environment OCID for deployment.
         """
         return pulumi.get(self, "deploy_environment_id_a")
 
     @deploy_environment_id_a.setter
-    def deploy_environment_id_a(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_environment_id_a(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_environment_id_a", value)
 
     @_builtins.property
     @pulumi.getter(name="deployEnvironmentIdB")
-    def deploy_environment_id_b(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_environment_id_b(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Second compute instance group environment OCID for deployment.
         """
         return pulumi.get(self, "deploy_environment_id_b")
 
     @deploy_environment_id_b.setter
-    def deploy_environment_id_b(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_environment_id_b(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_environment_id_b", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPipelineId")
-    def deploy_pipeline_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_pipeline_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a pipeline.
         """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @deploy_pipeline_id.setter
-    def deploy_pipeline_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_pipeline_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_pipeline_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStagePredecessorCollection")
-    def deploy_stage_predecessor_collection(self) -> Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']]:
+    def deploy_stage_predecessor_collection(self) -> pulumi.Input[Optional['DeployStageDeployStagePredecessorCollectionArgs']]:
         """
         (Updatable) Collection containing the predecessors of a stage.
         """
         return pulumi.get(self, "deploy_stage_predecessor_collection")
 
     @deploy_stage_predecessor_collection.setter
-    def deploy_stage_predecessor_collection(self, value: Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']]):
+    def deploy_stage_predecessor_collection(self, value: pulumi.Input[Optional['DeployStageDeployStagePredecessorCollectionArgs']]):
         pulumi.set(self, "deploy_stage_predecessor_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStageType")
-    def deploy_stage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_stage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deployment stage type.
         """
         return pulumi.get(self, "deploy_stage_type")
 
     @deploy_stage_type.setter
-    def deploy_stage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_stage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_stage_type", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
-    def deployment_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_spec_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the artifact that contains the deployment specification.
         """
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @deployment_spec_deploy_artifact_id.setter
-    def deployment_spec_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_spec_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_spec_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional description about the deployment stage.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dockerImageDeployArtifactId")
-    def docker_image_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def docker_image_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Docker image artifact OCID.
         """
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @docker_image_deploy_artifact_id.setter
-    def docker_image_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def docker_image_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "docker_image_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="failurePolicy")
-    def failure_policy(self) -> Optional[pulumi.Input['DeployStageFailurePolicyArgs']]:
+    def failure_policy(self) -> pulumi.Input[Optional['DeployStageFailurePolicyArgs']]:
         """
         (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
         """
         return pulumi.get(self, "failure_policy")
 
     @failure_policy.setter
-    def failure_policy(self, value: Optional[pulumi.Input['DeployStageFailurePolicyArgs']]):
+    def failure_policy(self, value: pulumi.Input[Optional['DeployStageFailurePolicyArgs']]):
         pulumi.set(self, "failure_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="functionDeployEnvironmentId")
-    def function_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def function_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Function environment OCID.
         """
         return pulumi.get(self, "function_deploy_environment_id")
 
     @function_deploy_environment_id.setter
-    def function_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def function_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "function_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="functionTimeoutInSeconds")
-    def function_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def function_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for execution of the Function. Value in seconds.
         """
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @function_timeout_in_seconds.setter
-    def function_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def function_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "function_timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="greenBackendIps")
-    def green_backend_ips(self) -> Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]:
+    def green_backend_ips(self) -> pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']]:
         """
         (Updatable) Collection of backend environment IP addresses.
         """
         return pulumi.get(self, "green_backend_ips")
 
     @green_backend_ips.setter
-    def green_backend_ips(self, value: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]):
+    def green_backend_ips(self, value: pulumi.Input[Optional['DeployStageGreenBackendIpsArgs']]):
         pulumi.set(self, "green_backend_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="helmChartDeployArtifactId")
-    def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def helm_chart_deploy_artifact_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Helm chart artifact OCID.
         """
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @helm_chart_deploy_artifact_id.setter
-    def helm_chart_deploy_artifact_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def helm_chart_deploy_artifact_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "helm_chart_deploy_artifact_id", value)
 
     @_builtins.property
     @pulumi.getter(name="helmCommandArtifactIds")
-    def helm_command_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def helm_command_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of Helm command artifact OCIDs.
         """
         return pulumi.get(self, "helm_command_artifact_ids")
 
     @helm_command_artifact_ids.setter
-    def helm_command_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def helm_command_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "helm_command_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="isAsync")
-    def is_async(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_async(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         """
         return pulumi.get(self, "is_async")
 
     @is_async.setter
-    def is_async(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_async(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_async", value)
 
     @_builtins.property
     @pulumi.getter(name="isDebugEnabled")
-    def is_debug_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_debug_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
         """
         return pulumi.get(self, "is_debug_enabled")
 
     @is_debug_enabled.setter
-    def is_debug_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_debug_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_debug_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceEnabled")
-    def is_force_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         """
         return pulumi.get(self, "is_force_enabled")
 
     @is_force_enabled.setter
-    def is_force_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isUninstallOnStageDelete")
-    def is_uninstall_on_stage_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_uninstall_on_stage_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Uninstall the Helm chart release on deleting the stage.
         """
         return pulumi.get(self, "is_uninstall_on_stage_delete")
 
     @is_uninstall_on_stage_delete.setter
-    def is_uninstall_on_stage_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_uninstall_on_stage_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_uninstall_on_stage_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="isValidationEnabled")
-    def is_validation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_validation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag specifies whether the invoked function should be validated.
         """
         return pulumi.get(self, "is_validation_enabled")
 
     @is_validation_enabled.setter
-    def is_validation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_validation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_validation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
-    def kubernetes_manifest_deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def kubernetes_manifest_deploy_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of Kubernetes manifest artifact OCIDs.
         """
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @kubernetes_manifest_deploy_artifact_ids.setter
-    def kubernetes_manifest_deploy_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def kubernetes_manifest_deploy_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "kubernetes_manifest_deploy_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerConfig")
-    def load_balancer_config(self) -> Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]:
+    def load_balancer_config(self) -> pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']]:
         """
         (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         """
         return pulumi.get(self, "load_balancer_config")
 
     @load_balancer_config.setter
-    def load_balancer_config(self, value: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]):
+    def load_balancer_config(self, value: pulumi.Input[Optional['DeployStageLoadBalancerConfigArgs']]):
         pulumi.set(self, "load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHistory")
-    def max_history(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_history(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         """
         return pulumi.get(self, "max_history")
 
     @max_history.setter
-    def max_history(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_history(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_history", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemoryInMbs")
-    def max_memory_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_memory_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum usable memory for the Function (in MB).
         """
         return pulumi.get(self, "max_memory_in_mbs")
 
     @max_memory_in_mbs.setter
-    def max_memory_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_memory_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_memory_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
-    def oke_blue_green_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_blue_green_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the upstream OKE blue-green deployment stage in this pipeline.
         """
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @oke_blue_green_deploy_stage_id.setter
-    def oke_blue_green_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_blue_green_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_blue_green_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeCanaryDeployStageId")
-    def oke_canary_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_canary_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of an upstream OKE canary deployment stage in this pipeline.
         """
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @oke_canary_deploy_stage_id.setter
-    def oke_canary_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_canary_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_canary_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
-    def oke_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         """
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @oke_canary_traffic_shift_deploy_stage_id.setter
-    def oke_canary_traffic_shift_deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_canary_traffic_shift_deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_canary_traffic_shift_deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
-    def oke_cluster_deploy_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oke_cluster_deploy_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Kubernetes cluster environment OCID for deployment.
         """
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @oke_cluster_deploy_environment_id.setter
-    def oke_cluster_deploy_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oke_cluster_deploy_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oke_cluster_deploy_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="productionLoadBalancerConfig")
-    def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
+    def production_load_balancer_config(self) -> pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']]:
         """
         Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "production_load_balancer_config")
 
     @production_load_balancer_config.setter
-    def production_load_balancer_config(self, value: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]):
+    def production_load_balancer_config(self, value: pulumi.Input[Optional['DeployStageProductionLoadBalancerConfigArgs']]):
         pulumi.set(self, "production_load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a project.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def purpose(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purpose(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The purpose of running this Helm stage
         """
         return pulumi.get(self, "purpose")
 
     @purpose.setter
-    def purpose(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purpose(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purpose", value)
 
     @_builtins.property
     @pulumi.getter(name="releaseName")
-    def release_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def release_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         """
         return pulumi.get(self, "release_name")
 
     @release_name.setter
-    def release_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def release_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "release_name", value)
 
     @_builtins.property
     @pulumi.getter(name="rollbackPolicy")
-    def rollback_policy(self) -> Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]:
+    def rollback_policy(self) -> pulumi.Input[Optional['DeployStageRollbackPolicyArgs']]:
         """
         (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         """
         return pulumi.get(self, "rollback_policy")
 
     @rollback_policy.setter
-    def rollback_policy(self, value: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]):
+    def rollback_policy(self, value: pulumi.Input[Optional['DeployStageRollbackPolicyArgs']]):
         pulumi.set(self, "rollback_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="rolloutPolicy")
-    def rollout_policy(self) -> Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]:
+    def rollout_policy(self) -> pulumi.Input[Optional['DeployStageRolloutPolicyArgs']]:
         """
         (Updatable) Description of rollout policy for load balancer traffic shift stage.
         """
         return pulumi.get(self, "rollout_policy")
 
     @rollout_policy.setter
-    def rollout_policy(self, value: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]):
+    def rollout_policy(self, value: pulumi.Input[Optional['DeployStageRolloutPolicyArgs']]):
         pulumi.set(self, "rollout_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="setString")
-    def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
+    def set_string(self) -> pulumi.Input[Optional['DeployStageSetStringArgs']]:
         """
         (Updatable) Specifies the name and value pairs to set helm values.
         """
         return pulumi.get(self, "set_string")
 
     @set_string.setter
-    def set_string(self, value: Optional[pulumi.Input['DeployStageSetStringArgs']]):
+    def set_string(self, value: pulumi.Input[Optional['DeployStageSetStringArgs']]):
         pulumi.set(self, "set_string", value)
 
     @_builtins.property
     @pulumi.getter(name="setValues")
-    def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
+    def set_values(self) -> pulumi.Input[Optional['DeployStageSetValuesArgs']]:
         """
         (Updatable) Specifies the name and value pairs to set helm values.
         """
         return pulumi.get(self, "set_values")
 
     @set_values.setter
-    def set_values(self, value: Optional[pulumi.Input['DeployStageSetValuesArgs']]):
+    def set_values(self, value: pulumi.Input[Optional['DeployStageSetValuesArgs']]):
         pulumi.set(self, "set_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCleanupOnFail")
-    def should_cleanup_on_fail(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_cleanup_on_fail(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         """
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @should_cleanup_on_fail.setter
-    def should_cleanup_on_fail(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_cleanup_on_fail(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_cleanup_on_fail", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldNotWait")
-    def should_not_wait(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_not_wait(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
         """
         return pulumi.get(self, "should_not_wait")
 
     @should_not_wait.setter
-    def should_not_wait(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_not_wait(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_not_wait", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldResetValues")
-    def should_reset_values(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_reset_values(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
         """
         return pulumi.get(self, "should_reset_values")
 
     @should_reset_values.setter
-    def should_reset_values(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_reset_values(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_reset_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldReuseValues")
-    def should_reuse_values(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_reuse_values(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
         """
         return pulumi.get(self, "should_reuse_values")
 
     @should_reuse_values.setter
-    def should_reuse_values(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_reuse_values(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_reuse_values", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipCrds")
-    def should_skip_crds(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_skip_crds(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         """
         return pulumi.get(self, "should_skip_crds")
 
     @should_skip_crds.setter
-    def should_skip_crds(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_skip_crds(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_skip_crds", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
-    def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_skip_render_subchart_notes(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         """
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @should_skip_render_subchart_notes.setter
-    def should_skip_render_subchart_notes(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_skip_render_subchart_notes(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_skip_render_subchart_notes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the deployment stage.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="testLoadBalancerConfig")
-    def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
+    def test_load_balancer_config(self) -> pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']]:
         """
         (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "test_load_balancer_config")
 
     @test_load_balancer_config.setter
-    def test_load_balancer_config(self, value: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]):
+    def test_load_balancer_config(self, value: pulumi.Input[Optional['DeployStageTestLoadBalancerConfigArgs']]):
         pulumi.set(self, "test_load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficShiftTarget")
-    def traffic_shift_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def traffic_shift_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the target or destination backend set.
         """
         return pulumi.get(self, "traffic_shift_target")
 
     @traffic_shift_target.setter
-    def traffic_shift_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def traffic_shift_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "traffic_shift_target", value)
 
     @_builtins.property
     @pulumi.getter(name="valuesArtifactIds")
-    def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values_artifact_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of values.yaml file artifact OCIDs.
         """
         return pulumi.get(self, "values_artifact_ids")
 
     @values_artifact_ids.setter
-    def values_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values_artifact_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values_artifact_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="waitCriteria")
-    def wait_criteria(self) -> Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]:
+    def wait_criteria(self) -> pulumi.Input[Optional['DeployStageWaitCriteriaArgs']]:
         """
         (Updatable) Specifies wait criteria for the Wait stage.
         """
         return pulumi.get(self, "wait_criteria")
 
     @wait_criteria.setter
-    def wait_criteria(self, value: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]):
+    def wait_criteria(self, value: pulumi.Input[Optional['DeployStageWaitCriteriaArgs']]):
         pulumi.set(self, "wait_criteria", value)
 
 
@@ -2167,69 +2167,69 @@ class DeployStage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_policy: Optional[pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
-                 are_hooks_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 blue_backend_ips: Optional[pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-                 blue_green_strategy: Optional[pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-                 canary_strategy: Optional[pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
-                 command_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deploy_environment_id_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_environment_id_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_predecessor_collection: Optional[pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
-                 deploy_stage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_image_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 function_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
-                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 helm_command_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_debug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_uninstall_on_stage_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_validation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: Optional[pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
-                 max_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_blue_green_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_cluster_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_load_balancer_config: Optional[pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 release_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rollback_policy: Optional[pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-                 rollout_policy: Optional[pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-                 set_string: Optional[pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-                 set_values: Optional[pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
-                 should_cleanup_on_fail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_not_wait: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reset_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reuse_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_crds: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_render_subchart_notes: Optional[pulumi.Input[_builtins.bool]] = None,
-                 test_load_balancer_config: Optional[pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_shift_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: Optional[pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
+                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+                 are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
+                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
+                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+                 command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+                 deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+                 helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_debug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+                 max_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_blue_green_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
+                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
+                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
+                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+                 should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -2352,69 +2352,69 @@ class DeployStage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_policy: Optional[pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
-                 are_hooks_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 blue_backend_ips: Optional[pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-                 blue_green_strategy: Optional[pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-                 canary_strategy: Optional[pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
-                 command_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_group_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deploy_environment_id_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_environment_id_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_predecessor_collection: Optional[pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
-                 deploy_stage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_image_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 function_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
-                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 helm_command_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_debug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_uninstall_on_stage_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_validation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: Optional[pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
-                 max_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_blue_green_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oke_cluster_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 production_load_balancer_config: Optional[pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 release_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rollback_policy: Optional[pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-                 rollout_policy: Optional[pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-                 set_string: Optional[pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-                 set_values: Optional[pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
-                 should_cleanup_on_fail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_not_wait: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reset_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_reuse_values: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_crds: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_skip_render_subchart_notes: Optional[pulumi.Input[_builtins.bool]] = None,
-                 test_load_balancer_config: Optional[pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 traffic_shift_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: Optional[pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
+                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+                 are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
+                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
+                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+                 command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+                 deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+                 helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_debug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+                 max_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_blue_green_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
+                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
+                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
+                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+                 should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2510,76 +2510,76 @@ class DeployStage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_policy: Optional[pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
-            are_hooks_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            blue_backend_ips: Optional[pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-            blue_green_strategy: Optional[pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-            canary_strategy: Optional[pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
-            command_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_group_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            deploy_environment_id_a: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_environment_id_b: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_stage_predecessor_collection: Optional[pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
-            deploy_stage_type: Optional[pulumi.Input[_builtins.str]] = None,
-            deployment_spec_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            docker_image_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-            failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            function_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            function_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
-            helm_chart_deploy_artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
-            helm_command_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_async: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_debug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_force_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_uninstall_on_stage_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_validation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer_config: Optional[pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
-            max_history: Optional[pulumi.Input[_builtins.int]] = None,
-            max_memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            oke_blue_green_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            oke_canary_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            oke_cluster_deploy_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            production_load_balancer_config: Optional[pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            purpose: Optional[pulumi.Input[_builtins.str]] = None,
-            release_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rollback_policy: Optional[pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-            rollout_policy: Optional[pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-            set_string: Optional[pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-            set_values: Optional[pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
-            should_cleanup_on_fail: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_not_wait: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_reset_values: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_reuse_values: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_skip_crds: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_skip_render_subchart_notes: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            test_load_balancer_config: Optional[pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            traffic_shift_target: Optional[pulumi.Input[_builtins.str]] = None,
-            values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            wait_criteria: Optional[pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None) -> 'DeployStage':
+            approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+            are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
+            blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
+            canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+            command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+            deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+            helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_async: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_debug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_force_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+            max_history: pulumi.Input[Optional[_builtins.int]] = None,
+            max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            oke_blue_green_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            purpose: pulumi.Input[Optional[_builtins.str]] = None,
+            release_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
+            rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
+            set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
+            set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+            should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
+            values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None) -> 'DeployStage':
         """
         Get an existing DeployStage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

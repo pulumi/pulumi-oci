@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
+ * const testOrganizationSubscriptions = oci.osuborganizationsubscription.getOrganizationSubscriptions({
  *     compartmentId: compartmentId,
  *     subscriptionIds: organizationSubscriptionSubscriptionIds,
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
@@ -81,7 +81,7 @@ export interface GetOrganizationSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
+ * const testOrganizationSubscriptions = oci.osuborganizationsubscription.getOrganizationSubscriptions({
  *     compartmentId: compartmentId,
  *     subscriptionIds: organizationSubscriptionSubscriptionIds,
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
@@ -106,7 +106,7 @@ export interface GetOrganizationSubscriptionsOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubOrganizationSubscription.GetOrganizationSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubOrganizationSubscription.GetOrganizationSubscriptionsFilterArgs>[] | undefined>;
     /**
      * Comma separated list of subscription ids, pass "DUMMY" as value
      */
@@ -114,5 +114,5 @@ export interface GetOrganizationSubscriptionsOutputArgs {
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

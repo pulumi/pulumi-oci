@@ -22,9 +22,9 @@ class NetworkFirewallPolicyApplicationArgs:
                  icmp_type: pulumi.Input[_builtins.int],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplication resource.
 
@@ -91,51 +91,51 @@ class NetworkFirewallPolicyApplicationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the application. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpCode")
-    def icmp_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def icmp_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
-    def icmp_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def icmp_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "icmp_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the application
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyApplicationState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 icmp_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplication resources.
 
@@ -168,79 +168,79 @@ class _NetworkFirewallPolicyApplicationState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the application. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpCode")
-    def icmp_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def icmp_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
-    def icmp_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def icmp_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "icmp_code", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpType")
-    def icmp_type(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def icmp_type(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
-    def icmp_type(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def icmp_type(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "icmp_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the application
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this application belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes the type of application. The accepted values are - * ICMP * ICMP_V6
 
@@ -251,7 +251,7 @@ class _NetworkFirewallPolicyApplicationState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -261,12 +261,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 icmp_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -283,12 +283,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application = oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
-            icmp_type=network_firewall_policy_application_icmp_type,
+            icmp_type=int(network_firewall_policy_application_icmp_type),
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
             description=network_firewall_policy_application_description,
-            icmp_code=network_firewall_policy_application_icmp_code)
+            icmp_code=int(network_firewall_policy_application_icmp_code))
         ```
 
         ## Import
@@ -334,12 +334,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application = oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
-            icmp_type=network_firewall_policy_application_icmp_type,
+            icmp_type=int(network_firewall_policy_application_icmp_type),
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
             description=network_firewall_policy_application_description,
-            icmp_code=network_firewall_policy_application_icmp_code)
+            icmp_code=int(network_firewall_policy_application_icmp_code))
         ```
 
         ## Import
@@ -366,12 +366,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 icmp_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,13 +404,13 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
-            icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicyApplication':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp_code: pulumi.Input[Optional[_builtins.int]] = None,
+            icmp_type: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyApplication':
         """
         Get an existing NetworkFirewallPolicyApplication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

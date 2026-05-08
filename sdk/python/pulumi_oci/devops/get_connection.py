@@ -276,7 +276,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DevOps.get_connection(connection_id=test_connection_oci_devops_connection["id"])
+    test_connection = oci.devops.get_connection(connection_id=test_connection_oci_devops_connection["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tls_verify_configs=pulumi.get(__ret__, 'tls_verify_configs'),
         username=pulumi.get(__ret__, 'username'))
-def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_connection_output(connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
     """
     This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
@@ -320,7 +320,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DevOps.get_connection(connection_id=test_connection_oci_devops_connection["id"])
+    test_connection = oci.devops.get_connection(connection_id=test_connection_oci_devops_connection["id"])
     ```
 
 

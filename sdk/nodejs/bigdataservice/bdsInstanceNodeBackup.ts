@@ -145,37 +145,37 @@ export class BdsInstanceNodeBackup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BdsInstanceNodeBackup resources.
  */
 export interface BdsInstanceNodeBackupState {
-    backupConfigId?: pulumi.Input<string>;
+    backupConfigId?: pulumi.Input<string | undefined>;
     /**
      * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Details of the type of level used to trigger the creation of a new node backup.
      */
-    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeBackupLevelTypeDetails>;
-    nodeInstanceId?: pulumi.Input<string>;
+    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeBackupLevelTypeDetails | undefined>;
+    nodeInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The state of the NodeBackup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the NodeBackup was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
-    timeUpdated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a BdsInstanceNodeBackup resource.
  */
 export interface BdsInstanceNodeBackupArgs {
-    backupConfigId?: pulumi.Input<string>;
+    backupConfigId?: pulumi.Input<string | undefined>;
     /**
      * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
@@ -184,10 +184,10 @@ export interface BdsInstanceNodeBackupArgs {
      * The OCID of the cluster.
      */
     bdsInstanceId: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Details of the type of level used to trigger the creation of a new node backup.
      */
     levelTypeDetails: pulumi.Input<inputs.BigDataService.BdsInstanceNodeBackupLevelTypeDetails>;
-    nodeInstanceId?: pulumi.Input<string>;
+    nodeInstanceId?: pulumi.Input<string | undefined>;
 }

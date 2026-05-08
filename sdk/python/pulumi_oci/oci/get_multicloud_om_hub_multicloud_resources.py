@@ -183,13 +183,13 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
         resource_anchor_id=pulumi.get(__ret__, 'resource_anchor_id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
-def get_multicloud_om_hub_multicloud_resources_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]]]] = None,
-                                                      limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                      resource_anchor_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]]]] = None,
+                                                      limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                      resource_anchor_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudOmHubMulticloudResourcesResult]:
     """
     This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.

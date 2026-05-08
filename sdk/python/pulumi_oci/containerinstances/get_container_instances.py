@@ -137,7 +137,7 @@ def get_container_instances(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=compartment_id,
+    test_container_instances = oci.containerinstances.get_container_instances(compartment_id=compartment_id,
         availability_domain=container_instance_availability_domain,
         display_name=container_instance_display_name,
         state=container_instance_state)
@@ -166,11 +166,11 @@ def get_container_instances(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_container_instances_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerInstancesFilterArgs', 'GetContainerInstancesFilterArgsDict']]]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_container_instances_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerInstancesFilterArgs', 'GetContainerInstancesFilterArgsDict']]]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstancesResult]:
     """
     This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
@@ -183,7 +183,7 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=compartment_id,
+    test_container_instances = oci.containerinstances.get_container_instances(compartment_id=compartment_id,
         availability_domain=container_instance_availability_domain,
         display_name=container_instance_display_name,
         state=container_instance_state)

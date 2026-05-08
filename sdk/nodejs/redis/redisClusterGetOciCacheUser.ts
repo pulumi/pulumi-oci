@@ -116,12 +116,12 @@ export interface RedisClusterGetOciCacheUserState {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    ociCacheUsers?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterGetOciCacheUserOciCacheUser>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    ociCacheUsers?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterGetOciCacheUserOciCacheUser>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      *
@@ -129,7 +129,7 @@ export interface RedisClusterGetOciCacheUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    redisClusterId?: pulumi.Input<string>;
+    redisClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -139,11 +139,11 @@ export interface RedisClusterGetOciCacheUserArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      *

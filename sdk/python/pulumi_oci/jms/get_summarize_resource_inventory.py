@@ -151,7 +151,7 @@ def get_summarize_resource_inventory(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=compartment_id,
+    test_summarize_resource_inventory = oci.jms.get_summarize_resource_inventory(compartment_id=compartment_id,
         time_end=summarize_resource_inventory_time_end,
         time_start=summarize_resource_inventory_time_start)
     ```
@@ -178,9 +178,9 @@ def get_summarize_resource_inventory(compartment_id: Optional[_builtins.str] = N
         managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_summarize_resource_inventory_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSummarizeResourceInventoryResult]:
     """
     This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
@@ -193,7 +193,7 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=compartment_id,
+    test_summarize_resource_inventory = oci.jms.get_summarize_resource_inventory(compartment_id=compartment_id,
         time_end=summarize_resource_inventory_time_end,
         time_start=summarize_resource_inventory_time_start)
     ```

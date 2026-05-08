@@ -24,7 +24,7 @@ class SubscriptionRedeemableUserArgs:
                  items: pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]],
                  subscription_id: pulumi.Input[_builtins.str],
                  tenancy_id: pulumi.Input[_builtins.str],
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SubscriptionRedeemableUser resource.
 
@@ -81,7 +81,7 @@ class SubscriptionRedeemableUserArgs:
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user ID of the person to send a copy of an email.
 
@@ -92,17 +92,17 @@ class SubscriptionRedeemableUserArgs:
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
 
 @pulumi.input_type
 class _SubscriptionRedeemableUserState:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SubscriptionRedeemableUser resources.
 
@@ -126,43 +126,43 @@ class _SubscriptionRedeemableUserState:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]]:
         """
         The list of new user to be added to the list of user that can redeem rewards.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subscription ID for which rewards information is requested for.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user ID of the person to send a copy of an email.
 
@@ -173,7 +173,7 @@ class _SubscriptionRedeemableUserState:
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
 
@@ -183,10 +183,10 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -288,10 +288,10 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -321,10 +321,10 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            user_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SubscriptionRedeemableUser':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SubscriptionRedeemableUser':
         """
         Get an existing SubscriptionRedeemableUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

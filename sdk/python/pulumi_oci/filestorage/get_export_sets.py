@@ -138,7 +138,7 @@ def get_export_sets(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+    test_export_sets = oci.filestorage.get_export_sets(availability_domain=export_set_availability_domain,
         compartment_id=compartment_id,
         display_name=export_set_display_name,
         id=export_set_id,
@@ -170,12 +170,12 @@ def get_export_sets(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_export_sets_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExportSetsFilterArgs', 'GetExportSetsFilterArgsDict']]]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_export_sets_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExportSetsFilterArgs', 'GetExportSetsFilterArgsDict']]]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExportSetsResult]:
     """
     This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
@@ -188,7 +188,7 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+    test_export_sets = oci.filestorage.get_export_sets(availability_domain=export_set_availability_domain,
         compartment_id=compartment_id,
         display_name=export_set_display_name,
         id=export_set_id,

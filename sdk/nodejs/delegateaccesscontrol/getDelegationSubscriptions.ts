@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationSubscriptions = oci.DelegateAccessControl.getDelegationSubscriptions({
+ * const testDelegationSubscriptions = oci.delegateaccesscontrol.getDelegationSubscriptions({
  *     compartmentId: compartmentId,
  *     displayName: delegationSubscriptionDisplayName,
  *     state: delegationSubscriptionState,
@@ -90,7 +90,7 @@ export interface GetDelegationSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationSubscriptions = oci.DelegateAccessControl.getDelegationSubscriptions({
+ * const testDelegationSubscriptions = oci.delegateaccesscontrol.getDelegationSubscriptions({
  *     compartmentId: compartmentId,
  *     displayName: delegationSubscriptionDisplayName,
  *     state: delegationSubscriptionState,
@@ -118,10 +118,10 @@ export interface GetDelegationSubscriptionsOutputArgs {
     /**
      * A filter to return Delegation Subscription resources that match the given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegationSubscriptionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegationSubscriptionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only Delegation Subscription resources whose lifecycleState matches the given Delegation Subscription lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

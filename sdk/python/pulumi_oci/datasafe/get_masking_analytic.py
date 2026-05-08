@@ -129,8 +129,8 @@ def get_masking_analytic(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytic = oci.datasafe.get_masking_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         target_id=test_target["id"])
@@ -160,11 +160,11 @@ def get_masking_analytic(compartment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_masking_analytic_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_analytic_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingAnalyticResult]:
     """
     This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -179,8 +179,8 @@ def get_masking_analytic_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytic = oci.DataSafe.get_masking_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytic = oci.datasafe.get_masking_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         target_id=test_target["id"])

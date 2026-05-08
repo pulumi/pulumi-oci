@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRules = oci.FileStorage.getFileSystemQuotaRules({
+ * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
- *     principalId: testPrincipal.id,
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  */
@@ -97,11 +97,11 @@ export interface GetFileSystemQuotaRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRules = oci.FileStorage.getFileSystemQuotaRules({
+ * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
- *     principalId: testPrincipal.id,
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  */
@@ -123,16 +123,16 @@ export interface GetFileSystemQuotaRulesOutputArgs {
     /**
      * An option to only display the users or groups that violate their quota rules. If `areViolatorsOnly` is false, the list result will display all the quota and usage report. If `areViolatorsOnly` is true, the list result will only display the quota and usage report for the users or groups that violate their quota rules.
      */
-    areViolatorsOnly?: pulumi.Input<boolean>;
+    areViolatorsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
     fileSystemId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetFileSystemQuotaRulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetFileSystemQuotaRulesFilterArgs>[] | undefined>;
     /**
      * An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
      */
-    principalId?: pulumi.Input<number>;
+    principalId?: pulumi.Input<number | undefined>;
     /**
      * The type of the owner of this quota rule and usage.
      */

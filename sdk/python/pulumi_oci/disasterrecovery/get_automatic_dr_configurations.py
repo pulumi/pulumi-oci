@@ -144,7 +144,7 @@ def get_automatic_dr_configurations(automatic_dr_configuration_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configurations = oci.DisasterRecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
+    test_automatic_dr_configurations = oci.disasterrecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
         automatic_dr_configuration_id=test_automatic_dr_configuration["id"],
         display_name=automatic_dr_configuration_display_name,
         lifecycle_state_not_equal_to=automatic_dr_configuration_lifecycle_state_not_equal_to,
@@ -177,12 +177,12 @@ def get_automatic_dr_configurations(automatic_dr_configuration_id: Optional[_bui
         id=pulumi.get(__ret__, 'id'),
         lifecycle_state_not_equal_to=pulumi.get(__ret__, 'lifecycle_state_not_equal_to'),
         state=pulumi.get(__ret__, 'state'))
-def get_automatic_dr_configurations_output(automatic_dr_configuration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict']]]]] = None,
-                                           lifecycle_state_not_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_automatic_dr_configurations_output(automatic_dr_configuration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict']]]]] = None,
+                                           lifecycle_state_not_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutomaticDrConfigurationsResult]:
     """
     This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -195,7 +195,7 @@ def get_automatic_dr_configurations_output(automatic_dr_configuration_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configurations = oci.DisasterRecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
+    test_automatic_dr_configurations = oci.disasterrecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
         automatic_dr_configuration_id=test_automatic_dr_configuration["id"],
         display_name=automatic_dr_configuration_display_name,
         lifecycle_state_not_equal_to=automatic_dr_configuration_lifecycle_state_not_equal_to,

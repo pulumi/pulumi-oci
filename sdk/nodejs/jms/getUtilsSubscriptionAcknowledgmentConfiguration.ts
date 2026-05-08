@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionAcknowledgmentConfiguration = oci.Jms.getUtilsSubscriptionAcknowledgmentConfiguration({
+ * const testSubscriptionAcknowledgmentConfiguration = oci.jms.getUtilsSubscriptionAcknowledgmentConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetUtilsSubscriptionAcknowledgmentConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionAcknowledgmentConfiguration = oci.Jms.getUtilsSubscriptionAcknowledgmentConfiguration({
+ * const testSubscriptionAcknowledgmentConfiguration = oci.jms.getUtilsSubscriptionAcknowledgmentConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```

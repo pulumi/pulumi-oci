@@ -268,7 +268,7 @@ def get_wlms_wls_domain(wls_domain_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         weblogic_version=pulumi.get(__ret__, 'weblogic_version'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_output(wls_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_wls_domain_output(wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainResult]:
     """
     This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.

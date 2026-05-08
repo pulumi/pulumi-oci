@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan({
+ * const testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan({
  *     attribute: managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute,
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlObjectId: testObject.id,
@@ -95,7 +95,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan({
+ * const testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan({
  *     attribute: managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute,
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlObjectId: testObject.id,
@@ -130,7 +130,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutputAr
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

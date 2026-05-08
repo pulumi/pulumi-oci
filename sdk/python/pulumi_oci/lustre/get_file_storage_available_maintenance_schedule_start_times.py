@@ -116,7 +116,7 @@ def get_file_storage_available_maintenance_schedule_start_times(availability_dom
     import pulumi
     import pulumi_oci as oci
 
-    test_available_maintenance_schedule_start_times = oci.Lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
+    test_available_maintenance_schedule_start_times = oci.lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
         compartment_id=compartment_id,
         day_of_week=available_maintenance_schedule_start_time_day_of_week,
         id=available_maintenance_schedule_start_time_id)
@@ -144,11 +144,11 @@ def get_file_storage_available_maintenance_schedule_start_times(availability_dom
         day_of_week=pulumi.get(__ret__, 'day_of_week'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_file_storage_available_maintenance_schedule_start_times_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       day_of_week: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict']]]]] = None,
-                                                                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_storage_available_maintenance_schedule_start_times_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       day_of_week: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict']]]]] = None,
+                                                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageAvailableMaintenanceScheduleStartTimesResult]:
     """
     This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -161,7 +161,7 @@ def get_file_storage_available_maintenance_schedule_start_times_output(availabil
     import pulumi
     import pulumi_oci as oci
 
-    test_available_maintenance_schedule_start_times = oci.Lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
+    test_available_maintenance_schedule_start_times = oci.lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
         compartment_id=compartment_id,
         day_of_week=available_maintenance_schedule_start_time_day_of_week,
         id=available_maintenance_schedule_start_time_id)

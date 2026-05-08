@@ -144,7 +144,7 @@ def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_types = oci.LogAnalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
+    test_log_analytics_entity_types = oci.loganalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
         cloud_type=log_analytics_entity_type_cloud_type,
         name=log_analytics_entity_type_name,
         name_contains=log_analytics_entity_type_name_contains,
@@ -177,12 +177,12 @@ def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_log_analytics_entity_types_output(cloud_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict']]]]] = None,
-                                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_log_analytics_entity_types_output(cloud_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict']]]]] = None,
+                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityTypesResult]:
     """
     This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
@@ -195,7 +195,7 @@ def get_log_analytics_entity_types_output(cloud_type: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_types = oci.LogAnalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
+    test_log_analytics_entity_types = oci.loganalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
         cloud_type=log_analytics_entity_type_cloud_type,
         name=log_analytics_entity_type_name,
         name_contains=log_analytics_entity_type_name_contains,

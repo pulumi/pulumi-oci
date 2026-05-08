@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstances = oci.Oce.getOceInstances({
+ * const testOceInstances = oci.oce.getOceInstances({
  *     compartmentId: compartmentId,
  *     displayName: oceInstanceDisplayName,
  *     state: oceInstanceState,
@@ -97,7 +97,7 @@ export interface GetOceInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstances = oci.Oce.getOceInstances({
+ * const testOceInstances = oci.oce.getOceInstances({
  *     compartmentId: compartmentId,
  *     displayName: oceInstanceDisplayName,
  *     state: oceInstanceState,
@@ -127,14 +127,14 @@ export interface GetOceInstancesOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Oce.GetOceInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Oce.GetOceInstancesFilterArgs>[] | undefined>;
     /**
      * Filter results on lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The ID of the tenancy in which to list resources.
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
 }

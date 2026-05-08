@@ -206,14 +206,14 @@ def get_attribute_sets(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_sets = oci.DataSafe.get_attribute_sets(compartment_id=compartment_id,
+    test_attribute_sets = oci.datasafe.get_attribute_sets(compartment_id=compartment_id,
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined,
+        is_user_defined=attribute_set_is_user_defined == "true",
         state=attribute_set_state)
     ```
 
@@ -255,16 +255,16 @@ def get_attribute_sets(access_level: Optional[_builtins.str] = None,
         in_use=pulumi.get(__ret__, 'in_use'),
         is_user_defined=pulumi.get(__ret__, 'is_user_defined'),
         state=pulumi.get(__ret__, 'state'))
-def get_attribute_sets_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              attribute_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              attribute_set_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAttributeSetsFilterArgs', 'GetAttributeSetsFilterArgsDict']]]]] = None,
-                              in_use: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              is_user_defined: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_attribute_sets_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              attribute_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              attribute_set_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAttributeSetsFilterArgs', 'GetAttributeSetsFilterArgsDict']]]]] = None,
+                              in_use: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              is_user_defined: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttributeSetsResult]:
     """
     This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
@@ -290,14 +290,14 @@ def get_attribute_sets_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_sets = oci.DataSafe.get_attribute_sets(compartment_id=compartment_id,
+    test_attribute_sets = oci.datasafe.get_attribute_sets(compartment_id=compartment_id,
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined,
+        is_user_defined=attribute_set_is_user_defined == "true",
         state=attribute_set_state)
     ```
 

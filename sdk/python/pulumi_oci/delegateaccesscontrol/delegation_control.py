@@ -26,14 +26,14 @@ class DelegationControlArgs:
                  notification_topic_id: pulumi.Input[_builtins.str],
                  resource_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  resource_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 num_approvals_required: Optional[pulumi.Input[_builtins.int]] = None,
-                 pre_approved_service_provider_action_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+                 pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DelegationControl resource.
 
@@ -167,91 +167,91 @@ class DelegationControlArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Delegation Control.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_approve_during_maintenance(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @is_auto_approve_during_maintenance.setter
-    def is_auto_approve_during_maintenance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_approve_during_maintenance(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="numApprovalsRequired")
-    def num_approvals_required(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_approvals_required(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) number of approvals required.
         """
         return pulumi.get(self, "num_approvals_required")
 
     @num_approvals_required.setter
-    def num_approvals_required(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_approvals_required(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_approvals_required", value)
 
     @_builtins.property
     @pulumi.getter(name="preApprovedServiceProviderActionNames")
-    def pre_approved_service_provider_action_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pre_approved_service_provider_action_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
         """
         return pulumi.get(self, "pre_approved_service_provider_action_names")
 
     @pre_approved_service_provider_action_names.setter
-    def pre_approved_service_provider_action_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pre_approved_service_provider_action_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pre_approved_service_provider_action_names", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultKeyId")
-    def vault_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
 
@@ -262,34 +262,34 @@ class DelegationControlArgs:
         return pulumi.get(self, "vault_key_id")
 
     @vault_key_id.setter
-    def vault_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_key_id", value)
 
 
 @pulumi.input_type
 class _DelegationControlState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delegation_subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_approvals_required: Optional[pulumi.Input[_builtins.int]] = None,
-                 pre_approved_service_provider_action_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_deleted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delegation_subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+                 pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DelegationControl resources.
 
@@ -364,247 +364,247 @@ class _DelegationControlState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains this Delegation Control.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="delegationSubscriptionIds")
-    def delegation_subscription_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def delegation_subscription_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of Delegation Subscription OCID that are allowed for this Delegation Control. The allowed subscriptions will determine the available Service Provider Actions. Only support operators for the allowed subscriptions are allowed to create Delegated Resource Access Request.
         """
         return pulumi.get(self, "delegation_subscription_ids")
 
     @delegation_subscription_ids.setter
-    def delegation_subscription_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def delegation_subscription_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "delegation_subscription_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Delegation Control.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Delegation Control. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_approve_during_maintenance(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @is_auto_approve_during_maintenance.setter
-    def is_auto_approve_during_maintenance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_approve_during_maintenance(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the current lifecycle state in more detail.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationMessageFormat")
-    def notification_message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format of the Oracle Cloud Infrastructure Notification messages for this Delegation Control.
         """
         return pulumi.get(self, "notification_message_format")
 
     @notification_message_format.setter
-    def notification_message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
         """
         return pulumi.get(self, "notification_topic_id")
 
     @notification_topic_id.setter
-    def notification_topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_topic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="numApprovalsRequired")
-    def num_approvals_required(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_approvals_required(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) number of approvals required.
         """
         return pulumi.get(self, "num_approvals_required")
 
     @num_approvals_required.setter
-    def num_approvals_required(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_approvals_required(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_approvals_required", value)
 
     @_builtins.property
     @pulumi.getter(name="preApprovedServiceProviderActionNames")
-    def pre_approved_service_provider_action_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pre_approved_service_provider_action_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
         """
         return pulumi.get(self, "pre_approved_service_provider_action_names")
 
     @pre_approved_service_provider_action_names.setter
-    def pre_approved_service_provider_action_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pre_approved_service_provider_action_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pre_approved_service_provider_action_names", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceIds")
-    def resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def resource_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCID of the selected resources that this Delegation Control is applicable to.
         """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
-    def resource_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def resource_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type for which the Delegation Control is applicable to.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the Delegation Control.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDeleted")
-    def time_deleted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_deleted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
         """
         return pulumi.get(self, "time_deleted")
 
     @time_deleted.setter
-    def time_deleted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_deleted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_deleted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultKeyId")
-    def vault_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
 
@@ -615,7 +615,7 @@ class _DelegationControlState:
         return pulumi.get(self, "vault_key_id")
 
     @vault_key_id.setter
-    def vault_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_key_id", value)
 
 
@@ -625,21 +625,21 @@ class DelegationControl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delegation_subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_approvals_required: Optional[pulumi.Input[_builtins.int]] = None,
-                 pre_approved_service_provider_action_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delegation_subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+                 pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Delegation Control resource in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -667,8 +667,8 @@ class DelegationControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance,
-            num_approvals_required=delegation_control_num_approvals_required,
+            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance == "true",
+            num_approvals_required=int(delegation_control_num_approvals_required),
             pre_approved_service_provider_action_names=delegation_control_pre_approved_service_provider_action_names,
             vault_id=test_vault["id"],
             vault_key_id=test_key["id"])
@@ -737,8 +737,8 @@ class DelegationControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance,
-            num_approvals_required=delegation_control_num_approvals_required,
+            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance == "true",
+            num_approvals_required=int(delegation_control_num_approvals_required),
             pre_approved_service_provider_action_names=delegation_control_pre_approved_service_provider_action_names,
             vault_id=test_vault["id"],
             vault_key_id=test_key["id"])
@@ -768,21 +768,21 @@ class DelegationControl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delegation_subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_approvals_required: Optional[pulumi.Input[_builtins.int]] = None,
-                 pre_approved_service_provider_action_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delegation_subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+                 pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -837,27 +837,27 @@ class DelegationControl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            delegation_subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_message_format: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-            num_approvals_required: Optional[pulumi.Input[_builtins.int]] = None,
-            pre_approved_service_provider_action_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_deleted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_key_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DelegationControl':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delegation_subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_message_format: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+            pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DelegationControl':
         """
         Get an existing DelegationControl resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -98,7 +98,7 @@ def get_db_node_console_connections(db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=test_db_node["id"])
+    test_db_node_console_connections = oci.database.get_db_node_console_connections(db_node_id=test_db_node["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_db_node_console_connections(db_node_id: Optional[_builtins.str] = None,
         db_node_id=pulumi.get(__ret__, 'db_node_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
+def get_db_node_console_connections_output(db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
@@ -129,7 +129,7 @@ def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=test_db_node["id"])
+    test_db_node_console_connections = oci.database.get_db_node_console_connections(db_node_id=test_db_node["id"])
     ```
 
 

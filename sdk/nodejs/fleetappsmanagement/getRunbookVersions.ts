@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookVersions = oci.FleetAppsManagement.getRunbookVersions({
+ * const testRunbookVersions = oci.fleetappsmanagement.getRunbookVersions({
  *     compartmentId: compartmentId,
  *     id: runbookVersionId,
  *     name: runbookVersionName,
@@ -105,7 +105,7 @@ export interface GetRunbookVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookVersions = oci.FleetAppsManagement.getRunbookVersions({
+ * const testRunbookVersions = oci.fleetappsmanagement.getRunbookVersions({
  *     compartmentId: compartmentId,
  *     id: runbookVersionId,
  *     name: runbookVersionName,
@@ -134,22 +134,22 @@ export interface GetRunbookVersionsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbookVersionsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbookVersionsFilterArgs>[] | undefined>;
     /**
      * A filter to return runbook versions whose identifier matches the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
      */
-    runbookId?: pulumi.Input<string>;
+    runbookId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

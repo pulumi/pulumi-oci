@@ -23,9 +23,9 @@ class SchedulingPolicySchedulingWindowArgs:
     def __init__(__self__, *,
                  scheduling_policy_id: pulumi.Input[_builtins.str],
                  window_preference: pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceArgs'],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SchedulingPolicySchedulingWindow resource.
 
@@ -70,55 +70,55 @@ class SchedulingPolicySchedulingWindowArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _SchedulingPolicySchedulingWindowState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_scheduling_window_starts: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 window_preference: Optional[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_scheduling_window_starts: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 window_preference: pulumi.Input[Optional['SchedulingPolicySchedulingWindowWindowPreferenceArgs']] = None):
         """
         Input properties used for looking up and filtering SchedulingPolicySchedulingWindow resources.
 
@@ -159,134 +159,134 @@ class _SchedulingPolicySchedulingWindowState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the Scheduling Window. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulingPolicyId")
-    def scheduling_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduling_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "scheduling_policy_id")
 
     @scheduling_policy_id.setter
-    def scheduling_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduling_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduling_policy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Scheduling Window. Valid states are CREATING, ACTIVE, UPDATING, FAILED, DELETING and DELETED.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Scheduling Window was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNextSchedulingWindowStarts")
-    def time_next_scheduling_window_starts(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_next_scheduling_window_starts(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
         """
         return pulumi.get(self, "time_next_scheduling_window_starts")
 
     @time_next_scheduling_window_starts.setter
-    def time_next_scheduling_window_starts(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_next_scheduling_window_starts(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_next_scheduling_window_starts", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last date and time that the Scheduling Window was updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="windowPreference")
-    def window_preference(self) -> Optional[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceArgs']]:
+    def window_preference(self) -> pulumi.Input[Optional['SchedulingPolicySchedulingWindowWindowPreferenceArgs']]:
         """
         (Updatable) The Single Scheduling Window details.
         """
         return pulumi.get(self, "window_preference")
 
     @window_preference.setter
-    def window_preference(self, value: Optional[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceArgs']]):
+    def window_preference(self, value: pulumi.Input[Optional['SchedulingPolicySchedulingWindowWindowPreferenceArgs']]):
         pulumi.set(self, "window_preference", value)
 
 
@@ -296,11 +296,11 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 window_preference: Optional[pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
@@ -319,8 +319,8 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                 "days_of_weeks": [{
                     "name": scheduling_policy_scheduling_window_window_preference_days_of_week_name,
                 }],
-                "duration": scheduling_policy_scheduling_window_window_preference_duration,
-                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration,
+                "duration": int(scheduling_policy_scheduling_window_window_preference_duration),
+                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration == "true",
                 "start_time": scheduling_policy_scheduling_window_window_preference_start_time,
                 "weeks_of_months": scheduling_policy_scheduling_window_window_preference_weeks_of_month,
                 "months": [{
@@ -374,8 +374,8 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                 "days_of_weeks": [{
                     "name": scheduling_policy_scheduling_window_window_preference_days_of_week_name,
                 }],
-                "duration": scheduling_policy_scheduling_window_window_preference_duration,
-                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration,
+                "duration": int(scheduling_policy_scheduling_window_window_preference_duration),
+                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration == "true",
                 "start_time": scheduling_policy_scheduling_window_window_preference_start_time,
                 "weeks_of_months": scheduling_policy_scheduling_window_window_preference_weeks_of_month,
                 "months": [{
@@ -413,11 +413,11 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 window_preference: Optional[pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -452,17 +452,17 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_next_scheduling_window_starts: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            window_preference: Optional[pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None) -> 'SchedulingPolicySchedulingWindow':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_scheduling_window_starts: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None) -> 'SchedulingPolicySchedulingWindow':
         """
         Get an existing SchedulingPolicySchedulingWindow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

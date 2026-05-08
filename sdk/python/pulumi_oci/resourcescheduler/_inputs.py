@@ -32,12 +32,12 @@ class ScheduleResourceArgsDict(TypedDict):
     """
     (Updatable) This is the resource OCID.
     """
-    metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) This is additional information that helps to identity the resource for the schedule.
     { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
     """
-    parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgsDict']]]]
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]]
     """
     (Updatable) This is the user input parameters to use when acting on the resource.
 
@@ -48,8 +48,8 @@ class ScheduleResourceArgsDict(TypedDict):
 class ScheduleResourceArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[_builtins.str],
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]] = None):
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] id: (Updatable) This is the resource OCID.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
@@ -78,7 +78,7 @@ class ScheduleResourceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
@@ -86,12 +86,12 @@ class ScheduleResourceArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]:
         """
         (Updatable) This is the user input parameters to use when acting on the resource.
 
@@ -100,7 +100,7 @@ class ScheduleResourceArgs:
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]):
         pulumi.set(self, "parameters", value)
 
 
@@ -109,15 +109,15 @@ class ScheduleResourceFilterArgsDict(TypedDict):
     """
     (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     This is the condition for the filter in comparison to its creation time.
     """
-    should_include_child_compartments: NotRequired[pulumi.Input[_builtins.bool]]
+    should_include_child_compartments: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     This sets whether to include child compartments.
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]]
     """
     (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
     * When `attribute="DEFINED_TAGS"`:
@@ -127,9 +127,9 @@ class ScheduleResourceFilterArgsDict(TypedDict):
 class ScheduleResourceFilterArgs:
     def __init__(__self__, *,
                  attribute: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_include_child_compartments: Optional[pulumi.Input[_builtins.bool]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_include_child_compartments: pulumi.Input[Optional[_builtins.bool]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] attribute: (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
         :param pulumi.Input[_builtins.str] condition: This is the condition for the filter in comparison to its creation time.
@@ -159,31 +159,31 @@ class ScheduleResourceFilterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the condition for the filter in comparison to its creation time.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldIncludeChildCompartments")
-    def should_include_child_compartments(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_include_child_compartments(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This sets whether to include child compartments.
         """
         return pulumi.get(self, "should_include_child_compartments")
 
     @should_include_child_compartments.setter
-    def should_include_child_compartments(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_include_child_compartments(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_include_child_compartments", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]:
         """
         (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
         * When `attribute="DEFINED_TAGS"`:
@@ -191,20 +191,20 @@ class ScheduleResourceFilterArgs:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]):
         pulumi.set(self, "values", value)
 
 
 class ScheduleResourceFilterValueArgsDict(TypedDict):
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     This is the namespace of the defined tag.
     """
-    tag_key: NotRequired[pulumi.Input[_builtins.str]]
+    tag_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     This is the key of the defined tag.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     This is the lifecycle state value used for filtering.
     """
@@ -212,9 +212,9 @@ class ScheduleResourceFilterValueArgsDict(TypedDict):
 @pulumi.input_type
 class ScheduleResourceFilterValueArgs:
     def __init__(__self__, *,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] namespace: This is the namespace of the defined tag.
         :param pulumi.Input[_builtins.str] tag_key: This is the key of the defined tag.
@@ -229,38 +229,38 @@ class ScheduleResourceFilterValueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the namespace of the defined tag.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="tagKey")
-    def tag_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the key of the defined tag.
         """
         return pulumi.get(self, "tag_key")
 
     @tag_key.setter
-    def tag_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the lifecycle state value used for filtering.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -269,7 +269,7 @@ class ScheduleResourceParameterArgsDict(TypedDict):
     """
     (Updatable) This is the parameter type on which the input parameter is defined
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) This is the HTTP request header value.
     { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
@@ -279,7 +279,7 @@ class ScheduleResourceParameterArgsDict(TypedDict):
 class ScheduleResourceParameterArgs:
     def __init__(__self__, *,
                  parameter_type: pulumi.Input[_builtins.str],
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] parameter_type: (Updatable) This is the parameter type on which the input parameter is defined
         :param pulumi.Input[_builtins.str] value: (Updatable) This is the HTTP request header value.
@@ -303,7 +303,7 @@ class ScheduleResourceParameterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the HTTP request header value.
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
@@ -311,7 +311,7 @@ class ScheduleResourceParameterArgs:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 

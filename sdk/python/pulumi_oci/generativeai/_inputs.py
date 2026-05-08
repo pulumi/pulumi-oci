@@ -156,11 +156,11 @@ __all__ = [
 ]
 
 class AgentAgentEndpointContentModerationConfigArgsDict(TypedDict):
-    should_enable_on_input: NotRequired[pulumi.Input[_builtins.bool]]
+    should_enable_on_input: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) A flag to enable or disable content moderation on input.
     """
-    should_enable_on_output: NotRequired[pulumi.Input[_builtins.bool]]
+    should_enable_on_output: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) A flag to enable or disable content moderation on output.
     """
@@ -168,8 +168,8 @@ class AgentAgentEndpointContentModerationConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentEndpointContentModerationConfigArgs:
     def __init__(__self__, *,
-                 should_enable_on_input: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_on_output: Optional[pulumi.Input[_builtins.bool]] = None):
+                 should_enable_on_input: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_on_output: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] should_enable_on_input: (Updatable) A flag to enable or disable content moderation on input.
         :param pulumi.Input[_builtins.bool] should_enable_on_output: (Updatable) A flag to enable or disable content moderation on output.
@@ -181,39 +181,39 @@ class AgentAgentEndpointContentModerationConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableOnInput")
-    def should_enable_on_input(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_on_input(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A flag to enable or disable content moderation on input.
         """
         return pulumi.get(self, "should_enable_on_input")
 
     @should_enable_on_input.setter
-    def should_enable_on_input(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_on_input(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_on_input", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableOnOutput")
-    def should_enable_on_output(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_on_output(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A flag to enable or disable content moderation on output.
         """
         return pulumi.get(self, "should_enable_on_output")
 
     @should_enable_on_output.setter
-    def should_enable_on_output(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_on_output(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_on_output", value)
 
 
 class AgentAgentEndpointGuardrailConfigArgsDict(TypedDict):
-    content_moderation_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict']]
+    content_moderation_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]]
     """
     (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
     """
-    personally_identifiable_information_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict']]
+    personally_identifiable_information_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]]
     """
     (Updatable) The configuration details for Personally Identifiable Information.
     """
-    prompt_injection_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict']]
+    prompt_injection_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]]
     """
     (Updatable) The configuration details for Prompt Injection.
     """
@@ -221,9 +221,9 @@ class AgentAgentEndpointGuardrailConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigArgs:
     def __init__(__self__, *,
-                 content_moderation_config: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']] = None,
-                 personally_identifiable_information_config: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']] = None,
-                 prompt_injection_config: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']] = None):
+                 content_moderation_config: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']] = None,
+                 personally_identifiable_information_config: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']] = None,
+                 prompt_injection_config: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']] = None):
         """
         :param pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         :param pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs'] personally_identifiable_information_config: (Updatable) The configuration details for Personally Identifiable Information.
@@ -238,47 +238,47 @@ class AgentAgentEndpointGuardrailConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentModerationConfig")
-    def content_moderation_config(self) -> Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]:
+    def content_moderation_config(self) -> pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]:
         """
         (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         """
         return pulumi.get(self, "content_moderation_config")
 
     @content_moderation_config.setter
-    def content_moderation_config(self, value: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]):
+    def content_moderation_config(self, value: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]):
         pulumi.set(self, "content_moderation_config", value)
 
     @_builtins.property
     @pulumi.getter(name="personallyIdentifiableInformationConfig")
-    def personally_identifiable_information_config(self) -> Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]:
+    def personally_identifiable_information_config(self) -> pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]:
         """
         (Updatable) The configuration details for Personally Identifiable Information.
         """
         return pulumi.get(self, "personally_identifiable_information_config")
 
     @personally_identifiable_information_config.setter
-    def personally_identifiable_information_config(self, value: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]):
+    def personally_identifiable_information_config(self, value: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]):
         pulumi.set(self, "personally_identifiable_information_config", value)
 
     @_builtins.property
     @pulumi.getter(name="promptInjectionConfig")
-    def prompt_injection_config(self) -> Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]:
+    def prompt_injection_config(self) -> pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]:
         """
         (Updatable) The configuration details for Prompt Injection.
         """
         return pulumi.get(self, "prompt_injection_config")
 
     @prompt_injection_config.setter
-    def prompt_injection_config(self, value: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]):
+    def prompt_injection_config(self, value: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]):
         pulumi.set(self, "prompt_injection_config", value)
 
 
 class AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict(TypedDict):
-    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    input_guardrail_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An input guardrail mode for content moderation.
     """
-    output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    output_guardrail_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An output guardrail mode for content moderation.
     """
@@ -286,8 +286,8 @@ class AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict(TypedDict
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigContentModerationConfigArgs:
     def __init__(__self__, *,
-                 input_guardrail_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_guardrail_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 input_guardrail_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_guardrail_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_guardrail_mode: (Updatable) An input guardrail mode for content moderation.
         :param pulumi.Input[_builtins.str] output_guardrail_mode: (Updatable) An output guardrail mode for content moderation.
@@ -299,35 +299,35 @@ class AgentAgentEndpointGuardrailConfigContentModerationConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="inputGuardrailMode")
-    def input_guardrail_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_guardrail_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An input guardrail mode for content moderation.
         """
         return pulumi.get(self, "input_guardrail_mode")
 
     @input_guardrail_mode.setter
-    def input_guardrail_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_guardrail_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_guardrail_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="outputGuardrailMode")
-    def output_guardrail_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_guardrail_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An output guardrail mode for content moderation.
         """
         return pulumi.get(self, "output_guardrail_mode")
 
     @output_guardrail_mode.setter
-    def output_guardrail_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_guardrail_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_guardrail_mode", value)
 
 
 class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict(TypedDict):
-    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    input_guardrail_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An input guardrail mode for personally identifiable information.
     """
-    output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    output_guardrail_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An output guardrail mode for personally identifiable information.
     """
@@ -335,8 +335,8 @@ class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigAr
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs:
     def __init__(__self__, *,
-                 input_guardrail_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_guardrail_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 input_guardrail_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_guardrail_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_guardrail_mode: (Updatable) An input guardrail mode for personally identifiable information.
         :param pulumi.Input[_builtins.str] output_guardrail_mode: (Updatable) An output guardrail mode for personally identifiable information.
@@ -348,31 +348,31 @@ class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigAr
 
     @_builtins.property
     @pulumi.getter(name="inputGuardrailMode")
-    def input_guardrail_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_guardrail_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An input guardrail mode for personally identifiable information.
         """
         return pulumi.get(self, "input_guardrail_mode")
 
     @input_guardrail_mode.setter
-    def input_guardrail_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_guardrail_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_guardrail_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="outputGuardrailMode")
-    def output_guardrail_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_guardrail_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An output guardrail mode for personally identifiable information.
         """
         return pulumi.get(self, "output_guardrail_mode")
 
     @output_guardrail_mode.setter
-    def output_guardrail_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_guardrail_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_guardrail_mode", value)
 
 
 class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict(TypedDict):
-    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    input_guardrail_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An input guardrail mode for prompt injection.
     """
@@ -380,7 +380,7 @@ class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs:
     def __init__(__self__, *,
-                 input_guardrail_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 input_guardrail_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_guardrail_mode: (Updatable) An input guardrail mode for prompt injection.
         """
@@ -389,14 +389,14 @@ class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="inputGuardrailMode")
-    def input_guardrail_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_guardrail_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An input guardrail mode for prompt injection.
         """
         return pulumi.get(self, "input_guardrail_mode")
 
     @input_guardrail_mode.setter
-    def input_guardrail_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_guardrail_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_guardrail_mode", value)
 
 
@@ -433,7 +433,7 @@ class AgentAgentEndpointOutputConfigArgsDict(TypedDict):
     """
     (Updatable) Location of the output.
     """
-    retention_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    retention_period_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Retention duration of the output data.
     """
@@ -442,7 +442,7 @@ class AgentAgentEndpointOutputConfigArgsDict(TypedDict):
 class AgentAgentEndpointOutputConfigArgs:
     def __init__(__self__, *,
                  output_location: pulumi.Input['AgentAgentEndpointOutputConfigOutputLocationArgs'],
-                 retention_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 retention_period_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input['AgentAgentEndpointOutputConfigOutputLocationArgs'] output_location: (Updatable) Location of the output.
         :param pulumi.Input[_builtins.int] retention_period_in_minutes: (Updatable) Retention duration of the output data.
@@ -465,14 +465,14 @@ class AgentAgentEndpointOutputConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInMinutes")
-    def retention_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention duration of the output data.
         """
         return pulumi.get(self, "retention_period_in_minutes")
 
     @retention_period_in_minutes.setter
-    def retention_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_minutes", value)
 
 
@@ -489,7 +489,7 @@ class AgentAgentEndpointOutputConfigOutputLocationArgsDict(TypedDict):
     """
     (Updatable) Type of OutputLocation.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The prefix of the object storage.
     """
@@ -500,7 +500,7 @@ class AgentAgentEndpointOutputConfigOutputLocationArgs:
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  output_location_type: pulumi.Input[_builtins.str],
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The namespace of the object storage.
@@ -551,14 +551,14 @@ class AgentAgentEndpointOutputConfigOutputLocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The prefix of the object storage.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
@@ -567,11 +567,11 @@ class AgentAgentEndpointProvisionedCapacityConfigArgsDict(TypedDict):
     """
     (Updatable) An OCID that uniquely identifies an Provisioned Capacity.
     """
-    platform_runtime_config: NotRequired[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgsDict']]
+    platform_runtime_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]]
     """
     (Updatable) Configuration for agent platform component.
     """
-    tool_runtime_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgsDict']]]]
+    tool_runtime_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]]
     """
     (Updatable) RAG and SQL will be tools.
     """
@@ -580,8 +580,8 @@ class AgentAgentEndpointProvisionedCapacityConfigArgsDict(TypedDict):
 class AgentAgentEndpointProvisionedCapacityConfigArgs:
     def __init__(__self__, *,
                  provisioned_capacity_id: pulumi.Input[_builtins.str],
-                 platform_runtime_config: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']] = None,
-                 tool_runtime_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]] = None):
+                 platform_runtime_config: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']] = None,
+                 tool_runtime_configs: pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] provisioned_capacity_id: (Updatable) An OCID that uniquely identifies an Provisioned Capacity.
         :param pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs'] platform_runtime_config: (Updatable) Configuration for agent platform component.
@@ -607,35 +607,35 @@ class AgentAgentEndpointProvisionedCapacityConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="platformRuntimeConfig")
-    def platform_runtime_config(self) -> Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]:
+    def platform_runtime_config(self) -> pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]:
         """
         (Updatable) Configuration for agent platform component.
         """
         return pulumi.get(self, "platform_runtime_config")
 
     @platform_runtime_config.setter
-    def platform_runtime_config(self, value: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]):
+    def platform_runtime_config(self, value: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]):
         pulumi.set(self, "platform_runtime_config", value)
 
     @_builtins.property
     @pulumi.getter(name="toolRuntimeConfigs")
-    def tool_runtime_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]:
+    def tool_runtime_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]:
         """
         (Updatable) RAG and SQL will be tools.
         """
         return pulumi.get(self, "tool_runtime_configs")
 
     @tool_runtime_configs.setter
-    def tool_runtime_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]):
+    def tool_runtime_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]):
         pulumi.set(self, "tool_runtime_configs", value)
 
 
 class AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgsDict(TypedDict):
-    platform_runtime_config_type: NotRequired[pulumi.Input[_builtins.str]]
+    platform_runtime_config_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of Platform runtime config.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The version of the Core. The latest version will be displayed as default.
     """
@@ -643,8 +643,8 @@ class AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgsDict(T
 @pulumi.input_type
 class AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs:
     def __init__(__self__, *,
-                 platform_runtime_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 platform_runtime_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] platform_runtime_config_type: (Updatable) The type of Platform runtime config.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of the Core. The latest version will be displayed as default.
@@ -656,26 +656,26 @@ class AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="platformRuntimeConfigType")
-    def platform_runtime_config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_runtime_config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of Platform runtime config.
         """
         return pulumi.get(self, "platform_runtime_config_type")
 
     @platform_runtime_config_type.setter
-    def platform_runtime_config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_runtime_config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_runtime_config_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the Core. The latest version will be displayed as default.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -684,7 +684,7 @@ class AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgsDict(Typed
     """
     (Updatable) The type of the tool.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The version of the components.
     """
@@ -693,7 +693,7 @@ class AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgsDict(Typed
 class AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs:
     def __init__(__self__, *,
                  tool_runtime_config_type: pulumi.Input[_builtins.str],
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] tool_runtime_config_type: (Updatable) The type of the tool.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of the components.
@@ -716,19 +716,19 @@ class AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the components.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class AgentAgentEndpointSessionConfigArgsDict(TypedDict):
-    idle_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    idle_timeout_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The session will become inactive after this timeout.
     """
@@ -736,7 +736,7 @@ class AgentAgentEndpointSessionConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentEndpointSessionConfigArgs:
     def __init__(__self__, *,
-                 idle_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 idle_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] idle_timeout_in_seconds: (Updatable) The session will become inactive after this timeout.
         """
@@ -745,23 +745,23 @@ class AgentAgentEndpointSessionConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="idleTimeoutInSeconds")
-    def idle_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def idle_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The session will become inactive after this timeout.
         """
         return pulumi.get(self, "idle_timeout_in_seconds")
 
     @idle_timeout_in_seconds.setter
-    def idle_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def idle_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "idle_timeout_in_seconds", value)
 
 
 class AgentAgentLlmConfigArgsDict(TypedDict):
-    routing_llm_customization: NotRequired[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgsDict']]
+    routing_llm_customization: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    runtime_version: NotRequired[pulumi.Input[_builtins.str]]
+    runtime_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The runtimeVersion of the system prompt.
     """
@@ -769,8 +769,8 @@ class AgentAgentLlmConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentLlmConfigArgs:
     def __init__(__self__, *,
-                 routing_llm_customization: Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgs']] = None,
-                 runtime_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 routing_llm_customization: pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgs']] = None,
+                 runtime_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgs'] routing_llm_customization: (Updatable) Configuration to customize LLM.
         :param pulumi.Input[_builtins.str] runtime_version: (Updatable) The runtimeVersion of the system prompt.
@@ -782,39 +782,39 @@ class AgentAgentLlmConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="routingLlmCustomization")
-    def routing_llm_customization(self) -> Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]:
+    def routing_llm_customization(self) -> pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]:
         """
         (Updatable) Configuration to customize LLM.
         """
         return pulumi.get(self, "routing_llm_customization")
 
     @routing_llm_customization.setter
-    def routing_llm_customization(self, value: Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]):
+    def routing_llm_customization(self, value: pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]):
         pulumi.set(self, "routing_llm_customization", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeVersion")
-    def runtime_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runtime_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The runtimeVersion of the system prompt.
         """
         return pulumi.get(self, "runtime_version")
 
     @runtime_version.setter
-    def runtime_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runtime_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runtime_version", value)
 
 
 class AgentAgentLlmConfigRoutingLlmCustomizationArgsDict(TypedDict):
-    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    instruction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If specified, the default instruction is replaced with provided instruction.
     """
-    llm_hyper_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    llm_hyper_parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgsDict']]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -822,9 +822,9 @@ class AgentAgentLlmConfigRoutingLlmCustomizationArgsDict(TypedDict):
 @pulumi.input_type
 class AgentAgentLlmConfigRoutingLlmCustomizationArgs:
     def __init__(__self__, *,
-                 instruction: Optional[pulumi.Input[_builtins.str]] = None,
-                 llm_hyper_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 llm_selection: Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']] = None):
+                 instruction: pulumi.Input[Optional[_builtins.str]] = None,
+                 llm_hyper_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 llm_selection: pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] llm_hyper_parameters: (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
@@ -839,38 +839,38 @@ class AgentAgentLlmConfigRoutingLlmCustomizationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instruction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instruction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
 
     @instruction.setter
-    def instruction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instruction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instruction", value)
 
     @_builtins.property
     @pulumi.getter(name="llmHyperParameters")
-    def llm_hyper_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def llm_hyper_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "llm_hyper_parameters")
 
     @llm_hyper_parameters.setter
-    def llm_hyper_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def llm_hyper_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "llm_hyper_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="llmSelection")
-    def llm_selection(self) -> Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]:
+    def llm_selection(self) -> pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]:
         """
         (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "llm_selection")
 
     @llm_selection.setter
-    def llm_selection(self, value: Optional[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]):
+    def llm_selection(self, value: pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]):
         pulumi.set(self, "llm_selection", value)
 
 
@@ -879,11 +879,11 @@ class AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgsDict(TypedDict):
     """
     (Updatable) Type of LLM selection
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI endpoint
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI model
     """
@@ -892,8 +892,8 @@ class AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgsDict(TypedDict):
 class AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs:
     def __init__(__self__, *,
                  llm_selection_type: pulumi.Input[_builtins.str],
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) Type of LLM selection
         :param pulumi.Input[_builtins.str] endpoint_id: (Updatable) The OCID of the GenAI endpoint
@@ -919,43 +919,43 @@ class AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI endpoint
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI model
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
 class AgentDataIngestionJobDataIngestionJobStatisticArgsDict(TypedDict):
-    duration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    duration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The duration of this ingestion job.
     """
-    number_of_failed_files: NotRequired[pulumi.Input[_builtins.int]]
+    number_of_failed_files: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of files that have failed during the ingestion.
     """
-    number_of_ignored_files: NotRequired[pulumi.Input[_builtins.int]]
+    number_of_ignored_files: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of files that have been ignored during the ingestion.
     """
-    number_of_ingested_files: NotRequired[pulumi.Input[_builtins.int]]
+    number_of_ingested_files: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of files that have been successfully ingested during the ingestion.
     """
@@ -963,10 +963,10 @@ class AgentDataIngestionJobDataIngestionJobStatisticArgsDict(TypedDict):
 @pulumi.input_type
 class AgentDataIngestionJobDataIngestionJobStatisticArgs:
     def __init__(__self__, *,
-                 duration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 number_of_failed_files: Optional[pulumi.Input[_builtins.int]] = None,
-                 number_of_ignored_files: Optional[pulumi.Input[_builtins.int]] = None,
-                 number_of_ingested_files: Optional[pulumi.Input[_builtins.int]] = None):
+                 duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 number_of_failed_files: pulumi.Input[Optional[_builtins.int]] = None,
+                 number_of_ignored_files: pulumi.Input[Optional[_builtins.int]] = None,
+                 number_of_ingested_files: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] duration_in_seconds: The duration of this ingestion job.
         :param pulumi.Input[_builtins.int] number_of_failed_files: The number of files that have failed during the ingestion.
@@ -984,55 +984,55 @@ class AgentDataIngestionJobDataIngestionJobStatisticArgs:
 
     @_builtins.property
     @pulumi.getter(name="durationInSeconds")
-    def duration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration of this ingestion job.
         """
         return pulumi.get(self, "duration_in_seconds")
 
     @duration_in_seconds.setter
-    def duration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfFailedFiles")
-    def number_of_failed_files(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_failed_files(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of files that have failed during the ingestion.
         """
         return pulumi.get(self, "number_of_failed_files")
 
     @number_of_failed_files.setter
-    def number_of_failed_files(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_failed_files(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_failed_files", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfIgnoredFiles")
-    def number_of_ignored_files(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_ignored_files(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of files that have been ignored during the ingestion.
         """
         return pulumi.get(self, "number_of_ignored_files")
 
     @number_of_ignored_files.setter
-    def number_of_ignored_files(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_ignored_files(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_ignored_files", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfIngestedFiles")
-    def number_of_ingested_files(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_ingested_files(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of files that have been successfully ingested during the ingestion.
         """
         return pulumi.get(self, "number_of_ingested_files")
 
     @number_of_ingested_files.setter
-    def number_of_ingested_files(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_ingested_files(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_ingested_files", value)
 
 
 class AgentDataIngestionJobDataIngestionJobTypeArgsDict(TypedDict):
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of ingestionJob.
     """
@@ -1040,7 +1040,7 @@ class AgentDataIngestionJobDataIngestionJobTypeArgsDict(TypedDict):
 @pulumi.input_type
 class AgentDataIngestionJobDataIngestionJobTypeArgs:
     def __init__(__self__, *,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of ingestionJob.
         """
@@ -1049,14 +1049,14 @@ class AgentDataIngestionJobDataIngestionJobTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of ingestionJob.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -1116,7 +1116,7 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict(TypedDict):
     """
     (Updatable) The namespace name of an object.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The prefix of file object(s) or folder prefix.
     """
@@ -1126,7 +1126,7 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The bucket name of an object.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The namespace name of an object.
@@ -1163,14 +1163,14 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs:
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
@@ -1179,27 +1179,27 @@ class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
     """
     (Updatable) The type of index.
     """
-    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
     """
-    database_connection: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict']]
+    database_connection: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]]
     """
     (Updatable) The connection type for Databases.
     """
-    database_functions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict']]]]
+    database_functions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]]
     """
     (Updatable) Array of Database functions to be used.
     """
-    indexes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgsDict']]]]
+    indexes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]]
     """
     (Updatable) Index configuration for open search.
     """
-    secret_detail: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgsDict']]
+    secret_detail: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]]
     """
     (Updatable) The details of configured security configuration on OpenSearch.
     """
-    should_enable_hybrid_search: NotRequired[pulumi.Input[_builtins.bool]]
+    should_enable_hybrid_search: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 
@@ -1212,12 +1212,12 @@ class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
 class AgentKnowledgeBaseIndexConfigArgs:
     def __init__(__self__, *,
                  index_config_type: pulumi.Input[_builtins.str],
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connection: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']] = None,
-                 database_functions: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]] = None,
-                 indexes: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]] = None,
-                 secret_detail: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgs']] = None,
-                 should_enable_hybrid_search: Optional[pulumi.Input[_builtins.bool]] = None):
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connection: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']] = None,
+                 database_functions: pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]] = None,
+                 indexes: pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]] = None,
+                 secret_detail: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgs']] = None,
+                 should_enable_hybrid_search: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] index_config_type: (Updatable) The type of index.
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
@@ -1259,67 +1259,67 @@ class AgentKnowledgeBaseIndexConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnection")
-    def database_connection(self) -> Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]:
+    def database_connection(self) -> pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]:
         """
         (Updatable) The connection type for Databases.
         """
         return pulumi.get(self, "database_connection")
 
     @database_connection.setter
-    def database_connection(self, value: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]):
+    def database_connection(self, value: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]):
         pulumi.set(self, "database_connection", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseFunctions")
-    def database_functions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]:
+    def database_functions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]:
         """
         (Updatable) Array of Database functions to be used.
         """
         return pulumi.get(self, "database_functions")
 
     @database_functions.setter
-    def database_functions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]):
+    def database_functions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]):
         pulumi.set(self, "database_functions", value)
 
     @_builtins.property
     @pulumi.getter
-    def indexes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]:
+    def indexes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]:
         """
         (Updatable) Index configuration for open search.
         """
         return pulumi.get(self, "indexes")
 
     @indexes.setter
-    def indexes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]):
+    def indexes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]):
         pulumi.set(self, "indexes", value)
 
     @_builtins.property
     @pulumi.getter(name="secretDetail")
-    def secret_detail(self) -> Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]:
+    def secret_detail(self) -> pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]:
         """
         (Updatable) The details of configured security configuration on OpenSearch.
         """
         return pulumi.get(self, "secret_detail")
 
     @secret_detail.setter
-    def secret_detail(self, value: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]):
+    def secret_detail(self, value: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]):
         pulumi.set(self, "secret_detail", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableHybridSearch")
-    def should_enable_hybrid_search(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_hybrid_search(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 
@@ -1330,7 +1330,7 @@ class AgentKnowledgeBaseIndexConfigArgs:
         return pulumi.get(self, "should_enable_hybrid_search")
 
     @should_enable_hybrid_search.setter
-    def should_enable_hybrid_search(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_hybrid_search(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_hybrid_search", value)
 
 
@@ -1382,7 +1382,7 @@ class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs:
 
 
 class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the Database function.
     """
@@ -1390,7 +1390,7 @@ class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict(TypedDict):
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the Database function.
         """
@@ -1399,23 +1399,23 @@ class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Database function.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class AgentKnowledgeBaseIndexConfigIndexArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The index name in opensearch.
     """
-    schema: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict']]
+    schema: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]]
     """
     (Updatable) The index schema details.
     """
@@ -1423,8 +1423,8 @@ class AgentKnowledgeBaseIndexConfigIndexArgsDict(TypedDict):
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigIndexArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The index name in opensearch.
         :param pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgs'] schema: (Updatable) The index schema details.
@@ -1436,43 +1436,43 @@ class AgentKnowledgeBaseIndexConfigIndexArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The index name in opensearch.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def schema(self) -> Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]:
+    def schema(self) -> pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]:
         """
         (Updatable) The index schema details.
         """
         return pulumi.get(self, "schema")
 
     @schema.setter
-    def schema(self, value: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]):
+    def schema(self, value: pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]):
         pulumi.set(self, "schema", value)
 
 
 class AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict(TypedDict):
-    body_key: NotRequired[pulumi.Input[_builtins.str]]
+    body_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Body key name.
     """
-    embedding_body_key: NotRequired[pulumi.Input[_builtins.str]]
+    embedding_body_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
     """
-    title_key: NotRequired[pulumi.Input[_builtins.str]]
+    title_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Title key that stores the Title of a document, if available.
     """
-    url_key: NotRequired[pulumi.Input[_builtins.str]]
+    url_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) URL key that stores the URL of a document, if available.
     """
@@ -1480,10 +1480,10 @@ class AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict(TypedDict):
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigIndexSchemaArgs:
     def __init__(__self__, *,
-                 body_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 embedding_body_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 title_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 body_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 embedding_body_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] body_key: (Updatable) Body key name.
         :param pulumi.Input[_builtins.str] embedding_body_key: (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
@@ -1501,50 +1501,50 @@ class AgentKnowledgeBaseIndexConfigIndexSchemaArgs:
 
     @_builtins.property
     @pulumi.getter(name="bodyKey")
-    def body_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Body key name.
         """
         return pulumi.get(self, "body_key")
 
     @body_key.setter
-    def body_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body_key", value)
 
     @_builtins.property
     @pulumi.getter(name="embeddingBodyKey")
-    def embedding_body_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def embedding_body_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
         """
         return pulumi.get(self, "embedding_body_key")
 
     @embedding_body_key.setter
-    def embedding_body_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def embedding_body_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "embedding_body_key", value)
 
     @_builtins.property
     @pulumi.getter(name="titleKey")
-    def title_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Title key that stores the Title of a document, if available.
         """
         return pulumi.get(self, "title_key")
 
     @title_key.setter
-    def title_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title_key", value)
 
     @_builtins.property
     @pulumi.getter(name="urlKey")
-    def url_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) URL key that stores the URL of a document, if available.
         """
         return pulumi.get(self, "url_key")
 
     @url_key.setter
-    def url_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url_key", value)
 
 
@@ -1557,15 +1557,15 @@ class AgentKnowledgeBaseIndexConfigSecretDetailArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
     """
-    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The IDCS Connect clientId.
     """
-    idcs_url: NotRequired[pulumi.Input[_builtins.str]]
+    idcs_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The URL represent authentication url of the IDCS.
     """
-    scope_url: NotRequired[pulumi.Input[_builtins.str]]
+    scope_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Fully qualified scope url
     """
@@ -1575,9 +1575,9 @@ class AgentKnowledgeBaseIndexConfigSecretDetailArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
                  vault_secret_id: pulumi.Input[_builtins.str],
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of OpenID.
         :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
@@ -1620,47 +1620,47 @@ class AgentKnowledgeBaseIndexConfigSecretDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IDCS Connect clientId.
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsUrl")
-    def idcs_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL represent authentication url of the IDCS.
         """
         return pulumi.get(self, "idcs_url")
 
     @idcs_url.setter
-    def idcs_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_url", value)
 
     @_builtins.property
     @pulumi.getter(name="scopeUrl")
-    def scope_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Fully qualified scope url
         """
         return pulumi.get(self, "scope_url")
 
     @scope_url.setter
-    def scope_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope_url", value)
 
 
 class AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict(TypedDict):
-    size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
+    size_in_bytes: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Knowledge Base size in bytes.
     """
-    total_ingested_files: NotRequired[pulumi.Input[_builtins.str]]
+    total_ingested_files: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Total number of ingested files in Knowledge Base.
     """
@@ -1668,8 +1668,8 @@ class AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict(TypedDict):
 @pulumi.input_type
 class AgentKnowledgeBaseKnowledgeBaseStatisticArgs:
     def __init__(__self__, *,
-                 size_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ingested_files: Optional[pulumi.Input[_builtins.str]] = None):
+                 size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ingested_files: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] size_in_bytes: Knowledge Base size in bytes.
         :param pulumi.Input[_builtins.str] total_ingested_files: Total number of ingested files in Knowledge Base.
@@ -1681,26 +1681,26 @@ class AgentKnowledgeBaseKnowledgeBaseStatisticArgs:
 
     @_builtins.property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Knowledge Base size in bytes.
         """
         return pulumi.get(self, "size_in_bytes")
 
     @size_in_bytes.setter
-    def size_in_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="totalIngestedFiles")
-    def total_ingested_files(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_ingested_files(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Total number of ingested files in Knowledge Base.
         """
         return pulumi.get(self, "total_ingested_files")
 
     @total_ingested_files.setter
-    def total_ingested_files(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_ingested_files(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_ingested_files", value)
 
 
@@ -1716,79 +1716,79 @@ class AgentToolToolConfigArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    agent_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
     """
-    api_schema: NotRequired[pulumi.Input['AgentToolToolConfigApiSchemaArgsDict']]
+    api_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgs']]]
     """
     (Updatable) The input location definition for Api schema.
     """
-    database_connection: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgsDict']]
+    database_connection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgs']]]
     """
     (Updatable) The connection type for Databases.
     """
-    database_schema: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgsDict']]
+    database_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgs']]]
     """
     (Updatable) The input location definition.
     """
-    dialect: NotRequired[pulumi.Input[_builtins.str]]
+    dialect: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Dialect to be used for SQL generation.
     """
-    embedding_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationArgsDict']]
+    embedding_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    function: NotRequired[pulumi.Input['AgentToolToolConfigFunctionArgsDict']]
+    function: NotRequired[pulumi.Input[Optional['AgentToolToolConfigFunctionArgs']]]
     """
     (Updatable) Details of Function for Function calling tool.
     """
-    generation_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgsDict']]
+    generation_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgs']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    http_endpoint_auth_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgsDict']]
+    http_endpoint_auth_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgs']]]
     """
     (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
     """
-    icl_examples: NotRequired[pulumi.Input['AgentToolToolConfigIclExamplesArgsDict']]
+    icl_examples: NotRequired[pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgs']]]
     """
     (Updatable) The input location definition.
     """
-    knowledge_base_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgsDict']]]]
+    knowledge_base_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]]
     """
     (Updatable) The KnowledgeBase configurations that this RAG Tool uses
     """
-    model_size: NotRequired[pulumi.Input[_builtins.str]]
+    model_size: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Size of the model.
     """
-    reasoning_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationArgsDict']]
+    reasoning_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgs']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    reranking_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationArgsDict']]
+    reranking_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgs']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    runtime_version: NotRequired[pulumi.Input[_builtins.str]]
+    runtime_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The runtimeVersion of the system prompt.
     """
-    should_enable_self_correction: NotRequired[pulumi.Input[_builtins.bool]]
+    should_enable_self_correction: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) To enable/disable self correction.
     """
-    should_enable_sql_execution: NotRequired[pulumi.Input[_builtins.bool]]
+    should_enable_sql_execution: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) To enable/disable SQL execution.
     """
-    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
     """
-    table_and_column_description: NotRequired[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgsDict']]
+    table_and_column_description: NotRequired[pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgs']]]
     """
     (Updatable) The input location definition.
     """
@@ -1797,25 +1797,25 @@ class AgentToolToolConfigArgsDict(TypedDict):
 class AgentToolToolConfigArgs:
     def __init__(__self__, *,
                  tool_config_type: pulumi.Input[_builtins.str],
-                 agent_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_schema: Optional[pulumi.Input['AgentToolToolConfigApiSchemaArgs']] = None,
-                 database_connection: Optional[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgs']] = None,
-                 database_schema: Optional[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgs']] = None,
-                 dialect: Optional[pulumi.Input[_builtins.str]] = None,
-                 embedding_llm_customization: Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationArgs']] = None,
-                 function: Optional[pulumi.Input['AgentToolToolConfigFunctionArgs']] = None,
-                 generation_llm_customization: Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgs']] = None,
-                 http_endpoint_auth_config: Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgs']] = None,
-                 icl_examples: Optional[pulumi.Input['AgentToolToolConfigIclExamplesArgs']] = None,
-                 knowledge_base_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]] = None,
-                 model_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 reasoning_llm_customization: Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationArgs']] = None,
-                 reranking_llm_customization: Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationArgs']] = None,
-                 runtime_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_enable_self_correction: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_sql_execution: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_and_column_description: Optional[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgs']] = None):
+                 agent_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_schema: pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgs']] = None,
+                 database_connection: pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgs']] = None,
+                 database_schema: pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgs']] = None,
+                 dialect: pulumi.Input[Optional[_builtins.str]] = None,
+                 embedding_llm_customization: pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgs']] = None,
+                 function: pulumi.Input[Optional['AgentToolToolConfigFunctionArgs']] = None,
+                 generation_llm_customization: pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgs']] = None,
+                 http_endpoint_auth_config: pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgs']] = None,
+                 icl_examples: pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgs']] = None,
+                 knowledge_base_configs: pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]] = None,
+                 model_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 reasoning_llm_customization: pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgs']] = None,
+                 reranking_llm_customization: pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgs']] = None,
+                 runtime_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_enable_self_correction: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_sql_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_and_column_description: pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] tool_config_type: (Updatable) The type of the Tool config. The allowed values are:
                * `SQL_TOOL_CONFIG`: The config for sql Tool.
@@ -1906,230 +1906,230 @@ class AgentToolToolConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentEndpointId")
-    def agent_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
         """
         return pulumi.get(self, "agent_endpoint_id")
 
     @agent_endpoint_id.setter
-    def agent_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="apiSchema")
-    def api_schema(self) -> Optional[pulumi.Input['AgentToolToolConfigApiSchemaArgs']]:
+    def api_schema(self) -> pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgs']]:
         """
         (Updatable) The input location definition for Api schema.
         """
         return pulumi.get(self, "api_schema")
 
     @api_schema.setter
-    def api_schema(self, value: Optional[pulumi.Input['AgentToolToolConfigApiSchemaArgs']]):
+    def api_schema(self, value: pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgs']]):
         pulumi.set(self, "api_schema", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnection")
-    def database_connection(self) -> Optional[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgs']]:
+    def database_connection(self) -> pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgs']]:
         """
         (Updatable) The connection type for Databases.
         """
         return pulumi.get(self, "database_connection")
 
     @database_connection.setter
-    def database_connection(self, value: Optional[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgs']]):
+    def database_connection(self, value: pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgs']]):
         pulumi.set(self, "database_connection", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSchema")
-    def database_schema(self) -> Optional[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgs']]:
+    def database_schema(self) -> pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgs']]:
         """
         (Updatable) The input location definition.
         """
         return pulumi.get(self, "database_schema")
 
     @database_schema.setter
-    def database_schema(self, value: Optional[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgs']]):
+    def database_schema(self, value: pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgs']]):
         pulumi.set(self, "database_schema", value)
 
     @_builtins.property
     @pulumi.getter
-    def dialect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dialect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Dialect to be used for SQL generation.
         """
         return pulumi.get(self, "dialect")
 
     @dialect.setter
-    def dialect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dialect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dialect", value)
 
     @_builtins.property
     @pulumi.getter(name="embeddingLlmCustomization")
-    def embedding_llm_customization(self) -> Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]:
+    def embedding_llm_customization(self) -> pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]:
         """
         (Updatable) Configuration to customize LLM.
         """
         return pulumi.get(self, "embedding_llm_customization")
 
     @embedding_llm_customization.setter
-    def embedding_llm_customization(self, value: Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]):
+    def embedding_llm_customization(self, value: pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]):
         pulumi.set(self, "embedding_llm_customization", value)
 
     @_builtins.property
     @pulumi.getter
-    def function(self) -> Optional[pulumi.Input['AgentToolToolConfigFunctionArgs']]:
+    def function(self) -> pulumi.Input[Optional['AgentToolToolConfigFunctionArgs']]:
         """
         (Updatable) Details of Function for Function calling tool.
         """
         return pulumi.get(self, "function")
 
     @function.setter
-    def function(self, value: Optional[pulumi.Input['AgentToolToolConfigFunctionArgs']]):
+    def function(self, value: pulumi.Input[Optional['AgentToolToolConfigFunctionArgs']]):
         pulumi.set(self, "function", value)
 
     @_builtins.property
     @pulumi.getter(name="generationLlmCustomization")
-    def generation_llm_customization(self) -> Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgs']]:
+    def generation_llm_customization(self) -> pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgs']]:
         """
         (Updatable) Configuration to customize LLM.
         """
         return pulumi.get(self, "generation_llm_customization")
 
     @generation_llm_customization.setter
-    def generation_llm_customization(self, value: Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgs']]):
+    def generation_llm_customization(self, value: pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgs']]):
         pulumi.set(self, "generation_llm_customization", value)
 
     @_builtins.property
     @pulumi.getter(name="httpEndpointAuthConfig")
-    def http_endpoint_auth_config(self) -> Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgs']]:
+    def http_endpoint_auth_config(self) -> pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgs']]:
         """
         (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
         """
         return pulumi.get(self, "http_endpoint_auth_config")
 
     @http_endpoint_auth_config.setter
-    def http_endpoint_auth_config(self, value: Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgs']]):
+    def http_endpoint_auth_config(self, value: pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgs']]):
         pulumi.set(self, "http_endpoint_auth_config", value)
 
     @_builtins.property
     @pulumi.getter(name="iclExamples")
-    def icl_examples(self) -> Optional[pulumi.Input['AgentToolToolConfigIclExamplesArgs']]:
+    def icl_examples(self) -> pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgs']]:
         """
         (Updatable) The input location definition.
         """
         return pulumi.get(self, "icl_examples")
 
     @icl_examples.setter
-    def icl_examples(self, value: Optional[pulumi.Input['AgentToolToolConfigIclExamplesArgs']]):
+    def icl_examples(self, value: pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgs']]):
         pulumi.set(self, "icl_examples", value)
 
     @_builtins.property
     @pulumi.getter(name="knowledgeBaseConfigs")
-    def knowledge_base_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]:
+    def knowledge_base_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]:
         """
         (Updatable) The KnowledgeBase configurations that this RAG Tool uses
         """
         return pulumi.get(self, "knowledge_base_configs")
 
     @knowledge_base_configs.setter
-    def knowledge_base_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]):
+    def knowledge_base_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]):
         pulumi.set(self, "knowledge_base_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="modelSize")
-    def model_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Size of the model.
         """
         return pulumi.get(self, "model_size")
 
     @model_size.setter
-    def model_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_size", value)
 
     @_builtins.property
     @pulumi.getter(name="reasoningLlmCustomization")
-    def reasoning_llm_customization(self) -> Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationArgs']]:
+    def reasoning_llm_customization(self) -> pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgs']]:
         """
         (Updatable) Configuration to customize LLM.
         """
         return pulumi.get(self, "reasoning_llm_customization")
 
     @reasoning_llm_customization.setter
-    def reasoning_llm_customization(self, value: Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationArgs']]):
+    def reasoning_llm_customization(self, value: pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgs']]):
         pulumi.set(self, "reasoning_llm_customization", value)
 
     @_builtins.property
     @pulumi.getter(name="rerankingLlmCustomization")
-    def reranking_llm_customization(self) -> Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationArgs']]:
+    def reranking_llm_customization(self) -> pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgs']]:
         """
         (Updatable) Configuration to customize LLM.
         """
         return pulumi.get(self, "reranking_llm_customization")
 
     @reranking_llm_customization.setter
-    def reranking_llm_customization(self, value: Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationArgs']]):
+    def reranking_llm_customization(self, value: pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgs']]):
         pulumi.set(self, "reranking_llm_customization", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeVersion")
-    def runtime_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runtime_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The runtimeVersion of the system prompt.
         """
         return pulumi.get(self, "runtime_version")
 
     @runtime_version.setter
-    def runtime_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runtime_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runtime_version", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableSelfCorrection")
-    def should_enable_self_correction(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_self_correction(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To enable/disable self correction.
         """
         return pulumi.get(self, "should_enable_self_correction")
 
     @should_enable_self_correction.setter
-    def should_enable_self_correction(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_self_correction(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_self_correction", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableSqlExecution")
-    def should_enable_sql_execution(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_sql_execution(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To enable/disable SQL execution.
         """
         return pulumi.get(self, "should_enable_sql_execution")
 
     @should_enable_sql_execution.setter
-    def should_enable_sql_execution(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_sql_execution(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_sql_execution", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tableAndColumnDescription")
-    def table_and_column_description(self) -> Optional[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgs']]:
+    def table_and_column_description(self) -> pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgs']]:
         """
         (Updatable) The input location definition.
         """
         return pulumi.get(self, "table_and_column_description")
 
     @table_and_column_description.setter
-    def table_and_column_description(self, value: Optional[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgs']]):
+    def table_and_column_description(self, value: pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgs']]):
         pulumi.set(self, "table_and_column_description", value)
 
 
@@ -2140,19 +2140,19 @@ class AgentToolToolConfigApiSchemaArgsDict(TypedDict):
     * `INLINE`: The Api schema input location is inline.
     * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The bucket name of an object.
     """
-    content: NotRequired[pulumi.Input[_builtins.str]]
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Inline content as input.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The namespace name of an object.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The location/name of object.
     """
@@ -2161,10 +2161,10 @@ class AgentToolToolConfigApiSchemaArgsDict(TypedDict):
 class AgentToolToolConfigApiSchemaArgs:
     def __init__(__self__, *,
                  api_schema_input_location_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] api_schema_input_location_type: (Updatable) Type of Api Schema InputLocation. The allowed values are:
                * `INLINE`: The Api schema input location is inline.
@@ -2200,50 +2200,50 @@ class AgentToolToolConfigApiSchemaArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The bucket name of an object.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Inline content as input.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace name of an object.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The location/name of object.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -2304,19 +2304,19 @@ class AgentToolToolConfigDatabaseSchemaArgsDict(TypedDict):
     * `INLINE`: The input location is inline.
     * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The bucket name of an object.
     """
-    content: NotRequired[pulumi.Input[_builtins.str]]
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Inline content as input.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The namespace name of an object.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The prefix of file object(s) or folder prefix.
     """
@@ -2325,10 +2325,10 @@ class AgentToolToolConfigDatabaseSchemaArgsDict(TypedDict):
 class AgentToolToolConfigDatabaseSchemaArgs:
     def __init__(__self__, *,
                  input_location_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_location_type: (Updatable) Type of InputLocation. The allowed values are:
                * `INLINE`: The input location is inline.
@@ -2364,63 +2364,63 @@ class AgentToolToolConfigDatabaseSchemaArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The bucket name of an object.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Inline content as input.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace name of an object.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
 class AgentToolToolConfigEmbeddingLlmCustomizationArgsDict(TypedDict):
-    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    instruction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If specified, the default instruction is replaced with provided instruction.
     """
-    llm_hyper_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    llm_hyper_parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgsDict']]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -2428,9 +2428,9 @@ class AgentToolToolConfigEmbeddingLlmCustomizationArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigEmbeddingLlmCustomizationArgs:
     def __init__(__self__, *,
-                 instruction: Optional[pulumi.Input[_builtins.str]] = None,
-                 llm_hyper_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 llm_selection: Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']] = None):
+                 instruction: pulumi.Input[Optional[_builtins.str]] = None,
+                 llm_hyper_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 llm_selection: pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] llm_hyper_parameters: (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
@@ -2445,38 +2445,38 @@ class AgentToolToolConfigEmbeddingLlmCustomizationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instruction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instruction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
 
     @instruction.setter
-    def instruction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instruction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instruction", value)
 
     @_builtins.property
     @pulumi.getter(name="llmHyperParameters")
-    def llm_hyper_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def llm_hyper_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "llm_hyper_parameters")
 
     @llm_hyper_parameters.setter
-    def llm_hyper_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def llm_hyper_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "llm_hyper_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="llmSelection")
-    def llm_selection(self) -> Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]:
+    def llm_selection(self) -> pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]:
         """
         (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "llm_selection")
 
     @llm_selection.setter
-    def llm_selection(self, value: Optional[pulumi.Input['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]):
+    def llm_selection(self, value: pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]):
         pulumi.set(self, "llm_selection", value)
 
 
@@ -2485,11 +2485,11 @@ class AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgsDict(TypedDict
     """
     (Updatable) Type of LLM selection
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI endpoint
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI model
     """
@@ -2498,8 +2498,8 @@ class AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgsDict(TypedDict
 class AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs:
     def __init__(__self__, *,
                  llm_selection_type: pulumi.Input[_builtins.str],
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) Type of LLM selection
         :param pulumi.Input[_builtins.str] endpoint_id: (Updatable) The OCID of the GenAI endpoint
@@ -2525,39 +2525,39 @@ class AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI endpoint
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI model
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
 class AgentToolToolConfigFunctionArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A description of the function.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the function to invoke.
     """
-    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
@@ -2565,9 +2565,9 @@ class AgentToolToolConfigFunctionArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigFunctionArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the function.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the function to invoke.
@@ -2582,51 +2582,51 @@ class AgentToolToolConfigFunctionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the function.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the function to invoke.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters", value)
 
 
 class AgentToolToolConfigGenerationLlmCustomizationArgsDict(TypedDict):
-    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    instruction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If specified, the default instruction is replaced with provided instruction.
     """
-    llm_hyper_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    llm_hyper_parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgsDict']]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -2634,9 +2634,9 @@ class AgentToolToolConfigGenerationLlmCustomizationArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigGenerationLlmCustomizationArgs:
     def __init__(__self__, *,
-                 instruction: Optional[pulumi.Input[_builtins.str]] = None,
-                 llm_hyper_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 llm_selection: Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']] = None):
+                 instruction: pulumi.Input[Optional[_builtins.str]] = None,
+                 llm_hyper_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 llm_selection: pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] llm_hyper_parameters: (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
@@ -2651,38 +2651,38 @@ class AgentToolToolConfigGenerationLlmCustomizationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instruction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instruction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
 
     @instruction.setter
-    def instruction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instruction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instruction", value)
 
     @_builtins.property
     @pulumi.getter(name="llmHyperParameters")
-    def llm_hyper_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def llm_hyper_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "llm_hyper_parameters")
 
     @llm_hyper_parameters.setter
-    def llm_hyper_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def llm_hyper_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "llm_hyper_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="llmSelection")
-    def llm_selection(self) -> Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]:
+    def llm_selection(self) -> pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]:
         """
         (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "llm_selection")
 
     @llm_selection.setter
-    def llm_selection(self, value: Optional[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]):
+    def llm_selection(self, value: pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]):
         pulumi.set(self, "llm_selection", value)
 
 
@@ -2691,11 +2691,11 @@ class AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgsDict(TypedDic
     """
     (Updatable) Type of LLM selection
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI endpoint
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI model
     """
@@ -2704,8 +2704,8 @@ class AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgsDict(TypedDic
 class AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs:
     def __init__(__self__, *,
                  llm_selection_type: pulumi.Input[_builtins.str],
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) Type of LLM selection
         :param pulumi.Input[_builtins.str] endpoint_id: (Updatable) The OCID of the GenAI endpoint
@@ -2731,31 +2731,31 @@ class AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI endpoint
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI model
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
 class AgentToolToolConfigHttpEndpointAuthConfigArgsDict(TypedDict):
-    http_endpoint_auth_sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict']]]]
+    http_endpoint_auth_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]]
     """
     (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
     """
@@ -2763,7 +2763,7 @@ class AgentToolToolConfigHttpEndpointAuthConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigHttpEndpointAuthConfigArgs:
     def __init__(__self__, *,
-                 http_endpoint_auth_sources: Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]] = None):
+                 http_endpoint_auth_sources: pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]] http_endpoint_auth_sources: (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
         """
@@ -2772,23 +2772,23 @@ class AgentToolToolConfigHttpEndpointAuthConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="httpEndpointAuthSources")
-    def http_endpoint_auth_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]:
+    def http_endpoint_auth_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]:
         """
         (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
         """
         return pulumi.get(self, "http_endpoint_auth_sources")
 
     @http_endpoint_auth_sources.setter
-    def http_endpoint_auth_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]):
+    def http_endpoint_auth_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]):
         pulumi.set(self, "http_endpoint_auth_sources", value)
 
 
 class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict(TypedDict):
-    http_endpoint_auth_scope: NotRequired[pulumi.Input[_builtins.str]]
+    http_endpoint_auth_scope: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the level from which credentials should be resolved.
     """
-    http_endpoint_auth_scope_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict']]
+    http_endpoint_auth_scope_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]]
     """
     (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
     """
@@ -2796,8 +2796,8 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict(Ty
 @pulumi.input_type
 class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs:
     def __init__(__self__, *,
-                 http_endpoint_auth_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_endpoint_auth_scope_config: Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']] = None):
+                 http_endpoint_auth_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_endpoint_auth_scope_config: pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] http_endpoint_auth_scope: (Updatable) Specifies the level from which credentials should be resolved.
         :param pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs'] http_endpoint_auth_scope_config: (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
@@ -2809,26 +2809,26 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="httpEndpointAuthScope")
-    def http_endpoint_auth_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def http_endpoint_auth_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the level from which credentials should be resolved.
         """
         return pulumi.get(self, "http_endpoint_auth_scope")
 
     @http_endpoint_auth_scope.setter
-    def http_endpoint_auth_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def http_endpoint_auth_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "http_endpoint_auth_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="httpEndpointAuthScopeConfig")
-    def http_endpoint_auth_scope_config(self) -> Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]:
+    def http_endpoint_auth_scope_config(self) -> pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]:
         """
         (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
         """
         return pulumi.get(self, "http_endpoint_auth_scope_config")
 
     @http_endpoint_auth_scope_config.setter
-    def http_endpoint_auth_scope_config(self, value: Optional[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]):
+    def http_endpoint_auth_scope_config(self, value: pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]):
         pulumi.set(self, "http_endpoint_auth_scope_config", value)
 
 
@@ -2837,27 +2837,27 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpoin
     """
     (Updatable) The type of authentication to be applied for this HTTP Endpoint.
     """
-    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) IDCS client ID.
     """
-    idcs_url: NotRequired[pulumi.Input[_builtins.str]]
+    idcs_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) IDCS OpenID discovery endpoint.
     """
-    key_location: NotRequired[pulumi.Input[_builtins.str]]
+    key_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The location of the API key in the request.
     """
-    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    key_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the key parameter in the location.
     """
-    scope_url: NotRequired[pulumi.Input[_builtins.str]]
+    scope_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) OAuth2 scopes for token generation.
     """
-    vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    vault_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
     """
@@ -2866,12 +2866,12 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpoin
 class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs:
     def __init__(__self__, *,
                  http_endpoint_auth_scope_config_type: pulumi.Input[_builtins.str],
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] http_endpoint_auth_scope_config_type: (Updatable) The type of authentication to be applied for this HTTP Endpoint.
         :param pulumi.Input[_builtins.str] client_id: (Updatable) IDCS client ID.
@@ -2909,74 +2909,74 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpoin
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) IDCS client ID.
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsUrl")
-    def idcs_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) IDCS OpenID discovery endpoint.
         """
         return pulumi.get(self, "idcs_url")
 
     @idcs_url.setter
-    def idcs_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_url", value)
 
     @_builtins.property
     @pulumi.getter(name="keyLocation")
-    def key_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The location of the API key in the request.
         """
         return pulumi.get(self, "key_location")
 
     @key_location.setter
-    def key_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_location", value)
 
     @_builtins.property
     @pulumi.getter(name="keyName")
-    def key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the key parameter in the location.
         """
         return pulumi.get(self, "key_name")
 
     @key_name.setter
-    def key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scopeUrl")
-    def scope_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OAuth2 scopes for token generation.
         """
         return pulumi.get(self, "scope_url")
 
     @scope_url.setter
-    def scope_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope_url", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultSecretId")
-    def vault_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
         """
         return pulumi.get(self, "vault_secret_id")
 
     @vault_secret_id.setter
-    def vault_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_secret_id", value)
 
 
@@ -2987,19 +2987,19 @@ class AgentToolToolConfigIclExamplesArgsDict(TypedDict):
     * `INLINE`: The input location is inline.
     * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The bucket name of an object.
     """
-    content: NotRequired[pulumi.Input[_builtins.str]]
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Inline content as input.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The namespace name of an object.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The prefix of file object(s) or folder prefix.
     """
@@ -3008,10 +3008,10 @@ class AgentToolToolConfigIclExamplesArgsDict(TypedDict):
 class AgentToolToolConfigIclExamplesArgs:
     def __init__(__self__, *,
                  input_location_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_location_type: (Updatable) Type of InputLocation. The allowed values are:
                * `INLINE`: The input location is inline.
@@ -3047,55 +3047,55 @@ class AgentToolToolConfigIclExamplesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The bucket name of an object.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Inline content as input.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace name of an object.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
 class AgentToolToolConfigKnowledgeBaseConfigArgsDict(TypedDict):
-    knowledge_base_id: NotRequired[pulumi.Input[_builtins.str]]
+    knowledge_base_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
     """
@@ -3103,7 +3103,7 @@ class AgentToolToolConfigKnowledgeBaseConfigArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigKnowledgeBaseConfigArgs:
     def __init__(__self__, *,
-                 knowledge_base_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 knowledge_base_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] knowledge_base_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
         """
@@ -3112,27 +3112,27 @@ class AgentToolToolConfigKnowledgeBaseConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="knowledgeBaseId")
-    def knowledge_base_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def knowledge_base_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
         """
         return pulumi.get(self, "knowledge_base_id")
 
     @knowledge_base_id.setter
-    def knowledge_base_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def knowledge_base_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "knowledge_base_id", value)
 
 
 class AgentToolToolConfigReasoningLlmCustomizationArgsDict(TypedDict):
-    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    instruction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If specified, the default instruction is replaced with provided instruction.
     """
-    llm_hyper_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    llm_hyper_parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgsDict']]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -3140,9 +3140,9 @@ class AgentToolToolConfigReasoningLlmCustomizationArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigReasoningLlmCustomizationArgs:
     def __init__(__self__, *,
-                 instruction: Optional[pulumi.Input[_builtins.str]] = None,
-                 llm_hyper_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 llm_selection: Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']] = None):
+                 instruction: pulumi.Input[Optional[_builtins.str]] = None,
+                 llm_hyper_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 llm_selection: pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] llm_hyper_parameters: (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
@@ -3157,38 +3157,38 @@ class AgentToolToolConfigReasoningLlmCustomizationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instruction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instruction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
 
     @instruction.setter
-    def instruction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instruction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instruction", value)
 
     @_builtins.property
     @pulumi.getter(name="llmHyperParameters")
-    def llm_hyper_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def llm_hyper_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "llm_hyper_parameters")
 
     @llm_hyper_parameters.setter
-    def llm_hyper_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def llm_hyper_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "llm_hyper_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="llmSelection")
-    def llm_selection(self) -> Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]:
+    def llm_selection(self) -> pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]:
         """
         (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "llm_selection")
 
     @llm_selection.setter
-    def llm_selection(self, value: Optional[pulumi.Input['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]):
+    def llm_selection(self, value: pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]):
         pulumi.set(self, "llm_selection", value)
 
 
@@ -3197,11 +3197,11 @@ class AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgsDict(TypedDict
     """
     (Updatable) Type of LLM selection
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI endpoint
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI model
     """
@@ -3210,8 +3210,8 @@ class AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgsDict(TypedDict
 class AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs:
     def __init__(__self__, *,
                  llm_selection_type: pulumi.Input[_builtins.str],
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) Type of LLM selection
         :param pulumi.Input[_builtins.str] endpoint_id: (Updatable) The OCID of the GenAI endpoint
@@ -3237,39 +3237,39 @@ class AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI endpoint
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI model
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
 class AgentToolToolConfigRerankingLlmCustomizationArgsDict(TypedDict):
-    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    instruction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If specified, the default instruction is replaced with provided instruction.
     """
-    llm_hyper_parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    llm_hyper_parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgsDict']]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -3277,9 +3277,9 @@ class AgentToolToolConfigRerankingLlmCustomizationArgsDict(TypedDict):
 @pulumi.input_type
 class AgentToolToolConfigRerankingLlmCustomizationArgs:
     def __init__(__self__, *,
-                 instruction: Optional[pulumi.Input[_builtins.str]] = None,
-                 llm_hyper_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 llm_selection: Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']] = None):
+                 instruction: pulumi.Input[Optional[_builtins.str]] = None,
+                 llm_hyper_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 llm_selection: pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] llm_hyper_parameters: (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
@@ -3294,38 +3294,38 @@ class AgentToolToolConfigRerankingLlmCustomizationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instruction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instruction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
 
     @instruction.setter
-    def instruction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instruction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instruction", value)
 
     @_builtins.property
     @pulumi.getter(name="llmHyperParameters")
-    def llm_hyper_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def llm_hyper_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
         """
         return pulumi.get(self, "llm_hyper_parameters")
 
     @llm_hyper_parameters.setter
-    def llm_hyper_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def llm_hyper_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "llm_hyper_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="llmSelection")
-    def llm_selection(self) -> Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]:
+    def llm_selection(self) -> pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]:
         """
         (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "llm_selection")
 
     @llm_selection.setter
-    def llm_selection(self, value: Optional[pulumi.Input['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]):
+    def llm_selection(self, value: pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]):
         pulumi.set(self, "llm_selection", value)
 
 
@@ -3334,11 +3334,11 @@ class AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgsDict(TypedDict
     """
     (Updatable) Type of LLM selection
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI endpoint
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the GenAI model
     """
@@ -3347,8 +3347,8 @@ class AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgsDict(TypedDict
 class AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs:
     def __init__(__self__, *,
                  llm_selection_type: pulumi.Input[_builtins.str],
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) Type of LLM selection
         :param pulumi.Input[_builtins.str] endpoint_id: (Updatable) The OCID of the GenAI endpoint
@@ -3374,26 +3374,26 @@ class AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI endpoint
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the GenAI model
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
@@ -3404,19 +3404,19 @@ class AgentToolToolConfigTableAndColumnDescriptionArgsDict(TypedDict):
     * `INLINE`: The input location is inline.
     * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The bucket name of an object.
     """
-    content: NotRequired[pulumi.Input[_builtins.str]]
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Inline content as input.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The namespace name of an object.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The prefix of file object(s) or folder prefix.
     """
@@ -3425,10 +3425,10 @@ class AgentToolToolConfigTableAndColumnDescriptionArgsDict(TypedDict):
 class AgentToolToolConfigTableAndColumnDescriptionArgs:
     def __init__(__self__, *,
                  input_location_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] input_location_type: (Updatable) Type of InputLocation. The allowed values are:
                * `INLINE`: The input location is inline.
@@ -3464,63 +3464,63 @@ class AgentToolToolConfigTableAndColumnDescriptionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The bucket name of an object.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Inline content as input.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The namespace name of an object.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
 class DedicatedAiClusterCapacityArgsDict(TypedDict):
-    capacity_type: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the dedicated AI cluster capacity.
     """
-    total_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    total_endpoint_capacity: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of endpoints that can be hosted on this dedicated AI cluster.
     """
-    used_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    used_endpoint_capacity: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of endpoints hosted on this dedicated AI cluster.
     """
@@ -3528,9 +3528,9 @@ class DedicatedAiClusterCapacityArgsDict(TypedDict):
 @pulumi.input_type
 class DedicatedAiClusterCapacityArgs:
     def __init__(__self__, *,
-                 capacity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_endpoint_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 used_endpoint_capacity: Optional[pulumi.Input[_builtins.int]] = None):
+                 capacity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_endpoint_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 used_endpoint_capacity: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] capacity_type: The type of the dedicated AI cluster capacity.
         :param pulumi.Input[_builtins.int] total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
@@ -3545,38 +3545,38 @@ class DedicatedAiClusterCapacityArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityType")
-    def capacity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the dedicated AI cluster capacity.
         """
         return pulumi.get(self, "capacity_type")
 
     @capacity_type.setter
-    def capacity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
-    def total_endpoint_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_endpoint_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of endpoints that can be hosted on this dedicated AI cluster.
         """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @total_endpoint_capacity.setter
-    def total_endpoint_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_endpoint_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_endpoint_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
-    def used_endpoint_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def used_endpoint_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of endpoints hosted on this dedicated AI cluster.
         """
         return pulumi.get(self, "used_endpoint_capacity")
 
     @used_endpoint_capacity.setter
-    def used_endpoint_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def used_endpoint_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "used_endpoint_capacity", value)
 
 
@@ -3585,11 +3585,11 @@ class EndpointContentModerationConfigArgsDict(TypedDict):
     """
     (Updatable) Whether to enable the content moderation feature.
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Enum for the modes of operation for inference protection.
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the model used for the feature.
     """
@@ -3598,8 +3598,8 @@ class EndpointContentModerationConfigArgsDict(TypedDict):
 class EndpointContentModerationConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether to enable the content moderation feature.
         :param pulumi.Input[_builtins.str] mode: (Updatable) Enum for the modes of operation for inference protection.
@@ -3625,63 +3625,63 @@ class EndpointContentModerationConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enum for the modes of operation for inference protection.
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the model used for the feature.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
 class ImportedModelDataSourceArgsDict(TypedDict):
-    access_token: NotRequired[pulumi.Input[_builtins.str]]
+    access_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
     """
-    branch: NotRequired[pulumi.Input[_builtins.str]]
+    branch: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket.
     """
-    commit: NotRequired[pulumi.Input[_builtins.str]]
+    commit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace of the Object Storage where the files are stored.
     """
-    prefix_name: NotRequired[pulumi.Input[_builtins.str]]
+    prefix_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The prefix path (or folder) within the bucket where files are located.
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
     """
-    source_type: NotRequired[pulumi.Input[_builtins.str]]
+    source_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specifies the source type for model import.
     """
@@ -3689,15 +3689,15 @@ class ImportedModelDataSourceArgsDict(TypedDict):
 @pulumi.input_type
 class ImportedModelDataSourceArgs:
     def __init__(__self__, *,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 commit: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 commit: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] access_token: Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
         :param pulumi.Input[_builtins.str] branch: The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
@@ -3730,110 +3730,110 @@ class ImportedModelDataSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
         """
         return pulumi.get(self, "access_token")
 
     @access_token.setter
-    def access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token", value)
 
     @_builtins.property
     @pulumi.getter
-    def branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
         """
         return pulumi.get(self, "branch")
 
     @branch.setter
-    def branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "branch", value)
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def commit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def commit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
         """
         return pulumi.get(self, "commit")
 
     @commit.setter
-    def commit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def commit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "commit", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace of the Object Storage where the files are stored.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="prefixName")
-    def prefix_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The prefix path (or folder) within the bucket where files are located.
         """
         return pulumi.get(self, "prefix_name")
 
     @prefix_name.setter
-    def prefix_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the source type for model import.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
 
@@ -3848,7 +3848,7 @@ class ModelFineTuneDetailsArgsDict(TypedDict):
 
     Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
     """
-    training_config: NotRequired[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgsDict']]
+    training_config: NotRequired[pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']]]
     """
     The fine-tuning method and hyperparameters used for fine-tuning a custom model.
     """
@@ -3858,7 +3858,7 @@ class ModelFineTuneDetailsArgs:
     def __init__(__self__, *,
                  dedicated_ai_cluster_id: pulumi.Input[_builtins.str],
                  training_dataset: pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs'],
-                 training_config: Optional[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs']] = None):
+                 training_config: pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
         :param pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs'] training_dataset: The dataset used to fine-tune the model. 
@@ -3899,14 +3899,14 @@ class ModelFineTuneDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="trainingConfig")
-    def training_config(self) -> Optional[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs']]:
+    def training_config(self) -> pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']]:
         """
         The fine-tuning method and hyperparameters used for fine-tuning a custom model.
         """
         return pulumi.get(self, "training_config")
 
     @training_config.setter
-    def training_config(self, value: Optional[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs']]):
+    def training_config(self, value: pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']]):
         pulumi.set(self, "training_config", value)
 
 
@@ -3915,45 +3915,45 @@ class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
     """
     The fine-tuning method for training a custom model.
     """
-    early_stopping_patience: NotRequired[pulumi.Input[_builtins.int]]
+    early_stopping_patience: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
     """
-    early_stopping_threshold: NotRequired[pulumi.Input[_builtins.float]]
+    early_stopping_threshold: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     How much the loss must improve to prevent early stopping.
     """
-    learning_rate: NotRequired[pulumi.Input[_builtins.float]]
+    learning_rate: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The initial learning rate to be used during training
     """
-    log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[_builtins.int]]
+    log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Determines how frequently to log model metrics. 
 
     Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
     """
-    lora_alpha: NotRequired[pulumi.Input[_builtins.int]]
+    lora_alpha: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     This parameter represents the scaling factor for the weight matrices in LoRA.
     """
-    lora_dropout: NotRequired[pulumi.Input[_builtins.float]]
+    lora_dropout: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     This parameter indicates the dropout probability for LoRA layers.
     """
-    lora_r: NotRequired[pulumi.Input[_builtins.int]]
+    lora_r: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     This parameter represents the LoRA rank of the update matrices.
     """
-    num_of_last_layers: NotRequired[pulumi.Input[_builtins.int]]
+    num_of_last_layers: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of last layers to be fine-tuned.
     """
-    total_training_epochs: NotRequired[pulumi.Input[_builtins.int]]
+    total_training_epochs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum number of training epochs to run for.
     """
-    training_batch_size: NotRequired[pulumi.Input[_builtins.int]]
+    training_batch_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The batch size used during training.
     """
@@ -3962,16 +3962,16 @@ class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
 class ModelFineTuneDetailsTrainingConfigArgs:
     def __init__(__self__, *,
                  training_config_type: pulumi.Input[_builtins.str],
-                 early_stopping_patience: Optional[pulumi.Input[_builtins.int]] = None,
-                 early_stopping_threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 learning_rate: Optional[pulumi.Input[_builtins.float]] = None,
-                 log_model_metrics_interval_in_steps: Optional[pulumi.Input[_builtins.int]] = None,
-                 lora_alpha: Optional[pulumi.Input[_builtins.int]] = None,
-                 lora_dropout: Optional[pulumi.Input[_builtins.float]] = None,
-                 lora_r: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_last_layers: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_training_epochs: Optional[pulumi.Input[_builtins.int]] = None,
-                 training_batch_size: Optional[pulumi.Input[_builtins.int]] = None):
+                 early_stopping_patience: pulumi.Input[Optional[_builtins.int]] = None,
+                 early_stopping_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 learning_rate: pulumi.Input[Optional[_builtins.float]] = None,
+                 log_model_metrics_interval_in_steps: pulumi.Input[Optional[_builtins.int]] = None,
+                 lora_alpha: pulumi.Input[Optional[_builtins.int]] = None,
+                 lora_dropout: pulumi.Input[Optional[_builtins.float]] = None,
+                 lora_r: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_last_layers: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_training_epochs: pulumi.Input[Optional[_builtins.int]] = None,
+                 training_batch_size: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] training_config_type: The fine-tuning method for training a custom model.
         :param pulumi.Input[_builtins.int] early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
@@ -4023,43 +4023,43 @@ class ModelFineTuneDetailsTrainingConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="earlyStoppingPatience")
-    def early_stopping_patience(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def early_stopping_patience(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
         """
         return pulumi.get(self, "early_stopping_patience")
 
     @early_stopping_patience.setter
-    def early_stopping_patience(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def early_stopping_patience(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "early_stopping_patience", value)
 
     @_builtins.property
     @pulumi.getter(name="earlyStoppingThreshold")
-    def early_stopping_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def early_stopping_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         How much the loss must improve to prevent early stopping.
         """
         return pulumi.get(self, "early_stopping_threshold")
 
     @early_stopping_threshold.setter
-    def early_stopping_threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def early_stopping_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "early_stopping_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="learningRate")
-    def learning_rate(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def learning_rate(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The initial learning rate to be used during training
         """
         return pulumi.get(self, "learning_rate")
 
     @learning_rate.setter
-    def learning_rate(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def learning_rate(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "learning_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
-    def log_model_metrics_interval_in_steps(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def log_model_metrics_interval_in_steps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Determines how frequently to log model metrics. 
 
@@ -4068,79 +4068,79 @@ class ModelFineTuneDetailsTrainingConfigArgs:
         return pulumi.get(self, "log_model_metrics_interval_in_steps")
 
     @log_model_metrics_interval_in_steps.setter
-    def log_model_metrics_interval_in_steps(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def log_model_metrics_interval_in_steps(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "log_model_metrics_interval_in_steps", value)
 
     @_builtins.property
     @pulumi.getter(name="loraAlpha")
-    def lora_alpha(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def lora_alpha(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         This parameter represents the scaling factor for the weight matrices in LoRA.
         """
         return pulumi.get(self, "lora_alpha")
 
     @lora_alpha.setter
-    def lora_alpha(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def lora_alpha(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "lora_alpha", value)
 
     @_builtins.property
     @pulumi.getter(name="loraDropout")
-    def lora_dropout(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def lora_dropout(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         This parameter indicates the dropout probability for LoRA layers.
         """
         return pulumi.get(self, "lora_dropout")
 
     @lora_dropout.setter
-    def lora_dropout(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def lora_dropout(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "lora_dropout", value)
 
     @_builtins.property
     @pulumi.getter(name="loraR")
-    def lora_r(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def lora_r(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         This parameter represents the LoRA rank of the update matrices.
         """
         return pulumi.get(self, "lora_r")
 
     @lora_r.setter
-    def lora_r(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def lora_r(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "lora_r", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfLastLayers")
-    def num_of_last_layers(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_last_layers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of last layers to be fine-tuned.
         """
         return pulumi.get(self, "num_of_last_layers")
 
     @num_of_last_layers.setter
-    def num_of_last_layers(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_last_layers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_last_layers", value)
 
     @_builtins.property
     @pulumi.getter(name="totalTrainingEpochs")
-    def total_training_epochs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_training_epochs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of training epochs to run for.
         """
         return pulumi.get(self, "total_training_epochs")
 
     @total_training_epochs.setter
-    def total_training_epochs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_training_epochs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_training_epochs", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingBatchSize")
-    def training_batch_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def training_batch_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The batch size used during training.
         """
         return pulumi.get(self, "training_batch_size")
 
     @training_batch_size.setter
-    def training_batch_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def training_batch_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "training_batch_size", value)
 
 
@@ -4230,15 +4230,15 @@ class ModelFineTuneDetailsTrainingDatasetArgs:
 
 
 class ModelModelMetricArgsDict(TypedDict):
-    final_accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    final_accuracy: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Fine-tuned model accuracy.
     """
-    final_loss: NotRequired[pulumi.Input[_builtins.float]]
+    final_loss: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Fine-tuned model loss.
     """
-    model_metrics_type: NotRequired[pulumi.Input[_builtins.str]]
+    model_metrics_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the model metrics. Each type of model can expect a different set of model metrics.
     """
@@ -4246,9 +4246,9 @@ class ModelModelMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ModelModelMetricArgs:
     def __init__(__self__, *,
-                 final_accuracy: Optional[pulumi.Input[_builtins.float]] = None,
-                 final_loss: Optional[pulumi.Input[_builtins.float]] = None,
-                 model_metrics_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 final_accuracy: pulumi.Input[Optional[_builtins.float]] = None,
+                 final_loss: pulumi.Input[Optional[_builtins.float]] = None,
+                 model_metrics_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.float] final_accuracy: Fine-tuned model accuracy.
         :param pulumi.Input[_builtins.float] final_loss: Fine-tuned model loss.
@@ -4263,38 +4263,38 @@ class ModelModelMetricArgs:
 
     @_builtins.property
     @pulumi.getter(name="finalAccuracy")
-    def final_accuracy(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def final_accuracy(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Fine-tuned model accuracy.
         """
         return pulumi.get(self, "final_accuracy")
 
     @final_accuracy.setter
-    def final_accuracy(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def final_accuracy(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "final_accuracy", value)
 
     @_builtins.property
     @pulumi.getter(name="finalLoss")
-    def final_loss(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def final_loss(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Fine-tuned model loss.
         """
         return pulumi.get(self, "final_loss")
 
     @final_loss.setter
-    def final_loss(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def final_loss(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "final_loss", value)
 
     @_builtins.property
     @pulumi.getter(name="modelMetricsType")
-    def model_metrics_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_metrics_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the model metrics. Each type of model can expect a different set of model metrics.
         """
         return pulumi.get(self, "model_metrics_type")
 
     @model_metrics_type.setter
-    def model_metrics_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_metrics_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_metrics_type", value)
 
 
@@ -4369,7 +4369,7 @@ class SemanticStoreRefreshScheduleArgsDict(TypedDict):
     """
     (Updatable) Specifies the type of refresh schedule.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
     """
@@ -4378,7 +4378,7 @@ class SemanticStoreRefreshScheduleArgsDict(TypedDict):
 class SemanticStoreRefreshScheduleArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Specifies the type of refresh schedule.
         :param pulumi.Input[_builtins.str] value: (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
@@ -4401,14 +4401,14 @@ class SemanticStoreRefreshScheduleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 

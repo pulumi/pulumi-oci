@@ -275,7 +275,7 @@ def get_managed_my_sql_database_general_replication_information(managed_my_sql_d
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_general_replication_information = oci.DatabaseManagement.get_managed_my_sql_database_general_replication_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_general_replication_information = oci.databasemanagement.get_managed_my_sql_database_general_replication_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_managed_my_sql_database_general_replication_information(managed_my_sql_d
         seconds_behind_source_max=pulumi.get(__ret__, 'seconds_behind_source_max'),
         server_id=pulumi.get(__ret__, 'server_id'),
         server_uuid=pulumi.get(__ret__, 'server_uuid'))
-def get_managed_my_sql_database_general_replication_information_output(managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_general_replication_information_output(managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseGeneralReplicationInformationResult]:
     """
     This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
@@ -319,7 +319,7 @@ def get_managed_my_sql_database_general_replication_information_output(managed_m
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_general_replication_information = oci.DatabaseManagement.get_managed_my_sql_database_general_replication_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_general_replication_information = oci.databasemanagement.get_managed_my_sql_database_general_replication_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

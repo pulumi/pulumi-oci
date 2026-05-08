@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListings = oci.Functions.getPbfListings({
+ * const testPbfListings = oci.functions.getPbfListings({
  *     name: pbfListingName,
  *     nameContains: pbfListingNameContains,
  *     nameStartsWith: pbfListingNameStartsWith,
@@ -111,7 +111,7 @@ export interface GetPbfListingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListings = oci.Functions.getPbfListings({
+ * const testPbfListings = oci.functions.getPbfListings({
  *     name: pbfListingName,
  *     nameContains: pbfListingNameContains,
  *     nameStartsWith: pbfListingNameStartsWith,
@@ -139,29 +139,29 @@ export function getPbfListingsOutput(args?: GetPbfListingsOutputArgs, opts?: pul
  * A collection of arguments for invoking getPbfListings.
  */
 export interface GetPbfListingsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire PBF name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that contain the supplied filter text in the PBF name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that start with the supplied filter text in the PBF name given.
      */
-    nameStartsWith?: pulumi.Input<string>;
+    nameStartsWith?: pulumi.Input<string | undefined>;
     /**
      * unique PbfListing identifier
      */
-    pbfListingId?: pulumi.Input<string>;
+    pbfListingId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the service trigger sources of a PBF.
      */
-    triggers?: pulumi.Input<pulumi.Input<string>[]>;
+    triggers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

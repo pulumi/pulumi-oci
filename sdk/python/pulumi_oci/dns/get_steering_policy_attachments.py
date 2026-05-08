@@ -191,7 +191,7 @@ def get_steering_policy_attachments(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=compartment_id,
+    test_steering_policy_attachments = oci.dns.get_steering_policy_attachments(compartment_id=compartment_id,
         display_name=steering_policy_attachment_display_name,
         domain=steering_policy_attachment_domain,
         domain_contains=steering_policy_attachment_domain_contains,
@@ -243,17 +243,17 @@ def get_steering_policy_attachments(compartment_id: Optional[_builtins.str] = No
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           domain_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSteeringPolicyAttachmentsFilterArgs', 'GetSteeringPolicyAttachmentsFilterArgsDict']]]]] = None,
-                                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           steering_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           zone_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_steering_policy_attachments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           domain_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSteeringPolicyAttachmentsFilterArgs', 'GetSteeringPolicyAttachmentsFilterArgsDict']]]]] = None,
+                                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           steering_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           zone_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSteeringPolicyAttachmentsResult]:
     """
     This data source provides the list of Steering Policy Attachments in Oracle Cloud Infrastructure DNS service.
@@ -266,7 +266,7 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=compartment_id,
+    test_steering_policy_attachments = oci.dns.get_steering_policy_attachments(compartment_id=compartment_id,
         display_name=steering_policy_attachment_display_name,
         domain=steering_policy_attachment_domain,
         domain_contains=steering_policy_attachment_domain_contains,

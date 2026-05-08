@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicySecurityRules = oci.NetworkFirewall.getNetworkFirewallPolicySecurityRules({
+ * const testNetworkFirewallPolicySecurityRules = oci.networkfirewall.getNetworkFirewallPolicySecurityRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicySecurityRuleDisplayName,
- *     securityRulePriorityOrder: networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
+ *     securityRulePriorityOrder: Number(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder),
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetNetworkFirewallPolicySecurityRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicySecurityRules = oci.NetworkFirewall.getNetworkFirewallPolicySecurityRules({
+ * const testNetworkFirewallPolicySecurityRules = oci.networkfirewall.getNetworkFirewallPolicySecurityRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicySecurityRuleDisplayName,
- *     securityRulePriorityOrder: networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
+ *     securityRulePriorityOrder: Number(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder),
  * });
  * ```
  */
@@ -105,8 +105,8 @@ export interface GetNetworkFirewallPolicySecurityRulesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRulesFilterArgs>[] | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -114,5 +114,5 @@ export interface GetNetworkFirewallPolicySecurityRulesOutputArgs {
     /**
      * Unique priority order for Security Rules in the network firewall policy.
      */
-    securityRulePriorityOrder?: pulumi.Input<number>;
+    securityRulePriorityOrder?: pulumi.Input<number | undefined>;
 }

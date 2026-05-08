@@ -264,7 +264,7 @@ def get_private_endpoint(private_endpoint_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
+    test_private_endpoint = oci.dataflow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_private_endpoint(private_endpoint_id: Optional[_builtins.str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_endpoint_output(private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
     This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -307,7 +307,7 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
+    test_private_endpoint = oci.dataflow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
     ```
 
 

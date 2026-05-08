@@ -137,7 +137,7 @@ def get_scheduling_policy_scheduling_windows(compartment_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_windows = oci.Database.get_scheduling_policy_scheduling_windows(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_windows = oci.database.get_scheduling_policy_scheduling_windows(scheduling_policy_id=test_scheduling_policy["id"],
         compartment_id=compartment_id,
         display_name=scheduling_policy_scheduling_window_display_name,
         state=scheduling_policy_scheduling_window_state)
@@ -166,11 +166,11 @@ def get_scheduling_policy_scheduling_windows(compartment_id: Optional[_builtins.
         scheduling_policy_id=pulumi.get(__ret__, 'scheduling_policy_id'),
         scheduling_windows=pulumi.get(__ret__, 'scheduling_windows'),
         state=pulumi.get(__ret__, 'state'))
-def get_scheduling_policy_scheduling_windows_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict']]]]] = None,
-                                                    scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduling_policy_scheduling_windows_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict']]]]] = None,
+                                                    scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPolicySchedulingWindowsResult]:
     """
     This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
@@ -183,7 +183,7 @@ def get_scheduling_policy_scheduling_windows_output(compartment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_windows = oci.Database.get_scheduling_policy_scheduling_windows(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_windows = oci.database.get_scheduling_policy_scheduling_windows(scheduling_policy_id=test_scheduling_policy["id"],
         compartment_id=compartment_id,
         display_name=scheduling_policy_scheduling_window_display_name,
         state=scheduling_policy_scheduling_window_state)

@@ -41,17 +41,17 @@ import * as utilities from "../utilities";
  *     iconUrl: identityProviderIconUrl,
  *     id: identityProviderId,
  *     idpSsoUrl: identityProviderIdpSsoUrl,
- *     includeSigningCertInSignature: identityProviderIncludeSigningCertInSignature,
+ *     includeSigningCertInSignature: identityProviderIncludeSigningCertInSignature === "true",
  *     jitUserProvAssignedGroups: [{
  *         value: identityProviderJitUserProvAssignedGroupsValue,
  *     }],
- *     jitUserProvAttributeUpdateEnabled: identityProviderJitUserProvAttributeUpdateEnabled,
+ *     jitUserProvAttributeUpdateEnabled: identityProviderJitUserProvAttributeUpdateEnabled === "true",
  *     jitUserProvAttributes: {
  *         value: identityProviderJitUserProvAttributesValue,
  *     },
- *     jitUserProvCreateUserEnabled: identityProviderJitUserProvCreateUserEnabled,
- *     jitUserProvEnabled: identityProviderJitUserProvEnabled,
- *     jitUserProvGroupAssertionAttributeEnabled: identityProviderJitUserProvGroupAssertionAttributeEnabled,
+ *     jitUserProvCreateUserEnabled: identityProviderJitUserProvCreateUserEnabled === "true",
+ *     jitUserProvEnabled: identityProviderJitUserProvEnabled === "true",
+ *     jitUserProvGroupAssertionAttributeEnabled: identityProviderJitUserProvGroupAssertionAttributeEnabled === "true",
  *     jitUserProvGroupAssignmentMethod: identityProviderJitUserProvGroupAssignmentMethod,
  *     jitUserProvGroupMappingMode: identityProviderJitUserProvGroupMappingMode,
  *     jitUserProvGroupMappings: [{
@@ -59,10 +59,10 @@ import * as utilities from "../utilities";
  *         value: identityProviderJitUserProvGroupMappingsValue,
  *     }],
  *     jitUserProvGroupSamlAttributeName: identityProviderJitUserProvGroupSamlAttributeName,
- *     jitUserProvGroupStaticListEnabled: identityProviderJitUserProvGroupStaticListEnabled,
- *     jitUserProvIgnoreErrorOnAbsentGroups: identityProviderJitUserProvIgnoreErrorOnAbsentGroups,
+ *     jitUserProvGroupStaticListEnabled: identityProviderJitUserProvGroupStaticListEnabled === "true",
+ *     jitUserProvIgnoreErrorOnAbsentGroups: identityProviderJitUserProvIgnoreErrorOnAbsentGroups === "true",
  *     logoutBinding: identityProviderLogoutBinding,
- *     logoutEnabled: identityProviderLogoutEnabled,
+ *     logoutEnabled: identityProviderLogoutEnabled === "true",
  *     logoutRequestUrl: identityProviderLogoutRequestUrl,
  *     logoutResponseUrl: identityProviderLogoutResponseUrl,
  *     metadata: identityProviderMetadata,
@@ -70,12 +70,12 @@ import * as utilities from "../utilities";
  *     ocid: identityProviderOcid,
  *     partnerProviderId: identityProviderPartnerProviderId,
  *     requestedAuthenticationContexts: identityProviderRequestedAuthenticationContext,
- *     requireForceAuthn: identityProviderRequireForceAuthn,
- *     requiresEncryptedAssertion: identityProviderRequiresEncryptedAssertion,
+ *     requireForceAuthn: identityProviderRequireForceAuthn === "true",
+ *     requiresEncryptedAssertion: identityProviderRequiresEncryptedAssertion === "true",
  *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
- *     samlHoKrequired: identityProviderSamlHoKrequired,
+ *     samlHoKrequired: identityProviderSamlHoKrequired === "true",
  *     serviceInstanceIdentifier: identityProviderServiceInstanceIdentifier,
- *     shownOnLoginPage: identityProviderShownOnLoginPage,
+ *     shownOnLoginPage: identityProviderShownOnLoginPage === "true",
  *     signatureHashAlgorithm: identityProviderSignatureHashAlgorithm,
  *     signingCertificate: identityProviderSigningCertificate,
  *     succinctId: "succinctId",
@@ -85,47 +85,47 @@ import * as utilities from "../utilities";
  *     }],
  *     type: identityProviderType,
  *     urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider: {
- *         accountLinkingEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderAccountLinkingEnabled,
+ *         accountLinkingEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderAccountLinkingEnabled === "true",
  *         consumerKey: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerKey,
  *         consumerSecret: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerSecret,
- *         registrationEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderRegistrationEnabled,
+ *         registrationEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderRegistrationEnabled === "true",
  *         serviceProviderName: identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderServiceProviderName,
  *         accessTokenUrl: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAccessTokenUrl,
  *         adminScopes: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAdminScope,
  *         appleDevId: testAppleDev.id,
  *         appleKeyId: testKey.id,
  *         authzUrl: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAuthzUrl,
- *         autoRedirectEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAutoRedirectEnabled,
- *         clientCredentialInPayload: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClientCredentialInPayload,
- *         clockSkewInSeconds: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClockSkewInSeconds,
+ *         autoRedirectEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAutoRedirectEnabled === "true",
+ *         clientCredentialInPayload: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClientCredentialInPayload === "true",
+ *         clockSkewInSeconds: Number(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClockSkewInSeconds),
  *         discoveryUrl: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderDiscoveryUrl,
  *         idAttribute: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderIdAttribute,
  *         jitProvAssignedGroups: [{
  *             value: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsValue,
  *             display: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsDisplay,
  *         }],
- *         jitProvGroupStaticListEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvGroupStaticListEnabled,
+ *         jitProvGroupStaticListEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvGroupStaticListEnabled === "true",
  *         profileUrl: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderProfileUrl,
  *         redirectUrl: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderRedirectUrl,
  *         scopes: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderScope,
- *         socialJitProvisioningEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderSocialJitProvisioningEnabled,
+ *         socialJitProvisioningEnabled: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderSocialJitProvisioningEnabled === "true",
  *         status: identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderStatus,
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionx509identityProvider: {
  *         certMatchAttribute: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCertMatchAttribute,
  *         signingCertificateChains: ["signingCertificateChain"],
  *         userMatchAttribute: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderUserMatchAttribute,
- *         crlCheckOnOcspFailureEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled,
- *         crlEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled,
+ *         crlCheckOnOcspFailureEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled === "true",
+ *         crlEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled === "true",
  *         crlLocation: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlLocation,
- *         crlReloadDuration: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlReloadDuration,
- *         ekuValidationEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValidationEnabled,
+ *         crlReloadDuration: Number(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlReloadDuration),
+ *         ekuValidationEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValidationEnabled === "true",
  *         ekuValues: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValues,
- *         ocspAllowUnknownResponseStatus: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspAllowUnknownResponseStatus,
- *         ocspEnableSignedResponse: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnableSignedResponse,
- *         ocspEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnabled,
+ *         ocspAllowUnknownResponseStatus: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspAllowUnknownResponseStatus === "true",
+ *         ocspEnableSignedResponse: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnableSignedResponse === "true",
+ *         ocspEnabled: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnabled === "true",
  *         ocspResponderUrl: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspResponderUrl,
- *         ocspRevalidateTime: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspRevalidateTime,
+ *         ocspRevalidateTime: Number(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspRevalidateTime),
  *         ocspServerName: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspServerName,
  *         ocspTrustCertChains: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspTrustCertChain,
  *         otherCertMatchAttribute: identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOtherCertMatchAttribute,
@@ -1211,15 +1211,15 @@ export interface DomainsIdentityProviderState {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    assertionAttribute?: pulumi.Input<string>;
+    assertionAttribute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) HTTP binding to use for authentication requests.
      *
@@ -1233,11 +1233,11 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    authnRequestBinding?: pulumi.Input<string>;
+    authnRequestBinding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -1251,7 +1251,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Correlation policy
      *
@@ -1267,7 +1267,7 @@ export interface DomainsIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    correlationPolicy?: pulumi.Input<inputs.Identity.DomainsIdentityProviderCorrelationPolicy>;
+    correlationPolicy?: pulumi.Input<inputs.Identity.DomainsIdentityProviderCorrelationPolicy | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -1281,7 +1281,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Description
      *
@@ -1295,7 +1295,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1309,7 +1309,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate Partner enabled.
      *
@@ -1323,7 +1323,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Encryption certificate
      *
@@ -1337,7 +1337,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    encryptionCertificate?: pulumi.Input<string>;
+    encryptionCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1350,7 +1350,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identity Provider Icon URL.
      *
@@ -1363,7 +1363,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -1375,11 +1375,11 @@ export interface DomainsIdentityProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -1391,7 +1391,7 @@ export interface DomainsIdentityProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1405,7 +1405,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1418,7 +1418,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Identity Provider SSO URL
      *
@@ -1432,7 +1432,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idpSsoUrl?: pulumi.Input<string>;
+    idpSsoUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to include the signing certificate in the signature.
      *
@@ -1446,7 +1446,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    includeSigningCertInSignature?: pulumi.Input<boolean>;
+    includeSigningCertInSignature?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      *
@@ -1462,7 +1462,7 @@ export interface DomainsIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup>[]>;
+    jitUserProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup>[] | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -1478,7 +1478,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvAttributeUpdateEnabled?: pulumi.Input<boolean>;
+    jitUserProvAttributeUpdateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Assertion To User Mapping
      *
@@ -1494,7 +1494,7 @@ export interface DomainsIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvAttributes?: pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAttributes>;
+    jitUserProvAttributes?: pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAttributes | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -1510,7 +1510,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvCreateUserEnabled?: pulumi.Input<boolean>;
+    jitUserProvCreateUserEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning is enabled
      *
@@ -1526,7 +1526,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvEnabled?: pulumi.Input<boolean>;
+    jitUserProvEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      *
@@ -1542,7 +1542,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvGroupAssertionAttributeEnabled?: pulumi.Input<boolean>;
+    jitUserProvGroupAssertionAttributeEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      *
@@ -1558,7 +1558,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupAssignmentMethod?: pulumi.Input<string>;
+    jitUserProvGroupAssignmentMethod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Property to indicate the mode of group mapping
      *
@@ -1574,7 +1574,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupMappingMode?: pulumi.Input<string>;
+    jitUserProvGroupMappingMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
      *
@@ -1589,7 +1589,7 @@ export interface DomainsIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvGroupMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping>[]>;
+    jitUserProvGroupMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping>[] | undefined>;
     /**
      * (Updatable) Name of the assertion attribute containing the users groups
      *
@@ -1605,7 +1605,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupSamlAttributeName?: pulumi.Input<string>;
+    jitUserProvGroupSamlAttributeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      *
@@ -1621,7 +1621,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvGroupStaticListEnabled?: pulumi.Input<boolean>;
+    jitUserProvGroupStaticListEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate ignoring absence of group while provisioning
      *
@@ -1638,7 +1638,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvIgnoreErrorOnAbsentGroups?: pulumi.Input<boolean>;
+    jitUserProvIgnoreErrorOnAbsentGroups?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
      *
@@ -1654,7 +1654,7 @@ export interface DomainsIdentityProviderState {
      * * type: dateTime
      * * uniqueness: none
      */
-    lastNotificationSentTime?: pulumi.Input<string>;
+    lastNotificationSentTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) HTTP binding to use for logout.
      *
@@ -1668,7 +1668,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    logoutBinding?: pulumi.Input<string>;
+    logoutBinding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to enable logout.
      *
@@ -1682,7 +1682,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    logoutEnabled?: pulumi.Input<boolean>;
+    logoutEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Logout request URL
      *
@@ -1696,7 +1696,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    logoutRequestUrl?: pulumi.Input<string>;
+    logoutRequestUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Logout response URL
      *
@@ -1710,7 +1710,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    logoutResponseUrl?: pulumi.Input<string>;
+    logoutResponseUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metadata
      *
@@ -1724,7 +1724,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1738,7 +1738,7 @@ export interface DomainsIdentityProviderState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderMeta>[] | undefined>;
     /**
      * (Updatable) Default authentication request name ID format.
      *
@@ -1752,7 +1752,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    nameIdFormat?: pulumi.Input<string>;
+    nameIdFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1766,7 +1766,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique name of the trusted Identity Provider.
      *
@@ -1780,7 +1780,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: server
      */
-    partnerName?: pulumi.Input<string>;
+    partnerName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Provider ID
      *
@@ -1794,7 +1794,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: server
      */
-    partnerProviderId?: pulumi.Input<string>;
+    partnerProviderId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SAML SP authentication type.
      *
@@ -1810,7 +1810,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    requestedAuthenticationContexts?: pulumi.Input<pulumi.Input<string>[]>;
+    requestedAuthenticationContexts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
      *
@@ -1826,7 +1826,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    requireForceAuthn?: pulumi.Input<boolean>;
+    requireForceAuthn?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) SAML SP must accept encrypted assertion only.
      *
@@ -1842,11 +1842,11 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    requiresEncryptedAssertion?: pulumi.Input<boolean>;
+    requiresEncryptedAssertion?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SAML SP HoK Enabled.
      *
@@ -1862,7 +1862,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    samlHoKrequired?: pulumi.Input<boolean>;
+    samlHoKrequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1876,7 +1876,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
      *
@@ -1892,7 +1892,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: server
      */
-    serviceInstanceIdentifier?: pulumi.Input<string>;
+    serviceInstanceIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate whether to show IdP in login page or not.
      *
@@ -1906,7 +1906,7 @@ export interface DomainsIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    shownOnLoginPage?: pulumi.Input<boolean>;
+    shownOnLoginPage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Signature hash algorithm.
      *
@@ -1920,7 +1920,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    signatureHashAlgorithm?: pulumi.Input<string>;
+    signatureHashAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Signing certificate
      *
@@ -1934,7 +1934,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    signingCertificate?: pulumi.Input<string>;
+    signingCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Succinct ID
      *
@@ -1948,7 +1948,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: server
      */
-    succinctId?: pulumi.Input<string>;
+    succinctId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1962,7 +1962,7 @@ export interface DomainsIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1976,7 +1976,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      *
@@ -1992,7 +1992,7 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    tenantProviderId?: pulumi.Input<string>;
+    tenantProviderId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identity Provider Type
      *
@@ -2008,15 +2008,15 @@ export interface DomainsIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social Identity Provider Extension Schema
      */
-    urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider>;
+    urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider | undefined>;
     /**
      * (Updatable) X509 Identity Provider Extension Schema
      */
-    urnietfparamsscimschemasoracleidcsextensionx509identityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider>;
+    urnietfparamsscimschemasoracleidcsextensionx509identityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider | undefined>;
     /**
      * (Updatable) User mapping method.
      *
@@ -2033,7 +2033,7 @@ export interface DomainsIdentityProviderState {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    userMappingMethod?: pulumi.Input<string>;
+    userMappingMethod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
      *
@@ -2054,7 +2054,7 @@ export interface DomainsIdentityProviderState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userMappingStoreAttribute?: pulumi.Input<string>;
+    userMappingStoreAttribute?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -2077,15 +2077,15 @@ export interface DomainsIdentityProviderArgs {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    assertionAttribute?: pulumi.Input<string>;
+    assertionAttribute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) HTTP binding to use for authentication requests.
      *
@@ -2099,11 +2099,11 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    authnRequestBinding?: pulumi.Input<string>;
+    authnRequestBinding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Correlation policy
      *
@@ -2119,7 +2119,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    correlationPolicy?: pulumi.Input<inputs.Identity.DomainsIdentityProviderCorrelationPolicy>;
+    correlationPolicy?: pulumi.Input<inputs.Identity.DomainsIdentityProviderCorrelationPolicy | undefined>;
     /**
      * (Updatable) Description
      *
@@ -2133,7 +2133,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate Partner enabled.
      *
@@ -2161,7 +2161,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    encryptionCertificate?: pulumi.Input<string>;
+    encryptionCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -2174,7 +2174,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identity Provider Icon URL.
      *
@@ -2187,7 +2187,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -2205,7 +2205,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    idpSsoUrl?: pulumi.Input<string>;
+    idpSsoUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to include the signing certificate in the signature.
      *
@@ -2219,7 +2219,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    includeSigningCertInSignature?: pulumi.Input<boolean>;
+    includeSigningCertInSignature?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      *
@@ -2235,7 +2235,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup>[]>;
+    jitUserProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup>[] | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -2251,7 +2251,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvAttributeUpdateEnabled?: pulumi.Input<boolean>;
+    jitUserProvAttributeUpdateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Assertion To User Mapping
      *
@@ -2267,7 +2267,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvAttributes?: pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAttributes>;
+    jitUserProvAttributes?: pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvAttributes | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -2283,7 +2283,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvCreateUserEnabled?: pulumi.Input<boolean>;
+    jitUserProvCreateUserEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning is enabled
      *
@@ -2299,7 +2299,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvEnabled?: pulumi.Input<boolean>;
+    jitUserProvEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      *
@@ -2315,7 +2315,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvGroupAssertionAttributeEnabled?: pulumi.Input<boolean>;
+    jitUserProvGroupAssertionAttributeEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      *
@@ -2331,7 +2331,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupAssignmentMethod?: pulumi.Input<string>;
+    jitUserProvGroupAssignmentMethod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Property to indicate the mode of group mapping
      *
@@ -2347,7 +2347,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupMappingMode?: pulumi.Input<string>;
+    jitUserProvGroupMappingMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
      *
@@ -2362,7 +2362,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    jitUserProvGroupMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping>[]>;
+    jitUserProvGroupMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping>[] | undefined>;
     /**
      * (Updatable) Name of the assertion attribute containing the users groups
      *
@@ -2378,7 +2378,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    jitUserProvGroupSamlAttributeName?: pulumi.Input<string>;
+    jitUserProvGroupSamlAttributeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      *
@@ -2394,7 +2394,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvGroupStaticListEnabled?: pulumi.Input<boolean>;
+    jitUserProvGroupStaticListEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to true to indicate ignoring absence of group while provisioning
      *
@@ -2411,7 +2411,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitUserProvIgnoreErrorOnAbsentGroups?: pulumi.Input<boolean>;
+    jitUserProvIgnoreErrorOnAbsentGroups?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) HTTP binding to use for logout.
      *
@@ -2425,7 +2425,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    logoutBinding?: pulumi.Input<string>;
+    logoutBinding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to enable logout.
      *
@@ -2439,7 +2439,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    logoutEnabled?: pulumi.Input<boolean>;
+    logoutEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Logout request URL
      *
@@ -2453,7 +2453,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    logoutRequestUrl?: pulumi.Input<string>;
+    logoutRequestUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Logout response URL
      *
@@ -2467,7 +2467,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    logoutResponseUrl?: pulumi.Input<string>;
+    logoutResponseUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metadata
      *
@@ -2481,7 +2481,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Default authentication request name ID format.
      *
@@ -2495,7 +2495,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    nameIdFormat?: pulumi.Input<string>;
+    nameIdFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -2509,7 +2509,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique name of the trusted Identity Provider.
      *
@@ -2537,7 +2537,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: server
      */
-    partnerProviderId?: pulumi.Input<string>;
+    partnerProviderId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SAML SP authentication type.
      *
@@ -2553,7 +2553,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    requestedAuthenticationContexts?: pulumi.Input<pulumi.Input<string>[]>;
+    requestedAuthenticationContexts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
      *
@@ -2569,7 +2569,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    requireForceAuthn?: pulumi.Input<boolean>;
+    requireForceAuthn?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) SAML SP must accept encrypted assertion only.
      *
@@ -2585,11 +2585,11 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    requiresEncryptedAssertion?: pulumi.Input<boolean>;
+    requiresEncryptedAssertion?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SAML SP HoK Enabled.
      *
@@ -2605,7 +2605,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    samlHoKrequired?: pulumi.Input<boolean>;
+    samlHoKrequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -2635,7 +2635,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: server
      */
-    serviceInstanceIdentifier?: pulumi.Input<string>;
+    serviceInstanceIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to indicate whether to show IdP in login page or not.
      *
@@ -2649,7 +2649,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    shownOnLoginPage?: pulumi.Input<boolean>;
+    shownOnLoginPage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Signature hash algorithm.
      *
@@ -2663,7 +2663,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    signatureHashAlgorithm?: pulumi.Input<string>;
+    signatureHashAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Signing certificate
      *
@@ -2677,7 +2677,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    signingCertificate?: pulumi.Input<string>;
+    signingCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Succinct ID
      *
@@ -2691,7 +2691,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: server
      */
-    succinctId?: pulumi.Input<string>;
+    succinctId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -2705,7 +2705,7 @@ export interface DomainsIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderTag>[] | undefined>;
     /**
      * (Updatable) Identity Provider Type
      *
@@ -2721,15 +2721,15 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social Identity Provider Extension Schema
      */
-    urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider>;
+    urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider | undefined>;
     /**
      * (Updatable) X509 Identity Provider Extension Schema
      */
-    urnietfparamsscimschemasoracleidcsextensionx509identityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider>;
+    urnietfparamsscimschemasoracleidcsextensionx509identityProvider?: pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider | undefined>;
     /**
      * (Updatable) User mapping method.
      *
@@ -2746,7 +2746,7 @@ export interface DomainsIdentityProviderArgs {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    userMappingMethod?: pulumi.Input<string>;
+    userMappingMethod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
      *
@@ -2767,5 +2767,5 @@ export interface DomainsIdentityProviderArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userMappingStoreAttribute?: pulumi.Input<string>;
+    userMappingStoreAttribute?: pulumi.Input<string | undefined>;
 }

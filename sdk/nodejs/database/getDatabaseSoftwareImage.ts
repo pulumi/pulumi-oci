@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImage = oci.Database.getDatabaseSoftwareImage({
+ * const testDatabaseSoftwareImage = oci.database.getDatabaseSoftwareImage({
  *     databaseSoftwareImageId: testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id,
  * });
  * ```
@@ -127,7 +127,7 @@ export interface GetDatabaseSoftwareImageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImage = oci.Database.getDatabaseSoftwareImage({
+ * const testDatabaseSoftwareImage = oci.database.getDatabaseSoftwareImage({
  *     databaseSoftwareImageId: testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id,
  * });
  * ```

@@ -22,16 +22,16 @@ __all__ = ['AppFirewallPolicyArgs', 'AppFirewallPolicy']
 class AppFirewallPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 request_access_control: Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']] = None,
-                 request_protection: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']] = None,
-                 request_rate_limiting: Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']] = None,
-                 response_access_control: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']] = None,
-                 response_protection: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 request_access_control: pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']] = None,
+                 request_protection: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']] = None,
+                 request_rate_limiting: pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']] = None,
+                 response_access_control: pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']] = None,
+                 response_protection: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AppFirewallPolicy resource.
 
@@ -87,115 +87,115 @@ class AppFirewallPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
+    def actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
         """
         (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]):
+    def actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) WebAppFirewallPolicy display name, can be renamed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="requestAccessControl")
-    def request_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]:
+    def request_access_control(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
         """
         return pulumi.get(self, "request_access_control")
 
     @request_access_control.setter
-    def request_access_control(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]):
+    def request_access_control(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']]):
         pulumi.set(self, "request_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="requestProtection")
-    def request_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]:
+    def request_protection(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']]:
         """
         (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
         """
         return pulumi.get(self, "request_protection")
 
     @request_protection.setter
-    def request_protection(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]):
+    def request_protection(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']]):
         pulumi.set(self, "request_protection", value)
 
     @_builtins.property
     @pulumi.getter(name="requestRateLimiting")
-    def request_rate_limiting(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]:
+    def request_rate_limiting(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
         """
         return pulumi.get(self, "request_rate_limiting")
 
     @request_rate_limiting.setter
-    def request_rate_limiting(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]):
+    def request_rate_limiting(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']]):
         pulumi.set(self, "request_rate_limiting", value)
 
     @_builtins.property
     @pulumi.getter(name="responseAccessControl")
-    def response_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]:
+    def response_access_control(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         """
         return pulumi.get(self, "response_access_control")
 
     @response_access_control.setter
-    def response_access_control(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]):
+    def response_access_control(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']]):
         pulumi.set(self, "response_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="responseProtection")
-    def response_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]:
+    def response_protection(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']]:
         """
         (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         """
         return pulumi.get(self, "response_protection")
 
     @response_protection.setter
-    def response_protection(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]):
+    def response_protection(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']]):
         pulumi.set(self, "response_protection", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -206,28 +206,28 @@ class AppFirewallPolicyArgs:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
 @pulumi.input_type
 class _AppFirewallPolicyState:
     def __init__(__self__, *,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_access_control: Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']] = None,
-                 request_protection: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']] = None,
-                 request_rate_limiting: Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']] = None,
-                 response_access_control: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']] = None,
-                 response_protection: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_access_control: pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']] = None,
+                 request_protection: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']] = None,
+                 request_rate_limiting: pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']] = None,
+                 response_access_control: pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']] = None,
+                 response_protection: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppFirewallPolicy resources.
 
@@ -284,151 +284,151 @@ class _AppFirewallPolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
+    def actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
         """
         (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]):
+    def actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) WebAppFirewallPolicy display name, can be renamed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="requestAccessControl")
-    def request_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]:
+    def request_access_control(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
         """
         return pulumi.get(self, "request_access_control")
 
     @request_access_control.setter
-    def request_access_control(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]):
+    def request_access_control(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestAccessControlArgs']]):
         pulumi.set(self, "request_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="requestProtection")
-    def request_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]:
+    def request_protection(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']]:
         """
         (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
         """
         return pulumi.get(self, "request_protection")
 
     @request_protection.setter
-    def request_protection(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]):
+    def request_protection(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionArgs']]):
         pulumi.set(self, "request_protection", value)
 
     @_builtins.property
     @pulumi.getter(name="requestRateLimiting")
-    def request_rate_limiting(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]:
+    def request_rate_limiting(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
         """
         return pulumi.get(self, "request_rate_limiting")
 
     @request_rate_limiting.setter
-    def request_rate_limiting(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]):
+    def request_rate_limiting(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestRateLimitingArgs']]):
         pulumi.set(self, "request_rate_limiting", value)
 
     @_builtins.property
     @pulumi.getter(name="responseAccessControl")
-    def response_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]:
+    def response_access_control(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']]:
         """
         (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         """
         return pulumi.get(self, "response_access_control")
 
     @response_access_control.setter
-    def response_access_control(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]):
+    def response_access_control(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseAccessControlArgs']]):
         pulumi.set(self, "response_access_control", value)
 
     @_builtins.property
     @pulumi.getter(name="responseProtection")
-    def response_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]:
+    def response_protection(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']]:
         """
         (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         """
         return pulumi.get(self, "response_protection")
 
     @response_protection.setter
-    def response_protection(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]):
+    def response_protection(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionArgs']]):
         pulumi.set(self, "response_protection", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the WebAppFirewallPolicy.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -439,31 +439,31 @@ class _AppFirewallPolicyState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -473,17 +473,17 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
-                 request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
-                 request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
-                 response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
-                 response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 request_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+                 request_protection: pulumi.Input[Optional[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+                 request_rate_limiting: pulumi.Input[Optional[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+                 response_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+                 response_protection: pulumi.Input[Optional[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
@@ -508,7 +508,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "text": web_app_firewall_policy_actions_body_text,
                     "type": web_app_firewall_policy_actions_body_type,
                 },
-                "code": web_app_firewall_policy_actions_code,
+                "code": int(web_app_firewall_policy_actions_code),
                 "headers": [{
                     "name": web_app_firewall_policy_actions_headers_name,
                     "value": web_app_firewall_policy_actions_headers_value,
@@ -533,18 +533,18 @@ class AppFirewallPolicy(pulumi.CustomResource):
             },
             request_protection={
                 "body_inspection_size_limit_exceeded_action_name": web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
-                "body_inspection_size_limit_in_bytes": web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
+                "body_inspection_size_limit_in_bytes": int(web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes),
                 "rules": [{
                     "action_name": web_app_firewall_policy_request_protection_rules_action_name,
                     "name": web_app_firewall_policy_request_protection_rules_name,
                     "protection_capabilities": [{
                         "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
-                        "version": web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
+                        "version": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_version),
                         "action_name": web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
-                        "collaborative_action_threshold": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_action_threshold": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold),
                         "collaborative_weights": [{
                             "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
-                            "weight": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
+                            "weight": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight),
                         }],
                         "exclusions": {
                             "args": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
@@ -554,14 +554,14 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "type": web_app_firewall_policy_request_protection_rules_type,
                     "condition": web_app_firewall_policy_request_protection_rules_condition,
                     "condition_language": web_app_firewall_policy_request_protection_rules_condition_language,
-                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
+                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled == "true",
                     "protection_capability_settings": {
                         "allowed_http_methods": web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
-                        "max_http_request_header_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        "max_http_request_headers": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
-                        "max_number_of_arguments": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        "max_single_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
-                        "max_total_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
+                        "max_http_request_header_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length),
+                        "max_http_request_headers": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers),
+                        "max_number_of_arguments": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments),
+                        "max_single_argument_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length),
+                        "max_total_argument_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length),
                     },
                 }],
             },
@@ -569,9 +569,9 @@ class AppFirewallPolicy(pulumi.CustomResource):
                 "rules": [{
                     "action_name": web_app_firewall_policy_request_rate_limiting_rules_action_name,
                     "configurations": [{
-                        "period_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
-                        "requests_limit": web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
-                        "action_duration_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
+                        "period_in_seconds": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds),
+                        "requests_limit": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit),
+                        "action_duration_in_seconds": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds),
                     }],
                     "name": web_app_firewall_policy_request_rate_limiting_rules_name,
                     "type": web_app_firewall_policy_request_rate_limiting_rules_type,
@@ -594,12 +594,12 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "name": web_app_firewall_policy_response_protection_rules_name,
                     "protection_capabilities": [{
                         "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
-                        "version": web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
+                        "version": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_version),
                         "action_name": web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
-                        "collaborative_action_threshold": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_action_threshold": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold),
                         "collaborative_weights": [{
                             "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
-                            "weight": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
+                            "weight": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight),
                         }],
                         "exclusions": {
                             "args": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
@@ -609,14 +609,14 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "type": web_app_firewall_policy_response_protection_rules_type,
                     "condition": web_app_firewall_policy_response_protection_rules_condition,
                     "condition_language": web_app_firewall_policy_response_protection_rules_condition_language,
-                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
+                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled == "true",
                     "protection_capability_settings": {
                         "allowed_http_methods": web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
-                        "max_http_request_header_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        "max_http_request_headers": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
-                        "max_number_of_arguments": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        "max_single_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
-                        "max_total_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
+                        "max_http_request_header_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length),
+                        "max_http_request_headers": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers),
+                        "max_number_of_arguments": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments),
+                        "max_single_argument_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length),
+                        "max_total_argument_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length),
                     },
                 }],
             },
@@ -679,7 +679,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "text": web_app_firewall_policy_actions_body_text,
                     "type": web_app_firewall_policy_actions_body_type,
                 },
-                "code": web_app_firewall_policy_actions_code,
+                "code": int(web_app_firewall_policy_actions_code),
                 "headers": [{
                     "name": web_app_firewall_policy_actions_headers_name,
                     "value": web_app_firewall_policy_actions_headers_value,
@@ -704,18 +704,18 @@ class AppFirewallPolicy(pulumi.CustomResource):
             },
             request_protection={
                 "body_inspection_size_limit_exceeded_action_name": web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
-                "body_inspection_size_limit_in_bytes": web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
+                "body_inspection_size_limit_in_bytes": int(web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes),
                 "rules": [{
                     "action_name": web_app_firewall_policy_request_protection_rules_action_name,
                     "name": web_app_firewall_policy_request_protection_rules_name,
                     "protection_capabilities": [{
                         "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
-                        "version": web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
+                        "version": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_version),
                         "action_name": web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
-                        "collaborative_action_threshold": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_action_threshold": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold),
                         "collaborative_weights": [{
                             "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
-                            "weight": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
+                            "weight": int(web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight),
                         }],
                         "exclusions": {
                             "args": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
@@ -725,14 +725,14 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "type": web_app_firewall_policy_request_protection_rules_type,
                     "condition": web_app_firewall_policy_request_protection_rules_condition,
                     "condition_language": web_app_firewall_policy_request_protection_rules_condition_language,
-                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
+                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled == "true",
                     "protection_capability_settings": {
                         "allowed_http_methods": web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
-                        "max_http_request_header_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        "max_http_request_headers": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
-                        "max_number_of_arguments": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        "max_single_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
-                        "max_total_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
+                        "max_http_request_header_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length),
+                        "max_http_request_headers": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers),
+                        "max_number_of_arguments": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments),
+                        "max_single_argument_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length),
+                        "max_total_argument_length": int(web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length),
                     },
                 }],
             },
@@ -740,9 +740,9 @@ class AppFirewallPolicy(pulumi.CustomResource):
                 "rules": [{
                     "action_name": web_app_firewall_policy_request_rate_limiting_rules_action_name,
                     "configurations": [{
-                        "period_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
-                        "requests_limit": web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
-                        "action_duration_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
+                        "period_in_seconds": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds),
+                        "requests_limit": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit),
+                        "action_duration_in_seconds": int(web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds),
                     }],
                     "name": web_app_firewall_policy_request_rate_limiting_rules_name,
                     "type": web_app_firewall_policy_request_rate_limiting_rules_type,
@@ -765,12 +765,12 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "name": web_app_firewall_policy_response_protection_rules_name,
                     "protection_capabilities": [{
                         "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
-                        "version": web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
+                        "version": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_version),
                         "action_name": web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
-                        "collaborative_action_threshold": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_action_threshold": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold),
                         "collaborative_weights": [{
                             "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
-                            "weight": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
+                            "weight": int(web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight),
                         }],
                         "exclusions": {
                             "args": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
@@ -780,14 +780,14 @@ class AppFirewallPolicy(pulumi.CustomResource):
                     "type": web_app_firewall_policy_response_protection_rules_type,
                     "condition": web_app_firewall_policy_response_protection_rules_condition,
                     "condition_language": web_app_firewall_policy_response_protection_rules_condition_language,
-                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
+                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled == "true",
                     "protection_capability_settings": {
                         "allowed_http_methods": web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
-                        "max_http_request_header_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        "max_http_request_headers": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
-                        "max_number_of_arguments": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        "max_single_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
-                        "max_total_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
+                        "max_http_request_header_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length),
+                        "max_http_request_headers": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers),
+                        "max_number_of_arguments": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments),
+                        "max_single_argument_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length),
+                        "max_total_argument_length": int(web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length),
                     },
                 }],
             },
@@ -818,17 +818,17 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
-                 request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
-                 request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
-                 response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
-                 response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 request_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+                 request_protection: pulumi.Input[Optional[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+                 request_rate_limiting: pulumi.Input[Optional[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+                 response_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+                 response_protection: pulumi.Input[Optional[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -865,21 +865,21 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
-            request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
-            request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
-            response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
-            response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppFirewallPolicy':
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            request_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+            request_protection: pulumi.Input[Optional[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+            request_rate_limiting: pulumi.Input[Optional[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+            response_access_control: pulumi.Input[Optional[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+            response_protection: pulumi.Input[Optional[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppFirewallPolicy':
         """
         Get an existing AppFirewallPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetInstallationSite = oci.Jms.getInstallationSite({
+ * const testFleetInstallationSite = oci.jms.getInstallationSite({
  *     fleetId: testFleet.id,
  *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,
@@ -144,7 +144,7 @@ export interface GetInstallationSiteResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetInstallationSite = oci.Jms.getInstallationSite({
+ * const testFleetInstallationSite = oci.jms.getInstallationSite({
  *     fleetId: testFleet.id,
  *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,
@@ -185,7 +185,7 @@ export interface GetInstallationSiteOutputArgs {
     /**
      * The Fleet-unique identifier of the related application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -193,41 +193,41 @@ export interface GetInstallationSiteOutputArgs {
     /**
      * The file system path of the installation.
      */
-    installationPath?: pulumi.Input<string>;
+    installationPath?: pulumi.Input<string | undefined>;
     /**
      * The distribution of the related Java Runtime.
      */
-    jreDistribution?: pulumi.Input<string>;
+    jreDistribution?: pulumi.Input<string | undefined>;
     /**
      * The security status of the Java Runtime.
      */
-    jreSecurityStatus?: pulumi.Input<string>;
+    jreSecurityStatus?: pulumi.Input<string | undefined>;
     /**
      * The vendor of the related Java Runtime.
      */
-    jreVendor?: pulumi.Input<string>;
+    jreVendor?: pulumi.Input<string | undefined>;
     /**
      * The version of the related Java Runtime.
      */
-    jreVersion?: pulumi.Input<string>;
+    jreVersion?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The operating system type.
      */
-    osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+    osFamilies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter the list with path contains the given value.
      */
-    pathContains?: pulumi.Input<string>;
+    pathContains?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

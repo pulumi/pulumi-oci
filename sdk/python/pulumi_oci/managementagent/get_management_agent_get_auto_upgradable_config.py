@@ -84,7 +84,7 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
+    test_management_agent_get_auto_upgradable_config = oci.managementagent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
 
 
@@ -99,7 +99,7 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[_bu
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         is_agent_auto_upgradable=pulumi.get(__ret__, 'is_agent_auto_upgradable'))
-def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_agent_get_auto_upgradable_config_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentGetAutoUpgradableConfigResult]:
     """
     This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
@@ -113,7 +113,7 @@ def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
+    test_management_agent_get_auto_upgradable_config = oci.managementagent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
 
 

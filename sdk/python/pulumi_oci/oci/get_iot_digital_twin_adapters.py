@@ -187,13 +187,13 @@ def get_iot_digital_twin_adapters(digital_twin_model_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         iot_domain_id=pulumi.get(__ret__, 'iot_domain_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_iot_digital_twin_adapters_output(digital_twin_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         digital_twin_model_spec_uri: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIotDigitalTwinAdaptersFilterArgs', 'GetIotDigitalTwinAdaptersFilterArgsDict']]]]] = None,
-                                         id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iot_digital_twin_adapters_output(digital_twin_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         digital_twin_model_spec_uri: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinAdaptersFilterArgs', 'GetIotDigitalTwinAdaptersFilterArgsDict']]]]] = None,
+                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinAdaptersResult]:
     """
     This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.

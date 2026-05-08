@@ -168,7 +168,7 @@ def get_organization_tenancy(organization_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancy = oci.Tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
+    test_organization_tenancy = oci.tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
         tenancy_id=test_tenancy["id"])
     ```
 
@@ -193,8 +193,8 @@ def get_organization_tenancy(organization_id: Optional[_builtins.str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_joined=pulumi.get(__ret__, 'time_joined'),
         time_left=pulumi.get(__ret__, 'time_left'))
-def get_organization_tenancy_output(organization_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_organization_tenancy_output(organization_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationTenancyResult]:
     """
     This data source provides details about a specific Organization Tenancy resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -207,7 +207,7 @@ def get_organization_tenancy_output(organization_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancy = oci.Tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
+    test_organization_tenancy = oci.tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
         tenancy_id=test_tenancy["id"])
     ```
 

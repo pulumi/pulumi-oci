@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
+ * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,
@@ -112,9 +112,9 @@ export interface GetPbfListingVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
+ * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,
@@ -137,15 +137,15 @@ export function getPbfListingVersionsOutput(args: GetPbfListingVersionsOutputArg
  * A collection of arguments for invoking getPbfListingVersions.
  */
 export interface GetPbfListingVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingVersionsFilterArgs>[] | undefined>;
     /**
      * Matches the current version (the most recently added version with an Active  lifecycleState) associated with a PbfListing.
      */
-    isCurrentVersion?: pulumi.Input<boolean>;
+    isCurrentVersion?: pulumi.Input<boolean | undefined>;
     /**
      * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * unique PbfListing identifier
      */
@@ -153,9 +153,9 @@ export interface GetPbfListingVersionsOutputArgs {
     /**
      * unique PbfListingVersion identifier
      */
-    pbfListingVersionId?: pulumi.Input<string>;
+    pbfListingVersionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

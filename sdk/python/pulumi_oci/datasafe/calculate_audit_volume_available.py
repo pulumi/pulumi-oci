@@ -22,9 +22,9 @@ __all__ = ['CalculateAuditVolumeAvailableArgs', 'CalculateAuditVolumeAvailable']
 class CalculateAuditVolumeAvailableArgs:
     def __init__(__self__, *,
                  audit_profile_id: pulumi.Input[_builtins.str],
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CalculateAuditVolumeAvailable resource.
 
@@ -59,31 +59,31 @@ class CalculateAuditVolumeAvailableArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
         """
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseUniqueName")
-    def database_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name of the database associated to the peer target database.
         """
         return pulumi.get(self, "database_unique_name")
 
     @database_unique_name.setter
-    def database_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocations")
-    def trail_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def trail_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The trail locations for which the audit data volume has to be calculated.
 
@@ -94,18 +94,18 @@ class CalculateAuditVolumeAvailableArgs:
         return pulumi.get(self, "trail_locations")
 
     @trail_locations.setter
-    def trail_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def trail_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "trail_locations", value)
 
 
 @pulumi.input_type
 class _CalculateAuditVolumeAvailableState:
     def __init__(__self__, *,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 available_audit_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]] = None,
-                 database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 available_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]] = None,
+                 database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CalculateAuditVolumeAvailable resources.
 
@@ -132,55 +132,55 @@ class _CalculateAuditVolumeAvailableState:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
         """
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="availableAuditVolumes")
-    def available_audit_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]]:
+    def available_audit_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]]:
         """
         List of available audit volumes.
         """
         return pulumi.get(self, "available_audit_volumes")
 
     @available_audit_volumes.setter
-    def available_audit_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]]):
+    def available_audit_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]]]):
         pulumi.set(self, "available_audit_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseUniqueName")
-    def database_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name of the database associated to the peer target database.
         """
         return pulumi.get(self, "database_unique_name")
 
     @database_unique_name.setter
-    def database_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocations")
-    def trail_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def trail_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The trail locations for which the audit data volume has to be calculated.
 
@@ -191,7 +191,7 @@ class _CalculateAuditVolumeAvailableState:
         return pulumi.get(self, "trail_locations")
 
     @trail_locations.setter
-    def trail_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def trail_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "trail_locations", value)
 
 
@@ -201,10 +201,10 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Calculate Audit Volume Available resource in Oracle Cloud Infrastructure Data Safe service.
@@ -292,10 +292,10 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,11 +322,11 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-            audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            available_audit_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict']]]]] = None,
-            database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CalculateAuditVolumeAvailable':
+            audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            available_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict']]]]] = None,
+            database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CalculateAuditVolumeAvailable':
         """
         Get an existing CalculateAuditVolumeAvailable resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

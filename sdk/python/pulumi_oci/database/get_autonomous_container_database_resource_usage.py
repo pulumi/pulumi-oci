@@ -204,7 +204,7 @@ def get_autonomous_container_database_resource_usage(autonomous_container_databa
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_resource_usage = oci.Database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=test_autonomous_container_database["id"])
+    test_autonomous_container_database_resource_usage = oci.database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_autonomous_container_database_resource_usage(autonomous_container_databa
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         used_cpus=pulumi.get(__ret__, 'used_cpus'))
-def get_autonomous_container_database_resource_usage_output(autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_container_database_resource_usage_output(autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResourceUsageResult]:
     """
     This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
@@ -242,7 +242,7 @@ def get_autonomous_container_database_resource_usage_output(autonomous_container
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_resource_usage = oci.Database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=test_autonomous_container_database["id"])
+    test_autonomous_container_database_resource_usage = oci.database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
 
 

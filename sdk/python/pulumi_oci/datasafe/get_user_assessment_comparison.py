@@ -118,7 +118,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_comparison = oci.datasafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
         user_assessment_id=test_user_assessment["id"])
     ```
 
@@ -139,8 +139,8 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[_buil
         summaries=pulumi.get(__ret__, 'summaries'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
-def get_user_assessment_comparison_output(comparison_user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_assessment_comparison_output(comparison_user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentComparisonResult]:
     """
     This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -153,7 +153,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_comparison = oci.datasafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
         user_assessment_id=test_user_assessment["id"])
     ```
 

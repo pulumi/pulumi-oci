@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecords = oci.Dns.getRecords({
+ * const testRecords = oci.dns.getRecords({
  *     zoneNameOrId: testZoneNameOr.id,
  *     domain: recordDomain,
  *     domainContains: recordDomainContains,
@@ -142,7 +142,7 @@ export interface GetRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecords = oci.Dns.getRecords({
+ * const testRecords = oci.dns.getRecords({
  *     zoneNameOrId: testZoneNameOr.id,
  *     domain: recordDomain,
  *     domainContains: recordDomainContains,
@@ -175,28 +175,28 @@ export interface GetRecordsOutputArgs {
      *
      * This parameter is deprecated and should be omitted.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
      */
-    domainContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetRecordsFilterArgs>[]>;
+    domainContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetRecordsFilterArgs>[] | undefined>;
     /**
      * Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      */
-    rtype?: pulumi.Input<string>;
+    rtype?: pulumi.Input<string | undefined>;
     /**
      * The field by which to sort records. Allowed values are: domain|rtype|ttl
      */
-    sortBy?: pulumi.Input<string>;
+    sortBy?: pulumi.Input<string | undefined>;
     /**
      * The order to sort the resources. Allowed values are: ASC|DESC
      */
-    sortOrder?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      *
@@ -206,5 +206,5 @@ export interface GetRecordsOutputArgs {
     /**
      * The version of the zone for which data is requested.
      */
-    zoneVersion?: pulumi.Input<string>;
+    zoneVersion?: pulumi.Input<string | undefined>;
 }

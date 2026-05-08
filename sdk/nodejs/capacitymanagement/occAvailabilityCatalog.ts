@@ -219,47 +219,47 @@ export interface OccAvailabilityCatalogState {
     /**
      * The base 64 encoded string corresponding to the catalog file contents.
      */
-    base64encodedCatalogDetails?: pulumi.Input<string>;
+    base64encodedCatalogDetails?: pulumi.Input<string | undefined>;
     /**
      * The different states associated with the availability catalog.
      */
-    catalogState?: pulumi.Input<string>;
+    catalogState?: pulumi.Input<string | undefined>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Additional information about the availability catalog.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Details about capacity available for different resources in catalog.
      */
-    details?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogDetail>[] | undefined>;
     /**
      * (Updatable) The display name of the availability catalog.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
      */
-    metadataDetails?: pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails>;
+    metadataDetails?: pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the customer group.
      *
@@ -267,23 +267,23 @@ export interface OccAvailabilityCatalogState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the availability catalog was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the availability catalog was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -301,11 +301,11 @@ export interface OccAvailabilityCatalogArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Additional information about the availability catalog.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the availability catalog.
      */
@@ -313,11 +313,11 @@ export interface OccAvailabilityCatalogArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
      */
-    metadataDetails?: pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails>;
+    metadataDetails?: pulumi.Input<inputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */

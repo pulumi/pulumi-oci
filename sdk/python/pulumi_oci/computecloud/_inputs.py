@@ -38,23 +38,23 @@ __all__ = [
 ]
 
 class AtCustomerCccInfrastructureInfrastructureInventoryArgsDict(TypedDict):
-    capacity_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
+    capacity_storage_tray_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
     """
-    compute_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    compute_node_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
     """
-    management_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    management_node_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
     """
-    performance_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
+    performance_storage_tray_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
     """
-    serial_number: NotRequired[pulumi.Input[_builtins.str]]
+    serial_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The serial number of the Compute Cloud@Customer infrastructure rack.
     """
@@ -62,11 +62,11 @@ class AtCustomerCccInfrastructureInfrastructureInventoryArgsDict(TypedDict):
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureInventoryArgs:
     def __init__(__self__, *,
-                 capacity_storage_tray_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 management_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 performance_storage_tray_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 serial_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 capacity_storage_tray_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 management_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 performance_storage_tray_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 serial_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] capacity_storage_tray_count: The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
         :param pulumi.Input[_builtins.int] compute_node_count: The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
@@ -87,123 +87,123 @@ class AtCustomerCccInfrastructureInfrastructureInventoryArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityStorageTrayCount")
-    def capacity_storage_tray_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def capacity_storage_tray_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
         """
         return pulumi.get(self, "capacity_storage_tray_count")
 
     @capacity_storage_tray_count.setter
-    def capacity_storage_tray_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def capacity_storage_tray_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity_storage_tray_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeNodeCount")
-    def compute_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
         """
         return pulumi.get(self, "compute_node_count")
 
     @compute_node_count.setter
-    def compute_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="managementNodeCount")
-    def management_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def management_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
         """
         return pulumi.get(self, "management_node_count")
 
     @management_node_count.setter
-    def management_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def management_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "management_node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="performanceStorageTrayCount")
-    def performance_storage_tray_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def performance_storage_tray_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
         """
         return pulumi.get(self, "performance_storage_tray_count")
 
     @performance_storage_tray_count.setter
-    def performance_storage_tray_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def performance_storage_tray_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "performance_storage_tray_count", value)
 
     @_builtins.property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def serial_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The serial number of the Compute Cloud@Customer infrastructure rack.
         """
         return pulumi.get(self, "serial_number")
 
     @serial_number.setter
-    def serial_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def serial_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "serial_number", value)
 
 
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict(TypedDict):
-    dns_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    dns_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
     """
-    infrastructure_routing_dynamics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict']]]]
+    infrastructure_routing_dynamics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]]
     """
     Dynamic routing information for the Compute Cloud@Customer infrastructure.
     """
-    infrastructure_routing_statics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict']]]]
+    infrastructure_routing_statics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]]
     """
     Static routing information for a rack.
     """
-    management_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict']]]]
+    management_nodes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]]
     """
     Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
     """
-    mgmt_vip_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    mgmt_vip_hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The hostname corresponding to the virtual IP (VIP) address of the management nodes.
     """
-    mgmt_vip_ip: NotRequired[pulumi.Input[_builtins.str]]
+    mgmt_vip_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address used as the virtual IP (VIP) address of the management nodes.
     """
-    spine_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    spine_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Addresses of the network spine switches.
     """
-    spine_vip: NotRequired[pulumi.Input[_builtins.str]]
+    spine_vip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
     """
-    uplink_domain: NotRequired[pulumi.Input[_builtins.str]]
+    uplink_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Domain name to be used as the base domain for the internal network and by  public facing services.
     """
-    uplink_gateway_ip: NotRequired[pulumi.Input[_builtins.str]]
+    uplink_gateway_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
     """
-    uplink_netmask: NotRequired[pulumi.Input[_builtins.str]]
+    uplink_netmask: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
     """
-    uplink_port_count: NotRequired[pulumi.Input[_builtins.int]]
+    uplink_port_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
     """
-    uplink_port_forward_error_correction: NotRequired[pulumi.Input[_builtins.str]]
+    uplink_port_forward_error_correction: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
     """
-    uplink_port_speed_in_gbps: NotRequired[pulumi.Input[_builtins.int]]
+    uplink_port_speed_in_gbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
     """
-    uplink_vlan_mtu: NotRequired[pulumi.Input[_builtins.int]]
+    uplink_vlan_mtu: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
     """
@@ -211,21 +211,21 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict(Type
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs:
     def __init__(__self__, *,
-                 dns_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_routing_dynamics: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]] = None,
-                 infrastructure_routing_statics: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]] = None,
-                 management_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]] = None,
-                 mgmt_vip_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 mgmt_vip_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 spine_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 spine_vip: Optional[pulumi.Input[_builtins.str]] = None,
-                 uplink_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 uplink_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 uplink_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 uplink_port_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 uplink_port_forward_error_correction: Optional[pulumi.Input[_builtins.str]] = None,
-                 uplink_port_speed_in_gbps: Optional[pulumi.Input[_builtins.int]] = None,
-                 uplink_vlan_mtu: Optional[pulumi.Input[_builtins.int]] = None):
+                 dns_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_routing_dynamics: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]] = None,
+                 infrastructure_routing_statics: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]] = None,
+                 management_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]] = None,
+                 mgmt_vip_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 mgmt_vip_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 spine_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 spine_vip: pulumi.Input[Optional[_builtins.str]] = None,
+                 uplink_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 uplink_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 uplink_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 uplink_port_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 uplink_port_forward_error_correction: pulumi.Input[Optional[_builtins.str]] = None,
+                 uplink_port_speed_in_gbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 uplink_vlan_mtu: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_ips: The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]] infrastructure_routing_dynamics: Dynamic routing information for the Compute Cloud@Customer infrastructure.
@@ -276,195 +276,195 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="dnsIps")
-    def dns_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dns_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
         """
         return pulumi.get(self, "dns_ips")
 
     @dns_ips.setter
-    def dns_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dns_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dns_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureRoutingDynamics")
-    def infrastructure_routing_dynamics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]:
+    def infrastructure_routing_dynamics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]:
         """
         Dynamic routing information for the Compute Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "infrastructure_routing_dynamics")
 
     @infrastructure_routing_dynamics.setter
-    def infrastructure_routing_dynamics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]):
+    def infrastructure_routing_dynamics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]):
         pulumi.set(self, "infrastructure_routing_dynamics", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureRoutingStatics")
-    def infrastructure_routing_statics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]:
+    def infrastructure_routing_statics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]:
         """
         Static routing information for a rack.
         """
         return pulumi.get(self, "infrastructure_routing_statics")
 
     @infrastructure_routing_statics.setter
-    def infrastructure_routing_statics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]):
+    def infrastructure_routing_statics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]):
         pulumi.set(self, "infrastructure_routing_statics", value)
 
     @_builtins.property
     @pulumi.getter(name="managementNodes")
-    def management_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]:
+    def management_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]:
         """
         Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "management_nodes")
 
     @management_nodes.setter
-    def management_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]):
+    def management_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]):
         pulumi.set(self, "management_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="mgmtVipHostname")
-    def mgmt_vip_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mgmt_vip_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname corresponding to the virtual IP (VIP) address of the management nodes.
         """
         return pulumi.get(self, "mgmt_vip_hostname")
 
     @mgmt_vip_hostname.setter
-    def mgmt_vip_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mgmt_vip_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mgmt_vip_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="mgmtVipIp")
-    def mgmt_vip_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mgmt_vip_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address used as the virtual IP (VIP) address of the management nodes.
         """
         return pulumi.get(self, "mgmt_vip_ip")
 
     @mgmt_vip_ip.setter
-    def mgmt_vip_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mgmt_vip_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mgmt_vip_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="spineIps")
-    def spine_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def spine_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Addresses of the network spine switches.
         """
         return pulumi.get(self, "spine_ips")
 
     @spine_ips.setter
-    def spine_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def spine_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "spine_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="spineVip")
-    def spine_vip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spine_vip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
         """
         return pulumi.get(self, "spine_vip")
 
     @spine_vip.setter
-    def spine_vip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spine_vip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spine_vip", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkDomain")
-    def uplink_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uplink_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Domain name to be used as the base domain for the internal network and by  public facing services.
         """
         return pulumi.get(self, "uplink_domain")
 
     @uplink_domain.setter
-    def uplink_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uplink_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uplink_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkGatewayIp")
-    def uplink_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uplink_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
         """
         return pulumi.get(self, "uplink_gateway_ip")
 
     @uplink_gateway_ip.setter
-    def uplink_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uplink_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uplink_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkNetmask")
-    def uplink_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uplink_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
         """
         return pulumi.get(self, "uplink_netmask")
 
     @uplink_netmask.setter
-    def uplink_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uplink_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uplink_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkPortCount")
-    def uplink_port_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def uplink_port_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
         """
         return pulumi.get(self, "uplink_port_count")
 
     @uplink_port_count.setter
-    def uplink_port_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def uplink_port_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "uplink_port_count", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkPortForwardErrorCorrection")
-    def uplink_port_forward_error_correction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uplink_port_forward_error_correction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "uplink_port_forward_error_correction")
 
     @uplink_port_forward_error_correction.setter
-    def uplink_port_forward_error_correction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uplink_port_forward_error_correction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uplink_port_forward_error_correction", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkPortSpeedInGbps")
-    def uplink_port_speed_in_gbps(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def uplink_port_speed_in_gbps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
         """
         return pulumi.get(self, "uplink_port_speed_in_gbps")
 
     @uplink_port_speed_in_gbps.setter
-    def uplink_port_speed_in_gbps(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def uplink_port_speed_in_gbps(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "uplink_port_speed_in_gbps", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkVlanMtu")
-    def uplink_vlan_mtu(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def uplink_vlan_mtu(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
         """
         return pulumi.get(self, "uplink_vlan_mtu")
 
     @uplink_vlan_mtu.setter
-    def uplink_vlan_mtu(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def uplink_vlan_mtu(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "uplink_vlan_mtu", value)
 
 
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict(TypedDict):
-    bgp_topology: NotRequired[pulumi.Input[_builtins.str]]
+    bgp_topology: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The topology in use for the Border Gateway Protocol (BGP) configuration.
     """
-    oracle_asn: NotRequired[pulumi.Input[_builtins.int]]
+    oracle_asn: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
     """
-    peer_informations: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict']]]]
+    peer_informations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]]
     """
     The list of peer devices in the dynamic routing configuration.
     """
@@ -472,9 +472,9 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs:
     def __init__(__self__, *,
-                 bgp_topology: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 peer_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]] = None):
+                 bgp_topology: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 peer_informations: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] bgp_topology: The topology in use for the Border Gateway Protocol (BGP) configuration.
         :param pulumi.Input[_builtins.int] oracle_asn: The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
@@ -489,47 +489,47 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 
     @_builtins.property
     @pulumi.getter(name="bgpTopology")
-    def bgp_topology(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_topology(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The topology in use for the Border Gateway Protocol (BGP) configuration.
         """
         return pulumi.get(self, "bgp_topology")
 
     @bgp_topology.setter
-    def bgp_topology(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_topology(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_topology", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleAsn")
-    def oracle_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def oracle_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
         """
         return pulumi.get(self, "oracle_asn")
 
     @oracle_asn.setter
-    def oracle_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def oracle_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "oracle_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="peerInformations")
-    def peer_informations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]:
+    def peer_informations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]:
         """
         The list of peer devices in the dynamic routing configuration.
         """
         return pulumi.get(self, "peer_informations")
 
     @peer_informations.setter
-    def peer_informations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]):
+    def peer_informations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]):
         pulumi.set(self, "peer_informations", value)
 
 
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict(TypedDict):
-    asn: NotRequired[pulumi.Input[_builtins.int]]
+    asn: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The Autonomous System Number (ASN) of the peer network.
     """
-    ip: NotRequired[pulumi.Input[_builtins.str]]
+    ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address of the management node.
     """
@@ -537,8 +537,8 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs:
     def __init__(__self__, *,
-                 asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] asn: The Autonomous System Number (ASN) of the peer network.
         :param pulumi.Input[_builtins.str] ip: Address of the management node.
@@ -550,35 +550,35 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 
     @_builtins.property
     @pulumi.getter
-    def asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Autonomous System Number (ASN) of the peer network.
         """
         return pulumi.get(self, "asn")
 
     @asn.setter
-    def asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "asn", value)
 
     @_builtins.property
     @pulumi.getter
-    def ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address of the management node.
         """
         return pulumi.get(self, "ip")
 
     @ip.setter
-    def ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip", value)
 
 
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict(TypedDict):
-    uplink_hsrp_group: NotRequired[pulumi.Input[_builtins.int]]
+    uplink_hsrp_group: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
     """
-    uplink_vlan: NotRequired[pulumi.Input[_builtins.int]]
+    uplink_vlan: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
     """
@@ -586,8 +586,8 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs:
     def __init__(__self__, *,
-                 uplink_hsrp_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 uplink_vlan: Optional[pulumi.Input[_builtins.int]] = None):
+                 uplink_hsrp_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 uplink_vlan: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] uplink_hsrp_group: The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         :param pulumi.Input[_builtins.int] uplink_vlan: The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
@@ -599,35 +599,35 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
 
     @_builtins.property
     @pulumi.getter(name="uplinkHsrpGroup")
-    def uplink_hsrp_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def uplink_hsrp_group(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "uplink_hsrp_group")
 
     @uplink_hsrp_group.setter
-    def uplink_hsrp_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def uplink_hsrp_group(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "uplink_hsrp_group", value)
 
     @_builtins.property
     @pulumi.getter(name="uplinkVlan")
-    def uplink_vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def uplink_vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
         """
         return pulumi.get(self, "uplink_vlan")
 
     @uplink_vlan.setter
-    def uplink_vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def uplink_vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "uplink_vlan", value)
 
 
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict(TypedDict):
-    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Hostname for interface to the management node.
     """
-    ip: NotRequired[pulumi.Input[_builtins.str]]
+    ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address of the management node.
     """
@@ -635,8 +635,8 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs:
     def __init__(__self__, *,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] hostname: Hostname for interface to the management node.
         :param pulumi.Input[_builtins.str] ip: Address of the management node.
@@ -648,43 +648,43 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Hostname for interface to the management node.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter
-    def ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address of the management node.
         """
         return pulumi.get(self, "ip")
 
     @ip.setter
-    def ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip", value)
 
 
 class AtCustomerCccInfrastructureUpgradeInformationArgsDict(TypedDict):
-    current_version: NotRequired[pulumi.Input[_builtins.str]]
+    current_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current version of software installed on the Compute Cloud@Customer infrastructure.
     """
-    is_active: NotRequired[pulumi.Input[_builtins.bool]]
+    is_active: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
     """
-    scheduled_upgrade_duration: NotRequired[pulumi.Input[_builtins.str]]
+    scheduled_upgrade_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
     """
-    time_of_scheduled_upgrade: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_scheduled_upgrade: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
     """
@@ -692,10 +692,10 @@ class AtCustomerCccInfrastructureUpgradeInformationArgsDict(TypedDict):
 @pulumi.input_type
 class AtCustomerCccInfrastructureUpgradeInformationArgs:
     def __init__(__self__, *,
-                 current_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scheduled_upgrade_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_scheduled_upgrade: Optional[pulumi.Input[_builtins.str]] = None):
+                 current_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_upgrade_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_scheduled_upgrade: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] current_version: The current version of software installed on the Compute Cloud@Customer infrastructure.
         :param pulumi.Input[_builtins.bool] is_active: Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
@@ -713,50 +713,50 @@ class AtCustomerCccInfrastructureUpgradeInformationArgs:
 
     @_builtins.property
     @pulumi.getter(name="currentVersion")
-    def current_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current version of software installed on the Compute Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "current_version")
 
     @current_version.setter
-    def current_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isActive")
-    def is_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
         """
         return pulumi.get(self, "is_active")
 
     @is_active.setter
-    def is_active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledUpgradeDuration")
-    def scheduled_upgrade_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_upgrade_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
         """
         return pulumi.get(self, "scheduled_upgrade_duration")
 
     @scheduled_upgrade_duration.setter
-    def scheduled_upgrade_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_upgrade_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_upgrade_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfScheduledUpgrade")
-    def time_of_scheduled_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_scheduled_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
         """
         return pulumi.get(self, "time_of_scheduled_upgrade")
 
     @time_of_scheduled_upgrade.setter
-    def time_of_scheduled_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_scheduled_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_scheduled_upgrade", value)
 
 
@@ -773,11 +773,11 @@ class AtCustomerCccUpgradeScheduleEventArgsDict(TypedDict):
     """
     (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Generated name associated with the event.
     """
-    schedule_event_recurrences: NotRequired[pulumi.Input[_builtins.str]]
+    schedule_event_recurrences: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
     """
@@ -788,8 +788,8 @@ class AtCustomerCccUpgradeScheduleEventArgs:
                  description: pulumi.Input[_builtins.str],
                  schedule_event_duration: pulumi.Input[_builtins.str],
                  time_start: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_event_recurrences: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_event_recurrences: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
         :param pulumi.Input[_builtins.str] schedule_event_duration: (Updatable) The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
@@ -843,26 +843,26 @@ class AtCustomerCccUpgradeScheduleEventArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generated name associated with the event.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleEventRecurrences")
-    def schedule_event_recurrences(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_event_recurrences(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
         """
         return pulumi.get(self, "schedule_event_recurrences")
 
     @schedule_event_recurrences.setter
-    def schedule_event_recurrences(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_event_recurrences(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_event_recurrences", value)
 
 

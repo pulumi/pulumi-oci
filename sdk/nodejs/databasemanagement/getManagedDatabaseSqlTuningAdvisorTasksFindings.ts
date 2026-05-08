@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
+ * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecId: testBeginExec.id,
@@ -126,7 +126,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
+ * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecId: testBeginExec.id,
@@ -162,20 +162,20 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs {
     /**
      * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
      */
-    beginExecId?: pulumi.Input<string>;
+    beginExecId?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
      */
-    endExecId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs>[]>;
+    endExecId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs>[] | undefined>;
     /**
      * The filter used to display specific findings in the report.
      */
-    findingFilter?: pulumi.Input<string>;
+    findingFilter?: pulumi.Input<string | undefined>;
     /**
      * The hash value of the index table name.
      */
-    indexHashFilter?: pulumi.Input<string>;
+    indexHashFilter?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -183,11 +183,11 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      */
-    searchPeriod?: pulumi.Input<string>;
+    searchPeriod?: pulumi.Input<string | undefined>;
     /**
      * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -195,5 +195,5 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs {
     /**
      * The hash value of the object for the statistic finding search.
      */
-    statsHashFilter?: pulumi.Input<string>;
+    statsHashFilter?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumes = oci.Core.getVolumes({
+ * const testVolumes = oci.core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
  *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,
@@ -121,7 +121,7 @@ export interface GetVolumesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumes = oci.Core.getVolumes({
+ * const testVolumes = oci.core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
  *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,
@@ -152,26 +152,26 @@ export interface GetVolumesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given cluster placement group Id exactly.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumesFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume group.
      */
-    volumeGroupId?: pulumi.Input<string>;
+    volumeGroupId?: pulumi.Input<string | undefined>;
 }

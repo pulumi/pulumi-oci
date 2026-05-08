@@ -254,7 +254,7 @@ def get_workspace_application_schedule(application_key: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedule = oci.DataIntegration.get_workspace_application_schedule(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedule = oci.dataintegration.get_workspace_application_schedule(application_key=workspace_application_schedule_application_key,
         schedule_key=workspace_application_schedule_schedule_key,
         workspace_id=test_workspace["id"])
     ```
@@ -290,9 +290,9 @@ def get_workspace_application_schedule(application_key: Optional[_builtins.str] 
         schedule_key=pulumi.get(__ret__, 'schedule_key'),
         timezone=pulumi.get(__ret__, 'timezone'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_schedule_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                              schedule_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                              workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_schedule_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                              schedule_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                              workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationScheduleResult]:
     """
     This data source provides details about a specific Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
@@ -305,7 +305,7 @@ def get_workspace_application_schedule_output(application_key: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedule = oci.DataIntegration.get_workspace_application_schedule(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedule = oci.dataintegration.get_workspace_application_schedule(application_key=workspace_application_schedule_application_key,
         schedule_key=workspace_application_schedule_schedule_key,
         workspace_id=test_workspace["id"])
     ```

@@ -23,7 +23,7 @@ class ManagedInstanceGroupRemovePackagesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_group_id: pulumi.Input[_builtins.str],
                  package_names: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']] = None):
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupRemovePackagesManagement resource.
 
@@ -62,23 +62,23 @@ class ManagedInstanceGroupRemovePackagesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceGroupRemovePackagesManagementState:
     def __init__(__self__, *,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupRemovePackagesManagement resources.
 
@@ -95,38 +95,38 @@ class _ManagedInstanceGroupRemovePackagesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         """
         return pulumi.get(self, "managed_instance_group_id")
 
     @managed_instance_group_id.setter
-    def managed_instance_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="packageNames")
-    def package_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def package_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of package names.
         """
         return pulumi.get(self, "package_names")
 
     @package_names.setter
-    def package_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def package_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "package_names", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -136,9 +136,9 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -231,9 +231,9 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -260,9 +260,9 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupRemovePackagesManagement':
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupRemovePackagesManagement':
         """
         Get an existing ManagedInstanceGroupRemovePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

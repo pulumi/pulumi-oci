@@ -22,10 +22,10 @@ __all__ = ['ManagementAgentArgs', 'ManagementAgent']
 class ManagementAgentArgs:
     def __init__(__self__, *,
                  managed_agent_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ManagementAgent resource.
 
@@ -68,19 +68,19 @@ class ManagementAgentArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPluginsIds")
-    def deploy_plugins_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deploy_plugins_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
 
@@ -96,67 +96,67 @@ class ManagementAgentArgs:
         return pulumi.get(self, "deploy_plugins_ids")
 
     @deploy_plugins_ids.setter
-    def deploy_plugins_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deploy_plugins_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deploy_plugins_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) New displayName of Agent.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ManagementAgentState:
     def __init__(__self__, *,
-                 availability_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]] = None,
-                 data_source_summary_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_agent_auto_upgradable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_customer_deployed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 latest_supported_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]] = None,
-                 platform_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]] = None,
-                 resource_artifact_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]] = None,
+                 data_source_summary_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_agent_auto_upgradable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_customer_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 latest_supported_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_properties: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]] = None,
+                 platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]] = None,
+                 resource_artifact_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementAgent resources.
 
@@ -261,64 +261,64 @@ class _ManagementAgentState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current availability status of managementAgent
         """
         return pulumi.get(self, "availability_status")
 
     @availability_status.setter
-    def availability_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_status", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment owning this DataSource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceLists")
-    def data_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]:
+    def data_source_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]:
         """
         list of dataSources associated with the agent
         """
         return pulumi.get(self, "data_source_lists")
 
     @data_source_lists.setter
-    def data_source_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]):
+    def data_source_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]):
         pulumi.set(self, "data_source_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceSummaryLists")
-    def data_source_summary_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]:
+    def data_source_summary_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]:
         return pulumi.get(self, "data_source_summary_lists")
 
     @data_source_summary_lists.setter
-    def data_source_summary_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]):
+    def data_source_summary_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]):
         pulumi.set(self, "data_source_summary_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPluginsIds")
-    def deploy_plugins_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deploy_plugins_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
 
@@ -334,292 +334,292 @@ class _ManagementAgentState:
         return pulumi.get(self, "deploy_plugins_ids")
 
     @deploy_plugins_ids.setter
-    def deploy_plugins_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deploy_plugins_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deploy_plugins_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) New displayName of Agent.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent host machine name
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host resource ocid
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="installKeyId")
-    def install_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def install_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         agent install key identifier
         """
         return pulumi.get(self, "install_key_id")
 
     @install_key_id.setter
-    def install_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def install_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "install_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="installPath")
-    def install_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def install_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path where Management Agent is installed
         """
         return pulumi.get(self, "install_path")
 
     @install_path.setter
-    def install_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def install_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "install_path", value)
 
     @_builtins.property
     @pulumi.getter(name="installType")
-    def install_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def install_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The install type, either AGENT or GATEWAY
         """
         return pulumi.get(self, "install_type")
 
     @install_type.setter
-    def install_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def install_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "install_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgentAutoUpgradable")
-    def is_agent_auto_upgradable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agent_auto_upgradable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
         """
         return pulumi.get(self, "is_agent_auto_upgradable")
 
     @is_agent_auto_upgradable.setter
-    def is_agent_auto_upgradable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agent_auto_upgradable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_auto_upgradable", value)
 
     @_builtins.property
     @pulumi.getter(name="isCustomerDeployed")
-    def is_customer_deployed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_customer_deployed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         """
         return pulumi.get(self, "is_customer_deployed")
 
     @is_customer_deployed.setter
-    def is_customer_deployed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_customer_deployed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_customer_deployed", value)
 
     @_builtins.property
     @pulumi.getter(name="latestSupportedVersion")
-    def latest_supported_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def latest_supported_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "latest_supported_version")
 
     @latest_supported_version.setter
-    def latest_supported_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def latest_supported_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "latest_supported_version", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managedAgentId")
-    def managed_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Management Agent identifier
         """
         return pulumi.get(self, "managed_agent_id")
 
     @managed_agent_id.setter
-    def managed_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentProperties")
-    def management_agent_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]:
+    def management_agent_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]:
         """
         Additional properties for this Management Agent
         """
         return pulumi.get(self, "management_agent_properties")
 
     @management_agent_properties.setter
-    def management_agent_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]):
+    def management_agent_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]]):
         pulumi.set(self, "management_agent_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform Name
         """
         return pulumi.get(self, "platform_name")
 
     @platform_name.setter
-    def platform_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_name", value)
 
     @_builtins.property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform Type
         """
         return pulumi.get(self, "platform_type")
 
     @platform_type.setter
-    def platform_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_type", value)
 
     @_builtins.property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform Version
         """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
-    def platform_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_version", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginLists")
-    def plugin_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]]:
+    def plugin_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]]:
         """
         list of managementAgentPlugins associated with the agent
         """
         return pulumi.get(self, "plugin_lists")
 
     @plugin_lists.setter
-    def plugin_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]]):
+    def plugin_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]]):
         pulumi.set(self, "plugin_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceArtifactVersion")
-    def resource_artifact_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_artifact_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         """
         return pulumi.get(self, "resource_artifact_version")
 
     @resource_artifact_version.setter
-    def resource_artifact_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_artifact_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_artifact_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of managementAgent
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Management Agent was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastHeartbeat")
-    def time_last_heartbeat(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_heartbeat(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_heartbeat")
 
     @time_last_heartbeat.setter
-    def time_last_heartbeat(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_heartbeat(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_heartbeat", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Management Agent was last updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent Version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -629,11 +629,11 @@ class ManagementAgent(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
@@ -727,11 +727,11 @@ class ManagementAgent(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -783,36 +783,36 @@ class ManagementAgent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_status: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict']]]]] = None,
-            data_source_summary_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceSummaryListArgs', 'ManagementAgentDataSourceSummaryListArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            install_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            install_path: Optional[pulumi.Input[_builtins.str]] = None,
-            install_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_agent_auto_upgradable: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_customer_deployed: Optional[pulumi.Input[_builtins.bool]] = None,
-            latest_supported_version: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict']]]]] = None,
-            platform_name: Optional[pulumi.Input[_builtins.str]] = None,
-            platform_type: Optional[pulumi.Input[_builtins.str]] = None,
-            platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-            plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]]] = None,
-            resource_artifact_version: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementAgent':
+            availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict']]]]] = None,
+            data_source_summary_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceSummaryListArgs', 'ManagementAgentDataSourceSummaryListArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            install_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            install_path: pulumi.Input[Optional[_builtins.str]] = None,
+            install_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_agent_auto_upgradable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_customer_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
+            latest_supported_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict']]]]] = None,
+            platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]]] = None,
+            resource_artifact_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagementAgent':
         """
         Get an existing ManagementAgent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

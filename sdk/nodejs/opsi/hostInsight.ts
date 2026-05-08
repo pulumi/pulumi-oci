@@ -240,67 +240,67 @@ export interface HostInsightState {
     /**
      * (Updatable) Compartment Identifier of host
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      */
-    computeId?: pulumi.Input<string>;
+    computeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    enterpriseManagerEntityDisplayName?: pulumi.Input<string>;
+    enterpriseManagerEntityDisplayName?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    enterpriseManagerEntityIdentifier?: pulumi.Input<string>;
+    enterpriseManagerEntityIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Name
      */
-    enterpriseManagerEntityName?: pulumi.Input<string>;
+    enterpriseManagerEntityName?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Type
      */
-    enterpriseManagerEntityType?: pulumi.Input<string>;
+    enterpriseManagerEntityType?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    enterpriseManagerIdentifier?: pulumi.Input<string>;
+    enterpriseManagerIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the host entity.
      */
-    entitySource?: pulumi.Input<string>;
+    entitySource?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    exadataInsightId?: pulumi.Input<string>;
+    exadataInsightId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the host. The name does not have to be unique.
      */
-    hostDisplayName?: pulumi.Input<string>;
+    hostDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
-    hostType?: pulumi.Input<string>;
+    hostType?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      *
@@ -308,40 +308,40 @@ export interface HostInsightState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * Platform name.
      */
-    platformName?: pulumi.Input<string>;
+    platformName?: pulumi.Input<string | undefined>;
     /**
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
-    platformType?: pulumi.Input<string>;
+    platformType?: pulumi.Input<string | undefined>;
     /**
      * Platform version.
      */
-    platformVersion?: pulumi.Input<string>;
-    processorCount?: pulumi.Input<number>;
+    platformVersion?: pulumi.Input<string | undefined>;
+    processorCount?: pulumi.Input<number | undefined>;
     /**
      * The current state of the host.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -355,23 +355,23 @@ export interface HostInsightArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      */
-    computeId?: pulumi.Input<string>;
+    computeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    enterpriseManagerEntityIdentifier?: pulumi.Input<string>;
+    enterpriseManagerEntityIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    enterpriseManagerIdentifier?: pulumi.Input<string>;
+    enterpriseManagerIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the host entity.
      */
@@ -379,11 +379,11 @@ export interface HostInsightArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    exadataInsightId?: pulumi.Input<string>;
+    exadataInsightId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      *
@@ -391,9 +391,9 @@ export interface HostInsightArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

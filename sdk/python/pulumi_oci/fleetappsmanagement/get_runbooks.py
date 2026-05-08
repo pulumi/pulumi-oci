@@ -162,7 +162,7 @@ def get_runbooks(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbooks = oci.FleetAppsManagement.get_runbooks(compartment_id=compartment_id,
+    test_runbooks = oci.fleetappsmanagement.get_runbooks(compartment_id=compartment_id,
         display_name=runbook_display_name,
         id=runbook_id,
         operation=runbook_operation,
@@ -202,14 +202,14 @@ def get_runbooks(compartment_id: Optional[_builtins.str] = None,
         runbook_collections=pulumi.get(__ret__, 'runbook_collections'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        operation: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        platform: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_runbooks_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        platform: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbooksResult]:
     """
     This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -223,7 +223,7 @@ def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_runbooks = oci.FleetAppsManagement.get_runbooks(compartment_id=compartment_id,
+    test_runbooks = oci.fleetappsmanagement.get_runbooks(compartment_id=compartment_id,
         display_name=runbook_display_name,
         id=runbook_id,
         operation=runbook_operation,

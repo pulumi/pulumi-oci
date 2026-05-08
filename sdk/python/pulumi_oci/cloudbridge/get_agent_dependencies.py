@@ -144,7 +144,7 @@ def get_agent_dependencies(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=compartment_id,
+    test_agent_dependencies = oci.cloudbridge.get_agent_dependencies(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_dependency_display_name,
         environment_id=test_environment["id"],
@@ -177,12 +177,12 @@ def get_agent_dependencies(agent_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  environment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentDependenciesFilterArgs', 'GetAgentDependenciesFilterArgsDict']]]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_dependencies_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentDependenciesFilterArgs', 'GetAgentDependenciesFilterArgsDict']]]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDependenciesResult]:
     """
     This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -195,7 +195,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=compartment_id,
+    test_agent_dependencies = oci.cloudbridge.get_agent_dependencies(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_dependency_display_name,
         environment_id=test_environment["id"],

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
+ * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
@@ -104,10 +104,10 @@ export interface GetTargetDatabaseRolesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
+ * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
@@ -132,20 +132,20 @@ export interface GetTargetDatabaseRolesOutputArgs {
     /**
      * A filter to return roles based on authentication type.
      */
-    authenticationType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabaseRolesFilterArgs>[]>;
+    authenticationType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabaseRolesFilterArgs>[] | undefined>;
     /**
      * A filter to return roles based on whether they are maintained by oracle or not.
      */
-    isOracleMaintained?: pulumi.Input<boolean>;
+    isOracleMaintained?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items if role name contains a specific string.
      */
-    roleNameContains?: pulumi.Input<string>;
+    roleNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only a specific role based on role name.
      */
-    roleNames?: pulumi.Input<pulumi.Input<string>[]>;
+    roleNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */

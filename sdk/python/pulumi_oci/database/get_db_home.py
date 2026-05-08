@@ -309,7 +309,7 @@ def get_db_home(db_home_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home = oci.Database.get_db_home(db_home_id=db_home_id)
+    test_db_home = oci.database.get_db_home(db_home_id=db_home_id)
     ```
 
 
@@ -344,7 +344,7 @@ def get_db_home(db_home_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_db_home_output(db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_home_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomeResult]:
     """
     This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
@@ -357,7 +357,7 @@ def get_db_home_output(db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home = oci.Database.get_db_home(db_home_id=db_home_id)
+    test_db_home = oci.database.get_db_home(db_home_id=db_home_id)
     ```
 
 

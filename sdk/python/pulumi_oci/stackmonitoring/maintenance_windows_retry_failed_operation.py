@@ -51,7 +51,7 @@ class MaintenanceWindowsRetryFailedOperationArgs:
 @pulumi.input_type
 class _MaintenanceWindowsRetryFailedOperationState:
     def __init__(__self__, *,
-                 maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindowsRetryFailedOperation resources.
 
@@ -66,7 +66,7 @@ class _MaintenanceWindowsRetryFailedOperationState:
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowId")
-    def maintenance_window_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_window_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 
@@ -77,7 +77,7 @@ class _MaintenanceWindowsRetryFailedOperationState:
         return pulumi.get(self, "maintenance_window_id")
 
     @maintenance_window_id.setter
-    def maintenance_window_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_window_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_window_id", value)
 
 
@@ -87,7 +87,7 @@ class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Maintenance Windows Retry Failed Operation resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -170,7 +170,7 @@ class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaintenanceWindowsRetryFailedOperation':
+            maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaintenanceWindowsRetryFailedOperation':
         """
         Get an existing MaintenanceWindowsRetryFailedOperation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

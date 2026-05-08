@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         dbSystemId: testDbSystem.id,
  *         instanceId: testInstance.id,
  *         ipAddresses: targetDatabaseDatabaseDetailsIpAddresses,
- *         listenerPort: targetDatabaseDatabaseDetailsListenerPort,
+ *         listenerPort: Number(targetDatabaseDatabaseDetailsListenerPort),
  *         pluggableDatabaseId: testPluggableDatabase.id,
  *         serviceName: testService.name,
  *         vmClusterId: testVmCluster.id,
@@ -59,7 +59,7 @@ import * as utilities from "../utilities";
  *             dbSystemId: testDbSystem.id,
  *             instanceId: testInstance.id,
  *             ipAddresses: targetDatabasePeerTargetDatabaseDetailsDatabaseDetailsIpAddresses,
- *             listenerPort: targetDatabasePeerTargetDatabaseDetailsDatabaseDetailsListenerPort,
+ *             listenerPort: Number(targetDatabasePeerTargetDatabaseDetailsDatabaseDetailsListenerPort),
  *             pluggableDatabaseId: testPluggableDatabase.id,
  *             serviceName: testService.name,
  *             vmClusterId: testVmCluster.id,
@@ -258,71 +258,71 @@ export interface TargetDatabaseState {
     /**
      * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
-    associatedResourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    associatedResourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment in which to create the Data Safe target database.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Types of connection supported by Data Safe.
      */
-    connectionOption?: pulumi.Input<inputs.DataSafe.TargetDatabaseConnectionOption>;
+    connectionOption?: pulumi.Input<inputs.DataSafe.TargetDatabaseConnectionOption | undefined>;
     /**
      * (Updatable) The database credentials required for Data Safe to connect to the database.
      */
-    credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
+    credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials | undefined>;
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
-    databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
+    databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the target database in Data Safe.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the peer target database in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The details of the database to be registered as a peer target database.
      */
-    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[]>;
+    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[] | undefined>;
     /**
      * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
      */
-    peerTargetDatabases?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabase>[]>;
+    peerTargetDatabases?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabase>[] | undefined>;
     /**
      * The current state of the target database in Data Safe.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the target database update in Data Safe.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabaseTlsConfig>;
+    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabaseTlsConfig | undefined>;
 }
 
 /**
@@ -336,11 +336,11 @@ export interface TargetDatabaseArgs {
     /**
      * (Updatable) Types of connection supported by Data Safe.
      */
-    connectionOption?: pulumi.Input<inputs.DataSafe.TargetDatabaseConnectionOption>;
+    connectionOption?: pulumi.Input<inputs.DataSafe.TargetDatabaseConnectionOption | undefined>;
     /**
      * (Updatable) The database credentials required for Data Safe to connect to the database.
      */
-    credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
+    credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials | undefined>;
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
@@ -348,25 +348,25 @@ export interface TargetDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the target database in Data Safe.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The details of the database to be registered as a peer target database.
      */
-    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[]>;
+    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[] | undefined>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabaseTlsConfig>;
+    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabaseTlsConfig | undefined>;
 }

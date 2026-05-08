@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTools = oci.GenerativeAi.getAgentTools({
+ * const testTools = oci.generativeai.getAgentTools({
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     displayName: toolDisplayName,
@@ -101,7 +101,7 @@ export interface GetAgentToolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTools = oci.GenerativeAi.getAgentTools({
+ * const testTools = oci.generativeai.getAgentTools({
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     displayName: toolDisplayName,
@@ -128,18 +128,18 @@ export interface GetAgentToolsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetAgentToolsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetAgentToolsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRegions = oci.Identity.getRegions({});
+ * const testRegions = oci.identity.getRegions({});
  * ```
  */
 export function getRegions(args?: GetRegionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRegionsResult> {
@@ -60,7 +60,7 @@ export interface GetRegionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRegions = oci.Identity.getRegions({});
+ * const testRegions = oci.identity.getRegions({});
  * ```
  */
 export function getRegionsOutput(args?: GetRegionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRegionsResult> {
@@ -75,5 +75,5 @@ export function getRegionsOutput(args?: GetRegionsOutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getRegions.
  */
 export interface GetRegionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetRegionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetRegionsFilterArgs>[] | undefined>;
 }

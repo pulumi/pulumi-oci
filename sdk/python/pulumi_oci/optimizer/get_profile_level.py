@@ -120,8 +120,8 @@ def get_profile_level(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
-        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+    test_profile_level = oci.optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree == "true",
         name=profile_level_name,
         recommendation_name=test_recommendation["name"])
     ```
@@ -149,10 +149,10 @@ def get_profile_level(compartment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'))
-def get_profile_level_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             recommendation_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_profile_level_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileLevelResult]:
     """
     This data source provides details about a specific Profile Level resource in Oracle Cloud Infrastructure Optimizer service.
@@ -165,8 +165,8 @@ def get_profile_level_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
-        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+    test_profile_level = oci.optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree == "true",
         name=profile_level_name,
         recommendation_name=test_recommendation["name"])
     ```

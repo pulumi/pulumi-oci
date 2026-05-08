@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseQueryDetail = oci.DatabaseManagement.getManagedMySqlDatabaseQueryDetail({
+ * const testManagedMySqlDatabaseQueryDetail = oci.databasemanagement.getManagedMySqlDatabaseQueryDetail({
  *     digest: managedMySqlDatabaseQueryDetailDigest,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
@@ -79,7 +79,7 @@ export interface GetManagedMySqlDatabaseQueryDetailResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseQueryDetail = oci.DatabaseManagement.getManagedMySqlDatabaseQueryDetail({
+ * const testManagedMySqlDatabaseQueryDetail = oci.databasemanagement.getManagedMySqlDatabaseQueryDetail({
  *     digest: managedMySqlDatabaseQueryDetailDigest,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });

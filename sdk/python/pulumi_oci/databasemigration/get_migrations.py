@@ -446,7 +446,7 @@ def get_migrations(migration_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         wait_after=pulumi.get(__ret__, 'wait_after'))
-def get_migrations_output(migration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_migrations_output(migration_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationsResult]:
     """
     This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.

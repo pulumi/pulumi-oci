@@ -98,7 +98,7 @@ def get_drgs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drgs = oci.Core.get_drgs(compartment_id=compartment_id)
+    test_drgs = oci.core.get_drgs(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_drgs(compartment_id: Optional[_builtins.str] = None,
         drgs=pulumi.get(__ret__, 'drgs'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_drgs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgsFilterArgs', 'GetDrgsFilterArgsDict']]]]] = None,
+def get_drgs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgsFilterArgs', 'GetDrgsFilterArgsDict']]]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgsResult]:
     """
     This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
@@ -129,7 +129,7 @@ def get_drgs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_drgs = oci.Core.get_drgs(compartment_id=compartment_id)
+    test_drgs = oci.core.get_drgs(compartment_id=compartment_id)
     ```
 
 

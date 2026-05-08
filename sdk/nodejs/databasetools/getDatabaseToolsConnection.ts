@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsConnection = oci.DatabaseTools.getDatabaseToolsConnection({
+ * const testDatabaseToolsConnection = oci.databasetools.getDatabaseToolsConnection({
  *     databaseToolsConnectionId: testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id,
  * });
  * ```
@@ -152,7 +152,7 @@ export interface GetDatabaseToolsConnectionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsConnection = oci.DatabaseTools.getDatabaseToolsConnection({
+ * const testDatabaseToolsConnection = oci.databasetools.getDatabaseToolsConnection({
  *     databaseToolsConnectionId: testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id,
  * });
  * ```

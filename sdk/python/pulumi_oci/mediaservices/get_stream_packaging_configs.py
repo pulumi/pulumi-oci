@@ -134,7 +134,7 @@ def get_stream_packaging_configs(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
+    test_stream_packaging_configs = oci.mediaservices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_packaging_config_display_name,
         state=stream_packaging_config_state,
         stream_packaging_config_id=test_stream_packaging_config["id"])
@@ -163,11 +163,11 @@ def get_stream_packaging_configs(display_name: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         stream_packaging_config_collections=pulumi.get(__ret__, 'stream_packaging_config_collections'),
         stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'))
-def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        stream_packaging_config_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stream_packaging_configs_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        stream_packaging_config_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:
     """
     This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
@@ -180,7 +180,7 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
+    test_stream_packaging_configs = oci.mediaservices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_packaging_config_display_name,
         state=stream_packaging_config_state,
         stream_packaging_config_id=test_stream_packaging_config["id"])

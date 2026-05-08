@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitment = oci.OneSubsription.getCommitment({
+ * const testCommitment = oci.onesubsription.getCommitment({
  *     commitmentId: testCommitmentOciOnesubscriptionCommitment.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetCommitmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitment = oci.OneSubsription.getCommitment({
+ * const testCommitment = oci.onesubsription.getCommitment({
  *     commitmentId: testCommitmentOciOnesubscriptionCommitment.id,
  * });
  * ```

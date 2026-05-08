@@ -29,23 +29,23 @@ class AlarmArgs:
                  namespace: pulumi.Input[_builtins.str],
                  query: pulumi.Input[_builtins.str],
                  severity: pulumi.Input[_builtins.str],
-                 alarm_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 evaluation_slack_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None):
+                 alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression: pulumi.Input[Optional['AlarmSuppressionArgs']] = None):
         """
         The set of arguments for constructing a Alarm resource.
 
@@ -277,79 +277,79 @@ class AlarmArgs:
 
     @_builtins.property
     @pulumi.getter(name="alarmSummary")
-    def alarm_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alarm_summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
         """
         return pulumi.get(self, "alarm_summary")
 
     @alarm_summary.setter
-    def alarm_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alarm_summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alarm_summary", value)
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="evaluationSlackDuration")
-    def evaluation_slack_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def evaluation_slack_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
         """
         return pulumi.get(self, "evaluation_slack_duration")
 
     @evaluation_slack_duration.setter
-    def evaluation_slack_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def evaluation_slack_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "evaluation_slack_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
-    def is_notifications_per_metric_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_notifications_per_metric_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         """
         return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @is_notifications_per_metric_dimension_enabled.setter
-    def is_notifications_per_metric_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_notifications_per_metric_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_notifications_per_metric_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format to use for alarm notifications. The formats are:
         * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
@@ -359,48 +359,48 @@ class AlarmArgs:
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="metricCompartmentIdInSubtree")
-    def metric_compartment_id_in_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metric_compartment_id_in_subtree(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         """
         return pulumi.get(self, "metric_compartment_id_in_subtree")
 
     @metric_compartment_id_in_subtree.setter
-    def metric_compartment_id_in_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metric_compartment_id_in_subtree(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metric_compartment_id_in_subtree", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTitle")
-    def notification_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         """
         return pulumi.get(self, "notification_title")
 
     @notification_title.setter
-    def notification_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_title", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationVersion")
-    def notification_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         """
         return pulumi.get(self, "notification_version")
 
     @notification_version.setter
-    def notification_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
+    def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
         """
         (Updatable) A set of overrides that control evaluations of the alarm. 
 
@@ -409,12 +409,12 @@ class AlarmArgs:
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
+    def overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 
@@ -429,12 +429,12 @@ class AlarmArgs:
         return pulumi.get(self, "pending_duration")
 
     @pending_duration.setter
-    def pending_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pending_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repeat_notification_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
 
@@ -445,89 +445,89 @@ class AlarmArgs:
         return pulumi.get(self, "repeat_notification_duration")
 
     @repeat_notification_duration.setter
-    def repeat_notification_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repeat_notification_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repeat_notification_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def resolution(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolution(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         """
         return pulumi.get(self, "resolution")
 
     @resolution.setter
-    def resolution(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolution(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolution", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def suppression(self) -> Optional[pulumi.Input['AlarmSuppressionArgs']]:
+    def suppression(self) -> pulumi.Input[Optional['AlarmSuppressionArgs']]:
         """
         (Updatable) The configuration details for suppressing an alarm.
         """
         return pulumi.get(self, "suppression")
 
     @suppression.setter
-    def suppression(self, value: Optional[pulumi.Input['AlarmSuppressionArgs']]):
+    def suppression(self, value: pulumi.Input[Optional['AlarmSuppressionArgs']]):
         pulumi.set(self, "suppression", value)
 
 
 @pulumi.input_type
 class _AlarmState:
     def __init__(__self__, *,
-                 alarm_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_slack_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression: pulumi.Input[Optional['AlarmSuppressionArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Alarm resources.
 
@@ -658,67 +658,67 @@ class _AlarmState:
 
     @_builtins.property
     @pulumi.getter(name="alarmSummary")
-    def alarm_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alarm_summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
         """
         return pulumi.get(self, "alarm_summary")
 
     @alarm_summary.setter
-    def alarm_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alarm_summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alarm_summary", value)
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def destinations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destinations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         """
         return pulumi.get(self, "destinations")
 
     @destinations.setter
-    def destinations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destinations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destinations", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -729,60 +729,60 @@ class _AlarmState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="evaluationSlackDuration")
-    def evaluation_slack_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def evaluation_slack_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
         """
         return pulumi.get(self, "evaluation_slack_duration")
 
     @evaluation_slack_duration.setter
-    def evaluation_slack_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def evaluation_slack_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "evaluation_slack_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the alarm is enabled.  Example: `true`
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
-    def is_notifications_per_metric_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_notifications_per_metric_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         """
         return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @is_notifications_per_metric_dimension_enabled.setter
-    def is_notifications_per_metric_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_notifications_per_metric_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_notifications_per_metric_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format to use for alarm notifications. The formats are:
         * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
@@ -792,72 +792,72 @@ class _AlarmState:
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="metricCompartmentId")
-    def metric_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         """
         return pulumi.get(self, "metric_compartment_id")
 
     @metric_compartment_id.setter
-    def metric_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricCompartmentIdInSubtree")
-    def metric_compartment_id_in_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metric_compartment_id_in_subtree(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         """
         return pulumi.get(self, "metric_compartment_id_in_subtree")
 
     @metric_compartment_id_in_subtree.setter
-    def metric_compartment_id_in_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metric_compartment_id_in_subtree(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metric_compartment_id_in_subtree", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTitle")
-    def notification_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         """
         return pulumi.get(self, "notification_title")
 
     @notification_title.setter
-    def notification_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_title", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationVersion")
-    def notification_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         """
         return pulumi.get(self, "notification_version")
 
     @notification_version.setter
-    def notification_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
+    def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
         """
         (Updatable) A set of overrides that control evaluations of the alarm. 
 
@@ -866,12 +866,12 @@ class _AlarmState:
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
+    def overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 
@@ -886,12 +886,12 @@ class _AlarmState:
         return pulumi.get(self, "pending_duration")
 
     @pending_duration.setter
-    def pending_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pending_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 
@@ -916,12 +916,12 @@ class _AlarmState:
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repeat_notification_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
 
@@ -932,103 +932,103 @@ class _AlarmState:
         return pulumi.get(self, "repeat_notification_duration")
 
     @repeat_notification_duration.setter
-    def repeat_notification_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repeat_notification_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repeat_notification_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def resolution(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolution(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         """
         return pulumi.get(self, "resolution")
 
     @resolution.setter
-    def resolution(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolution(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolution", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the alarm.  Example: `DELETED`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def suppression(self) -> Optional[pulumi.Input['AlarmSuppressionArgs']]:
+    def suppression(self) -> pulumi.Input[Optional['AlarmSuppressionArgs']]:
         """
         (Updatable) The configuration details for suppressing an alarm.
         """
         return pulumi.get(self, "suppression")
 
     @suppression.setter
-    def suppression(self, value: Optional[pulumi.Input['AlarmSuppressionArgs']]):
+    def suppression(self, value: pulumi.Input[Optional['AlarmSuppressionArgs']]):
         pulumi.set(self, "suppression", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -1038,31 +1038,31 @@ class Alarm(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_slack_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression: Optional[pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+                 alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Alarm resource in Oracle Cloud Infrastructure Monitoring service.
@@ -1090,7 +1090,7 @@ class Alarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             destinations=[test_notification_topic["id"]],
             display_name=alarm_display_name,
-            is_enabled=alarm_is_enabled,
+            is_enabled=alarm_is_enabled == "true",
             metric_compartment_id=alarm_metric_compartment_id,
             namespace=alarm_namespace,
             query=alarm_query,
@@ -1104,9 +1104,9 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled,
+            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled == "true",
             message_format=alarm_message_format,
-            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree,
+            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree == "true",
             notification_title=alarm_notification_title,
             notification_version=alarm_notification_version,
             overrides=[{
@@ -1236,7 +1236,7 @@ class Alarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             destinations=[test_notification_topic["id"]],
             display_name=alarm_display_name,
-            is_enabled=alarm_is_enabled,
+            is_enabled=alarm_is_enabled == "true",
             metric_compartment_id=alarm_metric_compartment_id,
             namespace=alarm_namespace,
             query=alarm_query,
@@ -1250,9 +1250,9 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled,
+            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled == "true",
             message_format=alarm_message_format,
-            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree,
+            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree == "true",
             notification_title=alarm_notification_title,
             notification_version=alarm_notification_version,
             overrides=[{
@@ -1298,31 +1298,31 @@ class Alarm(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_slack_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 suppression: Optional[pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+                 alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1386,34 +1386,34 @@ class Alarm(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alarm_summary: Optional[pulumi.Input[_builtins.str]] = None,
-            body: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            evaluation_slack_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            message_format: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_title: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_version: Optional[pulumi.Input[_builtins.str]] = None,
-            overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
-            pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            query: Optional[pulumi.Input[_builtins.str]] = None,
-            repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            resolution: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            suppression: Optional[pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Alarm':
+            alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            body: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            message_format: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+            pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            resolution: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Alarm':
         """
         Get an existing Alarm resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

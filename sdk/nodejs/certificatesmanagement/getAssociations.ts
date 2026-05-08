@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssociations = oci.CertificatesManagement.getAssociations({
+ * const testAssociations = oci.certificatesmanagement.getAssociations({
  *     associatedResourceId: testAssociatedResource.id,
  *     associationId: testAssociation.id,
  *     associationType: associationAssociationType,
@@ -120,7 +120,7 @@ export interface GetAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssociations = oci.CertificatesManagement.getAssociations({
+ * const testAssociations = oci.certificatesmanagement.getAssociations({
  *     associatedResourceId: testAssociatedResource.id,
  *     associationId: testAssociation.id,
  *     associationType: associationAssociationType,
@@ -151,26 +151,26 @@ export interface GetAssociationsOutputArgs {
     /**
      * A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the association. If the parameter is set to null, the service lists all associations.
      */
-    associationId?: pulumi.Input<string>;
+    associationId?: pulumi.Input<string | undefined>;
     /**
      * Type of associations to list. If the parameter is set to null, the service lists all types of associations.
      */
-    associationType?: pulumi.Input<string>;
+    associationType?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given OCID of a certificate-related resource.
      */
-    certificatesResourceId?: pulumi.Input<string>;
+    certificatesResourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetAssociationsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetAssociationsFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources that match the specified name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.MeteringComputation.getSchedules({
+ * const testSchedules = oci.meteringcomputation.getSchedules({
  *     compartmentId: compartmentId,
  *     name: scheduleName,
  * });
@@ -86,7 +86,7 @@ export interface GetSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.MeteringComputation.getSchedules({
+ * const testSchedules = oci.meteringcomputation.getSchedules({
  *     compartmentId: compartmentId,
  *     name: scheduleName,
  * });
@@ -112,9 +112,9 @@ export interface GetSchedulesOutputArgs {
     /**
      * The filter object for query usage.
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetSchedulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetSchedulesFilterArgs>[] | undefined>;
     /**
      * The query parameter for filtering by name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

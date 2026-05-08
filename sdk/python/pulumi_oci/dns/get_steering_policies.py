@@ -181,7 +181,7 @@ def get_steering_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+    test_steering_policies = oci.dns.get_steering_policies(compartment_id=compartment_id,
         display_name=steering_policy_display_name,
         display_name_contains=steering_policy_display_name_contains,
         health_check_monitor_id=test_http_monitor["id"],
@@ -229,16 +229,16 @@ def get_steering_policies(compartment_id: Optional[_builtins.str] = None,
         template=pulumi.get(__ret__, 'template'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_steering_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSteeringPoliciesFilterArgs', 'GetSteeringPoliciesFilterArgsDict']]]]] = None,
-                                 health_check_monitor_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 template: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_steering_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSteeringPoliciesFilterArgs', 'GetSteeringPoliciesFilterArgsDict']]]]] = None,
+                                 health_check_monitor_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 template: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSteeringPoliciesResult]:
     """
     This data source provides the list of Steering Policies in Oracle Cloud Infrastructure DNS service.
@@ -251,7 +251,7 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+    test_steering_policies = oci.dns.get_steering_policies(compartment_id=compartment_id,
         display_name=steering_policy_display_name,
         display_name_contains=steering_policy_display_name_contains,
         health_check_monitor_id=test_http_monitor["id"],

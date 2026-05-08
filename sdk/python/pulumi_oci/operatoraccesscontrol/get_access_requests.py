@@ -157,7 +157,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=compartment_id,
+    test_access_requests = oci.operatoraccesscontrol.get_access_requests(compartment_id=compartment_id,
         resource_name=access_request_resource_name,
         resource_type=access_request_resource_type,
         state=access_request_state,
@@ -194,13 +194,13 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_access_requests_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]]]] = None,
-                               resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]]]] = None,
+                               resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestsResult]:
     """
     This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
@@ -213,7 +213,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=compartment_id,
+    test_access_requests = oci.operatoraccesscontrol.get_access_requests(compartment_id=compartment_id,
         resource_name=access_request_resource_name,
         resource_type=access_request_resource_type,
         state=access_request_state,

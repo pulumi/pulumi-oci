@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
+ * const testManagedDatabaseCursorCacheStatements = oci.databasemanagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
  *     sqlText: managedDatabaseCursorCacheStatementSqlText,
@@ -87,7 +87,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
+ * const testManagedDatabaseCursorCacheStatements = oci.databasemanagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
  *     sqlText: managedDatabaseCursorCacheStatementSqlText,
@@ -109,8 +109,8 @@ export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDa
  * A collection of arguments for invoking getManagedDatabaseCursorCacheStatements.
  */
 export interface GetManagedDatabaseCursorCacheStatementsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseCursorCacheStatementsFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseCursorCacheStatementsFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -118,9 +118,9 @@ export interface GetManagedDatabaseCursorCacheStatementsOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
      */
-    sqlText?: pulumi.Input<string>;
+    sqlText?: pulumi.Input<string | undefined>;
 }

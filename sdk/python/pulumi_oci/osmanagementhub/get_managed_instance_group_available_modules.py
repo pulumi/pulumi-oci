@@ -128,7 +128,7 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_modules = oci.osmanagementhub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_available_module_name,
         name_contains=managed_instance_group_available_module_name_contains)
@@ -157,11 +157,11 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[_built
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'))
-def get_managed_instance_group_available_modules_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupAvailableModulesFilterArgs', 'GetManagedInstanceGroupAvailableModulesFilterArgsDict']]]]] = None,
-                                                        managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_instance_group_available_modules_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupAvailableModulesFilterArgs', 'GetManagedInstanceGroupAvailableModulesFilterArgsDict']]]]] = None,
+                                                        managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableModulesResult]:
     """
     This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
@@ -174,7 +174,7 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_modules = oci.osmanagementhub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_available_module_name,
         name_contains=managed_instance_group_available_module_name_contains)

@@ -141,7 +141,7 @@ def get_domain_governances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governances = oci.Tenantmanagercontrolplane.get_domain_governances(compartment_id=compartment_id,
+    test_domain_governances = oci.tenantmanagercontrolplane.get_domain_governances(compartment_id=compartment_id,
         domain_governance_id=test_domain_governance["id"],
         domain_id=test_domain["id"],
         name=domain_governance_name,
@@ -174,12 +174,12 @@ def get_domain_governances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_domain_governances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  domain_governance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  domain_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDomainGovernancesFilterArgs', 'GetDomainGovernancesFilterArgsDict']]]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domain_governances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  domain_governance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  domain_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainGovernancesFilterArgs', 'GetDomainGovernancesFilterArgsDict']]]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainGovernancesResult]:
     """
     This data source provides the list of Domain Governances in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -192,7 +192,7 @@ def get_domain_governances_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governances = oci.Tenantmanagercontrolplane.get_domain_governances(compartment_id=compartment_id,
+    test_domain_governances = oci.tenantmanagercontrolplane.get_domain_governances(compartment_id=compartment_id,
         domain_governance_id=test_domain_governance["id"],
         domain_id=test_domain["id"],
         name=domain_governance_name,

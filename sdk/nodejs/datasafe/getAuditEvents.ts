@@ -29,10 +29,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.DataSafe.getAuditEvents({
+ * const testAuditEvents = oci.datasafe.getAuditEvents({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAccessLevel,
- *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree === "true",
  *     scimQuery: auditEventScimQuery,
  * });
  * ```
@@ -117,10 +117,10 @@ export interface GetAuditEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.DataSafe.getAuditEvents({
+ * const testAuditEvents = oci.datasafe.getAuditEvents({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAccessLevel,
- *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree === "true",
  *     scimQuery: auditEventScimQuery,
  * });
  * ```
@@ -143,7 +143,7 @@ export interface GetAuditEventsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -151,12 +151,12 @@ export interface GetAuditEventsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditEventsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditEventsFilterArgs>[] | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON") The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user activity, common user activity, sensitive data activity and data safe activity **Example:** (adminUser eq 1)
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
 }

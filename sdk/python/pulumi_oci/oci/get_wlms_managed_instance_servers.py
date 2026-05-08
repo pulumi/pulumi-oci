@@ -132,9 +132,9 @@ def get_wlms_managed_instance_servers(filters: Optional[Sequence[Union['GetWlmsM
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         name=pulumi.get(__ret__, 'name'),
         server_collections=pulumi.get(__ret__, 'server_collections'))
-def get_wlms_managed_instance_servers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict']]]]] = None,
-                                             managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_wlms_managed_instance_servers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict']]]]] = None,
+                                             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstanceServersResult]:
     """
     This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.

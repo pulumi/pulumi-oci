@@ -23,10 +23,10 @@ class FileSystemQuotaRuleArgs:
                  is_hard_quota: pulumi.Input[_builtins.bool],
                  principal_type: pulumi.Input[_builtins.str],
                  quota_limit_in_gigabytes: pulumi.Input[_builtins.int],
-                 are_violators_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 principal_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a FileSystemQuotaRule resource.
 
@@ -108,60 +108,60 @@ class FileSystemQuotaRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="areViolatorsOnly")
-    def are_violators_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_violators_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "are_violators_only")
 
     @are_violators_only.setter
-    def are_violators_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_violators_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_violators_only", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="principalId")
-    def principal_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def principal_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
         """
         return pulumi.get(self, "principal_id")
 
     @principal_id.setter
-    def principal_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def principal_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "principal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="quotaRuleId")
-    def quota_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def quota_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "quota_rule_id")
 
     @quota_rule_id.setter
-    def quota_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def quota_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "quota_rule_id", value)
 
 
 @pulumi.input_type
 class _FileSystemQuotaRuleState:
     def __init__(__self__, *,
-                 are_violators_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hard_quota: Optional[pulumi.Input[_builtins.bool]] = None,
-                 principal_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 principal_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 quota_limit_in_gigabytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hard_quota: pulumi.Input[Optional[_builtins.bool]] = None,
+                 principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 principal_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 quota_limit_in_gigabytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileSystemQuotaRule resources.
 
@@ -201,76 +201,76 @@ class _FileSystemQuotaRuleState:
 
     @_builtins.property
     @pulumi.getter(name="areViolatorsOnly")
-    def are_violators_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_violators_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "are_violators_only")
 
     @are_violators_only.setter
-    def are_violators_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_violators_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_violators_only", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         """
         return pulumi.get(self, "file_system_id")
 
     @file_system_id.setter
-    def file_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isHardQuota")
-    def is_hard_quota(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hard_quota(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is true, the quota rule will be enforced so the write will be blocked if usage exceeds the hard quota limit. If `isHardQuota` is false, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
         """
         return pulumi.get(self, "is_hard_quota")
 
     @is_hard_quota.setter
-    def is_hard_quota(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hard_quota(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hard_quota", value)
 
     @_builtins.property
     @pulumi.getter(name="principalId")
-    def principal_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def principal_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
         """
         return pulumi.get(self, "principal_id")
 
     @principal_id.setter
-    def principal_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def principal_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "principal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="principalType")
-    def principal_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def principal_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the owner of this quota rule and usage.
         """
         return pulumi.get(self, "principal_type")
 
     @principal_type.setter
-    def principal_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def principal_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "principal_type", value)
 
     @_builtins.property
     @pulumi.getter(name="quotaLimitInGigabytes")
-    def quota_limit_in_gigabytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quota_limit_in_gigabytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The value of the quota rule. The unit is Gigabyte. 
 
@@ -281,40 +281,40 @@ class _FileSystemQuotaRuleState:
         return pulumi.get(self, "quota_limit_in_gigabytes")
 
     @quota_limit_in_gigabytes.setter
-    def quota_limit_in_gigabytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quota_limit_in_gigabytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quota_limit_in_gigabytes", value)
 
     @_builtins.property
     @pulumi.getter(name="quotaRuleId")
-    def quota_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def quota_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "quota_rule_id")
 
     @quota_rule_id.setter
-    def quota_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def quota_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "quota_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -324,14 +324,14 @@ class FileSystemQuotaRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_violators_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hard_quota: Optional[pulumi.Input[_builtins.bool]] = None,
-                 principal_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 principal_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 quota_limit_in_gigabytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hard_quota: pulumi.Input[Optional[_builtins.bool]] = None,
+                 principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 principal_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 quota_limit_in_gigabytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
@@ -350,11 +350,11 @@ class FileSystemQuotaRule(pulumi.CustomResource):
 
         test_file_system_quota_rule = oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule",
             file_system_id=test_file_system["id"],
-            is_hard_quota=file_system_quota_rule_is_hard_quota,
+            is_hard_quota=file_system_quota_rule_is_hard_quota == "true",
             principal_type=file_system_quota_rule_principal_type,
-            quota_limit_in_gigabytes=file_system_quota_rule_quota_limit_in_gigabytes,
+            quota_limit_in_gigabytes=int(file_system_quota_rule_quota_limit_in_gigabytes),
             display_name=file_system_quota_rule_display_name,
-            principal_id=test_principal["id"])
+            principal_id=int(test_principal["id"]))
         ```
 
         ## Import
@@ -402,11 +402,11 @@ class FileSystemQuotaRule(pulumi.CustomResource):
 
         test_file_system_quota_rule = oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule",
             file_system_id=test_file_system["id"],
-            is_hard_quota=file_system_quota_rule_is_hard_quota,
+            is_hard_quota=file_system_quota_rule_is_hard_quota == "true",
             principal_type=file_system_quota_rule_principal_type,
-            quota_limit_in_gigabytes=file_system_quota_rule_quota_limit_in_gigabytes,
+            quota_limit_in_gigabytes=int(file_system_quota_rule_quota_limit_in_gigabytes),
             display_name=file_system_quota_rule_display_name,
-            principal_id=test_principal["id"])
+            principal_id=int(test_principal["id"]))
         ```
 
         ## Import
@@ -433,14 +433,14 @@ class FileSystemQuotaRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_violators_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hard_quota: Optional[pulumi.Input[_builtins.bool]] = None,
-                 principal_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 principal_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 quota_limit_in_gigabytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hard_quota: pulumi.Input[Optional[_builtins.bool]] = None,
+                 principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 principal_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 quota_limit_in_gigabytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -478,16 +478,16 @@ class FileSystemQuotaRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            are_violators_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_hard_quota: Optional[pulumi.Input[_builtins.bool]] = None,
-            principal_id: Optional[pulumi.Input[_builtins.int]] = None,
-            principal_type: Optional[pulumi.Input[_builtins.str]] = None,
-            quota_limit_in_gigabytes: Optional[pulumi.Input[_builtins.int]] = None,
-            quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'FileSystemQuotaRule':
+            are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hard_quota: pulumi.Input[Optional[_builtins.bool]] = None,
+            principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+            principal_type: pulumi.Input[Optional[_builtins.str]] = None,
+            quota_limit_in_gigabytes: pulumi.Input[Optional[_builtins.int]] = None,
+            quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'FileSystemQuotaRule':
         """
         Get an existing FileSystemQuotaRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

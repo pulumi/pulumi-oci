@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssetSources = oci.CloudBridge.getAssetSources({
+ * const testAssetSources = oci.cloudbridge.getAssetSources({
  *     compartmentId: compartmentId,
  *     assetSourceId: testAssetSource.id,
  *     displayName: assetSourceDisplayName,
@@ -97,7 +97,7 @@ export interface GetAssetSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssetSources = oci.CloudBridge.getAssetSources({
+ * const testAssetSources = oci.cloudbridge.getAssetSources({
  *     compartmentId: compartmentId,
  *     assetSourceId: testAssetSource.id,
  *     displayName: assetSourceDisplayName,
@@ -123,7 +123,7 @@ export interface GetAssetSourcesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
      */
-    assetSourceId?: pulumi.Input<string>;
+    assetSourceId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -131,10 +131,10 @@ export interface GetAssetSourcesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAssetSourcesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAssetSourcesFilterArgs>[] | undefined>;
     /**
      * The current state of the asset source.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

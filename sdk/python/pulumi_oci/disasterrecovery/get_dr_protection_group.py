@@ -270,7 +270,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
+    test_dr_protection_group = oci.disasterrecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
     ```
 
 
@@ -301,7 +301,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[_builtins.str] = No
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dr_protection_group_output(dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrProtectionGroupResult]:
     """
     This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -314,7 +314,7 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
+    test_dr_protection_group = oci.disasterrecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
     ```
 
 

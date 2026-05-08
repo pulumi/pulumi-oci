@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new oci.databasemanagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("test_externalnoncontainerdatabase_external_non_container_dbm_features_management", {
  *     externalNonContainerDatabaseId: testExternalNonContainerDatabase.id,
- *     enableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature,
+ *     enableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature === "true",
  *     featureDetails: {
  *         feature: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsFeature,
  *         enableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature,
@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *             managementAgentId: testManagementAgent.id,
  *             privateEndPointId: testPrivateEndPoint.id,
  *         },
- *         canEnableAllCurrentPdbs: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
- *         isAutoEnablePluggableDatabase: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         canEnableAllCurrentPdbs: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
+ *         isAutoEnablePluggableDatabase: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
  *         licenseModel: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
  *     },
  * });
@@ -127,15 +127,15 @@ export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMana
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableExternalNonContainerDbmFeature?: pulumi.Input<boolean>;
+    enableExternalNonContainerDbmFeature?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external non-container database.
      */
-    externalNonContainerDatabaseId?: pulumi.Input<string>;
+    externalNonContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails | undefined>;
 }
 
 /**
@@ -157,5 +157,5 @@ export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMana
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails | undefined>;
 }

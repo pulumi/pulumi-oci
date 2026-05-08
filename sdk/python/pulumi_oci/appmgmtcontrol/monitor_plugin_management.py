@@ -51,12 +51,12 @@ class MonitorPluginManagementArgs:
 @pulumi.input_type
 class _MonitorPluginManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitored_instance_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitored_instance_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitored_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitored_instance_management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitored_instance_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitored_instance_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitored_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitored_instance_management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitorPluginManagement resources.
 
@@ -81,34 +81,34 @@ class _MonitorPluginManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoredInstanceDescription")
-    def monitored_instance_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitored_instance_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "monitored_instance_description")
 
     @monitored_instance_description.setter
-    def monitored_instance_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitored_instance_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitored_instance_description", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoredInstanceDisplayName")
-    def monitored_instance_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitored_instance_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "monitored_instance_display_name")
 
     @monitored_instance_display_name.setter
-    def monitored_instance_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitored_instance_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitored_instance_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoredInstanceId")
-    def monitored_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitored_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of monitored instance.
 
@@ -119,25 +119,25 @@ class _MonitorPluginManagementState:
         return pulumi.get(self, "monitored_instance_id")
 
     @monitored_instance_id.setter
-    def monitored_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitored_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitored_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoredInstanceManagementAgentId")
-    def monitored_instance_management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitored_instance_management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "monitored_instance_management_agent_id")
 
     @monitored_instance_management_agent_id.setter
-    def monitored_instance_management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitored_instance_management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitored_instance_management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -147,7 +147,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 monitored_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 monitored_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitor Plugin Management resource in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -228,7 +228,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 monitored_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 monitored_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,12 +256,12 @@ class MonitorPluginManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            monitored_instance_description: Optional[pulumi.Input[_builtins.str]] = None,
-            monitored_instance_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            monitored_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            monitored_instance_management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitorPluginManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_instance_description: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_instance_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_instance_management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitorPluginManagement':
         """
         Get an existing MonitorPluginManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

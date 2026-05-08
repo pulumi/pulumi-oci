@@ -105,7 +105,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ospgateway.get_subscriptions(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region)
     ```
 
@@ -126,9 +126,9 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
         subscription_collections=pulumi.get(__ret__, 'subscription_collections'))
-def get_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
-                             osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
@@ -141,7 +141,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ospgateway.get_subscriptions(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region)
     ```
 

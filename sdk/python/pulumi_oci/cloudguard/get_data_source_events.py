@@ -113,7 +113,7 @@ def get_data_source_events(data_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=test_data_source["id"],
+    test_data_source_events = oci.cloudguard.get_data_source_events(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 
@@ -134,9 +134,9 @@ def get_data_source_events(data_source_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         region=pulumi.get(__ret__, 'region'))
-def get_data_source_events_output(data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]]]] = None,
-                                  region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_data_source_events_output(data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]]]] = None,
+                                  region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourceEventsResult]:
     """
     This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
@@ -151,7 +151,7 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=test_data_source["id"],
+    test_data_source_events = oci.cloudguard.get_data_source_events(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 

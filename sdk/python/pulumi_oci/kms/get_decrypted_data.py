@@ -125,7 +125,7 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, _builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+    test_decrypted_data = oci.kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
         crypto_endpoint=decrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         associated_data=decrypted_data_associated_data)
@@ -153,10 +153,10 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, _builtins.str]] = 
         key_id=pulumi.get(__ret__, 'key_id'),
         plaintext=pulumi.get(__ret__, 'plaintext'),
         plaintext_checksum=pulumi.get(__ret__, 'plaintext_checksum'))
-def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                              ciphertext: Optional[pulumi.Input[_builtins.str]] = None,
-                              crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                              key_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_decrypted_data_output(associated_data: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                              ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+                              crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                              key_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDecryptedDataResult]:
     """
     The `kms_get_decrypted_data` data source provides details about a specific DecryptedData
@@ -169,7 +169,7 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+    test_decrypted_data = oci.kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
         crypto_endpoint=decrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         associated_data=decrypted_data_associated_data)

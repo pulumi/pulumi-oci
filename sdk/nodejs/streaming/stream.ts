@@ -24,13 +24,13 @@ import * as utilities from "../utilities";
  *
  * const testStream = new oci.streaming.Stream("test_stream", {
  *     name: streamName,
- *     partitions: streamPartitions,
+ *     partitions: Number(streamPartitions),
  *     compartmentId: compartmentId,
  *     definedTags: streamDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     retentionInHours: streamRetentionInHours,
+ *     retentionInHours: Number(streamRetentionInHours),
  *     streamPoolId: testStreamPool.id,
  * });
  * ```
@@ -173,39 +173,39 @@ export interface StreamState {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Any additional details about the current state of the stream.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
      */
-    messagesEndpoint?: pulumi.Input<string>;
+    messagesEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of partitions in the stream.
      */
-    partitions?: pulumi.Input<number>;
+    partitions?: pulumi.Input<number | undefined>;
     /**
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      */
-    retentionInHours?: pulumi.Input<number>;
+    retentionInHours?: pulumi.Input<number | undefined>;
     /**
      * The current state of the stream.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
      *
@@ -213,11 +213,11 @@ export interface StreamState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streamPoolId?: pulumi.Input<string>;
+    streamPoolId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -227,19 +227,19 @@ export interface StreamArgs {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of partitions in the stream.
      */
@@ -247,7 +247,7 @@ export interface StreamArgs {
     /**
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      */
-    retentionInHours?: pulumi.Input<number>;
+    retentionInHours?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
      *
@@ -255,5 +255,5 @@ export interface StreamArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streamPoolId?: pulumi.Input<string>;
+    streamPoolId?: pulumi.Input<string | undefined>;
 }

@@ -40,8 +40,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -83,8 +83,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -126,8 +126,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -169,8 +169,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -212,8 +212,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -255,8 +255,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -297,8 +297,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -339,8 +339,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -381,8 +381,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -423,8 +423,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -465,8 +465,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -510,8 +510,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -555,8 +555,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -600,8 +600,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -645,8 +645,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -690,8 +690,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -735,8 +735,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -780,8 +780,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -823,8 +823,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -866,8 +866,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -909,8 +909,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -952,8 +952,8 @@ public final class SecurityAttributeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
      * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

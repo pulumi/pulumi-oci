@@ -124,7 +124,7 @@ def get_boot_volumes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
+    test_boot_volumes = oci.core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
         compartment_id=compartment_id,
         volume_group_id=test_volume_group["id"])
     ```
@@ -149,10 +149,10 @@ def get_boot_volumes(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'))
-def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]]]] = None,
-                            volume_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_boot_volumes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]]]] = None,
+                            volume_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumesResult]:
     """
     This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
@@ -165,7 +165,7 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
+    test_boot_volumes = oci.core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
         compartment_id=compartment_id,
         volume_group_id=test_volume_group["id"])
     ```

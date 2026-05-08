@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservationInstanceShapes = oci.Core.getComputeCapacityReservationInstanceShapes({
+ * const testComputeCapacityReservationInstanceShapes = oci.core.getComputeCapacityReservationInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationInstanceShapeAvailabilityDomain,
  *     displayName: computeCapacityReservationInstanceShapeDisplayName,
@@ -84,7 +84,7 @@ export interface GetComputeCapacityReservationInstanceShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservationInstanceShapes = oci.Core.getComputeCapacityReservationInstanceShapes({
+ * const testComputeCapacityReservationInstanceShapes = oci.core.getComputeCapacityReservationInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationInstanceShapeAvailabilityDomain,
  *     displayName: computeCapacityReservationInstanceShapeDisplayName,
@@ -108,7 +108,7 @@ export interface GetComputeCapacityReservationInstanceShapesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -116,6 +116,6 @@ export interface GetComputeCapacityReservationInstanceShapesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityReservationInstanceShapesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityReservationInstanceShapesFilterArgs>[] | undefined>;
 }

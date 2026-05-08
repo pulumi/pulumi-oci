@@ -133,7 +133,7 @@ def get_http_probe_results(filters: Optional[Sequence[Union['GetHttpProbeResults
     import pulumi
     import pulumi_oci as oci
 
-    test_http_probe_results = oci.HealthChecks.get_http_probe_results(probe_configuration_id=test_probe_configuration["id"],
+    test_http_probe_results = oci.healthchecks.get_http_probe_results(probe_configuration_id=test_probe_configuration["id"],
         start_time_greater_than_or_equal_to=http_probe_result_start_time_greater_than_or_equal_to,
         start_time_less_than_or_equal_to=http_probe_result_start_time_less_than_or_equal_to,
         target=http_probe_result_target)
@@ -162,11 +162,11 @@ def get_http_probe_results(filters: Optional[Sequence[Union['GetHttpProbeResults
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         start_time_less_than_or_equal_to=pulumi.get(__ret__, 'start_time_less_than_or_equal_to'),
         target=pulumi.get(__ret__, 'target'))
-def get_http_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict']]]]] = None,
-                                  probe_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                  start_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                  target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_http_probe_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict']]]]] = None,
+                                  probe_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  start_time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                  start_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                  target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHttpProbeResultsResult]:
     """
     This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
@@ -181,7 +181,7 @@ def get_http_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_http_probe_results = oci.HealthChecks.get_http_probe_results(probe_configuration_id=test_probe_configuration["id"],
+    test_http_probe_results = oci.healthchecks.get_http_probe_results(probe_configuration_id=test_probe_configuration["id"],
         start_time_greater_than_or_equal_to=http_probe_result_start_time_greater_than_or_equal_to,
         start_time_less_than_or_equal_to=http_probe_result_start_time_less_than_or_equal_to,
         target=http_probe_result_target)

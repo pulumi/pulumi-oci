@@ -36,12 +36,12 @@ import * as utilities from "../utilities";
  *     schedules: [{
  *         backupType: volumeBackupPolicySchedulesBackupType,
  *         period: volumeBackupPolicySchedulesPeriod,
- *         retentionSeconds: volumeBackupPolicySchedulesRetentionSeconds,
- *         dayOfMonth: volumeBackupPolicySchedulesDayOfMonth,
+ *         retentionSeconds: Number(volumeBackupPolicySchedulesRetentionSeconds),
+ *         dayOfMonth: Number(volumeBackupPolicySchedulesDayOfMonth),
  *         dayOfWeek: volumeBackupPolicySchedulesDayOfWeek,
- *         hourOfDay: volumeBackupPolicySchedulesHourOfDay,
+ *         hourOfDay: Number(volumeBackupPolicySchedulesHourOfDay),
  *         month: volumeBackupPolicySchedulesMonth,
- *         offsetSeconds: volumeBackupPolicySchedulesOffsetSeconds,
+ *         offsetSeconds: Number(volumeBackupPolicySchedulesOffsetSeconds),
  *         offsetType: volumeBackupPolicySchedulesOffsetType,
  *         timeZone: volumeBackupPolicySchedulesTimeZone,
  *     }],
@@ -158,31 +158,31 @@ export interface VolumeBackupPolicyState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
      */
-    destinationRegion?: pulumi.Input<string>;
+    destinationRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBackupPolicySchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBackupPolicySchedule>[] | undefined>;
     /**
      * The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -196,21 +196,21 @@ export interface VolumeBackupPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
      */
-    destinationRegion?: pulumi.Input<string>;
+    destinationRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBackupPolicySchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBackupPolicySchedule>[] | undefined>;
 }

@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
+ * const testSensitiveTypes = oci.datasafe.getSensitiveTypes({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree === "true",
  *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
  *     displayName: sensitiveTypeDisplayName,
  *     entityType: sensitiveTypeEntityType,
- *     isCommon: sensitiveTypeIsCommon,
+ *     isCommon: sensitiveTypeIsCommon === "true",
  *     parentCategoryId: testCategory.id,
  *     sensitiveTypeId: testSensitiveType.id,
  *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,
@@ -176,14 +176,14 @@ export interface GetSensitiveTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
+ * const testSensitiveTypes = oci.datasafe.getSensitiveTypes({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree === "true",
  *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
  *     displayName: sensitiveTypeDisplayName,
  *     entityType: sensitiveTypeEntityType,
- *     isCommon: sensitiveTypeIsCommon,
+ *     isCommon: sensitiveTypeIsCommon === "true",
  *     parentCategoryId: testCategory.id,
  *     sensitiveTypeId: testSensitiveType.id,
  *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,
@@ -220,7 +220,7 @@ export interface GetSensitiveTypesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -228,50 +228,50 @@ export interface GetSensitiveTypesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
      */
-    defaultMaskingFormatId?: pulumi.Input<string>;
+    defaultMaskingFormatId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the sensitive type resources based on the value of their entityType attribute.
      */
-    entityType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveTypesFilterArgs>[]>;
+    entityType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveTypesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
      */
-    isCommon?: pulumi.Input<boolean>;
+    isCommon?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      */
-    parentCategoryId?: pulumi.Input<string>;
+    parentCategoryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the sensitive type resources based on the value of their source attribute.
      */
-    sensitiveTypeSource?: pulumi.Input<string>;
+    sensitiveTypeSource?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

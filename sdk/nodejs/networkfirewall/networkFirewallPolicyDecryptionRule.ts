@@ -176,40 +176,40 @@ export interface NetworkFirewallPolicyDecryptionRuleState {
      * * NO_DECRYPT - Matching traffic is not decrypted.
      * * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      */
-    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
+    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition | undefined>;
     /**
      * (Updatable) The name of the decryption profile to use.
      */
-    decryptionProfile?: pulumi.Input<string>;
+    decryptionProfile?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The description of the decryption rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this decryption rule belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition>;
-    priorityOrder?: pulumi.Input<string>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition | undefined>;
+    priorityOrder?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -229,15 +229,15 @@ export interface NetworkFirewallPolicyDecryptionRuleArgs {
     /**
      * (Updatable) The name of the decryption profile to use.
      */
-    decryptionProfile?: pulumi.Input<string>;
+    decryptionProfile?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The description of the decryption rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -245,10 +245,10 @@ export interface NetworkFirewallPolicyDecryptionRuleArgs {
     /**
      * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition>;
-    priorityOrder?: pulumi.Input<string>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition | undefined>;
+    priorityOrder?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
 }

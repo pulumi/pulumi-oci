@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControlAssignments = oci.OperatorAccessControl.getControlAssignments({
+ * const testOperatorControlAssignments = oci.operatoraccesscontrol.getControlAssignments({
  *     compartmentId: compartmentId,
  *     operatorControlName: testOperatorControl.name,
  *     resourceName: operatorControlAssignmentResourceName,
@@ -107,7 +107,7 @@ export interface GetControlAssignmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControlAssignments = oci.OperatorAccessControl.getControlAssignments({
+ * const testOperatorControlAssignments = oci.operatoraccesscontrol.getControlAssignments({
  *     compartmentId: compartmentId,
  *     operatorControlName: testOperatorControl.name,
  *     resourceName: operatorControlAssignmentResourceName,
@@ -136,21 +136,21 @@ export interface GetControlAssignmentsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetControlAssignmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetControlAssignmentsFilterArgs>[] | undefined>;
     /**
      * A filter to return OperatorControl that match the given operatorControlName.
      */
-    operatorControlName?: pulumi.Input<string>;
+    operatorControlName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given ResourceName.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only lists of resources that match the entire given service type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

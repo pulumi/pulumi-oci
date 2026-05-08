@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileLevels = oci.Optimizer.getProfileLevels({
+ * const testProfileLevels = oci.optimizer.getProfileLevels({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -96,9 +96,9 @@ export interface GetProfileLevelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileLevels = oci.Optimizer.getProfileLevels({
+ * const testProfileLevels = oci.optimizer.getProfileLevels({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -129,13 +129,13 @@ export interface GetProfileLevelsOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetProfileLevelsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetProfileLevelsFilterArgs>[] | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the recommendation name specified.
      */
-    recommendationName?: pulumi.Input<string>;
+    recommendationName?: pulumi.Input<string | undefined>;
 }

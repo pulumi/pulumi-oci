@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugin = oci.Jms.getJmsPlugin({
+ * const testJmsPlugin = oci.jms.getJmsPlugin({
  *     jmsPluginId: testJmsPluginOciJmsJmsPlugin.id,
  * });
  * ```
@@ -122,7 +122,7 @@ export interface GetJmsPluginResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugin = oci.Jms.getJmsPlugin({
+ * const testJmsPlugin = oci.jms.getJmsPlugin({
  *     jmsPluginId: testJmsPluginOciJmsJmsPlugin.id,
  * });
  * ```

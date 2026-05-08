@@ -137,20 +137,20 @@ export interface LoadBalancerRoutingPolicyState {
     /**
      * (Updatable) The version of the language in which `condition` of `rules` are composed.
      */
-    conditionLanguageVersion?: pulumi.Input<string>;
+    conditionLanguageVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of routing rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerRoutingPolicyRule>[]>;
-    state?: pulumi.Input<string>;
+    rules?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerRoutingPolicyRule>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -168,7 +168,7 @@ export interface LoadBalancerRoutingPolicyArgs {
     /**
      * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of routing rules.
      */

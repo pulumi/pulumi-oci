@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExports = oci.FileStorage.getExports({
+ * const testExports = oci.filestorage.getExports({
  *     compartmentId: compartmentId,
  *     exportSetId: testExportSet.id,
  *     fileSystemId: testFileSystem.id,
@@ -108,7 +108,7 @@ export interface GetExportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExports = oci.FileStorage.getExports({
+ * const testExports = oci.filestorage.getExports({
  *     compartmentId: compartmentId,
  *     exportSetId: testExportSet.id,
  *     fileSystemId: testFileSystem.id,
@@ -137,22 +137,22 @@ export interface GetExportsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      */
-    exportSetId?: pulumi.Input<string>;
+    exportSetId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    fileSystemId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetExportsFilterArgs>[]>;
+    fileSystemId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetExportsFilterArgs>[] | undefined>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannels = oci.Mysql.getChannels({
+ * const testChannels = oci.mysql.getChannels({
  *     compartmentId: compartmentId,
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled,
+ *     isEnabled: channelIsEnabled === "true",
  *     state: channelState,
  * });
  * ```
@@ -117,12 +117,12 @@ export interface GetChannelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannels = oci.Mysql.getChannels({
+ * const testChannels = oci.mysql.getChannels({
  *     compartmentId: compartmentId,
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled,
+ *     isEnabled: channelIsEnabled === "true",
  *     state: channelState,
  * });
  * ```
@@ -147,7 +147,7 @@ export interface GetChannelsOutputArgs {
     /**
      * The OCID of the Channel.
      */
-    channelId?: pulumi.Input<string>;
+    channelId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -155,18 +155,18 @@ export interface GetChannelsOutputArgs {
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resource matching the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetChannelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetChannelsFilterArgs>[] | undefined>;
     /**
      * If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The LifecycleState of the Channel.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -36,23 +36,23 @@ __all__ = [
 ]
 
 class ConfigurationKmsKeyArgsDict(TypedDict):
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
     """
-    kms_key_state: NotRequired[pulumi.Input[_builtins.str]]
+    kms_key_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
     """
-    kms_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    kms_vault_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
 
@@ -64,11 +64,11 @@ class ConfigurationKmsKeyArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigurationKmsKeyArgs:
     def __init__(__self__, *,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] id: (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
         :param pulumi.Input[_builtins.str] kms_key_state: (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
@@ -93,55 +93,55 @@ class ConfigurationKmsKeyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyState")
-    def kms_key_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
         """
         return pulumi.get(self, "kms_key_state")
 
     @kms_key_state.setter
-    def kms_key_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_state", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsVaultId")
-    def kms_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
         """
         return pulumi.get(self, "kms_vault_id")
 
     @kms_vault_id.setter
-    def kms_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
 
@@ -152,7 +152,7 @@ class ConfigurationKmsKeyArgs:
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -161,11 +161,11 @@ class IndexKeyArgsDict(TypedDict):
     """
     The name of a column to be included as an index key.
     """
-    json_field_type: NotRequired[pulumi.Input[_builtins.str]]
+    json_field_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
     """
-    json_path: NotRequired[pulumi.Input[_builtins.str]]
+    json_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
     """
@@ -174,8 +174,8 @@ class IndexKeyArgsDict(TypedDict):
 class IndexKeyArgs:
     def __init__(__self__, *,
                  column_name: pulumi.Input[_builtins.str],
-                 json_field_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 json_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 json_field_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 json_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] column_name: The name of a column to be included as an index key.
         :param pulumi.Input[_builtins.str] json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
@@ -201,51 +201,51 @@ class IndexKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="jsonFieldType")
-    def json_field_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def json_field_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         """
         return pulumi.get(self, "json_field_type")
 
     @json_field_type.setter
-    def json_field_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def json_field_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "json_field_type", value)
 
     @_builtins.property
     @pulumi.getter(name="jsonPath")
-    def json_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def json_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
         return pulumi.get(self, "json_path")
 
     @json_path.setter
-    def json_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def json_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "json_path", value)
 
 
 class TableReplicaArgsDict(TypedDict):
-    capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail.
     """
-    max_write_units: NotRequired[pulumi.Input[_builtins.int]]
+    max_write_units: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Maximum sustained write throughput limit for the table.
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A customer-facing region identifier
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of a table.
     """
-    table_id: NotRequired[pulumi.Input[_builtins.str]]
+    table_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the replica table
     """
@@ -253,12 +253,12 @@ class TableReplicaArgsDict(TypedDict):
 @pulumi.input_type
 class TableReplicaArgs:
     def __init__(__self__, *,
-                 capacity_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_write_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 capacity_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] capacity_mode: The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail.
@@ -282,95 +282,95 @@ class TableReplicaArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityMode")
-    def capacity_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
         return pulumi.get(self, "capacity_mode")
 
     @capacity_mode.setter
-    def capacity_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWriteUnits")
-    def max_write_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_write_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum sustained write throughput limit for the table.
         """
         return pulumi.get(self, "max_write_units")
 
     @max_write_units.setter
-    def max_write_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_write_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_write_units", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A customer-facing region identifier
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of a table.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tableId")
-    def table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the replica table
         """
         return pulumi.get(self, "table_id")
 
     @table_id.setter
-    def table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_id", value)
 
 
 class TableSchemaArgsDict(TypedDict):
-    columns: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgsDict']]]]
+    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]]
     """
     The columns of a table.
     """
-    identities: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgsDict']]]]
+    identities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]]
     """
     The identity properties of a table, if any.
     """
-    primary_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    primary_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of column names that make up a key.
     """
-    shard_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    shard_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of column names that make up a key.
     """
-    ttl: NotRequired[pulumi.Input[_builtins.int]]
+    ttl: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The default Time-to-Live for the table, in days.
     """
@@ -378,11 +378,11 @@ class TableSchemaArgsDict(TypedDict):
 @pulumi.input_type
 class TableSchemaArgs:
     def __init__(__self__, *,
-                 columns: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]]] = None,
-                 identities: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]] = None,
-                 primary_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shard_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None):
+                 columns: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgs']]]] = None,
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]] = None,
+                 primary_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shard_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]] columns: The columns of a table.
         :param pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]] identities: The identity properties of a table, if any.
@@ -403,87 +403,87 @@ class TableSchemaArgs:
 
     @_builtins.property
     @pulumi.getter
-    def columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]:
+    def columns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]:
         """
         The columns of a table.
         """
         return pulumi.get(self, "columns")
 
     @columns.setter
-    def columns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]):
+    def columns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]):
         pulumi.set(self, "columns", value)
 
     @_builtins.property
     @pulumi.getter
-    def identities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]:
+    def identities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]:
         """
         The identity properties of a table, if any.
         """
         return pulumi.get(self, "identities")
 
     @identities.setter
-    def identities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]):
+    def identities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]):
         pulumi.set(self, "identities", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryKeys")
-    def primary_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def primary_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of column names that make up a key.
         """
         return pulumi.get(self, "primary_keys")
 
     @primary_keys.setter
-    def primary_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def primary_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "primary_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="shardKeys")
-    def shard_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def shard_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of column names that make up a key.
         """
         return pulumi.get(self, "shard_keys")
 
     @shard_keys.setter
-    def shard_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def shard_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "shard_keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The default Time-to-Live for the table, in days.
         """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
 
 class TableSchemaColumnArgsDict(TypedDict):
-    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    default_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The column default value.
     """
-    is_as_uuid: NotRequired[pulumi.Input[_builtins.bool]]
+    is_as_uuid: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if the STRING column was declared AS UUID.
     """
-    is_generated: NotRequired[pulumi.Input[_builtins.bool]]
+    is_generated: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if the STRING AS UUID column is also GENERATED BY DEFAULT.
     """
-    is_nullable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_nullable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     The column nullable flag.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Table name.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The column type.
     """
@@ -491,12 +491,12 @@ class TableSchemaColumnArgsDict(TypedDict):
 @pulumi.input_type
 class TableSchemaColumnArgs:
     def __init__(__self__, *,
-                 default_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_as_uuid: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_generated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_nullable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_as_uuid: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_generated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_nullable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] default_value: The column default value.
         :param pulumi.Input[_builtins.bool] is_as_uuid: True if the STRING column was declared AS UUID.
@@ -520,87 +520,87 @@ class TableSchemaColumnArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The column default value.
         """
         return pulumi.get(self, "default_value")
 
     @default_value.setter
-    def default_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_value", value)
 
     @_builtins.property
     @pulumi.getter(name="isAsUuid")
-    def is_as_uuid(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_as_uuid(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the STRING column was declared AS UUID.
         """
         return pulumi.get(self, "is_as_uuid")
 
     @is_as_uuid.setter
-    def is_as_uuid(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_as_uuid(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_as_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="isGenerated")
-    def is_generated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_generated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the STRING AS UUID column is also GENERATED BY DEFAULT.
         """
         return pulumi.get(self, "is_generated")
 
     @is_generated.setter
-    def is_generated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_generated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_generated", value)
 
     @_builtins.property
     @pulumi.getter(name="isNullable")
-    def is_nullable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_nullable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The column nullable flag.
         """
         return pulumi.get(self, "is_nullable")
 
     @is_nullable.setter
-    def is_nullable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_nullable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_nullable", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Table name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The column type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class TableSchemaIdentityArgsDict(TypedDict):
-    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    column_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the identity column.
     """
-    is_always: NotRequired[pulumi.Input[_builtins.bool]]
+    is_always: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if the identity value is GENERATED ALWAYS.
     """
-    is_null: NotRequired[pulumi.Input[_builtins.bool]]
+    is_null: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if the identity value is GENERATED BY DEFAULT ON NULL.
     """
@@ -608,9 +608,9 @@ class TableSchemaIdentityArgsDict(TypedDict):
 @pulumi.input_type
 class TableSchemaIdentityArgs:
     def __init__(__self__, *,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_always: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_null: Optional[pulumi.Input[_builtins.bool]] = None):
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_always: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_null: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] column_name: The name of the identity column.
         :param pulumi.Input[_builtins.bool] is_always: True if the identity value is GENERATED ALWAYS.
@@ -625,38 +625,38 @@ class TableSchemaIdentityArgs:
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the identity column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isAlways")
-    def is_always(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_always(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the identity value is GENERATED ALWAYS.
         """
         return pulumi.get(self, "is_always")
 
     @is_always.setter
-    def is_always(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_always(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_always", value)
 
     @_builtins.property
     @pulumi.getter(name="isNull")
-    def is_null(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_null(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
         return pulumi.get(self, "is_null")
 
     @is_null.setter
-    def is_null(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_null(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_null", value)
 
 
@@ -677,7 +677,7 @@ class TableTableLimitsArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
     """
-    capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
     """
@@ -688,7 +688,7 @@ class TableTableLimitsArgs:
                  max_read_units: pulumi.Input[_builtins.int],
                  max_storage_in_gbs: pulumi.Input[_builtins.int],
                  max_write_units: pulumi.Input[_builtins.int],
-                 capacity_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 capacity_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] max_read_units: (Updatable) Maximum sustained read throughput limit for the table.
         :param pulumi.Input[_builtins.int] max_storage_in_gbs: (Updatable) Maximum size of storage used by the table.
@@ -747,14 +747,14 @@ class TableTableLimitsArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityMode")
-    def capacity_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
         return pulumi.get(self, "capacity_mode")
 
     @capacity_mode.setter
-    def capacity_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_mode", value)
 
 

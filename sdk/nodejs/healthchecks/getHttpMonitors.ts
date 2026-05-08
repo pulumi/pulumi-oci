@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
+ * const testHttpMonitors = oci.healthchecks.getHttpMonitors({
  *     compartmentId: compartmentId,
  *     displayName: httpMonitorDisplayName,
  *     homeRegion: httpMonitorHomeRegion,
@@ -90,7 +90,7 @@ export interface GetHttpMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
+ * const testHttpMonitors = oci.healthchecks.getHttpMonitors({
  *     compartmentId: compartmentId,
  *     displayName: httpMonitorDisplayName,
  *     homeRegion: httpMonitorHomeRegion,
@@ -118,10 +118,10 @@ export interface GetHttpMonitorsOutputArgs {
     /**
      * Filters results that exactly match the `displayName` field.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetHttpMonitorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetHttpMonitorsFilterArgs>[] | undefined>;
     /**
      * Filters results that match the `homeRegion`.
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
 }

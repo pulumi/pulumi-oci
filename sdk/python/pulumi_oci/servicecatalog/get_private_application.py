@@ -234,7 +234,7 @@ def get_private_application(private_application_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=test_private_application_oci_service_catalog_private_application["id"])
+    test_private_application = oci.servicecatalog.get_private_application(private_application_id=test_private_application_oci_service_catalog_private_application["id"])
     ```
 
 
@@ -262,7 +262,7 @@ def get_private_application(private_application_id: Optional[_builtins.str] = No
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_private_application_output(private_application_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_application_output(private_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationResult]:
     """
     This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -275,7 +275,7 @@ def get_private_application_output(private_application_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=test_private_application_oci_service_catalog_private_application["id"])
+    test_private_application = oci.servicecatalog.get_private_application(private_application_id=test_private_application_oci_service_catalog_private_application["id"])
     ```
 
 

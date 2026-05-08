@@ -98,7 +98,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleV
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
+    test_secretbundle_versions = oci.secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleV
         id=pulumi.get(__ret__, 'id'),
         secret_bundle_versions=pulumi.get(__ret__, 'secret_bundle_versions'),
         secret_id=pulumi.get(__ret__, 'secret_id'))
-def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]]]] = None,
-                                     secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_secretbundle_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]]]] = None,
+                                     secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretbundleVersionsResult]:
     """
     This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
@@ -129,7 +129,7 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
+    test_secretbundle_versions = oci.secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
 
 

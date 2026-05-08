@@ -191,7 +191,7 @@ def get_security_attribute_namespace(security_attribute_namespace_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespace = oci.SecurityAttribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
+    test_security_attribute_namespace = oci.securityattribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_security_attribute_namespace(security_attribute_namespace_id: Optional[_
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_security_attribute_namespace_output(security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_attribute_namespace_output(security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributeNamespaceResult]:
     """
     This data source provides details about a specific Security Attribute Namespace resource in Oracle Cloud Infrastructure Security Attribute service.
@@ -228,7 +228,7 @@ def get_security_attribute_namespace_output(security_attribute_namespace_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespace = oci.SecurityAttribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
+    test_security_attribute_namespace = oci.securityattribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
     ```
 
 

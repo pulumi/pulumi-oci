@@ -192,7 +192,7 @@ def get_managed_database_group(managed_database_group_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
+    test_managed_database_group = oci.databasemanagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
 
 
@@ -216,7 +216,7 @@ def get_managed_database_group(managed_database_group_id: Optional[_builtins.str
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_managed_database_group_output(managed_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_group_output(managed_database_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseGroupResult]:
     """
     This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
@@ -229,7 +229,7 @@ def get_managed_database_group_output(managed_database_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
+    test_managed_database_group = oci.databasemanagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
 
 

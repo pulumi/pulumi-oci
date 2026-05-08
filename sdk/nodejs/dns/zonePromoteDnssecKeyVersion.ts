@@ -123,11 +123,11 @@ export interface ZonePromoteDnssecKeyVersionState {
     /**
      * The UUID of the `DnssecKeyVersion` that is being promoted.
      */
-    dnssecKeyVersionUuid?: pulumi.Input<string>;
+    dnssecKeyVersionUuid?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target zone.
      *
@@ -135,7 +135,7 @@ export interface ZonePromoteDnssecKeyVersionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -149,7 +149,7 @@ export interface ZonePromoteDnssecKeyVersionArgs {
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target zone.
      *

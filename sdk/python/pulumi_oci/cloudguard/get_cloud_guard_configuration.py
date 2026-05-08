@@ -105,7 +105,7 @@ def get_cloud_guard_configuration(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=compartment_id)
+    test_cloud_guard_configuration = oci.cloudguard.get_cloud_guard_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -122,7 +122,7 @@ def get_cloud_guard_configuration(compartment_id: Optional[_builtins.str] = None
         reporting_region=pulumi.get(__ret__, 'reporting_region'),
         self_manage_resources=pulumi.get(__ret__, 'self_manage_resources'),
         status=pulumi.get(__ret__, 'status'))
-def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_guard_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudGuardConfigurationResult]:
     """
     This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -136,7 +136,7 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=compartment_id)
+    test_cloud_guard_configuration = oci.cloudguard.get_cloud_guard_configuration(compartment_id=compartment_id)
     ```
 
 

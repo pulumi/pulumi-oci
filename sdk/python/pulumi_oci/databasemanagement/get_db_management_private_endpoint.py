@@ -239,7 +239,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
+    test_db_management_private_endpoint = oci.databasemanagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_db_management_private_endpoint_output(db_management_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_management_private_endpoint_output(db_management_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointResult]:
     """
     This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
@@ -280,7 +280,7 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
+    test_db_management_private_endpoint = oci.databasemanagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
 
 

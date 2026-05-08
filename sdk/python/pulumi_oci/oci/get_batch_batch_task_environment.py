@@ -255,7 +255,7 @@ def get_batch_batch_task_environment(batch_task_environment_id: Optional[_builti
         time_updated=pulumi.get(__ret__, 'time_updated'),
         volumes=pulumi.get(__ret__, 'volumes'),
         working_directory=pulumi.get(__ret__, 'working_directory'))
-def get_batch_batch_task_environment_output(batch_task_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_batch_batch_task_environment_output(batch_task_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchTaskEnvironmentResult]:
     """
     This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.

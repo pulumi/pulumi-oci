@@ -148,7 +148,7 @@ def get_datastores(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastores = oci.Ocvp.get_datastores(compartment_id=compartment_id,
+    test_datastores = oci.ocvp.get_datastores(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_id=test_datastore["id"],
         display_name=datastore_display_name,
@@ -181,12 +181,12 @@ def get_datastores(cluster_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_datastores_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          datastore_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict']]]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_datastores_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          datastore_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict']]]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastoresResult]:
     """
     This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -200,7 +200,7 @@ def get_datastores_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_datastores = oci.Ocvp.get_datastores(compartment_id=compartment_id,
+    test_datastores = oci.ocvp.get_datastores(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_id=test_datastore["id"],
         display_name=datastore_display_name,

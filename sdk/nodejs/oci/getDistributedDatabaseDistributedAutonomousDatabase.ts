@@ -220,5 +220,5 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseOutputArgs {
      * Globally distributed autonomous database identifier
      */
     distributedAutonomousDatabaseId: pulumi.Input<string>;
-    metadataQuery?: pulumi.Input<string>;
+    metadataQuery?: pulumi.Input<string | undefined>;
 }

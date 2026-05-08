@@ -275,7 +275,7 @@ def get_cost_anomaly_event(cost_anomaly_event_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event = oci.Budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
+    test_cost_anomaly_event = oci.budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_cost_anomaly_event(cost_anomaly_event_id: Optional[_builtins.str] = None
         time_anomaly_event_date=pulumi.get(__ret__, 'time_anomaly_event_date'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cost_anomaly_event_output(cost_anomaly_event_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cost_anomaly_event_output(cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostAnomalyEventResult]:
     """
     This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
@@ -319,7 +319,7 @@ def get_cost_anomaly_event_output(cost_anomaly_event_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event = oci.Budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
+    test_cost_anomaly_event = oci.budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
     ```
 
 

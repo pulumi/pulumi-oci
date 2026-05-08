@@ -227,7 +227,7 @@ def get_awr_hub(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
+    test_awr_hub = oci.opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_awr_hub(awr_hub_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_awr_hub_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_awr_hub_output(awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubResult]:
     """
     This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
@@ -267,7 +267,7 @@ def get_awr_hub_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
+    test_awr_hub = oci.opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
     ```
 
 

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryDiffs = oci.DevOps.getRepositoryDiffs({
+ * const testRepositoryDiffs = oci.devops.getRepositoryDiffs({
  *     baseVersion: repositoryDiffBaseVersion,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
  *     targetRepositoryId: testRepository.id,
  * });
  * ```
@@ -95,11 +95,11 @@ export interface GetRepositoryDiffsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryDiffs = oci.DevOps.getRepositoryDiffs({
+ * const testRepositoryDiffs = oci.devops.getRepositoryDiffs({
  *     baseVersion: repositoryDiffBaseVersion,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
  *     targetRepositoryId: testRepository.id,
  * });
  * ```
@@ -124,11 +124,11 @@ export interface GetRepositoryDiffsOutputArgs {
      * The commit or reference name to compare changes against.
      */
     baseVersion: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryDiffsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryDiffsFilterArgs>[] | undefined>;
     /**
      * Boolean value to indicate whether to use merge base or most recent revision.
      */
-    isComparisonFromMergeBase?: pulumi.Input<boolean>;
+    isComparisonFromMergeBase?: pulumi.Input<boolean | undefined>;
     /**
      * Unique repository identifier.
      */
@@ -136,7 +136,7 @@ export interface GetRepositoryDiffsOutputArgs {
     /**
      * The target repository identifier
      */
-    targetRepositoryId?: pulumi.Input<string>;
+    targetRepositoryId?: pulumi.Input<string | undefined>;
     /**
      * The commit or reference name where changes are coming from.
      */

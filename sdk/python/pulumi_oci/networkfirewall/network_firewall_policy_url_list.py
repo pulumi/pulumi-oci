@@ -23,8 +23,8 @@ class NetworkFirewallPolicyUrlListArgs:
     def __init__(__self__, *,
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  urls: pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyUrlList resource.
 
@@ -66,38 +66,38 @@ class NetworkFirewallPolicyUrlListArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the Url list. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name to identify the group of urls to be used in the policy rules.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyUrlListState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_urls: Optional[pulumi.Input[_builtins.int]] = None,
-                 urls: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_urls: pulumi.Input[Optional[_builtins.int]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyUrlList resources.
 
@@ -123,74 +123,74 @@ class _NetworkFirewallPolicyUrlListState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the Url list. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name to identify the group of urls to be used in the policy rules.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this URL List belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="totalUrls")
-    def total_urls(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_urls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Total count of URLs in the URL List
         """
         return pulumi.get(self, "total_urls")
 
     @total_urls.setter
-    def total_urls(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_urls(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_urls", value)
 
     @_builtins.property
     @pulumi.getter
-    def urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]]:
+    def urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]]:
         """
         (Updatable) List of urls.
         """
         return pulumi.get(self, "urls")
 
     @urls.setter
-    def urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]]):
+    def urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]]):
         pulumi.set(self, "urls", value)
 
 
@@ -200,10 +200,10 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -299,10 +299,10 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -332,12 +332,12 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            total_urls: Optional[pulumi.Input[_builtins.int]] = None,
-            urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None) -> 'NetworkFirewallPolicyUrlList':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            total_urls: pulumi.Input[Optional[_builtins.int]] = None,
+            urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None) -> 'NetworkFirewallPolicyUrlList':
         """
         Get an existing NetworkFirewallPolicyUrlList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

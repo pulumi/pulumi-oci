@@ -116,15 +116,15 @@ export interface ManagedInstancesUpdatePackagesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The types of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesUpdatePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesUpdatePackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -138,9 +138,9 @@ export interface ManagedInstancesUpdatePackagesManagementArgs {
     /**
      * The types of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesUpdatePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesUpdatePackagesManagementWorkRequestDetails | undefined>;
 }

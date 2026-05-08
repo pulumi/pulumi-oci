@@ -25,13 +25,13 @@ import * as utilities from "../utilities";
  *     projectId: testProject.id,
  *     backupSetting: {
  *         backupRegion: modelBackupSettingBackupRegion,
- *         isBackupEnabled: modelBackupSettingIsBackupEnabled,
+ *         isBackupEnabled: modelBackupSettingIsBackupEnabled === "true",
  *         customerNotificationType: modelBackupSettingCustomerNotificationType,
  *     },
  *     customMetadataLists: [{
  *         category: modelCustomMetadataListCategory,
  *         description: modelCustomMetadataListDescription,
- *         hasArtifact: modelCustomMetadataListHasArtifact,
+ *         hasArtifact: modelCustomMetadataListHasArtifact === "true",
  *         key: modelCustomMetadataListKey,
  *         keywords: modelCustomMetadataListKeywords,
  *         value: modelCustomMetadataListValue,
@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     definedMetadataLists: [{
  *         category: modelDefinedMetadataListCategory,
  *         description: modelDefinedMetadataListDescription,
- *         hasArtifact: modelDefinedMetadataListHasArtifact,
+ *         hasArtifact: modelDefinedMetadataListHasArtifact === "true",
  *         key: modelDefinedMetadataListKey,
  *         keywords: modelDefinedMetadataListKeywords,
  *         value: modelDefinedMetadataListValue,
@@ -55,9 +55,9 @@ import * as utilities from "../utilities";
  *     inputSchema: modelInputSchema,
  *     outputSchema: modelOutputSchema,
  *     retentionSetting: {
- *         archiveAfterDays: modelRetentionSettingArchiveAfterDays,
+ *         archiveAfterDays: Number(modelRetentionSettingArchiveAfterDays),
  *         customerNotificationType: modelRetentionSettingCustomerNotificationType,
- *         deleteAfterDays: modelRetentionSettingDeleteAfterDays,
+ *         deleteAfterDays: Number(modelRetentionSettingDeleteAfterDays),
  *     },
  *     versionLabel: modelVersionLabel,
  * });
@@ -308,113 +308,113 @@ export interface ModelState {
     /**
      * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
      */
-    artifactContentDisposition?: pulumi.Input<string>;
+    artifactContentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The content length of the model_artifact.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    artifactContentLength?: pulumi.Input<string>;
-    artifactContentMd5?: pulumi.Input<string>;
-    artifactLastModified?: pulumi.Input<string>;
+    artifactContentLength?: pulumi.Input<string | undefined>;
+    artifactContentMd5?: pulumi.Input<string | undefined>;
+    artifactLastModified?: pulumi.Input<string | undefined>;
     /**
      * Backup operation details of the model.
      */
-    backupOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelBackupOperationDetail>[]>;
+    backupOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelBackupOperationDetail>[] | undefined>;
     /**
      * (Updatable) Back up setting details of the model.
      */
-    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting>;
+    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting | undefined>;
     /**
      * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of custom metadata details for the model.
      */
-    customMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelCustomMetadataList>[]>;
+    customMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelCustomMetadataList>[] | undefined>;
     /**
      * (Updatable) An array of defined metadata details for the model.
      */
-    definedMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDefinedMetadataList>[]>;
+    definedMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDefinedMetadataList>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      */
-    displayName?: pulumi.Input<string>;
-    emptyModel?: pulumi.Input<boolean>;
+    displayName?: pulumi.Input<string | undefined>;
+    emptyModel?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Input schema file content in String format
      */
-    inputSchema?: pulumi.Input<string>;
+    inputSchema?: pulumi.Input<string | undefined>;
     /**
      * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
      */
-    isModelByReference?: pulumi.Input<boolean>;
+    isModelByReference?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the lifecycle state of the model.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
      */
-    modelArtifact?: pulumi.Input<string>;
+    modelArtifact?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the model version set that the model is associated to.
      */
-    modelVersionSetId?: pulumi.Input<string>;
+    modelVersionSetId?: pulumi.Input<string | undefined>;
     /**
      * The name of the model version set that the model is associated to.
      */
-    modelVersionSetName?: pulumi.Input<string>;
+    modelVersionSetName?: pulumi.Input<string | undefined>;
     /**
      * Output schema file content in String format
      */
-    outputSchema?: pulumi.Input<string>;
+    outputSchema?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * Retention operation details for the model.
      */
-    retentionOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelRetentionOperationDetail>[]>;
+    retentionOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelRetentionOperationDetail>[] | undefined>;
     /**
      * (Updatable) Retention setting details of the model.
      */
-    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting>;
+    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting | undefined>;
     /**
      * The state of the model.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
      */
-    versionLabel?: pulumi.Input<string>;
+    versionLabel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -424,7 +424,7 @@ export interface ModelArgs {
     /**
      * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
      */
-    artifactContentDisposition?: pulumi.Input<string>;
+    artifactContentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The content length of the model_artifact.
      *
@@ -435,7 +435,7 @@ export interface ModelArgs {
     /**
      * (Updatable) Back up setting details of the model.
      */
-    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting>;
+    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
@@ -443,31 +443,31 @@ export interface ModelArgs {
     /**
      * (Updatable) An array of custom metadata details for the model.
      */
-    customMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelCustomMetadataList>[]>;
+    customMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelCustomMetadataList>[] | undefined>;
     /**
      * (Updatable) An array of defined metadata details for the model.
      */
-    definedMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDefinedMetadataList>[]>;
+    definedMetadataLists?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDefinedMetadataList>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Input schema file content in String format
      */
-    inputSchema?: pulumi.Input<string>;
+    inputSchema?: pulumi.Input<string | undefined>;
     /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
      */
@@ -475,15 +475,15 @@ export interface ModelArgs {
     /**
      * The OCID of the model version set that the model is associated to.
      */
-    modelVersionSetId?: pulumi.Input<string>;
+    modelVersionSetId?: pulumi.Input<string | undefined>;
     /**
      * The name of the model version set that the model is associated to.
      */
-    modelVersionSetName?: pulumi.Input<string>;
+    modelVersionSetName?: pulumi.Input<string | undefined>;
     /**
      * Output schema file content in String format
      */
-    outputSchema?: pulumi.Input<string>;
+    outputSchema?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
@@ -491,13 +491,13 @@ export interface ModelArgs {
     /**
      * (Updatable) Retention setting details of the model.
      */
-    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting>;
+    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting | undefined>;
     /**
      * The state of the model.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
      */
-    versionLabel?: pulumi.Input<string>;
+    versionLabel?: pulumi.Input<string | undefined>;
 }

@@ -52,7 +52,7 @@ __all__ = [
 ]
 
 class ProfileLevelsConfigurationArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgsDict']]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]]
     """
     (Updatable) The array of configuration levels.
     """
@@ -60,7 +60,7 @@ class ProfileLevelsConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ProfileLevelsConfigurationArgs:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]] items: (Updatable) The array of configuration levels.
         """
@@ -69,23 +69,23 @@ class ProfileLevelsConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]:
         """
         (Updatable) The array of configuration levels.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 class ProfileLevelsConfigurationItemArgsDict(TypedDict):
-    level: NotRequired[pulumi.Input[_builtins.str]]
+    level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The pre-defined profile level.
     """
-    recommendation_id: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique OCID of the recommendation.
     """
@@ -93,8 +93,8 @@ class ProfileLevelsConfigurationItemArgsDict(TypedDict):
 @pulumi.input_type
 class ProfileLevelsConfigurationItemArgs:
     def __init__(__self__, *,
-                 level: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommendation_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 level: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommendation_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] level: (Updatable) The pre-defined profile level.
         :param pulumi.Input[_builtins.str] recommendation_id: (Updatable) The unique OCID of the recommendation.
@@ -106,26 +106,26 @@ class ProfileLevelsConfigurationItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The pre-defined profile level.
         """
         return pulumi.get(self, "level")
 
     @level.setter
-    def level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "level", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique OCID of the recommendation.
         """
         return pulumi.get(self, "recommendation_id")
 
     @recommendation_id.setter
-    def recommendation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation_id", value)
 
 
@@ -202,7 +202,7 @@ class ProfileTargetTagsItemArgsDict(TypedDict):
 
     When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
     """
-    tag_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    tag_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 
@@ -217,7 +217,7 @@ class ProfileTargetTagsItemArgs:
                  tag_definition_name: pulumi.Input[_builtins.str],
                  tag_namespace_name: pulumi.Input[_builtins.str],
                  tag_value_type: pulumi.Input[_builtins.str],
-                 tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 tag_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] tag_definition_name: (Updatable) The name you use to refer to the tag, also known as the tag key.
         :param pulumi.Input[_builtins.str] tag_namespace_name: (Updatable) The name of the tag namespace.
@@ -280,7 +280,7 @@ class ProfileTargetTagsItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="tagValues")
-    def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tag_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 
@@ -291,16 +291,16 @@ class ProfileTargetTagsItemArgs:
         return pulumi.get(self, "tag_values")
 
     @tag_values.setter
-    def tag_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tag_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tag_values", value)
 
 
 class RecommendationResourceCountArgsDict(TypedDict):
-    count: NotRequired[pulumi.Input[_builtins.int]]
+    count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The count of resources.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The status of the recommendation.
     """
@@ -308,8 +308,8 @@ class RecommendationResourceCountArgsDict(TypedDict):
 @pulumi.input_type
 class RecommendationResourceCountArgs:
     def __init__(__self__, *,
-                 count: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 count: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] count: The count of resources.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of the recommendation.
@@ -321,31 +321,31 @@ class RecommendationResourceCountArgs:
 
     @_builtins.property
     @pulumi.getter
-    def count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The count of resources.
         """
         return pulumi.get(self, "count")
 
     @count.setter
-    def count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "count", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the recommendation.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 class RecommendationSupportedLevelArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgsDict']]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]]
     """
     The list of supported levels.
     """
@@ -353,7 +353,7 @@ class RecommendationSupportedLevelArgsDict(TypedDict):
 @pulumi.input_type
 class RecommendationSupportedLevelArgs:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]] items: The list of supported levels.
         """
@@ -362,19 +362,19 @@ class RecommendationSupportedLevelArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]:
         """
         The list of supported levels.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 class RecommendationSupportedLevelItemArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the profile level.
     """
@@ -382,7 +382,7 @@ class RecommendationSupportedLevelItemArgsDict(TypedDict):
 @pulumi.input_type
 class RecommendationSupportedLevelItemArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The name of the profile level.
         """
@@ -391,27 +391,27 @@ class RecommendationSupportedLevelItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the profile level.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class ResourceActionActionArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Text describing the recommended action.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the resource action.
     """
-    url: NotRequired[pulumi.Input[_builtins.str]]
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The URL path to documentation that explains how to perform the action.
     """
@@ -419,9 +419,9 @@ class ResourceActionActionArgsDict(TypedDict):
 @pulumi.input_type
 class ResourceActionActionArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: Text describing the recommended action.
         :param pulumi.Input[_builtins.str] type: The status of the resource action.
@@ -436,38 +436,38 @@ class ResourceActionActionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Text describing the recommended action.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource action.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL path to documentation that explains how to perform the action.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
 

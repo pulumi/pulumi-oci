@@ -231,8 +231,8 @@ def get_private_endpoint(name: Optional[_builtins.str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_modified=pulumi.get(__ret__, 'time_modified'))
-def get_private_endpoint_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_endpoint_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
     Use this data source to access information about an existing resource.

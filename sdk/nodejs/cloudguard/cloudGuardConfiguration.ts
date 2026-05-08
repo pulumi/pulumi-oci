@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     reportingRegion: cloudGuardConfigurationReportingRegion,
  *     status: cloudGuardConfigurationStatus,
- *     selfManageResources: cloudGuardConfigurationSelfManageResources,
+ *     selfManageResources: cloudGuardConfigurationSelfManageResources === "true",
  * });
  * ```
  *
@@ -125,15 +125,15 @@ export interface CloudGuardConfigurationState {
     /**
      * (Updatable) The OCID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The reporting region
      */
-    reportingRegion?: pulumi.Input<string>;
+    reportingRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      */
-    selfManageResources?: pulumi.Input<boolean>;
+    selfManageResources?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Status of Cloud Guard tenant
      *
@@ -141,7 +141,7 @@ export interface CloudGuardConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -159,7 +159,7 @@ export interface CloudGuardConfigurationArgs {
     /**
      * (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      */
-    selfManageResources?: pulumi.Input<boolean>;
+    selfManageResources?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Status of Cloud Guard tenant
      *

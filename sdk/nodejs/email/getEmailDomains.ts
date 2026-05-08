@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomains = oci.Email.getEmailDomains({
+ * const testEmailDomains = oci.email.getEmailDomains({
  *     compartmentId: compartmentId,
  *     id: emailDomainId,
  *     name: emailDomainName,
@@ -96,7 +96,7 @@ export interface GetEmailDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomains = oci.Email.getEmailDomains({
+ * const testEmailDomains = oci.email.getEmailDomains({
  *     compartmentId: compartmentId,
  *     id: emailDomainId,
  *     name: emailDomainName,
@@ -123,17 +123,17 @@ export interface GetEmailDomainsOutputArgs {
      * The OCID for the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailDomainsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailDomainsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

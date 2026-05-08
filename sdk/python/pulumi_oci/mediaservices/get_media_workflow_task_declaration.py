@@ -120,10 +120,10 @@ def get_media_workflow_task_declaration(compartment_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
-        is_current=media_workflow_task_declaration_is_current,
+    test_media_workflow_task_declaration = oci.mediaservices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current == "true",
         name=media_workflow_task_declaration_name,
-        version=media_workflow_task_declaration_version)
+        version=int(media_workflow_task_declaration_version))
     ```
 
 
@@ -147,10 +147,10 @@ def get_media_workflow_task_declaration(compartment_id: Optional[_builtins.str] 
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         version=pulumi.get(__ret__, 'version'))
-def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               is_current: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_media_workflow_task_declaration_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               is_current: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowTaskDeclarationResult]:
     """
     This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
@@ -163,10 +163,10 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
-        is_current=media_workflow_task_declaration_is_current,
+    test_media_workflow_task_declaration = oci.mediaservices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current == "true",
         name=media_workflow_task_declaration_name,
-        version=media_workflow_task_declaration_version)
+        version=int(media_workflow_task_declaration_version))
     ```
 
 

@@ -138,7 +138,7 @@ def get_subnets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=compartment_id,
+    test_subnets = oci.core.get_subnets(compartment_id=compartment_id,
         display_name=subnet_display_name,
         state=subnet_state,
         vcn_id=test_vcn["id"])
@@ -167,11 +167,11 @@ def get_subnets(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         subnets=pulumi.get(__ret__, 'subnets'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_subnets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict']]]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subnets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict']]]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetsResult]:
     """
     This data source provides the list of Subnets in Oracle Cloud Infrastructure Core service.
@@ -185,7 +185,7 @@ def get_subnets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=compartment_id,
+    test_subnets = oci.core.get_subnets(compartment_id=compartment_id,
         display_name=subnet_display_name,
         state=subnet_state,
         vcn_id=test_vcn["id"])

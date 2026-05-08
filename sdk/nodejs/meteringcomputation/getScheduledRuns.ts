@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledRuns = oci.MeteringComputation.getScheduledRuns({
+ * const testScheduledRuns = oci.meteringcomputation.getScheduledRuns({
  *     scheduleId: testSchedule.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetScheduledRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledRuns = oci.MeteringComputation.getScheduledRuns({
+ * const testScheduledRuns = oci.meteringcomputation.getScheduledRuns({
  *     scheduleId: testSchedule.id,
  * });
  * ```
@@ -87,7 +87,7 @@ export function getScheduledRunsOutput(args: GetScheduledRunsOutputArgs, opts?: 
  * A collection of arguments for invoking getScheduledRuns.
  */
 export interface GetScheduledRunsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetScheduledRunsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetScheduledRunsFilterArgs>[] | undefined>;
     /**
      * The schedule unique ID.
      */

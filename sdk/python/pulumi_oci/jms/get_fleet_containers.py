@@ -177,7 +177,7 @@ def get_fleet_containers(application_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_containers = oci.Jms.get_fleet_containers(fleet_id=test_fleet["id"],
+    test_fleet_containers = oci.jms.get_fleet_containers(fleet_id=test_fleet["id"],
         application_name=test_application["name"],
         display_name=fleet_container_display_name,
         jre_security_status=fleet_container_jre_security_status,
@@ -222,15 +222,15 @@ def get_fleet_containers(application_name: Optional[_builtins.str] = None,
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         time_started_greater_than_or_equal_to=pulumi.get(__ret__, 'time_started_greater_than_or_equal_to'),
         time_started_less_than_or_equal_to=pulumi.get(__ret__, 'time_started_less_than_or_equal_to'))
-def get_fleet_containers_output(application_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict']]]]] = None,
-                                fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                jre_security_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                jre_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_started_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_started_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_containers_output(application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict']]]]] = None,
+                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                jre_security_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                jre_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_started_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_started_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetContainersResult]:
     """
     This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
@@ -243,7 +243,7 @@ def get_fleet_containers_output(application_name: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_containers = oci.Jms.get_fleet_containers(fleet_id=test_fleet["id"],
+    test_fleet_containers = oci.jms.get_fleet_containers(fleet_id=test_fleet["id"],
         application_name=test_application["name"],
         display_name=fleet_container_display_name,
         jre_security_status=fleet_container_jre_security_status,

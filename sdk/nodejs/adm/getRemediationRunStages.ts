@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRunStages = oci.Adm.getRemediationRunStages({
+ * const testRemediationRunStages = oci.adm.getRemediationRunStages({
  *     remediationRunId: testRemediationRun.id,
  *     status: remediationRunStageStatus,
  *     type: remediationRunStageType,
@@ -90,7 +90,7 @@ export interface GetRemediationRunStagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRunStages = oci.Adm.getRemediationRunStages({
+ * const testRemediationRunStages = oci.adm.getRemediationRunStages({
  *     remediationRunId: testRemediationRun.id,
  *     status: remediationRunStageStatus,
  *     type: remediationRunStageType,
@@ -111,7 +111,7 @@ export function getRemediationRunStagesOutput(args: GetRemediationRunStagesOutpu
  * A collection of arguments for invoking getRemediationRunStages.
  */
 export interface GetRemediationRunStagesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Adm.GetRemediationRunStagesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Adm.GetRemediationRunStagesFilterArgs>[] | undefined>;
     /**
      * Unique Remediation Run identifier path parameter.
      */
@@ -119,9 +119,9 @@ export interface GetRemediationRunStagesOutputArgs {
     /**
      * A filter to return only Stages that match the specified status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Stages that match the specified type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

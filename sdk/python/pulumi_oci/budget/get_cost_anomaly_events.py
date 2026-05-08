@@ -181,7 +181,7 @@ def get_cost_anomaly_events(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_events = oci.Budget.get_cost_anomaly_events(compartment_id=compartment_id,
+    test_cost_anomaly_events = oci.budget.get_cost_anomaly_events(compartment_id=compartment_id,
         cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
         cost_impact=cost_anomaly_event_cost_impact,
         cost_impact_percentage=cost_anomaly_event_cost_impact_percentage,
@@ -230,16 +230,16 @@ def get_cost_anomaly_events(compartment_id: Optional[_builtins.str] = None,
         target_tenant_ids=pulumi.get(__ret__, 'target_tenant_ids'),
         time_anomaly_event_end_date=pulumi.get(__ret__, 'time_anomaly_event_end_date'),
         time_anomaly_event_start_date=pulumi.get(__ret__, 'time_anomaly_event_start_date'))
-def get_cost_anomaly_events_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   cost_anomaly_monitor_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   cost_impact: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                   cost_impact_percentage: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCostAnomalyEventsFilterArgs', 'GetCostAnomalyEventsFilterArgsDict']]]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   regions: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   target_tenant_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   time_anomaly_event_end_date: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   time_anomaly_event_start_date: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cost_anomaly_events_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   cost_anomaly_monitor_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   cost_impact: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                   cost_impact_percentage: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostAnomalyEventsFilterArgs', 'GetCostAnomalyEventsFilterArgsDict']]]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   regions: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   target_tenant_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   time_anomaly_event_end_date: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   time_anomaly_event_start_date: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostAnomalyEventsResult]:
     """
     This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
@@ -252,7 +252,7 @@ def get_cost_anomaly_events_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_events = oci.Budget.get_cost_anomaly_events(compartment_id=compartment_id,
+    test_cost_anomaly_events = oci.budget.get_cost_anomaly_events(compartment_id=compartment_id,
         cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
         cost_impact=cost_anomaly_event_cost_impact,
         cost_impact_percentage=cost_anomaly_event_cost_impact_percentage,

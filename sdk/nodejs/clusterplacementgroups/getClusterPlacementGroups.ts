@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroups = oci.ClusterPlacementGroups.getClusterPlacementGroups({
+ * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,
@@ -111,10 +111,10 @@ export interface GetClusterPlacementGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroups = oci.ClusterPlacementGroups.getClusterPlacementGroups({
+ * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,
@@ -142,26 +142,26 @@ export interface GetClusterPlacementGroupsOutputArgs {
     /**
      * A filter to return only the resources that match the specified availability domain.
      */
-    ad?: pulumi.Input<string>;
+    ad?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * When set to `true`, cluster placement groups in all compartments under the specified compartment are returned. The default is set to `false`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ClusterPlacementGroups.GetClusterPlacementGroupsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ClusterPlacementGroups.GetClusterPlacementGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified unique cluster placement group identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire display name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

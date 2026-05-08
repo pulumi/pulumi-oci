@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testViews = oci.Dns.getViews({
+ * const testViews = oci.dns.getViews({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: viewDisplayName,
@@ -113,7 +113,7 @@ export interface GetViewsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testViews = oci.Dns.getViews({
+ * const testViews = oci.dns.getViews({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: viewDisplayName,
@@ -145,18 +145,18 @@ export interface GetViewsOutputArgs {
     /**
      * The displayName of a resource.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetViewsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetViewsFilterArgs>[] | undefined>;
     /**
      * The OCID of a resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Value must be `PRIVATE` when listing private views.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

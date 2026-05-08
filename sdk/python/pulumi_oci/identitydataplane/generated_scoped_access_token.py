@@ -66,9 +66,9 @@ class GeneratedScopedAccessTokenArgs:
 @pulumi.input_type
 class _GeneratedScopedAccessTokenState:
     def __init__(__self__, *,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None):
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GeneratedScopedAccessToken resources.
 
@@ -89,19 +89,19 @@ class _GeneratedScopedAccessTokenState:
 
     @_builtins.property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
         """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
-    def public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scope definition for the scoped access token 
 
@@ -112,19 +112,19 @@ class _GeneratedScopedAccessTokenState:
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The security token, signed by auth service
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
 
@@ -134,8 +134,8 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
@@ -223,8 +223,8 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -251,9 +251,9 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None) -> 'GeneratedScopedAccessToken':
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None) -> 'GeneratedScopedAccessToken':
         """
         Get an existing GeneratedScopedAccessToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

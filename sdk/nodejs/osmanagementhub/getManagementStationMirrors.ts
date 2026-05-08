@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
+ * const testManagementStationMirrors = oci.osmanagementhub.getManagementStationMirrors({
  *     managementStationId: testManagementStation.id,
  *     displayName: managementStationMirrorDisplayName,
  *     displayNameContains: managementStationMirrorDisplayNameContains,
@@ -91,7 +91,7 @@ export interface GetManagementStationMirrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
+ * const testManagementStationMirrors = oci.osmanagementhub.getManagementStationMirrors({
  *     managementStationId: testManagementStation.id,
  *     displayName: managementStationMirrorDisplayName,
  *     displayNameContains: managementStationMirrorDisplayNameContains,
@@ -117,12 +117,12 @@ export interface GetManagementStationMirrorsOutputArgs {
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationMirrorsFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationMirrorsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
@@ -130,5 +130,5 @@ export interface GetManagementStationMirrorsOutputArgs {
     /**
      * List of Mirror state to filter by
      */
-    mirrorStates?: pulumi.Input<pulumi.Input<string>[]>;
+    mirrorStates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -137,7 +137,7 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
+    test_cloud_exadata_infrastructures = oci.database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
         cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
         display_name=cloud_exadata_infrastructure_display_name,
         state=cloud_exadata_infrastructure_state)
@@ -166,11 +166,11 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[_buil
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
     """
     This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -183,7 +183,7 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
+    test_cloud_exadata_infrastructures = oci.database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
         cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
         display_name=cloud_exadata_infrastructure_display_name,
         state=cloud_exadata_infrastructure_state)

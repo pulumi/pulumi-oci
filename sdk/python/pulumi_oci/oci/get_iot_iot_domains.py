@@ -170,12 +170,12 @@ def get_iot_iot_domains(compartment_id: Optional[_builtins.str] = None,
         iot_domain_collections=pulumi.get(__ret__, 'iot_domain_collections'),
         iot_domain_group_id=pulumi.get(__ret__, 'iot_domain_group_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_iot_iot_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIotIotDomainsFilterArgs', 'GetIotIotDomainsFilterArgsDict']]]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               iot_domain_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iot_iot_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotIotDomainsFilterArgs', 'GetIotIotDomainsFilterArgsDict']]]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               iot_domain_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotIotDomainsResult]:
     """
     This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.

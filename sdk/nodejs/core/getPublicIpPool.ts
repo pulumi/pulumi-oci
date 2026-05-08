@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPool = oci.Core.getPublicIpPool({
+ * const testPublicIpPool = oci.core.getPublicIpPool({
  *     publicIpPoolId: testPublicIpPoolOciCorePublicIpPool.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetPublicIpPoolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPool = oci.Core.getPublicIpPool({
+ * const testPublicIpPool = oci.core.getPublicIpPool({
  *     publicIpPoolId: testPublicIpPoolOciCorePublicIpPool.id,
  * });
  * ```

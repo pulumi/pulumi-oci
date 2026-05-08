@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := stackmonitoring.GetMonitoringTemplateAlarmConditions(ctx, &stackmonitoring.GetMonitoringTemplateAlarmConditionsArgs{
 //				MonitoringTemplateId: testMonitoringTemplate.Id,
-//				MetricNames:          testMetric.Name,
-//				ResourceTypes:        monitoringTemplateAlarmConditionResourceTypes,
+//				MetricNames:          pulumi.ToArray(testMetric.Name),
+//				ResourceTypes:        pulumi.ToArray(monitoringTemplateAlarmConditionResourceTypes),
 //				State:                pulumi.StringRef(monitoringTemplateAlarmConditionState),
 //				Status:               pulumi.StringRef(monitoringTemplateAlarmConditionStatus),
 //			}, nil)

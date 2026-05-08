@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     description: modelDescription,
  *     displayName: modelDisplayName,
  *     freeformTags: modelFreeformTags,
- *     isQuickMode: modelIsQuickMode,
+ *     isQuickMode: modelIsQuickMode === "true",
  *     maxTrainingDurationInHours: modelMaxTrainingDurationInHours,
  *     modelVersion: modelModelVersion,
  *     testingDataset: {
@@ -288,107 +288,107 @@ export interface ModelState {
     /**
      * The mean average precision of the trained model.
      */
-    averagePrecision?: pulumi.Input<number>;
+    averagePrecision?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The compartment identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The intersection over the union threshold used for calculating precision and recall.
      */
-    confidenceThreshold?: pulumi.Input<number>;
+    confidenceThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A human-friendly name for the model, which can be changed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
-    isQuickMode?: pulumi.Input<boolean>;
+    isQuickMode?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The maximum model training duration in hours, expressed as a decimal fraction.
      */
-    maxTrainingDurationInHours?: pulumi.Input<number>;
+    maxTrainingDurationInHours?: pulumi.Input<number | undefined>;
     /**
      * The complete set of per-label metrics for successfully trained models.
      */
-    metrics?: pulumi.Input<string>;
+    metrics?: pulumi.Input<string | undefined>;
     /**
      * Which type of Vision model this is.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * The model version
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * The precision of the trained model.
      */
-    precision?: pulumi.Input<number>;
+    precision?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * Recall of the trained model.
      */
-    recall?: pulumi.Input<number>;
+    recall?: pulumi.Input<number | undefined>;
     /**
      * The current state of the model.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The number of images set aside for evaluating model performance metrics after training.
      */
-    testImageCount?: pulumi.Input<number>;
+    testImageCount?: pulumi.Input<number | undefined>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset>;
+    testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset | undefined>;
     /**
      * When the model was created, as an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * When the model was updated, as an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The number of images in the dataset used to train, validate, and test the model.
      */
-    totalImageCount?: pulumi.Input<number>;
+    totalImageCount?: pulumi.Input<number | undefined>;
     /**
      * The total hours actually used for model training.
      */
-    trainedDurationInHours?: pulumi.Input<number>;
+    trainedDurationInHours?: pulumi.Input<number | undefined>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    trainingDataset?: pulumi.Input<inputs.AiVision.ModelTrainingDataset>;
+    trainingDataset?: pulumi.Input<inputs.AiVision.ModelTrainingDataset | undefined>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset>;
+    validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset | undefined>;
 }
 
 /**
@@ -402,27 +402,27 @@ export interface ModelArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the model.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A human-friendly name for the model, which can be changed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
-    isQuickMode?: pulumi.Input<boolean>;
+    isQuickMode?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum model training duration in hours, expressed as a decimal fraction.
      */
-    maxTrainingDurationInHours?: pulumi.Input<number>;
+    maxTrainingDurationInHours?: pulumi.Input<number | undefined>;
     /**
      * Which type of Vision model this is.
      */
@@ -430,7 +430,7 @@ export interface ModelArgs {
     /**
      * The model version
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
@@ -438,7 +438,7 @@ export interface ModelArgs {
     /**
      * The base entity which is the input for creating and training a model.
      */
-    testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset>;
+    testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset | undefined>;
     /**
      * The base entity which is the input for creating and training a model.
      */
@@ -446,5 +446,5 @@ export interface ModelArgs {
     /**
      * The base entity which is the input for creating and training a model.
      */
-    validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset>;
+    validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset | undefined>;
 }

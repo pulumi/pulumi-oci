@@ -237,7 +237,7 @@ def get_database_security_config(database_security_config_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_config = oci.DataSafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
+    test_database_security_config = oci.datasafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_database_security_config(database_security_config_id: Optional[_builtins
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_refreshed=pulumi.get(__ret__, 'time_last_refreshed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_database_security_config_output(database_security_config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_security_config_output(database_security_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSecurityConfigResult]:
     """
     This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -278,7 +278,7 @@ def get_database_security_config_output(database_security_config_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_config = oci.DataSafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
+    test_database_security_config = oci.datasafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
     ```
 
 

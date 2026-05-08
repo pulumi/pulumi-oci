@@ -121,7 +121,7 @@ def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=test_user["id"],
+    test_db_credentials = oci.identity.get_db_credentials(user_id=test_user["id"],
         name=db_credential_name,
         state=db_credential_state)
     ```
@@ -146,10 +146,10 @@ def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterA
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]]]] = None,
-                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              user_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]]]] = None,
+                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              user_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbCredentialsResult]:
     """
     This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
@@ -162,7 +162,7 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=test_user["id"],
+    test_db_credentials = oci.identity.get_db_credentials(user_id=test_user["id"],
         name=db_credential_name,
         state=db_credential_state)
     ```

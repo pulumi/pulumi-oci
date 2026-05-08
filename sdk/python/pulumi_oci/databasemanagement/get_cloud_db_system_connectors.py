@@ -124,7 +124,7 @@ def get_cloud_db_system_connectors(cloud_db_system_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connectors = oci.DatabaseManagement.get_cloud_db_system_connectors(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_db_system_connectors = oci.databasemanagement.get_cloud_db_system_connectors(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_db_system_connector_display_name)
     ```
@@ -149,10 +149,10 @@ def get_cloud_db_system_connectors(cloud_db_system_id: Optional[_builtins.str] =
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_cloud_db_system_connectors_output(cloud_db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict']]]]] = None,
+def get_cloud_db_system_connectors_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemConnectorsResult]:
     """
     This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -165,7 +165,7 @@ def get_cloud_db_system_connectors_output(cloud_db_system_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connectors = oci.DatabaseManagement.get_cloud_db_system_connectors(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_db_system_connectors = oci.databasemanagement.get_cloud_db_system_connectors(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_db_system_connector_display_name)
     ```

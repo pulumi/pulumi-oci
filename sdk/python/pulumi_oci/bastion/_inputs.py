@@ -58,27 +58,27 @@ class SessionTargetResourceDetailsArgsDict(TypedDict):
     """
     The session type.
     """
-    target_resource_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The display name of the target Compute instance that the session connects to.
     """
-    target_resource_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Fully Qualified Domain Name of the target resource that the session connects to.
     """
-    target_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
     """
-    target_resource_operating_system_user_name: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_operating_system_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the user on the target resource operating system that the session uses for the connection.
     """
-    target_resource_port: NotRequired[pulumi.Input[_builtins.int]]
+    target_resource_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number to connect to on the target resource.
     """
-    target_resource_private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_private_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The private IP address of the target resource that the session connects to.
 
@@ -91,12 +91,12 @@ class SessionTargetResourceDetailsArgsDict(TypedDict):
 class SessionTargetResourceDetailsArgs:
     def __init__(__self__, *,
                  session_type: pulumi.Input[_builtins.str],
-                 target_resource_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_operating_system_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_resource_private_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 target_resource_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_operating_system_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_resource_private_ip_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] session_type: The session type.
         :param pulumi.Input[_builtins.str] target_resource_display_name: The display name of the target Compute instance that the session connects to.
@@ -138,67 +138,67 @@ class SessionTargetResourceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="targetResourceDisplayName")
-    def target_resource_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the target Compute instance that the session connects to.
         """
         return pulumi.get(self, "target_resource_display_name")
 
     @target_resource_display_name.setter
-    def target_resource_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceFqdn")
-    def target_resource_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Fully Qualified Domain Name of the target resource that the session connects to.
         """
         return pulumi.get(self, "target_resource_fqdn")
 
     @target_resource_fqdn.setter
-    def target_resource_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         """
         return pulumi.get(self, "target_resource_id")
 
     @target_resource_id.setter
-    def target_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceOperatingSystemUserName")
-    def target_resource_operating_system_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_operating_system_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the user on the target resource operating system that the session uses for the connection.
         """
         return pulumi.get(self, "target_resource_operating_system_user_name")
 
     @target_resource_operating_system_user_name.setter
-    def target_resource_operating_system_user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_operating_system_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_operating_system_user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourcePort")
-    def target_resource_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_resource_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number to connect to on the target resource.
         """
         return pulumi.get(self, "target_resource_port")
 
     @target_resource_port.setter
-    def target_resource_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_resource_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_resource_port", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourcePrivateIpAddress")
-    def target_resource_private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP address of the target resource that the session connects to.
 
@@ -209,7 +209,7 @@ class SessionTargetResourceDetailsArgs:
         return pulumi.get(self, "target_resource_private_ip_address")
 
     @target_resource_private_ip_address.setter
-    def target_resource_private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_private_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_private_ip_address", value)
 
 

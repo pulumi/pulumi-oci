@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagStandardTagNamespaceTemplates = oci.Identity.getTagStandardTagNamespaceTemplates({
+ * const testTagStandardTagNamespaceTemplates = oci.identity.getTagStandardTagNamespaceTemplates({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagStandardTagNamespaceTemplates = oci.Identity.getTagStandardTagNamespaceTemplates({
+ * const testTagStandardTagNamespaceTemplates = oci.identity.getTagStandardTagNamespaceTemplates({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetTagStandardTagNamespaceTemplatesOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagStandardTagNamespaceTemplatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagStandardTagNamespaceTemplatesFilterArgs>[] | undefined>;
 }

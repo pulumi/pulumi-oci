@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchVersion = oci.Opensearch.getOpensearchVersion({
+ * const testOpensearchVersion = oci.opensearch.getOpensearchVersion({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -82,7 +82,7 @@ export interface GetOpensearchVersionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchVersion = oci.Opensearch.getOpensearchVersion({
+ * const testOpensearchVersion = oci.opensearch.getOpensearchVersion({
  *     compartmentId: compartmentId,
  * });
  * ```

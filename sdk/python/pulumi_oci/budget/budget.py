@@ -22,18 +22,18 @@ class BudgetArgs:
                  amount: pulumi.Input[_builtins.int],
                  compartment_id: pulumi.Input[_builtins.str],
                  reset_period: pulumi.Input[_builtins.str],
-                 budget_processing_period_start_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 processing_period_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Budget resource.
 
@@ -126,140 +126,140 @@ class BudgetArgs:
 
     @_builtins.property
     @pulumi.getter(name="budgetProcessingPeriodStartOffset")
-    def budget_processing_period_start_offset(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def budget_processing_period_start_offset(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
         """
         return pulumi.get(self, "budget_processing_period_start_offset")
 
     @budget_processing_period_start_offset.setter
-    def budget_processing_period_start_offset(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def budget_processing_period_start_offset(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "budget_processing_period_start_offset", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the budget.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The displayName of the budget. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
-    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="processingPeriodType")
-    def processing_period_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def processing_period_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
     @processing_period_type.setter
-    def processing_period_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def processing_period_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "processing_period_type", value)
 
     @_builtins.property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
-    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
     @_utilities.deprecated("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
-    def target_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
-    def target_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of target on which the budget is applied.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
 
@@ -270,36 +270,36 @@ class BudgetArgs:
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
 
 @pulumi.input_type
 class _BudgetState:
     def __init__(__self__, *,
-                 actual_spend: Optional[pulumi.Input[_builtins.float]] = None,
-                 alert_rule_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 budget_processing_period_start_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 forecasted_spend: Optional[pulumi.Input[_builtins.float]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 processing_period_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 reset_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_spend_computed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 actual_spend: pulumi.Input[Optional[_builtins.float]] = None,
+                 alert_rule_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 forecasted_spend: pulumi.Input[Optional[_builtins.float]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 reset_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_spend_computed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Budget resources.
 
@@ -383,224 +383,224 @@ class _BudgetState:
 
     @_builtins.property
     @pulumi.getter(name="actualSpend")
-    def actual_spend(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def actual_spend(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The actual spend in currency for the current budget cycle.
         """
         return pulumi.get(self, "actual_spend")
 
     @actual_spend.setter
-    def actual_spend(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def actual_spend(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "actual_spend", value)
 
     @_builtins.property
     @pulumi.getter(name="alertRuleCount")
-    def alert_rule_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alert_rule_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of alert rules in the budget.
         """
         return pulumi.get(self, "alert_rule_count")
 
     @alert_rule_count.setter
-    def alert_rule_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alert_rule_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alert_rule_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def amount(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def amount(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
         """
         return pulumi.get(self, "amount")
 
     @amount.setter
-    def amount(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def amount(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "amount", value)
 
     @_builtins.property
     @pulumi.getter(name="budgetProcessingPeriodStartOffset")
-    def budget_processing_period_start_offset(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def budget_processing_period_start_offset(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
         """
         return pulumi.get(self, "budget_processing_period_start_offset")
 
     @budget_processing_period_start_offset.setter
-    def budget_processing_period_start_offset(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def budget_processing_period_start_offset(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "budget_processing_period_start_offset", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the budget.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The displayName of the budget. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
-    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="forecastedSpend")
-    def forecasted_spend(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def forecasted_spend(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The forecasted spend in currency by the end of the current budget cycle.
         """
         return pulumi.get(self, "forecasted_spend")
 
     @forecasted_spend.setter
-    def forecasted_spend(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def forecasted_spend(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "forecasted_spend", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="processingPeriodType")
-    def processing_period_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def processing_period_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         """
         return pulumi.get(self, "processing_period_type")
 
     @processing_period_type.setter
-    def processing_period_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def processing_period_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "processing_period_type", value)
 
     @_builtins.property
     @pulumi.getter(name="resetPeriod")
-    def reset_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reset_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The reset period for the budget. Valid value is MONTHLY.
         """
         return pulumi.get(self, "reset_period")
 
     @reset_period.setter
-    def reset_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reset_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reset_period", value)
 
     @_builtins.property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
-    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the budget.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
     @_utilities.deprecated("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
-    def target_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
-    def target_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of target on which the budget is applied.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
 
@@ -611,55 +611,55 @@ class _BudgetState:
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time that the budget was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSpendComputed")
-    def time_spend_computed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_spend_computed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time that the budget spend was last computed.
         """
         return pulumi.get(self, "time_spend_computed")
 
     @time_spend_computed.setter
-    def time_spend_computed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_spend_computed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_spend_computed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time that the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version of the budget. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -669,21 +669,21 @@ class Budget(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 budget_processing_period_start_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 processing_period_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 reset_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 reset_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
@@ -700,10 +700,10 @@ class Budget(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_budget = oci.budget.Budget("test_budget",
-            amount=budget_amount,
+            amount=int(budget_amount),
             compartment_id=tenancy_ocid,
             reset_period=budget_reset_period,
-            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
+            budget_processing_period_start_offset=int(budget_budget_processing_period_start_offset),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -773,10 +773,10 @@ class Budget(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_budget = oci.budget.Budget("test_budget",
-            amount=budget_amount,
+            amount=int(budget_amount),
             compartment_id=tenancy_ocid,
             reset_period=budget_reset_period,
-            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
+            budget_processing_period_start_offset=int(budget_budget_processing_period_start_offset),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -818,21 +818,21 @@ class Budget(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 budget_processing_period_start_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 processing_period_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 reset_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 reset_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -881,29 +881,29 @@ class Budget(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actual_spend: Optional[pulumi.Input[_builtins.float]] = None,
-            alert_rule_count: Optional[pulumi.Input[_builtins.int]] = None,
-            amount: Optional[pulumi.Input[_builtins.int]] = None,
-            budget_processing_period_start_offset: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            forecasted_spend: Optional[pulumi.Input[_builtins.float]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            processing_period_type: Optional[pulumi.Input[_builtins.str]] = None,
-            reset_period: Optional[pulumi.Input[_builtins.str]] = None,
-            start_date: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_type: Optional[pulumi.Input[_builtins.str]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_spend_computed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'Budget':
+            actual_spend: pulumi.Input[Optional[_builtins.float]] = None,
+            alert_rule_count: pulumi.Input[Optional[_builtins.int]] = None,
+            amount: pulumi.Input[Optional[_builtins.int]] = None,
+            budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            forecasted_spend: pulumi.Input[Optional[_builtins.float]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+            reset_period: pulumi.Input[Optional[_builtins.str]] = None,
+            start_date: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_spend_computed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'Budget':
         """
         Get an existing Budget resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

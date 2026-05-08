@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipRanges = oci.Core.getByoipRanges({
+ * const testByoipRanges = oci.core.getByoipRanges({
  *     compartmentId: compartmentId,
  *     displayName: byoipRangeDisplayName,
  *     state: byoipRangeState,
@@ -92,7 +92,7 @@ export interface GetByoipRangesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipRanges = oci.Core.getByoipRanges({
+ * const testByoipRanges = oci.core.getByoipRanges({
  *     compartmentId: compartmentId,
  *     displayName: byoipRangeDisplayName,
  *     state: byoipRangeState,
@@ -120,10 +120,10 @@ export interface GetByoipRangesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoipRangesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoipRangesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

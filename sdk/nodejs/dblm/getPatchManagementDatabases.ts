@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatchManagementDatabases = oci.Dblm.getPatchManagementDatabases({
+ * const testPatchManagementDatabases = oci.dblm.getPatchManagementDatabases({
  *     compartmentId: compartmentId,
  *     databaseRelease: patchManagementDatabaseDatabaseRelease,
  *     databaseType: patchManagementDatabaseDatabaseType,
  *     displayName: patchManagementDatabaseDisplayName,
- *     drifterPatchId: testPatch.id,
+ *     drifterPatchId: Number(testPatch.id),
  *     imageCompliance: patchManagementDatabaseImageCompliance,
  *     imageId: testImage.id,
  *     severityTypes: patchManagementDatabaseSeverityType,
@@ -133,12 +133,12 @@ export interface GetPatchManagementDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatchManagementDatabases = oci.Dblm.getPatchManagementDatabases({
+ * const testPatchManagementDatabases = oci.dblm.getPatchManagementDatabases({
  *     compartmentId: compartmentId,
  *     databaseRelease: patchManagementDatabaseDatabaseRelease,
  *     databaseType: patchManagementDatabaseDatabaseType,
  *     displayName: patchManagementDatabaseDisplayName,
- *     drifterPatchId: testPatch.id,
+ *     drifterPatchId: Number(testPatch.id),
  *     imageCompliance: patchManagementDatabaseImageCompliance,
  *     imageId: testImage.id,
  *     severityTypes: patchManagementDatabaseSeverityType,
@@ -170,38 +170,38 @@ export interface GetPatchManagementDatabasesOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only database that match the given release version.
      */
-    databaseRelease?: pulumi.Input<string>;
+    databaseRelease?: pulumi.Input<string | undefined>;
     /**
      * Filter by database type. Possible values Single Instance or RAC.
      */
-    databaseType?: pulumi.Input<string>;
+    databaseType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only database that have given patchId as additional patch (drifter from image version).
      */
-    drifterPatchId?: pulumi.Input<number>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dblm.GetPatchManagementDatabasesFilterArgs>[]>;
+    drifterPatchId?: pulumi.Input<number | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dblm.GetPatchManagementDatabasesFilterArgs>[] | undefined>;
     /**
      * Filter databases by image compliance status.
      */
-    imageCompliance?: pulumi.Input<string>;
+    imageCompliance?: pulumi.Input<string | undefined>;
     /**
      * Subscribed image
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * Filter by one or more severity types. Possible values are critical, high, medium, low, info and none.
      */
-    severityTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    severityTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -83,9 +83,9 @@ class CustomTableArgs:
 @pulumi.input_type
 class _CustomTableState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_custom_table: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']] = None,
-                 saved_report_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_custom_table: pulumi.Input[Optional['CustomTableSavedCustomTableArgs']] = None,
+                 saved_report_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomTable resources.
 
@@ -106,31 +106,31 @@ class _CustomTableState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="savedCustomTable")
-    def saved_custom_table(self) -> Optional[pulumi.Input['CustomTableSavedCustomTableArgs']]:
+    def saved_custom_table(self) -> pulumi.Input[Optional['CustomTableSavedCustomTableArgs']]:
         """
         (Updatable) The custom table for Cost Analysis UI rendering.
         """
         return pulumi.get(self, "saved_custom_table")
 
     @saved_custom_table.setter
-    def saved_custom_table(self, value: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']]):
+    def saved_custom_table(self, value: pulumi.Input[Optional['CustomTableSavedCustomTableArgs']]):
         pulumi.set(self, "saved_custom_table", value)
 
     @_builtins.property
     @pulumi.getter(name="savedReportId")
-    def saved_report_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def saved_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated saved report OCID.
 
@@ -141,7 +141,7 @@ class _CustomTableState:
         return pulumi.get(self, "saved_report_id")
 
     @saved_report_id.setter
-    def saved_report_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def saved_report_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "saved_report_id", value)
 
 
@@ -151,9 +151,9 @@ class CustomTable(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
-                 saved_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+                 saved_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -266,9 +266,9 @@ class CustomTable(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
-                 saved_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+                 saved_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -297,9 +297,9 @@ class CustomTable(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
-            saved_report_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CustomTable':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+            saved_report_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomTable':
         """
         Get an existing CustomTable resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

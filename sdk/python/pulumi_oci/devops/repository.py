@@ -23,13 +23,13 @@ class RepositoryArgs:
     def __init__(__self__, *,
                  project_id: pulumi.Input[_builtins.str],
                  repository_type: pulumi.Input[_builtins.str],
-                 default_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 mirror_repository_config: pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Repository resource.
 
@@ -94,115 +94,115 @@ class RepositoryArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultBranch")
-    def default_branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default branch of the repository.
         """
         return pulumi.get(self, "default_branch")
 
     @default_branch.setter
-    def default_branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_branch", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Details of the repository. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="mirrorRepositoryConfig")
-    def mirror_repository_config(self) -> Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']]:
+    def mirror_repository_config(self) -> pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']]:
         """
         (Updatable) Configuration information for mirroring the repository.
         """
         return pulumi.get(self, "mirror_repository_config")
 
     @mirror_repository_config.setter
-    def mirror_repository_config(self, value: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']]):
+    def mirror_repository_config(self, value: pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']]):
         pulumi.set(self, "mirror_repository_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the repository. Should be unique within the project.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="parentRepositoryId")
-    def parent_repository_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_repository_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the parent repository.
         """
         return pulumi.get(self, "parent_repository_id")
 
     @parent_repository_id.setter
-    def parent_repository_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_repository_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_repository_id", value)
 
 
 @pulumi.input_type
 class _RepositoryState:
     def __init__(__self__, *,
-                 branch_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 commit_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 http_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_build_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 branch_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 commit_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 http_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 mirror_repository_config: pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_build_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Repository resources.
 
@@ -283,187 +283,187 @@ class _RepositoryState:
 
     @_builtins.property
     @pulumi.getter(name="branchCount")
-    def branch_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def branch_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The count of the branches present in the repository.
         """
         return pulumi.get(self, "branch_count")
 
     @branch_count.setter
-    def branch_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def branch_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "branch_count", value)
 
     @_builtins.property
     @pulumi.getter(name="commitCount")
-    def commit_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def commit_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The count of the commits present in the repository.
         """
         return pulumi.get(self, "commit_count")
 
     @commit_count.setter
-    def commit_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def commit_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "commit_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the repository's compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultBranch")
-    def default_branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default branch of the repository.
         """
         return pulumi.get(self, "default_branch")
 
     @default_branch.setter
-    def default_branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_branch", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Details of the repository. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="httpUrl")
-    def http_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def http_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         HTTP URL that you use to git clone, pull and push.
         """
         return pulumi.get(self, "http_url")
 
     @http_url.setter
-    def http_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def http_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "http_url", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecyle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
 
     @lifecyle_details.setter
-    def lifecyle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecyle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecyle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="mirrorRepositoryConfig")
-    def mirror_repository_config(self) -> Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']]:
+    def mirror_repository_config(self) -> pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']]:
         """
         (Updatable) Configuration information for mirroring the repository.
         """
         return pulumi.get(self, "mirror_repository_config")
 
     @mirror_repository_config.setter
-    def mirror_repository_config(self, value: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']]):
+    def mirror_repository_config(self, value: pulumi.Input[Optional['RepositoryMirrorRepositoryConfigArgs']]):
         pulumi.set(self, "mirror_repository_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the repository. Should be unique within the project.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy unique namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="parentRepositoryId")
-    def parent_repository_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_repository_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the parent repository.
         """
         return pulumi.get(self, "parent_repository_id")
 
     @parent_repository_id.setter
-    def parent_repository_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_repository_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_repository_id", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the DevOps project containing the repository.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter(name="projectName")
-    def project_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique project name in a namespace.
         """
         return pulumi.get(self, "project_name")
 
     @project_name.setter
-    def project_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_name", value)
 
     @_builtins.property
     @pulumi.getter(name="repositoryType")
-    def repository_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repository_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
 
@@ -474,91 +474,91 @@ class _RepositoryState:
         return pulumi.get(self, "repository_type")
 
     @repository_type.setter
-    def repository_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repository_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repository_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The size of the repository in bytes.
         """
         return pulumi.get(self, "size_in_bytes")
 
     @size_in_bytes.setter
-    def size_in_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="sshUrl")
-    def ssh_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSH URL that you use to git clone, pull and push.
         """
         return pulumi.get(self, "ssh_url")
 
     @ssh_url.setter
-    def ssh_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the repository.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="triggerBuildEvents")
-    def trigger_build_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def trigger_build_events(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         return pulumi.get(self, "trigger_build_events")
 
     @trigger_build_events.setter
-    def trigger_build_events(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def trigger_build_events(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "trigger_build_events", value)
 
 
@@ -568,15 +568,15 @@ class Repository(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
@@ -649,15 +649,15 @@ class Repository(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -704,29 +704,29 @@ class Repository(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            branch_count: Optional[pulumi.Input[_builtins.int]] = None,
-            commit_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_branch: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            http_url: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            project_name: Optional[pulumi.Input[_builtins.str]] = None,
-            repository_type: Optional[pulumi.Input[_builtins.str]] = None,
-            size_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_url: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trigger_build_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'Repository':
+            branch_count: pulumi.Input[Optional[_builtins.int]] = None,
+            commit_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            http_url: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_name: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger_build_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'Repository':
         """
         Get an existing Repository resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

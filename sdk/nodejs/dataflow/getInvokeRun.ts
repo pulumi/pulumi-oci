@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeRun = oci.DataFlow.getInvokeRun({
+ * const testInvokeRun = oci.dataflow.getInvokeRun({
  *     runId: testRun.id,
  * });
  * ```
@@ -234,7 +234,7 @@ export interface GetInvokeRunResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeRun = oci.DataFlow.getInvokeRun({
+ * const testInvokeRun = oci.dataflow.getInvokeRun({
  *     runId: testRun.id,
  * });
  * ```

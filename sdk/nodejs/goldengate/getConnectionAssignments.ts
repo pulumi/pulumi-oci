@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
+ * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
@@ -107,7 +107,7 @@ export interface GetConnectionAssignmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
+ * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
@@ -139,18 +139,18 @@ export interface GetConnectionAssignmentsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
-    deploymentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetConnectionAssignmentsFilterArgs>[]>;
+    deploymentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetConnectionAssignmentsFilterArgs>[] | undefined>;
     /**
      * The name of the connection in the assignment (aliasName).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only connection assignments having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

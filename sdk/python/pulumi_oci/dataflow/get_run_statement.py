@@ -157,7 +157,7 @@ def get_run_statement(run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=test_run["id"],
+    test_run_statement = oci.dataflow.get_run_statement(run_id=test_run["id"],
         statement_id=test_statement["id"])
     ```
 
@@ -181,8 +181,8 @@ def get_run_statement(run_id: Optional[_builtins.str] = None,
         statement_id=pulumi.get(__ret__, 'statement_id'),
         time_completed=pulumi.get(__ret__, 'time_completed'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_run_statement_output(run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             statement_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_run_statement_output(run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             statement_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunStatementResult]:
     """
     This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -195,7 +195,7 @@ def get_run_statement_output(run_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=test_run["id"],
+    test_run_statement = oci.dataflow.get_run_statement(run_id=test_run["id"],
         statement_id=test_statement["id"])
     ```
 

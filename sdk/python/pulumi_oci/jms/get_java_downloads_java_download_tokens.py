@@ -158,7 +158,7 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+    test_java_download_tokens = oci.jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
         display_name=java_download_token_display_name,
         family_version=java_download_token_family_version,
         id=java_download_token_id,
@@ -198,14 +198,14 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[_builtins.s
         search_by_user=pulumi.get(__ret__, 'search_by_user'),
         state=pulumi.get(__ret__, 'state'),
         value=pulumi.get(__ret__, 'value'))
-def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   family_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadTokensFilterArgs', 'GetJavaDownloadsJavaDownloadTokensFilterArgsDict']]]]] = None,
-                                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   search_by_user: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   value: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_downloads_java_download_tokens_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadTokensFilterArgs', 'GetJavaDownloadsJavaDownloadTokensFilterArgsDict']]]]] = None,
+                                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   search_by_user: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   value: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadTokensResult]:
     """
     This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -218,7 +218,7 @@ def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+    test_java_download_tokens = oci.jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
         display_name=java_download_token_display_name,
         family_version=java_download_token_family_version,
         id=java_download_token_id,

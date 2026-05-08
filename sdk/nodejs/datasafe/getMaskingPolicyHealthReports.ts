@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReports = oci.DataSafe.getMaskingPolicyHealthReports({
+ * const testMaskingPolicyHealthReports = oci.datasafe.getMaskingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree === "true",
  *     displayName: maskingPolicyHealthReportDisplayName,
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -131,10 +131,10 @@ export interface GetMaskingPolicyHealthReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReports = oci.DataSafe.getMaskingPolicyHealthReports({
+ * const testMaskingPolicyHealthReports = oci.datasafe.getMaskingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree === "true",
  *     displayName: maskingPolicyHealthReportDisplayName,
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -165,7 +165,7 @@ export interface GetMaskingPolicyHealthReportsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -173,26 +173,26 @@ export interface GetMaskingPolicyHealthReportsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyHealthReportsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyHealthReportsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified masking policy health report OCID.
      */
-    maskingPolicyHealthReportId?: pulumi.Input<string>;
+    maskingPolicyHealthReportId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified masking policy OCID.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle states.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

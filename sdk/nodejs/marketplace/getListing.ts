@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListing = oci.Marketplace.getListing({
+ * const testListing = oci.marketplace.getListing({
  *     listingId: testListingOciMarketplaceListing.id,
  *     compartmentId: compartmentId,
  * });
@@ -211,7 +211,7 @@ export interface GetListingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListing = oci.Marketplace.getListing({
+ * const testListing = oci.marketplace.getListing({
  *     listingId: testListingOciMarketplaceListing.id,
  *     compartmentId: compartmentId,
  * });
@@ -232,7 +232,7 @@ export interface GetListingOutputArgs {
     /**
      * The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the listing.
      */

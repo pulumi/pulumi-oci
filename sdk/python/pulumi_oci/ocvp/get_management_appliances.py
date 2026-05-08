@@ -147,7 +147,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
+    test_management_appliances = oci.ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
         sddc_id=test_sddc["id"],
@@ -180,12 +180,12 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
         management_appliance_id=pulumi.get(__ret__, 'management_appliance_id'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]]]] = None,
-                                     management_appliance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     sddc_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_appliances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]]]] = None,
+                                     management_appliance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     sddc_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAppliancesResult]:
     """
     This data source provides the list of Management Appliances in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -198,7 +198,7 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
+    test_management_appliances = oci.ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
         sddc_id=test_sddc["id"],

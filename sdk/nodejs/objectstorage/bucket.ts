@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     },
  *     kmsKeyId: testKey.id,
  *     metadata: bucketMetadata,
- *     objectEventsEnabled: bucketObjectEventsEnabled,
+ *     objectEventsEnabled: bucketObjectEventsEnabled === "true",
  *     storageTier: bucketStorageTier,
  *     retentionRules: [{
  *         displayName: retentionRuleDisplayName,
@@ -263,91 +263,91 @@ export interface BucketState {
     /**
      * (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      */
-    accessType?: pulumi.Input<string>;
+    accessType?: pulumi.Input<string | undefined>;
     /**
      * The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      */
-    approximateCount?: pulumi.Input<string>;
+    approximateCount?: pulumi.Input<string | undefined>;
     /**
      * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      */
-    approximateSize?: pulumi.Input<string>;
+    approximateSize?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
      */
-    autoTiering?: pulumi.Input<string>;
+    autoTiering?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      */
-    bucketId?: pulumi.Input<string>;
+    bucketId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
      */
-    bucketScope?: pulumi.Input<string>;
+    bucketScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The entity tag (ETag) for the bucket.
      */
-    etag?: pulumi.Input<string>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
-    isReadOnly?: pulumi.Input<boolean>;
+    isReadOnly?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      */
-    objectEventsEnabled?: pulumi.Input<boolean>;
+    objectEventsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      */
-    objectLifecyclePolicyEtag?: pulumi.Input<string>;
+    objectLifecyclePolicyEtag?: pulumi.Input<string | undefined>;
     /**
      * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
      */
-    replicationEnabled?: pulumi.Input<boolean>;
+    replicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
      */
-    retentionRules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.BucketRetentionRule>[]>;
+    retentionRules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.BucketRetentionRule>[] | undefined>;
     /**
      * The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
      */
-    storageTier?: pulumi.Input<string>;
+    storageTier?: pulumi.Input<string | undefined>;
     /**
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
      *
@@ -355,7 +355,7 @@ export interface BucketState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versioning?: pulumi.Input<string>;
+    versioning?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -365,15 +365,15 @@ export interface BucketArgs {
     /**
      * (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      */
-    accessType?: pulumi.Input<string>;
+    accessType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
      */
-    autoTiering?: pulumi.Input<string>;
+    autoTiering?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
      */
-    bucketScope?: pulumi.Input<string>;
+    bucketScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */
@@ -381,23 +381,23 @@ export interface BucketArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -405,15 +405,15 @@ export interface BucketArgs {
     /**
      * (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      */
-    objectEventsEnabled?: pulumi.Input<boolean>;
+    objectEventsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
      */
-    retentionRules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.BucketRetentionRule>[]>;
+    retentionRules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.BucketRetentionRule>[] | undefined>;
     /**
      * The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
      */
-    storageTier?: pulumi.Input<string>;
+    storageTier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
      *
@@ -421,5 +421,5 @@ export interface BucketArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versioning?: pulumi.Input<string>;
+    versioning?: pulumi.Input<string | undefined>;
 }

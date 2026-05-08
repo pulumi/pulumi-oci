@@ -25,16 +25,16 @@ class ExascaleDbStorageVaultArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  high_capacity_database_storage: pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'],
-                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-                 autoscale_limit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_autoscale_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+                 autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExascaleDbStorageVault resource.
 
@@ -132,115 +132,115 @@ class ExascaleDbStorageVaultArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalFlashCacheInPercent")
-    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def additional_flash_cache_in_percent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         """
         return pulumi.get(self, "additional_flash_cache_in_percent")
 
     @additional_flash_cache_in_percent.setter
-    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def additional_flash_cache_in_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "additional_flash_cache_in_percent", value)
 
     @_builtins.property
     @pulumi.getter(name="autoscaleLimitInGbs")
-    def autoscale_limit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def autoscale_limit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         """
         return pulumi.get(self, "autoscale_limit_in_gbs")
 
     @autoscale_limit_in_gbs.setter
-    def autoscale_limit_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def autoscale_limit_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "autoscale_limit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Exadata Database Storage Vault description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
-    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoscaleEnabled")
-    def is_autoscale_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_autoscale_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_autoscale_enabled")
 
     @is_autoscale_enabled.setter
-    def is_autoscale_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_autoscale_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_autoscale_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
 
@@ -251,34 +251,34 @@ class ExascaleDbStorageVaultArgs:
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
 @pulumi.input_type
 class _ExascaleDbStorageVaultState:
     def __init__(__self__, *,
-                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-                 attached_shape_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 autoscale_limit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 high_capacity_database_storage: Optional[pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']] = None,
-                 is_autoscale_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+                 attached_shape_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 high_capacity_database_storage: pulumi.Input[Optional['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']] = None,
+                 is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 vm_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ExascaleDbStorageVault resources.
 
@@ -353,223 +353,223 @@ class _ExascaleDbStorageVaultState:
 
     @_builtins.property
     @pulumi.getter(name="additionalFlashCacheInPercent")
-    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def additional_flash_cache_in_percent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         """
         return pulumi.get(self, "additional_flash_cache_in_percent")
 
     @additional_flash_cache_in_percent.setter
-    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def additional_flash_cache_in_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "additional_flash_cache_in_percent", value)
 
     @_builtins.property
     @pulumi.getter(name="attachedShapeAttributes")
-    def attached_shape_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attached_shape_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "attached_shape_attributes")
 
     @attached_shape_attributes.setter
-    def attached_shape_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attached_shape_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attached_shape_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="autoscaleLimitInGbs")
-    def autoscale_limit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def autoscale_limit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         """
         return pulumi.get(self, "autoscale_limit_in_gbs")
 
     @autoscale_limit_in_gbs.setter
-    def autoscale_limit_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def autoscale_limit_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "autoscale_limit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain in which the Exadata Database Storage Vault is located.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Exadata Database Storage Vault description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
-    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="highCapacityDatabaseStorage")
-    def high_capacity_database_storage(self) -> Optional[pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]:
+    def high_capacity_database_storage(self) -> pulumi.Input[Optional['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]:
         """
         (Updatable) Create exadata Database Storage Details
         """
         return pulumi.get(self, "high_capacity_database_storage")
 
     @high_capacity_database_storage.setter
-    def high_capacity_database_storage(self, value: Optional[pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]):
+    def high_capacity_database_storage(self, value: pulumi.Input[Optional['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]):
         pulumi.set(self, "high_capacity_database_storage", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoscaleEnabled")
-    def is_autoscale_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_autoscale_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_autoscale_enabled")
 
     @is_autoscale_enabled.setter
-    def is_autoscale_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_autoscale_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_autoscale_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the Exadata Database Storage Vault was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
 
@@ -580,31 +580,31 @@ class _ExascaleDbStorageVaultState:
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterCount")
-    def vm_cluster_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vm_cluster_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of Exadata VM clusters used the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "vm_cluster_count")
 
     @vm_cluster_count.setter
-    def vm_cluster_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vm_cluster_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vm_cluster_count", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterIds")
-    def vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vm_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
         """
         return pulumi.get(self, "vm_cluster_ids")
 
     @vm_cluster_ids.setter
-    def vm_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vm_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vm_cluster_ids", value)
 
 
@@ -614,20 +614,20 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-                 autoscale_limit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
-                 is_autoscale_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+                 autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
@@ -648,10 +648,10 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
             high_capacity_database_storage={
-                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+                "total_size_in_gbs": int(exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs),
             },
-            additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
-            autoscale_limit_in_gbs=exascale_db_storage_vault_autoscale_limit_in_gbs,
+            additional_flash_cache_in_percent=int(exascale_db_storage_vault_additional_flash_cache_in_percent),
+            autoscale_limit_in_gbs=int(exascale_db_storage_vault_autoscale_limit_in_gbs),
             cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -659,7 +659,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled,
+            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled == "true",
             subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```
@@ -719,10 +719,10 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
             high_capacity_database_storage={
-                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+                "total_size_in_gbs": int(exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs),
             },
-            additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
-            autoscale_limit_in_gbs=exascale_db_storage_vault_autoscale_limit_in_gbs,
+            additional_flash_cache_in_percent=int(exascale_db_storage_vault_additional_flash_cache_in_percent),
+            autoscale_limit_in_gbs=int(exascale_db_storage_vault_autoscale_limit_in_gbs),
             cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -730,7 +730,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled,
+            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled == "true",
             subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```
@@ -759,20 +759,20 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-                 autoscale_limit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
-                 is_autoscale_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+                 autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -821,27 +821,27 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-            attached_shape_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            autoscale_limit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
-            is_autoscale_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-            vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ExascaleDbStorageVault':
+            additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+            attached_shape_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+            is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            vm_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ExascaleDbStorageVault':
         """
         Get an existing ExascaleDbStorageVault resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

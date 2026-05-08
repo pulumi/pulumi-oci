@@ -168,7 +168,7 @@ def get_fleet_library_managed_instances(application_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_managed_instances = oci.Jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_library_managed_instances = oci.jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
         library_key=fleet_library_managed_instance_library_key,
         application_id=test_application["id"],
         host_name=fleet_library_managed_instance_host_name,
@@ -213,15 +213,15 @@ def get_fleet_library_managed_instances(application_id: Optional[_builtins.str] 
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_fleet_library_managed_instances_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict']]]]] = None,
-                                               fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               host_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               hostname_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               library_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                               managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_library_managed_instances_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict']]]]] = None,
+                                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               hostname_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               library_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                               managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetLibraryManagedInstancesResult]:
     """
     This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
@@ -234,7 +234,7 @@ def get_fleet_library_managed_instances_output(application_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_managed_instances = oci.Jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_library_managed_instances = oci.jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
         library_key=fleet_library_managed_instance_library_key,
         application_id=test_application["id"],
         host_name=fleet_library_managed_instance_host_name,

@@ -82,8 +82,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -292,8 +292,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -384,8 +384,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -476,8 +476,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -522,8 +522,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -564,8 +564,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -606,8 +606,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -648,8 +648,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -690,8 +690,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -732,8 +732,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -818,8 +818,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -861,8 +861,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -904,8 +904,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -947,8 +947,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -993,8 +993,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1039,8 +1039,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1085,8 +1085,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1131,8 +1131,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1177,8 +1177,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1220,8 +1220,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1263,8 +1263,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1306,8 +1306,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1349,8 +1349,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1392,8 +1392,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1435,8 +1435,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1478,8 +1478,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1521,8 +1521,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1564,8 +1564,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1649,8 +1649,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1691,8 +1691,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1733,8 +1733,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1775,8 +1775,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1817,8 +1817,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1859,8 +1859,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1901,8 +1901,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1943,8 +1943,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1985,8 +1985,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2027,8 +2027,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2072,8 +2072,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2117,8 +2117,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2162,8 +2162,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2207,8 +2207,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2252,8 +2252,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2303,8 +2303,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2354,8 +2354,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2405,8 +2405,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2456,8 +2456,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2507,8 +2507,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2549,8 +2549,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2591,8 +2591,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2633,8 +2633,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2675,8 +2675,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2717,8 +2717,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2762,8 +2762,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2807,8 +2807,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2852,8 +2852,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2897,8 +2897,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2942,8 +2942,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2984,8 +2984,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3026,8 +3026,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3068,8 +3068,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3110,8 +3110,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3152,8 +3152,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3197,8 +3197,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3242,8 +3242,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3287,8 +3287,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3332,8 +3332,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3377,8 +3377,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3420,8 +3420,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3463,8 +3463,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3506,8 +3506,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3549,8 +3549,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3592,8 +3592,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3634,8 +3634,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3676,8 +3676,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3718,8 +3718,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3760,8 +3760,8 @@ public final class CloudBridgeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
      * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

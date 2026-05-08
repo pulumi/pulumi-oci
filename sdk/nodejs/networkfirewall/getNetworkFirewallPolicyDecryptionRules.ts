@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyDecryptionRules = oci.NetworkFirewall.getNetworkFirewallPolicyDecryptionRules({
+ * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
+ *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```
@@ -81,9 +81,9 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyDecryptionRules = oci.NetworkFirewall.getNetworkFirewallPolicyDecryptionRules({
+ * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
+ *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```
@@ -105,12 +105,12 @@ export interface GetNetworkFirewallPolicyDecryptionRulesOutputArgs {
     /**
      * Unique priority order for Decryption Rules in the network firewall policy.
      */
-    decryptionRulePriorityOrder?: pulumi.Input<number>;
+    decryptionRulePriorityOrder?: pulumi.Input<number | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRulesFilterArgs>[] | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

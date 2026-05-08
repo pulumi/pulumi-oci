@@ -94,7 +94,7 @@ def get_runbook_export_statuses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_export_statuses = oci.FleetAppsManagement.get_runbook_export_statuses(compartment_id=compartment_id)
+    test_runbook_export_statuses = oci.fleetappsmanagement.get_runbook_export_statuses(compartment_id=compartment_id)
     ```
 
 
@@ -112,9 +112,9 @@ def get_runbook_export_statuses(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         runbook_export_status_collections=pulumi.get(__ret__, 'runbook_export_status_collections'))
-def get_runbook_export_statuses_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunbookExportStatusesFilterArgs', 'GetRunbookExportStatusesFilterArgsDict']]]]] = None,
-                                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_runbook_export_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbookExportStatusesFilterArgs', 'GetRunbookExportStatusesFilterArgsDict']]]]] = None,
+                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbookExportStatusesResult]:
     """
     This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -128,7 +128,7 @@ def get_runbook_export_statuses_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_export_statuses = oci.FleetAppsManagement.get_runbook_export_statuses(compartment_id=compartment_id)
+    test_runbook_export_statuses = oci.fleetappsmanagement.get_runbook_export_statuses(compartment_id=compartment_id)
     ```
 
 

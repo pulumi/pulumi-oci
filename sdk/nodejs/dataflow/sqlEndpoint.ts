@@ -30,9 +30,9 @@ import * as utilities from "../utilities";
  *     driverShape: sqlEndpointDriverShape,
  *     executorShape: sqlEndpointExecutorShape,
  *     lakeId: testLake.id,
- *     maxExecutorCount: sqlEndpointMaxExecutorCount,
+ *     maxExecutorCount: Number(sqlEndpointMaxExecutorCount),
  *     metastoreId: testMetastore.id,
- *     minExecutorCount: sqlEndpointMinExecutorCount,
+ *     minExecutorCount: Number(sqlEndpointMinExecutorCount),
  *     networkConfiguration: {
  *         networkType: sqlEndpointNetworkConfigurationNetworkType,
  *         accessControlRules: [{
@@ -67,7 +67,7 @@ import * as utilities from "../utilities";
  *     logCompartmentId: testCompartment.id,
  *     logDisplayName: sqlEndpointLogDisplayName,
  *     logGroupId: testLogGroup.id,
- *     logRetentionDuration: sqlEndpointLogRetentionDuration,
+ *     logRetentionDuration: Number(sqlEndpointLogRetentionDuration),
  *     sparkAdvancedConfigurations: sqlEndpointSparkAdvancedConfigurations,
  * });
  * ```
@@ -330,87 +330,87 @@ export interface SqlEndpointState {
     /**
      * (Updatable) The identifier of the compartment used with the SQL Endpoint.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of CreateSQLEndpointDetails.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The SQL Endpoint name, which can be changed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The shape of the SQL Endpoint driver instance.
      */
-    driverShape?: pulumi.Input<string>;
+    driverShape?: pulumi.Input<string | undefined>;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    driverShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointDriverShapeConfig>;
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointDriverShapeConfig | undefined>;
     /**
      * The shape of the SQL Endpoint worker instance.
      */
-    executorShape?: pulumi.Input<string>;
+    executorShape?: pulumi.Input<string | undefined>;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    executorShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointExecutorShapeConfig>;
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointExecutorShapeConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      */
-    jdbcEndpointUrl?: pulumi.Input<string>;
+    jdbcEndpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Oracle Cloud Infrastructure lake OCID
      */
-    lakeId?: pulumi.Input<string>;
+    lakeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
      */
-    logCompartmentId?: pulumi.Input<string>;
+    logCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The friendly name of the log object used with the SQL Endpoint.
      */
-    logDisplayName?: pulumi.Input<string>;
+    logDisplayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The identifier of the log group used with the SQL Endpoint.
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log retention duration in days
      */
-    logRetentionDuration?: pulumi.Input<number>;
+    logRetentionDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of executors.
      */
-    maxExecutorCount?: pulumi.Input<number>;
+    maxExecutorCount?: pulumi.Input<number | undefined>;
     /**
      * Metastore OCID
      */
-    metastoreId?: pulumi.Input<string>;
+    metastoreId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The minimum number of executors.
      */
-    minExecutorCount?: pulumi.Input<number>;
+    minExecutorCount?: pulumi.Input<number | undefined>;
     /**
      * The network configuration of a SQL Endpoint.
      */
-    networkConfiguration?: pulumi.Input<inputs.DataFlow.SqlEndpointNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.DataFlow.SqlEndpointNetworkConfiguration | undefined>;
     /**
      * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The version of the SQL Endpoint.
      */
-    sqlEndpointVersion?: pulumi.Input<string>;
+    sqlEndpointVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -418,27 +418,27 @@ export interface SqlEndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      */
-    stateMessage?: pulumi.Input<string>;
+    stateMessage?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      */
-    warehouseBucketUri?: pulumi.Input<string>;
+    warehouseBucketUri?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -452,11 +452,11 @@ export interface SqlEndpointArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of CreateSQLEndpointDetails.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The SQL Endpoint name, which can be changed.
      */
@@ -468,7 +468,7 @@ export interface SqlEndpointArgs {
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    driverShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointDriverShapeConfig>;
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointDriverShapeConfig | undefined>;
     /**
      * The shape of the SQL Endpoint worker instance.
      */
@@ -476,27 +476,27 @@ export interface SqlEndpointArgs {
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    executorShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointExecutorShapeConfig>;
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.SqlEndpointExecutorShapeConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
      */
-    logCompartmentId?: pulumi.Input<string>;
+    logCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The friendly name of the log object used with the SQL Endpoint.
      */
-    logDisplayName?: pulumi.Input<string>;
+    logDisplayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The identifier of the log group used with the SQL Endpoint.
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log retention duration in days
      */
-    logRetentionDuration?: pulumi.Input<number>;
+    logRetentionDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of executors.
      */
@@ -516,7 +516,7 @@ export interface SqlEndpointArgs {
     /**
      * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    sparkAdvancedConfigurations?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The version of the SQL Endpoint.
      */
@@ -528,5 +528,5 @@ export interface SqlEndpointArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

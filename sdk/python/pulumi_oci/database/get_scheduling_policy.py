@@ -204,7 +204,7 @@ def get_scheduling_policy(scheduling_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy = oci.Database.get_scheduling_policy(scheduling_policy_id=test_scheduling_policy_oci_database_scheduling_policy["id"])
+    test_scheduling_policy = oci.database.get_scheduling_policy(scheduling_policy_id=test_scheduling_policy_oci_database_scheduling_policy["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_scheduling_policy(scheduling_policy_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_next_window_starts=pulumi.get(__ret__, 'time_next_window_starts'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_scheduling_policy_output(scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduling_policy_output(scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPolicyResult]:
     """
     This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
@@ -242,7 +242,7 @@ def get_scheduling_policy_output(scheduling_policy_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy = oci.Database.get_scheduling_policy(scheduling_policy_id=test_scheduling_policy_oci_database_scheduling_policy["id"])
+    test_scheduling_policy = oci.database.get_scheduling_policy(scheduling_policy_id=test_scheduling_policy_oci_database_scheduling_policy["id"])
     ```
 
 

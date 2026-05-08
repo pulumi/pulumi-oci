@@ -117,7 +117,7 @@ export interface MarketplaceExternalAttestedMetadataState {
     /**
      * compartment that associated instance is in
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * unique id that identifies the associated instance
      *
@@ -125,11 +125,11 @@ export interface MarketplaceExternalAttestedMetadataState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The serialized JWT token, containing header, payload, signature
      */
-    serializedJwt?: pulumi.Input<string>;
+    serializedJwt?: pulumi.Input<string | undefined>;
 }
 
 /**

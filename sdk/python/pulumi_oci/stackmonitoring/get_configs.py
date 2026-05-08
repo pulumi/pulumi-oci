@@ -134,7 +134,7 @@ def get_configs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+    test_configs = oci.stackmonitoring.get_configs(compartment_id=compartment_id,
         display_name=config_display_name,
         state=config_state,
         type=config_type)
@@ -163,11 +163,11 @@ def get_configs(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_configs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_configs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigsResult]:
     """
     This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -180,7 +180,7 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+    test_configs = oci.stackmonitoring.get_configs(compartment_id=compartment_id,
         display_name=config_display_name,
         state=config_state,
         type=config_type)

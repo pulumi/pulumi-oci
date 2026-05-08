@@ -27,9 +27,9 @@ import * as utilities from "../utilities";
  *     displayName: cloudGateServerDisplayName,
  *     hostName: cloudGateServerHostName,
  *     idcsEndpoint: testDomain.url,
- *     port: cloudGateServerPort,
+ *     port: Number(cloudGateServerPort),
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer"],
- *     ssl: cloudGateServerSsl,
+ *     ssl: cloudGateServerSsl === "true",
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateServerAuthorization,
@@ -484,15 +484,15 @@ export interface DomainsCloudGateServerState {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Reference to owning Cloud Gate
      *
@@ -506,7 +506,7 @@ export interface DomainsCloudGateServerState {
      * * type: complex
      * * uniqueness: none
      */
-    cloudGate?: pulumi.Input<inputs.Identity.DomainsCloudGateServerCloudGate>;
+    cloudGate?: pulumi.Input<inputs.Identity.DomainsCloudGateServerCloudGate | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -520,7 +520,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -534,7 +534,7 @@ export interface DomainsCloudGateServerState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Brief description for this Cloud Gate server block
      *
@@ -548,7 +548,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name for the Server block
      *
@@ -562,7 +562,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: server
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -576,7 +576,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Hostname for the Server block
      *
@@ -590,7 +590,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -602,11 +602,11 @@ export interface DomainsCloudGateServerState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -618,7 +618,7 @@ export interface DomainsCloudGateServerState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -632,7 +632,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -645,7 +645,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Indicates whether this resource was created by OPC
      *
@@ -661,7 +661,7 @@ export interface DomainsCloudGateServerState {
      * * type: boolean
      * * uniqueness: none
      */
-    isOpcService?: pulumi.Input<boolean>;
+    isOpcService?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -675,7 +675,7 @@ export interface DomainsCloudGateServerState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerMeta>[] | undefined>;
     /**
      * (Updatable) More nginx Settings. JSON encoded text block
      *
@@ -689,7 +689,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    nginxSettings?: pulumi.Input<string>;
+    nginxSettings?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -703,7 +703,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Port for the Server Block
      *
@@ -719,11 +719,11 @@ export interface DomainsCloudGateServerState {
      * * type: integer
      * * uniqueness: none
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -737,7 +737,7 @@ export interface DomainsCloudGateServerState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) SSL flag for the Server Block
      *
@@ -751,7 +751,7 @@ export interface DomainsCloudGateServerState {
      * * type: boolean
      * * uniqueness: none
      */
-    ssl?: pulumi.Input<boolean>;
+    ssl?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -765,7 +765,7 @@ export interface DomainsCloudGateServerState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -783,7 +783,7 @@ export interface DomainsCloudGateServerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -793,15 +793,15 @@ export interface DomainsCloudGateServerArgs {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Reference to owning Cloud Gate
      *
@@ -829,7 +829,7 @@ export interface DomainsCloudGateServerArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name for the Server block
      *
@@ -875,7 +875,7 @@ export interface DomainsCloudGateServerArgs {
      * * type: string
      * * uniqueness: none
      */
-    nginxSettings?: pulumi.Input<string>;
+    nginxSettings?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -889,7 +889,7 @@ export interface DomainsCloudGateServerArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Port for the Server Block
      *
@@ -909,7 +909,7 @@ export interface DomainsCloudGateServerArgs {
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -951,5 +951,5 @@ export interface DomainsCloudGateServerArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsCloudGateServerTag>[] | undefined>;
 }

@@ -111,7 +111,7 @@ def get_vantage_points(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=vantage_point_display_name,
+    test_vantage_points = oci.healthchecks.get_vantage_points(display_name=vantage_point_display_name,
         name=vantage_point_name)
     ```
 
@@ -132,9 +132,9 @@ def get_vantage_points(display_name: Optional[_builtins.str] = None,
         health_checks_vantage_points=pulumi.get(__ret__, 'health_checks_vantage_points'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
-                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vantage_points_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
+                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointsResult]:
     """
     This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
@@ -147,7 +147,7 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=vantage_point_display_name,
+    test_vantage_points = oci.healthchecks.get_vantage_points(display_name=vantage_point_display_name,
         name=vantage_point_name)
     ```
 

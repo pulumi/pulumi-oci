@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipAllocatedRanges = oci.Core.getByoipAllocatedRanges({
+ * const testByoipAllocatedRanges = oci.core.getByoipAllocatedRanges({
  *     byoipRangeId: testByoipRange.id,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetByoipAllocatedRangesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipAllocatedRanges = oci.Core.getByoipAllocatedRanges({
+ * const testByoipAllocatedRanges = oci.core.getByoipAllocatedRanges({
  *     byoipRangeId: testByoipRange.id,
  * });
  * ```
@@ -90,5 +90,5 @@ export interface GetByoipAllocatedRangesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
      */
     byoipRangeId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoipAllocatedRangesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoipAllocatedRangesFilterArgs>[] | undefined>;
 }

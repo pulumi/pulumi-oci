@@ -193,7 +193,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.goldengate.get_deployments(compartment_id=compartment_id,
         assignable_connection_id=test_connection["id"],
         assigned_connection_id=test_connection["id"],
         deployment_type=deployment_deployment_type,
@@ -242,16 +242,16 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         state=pulumi.get(__ret__, 'state'),
         supported_connection_type=pulumi.get(__ret__, 'supported_connection_type'))
-def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           assigned_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
-                           fqdn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           lifecycle_sub_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           supported_connection_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deployments_output(assignable_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           assigned_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
+                           fqdn: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           supported_connection_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
     This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
@@ -264,7 +264,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.goldengate.get_deployments(compartment_id=compartment_id,
         assignable_connection_id=test_connection["id"],
         assigned_connection_id=test_connection["id"],
         deployment_type=deployment_deployment_type,

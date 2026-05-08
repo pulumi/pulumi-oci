@@ -165,7 +165,7 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
+    test_vm_cluster_update_history_entry = oci.database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 
@@ -190,8 +190,8 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[_built
         update_id=pulumi.get(__ret__, 'update_id'),
         update_type=pulumi.get(__ret__, 'update_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_update_history_entry_output(update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterUpdateHistoryEntryResult]:
     """
     This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -204,7 +204,7 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
+    test_vm_cluster_update_history_entry = oci.database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 

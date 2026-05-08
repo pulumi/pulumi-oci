@@ -81,9 +81,9 @@ class NamespaceIngestTimeRulesManagementArgs:
 @pulumi.input_type
 class _NamespaceIngestTimeRulesManagementState:
     def __init__(__self__, *,
-                 enable_ingest_time_rule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ingest_time_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_ingest_time_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRulesManagement resources.
 
@@ -104,7 +104,7 @@ class _NamespaceIngestTimeRulesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableIngestTimeRule")
-    def enable_ingest_time_rule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_ingest_time_rule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -115,31 +115,31 @@ class _NamespaceIngestTimeRulesManagementState:
         return pulumi.get(self, "enable_ingest_time_rule")
 
     @enable_ingest_time_rule.setter
-    def enable_ingest_time_rule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_ingest_time_rule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_ingest_time_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="ingestTimeRuleId")
-    def ingest_time_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ingest_time_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
         """
         return pulumi.get(self, "ingest_time_rule_id")
 
     @ingest_time_rule_id.setter
-    def ingest_time_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ingest_time_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ingest_time_rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -149,9 +149,9 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_ingest_time_rule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ingest_time_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_ingest_time_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -169,7 +169,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         test_namespace_ingest_time_rules_management = oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
             ingest_time_rule_id=test_rule["id"],
             namespace=namespace_ingest_time_rules_management_namespace,
-            enable_ingest_time_rule=enable_ingest_time_rule)
+            enable_ingest_time_rule=enable_ingest_time_rule == "true")
         ```
 
 
@@ -205,7 +205,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         test_namespace_ingest_time_rules_management = oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
             ingest_time_rule_id=test_rule["id"],
             namespace=namespace_ingest_time_rules_management_namespace,
-            enable_ingest_time_rule=enable_ingest_time_rule)
+            enable_ingest_time_rule=enable_ingest_time_rule == "true")
         ```
 
 
@@ -224,9 +224,9 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_ingest_time_rule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ingest_time_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_ingest_time_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -255,9 +255,9 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_ingest_time_rule: Optional[pulumi.Input[_builtins.bool]] = None,
-            ingest_time_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceIngestTimeRulesManagement':
+            enable_ingest_time_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+            ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceIngestTimeRulesManagement':
         """
         Get an existing NamespaceIngestTimeRulesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -394,7 +394,7 @@ def get_monitor(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
+    test_monitor = oci.apmsynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
         monitor_id=test_monitor_oci_apm_synthetics_monitor["id"])
     ```
 
@@ -438,8 +438,8 @@ def get_monitor(apm_domain_id: Optional[_builtins.str] = None,
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         vantage_point_count=pulumi.get(__ret__, 'vantage_point_count'),
         vantage_points=pulumi.get(__ret__, 'vantage_points'))
-def get_monitor_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_monitor_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorResult]:
     """
     This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -452,7 +452,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
+    test_monitor = oci.apmsynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
         monitor_id=test_monitor_oci_apm_synthetics_monitor["id"])
     ```
 

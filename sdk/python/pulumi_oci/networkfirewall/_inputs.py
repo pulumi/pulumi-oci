@@ -72,7 +72,7 @@ class NetworkFirewallNatConfigurationArgsDict(TypedDict):
     """
     (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
     """
-    nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nat_ip_address_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
     """
@@ -81,7 +81,7 @@ class NetworkFirewallNatConfigurationArgsDict(TypedDict):
 class NetworkFirewallNatConfigurationArgs:
     def __init__(__self__, *,
                  must_enable_private_nat: pulumi.Input[_builtins.bool],
-                 nat_ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 nat_ip_address_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.bool] must_enable_private_nat: (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nat_ip_address_lists: An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
@@ -104,23 +104,23 @@ class NetworkFirewallNatConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="natIpAddressLists")
-    def nat_ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nat_ip_address_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         return pulumi.get(self, "nat_ip_address_lists")
 
     @nat_ip_address_lists.setter
-    def nat_ip_address_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nat_ip_address_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nat_ip_address_lists", value)
 
 
 class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
-    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    destination_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
     """
-    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    source_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of IP address list names to be evaluated against the traffic source address.
     """
@@ -128,8 +128,8 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     def __init__(__self__, *,
-                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 destination_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
@@ -141,35 +141,35 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destination_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
-    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destination_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destination_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
-    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_addresses", value)
 
 
 class NetworkFirewallPolicyDecryptionRulePositionArgsDict(TypedDict):
-    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    after_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule after which this rule lies.
     """
-    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    before_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule before which this rule lies.
 
@@ -181,8 +181,8 @@ class NetworkFirewallPolicyDecryptionRulePositionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyDecryptionRulePositionArgs:
     def __init__(__self__, *,
-                 after_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 before_rule: Optional[pulumi.Input[_builtins.str]] = None):
+                 after_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 before_rule: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
@@ -198,19 +198,19 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
 
     @_builtins.property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def after_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule after which this rule lies.
         """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
-    def after_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def after_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "after_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
 
@@ -221,20 +221,20 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
-    def before_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before_rule", value)
 
 
 class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
-    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    destination_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
     """
-    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    source_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of IP address list names to be evaluated against the traffic source address.
     """
@@ -242,9 +242,9 @@ class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyNatRuleConditionArgs:
     def __init__(__self__, *,
-                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 destination_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         :param pulumi.Input[_builtins.str] service: (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
@@ -259,47 +259,47 @@ class NetworkFirewallPolicyNatRuleConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destination_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
-    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destination_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destination_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
-    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_addresses", value)
 
 
 class NetworkFirewallPolicyNatRulePositionArgsDict(TypedDict):
-    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    after_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule after which this rule lies.
     """
-    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    before_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule before which this rule lies.
     """
@@ -307,8 +307,8 @@ class NetworkFirewallPolicyNatRulePositionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyNatRulePositionArgs:
     def __init__(__self__, *,
-                 after_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 before_rule: Optional[pulumi.Input[_builtins.str]] = None):
+                 after_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 before_rule: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
@@ -320,47 +320,47 @@ class NetworkFirewallPolicyNatRulePositionArgs:
 
     @_builtins.property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def after_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule after which this rule lies.
         """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
-    def after_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def after_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "after_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
         """
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
-    def before_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before_rule", value)
 
 
 class NetworkFirewallPolicySecurityRuleConditionArgsDict(TypedDict):
-    applications: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    applications: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
     """
-    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    destination_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of address list names to be evaluated against the traffic destination address.
     """
-    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
     """
-    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    source_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of address list names to be evaluated against the traffic source address.
     """
-    urls: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    urls: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
     """
@@ -368,11 +368,11 @@ class NetworkFirewallPolicySecurityRuleConditionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicySecurityRuleConditionArgs:
     def __init__(__self__, *,
-                 applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 destination_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applications: (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
@@ -393,71 +393,71 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def applications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
         return pulumi.get(self, "applications")
 
     @applications.setter
-    def applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def applications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "applications", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destination_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
-    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destination_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destination_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
-    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         """
         return pulumi.get(self, "urls")
 
     @urls.setter
-    def urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "urls", value)
 
 
 class NetworkFirewallPolicySecurityRulePositionArgsDict(TypedDict):
-    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    after_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule after which this rule lies.
     """
-    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    before_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule before which this rule lies.
 
@@ -469,8 +469,8 @@ class NetworkFirewallPolicySecurityRulePositionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicySecurityRulePositionArgs:
     def __init__(__self__, *,
-                 after_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 before_rule: Optional[pulumi.Input[_builtins.str]] = None):
+                 after_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 before_rule: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
@@ -486,19 +486,19 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
 
     @_builtins.property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def after_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule after which this rule lies.
         """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
-    def after_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def after_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "after_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
 
@@ -509,7 +509,7 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
-    def before_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before_rule", value)
 
 
@@ -518,7 +518,7 @@ class NetworkFirewallPolicyServicePortRangeArgsDict(TypedDict):
     """
     (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
     """
-    maximum_port: NotRequired[pulumi.Input[_builtins.int]]
+    maximum_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
     """
@@ -527,7 +527,7 @@ class NetworkFirewallPolicyServicePortRangeArgsDict(TypedDict):
 class NetworkFirewallPolicyServicePortRangeArgs:
     def __init__(__self__, *,
                  minimum_port: pulumi.Input[_builtins.int],
-                 maximum_port: Optional[pulumi.Input[_builtins.int]] = None):
+                 maximum_port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] minimum_port: (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
         :param pulumi.Input[_builtins.int] maximum_port: (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
@@ -550,23 +550,23 @@ class NetworkFirewallPolicyServicePortRangeArgs:
 
     @_builtins.property
     @pulumi.getter(name="maximumPort")
-    def maximum_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def maximum_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
         """
         return pulumi.get(self, "maximum_port")
 
     @maximum_port.setter
-    def maximum_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def maximum_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "maximum_port", value)
 
 
 class NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict(TypedDict):
-    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    destination_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of address list names to be evaluated against the traffic destination address.
     """
-    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    source_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of address list names to be evaluated against the traffic source address.
     """
@@ -574,8 +574,8 @@ class NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRuleConditionArgs:
     def __init__(__self__, *,
-                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 destination_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
@@ -587,35 +587,35 @@ class NetworkFirewallPolicyTunnelInspectionRuleConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destination_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
-    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destination_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destination_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
-    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_addresses", value)
 
 
 class NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict(TypedDict):
-    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    after_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule after which this rule lies.
     """
-    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    before_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Identifier for rule before which this rule lies.
     """
@@ -623,8 +623,8 @@ class NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRulePositionArgs:
     def __init__(__self__, *,
-                 after_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 before_rule: Optional[pulumi.Input[_builtins.str]] = None):
+                 after_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 before_rule: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
@@ -636,31 +636,31 @@ class NetworkFirewallPolicyTunnelInspectionRulePositionArgs:
 
     @_builtins.property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def after_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule after which this rule lies.
         """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
-    def after_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def after_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "after_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
         """
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
-    def before_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before_rule", value)
 
 
 class NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict(TypedDict):
-    must_return_traffic_to_source: NotRequired[pulumi.Input[_builtins.bool]]
+    must_return_traffic_to_source: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Return scanned VXLAN tunnel traffic to source.
     """
@@ -668,7 +668,7 @@ class NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRuleProfileArgs:
     def __init__(__self__, *,
-                 must_return_traffic_to_source: Optional[pulumi.Input[_builtins.bool]] = None):
+                 must_return_traffic_to_source: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] must_return_traffic_to_source: (Updatable) Return scanned VXLAN tunnel traffic to source.
         """
@@ -677,14 +677,14 @@ class NetworkFirewallPolicyTunnelInspectionRuleProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="mustReturnTrafficToSource")
-    def must_return_traffic_to_source(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def must_return_traffic_to_source(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Return scanned VXLAN tunnel traffic to source.
         """
         return pulumi.get(self, "must_return_traffic_to_source")
 
     @must_return_traffic_to_source.setter
-    def must_return_traffic_to_source(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def must_return_traffic_to_source(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "must_return_traffic_to_source", value)
 
 

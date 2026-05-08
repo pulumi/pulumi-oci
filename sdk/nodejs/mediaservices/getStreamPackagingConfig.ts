@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfig = oci.MediaServices.getStreamPackagingConfig({
+ * const testStreamPackagingConfig = oci.mediaservices.getStreamPackagingConfig({
  *     streamPackagingConfigId: testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id,
  * });
  * ```
@@ -113,7 +113,7 @@ export interface GetStreamPackagingConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfig = oci.MediaServices.getStreamPackagingConfig({
+ * const testStreamPackagingConfig = oci.mediaservices.getStreamPackagingConfig({
  *     streamPackagingConfigId: testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id,
  * });
  * ```

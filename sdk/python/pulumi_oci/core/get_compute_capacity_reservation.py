@@ -216,7 +216,7 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=test_capacity_reservation["id"])
+    test_compute_capacity_reservation = oci.core.get_compute_capacity_reservation(capacity_reservation_id=test_capacity_reservation["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[_builtins
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         used_instance_count=pulumi.get(__ret__, 'used_instance_count'))
-def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_capacity_reservation_output(capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityReservationResult]:
     """
     This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
@@ -255,7 +255,7 @@ def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=test_capacity_reservation["id"])
+    test_compute_capacity_reservation = oci.core.get_compute_capacity_reservation(capacity_reservation_id=test_capacity_reservation["id"])
     ```
 
 

@@ -125,7 +125,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_generative_ai_private_endpoints = oci.GenerativeAi.get_generative_ai_private_endpoints(compartment_id=compartment_id,
+    test_generative_ai_private_endpoints = oci.generativeai.get_generative_ai_private_endpoints(compartment_id=compartment_id,
         display_name=generative_ai_private_endpoint_display_name,
         id=generative_ai_private_endpoint_id,
         state=generative_ai_private_endpoint_state)
@@ -153,11 +153,11 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
         generative_ai_private_endpoint_collections=pulumi.get(__ret__, 'generative_ai_private_endpoint_collections'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_generative_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]]]] = None,
-                                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]]]] = None,
+                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenerativeAiPrivateEndpointsResult]:
     """
     This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
@@ -170,7 +170,7 @@ def get_generative_ai_private_endpoints_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_generative_ai_private_endpoints = oci.GenerativeAi.get_generative_ai_private_endpoints(compartment_id=compartment_id,
+    test_generative_ai_private_endpoints = oci.generativeai.get_generative_ai_private_endpoints(compartment_id=compartment_id,
         display_name=generative_ai_private_endpoint_display_name,
         id=generative_ai_private_endpoint_id,
         state=generative_ai_private_endpoint_state)

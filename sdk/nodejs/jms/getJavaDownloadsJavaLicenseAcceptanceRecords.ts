@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
+ * const testJavaLicenseAcceptanceRecords = oci.jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
  *     compartmentId: tenancyOcid,
  *     id: javaLicenseAcceptanceRecordId,
  *     licenseType: javaLicenseAcceptanceRecordLicenseType,
@@ -100,7 +100,7 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
+ * const testJavaLicenseAcceptanceRecords = oci.jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
  *     compartmentId: tenancyOcid,
  *     id: javaLicenseAcceptanceRecordId,
  *     licenseType: javaLicenseAcceptanceRecordLicenseType,
@@ -129,21 +129,21 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs>[] | undefined>;
     /**
      * Unique Java license acceptance record identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Unique Java license type.
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
      */
-    searchByUser?: pulumi.Input<string>;
+    searchByUser?: pulumi.Input<string | undefined>;
     /**
      * The status of license acceptance.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

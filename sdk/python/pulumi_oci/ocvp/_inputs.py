@@ -84,11 +84,11 @@ __all__ = [
 ]
 
 class ClusterClusterByolAllocationDetailsArgsDict(TypedDict):
-    firewall_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    firewall_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
     """
-    vsan_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    vsan_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
     """
@@ -96,8 +96,8 @@ class ClusterClusterByolAllocationDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterClusterByolAllocationDetailsArgs:
     def __init__(__self__, *,
-                 firewall_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 firewall_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] firewall_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
         :param pulumi.Input[_builtins.str] vsan_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
@@ -109,26 +109,26 @@ class ClusterClusterByolAllocationDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="firewallByolAllocationId")
-    def firewall_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def firewall_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
         """
         return pulumi.get(self, "firewall_byol_allocation_id")
 
     @firewall_byol_allocation_id.setter
-    def firewall_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def firewall_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "firewall_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsanByolAllocationId")
-    def vsan_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsan_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
         """
         return pulumi.get(self, "vsan_byol_allocation_id")
 
     @vsan_byol_allocation_id.setter
-    def vsan_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsan_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsan_byol_allocation_id", value)
 
 
@@ -141,7 +141,7 @@ class ClusterDatastoreArgsDict(TypedDict):
     """
     Type of the datastore.
     """
-    capacity: NotRequired[pulumi.Input[_builtins.float]]
+    capacity: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Size of the Block Storage Volume in GB.
     """
@@ -151,7 +151,7 @@ class ClusterDatastoreArgs:
     def __init__(__self__, *,
                  block_volume_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  datastore_type: pulumi.Input[_builtins.str],
-                 capacity: Optional[pulumi.Input[_builtins.float]] = None):
+                 capacity: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
         :param pulumi.Input[_builtins.str] datastore_type: Type of the datastore.
@@ -188,14 +188,14 @@ class ClusterDatastoreArgs:
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size of the Block Storage Volume in GB.
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "capacity", value)
 
 
@@ -236,7 +236,7 @@ class ClusterNetworkConfigurationArgsDict(TypedDict):
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
     """
-    hcx_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    hcx_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
 
@@ -244,7 +244,7 @@ class ClusterNetworkConfigurationArgsDict(TypedDict):
 
     Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
     """
-    nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -252,7 +252,7 @@ class ClusterNetworkConfigurationArgsDict(TypedDict):
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
     """
-    nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -260,15 +260,15 @@ class ClusterNetworkConfigurationArgsDict(TypedDict):
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
     """
-    provisioning_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    provisioning_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
     """
-    replication_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    replication_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
     """
-    vsphere_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    vsphere_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -285,12 +285,12 @@ class ClusterNetworkConfigurationArgs:
                  provisioning_subnet_id: pulumi.Input[_builtins.str],
                  vmotion_vlan_id: pulumi.Input[_builtins.str],
                  vsan_vlan_id: pulumi.Input[_builtins.str],
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] nsx_edge_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
                
@@ -432,7 +432,7 @@ class ClusterNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="hcxVlanId")
-    def hcx_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
 
@@ -443,12 +443,12 @@ class ClusterNetworkConfigurationArgs:
         return pulumi.get(self, "hcx_vlan_id")
 
     @hcx_vlan_id.setter
-    def hcx_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
-    def nsx_edge_uplink1vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink1vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -459,12 +459,12 @@ class ClusterNetworkConfigurationArgs:
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @nsx_edge_uplink1vlan_id.setter
-    def nsx_edge_uplink1vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink1vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink1vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
-    def nsx_edge_uplink2vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink2vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -475,36 +475,36 @@ class ClusterNetworkConfigurationArgs:
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @nsx_edge_uplink2vlan_id.setter
-    def nsx_edge_uplink2vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink2vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink2vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
-    def provisioning_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
         """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @provisioning_vlan_id.setter
-    def provisioning_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationVlanId")
-    def replication_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
         """
         return pulumi.get(self, "replication_vlan_id")
 
     @replication_vlan_id.setter
-    def replication_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereVlanId")
-    def vsphere_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsphere_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -515,16 +515,16 @@ class ClusterNetworkConfigurationArgs:
         return pulumi.get(self, "vsphere_vlan_id")
 
     @vsphere_vlan_id.setter
-    def vsphere_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsphere_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsphere_vlan_id", value)
 
 
 class ClusterUpgradeLicenseArgsDict(TypedDict):
-    license_key: NotRequired[pulumi.Input[_builtins.str]]
+    license_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     vSphere license key value.
     """
-    license_type: NotRequired[pulumi.Input[_builtins.str]]
+    license_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     vSphere license type.
     """
@@ -532,8 +532,8 @@ class ClusterUpgradeLicenseArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterUpgradeLicenseArgs:
     def __init__(__self__, *,
-                 license_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] license_key: vSphere license key value.
         :param pulumi.Input[_builtins.str] license_type: vSphere license type.
@@ -545,35 +545,35 @@ class ClusterUpgradeLicenseArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseKey")
-    def license_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vSphere license key value.
         """
         return pulumi.get(self, "license_key")
 
     @license_key.setter
-    def license_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_key", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vSphere license type.
         """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
-    def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_type", value)
 
 
 class ClusterVsphereUpgradeObjectArgsDict(TypedDict):
-    download_link: NotRequired[pulumi.Input[_builtins.str]]
+    download_link: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Binary object download link.
     """
-    link_description: NotRequired[pulumi.Input[_builtins.str]]
+    link_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Binary object description.
     """
@@ -581,8 +581,8 @@ class ClusterVsphereUpgradeObjectArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterVsphereUpgradeObjectArgs:
     def __init__(__self__, *,
-                 download_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 download_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] download_link: Binary object download link.
         :param pulumi.Input[_builtins.str] link_description: Binary object description.
@@ -594,39 +594,39 @@ class ClusterVsphereUpgradeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="downloadLink")
-    def download_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def download_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Binary object download link.
         """
         return pulumi.get(self, "download_link")
 
     @download_link.setter
-    def download_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def download_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "download_link", value)
 
     @_builtins.property
     @pulumi.getter(name="linkDescription")
-    def link_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Binary object description.
         """
         return pulumi.get(self, "link_description")
 
     @link_description.setter
-    def link_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_description", value)
 
 
 class DatastoreBlockVolumeDetailArgsDict(TypedDict):
-    attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgsDict']]]]
+    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]]
     """
     List of BlockVolumeAttachment objects containing information about attachment details
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
     """
-    iqn: NotRequired[pulumi.Input[_builtins.str]]
+    iqn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An IQN of the Block Storage Volume.
     """
@@ -634,9 +634,9 @@ class DatastoreBlockVolumeDetailArgsDict(TypedDict):
 @pulumi.input_type
 class DatastoreBlockVolumeDetailArgs:
     def __init__(__self__, *,
-                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iqn: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachments: pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iqn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]] attachments: List of BlockVolumeAttachment objects containing information about attachment details
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
@@ -651,51 +651,51 @@ class DatastoreBlockVolumeDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]:
+    def attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]:
         """
         List of BlockVolumeAttachment objects containing information about attachment details
         """
         return pulumi.get(self, "attachments")
 
     @attachments.setter
-    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]):
+    def attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]):
         pulumi.set(self, "attachments", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def iqn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iqn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IQN of the Block Storage Volume.
         """
         return pulumi.get(self, "iqn")
 
     @iqn.setter
-    def iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iqn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iqn", value)
 
 
 class DatastoreBlockVolumeDetailAttachmentArgsDict(TypedDict):
-    esxi_host_id: NotRequired[pulumi.Input[_builtins.str]]
+    esxi_host_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
     """
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address of block volume attachment.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port of block volume attachment.
     """
@@ -703,9 +703,9 @@ class DatastoreBlockVolumeDetailAttachmentArgsDict(TypedDict):
 @pulumi.input_type
 class DatastoreBlockVolumeDetailAttachmentArgs:
     def __init__(__self__, *,
-                 esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None):
+                 esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] esxi_host_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
         :param pulumi.Input[_builtins.str] ip_address: The IP address of block volume attachment.
@@ -720,59 +720,59 @@ class DatastoreBlockVolumeDetailAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="esxiHostId")
-    def esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
         """
         return pulumi.get(self, "esxi_host_id")
 
     @esxi_host_id.setter
-    def esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of block volume attachment.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port of block volume attachment.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
 
 class EsxiHostDatastoreAttachmentArgsDict(TypedDict):
-    block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    block_volume_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
     """
-    datastore_id: NotRequired[pulumi.Input[_builtins.str]]
+    datastore_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
     """
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address of datastore attachment.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port of datastore attachment.
     """
-    volume_iqn: NotRequired[pulumi.Input[_builtins.str]]
+    volume_iqn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An IQN of the Block Storage Volume.
     """
@@ -780,11 +780,11 @@ class EsxiHostDatastoreAttachmentArgsDict(TypedDict):
 @pulumi.input_type
 class EsxiHostDatastoreAttachmentArgs:
     def __init__(__self__, *,
-                 block_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 volume_iqn: Optional[pulumi.Input[_builtins.str]] = None):
+                 block_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_iqn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] block_volume_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
         :param pulumi.Input[_builtins.str] datastore_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
@@ -805,62 +805,62 @@ class EsxiHostDatastoreAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockVolumeId")
-    def block_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
         """
         return pulumi.get(self, "block_volume_id")
 
     @block_volume_id.setter
-    def block_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_volume_id", value)
 
     @_builtins.property
     @pulumi.getter(name="datastoreId")
-    def datastore_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datastore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
         """
         return pulumi.get(self, "datastore_id")
 
     @datastore_id.setter
-    def datastore_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datastore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datastore_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of datastore attachment.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port of datastore attachment.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeIqn")
-    def volume_iqn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_iqn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IQN of the Block Storage Volume.
         """
         return pulumi.get(self, "volume_iqn")
 
     @volume_iqn.setter
-    def volume_iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_iqn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_iqn", value)
 
 
@@ -873,11 +873,11 @@ class ManagementApplianceConfigurationArgsDict(TypedDict):
     """
     (Updatable) Is metrics collection and publishing is enabled for appliance.
     """
-    metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Array of metrics ids to collect.
     """
-    support_bundle_bucket_id: NotRequired[pulumi.Input[_builtins.str]]
+    support_bundle_bucket_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
     """
@@ -887,8 +887,8 @@ class ManagementApplianceConfigurationArgs:
     def __init__(__self__, *,
                  is_log_ingestion_enabled: pulumi.Input[_builtins.bool],
                  is_metrics_collection_enabled: pulumi.Input[_builtins.bool],
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 support_bundle_bucket_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 support_bundle_bucket_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_log_ingestion_enabled: (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
         :param pulumi.Input[_builtins.bool] is_metrics_collection_enabled: (Updatable) Is metrics collection and publishing is enabled for appliance.
@@ -928,26 +928,26 @@ class ManagementApplianceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Array of metrics ids to collect.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="supportBundleBucketId")
-    def support_bundle_bucket_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def support_bundle_bucket_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
         """
         return pulumi.get(self, "support_bundle_bucket_id")
 
     @support_bundle_bucket_id.setter
-    def support_bundle_bucket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def support_bundle_bucket_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "support_bundle_bucket_id", value)
 
 
@@ -999,15 +999,15 @@ class ManagementApplianceConnectionArgs:
 
 
 class ManagementApplianceHeartbeatConnectionStateArgsDict(TypedDict):
-    details: NotRequired[pulumi.Input[_builtins.str]]
+    details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Information about current connection status.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Current state of the management appliance.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of connection.
     """
@@ -1015,9 +1015,9 @@ class ManagementApplianceHeartbeatConnectionStateArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementApplianceHeartbeatConnectionStateArgs:
     def __init__(__self__, *,
-                 details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] details: Information about current connection status.
         :param pulumi.Input[_builtins.str] state: Current state of the management appliance.
@@ -1032,38 +1032,38 @@ class ManagementApplianceHeartbeatConnectionStateArgs:
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Information about current connection status.
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current state of the management appliance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of connection.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -1076,7 +1076,7 @@ class SddcDatastoreArgsDict(TypedDict):
     """
     Type of the datastore.
     """
-    capacity: NotRequired[pulumi.Input[_builtins.float]]
+    capacity: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Size of the Block Storage Volume in GB.
     """
@@ -1086,7 +1086,7 @@ class SddcDatastoreArgs:
     def __init__(__self__, *,
                  block_volume_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  datastore_type: pulumi.Input[_builtins.str],
-                 capacity: Optional[pulumi.Input[_builtins.float]] = None):
+                 capacity: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
         :param pulumi.Input[_builtins.str] datastore_type: Type of the datastore.
@@ -1123,27 +1123,27 @@ class SddcDatastoreArgs:
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size of the Block Storage Volume in GB.
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "capacity", value)
 
 
 class SddcHcxOnPremLicenseArgsDict(TypedDict):
-    activation_key: NotRequired[pulumi.Input[_builtins.str]]
+    activation_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     HCX on-premise license key value.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     status of HCX on-premise license.
     """
-    system_name: NotRequired[pulumi.Input[_builtins.str]]
+    system_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the system that consumed the HCX on-premise license
     """
@@ -1151,9 +1151,9 @@ class SddcHcxOnPremLicenseArgsDict(TypedDict):
 @pulumi.input_type
 class SddcHcxOnPremLicenseArgs:
     def __init__(__self__, *,
-                 activation_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 activation_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] activation_key: HCX on-premise license key value.
         :param pulumi.Input[_builtins.str] status: status of HCX on-premise license.
@@ -1168,38 +1168,38 @@ class SddcHcxOnPremLicenseArgs:
 
     @_builtins.property
     @pulumi.getter(name="activationKey")
-    def activation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activation_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         HCX on-premise license key value.
         """
         return pulumi.get(self, "activation_key")
 
     @activation_key.setter
-    def activation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activation_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activation_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of HCX on-premise license.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemName")
-    def system_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the system that consumed the HCX on-premise license
         """
         return pulumi.get(self, "system_name")
 
     @system_name.setter
-    def system_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_name", value)
 
 
@@ -1246,61 +1246,61 @@ class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
     """
     vSphere Cluster types.
     """
-    actual_esxi_hosts_count: NotRequired[pulumi.Input[_builtins.int]]
+    actual_esxi_hosts_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
     """
-    capacity_reservation_id: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
     """
-    cluster_byol_allocation_details: NotRequired[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgsDict']]
+    cluster_byol_allocation_details: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]]
     """
     The BYOL allocations used for VMware Cluster provisioning.
     """
-    datastore_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    datastore_cluster_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of datastore clusters.
     """
-    datastores: NotRequired[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict']]]]
+    datastores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]]
     """
     A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
     """
-    initial_commitment: NotRequired[pulumi.Input[_builtins.str]]
+    initial_commitment: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
     """
-    initial_host_ocpu_count: NotRequired[pulumi.Input[_builtins.float]]
+    initial_host_ocpu_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The initial OCPU count of the Cluster's ESXi hosts.
     """
-    initial_host_shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    initial_host_shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
     """
-    initial_vcf_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    initial_vcf_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
     """
-    instance_display_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    instance_display_name_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 
     For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
     """
-    is_shielded_instance_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_shielded_instance_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether shielded instance is enabled for this Cluster.
     """
-    network_configuration: NotRequired[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict']]
+    network_configuration: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]]
     """
     The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
     """
-    workload_network_cidr: NotRequired[pulumi.Input[_builtins.str]]
+    workload_network_cidr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
     """
@@ -1311,20 +1311,20 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
                  compute_availability_domain: pulumi.Input[_builtins.str],
                  esxi_hosts_count: pulumi.Input[_builtins.int],
                  vsphere_type: pulumi.Input[_builtins.str],
-                 actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_byol_allocation_details: Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']] = None,
-                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_configuration: Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']] = None,
-                 workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+                 actual_esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_byol_allocation_details: pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']] = None,
+                 datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_configuration: pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']] = None,
+                 workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
@@ -1420,127 +1420,127 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="actualEsxiHostsCount")
-    def actual_esxi_hosts_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def actual_esxi_hosts_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         """
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @actual_esxi_hosts_count.setter
-    def actual_esxi_hosts_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def actual_esxi_hosts_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "actual_esxi_hosts_count", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterByolAllocationDetails")
-    def cluster_byol_allocation_details(self) -> Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]:
+    def cluster_byol_allocation_details(self) -> pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]:
         """
         The BYOL allocations used for VMware Cluster provisioning.
         """
         return pulumi.get(self, "cluster_byol_allocation_details")
 
     @cluster_byol_allocation_details.setter
-    def cluster_byol_allocation_details(self, value: Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]):
+    def cluster_byol_allocation_details(self, value: pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]):
         pulumi.set(self, "cluster_byol_allocation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="datastoreClusterIds")
-    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of datastore clusters.
         """
         return pulumi.get(self, "datastore_cluster_ids")
 
     @datastore_cluster_ids.setter
-    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def datastores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]:
+    def datastores(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]:
         """
         A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         """
         return pulumi.get(self, "datastores")
 
     @datastores.setter
-    def datastores(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]):
+    def datastores(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]):
         pulumi.set(self, "datastores", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="initialCommitment")
-    def initial_commitment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_commitment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
 
     @initial_commitment.setter
-    def initial_commitment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_commitment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_commitment", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
-    def initial_host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def initial_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The initial OCPU count of the Cluster's ESXi hosts.
         """
         return pulumi.get(self, "initial_host_ocpu_count")
 
     @initial_host_ocpu_count.setter
-    def initial_host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def initial_host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "initial_host_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostShapeName")
-    def initial_host_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_host_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "initial_host_shape_name")
 
     @initial_host_shape_name.setter
-    def initial_host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_host_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="initialVcfByolAllocationId")
-    def initial_vcf_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_vcf_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         """
         return pulumi.get(self, "initial_vcf_byol_allocation_id")
 
     @initial_vcf_byol_allocation_id.setter
-    def initial_vcf_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_vcf_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_vcf_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
-    def instance_display_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_display_name_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 
@@ -1549,52 +1549,52 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
         return pulumi.get(self, "instance_display_name_prefix")
 
     @instance_display_name_prefix.setter
-    def instance_display_name_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_display_name_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_display_name_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="isShieldedInstanceEnabled")
-    def is_shielded_instance_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shielded_instance_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether shielded instance is enabled for this Cluster.
         """
         return pulumi.get(self, "is_shielded_instance_enabled")
 
     @is_shielded_instance_enabled.setter
-    def is_shielded_instance_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shielded_instance_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shielded_instance_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]:
+    def network_configuration(self) -> pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]:
         """
         The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
-    def network_configuration(self, value: Optional[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]):
+    def network_configuration(self, value: pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]):
         pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadNetworkCidr")
-    def workload_network_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         """
         return pulumi.get(self, "workload_network_cidr")
 
     @workload_network_cidr.setter
-    def workload_network_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_network_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_network_cidr", value)
 
 
 class SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgsDict(TypedDict):
-    firewall_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    firewall_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
     """
-    vsan_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    vsan_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
     """
@@ -1602,8 +1602,8 @@ class SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDe
 @pulumi.input_type
 class SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs:
     def __init__(__self__, *,
-                 firewall_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 firewall_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
         :param pulumi.Input[_builtins.str] vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
@@ -1615,26 +1615,26 @@ class SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDe
 
     @_builtins.property
     @pulumi.getter(name="firewallByolAllocationId")
-    def firewall_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def firewall_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
         """
         return pulumi.get(self, "firewall_byol_allocation_id")
 
     @firewall_byol_allocation_id.setter
-    def firewall_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def firewall_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "firewall_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsanByolAllocationId")
-    def vsan_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsan_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
         """
         return pulumi.get(self, "vsan_byol_allocation_id")
 
     @vsan_byol_allocation_id.setter
-    def vsan_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsan_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsan_byol_allocation_id", value)
 
 
@@ -1722,7 +1722,7 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
     """
-    hcx_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    hcx_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
 
@@ -1730,7 +1730,7 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
 
     Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
     """
-    nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -1738,7 +1738,7 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
     """
-    nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -1746,15 +1746,15 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
 
     Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
     """
-    provisioning_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    provisioning_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
     """
-    replication_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    replication_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
     """
-    vsphere_vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    vsphere_vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -1771,12 +1771,12 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
                  provisioning_subnet_id: pulumi.Input[_builtins.str],
                  vmotion_vlan_id: pulumi.Input[_builtins.str],
                  vsan_vlan_id: pulumi.Input[_builtins.str],
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] nsx_edge_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
                
@@ -1918,7 +1918,7 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
 
     @_builtins.property
     @pulumi.getter(name="hcxVlanId")
-    def hcx_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
 
@@ -1929,12 +1929,12 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
         return pulumi.get(self, "hcx_vlan_id")
 
     @hcx_vlan_id.setter
-    def hcx_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
-    def nsx_edge_uplink1vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink1vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -1945,12 +1945,12 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @nsx_edge_uplink1vlan_id.setter
-    def nsx_edge_uplink1vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink1vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink1vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
-    def nsx_edge_uplink2vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink2vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -1961,36 +1961,36 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @nsx_edge_uplink2vlan_id.setter
-    def nsx_edge_uplink2vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink2vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink2vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
-    def provisioning_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
         """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @provisioning_vlan_id.setter
-    def provisioning_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationVlanId")
-    def replication_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
         """
         return pulumi.get(self, "replication_vlan_id")
 
     @replication_vlan_id.setter
-    def replication_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereVlanId")
-    def vsphere_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsphere_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 
@@ -2001,16 +2001,16 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
         return pulumi.get(self, "vsphere_vlan_id")
 
     @vsphere_vlan_id.setter
-    def vsphere_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsphere_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsphere_vlan_id", value)
 
 
 class SddcSddcByolAllocationDetailsArgsDict(TypedDict):
-    load_balancer_byol_allocation_id: NotRequired[pulumi.Input[_builtins.str]]
+    load_balancer_byol_allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
     """
-    load_balancer_instance_count: NotRequired[pulumi.Input[_builtins.int]]
+    load_balancer_instance_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
     """
@@ -2018,8 +2018,8 @@ class SddcSddcByolAllocationDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class SddcSddcByolAllocationDetailsArgs:
     def __init__(__self__, *,
-                 load_balancer_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_instance_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 load_balancer_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_instance_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] load_balancer_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
         :param pulumi.Input[_builtins.int] load_balancer_instance_count: (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
@@ -2031,35 +2031,35 @@ class SddcSddcByolAllocationDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerByolAllocationId")
-    def load_balancer_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
         """
         return pulumi.get(self, "load_balancer_byol_allocation_id")
 
     @load_balancer_byol_allocation_id.setter
-    def load_balancer_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerInstanceCount")
-    def load_balancer_instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def load_balancer_instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
         """
         return pulumi.get(self, "load_balancer_instance_count")
 
     @load_balancer_instance_count.setter
-    def load_balancer_instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def load_balancer_instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "load_balancer_instance_count", value)
 
 
 class SddcUpgradeLicenseArgsDict(TypedDict):
-    license_key: NotRequired[pulumi.Input[_builtins.str]]
+    license_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     vSphere license key value.
     """
-    license_type: NotRequired[pulumi.Input[_builtins.str]]
+    license_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     vSphere license type.
     """
@@ -2067,8 +2067,8 @@ class SddcUpgradeLicenseArgsDict(TypedDict):
 @pulumi.input_type
 class SddcUpgradeLicenseArgs:
     def __init__(__self__, *,
-                 license_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] license_key: vSphere license key value.
         :param pulumi.Input[_builtins.str] license_type: vSphere license type.
@@ -2080,35 +2080,35 @@ class SddcUpgradeLicenseArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseKey")
-    def license_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vSphere license key value.
         """
         return pulumi.get(self, "license_key")
 
     @license_key.setter
-    def license_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_key", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vSphere license type.
         """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
-    def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_type", value)
 
 
 class SddcVsphereUpgradeObjectArgsDict(TypedDict):
-    download_link: NotRequired[pulumi.Input[_builtins.str]]
+    download_link: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Binary object download link.
     """
-    link_description: NotRequired[pulumi.Input[_builtins.str]]
+    link_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Binary object description.
     """
@@ -2116,8 +2116,8 @@ class SddcVsphereUpgradeObjectArgsDict(TypedDict):
 @pulumi.input_type
 class SddcVsphereUpgradeObjectArgs:
     def __init__(__self__, *,
-                 download_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 download_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] download_link: Binary object download link.
         :param pulumi.Input[_builtins.str] link_description: Binary object description.
@@ -2129,26 +2129,26 @@ class SddcVsphereUpgradeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="downloadLink")
-    def download_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def download_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Binary object download link.
         """
         return pulumi.get(self, "download_link")
 
     @download_link.setter
-    def download_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def download_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "download_link", value)
 
     @_builtins.property
     @pulumi.getter(name="linkDescription")
-    def link_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Binary object description.
         """
         return pulumi.get(self, "link_description")
 
     @link_description.setter
-    def link_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_description", value)
 
 

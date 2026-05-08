@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testOperatorControlAssignment = new oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment", {
  *     compartmentId: compartmentId,
- *     isEnforcedAlways: operatorControlAssignmentIsEnforcedAlways,
+ *     isEnforcedAlways: operatorControlAssignmentIsEnforcedAlways === "true",
  *     operatorControlId: testOperatorControl.id,
  *     resourceCompartmentId: testCompartment.id,
  *     resourceId: testResource.id,
@@ -29,12 +29,12 @@ import * as utilities from "../utilities";
  *     comment: operatorControlAssignmentComment,
  *     definedTags: operatorControlAssignmentDefinedTags,
  *     freeformTags: operatorControlAssignmentFreeformTags,
- *     isAutoApproveDuringMaintenance: operatorControlAssignmentIsAutoApproveDuringMaintenance,
- *     isHypervisorLogForwarded: operatorControlAssignmentIsHypervisorLogForwarded,
- *     isLogForwarded: operatorControlAssignmentIsLogForwarded,
+ *     isAutoApproveDuringMaintenance: operatorControlAssignmentIsAutoApproveDuringMaintenance === "true",
+ *     isHypervisorLogForwarded: operatorControlAssignmentIsHypervisorLogForwarded === "true",
+ *     isLogForwarded: operatorControlAssignmentIsLogForwarded === "true",
  *     remoteSyslogServerAddress: operatorControlAssignmentRemoteSyslogServerAddress,
  *     remoteSyslogServerCaCert: operatorControlAssignmentRemoteSyslogServerCaCert,
- *     remoteSyslogServerPort: operatorControlAssignmentRemoteSyslogServerPort,
+ *     remoteSyslogServerPort: Number(operatorControlAssignmentRemoteSyslogServerPort),
  *     timeAssignmentFrom: operatorControlAssignmentTimeAssignmentFrom,
  *     timeAssignmentTo: operatorControlAssignmentTimeAssignmentTo,
  * });
@@ -310,119 +310,119 @@ export interface OperatorControlAssignmentState {
     /**
      * The OCID of the user who created this operator control assignment.
      */
-    assignerId?: pulumi.Input<string>;
+    assignerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      */
-    comment?: pulumi.Input<string>;
+    comment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * description containing reason for releasing of OperatorControl.
      */
-    detachmentDescription?: pulumi.Input<string>;
+    detachmentDescription?: pulumi.Input<string | undefined>;
     /**
      * The code identifying the error occurred during Assignment operation.
      */
-    errorCode?: pulumi.Input<number>;
+    errorCode?: pulumi.Input<number | undefined>;
     /**
      * The message describing the error occurred during Assignment operation.
      */
-    errorMessage?: pulumi.Input<string>;
+    errorMessage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The boolean if true would autoApprove during maintenance.
      */
-    isAutoApproveDuringMaintenance?: pulumi.Input<boolean>;
+    isAutoApproveDuringMaintenance?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the assignment is a default assignment.
      */
-    isDefaultAssignment?: pulumi.Input<boolean>;
+    isDefaultAssignment?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
-    isEnforcedAlways?: pulumi.Input<boolean>;
+    isEnforcedAlways?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
      */
-    isHypervisorLogForwarded?: pulumi.Input<boolean>;
+    isHypervisorLogForwarded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
-    isLogForwarded?: pulumi.Input<boolean>;
+    isLogForwarded?: pulumi.Input<boolean | undefined>;
     /**
      * More in detail about the lifeCycleState.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Name of the operator control name associated.
      */
-    opControlName?: pulumi.Input<string>;
+    opControlName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
-    operatorControlId?: pulumi.Input<string>;
+    operatorControlId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      */
-    remoteSyslogServerAddress?: pulumi.Input<string>;
+    remoteSyslogServerAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      */
-    remoteSyslogServerCaCert?: pulumi.Input<string>;
+    remoteSyslogServerCaCert?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      */
-    remoteSyslogServerPort?: pulumi.Input<number>;
+    remoteSyslogServerPort?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the compartment that contains the target resource.
      */
-    resourceCompartmentId?: pulumi.Input<string>;
+    resourceCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target resource being brought under the governance of the operator control.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * Name of the target resource.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * Type of the target resource.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current lifcycle state of the OperatorControl.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    timeAssignmentFrom?: pulumi.Input<string>;
+    timeAssignmentFrom?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    timeAssignmentTo?: pulumi.Input<string>;
+    timeAssignmentTo?: pulumi.Input<string | undefined>;
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    timeOfAssignment?: pulumi.Input<string>;
+    timeOfAssignment?: pulumi.Input<string | undefined>;
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * User id who released the operatorControl.
      */
-    unassignerId?: pulumi.Input<string>;
+    unassignerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
      *
@@ -430,7 +430,7 @@ export interface OperatorControlAssignmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateAssignmentTrigger?: pulumi.Input<number>;
+    validateAssignmentTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -440,7 +440,7 @@ export interface OperatorControlAssignmentArgs {
     /**
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      */
-    comment?: pulumi.Input<string>;
+    comment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
      */
@@ -448,15 +448,15 @@ export interface OperatorControlAssignmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The boolean if true would autoApprove during maintenance.
      */
-    isAutoApproveDuringMaintenance?: pulumi.Input<boolean>;
+    isAutoApproveDuringMaintenance?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
@@ -464,11 +464,11 @@ export interface OperatorControlAssignmentArgs {
     /**
      * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
      */
-    isHypervisorLogForwarded?: pulumi.Input<boolean>;
+    isHypervisorLogForwarded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
-    isLogForwarded?: pulumi.Input<boolean>;
+    isLogForwarded?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
@@ -476,15 +476,15 @@ export interface OperatorControlAssignmentArgs {
     /**
      * (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      */
-    remoteSyslogServerAddress?: pulumi.Input<string>;
+    remoteSyslogServerAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      */
-    remoteSyslogServerCaCert?: pulumi.Input<string>;
+    remoteSyslogServerCaCert?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      */
-    remoteSyslogServerPort?: pulumi.Input<number>;
+    remoteSyslogServerPort?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the compartment that contains the target resource.
      */
@@ -504,11 +504,11 @@ export interface OperatorControlAssignmentArgs {
     /**
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    timeAssignmentFrom?: pulumi.Input<string>;
+    timeAssignmentFrom?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    timeAssignmentTo?: pulumi.Input<string>;
+    timeAssignmentTo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
      *
@@ -516,5 +516,5 @@ export interface OperatorControlAssignmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateAssignmentTrigger?: pulumi.Input<number>;
+    validateAssignmentTrigger?: pulumi.Input<number | undefined>;
 }

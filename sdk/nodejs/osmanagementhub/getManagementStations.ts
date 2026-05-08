@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStations = oci.OsManagementHub.getManagementStations({
+ * const testManagementStations = oci.osmanagementhub.getManagementStations({
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
@@ -140,7 +140,7 @@ export interface GetManagementStationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStations = oci.OsManagementHub.getManagementStations({
+ * const testManagementStations = oci.osmanagementhub.getManagementStations({
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
@@ -177,38 +177,38 @@ export interface GetManagementStationsOutputArgs {
     /**
      * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationsFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationsFilterArgs>[] | undefined>;
     /**
      * A filter that returns information for management stations in the specified health state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose location does not match the given value.
      */
-    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources whose location matches the given value.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns information for management stations in the specified state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

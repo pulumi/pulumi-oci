@@ -249,7 +249,7 @@ def get_media_workflow(media_workflow_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow = oci.MediaServices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
+    test_media_workflow = oci.mediaservices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
     ```
 
 
@@ -278,7 +278,7 @@ def get_media_workflow(media_workflow_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_media_workflow_output(media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowResult]:
     """
     This data source provides details about a specific Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
@@ -291,7 +291,7 @@ def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow = oci.MediaServices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
+    test_media_workflow = oci.mediaservices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
     ```
 
 

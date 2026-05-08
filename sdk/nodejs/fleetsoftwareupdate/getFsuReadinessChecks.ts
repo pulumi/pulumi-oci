@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessChecks = oci.FleetSoftwareUpdate.getFsuReadinessChecks({
+ * const testFsuReadinessChecks = oci.fleetsoftwareupdate.getFsuReadinessChecks({
  *     compartmentId: compartmentId,
  *     displayName: fsuReadinessCheckDisplayName,
  *     resourceId: testResource.id,
@@ -107,7 +107,7 @@ export interface GetFsuReadinessChecksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessChecks = oci.FleetSoftwareUpdate.getFsuReadinessChecks({
+ * const testFsuReadinessChecks = oci.fleetsoftwareupdate.getFsuReadinessChecks({
  *     compartmentId: compartmentId,
  *     displayName: fsuReadinessCheckDisplayName,
  *     resourceId: testResource.id,
@@ -139,18 +139,18 @@ export interface GetFsuReadinessChecksOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuReadinessChecksFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuReadinessChecksFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the Exadata Fleet Update Readiness Check.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the specified lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose type matches the specified type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

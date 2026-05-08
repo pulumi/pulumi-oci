@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = new oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management", {
  *     externalContainerDatabaseId: testExternalContainerDatabase.id,
- *     enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
+ *     enableExternalContainerDbmFeature: enableExternalContainerDbmFeature === "true",
  *     featureDetails: {
  *         feature: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsFeature,
  *         enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *             managementAgentId: testManagementAgent.id,
  *             privateEndPointId: testPrivateEndPoint.id,
  *         },
- *         canEnableAllCurrentPdbs: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
- *         isAutoEnablePluggableDatabase: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         canEnableAllCurrentPdbs: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
+ *         isAutoEnablePluggableDatabase: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
  *         licenseModel: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
  *     },
  * });
@@ -126,7 +126,7 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
  * Input properties used for looking up and filtering ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resources.
  */
 export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState {
-    canDisableAllPdbs?: pulumi.Input<boolean>;
+    canDisableAllPdbs?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -134,23 +134,23 @@ export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableExternalContainerDbmFeature?: pulumi.Input<boolean>;
+    enableExternalContainerDbmFeature?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
-    externalContainerDatabaseId?: pulumi.Input<string>;
-    feature?: pulumi.Input<string>;
+    externalContainerDatabaseId?: pulumi.Input<string | undefined>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource.
  */
 export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs {
-    canDisableAllPdbs?: pulumi.Input<boolean>;
+    canDisableAllPdbs?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -163,9 +163,9 @@ export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
     externalContainerDatabaseId: pulumi.Input<string>;
-    feature?: pulumi.Input<string>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails | undefined>;
 }

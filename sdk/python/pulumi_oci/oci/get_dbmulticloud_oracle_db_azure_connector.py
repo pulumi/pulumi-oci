@@ -281,7 +281,7 @@ def get_dbmulticloud_oracle_db_azure_connector(oracle_db_azure_connector_id: Opt
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dbmulticloud_oracle_db_azure_connector_output(oracle_db_azure_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_azure_connector_output(oracle_db_azure_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureConnectorResult]:
     """
     This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.

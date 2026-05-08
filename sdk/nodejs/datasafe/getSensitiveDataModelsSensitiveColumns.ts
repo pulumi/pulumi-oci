@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
+ * const testSensitiveDataModelsSensitiveColumns = oci.datasafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
  *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
- *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
+ *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive === "true",
  *     objects: sensitiveDataModelsSensitiveColumnObject,
  *     objectTypes: sensitiveDataModelsSensitiveColumnObjectType,
  *     parentColumnKeys: sensitiveDataModelsSensitiveColumnParentColumnKey,
@@ -227,14 +227,14 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
+ * const testSensitiveDataModelsSensitiveColumns = oci.datasafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
  *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
- *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
+ *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive === "true",
  *     objects: sensitiveDataModelsSensitiveColumnObject,
  *     objectTypes: sensitiveDataModelsSensitiveColumnObjectType,
  *     parentColumnKeys: sensitiveDataModelsSensitiveColumnParentColumnKey,
@@ -283,52 +283,52 @@ export interface GetSensitiveDataModelsSensitiveColumnsOutputArgs {
     /**
      * Filters the sensitive columns with respect to the estimated row count.
      */
-    columnDataCountFilter?: pulumi.Input<string>;
+    columnDataCountFilter?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the sensitive columns that belong to the specified column group.
      */
-    columnGroup?: pulumi.Input<string>;
+    columnGroup?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
      */
-    confidenceLevels?: pulumi.Input<pulumi.Input<string>[]>;
+    confidenceLevels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified data types.
      */
-    dataTypes?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsFilterArgs>[]>;
+    dataTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelsSensitiveColumnsFilterArgs>[] | undefined>;
     /**
      * A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
      */
-    isCaseInSensitive?: pulumi.Input<boolean>;
+    isCaseInSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items related to a specific object type.
      */
-    objectTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    objectTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
      */
-    parentColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    parentColumnKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
      */
-    relationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    relationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filters the sensitive column resources with the given lifecycle state values.
      */
-    sensitiveColumnLifecycleState?: pulumi.Input<string>;
+    sensitiveColumnLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the sensitive data model.
      */
@@ -336,29 +336,29 @@ export interface GetSensitiveDataModelsSensitiveColumnsOutputArgs {
     /**
      * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
      */
-    sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the sensitive columns that match the specified status.
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeUpdatedLessThan?: pulumi.Input<string>;
+    timeUpdatedLessThan?: pulumi.Input<string | undefined>;
 }

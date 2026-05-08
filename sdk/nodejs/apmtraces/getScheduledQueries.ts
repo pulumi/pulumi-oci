@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledQueries = oci.ApmTraces.getScheduledQueries({
+ * const testScheduledQueries = oci.apmtraces.getScheduledQueries({
  *     apmDomainId: testApmDomain.id,
  *     displayName: scheduledQueryDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetScheduledQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledQueries = oci.ApmTraces.getScheduledQueries({
+ * const testScheduledQueries = oci.apmtraces.getScheduledQueries({
  *     apmDomainId: testApmDomain.id,
  *     displayName: scheduledQueryDisplayName,
  * });
@@ -100,6 +100,6 @@ export interface GetScheduledQueriesOutputArgs {
     /**
      * A filter to return resources that match the given display name.  This will return resources that have name starting with this filter.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApmTraces.GetScheduledQueriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApmTraces.GetScheduledQueriesFilterArgs>[] | undefined>;
 }

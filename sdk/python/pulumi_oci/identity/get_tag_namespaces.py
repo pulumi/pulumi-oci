@@ -121,8 +121,8 @@ def get_tag_namespaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=compartment_id,
-        include_subcompartments=tag_namespace_include_subcompartments,
+    test_tag_namespaces = oci.identity.get_tag_namespaces(compartment_id=compartment_id,
+        include_subcompartments=tag_namespace_include_subcompartments == "true",
         state=tag_namespace_state)
     ```
 
@@ -146,10 +146,10 @@ def get_tag_namespaces(compartment_id: Optional[_builtins.str] = None,
         include_subcompartments=pulumi.get(__ret__, 'include_subcompartments'),
         state=pulumi.get(__ret__, 'state'),
         tag_namespaces=pulumi.get(__ret__, 'tag_namespaces'))
-def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]]]] = None,
-                              include_subcompartments: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_tag_namespaces_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]]]] = None,
+                              include_subcompartments: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagNamespacesResult]:
     """
     This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
@@ -162,8 +162,8 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=compartment_id,
-        include_subcompartments=tag_namespace_include_subcompartments,
+    test_tag_namespaces = oci.identity.get_tag_namespaces(compartment_id=compartment_id,
+        include_subcompartments=tag_namespace_include_subcompartments == "true",
         state=tag_namespace_state)
     ```
 

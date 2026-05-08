@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPlatformConfigurations = oci.FleetAppsManagement.getPlatformConfigurations({
+ * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,
@@ -126,9 +126,9 @@ export interface GetPlatformConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPlatformConfigurations = oci.FleetAppsManagement.getPlatformConfigurations({
+ * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,
@@ -159,30 +159,30 @@ export interface GetPlatformConfigurationsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Config Category
      */
-    configCategory?: pulumi.Input<string>;
+    configCategory?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPlatformConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPlatformConfigurationsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Platform Configuration by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Platform Configurations whose type matches the given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

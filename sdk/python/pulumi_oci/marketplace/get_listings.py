@@ -218,10 +218,10 @@ def get_listings(categories: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+    test_listings = oci.marketplace.get_listings(categories=listing_category,
         compartment_id=compartment_id,
         image_id=test_image["id"],
-        is_featured=listing_is_featured,
+        is_featured=listing_is_featured == "true",
         listing_id=test_listing["id"],
         listing_types=listing_listing_types,
         names=listing_name,
@@ -275,18 +275,18 @@ def get_listings(categories: Optional[Sequence[_builtins.str]] = None,
         package_type=pulumi.get(__ret__, 'package_type'),
         pricings=pulumi.get(__ret__, 'pricings'),
         publisher_id=pulumi.get(__ret__, 'publisher_id'))
-def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict']]]]] = None,
-                        image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        is_featured: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                        listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        listing_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        operating_systems: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        package_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        pricings: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        publisher_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_listings_output(categories: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict']]]]] = None,
+                        image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        is_featured: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                        listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        listing_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        operating_systems: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        package_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        pricings: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        publisher_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingsResult]:
     """
     This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
@@ -313,10 +313,10 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+    test_listings = oci.marketplace.get_listings(categories=listing_category,
         compartment_id=compartment_id,
         image_id=test_image["id"],
-        is_featured=listing_is_featured,
+        is_featured=listing_is_featured == "true",
         listing_id=test_listing["id"],
         listing_types=listing_listing_types,
         names=listing_name,

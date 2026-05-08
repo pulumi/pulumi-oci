@@ -19,9 +19,9 @@ __all__ = ['MaskingReportManagementArgs', 'MaskingReportManagement']
 @pulumi.input_type
 class MaskingReportManagementArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingReportManagement resource.
 
@@ -38,62 +38,62 @@ class MaskingReportManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the masking report.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the masking policy.
         """
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database masked.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
 
 @pulumi.input_type
 class _MaskingReportManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-                 recompile: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_masking_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_masking_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_masked_columns: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_masked_objects: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_masked_schemas: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_masked_sensitive_types: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_masked_values: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+                 recompile: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_masking_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_masking_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_masked_columns: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_masked_objects: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_masked_schemas: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_masked_sensitive_types: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_masked_values: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingReportManagement resources.
 
@@ -155,218 +155,218 @@ class _MaskingReportManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the masking report.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_drop_temp_tables_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the temporary tables created during the masking operation were dropped after masking.
         """
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @is_drop_temp_tables_enabled.setter
-    def is_drop_temp_tables_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_drop_temp_tables_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_drop_temp_tables_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logging_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if redo logging was enabled during the masking operation.
         """
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @is_redo_logging_enabled.setter
-    def is_redo_logging_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logging_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logging_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_refresh_stats_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if statistics gathering was enabled during the masking operation.
         """
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @is_refresh_stats_enabled.setter
-    def is_refresh_stats_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_refresh_stats_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_refresh_stats_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the masking policy.
         """
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingWorkRequestId")
-    def masking_work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the masking work request that resulted in this masking report.
         """
         return pulumi.get(self, "masking_work_request_id")
 
     @masking_work_request_id.setter
-    def masking_work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_work_request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parallel_degree(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if parallel execution was enabled during the masking operation.
         """
         return pulumi.get(self, "parallel_degree")
 
     @parallel_degree.setter
-    def parallel_degree(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parallel_degree(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parallel_degree", value)
 
     @_builtins.property
     @pulumi.getter
-    def recompile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recompile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates how invalid objects were recompiled post the masking operation.
         """
         return pulumi.get(self, "recompile")
 
     @recompile.setter
-    def recompile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recompile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recompile", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the masking report.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database masked.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaskingFinished")
-    def time_masking_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_masking_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         return pulumi.get(self, "time_masking_finished")
 
     @time_masking_finished.setter
-    def time_masking_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_masking_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_masking_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaskingStarted")
-    def time_masking_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_masking_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         return pulumi.get(self, "time_masking_started")
 
     @time_masking_started.setter
-    def time_masking_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_masking_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_masking_started", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMaskedColumns")
-    def total_masked_columns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_masked_columns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of masked columns.
         """
         return pulumi.get(self, "total_masked_columns")
 
     @total_masked_columns.setter
-    def total_masked_columns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_masked_columns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_masked_columns", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMaskedObjects")
-    def total_masked_objects(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_masked_objects(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of unique objects (tables and editioning views) that contain the masked columns.
         """
         return pulumi.get(self, "total_masked_objects")
 
     @total_masked_objects.setter
-    def total_masked_objects(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_masked_objects(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_masked_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMaskedSchemas")
-    def total_masked_schemas(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_masked_schemas(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of unique schemas that contain the masked columns.
         """
         return pulumi.get(self, "total_masked_schemas")
 
     @total_masked_schemas.setter
-    def total_masked_schemas(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_masked_schemas(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_masked_schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMaskedSensitiveTypes")
-    def total_masked_sensitive_types(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_masked_sensitive_types(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of unique sensitive types associated with the masked columns.
         """
         return pulumi.get(self, "total_masked_sensitive_types")
 
     @total_masked_sensitive_types.setter
-    def total_masked_sensitive_types(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_masked_sensitive_types(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_masked_sensitive_types", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMaskedValues")
-    def total_masked_values(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_masked_values(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of masked values.
         """
         return pulumi.get(self, "total_masked_values")
 
     @total_masked_values.setter
-    def total_masked_values(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_masked_values(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_masked_values", value)
 
 
@@ -376,9 +376,9 @@ class MaskingReportManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides Masking Report Management resource in Oracle Cloud Infrastructure Data Safe service.
@@ -449,9 +449,9 @@ class MaskingReportManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -489,24 +489,24 @@ class MaskingReportManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            masking_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-            recompile: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_masking_finished: Optional[pulumi.Input[_builtins.str]] = None,
-            time_masking_started: Optional[pulumi.Input[_builtins.str]] = None,
-            total_masked_columns: Optional[pulumi.Input[_builtins.str]] = None,
-            total_masked_objects: Optional[pulumi.Input[_builtins.str]] = None,
-            total_masked_schemas: Optional[pulumi.Input[_builtins.str]] = None,
-            total_masked_sensitive_types: Optional[pulumi.Input[_builtins.str]] = None,
-            total_masked_values: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskingReportManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_columns: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_objects: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_schemas: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_sensitive_types: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_values: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskingReportManagement':
         """
         Get an existing MaskingReportManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

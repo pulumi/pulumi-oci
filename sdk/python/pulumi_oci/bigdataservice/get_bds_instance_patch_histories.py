@@ -131,7 +131,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_patch_histories = oci.bigdataservice.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
         patch_type=bds_instance_patch_history_patch_type,
         patch_version=bds_instance_patch_history_patch_version,
         state=bds_instance_patch_history_state)
@@ -160,11 +160,11 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[_builtins.str] = 
         patch_type=pulumi.get(__ret__, 'patch_type'),
         patch_version=pulumi.get(__ret__, 'patch_version'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]]]] = None,
-                                            patch_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            patch_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_patch_histories_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]]]] = None,
+                                            patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            patch_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstancePatchHistoriesResult]:
     """
     This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
@@ -177,7 +177,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_patch_histories = oci.bigdataservice.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
         patch_type=bds_instance_patch_history_patch_type,
         patch_version=bds_instance_patch_history_patch_version,
         state=bds_instance_patch_history_state)

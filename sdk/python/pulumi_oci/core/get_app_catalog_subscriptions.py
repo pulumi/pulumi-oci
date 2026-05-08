@@ -111,7 +111,7 @@ def get_app_catalog_subscriptions(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=compartment_id,
+    test_app_catalog_subscriptions = oci.core.get_app_catalog_subscriptions(compartment_id=compartment_id,
         listing_id=test_listing["id"])
     ```
 
@@ -132,9 +132,9 @@ def get_app_catalog_subscriptions(compartment_id: Optional[_builtins.str] = None
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'))
-def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]]]] = None,
-                                         listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_catalog_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]]]] = None,
+                                         listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
     """
     This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
@@ -147,7 +147,7 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=compartment_id,
+    test_app_catalog_subscriptions = oci.core.get_app_catalog_subscriptions(compartment_id=compartment_id,
         listing_id=test_listing["id"])
     ```
 

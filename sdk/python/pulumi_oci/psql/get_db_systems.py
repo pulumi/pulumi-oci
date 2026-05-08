@@ -125,7 +125,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
         state=db_system_state)
@@ -153,11 +153,11 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
-                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
+                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsResult]:
     """
     This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
@@ -170,7 +170,7 @@ def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
         state=db_system_state)

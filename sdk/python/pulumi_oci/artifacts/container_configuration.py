@@ -54,9 +54,9 @@ class ContainerConfigurationArgs:
 @pulumi.input_type
 class _ContainerConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_repository_created_on_first_push: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_repository_created_on_first_push: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerConfiguration resources.
 
@@ -72,35 +72,35 @@ class _ContainerConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
-    def is_repository_created_on_first_push(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_repository_created_on_first_push(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
     @is_repository_created_on_first_push.setter
-    def is_repository_created_on_first_push(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_repository_created_on_first_push(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_repository_created_on_first_push", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tenancy namespace used in the container repository path.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -110,8 +110,8 @@ class ContainerConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_repository_created_on_first_push: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_repository_created_on_first_push: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
@@ -186,8 +186,8 @@ class ContainerConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_repository_created_on_first_push: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_repository_created_on_first_push: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -214,9 +214,9 @@ class ContainerConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_repository_created_on_first_push: Optional[pulumi.Input[_builtins.bool]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'ContainerConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_repository_created_on_first_push: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'ContainerConfiguration':
         """
         Get an existing ContainerConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

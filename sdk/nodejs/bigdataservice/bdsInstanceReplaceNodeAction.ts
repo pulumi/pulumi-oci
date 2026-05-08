@@ -129,19 +129,19 @@ export interface BdsInstanceReplaceNodeActionState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * The id of the nodeBackup to use for replacing the node.
      */
-    nodeBackupId?: pulumi.Input<string>;
+    nodeBackupId?: pulumi.Input<string | undefined>;
     /**
      * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
      */
-    nodeHostName?: pulumi.Input<string>;
+    nodeHostName?: pulumi.Input<string | undefined>;
     /**
      * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
      *
@@ -149,7 +149,7 @@ export interface BdsInstanceReplaceNodeActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,5 +179,5 @@ export interface BdsInstanceReplaceNodeActionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }

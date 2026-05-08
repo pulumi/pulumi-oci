@@ -113,7 +113,7 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetO
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxies = oci.oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_scan_proxy_state)
     ```
 
@@ -134,9 +134,9 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetO
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
         oda_private_endpoint_scan_proxy_collections=pulumi.get(__ret__, 'oda_private_endpoint_scan_proxy_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict']]]]] = None,
-                                                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oda_private_endpoint_scan_proxies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict']]]]] = None,
+                                                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxiesResult]:
     """
     This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
@@ -154,7 +154,7 @@ def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxies = oci.oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_scan_proxy_state)
     ```
 

@@ -394,7 +394,7 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system = oci.Psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
+    test_db_system = oci.psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
         excluded_fields=db_system_excluded_fields)
     ```
 
@@ -439,8 +439,8 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
         system_type=pulumi.get(__ret__, 'system_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_db_system_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         excluded_fields: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         excluded_fields: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemResult]:
     """
     This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
@@ -453,7 +453,7 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system = oci.Psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
+    test_db_system = oci.psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
         excluded_fields=db_system_excluded_fields)
     ```
 

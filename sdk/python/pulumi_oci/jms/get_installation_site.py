@@ -197,7 +197,7 @@ def get_installation_site(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_installation_site = oci.Jms.get_installation_site(fleet_id=test_fleet["id"],
+    test_fleet_installation_site = oci.jms.get_installation_site(fleet_id=test_fleet["id"],
         application_id=fleet_installation_site_application_id,
         installation_path=fleet_installation_site_installation_path,
         jre_distribution=fleet_installation_site_jre_distribution,
@@ -256,18 +256,18 @@ def get_installation_site(application_id: Optional[_builtins.str] = None,
         path_contains=pulumi.get(__ret__, 'path_contains'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 installation_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 jre_distribution: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 jre_security_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 jre_vendor: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 jre_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 os_families: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 path_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_installation_site_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 installation_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 jre_distribution: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 jre_security_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 jre_vendor: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 jre_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 os_families: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 path_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstallationSiteResult]:
     """
     This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
@@ -280,7 +280,7 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_installation_site = oci.Jms.get_installation_site(fleet_id=test_fleet["id"],
+    test_fleet_installation_site = oci.jms.get_installation_site(fleet_id=test_fleet["id"],
         application_id=fleet_installation_site_application_id,
         installation_path=fleet_installation_site_installation_path,
         jre_distribution=fleet_installation_site_jre_distribution,

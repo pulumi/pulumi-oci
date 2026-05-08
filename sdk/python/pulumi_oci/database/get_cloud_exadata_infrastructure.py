@@ -552,7 +552,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
 
 
@@ -606,7 +606,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_storage_size_in_gbs=pulumi.get(__ret__, 'total_storage_size_in_gbs'))
-def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructureResult]:
     """
     This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -619,7 +619,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
 
 

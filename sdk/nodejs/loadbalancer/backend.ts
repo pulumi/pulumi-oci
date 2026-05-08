@@ -22,12 +22,12 @@ import * as utilities from "../utilities";
  *     backendsetName: testBackendSet.name,
  *     ipAddress: backendIpAddress,
  *     loadBalancerId: testLoadBalancer.id,
- *     port: backendPort,
- *     backup: backendBackup,
- *     drain: backendDrain,
- *     maxConnections: backendMaxConnections,
- *     offline: backendOffline,
- *     weight: backendWeight,
+ *     port: Number(backendPort),
+ *     backup: backendBackup === "true",
+ *     drain: backendDrain === "true",
+ *     maxConnections: Number(backendMaxConnections),
+ *     offline: backendOffline === "true",
+ *     weight: Number(backendWeight),
  * });
  * ```
  *
@@ -183,7 +183,7 @@ export interface BackendState {
     /**
      * The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
      */
-    backendsetName?: pulumi.Input<string>;
+    backendsetName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
      *
@@ -191,19 +191,19 @@ export interface BackendState {
      *
      * Example: `false`
      */
-    backup?: pulumi.Input<boolean>;
+    backup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
      */
-    drain?: pulumi.Input<boolean>;
+    drain?: pulumi.Input<boolean | undefined>;
     /**
      * The IP address of the backend server.  Example: `10.0.0.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
      *
@@ -211,20 +211,20 @@ export interface BackendState {
      *
      * Example: `300`
      */
-    maxConnections?: pulumi.Input<number>;
+    maxConnections?: pulumi.Input<number | undefined>;
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    offline?: pulumi.Input<boolean>;
+    offline?: pulumi.Input<boolean | undefined>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
-    port?: pulumi.Input<number>;
-    state?: pulumi.Input<string>;
+    port?: pulumi.Input<number | undefined>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
      *
@@ -232,7 +232,7 @@ export interface BackendState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -250,11 +250,11 @@ export interface BackendArgs {
      *
      * Example: `false`
      */
-    backup?: pulumi.Input<boolean>;
+    backup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
      */
-    drain?: pulumi.Input<boolean>;
+    drain?: pulumi.Input<boolean | undefined>;
     /**
      * The IP address of the backend server.  Example: `10.0.0.3`
      */
@@ -270,11 +270,11 @@ export interface BackendArgs {
      *
      * Example: `300`
      */
-    maxConnections?: pulumi.Input<number>;
+    maxConnections?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    offline?: pulumi.Input<boolean>;
+    offline?: pulumi.Input<boolean | undefined>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
@@ -286,5 +286,5 @@ export interface BackendArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }

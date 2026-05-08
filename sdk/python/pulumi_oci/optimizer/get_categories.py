@@ -154,10 +154,10 @@ def get_categories(child_tenancy_ids: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
-        compartment_id_in_subtree=category_compartment_id_in_subtree,
+    test_categories = oci.optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree == "true",
         child_tenancy_ids=category_child_tenancy_ids,
-        include_organization=category_include_organization,
+        include_organization=category_include_organization == "true",
         name=category_name,
         state=category_state)
     ```
@@ -203,13 +203,13 @@ def get_categories(child_tenancy_ids: Optional[Sequence[_builtins.str]] = None,
         include_organization=pulumi.get(__ret__, 'include_organization'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
-                          include_organization: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_categories_output(child_tenancy_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
+                          include_organization: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoriesResult]:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
@@ -222,10 +222,10 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
-        compartment_id_in_subtree=category_compartment_id_in_subtree,
+    test_categories = oci.optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree == "true",
         child_tenancy_ids=category_child_tenancy_ids,
-        include_organization=category_include_organization,
+        include_organization=category_include_organization == "true",
         name=category_name,
         state=category_state)
     ```

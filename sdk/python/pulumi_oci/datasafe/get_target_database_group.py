@@ -228,7 +228,7 @@ def get_target_database_group(target_database_group_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group = oci.DataSafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
+    test_target_database_group = oci.datasafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_target_database_group(target_database_group_id: Optional[_builtins.str] 
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_target_database_group_output(target_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_database_group_output(target_database_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabaseGroupResult]:
     """
     This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
@@ -268,7 +268,7 @@ def get_target_database_group_output(target_database_group_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group = oci.DataSafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
+    test_target_database_group = oci.datasafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
     ```
 
 

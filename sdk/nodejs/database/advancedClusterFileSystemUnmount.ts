@@ -64,7 +64,7 @@ export class AdvancedClusterFileSystemUnmount extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AdvancedClusterFileSystemUnmount resources.
  */
 export interface AdvancedClusterFileSystemUnmountState {
-    advancedClusterFileSystemId?: pulumi.Input<string>;
+    advancedClusterFileSystemId?: pulumi.Input<string | undefined>;
 }
 
 /**

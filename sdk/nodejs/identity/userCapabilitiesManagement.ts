@@ -135,19 +135,19 @@ export interface UserCapabilitiesManagementState {
     /**
      * (Updatable) Indicates if the user can use API keys.
      */
-    canUseApiKeys?: pulumi.Input<boolean>;
+    canUseApiKeys?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      */
-    canUseAuthTokens?: pulumi.Input<boolean>;
+    canUseAuthTokens?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can log in to the console.
      */
-    canUseConsolePassword?: pulumi.Input<boolean>;
+    canUseConsolePassword?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      */
-    canUseCustomerSecretKeys?: pulumi.Input<boolean>;
+    canUseCustomerSecretKeys?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
@@ -155,11 +155,11 @@ export interface UserCapabilitiesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    canUseSmtpCredentials?: pulumi.Input<boolean>;
+    canUseSmtpCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the user.
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -169,19 +169,19 @@ export interface UserCapabilitiesManagementArgs {
     /**
      * (Updatable) Indicates if the user can use API keys.
      */
-    canUseApiKeys?: pulumi.Input<boolean>;
+    canUseApiKeys?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      */
-    canUseAuthTokens?: pulumi.Input<boolean>;
+    canUseAuthTokens?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can log in to the console.
      */
-    canUseConsolePassword?: pulumi.Input<boolean>;
+    canUseConsolePassword?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      */
-    canUseCustomerSecretKeys?: pulumi.Input<boolean>;
+    canUseCustomerSecretKeys?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
@@ -189,7 +189,7 @@ export interface UserCapabilitiesManagementArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    canUseSmtpCredentials?: pulumi.Input<boolean>;
+    canUseSmtpCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the user.
      */

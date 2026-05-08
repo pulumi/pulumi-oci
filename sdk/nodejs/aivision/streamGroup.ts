@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     definedTags: streamGroupDefinedTags,
  *     displayName: streamGroupDisplayName,
  *     freeformTags: streamGroupFreeformTags,
- *     isEnabled: streamGroupIsEnabled,
+ *     isEnabled: streamGroupIsEnabled === "true",
  *     streamOverlaps: [{
  *         overlappingStreams: streamGroupStreamOverlapsOverlappingStreams,
  *     }],
@@ -171,31 +171,31 @@ export interface StreamGroupState {
     /**
      * (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A human-friendly name for the streamGroup.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the streamGroup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
      */
-    streamOverlaps?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamGroupStreamOverlap>[]>;
+    streamOverlaps?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamGroupStreamOverlap>[] | undefined>;
     /**
      * (Updatable) List of streamSource OCIDs associated with the stream group
      *
@@ -203,19 +203,19 @@ export interface StreamGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streamSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    streamSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * When the streamGroup was created, as an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * When the streamGroup was updated, as an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -229,23 +229,23 @@ export interface StreamGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A human-friendly name for the streamGroup.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
      */
-    streamOverlaps?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamGroupStreamOverlap>[]>;
+    streamOverlaps?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamGroupStreamOverlap>[] | undefined>;
     /**
      * (Updatable) List of streamSource OCIDs associated with the stream group
      *
@@ -253,5 +253,5 @@ export interface StreamGroupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streamSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    streamSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

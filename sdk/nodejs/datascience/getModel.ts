@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = oci.DataScience.getModel({
+ * const testModel = oci.datascience.getModel({
  *     modelId: testModelOciDatascienceModel.id,
  * });
  * ```
@@ -155,7 +155,7 @@ export interface GetModelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = oci.DataScience.getModel({
+ * const testModel = oci.datascience.getModel({
  *     modelId: testModelOciDatascienceModel.id,
  * });
  * ```

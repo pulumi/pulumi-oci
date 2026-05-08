@@ -23,99 +23,99 @@ class AutonomousDatabaseArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  db_name: pulumi.Input[_builtins.str],
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 are_primary_whitelisted_ips_used: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_refresh_frequency_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_refresh_point_lag_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_maintenance_window: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
-                 autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 clone_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
-                 data_safe_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 in_memory_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_access_control_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_backup_retention_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dedicated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dev_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disable_db_version_upgrade_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disconnect_peer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_local_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mtls_connection_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refreshable_clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_replicate_automatic_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_schedule_db_version_upgrade_to_earliest: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shrink_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
-                 max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 permission_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshable_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_summary: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shrink_adb_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 transportable_tablespace: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']] = None,
-                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 are_primary_whitelisted_ips_used: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_refresh_frequency_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_refresh_point_lag_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
+                 autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_table_space_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
+                 data_safe_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_tools_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_delete_scheduled_operations: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 in_memory_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_access_control_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_for_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_backup_retention_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_local_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mtls_connection_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_term_backup_schedules: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
+                 max_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 permission_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshable_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_summary: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shrink_adb_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 transportable_tablespace: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']] = None,
+                 use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vanity_url_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AutonomousDatabase resource.
 
@@ -505,139 +505,139 @@ class AutonomousDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
-    def are_primary_whitelisted_ips_used(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_primary_whitelisted_ips_used(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
     @are_primary_whitelisted_ips_used.setter
-    def are_primary_whitelisted_ips_used(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_primary_whitelisted_ips_used(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_primary_whitelisted_ips_used", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRefreshFrequencyInSeconds")
-    def auto_refresh_frequency_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_refresh_frequency_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         """
         return pulumi.get(self, "auto_refresh_frequency_in_seconds")
 
     @auto_refresh_frequency_in_seconds.setter
-    def auto_refresh_frequency_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_refresh_frequency_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_refresh_frequency_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRefreshPointLagInSeconds")
-    def auto_refresh_point_lag_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_refresh_point_lag_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         """
         return pulumi.get(self, "auto_refresh_point_lag_in_seconds")
 
     @auto_refresh_point_lag_in_seconds.setter
-    def auto_refresh_point_lag_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_refresh_point_lag_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_refresh_point_lag_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseId")
-    def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
-    def autonomous_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseBackupId")
-    def autonomous_database_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_backup_id")
 
     @autonomous_database_backup_id.setter
-    def autonomous_database_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
-    def autonomous_database_maintenance_window(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
+    def autonomous_database_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
         """
         (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         """
         return pulumi.get(self, "autonomous_database_maintenance_window")
 
     @autonomous_database_maintenance_window.setter
-    def autonomous_database_maintenance_window(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
+    def autonomous_database_maintenance_window(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
         pulumi.set(self, "autonomous_database_maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
-    def autonomous_maintenance_schedule_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_maintenance_schedule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
     @autonomous_maintenance_schedule_type.setter
-    def autonomous_maintenance_schedule_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_maintenance_schedule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_maintenance_schedule_type", value)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPeriodInDays")
-    def backup_retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backup_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @backup_retention_period_in_days.setter
-    def backup_retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backup_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backup_retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="byolComputeCountLimit")
-    def byol_compute_count_limit(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def byol_compute_count_limit(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         """
         return pulumi.get(self, "byol_compute_count_limit")
 
     @byol_compute_count_limit.setter
-    def byol_compute_count_limit(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def byol_compute_count_limit(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "byol_compute_count_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def character_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
 
@@ -648,24 +648,24 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "character_set")
 
     @character_set.setter
-    def character_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def character_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "character_set", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneTableSpaceLists")
-    def clone_table_space_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def clone_table_space_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
         """
         return pulumi.get(self, "clone_table_space_lists")
 
     @clone_table_space_lists.setter
-    def clone_table_space_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def clone_table_space_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "clone_table_space_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneType")
-    def clone_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def clone_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database clone type.
         * `FULL` - This option creates a new database that includes all source database data.
@@ -674,36 +674,36 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "clone_type")
 
     @clone_type.setter
-    def clone_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def clone_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "clone_type", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of CPU cores to be made available to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
 
@@ -712,36 +712,36 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]:
         """
         (Updatable) Customer Contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSafeStatus")
-    def data_safe_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_safe_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         """
         return pulumi.get(self, "data_safe_status")
 
     @data_safe_status.setter
-    def data_safe_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_safe_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_safe_status", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
 
@@ -752,12 +752,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details. A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
 
@@ -766,36 +766,36 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagementStatus")
-    def database_management_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_management_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of Database Management for this Autonomous AI Database.
         """
         return pulumi.get(self, "database_management_status")
 
     @database_management_status.setter
-    def database_management_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_management_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_management_status", value)
 
     @_builtins.property
     @pulumi.getter(name="dbToolsDetails")
-    def db_tools_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
+    def db_tools_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
         """
         (Updatable) The list of database tools details.
 
@@ -804,12 +804,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "db_tools_details")
 
     @db_tools_details.setter
-    def db_tools_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
+    def db_tools_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
         pulumi.set(self, "db_tools_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 
@@ -818,12 +818,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workload(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Autonomous AI Database workload type. The following values are valid:
         * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -839,93 +839,93 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
-    def db_workload(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workload(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workload", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryType")
-    def disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disaster_recovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
     @disaster_recovery_type.setter
-    def disaster_recovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disaster_recovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disaster_recovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDeleteScheduledOperations")
-    def enable_delete_scheduled_operations(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_delete_scheduled_operations(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "enable_delete_scheduled_operations")
 
     @enable_delete_scheduled_operations.setter
-    def enable_delete_scheduled_operations(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_delete_scheduled_operations(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_delete_scheduled_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]:
+    def encryption_key(self) -> pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']]:
         """
         (Updatable) Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]):
+    def encryption_key(self, value: pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inMemoryPercentage")
-    def in_memory_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def in_memory_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
     @in_memory_percentage.setter
-    def in_memory_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def in_memory_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "in_memory_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlEnabled")
-    def is_access_control_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_access_control_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
@@ -934,102 +934,102 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "is_access_control_enabled")
 
     @is_access_control_enabled.setter
-    def is_access_control_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_access_control_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_access_control_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_scaling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @is_auto_scaling_enabled.setter
-    def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_scaling_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingForStorageEnabled")
-    def is_auto_scaling_for_storage_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_scaling_for_storage_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
 
     @is_auto_scaling_for_storage_enabled.setter
-    def is_auto_scaling_for_storage_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_scaling_for_storage_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_for_storage_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackupRetentionLocked")
-    def is_backup_retention_locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backup_retention_locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True if the Autonomous AI Database is backup retention locked.
         """
         return pulumi.get(self, "is_backup_retention_locked")
 
     @is_backup_retention_locked.setter
-    def is_backup_retention_locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backup_retention_locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backup_retention_locked", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataGuardEnabled")
-    def is_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
     @is_data_guard_enabled.setter
-    def is_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDedicated")
-    def is_dedicated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dedicated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the database is on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         """
         return pulumi.get(self, "is_dedicated")
 
     @is_dedicated.setter
-    def is_dedicated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dedicated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dedicated", value)
 
     @_builtins.property
     @pulumi.getter(name="isDevTier")
-    def is_dev_tier(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dev_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
         """
         return pulumi.get(self, "is_dev_tier")
 
     @is_dev_tier.setter
-    def is_dev_tier(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dev_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dev_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
-    def is_disable_db_version_upgrade_schedule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disable_db_version_upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
 
     @is_disable_db_version_upgrade_schedule.setter
-    def is_disable_db_version_upgrade_schedule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disable_db_version_upgrade_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disable_db_version_upgrade_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisconnectPeer")
-    def is_disconnect_peer(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disconnect_peer(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disconnect_peer")
 
     @is_disconnect_peer.setter
-    def is_disconnect_peer(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disconnect_peer(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disconnect_peer", value)
 
     @_builtins.property
     @pulumi.getter(name="isFreeTier")
-    def is_free_tier(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_free_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
@@ -1038,24 +1038,24 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
-    def is_free_tier(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_free_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_free_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="isLocalDataGuardEnabled")
-    def is_local_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_local_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_local_data_guard_enabled")
 
     @is_local_data_guard_enabled.setter
-    def is_local_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_local_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_local_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMtlsConnectionRequired")
-    def is_mtls_connection_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_mtls_connection_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
 
@@ -1069,58 +1069,58 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "is_mtls_connection_required")
 
     @is_mtls_connection_required.setter
-    def is_mtls_connection_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_mtls_connection_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_mtls_connection_required", value)
 
     @_builtins.property
     @pulumi.getter(name="isPreviewVersionWithServiceTermsAccepted")
-    def is_preview_version_with_service_terms_accepted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preview_version_with_service_terms_accepted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to `TRUE`, indicates that an Autonomous AI Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous AI Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
         """
         return pulumi.get(self, "is_preview_version_with_service_terms_accepted")
 
     @is_preview_version_with_service_terms_accepted.setter
-    def is_preview_version_with_service_terms_accepted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preview_version_with_service_terms_accepted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preview_version_with_service_terms_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="isRefreshableClone")
-    def is_refreshable_clone(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_refreshable_clone(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Autonomous AI Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
-    def is_refreshable_clone(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_refreshable_clone(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_refreshable_clone", value)
 
     @_builtins.property
     @pulumi.getter(name="isReplicateAutomaticBackups")
-    def is_replicate_automatic_backups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_replicate_automatic_backups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         return pulumi.get(self, "is_replicate_automatic_backups")
 
     @is_replicate_automatic_backups.setter
-    def is_replicate_automatic_backups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_replicate_automatic_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_replicate_automatic_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
-    def is_schedule_db_version_upgrade_to_earliest(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_schedule_db_version_upgrade_to_earliest(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_schedule_db_version_upgrade_to_earliest")
 
     @is_schedule_db_version_upgrade_to_earliest.setter
-    def is_schedule_db_version_upgrade_to_earliest(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_schedule_db_version_upgrade_to_earliest(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_schedule_db_version_upgrade_to_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="isShrinkOnly")
     @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-    def is_shrink_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shrink_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `is_dedicated` is false.
 
@@ -1130,33 +1130,33 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
-    def is_shrink_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shrink_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shrink_only", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
@@ -1165,69 +1165,69 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
-    def local_adg_auto_failover_max_data_loss_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_adg_auto_failover_max_data_loss_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         """
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @local_adg_auto_failover_max_data_loss_limit.setter
-    def local_adg_auto_failover_max_data_loss_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_adg_auto_failover_max_data_loss_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="localAdgResourcePoolLeaderId")
-    def local_adg_resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_adg_resource_pool_leader_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         """
         return pulumi.get(self, "local_adg_resource_pool_leader_id")
 
     @local_adg_resource_pool_leader_id.setter
-    def local_adg_resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_adg_resource_pool_leader_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_adg_resource_pool_leader_id", value)
 
     @_builtins.property
     @pulumi.getter(name="longTermBackupSchedules")
-    def long_term_backup_schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
+    def long_term_backup_schedules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
         """
         Details for the long-term backup schedule.
         """
         return pulumi.get(self, "long_term_backup_schedules")
 
     @long_term_backup_schedules.setter
-    def long_term_backup_schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
+    def long_term_backup_schedules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
         pulumi.set(self, "long_term_backup_schedules", value)
 
     @_builtins.property
     @pulumi.getter(name="maxCpuCoreCount")
-    def max_cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_cpu_core_count")
 
     @max_cpu_core_count.setter
-    def max_cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -1235,12 +1235,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The number of OCPU cores to be made available to the database.
 
@@ -1256,12 +1256,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "ocpu_count")
 
     @ocpu_count.setter
-    def ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
@@ -1270,129 +1270,129 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
-    def open_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsStatus")
-    def operations_insights_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operations_insights_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of Operations Insights for this Autonomous AI Database.
         """
         return pulumi.get(self, "operations_insights_status")
 
     @operations_insights_status.setter
-    def operations_insights_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operations_insights_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operations_insights_status", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbId")
-    def peer_db_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "peer_db_id")
 
     @peer_db_id.setter
-    def peer_db_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_id", value)
 
     @_builtins.property
     @pulumi.getter(name="permissionLevel")
-    def permission_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def permission_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
     @permission_level.setter
-    def permission_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def permission_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "permission_level", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private endpoint Ip address for the resource.
         """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
-    def private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointLabel")
-    def private_endpoint_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private endpoint label for the resource.
         """
         return pulumi.get(self, "private_endpoint_label")
 
     @private_endpoint_label.setter
-    def private_endpoint_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_label", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshableMode")
-    def refreshable_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refreshable_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_mode")
 
     @refreshable_mode.setter
-    def refreshable_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refreshable_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refreshable_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteDisasterRecoveryType")
-    def remote_disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_disaster_recovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "remote_disaster_recovery_type")
 
     @remote_disaster_recovery_type.setter
-    def remote_disaster_recovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_disaster_recovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_disaster_recovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePoolLeaderId")
-    def resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_pool_leader_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
     @resource_pool_leader_id.setter
-    def resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_pool_leader_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_pool_leader_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePoolSummary")
-    def resource_pool_summary(self) -> Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']]:
+    def resource_pool_summary(self) -> pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']]:
         """
         (Updatable) The configuration details for resource pool
         """
         return pulumi.get(self, "resource_pool_summary")
 
     @resource_pool_summary.setter
-    def resource_pool_summary(self, value: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']]):
+    def resource_pool_summary(self, value: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']]):
         pulumi.set(self, "resource_pool_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledOperations")
-    def scheduled_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
+    def scheduled_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
         (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 
@@ -1401,12 +1401,12 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "scheduled_operations")
 
     @scheduled_operations.setter
-    def scheduled_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]):
+    def scheduled_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]):
         pulumi.set(self, "scheduled_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 
@@ -1415,45 +1415,45 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersionNumber")
-    def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secret_version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         """
         return pulumi.get(self, "secret_version_number")
 
     @secret_version_number.setter
-    def secret_version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secret_version_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secret_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="shrinkAdbTrigger")
-    def shrink_adb_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def shrink_adb_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "shrink_adb_trigger")
 
     @shrink_adb_trigger.setter
-    def shrink_adb_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def shrink_adb_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "shrink_adb_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database: Use `NONE` for creating a new Autonomous AI Database. Use `DATABASE` for creating a new Autonomous AI Database by cloning an existing Autonomous AI Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 
@@ -1462,24 +1462,24 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyWhitelistedIps")
-    def standby_whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def standby_whitelisted_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
@@ -1492,24 +1492,24 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "standby_whitelisted_ips")
 
     @standby_whitelisted_ips.setter
-    def standby_whitelisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def standby_whitelisted_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "standby_whitelisted_ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 
@@ -1523,144 +1523,144 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverTo")
-    def switchover_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def switchover_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         """
         return pulumi.get(self, "switchover_to")
 
     @switchover_to.setter
-    def switchover_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def switchover_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "switchover_to", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverToRemotePeerId")
-    def switchover_to_remote_peer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def switchover_to_remote_peer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
         """
         return pulumi.get(self, "switchover_to_remote_peer_id")
 
     @switchover_to_remote_peer_id.setter
-    def switchover_to_remote_peer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def switchover_to_remote_peer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "switchover_to_remote_peer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaintenancePauseUntil")
-    def time_maintenance_pause_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_maintenance_pause_until(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date until which maintenance of Autonomous Database is temporarily paused.
         """
         return pulumi.get(self, "time_maintenance_pause_until")
 
     @time_maintenance_pause_until.setter
-    def time_maintenance_pause_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_maintenance_pause_until(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_maintenance_pause_until", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
-    def time_of_auto_refresh_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_auto_refresh_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         """
         return pulumi.get(self, "time_of_auto_refresh_start")
 
     @time_of_auto_refresh_start.setter
-    def time_of_auto_refresh_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_auto_refresh_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_auto_refresh_start", value)
 
     @_builtins.property
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
-    def time_scheduled_db_version_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_scheduled_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_scheduled_db_version_upgrade")
 
     @time_scheduled_db_version_upgrade.setter
-    def time_scheduled_db_version_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_scheduled_db_version_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_scheduled_db_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter
-    def timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         """
         return pulumi.get(self, "timestamp")
 
     @timestamp.setter
-    def timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="transportableTablespace")
-    def transportable_tablespace(self) -> Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]:
+    def transportable_tablespace(self) -> pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']]:
         """
         Details for importing transportable tablespace for an Autonomous Database.
         """
         return pulumi.get(self, "transportable_tablespace")
 
     @transportable_tablespace.setter
-    def transportable_tablespace(self, value: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]):
+    def transportable_tablespace(self, value: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']]):
         pulumi.set(self, "transportable_tablespace", value)
 
     @_builtins.property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
-    def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_latest_available_backup_time_stamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Clone from latest available backup timestamp.
         """
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
 
     @use_latest_available_backup_time_stamp.setter
-    def use_latest_available_backup_time_stamp(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_latest_available_backup_time_stamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_latest_available_backup_time_stamp", value)
 
     @_builtins.property
     @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]:
+    def vanity_url_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]:
         """
         Details for api gateway and vanity url(custom url) for dbTools.
         """
         return pulumi.get(self, "vanity_url_details")
 
     @vanity_url_details.setter
-    def vanity_url_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]):
+    def vanity_url_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]):
         pulumi.set(self, "vanity_url_details", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="whitelistedIps")
-    def whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def whitelisted_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
@@ -1673,175 +1673,175 @@ class AutonomousDatabaseArgs:
         return pulumi.get(self, "whitelisted_ips")
 
     @whitelisted_ips.setter
-    def whitelisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def whitelisted_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "whitelisted_ips", value)
 
 
 @pulumi.input_type
 class _AutonomousDatabaseState:
     def __init__(__self__, *,
-                 actual_used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 additional_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 allocated_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 apex_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]] = None,
-                 are_primary_whitelisted_ips_used: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_refresh_frequency_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_refresh_point_lag_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_maintenance_window: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
-                 autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
-                 backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 clone_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]] = None,
-                 connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
-                 data_safe_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataguard_region_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disaster_recovery_region_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
-                 encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]] = None,
-                 failed_data_recovery_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 in_memory_area_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 in_memory_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_access_control_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_backup_retention_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dedicated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dev_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disable_db_version_upgrade_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disconnect_peer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_local_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mtls_connection_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_preview: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refreshable_clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_remote_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_replicate_automatic_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_schedule_db_version_upgrade_to_earliest: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shrink_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
-                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
-                 maintenance_target_component: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_long_term_backup_time_stamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 permission_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]] = None,
-                 public_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]] = None,
-                 public_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshable_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshable_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] = None,
-                 remote_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_summary: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 service_console_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 shrink_adb_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]] = None,
-                 standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_regions_to_clone_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_data_guard_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_deletion_of_free_autonomous_database: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_disaster_recovery_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_earliest_available_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_latest_available_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_local_data_guard_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_joining_resource_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_last_failover: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_last_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_last_refresh_point: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_last_switchover: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_next_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_undeleted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_until_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_backup_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 transportable_tablespace: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']] = None,
-                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 used_data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 vanity_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]] = None,
-                 vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 actual_used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 additional_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 allocated_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 apex_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]] = None,
+                 are_primary_whitelisted_ips_used: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_refresh_frequency_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_refresh_point_lag_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
+                 autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 available_upgrade_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
+                 backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_table_space_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]] = None,
+                 connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
+                 data_safe_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataguard_region_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_tools_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disaster_recovery_region_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_delete_scheduled_operations: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']] = None,
+                 encryption_key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]] = None,
+                 failed_data_recovery_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 in_memory_area_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 in_memory_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_access_control_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_for_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_backup_retention_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_local_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mtls_connection_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_preview: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_remote_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_standby_dbs: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
+                 long_term_backup_schedules: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
+                 maintenance_target_component: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_long_term_backup_time_stamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 permission_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisionable_cpuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]] = None,
+                 public_connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]] = None,
+                 public_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshable_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshable_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_disaster_recovery_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] = None,
+                 remote_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_summary: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 service_console_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 shrink_adb_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_dbs: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]] = None,
+                 standby_whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_regions_to_clone_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 switchover_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_data_guard_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_deletion_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_disaster_recovery_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_earliest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_latest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_local_data_guard_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_joining_resource_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_last_failover: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_last_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_last_refresh_point: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_last_switchover: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_next_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_backup_storage_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 transportable_tablespace: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']] = None,
+                 use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 used_data_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 vanity_connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]] = None,
+                 vanity_url_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabase resources.
 
@@ -2410,223 +2410,223 @@ class _AutonomousDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="actualUsedDataStorageSizeInTbs")
-    def actual_used_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def actual_used_data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The current amount of storage in use for user and system data, in terabytes (TB).
         """
         return pulumi.get(self, "actual_used_data_storage_size_in_tbs")
 
     @actual_used_data_storage_size_in_tbs.setter
-    def actual_used_data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def actual_used_data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "actual_used_data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="allocatedStorageSizeInTbs")
-    def allocated_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def allocated_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         """
         return pulumi.get(self, "allocated_storage_size_in_tbs")
 
     @allocated_storage_size_in_tbs.setter
-    def allocated_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def allocated_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "allocated_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="apexDetails")
-    def apex_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]]:
+    def apex_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]]:
         """
         Information about Oracle APEX AI Application Development.
         """
         return pulumi.get(self, "apex_details")
 
     @apex_details.setter
-    def apex_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]]):
+    def apex_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]]):
         pulumi.set(self, "apex_details", value)
 
     @_builtins.property
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
-    def are_primary_whitelisted_ips_used(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_primary_whitelisted_ips_used(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
     @are_primary_whitelisted_ips_used.setter
-    def are_primary_whitelisted_ips_used(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_primary_whitelisted_ips_used(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_primary_whitelisted_ips_used", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRefreshFrequencyInSeconds")
-    def auto_refresh_frequency_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_refresh_frequency_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         """
         return pulumi.get(self, "auto_refresh_frequency_in_seconds")
 
     @auto_refresh_frequency_in_seconds.setter
-    def auto_refresh_frequency_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_refresh_frequency_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_refresh_frequency_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRefreshPointLagInSeconds")
-    def auto_refresh_point_lag_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_refresh_point_lag_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         """
         return pulumi.get(self, "auto_refresh_point_lag_in_seconds")
 
     @auto_refresh_point_lag_in_seconds.setter
-    def auto_refresh_point_lag_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_refresh_point_lag_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_refresh_point_lag_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseId")
-    def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
-    def autonomous_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseBackupId")
-    def autonomous_database_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_backup_id")
 
     @autonomous_database_backup_id.setter
-    def autonomous_database_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
-    def autonomous_database_maintenance_window(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
+    def autonomous_database_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
         """
         (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         """
         return pulumi.get(self, "autonomous_database_maintenance_window")
 
     @autonomous_database_maintenance_window.setter
-    def autonomous_database_maintenance_window(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
+    def autonomous_database_maintenance_window(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
         pulumi.set(self, "autonomous_database_maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
-    def autonomous_maintenance_schedule_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_maintenance_schedule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
     @autonomous_maintenance_schedule_type.setter
-    def autonomous_maintenance_schedule_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_maintenance_schedule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_maintenance_schedule_type", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="availableUpgradeVersions")
-    def available_upgrade_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def available_upgrade_versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         """
         return pulumi.get(self, "available_upgrade_versions")
 
     @available_upgrade_versions.setter
-    def available_upgrade_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def available_upgrade_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "available_upgrade_versions", value)
 
     @_builtins.property
     @pulumi.getter(name="backupConfigs")
-    def backup_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]]:
+    def backup_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]]:
         """
         Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
 
     @backup_configs.setter
-    def backup_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]]):
+    def backup_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]]):
         pulumi.set(self, "backup_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPeriodInDays")
-    def backup_retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backup_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @backup_retention_period_in_days.setter
-    def backup_retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backup_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backup_retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="byolComputeCountLimit")
-    def byol_compute_count_limit(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def byol_compute_count_limit(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         """
         return pulumi.get(self, "byol_compute_count_limit")
 
     @byol_compute_count_limit.setter
-    def byol_compute_count_limit(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def byol_compute_count_limit(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "byol_compute_count_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def character_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
 
@@ -2637,24 +2637,24 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "character_set")
 
     @character_set.setter
-    def character_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def character_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "character_set", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneTableSpaceLists")
-    def clone_table_space_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def clone_table_space_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
         """
         return pulumi.get(self, "clone_table_space_lists")
 
     @clone_table_space_lists.setter
-    def clone_table_space_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def clone_table_space_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "clone_table_space_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneType")
-    def clone_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def clone_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database clone type.
         * `FULL` - This option creates a new database that includes all source database data.
@@ -2663,84 +2663,84 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "clone_type")
 
     @clone_type.setter
-    def clone_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def clone_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "clone_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous AI Database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]]:
         """
         The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionUrls")
-    def connection_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]]:
+    def connection_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]]:
         """
         The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         """
         return pulumi.get(self, "connection_urls")
 
     @connection_urls.setter
-    def connection_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]]):
+    def connection_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]]):
         pulumi.set(self, "connection_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of CPU cores to be made available to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
 
@@ -2749,36 +2749,36 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]:
         """
         (Updatable) Customer Contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSafeStatus")
-    def data_safe_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_safe_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         """
         return pulumi.get(self, "data_safe_status")
 
     @data_safe_status.setter
-    def data_safe_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_safe_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_safe_status", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
 
@@ -2789,12 +2789,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details. A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
 
@@ -2803,60 +2803,60 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagementStatus")
-    def database_management_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_management_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of Database Management for this Autonomous AI Database.
         """
         return pulumi.get(self, "database_management_status")
 
     @database_management_status.setter
-    def database_management_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_management_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_management_status", value)
 
     @_builtins.property
     @pulumi.getter(name="dataguardRegionType")
-    def dataguard_region_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataguard_region_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
     @dataguard_region_type.setter
-    def dataguard_region_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataguard_region_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataguard_region_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database name. The name must begin with an alphabetic character and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
-    def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbToolsDetails")
-    def db_tools_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
+    def db_tools_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
         """
         (Updatable) The list of database tools details.
 
@@ -2865,12 +2865,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "db_tools_details")
 
     @db_tools_details.setter
-    def db_tools_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
+    def db_tools_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
         pulumi.set(self, "db_tools_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 
@@ -2879,12 +2879,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workload(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Autonomous AI Database workload type. The following values are valid:
         * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -2900,165 +2900,165 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
-    def db_workload(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workload(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workload", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryRegionType")
-    def disaster_recovery_region_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disaster_recovery_region_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
     @disaster_recovery_region_type.setter
-    def disaster_recovery_region_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disaster_recovery_region_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disaster_recovery_region_type", value)
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryType")
-    def disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disaster_recovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
     @disaster_recovery_type.setter
-    def disaster_recovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disaster_recovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disaster_recovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDeleteScheduledOperations")
-    def enable_delete_scheduled_operations(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_delete_scheduled_operations(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "enable_delete_scheduled_operations")
 
     @enable_delete_scheduled_operations.setter
-    def enable_delete_scheduled_operations(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_delete_scheduled_operations(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_delete_scheduled_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]:
+    def encryption_key(self) -> pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']]:
         """
         (Updatable) Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]):
+    def encryption_key(self, value: pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeyHistoryEntries")
-    def encryption_key_history_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]:
+    def encryption_key_history_entries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]:
         """
         Key History Entry.
         """
         return pulumi.get(self, "encryption_key_history_entries")
 
     @encryption_key_history_entries.setter
-    def encryption_key_history_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]):
+    def encryption_key_history_entries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]):
         pulumi.set(self, "encryption_key_history_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
-    def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]:
+    def encryption_key_location_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]:
         """
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
 
     @encryption_key_location_details.setter
-    def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]):
+    def encryption_key_location_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]):
         pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
-    def failed_data_recovery_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failed_data_recovery_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the number of seconds of data loss for a Data Guard failover.
         """
         return pulumi.get(self, "failed_data_recovery_in_seconds")
 
     @failed_data_recovery_in_seconds.setter
-    def failed_data_recovery_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failed_data_recovery_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failed_data_recovery_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inMemoryAreaInGbs")
-    def in_memory_area_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def in_memory_area_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The area assigned to In-Memory tables in Autonomous AI Database.
         """
         return pulumi.get(self, "in_memory_area_in_gbs")
 
     @in_memory_area_in_gbs.setter
-    def in_memory_area_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def in_memory_area_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "in_memory_area_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="inMemoryPercentage")
-    def in_memory_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def in_memory_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
     @in_memory_percentage.setter
-    def in_memory_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def in_memory_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "in_memory_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def infrastructure_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure type this resource belongs to.
         """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
-    def infrastructure_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def infrastructure_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infrastructure_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlEnabled")
-    def is_access_control_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_access_control_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
@@ -3067,102 +3067,102 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "is_access_control_enabled")
 
     @is_access_control_enabled.setter
-    def is_access_control_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_access_control_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_access_control_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_scaling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @is_auto_scaling_enabled.setter
-    def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_scaling_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingForStorageEnabled")
-    def is_auto_scaling_for_storage_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_scaling_for_storage_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
 
     @is_auto_scaling_for_storage_enabled.setter
-    def is_auto_scaling_for_storage_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_scaling_for_storage_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_for_storage_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackupRetentionLocked")
-    def is_backup_retention_locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backup_retention_locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True if the Autonomous AI Database is backup retention locked.
         """
         return pulumi.get(self, "is_backup_retention_locked")
 
     @is_backup_retention_locked.setter
-    def is_backup_retention_locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backup_retention_locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backup_retention_locked", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataGuardEnabled")
-    def is_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
     @is_data_guard_enabled.setter
-    def is_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDedicated")
-    def is_dedicated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dedicated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the database is on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         """
         return pulumi.get(self, "is_dedicated")
 
     @is_dedicated.setter
-    def is_dedicated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dedicated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dedicated", value)
 
     @_builtins.property
     @pulumi.getter(name="isDevTier")
-    def is_dev_tier(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dev_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
         """
         return pulumi.get(self, "is_dev_tier")
 
     @is_dev_tier.setter
-    def is_dev_tier(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dev_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dev_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
-    def is_disable_db_version_upgrade_schedule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disable_db_version_upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
 
     @is_disable_db_version_upgrade_schedule.setter
-    def is_disable_db_version_upgrade_schedule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disable_db_version_upgrade_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disable_db_version_upgrade_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisconnectPeer")
-    def is_disconnect_peer(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disconnect_peer(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disconnect_peer")
 
     @is_disconnect_peer.setter
-    def is_disconnect_peer(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disconnect_peer(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disconnect_peer", value)
 
     @_builtins.property
     @pulumi.getter(name="isFreeTier")
-    def is_free_tier(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_free_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
@@ -3171,24 +3171,24 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
-    def is_free_tier(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_free_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_free_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="isLocalDataGuardEnabled")
-    def is_local_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_local_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_local_data_guard_enabled")
 
     @is_local_data_guard_enabled.setter
-    def is_local_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_local_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_local_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMtlsConnectionRequired")
-    def is_mtls_connection_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_mtls_connection_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
 
@@ -3202,94 +3202,94 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "is_mtls_connection_required")
 
     @is_mtls_connection_required.setter
-    def is_mtls_connection_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_mtls_connection_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_mtls_connection_required", value)
 
     @_builtins.property
     @pulumi.getter(name="isPreview")
-    def is_preview(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preview(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Autonomous AI Database version is a preview version.
         """
         return pulumi.get(self, "is_preview")
 
     @is_preview.setter
-    def is_preview(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preview(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preview", value)
 
     @_builtins.property
     @pulumi.getter(name="isPreviewVersionWithServiceTermsAccepted")
-    def is_preview_version_with_service_terms_accepted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preview_version_with_service_terms_accepted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to `TRUE`, indicates that an Autonomous AI Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous AI Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
         """
         return pulumi.get(self, "is_preview_version_with_service_terms_accepted")
 
     @is_preview_version_with_service_terms_accepted.setter
-    def is_preview_version_with_service_terms_accepted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preview_version_with_service_terms_accepted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preview_version_with_service_terms_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="isReconnectCloneEnabled")
-    def is_reconnect_clone_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reconnect_clone_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the refreshable clone can be reconnected to its source database.
         """
         return pulumi.get(self, "is_reconnect_clone_enabled")
 
     @is_reconnect_clone_enabled.setter
-    def is_reconnect_clone_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reconnect_clone_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reconnect_clone_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRefreshableClone")
-    def is_refreshable_clone(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_refreshable_clone(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Autonomous AI Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
-    def is_refreshable_clone(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_refreshable_clone(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_refreshable_clone", value)
 
     @_builtins.property
     @pulumi.getter(name="isRemoteDataGuardEnabled")
-    def is_remote_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_remote_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_remote_data_guard_enabled")
 
     @is_remote_data_guard_enabled.setter
-    def is_remote_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_remote_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_remote_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isReplicateAutomaticBackups")
-    def is_replicate_automatic_backups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_replicate_automatic_backups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         return pulumi.get(self, "is_replicate_automatic_backups")
 
     @is_replicate_automatic_backups.setter
-    def is_replicate_automatic_backups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_replicate_automatic_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_replicate_automatic_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
-    def is_schedule_db_version_upgrade_to_earliest(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_schedule_db_version_upgrade_to_earliest(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_schedule_db_version_upgrade_to_earliest")
 
     @is_schedule_db_version_upgrade_to_earliest.setter
-    def is_schedule_db_version_upgrade_to_earliest(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_schedule_db_version_upgrade_to_earliest(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_schedule_db_version_upgrade_to_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="isShrinkOnly")
     @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-    def is_shrink_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shrink_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `is_dedicated` is false.
 
@@ -3299,93 +3299,93 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
-    def is_shrink_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shrink_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shrink_only", value)
 
     @_builtins.property
     @pulumi.getter(name="keyHistoryEntries")
-    def key_history_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]]:
+    def key_history_entries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]]:
         """
         Key History Entry.
         """
         return pulumi.get(self, "key_history_entries")
 
     @key_history_entries.setter
-    def key_history_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]]):
+    def key_history_entries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]]):
         pulumi.set(self, "key_history_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_wallet_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
-    def key_store_wallet_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_wallet_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_wallet_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyLifecycleDetails")
-    def kms_key_lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         KMS key lifecycle details.
         """
         return pulumi.get(self, "kms_key_lifecycle_details")
 
     @kms_key_lifecycle_details.setter
-    def kms_key_lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
@@ -3394,165 +3394,165 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="localAdgAutoFailoverMaxDataLossLimit")
-    def local_adg_auto_failover_max_data_loss_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_adg_auto_failover_max_data_loss_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         """
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @local_adg_auto_failover_max_data_loss_limit.setter
-    def local_adg_auto_failover_max_data_loss_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_adg_auto_failover_max_data_loss_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="localAdgResourcePoolLeaderId")
-    def local_adg_resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_adg_resource_pool_leader_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         """
         return pulumi.get(self, "local_adg_resource_pool_leader_id")
 
     @local_adg_resource_pool_leader_id.setter
-    def local_adg_resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_adg_resource_pool_leader_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_adg_resource_pool_leader_id", value)
 
     @_builtins.property
     @pulumi.getter(name="localDisasterRecoveryType")
-    def local_disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_disaster_recovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "local_disaster_recovery_type")
 
     @local_disaster_recovery_type.setter
-    def local_disaster_recovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_disaster_recovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_disaster_recovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="localStandbyDbs")
-    def local_standby_dbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]:
+    def local_standby_dbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]:
         """
         Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "local_standby_dbs")
 
     @local_standby_dbs.setter
-    def local_standby_dbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]):
+    def local_standby_dbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]]):
         pulumi.set(self, "local_standby_dbs", value)
 
     @_builtins.property
     @pulumi.getter(name="longTermBackupSchedules")
-    def long_term_backup_schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
+    def long_term_backup_schedules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
         """
         Details for the long-term backup schedule.
         """
         return pulumi.get(self, "long_term_backup_schedules")
 
     @long_term_backup_schedules.setter
-    def long_term_backup_schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
+    def long_term_backup_schedules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
         pulumi.set(self, "long_term_backup_schedules", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceTargetComponent")
-    def maintenance_target_component(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_target_component(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component chosen for maintenance.
         """
         return pulumi.get(self, "maintenance_target_component")
 
     @maintenance_target_component.setter
-    def maintenance_target_component(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_target_component(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_target_component", value)
 
     @_builtins.property
     @pulumi.getter(name="maxCpuCoreCount")
-    def max_cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_cpu_core_count")
 
     @max_cpu_core_count.setter
-    def max_cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryPerComputeUnitInGbs")
-    def memory_per_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_per_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_compute_unit_in_gbs")
 
     @memory_per_compute_unit_in_gbs.setter
-    def memory_per_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_per_compute_unit_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_per_compute_unit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @memory_per_oracle_compute_unit_in_gbs.setter
-    def memory_per_oracle_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_per_oracle_compute_unit_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_per_oracle_compute_unit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
     @pulumi.getter(name="netServicesArchitecture")
-    def net_services_architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def net_services_architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         """
         return pulumi.get(self, "net_services_architecture")
 
     @net_services_architecture.setter
-    def net_services_architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def net_services_architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "net_services_architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="nextLongTermBackupTimeStamp")
-    def next_long_term_backup_time_stamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_long_term_backup_time_stamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the next long-term backup would be created.
         """
         return pulumi.get(self, "next_long_term_backup_time_stamp")
 
     @next_long_term_backup_time_stamp.setter
-    def next_long_term_backup_time_stamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_long_term_backup_time_stamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_long_term_backup_time_stamp", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -3560,12 +3560,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The number of OCPU cores to be made available to the database.
 
@@ -3581,12 +3581,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "ocpu_count")
 
     @ocpu_count.setter
-    def ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
@@ -3595,225 +3595,225 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
-    def open_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsStatus")
-    def operations_insights_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operations_insights_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of Operations Insights for this Autonomous AI Database.
         """
         return pulumi.get(self, "operations_insights_status")
 
     @operations_insights_status.setter
-    def operations_insights_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operations_insights_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operations_insights_status", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbId")
-    def peer_db_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "peer_db_id")
 
     @peer_db_id.setter
-    def peer_db_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbIds")
-    def peer_db_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def peer_db_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         """
         return pulumi.get(self, "peer_db_ids")
 
     @peer_db_ids.setter
-    def peer_db_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def peer_db_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "peer_db_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="permissionLevel")
-    def permission_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def permission_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
     @permission_level.setter
-    def permission_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def permission_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "permission_level", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private endpoint for the resource.
         """
         return pulumi.get(self, "private_endpoint")
 
     @private_endpoint.setter
-    def private_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private endpoint Ip address for the resource.
         """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
-    def private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointLabel")
-    def private_endpoint_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private endpoint label for the resource.
         """
         return pulumi.get(self, "private_endpoint_label")
 
     @private_endpoint_label.setter
-    def private_endpoint_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_label", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]]:
+    def provisionable_cpuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]]:
         """
         An array of CPU values that an Autonomous AI Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
     @provisionable_cpuses.setter
-    def provisionable_cpuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]]):
+    def provisionable_cpuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]]):
         pulumi.set(self, "provisionable_cpuses", value)
 
     @_builtins.property
     @pulumi.getter(name="publicConnectionUrls")
-    def public_connection_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]:
+    def public_connection_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]:
         """
         The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
         """
         return pulumi.get(self, "public_connection_urls")
 
     @public_connection_urls.setter
-    def public_connection_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]):
+    def public_connection_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]):
         pulumi.set(self, "public_connection_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="publicEndpoint")
-    def public_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public endpoint for the private endpoint enabled resource.
         """
         return pulumi.get(self, "public_endpoint")
 
     @public_endpoint.setter
-    def public_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshableMode")
-    def refreshable_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refreshable_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_mode")
 
     @refreshable_mode.setter
-    def refreshable_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refreshable_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refreshable_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshableStatus")
-    def refreshable_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refreshable_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_status")
 
     @refreshable_status.setter
-    def refreshable_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refreshable_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refreshable_status", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteDisasterRecoveryConfigurations")
-    def remote_disaster_recovery_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]:
+    def remote_disaster_recovery_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]:
         """
         Configurations of a Disaster Recovery.
         """
         return pulumi.get(self, "remote_disaster_recovery_configurations")
 
     @remote_disaster_recovery_configurations.setter
-    def remote_disaster_recovery_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]):
+    def remote_disaster_recovery_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]):
         pulumi.set(self, "remote_disaster_recovery_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteDisasterRecoveryType")
-    def remote_disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_disaster_recovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "remote_disaster_recovery_type")
 
     @remote_disaster_recovery_type.setter
-    def remote_disaster_recovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_disaster_recovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_disaster_recovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePoolLeaderId")
-    def resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_pool_leader_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
     @resource_pool_leader_id.setter
-    def resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_pool_leader_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_pool_leader_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePoolSummary")
-    def resource_pool_summary(self) -> Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']]:
+    def resource_pool_summary(self) -> pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']]:
         """
         (Updatable) The configuration details for resource pool
         """
         return pulumi.get(self, "resource_pool_summary")
 
     @resource_pool_summary.setter
-    def resource_pool_summary(self, value: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']]):
+    def resource_pool_summary(self, value: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']]):
         pulumi.set(self, "resource_pool_summary", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
         """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledOperations")
-    def scheduled_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
+    def scheduled_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
         (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 
@@ -3822,12 +3822,12 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "scheduled_operations")
 
     @scheduled_operations.setter
-    def scheduled_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]):
+    def scheduled_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]):
         pulumi.set(self, "scheduled_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 
@@ -3836,57 +3836,57 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersionNumber")
-    def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secret_version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         """
         return pulumi.get(self, "secret_version_number")
 
     @secret_version_number.setter
-    def secret_version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secret_version_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secret_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceConsoleUrl")
-    def service_console_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_console_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the Service Console for the Autonomous AI Database.
         """
         return pulumi.get(self, "service_console_url")
 
     @service_console_url.setter
-    def service_console_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_console_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_console_url", value)
 
     @_builtins.property
     @pulumi.getter(name="shrinkAdbTrigger")
-    def shrink_adb_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def shrink_adb_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "shrink_adb_trigger")
 
     @shrink_adb_trigger.setter
-    def shrink_adb_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def shrink_adb_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "shrink_adb_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database: Use `NONE` for creating a new Autonomous AI Database. Use `DATABASE` for creating a new Autonomous AI Database by cloning an existing Autonomous AI Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 
@@ -3895,36 +3895,36 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyDbs")
-    def standby_dbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]]:
+    def standby_dbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]]:
         """
         **Deprecated** Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "standby_dbs")
 
     @standby_dbs.setter
-    def standby_dbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]]):
+    def standby_dbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]]):
         pulumi.set(self, "standby_dbs", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyWhitelistedIps")
-    def standby_whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def standby_whitelisted_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
@@ -3937,24 +3937,24 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "standby_whitelisted_ips")
 
     @standby_whitelisted_ips.setter
-    def standby_whitelisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def standby_whitelisted_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "standby_whitelisted_ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 
@@ -3968,432 +3968,432 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedRegionsToCloneTos")
-    def supported_regions_to_clone_tos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def supported_regions_to_clone_tos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
         """
         return pulumi.get(self, "supported_regions_to_clone_tos")
 
     @supported_regions_to_clone_tos.setter
-    def supported_regions_to_clone_tos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def supported_regions_to_clone_tos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_regions_to_clone_tos", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverTo")
-    def switchover_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def switchover_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         """
         return pulumi.get(self, "switchover_to")
 
     @switchover_to.setter
-    def switchover_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def switchover_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "switchover_to", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverToRemotePeerId")
-    def switchover_to_remote_peer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def switchover_to_remote_peer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
         """
         return pulumi.get(self, "switchover_to_remote_peer_id")
 
     @switchover_to_remote_peer_id.setter
-    def switchover_to_remote_peer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def switchover_to_remote_peer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "switchover_to_remote_peer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous AI Database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDataGuardRoleChanged")
-    def time_data_guard_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_data_guard_role_changed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
     @time_data_guard_role_changed.setter
-    def time_data_guard_role_changed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_data_guard_role_changed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_data_guard_role_changed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDeletionOfFreeAutonomousDatabase")
-    def time_deletion_of_free_autonomous_database(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_deletion_of_free_autonomous_database(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         """
         return pulumi.get(self, "time_deletion_of_free_autonomous_database")
 
     @time_deletion_of_free_autonomous_database.setter
-    def time_deletion_of_free_autonomous_database(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_deletion_of_free_autonomous_database(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_deletion_of_free_autonomous_database", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
-    def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_disaster_recovery_role_changed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @time_disaster_recovery_role_changed.setter
-    def time_disaster_recovery_role_changed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_disaster_recovery_role_changed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_disaster_recovery_role_changed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
-    def time_earliest_available_db_version_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_earliest_available_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_earliest_available_db_version_upgrade")
 
     @time_earliest_available_db_version_upgrade.setter
-    def time_earliest_available_db_version_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_earliest_available_db_version_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_earliest_available_db_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
-    def time_latest_available_db_version_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_latest_available_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_latest_available_db_version_upgrade")
 
     @time_latest_available_db_version_upgrade.setter
-    def time_latest_available_db_version_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_latest_available_db_version_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_latest_available_db_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
-    def time_local_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_local_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         """
         return pulumi.get(self, "time_local_data_guard_enabled")
 
     @time_local_data_guard_enabled.setter
-    def time_local_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_local_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_local_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaintenanceBegin")
-    def time_maintenance_begin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_maintenance_begin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when maintenance will begin.
         """
         return pulumi.get(self, "time_maintenance_begin")
 
     @time_maintenance_begin.setter
-    def time_maintenance_begin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_maintenance_begin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_maintenance_begin", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaintenanceEnd")
-    def time_maintenance_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_maintenance_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
 
     @time_maintenance_end.setter
-    def time_maintenance_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_maintenance_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_maintenance_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaintenancePauseUntil")
-    def time_maintenance_pause_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_maintenance_pause_until(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date until which maintenance of Autonomous Database is temporarily paused.
         """
         return pulumi.get(self, "time_maintenance_pause_until")
 
     @time_maintenance_pause_until.setter
-    def time_maintenance_pause_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_maintenance_pause_until(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_maintenance_pause_until", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
-    def time_of_auto_refresh_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_auto_refresh_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         """
         return pulumi.get(self, "time_of_auto_refresh_start")
 
     @time_of_auto_refresh_start.setter
-    def time_of_auto_refresh_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_auto_refresh_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_auto_refresh_start", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfJoiningResourcePool")
-    def time_of_joining_resource_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_joining_resource_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the member joined the resource pool.
         """
         return pulumi.get(self, "time_of_joining_resource_pool")
 
     @time_of_joining_resource_pool.setter
-    def time_of_joining_resource_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_joining_resource_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_joining_resource_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastFailover")
-    def time_of_last_failover(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_failover(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last failover operation.
         """
         return pulumi.get(self, "time_of_last_failover")
 
     @time_of_last_failover.setter
-    def time_of_last_failover(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_failover(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_failover", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastRefresh")
-    def time_of_last_refresh(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_refresh(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when last refresh happened.
         """
         return pulumi.get(self, "time_of_last_refresh")
 
     @time_of_last_refresh.setter
-    def time_of_last_refresh(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_refresh(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_refresh", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastRefreshPoint")
-    def time_of_last_refresh_point(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_refresh_point(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
         """
         return pulumi.get(self, "time_of_last_refresh_point")
 
     @time_of_last_refresh_point.setter
-    def time_of_last_refresh_point(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_refresh_point(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_refresh_point", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastSwitchover")
-    def time_of_last_switchover(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_switchover(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last switchover operation for the Autonomous AI Database.
         """
         return pulumi.get(self, "time_of_last_switchover")
 
     @time_of_last_switchover.setter
-    def time_of_last_switchover(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_switchover(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_switchover", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfNextRefresh")
-    def time_of_next_refresh(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_next_refresh(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of next refresh.
         """
         return pulumi.get(self, "time_of_next_refresh")
 
     @time_of_next_refresh.setter
-    def time_of_next_refresh(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_next_refresh(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_next_refresh", value)
 
     @_builtins.property
     @pulumi.getter(name="timeReclamationOfFreeAutonomousDatabase")
-    def time_reclamation_of_free_autonomous_database(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_reclamation_of_free_autonomous_database(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
 
     @time_reclamation_of_free_autonomous_database.setter
-    def time_reclamation_of_free_autonomous_database(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_reclamation_of_free_autonomous_database(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_reclamation_of_free_autonomous_database", value)
 
     @_builtins.property
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
-    def time_scheduled_db_version_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_scheduled_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_scheduled_db_version_upgrade")
 
     @time_scheduled_db_version_upgrade.setter
-    def time_scheduled_db_version_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_scheduled_db_version_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_scheduled_db_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUndeleted")
-    def time_undeleted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_undeleted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous AI Database was most recently undeleted.
         """
         return pulumi.get(self, "time_undeleted")
 
     @time_undeleted.setter
-    def time_undeleted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_undeleted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_undeleted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")
-    def time_until_reconnect_clone_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_until_reconnect_clone_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         """
         return pulumi.get(self, "time_until_reconnect_clone_enabled")
 
     @time_until_reconnect_clone_enabled.setter
-    def time_until_reconnect_clone_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_until_reconnect_clone_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_until_reconnect_clone_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         """
         return pulumi.get(self, "timestamp")
 
     @timestamp.setter
-    def timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="totalBackupStorageSizeInGbs")
-    def total_backup_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_backup_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The backup storage to the database.
         """
         return pulumi.get(self, "total_backup_storage_size_in_gbs")
 
     @total_backup_storage_size_in_gbs.setter
-    def total_backup_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_backup_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_backup_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="transportableTablespace")
-    def transportable_tablespace(self) -> Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]:
+    def transportable_tablespace(self) -> pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']]:
         """
         Details for importing transportable tablespace for an Autonomous Database.
         """
         return pulumi.get(self, "transportable_tablespace")
 
     @transportable_tablespace.setter
-    def transportable_tablespace(self, value: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]):
+    def transportable_tablespace(self, value: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']]):
         pulumi.set(self, "transportable_tablespace", value)
 
     @_builtins.property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
-    def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_latest_available_backup_time_stamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Clone from latest available backup timestamp.
         """
         return pulumi.get(self, "use_latest_available_backup_time_stamp")
 
     @use_latest_available_backup_time_stamp.setter
-    def use_latest_available_backup_time_stamp(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_latest_available_backup_time_stamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_latest_available_backup_time_stamp", value)
 
     @_builtins.property
     @pulumi.getter(name="usedDataStorageSizeInGbs")
-    def used_data_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def used_data_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The storage space consumed by Autonomous AI Database in GBs.
         """
         return pulumi.get(self, "used_data_storage_size_in_gbs")
 
     @used_data_storage_size_in_gbs.setter
-    def used_data_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def used_data_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "used_data_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
-    def used_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def used_data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
 
     @used_data_storage_size_in_tbs.setter
-    def used_data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def used_data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "used_data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="vanityConnectionUrls")
-    def vanity_connection_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]]:
+    def vanity_connection_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]]:
         """
         The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
         """
         return pulumi.get(self, "vanity_connection_urls")
 
     @vanity_connection_urls.setter
-    def vanity_connection_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]]):
+    def vanity_connection_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityConnectionUrlArgs']]]]):
         pulumi.set(self, "vanity_connection_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]:
+    def vanity_url_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]:
         """
         Details for api gateway and vanity url(custom url) for dbTools.
         """
         return pulumi.get(self, "vanity_url_details")
 
     @vanity_url_details.setter
-    def vanity_url_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]):
+    def vanity_url_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]]):
         pulumi.set(self, "vanity_url_details", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="whitelistedIps")
-    def whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def whitelisted_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
@@ -4406,7 +4406,7 @@ class _AutonomousDatabaseState:
         return pulumi.get(self, "whitelisted_ips")
 
     @whitelisted_ips.setter
-    def whitelisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def whitelisted_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "whitelisted_ips", value)
 
 
@@ -4416,101 +4416,101 @@ class AutonomousDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 are_primary_whitelisted_ips_used: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_refresh_frequency_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_refresh_point_lag_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
-                 autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 clone_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
-                 data_safe_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 in_memory_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_access_control_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_backup_retention_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dedicated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dev_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disable_db_version_upgrade_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disconnect_peer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_local_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mtls_connection_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refreshable_clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_replicate_automatic_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_schedule_db_version_upgrade_to_earliest: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shrink_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
-                 max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 permission_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshable_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_summary: Optional[pulumi.Input[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shrink_adb_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
-                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 are_primary_whitelisted_ips_used: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_refresh_frequency_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_refresh_point_lag_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
+                 autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_table_space_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
+                 data_safe_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_tools_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_delete_scheduled_operations: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 in_memory_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_access_control_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_for_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_backup_retention_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_local_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mtls_connection_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_term_backup_schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
+                 max_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 permission_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshable_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shrink_adb_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
+                 use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vanity_url_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -4737,101 +4737,101 @@ class AutonomousDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 are_primary_whitelisted_ips_used: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_refresh_frequency_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_refresh_point_lag_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
-                 autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 clone_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
-                 data_safe_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 in_memory_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_access_control_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_backup_retention_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dedicated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dev_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disable_db_version_upgrade_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disconnect_peer: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_local_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_mtls_connection_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refreshable_clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_replicate_automatic_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_schedule_db_version_upgrade_to_earliest: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shrink_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
-                 max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 permission_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshable_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_pool_summary: Optional[pulumi.Input[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shrink_adb_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
-                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 are_primary_whitelisted_ips_used: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_refresh_frequency_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_refresh_point_lag_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
+                 autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_table_space_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
+                 data_safe_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_tools_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_delete_scheduled_operations: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 in_memory_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_access_control_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_scaling_for_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_backup_retention_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_local_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_mtls_connection_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_adg_auto_failover_max_data_loss_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_term_backup_schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
+                 max_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 permission_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshable_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shrink_adb_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
+                 use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vanity_url_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -5019,168 +5019,168 @@ class AutonomousDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actual_used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            additional_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            allocated_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            apex_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseApexDetailArgs', 'AutonomousDatabaseApexDetailArgsDict']]]]] = None,
-            are_primary_whitelisted_ips_used: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_refresh_frequency_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            auto_refresh_point_lag_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
-            autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupConfigArgs', 'AutonomousDatabaseBackupConfigArgsDict']]]]] = None,
-            backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
-            character_set: Optional[pulumi.Input[_builtins.str]] = None,
-            clone_table_space_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            clone_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_count: Optional[pulumi.Input[_builtins.float]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseConnectionStringArgs', 'AutonomousDatabaseConnectionStringArgsDict']]]]] = None,
-            connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseConnectionUrlArgs', 'AutonomousDatabaseConnectionUrlArgsDict']]]]] = None,
-            cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
-            data_safe_status: Optional[pulumi.Input[_builtins.str]] = None,
-            data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-            data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-            database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-            database_management_status: Optional[pulumi.Input[_builtins.str]] = None,
-            dataguard_region_type: Optional[pulumi.Input[_builtins.str]] = None,
-            db_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            disaster_recovery_region_type: Optional[pulumi.Input[_builtins.str]] = None,
-            disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
-            encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
-            encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
-            encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]]] = None,
-            failed_data_recovery_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            in_memory_area_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            in_memory_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_access_control_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_backup_retention_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_dedicated: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_dev_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_disable_db_version_upgrade_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_disconnect_peer: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_local_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_mtls_connection_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_preview: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_refreshable_clone: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_remote_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_replicate_automatic_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_schedule_db_version_upgrade_to_earliest: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_shrink_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseKeyHistoryEntryArgs', 'AutonomousDatabaseKeyHistoryEntryArgsDict']]]]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-            key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-            local_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-            local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]]] = None,
-            long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
-            maintenance_target_component: Optional[pulumi.Input[_builtins.str]] = None,
-            max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-            memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-            net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-            next_long_term_backup_time_stamp: Optional[pulumi.Input[_builtins.str]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-            open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            operations_insights_status: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            permission_level: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_label: Optional[pulumi.Input[_builtins.str]] = None,
-            provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]] = None,
-            public_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabasePublicConnectionUrlArgs', 'AutonomousDatabasePublicConnectionUrlArgsDict']]]]] = None,
-            public_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            refreshable_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            refreshable_status: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs', 'AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict']]]]] = None,
-            remote_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_pool_summary: Optional[pulumi.Input[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
-            secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_version_number: Optional[pulumi.Input[_builtins.int]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            service_console_url: Optional[pulumi.Input[_builtins.str]] = None,
-            shrink_adb_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseStandbyDbArgs', 'AutonomousDatabaseStandbyDbArgsDict']]]]] = None,
-            standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            supported_regions_to_clone_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
-            switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_data_guard_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_deletion_of_free_autonomous_database: Optional[pulumi.Input[_builtins.str]] = None,
-            time_disaster_recovery_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_earliest_available_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-            time_latest_available_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-            time_local_data_guard_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-            time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
-            time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None,
-            time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_joining_resource_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_last_failover: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_last_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_last_refresh_point: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_last_switchover: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_next_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-            time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[_builtins.str]] = None,
-            time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-            time_undeleted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_until_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-            timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            total_backup_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
-            use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
-            used_data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
-            vanity_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityConnectionUrlArgs', 'AutonomousDatabaseVanityConnectionUrlArgsDict']]]]] = None,
-            vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AutonomousDatabase':
+            actual_used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            additional_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            allocated_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            apex_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseApexDetailArgs', 'AutonomousDatabaseApexDetailArgsDict']]]]] = None,
+            are_primary_whitelisted_ips_used: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_refresh_frequency_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_refresh_point_lag_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_database_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
+            autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            available_upgrade_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupConfigArgs', 'AutonomousDatabaseBackupConfigArgsDict']]]]] = None,
+            backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            clone_table_space_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            clone_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseConnectionStringArgs', 'AutonomousDatabaseConnectionStringArgsDict']]]]] = None,
+            connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseConnectionUrlArgs', 'AutonomousDatabaseConnectionUrlArgsDict']]]]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseCustomerContactArgs', 'AutonomousDatabaseCustomerContactArgsDict']]]]] = None,
+            data_safe_status: pulumi.Input[Optional[_builtins.str]] = None,
+            data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            database_management_status: pulumi.Input[Optional[_builtins.str]] = None,
+            dataguard_region_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_tools_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            disaster_recovery_region_type: pulumi.Input[Optional[_builtins.str]] = None,
+            disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_delete_scheduled_operations: pulumi.Input[Optional[_builtins.bool]] = None,
+            encryption_key: pulumi.Input[Optional[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
+            encryption_key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            failed_data_recovery_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            in_memory_area_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            in_memory_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_access_control_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_auto_scaling_for_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_backup_retention_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_local_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_mtls_connection_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_preview: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_remote_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseKeyHistoryEntryArgs', 'AutonomousDatabaseKeyHistoryEntryArgsDict']]]]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            local_adg_auto_failover_max_data_loss_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            local_adg_resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+            local_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            local_standby_dbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]]] = None,
+            long_term_backup_schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
+            maintenance_target_component: pulumi.Input[Optional[_builtins.str]] = None,
+            max_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            next_long_term_backup_time_stamp: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            operations_insights_status: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            permission_level: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_label: pulumi.Input[Optional[_builtins.str]] = None,
+            provisionable_cpuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]] = None,
+            public_connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabasePublicConnectionUrlArgs', 'AutonomousDatabasePublicConnectionUrlArgsDict']]]]] = None,
+            public_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            refreshable_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            refreshable_status: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_disaster_recovery_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs', 'AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict']]]]] = None,
+            remote_disaster_recovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            service_console_url: pulumi.Input[Optional[_builtins.str]] = None,
+            shrink_adb_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_dbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseStandbyDbArgs', 'AutonomousDatabaseStandbyDbArgsDict']]]]] = None,
+            standby_whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            supported_regions_to_clone_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            switchover_to: pulumi.Input[Optional[_builtins.str]] = None,
+            switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_data_guard_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_deletion_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+            time_disaster_recovery_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_earliest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_latest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_local_data_guard_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_joining_resource_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_last_failover: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_last_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_last_refresh_point: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_last_switchover: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_next_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+            time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            total_backup_storage_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
+            use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
+            used_data_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.int]] = None,
+            vanity_connection_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityConnectionUrlArgs', 'AutonomousDatabaseVanityConnectionUrlArgsDict']]]]] = None,
+            vanity_url_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            whitelisted_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'AutonomousDatabase':
         """
         Get an existing AutonomousDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplication = oci.ServiceCatalog.getPrivateApplication({
+ * const testPrivateApplication = oci.servicecatalog.getPrivateApplication({
  *     privateApplicationId: testPrivateApplicationOciServiceCatalogPrivateApplication.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetPrivateApplicationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplication = oci.ServiceCatalog.getPrivateApplication({
+ * const testPrivateApplication = oci.servicecatalog.getPrivateApplication({
  *     privateApplicationId: testPrivateApplicationOciServiceCatalogPrivateApplication.id,
  * });
  * ```

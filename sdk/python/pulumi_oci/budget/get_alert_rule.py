@@ -240,7 +240,7 @@ def get_alert_rule(alert_rule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
+    test_alert_rule = oci.budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
         budget_id=test_budget["id"])
     ```
 
@@ -271,8 +271,8 @@ def get_alert_rule(alert_rule_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
-def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          budget_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_alert_rule_output(alert_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          budget_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertRuleResult]:
     """
     This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
@@ -285,7 +285,7 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
+    test_alert_rule = oci.budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
         budget_id=test_budget["id"])
     ```
 

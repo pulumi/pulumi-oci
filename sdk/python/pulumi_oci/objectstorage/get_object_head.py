@@ -161,7 +161,7 @@ def get_object_head(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+    test_object_head = oci.objectstorage.get_object_head(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object)
     ```
@@ -189,9 +189,9 @@ def get_object_head(bucket: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         object=pulumi.get(__ret__, 'object'),
         storage_tier=pulumi.get(__ret__, 'storage_tier'))
-def get_object_head_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                           namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                           object: Optional[pulumi.Input[_builtins.str]] = None,
+def get_object_head_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                           namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                           object: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectHeadResult]:
     """
     This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -204,7 +204,7 @@ def get_object_head_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+    test_object_head = oci.objectstorage.get_object_head(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object)
     ```

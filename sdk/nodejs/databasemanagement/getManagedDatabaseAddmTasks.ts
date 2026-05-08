@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAddmTasks = oci.DatabaseManagement.getManagedDatabaseAddmTasks({
+ * const testManagedDatabaseAddmTasks = oci.databasemanagement.getManagedDatabaseAddmTasks({
  *     managedDatabaseId: testManagedDatabase.id,
  *     timeEnd: managedDatabaseAddmTaskTimeEnd,
  *     timeStart: managedDatabaseAddmTaskTimeStart,
@@ -86,7 +86,7 @@ export interface GetManagedDatabaseAddmTasksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAddmTasks = oci.DatabaseManagement.getManagedDatabaseAddmTasks({
+ * const testManagedDatabaseAddmTasks = oci.databasemanagement.getManagedDatabaseAddmTasks({
  *     managedDatabaseId: testManagedDatabase.id,
  *     timeEnd: managedDatabaseAddmTaskTimeEnd,
  *     timeStart: managedDatabaseAddmTaskTimeStart,
@@ -107,7 +107,7 @@ export function getManagedDatabaseAddmTasksOutput(args: GetManagedDatabaseAddmTa
  * A collection of arguments for invoking getManagedDatabaseAddmTasks.
  */
 export interface GetManagedDatabaseAddmTasksOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseAddmTasksFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseAddmTasksFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

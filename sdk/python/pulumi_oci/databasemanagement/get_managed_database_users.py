@@ -118,7 +118,7 @@ def get_managed_database_users(filters: Optional[Sequence[Union['GetManagedDatab
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
+    test_managed_database_users = oci.databasemanagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
         name=managed_database_user_name,
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```
@@ -143,10 +143,10 @@ def get_managed_database_users(filters: Optional[Sequence[Union['GetManagedDatab
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         user_collections=pulumi.get(__ret__, 'user_collections'))
-def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict']]]]] = None,
-                                      managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict']]]]] = None,
+                                      managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUsersResult]:
     """
     This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
@@ -159,7 +159,7 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
+    test_managed_database_users = oci.databasemanagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
         name=managed_database_user_name,
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```

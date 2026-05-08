@@ -227,56 +227,56 @@ export interface MigrationAssetState {
     /**
      * Availability domain
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Compartment Identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * List of migration assets that depend on the asset.
      */
-    dependedOnBies?: pulumi.Input<pulumi.Input<string>[]>;
+    dependedOnBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Mapping of source disk id to destination disk details
      */
-    destinationDisks?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    destinationDisks?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * OCID of an asset for an inventory.
      */
-    inventoryAssetId?: pulumi.Input<string>;
+    inventoryAssetId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
-    migrationAssetDependsOns?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
+    migrationAssetDependsOns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * OCID of the associated migration.
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * List of notifications
      */
-    notifications?: pulumi.Input<pulumi.Input<string>[]>;
+    notifications?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The parent snapshot of the migration asset to be used by the replication task.
      */
-    parentSnapshot?: pulumi.Input<string>;
+    parentSnapshot?: pulumi.Input<string | undefined>;
     /**
      * Replication compartment identifier
      */
-    replicationCompartmentId?: pulumi.Input<string>;
+    replicationCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * Replication location detail where the snapshots reside
      */
-    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail>;
+    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail | undefined>;
     /**
      * (Updatable) Replication schedule identifier
      */
-    replicationScheduleId?: pulumi.Input<string>;
+    replicationScheduleId?: pulumi.Input<string | undefined>;
     /**
      * Name of snapshot bucket
      *
@@ -284,35 +284,35 @@ export interface MigrationAssetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    snapShotBucketName?: pulumi.Input<string>;
+    snapShotBucketName?: pulumi.Input<string | undefined>;
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    snapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    snapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * OCID that is referenced to an asset for an inventory.
      */
-    sourceAssetId?: pulumi.Input<string>;
+    sourceAssetId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the migration asset.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Tenancy identifier
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * The time when the migration asset was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the migration asset was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The type of asset referenced for inventory.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -326,12 +326,12 @@ export interface MigrationAssetArgs {
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * OCID of an asset for an inventory.
      */
     inventoryAssetId: pulumi.Input<string>;
-    migrationAssetDependsOns?: pulumi.Input<pulumi.Input<string>[]>;
+    migrationAssetDependsOns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * OCID of the associated migration.
      */
@@ -343,11 +343,11 @@ export interface MigrationAssetArgs {
     /**
      * Replication location detail where the snapshots reside
      */
-    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail>;
+    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail | undefined>;
     /**
      * (Updatable) Replication schedule identifier
      */
-    replicationScheduleId?: pulumi.Input<string>;
+    replicationScheduleId?: pulumi.Input<string | undefined>;
     /**
      * Name of snapshot bucket
      *

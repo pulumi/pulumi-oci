@@ -138,7 +138,7 @@ def get_sddcs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=compartment_id,
+    test_sddcs = oci.ocvp.get_sddcs(compartment_id=compartment_id,
         compute_availability_domain=sddc_compute_availability_domain,
         display_name=sddc_display_name,
         state=sddc_state)
@@ -167,11 +167,11 @@ def get_sddcs(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         sddc_collections=pulumi.get(__ret__, 'sddc_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_sddcs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     compute_availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict']]]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sddcs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     compute_availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict']]]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSddcsResult]:
     """
     This data source provides the list of Sddcs in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -185,7 +185,7 @@ def get_sddcs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=compartment_id,
+    test_sddcs = oci.ocvp.get_sddcs(compartment_id=compartment_id,
         compute_availability_domain=sddc_compute_availability_domain,
         display_name=sddc_display_name,
         state=sddc_state)

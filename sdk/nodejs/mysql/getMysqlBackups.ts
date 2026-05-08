@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlBackups = oci.Mysql.getMysqlBackups({
+ * const testMysqlBackups = oci.mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
  *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,
@@ -127,7 +127,7 @@ export interface GetMysqlBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlBackups = oci.Mysql.getMysqlBackups({
+ * const testMysqlBackups = oci.mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
  *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,
@@ -159,7 +159,7 @@ export interface GetMysqlBackupsOutputArgs {
     /**
      * Backup OCID
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -167,22 +167,22 @@ export interface GetMysqlBackupsOutputArgs {
     /**
      * Backup creationType
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resource matching the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlBackupsFilterArgs>[] | undefined>;
     /**
      * Backup Soft Delete
      */
-    softDelete?: pulumi.Input<string>;
+    softDelete?: pulumi.Input<string | undefined>;
     /**
      * Backup Lifecycle State
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

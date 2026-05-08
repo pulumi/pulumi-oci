@@ -237,15 +237,15 @@ export interface InstanceMaintenanceEventState {
     /**
      * Additional details of the maintenance in the form of json.
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
      */
-    alternativeResolutionAction?: pulumi.Input<string>;
+    alternativeResolutionAction?: pulumi.Input<string | undefined>;
     /**
      * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
      */
-    alternativeResolutionActions?: pulumi.Input<pulumi.Input<string>[]>;
+    alternativeResolutionActions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This field is only applicable when setting the alternativeResolutionAction.
      *
@@ -253,87 +253,87 @@ export interface InstanceMaintenanceEventState {
      *
      * In cases where the local storage will be lost, this parameter must be set or the request will fail.
      */
-    canDeleteLocalStorage?: pulumi.Input<boolean>;
+    canDeleteLocalStorage?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
      */
-    canReschedule?: pulumi.Input<boolean>;
+    canReschedule?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the compartment that contains the instance.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier that will group Instances that have a relationship with one another and must be scheduled together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance perspective will have a matching correlationToken.
      */
-    correlationToken?: pulumi.Input<string>;
+    correlationToken?: pulumi.Input<string | undefined>;
     /**
      * The creator of the maintenance event.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * It is the descriptive information about the maintenance taking place on the customer instance.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
      */
-    estimatedDuration?: pulumi.Input<string>;
+    estimatedDuration?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
      */
-    instanceAction?: pulumi.Input<string>;
+    instanceAction?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance maintenance event.
      */
-    instanceMaintenanceEventId?: pulumi.Input<string>;
+    instanceMaintenanceEventId?: pulumi.Input<string | undefined>;
     /**
      * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      */
-    maintenanceCategory?: pulumi.Input<string>;
+    maintenanceCategory?: pulumi.Input<string | undefined>;
     /**
      * This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      */
-    maintenanceReason?: pulumi.Input<string>;
+    maintenanceReason?: pulumi.Input<string | undefined>;
     /**
      * The duration of the time window Maintenance is scheduled to begin within.
      */
-    startWindowDuration?: pulumi.Input<string>;
+    startWindowDuration?: pulumi.Input<string | undefined>;
     /**
      * The current state of the maintenance event.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the Maintenance actually finished.
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
      */
-    timeHardDueDate?: pulumi.Input<string>;
+    timeHardDueDate?: pulumi.Input<string | undefined>;
     /**
      * The time at which the Maintenance actually started.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
      *
@@ -343,7 +343,7 @@ export interface InstanceMaintenanceEventState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeWindowStart?: pulumi.Input<string>;
+    timeWindowStart?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -353,7 +353,7 @@ export interface InstanceMaintenanceEventArgs {
     /**
      * (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
      */
-    alternativeResolutionAction?: pulumi.Input<string>;
+    alternativeResolutionAction?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This field is only applicable when setting the alternativeResolutionAction.
      *
@@ -361,19 +361,19 @@ export interface InstanceMaintenanceEventArgs {
      *
      * In cases where the local storage will be lost, this parameter must be set or the request will fail.
      */
-    canDeleteLocalStorage?: pulumi.Input<boolean>;
+    canDeleteLocalStorage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the instance maintenance event.
      */
@@ -387,5 +387,5 @@ export interface InstanceMaintenanceEventArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeWindowStart?: pulumi.Input<string>;
+    timeWindowStart?: pulumi.Input<string | undefined>;
 }

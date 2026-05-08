@@ -180,7 +180,7 @@ def get_repository_commit(commit_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
+    test_repository_commit = oci.devops.get_repository_commit(commit_id=test_commit["id"],
         repository_id=test_repository["id"])
     ```
 
@@ -206,8 +206,8 @@ def get_repository_commit(commit_id: Optional[_builtins.str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         tree_id=pulumi.get(__ret__, 'tree_id'))
-def get_repository_commit_output(commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_commit_output(commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryCommitResult]:
     """
     This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
@@ -220,7 +220,7 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
+    test_repository_commit = oci.devops.get_repository_commit(commit_id=test_commit["id"],
         repository_id=test_repository["id"])
     ```
 

@@ -20,7 +20,7 @@ __all__ = ['DomainReplicationToRegionArgs', 'DomainReplicationToRegion']
 class DomainReplicationToRegionArgs:
     def __init__(__self__, *,
                  domain_id: pulumi.Input[_builtins.str],
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None):
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainReplicationToRegion resource.
 
@@ -49,7 +49,7 @@ class DomainReplicationToRegionArgs:
 
     @_builtins.property
     @pulumi.getter(name="replicaRegion")
-    def replica_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replica_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
 
@@ -60,15 +60,15 @@ class DomainReplicationToRegionArgs:
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
-    def replica_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replica_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replica_region", value)
 
 
 @pulumi.input_type
 class _DomainReplicationToRegionState:
     def __init__(__self__, *,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None):
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainReplicationToRegion resources.
 
@@ -86,19 +86,19 @@ class _DomainReplicationToRegionState:
 
     @_builtins.property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the domain
         """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaRegion")
-    def replica_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replica_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
 
@@ -109,7 +109,7 @@ class _DomainReplicationToRegionState:
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
-    def replica_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replica_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replica_region", value)
 
 
@@ -119,8 +119,8 @@ class DomainReplicationToRegion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
@@ -224,8 +224,8 @@ class DomainReplicationToRegion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -249,8 +249,8 @@ class DomainReplicationToRegion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_region: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainReplicationToRegion':
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_region: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainReplicationToRegion':
         """
         Get an existing DomainReplicationToRegion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

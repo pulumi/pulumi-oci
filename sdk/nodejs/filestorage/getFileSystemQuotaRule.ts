@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRule = oci.FileStorage.getFileSystemQuotaRule({
+ * const testFileSystemQuotaRule = oci.filestorage.getFileSystemQuotaRule({
  *     fileSystemId: testFileSystem.id,
  *     quotaRuleId: testRule.id,
  * });
@@ -99,7 +99,7 @@ export interface GetFileSystemQuotaRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRule = oci.FileStorage.getFileSystemQuotaRule({
+ * const testFileSystemQuotaRule = oci.filestorage.getFileSystemQuotaRule({
  *     fileSystemId: testFileSystem.id,
  *     quotaRuleId: testRule.id,
  * });
@@ -118,7 +118,7 @@ export function getFileSystemQuotaRuleOutput(args: GetFileSystemQuotaRuleOutputA
  * A collection of arguments for invoking getFileSystemQuotaRule.
  */
 export interface GetFileSystemQuotaRuleOutputArgs {
-    areViolatorsOnly?: pulumi.Input<string>;
+    areViolatorsOnly?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
@@ -126,5 +126,5 @@ export interface GetFileSystemQuotaRuleOutputArgs {
     /**
      * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
      */
-    quotaRuleId?: pulumi.Input<string>;
+    quotaRuleId?: pulumi.Input<string | undefined>;
 }

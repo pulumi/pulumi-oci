@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsm = oci.DatabaseManagement.getExternalAsm({
+ * const testExternalAsm = oci.databasemanagement.getExternalAsm({
  *     externalAsmId: testExternalAsmOciDatabaseManagementExternalAsm.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetExternalAsmResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsm = oci.DatabaseManagement.getExternalAsm({
+ * const testExternalAsm = oci.databasemanagement.getExternalAsm({
  *     externalAsmId: testExternalAsmOciDatabaseManagementExternalAsm.id,
  * });
  * ```

@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceSoftwarePackages = oci.OsManagementHub.getSoftwareSourceSoftwarePackages({
+ * const testSoftwareSourceSoftwarePackages = oci.osmanagementhub.getSoftwareSourceSoftwarePackages({
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceSoftwarePackageIsLatest,
+ *     isLatest: softwareSourceSoftwarePackageIsLatest === "true",
  * });
  * ```
  */
@@ -96,11 +96,11 @@ export interface GetSoftwareSourceSoftwarePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceSoftwarePackages = oci.OsManagementHub.getSoftwareSourceSoftwarePackages({
+ * const testSoftwareSourceSoftwarePackages = oci.osmanagementhub.getSoftwareSourceSoftwarePackages({
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceSoftwarePackageIsLatest,
+ *     isLatest: softwareSourceSoftwarePackageIsLatest === "true",
  * });
  * ```
  */
@@ -122,16 +122,16 @@ export interface GetSoftwareSourceSoftwarePackagesOutputArgs {
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesFilterArgs>[] | undefined>;
     /**
      * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */

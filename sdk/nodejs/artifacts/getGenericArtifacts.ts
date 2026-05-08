@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenericArtifacts = oci.Artifacts.getGenericArtifacts({
+ * const testGenericArtifacts = oci.artifacts.getGenericArtifacts({
  *     compartmentId: compartmentId,
  *     repositoryId: testRepository.id,
  *     artifactPath: genericArtifactArtifactPath,
@@ -136,7 +136,7 @@ export interface GetGenericArtifactsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenericArtifacts = oci.Artifacts.getGenericArtifacts({
+ * const testGenericArtifacts = oci.artifacts.getGenericArtifacts({
  *     compartmentId: compartmentId,
  *     repositoryId: testRepository.id,
  *     artifactPath: genericArtifactArtifactPath,
@@ -170,7 +170,7 @@ export interface GetGenericArtifactsOutputArgs {
     /**
      * Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
      */
-    artifactPath?: pulumi.Input<string>;
+    artifactPath?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -178,12 +178,12 @@ export interface GetGenericArtifactsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetGenericArtifactsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetGenericArtifactsFilterArgs>[] | undefined>;
     /**
      * A filter to return the resources for the specified OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the artifacts only for the specified repository OCID.
      */
@@ -191,13 +191,13 @@ export interface GetGenericArtifactsOutputArgs {
     /**
      * Filter results by a specified SHA256 digest for the artifact.
      */
-    sha256?: pulumi.Input<string>;
+    sha256?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

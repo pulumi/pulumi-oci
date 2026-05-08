@@ -91,7 +91,7 @@ def get_repository_object_content(file_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=test_repository["id"],
+    test_repository_object_content = oci.devops.get_repository_object_content(repository_id=test_repository["id"],
         sha=repository_object_content_sha,
         file_path=repository_object_content_file_path)
     ```
@@ -113,9 +113,9 @@ def get_repository_object_content(file_path: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         sha=pulumi.get(__ret__, 'sha'))
-def get_repository_object_content_output(file_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         sha: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_object_content_output(file_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         sha: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryObjectContentResult]:
     """
     This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
@@ -128,7 +128,7 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=test_repository["id"],
+    test_repository_object_content = oci.devops.get_repository_object_content(repository_id=test_repository["id"],
         sha=repository_object_content_sha,
         file_path=repository_object_content_file_path)
     ```

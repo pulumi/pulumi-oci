@@ -125,19 +125,19 @@ class FusionEnvironmentAdditionalEgressRuleArgs:
 
 
 class FusionEnvironmentAdminUserItemArgsDict(TypedDict):
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The email address for the administrator.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The administrator's first name.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The administrator's last name.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The username for the administrator.
 
@@ -149,10 +149,10 @@ class FusionEnvironmentAdminUserItemArgsDict(TypedDict):
 @pulumi.input_type
 class FusionEnvironmentAdminUserItemArgs:
     def __init__(__self__, *,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
@@ -174,43 +174,43 @@ class FusionEnvironmentAdminUserItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email address for the administrator.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The administrator's first name.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The administrator's last name.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username for the administrator.
 
@@ -221,7 +221,7 @@ class FusionEnvironmentAdminUserItemArgs:
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -311,15 +311,15 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
 
 
 class FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict(TypedDict):
-    concurrent_maintenance: NotRequired[pulumi.Input[_builtins.str]]
+    concurrent_maintenance: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
     """
-    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When True, monthly patching is enabled for the environment family.
     """
-    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[_builtins.str]]
+    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The quarterly maintenance month group schedule of the Fusion environment family.
     """
@@ -327,9 +327,9 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict(TypedDict):
 @pulumi.input_type
 class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
     def __init__(__self__, *,
-                 concurrent_maintenance: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_monthly_patching_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quarterly_upgrade_begin_times: Optional[pulumi.Input[_builtins.str]] = None):
+                 concurrent_maintenance: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_monthly_patching_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quarterly_upgrade_begin_times: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] concurrent_maintenance: (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
         :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: (Updatable) When True, monthly patching is enabled for the environment family.
@@ -344,60 +344,60 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="concurrentMaintenance")
-    def concurrent_maintenance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def concurrent_maintenance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
         """
         return pulumi.get(self, "concurrent_maintenance")
 
     @concurrent_maintenance.setter
-    def concurrent_maintenance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def concurrent_maintenance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "concurrent_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
-    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_monthly_patching_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When True, monthly patching is enabled for the environment family.
         """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
-    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_monthly_patching_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="quarterlyUpgradeBeginTimes")
-    def quarterly_upgrade_begin_times(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def quarterly_upgrade_begin_times(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The quarterly maintenance month group schedule of the Fusion environment family.
         """
         return pulumi.get(self, "quarterly_upgrade_begin_times")
 
     @quarterly_upgrade_begin_times.setter
-    def quarterly_upgrade_begin_times(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def quarterly_upgrade_begin_times(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "quarterly_upgrade_begin_times", value)
 
 
 class FusionEnvironmentKmsKeyInfoArgsDict(TypedDict):
-    active_key_id: NotRequired[pulumi.Input[_builtins.str]]
-    active_key_version: NotRequired[pulumi.Input[_builtins.str]]
-    current_key_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
-    scheduled_key_id: NotRequired[pulumi.Input[_builtins.str]]
-    scheduled_key_status: NotRequired[pulumi.Input[_builtins.str]]
-    scheduled_key_version: NotRequired[pulumi.Input[_builtins.str]]
-    scheduled_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
+    active_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    active_key_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    current_key_lifecycle_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    scheduled_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    scheduled_key_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    scheduled_key_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    scheduled_lifecycle_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class FusionEnvironmentKmsKeyInfoArgs:
     def __init__(__self__, *,
-                 active_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 active_key_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_key_lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_key_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_key_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 active_key_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_key_lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_key_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_key_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None):
         if active_key_id is not None:
             pulumi.set(__self__, "active_key_id", active_key_id)
         if active_key_version is not None:
@@ -415,78 +415,78 @@ class FusionEnvironmentKmsKeyInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeKeyId")
-    def active_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "active_key_id")
 
     @active_key_id.setter
-    def active_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="activeKeyVersion")
-    def active_key_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_key_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "active_key_version")
 
     @active_key_version.setter
-    def active_key_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_key_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_key_version", value)
 
     @_builtins.property
     @pulumi.getter(name="currentKeyLifecycleState")
-    def current_key_lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_key_lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "current_key_lifecycle_state")
 
     @current_key_lifecycle_state.setter
-    def current_key_lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_key_lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_key_lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledKeyId")
-    def scheduled_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "scheduled_key_id")
 
     @scheduled_key_id.setter
-    def scheduled_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledKeyStatus")
-    def scheduled_key_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_key_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "scheduled_key_status")
 
     @scheduled_key_status.setter
-    def scheduled_key_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_key_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_key_status", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledKeyVersion")
-    def scheduled_key_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_key_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "scheduled_key_version")
 
     @scheduled_key_version.setter
-    def scheduled_key_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_key_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_key_version", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledLifecycleState")
-    def scheduled_lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "scheduled_lifecycle_state")
 
     @scheduled_lifecycle_state.setter
-    def scheduled_lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_lifecycle_state", value)
 
 
 class FusionEnvironmentMaintenancePolicyArgsDict(TypedDict):
-    environment_maintenance_override: NotRequired[pulumi.Input[_builtins.str]]
+    environment_maintenance_override: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
     """
-    monthly_patching_override: NotRequired[pulumi.Input[_builtins.str]]
+    monthly_patching_override: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
     """
-    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict']]]]
+    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]]
     """
     Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
     """
@@ -494,9 +494,9 @@ class FusionEnvironmentMaintenancePolicyArgsDict(TypedDict):
 @pulumi.input_type
 class FusionEnvironmentMaintenancePolicyArgs:
     def __init__(__self__, *,
-                 environment_maintenance_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_patching_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 quarterly_upgrade_begin_times: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]] = None):
+                 environment_maintenance_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_patching_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 quarterly_upgrade_begin_times: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] environment_maintenance_override: (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
         :param pulumi.Input[_builtins.str] monthly_patching_override: (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
@@ -511,47 +511,47 @@ class FusionEnvironmentMaintenancePolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="environmentMaintenanceOverride")
-    def environment_maintenance_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment_maintenance_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
         """
         return pulumi.get(self, "environment_maintenance_override")
 
     @environment_maintenance_override.setter
-    def environment_maintenance_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment_maintenance_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment_maintenance_override", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyPatchingOverride")
-    def monthly_patching_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monthly_patching_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
         """
         return pulumi.get(self, "monthly_patching_override")
 
     @monthly_patching_override.setter
-    def monthly_patching_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monthly_patching_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monthly_patching_override", value)
 
     @_builtins.property
     @pulumi.getter(name="quarterlyUpgradeBeginTimes")
-    def quarterly_upgrade_begin_times(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]:
+    def quarterly_upgrade_begin_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]:
         """
         Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
         """
         return pulumi.get(self, "quarterly_upgrade_begin_times")
 
     @quarterly_upgrade_begin_times.setter
-    def quarterly_upgrade_begin_times(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]):
+    def quarterly_upgrade_begin_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]):
         pulumi.set(self, "quarterly_upgrade_begin_times", value)
 
 
 class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict(TypedDict):
-    begin_times_value: NotRequired[pulumi.Input[_builtins.str]]
+    begin_times_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The frequency and month when maintenance occurs for the Fusion environment.
     """
-    override_type: NotRequired[pulumi.Input[_builtins.str]]
+    override_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
     """
@@ -559,8 +559,8 @@ class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict(TypedD
 @pulumi.input_type
 class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
     def __init__(__self__, *,
-                 begin_times_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 override_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 begin_times_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 override_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] begin_times_value: The frequency and month when maintenance occurs for the Fusion environment.
         :param pulumi.Input[_builtins.str] override_type: Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
@@ -572,39 +572,39 @@ class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
 
     @_builtins.property
     @pulumi.getter(name="beginTimesValue")
-    def begin_times_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def begin_times_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The frequency and month when maintenance occurs for the Fusion environment.
         """
         return pulumi.get(self, "begin_times_value")
 
     @begin_times_value.setter
-    def begin_times_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def begin_times_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "begin_times_value", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideType")
-    def override_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def override_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
         """
         return pulumi.get(self, "override_type")
 
     @override_type.setter
-    def override_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def override_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "override_type", value)
 
 
 class FusionEnvironmentRefreshArgsDict(TypedDict):
-    source_fusion_environment_id: NotRequired[pulumi.Input[_builtins.str]]
+    source_fusion_environment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The source environment id for the last refresh
     """
-    time_finished: NotRequired[pulumi.Input[_builtins.str]]
+    time_finished: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time of when the last refresh finish
     """
-    time_of_restoration_point: NotRequired[pulumi.Input[_builtins.str]]
+    time_of_restoration_point: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The point of time of the latest DB backup for the last refresh
     """
@@ -612,9 +612,9 @@ class FusionEnvironmentRefreshArgsDict(TypedDict):
 @pulumi.input_type
 class FusionEnvironmentRefreshArgs:
     def __init__(__self__, *,
-                 source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_restoration_point: Optional[pulumi.Input[_builtins.str]] = None):
+                 source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_restoration_point: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] source_fusion_environment_id: The source environment id for the last refresh
         :param pulumi.Input[_builtins.str] time_finished: The time of when the last refresh finish
@@ -629,43 +629,43 @@ class FusionEnvironmentRefreshArgs:
 
     @_builtins.property
     @pulumi.getter(name="sourceFusionEnvironmentId")
-    def source_fusion_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_fusion_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source environment id for the last refresh
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
     @source_fusion_environment_id.setter
-    def source_fusion_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_fusion_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_fusion_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time of when the last refresh finish
         """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
-    def time_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfRestorationPoint")
-    def time_of_restoration_point(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_restoration_point(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The point of time of the latest DB backup for the last refresh
         """
         return pulumi.get(self, "time_of_restoration_point")
 
     @time_of_restoration_point.setter
-    def time_of_restoration_point(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_restoration_point(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_restoration_point", value)
 
 
 class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict(TypedDict):
-    refresh_issues: NotRequired[pulumi.Input[_builtins.str]]
+    refresh_issues: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detail reasons of refresh failure or validation failure that needs to be shown to customer.
     """
@@ -673,7 +673,7 @@ class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict(TypedDict)
 @pulumi.input_type
 class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
     def __init__(__self__, *,
-                 refresh_issues: Optional[pulumi.Input[_builtins.str]] = None):
+                 refresh_issues: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
         """
@@ -682,14 +682,14 @@ class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
 
     @_builtins.property
     @pulumi.getter(name="refreshIssues")
-    def refresh_issues(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_issues(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detail reasons of refresh failure or validation failure that needs to be shown to customer.
         """
         return pulumi.get(self, "refresh_issues")
 
     @refresh_issues.setter
-    def refresh_issues(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_issues(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_issues", value)
 
 
@@ -702,7 +702,7 @@ class FusionEnvironmentRuleArgsDict(TypedDict):
     """
     (Updatable)
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
 
@@ -716,7 +716,7 @@ class FusionEnvironmentRuleArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  conditions: pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) Rule type
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]] conditions: (Updatable)
@@ -757,7 +757,7 @@ class FusionEnvironmentRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
 
@@ -768,7 +768,7 @@ class FusionEnvironmentRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 

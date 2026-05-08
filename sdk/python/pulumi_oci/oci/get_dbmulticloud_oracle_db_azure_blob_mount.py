@@ -254,7 +254,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mount(oracle_db_azure_blob_mount_id: O
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dbmulticloud_oracle_db_azure_blob_mount_output(oracle_db_azure_blob_mount_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_azure_blob_mount_output(oracle_db_azure_blob_mount_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureBlobMountResult]:
     """
     This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.

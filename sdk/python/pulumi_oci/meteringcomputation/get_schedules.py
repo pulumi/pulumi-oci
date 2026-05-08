@@ -114,7 +114,7 @@ def get_schedules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=compartment_id,
+    test_schedules = oci.meteringcomputation.get_schedules(compartment_id=compartment_id,
         name=schedule_name)
     ```
 
@@ -136,9 +136,9 @@ def get_schedules(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         schedule_collections=pulumi.get(__ret__, 'schedule_collections'))
-def get_schedules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
-                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_schedules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
+                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulesResult]:
     """
     This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
@@ -151,7 +151,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=compartment_id,
+    test_schedules = oci.meteringcomputation.get_schedules(compartment_id=compartment_id,
         name=schedule_name)
     ```
 

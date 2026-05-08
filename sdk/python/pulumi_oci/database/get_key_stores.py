@@ -98,7 +98,7 @@ def get_key_stores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.Database.get_key_stores(compartment_id=compartment_id)
+    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_key_stores(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         key_stores=pulumi.get(__ret__, 'key_stores'))
-def get_key_stores_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict']]]]] = None,
+def get_key_stores_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyStoresResult]:
     """
     This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -129,7 +129,7 @@ def get_key_stores_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.Database.get_key_stores(compartment_id=compartment_id)
+    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id)
     ```
 
 

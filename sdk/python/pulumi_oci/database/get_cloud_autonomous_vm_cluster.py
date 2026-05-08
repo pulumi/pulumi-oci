@@ -853,7 +853,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
+    test_cloud_autonomous_vm_cluster = oci.database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
     ```
 
 
@@ -933,7 +933,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
         total_cpus=pulumi.get(__ret__, 'total_cpus'),
         unregister_pkcs_trigger=pulumi.get(__ret__, 'unregister_pkcs_trigger'))
-def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResult]:
     """
     This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -946,7 +946,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
+    test_cloud_autonomous_vm_cluster = oci.database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
     ```
 
 

@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDeleteProtected: replicaIsDeleteProtected,
+ *     isDeleteProtected: replicaIsDeleteProtected === "true",
  *     replicaOverrides: {
  *         configurationId: testMysqlConfiguration.id,
  *         mysqlVersion: replicaReplicaOverridesMysqlVersion,
@@ -269,103 +269,103 @@ export interface ReplicaState {
     /**
      * The name of the Availability Domain the read replica is located in.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment that contains the read replica.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Configuration to be used by the read replica.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DB System the read replica is associated with.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User provided description of the read replica.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Encrypt data details.
      */
-    encryptDatas?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaEncryptData>[]>;
+    encryptDatas?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaEncryptData>[] | undefined>;
     /**
      * The name of the Fault Domain the read replica is located in.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The IP address the read replica is configured to listen on.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */
-    isDeleteProtected?: pulumi.Input<boolean>;
+    isDeleteProtected?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the state of the read replica.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The MySQL version to be used by the read replica.
      */
-    mysqlVersion?: pulumi.Input<string>;
+    mysqlVersion?: pulumi.Input<string | undefined>;
     /**
      * Network Security Group OCIDs used for the VNIC attachment.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The port the read replica is configured to listen on.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    portX?: pulumi.Input<number>;
+    portX?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
      */
-    replicaOverrides?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverrides>;
+    replicaOverrides?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverrides | undefined>;
     /**
      * Secure connection configuration details.
      */
-    secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaSecureConnection>[]>;
+    secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaSecureConnection>[] | undefined>;
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * The state of the read replica.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Telemetry configuration details of a DB System or a read replica.
      */
-    telemetryConfigurations?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaTelemetryConfiguration>[]>;
+    telemetryConfigurations?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaTelemetryConfiguration>[] | undefined>;
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -379,25 +379,25 @@ export interface ReplicaArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User provided description of the read replica.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */
-    isDeleteProtected?: pulumi.Input<boolean>;
+    isDeleteProtected?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
      */
-    replicaOverrides?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverrides>;
+    replicaOverrides?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverrides | undefined>;
 }

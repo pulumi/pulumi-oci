@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageServers = oci.DatabaseManagement.getCloudExadataStorageServers({
+ * const testCloudExadataStorageServers = oci.databasemanagement.getCloudExadataStorageServers({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudExadataStorageServerDisplayName,
@@ -84,7 +84,7 @@ export interface GetCloudExadataStorageServersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageServers = oci.DatabaseManagement.getCloudExadataStorageServers({
+ * const testCloudExadataStorageServers = oci.databasemanagement.getCloudExadataStorageServers({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudExadataStorageServerDisplayName,
@@ -116,6 +116,6 @@ export interface GetCloudExadataStorageServersOutputArgs {
     /**
      * The optional single value query filter parameter on the entity display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudExadataStorageServersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudExadataStorageServersFilterArgs>[] | undefined>;
 }

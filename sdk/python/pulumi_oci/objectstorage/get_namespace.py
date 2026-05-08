@@ -89,7 +89,7 @@ def get_namespace(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=compartment_id)
+    test_namespace = oci.objectstorage.get_namespace(compartment_id=compartment_id)
     ```
 
 
@@ -104,7 +104,7 @@ def get_namespace(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_namespace_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceResult]:
     """
     This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
@@ -123,7 +123,7 @@ def get_namespace_output(compartment_id: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=compartment_id)
+    test_namespace = oci.objectstorage.get_namespace(compartment_id=compartment_id)
     ```
 
 

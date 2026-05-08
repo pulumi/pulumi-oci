@@ -138,7 +138,7 @@ def get_target_components(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_components = oci.FleetAppsManagement.get_target_components(compartment_id=compartment_id,
+    test_target_components = oci.fleetappsmanagement.get_target_components(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         name=target_component_name,
@@ -171,12 +171,12 @@ def get_target_components(compartment_id: Optional[_builtins.str] = None,
         target_component_collections=pulumi.get(__ret__, 'target_component_collections'),
         target_id=pulumi.get(__ret__, 'target_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
-def get_target_components_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict']]]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 target_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_target_components_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict']]]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 target_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetComponentsResult]:
     """
     This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -189,7 +189,7 @@ def get_target_components_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_target_components = oci.FleetAppsManagement.get_target_components(compartment_id=compartment_id,
+    test_target_components = oci.fleetappsmanagement.get_target_components(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         name=target_component_name,

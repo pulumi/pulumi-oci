@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsPreference = oci.LogAnalytics.getLogAnalyticsPreference({
+ * const testLogAnalyticsPreference = oci.loganalytics.getLogAnalyticsPreference({
  *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetLogAnalyticsPreferenceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsPreference = oci.LogAnalytics.getLogAnalyticsPreference({
+ * const testLogAnalyticsPreference = oci.loganalytics.getLogAnalyticsPreference({
  *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```

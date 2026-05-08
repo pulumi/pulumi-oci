@@ -22,11 +22,11 @@ __all__ = ['UserArgs', 'User']
 class UserArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a User resource.
 
@@ -67,55 +67,55 @@ class UserArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy containing the user.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email you assign to the user. Has to be unique across the tenancy.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
 
@@ -126,29 +126,29 @@ class UserArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _UserState:
     def __init__(__self__, *,
-                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['UserCapabilityArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_verified: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 inactive_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_successful_login_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 previous_successful_login_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input['UserCapabilityArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_verified: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
 
@@ -211,127 +211,127 @@ class _UserState:
 
     @_builtins.property
     @pulumi.getter
-    def capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserCapabilityArgs']]]]:
+    def capabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserCapabilityArgs']]]]:
         """
         Properties indicating how the user is allowed to authenticate.
         """
         return pulumi.get(self, "capabilities")
 
     @capabilities.setter
-    def capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserCapabilityArgs']]]]):
+    def capabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserCapabilityArgs']]]]):
         pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy containing the user.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUserName")
-    def db_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DB username of the DB credential. Has to be unique across the tenancy.
         """
         return pulumi.get(self, "db_user_name")
 
     @db_user_name.setter
-    def db_user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email you assign to the user. Has to be unique across the tenancy.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="emailVerified")
-    def email_verified(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def email_verified(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the email address has been validated.
         """
         return pulumi.get(self, "email_verified")
 
     @email_verified.setter
-    def email_verified(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def email_verified(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "email_verified", value)
 
     @_builtins.property
     @pulumi.getter(name="externalIdentifier")
-    def external_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier of the user in the identity provider
         """
         return pulumi.get(self, "external_identifier")
 
     @external_identifier.setter
-    def external_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviderId")
-    def identity_provider_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_provider_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the `IdentityProvider` this user belongs to.
         """
         return pulumi.get(self, "identity_provider_id")
 
     @identity_provider_id.setter
-    def identity_provider_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_provider_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_provider_id", value)
 
     @_builtins.property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inactive_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
         * bit 0: SUSPENDED (reserved for future use)
@@ -341,24 +341,24 @@ class _UserState:
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
-    def inactive_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inactive_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inactive_state", value)
 
     @_builtins.property
     @pulumi.getter(name="lastSuccessfulLoginTime")
-    def last_successful_login_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_successful_login_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         """
         return pulumi.get(self, "last_successful_login_time")
 
     @last_successful_login_time.setter
-    def last_successful_login_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_successful_login_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_successful_login_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
 
@@ -369,43 +369,43 @@ class _UserState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="previousSuccessfulLoginTime")
-    def previous_successful_login_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def previous_successful_login_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         """
         return pulumi.get(self, "previous_successful_login_time")
 
     @previous_successful_login_time.setter
-    def previous_successful_login_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def previous_successful_login_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "previous_successful_login_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -415,12 +415,12 @@ class User(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the User resource in Oracle Cloud Infrastructure Identity service.
@@ -588,12 +588,12 @@ class User(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -631,22 +631,22 @@ class User(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            email: Optional[pulumi.Input[_builtins.str]] = None,
-            email_verified: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-            inactive_state: Optional[pulumi.Input[_builtins.str]] = None,
-            last_successful_login_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            previous_successful_login_time: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'User':
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            email_verified: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+            inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+            last_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'User':
         """
         Get an existing User resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

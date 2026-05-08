@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplication = oci.DataIntegration.getWorkspaceApplication({
+ * const testWorkspaceApplication = oci.dataintegration.getWorkspaceApplication({
  *     applicationKey: workspaceApplicationApplicationKey,
  *     workspaceId: testWorkspace.id,
  * });
@@ -166,7 +166,7 @@ export interface GetWorkspaceApplicationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplication = oci.DataIntegration.getWorkspaceApplication({
+ * const testWorkspaceApplication = oci.dataintegration.getWorkspaceApplication({
  *     applicationKey: workspaceApplicationApplicationKey,
  *     workspaceId: testWorkspace.id,
  * });

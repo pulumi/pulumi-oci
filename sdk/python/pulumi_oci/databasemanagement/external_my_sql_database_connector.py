@@ -24,7 +24,7 @@ class ExternalMySqlDatabaseConnectorArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  connector_details: pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'],
                  is_test_connection_param: pulumi.Input[_builtins.bool],
-                 check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ExternalMySqlDatabaseConnector resource.
 
@@ -81,7 +81,7 @@ class ExternalMySqlDatabaseConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="checkConnectionStatusTrigger")
-    def check_connection_status_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def check_connection_status_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
 
@@ -92,35 +92,35 @@ class ExternalMySqlDatabaseConnectorArgs:
         return pulumi.get(self, "check_connection_status_trigger")
 
     @check_connection_status_trigger.setter
-    def check_connection_status_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def check_connection_status_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "check_connection_status_trigger", value)
 
 
 @pulumi.input_type
 class _ExternalMySqlDatabaseConnectorState:
     def __init__(__self__, *,
-                 associated_services: Optional[pulumi.Input[_builtins.str]] = None,
-                 check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_details: Optional[pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
-                 macs_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_database: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_services: pulumi.Input[Optional[_builtins.str]] = None,
+                 check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_details: pulumi.Input[Optional['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_test_connection_param: pulumi.Input[Optional[_builtins.bool]] = None,
+                 macs_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_database: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabaseConnector resources.
 
@@ -198,19 +198,19 @@ class _ExternalMySqlDatabaseConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="associatedServices")
-    def associated_services(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def associated_services(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Cloud Infrastructure Services associated with this connector.
         """
         return pulumi.get(self, "associated_services")
 
     @associated_services.setter
-    def associated_services(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def associated_services(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "associated_services", value)
 
     @_builtins.property
     @pulumi.getter(name="checkConnectionStatusTrigger")
-    def check_connection_status_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def check_connection_status_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
 
@@ -221,247 +221,247 @@ class _ExternalMySqlDatabaseConnectorState:
         return pulumi.get(self, "check_connection_status_trigger")
 
     @check_connection_status_trigger.setter
-    def check_connection_status_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def check_connection_status_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "check_connection_status_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID of compartment for the External MySQL Database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connection Status
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']]:
         """
         (Updatable) Create Details of external database connector.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connector Type.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential type used to connect to database.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseId")
-    def external_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of MySQL Database resource
         """
         return pulumi.get(self, "external_database_id")
 
     @external_database_id.setter
-    def external_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name for Connector.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isTestConnectionParam")
-    def is_test_connection_param(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_test_connection_param(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Parameter indicating whether database connection needs to be tested.
         """
         return pulumi.get(self, "is_test_connection_param")
 
     @is_test_connection_param.setter
-    def is_test_connection_param(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_test_connection_param(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_test_connection_param", value)
 
     @_builtins.property
     @pulumi.getter(name="macsAgentId")
-    def macs_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def macs_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Agent Id of the MACS agent.
         """
         return pulumi.get(self, "macs_agent_id")
 
     @macs_agent_id.setter
-    def macs_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def macs_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "macs_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External MySQL Database Connector Name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkProtocol")
-    def network_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network Protocol.
         """
         return pulumi.get(self, "network_protocol")
 
     @network_protocol.setter
-    def network_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Connector port.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabase")
-    def source_database(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_database(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of MySQL Database.
         """
         return pulumi.get(self, "source_database")
 
     @source_database.setter
-    def source_database(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_database(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_database", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabaseType")
-    def source_database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of MySQL Database.
         """
         return pulumi.get(self, "source_database_type")
 
     @source_database_type.setter
-    def source_database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the SSL secret, if TCPS with SSL is used to connect to database.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretName")
-    def ssl_secret_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the SSL secret, if TCPS with SSL is used to connect to database.
         """
         return pulumi.get(self, "ssl_secret_name")
 
     @ssl_secret_name.setter
-    def ssl_secret_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates lifecycle  state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusUpdated")
-    def time_connection_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when connection status was last updated.
         """
         return pulumi.get(self, "time_connection_status_updated")
 
     @time_connection_status_updated.setter
-    def time_connection_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connector creation time.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connector update time.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -471,10 +471,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_details: Optional[pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
-                 is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
+                 check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_details: pulumi.Input[Optional[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
+                 is_test_connection_param: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -499,10 +499,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                 "host_name": external_my_sql_database_connector_connector_details_host_name,
                 "macs_agent_id": test_agent["id"],
                 "network_protocol": external_my_sql_database_connector_connector_details_network_protocol,
-                "port": external_my_sql_database_connector_connector_details_port,
+                "port": int(external_my_sql_database_connector_connector_details_port),
                 "ssl_secret_id": test_secret["id"],
             },
-            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param)
+            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param == "true")
         ```
 
         ## Import
@@ -554,10 +554,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                 "host_name": external_my_sql_database_connector_connector_details_host_name,
                 "macs_agent_id": test_agent["id"],
                 "network_protocol": external_my_sql_database_connector_connector_details_network_protocol,
-                "port": external_my_sql_database_connector_connector_details_port,
+                "port": int(external_my_sql_database_connector_connector_details_port),
                 "ssl_secret_id": test_secret["id"],
             },
-            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param)
+            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param == "true")
         ```
 
         ## Import
@@ -584,10 +584,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_details: Optional[pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
-                 is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
+                 check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_details: pulumi.Input[Optional[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
+                 is_test_connection_param: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -635,28 +635,28 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_services: Optional[pulumi.Input[_builtins.str]] = None,
-            check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-            connector_details: Optional[pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
-            connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-            credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-            external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
-            macs_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            source_database: Optional[pulumi.Input[_builtins.str]] = None,
-            source_database_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_connection_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalMySqlDatabaseConnector':
+            associated_services: pulumi.Input[Optional[_builtins.str]] = None,
+            check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_details: pulumi.Input[Optional[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']]] = None,
+            connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_test_connection_param: pulumi.Input[Optional[_builtins.bool]] = None,
+            macs_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            source_database: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_connection_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalMySqlDatabaseConnector':
         """
         Get an existing ExternalMySqlDatabaseConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

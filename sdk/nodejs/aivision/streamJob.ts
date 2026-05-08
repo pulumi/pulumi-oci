@@ -24,15 +24,15 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     features: [{
  *         featureType: streamJobFeaturesFeatureType,
- *         maxResults: streamJobFeaturesMaxResults,
- *         shouldReturnLandmarks: streamJobFeaturesShouldReturnLandmarks,
+ *         maxResults: Number(streamJobFeaturesMaxResults),
+ *         shouldReturnLandmarks: streamJobFeaturesShouldReturnLandmarks === "true",
  *         trackingTypes: [{
  *             biometricStoreCompartmentId: testCompartment.id,
  *             biometricStoreId: testBiometricStore.id,
  *             detectionModelId: testModel.id,
- *             maxResults: streamJobFeaturesTrackingTypesMaxResults,
+ *             maxResults: Number(streamJobFeaturesTrackingTypesMaxResults),
  *             objects: streamJobFeaturesTrackingTypesObjects,
- *             shouldReturnLandmarks: streamJobFeaturesTrackingTypesShouldReturnLandmarks,
+ *             shouldReturnLandmarks: streamJobFeaturesTrackingTypesShouldReturnLandmarks === "true",
  *             trackingModelId: testModel.id,
  *         }],
  *     }],
@@ -209,31 +209,31 @@ export interface StreamJobState {
     /**
      * participant id of agent where results need to be sent
      */
-    agentParticipantId?: pulumi.Input<string>;
+    agentParticipantId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream job display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) a list of stream analysis features.
      */
-    features?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamJobFeature>[]>;
+    features?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamJobFeature>[] | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional details about current state of streamJob
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -241,27 +241,27 @@ export interface StreamJobState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details about a where results will be Sent
      */
-    streamOutputLocation?: pulumi.Input<inputs.AiVision.StreamJobStreamOutputLocation>;
+    streamOutputLocation?: pulumi.Input<inputs.AiVision.StreamJobStreamOutputLocation | undefined>;
     /**
      * (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of streamSource.
      */
-    streamSourceId?: pulumi.Input<string>;
+    streamSourceId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * When the streamJob was created, as an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * When the stream job was updated, as an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -275,11 +275,11 @@ export interface StreamJobArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Stream job display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) a list of stream analysis features.
      */
@@ -287,7 +287,7 @@ export interface StreamJobArgs {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -295,7 +295,7 @@ export interface StreamJobArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details about a where results will be Sent
      */

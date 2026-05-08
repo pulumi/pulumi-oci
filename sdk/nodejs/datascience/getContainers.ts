@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainers = oci.DataScience.getContainers({
+ * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest,
+ *     isLatest: containerIsLatest === "true",
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,
@@ -122,10 +122,10 @@ export interface GetContainersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainers = oci.DataScience.getContainers({
+ * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest,
+ *     isLatest: containerIsLatest === "true",
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,
@@ -155,30 +155,30 @@ export interface GetContainersOutputArgs {
     /**
      * <b>Filter</b> results by the container name.
      */
-    containerName?: pulumi.Input<string>;
+    containerName?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetContainersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetContainersFilterArgs>[] | undefined>;
     /**
      * if true, this returns latest version of container.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the container version tag.
      */
-    tagQueryParam?: pulumi.Input<string>;
+    tagQueryParam?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the target workload.
      */
-    targetWorkload?: pulumi.Input<string>;
+    targetWorkload?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the usage.
      */
-    usageQueryParam?: pulumi.Input<string>;
+    usageQueryParam?: pulumi.Input<string | undefined>;
 }

@@ -100,7 +100,7 @@ def get_data_source_event(data_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_event = oci.CloudGuard.get_data_source_event(data_source_id=test_data_source["id"],
+    test_data_source_event = oci.cloudguard.get_data_source_event(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 
@@ -119,8 +119,8 @@ def get_data_source_event(data_source_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         region=pulumi.get(__ret__, 'region'))
-def get_data_source_event_output(data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_data_source_event_output(data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourceEventResult]:
     """
     This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -133,7 +133,7 @@ def get_data_source_event_output(data_source_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_event = oci.CloudGuard.get_data_source_event(data_source_id=test_data_source["id"],
+    test_data_source_event = oci.cloudguard.get_data_source_event(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 

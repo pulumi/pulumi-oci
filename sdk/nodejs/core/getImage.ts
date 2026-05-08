@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImage = oci.Core.getImage({
+ * const testImage = oci.core.getImage({
  *     imageId: testImageOciCoreImage.id,
  * });
  * ```
@@ -130,7 +130,7 @@ export interface GetImageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImage = oci.Core.getImage({
+ * const testImage = oci.core.getImage({
  *     imageId: testImageOciCoreImage.id,
  * });
  * ```

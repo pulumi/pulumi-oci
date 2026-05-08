@@ -173,7 +173,7 @@ def get_public_ips(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+    test_public_ips = oci.core.get_public_ips(compartment_id=compartment_id,
         scope=public_ip_scope,
         availability_domain=public_ip_availability_domain,
         lifetime=public_ip_lifetime,
@@ -208,12 +208,12 @@ def get_public_ips(availability_domain: Optional[_builtins.str] = None,
         public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
         public_ips=pulumi.get(__ret__, 'public_ips'),
         scope=pulumi.get(__ret__, 'scope'))
-def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict']]]]] = None,
-                          lifetime: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          public_ip_pool_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          scope: Optional[pulumi.Input[_builtins.str]] = None,
+def get_public_ips_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict']]]]] = None,
+                          lifetime: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          public_ip_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          scope: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpsResult]:
     """
     This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
@@ -245,7 +245,7 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+    test_public_ips = oci.core.get_public_ips(compartment_id=compartment_id,
         scope=public_ip_scope,
         availability_domain=public_ip_availability_domain,
         lifetime=public_ip_lifetime,

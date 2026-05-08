@@ -767,8 +767,8 @@ def get_distributed_database_distributed_autonomous_database(distributed_autonom
         validate_ca_bundle_trigger=pulumi.get(__ret__, 'validate_ca_bundle_trigger'),
         validate_network_details=pulumi.get(__ret__, 'validate_network_details'),
         validate_network_trigger=pulumi.get(__ret__, 'validate_network_trigger'))
-def get_distributed_database_distributed_autonomous_database_output(distributed_autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                    metadata_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_distributed_database_distributed_autonomous_database_output(distributed_autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                    metadata_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedAutonomousDatabaseResult]:
     """
     This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.

@@ -22,15 +22,15 @@ __all__ = ['MonitoredResourceTypeArgs', 'MonitoredResourceType']
 class MonitoredResourceTypeArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']] = None,
-                 metric_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadata: pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']] = None,
+                 metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourceType resource.
 
@@ -83,103 +83,103 @@ class MonitoredResourceTypeArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A friendly description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Monitored resource type display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']]:
         """
         (Updatable) The metadata details for resource type.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="metricNamespace")
-    def metric_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metric namespace for resource type.
         """
         return pulumi.get(self, "metric_namespace")
 
     @metric_namespace.setter
-    def metric_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCategory")
-    def resource_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource Category to indicate the kind of resource type.
         """
         return pulumi.get(self, "resource_category")
 
     @resource_category.setter
-    def resource_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_category", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
 
@@ -190,32 +190,32 @@ class MonitoredResourceTypeArgs:
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
 
 @pulumi.input_type
 class _MonitoredResourceTypeState:
     def __init__(__self__, *,
-                 additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 availability_metrics_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 handler_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]] = None,
-                 is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']] = None,
-                 metric_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_namespace_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 availability_metrics_configs: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 handler_configs: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]] = None,
+                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']] = None,
+                 metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceType resources.
 
@@ -284,163 +284,163 @@ class _MonitoredResourceTypeState:
 
     @_builtins.property
     @pulumi.getter(name="additionalNamespaceMap")
-    def additional_namespace_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_namespace_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
         """
         return pulumi.get(self, "additional_namespace_map")
 
     @additional_namespace_map.setter
-    def additional_namespace_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_namespace_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_namespace_map", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityMetricsConfigs")
-    def availability_metrics_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]:
+    def availability_metrics_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]:
         """
         Availability metrics details.
         """
         return pulumi.get(self, "availability_metrics_configs")
 
     @availability_metrics_configs.setter
-    def availability_metrics_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]):
+    def availability_metrics_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]):
         pulumi.set(self, "availability_metrics_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A friendly description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Monitored resource type display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="handlerConfigs")
-    def handler_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]:
+    def handler_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]:
         """
         Specific resource mapping configurations for Agent Extension Handlers.
         """
         return pulumi.get(self, "handler_configs")
 
     @handler_configs.setter
-    def handler_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]):
+    def handler_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]):
         pulumi.set(self, "handler_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
-    def is_system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If boolean flag is true, then the resource type cannot be modified or deleted.
         """
         return pulumi.get(self, "is_system_defined")
 
     @is_system_defined.setter
-    def is_system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_system_defined", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']]:
         """
         (Updatable) The metadata details for resource type.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['MonitoredResourceTypeMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="metricNamespace")
-    def metric_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metric namespace for resource type.
         """
         return pulumi.get(self, "metric_namespace")
 
     @metric_namespace.setter
-    def metric_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCategory")
-    def resource_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource Category to indicate the kind of resource type.
         """
         return pulumi.get(self, "resource_category")
 
     @resource_category.setter
-    def resource_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_category", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
 
@@ -451,67 +451,67 @@ class _MonitoredResourceTypeState:
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lifecycle state of the monitored resource type.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -521,16 +521,16 @@ class MonitoredResourceType(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
-                 metric_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+                 metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -672,16 +672,16 @@ class MonitoredResourceType(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
-                 metric_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+                 metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -722,25 +722,25 @@ class MonitoredResourceType(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            availability_metrics_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            handler_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]]] = None,
-            is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
-            metric_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredResourceType':
+            additional_namespace_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            availability_metrics_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            handler_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+            metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourceType':
         """
         Get an existing MonitoredResourceType resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

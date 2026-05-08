@@ -178,43 +178,43 @@ export interface ApplicationVipState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      */
-    cloudVmClusterId?: pulumi.Input<string>;
+    cloudVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      */
-    dbNodeId?: pulumi.Input<string>;
+    dbNodeId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname of the application virtual IP (VIP) address.
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * The application virtual IP (VIP) IPv4 address.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The application virtual IP (VIP) IPv6 address.
      */
-    ipv6address?: pulumi.Input<string>;
+    ipv6address?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the application virtual IP (VIP) address.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      *
@@ -222,11 +222,11 @@ export interface ApplicationVipState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the create operation for the application virtual IP (VIP) address completed.
      */
-    timeAssigned?: pulumi.Input<string>;
+    timeAssigned?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -240,7 +240,7 @@ export interface ApplicationVipArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      */
-    dbNodeId?: pulumi.Input<string>;
+    dbNodeId?: pulumi.Input<string | undefined>;
     /**
      * The hostname of the application virtual IP (VIP) address.
      */
@@ -248,11 +248,11 @@ export interface ApplicationVipArgs {
     /**
      * The application virtual IP (VIP) IPv4 address.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The application virtual IP (VIP) IPv6 address.
      */
-    ipv6address?: pulumi.Input<string>;
+    ipv6address?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      *

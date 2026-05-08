@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlocks = oci.CapacityManagement.getOccHandoverResourceBlocks({
+ * const testOccHandoverResourceBlocks = oci.capacitymanagement.getOccHandoverResourceBlocks({
  *     compartmentId: compartmentId,
  *     handoverDateGreaterThanOrEqualTo: occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
  *     handoverDateLessThanOrEqualTo: occHandoverResourceBlockHandoverDateLessThanOrEqualTo,
@@ -112,7 +112,7 @@ export interface GetOccHandoverResourceBlocksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlocks = oci.CapacityManagement.getOccHandoverResourceBlocks({
+ * const testOccHandoverResourceBlocks = oci.capacitymanagement.getOccHandoverResourceBlocks({
  *     compartmentId: compartmentId,
  *     handoverDateGreaterThanOrEqualTo: occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
  *     handoverDateLessThanOrEqualTo: occHandoverResourceBlockHandoverDateLessThanOrEqualTo,
@@ -143,26 +143,26 @@ export interface GetOccHandoverResourceBlocksOutputArgs {
     /**
      * The OCID of the compartment or tenancy in which resources are to be listed.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccHandoverResourceBlocksFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccHandoverResourceBlocksFilterArgs>[] | undefined>;
     /**
      * This filter helps in fetching all handed over resources for which the recordDate is greater than or equal to the startDate.
      */
-    handoverDateGreaterThanOrEqualTo?: pulumi.Input<string>;
+    handoverDateGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * This filter helps in fetching all handed over resources for which the recordDate is less than or equal to the endDate.
      */
-    handoverDateLessThanOrEqualTo?: pulumi.Input<string>;
+    handoverDateLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the list of resources that match the name provided in this filter.
      */
-    handoverResourceName?: pulumi.Input<string>;
+    handoverResourceName?: pulumi.Input<string | undefined>;
     /**
      * The namespace by which we would filter the list.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
      */
-    occHandoverResourceBlockId?: pulumi.Input<string>;
+    occHandoverResourceBlockId?: pulumi.Input<string | undefined>;
 }

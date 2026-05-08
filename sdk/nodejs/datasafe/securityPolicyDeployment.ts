@@ -211,31 +211,31 @@ export interface SecurityPolicyDeploymentState {
     /**
      * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
      */
-    deployTrigger?: pulumi.Input<number>;
+    deployTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the security policy deployment in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -243,39 +243,39 @@ export interface SecurityPolicyDeploymentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the security policy corresponding to the security policy deployment.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the security policy deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the target where the security policy is deployed.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the security policy deployment is for a target database or a target database group.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the security policy was deployed, in the format defined by RFC3339.
      */
-    timeDeployed?: pulumi.Input<string>;
+    timeDeployed?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -289,23 +289,23 @@ export interface SecurityPolicyDeploymentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
      */
-    deployTrigger?: pulumi.Input<number>;
+    deployTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -313,7 +313,7 @@ export interface SecurityPolicyDeploymentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the security policy corresponding to the security policy deployment.
      */

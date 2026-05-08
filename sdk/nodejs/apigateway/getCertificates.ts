@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.ApiGateway.getCertificates({
+ * const testCertificates = oci.apigateway.getCertificates({
  *     compartmentId: compartmentId,
  *     displayName: certificateDisplayName,
  *     state: certificateState,
@@ -90,7 +90,7 @@ export interface GetCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.ApiGateway.getCertificates({
+ * const testCertificates = oci.apigateway.getCertificates({
  *     compartmentId: compartmentId,
  *     displayName: certificateDisplayName,
  *     state: certificateState,
@@ -118,10 +118,10 @@ export interface GetCertificatesOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetCertificatesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetCertificatesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipientInvitations = oci.Tenantmanagercontrolplane.getRecipientInvitations({
+ * const testRecipientInvitations = oci.tenantmanagercontrolplane.getRecipientInvitations({
  *     compartmentId: compartmentId,
  *     senderTenancyId: testTenancy.id,
  *     state: recipientInvitationState,
@@ -100,7 +100,7 @@ export interface GetRecipientInvitationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipientInvitations = oci.Tenantmanagercontrolplane.getRecipientInvitations({
+ * const testRecipientInvitations = oci.tenantmanagercontrolplane.getRecipientInvitations({
  *     compartmentId: compartmentId,
  *     senderTenancyId: testTenancy.id,
  *     state: recipientInvitationState,
@@ -127,17 +127,17 @@ export interface GetRecipientInvitationsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetRecipientInvitationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetRecipientInvitationsFilterArgs>[] | undefined>;
     /**
      * The tenancy that sent the invitation.
      */
-    senderTenancyId?: pulumi.Input<string>;
+    senderTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The status of the recipient invitation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

@@ -333,7 +333,7 @@ def get_self_subscription(subscription_id: Optional[_builtins.str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_self_subscription_output(subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_self_subscription_output(subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfSubscriptionResult]:
     """
     This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.

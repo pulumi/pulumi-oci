@@ -95,7 +95,7 @@ def get_onboarding_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
+    test_onboarding_policies = oci.fleetappsmanagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_onboarding_policies(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         onboarding_policy_collections=pulumi.get(__ret__, 'onboarding_policy_collections'))
-def get_onboarding_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]]]] = None,
+def get_onboarding_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingPoliciesResult]:
     """
     This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -126,7 +126,7 @@ def get_onboarding_policies_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
+    test_onboarding_policies = oci.fleetappsmanagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
 
 

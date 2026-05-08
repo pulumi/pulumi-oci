@@ -121,7 +121,7 @@ def get_instance_pool_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=compartment_id,
+    test_instance_pool_instances = oci.core.get_instance_pool_instances(compartment_id=compartment_id,
         instance_pool_id=test_instance_pool["id"],
         display_name=instance_pool_instance_display_name)
     ```
@@ -146,10 +146,10 @@ def get_instance_pool_instances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
         instances=pulumi.get(__ret__, 'instances'))
-def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstancePoolInstancesFilterArgs', 'GetInstancePoolInstancesFilterArgsDict']]]]] = None,
-                                       instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_pool_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstancePoolInstancesFilterArgs', 'GetInstancePoolInstancesFilterArgsDict']]]]] = None,
+                                       instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancePoolInstancesResult]:
     """
     This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
@@ -162,7 +162,7 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=compartment_id,
+    test_instance_pool_instances = oci.core.get_instance_pool_instances(compartment_id=compartment_id,
         instance_pool_id=test_instance_pool["id"],
         display_name=instance_pool_instance_display_name)
     ```

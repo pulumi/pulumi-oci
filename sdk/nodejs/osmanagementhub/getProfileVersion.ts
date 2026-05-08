@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileVersion = oci.OsManagementHub.getProfileVersion({
+ * const testProfileVersion = oci.osmanagementhub.getProfileVersion({
  *     profileId: testProfile.id,
  *     profileVersion: profileVersionProfileVersion,
  * });
@@ -142,7 +142,7 @@ export interface GetProfileVersionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileVersion = oci.OsManagementHub.getProfileVersion({
+ * const testProfileVersion = oci.osmanagementhub.getProfileVersion({
  *     profileId: testProfile.id,
  *     profileVersion: profileVersionProfileVersion,
  * });

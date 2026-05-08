@@ -252,7 +252,7 @@ def get_recommendation(recommendation_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
+    test_recommendation = oci.optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_recommendation(recommendation_id: Optional[_builtins.str] = None,
         time_status_begin=pulumi.get(__ret__, 'time_status_begin'),
         time_status_end=pulumi.get(__ret__, 'time_status_end'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_recommendation_output(recommendation_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_recommendation_output(recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationResult]:
     """
     This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -294,7 +294,7 @@ def get_recommendation_output(recommendation_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
+    test_recommendation = oci.optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
     ```
 
 

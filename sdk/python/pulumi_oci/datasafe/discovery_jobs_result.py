@@ -49,28 +49,28 @@ class DiscoveryJobsResultArgs:
 @pulumi.input_type
 class _DiscoveryJobsResultState:
     def __init__(__self__, *,
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_data_value_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_result_applied: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 planned_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_columnkey: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_result_applied: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 planned_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_columnkey: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryJobsResult resources.
 
@@ -151,263 +151,263 @@ class _DiscoveryJobsResultState:
 
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def app_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         """
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @app_defined_child_column_keys.setter
-    def app_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def app_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "app_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter(name="confidenceLevel")
-    def confidence_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confidence_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "confidence_level")
 
     @confidence_level.setter
-    def confidence_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confidence_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confidence_level", value)
 
     @_builtins.property
     @pulumi.getter(name="confidenceLevelDetails")
-    def confidence_level_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]:
+    def confidence_level_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]:
         return pulumi.get(self, "confidence_level_details")
 
     @confidence_level_details.setter
-    def confidence_level_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]):
+    def confidence_level_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]):
         pulumi.set(self, "confidence_level_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data type of the sensitive column.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @db_defined_child_column_keys.setter
-    def db_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryJobId")
     @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-    def discovery_job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the discovery job.
         """
         return pulumi.get(self, "discovery_job_id")
 
     @discovery_job_id.setter
-    def discovery_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_job_id", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryType")
     @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-    def discovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
-    def discovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedDataValueCount")
-    def estimated_data_value_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_data_value_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The estimated number of data values the column has in the associated database.
         """
         return pulumi.get(self, "estimated_data_value_count")
 
     @estimated_data_value_count.setter
-    def estimated_data_value_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_data_value_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_data_value_count", value)
 
     @_builtins.property
     @pulumi.getter(name="isResultApplied")
-    def is_result_applied(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_result_applied(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
         """
         return pulumi.get(self, "is_result_applied")
 
     @is_result_applied.setter
-    def is_result_applied(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_result_applied(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_result_applied", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key that identifies the discovery result.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedAttributes")
-    def modified_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]]:
+    def modified_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]]:
         """
         The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
         """
         return pulumi.get(self, "modified_attributes")
 
     @modified_attributes.setter
-    def modified_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]]):
+    def modified_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]]):
         pulumi.set(self, "modified_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database object that contains the sensitive column.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the database object that contains the sensitive column.
         """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
-    def object_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type", value)
 
     @_builtins.property
     @pulumi.getter(name="parentColumnKeys")
-    def parent_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def parent_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
         """
         return pulumi.get(self, "parent_column_keys")
 
     @parent_column_keys.setter
-    def parent_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def parent_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parent_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="plannedAction")
-    def planned_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def planned_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
         """
         return pulumi.get(self, "planned_action")
 
     @planned_action.setter
-    def planned_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def planned_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "planned_action", value)
 
     @_builtins.property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def relation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         """
         return pulumi.get(self, "relation_type")
 
     @relation_type.setter
-    def relation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def relation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "relation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sampleDataValues")
-    def sample_data_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sample_data_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
         """
         return pulumi.get(self, "sample_data_values")
 
     @sample_data_values.setter
-    def sample_data_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sample_data_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sample_data_values", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database schema that contains the sensitive column.
         """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
-    def schema_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveColumnkey")
-    def sensitive_columnkey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_columnkey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key that identifies the sensitive column represented by the discovery result.
         """
         return pulumi.get(self, "sensitive_columnkey")
 
     @sensitive_columnkey.setter
-    def sensitive_columnkey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_columnkey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_columnkey", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the sensitive type associated with the sensitive column.
         """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
 
@@ -417,7 +417,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         **Deprecated. This resource does not support create and update operations.**
@@ -490,7 +490,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -534,28 +534,28 @@ class DiscoveryJobsResult(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            column_name: Optional[pulumi.Input[_builtins.str]] = None,
-            confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
-            confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict']]]]] = None,
-            data_type: Optional[pulumi.Input[_builtins.str]] = None,
-            db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_data_value_count: Optional[pulumi.Input[_builtins.str]] = None,
-            is_result_applied: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]]] = None,
-            object: Optional[pulumi.Input[_builtins.str]] = None,
-            object_type: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            planned_action: Optional[pulumi.Input[_builtins.str]] = None,
-            relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_columnkey: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiscoveryJobsResult':
+            app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+            is_result_applied: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            planned_action: pulumi.Input[Optional[_builtins.str]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_columnkey: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiscoveryJobsResult':
         """
         Get an existing DiscoveryJobsResult resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

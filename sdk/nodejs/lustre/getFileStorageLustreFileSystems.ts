@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystems = oci.Lustre.getFileStorageLustreFileSystems({
+ * const testLustreFileSystems = oci.lustre.getFileStorageLustreFileSystems({
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: lustreFileSystemDisplayName,
@@ -107,7 +107,7 @@ export interface GetFileStorageLustreFileSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystems = oci.Lustre.getFileStorageLustreFileSystems({
+ * const testLustreFileSystems = oci.lustre.getFileStorageLustreFileSystems({
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: lustreFileSystemDisplayName,
@@ -136,22 +136,22 @@ export interface GetFileStorageLustreFileSystemsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageLustreFileSystemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageLustreFileSystemsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

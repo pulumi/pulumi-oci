@@ -133,7 +133,7 @@ def get_user_group_memberships(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=tenancy_ocid,
+    test_user_group_memberships = oci.identity.get_user_group_memberships(compartment_id=tenancy_ocid,
         group_id=test_group["id"],
         user_id=test_user["id"])
     ```
@@ -158,10 +158,10 @@ def get_user_group_memberships(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         memberships=pulumi.get(__ret__, 'memberships'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict']]]]] = None,
-                                      group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      user_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_user_group_memberships_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict']]]]] = None,
+                                      group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupMembershipsResult]:
     """
     This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
@@ -183,7 +183,7 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=tenancy_ocid,
+    test_user_group_memberships = oci.identity.get_user_group_memberships(compartment_id=tenancy_ocid,
         group_id=test_group["id"],
         user_id=test_user["id"])
     ```

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
+ * const testJavaDownloadRecords = oci.jms.getJavaDownloadsJavaDownloadRecords({
  *     compartmentId: compartmentId,
  *     architecture: javaDownloadRecordArchitecture,
  *     familyVersion: javaDownloadRecordFamilyVersion,
@@ -135,7 +135,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
+ * const testJavaDownloadRecords = oci.jms.getJavaDownloadsJavaDownloadRecords({
  *     compartmentId: compartmentId,
  *     architecture: javaDownloadRecordArchitecture,
  *     familyVersion: javaDownloadRecordFamilyVersion,
@@ -169,7 +169,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsOutputArgs {
     /**
      * Target Operating System architecture of the artifact.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
      */
@@ -177,26 +177,26 @@ export interface GetJavaDownloadsJavaDownloadRecordsOutputArgs {
     /**
      * Unique Java family version identifier.
      */
-    familyVersion?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadRecordsFilterArgs>[]>;
+    familyVersion?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadRecordsFilterArgs>[] | undefined>;
     /**
      * Target Operating System family of the artifact.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * Packaging type detail of the artifact.
      */
-    packageTypeDetail?: pulumi.Input<string>;
+    packageTypeDetail?: pulumi.Input<string | undefined>;
     /**
      * Unique Java release version identifier.
      */
-    releaseVersion?: pulumi.Input<string>;
+    releaseVersion?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period for which reports are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period for which reports are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

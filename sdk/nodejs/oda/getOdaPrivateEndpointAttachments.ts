@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
+ * const testOdaPrivateEndpointAttachments = oci.oda.getOdaPrivateEndpointAttachments({
  *     compartmentId: compartmentId,
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointAttachmentState,
@@ -98,7 +98,7 @@ export interface GetOdaPrivateEndpointAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
+ * const testOdaPrivateEndpointAttachments = oci.oda.getOdaPrivateEndpointAttachments({
  *     compartmentId: compartmentId,
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointAttachmentState,
@@ -123,7 +123,7 @@ export interface GetOdaPrivateEndpointAttachmentsOutputArgs {
      * List the ODA Private Endpoint Attachments that belong to this compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointAttachmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointAttachmentsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
      */
@@ -131,5 +131,5 @@ export interface GetOdaPrivateEndpointAttachmentsOutputArgs {
     /**
      * List only the ODA Private Endpoint Attachments that are in this lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

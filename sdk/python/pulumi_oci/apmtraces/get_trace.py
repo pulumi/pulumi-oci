@@ -343,7 +343,7 @@ def get_trace(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+    test_trace = oci.apmtraces.get_trace(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_trace_key,
         time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
         time_trace_started_less_than=trace_time_trace_started_less_than,
@@ -392,11 +392,11 @@ def get_trace(apm_domain_id: Optional[_builtins.str] = None,
         trace_key=pulumi.get(__ret__, 'trace_key'),
         trace_namespace=pulumi.get(__ret__, 'trace_namespace'),
         trace_status=pulumi.get(__ret__, 'trace_status'))
-def get_trace_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     time_trace_started_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     time_trace_started_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     trace_key: Optional[pulumi.Input[_builtins.str]] = None,
-                     trace_namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_trace_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     time_trace_started_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     time_trace_started_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     trace_key: pulumi.Input[Optional[_builtins.str]] = None,
+                     trace_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceResult]:
     """
     This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -409,7 +409,7 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+    test_trace = oci.apmtraces.get_trace(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_trace_key,
         time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
         time_trace_started_less_than=trace_time_trace_started_less_than,

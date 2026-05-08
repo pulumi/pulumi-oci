@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplications = oci.DataScience.getMlApplications({
+ * const testMlApplications = oci.datascience.getMlApplications({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree === "true",
  *     mlApplicationId: testMlApplication.id,
  *     name: mlApplicationName,
  *     state: mlApplicationState,
@@ -104,9 +104,9 @@ export interface GetMlApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplications = oci.DataScience.getMlApplications({
+ * const testMlApplications = oci.datascience.getMlApplications({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree === "true",
  *     mlApplicationId: testMlApplication.id,
  *     name: mlApplicationName,
  *     state: mlApplicationState,
@@ -136,18 +136,18 @@ export interface GetMlApplicationsOutputArgs {
     /**
      * If it is true search must include all results from descendant compartments. Value true is allowed only if compartmentId refers to root compartment.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationsFilterArgs>[] | undefined>;
     /**
      * unique MlApplication identifier
      */
-    mlApplicationId?: pulumi.Input<string>;
+    mlApplicationId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with lifecycleState matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

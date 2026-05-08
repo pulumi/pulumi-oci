@@ -114,7 +114,7 @@ def get_subscription_product(producttype: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=test_subscription["id"],
+    test_subscription_product = oci.usageproxy.get_subscription_product(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)
@@ -141,10 +141,10 @@ def get_subscription_product(producttype: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         usage_period_key=pulumi.get(__ret__, 'usage_period_key'))
-def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    usage_period_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_product_output(producttype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    usage_period_key: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionProductResult]:
     """
     This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -157,7 +157,7 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=test_subscription["id"],
+    test_subscription_product = oci.usageproxy.get_subscription_product(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)

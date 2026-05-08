@@ -26,10 +26,10 @@ class ScheduleArgs:
                  display_name: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
                  trigger: pulumi.Input['ScheduleTriggerArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_details: Optional[pulumi.Input['ScheduleLogDetailsArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_details: pulumi.Input[Optional['ScheduleLogDetailsArgs']] = None):
         """
         The set of arguments for constructing a Schedule resource.
 
@@ -119,74 +119,74 @@ class ScheduleArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the schedule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Optional[pulumi.Input['ScheduleLogDetailsArgs']]:
+    def log_details(self) -> pulumi.Input[Optional['ScheduleLogDetailsArgs']]:
         """
         (Updatable) Custom logging details for schedule execution.
         """
         return pulumi.get(self, "log_details")
 
     @log_details.setter
-    def log_details(self, value: Optional[pulumi.Input['ScheduleLogDetailsArgs']]):
+    def log_details(self, value: pulumi.Input[Optional['ScheduleLogDetailsArgs']]):
         pulumi.set(self, "log_details", value)
 
 
 @pulumi.input_type
 class _ScheduleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input['ScheduleActionArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 last_schedule_run_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_details: Optional[pulumi.Input['ScheduleLogDetailsArgs']] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_schedule_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_scheduled_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input['ScheduleTriggerArgs']] = None):
+                 action: pulumi.Input[Optional['ScheduleActionArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_schedule_run_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_details: pulumi.Input[Optional['ScheduleLogDetailsArgs']] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_schedule_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_scheduled_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional['ScheduleTriggerArgs']] = None):
         """
         Input properties used for looking up and filtering Schedule resources.
 
@@ -248,218 +248,218 @@ class _ScheduleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input['ScheduleActionArgs']]:
+    def action(self) -> pulumi.Input[Optional['ScheduleActionArgs']]:
         """
         (Updatable) The schedule action
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input['ScheduleActionArgs']]):
+    def action(self, value: pulumi.Input[Optional['ScheduleActionArgs']]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the schedule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lastScheduleRunDetails")
-    def last_schedule_run_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_schedule_run_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
         """
         return pulumi.get(self, "last_schedule_run_details")
 
     @last_schedule_run_details.setter
-    def last_schedule_run_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_schedule_run_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_schedule_run_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Optional[pulumi.Input['ScheduleLogDetailsArgs']]:
+    def log_details(self) -> pulumi.Input[Optional['ScheduleLogDetailsArgs']]:
         """
         (Updatable) Custom logging details for schedule execution.
         """
         return pulumi.get(self, "log_details")
 
     @log_details.setter
-    def log_details(self, value: Optional[pulumi.Input['ScheduleLogDetailsArgs']]):
+    def log_details(self, value: pulumi.Input[Optional['ScheduleLogDetailsArgs']]):
         pulumi.set(self, "log_details", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the schedule.           Example: `ACTIVE`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastScheduleRun")
-    def time_last_schedule_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_schedule_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
         """
         return pulumi.get(self, "time_last_schedule_run")
 
     @time_last_schedule_run.setter
-    def time_last_schedule_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_schedule_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_schedule_run", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNextScheduledRun")
-    def time_next_scheduled_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_next_scheduled_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
         """
         return pulumi.get(self, "time_next_scheduled_run")
 
     @time_next_scheduled_run.setter
-    def time_next_scheduled_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_next_scheduled_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_next_scheduled_run", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def trigger(self) -> Optional[pulumi.Input['ScheduleTriggerArgs']]:
+    def trigger(self) -> pulumi.Input[Optional['ScheduleTriggerArgs']]:
         """
         (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
         """
         return pulumi.get(self, "trigger")
 
     @trigger.setter
-    def trigger(self, value: Optional[pulumi.Input['ScheduleTriggerArgs']]):
+    def trigger(self, value: pulumi.Input[Optional['ScheduleTriggerArgs']]):
         pulumi.set(self, "trigger", value)
 
 
@@ -469,15 +469,15 @@ class Schedule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_details: Optional[pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
+                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Schedule resource in Oracle Cloud Infrastructure Data Science service.
@@ -519,8 +519,8 @@ class Schedule(pulumi.CustomResource):
                         },
                         "job_id": test_job["id"],
                         "job_log_configuration_override_details": {
-                            "enable_auto_log_creation": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_auto_log_creation,
-                            "enable_logging": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_logging,
+                            "enable_auto_log_creation": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_auto_log_creation == "true",
+                            "enable_logging": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_logging == "true",
                             "log_group_id": test_log_group["id"],
                             "log_id": test_log["id"],
                         },
@@ -542,8 +542,8 @@ class Schedule(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         "log_configuration_override_details": {
-                            "enable_auto_log_creation": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_auto_log_creation,
-                            "enable_logging": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_logging,
+                            "enable_auto_log_creation": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_auto_log_creation == "true",
+                            "enable_logging": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_logging == "true",
                             "log_group_id": test_log_group["id"],
                             "log_id": test_log["id"],
                         },
@@ -585,8 +585,8 @@ class Schedule(pulumi.CustomResource):
                 "trigger_type": schedule_trigger_trigger_type,
                 "cron_expression": schedule_trigger_cron_expression,
                 "frequency": schedule_trigger_frequency,
-                "interval": schedule_trigger_interval,
-                "is_random_start_time": schedule_trigger_is_random_start_time,
+                "interval": int(schedule_trigger_interval),
+                "is_random_start_time": schedule_trigger_is_random_start_time == "true",
                 "recurrence": schedule_trigger_recurrence,
                 "time_end": schedule_trigger_time_end,
                 "time_start": schedule_trigger_time_start,
@@ -671,8 +671,8 @@ class Schedule(pulumi.CustomResource):
                         },
                         "job_id": test_job["id"],
                         "job_log_configuration_override_details": {
-                            "enable_auto_log_creation": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_auto_log_creation,
-                            "enable_logging": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_logging,
+                            "enable_auto_log_creation": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_auto_log_creation == "true",
+                            "enable_logging": schedule_action_action_details_create_job_run_details_job_log_configuration_override_details_enable_logging == "true",
                             "log_group_id": test_log_group["id"],
                             "log_id": test_log["id"],
                         },
@@ -694,8 +694,8 @@ class Schedule(pulumi.CustomResource):
                             "Department": "Finance",
                         },
                         "log_configuration_override_details": {
-                            "enable_auto_log_creation": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_auto_log_creation,
-                            "enable_logging": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_logging,
+                            "enable_auto_log_creation": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_auto_log_creation == "true",
+                            "enable_logging": schedule_action_action_details_create_pipeline_run_details_log_configuration_override_details_enable_logging == "true",
                             "log_group_id": test_log_group["id"],
                             "log_id": test_log["id"],
                         },
@@ -737,8 +737,8 @@ class Schedule(pulumi.CustomResource):
                 "trigger_type": schedule_trigger_trigger_type,
                 "cron_expression": schedule_trigger_cron_expression,
                 "frequency": schedule_trigger_frequency,
-                "interval": schedule_trigger_interval,
-                "is_random_start_time": schedule_trigger_is_random_start_time,
+                "interval": int(schedule_trigger_interval),
+                "is_random_start_time": schedule_trigger_is_random_start_time == "true",
                 "recurrence": schedule_trigger_recurrence,
                 "time_end": schedule_trigger_time_end,
                 "time_start": schedule_trigger_time_start,
@@ -780,15 +780,15 @@ class Schedule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_details: Optional[pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
+                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -836,24 +836,24 @@ class Schedule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            last_schedule_run_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            log_details: Optional[pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_schedule_run: Optional[pulumi.Input[_builtins.str]] = None,
-            time_next_scheduled_run: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trigger: Optional[pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None) -> 'Schedule':
+            action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_schedule_run_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_schedule_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_scheduled_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None) -> 'Schedule':
         """
         Get an existing Schedule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

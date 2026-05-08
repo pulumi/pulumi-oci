@@ -606,7 +606,7 @@ def get_invoke_run(run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_run = oci.DataFlow.get_invoke_run(run_id=test_run["id"])
+    test_invoke_run = oci.dataflow.get_invoke_run(run_id=test_run["id"])
     ```
 
 
@@ -665,7 +665,7 @@ def get_invoke_run(run_id: Optional[_builtins.str] = None,
         total_ocpu=pulumi.get(__ret__, 'total_ocpu'),
         type=pulumi.get(__ret__, 'type'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
-def get_invoke_run_output(run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_invoke_run_output(run_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvokeRunResult]:
     """
     This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
@@ -678,7 +678,7 @@ def get_invoke_run_output(run_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_run = oci.DataFlow.get_invoke_run(run_id=test_run["id"])
+    test_invoke_run = oci.dataflow.get_invoke_run(run_id=test_run["id"])
     ```
 
 

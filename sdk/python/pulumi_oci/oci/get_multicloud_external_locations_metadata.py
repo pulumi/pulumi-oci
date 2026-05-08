@@ -228,16 +228,16 @@ def get_multicloud_external_locations_metadata(cluster_placement_group_id: Optio
         logical_zone=pulumi.get(__ret__, 'logical_zone'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
-def get_multicloud_external_locations_metadata_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      entity_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudExternalLocationsMetadataFilterArgs', 'GetMulticloudExternalLocationsMetadataFilterArgsDict']]]]] = None,
-                                                      limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                      linked_compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      logical_zone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_external_locations_metadata_output(cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      entity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationsMetadataFilterArgs', 'GetMulticloudExternalLocationsMetadataFilterArgsDict']]]]] = None,
+                                                      limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                      linked_compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      logical_zone: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudExternalLocationsMetadataResult]:
     """
     This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.

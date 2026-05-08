@@ -111,7 +111,7 @@ def get_redis_cluster_nodes(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster_nodes = oci.Redis.get_redis_cluster_nodes(redis_cluster_id=test_redis_cluster["id"],
+    test_redis_cluster_nodes = oci.redis.get_redis_cluster_nodes(redis_cluster_id=test_redis_cluster["id"],
         display_name=redis_cluster_node_display_name)
     ```
 
@@ -132,9 +132,9 @@ def get_redis_cluster_nodes(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         redis_node_collections=pulumi.get(__ret__, 'redis_node_collections'))
-def get_redis_cluster_nodes_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict']]]]] = None,
-                                   redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_redis_cluster_nodes_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict']]]]] = None,
+                                   redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRedisClusterNodesResult]:
     """
     This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
@@ -147,7 +147,7 @@ def get_redis_cluster_nodes_output(display_name: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster_nodes = oci.Redis.get_redis_cluster_nodes(redis_cluster_id=test_redis_cluster["id"],
+    test_redis_cluster_nodes = oci.redis.get_redis_cluster_nodes(redis_cluster_id=test_redis_cluster["id"],
         display_name=redis_cluster_node_display_name)
     ```
 

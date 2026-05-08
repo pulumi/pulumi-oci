@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.DataScience.getSchedules({
+ * const testSchedules = oci.datascience.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     id: scheduleId,
@@ -106,7 +106,7 @@ export interface GetSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.DataScience.getSchedules({
+ * const testSchedules = oci.datascience.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     id: scheduleId,
@@ -138,18 +138,18 @@ export interface GetSchedulesOutputArgs {
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetSchedulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetSchedulesFilterArgs>[] | undefined>;
     /**
      * unique Schedule identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

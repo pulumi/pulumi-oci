@@ -188,47 +188,47 @@ export interface AppCatalogSubscriptionState {
     /**
      * The compartmentID for the subscription.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * EULA link
      */
-    eulaLink?: pulumi.Input<string>;
+    eulaLink?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the listing.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * Listing resource id.
      */
-    listingResourceId?: pulumi.Input<string>;
+    listingResourceId?: pulumi.Input<string | undefined>;
     /**
      * Listing resource version.
      */
-    listingResourceVersion?: pulumi.Input<string>;
+    listingResourceVersion?: pulumi.Input<string | undefined>;
     /**
      * Oracle TOU link
      */
-    oracleTermsOfUseLink?: pulumi.Input<string>;
+    oracleTermsOfUseLink?: pulumi.Input<string | undefined>;
     /**
      * Name of the publisher who published this listing.
      */
-    publisherName?: pulumi.Input<string>;
+    publisherName?: pulumi.Input<string | undefined>;
     /**
      * A generated signature for this listing resource version retrieved the agreements API.
      */
-    signature?: pulumi.Input<string>;
+    signature?: pulumi.Input<string | undefined>;
     /**
      * The short summary to the listing.
      */
-    summary?: pulumi.Input<string>;
+    summary?: pulumi.Input<string | undefined>;
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
      *
@@ -236,7 +236,7 @@ export interface AppCatalogSubscriptionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeRetrieved?: pulumi.Input<string>;
+    timeRetrieved?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -250,7 +250,7 @@ export interface AppCatalogSubscriptionArgs {
     /**
      * EULA link
      */
-    eulaLink?: pulumi.Input<string>;
+    eulaLink?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the listing.
      */

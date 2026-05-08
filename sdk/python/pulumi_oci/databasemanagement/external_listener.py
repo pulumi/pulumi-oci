@@ -22,9 +22,9 @@ __all__ = ['ExternalListenerArgs', 'ExternalListener']
 class ExternalListenerArgs:
     def __init__(__self__, *,
                  external_listener_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 external_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalListener resource.
 
@@ -59,31 +59,31 @@ class ExternalListenerArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
-    def external_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -94,41 +94,41 @@ class ExternalListenerArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ExternalListenerState:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]] = None,
-                 external_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_ora_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 serviced_asms: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]] = None,
-                 serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]] = None,
+                 external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_ora_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 serviced_asms: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]] = None,
+                 serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalListener resources.
 
@@ -224,151 +224,151 @@ class _ExternalListenerState:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the external listener.
         """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
-    def component_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]]:
+    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]]:
         """
         The list of protocol addresses the listener is configured to listen on.
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]]):
+    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
-    def external_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDbHomeId")
-    def external_db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_db_home_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         """
         return pulumi.get(self, "external_db_home_id")
 
     @external_db_home_id.setter
-    def external_db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_db_home_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_db_home_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDbNodeId")
-    def external_db_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_db_node_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         """
         return pulumi.get(self, "external_db_node_id")
 
     @external_db_node_id.setter
-    def external_db_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_db_node_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_db_node_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
-    def external_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalListenerId")
-    def external_listener_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_listener_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
         """
         return pulumi.get(self, "external_listener_id")
 
     @external_listener_id.setter
-    def external_listener_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_listener_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_listener_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -379,187 +379,187 @@ class _ExternalListenerState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the host on which the external listener is running.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerAlias")
-    def listener_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener alias.
         """
         return pulumi.get(self, "listener_alias")
 
     @listener_alias.setter
-    def listener_alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_alias", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerOraLocation")
-    def listener_ora_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_ora_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the listener configuration file listener.ora.
         """
         return pulumi.get(self, "listener_ora_location")
 
     @listener_ora_location.setter
-    def listener_ora_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_ora_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_ora_location", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerType")
-    def listener_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of listener.
         """
         return pulumi.get(self, "listener_type")
 
     @listener_type.setter
-    def listener_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_type", value)
 
     @_builtins.property
     @pulumi.getter(name="logDirectory")
-    def log_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener log file.
         """
         return pulumi.get(self, "log_directory")
 
     @log_directory.setter
-    def log_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home location of the listener.
         """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
-    def oracle_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_home", value)
 
     @_builtins.property
     @pulumi.getter(name="servicedAsms")
-    def serviced_asms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]]:
+    def serviced_asms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]]:
         """
         The list of ASMs that are serviced by the listener.
         """
         return pulumi.get(self, "serviced_asms")
 
     @serviced_asms.setter
-    def serviced_asms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]]):
+    def serviced_asms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]]):
         pulumi.set(self, "serviced_asms", value)
 
     @_builtins.property
     @pulumi.getter(name="servicedDatabases")
-    def serviced_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]]:
+    def serviced_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]]:
         """
         The list of databases that are serviced by the listener.
         """
         return pulumi.get(self, "serviced_databases")
 
     @serviced_databases.setter
-    def serviced_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]]):
+    def serviced_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]]):
         pulumi.set(self, "serviced_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the external listener.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the external listener was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the external listener was last updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="traceDirectory")
-    def trace_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trace_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener trace file.
         """
         return pulumi.get(self, "trace_directory")
 
     @trace_directory.setter
-    def trace_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trace_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trace_directory", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -569,10 +569,10 @@ class ExternalListener(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 external_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -640,10 +640,10 @@ class ExternalListener(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 external_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -693,34 +693,34 @@ class ExternalListener(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            component_name: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerEndpointArgs', 'ExternalListenerEndpointArgsDict']]]]] = None,
-            external_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_alias: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_ora_location: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-            log_directory: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_home: Optional[pulumi.Input[_builtins.str]] = None,
-            serviced_asms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedAsmArgs', 'ExternalListenerServicedAsmArgsDict']]]]] = None,
-            serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedDatabaseArgs', 'ExternalListenerServicedDatabaseArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trace_directory: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalListener':
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerEndpointArgs', 'ExternalListenerEndpointArgsDict']]]]] = None,
+            external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_ora_location: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+            log_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
+            serviced_asms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerServicedAsmArgs', 'ExternalListenerServicedAsmArgsDict']]]]] = None,
+            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerServicedDatabaseArgs', 'ExternalListenerServicedDatabaseArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trace_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalListener':
         """
         Get an existing ExternalListener resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

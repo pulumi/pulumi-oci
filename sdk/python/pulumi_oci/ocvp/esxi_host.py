@@ -21,26 +21,26 @@ __all__ = ['EsxiHostArgs', 'EsxiHost']
 @pulumi.input_type
 class EsxiHostArgs:
     def __init__(__self__, *,
-                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vsan_byol_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 next_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
 
@@ -132,99 +132,99 @@ class EsxiHostArgs:
 
     @_builtins.property
     @pulumi.getter(name="attachDatastoreClusterIds")
-    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attach_datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "attach_datastore_cluster_ids")
 
     @attach_datastore_cluster_ids.setter
-    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attach_datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="billingDonorHostId")
     @_utilities.deprecated("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
-    def billing_donor_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def billing_donor_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
-    def billing_donor_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def billing_donor_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "billing_donor_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
-    def compute_availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         """
         return pulumi.get(self, "compute_availability_domain")
 
     @compute_availability_domain.setter
-    def compute_availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="currentSku")
     @_utilities.deprecated("""The 'current_sku' field has been deprecated. It is no longer supported.""")
-    def current_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         """
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
-    def current_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="detachDatastoreClusterIds")
-    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def detach_datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "detach_datastore_cluster_ids")
 
     @detach_datastore_cluster_ids.setter
-    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def detach_datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "detach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
@@ -235,112 +235,112 @@ class EsxiHostArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiSoftwareVersion")
-    def esxi_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def esxi_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         """
         return pulumi.get(self, "esxi_software_version")
 
     @esxi_software_version.setter
-    def esxi_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def esxi_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "esxi_software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="failedEsxiHostId")
     @_utilities.deprecated("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
-    def failed_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failed_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
-    def failed_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failed_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failed_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostOcpuCount")
-    def host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The OCPU count of the ESXi host.
         """
         return pulumi.get(self, "host_ocpu_count")
 
     @host_ocpu_count.setter
-    def host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "host_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="hostShapeName")
-    def host_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "host_shape_name")
 
     @host_shape_name.setter
-    def host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isVsanByolEnabled")
-    def is_vsan_byol_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vsan_byol_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         """
         return pulumi.get(self, "is_vsan_byol_enabled")
 
     @is_vsan_byol_enabled.setter
-    def is_vsan_byol_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vsan_byol_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vsan_byol_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="nextSku")
     @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
-    def next_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         """
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
-    def next_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
     @_utilities.deprecated("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
-    def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def non_upgraded_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
-    def non_upgraded_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def non_upgraded_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "non_upgraded_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sddcId")
     @_utilities.deprecated("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
-    def sddc_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sddc_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
 
@@ -351,75 +351,75 @@ class EsxiHostArgs:
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
-    def sddc_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sddc_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sddc_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="vcfByolAllocationId")
-    def vcf_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcf_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
         """
         return pulumi.get(self, "vcf_byol_allocation_id")
 
     @vcf_byol_allocation_id.setter
-    def vcf_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcf_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcf_byol_allocation_id", value)
 
 
 @pulumi.input_type
 class _EsxiHostState:
     def __init__(__self__, *,
-                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 billing_contract_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_commitment: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastore_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]] = None,
-                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 grace_period_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_billing_continuation_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_billing_swapping_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vsan_byol_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 next_commitment: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_vnic_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 swap_billing_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgraded_replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 billing_contract_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastore_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]] = None,
+                 datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 grace_period_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_billing_continuation_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_billing_swapping_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_vnic_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 swap_billing_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgraded_replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EsxiHost resources.
 
@@ -564,171 +564,171 @@ class _EsxiHostState:
 
     @_builtins.property
     @pulumi.getter(name="attachDatastoreClusterIds")
-    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attach_datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "attach_datastore_cluster_ids")
 
     @attach_datastore_cluster_ids.setter
-    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attach_datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="billingContractEndDate")
-    def billing_contract_end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def billing_contract_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
 
     @billing_contract_end_date.setter
-    def billing_contract_end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def billing_contract_end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "billing_contract_end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="billingDonorHostId")
     @_utilities.deprecated("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
-    def billing_donor_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def billing_donor_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
-    def billing_donor_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def billing_donor_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "billing_donor_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
-    def compute_availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         """
         return pulumi.get(self, "compute_availability_domain")
 
     @compute_availability_domain.setter
-    def compute_availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
-    def compute_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         """
         return pulumi.get(self, "compute_instance_id")
 
     @compute_instance_id.setter
-    def compute_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentCommitment")
-    def current_commitment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_commitment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "current_commitment")
 
     @current_commitment.setter
-    def current_commitment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_commitment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_commitment", value)
 
     @_builtins.property
     @pulumi.getter(name="currentSku")
     @_utilities.deprecated("""The 'current_sku' field has been deprecated. It is no longer supported.""")
-    def current_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         """
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
-    def current_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="datastoreAttachments")
-    def datastore_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]:
+    def datastore_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]:
         """
         List of DatastoreAttachment objects containing information about attachment details
         """
         return pulumi.get(self, "datastore_attachments")
 
     @datastore_attachments.setter
-    def datastore_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]):
+    def datastore_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]):
         pulumi.set(self, "datastore_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="datastoreClusterIds")
-    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of datastore clusters.
         """
         return pulumi.get(self, "datastore_cluster_ids")
 
     @datastore_cluster_ids.setter
-    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="detachDatastoreClusterIds")
-    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def detach_datastore_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "detach_datastore_cluster_ids")
 
     @detach_datastore_cluster_ids.setter
-    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def detach_datastore_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "detach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
@@ -739,181 +739,181 @@ class _EsxiHostState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiSoftwareVersion")
-    def esxi_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def esxi_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         """
         return pulumi.get(self, "esxi_software_version")
 
     @esxi_software_version.setter
-    def esxi_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def esxi_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "esxi_software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="failedEsxiHostId")
     @_utilities.deprecated("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
-    def failed_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failed_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
-    def failed_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failed_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failed_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gracePeriodEndDate")
-    def grace_period_end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grace_period_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         """
         return pulumi.get(self, "grace_period_end_date")
 
     @grace_period_end_date.setter
-    def grace_period_end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grace_period_end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grace_period_end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="hostOcpuCount")
-    def host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The OCPU count of the ESXi host.
         """
         return pulumi.get(self, "host_ocpu_count")
 
     @host_ocpu_count.setter
-    def host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "host_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="hostShapeName")
-    def host_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "host_shape_name")
 
     @host_shape_name.setter
-    def host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isBillingContinuationInProgress")
-    def is_billing_continuation_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_billing_continuation_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this host is in the progress of billing continuation.
         """
         return pulumi.get(self, "is_billing_continuation_in_progress")
 
     @is_billing_continuation_in_progress.setter
-    def is_billing_continuation_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_billing_continuation_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_billing_continuation_in_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="isBillingSwappingInProgress")
-    def is_billing_swapping_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_billing_swapping_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this host is in the progress of swapping billing.
         """
         return pulumi.get(self, "is_billing_swapping_in_progress")
 
     @is_billing_swapping_in_progress.setter
-    def is_billing_swapping_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_billing_swapping_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_billing_swapping_in_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="isVsanByolEnabled")
-    def is_vsan_byol_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vsan_byol_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         """
         return pulumi.get(self, "is_vsan_byol_enabled")
 
     @is_vsan_byol_enabled.setter
-    def is_vsan_byol_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vsan_byol_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vsan_byol_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="nextCommitment")
-    def next_commitment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_commitment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "next_commitment")
 
     @next_commitment.setter
-    def next_commitment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_commitment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_commitment", value)
 
     @_builtins.property
     @pulumi.getter(name="nextSku")
     @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
-    def next_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         """
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
-    def next_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
     @_utilities.deprecated("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
-    def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def non_upgraded_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
-    def non_upgraded_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def non_upgraded_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "non_upgraded_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryVnicMacAddress")
-    def primary_vnic_mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_vnic_mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "primary_vnic_mac_address")
 
     @primary_vnic_mac_address.setter
-    def primary_vnic_mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_vnic_mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_vnic_mac_address", value)
 
     @_builtins.property
     @pulumi.getter(name="replacementEsxiHostId")
-    def replacement_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         """
         return pulumi.get(self, "replacement_esxi_host_id")
 
     @replacement_esxi_host_id.setter
-    def replacement_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sddcId")
     @_utilities.deprecated("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
-    def sddc_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sddc_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
 
@@ -924,103 +924,103 @@ class _EsxiHostState:
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
-    def sddc_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sddc_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sddc_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the ESXi host.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="swapBillingHostId")
-    def swap_billing_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def swap_billing_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         return pulumi.get(self, "swap_billing_host_id")
 
     @swap_billing_host_id.setter
-    def swap_billing_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def swap_billing_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "swap_billing_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradedReplacementEsxiHostId")
-    def upgraded_replacement_esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgraded_replacement_esxi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         """
         return pulumi.get(self, "upgraded_replacement_esxi_host_id")
 
     @upgraded_replacement_esxi_host_id.setter
-    def upgraded_replacement_esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgraded_replacement_esxi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgraded_replacement_esxi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vcfByolAllocationId")
-    def vcf_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcf_byol_allocation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
         """
         return pulumi.get(self, "vcf_byol_allocation_id")
 
     @vcf_byol_allocation_id.setter
-    def vcf_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcf_byol_allocation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcf_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareSoftwareVersion")
-    def vmware_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmware_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         return pulumi.get(self, "vmware_software_version")
 
     @vmware_software_version.setter
-    def vmware_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmware_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmware_software_version", value)
 
 
@@ -1030,26 +1030,26 @@ class EsxiHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vsan_byol_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 next_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -1086,7 +1086,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
-            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled,
+            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
         ```
@@ -1179,7 +1179,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
-            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled,
+            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
         ```
@@ -1217,26 +1217,26 @@ class EsxiHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_vsan_byol_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 next_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1294,44 +1294,44 @@ class EsxiHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            billing_contract_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_commitment: Optional[pulumi.Input[_builtins.str]] = None,
-            current_sku: Optional[pulumi.Input[_builtins.str]] = None,
-            datastore_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EsxiHostDatastoreAttachmentArgs', 'EsxiHostDatastoreAttachmentArgsDict']]]]] = None,
-            datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-            failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            grace_period_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-            host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            is_billing_continuation_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_billing_swapping_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vsan_byol_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            next_commitment: Optional[pulumi.Input[_builtins.str]] = None,
-            next_sku: Optional[pulumi.Input[_builtins.str]] = None,
-            non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_vnic_mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            swap_billing_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            upgraded_replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None) -> 'EsxiHost':
+            attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            billing_contract_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+            datastore_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EsxiHostDatastoreAttachmentArgs', 'EsxiHostDatastoreAttachmentArgsDict']]]]] = None,
+            datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            grace_period_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_billing_continuation_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_billing_swapping_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+            non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_vnic_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            swap_billing_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgraded_replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None) -> 'EsxiHost':
         """
         Get an existing EsxiHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

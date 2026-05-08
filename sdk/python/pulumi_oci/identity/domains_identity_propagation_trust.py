@@ -25,28 +25,28 @@ class DomainsIdentityPropagationTrustArgs:
                  issuer: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  type: pulumi.Input[_builtins.str],
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_impersonation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 clock_skew_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 impersonation_service_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
-                 keytab: Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oauth_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_mapping_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
+                 keytab: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsIdentityPropagationTrust resource.
 
@@ -419,7 +419,7 @@ class DomainsIdentityPropagationTrustArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
 
@@ -436,12 +436,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, specifies that this Identity Propagation Trust is in an enabled state. The default value is false.
 
@@ -457,12 +457,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="allowImpersonation")
-    def allow_impersonation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_impersonation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
 
@@ -478,48 +478,48 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "allow_impersonation")
 
     @allow_impersonation.setter
-    def allow_impersonation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_impersonation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_impersonation", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="clientClaimName")
-    def client_claim_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_claim_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
 
@@ -535,12 +535,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "client_claim_name")
 
     @client_claim_name.setter
-    def client_claim_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_claim_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_claim_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clientClaimValues")
-    def client_claim_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def client_claim_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The value that corresponds to the client claim name used to identify to whom the token is issued.
 
@@ -557,12 +557,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "client_claim_values")
 
     @client_claim_values.setter
-    def client_claim_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def client_claim_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "client_claim_values", value)
 
     @_builtins.property
     @pulumi.getter(name="clockSkewSeconds")
-    def clock_skew_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clock_skew_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The clock skew (in secs) that's allowed for the token issue and expiry time.
 
@@ -581,12 +581,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "clock_skew_seconds")
 
     @clock_skew_seconds.setter
-    def clock_skew_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clock_skew_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clock_skew_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the Identity Propagation Trust.
 
@@ -603,12 +603,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")
-    def impersonation_service_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]:
+    def impersonation_service_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]:
         """
         (Updatable) The Impersonating Principal.
 
@@ -625,12 +625,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "impersonation_service_users")
 
     @impersonation_service_users.setter
-    def impersonation_service_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]):
+    def impersonation_service_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]):
         pulumi.set(self, "impersonation_service_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def keytab(self) -> Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']]:
+    def keytab(self) -> pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']]:
         """
         (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
 
@@ -647,12 +647,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "keytab")
 
     @keytab.setter
-    def keytab(self, value: Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']]):
+    def keytab(self, value: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']]):
         pulumi.set(self, "keytab", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the the Identity Propagation Trust.
 
@@ -669,12 +669,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="oauthClients")
-    def oauth_clients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def oauth_clients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The value of all the authorized OAuth Clients.
 
@@ -690,12 +690,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "oauth_clients")
 
     @oauth_clients.setter
-    def oauth_clients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def oauth_clients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "oauth_clients", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -712,12 +712,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="publicCertificate")
-    def public_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Store the public key if public key cert.
 
@@ -733,12 +733,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
-    def public_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyEndpoint")
-    def public_key_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The cloud provider's public key API of SAML and OIDC providers for signature validation.
 
@@ -755,24 +755,24 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "public_key_endpoint")
 
     @public_key_endpoint.setter
-    def public_key_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectClaimName")
-    def subject_claim_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_claim_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used for locating the subject claim from the incoming token.
 
@@ -789,12 +789,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "subject_claim_name")
 
     @subject_claim_name.setter
-    def subject_claim_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_claim_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_claim_name", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectMappingAttribute")
-    def subject_mapping_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_mapping_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subject Mapping Attribute to which the value from subject claim name value would be used for identity lookup.
 
@@ -810,12 +810,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "subject_mapping_attribute")
 
     @subject_mapping_attribute.setter
-    def subject_mapping_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_mapping_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_mapping_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectType")
-    def subject_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the resource against which lookup will be made in the identity domain in IAM for the incoming subject claim value.
 
@@ -831,12 +831,12 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "subject_type")
 
     @subject_type.setter
-    def subject_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -853,48 +853,48 @@ class DomainsIdentityPropagationTrustArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _DomainsIdentityPropagationTrustState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_impersonation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 clock_skew_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 impersonation_service_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytab: Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oauth_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subject_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_mapping_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytab: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsIdentityPropagationTrust resources.
 
@@ -1301,7 +1301,7 @@ class _DomainsIdentityPropagationTrustState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
 
@@ -1318,12 +1318,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, specifies that this Identity Propagation Trust is in an enabled state. The default value is false.
 
@@ -1339,12 +1339,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="allowImpersonation")
-    def allow_impersonation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_impersonation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
 
@@ -1360,48 +1360,48 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "allow_impersonation")
 
     @allow_impersonation.setter
-    def allow_impersonation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_impersonation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_impersonation", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="clientClaimName")
-    def client_claim_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_claim_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
 
@@ -1417,12 +1417,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "client_claim_name")
 
     @client_claim_name.setter
-    def client_claim_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_claim_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_claim_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clientClaimValues")
-    def client_claim_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def client_claim_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The value that corresponds to the client claim name used to identify to whom the token is issued.
 
@@ -1439,12 +1439,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "client_claim_values")
 
     @client_claim_values.setter
-    def client_claim_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def client_claim_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "client_claim_values", value)
 
     @_builtins.property
     @pulumi.getter(name="clockSkewSeconds")
-    def clock_skew_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clock_skew_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The clock skew (in secs) that's allowed for the token issue and expiry time.
 
@@ -1463,12 +1463,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "clock_skew_seconds")
 
     @clock_skew_seconds.setter
-    def clock_skew_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clock_skew_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clock_skew_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -1485,12 +1485,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -1507,12 +1507,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the Identity Propagation Trust.
 
@@ -1529,12 +1529,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -1551,12 +1551,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -1571,24 +1571,24 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -1603,12 +1603,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -1625,12 +1625,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -1646,12 +1646,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")
-    def impersonation_service_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]:
+    def impersonation_service_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]:
         """
         (Updatable) The Impersonating Principal.
 
@@ -1668,12 +1668,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "impersonation_service_users")
 
     @impersonation_service_users.setter
-    def impersonation_service_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]):
+    def impersonation_service_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]]):
         pulumi.set(self, "impersonation_service_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The issuer claim of the Identity provider.
 
@@ -1690,12 +1690,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "issuer")
 
     @issuer.setter
-    def issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer", value)
 
     @_builtins.property
     @pulumi.getter
-    def keytab(self) -> Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']]:
+    def keytab(self) -> pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']]:
         """
         (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
 
@@ -1712,12 +1712,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "keytab")
 
     @keytab.setter
-    def keytab(self, value: Optional[pulumi.Input['DomainsIdentityPropagationTrustKeytabArgs']]):
+    def keytab(self, value: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']]):
         pulumi.set(self, "keytab", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -1734,12 +1734,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the the Identity Propagation Trust.
 
@@ -1756,12 +1756,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="oauthClients")
-    def oauth_clients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def oauth_clients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The value of all the authorized OAuth Clients.
 
@@ -1777,12 +1777,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "oauth_clients")
 
     @oauth_clients.setter
-    def oauth_clients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def oauth_clients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "oauth_clients", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1799,12 +1799,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="publicCertificate")
-    def public_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Store the public key if public key cert.
 
@@ -1820,12 +1820,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
-    def public_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyEndpoint")
-    def public_key_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The cloud provider's public key API of SAML and OIDC providers for signature validation.
 
@@ -1842,24 +1842,24 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "public_key_endpoint")
 
     @public_key_endpoint.setter
-    def public_key_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -1876,12 +1876,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectClaimName")
-    def subject_claim_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_claim_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used for locating the subject claim from the incoming token.
 
@@ -1898,12 +1898,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "subject_claim_name")
 
     @subject_claim_name.setter
-    def subject_claim_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_claim_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_claim_name", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectMappingAttribute")
-    def subject_mapping_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_mapping_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subject Mapping Attribute to which the value from subject claim name value would be used for identity lookup.
 
@@ -1919,12 +1919,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "subject_mapping_attribute")
 
     @subject_mapping_attribute.setter
-    def subject_mapping_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_mapping_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_mapping_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectType")
-    def subject_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the resource against which lookup will be made in the identity domain in IAM for the incoming subject claim value.
 
@@ -1940,12 +1940,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "subject_type")
 
     @subject_type.setter
-    def subject_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1962,12 +1962,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -1984,12 +1984,12 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the inbound token from the Identity cloud provider.
 
@@ -2010,7 +2010,7 @@ class _DomainsIdentityPropagationTrustState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -2020,32 +2020,32 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_impersonation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 clock_skew_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 impersonation_service_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytab: Optional[pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oauth_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subject_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_mapping_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2068,14 +2068,14 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"],
             type=identity_propagation_trust_type,
             account_id="accountId",
-            active=identity_propagation_trust_active,
-            allow_impersonation=identity_propagation_trust_allow_impersonation,
+            active=identity_propagation_trust_active == "true",
+            allow_impersonation=identity_propagation_trust_allow_impersonation == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=identity_propagation_trust_authorization,
             client_claim_name=identity_propagation_trust_client_claim_name,
             client_claim_values=["clientClaimValues"],
-            clock_skew_seconds=identity_propagation_trust_clock_skew_seconds,
+            clock_skew_seconds=int(identity_propagation_trust_clock_skew_seconds),
             description=identity_propagation_trust_description,
             impersonation_service_users=[{
                 "rule": identity_propagation_trust_impersonation_service_users_rule,
@@ -2084,7 +2084,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             }],
             keytab={
                 "secret_ocid": identity_propagation_trust_keytab_secret_ocid,
-                "secret_version": identity_propagation_trust_keytab_secret_version,
+                "secret_version": int(identity_propagation_trust_keytab_secret_version),
             },
             oauth_clients=["oauthClients"],
             ocid=identity_propagation_trust_ocid,
@@ -2374,14 +2374,14 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"],
             type=identity_propagation_trust_type,
             account_id="accountId",
-            active=identity_propagation_trust_active,
-            allow_impersonation=identity_propagation_trust_allow_impersonation,
+            active=identity_propagation_trust_active == "true",
+            allow_impersonation=identity_propagation_trust_allow_impersonation == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=identity_propagation_trust_authorization,
             client_claim_name=identity_propagation_trust_client_claim_name,
             client_claim_values=["clientClaimValues"],
-            clock_skew_seconds=identity_propagation_trust_clock_skew_seconds,
+            clock_skew_seconds=int(identity_propagation_trust_clock_skew_seconds),
             description=identity_propagation_trust_description,
             impersonation_service_users=[{
                 "rule": identity_propagation_trust_impersonation_service_users_rule,
@@ -2390,7 +2390,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             }],
             keytab={
                 "secret_ocid": identity_propagation_trust_keytab_secret_ocid,
-                "secret_version": identity_propagation_trust_keytab_secret_version,
+                "secret_version": int(identity_propagation_trust_keytab_secret_version),
             },
             oauth_clients=["oauthClients"],
             ocid=identity_propagation_trust_ocid,
@@ -2430,32 +2430,32 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_impersonation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_claim_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 clock_skew_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 impersonation_service_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 keytab: Optional[pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oauth_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subject_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_mapping_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2518,41 +2518,41 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            allow_impersonation: Optional[pulumi.Input[_builtins.bool]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            client_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-            client_claim_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            clock_skew_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            impersonation_service_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
-            issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            keytab: Optional[pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            oauth_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            subject_claim_name: Optional[pulumi.Input[_builtins.str]] = None,
-            subject_mapping_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            subject_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsIdentityPropagationTrust':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+            client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+            issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsIdentityPropagationTrust':
         """
         Get an existing DomainsIdentityPropagationTrust resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

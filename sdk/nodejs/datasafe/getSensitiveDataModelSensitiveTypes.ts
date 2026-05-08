@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveTypes = oci.DataSafe.getSensitiveDataModelSensitiveTypes({
+ * const testSensitiveDataModelSensitiveTypes = oci.datasafe.getSensitiveDataModelSensitiveTypes({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeId: testSensitiveType.id,
  * });
@@ -77,7 +77,7 @@ export interface GetSensitiveDataModelSensitiveTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveTypes = oci.DataSafe.getSensitiveDataModelSensitiveTypes({
+ * const testSensitiveDataModelSensitiveTypes = oci.datasafe.getSensitiveDataModelSensitiveTypes({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeId: testSensitiveType.id,
  * });
@@ -96,7 +96,7 @@ export function getSensitiveDataModelSensitiveTypesOutput(args: GetSensitiveData
  * A collection of arguments for invoking getSensitiveDataModelSensitiveTypes.
  */
 export interface GetSensitiveDataModelSensitiveTypesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveTypesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveTypesFilterArgs>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */
@@ -104,5 +104,5 @@ export interface GetSensitiveDataModelSensitiveTypesOutputArgs {
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
 }

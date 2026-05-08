@@ -150,7 +150,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_cloud_autonomous_vm_clusters = oci.database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
         availability_domain=cloud_autonomous_vm_cluster_availability_domain,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_autonomous_vm_cluster_display_name,
@@ -183,12 +183,12 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[_builtins.str
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            cloud_exadata_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_autonomous_vm_clusters_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            cloud_exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClustersResult]:
     """
     This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -201,7 +201,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_cloud_autonomous_vm_clusters = oci.database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
         availability_domain=cloud_autonomous_vm_cluster_availability_domain,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_autonomous_vm_cluster_display_name,

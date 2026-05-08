@@ -70,8 +70,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -112,8 +112,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -154,8 +154,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -196,8 +196,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -238,8 +238,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -280,8 +280,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -322,8 +322,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -364,8 +364,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -406,8 +406,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -448,8 +448,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -490,8 +490,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -535,8 +535,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -580,8 +580,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -625,8 +625,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -670,8 +670,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -715,8 +715,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -799,8 +799,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -841,8 +841,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -883,8 +883,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -925,8 +925,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -970,8 +970,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1015,8 +1015,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1060,8 +1060,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1105,8 +1105,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1150,8 +1150,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1192,8 +1192,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1234,8 +1234,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1276,8 +1276,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1318,8 +1318,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1360,8 +1360,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1405,8 +1405,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1450,8 +1450,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1495,8 +1495,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1540,8 +1540,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1585,8 +1585,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1630,8 +1630,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1675,8 +1675,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1720,8 +1720,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1765,8 +1765,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1810,8 +1810,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1852,8 +1852,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1894,8 +1894,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1936,8 +1936,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1978,8 +1978,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2020,8 +2020,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2066,8 +2066,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2112,8 +2112,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2158,8 +2158,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2204,8 +2204,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2250,8 +2250,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2296,8 +2296,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2342,8 +2342,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSenderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2384,8 +2384,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSenderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2426,8 +2426,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSenderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2468,8 +2468,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSenderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2510,8 +2510,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSenderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2552,8 +2552,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSendersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2598,8 +2598,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSendersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2644,8 +2644,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSendersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2690,8 +2690,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSendersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2736,8 +2736,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSendersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2783,8 +2783,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2826,8 +2826,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2869,8 +2869,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2912,8 +2912,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2955,8 +2955,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2999,8 +2999,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3046,8 +3046,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3093,8 +3093,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3140,8 +3140,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3187,8 +3187,8 @@ public final class EmailFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Email.EmailFunctions;
      * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

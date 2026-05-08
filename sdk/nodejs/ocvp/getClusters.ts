@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.Ocvp.getClusters({
+ * const testClusters = oci.ocvp.getClusters({
  *     compartmentId: compartmentId,
  *     displayName: clusterDisplayName,
  *     sddcId: testSddc.id,
@@ -101,7 +101,7 @@ export interface GetClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.Ocvp.getClusters({
+ * const testClusters = oci.ocvp.getClusters({
  *     compartmentId: compartmentId,
  *     displayName: clusterDisplayName,
  *     sddcId: testSddc.id,
@@ -128,18 +128,18 @@ export interface GetClustersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetClustersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */
-    sddcId?: pulumi.Input<string>;
+    sddcId?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

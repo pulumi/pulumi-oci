@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedeemableUsers = oci.UsageProxy.getSubscriptionRedeemableUsers({
+ * const testSubscriptionRedeemableUsers = oci.usageproxy.getSubscriptionRedeemableUsers({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });
@@ -74,7 +74,7 @@ export interface GetSubscriptionRedeemableUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedeemableUsers = oci.UsageProxy.getSubscriptionRedeemableUsers({
+ * const testSubscriptionRedeemableUsers = oci.usageproxy.getSubscriptionRedeemableUsers({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });
@@ -93,7 +93,7 @@ export function getSubscriptionRedeemableUsersOutput(args: GetSubscriptionRedeem
  * A collection of arguments for invoking getSubscriptionRedeemableUsers.
  */
 export interface GetSubscriptionRedeemableUsersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRedeemableUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRedeemableUsersFilterArgs>[] | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */

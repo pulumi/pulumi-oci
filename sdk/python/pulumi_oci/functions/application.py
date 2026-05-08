@@ -24,16 +24,16 @@ class ApplicationArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  subnet_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
-                 logging: Optional[pulumi.Input['ApplicationLoggingArgs']] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_policy_config: pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']] = None,
+                 logging: pulumi.Input[Optional['ApplicationLoggingArgs']] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_config: pulumi.Input[Optional['ApplicationTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Application resource.
 
@@ -115,7 +115,7 @@ class ApplicationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 
@@ -124,137 +124,137 @@ class ApplicationArgs:
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="imagePolicyConfig")
-    def image_policy_config(self) -> Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]:
+    def image_policy_config(self) -> pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']]:
         """
         (Updatable) Define the image signature verification policy for an application.
         """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
-    def image_policy_config(self, value: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]):
+    def image_policy_config(self, value: pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']]):
         pulumi.set(self, "image_policy_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input['ApplicationLoggingArgs']]:
+    def logging(self) -> pulumi.Input[Optional['ApplicationLoggingArgs']]:
         """
         (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input['ApplicationLoggingArgs']]):
+    def logging(self, value: pulumi.Input[Optional['ApplicationLoggingArgs']]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogUrl")
-    def syslog_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         """
         return pulumi.get(self, "syslog_url")
 
     @syslog_url.setter
-    def syslog_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_url", value)
 
     @_builtins.property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> Optional[pulumi.Input['ApplicationTraceConfigArgs']]:
+    def trace_config(self) -> pulumi.Input[Optional['ApplicationTraceConfigArgs']]:
         """
         (Updatable) Define the tracing configuration for an application.
         """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
-    def trace_config(self, value: Optional[pulumi.Input['ApplicationTraceConfigArgs']]):
+    def trace_config(self, value: pulumi.Input[Optional['ApplicationTraceConfigArgs']]):
         pulumi.set(self, "trace_config", value)
 
 
 @pulumi.input_type
 class _ApplicationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
-                 logging: Optional[pulumi.Input['ApplicationLoggingArgs']] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 syslog_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_policy_config: pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']] = None,
+                 logging: pulumi.Input[Optional['ApplicationLoggingArgs']] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_config: pulumi.Input[Optional['ApplicationTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Application resources.
 
@@ -312,19 +312,19 @@ class _ApplicationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment to create the application within.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 
@@ -333,175 +333,175 @@ class _ApplicationState:
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="imagePolicyConfig")
-    def image_policy_config(self) -> Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]:
+    def image_policy_config(self) -> pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']]:
         """
         (Updatable) Define the image signature verification policy for an application.
         """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
-    def image_policy_config(self, value: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]):
+    def image_policy_config(self, value: pulumi.Input[Optional['ApplicationImagePolicyConfigArgs']]):
         pulumi.set(self, "image_policy_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input['ApplicationLoggingArgs']]:
+    def logging(self) -> pulumi.Input[Optional['ApplicationLoggingArgs']]:
         """
         (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input['ApplicationLoggingArgs']]):
+    def logging(self, value: pulumi.Input[Optional['ApplicationLoggingArgs']]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the application.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetIds")
-    def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
-    def subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def subnet_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subnet_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogUrl")
-    def syslog_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         """
         return pulumi.get(self, "syslog_url")
 
     @syslog_url.setter
-    def syslog_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_url", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> Optional[pulumi.Input['ApplicationTraceConfigArgs']]:
+    def trace_config(self) -> pulumi.Input[Optional['ApplicationTraceConfigArgs']]:
         """
         (Updatable) Define the tracing configuration for an application.
         """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
-    def trace_config(self, value: Optional[pulumi.Input['ApplicationTraceConfigArgs']]):
+    def trace_config(self, value: pulumi.Input[Optional['ApplicationTraceConfigArgs']]):
         pulumi.set(self, "trace_config", value)
 
 
@@ -511,19 +511,19 @@ class Application(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-                 logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 syslog_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Application resource in Oracle Cloud Infrastructure Functions service.
@@ -554,7 +554,7 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=application_network_security_group_ids,
             image_policy_config={
-                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -567,7 +567,7 @@ class Application(pulumi.CustomResource):
             syslog_url=application_syslog_url,
             trace_config={
                 "domain_id": test_domain["id"],
-                "is_enabled": application_trace_config_is_enabled,
+                "is_enabled": application_trace_config_is_enabled == "true",
             })
         ```
 
@@ -633,7 +633,7 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=application_network_security_group_ids,
             image_policy_config={
-                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -646,7 +646,7 @@ class Application(pulumi.CustomResource):
             syslog_url=application_syslog_url,
             trace_config={
                 "domain_id": test_domain["id"],
-                "is_enabled": application_trace_config_is_enabled,
+                "is_enabled": application_trace_config_is_enabled == "true",
             })
         ```
 
@@ -674,19 +674,19 @@ class Application(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-                 logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 syslog_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -728,22 +728,22 @@ class Application(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-            logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
-            network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            syslog_url: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None) -> 'Application':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+            logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None) -> 'Application':
         """
         Get an existing Application resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

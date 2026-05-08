@@ -48,8 +48,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -92,8 +92,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -136,8 +136,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -180,8 +180,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -224,8 +224,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -269,8 +269,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -315,8 +315,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -361,8 +361,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -407,8 +407,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -453,8 +453,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -500,8 +500,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -549,8 +549,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -598,8 +598,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -647,8 +647,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -696,8 +696,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -745,8 +745,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -794,8 +794,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -841,8 +841,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -885,8 +885,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -929,8 +929,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -973,8 +973,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1017,8 +1017,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1061,8 +1061,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1105,8 +1105,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1149,8 +1149,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1193,8 +1193,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1237,8 +1237,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1283,8 +1283,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1332,8 +1332,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1381,8 +1381,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1430,8 +1430,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1479,8 +1479,8 @@ public final class ResourceManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
      * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

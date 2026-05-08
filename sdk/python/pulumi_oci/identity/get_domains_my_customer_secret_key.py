@@ -318,7 +318,7 @@ def get_domains_my_customer_secret_key(authorization: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
+    test_my_customer_secret_key = oci.identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
         my_customer_secret_key_id=test_customer_secret_key["id"],
         authorization=my_customer_secret_key_authorization,
         resource_type_schema_version=my_customer_secret_key_resource_type_schema_version)
@@ -362,10 +362,10 @@ def get_domains_my_customer_secret_key(authorization: Optional[_builtins.str] = 
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                              my_customer_secret_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_customer_secret_key_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                              my_customer_secret_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyCustomerSecretKeyResult]:
     """
     This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -378,7 +378,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
+    test_my_customer_secret_key = oci.identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
         my_customer_secret_key_id=test_customer_secret_key["id"],
         authorization=my_customer_secret_key_authorization,
         resource_type_schema_version=my_customer_secret_key_resource_type_schema_version)

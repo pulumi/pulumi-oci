@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
+ * const testResolverEndpoints = oci.dns.getResolverEndpoints({
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
  *     name: resolverEndpointName,
@@ -100,7 +100,7 @@ export interface GetResolverEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
+ * const testResolverEndpoints = oci.dns.getResolverEndpoints({
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
  *     name: resolverEndpointName,
@@ -123,11 +123,11 @@ export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs,
  * A collection of arguments for invoking getResolverEndpoints.
  */
 export interface GetResolverEndpointsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetResolverEndpointsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetResolverEndpointsFilterArgs>[] | undefined>;
     /**
      * The name of a resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target resolver.
      */
@@ -139,5 +139,5 @@ export interface GetResolverEndpointsOutputArgs {
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

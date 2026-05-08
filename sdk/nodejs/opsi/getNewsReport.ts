@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReport = oci.Opsi.getNewsReport({
+ * const testNewsReport = oci.opsi.getNewsReport({
  *     newsReportId: testNewsReportOciOpsiNewsReport.id,
  * });
  * ```
@@ -136,7 +136,7 @@ export interface GetNewsReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReport = oci.Opsi.getNewsReport({
+ * const testNewsReport = oci.opsi.getNewsReport({
  *     newsReportId: testNewsReportOciOpsiNewsReport.id,
  * });
  * ```

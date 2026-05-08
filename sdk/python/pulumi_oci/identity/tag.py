@@ -23,12 +23,12 @@ class TagArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[_builtins.str],
                  tag_namespace_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input['TagValidatorArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional['TagValidatorArgs']] = None):
         """
         The set of arguments for constructing a Tag resource.
 
@@ -90,43 +90,43 @@ class TagArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCostTracking")
-    def is_cost_tracking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cost_tracking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the tag is enabled for cost tracking.
         """
         return pulumi.get(self, "is_cost_tracking")
 
     @is_cost_tracking.setter
-    def is_cost_tracking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cost_tracking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cost_tracking", value)
 
     @_builtins.property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_retired(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 
@@ -137,24 +137,24 @@ class TagArgs:
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
-    def is_retired(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_retired(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_retired", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def validator(self) -> Optional[pulumi.Input['TagValidatorArgs']]:
+    def validator(self) -> pulumi.Input[Optional['TagValidatorArgs']]:
         """
         (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
 
@@ -165,23 +165,23 @@ class TagArgs:
         return pulumi.get(self, "validator")
 
     @validator.setter
-    def validator(self, value: Optional[pulumi.Input['TagValidatorArgs']]):
+    def validator(self, value: pulumi.Input[Optional['TagValidatorArgs']]):
         pulumi.set(self, "validator", value)
 
 
 @pulumi.input_type
 class _TagState:
     def __init__(__self__, *,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input['TagValidatorArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional['TagValidatorArgs']] = None):
         """
         Input properties used for looking up and filtering Tag resources.
 
@@ -227,55 +227,55 @@ class _TagState:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description you assign to the tag during creation.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCostTracking")
-    def is_cost_tracking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cost_tracking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the tag is enabled for cost tracking.
         """
         return pulumi.get(self, "is_cost_tracking")
 
     @is_cost_tracking.setter
-    def is_cost_tracking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cost_tracking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cost_tracking", value)
 
     @_builtins.property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_retired(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 
@@ -286,60 +286,60 @@ class _TagState:
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
-    def is_retired(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_retired(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_retired", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tagNamespaceId")
-    def tag_namespace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_namespace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tag namespace.
         """
         return pulumi.get(self, "tag_namespace_id")
 
     @tag_namespace_id.setter
-    def tag_namespace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_namespace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_namespace_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def validator(self) -> Optional[pulumi.Input['TagValidatorArgs']]:
+    def validator(self) -> pulumi.Input[Optional['TagValidatorArgs']]:
         """
         (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
 
@@ -350,7 +350,7 @@ class _TagState:
         return pulumi.get(self, "validator")
 
     @validator.setter
-    def validator(self, value: Optional[pulumi.Input['TagValidatorArgs']]):
+    def validator(self, value: pulumi.Input[Optional['TagValidatorArgs']]):
         pulumi.set(self, "validator", value)
 
 
@@ -360,14 +360,14 @@ class Tag(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -414,7 +414,7 @@ class Tag(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=tag_is_cost_tracking,
+            is_cost_tracking=tag_is_cost_tracking == "true",
             validator={
                 "validator_type": tag_validator_validator_type,
                 "values": tag_validator_values,
@@ -501,7 +501,7 @@ class Tag(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=tag_is_cost_tracking,
+            is_cost_tracking=tag_is_cost_tracking == "true",
             validator={
                 "validator_type": tag_validator_validator_type,
                 "values": tag_validator_values,
@@ -533,14 +533,14 @@ class Tag(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -574,16 +574,16 @@ class Tag(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_cost_tracking: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            validator: Optional[pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None) -> 'Tag':
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None) -> 'Tag':
         """
         Get an existing Tag resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

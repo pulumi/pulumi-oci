@@ -150,7 +150,7 @@ def get_sender_invitations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender_invitations = oci.Tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
+    test_sender_invitations = oci.tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
         display_name=sender_invitation_display_name,
         recipient_tenancy_id=test_tenancy["id"],
         state=sender_invitation_state,
@@ -183,12 +183,12 @@ def get_sender_invitations(compartment_id: Optional[_builtins.str] = None,
         sender_invitation_collections=pulumi.get(__ret__, 'sender_invitation_collections'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_sender_invitations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict']]]]] = None,
-                                  recipient_tenancy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sender_invitations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict']]]]] = None,
+                                  recipient_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSenderInvitationsResult]:
     """
     This data source provides the list of Sender Invitations in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -201,7 +201,7 @@ def get_sender_invitations_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_sender_invitations = oci.Tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
+    test_sender_invitations = oci.tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
         display_name=sender_invitation_display_name,
         recipient_tenancy_id=test_tenancy["id"],
         state=sender_invitation_state,

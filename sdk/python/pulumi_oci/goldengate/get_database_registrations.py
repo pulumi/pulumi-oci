@@ -125,7 +125,7 @@ def get_database_registrations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=compartment_id,
+    test_database_registrations = oci.goldengate.get_database_registrations(compartment_id=compartment_id,
         display_name=database_registration_display_name,
         state=database_registration_state)
     ```
@@ -150,10 +150,10 @@ def get_database_registrations(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_database_registrations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseRegistrationsFilterArgs', 'GetDatabaseRegistrationsFilterArgsDict']]]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_registrations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseRegistrationsFilterArgs', 'GetDatabaseRegistrationsFilterArgsDict']]]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseRegistrationsResult]:
     """
     This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
@@ -167,7 +167,7 @@ def get_database_registrations_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=compartment_id,
+    test_database_registrations = oci.goldengate.get_database_registrations(compartment_id=compartment_id,
         display_name=database_registration_display_name,
         state=database_registration_state)
     ```

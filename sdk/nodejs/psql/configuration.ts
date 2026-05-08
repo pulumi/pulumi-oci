@@ -38,9 +38,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
- *     isFlexible: configurationIsFlexible,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
+ *     isFlexible: configurationIsFlexible === "true",
  *     shape: configurationShape,
  *     systemTags: configurationSystemTags,
  * });
@@ -247,77 +247,77 @@ export interface ConfigurationState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates the collection of compatible shapes for this configuration.
      */
-    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of configuration. Either user-created or a default configuration.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * List of configuration details.
      */
-    configurationDetails?: pulumi.Input<pulumi.Input<inputs.Psql.ConfigurationConfigurationDetail>[]>;
+    configurationDetails?: pulumi.Input<pulumi.Input<inputs.Psql.ConfigurationConfigurationDetail>[] | undefined>;
     /**
      * Configuration overrides for a PostgreSQL instance.
      */
-    dbConfigurationOverrides?: pulumi.Input<inputs.Psql.ConfigurationDbConfigurationOverrides>;
+    dbConfigurationOverrides?: pulumi.Input<inputs.Psql.ConfigurationDbConfigurationOverrides | undefined>;
     /**
      * Version of the PostgreSQL database.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * The Default configuration used for this configuration.
      */
-    defaultConfigId?: pulumi.Input<string>;
+    defaultConfigId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details about the configuration set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Memory size in gigabytes with 1GB increment.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceMemorySizeInGbs?: pulumi.Input<number>;
+    instanceMemorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * CPU core count.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceOcpuCount?: pulumi.Input<number>;
+    instanceOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * Whether the configuration supports flexible shapes.
      */
-    isFlexible?: pulumi.Input<boolean>;
+    isFlexible?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The name of the shape for the configuration. 
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current state of the configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -325,11 +325,11 @@ export interface ConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -343,7 +343,7 @@ export interface ConfigurationArgs {
     /**
      * (Updatable) Indicates the collection of compatible shapes for this configuration.
      */
-    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Configuration overrides for a PostgreSQL instance.
      */
@@ -355,11 +355,11 @@ export interface ConfigurationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details about the configuration set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      */
@@ -367,29 +367,29 @@ export interface ConfigurationArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Memory size in gigabytes with 1GB increment.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceMemorySizeInGbs?: pulumi.Input<number>;
+    instanceMemorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * CPU core count.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceOcpuCount?: pulumi.Input<number>;
+    instanceOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * Whether the configuration supports flexible shapes.
      */
-    isFlexible?: pulumi.Input<boolean>;
+    isFlexible?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the shape for the configuration. 
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -397,5 +397,5 @@ export interface ConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

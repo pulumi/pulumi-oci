@@ -204,7 +204,7 @@ def get_processor_job(processor_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
+    test_processor_job = oci.aidocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_processor_job(processor_job_id: Optional[_builtins.str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_processor_job_output(processor_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_processor_job_output(processor_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProcessorJobResult]:
     """
     This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -242,7 +242,7 @@ def get_processor_job_output(processor_job_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
+    test_processor_job = oci.aidocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
     ```
 
 

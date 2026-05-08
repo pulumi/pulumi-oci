@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeReplicas = oci.Core.getBootVolumeReplicas({
+ * const testBootVolumeReplicas = oci.core.getBootVolumeReplicas({
  *     availabilityDomain: bootVolumeReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: bootVolumeReplicaDisplayName,
@@ -108,7 +108,7 @@ export interface GetBootVolumeReplicasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeReplicas = oci.Core.getBootVolumeReplicas({
+ * const testBootVolumeReplicas = oci.core.getBootVolumeReplicas({
  *     availabilityDomain: bootVolumeReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: bootVolumeReplicaDisplayName,
@@ -137,22 +137,22 @@ export interface GetBootVolumeReplicasOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumeReplicasFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumeReplicasFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
      */
-    volumeGroupReplicaId?: pulumi.Input<string>;
+    volumeGroupReplicaId?: pulumi.Input<string | undefined>;
 }

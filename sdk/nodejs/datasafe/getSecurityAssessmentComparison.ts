@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentComparison = oci.DataSafe.getSecurityAssessmentComparison({
+ * const testSecurityAssessmentComparison = oci.datasafe.getSecurityAssessmentComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  * });
@@ -83,7 +83,7 @@ export interface GetSecurityAssessmentComparisonResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentComparison = oci.DataSafe.getSecurityAssessmentComparison({
+ * const testSecurityAssessmentComparison = oci.datasafe.getSecurityAssessmentComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  * });

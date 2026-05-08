@@ -362,7 +362,7 @@ def get_domains_customer_secret_key(attribute_sets: Optional[Sequence[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=test_customer_secret_key_oci_identity_customer_secret_key["id"],
+    test_customer_secret_key = oci.identity.get_domains_customer_secret_key(customer_secret_key_id=test_customer_secret_key_oci_identity_customer_secret_key["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -416,12 +416,12 @@ def get_domains_customer_secret_key(attribute_sets: Optional[Sequence[_builtins.
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         urnietfparamsscimschemasoracleidcsextensionself_change_users=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionself_change_users'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_customer_secret_key_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                           attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           customer_secret_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                           resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_customer_secret_key_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                           attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           customer_secret_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                           resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsCustomerSecretKeyResult]:
     """
     This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -434,7 +434,7 @@ def get_domains_customer_secret_key_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_key = oci.Identity.get_domains_customer_secret_key(customer_secret_key_id=test_customer_secret_key_oci_identity_customer_secret_key["id"],
+    test_customer_secret_key = oci.identity.get_domains_customer_secret_key(customer_secret_key_id=test_customer_secret_key_oci_identity_customer_secret_key["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

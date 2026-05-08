@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemaTables = oci.GoldenGate.getPipelineSchemaTables({
+ * const testPipelineSchemaTables = oci.goldengate.getPipelineSchemaTables({
  *     pipelineId: testPipeline.id,
  *     sourceSchemaName: pipelineSchemaTableSourceSchemaName,
  *     targetSchemaName: pipelineSchemaTableTargetSchemaName,
@@ -94,7 +94,7 @@ export interface GetPipelineSchemaTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemaTables = oci.GoldenGate.getPipelineSchemaTables({
+ * const testPipelineSchemaTables = oci.goldengate.getPipelineSchemaTables({
  *     pipelineId: testPipeline.id,
  *     sourceSchemaName: pipelineSchemaTableSourceSchemaName,
  *     targetSchemaName: pipelineSchemaTableTargetSchemaName,
@@ -120,8 +120,8 @@ export interface GetPipelineSchemaTablesOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineSchemaTablesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineSchemaTablesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline created.
      */

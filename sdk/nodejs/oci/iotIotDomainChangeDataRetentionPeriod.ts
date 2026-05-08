@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIotDomainChangeDataRetentionPeriod = new oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period", {
- *     dataRetentionPeriodInDays: iotDomainChangeDataRetentionPeriodDataRetentionPeriodInDays,
+ *     dataRetentionPeriodInDays: Number(iotDomainChangeDataRetentionPeriodDataRetentionPeriodInDays),
  *     iotDomainId: testIotDomain.id,
  *     type: iotDomainChangeDataRetentionPeriodType,
  * });
@@ -117,11 +117,11 @@ export interface IotIotDomainChangeDataRetentionPeriodState {
     /**
      * The duration (in days) for which data will be retained in the IoT domain.
      */
-    dataRetentionPeriodInDays?: pulumi.Input<number>;
+    dataRetentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      */
-    iotDomainId?: pulumi.Input<string>;
+    iotDomainId?: pulumi.Input<string | undefined>;
     /**
      * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
      *
@@ -129,7 +129,7 @@ export interface IotIotDomainChangeDataRetentionPeriodState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**

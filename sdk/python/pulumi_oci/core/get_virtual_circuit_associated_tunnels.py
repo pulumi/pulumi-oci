@@ -95,7 +95,7 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[Union['Get
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
+    test_virtual_circuit_associated_tunnels = oci.core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[Union['Get
         id=pulumi.get(__ret__, 'id'),
         virtual_circuit_associated_tunnel_details=pulumi.get(__ret__, 'virtual_circuit_associated_tunnel_details'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
-def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]]]] = None,
-                                                  virtual_circuit_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_circuit_associated_tunnels_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]]]] = None,
+                                                  virtual_circuit_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
     """
     This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
@@ -126,7 +126,7 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
+    test_virtual_circuit_associated_tunnels = oci.core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
 
 

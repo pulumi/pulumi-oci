@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
+ * const testAuditArchiveRetrievals = oci.datasafe.getAuditArchiveRetrievals({
  *     compartmentId: compartmentId,
  *     accessLevel: auditArchiveRetrievalAccessLevel,
  *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
- *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree === "true",
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -138,11 +138,11 @@ export interface GetAuditArchiveRetrievalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
+ * const testAuditArchiveRetrievals = oci.datasafe.getAuditArchiveRetrievals({
  *     compartmentId: compartmentId,
  *     accessLevel: auditArchiveRetrievalAccessLevel,
  *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
- *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree === "true",
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -174,11 +174,11 @@ export interface GetAuditArchiveRetrievalsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * OCID of the archive retrieval.
      */
-    auditArchiveRetrievalId?: pulumi.Input<string>;
+    auditArchiveRetrievalId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -186,26 +186,26 @@ export interface GetAuditArchiveRetrievalsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditArchiveRetrievalsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditArchiveRetrievalsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that matches the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target associated with the archive retrieval.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      */
-    timeOfExpiry?: pulumi.Input<string>;
+    timeOfExpiry?: pulumi.Input<string | undefined>;
 }

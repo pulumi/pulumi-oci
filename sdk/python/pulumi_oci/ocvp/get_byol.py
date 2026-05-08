@@ -258,7 +258,7 @@ def get_byol(byol_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol = oci.Ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
+    test_byol = oci.ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
     ```
 
 
@@ -287,7 +287,7 @@ def get_byol(byol_id: Optional[_builtins.str] = None,
         time_term_start=pulumi.get(__ret__, 'time_term_start'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_units=pulumi.get(__ret__, 'total_units'))
-def get_byol_output(byol_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_byol_output(byol_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByolResult]:
     """
     This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -300,7 +300,7 @@ def get_byol_output(byol_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol = oci.Ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
+    test_byol = oci.ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
     ```
 
 

@@ -128,7 +128,7 @@ def get_assessment_assessor_checks(assessment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_checks = oci.DatabaseMigration.get_assessment_assessor_checks(assessment_id=test_assessment["id"],
+    test_assessment_assessor_checks = oci.databasemigration.get_assessment_assessor_checks(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_assessor_name,
         compartment_id=compartment_id,
         display_name=assessment_assessor_check_display_name)
@@ -157,11 +157,11 @@ def get_assessment_assessor_checks(assessment_id: Optional[_builtins.str] = None
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_assessment_assessor_checks_output(assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict']]]]] = None,
+def get_assessment_assessor_checks_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorChecksResult]:
     """
     This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
@@ -174,7 +174,7 @@ def get_assessment_assessor_checks_output(assessment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_checks = oci.DatabaseMigration.get_assessment_assessor_checks(assessment_id=test_assessment["id"],
+    test_assessment_assessor_checks = oci.databasemigration.get_assessment_assessor_checks(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_assessor_name,
         compartment_id=compartment_id,
         display_name=assessment_assessor_check_display_name)

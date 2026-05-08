@@ -117,7 +117,7 @@ def get_log_analytics_categories_list(category_display_text: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+    test_log_analytics_categories_list = oci.loganalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
         category_display_text=log_analytics_categories_list_category_display_text,
         category_type=log_analytics_categories_list_category_type,
         name=log_analytics_categories_list_name)
@@ -144,10 +144,10 @@ def get_log_analytics_categories_list(category_display_text: Optional[_builtins.
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_analytics_categories_list_output(category_display_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             category_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_categories_list_output(category_display_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             category_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsCategoriesListResult]:
     """
     This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -160,7 +160,7 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+    test_log_analytics_categories_list = oci.loganalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
         category_display_text=log_analytics_categories_list_category_display_text,
         category_type=log_analytics_categories_list_category_type,
         name=log_analytics_categories_list_name)

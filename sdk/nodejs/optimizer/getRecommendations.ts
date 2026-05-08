@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendations = oci.Optimizer.getRecommendations({
+ * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization,
+ *     includeOrganization: recommendationIncludeOrganization === "true",
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,
@@ -150,13 +150,13 @@ export interface GetRecommendationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendations = oci.Optimizer.getRecommendations({
+ * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization,
+ *     includeOrganization: recommendationIncludeOrganization === "true",
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,
@@ -186,11 +186,11 @@ export interface GetRecommendationsOutputArgs {
     /**
      * The unique OCID associated with the category.
      */
-    categoryId?: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the category name specified.
      */
-    categoryName?: pulumi.Input<string>;
+    categoryName?: pulumi.Input<string | undefined>;
     /**
      * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
      *
@@ -200,7 +200,7 @@ export interface GetRecommendationsOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -211,7 +211,7 @@ export interface GetRecommendationsOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationsFilterArgs>[] | undefined>;
     /**
      * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
      *
@@ -219,17 +219,17 @@ export interface GetRecommendationsOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    includeOrganization?: pulumi.Input<boolean>;
+    includeOrganization?: pulumi.Input<boolean | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns recommendations that match the status specified.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

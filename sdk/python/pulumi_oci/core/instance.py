@@ -23,42 +23,42 @@ class InstanceArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
-                 agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
-                 async_: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
-                 dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
-                 ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
-                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
-                 licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']] = None,
-                 platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
-                 preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
-                 preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
-                 source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_config: pulumi.Input[Optional['InstanceAgentConfigArgs']] = None,
+                 async_: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_config: pulumi.Input[Optional['InstanceAvailabilityConfigArgs']] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_vnic_details: pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']] = None,
+                 dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_options: pulumi.Input[Optional['InstanceInstanceOptionsArgs']] = None,
+                 ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 launch_options: pulumi.Input[Optional['InstanceLaunchOptionsArgs']] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
+                 licensing_configs: pulumi.Input[Optional['InstanceLicensingConfigsArgs']] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']] = None,
+                 platform_config: pulumi.Input[Optional['InstancePlatformConfigArgs']] = None,
+                 preemptible_instance_config: pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']] = None,
+                 preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config: pulumi.Input[Optional['InstanceShapeConfigArgs']] = None,
+                 source_details: pulumi.Input[Optional['InstanceSourceDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -289,19 +289,19 @@ class InstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentConfig")
-    def agent_config(self) -> Optional[pulumi.Input['InstanceAgentConfigArgs']]:
+    def agent_config(self) -> pulumi.Input[Optional['InstanceAgentConfigArgs']]:
         """
         (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         """
         return pulumi.get(self, "agent_config")
 
     @agent_config.setter
-    def agent_config(self, value: Optional[pulumi.Input['InstanceAgentConfigArgs']]):
+    def agent_config(self, value: pulumi.Input[Optional['InstanceAgentConfigArgs']]):
         pulumi.set(self, "agent_config", value)
 
     @_builtins.property
     @pulumi.getter(name="async")
-    def async_(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def async_(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether Terraform creates and destroys the resource asynchronously. The default value is false.
         * If `async` is true, all the creation and deletion of instances are asynchronous
@@ -312,108 +312,108 @@ class InstanceArgs:
         return pulumi.get(self, "async_")
 
     @async_.setter
-    def async_(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def async_(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "async_", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityConfig")
-    def availability_config(self) -> Optional[pulumi.Input['InstanceAvailabilityConfigArgs']]:
+    def availability_config(self) -> pulumi.Input[Optional['InstanceAvailabilityConfigArgs']]:
         """
         (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         """
         return pulumi.get(self, "availability_config")
 
     @availability_config.setter
-    def availability_config(self, value: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']]):
+    def availability_config(self, value: pulumi.Input[Optional['InstanceAvailabilityConfigArgs']]):
         pulumi.set(self, "availability_config", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster placement group of the instance.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeClusterId")
-    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         """
         return pulumi.get(self, "compute_cluster_id")
 
     @compute_cluster_id.setter
-    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
-    def create_vnic_details(self) -> Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']]:
+    def create_vnic_details(self) -> pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']]:
         """
         (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
-    def create_vnic_details(self, value: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']]):
+    def create_vnic_details(self, value: pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']]):
         pulumi.set(self, "create_vnic_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHostId")
-    def dedicated_vm_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_vm_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
     @dedicated_vm_host_id.setter
-    def dedicated_vm_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_vm_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_vm_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def extended_metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 
@@ -426,12 +426,12 @@ class InstanceArgs:
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def extended_metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 
@@ -444,74 +444,74 @@ class InstanceArgs:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
     @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
-    def instance_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOptions")
-    def instance_options(self) -> Optional[pulumi.Input['InstanceInstanceOptionsArgs']]:
+    def instance_options(self) -> pulumi.Input[Optional['InstanceInstanceOptionsArgs']]:
         """
         (Updatable) Optional mutable instance options
         """
         return pulumi.get(self, "instance_options")
 
     @instance_options.setter
-    def instance_options(self, value: Optional[pulumi.Input['InstanceInstanceOptionsArgs']]):
+    def instance_options(self, value: pulumi.Input[Optional['InstanceInstanceOptionsArgs']]):
         pulumi.set(self, "instance_options", value)
 
     @_builtins.property
     @pulumi.getter(name="ipxeScript")
-    def ipxe_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipxe_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is an advanced option.
 
@@ -530,48 +530,48 @@ class InstanceArgs:
         return pulumi.get(self, "ipxe_script")
 
     @ipxe_script.setter
-    def ipxe_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipxe_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipxe_script", value)
 
     @_builtins.property
     @pulumi.getter(name="isAiEnterpriseEnabled")
-    def is_ai_enterprise_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ai_enterprise_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable AI enterprise on the instance.
         """
         return pulumi.get(self, "is_ai_enterprise_enabled")
 
     @is_ai_enterprise_enabled.setter
-    def is_ai_enterprise_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ai_enterprise_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ai_enterprise_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
-    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pv_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="launchOptions")
-    def launch_options(self) -> Optional[pulumi.Input['InstanceLaunchOptionsArgs']]:
+    def launch_options(self) -> pulumi.Input[Optional['InstanceLaunchOptionsArgs']]:
         """
         (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
-    def launch_options(self, value: Optional[pulumi.Input['InstanceLaunchOptionsArgs']]):
+    def launch_options(self, value: pulumi.Input[Optional['InstanceLaunchOptionsArgs']]):
         pulumi.set(self, "launch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="launchVolumeAttachments")
-    def launch_volume_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
+    def launch_volume_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
         """
         Volume attachments to create as part of the launch instance operation.
 
@@ -580,24 +580,24 @@ class InstanceArgs:
         return pulumi.get(self, "launch_volume_attachments")
 
     @launch_volume_attachments.setter
-    def launch_volume_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
+    def launch_volume_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
         pulumi.set(self, "launch_volume_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="licensingConfigs")
-    def licensing_configs(self) -> Optional[pulumi.Input['InstanceLicensingConfigsArgs']]:
+    def licensing_configs(self) -> pulumi.Input[Optional['InstanceLicensingConfigsArgs']]:
         """
         (Updatable) List of licensing configurations associated with target launch values.
         """
         return pulumi.get(self, "licensing_configs")
 
     @licensing_configs.setter
-    def licensing_configs(self, value: Optional[pulumi.Input['InstanceLicensingConfigsArgs']]):
+    def licensing_configs(self, value: pulumi.Input[Optional['InstanceLicensingConfigsArgs']]):
         pulumi.set(self, "licensing_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 
@@ -636,24 +636,24 @@ class InstanceArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
-    def placement_constraint_details(self) -> Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]:
+    def placement_constraint_details(self) -> pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']]:
         """
         Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         """
         return pulumi.get(self, "placement_constraint_details")
 
     @placement_constraint_details.setter
-    def placement_constraint_details(self, value: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]):
+    def placement_constraint_details(self, value: pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']]):
         pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
-    def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
+    def platform_config(self) -> pulumi.Input[Optional['InstancePlatformConfigArgs']]:
         """
         (Updatable) The platform configuration requested for the instance.
 
@@ -669,57 +669,57 @@ class InstanceArgs:
         return pulumi.get(self, "platform_config")
 
     @platform_config.setter
-    def platform_config(self, value: Optional[pulumi.Input['InstancePlatformConfigArgs']]):
+    def platform_config(self, value: pulumi.Input[Optional['InstancePlatformConfigArgs']]):
         pulumi.set(self, "platform_config", value)
 
     @_builtins.property
     @pulumi.getter(name="preemptibleInstanceConfig")
-    def preemptible_instance_config(self) -> Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']]:
+    def preemptible_instance_config(self) -> pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']]:
         """
         Configuration options for preemptible instances.
         """
         return pulumi.get(self, "preemptible_instance_config")
 
     @preemptible_instance_config.setter
-    def preemptible_instance_config(self, value: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']]):
+    def preemptible_instance_config(self, value: pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']]):
         pulumi.set(self, "preemptible_instance_config", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveBootVolume")
-    def preserve_boot_volume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_boot_volume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
 
     @preserve_boot_volume.setter
-    def preserve_boot_volume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_boot_volume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_boot_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
-    def preserve_data_volumes_created_at_launch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_data_volumes_created_at_launch(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "preserve_data_volumes_created_at_launch")
 
     @preserve_data_volumes_created_at_launch.setter
-    def preserve_data_volumes_created_at_launch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_data_volumes_created_at_launch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_data_volumes_created_at_launch", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 
@@ -728,12 +728,12 @@ class InstanceArgs:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
-    def shape_config(self) -> Optional[pulumi.Input['InstanceShapeConfigArgs']]:
+    def shape_config(self) -> pulumi.Input[Optional['InstanceShapeConfigArgs']]:
         """
         (Updatable) The shape configuration requested for the instance.
 
@@ -744,24 +744,24 @@ class InstanceArgs:
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
-    def shape_config(self, value: Optional[pulumi.Input['InstanceShapeConfigArgs']]):
+    def shape_config(self, value: pulumi.Input[Optional['InstanceShapeConfigArgs']]):
         pulumi.set(self, "shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Optional[pulumi.Input['InstanceSourceDetailsArgs']]:
+    def source_details(self) -> pulumi.Input[Optional['InstanceSourceDetailsArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
-    def source_details(self, value: Optional[pulumi.Input['InstanceSourceDetailsArgs']]):
+    def source_details(self, value: pulumi.Input[Optional['InstanceSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
 
@@ -771,83 +771,83 @@ class InstanceArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="updateOperationConstraint")
-    def update_operation_constraint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_operation_constraint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "update_operation_constraint")
 
     @update_operation_constraint.setter
-    def update_operation_constraint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_operation_constraint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_operation_constraint", value)
 
 
 @pulumi.input_type
 class _InstanceState:
     def __init__(__self__, *,
-                 agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
-                 async_: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
-                 dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
-                 ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cross_numa_node: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
-                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
-                 licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']] = None,
-                 platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
-                 preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
-                 preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_attributes_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
-                 source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_config: pulumi.Input[Optional['InstanceAgentConfigArgs']] = None,
+                 async_: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_config: pulumi.Input[Optional['InstanceAvailabilityConfigArgs']] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_vnic_details: pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']] = None,
+                 dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_options: pulumi.Input[Optional['InstanceInstanceOptionsArgs']] = None,
+                 ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cross_numa_node: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_options: pulumi.Input[Optional['InstanceLaunchOptionsArgs']] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
+                 licensing_configs: pulumi.Input[Optional['InstanceLicensingConfigsArgs']] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']] = None,
+                 platform_config: pulumi.Input[Optional['InstancePlatformConfigArgs']] = None,
+                 preemptible_instance_config: pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']] = None,
+                 preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config: pulumi.Input[Optional['InstanceShapeConfigArgs']] = None,
+                 source_details: pulumi.Input[Optional['InstanceSourceDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
 
@@ -1090,19 +1090,19 @@ class _InstanceState:
 
     @_builtins.property
     @pulumi.getter(name="agentConfig")
-    def agent_config(self) -> Optional[pulumi.Input['InstanceAgentConfigArgs']]:
+    def agent_config(self) -> pulumi.Input[Optional['InstanceAgentConfigArgs']]:
         """
         (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         """
         return pulumi.get(self, "agent_config")
 
     @agent_config.setter
-    def agent_config(self, value: Optional[pulumi.Input['InstanceAgentConfigArgs']]):
+    def agent_config(self, value: pulumi.Input[Optional['InstanceAgentConfigArgs']]):
         pulumi.set(self, "agent_config", value)
 
     @_builtins.property
     @pulumi.getter(name="async")
-    def async_(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def async_(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether Terraform creates and destroys the resource asynchronously. The default value is false.
         * If `async` is true, all the creation and deletion of instances are asynchronous
@@ -1113,144 +1113,144 @@ class _InstanceState:
         return pulumi.get(self, "async_")
 
     @async_.setter
-    def async_(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def async_(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "async_", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityConfig")
-    def availability_config(self) -> Optional[pulumi.Input['InstanceAvailabilityConfigArgs']]:
+    def availability_config(self) -> pulumi.Input[Optional['InstanceAvailabilityConfigArgs']]:
         """
         (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         """
         return pulumi.get(self, "availability_config")
 
     @availability_config.setter
-    def availability_config(self, value: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']]):
+    def availability_config(self, value: pulumi.Input[Optional['InstanceAvailabilityConfigArgs']]):
         pulumi.set(self, "availability_config", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeId")
-    def boot_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         """
         return pulumi.get(self, "boot_volume_id")
 
     @boot_volume_id.setter
-    def boot_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_volume_id", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster placement group of the instance.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeClusterId")
-    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         """
         return pulumi.get(self, "compute_cluster_id")
 
     @compute_cluster_id.setter
-    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
-    def create_vnic_details(self) -> Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']]:
+    def create_vnic_details(self) -> pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']]:
         """
         (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
-    def create_vnic_details(self, value: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']]):
+    def create_vnic_details(self, value: pulumi.Input[Optional['InstanceCreateVnicDetailsArgs']]):
         pulumi.set(self, "create_vnic_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHostId")
-    def dedicated_vm_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_vm_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
     @dedicated_vm_host_id.setter
-    def dedicated_vm_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_vm_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_vm_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def extended_metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 
@@ -1263,12 +1263,12 @@ class _InstanceState:
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def extended_metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 
@@ -1281,74 +1281,74 @@ class _InstanceState:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
     @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
-    def instance_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOptions")
-    def instance_options(self) -> Optional[pulumi.Input['InstanceInstanceOptionsArgs']]:
+    def instance_options(self) -> pulumi.Input[Optional['InstanceInstanceOptionsArgs']]:
         """
         (Updatable) Optional mutable instance options
         """
         return pulumi.get(self, "instance_options")
 
     @instance_options.setter
-    def instance_options(self, value: Optional[pulumi.Input['InstanceInstanceOptionsArgs']]):
+    def instance_options(self, value: pulumi.Input[Optional['InstanceInstanceOptionsArgs']]):
         pulumi.set(self, "instance_options", value)
 
     @_builtins.property
     @pulumi.getter(name="ipxeScript")
-    def ipxe_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipxe_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is an advanced option.
 
@@ -1367,48 +1367,48 @@ class _InstanceState:
         return pulumi.get(self, "ipxe_script")
 
     @ipxe_script.setter
-    def ipxe_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipxe_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipxe_script", value)
 
     @_builtins.property
     @pulumi.getter(name="isAiEnterpriseEnabled")
-    def is_ai_enterprise_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ai_enterprise_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable AI enterprise on the instance.
         """
         return pulumi.get(self, "is_ai_enterprise_enabled")
 
     @is_ai_enterprise_enabled.setter
-    def is_ai_enterprise_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ai_enterprise_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ai_enterprise_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCrossNumaNode")
-    def is_cross_numa_node(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cross_numa_node(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         """
         return pulumi.get(self, "is_cross_numa_node")
 
     @is_cross_numa_node.setter
-    def is_cross_numa_node(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cross_numa_node(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cross_numa_node", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
-    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pv_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="launchMode")
-    def launch_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def launch_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -1419,24 +1419,24 @@ class _InstanceState:
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
-    def launch_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def launch_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "launch_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="launchOptions")
-    def launch_options(self) -> Optional[pulumi.Input['InstanceLaunchOptionsArgs']]:
+    def launch_options(self) -> pulumi.Input[Optional['InstanceLaunchOptionsArgs']]:
         """
         (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
-    def launch_options(self, value: Optional[pulumi.Input['InstanceLaunchOptionsArgs']]):
+    def launch_options(self, value: pulumi.Input[Optional['InstanceLaunchOptionsArgs']]):
         pulumi.set(self, "launch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="launchVolumeAttachments")
-    def launch_volume_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
+    def launch_volume_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
         """
         Volume attachments to create as part of the launch instance operation.
 
@@ -1445,24 +1445,24 @@ class _InstanceState:
         return pulumi.get(self, "launch_volume_attachments")
 
     @launch_volume_attachments.setter
-    def launch_volume_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
+    def launch_volume_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
         pulumi.set(self, "launch_volume_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="licensingConfigs")
-    def licensing_configs(self) -> Optional[pulumi.Input['InstanceLicensingConfigsArgs']]:
+    def licensing_configs(self) -> pulumi.Input[Optional['InstanceLicensingConfigsArgs']]:
         """
         (Updatable) List of licensing configurations associated with target launch values.
         """
         return pulumi.get(self, "licensing_configs")
 
     @licensing_configs.setter
-    def licensing_configs(self, value: Optional[pulumi.Input['InstanceLicensingConfigsArgs']]):
+    def licensing_configs(self, value: pulumi.Input[Optional['InstanceLicensingConfigsArgs']]):
         pulumi.set(self, "licensing_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 
@@ -1501,24 +1501,24 @@ class _InstanceState:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
-    def placement_constraint_details(self) -> Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]:
+    def placement_constraint_details(self) -> pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']]:
         """
         Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         """
         return pulumi.get(self, "placement_constraint_details")
 
     @placement_constraint_details.setter
-    def placement_constraint_details(self, value: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]):
+    def placement_constraint_details(self, value: pulumi.Input[Optional['InstancePlacementConstraintDetailsArgs']]):
         pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
-    def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
+    def platform_config(self) -> pulumi.Input[Optional['InstancePlatformConfigArgs']]:
         """
         (Updatable) The platform configuration requested for the instance.
 
@@ -1534,105 +1534,105 @@ class _InstanceState:
         return pulumi.get(self, "platform_config")
 
     @platform_config.setter
-    def platform_config(self, value: Optional[pulumi.Input['InstancePlatformConfigArgs']]):
+    def platform_config(self, value: pulumi.Input[Optional['InstancePlatformConfigArgs']]):
         pulumi.set(self, "platform_config", value)
 
     @_builtins.property
     @pulumi.getter(name="preemptibleInstanceConfig")
-    def preemptible_instance_config(self) -> Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']]:
+    def preemptible_instance_config(self) -> pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']]:
         """
         Configuration options for preemptible instances.
         """
         return pulumi.get(self, "preemptible_instance_config")
 
     @preemptible_instance_config.setter
-    def preemptible_instance_config(self, value: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']]):
+    def preemptible_instance_config(self, value: pulumi.Input[Optional['InstancePreemptibleInstanceConfigArgs']]):
         pulumi.set(self, "preemptible_instance_config", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveBootVolume")
-    def preserve_boot_volume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_boot_volume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
 
     @preserve_boot_volume.setter
-    def preserve_boot_volume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_boot_volume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_boot_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
-    def preserve_data_volumes_created_at_launch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_data_volumes_created_at_launch(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "preserve_data_volumes_created_at_launch")
 
     @preserve_data_volumes_created_at_launch.setter
-    def preserve_data_volumes_created_at_launch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_data_volumes_created_at_launch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_data_volumes_created_at_launch", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IP address of instance VNIC (if enabled).
         """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
-    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region that contains the availability domain the instance is running in.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributesState")
-    def security_attributes_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_attributes_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the `securityAttributes`
         """
         return pulumi.get(self, "security_attributes_state")
 
     @security_attributes_state.setter
-    def security_attributes_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_attributes_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_attributes_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 
@@ -1641,12 +1641,12 @@ class _InstanceState:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
-    def shape_config(self) -> Optional[pulumi.Input['InstanceShapeConfigArgs']]:
+    def shape_config(self) -> pulumi.Input[Optional['InstanceShapeConfigArgs']]:
         """
         (Updatable) The shape configuration requested for the instance.
 
@@ -1657,24 +1657,24 @@ class _InstanceState:
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
-    def shape_config(self, value: Optional[pulumi.Input['InstanceShapeConfigArgs']]):
+    def shape_config(self, value: pulumi.Input[Optional['InstanceShapeConfigArgs']]):
         pulumi.set(self, "shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Optional[pulumi.Input['InstanceSourceDetailsArgs']]:
+    def source_details(self) -> pulumi.Input[Optional['InstanceSourceDetailsArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
-    def source_details(self, value: Optional[pulumi.Input['InstanceSourceDetailsArgs']]):
+    def source_details(self, value: pulumi.Input[Optional['InstanceSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
 
@@ -1684,65 +1684,65 @@ class _InstanceState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaintenanceRebootDue")
-    def time_maintenance_reboot_due(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_maintenance_reboot_due(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_maintenance_reboot_due")
 
     @time_maintenance_reboot_due.setter
-    def time_maintenance_reboot_due(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_maintenance_reboot_due(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_maintenance_reboot_due", value)
 
     @_builtins.property
     @pulumi.getter(name="updateOperationConstraint")
-    def update_operation_constraint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_operation_constraint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "update_operation_constraint")
 
     @update_operation_constraint.setter
-    def update_operation_constraint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_operation_constraint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_operation_constraint", value)
 
 
@@ -1752,44 +1752,44 @@ class Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_config: Optional[pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
-                 async_: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_config: Optional[pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
-                 dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_options: Optional[pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
-                 ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-                 platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-                 preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
-                 preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-                 source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+                 async_: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+                 dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+                 ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
+                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
+                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+                 preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Instance resource in Oracle Cloud Infrastructure Core service.
@@ -2061,44 +2061,44 @@ class Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_config: Optional[pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
-                 async_: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_config: Optional[pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
-                 dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_options: Optional[pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
-                 ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-                 platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-                 preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
-                 preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-                 source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+                 async_: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+                 dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+                 ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
+                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
+                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+                 preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2170,54 +2170,54 @@ class Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_config: Optional[pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
-            async_: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_config: Optional[pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            boot_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
-            dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_options: Optional[pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
-            ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
-            is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_cross_numa_node: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-            launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-            licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-            platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-            preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
-            preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-            preserve_data_volumes_created_at_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-            private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            security_attributes_state: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-            source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
-            update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None) -> 'Instance':
+            agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+            async_: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            boot_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+            dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+            ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_cross_numa_node: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
+            launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+            licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
+            platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
+            preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+            preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+            preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            security_attributes_state: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+            update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None) -> 'Instance':
         """
         Get an existing Instance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

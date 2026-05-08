@@ -36,8 +36,8 @@ import (
 //				DisplayNameContains: pulumi.StringRef(managementStationDisplayNameContains),
 //				HealthState:         pulumi.StringRef(managementStationHealthState),
 //				Id:                  pulumi.StringRef(managementStationId),
-//				Locations:           managementStationLocation,
-//				LocationNotEqualTos: managementStationLocationNotEqualTo,
+//				Locations:           pulumi.ToArray(managementStationLocation),
+//				LocationNotEqualTos: pulumi.ToArray(managementStationLocationNotEqualTo),
 //				ManagedInstanceId:   pulumi.StringRef(testManagedInstance.Id),
 //				State:               pulumi.StringRef(managementStationState),
 //			}, nil)

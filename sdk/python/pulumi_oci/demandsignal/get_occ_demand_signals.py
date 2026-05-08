@@ -125,7 +125,7 @@ def get_occ_demand_signals(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signals = oci.DemandSignal.get_occ_demand_signals(compartment_id=compartment_id,
+    test_occ_demand_signals = oci.demandsignal.get_occ_demand_signals(compartment_id=compartment_id,
         display_name=occ_demand_signal_display_name,
         id=occ_demand_signal_id,
         state=occ_demand_signal_state)
@@ -153,11 +153,11 @@ def get_occ_demand_signals(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         occ_demand_signal_collections=pulumi.get(__ret__, 'occ_demand_signal_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_occ_demand_signals_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict']]]]] = None,
-                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_occ_demand_signals_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict']]]]] = None,
+                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccDemandSignalsResult]:
     """
     This data source provides the list of Occ Demand Signals in Oracle Cloud Infrastructure Demand Signal service.
@@ -170,7 +170,7 @@ def get_occ_demand_signals_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signals = oci.DemandSignal.get_occ_demand_signals(compartment_id=compartment_id,
+    test_occ_demand_signals = oci.demandsignal.get_occ_demand_signals(compartment_id=compartment_id,
         display_name=occ_demand_signal_display_name,
         id=occ_demand_signal_id,
         state=occ_demand_signal_state)

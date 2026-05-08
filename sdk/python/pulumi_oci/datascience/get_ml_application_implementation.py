@@ -306,7 +306,7 @@ def get_ml_application_implementation(ml_application_implementation_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation = oci.DataScience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
+    test_ml_application_implementation = oci.datascience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
     ```
 
 
@@ -340,7 +340,7 @@ def get_ml_application_implementation(ml_application_implementation_id: Optional
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_ml_application_implementation_output(ml_application_implementation_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ml_application_implementation_output(ml_application_implementation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationImplementationResult]:
     """
     This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
@@ -353,7 +353,7 @@ def get_ml_application_implementation_output(ml_application_implementation_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation = oci.DataScience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
+    test_ml_application_implementation = oci.datascience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
     ```
 
 

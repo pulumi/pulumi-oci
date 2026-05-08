@@ -142,26 +142,26 @@ export interface GetAiDataPlatformAiDataPlatformsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to exclude resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    excludeLifecycleState?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetAiDataPlatformAiDataPlatformsFilterArgs>[]>;
+    excludeLifecycleState?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetAiDataPlatformAiDataPlatformsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * This flag will determine if legacy instances will be returned.
      */
-    includeLegacy?: pulumi.Input<string>;
+    includeLegacy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

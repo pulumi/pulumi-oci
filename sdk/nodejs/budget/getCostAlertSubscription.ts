@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAlertSubscription = oci.Budget.getCostAlertSubscription({
+ * const testCostAlertSubscription = oci.budget.getCostAlertSubscription({
  *     costAlertSubscriptionId: testCostAlertSubscriptionOciBudgetCostAlertSubscription.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetCostAlertSubscriptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAlertSubscription = oci.Budget.getCostAlertSubscription({
+ * const testCostAlertSubscription = oci.budget.getCostAlertSubscription({
  *     costAlertSubscriptionId: testCostAlertSubscriptionOciBudgetCostAlertSubscription.id,
  * });
  * ```

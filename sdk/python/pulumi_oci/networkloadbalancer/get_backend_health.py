@@ -121,7 +121,7 @@ def get_backend_health(backend_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=test_backend["name"],
+    test_backend_health = oci.networkloadbalancer.get_backend_health(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```
@@ -145,9 +145,9 @@ def get_backend_health(backend_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
         status=pulumi.get(__ret__, 'status'))
-def get_backend_health_output(backend_name: Optional[pulumi.Input[_builtins.str]] = None,
-                              backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                              network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_backend_health_output(backend_name: pulumi.Input[Optional[_builtins.str]] = None,
+                              backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                              network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendHealthResult]:
     """
     This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -160,7 +160,7 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=test_backend["name"],
+    test_backend_health = oci.networkloadbalancer.get_backend_health(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```

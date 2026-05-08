@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
  *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
@@ -85,7 +85,7 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
  *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
@@ -109,8 +109,8 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArg
     /**
      * The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    endTimeLessThanOrEqualTo?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs>[]>;
+    endTimeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -118,5 +118,5 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArg
     /**
      * The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      */
-    startTimeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    startTimeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

@@ -23,7 +23,7 @@ class VaultVerificationArgs:
     def __init__(__self__, *,
                  replica_region: pulumi.Input[_builtins.str],
                  vault_id: pulumi.Input[_builtins.str],
-                 replica_vault_metadata: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']] = None):
+                 replica_vault_metadata: pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']] = None):
         """
         The set of arguments for constructing a VaultVerification resource.
 
@@ -63,23 +63,23 @@ class VaultVerificationArgs:
 
     @_builtins.property
     @pulumi.getter(name="replicaVaultMetadata")
-    def replica_vault_metadata(self) -> Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]:
+    def replica_vault_metadata(self) -> pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']]:
         return pulumi.get(self, "replica_vault_metadata")
 
     @replica_vault_metadata.setter
-    def replica_vault_metadata(self, value: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]):
+    def replica_vault_metadata(self, value: pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']]):
         pulumi.set(self, "replica_vault_metadata", value)
 
 
 @pulumi.input_type
 class _VaultVerificationState:
     def __init__(__self__, *,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_vault_metadata: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_replica_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_vault_metadata: pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_replica_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VaultVerification resources.
 
@@ -102,25 +102,25 @@ class _VaultVerificationState:
 
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crypto_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
-    def crypto_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crypto_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crypto_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
-    def management_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaRegion")
-    def replica_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replica_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The region to be created replica to. When updated,
         replica will be deleted from old region, and created to updated region.
@@ -128,37 +128,37 @@ class _VaultVerificationState:
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
-    def replica_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replica_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replica_region", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaVaultMetadata")
-    def replica_vault_metadata(self) -> Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]:
+    def replica_vault_metadata(self) -> pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']]:
         return pulumi.get(self, "replica_vault_metadata")
 
     @replica_vault_metadata.setter
-    def replica_vault_metadata(self, value: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]):
+    def replica_vault_metadata(self, value: pulumi.Input[Optional['VaultVerificationReplicaVaultMetadataArgs']]):
         pulumi.set(self, "replica_vault_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the primary vault to create replica from.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultReplicaStatus")
-    def vault_replica_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_replica_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "vault_replica_status")
 
     @vault_replica_status.setter
-    def vault_replica_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_replica_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_replica_status", value)
 
 
@@ -168,9 +168,9 @@ class VaultVerification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This source triggers action to create, update and delete replica for a vault in Oracle Cloud Infrastructure Kms service.
@@ -241,9 +241,9 @@ class VaultVerification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 replica_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 replica_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -273,12 +273,12 @@ class VaultVerification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_region: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_replica_status: Optional[pulumi.Input[_builtins.str]] = None) -> 'VaultVerification':
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_region: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_replica_status: pulumi.Input[Optional[_builtins.str]] = None) -> 'VaultVerification':
         """
         Get an existing VaultVerification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

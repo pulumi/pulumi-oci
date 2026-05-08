@@ -104,7 +104,7 @@ def get_external_my_sql_database(external_my_sql_database_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database = oci.DatabaseManagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
+    test_external_my_sql_database = oci.databasemanagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
     ```
 
 
@@ -121,7 +121,7 @@ def get_external_my_sql_database(external_my_sql_database_id: Optional[_builtins
         external_database_id=pulumi.get(__ret__, 'external_database_id'),
         external_my_sql_database_id=pulumi.get(__ret__, 'external_my_sql_database_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_my_sql_database_output(external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_my_sql_database_output(external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabaseResult]:
     """
     This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -134,7 +134,7 @@ def get_external_my_sql_database_output(external_my_sql_database_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database = oci.DatabaseManagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
+    test_external_my_sql_database = oci.databasemanagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
     ```
 
 

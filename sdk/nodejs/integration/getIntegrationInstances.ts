@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIntegrationInstances = oci.Integration.getIntegrationInstances({
+ * const testIntegrationInstances = oci.integration.getIntegrationInstances({
  *     compartmentId: compartmentId,
  *     displayName: integrationInstanceDisplayName,
  *     state: integrationInstanceState,
@@ -90,7 +90,7 @@ export interface GetIntegrationInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIntegrationInstances = oci.Integration.getIntegrationInstances({
+ * const testIntegrationInstances = oci.integration.getIntegrationInstances({
  *     compartmentId: compartmentId,
  *     displayName: integrationInstanceDisplayName,
  *     state: integrationInstanceState,
@@ -118,10 +118,10 @@ export interface GetIntegrationInstancesOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Integration.GetIntegrationInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Integration.GetIntegrationInstancesFilterArgs>[] | undefined>;
     /**
      * Life cycle state to query on.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -267,7 +267,7 @@ def get_iot_iot_domain_group(iot_domain_group_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_iot_iot_domain_group_output(iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iot_iot_domain_group_output(iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotIotDomainGroupResult]:
     """
     This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.

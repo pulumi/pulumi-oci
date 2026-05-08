@@ -25,12 +25,12 @@ import * as utilities from "../utilities";
  *     queryDefinition: {
  *         costAnalysisUi: {
  *             graph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiGraph,
- *             isCumulativeGraph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
+ *             isCumulativeGraph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph === "true",
  *         },
  *         displayName: usageCarbonEmissionsQueryQueryDefinitionDisplayName,
  *         reportQuery: {
  *             tenantId: testTenant.id,
- *             compartmentDepth: usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
+ *             compartmentDepth: Number(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth),
  *             dateRangeName: usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
  *             emissionCalculationMethod: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod,
  *             emissionType: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionType,
@@ -41,12 +41,12 @@ import * as utilities from "../utilities";
  *                 namespace: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagNamespace,
  *                 value: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime,
+ *             isAggregateByTime: usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime === "true",
  *             timeUsageEnded: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageEnded,
  *             timeUsageStarted: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageStarted,
  *             usageCarbonEmissionsQueryFilter: usageCarbonEmissionsQueryQueryDefinitionReportQueryUsageCarbonEmissionsQueryFilter,
  *         },
- *         version: usageCarbonEmissionsQueryQueryDefinitionVersion,
+ *         version: Number(usageCarbonEmissionsQueryQueryDefinitionVersion),
  *     },
  * });
  * ```
@@ -134,11 +134,11 @@ export interface UsageCarbonEmissionsQueryState {
     /**
      * The compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The common fields for queries.
      */
-    queryDefinition?: pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinition>;
+    queryDefinition?: pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinition | undefined>;
 }
 
 /**

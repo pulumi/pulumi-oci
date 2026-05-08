@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelEvaluationResults = oci.AiLanguage.getModelEvaluationResults({
+ * const testModelEvaluationResults = oci.ailanguage.getModelEvaluationResults({
  *     modelId: testModel.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetModelEvaluationResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelEvaluationResults = oci.AiLanguage.getModelEvaluationResults({
+ * const testModelEvaluationResults = oci.ailanguage.getModelEvaluationResults({
  *     modelId: testModel.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getModelEvaluationResultsOutput(args: GetModelEvaluationResultsO
  * A collection of arguments for invoking getModelEvaluationResults.
  */
 export interface GetModelEvaluationResultsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.AiLanguage.GetModelEvaluationResultsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AiLanguage.GetModelEvaluationResultsFilterArgs>[] | undefined>;
     /**
      * unique model OCID.
      */

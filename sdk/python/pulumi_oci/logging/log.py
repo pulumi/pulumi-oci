@@ -24,11 +24,11 @@ class LogArgs:
                  display_name: pulumi.Input[_builtins.str],
                  log_group_id: pulumi.Input[_builtins.str],
                  log_type: pulumi.Input[_builtins.str],
-                 configuration: Optional[pulumi.Input['LogConfigurationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_duration: Optional[pulumi.Input[_builtins.int]] = None):
+                 configuration: pulumi.Input[Optional['LogConfigurationArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_duration: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Log resource.
 
@@ -97,55 +97,55 @@ class LogArgs:
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input['LogConfigurationArgs']]:
+    def configuration(self) -> pulumi.Input[Optional['LogConfigurationArgs']]:
         """
         Log object configuration.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input['LogConfigurationArgs']]):
+    def configuration(self, value: pulumi.Input[Optional['LogConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not this resource is currently enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionDuration")
-    def retention_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
@@ -156,26 +156,26 @@ class LogArgs:
         return pulumi.get(self, "retention_duration")
 
     @retention_duration.setter
-    def retention_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_duration", value)
 
 
 @pulumi.input_type
 class _LogState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration: Optional[pulumi.Input['LogConfigurationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_modified: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional['LogConfigurationArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_modified: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Log resources.
 
@@ -226,103 +226,103 @@ class _LogState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that the resource belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input['LogConfigurationArgs']]:
+    def configuration(self) -> pulumi.Input[Optional['LogConfigurationArgs']]:
         """
         Log object configuration.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input['LogConfigurationArgs']]):
+    def configuration(self, value: pulumi.Input[Optional['LogConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not this resource is currently enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID of a log group to work with.
         """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
-    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="logType")
-    def log_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The logType that the log object is for, whether custom or service.
         """
         return pulumi.get(self, "log_type")
 
     @log_type.setter
-    def log_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_type", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionDuration")
-    def retention_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
@@ -333,55 +333,55 @@ class _LogState:
         return pulumi.get(self, "retention_duration")
 
     @retention_duration.setter
-    def retention_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pipeline state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the resource was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the resource was last modified.
         """
         return pulumi.get(self, "time_last_modified")
 
     @time_last_modified.setter
-    def time_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_modified", value)
 
 
@@ -391,14 +391,14 @@ class Log(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
@@ -435,8 +435,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=log_is_enabled,
-            retention_duration=log_retention_duration)
+            is_enabled=log_is_enabled == "true",
+            retention_duration=int(log_retention_duration))
         ```
 
         ## Import
@@ -504,8 +504,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=log_is_enabled,
-            retention_duration=log_retention_duration)
+            is_enabled=log_is_enabled == "true",
+            retention_duration=int(log_retention_duration))
         ```
 
         ## Import
@@ -532,14 +532,14 @@ class Log(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -578,19 +578,19 @@ class Log(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            log_type: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_modified: Optional[pulumi.Input[_builtins.str]] = None) -> 'Log':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_type: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> 'Log':
         """
         Get an existing Log resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -154,7 +154,7 @@ def get_workspace_export_requests(export_status: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
+    test_workspace_export_requests = oci.dataintegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
         export_status=workspace_export_request_export_status,
         name=workspace_export_request_name,
         projection=workspace_export_request_projection,
@@ -191,13 +191,13 @@ def get_workspace_export_requests(export_status: Optional[_builtins.str] = None,
         time_ended_in_millis=pulumi.get(__ret__, 'time_ended_in_millis'),
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         projection: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_ended_in_millis: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_started_in_millis: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_export_requests_output(export_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         projection: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_ended_in_millis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_started_in_millis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceExportRequestsResult]:
     """
     This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
@@ -210,7 +210,7 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
+    test_workspace_export_requests = oci.dataintegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
         export_status=workspace_export_request_export_status,
         name=workspace_export_request_name,
         projection=workspace_export_request_projection,

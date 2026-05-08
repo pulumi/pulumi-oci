@@ -29,9 +29,9 @@ class DbmulticloudOracleDbAzureConnectorArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  db_cluster_resource_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]] = None,
-                 last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None):
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]] = None,
+                 last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureConnector resource.
 
@@ -160,59 +160,59 @@ class DbmulticloudOracleDbAzureConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="arcAgentNodes")
-    def arc_agent_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
+    def arc_agent_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
         """
         List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
 
     @arc_agent_nodes.setter
-    def arc_agent_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]):
+    def arc_agent_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]):
         pulumi.set(self, "arc_agent_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModification")
-    def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
     @last_modification.setter
-    def last_modification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modification", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the current lifecycle state in more detail.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
 
 @pulumi.input_type
 class _DbmulticloudOracleDbAzureConnectorState:
     def __init__(__self__, *,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]] = None,
-                 azure_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_cluster_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]] = None,
+                 azure_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_cluster_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureConnector resources.
 
@@ -265,182 +265,182 @@ class _DbmulticloudOracleDbAzureConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
     @access_token.setter
-    def access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="arcAgentNodes")
-    def arc_agent_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
+    def arc_agent_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
         """
         List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
 
     @arc_agent_nodes.setter
-    def arc_agent_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]):
+    def arc_agent_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]):
         pulumi.set(self, "arc_agent_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="azureIdentityConnectivityStatus")
-    def azure_identity_connectivity_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_identity_connectivity_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current Connectivity status of Azure Identity Connector resource.
         """
         return pulumi.get(self, "azure_identity_connectivity_status")
 
     @azure_identity_connectivity_status.setter
-    def azure_identity_connectivity_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_identity_connectivity_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_identity_connectivity_status", value)
 
     @_builtins.property
     @pulumi.getter(name="azureIdentityMechanism")
-    def azure_identity_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_identity_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
     @azure_identity_mechanism.setter
-    def azure_identity_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_identity_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_identity_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="azureResourceGroup")
-    def azure_resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
     @azure_resource_group.setter
-    def azure_resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="azureSubscriptionId")
-    def azure_subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure Subscription ID.
         """
         return pulumi.get(self, "azure_subscription_id")
 
     @azure_subscription_id.setter
-    def azure_subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
-    def azure_tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure Tenant ID.
         """
         return pulumi.get(self, "azure_tenant_id")
 
     @azure_tenant_id.setter
-    def azure_tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbClusterResourceId")
-    def db_cluster_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_cluster_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
     @db_cluster_resource_id.setter
-    def db_cluster_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_cluster_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_cluster_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle DB Azure Connector resource name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModification")
-    def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
     @last_modification.setter
-    def last_modification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modification", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the current lifecycle state in more detail.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -450,17 +450,17 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
-                 azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_cluster_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+                 azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_cluster_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -535,17 +535,17 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
-                 azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_cluster_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+                 azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_cluster_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -596,21 +596,21 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
-            azure_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_cluster_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbmulticloudOracleDbAzureConnector':
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+            azure_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_cluster_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbmulticloudOracleDbAzureConnector':
         """
         Get an existing DbmulticloudOracleDbAzureConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

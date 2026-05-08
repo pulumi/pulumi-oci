@@ -312,7 +312,7 @@ def get_external_cluster(external_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
+    test_external_cluster = oci.databasemanagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_external_cluster(external_cluster_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'),
         vip_configurations=pulumi.get(__ret__, 'vip_configurations'))
-def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_cluster_output(external_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClusterResult]:
     """
     This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
@@ -359,7 +359,7 @@ def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
+    test_external_cluster = oci.databasemanagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
     ```
 
 

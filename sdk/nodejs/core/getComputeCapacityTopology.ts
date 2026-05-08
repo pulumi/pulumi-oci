@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopology = oci.Core.getComputeCapacityTopology({
+ * const testComputeCapacityTopology = oci.core.getComputeCapacityTopology({
  *     computeCapacityTopologyId: testComputeCapacityTopologyOciCoreComputeCapacityTopology.id,
  * });
  * ```
@@ -96,7 +96,7 @@ export interface GetComputeCapacityTopologyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopology = oci.Core.getComputeCapacityTopology({
+ * const testComputeCapacityTopology = oci.core.getComputeCapacityTopology({
  *     computeCapacityTopologyId: testComputeCapacityTopologyOciCoreComputeCapacityTopology.id,
  * });
  * ```

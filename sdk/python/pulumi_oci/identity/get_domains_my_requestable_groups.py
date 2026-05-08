@@ -203,12 +203,12 @@ def get_domains_my_requestable_groups(authorization: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
-        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
+    test_my_requestable_groups = oci.identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
+        my_requestable_group_count=int(my_requestable_group_my_requestable_group_count),
         my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
         authorization=my_requestable_group_authorization,
         resource_type_schema_version=my_requestable_group_resource_type_schema_version,
-        start_index=my_requestable_group_start_index)
+        start_index=int(my_requestable_group_start_index))
     ```
 
 
@@ -247,15 +247,15 @@ def get_domains_my_requestable_groups(authorization: Optional[_builtins.str] = N
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_my_requestable_groups_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                             my_requestable_group_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                             my_requestable_group_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_my_requestable_groups_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                             my_requestable_group_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                             my_requestable_group_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyRequestableGroupsResult]:
     """
     This data source provides the list of My Requestable Groups in Oracle Cloud Infrastructure Identity Domains service.
@@ -268,12 +268,12 @@ def get_domains_my_requestable_groups_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
-        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
+    test_my_requestable_groups = oci.identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
+        my_requestable_group_count=int(my_requestable_group_my_requestable_group_count),
         my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
         authorization=my_requestable_group_authorization,
         resource_type_schema_version=my_requestable_group_resource_type_schema_version,
-        start_index=my_requestable_group_start_index)
+        start_index=int(my_requestable_group_start_index))
     ```
 
 

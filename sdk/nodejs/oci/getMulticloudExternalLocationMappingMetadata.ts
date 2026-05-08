@@ -110,12 +110,12 @@ export interface GetMulticloudExternalLocationMappingMetadataOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationMappingMetadataFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationMappingMetadataFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
      */

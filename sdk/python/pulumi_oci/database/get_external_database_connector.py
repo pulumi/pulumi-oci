@@ -252,7 +252,7 @@ def get_external_database_connector(external_database_connector_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=test_external_database_connector_oci_database_external_database_connector["id"])
+    test_external_database_connector = oci.database.get_external_database_connector(external_database_connector_id=test_external_database_connector_oci_database_external_database_connector["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_external_database_connector(external_database_connector_id: Optional[_bu
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_external_database_connector_output(external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_database_connector_output(external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabaseConnectorResult]:
     """
     This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
@@ -294,7 +294,7 @@ def get_external_database_connector_output(external_database_connector_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=test_external_database_connector_oci_database_external_database_connector["id"])
+    test_external_database_connector = oci.database.get_external_database_connector(external_database_connector_id=test_external_database_connector_oci_database_external_database_connector["id"])
     ```
 
 

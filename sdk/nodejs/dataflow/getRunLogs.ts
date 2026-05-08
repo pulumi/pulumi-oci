@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLogs = oci.DataFlow.getRunLogs({
+ * const testRunLogs = oci.dataflow.getRunLogs({
  *     runId: testRun.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetRunLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLogs = oci.DataFlow.getRunLogs({
+ * const testRunLogs = oci.dataflow.getRunLogs({
  *     runId: testRun.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getRunLogs.
  */
 export interface GetRunLogsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetRunLogsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetRunLogsFilterArgs>[] | undefined>;
     /**
      * The unique ID for the run
      */

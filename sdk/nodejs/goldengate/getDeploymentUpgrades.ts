@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentUpgrades = oci.GoldenGate.getDeploymentUpgrades({
+ * const testDeploymentUpgrades = oci.goldengate.getDeploymentUpgrades({
  *     compartmentId: compartmentId,
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentUpgradeDisplayName,
@@ -100,7 +100,7 @@ export interface GetDeploymentUpgradesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentUpgrades = oci.GoldenGate.getDeploymentUpgrades({
+ * const testDeploymentUpgrades = oci.goldengate.getDeploymentUpgrades({
  *     compartmentId: compartmentId,
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentUpgradeDisplayName,
@@ -130,14 +130,14 @@ export interface GetDeploymentUpgradesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
-    deploymentId?: pulumi.Input<string>;
+    deploymentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentUpgradesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentUpgradesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the deployment upgrades having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -115,7 +115,7 @@ def get_assessment_assessor_check_affected_objects(assessment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_check_affected_objects = oci.DatabaseMigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
+    test_assessment_assessor_check_affected_objects = oci.databasemigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_affected_object_assessor_name,
         check_name=assessment_assessor_check_affected_object_check_name)
     ```
@@ -140,10 +140,10 @@ def get_assessment_assessor_check_affected_objects(assessment_id: Optional[_buil
         check_name=pulumi.get(__ret__, 'check_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_assessment_assessor_check_affected_objects_output(assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          check_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict']]]]] = None,
+def get_assessment_assessor_check_affected_objects_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          check_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict']]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorCheckAffectedObjectsResult]:
     """
     This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
@@ -156,7 +156,7 @@ def get_assessment_assessor_check_affected_objects_output(assessment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_check_affected_objects = oci.DatabaseMigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
+    test_assessment_assessor_check_affected_objects = oci.databasemigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_affected_object_assessor_name,
         check_name=assessment_assessor_check_affected_object_check_name)
     ```

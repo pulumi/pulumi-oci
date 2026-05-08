@@ -547,255 +547,255 @@ export interface ClusterState {
     /**
      * The availability domains to distribute the cluser nodes across.
      */
-    availabilityDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilityDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Custom certificate config for customer provided certs.
      */
-    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig>;
+    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig | undefined>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      */
-    configureOutboundClusterTrigger?: pulumi.Input<number>;
+    configureOutboundClusterTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
-    dataNodeCount?: pulumi.Input<number>;
+    dataNodeCount?: pulumi.Input<number | undefined>;
     /**
      * The bare metal shape for the cluster's data nodes.
      */
-    dataNodeHostBareMetalShape?: pulumi.Input<string>;
+    dataNodeHostBareMetalShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
-    dataNodeHostMemoryGb?: pulumi.Input<number>;
+    dataNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
-    dataNodeHostOcpuCount?: pulumi.Input<number>;
+    dataNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's data nodes.
      */
-    dataNodeHostShape?: pulumi.Input<string>;
+    dataNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * TThe instance type for the cluster's data nodes.
      */
-    dataNodeHostType?: pulumi.Input<string>;
+    dataNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
-    dataNodeStorageGb?: pulumi.Input<number>;
+    dataNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    fqdn?: pulumi.Input<string>;
+    fqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of inbound clusters that will be queried using cross cluster search
      */
-    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Additional information about the current lifecycle state of the cluster.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
      */
-    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig>;
+    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig | undefined>;
     /**
      * (Updatable) Details for creation of maintenance details
      */
-    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails>;
+    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails | undefined>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
-    masterNodeCount?: pulumi.Input<number>;
+    masterNodeCount?: pulumi.Input<number | undefined>;
     /**
      * The bare metal shape for the cluster's master nodes.
      */
-    masterNodeHostBareMetalShape?: pulumi.Input<string>;
+    masterNodeHostBareMetalShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
-    masterNodeHostMemoryGb?: pulumi.Input<number>;
+    masterNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluser's master nodes.
      */
-    masterNodeHostOcpuCount?: pulumi.Input<number>;
+    masterNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's master nodes.
      */
-    masterNodeHostShape?: pulumi.Input<string>;
+    masterNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's master nodes.
      */
-    masterNodeHostType?: pulumi.Input<string>;
+    masterNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of ML nodes configured for the cluster.
      */
-    mlNodeCount?: pulumi.Input<number>;
+    mlNodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for the cluster's ML nodes.
      */
-    mlNodeHostMemoryGb?: pulumi.Input<number>;
+    mlNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for the cluster's ML nodes.
      */
-    mlNodeHostOcpuCount?: pulumi.Input<number>;
+    mlNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's ML nodes.
      */
-    mlNodeHostShape?: pulumi.Input<string>;
+    mlNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's ML nodes.
      */
-    mlNodeHostType?: pulumi.Input<string>;
+    mlNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
      */
-    mlNodeStorageGb?: pulumi.Input<number>;
+    mlNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */
-    nsgId?: pulumi.Input<string>;
+    nsgId?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
-    opendashboardFqdn?: pulumi.Input<string>;
+    opendashboardFqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
-    opendashboardNodeCount?: pulumi.Input<number>;
+    opendashboardNodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
      */
-    opendashboardNodeHostMemoryGb?: pulumi.Input<number>;
+    opendashboardNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
-    opendashboardNodeHostOcpuCount?: pulumi.Input<number>;
+    opendashboardNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
      */
-    opendashboardNodeHostShape?: pulumi.Input<string>;
+    opendashboardNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
-    opendashboardPrivateIp?: pulumi.Input<string>;
+    opendashboardPrivateIp?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    opensearchFqdn?: pulumi.Input<string>;
+    opensearchFqdn?: pulumi.Input<string | undefined>;
     /**
      * The cluster's private IP address.
      */
-    opensearchPrivateIp?: pulumi.Input<string>;
+    opensearchPrivateIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
      */
-    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig>;
+    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig | undefined>;
     /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
-    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of reverse connection endpoints.
      */
-    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterReverseConnectionEndpoint>[]>;
+    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterReverseConnectionEndpoint>[] | undefined>;
     /**
      * (Updatable) The number of search nodes configured for the cluster.
      */
-    searchNodeCount?: pulumi.Input<number>;
+    searchNodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for the cluster's search nodes.
      */
-    searchNodeHostMemoryGb?: pulumi.Input<number>;
+    searchNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for the cluster's search nodes.
      */
-    searchNodeHostOcpuCount?: pulumi.Input<number>;
+    searchNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's search nodes.
      */
-    searchNodeHostShape?: pulumi.Input<string>;
+    searchNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's search nodes.
      */
-    searchNodeHostType?: pulumi.Input<string>;
+    searchNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
-    searchNodeStorageGb?: pulumi.Input<number>;
+    searchNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
-    securityMasterUserName?: pulumi.Input<string>;
+    securityMasterUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The password hash of the master user that are used to manage security config
      */
-    securityMasterUserPasswordHash?: pulumi.Input<string>;
+    securityMasterUserPasswordHash?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The security mode of the cluster.
      */
-    securityMode?: pulumi.Input<string>;
+    securityMode?: pulumi.Input<string | undefined>;
     /**
      * SAML policy is optionally used for Opensearch cluster to config SAML authentication
      */
-    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig>;
+    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig | undefined>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
-    softwareVersion?: pulumi.Input<string>;
+    softwareVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID for the compartment where the cluster's subnet is located.
      */
-    subnetCompartmentId?: pulumi.Input<string>;
+    subnetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster's subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    timeDeleted?: pulumi.Input<string>;
+    timeDeleted?: pulumi.Input<string | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The size in GB of the cluster's total storage.
      */
-    totalStorageGb?: pulumi.Input<number>;
+    totalStorageGb?: pulumi.Input<number | undefined>;
     /**
      * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
      *
@@ -803,15 +803,15 @@ export interface ClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    upgradeMajorVersionTrigger?: pulumi.Input<number>;
+    upgradeMajorVersionTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */
-    vcnCompartmentId?: pulumi.Input<string>;
+    vcnCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster's VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -821,7 +821,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) Custom certificate config for customer provided certs.
      */
-    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig>;
+    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig | undefined>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
@@ -829,7 +829,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      */
-    configureOutboundClusterTrigger?: pulumi.Input<number>;
+    configureOutboundClusterTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
@@ -837,7 +837,7 @@ export interface ClusterArgs {
     /**
      * The bare metal shape for the cluster's data nodes.
      */
-    dataNodeHostBareMetalShape?: pulumi.Input<string>;
+    dataNodeHostBareMetalShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
@@ -849,7 +849,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) The node shape for the cluster's data nodes.
      */
-    dataNodeHostShape?: pulumi.Input<string>;
+    dataNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * TThe instance type for the cluster's data nodes.
      */
@@ -861,7 +861,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
@@ -869,19 +869,19 @@ export interface ClusterArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of inbound clusters that will be queried using cross cluster search
      */
-    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
      */
-    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig>;
+    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig | undefined>;
     /**
      * (Updatable) Details for creation of maintenance details
      */
-    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails>;
+    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails | undefined>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
@@ -889,7 +889,7 @@ export interface ClusterArgs {
     /**
      * The bare metal shape for the cluster's master nodes.
      */
-    masterNodeHostBareMetalShape?: pulumi.Input<string>;
+    masterNodeHostBareMetalShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
@@ -901,7 +901,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) The node shape for the cluster's master nodes.
      */
-    masterNodeHostShape?: pulumi.Input<string>;
+    masterNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's master nodes.
      */
@@ -909,31 +909,31 @@ export interface ClusterArgs {
     /**
      * (Updatable) The number of ML nodes configured for the cluster.
      */
-    mlNodeCount?: pulumi.Input<number>;
+    mlNodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for the cluster's ML nodes.
      */
-    mlNodeHostMemoryGb?: pulumi.Input<number>;
+    mlNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for the cluster's ML nodes.
      */
-    mlNodeHostOcpuCount?: pulumi.Input<number>;
+    mlNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's ML nodes.
      */
-    mlNodeHostShape?: pulumi.Input<string>;
+    mlNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's ML nodes.
      */
-    mlNodeHostType?: pulumi.Input<string>;
+    mlNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
      */
-    mlNodeStorageGb?: pulumi.Input<number>;
+    mlNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */
-    nsgId?: pulumi.Input<string>;
+    nsgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
@@ -949,59 +949,59 @@ export interface ClusterArgs {
     /**
      * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
      */
-    opendashboardNodeHostShape?: pulumi.Input<string>;
+    opendashboardNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
      */
-    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig>;
+    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig | undefined>;
     /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
-    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The number of search nodes configured for the cluster.
      */
-    searchNodeCount?: pulumi.Input<number>;
+    searchNodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for the cluster's search nodes.
      */
-    searchNodeHostMemoryGb?: pulumi.Input<number>;
+    searchNodeHostMemoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for the cluster's search nodes.
      */
-    searchNodeHostOcpuCount?: pulumi.Input<number>;
+    searchNodeHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The node shape for the cluster's search nodes.
      */
-    searchNodeHostShape?: pulumi.Input<string>;
+    searchNodeHostShape?: pulumi.Input<string | undefined>;
     /**
      * The instance type for the cluster's search nodes.
      */
-    searchNodeHostType?: pulumi.Input<string>;
+    searchNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
-    searchNodeStorageGb?: pulumi.Input<number>;
+    searchNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
-    securityMasterUserName?: pulumi.Input<string>;
+    securityMasterUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The password hash of the master user that are used to manage security config
      */
-    securityMasterUserPasswordHash?: pulumi.Input<string>;
+    securityMasterUserPasswordHash?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The security mode of the cluster.
      */
-    securityMode?: pulumi.Input<string>;
+    securityMode?: pulumi.Input<string | undefined>;
     /**
      * SAML policy is optionally used for Opensearch cluster to config SAML authentication
      */
-    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig>;
+    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig | undefined>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
@@ -1017,7 +1017,7 @@ export interface ClusterArgs {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
      *
@@ -1025,7 +1025,7 @@ export interface ClusterArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    upgradeMajorVersionTrigger?: pulumi.Input<number>;
+    upgradeMajorVersionTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */

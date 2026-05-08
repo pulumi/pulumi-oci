@@ -368,7 +368,7 @@ def get_audit_trail(audit_trail_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
+    test_audit_trail = oci.datasafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
     ```
 
 
@@ -407,7 +407,7 @@ def get_audit_trail(audit_trail_id: Optional[_builtins.str] = None,
         trail_location=pulumi.get(__ret__, 'trail_location'),
         trail_source=pulumi.get(__ret__, 'trail_source'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_audit_trail_output(audit_trail_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditTrailResult]:
     """
     This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
@@ -420,7 +420,7 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
+    test_audit_trail = oci.datasafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
     ```
 
 

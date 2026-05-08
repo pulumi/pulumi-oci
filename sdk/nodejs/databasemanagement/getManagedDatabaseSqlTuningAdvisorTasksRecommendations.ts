@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
+ * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
  *     executionId: testExecution.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlObjectId: testObject.id,
@@ -100,7 +100,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
+ * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
  *     executionId: testExecution.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlObjectId: testObject.id,
@@ -129,7 +129,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArg
      * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     executionId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -137,7 +137,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArg
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

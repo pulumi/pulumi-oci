@@ -52,8 +52,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -97,8 +97,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -142,8 +142,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -187,8 +187,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -277,8 +277,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -322,8 +322,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -367,8 +367,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -410,8 +410,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -453,8 +453,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -496,8 +496,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -539,8 +539,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -582,8 +582,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -624,8 +624,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -666,8 +666,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -708,8 +708,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -750,8 +750,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -792,8 +792,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -838,8 +838,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -884,8 +884,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -930,8 +930,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -976,8 +976,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1022,8 +1022,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1068,8 +1068,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1114,8 +1114,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1156,8 +1156,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1198,8 +1198,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1240,8 +1240,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1282,8 +1282,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1324,8 +1324,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1367,8 +1367,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1410,8 +1410,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1453,8 +1453,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1496,8 +1496,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1539,8 +1539,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1582,8 +1582,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1625,8 +1625,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1668,8 +1668,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1711,8 +1711,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1754,8 +1754,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1801,8 +1801,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1848,8 +1848,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1895,8 +1895,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1942,8 +1942,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1989,8 +1989,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2036,8 +2036,8 @@ public final class LustreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Lustre.LustreFunctions;
      * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -172,7 +172,7 @@ def get_iam_work_request(iam_work_request_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
+    test_iam_work_request = oci.identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
     ```
 
 
@@ -194,7 +194,7 @@ def get_iam_work_request(iam_work_request_id: Optional[_builtins.str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_work_request_output(iam_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestResult]:
     """
     This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
@@ -211,7 +211,7 @@ def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
+    test_iam_work_request = oci.identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
     ```
 
 

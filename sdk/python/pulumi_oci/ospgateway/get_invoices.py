@@ -188,7 +188,7 @@ def get_invoices(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OspGateway.get_invoices(compartment_id=compartment_id,
+    test_invoices = oci.ospgateway.get_invoices(compartment_id=compartment_id,
         osp_home_region=invoice_osp_home_region,
         invoice_id=test_invoice["id"],
         search_text=invoice_search_text,
@@ -241,17 +241,17 @@ def get_invoices(compartment_id: Optional[_builtins.str] = None,
         time_payment_end=pulumi.get(__ret__, 'time_payment_end'),
         time_payment_start=pulumi.get(__ret__, 'time_payment_start'),
         types=pulumi.get(__ret__, 'types'))
-def get_invoices_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
-                        invoice_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                        search_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        time_invoice_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        time_invoice_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        time_payment_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        time_payment_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_invoices_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
+                        invoice_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                        search_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        time_invoice_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        time_invoice_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        time_payment_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        time_payment_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoicesResult]:
     """
     This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
@@ -264,7 +264,7 @@ def get_invoices_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OspGateway.get_invoices(compartment_id=compartment_id,
+    test_invoices = oci.ospgateway.get_invoices(compartment_id=compartment_id,
         osp_home_region=invoice_osp_home_region,
         invoice_id=test_invoice["id"],
         search_text=invoice_search_text,

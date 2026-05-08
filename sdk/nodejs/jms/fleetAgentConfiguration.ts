@@ -204,51 +204,51 @@ export interface FleetAgentConfigurationState {
     /**
      * (Updatable) Agent polling interval in minutes
      */
-    agentPollingIntervalInMinutes?: pulumi.Input<number>;
+    agentPollingIntervalInMinutes?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Collect network addresses of managed instances in the fleet.
      */
-    isCapturingIpAddressAndFqdnEnabled?: pulumi.Input<boolean>;
+    isCapturingIpAddressAndFqdnEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collect JMS agent metrics on all managed instances in the fleet.
      */
-    isCollectingManagedInstanceMetricsEnabled?: pulumi.Input<boolean>;
+    isCollectingManagedInstanceMetricsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collect username for application invocations for all managed instances in the fleet.
      */
-    isCollectingUsernamesEnabled?: pulumi.Input<boolean>;
+    isCollectingUsernamesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Enable libraries scan on all managed instances in the fleet.
      */
-    isLibrariesScanEnabled?: pulumi.Input<boolean>;
+    isLibrariesScanEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
      */
-    javaUsageTrackerProcessingFrequencyInMinutes?: pulumi.Input<number>;
+    javaUsageTrackerProcessingFrequencyInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
      */
-    jreScanFrequencyInMinutes?: pulumi.Input<number>;
+    jreScanFrequencyInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    linuxConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationLinuxConfiguration>;
+    linuxConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationLinuxConfiguration | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    macOsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationMacOsConfiguration>;
+    macOsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationMacOsConfiguration | undefined>;
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastModified?: pulumi.Input<string>;
+    timeLastModified?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration>;
+    windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration | undefined>;
     /**
      * (Updatable) The validity period in days for work requests. 
      *
@@ -256,7 +256,7 @@ export interface FleetAgentConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workRequestValidityPeriodInDays?: pulumi.Input<number>;
+    workRequestValidityPeriodInDays?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -266,7 +266,7 @@ export interface FleetAgentConfigurationArgs {
     /**
      * (Updatable) Agent polling interval in minutes
      */
-    agentPollingIntervalInMinutes?: pulumi.Input<number>;
+    agentPollingIntervalInMinutes?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -274,39 +274,39 @@ export interface FleetAgentConfigurationArgs {
     /**
      * (Updatable) Collect network addresses of managed instances in the fleet.
      */
-    isCapturingIpAddressAndFqdnEnabled?: pulumi.Input<boolean>;
+    isCapturingIpAddressAndFqdnEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collect JMS agent metrics on all managed instances in the fleet.
      */
-    isCollectingManagedInstanceMetricsEnabled?: pulumi.Input<boolean>;
+    isCollectingManagedInstanceMetricsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collect username for application invocations for all managed instances in the fleet.
      */
-    isCollectingUsernamesEnabled?: pulumi.Input<boolean>;
+    isCollectingUsernamesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Enable libraries scan on all managed instances in the fleet.
      */
-    isLibrariesScanEnabled?: pulumi.Input<boolean>;
+    isLibrariesScanEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
      */
-    javaUsageTrackerProcessingFrequencyInMinutes?: pulumi.Input<number>;
+    javaUsageTrackerProcessingFrequencyInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
      */
-    jreScanFrequencyInMinutes?: pulumi.Input<number>;
+    jreScanFrequencyInMinutes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    linuxConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationLinuxConfiguration>;
+    linuxConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationLinuxConfiguration | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    macOsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationMacOsConfiguration>;
+    macOsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationMacOsConfiguration | undefined>;
     /**
      * (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
      */
-    windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration>;
+    windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration | undefined>;
     /**
      * (Updatable) The validity period in days for work requests. 
      *
@@ -314,5 +314,5 @@ export interface FleetAgentConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workRequestValidityPeriodInDays?: pulumi.Input<number>;
+    workRequestValidityPeriodInDays?: pulumi.Input<number | undefined>;
 }

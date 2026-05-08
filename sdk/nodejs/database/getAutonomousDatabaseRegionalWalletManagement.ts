@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
+ * const testAutonomousDatabaseRegionalWalletManagement = oci.database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
  */
 export function getAutonomousDatabaseRegionalWalletManagement(opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseRegionalWalletManagementResult> {
@@ -51,7 +51,7 @@ export interface GetAutonomousDatabaseRegionalWalletManagementResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
+ * const testAutonomousDatabaseRegionalWalletManagement = oci.database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
  */
 export function getAutonomousDatabaseRegionalWalletManagementOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseRegionalWalletManagementResult> {

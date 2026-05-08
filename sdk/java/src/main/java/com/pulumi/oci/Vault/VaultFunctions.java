@@ -37,8 +37,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -79,8 +79,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -121,8 +121,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -163,8 +163,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -205,8 +205,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -262,8 +262,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -307,8 +307,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -352,8 +352,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -397,8 +397,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -442,8 +442,8 @@ public final class VaultFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Vault.VaultFunctions;
      * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinition = oci.DataSafe.getReportDefinition({
+ * const testReportDefinition = oci.datasafe.getReportDefinition({
  *     reportDefinitionId: testReportDefinitionOciDataSafeReportDefinition.id,
  * });
  * ```
@@ -168,7 +168,7 @@ export interface GetReportDefinitionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinition = oci.DataSafe.getReportDefinition({
+ * const testReportDefinition = oci.datasafe.getReportDefinition({
  *     reportDefinitionId: testReportDefinitionOciDataSafeReportDefinition.id,
  * });
  * ```

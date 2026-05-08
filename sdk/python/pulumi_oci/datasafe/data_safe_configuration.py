@@ -22,7 +22,7 @@ __all__ = ['DataSafeConfigurationArgs', 'DataSafeConfiguration']
 class DataSafeConfigurationArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataSafeConfiguration resource.
 
@@ -55,29 +55,29 @@ class DataSafeConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
 
 @pulumi.input_type
 class _DataSafeConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_safe_nat_gateway_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 global_settings: Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_safe_nat_gateway_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 global_settings: pulumi.Input[Optional[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataSafeConfiguration resources.
 
@@ -116,67 +116,67 @@ class _DataSafeConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSafeNatGatewayIpAddress")
-    def data_safe_nat_gateway_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_safe_nat_gateway_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Data Safe's NAT Gateway IP Address.
         """
         return pulumi.get(self, "data_safe_nat_gateway_ip_address")
 
     @data_safe_nat_gateway_ip_address.setter
-    def data_safe_nat_gateway_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_safe_nat_gateway_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_safe_nat_gateway_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="globalSettings")
-    def global_settings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]]:
+    def global_settings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]]:
         """
         Details of the tenancy level global settings in Data Safe.
         """
         return pulumi.get(self, "global_settings")
 
     @global_settings.setter
-    def global_settings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]]):
+    def global_settings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]]):
         pulumi.set(self, "global_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if Data Safe is enabled.
 
@@ -187,43 +187,43 @@ class _DataSafeConfigurationState:
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of Data Safe.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnabled")
-    def time_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_enabled")
 
     @time_enabled.setter
-    def time_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the Data Safe service.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
 
@@ -233,8 +233,8 @@ class DataSafeConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -251,7 +251,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_data_safe_configuration = oci.datasafe.DataSafeConfiguration("test_data_safe_configuration",
-            is_enabled=data_safe_configuration_is_enabled,
+            is_enabled=data_safe_configuration_is_enabled == "true",
             compartment_id=compartment_id)
         ```
 
@@ -290,7 +290,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_data_safe_configuration = oci.datasafe.DataSafeConfiguration("test_data_safe_configuration",
-            is_enabled=data_safe_configuration_is_enabled,
+            is_enabled=data_safe_configuration_is_enabled == "true",
             compartment_id=compartment_id)
         ```
 
@@ -314,8 +314,8 @@ class DataSafeConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -346,15 +346,15 @@ class DataSafeConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_safe_nat_gateway_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            global_settings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None) -> 'DataSafeConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_safe_nat_gateway_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            global_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None) -> 'DataSafeConfiguration':
         """
         Get an existing DataSafeConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

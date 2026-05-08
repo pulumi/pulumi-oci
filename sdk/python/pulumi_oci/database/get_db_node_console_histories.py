@@ -124,7 +124,7 @@ def get_db_node_console_histories(db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=test_db_node["id"],
+    test_db_node_console_histories = oci.database.get_db_node_console_histories(db_node_id=test_db_node["id"],
         display_name=db_node_console_history_display_name,
         state=db_node_console_history_state)
     ```
@@ -149,10 +149,10 @@ def get_db_node_console_histories(db_node_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleHistoriesFilterArgs', 'GetDbNodeConsoleHistoriesFilterArgsDict']]]]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_node_console_histories_output(db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeConsoleHistoriesFilterArgs', 'GetDbNodeConsoleHistoriesFilterArgsDict']]]]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleHistoriesResult]:
     """
     This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
@@ -165,7 +165,7 @@ def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=test_db_node["id"],
+    test_db_node_console_histories = oci.database.get_db_node_console_histories(db_node_id=test_db_node["id"],
         display_name=db_node_console_history_display_name,
         state=db_node_console_history_state)
     ```

@@ -191,7 +191,7 @@ def get_inventory_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_resources = oci.FleetAppsManagement.get_inventory_resources(compartment_id=compartment_id,
+    test_inventory_resources = oci.fleetappsmanagement.get_inventory_resources(compartment_id=compartment_id,
         resource_compartment_id=test_compartment["id"],
         defined_tag_equals=inventory_resource_defined_tag_equals,
         display_name=inventory_resource_display_name,
@@ -240,16 +240,16 @@ def get_inventory_resources(compartment_id: Optional[_builtins.str] = None,
         resource_compartment_id=pulumi.get(__ret__, 'resource_compartment_id'),
         resource_region=pulumi.get(__ret__, 'resource_region'),
         state=pulumi.get(__ret__, 'state'))
-def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   defined_tag_equals: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInventoryResourcesFilterArgs', 'GetInventoryResourcesFilterArgsDict']]]]] = None,
-                                   freeform_tag_equals: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   inventory_properties: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   matching_criteria: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   resource_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_inventory_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   defined_tag_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoryResourcesFilterArgs', 'GetInventoryResourcesFilterArgsDict']]]]] = None,
+                                   freeform_tag_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   inventory_properties: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   matching_criteria: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   resource_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoryResourcesResult]:
     """
     This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -263,7 +263,7 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_resources = oci.FleetAppsManagement.get_inventory_resources(compartment_id=compartment_id,
+    test_inventory_resources = oci.fleetappsmanagement.get_inventory_resources(compartment_id=compartment_id,
         resource_compartment_id=test_compartment["id"],
         defined_tag_equals=inventory_resource_defined_tag_equals,
         display_name=inventory_resource_display_name,

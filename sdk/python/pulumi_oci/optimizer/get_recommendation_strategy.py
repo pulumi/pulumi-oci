@@ -117,8 +117,8 @@ def get_recommendation_strategy(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+    test_recommendation_strategy = oci.optimizer.get_recommendation_strategy(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```
@@ -146,10 +146,10 @@ def get_recommendation_strategy(compartment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'))
-def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       recommendation_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recommendation_strategy_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationStrategyResult]:
     """
     This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
@@ -162,8 +162,8 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+    test_recommendation_strategy = oci.optimizer.get_recommendation_strategy(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```

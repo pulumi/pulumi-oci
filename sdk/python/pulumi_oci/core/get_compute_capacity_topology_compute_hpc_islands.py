@@ -118,7 +118,7 @@ def get_compute_capacity_topology_compute_hpc_islands(availability_domain: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_hpc_islands = oci.core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_hpc_island_availability_domain,
         compartment_id=compartment_id)
     ```
@@ -143,10 +143,10 @@ def get_compute_capacity_topology_compute_hpc_islands(availability_domain: Optio
         compute_hpc_island_collections=pulumi.get(__ret__, 'compute_hpc_island_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             compute_capacity_topology_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs', 'GetComputeCapacityTopologyComputeHpcIslandsFilterArgsDict']]]]] = None,
+def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             compute_capacity_topology_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs', 'GetComputeCapacityTopologyComputeHpcIslandsFilterArgsDict']]]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeHpcIslandsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
@@ -159,7 +159,7 @@ def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_hpc_islands = oci.core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_hpc_island_availability_domain,
         compartment_id=compartment_id)
     ```

@@ -38,27 +38,27 @@ import * as utilities from "../utilities";
  *         attachments: [{
  *             device: assetAwsEbsAttachmentsDevice,
  *             instanceKey: assetAwsEbsAttachmentsInstanceKey,
- *             isDeleteOnTermination: assetAwsEbsAttachmentsIsDeleteOnTermination,
+ *             isDeleteOnTermination: assetAwsEbsAttachmentsIsDeleteOnTermination === "true",
  *             status: assetAwsEbsAttachmentsStatus,
  *             volumeKey: assetAwsEbsAttachmentsVolumeKey,
  *         }],
  *         availabilityZone: assetAwsEbsAvailabilityZone,
- *         iops: assetAwsEbsIops,
- *         isEncrypted: assetAwsEbsIsEncrypted,
- *         isMultiAttachEnabled: assetAwsEbsIsMultiAttachEnabled,
- *         sizeInGiBs: assetAwsEbsSizeInGiBs,
+ *         iops: Number(assetAwsEbsIops),
+ *         isEncrypted: assetAwsEbsIsEncrypted === "true",
+ *         isMultiAttachEnabled: assetAwsEbsIsMultiAttachEnabled === "true",
+ *         sizeInGiBs: Number(assetAwsEbsSizeInGiBs),
  *         status: assetAwsEbsStatus,
  *         tags: [{
  *             key: assetAwsEbsTagsKey,
  *             value: assetAwsEbsTagsValue,
  *         }],
- *         throughput: assetAwsEbsThroughput,
+ *         throughput: Number(assetAwsEbsThroughput),
  *         volumeKey: assetAwsEbsVolumeKey,
  *         volumeType: assetAwsEbsVolumeType,
  *     },
  *     awsEc2: {
  *         architecture: assetAwsEc2Architecture,
- *         areElasticInferenceAcceleratorsPresent: assetAwsEc2AreElasticInferenceAcceleratorsPresent,
+ *         areElasticInferenceAcceleratorsPresent: assetAwsEc2AreElasticInferenceAcceleratorsPresent === "true",
  *         bootMode: assetAwsEc2BootMode,
  *         capacityReservationKey: assetAwsEc2CapacityReservationKey,
  *         imageKey: assetAwsEc2ImageKey,
@@ -67,10 +67,10 @@ import * as utilities from "../utilities";
  *         instanceType: assetAwsEc2InstanceType,
  *         ipAddress: assetAwsEc2IpAddress,
  *         ipv6address: assetAwsEc2Ipv6address,
- *         isEnclaveOptions: assetAwsEc2IsEnclaveOptions,
- *         isHibernationOptions: assetAwsEc2IsHibernationOptions,
- *         isSourceDestCheck: assetAwsEc2IsSourceDestCheck,
- *         isSpotInstance: assetAwsEc2IsSpotInstance,
+ *         isEnclaveOptions: assetAwsEc2IsEnclaveOptions === "true",
+ *         isHibernationOptions: assetAwsEc2IsHibernationOptions === "true",
+ *         isSourceDestCheck: assetAwsEc2IsSourceDestCheck === "true",
+ *         isSpotInstance: assetAwsEc2IsSpotInstance === "true",
  *         kernelKey: assetAwsEc2KernelKey,
  *         licenses: assetAwsEc2Licenses,
  *         maintenanceOptions: assetAwsEc2MaintenanceOptions,
@@ -85,9 +85,9 @@ import * as utilities from "../utilities";
  *             },
  *             attachment: {
  *                 attachmentKey: assetAwsEc2NetworkInterfacesAttachmentAttachmentKey,
- *                 deviceIndex: assetAwsEc2NetworkInterfacesAttachmentDeviceIndex,
- *                 isDeleteOnTermination: assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination,
- *                 networkCardIndex: assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex,
+ *                 deviceIndex: Number(assetAwsEc2NetworkInterfacesAttachmentDeviceIndex),
+ *                 isDeleteOnTermination: assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination === "true",
+ *                 networkCardIndex: Number(assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex),
  *                 status: assetAwsEc2NetworkInterfacesAttachmentStatus,
  *                 timeAttach: assetAwsEc2NetworkInterfacesAttachmentTimeAttach,
  *             },
@@ -96,7 +96,7 @@ import * as utilities from "../utilities";
  *             ipv4prefixes: assetAwsEc2NetworkInterfacesIpv4prefixes,
  *             ipv6addresses: assetAwsEc2NetworkInterfacesIpv6addresses,
  *             ipv6prefixes: assetAwsEc2NetworkInterfacesIpv6prefixes,
- *             isSourceDestCheck: assetAwsEc2NetworkInterfacesIsSourceDestCheck,
+ *             isSourceDestCheck: assetAwsEc2NetworkInterfacesIsSourceDestCheck === "true",
  *             macAddress: assetAwsEc2NetworkInterfacesMacAddress,
  *             networkInterfaceKey: assetAwsEc2NetworkInterfacesNetworkInterfaceKey,
  *             ownerKey: assetAwsEc2NetworkInterfacesOwnerKey,
@@ -108,7 +108,7 @@ import * as utilities from "../utilities";
  *                     publicDnsName: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicDnsName,
  *                     publicIp: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicIp,
  *                 },
- *                 isPrimary: assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary,
+ *                 isPrimary: assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary === "true",
  *                 privateDnsName: assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateDnsName,
  *                 privateIpAddress: assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateIpAddress,
  *             }],
@@ -125,7 +125,7 @@ import * as utilities from "../utilities";
  *             groupName: testGroup.name,
  *             hostKey: assetAwsEc2PlacementHostKey,
  *             hostResourceGroupArn: assetAwsEc2PlacementHostResourceGroupArn,
- *             partitionNumber: assetAwsEc2PlacementPartitionNumber,
+ *             partitionNumber: Number(assetAwsEc2PlacementPartitionNumber),
  *             spreadDomain: assetAwsEc2PlacementSpreadDomain,
  *             tenancy: assetAwsEc2PlacementTenancy,
  *         },
@@ -139,7 +139,7 @@ import * as utilities from "../utilities";
  *         }],
  *         sriovNetSupport: assetAwsEc2SriovNetSupport,
  *         state: {
- *             code: assetAwsEc2StateCode,
+ *             code: Number(assetAwsEc2StateCode),
  *             name: assetAwsEc2StateName,
  *         },
  *         subnetKey: assetAwsEc2SubnetKey,
@@ -157,13 +157,13 @@ import * as utilities from "../utilities";
  *         currencyCode: assetAwsEc2costCurrencyCode,
  *     },
  *     compute: {
- *         connectedNetworks: assetComputeConnectedNetworks,
- *         coresCount: assetComputeCoresCount,
+ *         connectedNetworks: Number(assetComputeConnectedNetworks),
+ *         coresCount: Number(assetComputeCoresCount),
  *         cpuModel: assetComputeCpuModel,
  *         description: assetComputeDescription,
  *         disks: [{
- *             bootOrder: assetComputeDisksBootOrder,
- *             isCbtEnabled: assetComputeDisksIsCbtEnabled,
+ *             bootOrder: Number(assetComputeDisksBootOrder),
+ *             isCbtEnabled: assetComputeDisksIsCbtEnabled === "true",
  *             location: assetComputeDisksLocation,
  *             name: assetComputeDisksName,
  *             persistentMode: assetComputeDisksPersistentMode,
@@ -171,22 +171,22 @@ import * as utilities from "../utilities";
  *             uuid: assetComputeDisksUuid,
  *             uuidLun: assetComputeDisksUuidLun,
  *         }],
- *         disksCount: assetComputeDisksCount,
+ *         disksCount: Number(assetComputeDisksCount),
  *         dnsName: assetComputeDnsName,
  *         firmware: assetComputeFirmware,
  *         gpuDevices: [{
- *             coresCount: assetComputeGpuDevicesCoresCount,
+ *             coresCount: Number(assetComputeGpuDevicesCoresCount),
  *             description: assetComputeGpuDevicesDescription,
  *             manufacturer: assetComputeGpuDevicesManufacturer,
  *             memoryInMbs: assetComputeGpuDevicesMemoryInMbs,
  *             name: assetComputeGpuDevicesName,
  *         }],
- *         gpuDevicesCount: assetComputeGpuDevicesCount,
+ *         gpuDevicesCount: Number(assetComputeGpuDevicesCount),
  *         guestState: assetComputeGuestState,
  *         hardwareVersion: assetComputeHardwareVersion,
  *         hostName: assetComputeHostName,
- *         isPmemEnabled: assetComputeIsPmemEnabled,
- *         isTpmEnabled: assetComputeIsTpmEnabled,
+ *         isPmemEnabled: assetComputeIsPmemEnabled === "true",
+ *         isTpmEnabled: assetComputeIsTpmEnabled === "true",
  *         latencySensitivity: assetComputeLatencySensitivity,
  *         memoryInMbs: assetComputeMemoryInMbs,
  *         nics: [{
@@ -197,15 +197,15 @@ import * as utilities from "../utilities";
  *             networkName: assetComputeNicsNetworkName,
  *             switchName: assetComputeNicsSwitchName,
  *         }],
- *         nicsCount: assetComputeNicsCount,
+ *         nicsCount: Number(assetComputeNicsCount),
  *         nvdimmController: {
- *             busNumber: assetComputeNvdimmControllerBusNumber,
+ *             busNumber: Number(assetComputeNvdimmControllerBusNumber),
  *             label: assetComputeNvdimmControllerLabel,
  *         },
  *         nvdimms: [{
- *             controllerKey: assetComputeNvdimmsControllerKey,
+ *             controllerKey: Number(assetComputeNvdimmsControllerKey),
  *             label: assetComputeNvdimmsLabel,
- *             unitNumber: assetComputeNvdimmsUnitNumber,
+ *             unitNumber: Number(assetComputeNvdimmsUnitNumber),
  *         }],
  *         operatingSystem: assetComputeOperatingSystem,
  *         operatingSystemVersion: assetComputeOperatingSystemVersion,
@@ -215,10 +215,10 @@ import * as utilities from "../utilities";
  *         scsiController: {
  *             label: assetComputeScsiControllerLabel,
  *             sharedBus: assetComputeScsiControllerSharedBus,
- *             unitNumber: assetComputeScsiControllerUnitNumber,
+ *             unitNumber: Number(assetComputeScsiControllerUnitNumber),
  *         },
  *         storageProvisionedInMbs: assetComputeStorageProvisionedInMbs,
- *         threadsPerCoreCount: assetComputeThreadsPerCoreCount,
+ *         threadsPerCoreCount: Number(assetComputeThreadsPerCoreCount),
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -245,12 +245,12 @@ import * as utilities from "../utilities";
  *             description: assetVmwareVmCustomerTagsDescription,
  *             name: assetVmwareVmCustomerTagsName,
  *         }],
- *         faultToleranceBandwidth: assetVmwareVmFaultToleranceBandwidth,
- *         faultToleranceSecondaryLatency: assetVmwareVmFaultToleranceSecondaryLatency,
+ *         faultToleranceBandwidth: Number(assetVmwareVmFaultToleranceBandwidth),
+ *         faultToleranceSecondaryLatency: Number(assetVmwareVmFaultToleranceSecondaryLatency),
  *         faultToleranceState: assetVmwareVmFaultToleranceState,
  *         instanceUuid: assetVmwareVmInstanceUuid,
- *         isDisksCbtEnabled: assetVmwareVmIsDisksCbtEnabled,
- *         isDisksUuidEnabled: assetVmwareVmIsDisksUuidEnabled,
+ *         isDisksCbtEnabled: assetVmwareVmIsDisksCbtEnabled === "true",
+ *         isDisksUuidEnabled: assetVmwareVmIsDisksUuidEnabled === "true",
  *         path: assetVmwareVmPath,
  *         vmwareToolsStatus: assetVmwareVmVmwareToolsStatus,
  *     },
@@ -487,103 +487,103 @@ export interface AssetState {
     /**
      * (Updatable) The class name of the asset.
      */
-    assetClassName?: pulumi.Input<string>;
+    assetClassName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the asset class.
      */
-    assetClassVersion?: pulumi.Input<string>;
+    assetClassVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details of the asset.
      */
-    assetDetails?: pulumi.Input<string>;
+    assetDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of asset source OCID.
      */
-    assetSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assetSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The type of asset.
      */
-    assetType?: pulumi.Input<string>;
+    assetType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Cost information for monthly maintenance.
      */
-    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost>;
+    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost | undefined>;
     /**
      * (Updatable) AWS EBS volume related properties.
      */
-    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs>;
+    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs | undefined>;
     /**
      * (Updatable) AWS virtual machine related properties.
      */
-    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2>;
+    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2 | undefined>;
     /**
      * (Updatable) Cost information for monthly maintenance.
      */
-    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost>;
+    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost | undefined>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compute related properties.
      */
-    compute?: pulumi.Input<inputs.CloudBridge.AssetCompute>;
+    compute?: pulumi.Input<inputs.CloudBridge.AssetCompute | undefined>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Asset display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
      */
-    environmentType?: pulumi.Input<string>;
+    environmentType?: pulumi.Input<string | undefined>;
     /**
      * The key of the asset from the external environment.
      */
-    externalAssetKey?: pulumi.Input<string>;
+    externalAssetKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Inventory ID to which an asset belongs.
      */
-    inventoryId?: pulumi.Input<string>;
+    inventoryId?: pulumi.Input<string | undefined>;
     /**
      * The source key to which the asset belongs.
      */
-    sourceKey?: pulumi.Input<string>;
+    sourceKey?: pulumi.Input<string | undefined>;
     /**
      * The current state of the asset.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the asset was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Virtual machine related properties.
      */
-    vm?: pulumi.Input<inputs.CloudBridge.AssetVm>;
+    vm?: pulumi.Input<inputs.CloudBridge.AssetVm | undefined>;
     /**
      * (Updatable) VMware vCenter related properties.
      */
-    vmwareVcenter?: pulumi.Input<inputs.CloudBridge.AssetVmwareVcenter>;
+    vmwareVcenter?: pulumi.Input<inputs.CloudBridge.AssetVmwareVcenter | undefined>;
     /**
      * (Updatable) VMware virtual machine related properties.
      */
-    vmwareVm?: pulumi.Input<inputs.CloudBridge.AssetVmwareVm>;
+    vmwareVm?: pulumi.Input<inputs.CloudBridge.AssetVmwareVm | undefined>;
 }
 
 /**
@@ -593,19 +593,19 @@ export interface AssetArgs {
     /**
      * (Updatable) The class name of the asset.
      */
-    assetClassName?: pulumi.Input<string>;
+    assetClassName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the asset class.
      */
-    assetClassVersion?: pulumi.Input<string>;
+    assetClassVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details of the asset.
      */
-    assetDetails?: pulumi.Input<string>;
+    assetDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of asset source OCID.
      */
-    assetSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assetSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The type of asset.
      */
@@ -613,19 +613,19 @@ export interface AssetArgs {
     /**
      * (Updatable) Cost information for monthly maintenance.
      */
-    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost>;
+    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost | undefined>;
     /**
      * (Updatable) AWS EBS volume related properties.
      */
-    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs>;
+    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs | undefined>;
     /**
      * (Updatable) AWS virtual machine related properties.
      */
-    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2>;
+    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2 | undefined>;
     /**
      * (Updatable) Cost information for monthly maintenance.
      */
-    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost>;
+    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost | undefined>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */
@@ -633,15 +633,15 @@ export interface AssetArgs {
     /**
      * (Updatable) Compute related properties.
      */
-    compute?: pulumi.Input<inputs.CloudBridge.AssetCompute>;
+    compute?: pulumi.Input<inputs.CloudBridge.AssetCompute | undefined>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Asset display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The key of the asset from the external environment.
      */
@@ -649,7 +649,7 @@ export interface AssetArgs {
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Inventory ID to which an asset belongs.
      */
@@ -661,13 +661,13 @@ export interface AssetArgs {
     /**
      * (Updatable) Virtual machine related properties.
      */
-    vm?: pulumi.Input<inputs.CloudBridge.AssetVm>;
+    vm?: pulumi.Input<inputs.CloudBridge.AssetVm | undefined>;
     /**
      * (Updatable) VMware vCenter related properties.
      */
-    vmwareVcenter?: pulumi.Input<inputs.CloudBridge.AssetVmwareVcenter>;
+    vmwareVcenter?: pulumi.Input<inputs.CloudBridge.AssetVmwareVcenter | undefined>;
     /**
      * (Updatable) VMware virtual machine related properties.
      */
-    vmwareVm?: pulumi.Input<inputs.CloudBridge.AssetVmwareVm>;
+    vmwareVm?: pulumi.Input<inputs.CloudBridge.AssetVmwareVm | undefined>;
 }

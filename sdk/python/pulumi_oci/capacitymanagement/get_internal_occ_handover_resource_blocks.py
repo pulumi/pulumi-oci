@@ -167,7 +167,7 @@ def get_internal_occ_handover_resource_blocks(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_blocks = oci.CapacityManagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_internal_occ_handover_resource_blocks = oci.capacitymanagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
         namespace=internal_occ_handover_resource_block_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         handover_date_greater_than_or_equal_to=internal_occ_handover_resource_block_handover_date_greater_than_or_equal_to,
@@ -208,14 +208,14 @@ def get_internal_occ_handover_resource_blocks(compartment_id: Optional[_builtins
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'),
         occ_handover_resource_block_collections=pulumi.get(__ret__, 'occ_handover_resource_block_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-def get_internal_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
-                                                     handover_date_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     handover_date_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     handover_resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     occ_handover_resource_block_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_internal_occ_handover_resource_blocks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
+                                                     handover_date_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     handover_date_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     handover_resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     occ_handover_resource_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccHandoverResourceBlocksResult]:
     """
     This data source provides the list of Internal Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
@@ -228,7 +228,7 @@ def get_internal_occ_handover_resource_blocks_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_blocks = oci.CapacityManagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_internal_occ_handover_resource_blocks = oci.capacitymanagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
         namespace=internal_occ_handover_resource_block_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         handover_date_greater_than_or_equal_to=internal_occ_handover_resource_block_handover_date_greater_than_or_equal_to,

@@ -24,12 +24,12 @@ class SteeringPolicyArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  template: pulumi.Input[_builtins.str],
-                 answers: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_check_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None):
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a SteeringPolicy resource.
 
@@ -133,43 +133,43 @@ class SteeringPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def answers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
+    def answers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
         """
         The set of all answers that can potentially issue from the steering policy.
         """
         return pulumi.get(self, "answers")
 
     @answers.setter
-    def answers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]):
+    def answers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]):
         pulumi.set(self, "answers", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="healthCheckMonitorId")
-    def health_check_monitor_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_check_monitor_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
 
@@ -178,12 +178,12 @@ class SteeringPolicyArgs:
         return pulumi.get(self, "health_check_monitor_id")
 
     @health_check_monitor_id.setter
-    def health_check_monitor_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_check_monitor_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_check_monitor_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
         """
         The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
 
@@ -192,12 +192,12 @@ class SteeringPolicyArgs:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
 
@@ -208,25 +208,25 @@ class SteeringPolicyArgs:
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
 
 @pulumi.input_type
 class _SteeringPolicyState:
     def __init__(__self__, *,
-                 answers: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_check_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]] = None,
-                 self: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 template: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None):
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]] = None,
+                 self: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 template: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering SteeringPolicy resources.
 
@@ -292,67 +292,67 @@ class _SteeringPolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def answers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
+    def answers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
         """
         The set of all answers that can potentially issue from the steering policy.
         """
         return pulumi.get(self, "answers")
 
     @answers.setter
-    def answers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]):
+    def answers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]):
         pulumi.set(self, "answers", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment containing the steering policy.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="healthCheckMonitorId")
-    def health_check_monitor_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_check_monitor_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
 
@@ -361,12 +361,12 @@ class _SteeringPolicyState:
         return pulumi.get(self, "health_check_monitor_id")
 
     @health_check_monitor_id.setter
-    def health_check_monitor_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_check_monitor_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_check_monitor_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
         """
         The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
 
@@ -375,36 +375,36 @@ class _SteeringPolicyState:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def self(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def self(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical absolute URL of the resource.
         """
         return pulumi.get(self, "self")
 
     @self.setter
-    def self(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def self(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "self", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
 
@@ -425,24 +425,24 @@ class _SteeringPolicyState:
         return pulumi.get(self, "template")
 
     @template.setter
-    def template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
 
@@ -453,7 +453,7 @@ class _SteeringPolicyState:
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
 
@@ -463,15 +463,15 @@ class SteeringPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 answers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_check_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
-                 template: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+                 template: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Steering Policy resource in Oracle Cloud Infrastructure DNS service.
@@ -496,7 +496,7 @@ class SteeringPolicy(pulumi.CustomResource):
                 "name": steering_policy_answers_name,
                 "rdata": steering_policy_answers_rdata,
                 "rtype": steering_policy_answers_rtype,
-                "is_disabled": steering_policy_answers_is_disabled,
+                "is_disabled": steering_policy_answers_is_disabled == "true",
                 "pool": steering_policy_answers_pool,
             }],
             defined_tags=steering_policy_defined_tags,
@@ -507,21 +507,21 @@ class SteeringPolicy(pulumi.CustomResource):
                 "cases": [{
                     "answer_datas": [{
                         "answer_condition": steering_policy_rules_cases_answer_data_answer_condition,
-                        "should_keep": steering_policy_rules_cases_answer_data_should_keep,
-                        "value": steering_policy_rules_cases_answer_data_value,
+                        "should_keep": steering_policy_rules_cases_answer_data_should_keep == "true",
+                        "value": int(steering_policy_rules_cases_answer_data_value),
                     }],
                     "case_condition": steering_policy_rules_cases_case_condition,
-                    "count": steering_policy_rules_cases_count,
+                    "count": int(steering_policy_rules_cases_count),
                 }],
                 "default_answer_datas": [{
                     "answer_condition": steering_policy_rules_default_answer_data_answer_condition,
-                    "should_keep": steering_policy_rules_default_answer_data_should_keep,
-                    "value": steering_policy_rules_default_answer_data_value,
+                    "should_keep": steering_policy_rules_default_answer_data_should_keep == "true",
+                    "value": int(steering_policy_rules_default_answer_data_value),
                 }],
-                "default_count": steering_policy_rules_default_count,
+                "default_count": int(steering_policy_rules_default_count),
                 "description": steering_policy_rules_description,
             }],
-            ttl=steering_policy_ttl)
+            ttl=int(steering_policy_ttl))
         ```
 
         ## Import
@@ -596,7 +596,7 @@ class SteeringPolicy(pulumi.CustomResource):
                 "name": steering_policy_answers_name,
                 "rdata": steering_policy_answers_rdata,
                 "rtype": steering_policy_answers_rtype,
-                "is_disabled": steering_policy_answers_is_disabled,
+                "is_disabled": steering_policy_answers_is_disabled == "true",
                 "pool": steering_policy_answers_pool,
             }],
             defined_tags=steering_policy_defined_tags,
@@ -607,21 +607,21 @@ class SteeringPolicy(pulumi.CustomResource):
                 "cases": [{
                     "answer_datas": [{
                         "answer_condition": steering_policy_rules_cases_answer_data_answer_condition,
-                        "should_keep": steering_policy_rules_cases_answer_data_should_keep,
-                        "value": steering_policy_rules_cases_answer_data_value,
+                        "should_keep": steering_policy_rules_cases_answer_data_should_keep == "true",
+                        "value": int(steering_policy_rules_cases_answer_data_value),
                     }],
                     "case_condition": steering_policy_rules_cases_case_condition,
-                    "count": steering_policy_rules_cases_count,
+                    "count": int(steering_policy_rules_cases_count),
                 }],
                 "default_answer_datas": [{
                     "answer_condition": steering_policy_rules_default_answer_data_answer_condition,
-                    "should_keep": steering_policy_rules_default_answer_data_should_keep,
-                    "value": steering_policy_rules_default_answer_data_value,
+                    "should_keep": steering_policy_rules_default_answer_data_should_keep == "true",
+                    "value": int(steering_policy_rules_default_answer_data_value),
                 }],
-                "default_count": steering_policy_rules_default_count,
+                "default_count": int(steering_policy_rules_default_count),
                 "description": steering_policy_rules_description,
             }],
-            ttl=steering_policy_ttl)
+            ttl=int(steering_policy_ttl))
         ```
 
         ## Import
@@ -648,15 +648,15 @@ class SteeringPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 answers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_check_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
-                 template: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+                 template: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -694,18 +694,18 @@ class SteeringPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            answers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            health_check_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
-            self: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            template: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            ttl: Optional[pulumi.Input[_builtins.int]] = None) -> 'SteeringPolicy':
+            answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            template: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None) -> 'SteeringPolicy':
         """
         Get an existing SteeringPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

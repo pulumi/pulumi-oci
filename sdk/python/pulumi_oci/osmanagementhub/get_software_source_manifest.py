@@ -77,7 +77,7 @@ def get_software_source_manifest(software_source_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_manifest = oci.OsManagementHub.get_software_source_manifest(software_source_id=test_software_source["id"])
+    test_software_source_manifest = oci.osmanagementhub.get_software_source_manifest(software_source_id=test_software_source["id"])
     ```
 
 
@@ -92,7 +92,7 @@ def get_software_source_manifest(software_source_id: Optional[_builtins.str] = N
         content=pulumi.get(__ret__, 'content'),
         id=pulumi.get(__ret__, 'id'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-def get_software_source_manifest_output(software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_manifest_output(software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceManifestResult]:
     """
     This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -105,7 +105,7 @@ def get_software_source_manifest_output(software_source_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_manifest = oci.OsManagementHub.get_software_source_manifest(software_source_id=test_software_source["id"])
+    test_software_source_manifest = oci.osmanagementhub.get_software_source_manifest(software_source_id=test_software_source["id"])
     ```
 
 

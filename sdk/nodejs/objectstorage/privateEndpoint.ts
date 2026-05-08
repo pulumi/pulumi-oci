@@ -126,23 +126,23 @@ export class PrivateEndpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PrivateEndpoint resources.
  */
 export interface PrivateEndpointState {
-    accessTargets?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.PrivateEndpointAccessTarget>[]>;
-    additionalPrefixes?: pulumi.Input<pulumi.Input<string>[]>;
-    compartmentId?: pulumi.Input<string>;
-    createdBy?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    etag?: pulumi.Input<string>;
-    fqdns?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>}>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    name?: pulumi.Input<string>;
-    namespace?: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    prefix?: pulumi.Input<string>;
-    privateEndpointIp?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    subnetId?: pulumi.Input<string>;
-    timeCreated?: pulumi.Input<string>;
-    timeModified?: pulumi.Input<string>;
+    accessTargets?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.PrivateEndpointAccessTarget>[] | undefined>;
+    additionalPrefixes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    etag?: pulumi.Input<string | undefined>;
+    fqdns?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>} | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    namespace?: pulumi.Input<string | undefined>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    prefix?: pulumi.Input<string | undefined>;
+    privateEndpointIp?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    subnetId?: pulumi.Input<string | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    timeModified?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -150,16 +150,16 @@ export interface PrivateEndpointState {
  */
 export interface PrivateEndpointArgs {
     accessTargets: pulumi.Input<pulumi.Input<inputs.ObjectStorage.PrivateEndpointAccessTarget>[]>;
-    additionalPrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalPrefixes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    fqdns?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>}>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    name?: pulumi.Input<string>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    fqdns?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>} | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    name?: pulumi.Input<string | undefined>;
     namespace: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     prefix: pulumi.Input<string>;
-    privateEndpointIp?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    privateEndpointIp?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
     subnetId: pulumi.Input<string>;
 }

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryRecords = oci.FleetAppsManagement.getInventoryRecords({
+ * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
  *     resourceId: testResource.id,
  * });
  * ```
@@ -98,11 +98,11 @@ export interface GetInventoryRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryRecords = oci.FleetAppsManagement.getInventoryRecords({
+ * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
  *     resourceId: testResource.id,
  * });
  * ```
@@ -130,18 +130,18 @@ export interface GetInventoryRecordsOutputArgs {
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetInventoryRecordsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetInventoryRecordsFilterArgs>[] | undefined>;
     /**
      * unique Fleet identifier
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, inventory details will be returned.
      */
-    isDetailsRequired?: pulumi.Input<boolean>;
+    isDetailsRequired?: pulumi.Input<boolean | undefined>;
     /**
      * Resource Identifier
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
 }

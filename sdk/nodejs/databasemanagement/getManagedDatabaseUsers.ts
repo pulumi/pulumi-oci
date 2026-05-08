@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUsers = oci.DatabaseManagement.getManagedDatabaseUsers({
+ * const testManagedDatabaseUsers = oci.databasemanagement.getManagedDatabaseUsers({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseUserName,
  *     opcNamedCredentialId: managedDatabaseUserOpcNamedCredentialId,
@@ -84,7 +84,7 @@ export interface GetManagedDatabaseUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUsers = oci.DatabaseManagement.getManagedDatabaseUsers({
+ * const testManagedDatabaseUsers = oci.databasemanagement.getManagedDatabaseUsers({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseUserName,
  *     opcNamedCredentialId: managedDatabaseUserOpcNamedCredentialId,
@@ -105,7 +105,7 @@ export function getManagedDatabaseUsersOutput(args: GetManagedDatabaseUsersOutpu
  * A collection of arguments for invoking getManagedDatabaseUsers.
  */
 export interface GetManagedDatabaseUsersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseUsersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -113,9 +113,9 @@ export interface GetManagedDatabaseUsersOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

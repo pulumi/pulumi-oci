@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplications = oci.DataIntegration.getWorkspaceApplications({
+ * const testWorkspaceApplications = oci.dataintegration.getWorkspaceApplications({
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceApplicationFields,
  *     identifiers: workspaceApplicationIdentifier,
@@ -104,7 +104,7 @@ export interface GetWorkspaceApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplications = oci.DataIntegration.getWorkspaceApplications({
+ * const testWorkspaceApplications = oci.dataintegration.getWorkspaceApplications({
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceApplicationFields,
  *     identifiers: workspaceApplicationIdentifier,
@@ -132,20 +132,20 @@ export interface GetWorkspaceApplicationsOutputArgs {
     /**
      * Specifies the fields to get for an object.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationsFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationsFilterArgs>[] | undefined>;
     /**
      * Used to filter by the identifier of the published object.
      */
-    identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    identifiers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * This parameter can be used to filter objects by the names that match partially or fully with the given value.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      */

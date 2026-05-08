@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
+ * const testWorkspaceApplicationTaskSchedules = oci.dataintegration.getWorkspaceApplicationTaskSchedules({
  *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationTaskScheduleIdentifier,
- *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled === "true",
  *     keys: workspaceApplicationTaskScheduleKey,
  *     name: workspaceApplicationTaskScheduleName,
  *     types: workspaceApplicationTaskScheduleType,
@@ -124,11 +124,11 @@ export interface GetWorkspaceApplicationTaskSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
+ * const testWorkspaceApplicationTaskSchedules = oci.dataintegration.getWorkspaceApplicationTaskSchedules({
  *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationTaskScheduleIdentifier,
- *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled === "true",
  *     keys: workspaceApplicationTaskScheduleKey,
  *     name: workspaceApplicationTaskScheduleName,
  *     types: workspaceApplicationTaskScheduleType,
@@ -157,27 +157,27 @@ export interface GetWorkspaceApplicationTaskSchedulesOutputArgs {
      * The application key.
      */
     applicationKey: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationTaskSchedulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationTaskSchedulesFilterArgs>[] | undefined>;
     /**
      * Used to filter by the identifier of the object.
      */
-    identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    identifiers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This filter parameter can be used to filter task schedule by its state.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Used to filter by the key of the object.
      */
-    keys?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The workspace ID.
      */

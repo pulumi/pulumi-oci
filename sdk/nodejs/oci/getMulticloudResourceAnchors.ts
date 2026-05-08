@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree === "true",
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  *     subscriptionServiceName: subscriptionServiceName,
  *     subscriptionId: subscriptionId,
  * });
@@ -147,8 +147,8 @@ export interface GetMulticloudResourceAnchorsResult {
  *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree === "true",
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  *     subscriptionServiceName: subscriptionServiceName,
  *     subscriptionId: subscriptionId,
  * });
@@ -179,39 +179,39 @@ export interface GetMulticloudResourceAnchorsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudResourceAnchorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudResourceAnchorsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Check the sub-compartments of a given compartmentId
      */
-    isCompartmentIdInSubtree?: pulumi.Input<boolean>;
+    isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the ResourceAnchor.
      */
-    lifecycleState?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
+    lifecycleState?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      */
-    linkedCompartmentId?: pulumi.Input<string>;
+    linkedCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      */
-    shouldFetchCompartmentName?: pulumi.Input<boolean>;
+    shouldFetchCompartmentName?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The subscription service name of the Cloud Service Provider.
      */
-    subscriptionServiceName?: pulumi.Input<string>;
+    subscriptionServiceName?: pulumi.Input<string | undefined>;
 }

@@ -568,7 +568,7 @@ def get_data_guard_association(data_guard_association_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
+    test_data_guard_association = oci.database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
         database_id=test_database["id"])
     ```
 
@@ -635,8 +635,8 @@ def get_data_guard_association(data_guard_association_id: Optional[_builtins.str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         transport_type=pulumi.get(__ret__, 'transport_type'))
-def get_data_guard_association_output(data_guard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_data_guard_association_output(data_guard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataGuardAssociationResult]:
     """
     This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -649,7 +649,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
+    test_data_guard_association = oci.database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
         database_id=test_database["id"])
     ```
 

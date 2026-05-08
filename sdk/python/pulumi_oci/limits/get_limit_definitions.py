@@ -133,7 +133,7 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+    test_limit_definitions = oci.limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
         service_name=test_service["name"],
         subscription_id=subscription_ocid)
@@ -162,11 +162,11 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_limit_definitions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLimitDefinitionsResult]:
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
@@ -181,7 +181,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+    test_limit_definitions = oci.limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
         service_name=test_service["name"],
         subscription_id=subscription_ocid)

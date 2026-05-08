@@ -134,7 +134,7 @@ def get_fusion_environment_service_attachments(display_name: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachments = oci.functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_service_attachment_display_name,
         service_instance_type=fusion_environment_service_attachment_service_instance_type,
         state=fusion_environment_service_attachment_state)
@@ -163,11 +163,11 @@ def get_fusion_environment_service_attachments(display_name: Optional[_builtins.
         service_attachment_collections=pulumi.get(__ret__, 'service_attachment_collections'),
         service_instance_type=pulumi.get(__ret__, 'service_instance_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_fusion_environment_service_attachments_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]]]] = None,
-                                                      fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      service_instance_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fusion_environment_service_attachments_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]]]] = None,
+                                                      fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      service_instance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentsResult]:
     """
     This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
@@ -180,7 +180,7 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachments = oci.functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_service_attachment_display_name,
         service_instance_type=fusion_environment_service_attachment_service_instance_type,
         state=fusion_environment_service_attachment_state)

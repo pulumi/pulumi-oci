@@ -233,24 +233,24 @@ export interface BackupState {
     /**
      * The name of the availability domain where the database backup is stored.
      */
-    availabilityDomain?: pulumi.Input<string>;
-    backupDestinationType?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
+    backupDestinationType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    databaseEdition?: pulumi.Input<string>;
+    databaseEdition?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * The size of the database in gigabytes at the time the backup was taken.
      */
-    databaseSizeInGbs?: pulumi.Input<number>;
+    databaseSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      *
@@ -258,64 +258,64 @@ export interface BackupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Types of providers supported for managing database encryption keys
      */
-    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.BackupEncryptionKeyLocationDetail>[]>;
-    isUsingOracleManagedKeys?: pulumi.Input<boolean>;
+    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.BackupEncryptionKeyLocationDetail>[] | undefined>;
+    isUsingOracleManagedKeys?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    keyStoreWalletName?: pulumi.Input<string>;
+    keyStoreWalletName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
-    retentionPeriodInDays?: pulumi.Input<number>;
-    retentionPeriodInYears?: pulumi.Input<number>;
-    secondaryKmsKeyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
+    retentionPeriodInYears?: pulumi.Input<number | undefined>;
+    secondaryKmsKeyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Shape of the backup's source database.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current state of the backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup was completed.
      */
-    timeEnded?: pulumi.Input<string>;
-    timeExpiryScheduled?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
+    timeExpiryScheduled?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup started.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The type of backup.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * Version of the backup's source database
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -334,6 +334,6 @@ export interface BackupArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName: pulumi.Input<string>;
-    retentionPeriodInDays?: pulumi.Input<number>;
-    retentionPeriodInYears?: pulumi.Input<number>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
+    retentionPeriodInYears?: pulumi.Input<number | undefined>;
 }

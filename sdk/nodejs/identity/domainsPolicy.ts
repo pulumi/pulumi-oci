@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         value: "IdentityProvider",
  *     },
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
- *     active: policyActive,
+ *     active: policyActive === "true",
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     policyGroovy: policyPolicyGroovy,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
  *     rules: [{
- *         sequence: policyRulesSequence,
+ *         sequence: Number(policyRulesSequence),
  *         value: "TODO",
  *     }],
  *     tags: [{
@@ -462,19 +462,19 @@ export interface DomainsPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -488,7 +488,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -502,7 +502,7 @@ export interface DomainsPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Policy Description
      *
@@ -515,7 +515,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -529,7 +529,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value.  The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -543,7 +543,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -555,11 +555,11 @@ export interface DomainsPolicyState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -571,7 +571,7 @@ export interface DomainsPolicyState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -585,7 +585,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -598,7 +598,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -612,7 +612,7 @@ export interface DomainsPolicyState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyMeta>[] | undefined>;
     /**
      * (Updatable) Policy name
      *
@@ -626,7 +626,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -640,7 +640,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Groovy script that is run instead of the policy, if the policy type allows the policy to be a Groovy script.
      *
@@ -653,7 +653,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    policyGroovy?: pulumi.Input<string>;
+    policyGroovy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PolicyType on which the policy is based
      *
@@ -666,11 +666,11 @@ export interface DomainsPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    policyType?: pulumi.Input<inputs.Identity.DomainsPolicyPolicyType>;
+    policyType?: pulumi.Input<inputs.Identity.DomainsPolicyPolicyType | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Rules assigned to this policy
      *
@@ -684,7 +684,7 @@ export interface DomainsPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyRule>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -698,7 +698,7 @@ export interface DomainsPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -713,7 +713,7 @@ export interface DomainsPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -731,7 +731,7 @@ export interface DomainsPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -751,19 +751,19 @@ export interface DomainsPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Policy Description
      *
@@ -776,7 +776,7 @@ export interface DomainsPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value.  The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -790,7 +790,7 @@ export interface DomainsPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -808,7 +808,7 @@ export interface DomainsPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -822,7 +822,7 @@ export interface DomainsPolicyArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Groovy script that is run instead of the policy, if the policy type allows the policy to be a Groovy script.
      *
@@ -835,7 +835,7 @@ export interface DomainsPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    policyGroovy?: pulumi.Input<string>;
+    policyGroovy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PolicyType on which the policy is based
      *
@@ -852,7 +852,7 @@ export interface DomainsPolicyArgs {
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Rules assigned to this policy
      *
@@ -866,7 +866,7 @@ export interface DomainsPolicyArgs {
      * * type: complex
      * * uniqueness: none
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyRule>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -895,5 +895,5 @@ export interface DomainsPolicyArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyTag>[] | undefined>;
 }

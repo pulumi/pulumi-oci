@@ -152,7 +152,7 @@ def get_properties(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_properties = oci.FleetAppsManagement.get_properties(compartment_id=compartment_id,
+    test_properties = oci.fleetappsmanagement.get_properties(compartment_id=compartment_id,
         display_name=property_display_name,
         id=property_id,
         scope=property_scope,
@@ -188,13 +188,13 @@ def get_properties(compartment_id: Optional[_builtins.str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict']]]]] = None,
-                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_properties_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict']]]]] = None,
+                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertiesResult]:
     """
     This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -208,7 +208,7 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_properties = oci.FleetAppsManagement.get_properties(compartment_id=compartment_id,
+    test_properties = oci.fleetappsmanagement.get_properties(compartment_id=compartment_id,
         display_name=property_display_name,
         id=property_id,
         scope=property_scope,

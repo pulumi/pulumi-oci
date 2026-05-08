@@ -28,7 +28,7 @@ __all__ = [
 ]
 
 class AppAccelerationPolicyResponseCachingPolicyArgsDict(TypedDict):
-    is_response_header_based_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_response_header_based_caching_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When false, responses will not be cached by the backend based on response headers.
 
@@ -46,7 +46,7 @@ class AppAccelerationPolicyResponseCachingPolicyArgsDict(TypedDict):
 @pulumi.input_type
 class AppAccelerationPolicyResponseCachingPolicyArgs:
     def __init__(__self__, *,
-                 is_response_header_based_caching_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_response_header_based_caching_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_response_header_based_caching_enabled: (Updatable) When false, responses will not be cached by the backend based on response headers.
                
@@ -65,7 +65,7 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
-    def is_response_header_based_caching_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_response_header_based_caching_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When false, responses will not be cached by the backend based on response headers.
 
@@ -82,12 +82,12 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
         return pulumi.get(self, "is_response_header_based_caching_enabled")
 
     @is_response_header_based_caching_enabled.setter
-    def is_response_header_based_caching_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_response_header_based_caching_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_response_header_based_caching_enabled", value)
 
 
 class AppAccelerationPolicyResponseCompressionPolicyArgsDict(TypedDict):
-    gzip_compression: NotRequired[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict']]
+    gzip_compression: NotRequired[pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]]
     """
     (Updatable) An object that specifies the gzip compression policy.
     """
@@ -95,7 +95,7 @@ class AppAccelerationPolicyResponseCompressionPolicyArgsDict(TypedDict):
 @pulumi.input_type
 class AppAccelerationPolicyResponseCompressionPolicyArgs:
     def __init__(__self__, *,
-                 gzip_compression: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']] = None):
+                 gzip_compression: pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']] = None):
         """
         :param pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs'] gzip_compression: (Updatable) An object that specifies the gzip compression policy.
         """
@@ -104,19 +104,19 @@ class AppAccelerationPolicyResponseCompressionPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="gzipCompression")
-    def gzip_compression(self) -> Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]:
+    def gzip_compression(self) -> pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]:
         """
         (Updatable) An object that specifies the gzip compression policy.
         """
         return pulumi.get(self, "gzip_compression")
 
     @gzip_compression.setter
-    def gzip_compression(self, value: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]):
+    def gzip_compression(self, value: pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]):
         pulumi.set(self, "gzip_compression", value)
 
 
 class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict(TypedDict):
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
 
@@ -126,7 +126,7 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict(Type
 @pulumi.input_type
 class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
     def __init__(__self__, *,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
                
@@ -137,7 +137,7 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
 
@@ -146,7 +146,7 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
 

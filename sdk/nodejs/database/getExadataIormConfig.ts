@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataIormConfig = oci.Database.getExadataIormConfig({
+ * const testExadataIormConfig = oci.database.getExadataIormConfig({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -89,7 +89,7 @@ export interface GetExadataIormConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataIormConfig = oci.Database.getExadataIormConfig({
+ * const testExadataIormConfig = oci.database.getExadataIormConfig({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```

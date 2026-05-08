@@ -145,7 +145,7 @@ def get_bds_instance_software_update(bds_instance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_update = oci.BigDataService.get_bds_instance_software_update(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_software_update = oci.bigdataservice.get_bds_instance_software_update(bds_instance_id=test_bds_instance["id"],
         software_update_key=bds_instance_software_update_software_update_key)
     ```
 
@@ -168,8 +168,8 @@ def get_bds_instance_software_update(bds_instance_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'),
         time_due=pulumi.get(__ret__, 'time_due'),
         time_released=pulumi.get(__ret__, 'time_released'))
-def get_bds_instance_software_update_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            software_update_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_software_update_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            software_update_key: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceSoftwareUpdateResult]:
     """
     This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -182,7 +182,7 @@ def get_bds_instance_software_update_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_update = oci.BigDataService.get_bds_instance_software_update(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_software_update = oci.bigdataservice.get_bds_instance_software_update(bds_instance_id=test_bds_instance["id"],
         software_update_key=bds_instance_software_update_software_update_key)
     ```
 

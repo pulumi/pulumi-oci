@@ -23,15 +23,15 @@ class ZoneArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  zone_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dnssec_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Zone resource.
 
@@ -122,7 +122,7 @@ class ZoneArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
@@ -131,12 +131,12 @@ class ZoneArgs:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dnssecState")
-    def dnssec_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dnssec_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The state of DNSSEC on the zone.
 
@@ -155,36 +155,36 @@ class ZoneArgs:
         return pulumi.get(self, "dnssec_state")
 
     @dnssec_state.setter
-    def dnssec_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dnssec_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dnssec_state", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDownstreams")
-    def external_downstreams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
+    def external_downstreams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
         """
         (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         """
         return pulumi.get(self, "external_downstreams")
 
     @external_downstreams.setter
-    def external_downstreams(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
+    def external_downstreams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
         pulumi.set(self, "external_downstreams", value)
 
     @_builtins.property
     @pulumi.getter(name="externalMasters")
-    def external_masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]:
+    def external_masters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]:
         """
         (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         """
         return pulumi.get(self, "external_masters")
 
     @external_masters.setter
-    def external_masters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]):
+    def external_masters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]):
         pulumi.set(self, "external_masters", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
@@ -193,81 +193,81 @@ class ZoneArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the zone.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resolutionMode")
-    def resolution_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolution_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
         """
         return pulumi.get(self, "resolution_mode")
 
     @resolution_mode.setter
-    def resolution_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolution_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolution_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def view_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
-    def view_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def view_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "view_id", value)
 
 
 @pulumi.input_type
 class _ZoneState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]] = None,
-                 dnssec_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nameservers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]] = None,
-                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 self: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]] = None,
-                 zone_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dnssec_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]] = None,
+                 dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nameservers: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneNameserverArgs']]]] = None,
+                 resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 self: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_transfer_servers: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]] = None,
+                 zone_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Zone resources.
 
@@ -356,19 +356,19 @@ class _ZoneState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment containing the zone.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
@@ -377,24 +377,24 @@ class _ZoneState:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dnssecConfigs")
-    def dnssec_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]:
+    def dnssec_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]:
         """
         DNSSEC configuration data.
         """
         return pulumi.get(self, "dnssec_configs")
 
     @dnssec_configs.setter
-    def dnssec_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]):
+    def dnssec_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]):
         pulumi.set(self, "dnssec_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="dnssecState")
-    def dnssec_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dnssec_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The state of DNSSEC on the zone.
 
@@ -413,36 +413,36 @@ class _ZoneState:
         return pulumi.get(self, "dnssec_state")
 
     @dnssec_state.setter
-    def dnssec_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dnssec_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dnssec_state", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDownstreams")
-    def external_downstreams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
+    def external_downstreams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
         """
         (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         """
         return pulumi.get(self, "external_downstreams")
 
     @external_downstreams.setter
-    def external_downstreams(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
+    def external_downstreams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
         pulumi.set(self, "external_downstreams", value)
 
     @_builtins.property
     @pulumi.getter(name="externalMasters")
-    def external_masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]:
+    def external_masters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]:
         """
         (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         """
         return pulumi.get(self, "external_masters")
 
     @external_masters.setter
-    def external_masters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]):
+    def external_masters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]]):
         pulumi.set(self, "external_masters", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
@@ -451,153 +451,153 @@ class _ZoneState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_protected(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
-    def is_protected(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_protected(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_protected", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the zone.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def nameservers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]]:
+    def nameservers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneNameserverArgs']]]]:
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
-    def nameservers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]]):
+    def nameservers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneNameserverArgs']]]]):
         pulumi.set(self, "nameservers", value)
 
     @_builtins.property
     @pulumi.getter(name="resolutionMode")
-    def resolution_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolution_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
         """
         return pulumi.get(self, "resolution_mode")
 
     @resolution_mode.setter
-    def resolution_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolution_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolution_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def self(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def self(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical absolute URL of the resource.
         """
         return pulumi.get(self, "self")
 
     @self.setter
-    def self(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def self(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "self", value)
 
     @_builtins.property
     @pulumi.getter
-    def serial(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def serial(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The current serial of the zone. As seen in the zone's SOA record.
         """
         return pulumi.get(self, "serial")
 
     @serial.setter
-    def serial(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def serial(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "serial", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the zone resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def view_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
-    def view_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def view_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "view_id", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneTransferServers")
-    def zone_transfer_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]:
+    def zone_transfer_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]:
         """
         The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         """
         return pulumi.get(self, "zone_transfer_servers")
 
     @zone_transfer_servers.setter
-    def zone_transfer_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]):
+    def zone_transfer_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]):
         pulumi.set(self, "zone_transfer_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneType")
-    def zone_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
 
@@ -610,7 +610,7 @@ class _ZoneState:
         return pulumi.get(self, "zone_type")
 
     @zone_type.setter
-    def zone_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_type", value)
 
 
@@ -620,17 +620,17 @@ class Zone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dnssec_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
@@ -657,12 +657,12 @@ class Zone(pulumi.CustomResource):
             dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
-                "port": zone_external_downstreams_port,
+                "port": int(zone_external_downstreams_port),
                 "tsig_key_id": test_tsig_key["id"],
             }],
             external_masters=[{
                 "address": zone_external_masters_address,
-                "port": zone_external_masters_port,
+                "port": int(zone_external_masters_port),
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,
@@ -747,12 +747,12 @@ class Zone(pulumi.CustomResource):
             dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
-                "port": zone_external_downstreams_port,
+                "port": int(zone_external_downstreams_port),
                 "tsig_key_id": test_tsig_key["id"],
             }],
             external_masters=[{
                 "address": zone_external_masters_address,
-                "port": zone_external_masters_port,
+                "port": int(zone_external_masters_port),
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,
@@ -785,17 +785,17 @@ class Zone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dnssec_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -839,26 +839,26 @@ class Zone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]]] = None,
-            dnssec_state: Optional[pulumi.Input[_builtins.str]] = None,
-            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-            external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]]] = None,
-            resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            self: Optional[pulumi.Input[_builtins.str]] = None,
-            serial: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            view_id: Optional[pulumi.Input[_builtins.str]] = None,
-            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]]] = None,
-            zone_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Zone':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dnssec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]]] = None,
+            dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+            external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+            external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nameservers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]]] = None,
+            resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            serial: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            view_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_transfer_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]]] = None,
+            zone_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Zone':
         """
         Get an existing Zone resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

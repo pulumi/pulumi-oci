@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpv6 = oci.Core.getIpv6({
+ * const testIpv6 = oci.core.getIpv6({
  *     ipv6id: testIpv6OciCoreIpv6.id,
  * });
  * ```
@@ -119,7 +119,7 @@ export interface GetIpv6Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpv6 = oci.Core.getIpv6({
+ * const testIpv6 = oci.core.getIpv6({
  *     ipv6id: testIpv6OciCoreIpv6.id,
  * });
  * ```

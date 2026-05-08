@@ -141,7 +141,7 @@ def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatab
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=test_target_database["id"],
+    test_target_databases_tables = oci.datasafe.get_target_databases_tables(target_database_id=test_target_database["id"],
         schema_names=target_databases_table_schema_name,
         schema_name_contains=target_databases_table_schema_name_contains,
         table_names=test_table["name"],
@@ -174,12 +174,12 @@ def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatab
         table_names=pulumi.get(__ret__, 'table_names'),
         tables=pulumi.get(__ret__, 'tables'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict']]]]] = None,
-                                       schema_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       table_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       table_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_databases_tables_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict']]]]] = None,
+                                       schema_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       table_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       table_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesTablesResult]:
     """
     This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
@@ -192,7 +192,7 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=test_target_database["id"],
+    test_target_databases_tables = oci.datasafe.get_target_databases_tables(target_database_id=test_target_database["id"],
         schema_names=target_databases_table_schema_name,
         schema_name_contains=target_databases_table_schema_name_contains,
         table_names=test_table["name"],

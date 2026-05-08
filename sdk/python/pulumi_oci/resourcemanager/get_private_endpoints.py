@@ -138,7 +138,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.resourcemanager.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         private_endpoint_id=test_private_endpoint["id"],
         vcn_id=test_vcn["id"])
@@ -167,11 +167,11 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         private_endpoint_collections=pulumi.get(__ret__, 'private_endpoint_collections'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
-                                 private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_endpoints_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
+                                 private_endpoint_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
     This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
@@ -188,7 +188,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.resourcemanager.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         private_endpoint_id=test_private_endpoint["id"],
         vcn_id=test_vcn["id"])

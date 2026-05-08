@@ -323,7 +323,7 @@ def get_masking_report(masking_report_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
+    test_masking_report = oci.datasafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
     ```
 
 
@@ -358,7 +358,7 @@ def get_masking_report(masking_report_id: Optional[_builtins.str] = None,
         total_masked_values=pulumi.get(__ret__, 'total_masked_values'),
         total_post_masking_script_errors=pulumi.get(__ret__, 'total_post_masking_script_errors'),
         total_pre_masking_script_errors=pulumi.get(__ret__, 'total_pre_masking_script_errors'))
-def get_masking_report_output(masking_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_masking_report_output(masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportResult]:
     """
     This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -371,7 +371,7 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
+    test_masking_report = oci.datasafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
     ```
 
 

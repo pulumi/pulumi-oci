@@ -168,7 +168,7 @@ def get_service_provider_action(service_provider_action_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_action = oci.DelegateAccessControl.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
+    test_service_provider_action = oci.delegateaccesscontrol.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
     ```
 
 
@@ -190,7 +190,7 @@ def get_service_provider_action(service_provider_action_id: Optional[_builtins.s
         service_provider_action_id=pulumi.get(__ret__, 'service_provider_action_id'),
         service_provider_service_types=pulumi.get(__ret__, 'service_provider_service_types'),
         state=pulumi.get(__ret__, 'state'))
-def get_service_provider_action_output(service_provider_action_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_provider_action_output(service_provider_action_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceProviderActionResult]:
     """
     This data source provides details about a specific Service Provider Action resource in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -203,7 +203,7 @@ def get_service_provider_action_output(service_provider_action_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_action = oci.DelegateAccessControl.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
+    test_service_provider_action = oci.delegateaccesscontrol.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
     ```
 
 

@@ -28,15 +28,15 @@ import * as utilities from "../utilities";
  *         dbrsPolicyId: testPolicy.id,
  *         id: autonomousDatabaseBackupBackupDestinationDetailsId,
  *         internetProxy: autonomousDatabaseBackupBackupDestinationDetailsInternetProxy,
- *         isRemote: autonomousDatabaseBackupBackupDestinationDetailsIsRemote,
- *         isRetentionLockEnabled: autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled,
+ *         isRemote: autonomousDatabaseBackupBackupDestinationDetailsIsRemote === "true",
+ *         isRetentionLockEnabled: autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled === "true",
  *         remoteRegion: autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion,
  *         vpcPassword: autonomousDatabaseBackupBackupDestinationDetailsVpcPassword,
  *         vpcUser: autonomousDatabaseBackupBackupDestinationDetailsVpcUser,
  *     },
  *     displayName: autonomousDatabaseBackupDisplayName,
- *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup,
- *     retentionPeriodInDays: autonomousDatabaseBackupRetentionPeriodInDays,
+ *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup === "true",
+ *     retentionPeriodInDays: Number(autonomousDatabaseBackupRetentionPeriodInDays),
  * });
  * ```
  *
@@ -262,67 +262,67 @@ export interface AutonomousDatabaseBackupState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * Backup destination details
      */
-    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
+    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The size of the database in terabytes at the time the backup was taken.
      */
-    databaseSizeInTbs?: pulumi.Input<number>;
+    databaseSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The infrastructure type this resource belongs to.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
-    isAutomatic?: pulumi.Input<boolean>;
+    isAutomatic?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the backup is long-term
      */
-    isLongTermBackup?: pulumi.Input<boolean>;
+    isLongTermBackup?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      */
-    isRestorable?: pulumi.Input<boolean>;
+    isRestorable?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    keyStoreWalletName?: pulumi.Input<string>;
+    keyStoreWalletName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Name of the region in which backup is taken in.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -330,39 +330,39 @@ export interface AutonomousDatabaseBackupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The backup size in terrabytes (TB).
      */
-    sizeInTbs?: pulumi.Input<number>;
+    sizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * Source Autonomous Database details.
      */
-    sourceDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetail>[]>;
+    sourceDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetail>[] | undefined>;
     /**
      * The current state of the backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Timestamp until when the backup will be available
      */
-    timeAvailableTill?: pulumi.Input<string>;
+    timeAvailableTill?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup completed.
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup started.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The type of backup.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -376,15 +376,15 @@ export interface AutonomousDatabaseBackupArgs {
     /**
      * Backup destination details
      */
-    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
+    backupDestinationDetails?: pulumi.Input<inputs.Database.AutonomousDatabaseBackupBackupDestinationDetails | undefined>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the backup is long-term
      */
-    isLongTermBackup?: pulumi.Input<boolean>;
+    isLongTermBackup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -392,5 +392,5 @@ export interface AutonomousDatabaseBackupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
 }

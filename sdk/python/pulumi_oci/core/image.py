@@ -22,12 +22,12 @@ __all__ = ['ImageArgs', 'Image']
 class ImageArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_source_details: pulumi.Input[Optional['ImageImageSourceDetailsArgs']] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Image resource.
 
@@ -78,19 +78,19 @@ class ImageArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -101,45 +101,45 @@ class ImageArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="imageSourceDetails")
-    def image_source_details(self) -> Optional[pulumi.Input['ImageImageSourceDetailsArgs']]:
+    def image_source_details(self) -> pulumi.Input[Optional['ImageImageSourceDetailsArgs']]:
         return pulumi.get(self, "image_source_details")
 
     @image_source_details.setter
-    def image_source_details(self, value: Optional[pulumi.Input['ImageImageSourceDetailsArgs']]):
+    def image_source_details(self, value: pulumi.Input[Optional['ImageImageSourceDetailsArgs']]):
         pulumi.set(self, "image_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance you want to use as the basis for the image.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="launchMode")
-    def launch_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def launch_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -154,31 +154,31 @@ class ImageArgs:
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
-    def launch_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def launch_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "launch_mode", value)
 
 
 @pulumi.input_type
 class _ImageState:
     def __init__(__self__, *,
-                 agent_features: Optional[pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]] = None,
-                 base_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 billable_size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_image_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_options: Optional[pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]] = None,
-                 listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_features: pulumi.Input[Optional[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]] = None,
+                 base_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 billable_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_image_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_source_details: pulumi.Input[Optional['ImageImageSourceDetailsArgs']] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_options: pulumi.Input[Optional[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]] = None,
+                 listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Image resources.
 
@@ -251,79 +251,79 @@ class _ImageState:
 
     @_builtins.property
     @pulumi.getter(name="agentFeatures")
-    def agent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]]:
+    def agent_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]]:
         """
         Oracle Cloud Agent features supported on the image.
         """
         return pulumi.get(self, "agent_features")
 
     @agent_features.setter
-    def agent_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]]):
+    def agent_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]]):
         pulumi.set(self, "agent_features", value)
 
     @_builtins.property
     @pulumi.getter(name="baseImageId")
-    def base_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the image originally used to launch the instance.
         """
         return pulumi.get(self, "base_image_id")
 
     @base_image_id.setter
-    def base_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="billableSizeInGbs")
-    def billable_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def billable_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         """
         return pulumi.get(self, "billable_size_in_gbs")
 
     @billable_size_in_gbs.setter
-    def billable_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def billable_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "billable_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment you want the image to be created in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createImageAllowed")
-    def create_image_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def create_image_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
         """
         return pulumi.get(self, "create_image_allowed")
 
     @create_image_allowed.setter
-    def create_image_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def create_image_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "create_image_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -334,45 +334,45 @@ class _ImageState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="imageSourceDetails")
-    def image_source_details(self) -> Optional[pulumi.Input['ImageImageSourceDetailsArgs']]:
+    def image_source_details(self) -> pulumi.Input[Optional['ImageImageSourceDetailsArgs']]:
         return pulumi.get(self, "image_source_details")
 
     @image_source_details.setter
-    def image_source_details(self, value: Optional[pulumi.Input['ImageImageSourceDetailsArgs']]):
+    def image_source_details(self, value: pulumi.Input[Optional['ImageImageSourceDetailsArgs']]):
         pulumi.set(self, "image_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance you want to use as the basis for the image.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="launchMode")
-    def launch_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def launch_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -387,91 +387,91 @@ class _ImageState:
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
-    def launch_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def launch_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "launch_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="launchOptions")
-    def launch_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]]:
+    def launch_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]]:
         """
         Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
-    def launch_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]]):
+    def launch_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]]):
         pulumi.set(self, "launch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listing type of the image. The default value is "NONE".
         """
         return pulumi.get(self, "listing_type")
 
     @listing_type.setter
-    def listing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_type", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image's operating system.  Example: `Oracle Linux`
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystemVersion")
-    def operating_system_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image's operating system version.  Example: `7.2`
         """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
-    def operating_system_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system_version", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
         """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
-    def size_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the image.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -481,13 +481,13 @@ class Image(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Image resource in Oracle Cloud Infrastructure Core service.
@@ -725,13 +725,13 @@ class Image(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -771,24 +771,24 @@ class Image(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]]] = None,
-            base_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            billable_size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_image_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            launch_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]]] = None,
-            listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_system_version: Optional[pulumi.Input[_builtins.str]] = None,
-            size_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Image':
+            agent_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]]] = None,
+            base_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            billable_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_image_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            launch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]]] = None,
+            listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Image':
         """
         Get an existing Image resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

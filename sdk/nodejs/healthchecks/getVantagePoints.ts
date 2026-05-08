@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVantagePoints = oci.HealthChecks.getVantagePoints({
+ * const testVantagePoints = oci.healthchecks.getVantagePoints({
  *     displayName: vantagePointDisplayName,
  *     name: vantagePointName,
  * });
@@ -81,7 +81,7 @@ export interface GetVantagePointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVantagePoints = oci.HealthChecks.getVantagePoints({
+ * const testVantagePoints = oci.healthchecks.getVantagePoints({
  *     displayName: vantagePointDisplayName,
  *     name: vantagePointName,
  * });
@@ -104,10 +104,10 @@ export interface GetVantagePointsOutputArgs {
     /**
      * Filters results that exactly match the `displayName` field.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetVantagePointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetVantagePointsFilterArgs>[] | undefined>;
     /**
      * Filters results that exactly match the `name` field.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -143,7 +143,7 @@ def get_tenancy(tenancy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=tenancy_ocid)
+    test_tenancy = oci.identity.get_tenancy(tenancy_id=tenancy_ocid)
     ```
 
 
@@ -163,7 +163,7 @@ def get_tenancy(tenancy_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         upi_idcs_compatibility_layer_endpoint=pulumi.get(__ret__, 'upi_idcs_compatibility_layer_endpoint'))
-def get_tenancy_output(tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tenancy_output(tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTenancyResult]:
     """
     This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
@@ -176,7 +176,7 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=tenancy_ocid)
+    test_tenancy = oci.identity.get_tenancy(tenancy_id=tenancy_ocid)
     ```
 
 

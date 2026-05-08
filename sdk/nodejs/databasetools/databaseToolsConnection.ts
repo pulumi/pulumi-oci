@@ -232,95 +232,95 @@ export interface DatabaseToolsConnectionState {
     /**
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
-    advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
-    keyStores?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionKeyStore>[]>;
+    keyStores?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionKeyStore>[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The proxy client information.
      */
-    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
+    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient | undefined>;
     /**
      * (Updatable) The related resource
      */
-    relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource | undefined>;
     /**
      * Specifies the Database Tools Runtime endpoint.
      */
-    runtimeEndpoint?: pulumi.Input<string>;
+    runtimeEndpoint?: pulumi.Input<string | undefined>;
     /**
      * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
      */
-    runtimeIdentity?: pulumi.Input<string>;
+    runtimeIdentity?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
-    runtimeSupport?: pulumi.Input<string>;
+    runtimeSupport?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Database Tools connection.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Database Tools connection type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database user name.
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database user password.
      */
-    userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword | undefined>;
 }
 
 /**
@@ -330,7 +330,7 @@ export interface DatabaseToolsConnectionArgs {
     /**
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
-    advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
@@ -338,11 +338,11 @@ export interface DatabaseToolsConnectionArgs {
     /**
      * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -350,35 +350,35 @@ export interface DatabaseToolsConnectionArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
-    keyStores?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionKeyStore>[]>;
+    keyStores?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionKeyStore>[] | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The proxy client information.
      */
-    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
+    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient | undefined>;
     /**
      * (Updatable) The related resource
      */
-    relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource | undefined>;
     /**
      * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
      */
-    runtimeIdentity?: pulumi.Input<string>;
+    runtimeIdentity?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
-    runtimeSupport?: pulumi.Input<string>;
+    runtimeSupport?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Database Tools connection type.
      */
@@ -386,7 +386,7 @@ export interface DatabaseToolsConnectionArgs {
     /**
      * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database user name.
      */

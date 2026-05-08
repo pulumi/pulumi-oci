@@ -133,23 +133,23 @@ export interface DbNodeSnapshotManagementState {
     /**
      * Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
      */
-    exadbVmClusterId?: pulumi.Input<string>;
+    exadbVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The list of created Exadata Database Node Snapshots.
      */
-    snapshots?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotManagementSnapshot>[]>;
+    snapshots?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotManagementSnapshot>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Nodes for which snapshots will be created.
      *
@@ -157,7 +157,7 @@ export interface DbNodeSnapshotManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceDbnodeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    sourceDbnodeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -167,7 +167,7 @@ export interface DbNodeSnapshotManagementArgs {
     /**
      * Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
      */
@@ -175,11 +175,11 @@ export interface DbNodeSnapshotManagementArgs {
     /**
      * Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Nodes for which snapshots will be created.
      *

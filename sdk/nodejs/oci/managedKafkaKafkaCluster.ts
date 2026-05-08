@@ -25,13 +25,13 @@ import * as utilities from "../utilities";
  *         subnets: kafkaClusterAccessSubnetsSubnets,
  *     }],
  *     brokerShape: {
- *         nodeCount: kafkaClusterBrokerShapeNodeCount,
- *         ocpuCount: kafkaClusterBrokerShapeOcpuCount,
+ *         nodeCount: Number(kafkaClusterBrokerShapeNodeCount),
+ *         ocpuCount: Number(kafkaClusterBrokerShapeOcpuCount),
  *         nodeShape: kafkaClusterBrokerShapeNodeShape,
- *         storageSizeInGbs: kafkaClusterBrokerShapeStorageSizeInGbs,
+ *         storageSizeInGbs: Number(kafkaClusterBrokerShapeStorageSizeInGbs),
  *     },
  *     clusterConfigId: testConfig.id,
- *     clusterConfigVersion: kafkaClusterClusterConfigVersion,
+ *     clusterConfigVersion: Number(kafkaClusterClusterConfigVersion),
  *     clusterType: kafkaClusterClusterType,
  *     compartmentId: compartmentId,
  *     coordinationType: kafkaClusterCoordinationType,
@@ -254,51 +254,51 @@ export interface ManagedKafkaKafkaClusterState {
     /**
      * (Updatable) Subnets where broker/coordinator VNICs will be created.
      */
-    accessSubnets?: pulumi.Input<pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterAccessSubnet>[]>;
+    accessSubnets?: pulumi.Input<pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterAccessSubnet>[] | undefined>;
     /**
      * (Updatable) Configuration of the broker node.
      */
-    brokerShape?: pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterBrokerShape>;
+    brokerShape?: pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterBrokerShape | undefined>;
     /**
      * (Updatable) CA certificate bundle for mTLS broker authentication.
      */
-    clientCertificateBundle?: pulumi.Input<string>;
+    clientCertificateBundle?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
      */
-    clusterConfigId?: pulumi.Input<string>;
+    clusterConfigId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of configuration object
      */
-    clusterConfigVersion?: pulumi.Input<number>;
+    clusterConfigVersion?: pulumi.Input<number | undefined>;
     /**
      * Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on single node PRODUCTION - Minimum allowed broker count is 3
      */
-    clusterType?: pulumi.Input<string>;
+    clusterType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the KafkaCluster in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Kafka coordination type. Set of available types depends on Kafka version
      */
-    coordinationType?: pulumi.Input<string>;
+    coordinationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Bootstrap URL that can be used to connect to Kafka
      */
-    kafkaBootstrapUrls?: pulumi.Input<pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterKafkaBootstrapUrl>[]>;
+    kafkaBootstrapUrls?: pulumi.Input<pulumi.Input<inputs.oci.ManagedKafkaKafkaClusterKafkaBootstrapUrl>[] | undefined>;
     /**
      * Version of Kafka to use to spin up the cluster
      *
@@ -306,31 +306,31 @@ export interface ManagedKafkaKafkaClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    kafkaVersion?: pulumi.Input<string>;
+    kafkaVersion?: pulumi.Input<string | undefined>;
     /**
      * A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the KafkaCluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -348,7 +348,7 @@ export interface ManagedKafkaKafkaClusterArgs {
     /**
      * (Updatable) CA certificate bundle for mTLS broker authentication.
      */
-    clientCertificateBundle?: pulumi.Input<string>;
+    clientCertificateBundle?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
      */
@@ -372,15 +372,15 @@ export interface ManagedKafkaKafkaClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Version of Kafka to use to spin up the cluster
      *

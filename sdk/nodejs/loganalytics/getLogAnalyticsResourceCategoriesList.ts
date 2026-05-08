@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
+ * const testLogAnalyticsResourceCategoriesList = oci.loganalytics.getLogAnalyticsResourceCategoriesList({
  *     namespace: logAnalyticsResourceCategoriesListNamespace,
  *     compartmentId: logAnalyticsResourceCategoriesCompartmentId,
  *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
@@ -99,7 +99,7 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
+ * const testLogAnalyticsResourceCategoriesList = oci.loganalytics.getLogAnalyticsResourceCategoriesList({
  *     namespace: logAnalyticsResourceCategoriesListNamespace,
  *     compartmentId: logAnalyticsResourceCategoriesCompartmentId,
  *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
@@ -126,7 +126,7 @@ export interface GetLogAnalyticsResourceCategoriesListOutputArgs {
     /**
      * The compartment id in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Logging Analytics namespace used for the request.
      */
@@ -134,13 +134,13 @@ export interface GetLogAnalyticsResourceCategoriesListOutputArgs {
     /**
      * A comma-separated list of category names used for filtering
      */
-    resourceCategories?: pulumi.Input<string>;
+    resourceCategories?: pulumi.Input<string | undefined>;
     /**
      * A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.
      */
-    resourceIds?: pulumi.Input<string>;
+    resourceIds?: pulumi.Input<string | undefined>;
     /**
      * A comma-separated list of resource types used for filtering. Only resources of the types specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
      */
-    resourceTypes?: pulumi.Input<string>;
+    resourceTypes?: pulumi.Input<string | undefined>;
 }

@@ -104,7 +104,7 @@ export interface ClusterStartCredentialRotationManagementState {
     /**
      * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
      */
-    autoCompletionDelayDuration?: pulumi.Input<string>;
+    autoCompletionDelayDuration?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      *
@@ -112,7 +112,7 @@ export interface ClusterStartCredentialRotationManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
 }
 
 /**

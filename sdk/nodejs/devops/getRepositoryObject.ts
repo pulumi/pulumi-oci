@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryObject = oci.DevOps.getRepositoryObject({
+ * const testRepositoryObject = oci.devops.getRepositoryObject({
  *     repositoryId: testRepository.id,
  *     filePath: repositoryObjectFilePath,
  *     refName: repositoryObjectRefName,
@@ -88,7 +88,7 @@ export interface GetRepositoryObjectResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryObject = oci.DevOps.getRepositoryObject({
+ * const testRepositoryObject = oci.devops.getRepositoryObject({
  *     repositoryId: testRepository.id,
  *     filePath: repositoryObjectFilePath,
  *     refName: repositoryObjectRefName,
@@ -111,11 +111,11 @@ export interface GetRepositoryObjectOutputArgs {
     /**
      * A filter to return only commits that affect any of the specified paths.
      */
-    filePath?: pulumi.Input<string>;
+    filePath?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

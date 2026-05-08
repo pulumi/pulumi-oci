@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     bucket: workspaceImportRequestBucket,
  *     fileName: workspaceImportRequestFileName,
  *     workspaceId: testWorkspace.id,
- *     areDataAssetReferencesIncluded: workspaceImportRequestAreDataAssetReferencesIncluded,
+ *     areDataAssetReferencesIncluded: workspaceImportRequestAreDataAssetReferencesIncluded === "true",
  *     importConflictResolution: {
  *         importConflictResolutionType: workspaceImportRequestImportConflictResolutionImportConflictResolutionType,
  *         duplicatePrefix: workspaceImportRequestImportConflictResolutionDuplicatePrefix,
@@ -216,67 +216,67 @@ export interface WorkspaceImportRequestState {
     /**
      * This field controls if the data asset references will be included during import.
      */
-    areDataAssetReferencesIncluded?: pulumi.Input<boolean>;
+    areDataAssetReferencesIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * Name of the user who initiated import request.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Contains key of the error
      */
-    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the zip file to be imported.
      */
-    fileName?: pulumi.Input<string>;
+    fileName?: pulumi.Input<string | undefined>;
     /**
      * Import Objects Conflict resolution.
      */
-    importConflictResolution?: pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportConflictResolution>;
+    importConflictResolution?: pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportConflictResolution | undefined>;
     /**
      * The array of imported object details.
      */
-    importedObjects?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportedObject>[]>;
+    importedObjects?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportedObject>[] | undefined>;
     /**
      * Import object request key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Name of the import request.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Key of the object inside which all the objects will be imported
      */
-    objectKeyForImport?: pulumi.Input<string>;
+    objectKeyForImport?: pulumi.Input<string | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    objectStorageRegion?: pulumi.Input<string>;
+    objectStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    objectStorageTenancyId?: pulumi.Input<string>;
+    objectStorageTenancyId?: pulumi.Input<string | undefined>;
     /**
      * Import Objects request status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Time at which the request was completely processed.
      */
-    timeEndedInMillis?: pulumi.Input<string>;
+    timeEndedInMillis?: pulumi.Input<string | undefined>;
     /**
      * Time at which the request started getting processed.
      */
-    timeStartedInMillis?: pulumi.Input<string>;
+    timeStartedInMillis?: pulumi.Input<string | undefined>;
     /**
      * Number of objects that are imported.
      */
-    totalImportedObjectCount?: pulumi.Input<number>;
+    totalImportedObjectCount?: pulumi.Input<number | undefined>;
     /**
      * The workspace ID.
      *
@@ -284,7 +284,7 @@ export interface WorkspaceImportRequestState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -294,7 +294,7 @@ export interface WorkspaceImportRequestArgs {
     /**
      * This field controls if the data asset references will be included during import.
      */
-    areDataAssetReferencesIncluded?: pulumi.Input<boolean>;
+    areDataAssetReferencesIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */
@@ -306,19 +306,19 @@ export interface WorkspaceImportRequestArgs {
     /**
      * Import Objects Conflict resolution.
      */
-    importConflictResolution?: pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportConflictResolution>;
+    importConflictResolution?: pulumi.Input<inputs.DataIntegration.WorkspaceImportRequestImportConflictResolution | undefined>;
     /**
      * Key of the object inside which all the objects will be imported
      */
-    objectKeyForImport?: pulumi.Input<string>;
+    objectKeyForImport?: pulumi.Input<string | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    objectStorageRegion?: pulumi.Input<string>;
+    objectStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    objectStorageTenancyId?: pulumi.Input<string>;
+    objectStorageTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
+ * const testOperationsInsightsWarehouseUsers = oci.opsi.getOperationsInsightsWarehouseUsers({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: operationsInsightsWarehouseUserDisplayName,
@@ -103,7 +103,7 @@ export interface GetOperationsInsightsWarehouseUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
+ * const testOperationsInsightsWarehouseUsers = oci.opsi.getOperationsInsightsWarehouseUsers({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: operationsInsightsWarehouseUserDisplayName,
@@ -131,16 +131,16 @@ export interface GetOperationsInsightsWarehouseUsersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOperationsInsightsWarehouseUsersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOperationsInsightsWarehouseUsersFilterArgs>[] | undefined>;
     /**
      * Unique Operations Insights Warehouse User identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Unique Operations Insights Warehouse identifier
      */
@@ -148,5 +148,5 @@ export interface GetOperationsInsightsWarehouseUsersOutputArgs {
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

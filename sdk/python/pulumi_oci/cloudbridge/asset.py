@@ -26,21 +26,21 @@ class AssetArgs:
                  external_asset_key: pulumi.Input[_builtins.str],
                  inventory_id: pulumi.Input[_builtins.str],
                  source_key: pulumi.Input[_builtins.str],
-                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attached_ebs_volumes_cost: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']] = None,
-                 aws_ebs: Optional[pulumi.Input['AssetAwsEbsArgs']] = None,
-                 aws_ec2: Optional[pulumi.Input['AssetAwsEc2Args']] = None,
-                 aws_ec2cost: Optional[pulumi.Input['AssetAwsEc2costArgs']] = None,
-                 compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vm: Optional[pulumi.Input['AssetVmArgs']] = None,
-                 vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
-                 vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
+                 asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']] = None,
+                 aws_ebs: pulumi.Input[Optional['AssetAwsEbsArgs']] = None,
+                 aws_ec2: pulumi.Input[Optional['AssetAwsEc2Args']] = None,
+                 aws_ec2cost: pulumi.Input[Optional['AssetAwsEc2costArgs']] = None,
+                 compute: pulumi.Input[Optional['AssetComputeArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vm: pulumi.Input[Optional['AssetVmArgs']] = None,
+                 vmware_vcenter: pulumi.Input[Optional['AssetVmwareVcenterArgs']] = None,
+                 vmware_vm: pulumi.Input[Optional['AssetVmwareVmArgs']] = None):
         """
         The set of arguments for constructing a Asset resource.
 
@@ -163,213 +163,213 @@ class AssetArgs:
 
     @_builtins.property
     @pulumi.getter(name="assetClassName")
-    def asset_class_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_class_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The class name of the asset.
         """
         return pulumi.get(self, "asset_class_name")
 
     @asset_class_name.setter
-    def asset_class_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_class_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_class_name", value)
 
     @_builtins.property
     @pulumi.getter(name="assetClassVersion")
-    def asset_class_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_class_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the asset class.
         """
         return pulumi.get(self, "asset_class_version")
 
     @asset_class_version.setter
-    def asset_class_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_class_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_class_version", value)
 
     @_builtins.property
     @pulumi.getter(name="assetDetails")
-    def asset_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The details of the asset.
         """
         return pulumi.get(self, "asset_details")
 
     @asset_details.setter
-    def asset_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_details", value)
 
     @_builtins.property
     @pulumi.getter(name="assetSourceIds")
-    def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def asset_source_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of asset source OCID.
         """
         return pulumi.get(self, "asset_source_ids")
 
     @asset_source_ids.setter
-    def asset_source_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def asset_source_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "asset_source_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="attachedEbsVolumesCost")
-    def attached_ebs_volumes_cost(self) -> Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]:
+    def attached_ebs_volumes_cost(self) -> pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']]:
         """
         (Updatable) Cost information for monthly maintenance.
         """
         return pulumi.get(self, "attached_ebs_volumes_cost")
 
     @attached_ebs_volumes_cost.setter
-    def attached_ebs_volumes_cost(self, value: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]):
+    def attached_ebs_volumes_cost(self, value: pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']]):
         pulumi.set(self, "attached_ebs_volumes_cost", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEbs")
-    def aws_ebs(self) -> Optional[pulumi.Input['AssetAwsEbsArgs']]:
+    def aws_ebs(self) -> pulumi.Input[Optional['AssetAwsEbsArgs']]:
         """
         (Updatable) AWS EBS volume related properties.
         """
         return pulumi.get(self, "aws_ebs")
 
     @aws_ebs.setter
-    def aws_ebs(self, value: Optional[pulumi.Input['AssetAwsEbsArgs']]):
+    def aws_ebs(self, value: pulumi.Input[Optional['AssetAwsEbsArgs']]):
         pulumi.set(self, "aws_ebs", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEc2")
-    def aws_ec2(self) -> Optional[pulumi.Input['AssetAwsEc2Args']]:
+    def aws_ec2(self) -> pulumi.Input[Optional['AssetAwsEc2Args']]:
         """
         (Updatable) AWS virtual machine related properties.
         """
         return pulumi.get(self, "aws_ec2")
 
     @aws_ec2.setter
-    def aws_ec2(self, value: Optional[pulumi.Input['AssetAwsEc2Args']]):
+    def aws_ec2(self, value: pulumi.Input[Optional['AssetAwsEc2Args']]):
         pulumi.set(self, "aws_ec2", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEc2cost")
-    def aws_ec2cost(self) -> Optional[pulumi.Input['AssetAwsEc2costArgs']]:
+    def aws_ec2cost(self) -> pulumi.Input[Optional['AssetAwsEc2costArgs']]:
         """
         (Updatable) Cost information for monthly maintenance.
         """
         return pulumi.get(self, "aws_ec2cost")
 
     @aws_ec2cost.setter
-    def aws_ec2cost(self, value: Optional[pulumi.Input['AssetAwsEc2costArgs']]):
+    def aws_ec2cost(self, value: pulumi.Input[Optional['AssetAwsEc2costArgs']]):
         pulumi.set(self, "aws_ec2cost", value)
 
     @_builtins.property
     @pulumi.getter
-    def compute(self) -> Optional[pulumi.Input['AssetComputeArgs']]:
+    def compute(self) -> pulumi.Input[Optional['AssetComputeArgs']]:
         """
         (Updatable) Compute related properties.
         """
         return pulumi.get(self, "compute")
 
     @compute.setter
-    def compute(self, value: Optional[pulumi.Input['AssetComputeArgs']]):
+    def compute(self, value: pulumi.Input[Optional['AssetComputeArgs']]):
         pulumi.set(self, "compute", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Asset display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def vm(self) -> Optional[pulumi.Input['AssetVmArgs']]:
+    def vm(self) -> pulumi.Input[Optional['AssetVmArgs']]:
         """
         (Updatable) Virtual machine related properties.
         """
         return pulumi.get(self, "vm")
 
     @vm.setter
-    def vm(self, value: Optional[pulumi.Input['AssetVmArgs']]):
+    def vm(self, value: pulumi.Input[Optional['AssetVmArgs']]):
         pulumi.set(self, "vm", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareVcenter")
-    def vmware_vcenter(self) -> Optional[pulumi.Input['AssetVmwareVcenterArgs']]:
+    def vmware_vcenter(self) -> pulumi.Input[Optional['AssetVmwareVcenterArgs']]:
         """
         (Updatable) VMware vCenter related properties.
         """
         return pulumi.get(self, "vmware_vcenter")
 
     @vmware_vcenter.setter
-    def vmware_vcenter(self, value: Optional[pulumi.Input['AssetVmwareVcenterArgs']]):
+    def vmware_vcenter(self, value: pulumi.Input[Optional['AssetVmwareVcenterArgs']]):
         pulumi.set(self, "vmware_vcenter", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareVm")
-    def vmware_vm(self) -> Optional[pulumi.Input['AssetVmwareVmArgs']]:
+    def vmware_vm(self) -> pulumi.Input[Optional['AssetVmwareVmArgs']]:
         """
         (Updatable) VMware virtual machine related properties.
         """
         return pulumi.get(self, "vmware_vm")
 
     @vmware_vm.setter
-    def vmware_vm(self, value: Optional[pulumi.Input['AssetVmwareVmArgs']]):
+    def vmware_vm(self, value: pulumi.Input[Optional['AssetVmwareVmArgs']]):
         pulumi.set(self, "vmware_vm", value)
 
 
 @pulumi.input_type
 class _AssetState:
     def __init__(__self__, *,
-                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asset_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 attached_ebs_volumes_cost: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']] = None,
-                 aws_ebs: Optional[pulumi.Input['AssetAwsEbsArgs']] = None,
-                 aws_ec2: Optional[pulumi.Input['AssetAwsEc2Args']] = None,
-                 aws_ec2cost: Optional[pulumi.Input['AssetAwsEc2costArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm: Optional[pulumi.Input['AssetVmArgs']] = None,
-                 vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
-                 vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
+                 asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']] = None,
+                 aws_ebs: pulumi.Input[Optional['AssetAwsEbsArgs']] = None,
+                 aws_ec2: pulumi.Input[Optional['AssetAwsEc2Args']] = None,
+                 aws_ec2cost: pulumi.Input[Optional['AssetAwsEc2costArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute: pulumi.Input[Optional['AssetComputeArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm: pulumi.Input[Optional['AssetVmArgs']] = None,
+                 vmware_vcenter: pulumi.Input[Optional['AssetVmwareVcenterArgs']] = None,
+                 vmware_vm: pulumi.Input[Optional['AssetVmwareVmArgs']] = None):
         """
         Input properties used for looking up and filtering Asset resources.
 
@@ -452,302 +452,302 @@ class _AssetState:
 
     @_builtins.property
     @pulumi.getter(name="assetClassName")
-    def asset_class_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_class_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The class name of the asset.
         """
         return pulumi.get(self, "asset_class_name")
 
     @asset_class_name.setter
-    def asset_class_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_class_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_class_name", value)
 
     @_builtins.property
     @pulumi.getter(name="assetClassVersion")
-    def asset_class_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_class_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the asset class.
         """
         return pulumi.get(self, "asset_class_version")
 
     @asset_class_version.setter
-    def asset_class_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_class_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_class_version", value)
 
     @_builtins.property
     @pulumi.getter(name="assetDetails")
-    def asset_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The details of the asset.
         """
         return pulumi.get(self, "asset_details")
 
     @asset_details.setter
-    def asset_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_details", value)
 
     @_builtins.property
     @pulumi.getter(name="assetSourceIds")
-    def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def asset_source_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of asset source OCID.
         """
         return pulumi.get(self, "asset_source_ids")
 
     @asset_source_ids.setter
-    def asset_source_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def asset_source_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "asset_source_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="assetType")
-    def asset_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of asset.
         """
         return pulumi.get(self, "asset_type")
 
     @asset_type.setter
-    def asset_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_type", value)
 
     @_builtins.property
     @pulumi.getter(name="attachedEbsVolumesCost")
-    def attached_ebs_volumes_cost(self) -> Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]:
+    def attached_ebs_volumes_cost(self) -> pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']]:
         """
         (Updatable) Cost information for monthly maintenance.
         """
         return pulumi.get(self, "attached_ebs_volumes_cost")
 
     @attached_ebs_volumes_cost.setter
-    def attached_ebs_volumes_cost(self, value: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]):
+    def attached_ebs_volumes_cost(self, value: pulumi.Input[Optional['AssetAttachedEbsVolumesCostArgs']]):
         pulumi.set(self, "attached_ebs_volumes_cost", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEbs")
-    def aws_ebs(self) -> Optional[pulumi.Input['AssetAwsEbsArgs']]:
+    def aws_ebs(self) -> pulumi.Input[Optional['AssetAwsEbsArgs']]:
         """
         (Updatable) AWS EBS volume related properties.
         """
         return pulumi.get(self, "aws_ebs")
 
     @aws_ebs.setter
-    def aws_ebs(self, value: Optional[pulumi.Input['AssetAwsEbsArgs']]):
+    def aws_ebs(self, value: pulumi.Input[Optional['AssetAwsEbsArgs']]):
         pulumi.set(self, "aws_ebs", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEc2")
-    def aws_ec2(self) -> Optional[pulumi.Input['AssetAwsEc2Args']]:
+    def aws_ec2(self) -> pulumi.Input[Optional['AssetAwsEc2Args']]:
         """
         (Updatable) AWS virtual machine related properties.
         """
         return pulumi.get(self, "aws_ec2")
 
     @aws_ec2.setter
-    def aws_ec2(self, value: Optional[pulumi.Input['AssetAwsEc2Args']]):
+    def aws_ec2(self, value: pulumi.Input[Optional['AssetAwsEc2Args']]):
         pulumi.set(self, "aws_ec2", value)
 
     @_builtins.property
     @pulumi.getter(name="awsEc2cost")
-    def aws_ec2cost(self) -> Optional[pulumi.Input['AssetAwsEc2costArgs']]:
+    def aws_ec2cost(self) -> pulumi.Input[Optional['AssetAwsEc2costArgs']]:
         """
         (Updatable) Cost information for monthly maintenance.
         """
         return pulumi.get(self, "aws_ec2cost")
 
     @aws_ec2cost.setter
-    def aws_ec2cost(self, value: Optional[pulumi.Input['AssetAwsEc2costArgs']]):
+    def aws_ec2cost(self, value: pulumi.Input[Optional['AssetAwsEc2costArgs']]):
         pulumi.set(self, "aws_ec2cost", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that the asset belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def compute(self) -> Optional[pulumi.Input['AssetComputeArgs']]:
+    def compute(self) -> pulumi.Input[Optional['AssetComputeArgs']]:
         """
         (Updatable) Compute related properties.
         """
         return pulumi.get(self, "compute")
 
     @compute.setter
-    def compute(self, value: Optional[pulumi.Input['AssetComputeArgs']]):
+    def compute(self, value: pulumi.Input[Optional['AssetComputeArgs']]):
         pulumi.set(self, "compute", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Asset display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
         """
         return pulumi.get(self, "environment_type")
 
     @environment_type.setter
-    def environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="externalAssetKey")
-    def external_asset_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_asset_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key of the asset from the external environment.
         """
         return pulumi.get(self, "external_asset_key")
 
     @external_asset_key.setter
-    def external_asset_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_asset_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_asset_key", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inventoryId")
-    def inventory_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inventory_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Inventory ID to which an asset belongs.
         """
         return pulumi.get(self, "inventory_id")
 
     @inventory_id.setter
-    def inventory_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inventory_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inventory_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceKey")
-    def source_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source key to which the asset belongs.
         """
         return pulumi.get(self, "source_key")
 
     @source_key.setter
-    def source_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the asset.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the asset was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the asset was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def vm(self) -> Optional[pulumi.Input['AssetVmArgs']]:
+    def vm(self) -> pulumi.Input[Optional['AssetVmArgs']]:
         """
         (Updatable) Virtual machine related properties.
         """
         return pulumi.get(self, "vm")
 
     @vm.setter
-    def vm(self, value: Optional[pulumi.Input['AssetVmArgs']]):
+    def vm(self, value: pulumi.Input[Optional['AssetVmArgs']]):
         pulumi.set(self, "vm", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareVcenter")
-    def vmware_vcenter(self) -> Optional[pulumi.Input['AssetVmwareVcenterArgs']]:
+    def vmware_vcenter(self) -> pulumi.Input[Optional['AssetVmwareVcenterArgs']]:
         """
         (Updatable) VMware vCenter related properties.
         """
         return pulumi.get(self, "vmware_vcenter")
 
     @vmware_vcenter.setter
-    def vmware_vcenter(self, value: Optional[pulumi.Input['AssetVmwareVcenterArgs']]):
+    def vmware_vcenter(self, value: pulumi.Input[Optional['AssetVmwareVcenterArgs']]):
         pulumi.set(self, "vmware_vcenter", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareVm")
-    def vmware_vm(self) -> Optional[pulumi.Input['AssetVmwareVmArgs']]:
+    def vmware_vm(self) -> pulumi.Input[Optional['AssetVmwareVmArgs']]:
         """
         (Updatable) VMware virtual machine related properties.
         """
         return pulumi.get(self, "vmware_vm")
 
     @vmware_vm.setter
-    def vmware_vm(self, value: Optional[pulumi.Input['AssetVmwareVmArgs']]):
+    def vmware_vm(self, value: pulumi.Input[Optional['AssetVmwareVmArgs']]):
         pulumi.set(self, "vmware_vm", value)
 
 
@@ -757,26 +757,26 @@ class Asset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asset_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-                 aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-                 aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-                 aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-                 vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-                 vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
+                 asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -810,27 +810,27 @@ class Asset(pulumi.CustomResource):
                 "attachments": [{
                     "device": asset_aws_ebs_attachments_device,
                     "instance_key": asset_aws_ebs_attachments_instance_key,
-                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination,
+                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination == "true",
                     "status": asset_aws_ebs_attachments_status,
                     "volume_key": asset_aws_ebs_attachments_volume_key,
                 }],
                 "availability_zone": asset_aws_ebs_availability_zone,
-                "iops": asset_aws_ebs_iops,
-                "is_encrypted": asset_aws_ebs_is_encrypted,
-                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled,
-                "size_in_gi_bs": asset_aws_ebs_size_in_gi_bs,
+                "iops": int(asset_aws_ebs_iops),
+                "is_encrypted": asset_aws_ebs_is_encrypted == "true",
+                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled == "true",
+                "size_in_gi_bs": int(asset_aws_ebs_size_in_gi_bs),
                 "status": asset_aws_ebs_status,
                 "tags": [{
                     "key": asset_aws_ebs_tags_key,
                     "value": asset_aws_ebs_tags_value,
                 }],
-                "throughput": asset_aws_ebs_throughput,
+                "throughput": int(asset_aws_ebs_throughput),
                 "volume_key": asset_aws_ebs_volume_key,
                 "volume_type": asset_aws_ebs_volume_type,
             },
             aws_ec2={
                 "architecture": asset_aws_ec2_architecture,
-                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present,
+                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present == "true",
                 "boot_mode": asset_aws_ec2_boot_mode,
                 "capacity_reservation_key": asset_aws_ec2_capacity_reservation_key,
                 "image_key": asset_aws_ec2_image_key,
@@ -839,10 +839,10 @@ class Asset(pulumi.CustomResource):
                 "instance_type": asset_aws_ec2_instance_type,
                 "ip_address": asset_aws_ec2_ip_address,
                 "ipv6address": asset_aws_ec2_ipv6address,
-                "is_enclave_options": asset_aws_ec2_is_enclave_options,
-                "is_hibernation_options": asset_aws_ec2_is_hibernation_options,
-                "is_source_dest_check": asset_aws_ec2_is_source_dest_check,
-                "is_spot_instance": asset_aws_ec2_is_spot_instance,
+                "is_enclave_options": asset_aws_ec2_is_enclave_options == "true",
+                "is_hibernation_options": asset_aws_ec2_is_hibernation_options == "true",
+                "is_source_dest_check": asset_aws_ec2_is_source_dest_check == "true",
+                "is_spot_instance": asset_aws_ec2_is_spot_instance == "true",
                 "kernel_key": asset_aws_ec2_kernel_key,
                 "licenses": asset_aws_ec2_licenses,
                 "maintenance_options": asset_aws_ec2_maintenance_options,
@@ -857,9 +857,9 @@ class Asset(pulumi.CustomResource):
                     },
                     "attachment": {
                         "attachment_key": asset_aws_ec2_network_interfaces_attachment_attachment_key,
-                        "device_index": asset_aws_ec2_network_interfaces_attachment_device_index,
-                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination,
-                        "network_card_index": asset_aws_ec2_network_interfaces_attachment_network_card_index,
+                        "device_index": int(asset_aws_ec2_network_interfaces_attachment_device_index),
+                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination == "true",
+                        "network_card_index": int(asset_aws_ec2_network_interfaces_attachment_network_card_index),
                         "status": asset_aws_ec2_network_interfaces_attachment_status,
                         "time_attach": asset_aws_ec2_network_interfaces_attachment_time_attach,
                     },
@@ -868,7 +868,7 @@ class Asset(pulumi.CustomResource):
                     "ipv4prefixes": asset_aws_ec2_network_interfaces_ipv4prefixes,
                     "ipv6addresses": asset_aws_ec2_network_interfaces_ipv6addresses,
                     "ipv6prefixes": asset_aws_ec2_network_interfaces_ipv6prefixes,
-                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check,
+                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check == "true",
                     "mac_address": asset_aws_ec2_network_interfaces_mac_address,
                     "network_interface_key": asset_aws_ec2_network_interfaces_network_interface_key,
                     "owner_key": asset_aws_ec2_network_interfaces_owner_key,
@@ -880,7 +880,7 @@ class Asset(pulumi.CustomResource):
                             "public_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_dns_name,
                             "public_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_ip,
                         },
-                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary,
+                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary == "true",
                         "private_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_private_dns_name,
                         "private_ip_address": asset_aws_ec2_network_interfaces_private_ip_addresses_private_ip_address,
                     }],
@@ -897,7 +897,7 @@ class Asset(pulumi.CustomResource):
                     "group_name": test_group["name"],
                     "host_key": asset_aws_ec2_placement_host_key,
                     "host_resource_group_arn": asset_aws_ec2_placement_host_resource_group_arn,
-                    "partition_number": asset_aws_ec2_placement_partition_number,
+                    "partition_number": int(asset_aws_ec2_placement_partition_number),
                     "spread_domain": asset_aws_ec2_placement_spread_domain,
                     "tenancy": asset_aws_ec2_placement_tenancy,
                 },
@@ -911,7 +911,7 @@ class Asset(pulumi.CustomResource):
                 }],
                 "sriov_net_support": asset_aws_ec2_sriov_net_support,
                 "state": {
-                    "code": asset_aws_ec2_state_code,
+                    "code": int(asset_aws_ec2_state_code),
                     "name": asset_aws_ec2_state_name,
                 },
                 "subnet_key": asset_aws_ec2_subnet_key,
@@ -929,13 +929,13 @@ class Asset(pulumi.CustomResource):
                 "currency_code": asset_aws_ec2cost_currency_code,
             },
             compute={
-                "connected_networks": asset_compute_connected_networks,
-                "cores_count": asset_compute_cores_count,
+                "connected_networks": int(asset_compute_connected_networks),
+                "cores_count": int(asset_compute_cores_count),
                 "cpu_model": asset_compute_cpu_model,
                 "description": asset_compute_description,
                 "disks": [{
-                    "boot_order": asset_compute_disks_boot_order,
-                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled,
+                    "boot_order": int(asset_compute_disks_boot_order),
+                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled == "true",
                     "location": asset_compute_disks_location,
                     "name": asset_compute_disks_name,
                     "persistent_mode": asset_compute_disks_persistent_mode,
@@ -943,22 +943,22 @@ class Asset(pulumi.CustomResource):
                     "uuid": asset_compute_disks_uuid,
                     "uuid_lun": asset_compute_disks_uuid_lun,
                 }],
-                "disks_count": asset_compute_disks_count,
+                "disks_count": int(asset_compute_disks_count),
                 "dns_name": asset_compute_dns_name,
                 "firmware": asset_compute_firmware,
                 "gpu_devices": [{
-                    "cores_count": asset_compute_gpu_devices_cores_count,
+                    "cores_count": int(asset_compute_gpu_devices_cores_count),
                     "description": asset_compute_gpu_devices_description,
                     "manufacturer": asset_compute_gpu_devices_manufacturer,
                     "memory_in_mbs": asset_compute_gpu_devices_memory_in_mbs,
                     "name": asset_compute_gpu_devices_name,
                 }],
-                "gpu_devices_count": asset_compute_gpu_devices_count,
+                "gpu_devices_count": int(asset_compute_gpu_devices_count),
                 "guest_state": asset_compute_guest_state,
                 "hardware_version": asset_compute_hardware_version,
                 "host_name": asset_compute_host_name,
-                "is_pmem_enabled": asset_compute_is_pmem_enabled,
-                "is_tpm_enabled": asset_compute_is_tpm_enabled,
+                "is_pmem_enabled": asset_compute_is_pmem_enabled == "true",
+                "is_tpm_enabled": asset_compute_is_tpm_enabled == "true",
                 "latency_sensitivity": asset_compute_latency_sensitivity,
                 "memory_in_mbs": asset_compute_memory_in_mbs,
                 "nics": [{
@@ -969,15 +969,15 @@ class Asset(pulumi.CustomResource):
                     "network_name": asset_compute_nics_network_name,
                     "switch_name": asset_compute_nics_switch_name,
                 }],
-                "nics_count": asset_compute_nics_count,
+                "nics_count": int(asset_compute_nics_count),
                 "nvdimm_controller": {
-                    "bus_number": asset_compute_nvdimm_controller_bus_number,
+                    "bus_number": int(asset_compute_nvdimm_controller_bus_number),
                     "label": asset_compute_nvdimm_controller_label,
                 },
                 "nvdimms": [{
-                    "controller_key": asset_compute_nvdimms_controller_key,
+                    "controller_key": int(asset_compute_nvdimms_controller_key),
                     "label": asset_compute_nvdimms_label,
-                    "unit_number": asset_compute_nvdimms_unit_number,
+                    "unit_number": int(asset_compute_nvdimms_unit_number),
                 }],
                 "operating_system": asset_compute_operating_system,
                 "operating_system_version": asset_compute_operating_system_version,
@@ -987,10 +987,10 @@ class Asset(pulumi.CustomResource):
                 "scsi_controller": {
                     "label": asset_compute_scsi_controller_label,
                     "shared_bus": asset_compute_scsi_controller_shared_bus,
-                    "unit_number": asset_compute_scsi_controller_unit_number,
+                    "unit_number": int(asset_compute_scsi_controller_unit_number),
                 },
                 "storage_provisioned_in_mbs": asset_compute_storage_provisioned_in_mbs,
-                "threads_per_core_count": asset_compute_threads_per_core_count,
+                "threads_per_core_count": int(asset_compute_threads_per_core_count),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -1017,12 +1017,12 @@ class Asset(pulumi.CustomResource):
                     "description": asset_vmware_vm_customer_tags_description,
                     "name": asset_vmware_vm_customer_tags_name,
                 }],
-                "fault_tolerance_bandwidth": asset_vmware_vm_fault_tolerance_bandwidth,
-                "fault_tolerance_secondary_latency": asset_vmware_vm_fault_tolerance_secondary_latency,
+                "fault_tolerance_bandwidth": int(asset_vmware_vm_fault_tolerance_bandwidth),
+                "fault_tolerance_secondary_latency": int(asset_vmware_vm_fault_tolerance_secondary_latency),
                 "fault_tolerance_state": asset_vmware_vm_fault_tolerance_state,
                 "instance_uuid": asset_vmware_vm_instance_uuid,
-                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled,
-                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled,
+                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled == "true",
+                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled == "true",
                 "path": asset_vmware_vm_path,
                 "vmware_tools_status": asset_vmware_vm_vmware_tools_status,
             })
@@ -1098,27 +1098,27 @@ class Asset(pulumi.CustomResource):
                 "attachments": [{
                     "device": asset_aws_ebs_attachments_device,
                     "instance_key": asset_aws_ebs_attachments_instance_key,
-                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination,
+                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination == "true",
                     "status": asset_aws_ebs_attachments_status,
                     "volume_key": asset_aws_ebs_attachments_volume_key,
                 }],
                 "availability_zone": asset_aws_ebs_availability_zone,
-                "iops": asset_aws_ebs_iops,
-                "is_encrypted": asset_aws_ebs_is_encrypted,
-                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled,
-                "size_in_gi_bs": asset_aws_ebs_size_in_gi_bs,
+                "iops": int(asset_aws_ebs_iops),
+                "is_encrypted": asset_aws_ebs_is_encrypted == "true",
+                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled == "true",
+                "size_in_gi_bs": int(asset_aws_ebs_size_in_gi_bs),
                 "status": asset_aws_ebs_status,
                 "tags": [{
                     "key": asset_aws_ebs_tags_key,
                     "value": asset_aws_ebs_tags_value,
                 }],
-                "throughput": asset_aws_ebs_throughput,
+                "throughput": int(asset_aws_ebs_throughput),
                 "volume_key": asset_aws_ebs_volume_key,
                 "volume_type": asset_aws_ebs_volume_type,
             },
             aws_ec2={
                 "architecture": asset_aws_ec2_architecture,
-                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present,
+                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present == "true",
                 "boot_mode": asset_aws_ec2_boot_mode,
                 "capacity_reservation_key": asset_aws_ec2_capacity_reservation_key,
                 "image_key": asset_aws_ec2_image_key,
@@ -1127,10 +1127,10 @@ class Asset(pulumi.CustomResource):
                 "instance_type": asset_aws_ec2_instance_type,
                 "ip_address": asset_aws_ec2_ip_address,
                 "ipv6address": asset_aws_ec2_ipv6address,
-                "is_enclave_options": asset_aws_ec2_is_enclave_options,
-                "is_hibernation_options": asset_aws_ec2_is_hibernation_options,
-                "is_source_dest_check": asset_aws_ec2_is_source_dest_check,
-                "is_spot_instance": asset_aws_ec2_is_spot_instance,
+                "is_enclave_options": asset_aws_ec2_is_enclave_options == "true",
+                "is_hibernation_options": asset_aws_ec2_is_hibernation_options == "true",
+                "is_source_dest_check": asset_aws_ec2_is_source_dest_check == "true",
+                "is_spot_instance": asset_aws_ec2_is_spot_instance == "true",
                 "kernel_key": asset_aws_ec2_kernel_key,
                 "licenses": asset_aws_ec2_licenses,
                 "maintenance_options": asset_aws_ec2_maintenance_options,
@@ -1145,9 +1145,9 @@ class Asset(pulumi.CustomResource):
                     },
                     "attachment": {
                         "attachment_key": asset_aws_ec2_network_interfaces_attachment_attachment_key,
-                        "device_index": asset_aws_ec2_network_interfaces_attachment_device_index,
-                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination,
-                        "network_card_index": asset_aws_ec2_network_interfaces_attachment_network_card_index,
+                        "device_index": int(asset_aws_ec2_network_interfaces_attachment_device_index),
+                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination == "true",
+                        "network_card_index": int(asset_aws_ec2_network_interfaces_attachment_network_card_index),
                         "status": asset_aws_ec2_network_interfaces_attachment_status,
                         "time_attach": asset_aws_ec2_network_interfaces_attachment_time_attach,
                     },
@@ -1156,7 +1156,7 @@ class Asset(pulumi.CustomResource):
                     "ipv4prefixes": asset_aws_ec2_network_interfaces_ipv4prefixes,
                     "ipv6addresses": asset_aws_ec2_network_interfaces_ipv6addresses,
                     "ipv6prefixes": asset_aws_ec2_network_interfaces_ipv6prefixes,
-                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check,
+                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check == "true",
                     "mac_address": asset_aws_ec2_network_interfaces_mac_address,
                     "network_interface_key": asset_aws_ec2_network_interfaces_network_interface_key,
                     "owner_key": asset_aws_ec2_network_interfaces_owner_key,
@@ -1168,7 +1168,7 @@ class Asset(pulumi.CustomResource):
                             "public_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_dns_name,
                             "public_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_ip,
                         },
-                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary,
+                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary == "true",
                         "private_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_private_dns_name,
                         "private_ip_address": asset_aws_ec2_network_interfaces_private_ip_addresses_private_ip_address,
                     }],
@@ -1185,7 +1185,7 @@ class Asset(pulumi.CustomResource):
                     "group_name": test_group["name"],
                     "host_key": asset_aws_ec2_placement_host_key,
                     "host_resource_group_arn": asset_aws_ec2_placement_host_resource_group_arn,
-                    "partition_number": asset_aws_ec2_placement_partition_number,
+                    "partition_number": int(asset_aws_ec2_placement_partition_number),
                     "spread_domain": asset_aws_ec2_placement_spread_domain,
                     "tenancy": asset_aws_ec2_placement_tenancy,
                 },
@@ -1199,7 +1199,7 @@ class Asset(pulumi.CustomResource):
                 }],
                 "sriov_net_support": asset_aws_ec2_sriov_net_support,
                 "state": {
-                    "code": asset_aws_ec2_state_code,
+                    "code": int(asset_aws_ec2_state_code),
                     "name": asset_aws_ec2_state_name,
                 },
                 "subnet_key": asset_aws_ec2_subnet_key,
@@ -1217,13 +1217,13 @@ class Asset(pulumi.CustomResource):
                 "currency_code": asset_aws_ec2cost_currency_code,
             },
             compute={
-                "connected_networks": asset_compute_connected_networks,
-                "cores_count": asset_compute_cores_count,
+                "connected_networks": int(asset_compute_connected_networks),
+                "cores_count": int(asset_compute_cores_count),
                 "cpu_model": asset_compute_cpu_model,
                 "description": asset_compute_description,
                 "disks": [{
-                    "boot_order": asset_compute_disks_boot_order,
-                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled,
+                    "boot_order": int(asset_compute_disks_boot_order),
+                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled == "true",
                     "location": asset_compute_disks_location,
                     "name": asset_compute_disks_name,
                     "persistent_mode": asset_compute_disks_persistent_mode,
@@ -1231,22 +1231,22 @@ class Asset(pulumi.CustomResource):
                     "uuid": asset_compute_disks_uuid,
                     "uuid_lun": asset_compute_disks_uuid_lun,
                 }],
-                "disks_count": asset_compute_disks_count,
+                "disks_count": int(asset_compute_disks_count),
                 "dns_name": asset_compute_dns_name,
                 "firmware": asset_compute_firmware,
                 "gpu_devices": [{
-                    "cores_count": asset_compute_gpu_devices_cores_count,
+                    "cores_count": int(asset_compute_gpu_devices_cores_count),
                     "description": asset_compute_gpu_devices_description,
                     "manufacturer": asset_compute_gpu_devices_manufacturer,
                     "memory_in_mbs": asset_compute_gpu_devices_memory_in_mbs,
                     "name": asset_compute_gpu_devices_name,
                 }],
-                "gpu_devices_count": asset_compute_gpu_devices_count,
+                "gpu_devices_count": int(asset_compute_gpu_devices_count),
                 "guest_state": asset_compute_guest_state,
                 "hardware_version": asset_compute_hardware_version,
                 "host_name": asset_compute_host_name,
-                "is_pmem_enabled": asset_compute_is_pmem_enabled,
-                "is_tpm_enabled": asset_compute_is_tpm_enabled,
+                "is_pmem_enabled": asset_compute_is_pmem_enabled == "true",
+                "is_tpm_enabled": asset_compute_is_tpm_enabled == "true",
                 "latency_sensitivity": asset_compute_latency_sensitivity,
                 "memory_in_mbs": asset_compute_memory_in_mbs,
                 "nics": [{
@@ -1257,15 +1257,15 @@ class Asset(pulumi.CustomResource):
                     "network_name": asset_compute_nics_network_name,
                     "switch_name": asset_compute_nics_switch_name,
                 }],
-                "nics_count": asset_compute_nics_count,
+                "nics_count": int(asset_compute_nics_count),
                 "nvdimm_controller": {
-                    "bus_number": asset_compute_nvdimm_controller_bus_number,
+                    "bus_number": int(asset_compute_nvdimm_controller_bus_number),
                     "label": asset_compute_nvdimm_controller_label,
                 },
                 "nvdimms": [{
-                    "controller_key": asset_compute_nvdimms_controller_key,
+                    "controller_key": int(asset_compute_nvdimms_controller_key),
                     "label": asset_compute_nvdimms_label,
-                    "unit_number": asset_compute_nvdimms_unit_number,
+                    "unit_number": int(asset_compute_nvdimms_unit_number),
                 }],
                 "operating_system": asset_compute_operating_system,
                 "operating_system_version": asset_compute_operating_system_version,
@@ -1275,10 +1275,10 @@ class Asset(pulumi.CustomResource):
                 "scsi_controller": {
                     "label": asset_compute_scsi_controller_label,
                     "shared_bus": asset_compute_scsi_controller_shared_bus,
-                    "unit_number": asset_compute_scsi_controller_unit_number,
+                    "unit_number": int(asset_compute_scsi_controller_unit_number),
                 },
                 "storage_provisioned_in_mbs": asset_compute_storage_provisioned_in_mbs,
-                "threads_per_core_count": asset_compute_threads_per_core_count,
+                "threads_per_core_count": int(asset_compute_threads_per_core_count),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -1305,12 +1305,12 @@ class Asset(pulumi.CustomResource):
                     "description": asset_vmware_vm_customer_tags_description,
                     "name": asset_vmware_vm_customer_tags_name,
                 }],
-                "fault_tolerance_bandwidth": asset_vmware_vm_fault_tolerance_bandwidth,
-                "fault_tolerance_secondary_latency": asset_vmware_vm_fault_tolerance_secondary_latency,
+                "fault_tolerance_bandwidth": int(asset_vmware_vm_fault_tolerance_bandwidth),
+                "fault_tolerance_secondary_latency": int(asset_vmware_vm_fault_tolerance_secondary_latency),
                 "fault_tolerance_state": asset_vmware_vm_fault_tolerance_state,
                 "instance_uuid": asset_vmware_vm_instance_uuid,
-                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled,
-                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled,
+                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled == "true",
+                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled == "true",
                 "path": asset_vmware_vm_path,
                 "vmware_tools_status": asset_vmware_vm_vmware_tools_status,
             })
@@ -1340,26 +1340,26 @@ class Asset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asset_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-                 aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-                 aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-                 aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-                 vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-                 vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
+                 asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1414,31 +1414,31 @@ class Asset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
-            asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
-            asset_details: Optional[pulumi.Input[_builtins.str]] = None,
-            asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            asset_type: Optional[pulumi.Input[_builtins.str]] = None,
-            attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-            aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-            aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-            aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_key: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-            vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-            vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None) -> 'Asset':
+            asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+            attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+            aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+            aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+            aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_key: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+            vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+            vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None) -> 'Asset':
         """
         Get an existing Asset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

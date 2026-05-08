@@ -52,8 +52,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -98,8 +98,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -144,8 +144,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -236,8 +236,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -282,8 +282,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -324,8 +324,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -366,8 +366,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -408,8 +408,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -450,8 +450,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -492,8 +492,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -537,8 +537,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -582,8 +582,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -627,8 +627,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -672,8 +672,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -717,8 +717,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -764,8 +764,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -811,8 +811,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -858,8 +858,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -952,8 +952,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -996,8 +996,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1040,8 +1040,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1084,8 +1084,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1128,8 +1128,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1172,8 +1172,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1214,8 +1214,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1256,8 +1256,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1298,8 +1298,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1340,8 +1340,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1382,8 +1382,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1427,8 +1427,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1472,8 +1472,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1517,8 +1517,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1562,8 +1562,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1649,8 +1649,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1691,8 +1691,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1733,8 +1733,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1775,8 +1775,8 @@ public final class WafFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waf.WafFunctions;
      * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -125,7 +125,7 @@ def get_queues(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+    test_queues = oci.queue.get_queues(compartment_id=compartment_id,
         display_name=queue_display_name,
         id=queue_id,
         state=queue_state)
@@ -153,11 +153,11 @@ def get_queues(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         queue_collections=pulumi.get(__ret__, 'queue_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueuesFilterArgs', 'GetQueuesFilterArgsDict']]]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_queues_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueuesFilterArgs', 'GetQueuesFilterArgsDict']]]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueuesResult]:
     """
     This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
@@ -170,7 +170,7 @@ def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+    test_queues = oci.queue.get_queues(compartment_id=compartment_id,
         display_name=queue_display_name,
         id=queue_id,
         state=queue_state)

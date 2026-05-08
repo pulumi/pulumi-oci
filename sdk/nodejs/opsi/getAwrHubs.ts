@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubs = oci.Opsi.getAwrHubs({
+ * const testAwrHubs = oci.opsi.getAwrHubs({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: awrHubDisplayName,
@@ -106,7 +106,7 @@ export interface GetAwrHubsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubs = oci.Opsi.getAwrHubs({
+ * const testAwrHubs = oci.opsi.getAwrHubs({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: awrHubDisplayName,
@@ -134,16 +134,16 @@ export interface GetAwrHubsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetAwrHubsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetAwrHubsFilterArgs>[] | undefined>;
     /**
      * Unique Awr Hub identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Unique Operations Insights Warehouse identifier
      */
@@ -151,5 +151,5 @@ export interface GetAwrHubsOutputArgs {
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

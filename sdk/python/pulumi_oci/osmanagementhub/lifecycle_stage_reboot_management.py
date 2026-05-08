@@ -22,8 +22,8 @@ __all__ = ['LifecycleStageRebootManagementArgs', 'LifecycleStageRebootManagement
 class LifecycleStageRebootManagementArgs:
     def __init__(__self__, *,
                  lifecycle_stage_id: pulumi.Input[_builtins.str],
-                 reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 work_request_details: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
+                 reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 work_request_details: pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a LifecycleStageRebootManagement resource.
 
@@ -51,35 +51,35 @@ class LifecycleStageRebootManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="rebootTimeoutInMins")
-    def reboot_timeout_in_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reboot_timeout_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
         """
         return pulumi.get(self, "reboot_timeout_in_mins")
 
     @reboot_timeout_in_mins.setter
-    def reboot_timeout_in_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reboot_timeout_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reboot_timeout_in_mins", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _LifecycleStageRebootManagementState:
     def __init__(__self__, *,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 work_request_details: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 work_request_details: pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStageRebootManagement resources.
 
@@ -96,38 +96,38 @@ class _LifecycleStageRebootManagementState:
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStageId")
-    def lifecycle_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_stage_id")
 
     @lifecycle_stage_id.setter
-    def lifecycle_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="rebootTimeoutInMins")
-    def reboot_timeout_in_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reboot_timeout_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
         """
         return pulumi.get(self, "reboot_timeout_in_mins")
 
     @reboot_timeout_in_mins.setter
-    def reboot_timeout_in_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reboot_timeout_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reboot_timeout_in_mins", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['LifecycleStageRebootManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -157,7 +157,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
 
         test_lifecycle_stage_reboot_management = oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
-            reboot_timeout_in_mins=lifecycle_stage_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(lifecycle_stage_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": lifecycle_stage_reboot_management_work_request_details_description,
                 "display_name": lifecycle_stage_reboot_management_work_request_details_display_name,
@@ -201,7 +201,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
 
         test_lifecycle_stage_reboot_management = oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
-            reboot_timeout_in_mins=lifecycle_stage_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(lifecycle_stage_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": lifecycle_stage_reboot_management_work_request_details_description,
                 "display_name": lifecycle_stage_reboot_management_work_request_details_display_name,
@@ -232,9 +232,9 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -259,9 +259,9 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-            work_request_details: Optional[pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStageRebootManagement':
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStageRebootManagement':
         """
         Get an existing LifecycleStageRebootManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

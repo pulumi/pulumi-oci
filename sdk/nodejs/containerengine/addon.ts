@@ -152,39 +152,39 @@ export interface AddonState {
     /**
      * The error info of the addon.
      */
-    addonErrors?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonAddonError>[]>;
+    addonErrors?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonAddonError>[] | undefined>;
     /**
      * The name of the addon.
      */
-    addonName?: pulumi.Input<string>;
+    addonName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Addon configuration details
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[] | undefined>;
     /**
      * current installed version of the addon
      */
-    currentInstalledVersion?: pulumi.Input<string>;
+    currentInstalledVersion?: pulumi.Input<string | undefined>;
     /**
      * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
      */
-    overrideExisting?: pulumi.Input<boolean>;
+    overrideExisting?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to remove addon resource in deletion.
      */
-    removeAddonResourcesOnDelete?: pulumi.Input<boolean>;
+    removeAddonResourcesOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The state of the addon.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the cluster was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of addon to be installed.
      *
@@ -192,7 +192,7 @@ export interface AddonState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -210,11 +210,11 @@ export interface AddonArgs {
     /**
      * (Updatable) Addon configuration details
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[] | undefined>;
     /**
      * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
      */
-    overrideExisting?: pulumi.Input<boolean>;
+    overrideExisting?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to remove addon resource in deletion.
      */
@@ -226,5 +226,5 @@ export interface AddonArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

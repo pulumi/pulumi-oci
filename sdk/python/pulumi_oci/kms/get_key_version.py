@@ -256,7 +256,7 @@ def get_key_version(key_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=test_key["id"],
+    test_key_version = oci.kms.get_key_version(key_id=test_key["id"],
         key_version_id=test_key_version_oci_kms_key_version["id"],
         management_endpoint=key_version_management_endpoint)
     ```
@@ -291,9 +291,9 @@ def get_key_version(key_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-def get_key_version_output(key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+def get_key_version_output(key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyVersionResult]:
     """
     This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -311,7 +311,7 @@ def get_key_version_output(key_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=test_key["id"],
+    test_key_version = oci.kms.get_key_version(key_id=test_key["id"],
         key_version_id=test_key_version_oci_kms_key_version["id"],
         management_endpoint=key_version_management_endpoint)
     ```

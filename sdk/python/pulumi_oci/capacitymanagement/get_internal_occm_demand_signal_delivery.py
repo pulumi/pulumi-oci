@@ -227,7 +227,7 @@ def get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_delivery = oci.CapacityManagement.get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id=test_occm_demand_signal_delivery["id"])
+    test_internal_occm_demand_signal_delivery = oci.capacitymanagement.get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id=test_occm_demand_signal_delivery["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id: Opt
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_delivered=pulumi.get(__ret__, 'time_delivered'))
-def get_internal_occm_demand_signal_delivery_output(occm_demand_signal_delivery_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_internal_occm_demand_signal_delivery_output(occm_demand_signal_delivery_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccmDemandSignalDeliveryResult]:
     """
     This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -267,7 +267,7 @@ def get_internal_occm_demand_signal_delivery_output(occm_demand_signal_delivery_
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_delivery = oci.CapacityManagement.get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id=test_occm_demand_signal_delivery["id"])
+    test_internal_occm_demand_signal_delivery = oci.capacitymanagement.get_internal_occm_demand_signal_delivery(occm_demand_signal_delivery_id=test_occm_demand_signal_delivery["id"])
     ```
 
 

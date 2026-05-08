@@ -108,7 +108,7 @@ def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_types = oci.DataSafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_types = oci.datasafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 
@@ -129,9 +129,9 @@ def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['G
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_data_model_sensitive_type_collections=pulumi.get(__ret__, 'sensitive_data_model_sensitive_type_collections'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_sensitive_data_model_sensitive_types_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]]]] = None,
-                                                    sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sensitive_data_model_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]]]] = None,
+                                                    sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveTypesResult]:
     """
     This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
@@ -144,7 +144,7 @@ def get_sensitive_data_model_sensitive_types_output(filters: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_types = oci.DataSafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_types = oci.datasafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 

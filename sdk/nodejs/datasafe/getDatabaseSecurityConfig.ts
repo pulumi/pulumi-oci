@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSecurityConfig = oci.DataSafe.getDatabaseSecurityConfig({
+ * const testDatabaseSecurityConfig = oci.datasafe.getDatabaseSecurityConfig({
  *     databaseSecurityConfigId: testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id,
  * });
  * ```
@@ -113,7 +113,7 @@ export interface GetDatabaseSecurityConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSecurityConfig = oci.DataSafe.getDatabaseSecurityConfig({
+ * const testDatabaseSecurityConfig = oci.datasafe.getDatabaseSecurityConfig({
  *     databaseSecurityConfigId: testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id,
  * });
  * ```

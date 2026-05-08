@@ -60,9 +60,9 @@ class BdsCapacityReportArgs:
 @pulumi.input_type
 class _BdsCapacityReportState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsCapacityReport resources.
 
@@ -79,38 +79,38 @@ class _BdsCapacityReportState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID for the compartment. This should always be the root compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeAvailabilities")
-    def shape_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]]:
+    def shape_availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]]:
         """
         Information about the shapes in the capacity report.
         """
         return pulumi.get(self, "shape_availabilities")
 
     @shape_availabilities.setter
-    def shape_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]]):
+    def shape_availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]]):
         pulumi.set(self, "shape_availabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the report was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -120,8 +120,8 @@ class BdsCapacityReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -142,9 +142,9 @@ class BdsCapacityReport(pulumi.CustomResource):
             shape_availabilities=[{
                 "shape": bds_capacity_report_shape_availabilities_shape,
                 "shape_config": {
-                    "memory_in_gbs": bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs,
-                    "nvmes": bds_capacity_report_shape_availabilities_shape_config_nvmes,
-                    "ocpus": bds_capacity_report_shape_availabilities_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_capacity_report_shape_availabilities_shape_config_nvmes),
+                    "ocpus": int(bds_capacity_report_shape_availabilities_shape_config_ocpus),
                 },
             }])
         ```
@@ -188,9 +188,9 @@ class BdsCapacityReport(pulumi.CustomResource):
             shape_availabilities=[{
                 "shape": bds_capacity_report_shape_availabilities_shape,
                 "shape_config": {
-                    "memory_in_gbs": bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs,
-                    "nvmes": bds_capacity_report_shape_availabilities_shape_config_nvmes,
-                    "ocpus": bds_capacity_report_shape_availabilities_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_capacity_report_shape_availabilities_shape_config_nvmes),
+                    "ocpus": int(bds_capacity_report_shape_availabilities_shape_config_ocpus),
                 },
             }])
         ```
@@ -219,8 +219,8 @@ class BdsCapacityReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -247,9 +247,9 @@ class BdsCapacityReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsCapacityReport':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsCapacityReport':
         """
         Get an existing BdsCapacityReport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

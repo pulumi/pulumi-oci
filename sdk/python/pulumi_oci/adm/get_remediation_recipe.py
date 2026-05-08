@@ -240,7 +240,7 @@ def get_remediation_recipe(remediation_recipe_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
+    test_remediation_recipe = oci.adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_remediation_recipe(remediation_recipe_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         verify_configurations=pulumi.get(__ret__, 'verify_configurations'))
-def get_remediation_recipe_output(remediation_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_remediation_recipe_output(remediation_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRecipeResult]:
     """
     This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
@@ -281,7 +281,7 @@ def get_remediation_recipe_output(remediation_recipe_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
+    test_remediation_recipe = oci.adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
     ```
 
 

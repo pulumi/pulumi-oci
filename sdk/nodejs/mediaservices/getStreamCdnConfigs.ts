@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
+ * const testStreamCdnConfigs = oci.mediaservices.getStreamCdnConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamCdnConfigDisplayName,
  *     id: streamCdnConfigId,
@@ -96,7 +96,7 @@ export interface GetStreamCdnConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
+ * const testStreamCdnConfigs = oci.mediaservices.getStreamCdnConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamCdnConfigDisplayName,
  *     id: streamCdnConfigId,
@@ -122,18 +122,18 @@ export interface GetStreamCdnConfigsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The Stream Distribution Channel identifier this CdnConfig belongs to.
      */
     distributionChannelId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetStreamCdnConfigsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetStreamCdnConfigsFilterArgs>[] | undefined>;
     /**
      * Unique StreamCdnConfig identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources with lifecycleState matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

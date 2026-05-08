@@ -251,7 +251,7 @@ def get_scheduling_plan(scheduling_plan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plan = oci.Database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
+    test_scheduling_plan = oci.database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_scheduling_plan(scheduling_plan_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_scheduling_plan_output(scheduling_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduling_plan_output(scheduling_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPlanResult]:
     """
     This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
@@ -293,7 +293,7 @@ def get_scheduling_plan_output(scheduling_plan_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plan = oci.Database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
+    test_scheduling_plan = oci.database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
     ```
 
 

@@ -209,47 +209,47 @@ export interface ScheduleState {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This is the description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This is the status of the last work request.
      */
-    lastRunStatus?: pulumi.Input<string>;
+    lastRunStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
-    recurrenceDetails?: pulumi.Input<string>;
+    recurrenceDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of recurrence of a schedule
      */
-    recurrenceType?: pulumi.Input<string>;
+    recurrenceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
      */
-    resourceFilters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilter>[]>;
+    resourceFilters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilter>[] | undefined>;
     /**
      * (Updatable) This is the list of resources to which the scheduled operation is applied.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResource>[] | undefined>;
     /**
      * (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -257,35 +257,35 @@ export interface ScheduleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeEnds?: pulumi.Input<string>;
+    timeEnds?: pulumi.Input<string | undefined>;
     /**
      * This is the date and time the schedule runs last time, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeLastRun?: pulumi.Input<string>;
+    timeLastRun?: pulumi.Input<string | undefined>;
     /**
      * This is the date and time the schedule run the next time, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeNextRun?: pulumi.Input<string>;
+    timeNextRun?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the date and time the schedule starts, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeStarts?: pulumi.Input<string>;
+    timeStarts?: pulumi.Input<string | undefined>;
     /**
      * This is the date and time the schedule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -303,19 +303,19 @@ export interface ScheduleArgs {
     /**
      * (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This is the description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
@@ -327,11 +327,11 @@ export interface ScheduleArgs {
     /**
      * (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
      */
-    resourceFilters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilter>[]>;
+    resourceFilters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilter>[] | undefined>;
     /**
      * (Updatable) This is the list of resources to which the scheduled operation is applied.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResource>[] | undefined>;
     /**
      * (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -339,13 +339,13 @@ export interface ScheduleArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeEnds?: pulumi.Input<string>;
+    timeEnds?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the date and time the schedule starts, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeStarts?: pulumi.Input<string>;
+    timeStarts?: pulumi.Input<string | undefined>;
 }

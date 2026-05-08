@@ -191,7 +191,7 @@ def get_discovery_schedule(discovery_schedule_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedule = oci.CloudBridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
+    test_discovery_schedule = oci.cloudbridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_discovery_schedule(discovery_schedule_id: Optional[_builtins.str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_discovery_schedule_output(discovery_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_discovery_schedule_output(discovery_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryScheduleResult]:
     """
     This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -228,7 +228,7 @@ def get_discovery_schedule_output(discovery_schedule_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedule = oci.CloudBridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
+    test_discovery_schedule = oci.cloudbridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
     ```
 
 

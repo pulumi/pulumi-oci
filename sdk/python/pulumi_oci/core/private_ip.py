@@ -19,18 +19,18 @@ __all__ = ['PrivateIpArgs', 'PrivateIp']
 @pulumi.input_type
 class PrivateIpArgs:
     def __init__(__self__, *,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateIp resource.
 
@@ -86,55 +86,55 @@ class PrivateIpArgs:
 
     @_builtins.property
     @pulumi.getter(name="cidrPrefixLength")
-    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cidr_prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         """
         return pulumi.get(self, "cidr_prefix_length")
 
     @cidr_prefix_length.setter
-    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cidr_prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 
@@ -145,36 +145,36 @@ class PrivateIpArgs:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4subnetCidrAtCreation")
-    def ipv4subnet_cidr_at_creation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4subnet_cidr_at_creation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any one of the IPv4 CIDRs allocated to the subnet.
         """
         return pulumi.get(self, "ipv4subnet_cidr_at_creation")
 
     @ipv4subnet_cidr_at_creation.setter
-    def ipv4subnet_cidr_at_creation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4subnet_cidr_at_creation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4subnet_cidr_at_creation", value)
 
     @_builtins.property
     @pulumi.getter
-    def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifetime(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Lifetime of the IP address. There are two types of IPs:
         * Ephemeral
@@ -183,36 +183,36 @@ class PrivateIpArgs:
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
-    def lifetime(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifetime(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifetime", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Use this attribute only with the Oracle Cloud VMware Solution.
 
@@ -221,12 +221,12 @@ class PrivateIpArgs:
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet. 
 
@@ -237,31 +237,31 @@ class PrivateIpArgs:
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
 @pulumi.input_type
 class _PrivateIpState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_reserved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reserved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateIp resources.
 
@@ -334,79 +334,79 @@ class _PrivateIpState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrPrefixLength")
-    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cidr_prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         """
         return pulumi.get(self, "cidr_prefix_length")
 
     @cidr_prefix_length.setter
-    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cidr_prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 
@@ -417,69 +417,69 @@ class _PrivateIpState:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipState")
-    def ip_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         """
         return pulumi.get(self, "ip_state")
 
     @ip_state.setter
-    def ip_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_state", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4subnetCidrAtCreation")
-    def ipv4subnet_cidr_at_creation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4subnet_cidr_at_creation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any one of the IPv4 CIDRs allocated to the subnet.
         """
         return pulumi.get(self, "ipv4subnet_cidr_at_creation")
 
     @ipv4subnet_cidr_at_creation.setter
-    def ipv4subnet_cidr_at_creation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4subnet_cidr_at_creation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4subnet_cidr_at_creation", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
         """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
-    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary", value)
 
     @_builtins.property
     @pulumi.getter(name="isReserved")
-    def is_reserved(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reserved(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_reserved")
 
     @is_reserved.setter
-    def is_reserved(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reserved(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reserved", value)
 
     @_builtins.property
     @pulumi.getter
-    def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifetime(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Lifetime of the IP address. There are two types of IPs:
         * Ephemeral
@@ -488,48 +488,48 @@ class _PrivateIpState:
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
-    def lifetime(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifetime(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifetime", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Use this attribute only with the Oracle Cloud VMware Solution.
 
@@ -538,12 +538,12 @@ class _PrivateIpState:
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet. 
 
@@ -554,7 +554,7 @@ class _PrivateIpState:
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
@@ -564,18 +564,18 @@ class PrivateIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
@@ -594,7 +594,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
-            cidr_prefix_length=private_ip_cidr_prefix_length,
+            cidr_prefix_length=int(private_ip_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -671,7 +671,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
-            cidr_prefix_length=private_ip_cidr_prefix_length,
+            cidr_prefix_length=int(private_ip_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -713,18 +713,18 @@ class PrivateIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -762,24 +762,24 @@ class PrivateIp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_state: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
-            is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_reserved: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifetime: Optional[pulumi.Input[_builtins.str]] = None,
-            route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vnic_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PrivateIp':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4subnet_cidr_at_creation: pulumi.Input[Optional[_builtins.str]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reserved: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PrivateIp':
         """
         Get an existing PrivateIp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

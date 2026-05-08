@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObject = oci.ObjectStorage.getObject({
+ * const testObject = oci.objectstorage.getObject({
  *     bucket: objectBucket,
  *     namespace: objectNamespace,
  *     object: objectObject,
@@ -177,7 +177,7 @@ export interface GetObjectResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObject = oci.ObjectStorage.getObject({
+ * const testObject = oci.objectstorage.getObject({
  *     bucket: objectBucket,
  *     namespace: objectNamespace,
  *     object: objectObject,
@@ -217,7 +217,7 @@ export interface GetObjectOutputArgs {
      * Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
      * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
@@ -225,31 +225,31 @@ export interface GetObjectOutputArgs {
     /**
      * The limit of the content length of the object body to download from the object store. The default is 1Mb.
      */
-    contentLengthLimit?: pulumi.Input<number>;
+    contentLengthLimit?: pulumi.Input<number | undefined>;
     /**
      * Specify this query parameter to override the Cache-Control response header in the GetObject response.
      */
-    httpResponseCacheControl?: pulumi.Input<string>;
+    httpResponseCacheControl?: pulumi.Input<string | undefined>;
     /**
      * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
      */
-    httpResponseContentDisposition?: pulumi.Input<string>;
+    httpResponseContentDisposition?: pulumi.Input<string | undefined>;
     /**
      * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
      */
-    httpResponseContentEncoding?: pulumi.Input<string>;
+    httpResponseContentEncoding?: pulumi.Input<string | undefined>;
     /**
      * Specify this query parameter to override the Content-Language response header in the GetObject response.
      */
-    httpResponseContentLanguage?: pulumi.Input<string>;
+    httpResponseContentLanguage?: pulumi.Input<string | undefined>;
     /**
      * Specify this query parameter to override the Content-Type response header in the GetObject response.
      */
-    httpResponseContentType?: pulumi.Input<string>;
+    httpResponseContentType?: pulumi.Input<string | undefined>;
     /**
      * Specify this query parameter to override the Expires response header in the GetObject response.
      */
-    httpResponseExpires?: pulumi.Input<string>;
+    httpResponseExpires?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -261,5 +261,5 @@ export interface GetObjectOutputArgs {
     /**
      * VersionId used to identify a particular version of the object
      */
-    versionId?: pulumi.Input<string>;
+    versionId?: pulumi.Input<string | undefined>;
 }

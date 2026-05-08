@@ -24,11 +24,11 @@ class NetworkFirewallPolicySecurityRuleArgs:
                  action: pulumi.Input[_builtins.str],
                  condition: pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 inspection: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 inspection: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 positions: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicySecurityRule resource.
 
@@ -102,19 +102,19 @@ class NetworkFirewallPolicySecurityRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the security rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def inspection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inspection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of inspection to affect the traffic flow.
         * INTRUSION_DETECTION - Intrusion detection.
@@ -123,55 +123,55 @@ class NetworkFirewallPolicySecurityRuleArgs:
         return pulumi.get(self, "inspection")
 
     @inspection.setter
-    def inspection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inspection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inspection", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the Security rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def positions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]:
+    def positions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]:
         """
         (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
         return pulumi.get(self, "positions")
 
     @positions.setter
-    def positions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]):
+    def positions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]):
         pulumi.set(self, "positions", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicySecurityRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 inspection: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional['NetworkFirewallPolicySecurityRuleConditionArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 inspection: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 positions: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicySecurityRule resources.
 
@@ -211,7 +211,7 @@ class _NetworkFirewallPolicySecurityRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Types of Action on the Traffic flow.
         * ALLOW - Allows the traffic.
@@ -222,36 +222,36 @@ class _NetworkFirewallPolicySecurityRuleState:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']]:
+    def condition(self) -> pulumi.Input[Optional['NetworkFirewallPolicySecurityRuleConditionArgs']]:
         """
         (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']]):
+    def condition(self, value: pulumi.Input[Optional['NetworkFirewallPolicySecurityRuleConditionArgs']]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the security rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def inspection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inspection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of inspection to affect the traffic flow.
         * INTRUSION_DETECTION - Intrusion detection.
@@ -260,64 +260,64 @@ class _NetworkFirewallPolicySecurityRuleState:
         return pulumi.get(self, "inspection")
 
     @inspection.setter
-    def inspection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inspection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inspection", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the Security rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this security rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def positions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]:
+    def positions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]:
         """
         (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
         return pulumi.get(self, "positions")
 
     @positions.setter
-    def positions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]):
+    def positions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]]):
         pulumi.set(self, "positions", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
 
@@ -327,14 +327,14 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 inspection: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 inspection: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 positions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -457,14 +457,14 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 inspection: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 inspection: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 positions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -499,15 +499,15 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            inspection: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
-            priority_order: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicySecurityRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            inspection: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            positions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicySecurityRule':
         """
         Get an existing NetworkFirewallPolicySecurityRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

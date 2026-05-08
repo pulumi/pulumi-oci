@@ -99,7 +99,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequ
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
+    test_iam_work_request_errors = oci.identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
     ```
 
 
@@ -116,8 +116,8 @@ def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequ
         iam_work_request_errors=pulumi.get(__ret__, 'iam_work_request_errors'),
         iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]]]] = None,
-                                       iam_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_work_request_errors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]]]] = None,
+                                       iam_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
     """
     This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
@@ -134,7 +134,7 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
+    test_iam_work_request_errors = oci.identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
     ```
 
 

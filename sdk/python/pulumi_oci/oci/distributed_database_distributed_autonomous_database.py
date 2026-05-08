@@ -36,36 +36,36 @@ class DistributedDatabaseDistributedAutonomousDatabaseArgs:
                  private_endpoint_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  shard_details: pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]],
                  sharding_method: pulumi.Input[_builtins.str],
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_db_backup_config_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 chunks: Optional[pulumi.Input[_builtins.int]] = None,
-                 configure_gsm_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 configure_sharding_is_rebalance_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 configure_sharding_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_backup_config: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
-                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]] = None,
-                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 upload_ca_signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 upload_signed_certificate_and_generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_ca_bundle_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_network_details: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']] = None,
-                 validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 chunks: pulumi.Input[Optional[_builtins.int]] = None,
+                 configure_gsm_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 configure_sharding_is_rebalance_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 configure_sharding_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_backup_config: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 move_replication_unit_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]] = None,
+                 recreate_failed_resource_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 upload_ca_signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 upload_signed_certificate_and_generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_ca_bundle_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_network_details: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']] = None,
+                 validate_network_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a DistributedDatabaseDistributedAutonomousDatabase resource.
 
@@ -373,343 +373,343 @@ class DistributedDatabaseDistributedAutonomousDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="caBundleId")
-    def ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configure_sharding_trigger` is incremented.
         """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
-    def ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configure_sharding_trigger` is incremented.
         """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="changeDbBackupConfigTrigger")
-    def change_db_backup_config_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def change_db_backup_config_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
         """
         return pulumi.get(self, "change_db_backup_config_trigger")
 
     @change_db_backup_config_trigger.setter
-    def change_db_backup_config_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def change_db_backup_config_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "change_db_backup_config_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def chunks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def chunks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
         """
         return pulumi.get(self, "chunks")
 
     @chunks.setter
-    def chunks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def chunks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "chunks", value)
 
     @_builtins.property
     @pulumi.getter(name="configureGsmWalletTrigger")
-    def configure_gsm_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def configure_gsm_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "configure_gsm_wallet_trigger")
 
     @configure_gsm_wallet_trigger.setter
-    def configure_gsm_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def configure_gsm_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_gsm_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="configureShardingIsRebalanceRequired")
-    def configure_sharding_is_rebalance_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def configure_sharding_is_rebalance_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
         """
         return pulumi.get(self, "configure_sharding_is_rebalance_required")
 
     @configure_sharding_is_rebalance_required.setter
-    def configure_sharding_is_rebalance_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def configure_sharding_is_rebalance_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "configure_sharding_is_rebalance_required", value)
 
     @_builtins.property
     @pulumi.getter(name="configureShardingTrigger")
-    def configure_sharding_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def configure_sharding_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
         """
         return pulumi.get(self, "configure_sharding_trigger")
 
     @configure_sharding_trigger.setter
-    def configure_sharding_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def configure_sharding_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_sharding_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="dbBackupConfig")
-    def db_backup_config(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]:
+    def db_backup_config(self) -> pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]:
         """
         Backup options for the Distributed Autonomous Database.
         """
         return pulumi.get(self, "db_backup_config")
 
     @db_backup_config.setter
-    def db_backup_config(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]):
+    def db_backup_config(self, value: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]):
         pulumi.set(self, "db_backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="downloadGsmCertificateSigningRequestTrigger")
-    def download_gsm_certificate_signing_request_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def download_gsm_certificate_signing_request_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
         """
         return pulumi.get(self, "download_gsm_certificate_signing_request_trigger")
 
     @download_gsm_certificate_signing_request_trigger.setter
-    def download_gsm_certificate_signing_request_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def download_gsm_certificate_signing_request_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "download_gsm_certificate_signing_request_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="generateGsmCertificateSigningRequestTrigger")
-    def generate_gsm_certificate_signing_request_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_gsm_certificate_signing_request_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         """
         return pulumi.get(self, "generate_gsm_certificate_signing_request_trigger")
 
     @generate_gsm_certificate_signing_request_trigger.setter
-    def generate_gsm_certificate_signing_request_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_gsm_certificate_signing_request_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_gsm_certificate_signing_request_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="generateGsmCertificateSigningRequestTriggerCaBundleId")
-    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_gsm_certificate_signing_request_trigger_ca_bundle_id")
 
     @generate_gsm_certificate_signing_request_trigger_ca_bundle_id.setter
-    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_gsm_certificate_signing_request_trigger_ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletPassword")
-    def generate_wallet_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_wallet_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_wallet_password")
 
     @generate_wallet_password.setter
-    def generate_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_wallet_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_wallet_password", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletTrigger")
-    def generate_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "generate_wallet_trigger")
 
     @generate_wallet_trigger.setter
-    def generate_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPortTls")
-    def listener_port_tls(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
         """
         return pulumi.get(self, "listener_port_tls")
 
     @listener_port_tls.setter
-    def listener_port_tls(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port_tls(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port_tls", value)
 
     @_builtins.property
     @pulumi.getter(name="moveReplicationUnitTrigger")
-    def move_replication_unit_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def move_replication_unit_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         """
         return pulumi.get(self, "move_replication_unit_trigger")
 
     @move_replication_unit_trigger.setter
-    def move_replication_unit_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def move_replication_unit_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "move_replication_unit_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="recreateFailedResourceTrigger")
-    def recreate_failed_resource_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def recreate_failed_resource_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         """
         return pulumi.get(self, "recreate_failed_resource_trigger")
 
     @recreate_failed_resource_trigger.setter
-    def recreate_failed_resource_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def recreate_failed_resource_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "recreate_failed_resource_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
-    def replication_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
         """
         return pulumi.get(self, "replication_factor")
 
     @replication_factor.setter
-    def replication_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationMethod")
-    def replication_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         """
         return pulumi.get(self, "replication_method")
 
     @replication_method.setter
-    def replication_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_method", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationUnit")
-    def replication_unit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_unit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The replication unit count for RAFT based distributed autonomous database. For RAFT replication based Globally distributed autonomous database, the value should be at least twice the number of shards.
         """
         return pulumi.get(self, "replication_unit")
 
     @replication_unit.setter
-    def replication_unit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_unit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="startDatabaseTrigger")
-    def start_database_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_database_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Increment this value to trigger StartDistributedAutonomousDatabase action.
         """
         return pulumi.get(self, "start_database_trigger")
 
     @start_database_trigger.setter
-    def start_database_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_database_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_database_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Distributed Autonomous Database. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stopDatabaseTrigger")
-    def stop_database_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_database_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Increment this value to trigger StopDistributedAutonomousDatabase action.
         """
         return pulumi.get(self, "stop_database_trigger")
 
     @stop_database_trigger.setter
-    def stop_database_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_database_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_database_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="uploadCaSignedCertificate")
-    def upload_ca_signed_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upload_ca_signed_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "upload_ca_signed_certificate")
 
     @upload_ca_signed_certificate.setter
-    def upload_ca_signed_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upload_ca_signed_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upload_ca_signed_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="uploadSignedCertificateAndGenerateWalletTrigger")
-    def upload_signed_certificate_and_generate_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def upload_signed_certificate_and_generate_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "upload_signed_certificate_and_generate_wallet_trigger")
 
     @upload_signed_certificate_and_generate_wallet_trigger.setter
-    def upload_signed_certificate_and_generate_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def upload_signed_certificate_and_generate_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "upload_signed_certificate_and_generate_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="validateCaBundleTrigger")
-    def validate_ca_bundle_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_ca_bundle_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         """
         return pulumi.get(self, "validate_ca_bundle_trigger")
 
     @validate_ca_bundle_trigger.setter
-    def validate_ca_bundle_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_ca_bundle_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_ca_bundle_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="validateNetworkDetails")
-    def validate_network_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]:
+    def validate_network_details(self) -> pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]:
         return pulumi.get(self, "validate_network_details")
 
     @validate_network_details.setter
-    def validate_network_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]):
+    def validate_network_details(self, value: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]):
         pulumi.set(self, "validate_network_details", value)
 
     @_builtins.property
     @pulumi.getter(name="validateNetworkTrigger")
-    def validate_network_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_network_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 
@@ -720,71 +720,71 @@ class DistributedDatabaseDistributedAutonomousDatabaseArgs:
         return pulumi.get(self, "validate_network_trigger")
 
     @validate_network_trigger.setter
-    def validate_network_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_network_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_network_trigger", value)
 
 
 @pulumi.input_type
 class _DistributedDatabaseDistributedAutonomousDatabaseState:
     def __init__(__self__, *,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_db_backup_config_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 chunks: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configure_gsm_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 configure_sharding_is_rebalance_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 configure_sharding_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_backup_config: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']] = None,
-                 db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 downloaded_gsm_csr_pem: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_downloaded_wallet_content_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 generate_wallet_downloaded_wallet_etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_downloaded_wallet_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_downloaded_wallet_zip_base64: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 gsm_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]] = None,
-                 latest_gsm_images: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]] = None,
-                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
-                 ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
-                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]] = None,
-                 sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 upload_ca_signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 upload_signed_certificate_and_generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_ca_bundle_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_network_details: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']] = None,
-                 validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_details: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 chunks: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configure_gsm_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 configure_sharding_is_rebalance_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 configure_sharding_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_backup_config: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']] = None,
+                 db_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 downloaded_gsm_csr_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_downloaded_wallet_content_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 generate_wallet_downloaded_wallet_etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_downloaded_wallet_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_downloaded_wallet_zip_base64: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 gsm_details: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]] = None,
+                 latest_gsm_images: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]] = None,
+                 move_replication_unit_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 ons_port_local: pulumi.Input[Optional[_builtins.int]] = None,
+                 ons_port_remote: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
+                 shard_details: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]] = None,
+                 sharding_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upload_ca_signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 upload_signed_certificate_and_generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_ca_bundle_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_network_details: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']] = None,
+                 validate_network_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DistributedDatabaseDistributedAutonomousDatabase resources.
 
@@ -961,664 +961,664 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="caBundleId")
-    def ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configure_sharding_trigger` is incremented.
         """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
-    def ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogDetails")
-    def catalog_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]]:
+    def catalog_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]]:
         """
         Collection of catalog for the Globally distributed autonomous database.
         """
         return pulumi.get(self, "catalog_details")
 
     @catalog_details.setter
-    def catalog_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]]):
+    def catalog_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs']]]]):
         pulumi.set(self, "catalog_details", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configure_sharding_trigger` is incremented.
         """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="changeDbBackupConfigTrigger")
-    def change_db_backup_config_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def change_db_backup_config_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
         """
         return pulumi.get(self, "change_db_backup_config_trigger")
 
     @change_db_backup_config_trigger.setter
-    def change_db_backup_config_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def change_db_backup_config_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "change_db_backup_config_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def character_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the database.
         """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
-    def character_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def character_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "character_set", value)
 
     @_builtins.property
     @pulumi.getter
-    def chunks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def chunks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
         """
         return pulumi.get(self, "chunks")
 
     @chunks.setter
-    def chunks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def chunks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "chunks", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configureGsmWalletTrigger")
-    def configure_gsm_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def configure_gsm_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "configure_gsm_wallet_trigger")
 
     @configure_gsm_wallet_trigger.setter
-    def configure_gsm_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def configure_gsm_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_gsm_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="configureShardingIsRebalanceRequired")
-    def configure_sharding_is_rebalance_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def configure_sharding_is_rebalance_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
         """
         return pulumi.get(self, "configure_sharding_is_rebalance_required")
 
     @configure_sharding_is_rebalance_required.setter
-    def configure_sharding_is_rebalance_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def configure_sharding_is_rebalance_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "configure_sharding_is_rebalance_required", value)
 
     @_builtins.property
     @pulumi.getter(name="configureShardingTrigger")
-    def configure_sharding_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def configure_sharding_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
         """
         return pulumi.get(self, "configure_sharding_trigger")
 
     @configure_sharding_trigger.setter
-    def configure_sharding_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def configure_sharding_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_sharding_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]]:
         """
         Details of Globally distributed autonomous database connection String.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Database version for the shards and catalog used in Globally distributed autonomous database.
         """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
-    def database_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbBackupConfig")
-    def db_backup_config(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]:
+    def db_backup_config(self) -> pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]:
         """
         Backup options for the Distributed Autonomous Database.
         """
         return pulumi.get(self, "db_backup_config")
 
     @db_backup_config.setter
-    def db_backup_config(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]):
+    def db_backup_config(self, value: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs']]):
         pulumi.set(self, "db_backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="dbDeploymentType")
-    def db_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The distributed autonomous database deployment type.
         """
         return pulumi.get(self, "db_deployment_type")
 
     @db_deployment_type.setter
-    def db_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workload(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible workload types. Currently only OLTP workload type is supported.
         """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
-    def db_workload(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workload(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workload", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the Globally distributed autonomous database.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="downloadGsmCertificateSigningRequestTrigger")
-    def download_gsm_certificate_signing_request_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def download_gsm_certificate_signing_request_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
         """
         return pulumi.get(self, "download_gsm_certificate_signing_request_trigger")
 
     @download_gsm_certificate_signing_request_trigger.setter
-    def download_gsm_certificate_signing_request_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def download_gsm_certificate_signing_request_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "download_gsm_certificate_signing_request_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="downloadedGsmCsrPem")
-    def downloaded_gsm_csr_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def downloaded_gsm_csr_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "downloaded_gsm_csr_pem")
 
     @downloaded_gsm_csr_pem.setter
-    def downloaded_gsm_csr_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def downloaded_gsm_csr_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "downloaded_gsm_csr_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="generateGsmCertificateSigningRequestTrigger")
-    def generate_gsm_certificate_signing_request_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_gsm_certificate_signing_request_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         """
         return pulumi.get(self, "generate_gsm_certificate_signing_request_trigger")
 
     @generate_gsm_certificate_signing_request_trigger.setter
-    def generate_gsm_certificate_signing_request_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_gsm_certificate_signing_request_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_gsm_certificate_signing_request_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="generateGsmCertificateSigningRequestTriggerCaBundleId")
-    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_gsm_certificate_signing_request_trigger_ca_bundle_id")
 
     @generate_gsm_certificate_signing_request_trigger_ca_bundle_id.setter
-    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_gsm_certificate_signing_request_trigger_ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_gsm_certificate_signing_request_trigger_ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletDownloadedWalletContentLength")
-    def generate_wallet_downloaded_wallet_content_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_wallet_downloaded_wallet_content_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "generate_wallet_downloaded_wallet_content_length")
 
     @generate_wallet_downloaded_wallet_content_length.setter
-    def generate_wallet_downloaded_wallet_content_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_wallet_downloaded_wallet_content_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_wallet_downloaded_wallet_content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletDownloadedWalletEtag")
-    def generate_wallet_downloaded_wallet_etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_wallet_downloaded_wallet_etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_wallet_downloaded_wallet_etag")
 
     @generate_wallet_downloaded_wallet_etag.setter
-    def generate_wallet_downloaded_wallet_etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_wallet_downloaded_wallet_etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_wallet_downloaded_wallet_etag", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletDownloadedWalletLastModified")
-    def generate_wallet_downloaded_wallet_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_wallet_downloaded_wallet_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_wallet_downloaded_wallet_last_modified")
 
     @generate_wallet_downloaded_wallet_last_modified.setter
-    def generate_wallet_downloaded_wallet_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_wallet_downloaded_wallet_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_wallet_downloaded_wallet_last_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletDownloadedWalletZipBase64")
-    def generate_wallet_downloaded_wallet_zip_base64(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_wallet_downloaded_wallet_zip_base64(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_wallet_downloaded_wallet_zip_base64")
 
     @generate_wallet_downloaded_wallet_zip_base64.setter
-    def generate_wallet_downloaded_wallet_zip_base64(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_wallet_downloaded_wallet_zip_base64(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_wallet_downloaded_wallet_zip_base64", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletPassword")
-    def generate_wallet_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_wallet_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "generate_wallet_password")
 
     @generate_wallet_password.setter
-    def generate_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_wallet_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_wallet_password", value)
 
     @_builtins.property
     @pulumi.getter(name="generateWalletTrigger")
-    def generate_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "generate_wallet_trigger")
 
     @generate_wallet_trigger.setter
-    def generate_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="gsmDetails")
-    def gsm_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]]:
+    def gsm_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]]:
         """
         Collection of catalogs associated with the Globally distributed autonomous database.
         """
         return pulumi.get(self, "gsm_details")
 
     @gsm_details.setter
-    def gsm_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]]):
+    def gsm_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs']]]]):
         pulumi.set(self, "gsm_details", value)
 
     @_builtins.property
     @pulumi.getter(name="latestGsmImages")
-    def latest_gsm_images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]]:
+    def latest_gsm_images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]]:
         """
         The Global service manager image details.
         """
         return pulumi.get(self, "latest_gsm_images")
 
     @latest_gsm_images.setter
-    def latest_gsm_images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]]):
+    def latest_gsm_images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs']]]]):
         pulumi.set(self, "latest_gsm_images", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycleDetails for the Globally distributed autonomous database.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The listener port number for the Globally distributed autonomous database. The listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPortTls")
-    def listener_port_tls(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
         """
         return pulumi.get(self, "listener_port_tls")
 
     @listener_port_tls.setter
-    def listener_port_tls(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port_tls(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port_tls", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]]:
         """
         Additional metadata related to Globally distributed autonomous database resources.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="moveReplicationUnitTrigger")
-    def move_replication_unit_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def move_replication_unit_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         """
         return pulumi.get(self, "move_replication_unit_trigger")
 
     @move_replication_unit_trigger.setter
-    def move_replication_unit_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def move_replication_unit_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "move_replication_unit_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The national character set for the database.
         """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
     @pulumi.getter(name="onsPortLocal")
-    def ons_port_local(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ons_port_local(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
         """
         return pulumi.get(self, "ons_port_local")
 
     @ons_port_local.setter
-    def ons_port_local(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ons_port_local(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ons_port_local", value)
 
     @_builtins.property
     @pulumi.getter(name="onsPortRemote")
-    def ons_port_remote(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ons_port_remote(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
         """
         return pulumi.get(self, "ons_port_remote")
 
     @ons_port_remote.setter
-    def ons_port_remote(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ons_port_remote(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ons_port_remote", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIds")
-    def private_endpoint_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_endpoint_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
         """
         return pulumi.get(self, "private_endpoint_ids")
 
     @private_endpoint_ids.setter
-    def private_endpoint_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_endpoint_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_endpoint_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="recreateFailedResourceTrigger")
-    def recreate_failed_resource_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def recreate_failed_resource_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         """
         return pulumi.get(self, "recreate_failed_resource_trigger")
 
     @recreate_failed_resource_trigger.setter
-    def recreate_failed_resource_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def recreate_failed_resource_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "recreate_failed_resource_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
-    def replication_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
         """
         return pulumi.get(self, "replication_factor")
 
     @replication_factor.setter
-    def replication_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationMethod")
-    def replication_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         """
         return pulumi.get(self, "replication_method")
 
     @replication_method.setter
-    def replication_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_method", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationUnit")
-    def replication_unit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_unit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The replication unit count for RAFT based distributed autonomous database. For RAFT replication based Globally distributed autonomous database, the value should be at least twice the number of shards.
         """
         return pulumi.get(self, "replication_unit")
 
     @replication_unit.setter
-    def replication_unit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_unit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="shardDetails")
-    def shard_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]]:
+    def shard_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]]:
         """
         Collection of shards for the Globally distributed autonomous database.
         """
         return pulumi.get(self, "shard_details")
 
     @shard_details.setter
-    def shard_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]]):
+    def shard_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs']]]]):
         pulumi.set(self, "shard_details", value)
 
     @_builtins.property
     @pulumi.getter(name="shardingMethod")
-    def sharding_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sharding_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sharding Methods for the Globally distributed autonomous database.
         """
         return pulumi.get(self, "sharding_method")
 
     @sharding_method.setter
-    def sharding_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sharding_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sharding_method", value)
 
     @_builtins.property
     @pulumi.getter(name="startDatabaseTrigger")
-    def start_database_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_database_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Increment this value to trigger StartDistributedAutonomousDatabase action.
         """
         return pulumi.get(self, "start_database_trigger")
 
     @start_database_trigger.setter
-    def start_database_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_database_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_database_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Distributed Autonomous Database. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stopDatabaseTrigger")
-    def stop_database_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_database_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Increment this value to trigger StopDistributedAutonomousDatabase action.
         """
         return pulumi.get(self, "stop_database_trigger")
 
     @stop_database_trigger.setter
-    def stop_database_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_database_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_database_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="uploadCaSignedCertificate")
-    def upload_ca_signed_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upload_ca_signed_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "upload_ca_signed_certificate")
 
     @upload_ca_signed_certificate.setter
-    def upload_ca_signed_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upload_ca_signed_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upload_ca_signed_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="uploadSignedCertificateAndGenerateWalletTrigger")
-    def upload_signed_certificate_and_generate_wallet_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def upload_signed_certificate_and_generate_wallet_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
         """
         return pulumi.get(self, "upload_signed_certificate_and_generate_wallet_trigger")
 
     @upload_signed_certificate_and_generate_wallet_trigger.setter
-    def upload_signed_certificate_and_generate_wallet_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def upload_signed_certificate_and_generate_wallet_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "upload_signed_certificate_and_generate_wallet_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="validateCaBundleTrigger")
-    def validate_ca_bundle_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_ca_bundle_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         """
         return pulumi.get(self, "validate_ca_bundle_trigger")
 
     @validate_ca_bundle_trigger.setter
-    def validate_ca_bundle_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_ca_bundle_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_ca_bundle_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="validateNetworkDetails")
-    def validate_network_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]:
+    def validate_network_details(self) -> pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]:
         return pulumi.get(self, "validate_network_details")
 
     @validate_network_details.setter
-    def validate_network_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]):
+    def validate_network_details(self, value: pulumi.Input[Optional['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs']]):
         pulumi.set(self, "validate_network_details", value)
 
     @_builtins.property
     @pulumi.getter(name="validateNetworkTrigger")
-    def validate_network_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_network_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 
@@ -1629,7 +1629,7 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
         return pulumi.get(self, "validate_network_trigger")
 
     @validate_network_trigger.setter
-    def validate_network_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_network_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_network_trigger", value)
 
 
@@ -1639,51 +1639,51 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_db_backup_config_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 chunks: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configure_gsm_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 configure_sharding_is_rebalance_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 configure_sharding_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_backup_config: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
-                 db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
-                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
-                 ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
-                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
-                 sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 upload_ca_signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 upload_signed_certificate_and_generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_ca_bundle_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_network_details: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
-                 validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 chunks: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configure_gsm_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 configure_sharding_is_rebalance_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 configure_sharding_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_backup_config: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
+                 db_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 move_replication_unit_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 ons_port_local: pulumi.Input[Optional[_builtins.int]] = None,
+                 ons_port_remote: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
+                 shard_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
+                 sharding_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 upload_ca_signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 upload_signed_certificate_and_generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_ca_bundle_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_network_details: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
+                 validate_network_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
@@ -1709,7 +1709,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
                 "compute_count": distributed_autonomous_database_catalog_details_compute_count,
                 "data_storage_size_in_gbs": distributed_autonomous_database_catalog_details_data_storage_size_in_gbs,
-                "is_auto_scaling_enabled": distributed_autonomous_database_catalog_details_is_auto_scaling_enabled,
+                "is_auto_scaling_enabled": distributed_autonomous_database_catalog_details_is_auto_scaling_enabled == "true",
                 "source": distributed_autonomous_database_catalog_details_source,
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
@@ -1718,10 +1718,10 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "peer_cloud_autonomous_vm_cluster_ids": distributed_autonomous_database_catalog_details_peer_cloud_autonomous_vm_cluster_ids,
                 "peer_details": [{
                     "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
-                    "fast_start_fail_over_lag_limit_in_seconds": distributed_autonomous_database_catalog_details_peer_details_fast_start_fail_over_lag_limit_in_seconds,
-                    "is_automatic_failover_enabled": distributed_autonomous_database_catalog_details_peer_details_is_automatic_failover_enabled,
+                    "fast_start_fail_over_lag_limit_in_seconds": int(distributed_autonomous_database_catalog_details_peer_details_fast_start_fail_over_lag_limit_in_seconds),
+                    "is_automatic_failover_enabled": distributed_autonomous_database_catalog_details_peer_details_is_automatic_failover_enabled == "true",
                     "protection_mode": distributed_autonomous_database_catalog_details_peer_details_protection_mode,
-                    "standby_maintenance_buffer_in_days": distributed_autonomous_database_catalog_details_peer_details_standby_maintenance_buffer_in_days,
+                    "standby_maintenance_buffer_in_days": int(distributed_autonomous_database_catalog_details_peer_details_standby_maintenance_buffer_in_days),
                 }],
                 "vault_id": test_vault["id"],
             }],
@@ -1732,10 +1732,10 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             db_workload=distributed_autonomous_database_db_workload,
             display_name=distributed_autonomous_database_display_name,
             distributed_autonomous_database_id=distributed_autonomous_database_distributed_autonomous_database_id,
-            listener_port=distributed_autonomous_database_listener_port,
+            listener_port=int(distributed_autonomous_database_listener_port),
             ncharacter_set=distributed_autonomous_database_ncharacter_set,
-            ons_port_local=distributed_autonomous_database_ons_port_local,
-            ons_port_remote=distributed_autonomous_database_ons_port_remote,
+            ons_port_local=int(distributed_autonomous_database_ons_port_local),
+            ons_port_remote=int(distributed_autonomous_database_ons_port_remote),
             prefix=distributed_autonomous_database_prefix,
             private_endpoint_ids=distributed_autonomous_database_private_endpoint_ids,
             shard_details=[{
@@ -1743,7 +1743,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
                 "compute_count": distributed_autonomous_database_shard_details_compute_count,
                 "data_storage_size_in_gbs": distributed_autonomous_database_shard_details_data_storage_size_in_gbs,
-                "is_auto_scaling_enabled": distributed_autonomous_database_shard_details_is_auto_scaling_enabled,
+                "is_auto_scaling_enabled": distributed_autonomous_database_shard_details_is_auto_scaling_enabled == "true",
                 "source": distributed_autonomous_database_shard_details_source,
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
@@ -1752,28 +1752,28 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "peer_cloud_autonomous_vm_cluster_ids": distributed_autonomous_database_shard_details_peer_cloud_autonomous_vm_cluster_ids,
                 "peer_details": [{
                     "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
-                    "fast_start_fail_over_lag_limit_in_seconds": distributed_autonomous_database_shard_details_peer_details_fast_start_fail_over_lag_limit_in_seconds,
-                    "is_automatic_failover_enabled": distributed_autonomous_database_shard_details_peer_details_is_automatic_failover_enabled,
+                    "fast_start_fail_over_lag_limit_in_seconds": int(distributed_autonomous_database_shard_details_peer_details_fast_start_fail_over_lag_limit_in_seconds),
+                    "is_automatic_failover_enabled": distributed_autonomous_database_shard_details_peer_details_is_automatic_failover_enabled == "true",
                     "protection_mode": distributed_autonomous_database_shard_details_peer_details_protection_mode,
-                    "standby_maintenance_buffer_in_days": distributed_autonomous_database_shard_details_peer_details_standby_maintenance_buffer_in_days,
+                    "standby_maintenance_buffer_in_days": int(distributed_autonomous_database_shard_details_peer_details_standby_maintenance_buffer_in_days),
                 }],
                 "shard_space": distributed_autonomous_database_shard_details_shard_space,
                 "vault_id": test_vault["id"],
             }],
             sharding_method=distributed_autonomous_database_sharding_method,
-            chunks=distributed_autonomous_database_chunks,
+            chunks=int(distributed_autonomous_database_chunks),
             db_backup_config={
                 "backup_destination_details": [{
                     "type": distributed_autonomous_database_db_backup_config_backup_destination_details_type,
                     "dbrs_policy_id": test_policy["id"],
                     "id": distributed_autonomous_database_db_backup_config_backup_destination_details_id,
                     "internet_proxy": distributed_autonomous_database_db_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": distributed_autonomous_database_db_backup_config_backup_destination_details_is_remote,
+                    "is_remote": distributed_autonomous_database_db_backup_config_backup_destination_details_is_remote == "true",
                     "remote_region": distributed_autonomous_database_db_backup_config_backup_destination_details_remote_region,
                     "vpc_password": distributed_autonomous_database_db_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": distributed_autonomous_database_db_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": distributed_autonomous_database_db_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(distributed_autonomous_database_db_backup_config_recovery_window_in_days),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -1781,15 +1781,15 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listener_port_tls=distributed_autonomous_database_listener_port_tls,
+            listener_port_tls=int(distributed_autonomous_database_listener_port_tls),
             patch_operations=[{
                 "operation": distributed_autonomous_database_patch_operations_operation,
                 "selection": distributed_autonomous_database_patch_operations_selection,
                 "value": distributed_autonomous_database_patch_operations_value,
             }],
-            replication_factor=distributed_autonomous_database_replication_factor,
+            replication_factor=int(distributed_autonomous_database_replication_factor),
             replication_method=distributed_autonomous_database_replication_method,
-            replication_unit=distributed_autonomous_database_replication_unit)
+            replication_unit=int(distributed_autonomous_database_replication_unit))
         ```
 
         ## Import
@@ -1879,7 +1879,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
                 "compute_count": distributed_autonomous_database_catalog_details_compute_count,
                 "data_storage_size_in_gbs": distributed_autonomous_database_catalog_details_data_storage_size_in_gbs,
-                "is_auto_scaling_enabled": distributed_autonomous_database_catalog_details_is_auto_scaling_enabled,
+                "is_auto_scaling_enabled": distributed_autonomous_database_catalog_details_is_auto_scaling_enabled == "true",
                 "source": distributed_autonomous_database_catalog_details_source,
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
@@ -1888,10 +1888,10 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "peer_cloud_autonomous_vm_cluster_ids": distributed_autonomous_database_catalog_details_peer_cloud_autonomous_vm_cluster_ids,
                 "peer_details": [{
                     "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
-                    "fast_start_fail_over_lag_limit_in_seconds": distributed_autonomous_database_catalog_details_peer_details_fast_start_fail_over_lag_limit_in_seconds,
-                    "is_automatic_failover_enabled": distributed_autonomous_database_catalog_details_peer_details_is_automatic_failover_enabled,
+                    "fast_start_fail_over_lag_limit_in_seconds": int(distributed_autonomous_database_catalog_details_peer_details_fast_start_fail_over_lag_limit_in_seconds),
+                    "is_automatic_failover_enabled": distributed_autonomous_database_catalog_details_peer_details_is_automatic_failover_enabled == "true",
                     "protection_mode": distributed_autonomous_database_catalog_details_peer_details_protection_mode,
-                    "standby_maintenance_buffer_in_days": distributed_autonomous_database_catalog_details_peer_details_standby_maintenance_buffer_in_days,
+                    "standby_maintenance_buffer_in_days": int(distributed_autonomous_database_catalog_details_peer_details_standby_maintenance_buffer_in_days),
                 }],
                 "vault_id": test_vault["id"],
             }],
@@ -1902,10 +1902,10 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             db_workload=distributed_autonomous_database_db_workload,
             display_name=distributed_autonomous_database_display_name,
             distributed_autonomous_database_id=distributed_autonomous_database_distributed_autonomous_database_id,
-            listener_port=distributed_autonomous_database_listener_port,
+            listener_port=int(distributed_autonomous_database_listener_port),
             ncharacter_set=distributed_autonomous_database_ncharacter_set,
-            ons_port_local=distributed_autonomous_database_ons_port_local,
-            ons_port_remote=distributed_autonomous_database_ons_port_remote,
+            ons_port_local=int(distributed_autonomous_database_ons_port_local),
+            ons_port_remote=int(distributed_autonomous_database_ons_port_remote),
             prefix=distributed_autonomous_database_prefix,
             private_endpoint_ids=distributed_autonomous_database_private_endpoint_ids,
             shard_details=[{
@@ -1913,7 +1913,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
                 "compute_count": distributed_autonomous_database_shard_details_compute_count,
                 "data_storage_size_in_gbs": distributed_autonomous_database_shard_details_data_storage_size_in_gbs,
-                "is_auto_scaling_enabled": distributed_autonomous_database_shard_details_is_auto_scaling_enabled,
+                "is_auto_scaling_enabled": distributed_autonomous_database_shard_details_is_auto_scaling_enabled == "true",
                 "source": distributed_autonomous_database_shard_details_source,
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
@@ -1922,28 +1922,28 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
                 "peer_cloud_autonomous_vm_cluster_ids": distributed_autonomous_database_shard_details_peer_cloud_autonomous_vm_cluster_ids,
                 "peer_details": [{
                     "cloud_autonomous_vm_cluster_id": test_cloud_autonomous_vm_cluster["id"],
-                    "fast_start_fail_over_lag_limit_in_seconds": distributed_autonomous_database_shard_details_peer_details_fast_start_fail_over_lag_limit_in_seconds,
-                    "is_automatic_failover_enabled": distributed_autonomous_database_shard_details_peer_details_is_automatic_failover_enabled,
+                    "fast_start_fail_over_lag_limit_in_seconds": int(distributed_autonomous_database_shard_details_peer_details_fast_start_fail_over_lag_limit_in_seconds),
+                    "is_automatic_failover_enabled": distributed_autonomous_database_shard_details_peer_details_is_automatic_failover_enabled == "true",
                     "protection_mode": distributed_autonomous_database_shard_details_peer_details_protection_mode,
-                    "standby_maintenance_buffer_in_days": distributed_autonomous_database_shard_details_peer_details_standby_maintenance_buffer_in_days,
+                    "standby_maintenance_buffer_in_days": int(distributed_autonomous_database_shard_details_peer_details_standby_maintenance_buffer_in_days),
                 }],
                 "shard_space": distributed_autonomous_database_shard_details_shard_space,
                 "vault_id": test_vault["id"],
             }],
             sharding_method=distributed_autonomous_database_sharding_method,
-            chunks=distributed_autonomous_database_chunks,
+            chunks=int(distributed_autonomous_database_chunks),
             db_backup_config={
                 "backup_destination_details": [{
                     "type": distributed_autonomous_database_db_backup_config_backup_destination_details_type,
                     "dbrs_policy_id": test_policy["id"],
                     "id": distributed_autonomous_database_db_backup_config_backup_destination_details_id,
                     "internet_proxy": distributed_autonomous_database_db_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": distributed_autonomous_database_db_backup_config_backup_destination_details_is_remote,
+                    "is_remote": distributed_autonomous_database_db_backup_config_backup_destination_details_is_remote == "true",
                     "remote_region": distributed_autonomous_database_db_backup_config_backup_destination_details_remote_region,
                     "vpc_password": distributed_autonomous_database_db_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": distributed_autonomous_database_db_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": distributed_autonomous_database_db_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(distributed_autonomous_database_db_backup_config_recovery_window_in_days),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -1951,15 +1951,15 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listener_port_tls=distributed_autonomous_database_listener_port_tls,
+            listener_port_tls=int(distributed_autonomous_database_listener_port_tls),
             patch_operations=[{
                 "operation": distributed_autonomous_database_patch_operations_operation,
                 "selection": distributed_autonomous_database_patch_operations_selection,
                 "value": distributed_autonomous_database_patch_operations_value,
             }],
-            replication_factor=distributed_autonomous_database_replication_factor,
+            replication_factor=int(distributed_autonomous_database_replication_factor),
             replication_method=distributed_autonomous_database_replication_method,
-            replication_unit=distributed_autonomous_database_replication_unit)
+            replication_unit=int(distributed_autonomous_database_replication_unit))
         ```
 
         ## Import
@@ -1986,51 +1986,51 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 change_db_backup_config_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 chunks: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configure_gsm_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 configure_sharding_is_rebalance_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 configure_sharding_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_backup_config: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
-                 db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
-                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
-                 ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
-                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
-                 sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 upload_ca_signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 upload_signed_certificate_and_generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_ca_bundle_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 validate_network_details: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
-                 validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 chunks: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configure_gsm_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 configure_sharding_is_rebalance_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 configure_sharding_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_backup_config: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
+                 db_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 move_replication_unit_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 ons_port_local: pulumi.Input[Optional[_builtins.int]] = None,
+                 ons_port_remote: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
+                 shard_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
+                 sharding_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 upload_ca_signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 upload_signed_certificate_and_generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_ca_bundle_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 validate_network_details: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
+                 validate_network_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2140,64 +2140,64 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-            catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
-            certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-            change_db_backup_config_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            character_set: Optional[pulumi.Input[_builtins.str]] = None,
-            chunks: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configure_gsm_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            configure_sharding_is_rebalance_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            configure_sharding_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs', 'DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgsDict']]]]] = None,
-            database_version: Optional[pulumi.Input[_builtins.str]] = None,
-            db_backup_config: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
-            db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            downloaded_gsm_csr_pem: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            generate_gsm_certificate_signing_request_trigger_ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_wallet_downloaded_wallet_content_length: Optional[pulumi.Input[_builtins.int]] = None,
-            generate_wallet_downloaded_wallet_etag: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_wallet_downloaded_wallet_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_wallet_downloaded_wallet_zip_base64: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            gsm_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgsDict']]]]] = None,
-            latest_gsm_images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs', 'DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-            listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs', 'DistributedDatabaseDistributedAutonomousDatabaseMetadataArgsDict']]]]] = None,
-            move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-            ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
-            ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
-            prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-            replication_method: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
-            shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
-            sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
-            start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            upload_ca_signed_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            upload_signed_certificate_and_generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            validate_ca_bundle_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            validate_network_details: Optional[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
-            validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None) -> 'DistributedDatabaseDistributedAutonomousDatabase':
+            ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            catalog_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict']]]]] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+            change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            chunks: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configure_gsm_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            configure_sharding_is_rebalance_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            configure_sharding_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs', 'DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgsDict']]]]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_backup_config: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs', 'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict']]] = None,
+            db_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            downloaded_gsm_csr_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_wallet_downloaded_wallet_content_length: pulumi.Input[Optional[_builtins.int]] = None,
+            generate_wallet_downloaded_wallet_etag: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_wallet_downloaded_wallet_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_wallet_downloaded_wallet_zip_base64: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            gsm_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgsDict']]]]] = None,
+            latest_gsm_images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs', 'DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+            listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs', 'DistributedDatabaseDistributedAutonomousDatabaseMetadataArgsDict']]]]] = None,
+            move_replication_unit_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            ons_port_local: pulumi.Input[Optional[_builtins.int]] = None,
+            ons_port_remote: pulumi.Input[Optional[_builtins.int]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs', 'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict']]]]] = None,
+            prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            recreate_failed_resource_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+            replication_method: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
+            shard_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs', 'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict']]]]] = None,
+            sharding_method: pulumi.Input[Optional[_builtins.str]] = None,
+            start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upload_ca_signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            upload_signed_certificate_and_generate_wallet_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            validate_ca_bundle_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            validate_network_details: pulumi.Input[Optional[Union['DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs', 'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict']]] = None,
+            validate_network_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> 'DistributedDatabaseDistributedAutonomousDatabase':
         """
         Get an existing DistributedDatabaseDistributedAutonomousDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

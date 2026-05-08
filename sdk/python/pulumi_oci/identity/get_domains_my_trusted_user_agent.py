@@ -374,7 +374,7 @@ def get_domains_my_trusted_user_agent(attribute_sets: Optional[Sequence[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+    test_my_trusted_user_agent = oci.identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
         my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",
@@ -429,12 +429,12 @@ def get_domains_my_trusted_user_agent(attribute_sets: Optional[Sequence[_builtin
         trust_token=pulumi.get(__ret__, 'trust_token'),
         trusted_factors=pulumi.get(__ret__, 'trusted_factors'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                             my_trusted_user_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_trusted_user_agent_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                             my_trusted_user_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyTrustedUserAgentResult]:
     """
     This data source provides details about a specific My Trusted User Agent resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -447,7 +447,7 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+    test_my_trusted_user_agent = oci.identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
         my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",

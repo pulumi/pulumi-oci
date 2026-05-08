@@ -151,7 +151,7 @@ def get_pipeline_runs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_runs = oci.DataScience.get_pipeline_runs(compartment_id=compartment_id,
+    test_pipeline_runs = oci.datascience.get_pipeline_runs(compartment_id=compartment_id,
         created_by=pipeline_run_created_by,
         display_name=pipeline_run_display_name,
         id=pipeline_run_id,
@@ -187,13 +187,13 @@ def get_pipeline_runs(compartment_id: Optional[_builtins.str] = None,
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_runs=pulumi.get(__ret__, 'pipeline_runs'),
         state=pulumi.get(__ret__, 'state'))
-def get_pipeline_runs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPipelineRunsFilterArgs', 'GetPipelineRunsFilterArgsDict']]]]] = None,
-                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             pipeline_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pipeline_runs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineRunsFilterArgs', 'GetPipelineRunsFilterArgsDict']]]]] = None,
+                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineRunsResult]:
     """
     This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
@@ -206,7 +206,7 @@ def get_pipeline_runs_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_runs = oci.DataScience.get_pipeline_runs(compartment_id=compartment_id,
+    test_pipeline_runs = oci.datascience.get_pipeline_runs(compartment_id=compartment_id,
         created_by=pipeline_run_created_by,
         display_name=pipeline_run_display_name,
         id=pipeline_run_id,

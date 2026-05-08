@@ -168,11 +168,11 @@ def get_responder_recipes(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+    test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only,
+        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
         state=responder_recipe_state)
     ```
 
@@ -205,13 +205,13 @@ def get_responder_recipes(access_level: Optional[_builtins.str] = None,
         resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
         responder_recipe_collections=pulumi.get(__ret__, 'responder_recipe_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict']]]]] = None,
-                                 resource_metadata_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_responder_recipes_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict']]]]] = None,
+                                 resource_metadata_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResponderRecipesResult]:
     """
     This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -238,11 +238,11 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+    test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only,
+        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
         state=responder_recipe_state)
     ```
 

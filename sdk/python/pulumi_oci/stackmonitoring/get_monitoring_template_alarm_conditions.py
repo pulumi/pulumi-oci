@@ -167,7 +167,7 @@ def get_monitoring_template_alarm_conditions(alarm_condition_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_conditions = oci.StackMonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
+    test_monitoring_template_alarm_conditions = oci.stackmonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
         metric_names=test_metric["name"],
         resource_types=monitoring_template_alarm_condition_resource_types,
         state=monitoring_template_alarm_condition_state,
@@ -204,14 +204,14 @@ def get_monitoring_template_alarm_conditions(alarm_condition_id: Optional[_built
         resource_types=pulumi.get(__ret__, 'resource_types'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_monitoring_template_alarm_conditions_output(alarm_condition_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict']]]]] = None,
-                                                    metric_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    resource_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_monitoring_template_alarm_conditions_output(alarm_condition_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict']]]]] = None,
+                                                    metric_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    resource_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoringTemplateAlarmConditionsResult]:
     """
     This data source provides the list of Monitoring Template Alarm Conditions in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -224,7 +224,7 @@ def get_monitoring_template_alarm_conditions_output(alarm_condition_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_conditions = oci.StackMonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
+    test_monitoring_template_alarm_conditions = oci.stackmonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
         metric_names=test_metric["name"],
         resource_types=monitoring_template_alarm_condition_resource_types,
         state=monitoring_template_alarm_condition_state,

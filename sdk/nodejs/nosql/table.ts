@@ -28,11 +28,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoReclaimable: tableIsAutoReclaimable,
+ *     isAutoReclaimable: tableIsAutoReclaimable === "true",
  *     tableLimits: {
- *         maxReadUnits: tableTableLimitsMaxReadUnits,
- *         maxStorageInGbs: tableTableLimitsMaxStorageInGbs,
- *         maxWriteUnits: tableTableLimitsMaxWriteUnits,
+ *         maxReadUnits: Number(tableTableLimitsMaxReadUnits),
+ *         maxStorageInGbs: Number(tableTableLimitsMaxStorageInGbs),
+ *         maxWriteUnits: Number(tableTableLimitsMaxWriteUnits),
  *         capacityMode: tableTableLimitsCapacityMode,
  *     },
  * });
@@ -217,75 +217,75 @@ export interface TableState {
     /**
      * (Updatable) Compartment Identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      */
-    ddlStatement?: pulumi.Input<string>;
+    ddlStatement?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * True if table can be reclaimed after an idle period.
      */
-    isAutoReclaimable?: pulumi.Input<boolean>;
+    isAutoReclaimable?: pulumi.Input<boolean | undefined>;
     /**
      * True if this table is currently a member of a replication set.
      */
-    isMultiRegion?: pulumi.Input<boolean>;
+    isMultiRegion?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
      */
-    localReplicaInitializationInPercent?: pulumi.Input<number>;
+    localReplicaInitializationInPercent?: pulumi.Input<number | undefined>;
     /**
      * Table name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * An array of Replica listing this table's replicas, if any
      */
-    replicas?: pulumi.Input<pulumi.Input<inputs.Nosql.TableReplica>[]>;
+    replicas?: pulumi.Input<pulumi.Input<inputs.Nosql.TableReplica>[] | undefined>;
     /**
      * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      */
-    schemaState?: pulumi.Input<string>;
+    schemaState?: pulumi.Input<string | undefined>;
     /**
      * The table schema information as a JSON object.
      */
-    schemas?: pulumi.Input<pulumi.Input<inputs.Nosql.TableSchema>[]>;
+    schemas?: pulumi.Input<pulumi.Input<inputs.Nosql.TableSchema>[] | undefined>;
     /**
      * The state of a table.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
-    tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits>;
+    tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits | undefined>;
     /**
      * The time the the table was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      */
-    timeOfExpiration?: pulumi.Input<string>;
+    timeOfExpiration?: pulumi.Input<string | undefined>;
     /**
      * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -303,21 +303,21 @@ export interface TableArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * True if table can be reclaimed after an idle period.
      */
-    isAutoReclaimable?: pulumi.Input<boolean>;
+    isAutoReclaimable?: pulumi.Input<boolean | undefined>;
     /**
      * Table name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
-    tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits>;
+    tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits | undefined>;
 }

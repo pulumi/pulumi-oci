@@ -160,7 +160,7 @@ def get_bds_instance_metastore_configs(bds_api_key_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_configs = oci.BigDataService.get_bds_instance_metastore_configs(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_configs = oci.bigdataservice.get_bds_instance_metastore_configs(bds_instance_id=test_bds_instance["id"],
         bds_api_key_id=test_api_key["id"],
         display_name=bds_instance_metastore_config_display_name,
         metastore_id=test_metastore["id"],
@@ -197,13 +197,13 @@ def get_bds_instance_metastore_configs(bds_api_key_id: Optional[_builtins.str] =
         metastore_id=pulumi.get(__ret__, 'metastore_id'),
         metastore_type=pulumi.get(__ret__, 'metastore_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instance_metastore_configs_output(bds_api_key_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceMetastoreConfigsFilterArgs', 'GetBdsInstanceMetastoreConfigsFilterArgsDict']]]]] = None,
-                                              metastore_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              metastore_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_metastore_configs_output(bds_api_key_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceMetastoreConfigsFilterArgs', 'GetBdsInstanceMetastoreConfigsFilterArgsDict']]]]] = None,
+                                              metastore_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              metastore_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigsResult]:
     """
     This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
@@ -216,7 +216,7 @@ def get_bds_instance_metastore_configs_output(bds_api_key_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_configs = oci.BigDataService.get_bds_instance_metastore_configs(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_configs = oci.bigdataservice.get_bds_instance_metastore_configs(bds_instance_id=test_bds_instance["id"],
         bds_api_key_id=test_api_key["id"],
         display_name=bds_instance_metastore_config_display_name,
         metastore_id=test_metastore["id"],

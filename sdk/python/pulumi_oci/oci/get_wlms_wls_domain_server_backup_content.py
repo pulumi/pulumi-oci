@@ -144,9 +144,9 @@ def get_wlms_wls_domain_server_backup_content(backup_id: Optional[_builtins.str]
         middlewares=pulumi.get(__ret__, 'middlewares'),
         server_id=pulumi.get(__ret__, 'server_id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_server_backup_content_output(backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     wls_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_wls_domain_server_backup_content_output(backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainServerBackupContentResult]:
     """
     This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.

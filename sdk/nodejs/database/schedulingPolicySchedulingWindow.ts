@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *         daysOfWeeks: [{
  *             name: schedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekName,
  *         }],
- *         duration: schedulingPolicySchedulingWindowWindowPreferenceDuration,
- *         isEnforcedDuration: schedulingPolicySchedulingWindowWindowPreferenceIsEnforcedDuration,
+ *         duration: Number(schedulingPolicySchedulingWindowWindowPreferenceDuration),
+ *         isEnforcedDuration: schedulingPolicySchedulingWindowWindowPreferenceIsEnforcedDuration === "true",
  *         startTime: schedulingPolicySchedulingWindowWindowPreferenceStartTime,
  *         weeksOfMonths: schedulingPolicySchedulingWindowWindowPreferenceWeeksOfMonth,
  *         months: [{
@@ -176,47 +176,47 @@ export interface SchedulingPolicySchedulingWindowState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Scheduling Window. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    schedulingPolicyId?: pulumi.Input<string>;
+    schedulingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Scheduling Window. Valid states are CREATING, ACTIVE, UPDATING, FAILED, DELETING and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Scheduling Window was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
      */
-    timeNextSchedulingWindowStarts?: pulumi.Input<string>;
+    timeNextSchedulingWindowStarts?: pulumi.Input<string | undefined>;
     /**
      * The last date and time that the Scheduling Window was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Single Scheduling Window details.
      */
-    windowPreference?: pulumi.Input<inputs.Database.SchedulingPolicySchedulingWindowWindowPreference>;
+    windowPreference?: pulumi.Input<inputs.Database.SchedulingPolicySchedulingWindowWindowPreference | undefined>;
 }
 
 /**
@@ -226,15 +226,15 @@ export interface SchedulingPolicySchedulingWindowArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

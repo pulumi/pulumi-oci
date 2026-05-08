@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
+ * const testOpsiConfigurationConfigurationItem = oci.opsi.getOpsiConfigurationConfigurationItem({
  *     compartmentId: compartmentId,
  *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
  *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
@@ -100,7 +100,7 @@ export interface GetOpsiConfigurationConfigurationItemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
+ * const testOpsiConfigurationConfigurationItem = oci.opsi.getOpsiConfigurationConfigurationItem({
  *     compartmentId: compartmentId,
  *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
  *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
@@ -127,19 +127,19 @@ export interface GetOpsiConfigurationConfigurationItemOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the fields to return in a config item summary.
      */
-    configItemFields?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
      */
-    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only configuration items that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter to return configuration items based on configuration type of OPSI configuration.
      */

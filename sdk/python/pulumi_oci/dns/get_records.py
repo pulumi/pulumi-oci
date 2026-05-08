@@ -182,7 +182,7 @@ def get_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+    test_records = oci.dns.get_records(zone_name_or_id=test_zone_name_or["id"],
         domain=record_domain,
         domain_contains=record_domain_contains,
         rtype=record_rtype,
@@ -226,15 +226,15 @@ def get_records(compartment_id: Optional[_builtins.str] = None,
         sort_order=pulumi.get(__ret__, 'sort_order'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
         zone_version=pulumi.get(__ret__, 'zone_version'))
-def get_records_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       domain_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecordsFilterArgs', 'GetRecordsFilterArgsDict']]]]] = None,
-                       rtype: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       zone_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_records_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       domain_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecordsFilterArgs', 'GetRecordsFilterArgsDict']]]]] = None,
+                       rtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       zone_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecordsResult]:
     """
     **Deprecated. Use dns_get_rrsets instead.**
@@ -254,7 +254,7 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+    test_records = oci.dns.get_records(zone_name_or_id=test_zone_name_or["id"],
         domain=record_domain,
         domain_contains=record_domain_contains,
         rtype=record_rtype,

@@ -175,23 +175,23 @@ export interface SchedulingPolicyState {
     /**
      * (Updatable) The cadence period.
      */
-    cadence?: pulumi.Input<string>;
+    cadence?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Start of the month to be followed during the cadence period.
      */
-    cadenceStartMonth?: pulumi.Input<inputs.Database.SchedulingPolicyCadenceStartMonth>;
+    cadenceStartMonth?: pulumi.Input<inputs.Database.SchedulingPolicyCadenceStartMonth | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Scheduling Policy. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -199,27 +199,27 @@ export interface SchedulingPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Scheduling Policy. Valid states are CREATING, NEEDS_ATTENTION, ACTIVE, UPDATING, FAILED, DELETING and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Scheduling Policy was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
      */
-    timeNextWindowStarts?: pulumi.Input<string>;
+    timeNextWindowStarts?: pulumi.Input<string | undefined>;
     /**
      * The last date and time that the Scheduling Policy was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -233,7 +233,7 @@ export interface SchedulingPolicyArgs {
     /**
      * (Updatable) Start of the month to be followed during the cadence period.
      */
-    cadenceStartMonth?: pulumi.Input<inputs.Database.SchedulingPolicyCadenceStartMonth>;
+    cadenceStartMonth?: pulumi.Input<inputs.Database.SchedulingPolicyCadenceStartMonth | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -241,7 +241,7 @@ export interface SchedulingPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Scheduling Policy. The name does not need to be unique.
      */
@@ -253,5 +253,5 @@ export interface SchedulingPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

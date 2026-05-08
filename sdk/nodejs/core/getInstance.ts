@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstance = oci.Core.getInstance({
+ * const testInstance = oci.core.getInstance({
  *     instanceId: testInstanceOciCoreInstance.id,
  * });
  * ```
@@ -245,7 +245,7 @@ export interface GetInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstance = oci.Core.getInstance({
+ * const testInstance = oci.core.getInstance({
  *     instanceId: testInstanceOciCoreInstance.id,
  * });
  * ```

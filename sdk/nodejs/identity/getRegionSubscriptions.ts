@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRegionSubscriptions = oci.Identity.getRegionSubscriptions({
+ * const testRegionSubscriptions = oci.identity.getRegionSubscriptions({
  *     tenancyId: testTenancy.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetRegionSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRegionSubscriptions = oci.Identity.getRegionSubscriptions({
+ * const testRegionSubscriptions = oci.identity.getRegionSubscriptions({
  *     tenancyId: testTenancy.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getRegionSubscriptionsOutput(args: GetRegionSubscriptionsOutputA
  * A collection of arguments for invoking getRegionSubscriptions.
  */
 export interface GetRegionSubscriptionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetRegionSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetRegionSubscriptionsFilterArgs>[] | undefined>;
     /**
      * The OCID of the tenancy.
      */

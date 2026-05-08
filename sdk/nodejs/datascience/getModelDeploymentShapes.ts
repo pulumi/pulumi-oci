@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeploymentShapes = oci.DataScience.getModelDeploymentShapes({
+ * const testModelDeploymentShapes = oci.datascience.getModelDeploymentShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetModelDeploymentShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeploymentShapes = oci.DataScience.getModelDeploymentShapes({
+ * const testModelDeploymentShapes = oci.datascience.getModelDeploymentShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetModelDeploymentShapesOutputArgs {
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelDeploymentShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelDeploymentShapesFilterArgs>[] | undefined>;
 }

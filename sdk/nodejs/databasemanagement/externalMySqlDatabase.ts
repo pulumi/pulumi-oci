@@ -117,7 +117,7 @@ export interface ExternalMySqlDatabaseState {
     /**
      * OCID of compartment for the External MySQL Database.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the External MySQL Database.
      *
@@ -125,11 +125,11 @@ export interface ExternalMySqlDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    dbName?: pulumi.Input<string>;
+    dbName?: pulumi.Input<string | undefined>;
     /**
      * OCID of External MySQL Database.
      */
-    externalDatabaseId?: pulumi.Input<string>;
+    externalDatabaseId?: pulumi.Input<string | undefined>;
 }
 
 /**

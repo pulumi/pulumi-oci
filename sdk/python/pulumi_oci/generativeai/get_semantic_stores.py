@@ -135,7 +135,7 @@ def get_semantic_stores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_stores = oci.GenerativeAi.get_semantic_stores(compartment_id=compartment_id,
+    test_semantic_stores = oci.generativeai.get_semantic_stores(compartment_id=compartment_id,
         data_source_querying_connection_id=test_connection["id"],
         display_name=semantic_store_display_name,
         id=semantic_store_id,
@@ -167,12 +167,12 @@ def get_semantic_stores(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         semantic_store_collections=pulumi.get(__ret__, 'semantic_store_collections'),
         states=pulumi.get(__ret__, 'states'))
-def get_semantic_stores_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               data_source_querying_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict']]]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_semantic_stores_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               data_source_querying_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict']]]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSemanticStoresResult]:
     """
     This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
@@ -185,7 +185,7 @@ def get_semantic_stores_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_stores = oci.GenerativeAi.get_semantic_stores(compartment_id=compartment_id,
+    test_semantic_stores = oci.generativeai.get_semantic_stores(compartment_id=compartment_id,
         data_source_querying_connection_id=test_connection["id"],
         display_name=semantic_store_display_name,
         id=semantic_store_id,

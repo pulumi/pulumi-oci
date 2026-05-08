@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     highCapacityDatabaseStorage: {
- *         totalSizeInGbs: exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
+ *         totalSizeInGbs: Number(exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs),
  *     },
- *     additionalFlashCacheInPercent: exascaleDbStorageVaultAdditionalFlashCacheInPercent,
- *     autoscaleLimitInGbs: exascaleDbStorageVaultAutoscaleLimitInGbs,
+ *     additionalFlashCacheInPercent: Number(exascaleDbStorageVaultAdditionalFlashCacheInPercent),
+ *     autoscaleLimitInGbs: Number(exascaleDbStorageVaultAutoscaleLimitInGbs),
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     definedTags: exascaleDbStorageVaultDefinedTags,
  *     description: exascaleDbStorageVaultDescription,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoscaleEnabled: exascaleDbStorageVaultIsAutoscaleEnabled,
+ *     isAutoscaleEnabled: exascaleDbStorageVaultIsAutoscaleEnabled === "true",
  *     subscriptionId: tenantSubscriptionId,
  *     timeZone: exascaleDbStorageVaultTimeZone,
  * });
@@ -249,75 +249,75 @@ export interface ExascaleDbStorageVaultState {
     /**
      * (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
      */
-    additionalFlashCacheInPercent?: pulumi.Input<number>;
+    additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
     /**
      * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
      */
-    attachedShapeAttributes?: pulumi.Input<pulumi.Input<string>[]>;
+    attachedShapeAttributes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      */
-    autoscaleLimitInGbs?: pulumi.Input<number>;
+    autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Exadata Database Storage Vault description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Create exadata Database Storage Details
      */
-    highCapacityDatabaseStorage?: pulumi.Input<inputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage>;
+    highCapacityDatabaseStorage?: pulumi.Input<inputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage | undefined>;
     /**
      * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
      */
-    isAutoscaleEnabled?: pulumi.Input<boolean>;
+    isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Exadata Database Storage Vault.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the Exadata Database Storage Vault was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *
@@ -325,15 +325,15 @@ export interface ExascaleDbStorageVaultState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * The number of Exadata VM clusters used the Exadata Database Storage Vault.
      */
-    vmClusterCount?: pulumi.Input<number>;
+    vmClusterCount?: pulumi.Input<number | undefined>;
     /**
      * The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
      */
-    vmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vmClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -343,11 +343,11 @@ export interface ExascaleDbStorageVaultArgs {
     /**
      * (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
      */
-    additionalFlashCacheInPercent?: pulumi.Input<number>;
+    additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      */
-    autoscaleLimitInGbs?: pulumi.Input<number>;
+    autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
@@ -355,7 +355,7 @@ export interface ExascaleDbStorageVaultArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -363,11 +363,11 @@ export interface ExascaleDbStorageVaultArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Exadata Database Storage Vault description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      */
@@ -375,11 +375,11 @@ export interface ExascaleDbStorageVaultArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Create exadata Database Storage Details
      */
@@ -387,11 +387,11 @@ export interface ExascaleDbStorageVaultArgs {
     /**
      * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
      */
-    isAutoscaleEnabled?: pulumi.Input<boolean>;
+    isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *
@@ -399,5 +399,5 @@ export interface ExascaleDbStorageVaultArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
 }

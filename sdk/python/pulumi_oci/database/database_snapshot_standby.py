@@ -24,7 +24,7 @@ class DatabaseSnapshotStandbyArgs:
                  database_admin_password: pulumi.Input[_builtins.str],
                  database_id: pulumi.Input[_builtins.str],
                  standby_conversion_type: pulumi.Input[_builtins.str],
-                 snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a DatabaseSnapshotStandby resource.
 
@@ -99,7 +99,7 @@ class DatabaseSnapshotStandbyArgs:
 
     @_builtins.property
     @pulumi.getter(name="snapshotDurationInDays")
-    def snapshot_duration_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def snapshot_duration_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         SnapshotDurationInDays is the duration in day(s) after which the Snapshot Standby Database will get converted back to Physical Standby. The minimum value of snapshotDurationInDays is 3 days and maximum value is 14 days. Default value will be 7 days if not provided in the Request.
 
@@ -108,48 +108,48 @@ class DatabaseSnapshotStandbyArgs:
         return pulumi.get(self, "snapshot_duration_in_days")
 
     @snapshot_duration_in_days.setter
-    def snapshot_duration_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def snapshot_duration_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "snapshot_duration_in_days", value)
 
 
 @pulumi.input_type
 class _DatabaseSnapshotStandbyState:
     def __init__(__self__, *,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]] = None,
-                 data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]] = None,
-                 db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cdb: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_backup_duration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 last_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_failed_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_conversion_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]] = None,
+                 data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]] = None,
+                 db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cdb: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_backup_duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_database_point_in_time_recovery_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_conversion_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseSnapshotStandby resources.
 
@@ -274,55 +274,55 @@ class _DatabaseSnapshotStandbyState:
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def character_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set for the database.
         """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
-    def character_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def character_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "character_set", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]]:
         """
         The Connection strings used to connect to the Oracle Database.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="dataGuardGroups")
-    def data_guard_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]]:
+    def data_guard_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]]:
         """
         Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         """
         return pulumi.get(self, "data_guard_groups")
 
     @data_guard_groups.setter
-    def data_guard_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]]):
+    def data_guard_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupArgs']]]]):
         pulumi.set(self, "data_guard_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseAdminPassword")
-    def database_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The administrator password of the primary database in this Data Guard association.
 
@@ -331,288 +331,288 @@ class _DatabaseSnapshotStandbyState:
         return pulumi.get(self, "database_admin_password")
 
     @database_admin_password.setter
-    def database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]]:
+    def database_management_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]]:
         """
         The configuration of the Database Management service.
         """
         return pulumi.get(self, "database_management_configs")
 
     @database_management_configs.setter
-    def database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]]):
+    def database_management_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDatabaseManagementConfigArgs']]]]):
         pulumi.set(self, "database_management_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbBackupConfigs")
-    def db_backup_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]]:
+    def db_backup_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]]:
         """
         Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         """
         return pulumi.get(self, "db_backup_configs")
 
     @db_backup_configs.setter
-    def db_backup_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]]):
+    def db_backup_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigArgs']]]]):
         pulumi.set(self, "db_backup_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbHomeId")
-    def db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_home_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
         return pulumi.get(self, "db_home_id")
 
     @db_home_id.setter
-    def db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_home_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_home_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database name.
         """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
-    def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workload(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
         """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
-    def db_workload(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workload(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workload", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCdb")
-    def is_cdb(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cdb(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the database is a container database.
         """
         return pulumi.get(self, "is_cdb")
 
     @is_cdb.setter
-    def is_cdb(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cdb(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cdb", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_wallet_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
-    def key_store_wallet_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_wallet_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_wallet_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastBackupDurationInSeconds")
-    def last_backup_duration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def last_backup_duration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration when the latest database backup created.
         """
         return pulumi.get(self, "last_backup_duration_in_seconds")
 
     @last_backup_duration_in_seconds.setter
-    def last_backup_duration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def last_backup_duration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "last_backup_duration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="lastBackupTimestamp")
-    def last_backup_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_backup_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the latest database backup was created.
         """
         return pulumi.get(self, "last_backup_timestamp")
 
     @last_backup_timestamp.setter
-    def last_backup_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_backup_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_backup_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="lastFailedBackupTimestamp")
-    def last_failed_backup_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_failed_backup_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the latest database backup failed.
         """
         return pulumi.get(self, "last_failed_backup_timestamp")
 
     @last_failed_backup_timestamp.setter
-    def last_failed_backup_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_failed_backup_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_failed_backup_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The national character set for the database.
         """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pdb_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
-    def pdb_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pdb_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pdb_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sidPrefix")
-    def sid_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sid_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a prefix for the `Oracle SID` of the database to be created.
         """
         return pulumi.get(self, "sid_prefix")
 
     @sid_prefix.setter
-    def sid_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sid_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sid_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotDurationInDays")
-    def snapshot_duration_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def snapshot_duration_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         SnapshotDurationInDays is the duration in day(s) after which the Snapshot Standby Database will get converted back to Physical Standby. The minimum value of snapshotDurationInDays is 3 days and maximum value is 14 days. Default value will be 7 days if not provided in the Request.
 
@@ -621,24 +621,24 @@ class _DatabaseSnapshotStandbyState:
         return pulumi.get(self, "snapshot_duration_in_days")
 
     @snapshot_duration_in_days.setter
-    def snapshot_duration_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def snapshot_duration_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "snapshot_duration_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
-    def source_database_point_in_time_recovery_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_database_point_in_time_recovery_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         """
         return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
 
     @source_database_point_in_time_recovery_timestamp.setter
-    def source_database_point_in_time_recovery_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_database_point_in_time_recovery_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_database_point_in_time_recovery_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyConversionType")
-    def standby_conversion_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def standby_conversion_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the conversion type of the standby database. Specify this to convert a physical standby to a snapshot standby and vice versa.
 
@@ -653,55 +653,55 @@ class _DatabaseSnapshotStandbyState:
         return pulumi.get(self, "standby_conversion_type")
 
     @standby_conversion_type.setter
-    def standby_conversion_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def standby_conversion_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "standby_conversion_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
 
@@ -711,10 +711,10 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 standby_conversion_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 standby_conversion_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
@@ -734,7 +734,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
             database_admin_password=database_snapshot_standby_database_admin_password,
             database_id=test_database["id"],
             standby_conversion_type=database_snapshot_standby_standby_conversion_type,
-            snapshot_duration_in_days=database_snapshot_standby_snapshot_duration_in_days)
+            snapshot_duration_in_days=int(database_snapshot_standby_snapshot_duration_in_days))
         ```
 
         ## Import
@@ -789,7 +789,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
             database_admin_password=database_snapshot_standby_database_admin_password,
             database_id=test_database["id"],
             standby_conversion_type=database_snapshot_standby_standby_conversion_type,
-            snapshot_duration_in_days=database_snapshot_standby_snapshot_duration_in_days)
+            snapshot_duration_in_days=int(database_snapshot_standby_snapshot_duration_in_days))
         ```
 
         ## Import
@@ -816,10 +816,10 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 standby_conversion_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 standby_conversion_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -882,41 +882,41 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            character_set: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict']]]]] = None,
-            data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict']]]]] = None,
-            database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict']]]]] = None,
-            database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict']]]]] = None,
-            db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_workload: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_cdb: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_backup_duration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            last_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            last_failed_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-            pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-            sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            standby_conversion_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DatabaseSnapshotStandby':
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict']]]]] = None,
+            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict']]]]] = None,
+            database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict']]]]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict']]]]] = None,
+            db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cdb: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_backup_duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            source_database_point_in_time_recovery_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_conversion_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DatabaseSnapshotStandby':
         """
         Get an existing DatabaseSnapshotStandby resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

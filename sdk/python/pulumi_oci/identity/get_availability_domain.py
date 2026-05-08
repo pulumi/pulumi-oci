@@ -98,9 +98,9 @@ def get_availability_domain(ad_number: Optional[_builtins.int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=tenancy_ocid,
+    test_compartment = oci.identity.get_availability_domain(compartment_id=tenancy_ocid,
         id=id,
-        ad_number=ad_number)
+        ad_number=int(ad_number))
     ```
 
 
@@ -120,9 +120,9 @@ def get_availability_domain(ad_number: Optional[_builtins.int] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_availability_domain_output(ad_number: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAvailabilityDomainResult]:
     """
     This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
@@ -133,9 +133,9 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=tenancy_ocid,
+    test_compartment = oci.identity.get_availability_domain(compartment_id=tenancy_ocid,
         id=id,
-        ad_number=ad_number)
+        ad_number=int(ad_number))
     ```
 
 

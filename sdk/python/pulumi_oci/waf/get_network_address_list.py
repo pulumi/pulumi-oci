@@ -216,7 +216,7 @@ def get_network_address_list(network_address_list_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
+    test_network_address_list = oci.waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_network_address_list(network_address_list_id: Optional[_builtins.str] = 
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         vcn_addresses=pulumi.get(__ret__, 'vcn_addresses'))
-def get_network_address_list_output(network_address_list_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_address_list_output(network_address_list_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkAddressListResult]:
     """
     This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -255,7 +255,7 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
+    test_network_address_list = oci.waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
     ```
 
 

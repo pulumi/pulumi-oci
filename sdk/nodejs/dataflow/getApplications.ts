@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.DataFlow.getApplications({
+ * const testApplications = oci.dataflow.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     displayNameStartsWith: applicationDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.DataFlow.getApplications({
+ * const testApplications = oci.dataflow.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     displayNameStartsWith: applicationDisplayNameStartsWith,
@@ -139,18 +139,18 @@ export interface GetApplicationsOutputArgs {
     /**
      * The query parameter for the Spark application name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The displayName prefix.
      */
-    displayNameStartsWith?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetApplicationsFilterArgs>[]>;
+    displayNameStartsWith?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetApplicationsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The Spark version utilized to run the application.
      */
-    sparkVersion?: pulumi.Input<string>;
+    sparkVersion?: pulumi.Input<string | undefined>;
 }

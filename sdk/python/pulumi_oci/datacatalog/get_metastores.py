@@ -124,7 +124,7 @@ def get_metastores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=compartment_id,
+    test_metastores = oci.datacatalog.get_metastores(compartment_id=compartment_id,
         display_name=metastore_display_name,
         state=metastore_state)
     ```
@@ -149,10 +149,10 @@ def get_metastores(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         metastores=pulumi.get(__ret__, 'metastores'),
         state=pulumi.get(__ret__, 'state'))
-def get_metastores_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetastoresFilterArgs', 'GetMetastoresFilterArgsDict']]]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_metastores_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetastoresFilterArgs', 'GetMetastoresFilterArgsDict']]]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetastoresResult]:
     """
     This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
@@ -165,7 +165,7 @@ def get_metastores_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=compartment_id,
+    test_metastores = oci.datacatalog.get_metastores(compartment_id=compartment_id,
         display_name=metastore_display_name,
         state=metastore_state)
     ```

@@ -96,7 +96,7 @@ def get_instance_measured_boot_report(instance_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=test_instance["id"])
+    test_instance_measured_boot_report = oci.core.get_instance_measured_boot_report(instance_id=test_instance["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_instance_measured_boot_report(instance_id: Optional[_builtins.str] = Non
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_policy_verification_successful=pulumi.get(__ret__, 'is_policy_verification_successful'),
         measurements=pulumi.get(__ret__, 'measurements'))
-def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_measured_boot_report_output(instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMeasuredBootReportResult]:
     """
     This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
@@ -125,7 +125,7 @@ def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=test_instance["id"])
+    test_instance_measured_boot_report = oci.core.get_instance_measured_boot_report(instance_id=test_instance["id"])
     ```
 
 

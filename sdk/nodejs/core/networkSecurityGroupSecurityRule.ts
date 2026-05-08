@@ -28,30 +28,30 @@ import * as utilities from "../utilities";
  *     destination: networkSecurityGroupSecurityRuleDestination,
  *     destinationType: networkSecurityGroupSecurityRuleDestinationType,
  *     icmpOptions: {
- *         type: networkSecurityGroupSecurityRuleIcmpOptionsType,
- *         code: networkSecurityGroupSecurityRuleIcmpOptionsCode,
+ *         type: Number(networkSecurityGroupSecurityRuleIcmpOptionsType),
+ *         code: Number(networkSecurityGroupSecurityRuleIcmpOptionsCode),
  *     },
  *     source: networkSecurityGroupSecurityRuleSource,
  *     sourceType: networkSecurityGroupSecurityRuleSourceType,
- *     stateless: networkSecurityGroupSecurityRuleStateless,
+ *     stateless: networkSecurityGroupSecurityRuleStateless === "true",
  *     tcpOptions: {
  *         destinationPortRange: {
- *             max: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax,
- *             min: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin),
  *         },
  *         sourcePortRange: {
- *             max: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax,
- *             min: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin),
  *         },
  *     },
  *     udpOptions: {
  *         destinationPortRange: {
- *             max: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax,
- *             min: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin),
  *         },
  *         sourcePortRange: {
- *             max: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax,
- *             min: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin),
  *         },
  *     },
  * });
@@ -220,64 +220,64 @@ export interface NetworkSecurityGroupSecurityRuleState {
     /**
      * An optional description of your choice for the rule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      */
-    destinationType?: pulumi.Input<string>;
+    destinationType?: pulumi.Input<string | undefined>;
     /**
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      */
-    icmpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions>;
+    icmpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions | undefined>;
     /**
      * Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      */
-    isValid?: pulumi.Input<boolean>;
+    isValid?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */
-    networkSecurityGroupId?: pulumi.Input<string>;
+    networkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
      * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
      * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      */
-    stateless?: pulumi.Input<boolean>;
+    stateless?: pulumi.Input<boolean | undefined>;
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      */
-    tcpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions>;
+    tcpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions | undefined>;
     /**
      * The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      */
-    udpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions>;
+    udpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions | undefined>;
 }
 
 /**
@@ -287,15 +287,15 @@ export interface NetworkSecurityGroupSecurityRuleArgs {
     /**
      * An optional description of your choice for the rule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      */
-    destinationType?: pulumi.Input<string>;
+    destinationType?: pulumi.Input<string | undefined>;
     /**
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      */
@@ -305,7 +305,7 @@ export interface NetworkSecurityGroupSecurityRuleArgs {
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      */
-    icmpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions>;
+    icmpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */
@@ -317,24 +317,24 @@ export interface NetworkSecurityGroupSecurityRuleArgs {
     /**
      * Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
      * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
      * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      */
-    stateless?: pulumi.Input<boolean>;
+    stateless?: pulumi.Input<boolean | undefined>;
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      */
-    tcpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions>;
+    tcpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions | undefined>;
     /**
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      */
-    udpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions>;
+    udpOptions?: pulumi.Input<inputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions | undefined>;
 }

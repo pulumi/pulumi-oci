@@ -27,21 +27,21 @@ import * as utilities from "../utilities";
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     autonomousDataStorageSizeInTbs: autonomousVmClusterAutonomousDataStorageSizeInTbs,
  *     computeModel: autonomousVmClusterComputeModel,
- *     cpuCoreCountPerNode: autonomousVmClusterCpuCoreCountPerNode,
+ *     cpuCoreCountPerNode: Number(autonomousVmClusterCpuCoreCountPerNode),
  *     dbServers: autonomousVmClusterDbServers,
  *     definedTags: autonomousVmClusterDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled,
- *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled,
+ *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled === "true",
+ *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled === "true",
  *     licenseModel: autonomousVmClusterLicenseModel,
  *     maintenanceWindowDetails: [{
  *         daysOfWeeks: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: autonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
- *         leadTimeInWeeks: autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
+ *         leadTimeInWeeks: Number(autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
  *         months: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsMonthsName,
  *         }],
@@ -49,11 +49,11 @@ import * as utilities from "../utilities";
  *         preference: autonomousVmClusterMaintenanceWindowDetailsPreference,
  *         weeksOfMonths: autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     }],
- *     memoryPerOracleComputeUnitInGbs: autonomousVmClusterMemoryPerOracleComputeUnitInGbs,
- *     scanListenerPortNonTls: autonomousVmClusterScanListenerPortNonTls,
- *     scanListenerPortTls: autonomousVmClusterScanListenerPortTls,
+ *     memoryPerOracleComputeUnitInGbs: Number(autonomousVmClusterMemoryPerOracleComputeUnitInGbs),
+ *     scanListenerPortNonTls: Number(autonomousVmClusterScanListenerPortNonTls),
+ *     scanListenerPortTls: Number(autonomousVmClusterScanListenerPortTls),
  *     timeZone: autonomousVmClusterTimeZone,
- *     totalContainerDatabases: autonomousVmClusterTotalContainerDatabases,
+ *     totalContainerDatabases: Number(autonomousVmClusterTotalContainerDatabases),
  * });
  * ```
  *
@@ -431,194 +431,194 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AutonomousVmCluster resources.
  */
 export interface AutonomousVmClusterState {
-    autonomousDataStoragePercentage?: pulumi.Input<number>;
+    autonomousDataStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
-    autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
+    autonomousDataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    availableAutonomousDataStorageSizeInTbs?: pulumi.Input<number>;
+    availableAutonomousDataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      */
-    availableContainerDatabases?: pulumi.Input<number>;
+    availableContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The numnber of CPU cores available.
      */
-    availableCpus?: pulumi.Input<number>;
+    availableCpus?: pulumi.Input<number | undefined>;
     /**
      * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
-    availableDataStorageSizeInTbs?: pulumi.Input<number>;
+    availableDataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
-    cpuCoreCountPerNode?: pulumi.Input<number>;
-    cpuPercentage?: pulumi.Input<number>;
+    cpuCoreCountPerNode?: pulumi.Input<number | undefined>;
+    cpuPercentage?: pulumi.Input<number | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    cpusEnabled?: pulumi.Input<number>;
-    cpusLowestScaledValue?: pulumi.Input<number>;
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    cpusEnabled?: pulumi.Input<number | undefined>;
+    cpusLowestScaledValue?: pulumi.Input<number | undefined>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The total data storage allocated in TBs
      */
-    dataStorageSizeInTbs?: pulumi.Input<number>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dbServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The lowest value to which exadataStorage(in TBs) can be scaled down.
      */
-    exadataStorageInTbsLowestScaledValue?: pulumi.Input<number>;
+    exadataStorageInTbsLowestScaledValue?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      */
-    isLocalBackupEnabled?: pulumi.Input<boolean>;
+    isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
-    isMtlsEnabled?: pulumi.Input<boolean>;
+    isMtlsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[]>;
+    maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[] | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindow>[] | undefined>;
     /**
      * The lowest value to which maximum number of ACDs can be scaled down.
      */
-    maxAcdsLowestScaledValue?: pulumi.Input<number>;
+    maxAcdsLowestScaledValue?: pulumi.Input<number | undefined>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    memoryPerComputeUnitInGbs?: pulumi.Input<number>;
+    memoryPerComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
+    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The number of nodes in the Autonomous VM Cluster.
      */
-    nodeCount?: pulumi.Input<number>;
-    nonProvisionableAutonomousContainerDatabases?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
+    nonProvisionableAutonomousContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The number of enabled OCPU cores.
      */
-    ocpusEnabled?: pulumi.Input<number>;
+    ocpusEnabled?: pulumi.Input<number | undefined>;
     /**
      * **Deprecated.** Use field totalContainerDatabases.
      */
-    provisionableAutonomousContainerDatabases?: pulumi.Input<number>;
+    provisionableAutonomousContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    provisionedAutonomousContainerDatabases?: pulumi.Input<number>;
+    provisionedAutonomousContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The number of CPUs provisioned in an Autonomous VM Cluster.
      */
-    provisionedCpus?: pulumi.Input<number>;
+    provisionedCpus?: pulumi.Input<number | undefined>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    reclaimableCpus?: pulumi.Input<number>;
+    reclaimableCpus?: pulumi.Input<number | undefined>;
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
-    reservedCpus?: pulumi.Input<number>;
+    reservedCpus?: pulumi.Input<number | undefined>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
-    scanListenerPortNonTls?: pulumi.Input<number>;
+    scanListenerPortNonTls?: pulumi.Input<number | undefined>;
     /**
      * The SCAN Listener TLS port number. Default value is 2484.
      */
-    scanListenerPortTls?: pulumi.Input<number>;
+    scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * The current state of the Autonomous VM cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the Autonomous VM cluster was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of Database SSL certificate expiration.
      */
-    timeDatabaseSslCertificateExpires?: pulumi.Input<string>;
+    timeDatabaseSslCertificateExpires?: pulumi.Input<string | undefined>;
     /**
      * The date and time of ORDS certificate expiration.
      */
-    timeOrdsCertificateExpires?: pulumi.Input<string>;
+    timeOrdsCertificateExpires?: pulumi.Input<string | undefined>;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
-    totalAutonomousDataStorageInTbs?: pulumi.Input<number>;
+    timeZone?: pulumi.Input<string | undefined>;
+    totalAutonomousDataStorageInTbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
-    totalContainerDatabases?: pulumi.Input<number>;
+    totalContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      *
@@ -626,7 +626,7 @@ export interface AutonomousVmClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterNetworkId?: pulumi.Input<string>;
+    vmClusterNetworkId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -636,7 +636,7 @@ export interface AutonomousVmClusterArgs {
     /**
      * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
-    autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
+    autonomousDataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -644,19 +644,19 @@ export interface AutonomousVmClusterArgs {
     /**
      * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
-    cpuCoreCountPerNode?: pulumi.Input<number>;
+    cpuCoreCountPerNode?: pulumi.Input<number | undefined>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dbServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
@@ -668,43 +668,43 @@ export interface AutonomousVmClusterArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      */
-    isLocalBackupEnabled?: pulumi.Input<boolean>;
+    isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
-    isMtlsEnabled?: pulumi.Input<boolean>;
+    isMtlsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[]>;
+    maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[] | undefined>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
+    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
-    scanListenerPortNonTls?: pulumi.Input<number>;
+    scanListenerPortNonTls?: pulumi.Input<number | undefined>;
     /**
      * The SCAN Listener TLS port number. Default value is 2484.
      */
-    scanListenerPortTls?: pulumi.Input<number>;
+    scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
-    totalContainerDatabases?: pulumi.Input<number>;
+    totalContainerDatabases?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      *

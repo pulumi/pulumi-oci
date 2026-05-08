@@ -247,7 +247,7 @@ def get_security_assessment_template_baseline_comparison(category: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_baseline_comparison = oci.DataSafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_template_baseline_comparison = oci.datasafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"],
         category=security_assessment_template_baseline_comparison_category,
         finding_key=security_assessment_template_baseline_comparison_finding_key,
@@ -288,11 +288,11 @@ def get_security_assessment_template_baseline_comparison(category: Optional[_bui
         template_baseline_name=pulumi.get(__ret__, 'template_baseline_name'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_accounts=pulumi.get(__ret__, 'user_accounts'))
-def get_security_assessment_template_baseline_comparison_output(category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                finding_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_template_baseline_comparison_output(category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                finding_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentTemplateBaselineComparisonResult]:
     """
     This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -305,7 +305,7 @@ def get_security_assessment_template_baseline_comparison_output(category: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_baseline_comparison = oci.DataSafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_template_baseline_comparison = oci.datasafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"],
         category=security_assessment_template_baseline_comparison_category,
         finding_key=security_assessment_template_baseline_comparison_finding_key,

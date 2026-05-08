@@ -93,7 +93,7 @@ def get_file_storage_available_override_maintenance_start_times(date: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_available_override_maintenance_start_times = oci.Lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
+    test_available_override_maintenance_start_times = oci.lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
         date=available_override_maintenance_start_time_date)
     ```
 
@@ -113,9 +113,9 @@ def get_file_storage_available_override_maintenance_start_times(date: Optional[_
         date=pulumi.get(__ret__, 'date'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_file_storage_available_override_maintenance_start_times_output(date: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict']]]]] = None,
-                                                                       id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_file_storage_available_override_maintenance_start_times_output(date: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict']]]]] = None,
+                                                                       id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageAvailableOverrideMaintenanceStartTimesResult]:
     """
     This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -128,7 +128,7 @@ def get_file_storage_available_override_maintenance_start_times_output(date: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_available_override_maintenance_start_times = oci.Lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
+    test_available_override_maintenance_start_times = oci.lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
         date=available_override_maintenance_start_time_date)
     ```
 

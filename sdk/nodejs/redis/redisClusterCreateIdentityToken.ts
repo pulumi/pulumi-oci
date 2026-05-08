@@ -126,20 +126,20 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
  * Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
  */
 export interface RedisClusterCreateIdentityTokenState {
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Generated Identity token
      */
-    identityToken?: pulumi.Input<string>;
+    identityToken?: pulumi.Input<string | undefined>;
     /**
      * User public key pair
      */
-    publicKey?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
-    redisClusterId?: pulumi.Input<string>;
+    redisClusterId?: pulumi.Input<string | undefined>;
     /**
      * Redis User generating identity token.
      *
@@ -147,15 +147,15 @@ export interface RedisClusterCreateIdentityTokenState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    redisUser?: pulumi.Input<string>;
+    redisUser?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a RedisClusterCreateIdentityToken resource.
  */
 export interface RedisClusterCreateIdentityTokenArgs {
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * User public key pair
      */

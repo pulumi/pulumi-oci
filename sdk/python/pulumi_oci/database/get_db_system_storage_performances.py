@@ -128,7 +128,7 @@ def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+    test_db_system_storage_performances = oci.database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type,
         database_edition=db_system_storage_performance_database_edition,
         compartment_id=compartment_id)
@@ -164,11 +164,11 @@ def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] =
         id=pulumi.get(__ret__, 'id'),
         shape_type=pulumi.get(__ret__, 'shape_type'),
         storage_management=pulumi.get(__ret__, 'storage_management'))
-def get_db_system_storage_performances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              database_edition: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
-                                              shape_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              storage_management: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_system_storage_performances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              database_edition: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
+                                              shape_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              storage_management: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:
     """
     This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
@@ -181,7 +181,7 @@ def get_db_system_storage_performances_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+    test_db_system_storage_performances = oci.database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type,
         database_edition=db_system_storage_performance_database_edition,
         compartment_id=compartment_id)

@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         targetType: alarmSuppressionAlarmSuppressionTargetTargetType,
  *         alarmId: testAlarm.id,
  *         compartmentId: compartmentId,
- *         compartmentIdInSubtree: alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree,
+ *         compartmentIdInSubtree: alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree === "true",
  *     },
  *     displayName: alarmSuppressionDisplayName,
  *     timeSuppressFrom: alarmSuppressionTimeSuppressFrom,
@@ -230,15 +230,15 @@ export interface AlarmSuppressionState {
     /**
      * The target of the alarm suppression.
      */
-    alarmSuppressionTarget?: pulumi.Input<inputs.Monitoring.AlarmSuppressionAlarmSuppressionTarget>;
+    alarmSuppressionTarget?: pulumi.Input<inputs.Monitoring.AlarmSuppressionAlarmSuppressionTarget | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -246,43 +246,43 @@ export interface AlarmSuppressionState {
      *
      * Example: `Planned outage due to change IT-1234.`
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
      * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
      *
      * Defaut: `DIMENSION`
      */
-    level?: pulumi.Input<string>;
+    level?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
      */
-    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[]>;
+    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[] | undefined>;
     /**
      * The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */
-    timeSuppressFrom?: pulumi.Input<string>;
+    timeSuppressFrom?: pulumi.Input<string | undefined>;
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
      *
@@ -290,11 +290,11 @@ export interface AlarmSuppressionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeSuppressUntil?: pulumi.Input<string>;
+    timeSuppressUntil?: pulumi.Input<string | undefined>;
     /**
      * The date and time the alarm suppression was last updated (deleted). Format defined by RFC3339.  Example: `2018-02-03T01:02:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,7 +308,7 @@ export interface AlarmSuppressionArgs {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -316,13 +316,13 @@ export interface AlarmSuppressionArgs {
      *
      * Example: `Planned outage due to change IT-1234.`
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
      * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -330,17 +330,17 @@ export interface AlarmSuppressionArgs {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
      *
      * Defaut: `DIMENSION`
      */
-    level?: pulumi.Input<string>;
+    level?: pulumi.Input<string | undefined>;
     /**
      * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
      */
-    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[]>;
+    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[] | undefined>;
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */

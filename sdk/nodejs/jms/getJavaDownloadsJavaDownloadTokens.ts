@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadTokens = oci.Jms.getJavaDownloadsJavaDownloadTokens({
+ * const testJavaDownloadTokens = oci.jms.getJavaDownloadsJavaDownloadTokens({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadTokenDisplayName,
  *     familyVersion: javaDownloadTokenFamilyVersion,
@@ -120,7 +120,7 @@ export interface GetJavaDownloadsJavaDownloadTokensResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadTokens = oci.Jms.getJavaDownloadsJavaDownloadTokens({
+ * const testJavaDownloadTokens = oci.jms.getJavaDownloadsJavaDownloadTokens({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadTokenDisplayName,
  *     familyVersion: javaDownloadTokenFamilyVersion,
@@ -156,26 +156,26 @@ export interface GetJavaDownloadsJavaDownloadTokensOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique Java family version identifier.
      */
-    familyVersion?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadTokensFilterArgs>[]>;
+    familyVersion?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaDownloadTokensFilterArgs>[] | undefined>;
     /**
      * Unique JavaDownloadToken identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
      */
-    searchByUser?: pulumi.Input<string>;
+    searchByUser?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Unique JavaDownloadToken value.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }

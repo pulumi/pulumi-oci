@@ -543,7 +543,7 @@ def get_database_insight(database_insight_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
+    test_database_insight = oci.opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
 
 
@@ -597,7 +597,7 @@ def get_database_insight(database_insight_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_database_insight_output(database_insight_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_insight_output(database_insight_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseInsightResult]:
     """
     This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -610,7 +610,7 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
+    test_database_insight = oci.opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktops = oci.Desktops.getDesktops({
+ * const testDesktops = oci.desktops.getDesktops({
  *     compartmentId: compartmentId,
  *     availabilityDomain: desktopAvailabilityDomain,
  *     desktopPoolId: testDesktopPool.id,
@@ -107,7 +107,7 @@ export interface GetDesktopsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktops = oci.Desktops.getDesktops({
+ * const testDesktops = oci.desktops.getDesktops({
  *     compartmentId: compartmentId,
  *     availabilityDomain: desktopAvailabilityDomain,
  *     desktopPoolId: testDesktopPool.id,
@@ -137,7 +137,7 @@ export interface GetDesktopsOutputArgs {
     /**
      * The name of the availability domain.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment of the desktop pool.
      */
@@ -145,18 +145,18 @@ export interface GetDesktopsOutputArgs {
     /**
      * The OCID of the desktop pool.
      */
-    desktopPoolId?: pulumi.Input<string>;
+    desktopPoolId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only results with the given displayName.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Desktops.GetDesktopsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Desktops.GetDesktopsFilterArgs>[] | undefined>;
     /**
      * A filter to return only results with the given OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only results with the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

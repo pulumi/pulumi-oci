@@ -153,11 +153,11 @@ def get_api_platform_api_platform_instances(compartment_id: Optional[_builtins.s
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_api_platform_api_platform_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiPlatformApiPlatformInstancesFilterArgs', 'GetApiPlatformApiPlatformInstancesFilterArgsDict']]]]] = None,
-                                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_api_platform_api_platform_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiPlatformApiPlatformInstancesFilterArgs', 'GetApiPlatformApiPlatformInstancesFilterArgsDict']]]]] = None,
+                                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiPlatformApiPlatformInstancesResult]:
     """
     This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.

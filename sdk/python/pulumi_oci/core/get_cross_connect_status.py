@@ -127,7 +127,7 @@ def get_cross_connect_status(cross_connect_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
+    test_cross_connect_status = oci.core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
     ```
 
 
@@ -145,7 +145,7 @@ def get_cross_connect_status(cross_connect_id: Optional[_builtins.str] = None,
         interface_state=pulumi.get(__ret__, 'interface_state'),
         light_level_ind_bm=pulumi.get(__ret__, 'light_level_ind_bm'),
         light_level_indicator=pulumi.get(__ret__, 'light_level_indicator'))
-def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cross_connect_status_output(cross_connect_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectStatusResult]:
     """
     This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
@@ -158,7 +158,7 @@ def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
+    test_cross_connect_status = oci.core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
     ```
 
 

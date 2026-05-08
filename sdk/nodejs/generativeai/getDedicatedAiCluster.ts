@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedAiCluster = oci.GenerativeAi.getDedicatedAiCluster({
+ * const testDedicatedAiCluster = oci.generativeai.getDedicatedAiCluster({
  *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```
@@ -113,7 +113,7 @@ export interface GetDedicatedAiClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedAiCluster = oci.GenerativeAi.getDedicatedAiCluster({
+ * const testDedicatedAiCluster = oci.generativeai.getDedicatedAiCluster({
  *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```

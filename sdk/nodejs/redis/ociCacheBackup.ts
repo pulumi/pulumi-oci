@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionPeriodInDays: ociCacheBackupRetentionPeriodInDays,
+ *     retentionPeriodInDays: Number(ociCacheBackupRetentionPeriodInDays),
  * });
  * ```
  *
@@ -226,39 +226,39 @@ export interface OciCacheBackupState {
     /**
      * Backup size in GB.
      */
-    backupSizeInGbs?: pulumi.Input<number>;
+    backupSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether the backup was created from a replica or primary node
      */
-    backupSource?: pulumi.Input<string>;
+    backupSource?: pulumi.Input<string | undefined>;
     /**
      * Backup Type.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * The amount of memory allocated to the cluster, in gigabytes.
      */
-    clusterMemoryInGbs?: pulumi.Input<number>;
+    clusterMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
-    clusterMode?: pulumi.Input<string>;
+    clusterMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Backup description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Backup display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
      *
@@ -266,43 +266,43 @@ export interface OciCacheBackupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    exportToObjectStorageTrigger?: pulumi.Input<number>;
+    exportToObjectStorageTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Backup retention period in days.
      */
-    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
      */
-    shardCount?: pulumi.Input<number>;
+    shardCount?: pulumi.Input<number | undefined>;
     /**
      * The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
-    softwareVersion?: pulumi.Input<string>;
+    softwareVersion?: pulumi.Input<string | undefined>;
     /**
      * Oracle Cloud Infrastructure Cache cluster identifier
      */
-    sourceClusterId?: pulumi.Input<string>;
+    sourceClusterId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -312,7 +312,7 @@ export interface OciCacheBackupArgs {
     /**
      * Specifies whether the backup was created from a replica or primary node
      */
-    backupSource?: pulumi.Input<string>;
+    backupSource?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment identifier
      */
@@ -320,11 +320,11 @@ export interface OciCacheBackupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Backup description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Backup display name.
      */
@@ -336,15 +336,15 @@ export interface OciCacheBackupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    exportToObjectStorageTrigger?: pulumi.Input<number>;
+    exportToObjectStorageTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Backup retention period in days.
      */
-    retentionPeriodInDays?: pulumi.Input<number>;
+    retentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * Oracle Cloud Infrastructure Cache cluster identifier
      */

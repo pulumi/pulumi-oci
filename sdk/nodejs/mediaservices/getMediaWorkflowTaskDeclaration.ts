@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowTaskDeclaration = oci.MediaServices.getMediaWorkflowTaskDeclaration({
+ * const testMediaWorkflowTaskDeclaration = oci.mediaservices.getMediaWorkflowTaskDeclaration({
  *     compartmentId: compartmentId,
- *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent,
+ *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent === "true",
  *     name: mediaWorkflowTaskDeclarationName,
- *     version: mediaWorkflowTaskDeclarationVersion,
+ *     version: Number(mediaWorkflowTaskDeclarationVersion),
  * });
  * ```
  */
@@ -92,11 +92,11 @@ export interface GetMediaWorkflowTaskDeclarationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowTaskDeclaration = oci.MediaServices.getMediaWorkflowTaskDeclaration({
+ * const testMediaWorkflowTaskDeclaration = oci.mediaservices.getMediaWorkflowTaskDeclaration({
  *     compartmentId: compartmentId,
- *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent,
+ *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent === "true",
  *     name: mediaWorkflowTaskDeclarationName,
- *     version: mediaWorkflowTaskDeclarationVersion,
+ *     version: Number(mediaWorkflowTaskDeclarationVersion),
  * });
  * ```
  */
@@ -118,17 +118,17 @@ export interface GetMediaWorkflowTaskDeclarationOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only select the newest version for each MediaWorkflowTaskDeclaration name.
      */
-    isCurrent?: pulumi.Input<boolean>;
+    isCurrent?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only the resources with their system defined, unique name matching the given name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to select MediaWorkflowTaskDeclaration by version.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }

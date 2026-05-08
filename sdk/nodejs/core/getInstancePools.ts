@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePools = oci.Core.getInstancePools({
+ * const testInstancePools = oci.core.getInstancePools({
  *     compartmentId: compartmentId,
  *     displayName: instancePoolDisplayName,
  *     state: instancePoolState,
@@ -90,7 +90,7 @@ export interface GetInstancePoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePools = oci.Core.getInstancePools({
+ * const testInstancePools = oci.core.getInstancePools({
  *     compartmentId: compartmentId,
  *     displayName: instancePoolDisplayName,
  *     state: instancePoolState,
@@ -118,10 +118,10 @@ export interface GetInstancePoolsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstancePoolsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstancePoolsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

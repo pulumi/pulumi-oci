@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiDeploymentSpecification = oci.ApiGateway.getApiDeploymentSpecification({
+ * const testApiDeploymentSpecification = oci.apigateway.getApiDeploymentSpecification({
  *     apiId: testApi.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetApiDeploymentSpecificationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiDeploymentSpecification = oci.ApiGateway.getApiDeploymentSpecification({
+ * const testApiDeploymentSpecification = oci.apigateway.getApiDeploymentSpecification({
  *     apiId: testApi.id,
  * });
  * ```

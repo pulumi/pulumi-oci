@@ -173,7 +173,7 @@ def get_domains_account_recovery_settings(attribute_sets: Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
+    test_account_recovery_settings = oci.identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=account_recovery_setting_authorization,
@@ -210,12 +210,12 @@ def get_domains_account_recovery_settings(attribute_sets: Optional[Sequence[_bui
         schemas=pulumi.get(__ret__, 'schemas'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_account_recovery_settings_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                 attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_account_recovery_settings_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                 attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAccountRecoverySettingsResult]:
     """
     This data source provides the list of Account Recovery Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -228,7 +228,7 @@ def get_domains_account_recovery_settings_output(attribute_sets: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
+    test_account_recovery_settings = oci.identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=account_recovery_setting_authorization,

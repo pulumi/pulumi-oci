@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlans = oci.DisasterRecovery.getDrPlans({
+ * const testDrPlans = oci.disasterrecovery.getDrPlans({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanDisplayName,
  *     drPlanId: testDrPlan.id,
@@ -114,7 +114,7 @@ export interface GetDrPlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlans = oci.DisasterRecovery.getDrPlans({
+ * const testDrPlans = oci.disasterrecovery.getDrPlans({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanDisplayName,
  *     drPlanId: testDrPlan.id,
@@ -144,26 +144,26 @@ export interface GetDrPlansOutputArgs {
     /**
      * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    drPlanId?: pulumi.Input<string>;
+    drPlanId?: pulumi.Input<string | undefined>;
     /**
      * The DR plan type.
      */
-    drPlanType?: pulumi.Input<string>;
+    drPlanType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlansFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlansFilterArgs>[] | undefined>;
     /**
      * A filter to return only DR plans that match the given lifecycle sub-state.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only DR plans that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

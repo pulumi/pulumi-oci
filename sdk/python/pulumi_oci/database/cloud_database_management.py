@@ -27,10 +27,10 @@ class CloudDatabaseManagementArgs:
                  management_type: pulumi.Input[_builtins.str],
                  private_end_point_id: pulumi.Input[_builtins.str],
                  service_name: pulumi.Input[_builtins.str],
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudDatabaseManagement resource.
 
@@ -142,66 +142,66 @@ class CloudDatabaseManagementArgs:
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used by the database connection.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user that will be connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
 
 @pulumi.input_type
 class _CloudDatabaseManagementState:
     def __init__(__self__, *,
-                 credentialdetails: Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentialdetails: pulumi.Input[Optional['CloudDatabaseManagementCredentialdetailsArgs']] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDatabaseManagement resources.
 
@@ -244,28 +244,28 @@ class _CloudDatabaseManagementState:
 
     @_builtins.property
     @pulumi.getter
-    def credentialdetails(self) -> Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']]:
+    def credentialdetails(self) -> pulumi.Input[Optional['CloudDatabaseManagementCredentialdetailsArgs']]:
         return pulumi.get(self, "credentialdetails")
 
     @credentialdetails.setter
-    def credentialdetails(self, value: Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']]):
+    def credentialdetails(self, value: pulumi.Input[Optional['CloudDatabaseManagementCredentialdetailsArgs']]):
         pulumi.set(self, "credentialdetails", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableManagement")
-    def enable_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Use this flag to enable/disable database management
 
@@ -275,12 +275,12 @@ class _CloudDatabaseManagementState:
         return pulumi.get(self, "enable_management")
 
     @enable_management.setter
-    def enable_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_management", value)
 
     @_builtins.property
     @pulumi.getter(name="managementType")
-    def management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies database management type
         enum:
@@ -290,79 +290,79 @@ class _CloudDatabaseManagementState:
         return pulumi.get(self, "management_type")
 
     @management_type.setter
-    def management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used by the database connection.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user that will be connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Oracle Database service that will be used to connect to the database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
 
@@ -372,16 +372,16 @@ class CloudDatabaseManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentialdetails: Optional[pulumi.Input[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 credentialdetails: pulumi.Input[Optional[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -407,8 +407,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 "user_name": database_cloud_database_management_details_user_name,
                 "password_secret_id": database_cloud_database_management_details_password_secret_id,
             },
-            enable_management=database_cloud_database_management_details_enable_management,
-            port=cloud_database_management_port,
+            enable_management=database_cloud_database_management_details_enable_management == "true",
+            port=int(cloud_database_management_port),
             protocol=cloud_database_management_protocol,
             role=cloud_database_management_role,
             ssl_secret_id=test_secret["id"])
@@ -467,8 +467,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 "user_name": database_cloud_database_management_details_user_name,
                 "password_secret_id": database_cloud_database_management_details_password_secret_id,
             },
-            enable_management=database_cloud_database_management_details_enable_management,
-            port=cloud_database_management_port,
+            enable_management=database_cloud_database_management_details_enable_management == "true",
+            port=int(cloud_database_management_port),
             protocol=cloud_database_management_protocol,
             role=cloud_database_management_role,
             ssl_secret_id=test_secret["id"])
@@ -494,16 +494,16 @@ class CloudDatabaseManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentialdetails: Optional[pulumi.Input[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 credentialdetails: pulumi.Input[Optional[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -545,16 +545,16 @@ class CloudDatabaseManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            credentialdetails: Optional[pulumi.Input[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            management_type: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudDatabaseManagement':
+            credentialdetails: pulumi.Input[Optional[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict']]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_type: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudDatabaseManagement':
         """
         Get an existing CloudDatabaseManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

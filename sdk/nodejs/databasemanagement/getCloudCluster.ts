@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudCluster = oci.DatabaseManagement.getCloudCluster({
+ * const testCloudCluster = oci.databasemanagement.getCloudCluster({
  *     cloudClusterId: testCloudClusterOciDatabaseManagementCloudCluster.id,
  * });
  * ```
@@ -144,7 +144,7 @@ export interface GetCloudClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudCluster = oci.DatabaseManagement.getCloudCluster({
+ * const testCloudCluster = oci.databasemanagement.getCloudCluster({
  *     cloudClusterId: testCloudClusterOciDatabaseManagementCloudCluster.id,
  * });
  * ```

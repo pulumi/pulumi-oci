@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHost = oci.Core.getComputeHost({
+ * const testComputeHost = oci.core.getComputeHost({
  *     computeHostId: testComputeHostOciCoreComputeHost.id,
  * });
  * ```
@@ -168,7 +168,7 @@ export interface GetComputeHostResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHost = oci.Core.getComputeHost({
+ * const testComputeHost = oci.core.getComputeHost({
  *     computeHostId: testComputeHostOciCoreComputeHost.id,
  * });
  * ```

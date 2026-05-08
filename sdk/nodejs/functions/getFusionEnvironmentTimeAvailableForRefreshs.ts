@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentTimeAvailableForRefreshs = oci.Functions.getFusionEnvironmentTimeAvailableForRefreshs({
+ * const testFusionEnvironmentTimeAvailableForRefreshs = oci.functions.getFusionEnvironmentTimeAvailableForRefreshs({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentTimeAvailableForRefreshs = oci.Functions.getFusionEnvironmentTimeAvailableForRefreshs({
+ * const testFusionEnvironmentTimeAvailableForRefreshs = oci.functions.getFusionEnvironmentTimeAvailableForRefreshs({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getFusionEnvironmentTimeAvailableForRefreshsOutput(args: GetFusi
  * A collection of arguments for invoking getFusionEnvironmentTimeAvailableForRefreshs.
  */
 export interface GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */

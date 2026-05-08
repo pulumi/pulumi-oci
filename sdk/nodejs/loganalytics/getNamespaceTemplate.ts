@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceTemplate = oci.LogAnalytics.getNamespaceTemplate({
+ * const testNamespaceTemplate = oci.loganalytics.getNamespaceTemplate({
  *     namespace: namespaceTemplateNamespace,
  *     templateId: testTemplate.id,
  * });
@@ -131,7 +131,7 @@ export interface GetNamespaceTemplateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceTemplate = oci.LogAnalytics.getNamespaceTemplate({
+ * const testNamespaceTemplate = oci.loganalytics.getNamespaceTemplate({
  *     namespace: namespaceTemplateNamespace,
  *     templateId: testTemplate.id,
  * });

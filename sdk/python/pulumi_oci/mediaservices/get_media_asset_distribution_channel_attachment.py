@@ -189,10 +189,10 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
         metadata_ref=pulumi.get(__ret__, 'metadata_ref'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-def get_media_asset_distribution_channel_attachment_output(distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                           is_lock_override: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                           locks: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']]]]] = None,
-                                                           media_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_media_asset_distribution_channel_attachment_output(distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                           is_lock_override: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                           locks: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']]]]] = None,
+                                                           media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaAssetDistributionChannelAttachmentResult]:
     """
     This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.

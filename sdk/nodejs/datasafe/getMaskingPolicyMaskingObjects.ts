@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
+ * const testMaskingPolicyMaskingObjects = oci.datasafe.getMaskingPolicyMaskingObjects({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     objects: maskingPolicyMaskingObjectObject,
  *     objectTypes: maskingPolicyMaskingObjectObjectType,
@@ -97,7 +97,7 @@ export interface GetMaskingPolicyMaskingObjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
+ * const testMaskingPolicyMaskingObjects = oci.datasafe.getMaskingPolicyMaskingObjects({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     objects: maskingPolicyMaskingObjectObject,
  *     objectTypes: maskingPolicyMaskingObjectObjectType,
@@ -120,7 +120,7 @@ export function getMaskingPolicyMaskingObjectsOutput(args: GetMaskingPolicyMaski
  * A collection of arguments for invoking getMaskingPolicyMaskingObjects.
  */
 export interface GetMaskingPolicyMaskingObjectsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyMaskingObjectsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyMaskingObjectsFilterArgs>[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
@@ -128,13 +128,13 @@ export interface GetMaskingPolicyMaskingObjectsOutputArgs {
     /**
      * A filter to return only items related to a specific object type.
      */
-    objectTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    objectTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

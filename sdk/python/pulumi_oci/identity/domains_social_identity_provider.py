@@ -30,32 +30,32 @@ class DomainsSocialIdentityProviderArgs:
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  service_provider_name: pulumi.Input[_builtins.str],
                  show_on_login: pulumi.Input[_builtins.bool],
-                 access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 authz_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_credential_in_payload: Optional[pulumi.Input[_builtins.bool]] = None,
-                 clock_skew_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 jit_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]] = None,
-                 jit_prov_group_static_list_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 relay_idp_param_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 social_jit_provisioning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]] = None):
+                 access_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 apple_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 authz_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_redirect_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_credential_in_payload: pulumi.Input[Optional[_builtins.bool]] = None,
+                 clock_skew_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]] = None,
+                 jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsSocialIdentityProvider resource.
 
@@ -692,7 +692,7 @@ class DomainsSocialIdentityProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTokenUrl")
-    def access_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Access token URL
 
@@ -709,12 +709,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "access_token_url")
 
     @access_token_url.setter
-    def access_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="adminScopes")
-    def admin_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def admin_scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Admin scope to request
 
@@ -731,12 +731,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "admin_scopes")
 
     @admin_scopes.setter
-    def admin_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def admin_scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "admin_scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="appleDevId")
-    def apple_dev_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apple_dev_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Apple Developer ID
 
@@ -755,12 +755,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "apple_dev_id")
 
     @apple_dev_id.setter
-    def apple_dev_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apple_dev_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apple_dev_id", value)
 
     @_builtins.property
     @pulumi.getter(name="appleKeyId")
-    def apple_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apple_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Apple Private Key ID
 
@@ -779,24 +779,24 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "apple_key_id")
 
     @apple_key_id.setter
-    def apple_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apple_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apple_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="authzUrl")
-    def authz_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authz_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Authorization URL
 
@@ -813,12 +813,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "authz_url")
 
     @authz_url.setter
-    def authz_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authz_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authz_url", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRedirectEnabled")
-    def auto_redirect_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_redirect_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
 
@@ -837,12 +837,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "auto_redirect_enabled")
 
     @auto_redirect_enabled.setter
-    def auto_redirect_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_redirect_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_redirect_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="clientCredentialInPayload")
-    def client_credential_in_payload(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def client_credential_in_payload(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the client credential is contained in payload
 
@@ -861,12 +861,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "client_credential_in_payload")
 
     @client_credential_in_payload.setter
-    def client_credential_in_payload(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def client_credential_in_payload(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "client_credential_in_payload", value)
 
     @_builtins.property
     @pulumi.getter(name="clockSkewInSeconds")
-    def clock_skew_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clock_skew_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Social IDP allowed clock skew time
 
@@ -882,12 +882,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "clock_skew_in_seconds")
 
     @clock_skew_in_seconds.setter
-    def clock_skew_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clock_skew_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clock_skew_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP description
 
@@ -904,12 +904,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryUrl")
-    def discovery_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Discovery URL
 
@@ -928,12 +928,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "discovery_url")
 
     @discovery_url.setter
-    def discovery_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iconUrl")
-    def icon_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) ICON URL for social idp
 
@@ -952,12 +952,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "icon_url")
 
     @icon_url.setter
-    def icon_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idAttribute")
-    def id_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id attribute used for account linking
 
@@ -974,12 +974,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "id_attribute")
 
     @id_attribute.setter
-    def id_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="jitProvAssignedGroups")
-    def jit_prov_assigned_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]:
+    def jit_prov_assigned_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]:
         """
         (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
 
@@ -998,12 +998,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "jit_prov_assigned_groups")
 
     @jit_prov_assigned_groups.setter
-    def jit_prov_assigned_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]):
+    def jit_prov_assigned_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]):
         pulumi.set(self, "jit_prov_assigned_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="jitProvGroupStaticListEnabled")
-    def jit_prov_group_static_list_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def jit_prov_group_static_list_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
 
@@ -1022,12 +1022,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "jit_prov_group_static_list_enabled")
 
     @jit_prov_group_static_list_enabled.setter
-    def jit_prov_group_static_list_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def jit_prov_group_static_list_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "jit_prov_group_static_list_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social provider name
 
@@ -1044,12 +1044,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1066,12 +1066,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP User profile URL
 
@@ -1088,12 +1088,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
-    def profile_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_url", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUrl")
-    def redirect_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redirect_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) redirect URL for social idp
 
@@ -1110,12 +1110,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "redirect_url")
 
     @redirect_url.setter
-    def redirect_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redirect_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redirect_url", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTokenUrl")
-    def refresh_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Refresh token URL
 
@@ -1134,12 +1134,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "refresh_token_url")
 
     @refresh_token_url.setter
-    def refresh_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="relayIdpParamMappings")
-    def relay_idp_param_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]:
+    def relay_idp_param_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]:
         """
         (Updatable) Relay Param variable for Social IDP
 
@@ -1158,24 +1158,24 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "relay_idp_param_mappings")
 
     @relay_idp_param_mappings.setter
-    def relay_idp_param_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]):
+    def relay_idp_param_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]):
         pulumi.set(self, "relay_idp_param_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Scope to request
 
@@ -1192,12 +1192,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="socialJitProvisioningEnabled")
-    def social_jit_provisioning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def social_jit_provisioning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether Social JIT Provisioning is enabled
 
@@ -1216,12 +1216,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "social_jit_provisioning_enabled")
 
     @social_jit_provisioning_enabled.setter
-    def social_jit_provisioning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def social_jit_provisioning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "social_jit_provisioning_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status
 
@@ -1240,12 +1240,12 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1262,57 +1262,57 @@ class DomainsSocialIdentityProviderArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _DomainsSocialIdentityProviderState:
     def __init__(__self__, *,
-                 access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 authz_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_credential_in_payload: Optional[pulumi.Input[_builtins.bool]] = None,
-                 clock_skew_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 jit_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]] = None,
-                 jit_prov_group_static_list_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 registration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 relay_idp_param_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_provider_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_on_login: Optional[pulumi.Input[_builtins.bool]] = None,
-                 social_jit_provisioning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_linking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 apple_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 authz_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_redirect_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_credential_in_payload: pulumi.Input[Optional[_builtins.bool]] = None,
+                 clock_skew_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]] = None,
+                 jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_provider_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
+                 social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsSocialIdentityProvider resources.
 
@@ -1885,7 +1885,7 @@ class _DomainsSocialIdentityProviderState:
 
     @_builtins.property
     @pulumi.getter(name="accessTokenUrl")
-    def access_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Access token URL
 
@@ -1902,12 +1902,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "access_token_url")
 
     @access_token_url.setter
-    def access_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="accountLinkingEnabled")
-    def account_linking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_linking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether account linking is enabled
 
@@ -1924,12 +1924,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "account_linking_enabled")
 
     @account_linking_enabled.setter
-    def account_linking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_linking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_linking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="adminScopes")
-    def admin_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def admin_scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Admin scope to request
 
@@ -1946,12 +1946,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "admin_scopes")
 
     @admin_scopes.setter
-    def admin_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def admin_scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "admin_scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="appleDevId")
-    def apple_dev_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apple_dev_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Apple Developer ID
 
@@ -1970,12 +1970,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "apple_dev_id")
 
     @apple_dev_id.setter
-    def apple_dev_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apple_dev_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apple_dev_id", value)
 
     @_builtins.property
     @pulumi.getter(name="appleKeyId")
-    def apple_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apple_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Apple Private Key ID
 
@@ -1994,24 +1994,24 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "apple_key_id")
 
     @apple_key_id.setter
-    def apple_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apple_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apple_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="authzUrl")
-    def authz_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authz_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Authorization URL
 
@@ -2028,12 +2028,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "authz_url")
 
     @authz_url.setter
-    def authz_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authz_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authz_url", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRedirectEnabled")
-    def auto_redirect_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_redirect_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
 
@@ -2052,12 +2052,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "auto_redirect_enabled")
 
     @auto_redirect_enabled.setter
-    def auto_redirect_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_redirect_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_redirect_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="clientCredentialInPayload")
-    def client_credential_in_payload(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def client_credential_in_payload(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the client credential is contained in payload
 
@@ -2076,12 +2076,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "client_credential_in_payload")
 
     @client_credential_in_payload.setter
-    def client_credential_in_payload(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def client_credential_in_payload(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "client_credential_in_payload", value)
 
     @_builtins.property
     @pulumi.getter(name="clockSkewInSeconds")
-    def clock_skew_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clock_skew_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Social IDP allowed clock skew time
 
@@ -2097,12 +2097,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "clock_skew_in_seconds")
 
     @clock_skew_in_seconds.setter
-    def clock_skew_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clock_skew_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clock_skew_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -2119,12 +2119,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="consumerKey")
-    def consumer_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumer_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Client Application Client ID
 
@@ -2141,12 +2141,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "consumer_key")
 
     @consumer_key.setter
-    def consumer_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumer_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumer_key", value)
 
     @_builtins.property
     @pulumi.getter(name="consumerSecret")
-    def consumer_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumer_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Client Application Client Secret
 
@@ -2164,12 +2164,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "consumer_secret")
 
     @consumer_secret.setter
-    def consumer_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumer_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumer_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -2186,12 +2186,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP description
 
@@ -2208,12 +2208,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryUrl")
-    def discovery_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Discovery URL
 
@@ -2232,12 +2232,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "discovery_url")
 
     @discovery_url.setter
-    def discovery_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_url", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -2254,12 +2254,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the IDP is enabled or not
 
@@ -2276,12 +2276,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="iconUrl")
-    def icon_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) ICON URL for social idp
 
@@ -2300,12 +2300,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "icon_url")
 
     @icon_url.setter
-    def icon_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idAttribute")
-    def id_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id attribute used for account linking
 
@@ -2322,12 +2322,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "id_attribute")
 
     @id_attribute.setter
-    def id_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -2342,24 +2342,24 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -2374,12 +2374,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -2396,12 +2396,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -2417,12 +2417,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="jitProvAssignedGroups")
-    def jit_prov_assigned_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]:
+    def jit_prov_assigned_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]:
         """
         (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
 
@@ -2441,12 +2441,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "jit_prov_assigned_groups")
 
     @jit_prov_assigned_groups.setter
-    def jit_prov_assigned_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]):
+    def jit_prov_assigned_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderJitProvAssignedGroupArgs']]]]):
         pulumi.set(self, "jit_prov_assigned_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="jitProvGroupStaticListEnabled")
-    def jit_prov_group_static_list_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def jit_prov_group_static_list_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
 
@@ -2465,12 +2465,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "jit_prov_group_static_list_enabled")
 
     @jit_prov_group_static_list_enabled.setter
-    def jit_prov_group_static_list_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def jit_prov_group_static_list_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "jit_prov_group_static_list_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -2487,12 +2487,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social provider name
 
@@ -2509,12 +2509,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -2531,12 +2531,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP User profile URL
 
@@ -2553,12 +2553,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
-    def profile_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_url", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUrl")
-    def redirect_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redirect_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) redirect URL for social idp
 
@@ -2575,12 +2575,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "redirect_url")
 
     @redirect_url.setter
-    def redirect_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redirect_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redirect_url", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTokenUrl")
-    def refresh_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Social IDP Refresh token URL
 
@@ -2599,12 +2599,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "refresh_token_url")
 
     @refresh_token_url.setter
-    def refresh_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="registrationEnabled")
-    def registration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def registration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether registration is enabled
 
@@ -2621,12 +2621,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "registration_enabled")
 
     @registration_enabled.setter
-    def registration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def registration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "registration_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="relayIdpParamMappings")
-    def relay_idp_param_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]:
+    def relay_idp_param_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]:
         """
         (Updatable) Relay Param variable for Social IDP
 
@@ -2645,24 +2645,24 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "relay_idp_param_mappings")
 
     @relay_idp_param_mappings.setter
-    def relay_idp_param_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]):
+    def relay_idp_param_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderRelayIdpParamMappingArgs']]]]):
         pulumi.set(self, "relay_idp_param_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -2679,12 +2679,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Scope to request
 
@@ -2701,12 +2701,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceProviderName")
-    def service_provider_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_provider_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service Provider Name
 
@@ -2723,12 +2723,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "service_provider_name")
 
     @service_provider_name.setter
-    def service_provider_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_provider_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_provider_name", value)
 
     @_builtins.property
     @pulumi.getter(name="showOnLogin")
-    def show_on_login(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def show_on_login(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether show on login
 
@@ -2745,12 +2745,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "show_on_login")
 
     @show_on_login.setter
-    def show_on_login(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def show_on_login(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "show_on_login", value)
 
     @_builtins.property
     @pulumi.getter(name="socialJitProvisioningEnabled")
-    def social_jit_provisioning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def social_jit_provisioning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether Social JIT Provisioning is enabled
 
@@ -2769,12 +2769,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "social_jit_provisioning_enabled")
 
     @social_jit_provisioning_enabled.setter
-    def social_jit_provisioning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def social_jit_provisioning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "social_jit_provisioning_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status
 
@@ -2793,12 +2793,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -2815,12 +2815,12 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -2841,7 +2841,7 @@ class _DomainsSocialIdentityProviderState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
 
@@ -2851,41 +2851,41 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 authz_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_credential_in_payload: Optional[pulumi.Input[_builtins.bool]] = None,
-                 clock_skew_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 consumer_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 jit_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
-                 jit_prov_group_static_list_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 registration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 relay_idp_param_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_provider_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_on_login: Optional[pulumi.Input[_builtins.bool]] = None,
-                 social_jit_provisioning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+                 access_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_linking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 apple_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 authz_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_redirect_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_credential_in_payload: pulumi.Input[Optional[_builtins.bool]] = None,
+                 clock_skew_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 consumer_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+                 jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_provider_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
+                 social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2902,25 +2902,25 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_social_identity_provider = oci.identity.DomainsSocialIdentityProvider("test_social_identity_provider",
-            account_linking_enabled=social_identity_provider_account_linking_enabled,
+            account_linking_enabled=social_identity_provider_account_linking_enabled == "true",
             consumer_key=social_identity_provider_consumer_key,
             consumer_secret=social_identity_provider_consumer_secret,
-            enabled=social_identity_provider_enabled,
+            enabled=social_identity_provider_enabled == "true",
             idcs_endpoint=test_domain["url"],
             name=social_identity_provider_name,
-            registration_enabled=social_identity_provider_registration_enabled,
+            registration_enabled=social_identity_provider_registration_enabled == "true",
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SocialIdentityProvider"],
             service_provider_name=social_identity_provider_service_provider_name,
-            show_on_login=social_identity_provider_show_on_login,
+            show_on_login=social_identity_provider_show_on_login == "true",
             access_token_url=social_identity_provider_access_token_url,
             admin_scopes=social_identity_provider_admin_scope,
             apple_dev_id=test_apple_dev["id"],
             apple_key_id=test_key["id"],
             authorization=social_identity_provider_authorization,
             authz_url=social_identity_provider_authz_url,
-            auto_redirect_enabled=social_identity_provider_auto_redirect_enabled,
-            client_credential_in_payload=social_identity_provider_client_credential_in_payload,
-            clock_skew_in_seconds=social_identity_provider_clock_skew_in_seconds,
+            auto_redirect_enabled=social_identity_provider_auto_redirect_enabled == "true",
+            client_credential_in_payload=social_identity_provider_client_credential_in_payload == "true",
+            clock_skew_in_seconds=int(social_identity_provider_clock_skew_in_seconds),
             description=social_identity_provider_description,
             discovery_url=social_identity_provider_discovery_url,
             icon_url=social_identity_provider_icon_url,
@@ -2928,7 +2928,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             jit_prov_assigned_groups=[{
                 "value": social_identity_provider_jit_prov_assigned_groups_value,
             }],
-            jit_prov_group_static_list_enabled=social_identity_provider_jit_prov_group_static_list_enabled,
+            jit_prov_group_static_list_enabled=social_identity_provider_jit_prov_group_static_list_enabled == "true",
             ocid=social_identity_provider_ocid,
             profile_url=social_identity_provider_profile_url,
             redirect_url=social_identity_provider_redirect_url,
@@ -2939,7 +2939,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             }],
             resource_type_schema_version=social_identity_provider_resource_type_schema_version,
             scopes=social_identity_provider_scope,
-            social_jit_provisioning_enabled=social_identity_provider_social_jit_provisioning_enabled,
+            social_jit_provisioning_enabled=social_identity_provider_social_jit_provisioning_enabled == "true",
             status=social_identity_provider_status,
             tags=[{
                 "key": social_identity_provider_tags_key,
@@ -3359,25 +3359,25 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_social_identity_provider = oci.identity.DomainsSocialIdentityProvider("test_social_identity_provider",
-            account_linking_enabled=social_identity_provider_account_linking_enabled,
+            account_linking_enabled=social_identity_provider_account_linking_enabled == "true",
             consumer_key=social_identity_provider_consumer_key,
             consumer_secret=social_identity_provider_consumer_secret,
-            enabled=social_identity_provider_enabled,
+            enabled=social_identity_provider_enabled == "true",
             idcs_endpoint=test_domain["url"],
             name=social_identity_provider_name,
-            registration_enabled=social_identity_provider_registration_enabled,
+            registration_enabled=social_identity_provider_registration_enabled == "true",
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SocialIdentityProvider"],
             service_provider_name=social_identity_provider_service_provider_name,
-            show_on_login=social_identity_provider_show_on_login,
+            show_on_login=social_identity_provider_show_on_login == "true",
             access_token_url=social_identity_provider_access_token_url,
             admin_scopes=social_identity_provider_admin_scope,
             apple_dev_id=test_apple_dev["id"],
             apple_key_id=test_key["id"],
             authorization=social_identity_provider_authorization,
             authz_url=social_identity_provider_authz_url,
-            auto_redirect_enabled=social_identity_provider_auto_redirect_enabled,
-            client_credential_in_payload=social_identity_provider_client_credential_in_payload,
-            clock_skew_in_seconds=social_identity_provider_clock_skew_in_seconds,
+            auto_redirect_enabled=social_identity_provider_auto_redirect_enabled == "true",
+            client_credential_in_payload=social_identity_provider_client_credential_in_payload == "true",
+            clock_skew_in_seconds=int(social_identity_provider_clock_skew_in_seconds),
             description=social_identity_provider_description,
             discovery_url=social_identity_provider_discovery_url,
             icon_url=social_identity_provider_icon_url,
@@ -3385,7 +3385,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             jit_prov_assigned_groups=[{
                 "value": social_identity_provider_jit_prov_assigned_groups_value,
             }],
-            jit_prov_group_static_list_enabled=social_identity_provider_jit_prov_group_static_list_enabled,
+            jit_prov_group_static_list_enabled=social_identity_provider_jit_prov_group_static_list_enabled == "true",
             ocid=social_identity_provider_ocid,
             profile_url=social_identity_provider_profile_url,
             redirect_url=social_identity_provider_redirect_url,
@@ -3396,7 +3396,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             }],
             resource_type_schema_version=social_identity_provider_resource_type_schema_version,
             scopes=social_identity_provider_scope,
-            social_jit_provisioning_enabled=social_identity_provider_social_jit_provisioning_enabled,
+            social_jit_provisioning_enabled=social_identity_provider_social_jit_provisioning_enabled == "true",
             status=social_identity_provider_status,
             tags=[{
                 "key": social_identity_provider_tags_key,
@@ -3428,41 +3428,41 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 authz_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 client_credential_in_payload: Optional[pulumi.Input[_builtins.bool]] = None,
-                 clock_skew_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 consumer_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 id_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 jit_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
-                 jit_prov_group_static_list_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 registration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 relay_idp_param_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_provider_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 show_on_login: Optional[pulumi.Input[_builtins.bool]] = None,
-                 social_jit_provisioning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+                 access_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_linking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 admin_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 apple_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 authz_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_redirect_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 client_credential_in_payload: pulumi.Input[Optional[_builtins.bool]] = None,
+                 clock_skew_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 consumer_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+                 jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_provider_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
+                 social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -3544,50 +3544,50 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-            account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
-            apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            authz_url: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            client_credential_in_payload: Optional[pulumi.Input[_builtins.bool]] = None,
-            clock_skew_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            consumer_key: Optional[pulumi.Input[_builtins.str]] = None,
-            consumer_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            discovery_url: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-            id_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            jit_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
-            jit_prov_group_static_list_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-            redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-            registration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            relay_idp_param_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_provider_name: Optional[pulumi.Input[_builtins.str]] = None,
-            show_on_login: Optional[pulumi.Input[_builtins.bool]] = None,
-            social_jit_provisioning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsSocialIdentityProvider':
+            access_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+            account_linking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            admin_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            apple_dev_id: pulumi.Input[Optional[_builtins.str]] = None,
+            apple_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            authz_url: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_redirect_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            client_credential_in_payload: pulumi.Input[Optional[_builtins.bool]] = None,
+            clock_skew_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            consumer_key: pulumi.Input[Optional[_builtins.str]] = None,
+            consumer_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+            id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+            jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+            redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+            registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_provider_name: pulumi.Input[Optional[_builtins.str]] = None,
+            show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
+            social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsSocialIdentityProvider':
         """
         Get an existing DomainsSocialIdentityProvider resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

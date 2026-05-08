@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrors = oci.Jms.getFleetErrors({
+ * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,
@@ -116,9 +116,9 @@ export interface GetFleetErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrors = oci.Jms.getFleetErrors({
+ * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,
@@ -149,30 +149,30 @@ export interface GetFleetErrorsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetErrorsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetErrorsFilterArgs>[] | undefined>;
     /**
      * The ID of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
-    timeFirstSeenGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeFirstSeenGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
-    timeFirstSeenLessThanOrEqualTo?: pulumi.Input<string>;
+    timeFirstSeenLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
-    timeLastSeenGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeLastSeenGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
-    timeLastSeenLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLastSeenLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

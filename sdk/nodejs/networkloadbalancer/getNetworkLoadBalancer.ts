@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancer = oci.NetworkLoadBalancer.getNetworkLoadBalancer({
+ * const testNetworkLoadBalancer = oci.networkloadbalancer.getNetworkLoadBalancer({
  *     networkLoadBalancerId: testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetNetworkLoadBalancerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancer = oci.NetworkLoadBalancer.getNetworkLoadBalancer({
+ * const testNetworkLoadBalancer = oci.networkloadbalancer.getNetworkLoadBalancer({
  *     networkLoadBalancerId: testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id,
  * });
  * ```

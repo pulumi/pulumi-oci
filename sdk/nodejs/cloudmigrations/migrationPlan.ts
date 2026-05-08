@@ -184,67 +184,67 @@ export interface MigrationPlanState {
     /**
      * Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
      */
-    calculatedLimits?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    calculatedLimits?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Compartment identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Migration plan identifier
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the associated migration.
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * Status of the migration plan.
      */
-    migrationPlanStats?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanMigrationPlanStat>[]>;
+    migrationPlanStats?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanMigrationPlanStat>[] | undefined>;
     /**
      * OCID of the referenced ORM job.
      */
-    referenceToRmsStack?: pulumi.Input<string>;
+    referenceToRmsStack?: pulumi.Input<string | undefined>;
     /**
      * Source migraiton plan ID to be cloned.
      */
-    sourceMigrationPlanId?: pulumi.Input<string>;
+    sourceMigrationPlanId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the migration plan.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of strategies for the resources to be migrated.
      */
-    strategies?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanStrategy>[]>;
+    strategies?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanStrategy>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of target environments.
      */
-    targetEnvironments?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanTargetEnvironment>[]>;
+    targetEnvironments?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanTargetEnvironment>[] | undefined>;
     /**
      * The time when the migration plan was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -258,7 +258,7 @@ export interface MigrationPlanArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Migration plan identifier
      */
@@ -266,7 +266,7 @@ export interface MigrationPlanArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the associated migration.
      */
@@ -274,13 +274,13 @@ export interface MigrationPlanArgs {
     /**
      * Source migraiton plan ID to be cloned.
      */
-    sourceMigrationPlanId?: pulumi.Input<string>;
+    sourceMigrationPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of strategies for the resources to be migrated.
      */
-    strategies?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanStrategy>[]>;
+    strategies?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanStrategy>[] | undefined>;
     /**
      * (Updatable) List of target environments.
      */
-    targetEnvironments?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanTargetEnvironment>[]>;
+    targetEnvironments?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanTargetEnvironment>[] | undefined>;
 }

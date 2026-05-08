@@ -158,27 +158,27 @@ export interface AnalyticsInstanceVanityUrlState {
     /**
      * The OCID of the AnalyticsInstance.
      */
-    analyticsInstanceId?: pulumi.Input<string>;
+    analyticsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
      */
-    caCertificate?: pulumi.Input<string>;
+    caCertificate?: pulumi.Input<string | undefined>;
     /**
      * Optional description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      */
-    hosts?: pulumi.Input<pulumi.Input<string>[]>;
+    hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Passphrase for the PEM Private key (if any).
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PEM Private key for HTTPS connections.
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PEM certificate for HTTPS connections. 
      *
@@ -186,7 +186,7 @@ export interface AnalyticsInstanceVanityUrlState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -204,7 +204,7 @@ export interface AnalyticsInstanceVanityUrlArgs {
     /**
      * Optional description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      */
@@ -212,7 +212,7 @@ export interface AnalyticsInstanceVanityUrlArgs {
     /**
      * (Updatable) Passphrase for the PEM Private key (if any).
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) PEM Private key for HTTPS connections.
      */

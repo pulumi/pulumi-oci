@@ -142,7 +142,7 @@ def get_identity_providers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=tenancy_ocid,
+    test_identity_providers = oci.identity.get_identity_providers(compartment_id=tenancy_ocid,
         protocol=identity_provider_protocol,
         name=identity_provider_name,
         state=identity_provider_state)
@@ -171,11 +171,11 @@ def get_identity_providers(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         protocol=pulumi.get(__ret__, 'protocol'),
         state=pulumi.get(__ret__, 'state'))
-def get_identity_providers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict']]]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_identity_providers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict']]]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIdentityProvidersResult]:
     """
     This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
@@ -193,7 +193,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=tenancy_ocid,
+    test_identity_providers = oci.identity.get_identity_providers(compartment_id=tenancy_ocid,
         protocol=identity_provider_protocol,
         name=identity_provider_name,
         state=identity_provider_state)

@@ -119,7 +119,7 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[Union['GetManaged
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_addm_tasks = oci.databasemanagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```
@@ -144,10 +144,10 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[Union['GetManaged
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseAddmTasksFilterArgs', 'GetManagedDatabaseAddmTasksFilterArgsDict']]]]] = None,
-                                           managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                                           time_start: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_addm_tasks_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseAddmTasksFilterArgs', 'GetManagedDatabaseAddmTasksFilterArgsDict']]]]] = None,
+                                           managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                                           time_start: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseAddmTasksResult]:
     """
     This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
@@ -161,7 +161,7 @@ def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_addm_tasks = oci.databasemanagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```

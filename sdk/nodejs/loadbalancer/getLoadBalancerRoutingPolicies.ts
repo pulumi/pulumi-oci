@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerRoutingPolicies = oci.LoadBalancer.getLoadBalancerRoutingPolicies({
+ * const testLoadBalancerRoutingPolicies = oci.loadbalancer.getLoadBalancerRoutingPolicies({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetLoadBalancerRoutingPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerRoutingPolicies = oci.LoadBalancer.getLoadBalancerRoutingPolicies({
+ * const testLoadBalancerRoutingPolicies = oci.loadbalancer.getLoadBalancerRoutingPolicies({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getLoadBalancerRoutingPoliciesOutput(args: GetLoadBalancerRoutin
  * A collection of arguments for invoking getLoadBalancerRoutingPolicies.
  */
 export interface GetLoadBalancerRoutingPoliciesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetLoadBalancerRoutingPoliciesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetLoadBalancerRoutingPoliciesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the routing policies.
      */

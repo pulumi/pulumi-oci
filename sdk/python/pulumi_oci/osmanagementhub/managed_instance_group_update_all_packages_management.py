@@ -22,8 +22,8 @@ __all__ = ['ManagedInstanceGroupUpdateAllPackagesManagementArgs', 'ManagedInstan
 class ManagedInstanceGroupUpdateAllPackagesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_group_id: pulumi.Input[_builtins.str],
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupUpdateAllPackagesManagement resource.
 
@@ -51,35 +51,35 @@ class ManagedInstanceGroupUpdateAllPackagesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="updateTypes")
-    def update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The type of updates to be applied.
         """
         return pulumi.get(self, "update_types")
 
     @update_types.setter
-    def update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceGroupUpdateAllPackagesManagementState:
     def __init__(__self__, *,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupUpdateAllPackagesManagement resources.
 
@@ -96,38 +96,38 @@ class _ManagedInstanceGroupUpdateAllPackagesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         """
         return pulumi.get(self, "managed_instance_group_id")
 
     @managed_instance_group_id.setter
-    def managed_instance_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTypes")
-    def update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The type of updates to be applied.
         """
         return pulumi.get(self, "update_types")
 
     @update_types.setter
-    def update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Update All Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -232,9 +232,9 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -259,9 +259,9 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupUpdateAllPackagesManagement':
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupUpdateAllPackagesManagement':
         """
         Get an existing ManagedInstanceGroupUpdateAllPackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

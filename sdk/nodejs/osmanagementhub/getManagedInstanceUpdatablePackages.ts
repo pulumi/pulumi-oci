@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
+ * const testManagedInstanceUpdatablePackages = oci.osmanagementhub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
  *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,
@@ -115,7 +115,7 @@ export interface GetManagedInstanceUpdatablePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
+ * const testManagedInstanceUpdatablePackages = oci.osmanagementhub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
  *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,
@@ -147,28 +147,28 @@ export interface GetManagedInstanceUpdatablePackagesOutputArgs {
     /**
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
-    advisoryNames?: pulumi.Input<pulumi.Input<string>[]>;
+    advisoryNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The advisory severity.
      */
-    advisorySeverities?: pulumi.Input<pulumi.Input<string>[]>;
+    advisorySeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only packages that match the given update classification type.
      */
-    classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    classificationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceUpdatablePackagesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceUpdatablePackagesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */

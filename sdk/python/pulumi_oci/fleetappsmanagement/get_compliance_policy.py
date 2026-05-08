@@ -203,7 +203,7 @@ def get_compliance_policy(compliance_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy = oci.FleetAppsManagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
+    test_compliance_policy = oci.fleetappsmanagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_compliance_policy(compliance_policy_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_compliance_policy_output(compliance_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compliance_policy_output(compliance_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompliancePolicyResult]:
     """
     This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -241,7 +241,7 @@ def get_compliance_policy_output(compliance_policy_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy = oci.FleetAppsManagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
+    test_compliance_policy = oci.fleetappsmanagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
     ```
 
 

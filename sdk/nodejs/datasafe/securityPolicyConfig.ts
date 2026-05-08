@@ -191,55 +191,55 @@ export interface SecurityPolicyConfigState {
     /**
      * (Updatable) The OCID of the compartment containing the security policy configuration.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security policy configuration. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details to update the SQL Firewall configuration.
      */
-    firewallConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigFirewallConfig>;
+    firewallConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigFirewallConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the security policy configuration.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security policy corresponding to the security policy configuration.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the security policy configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the security policy configuration was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the security policy configuration was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The unified audit policy related configurations.
      */
-    unifiedAuditPolicyConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigUnifiedAuditPolicyConfig>;
+    unifiedAuditPolicyConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigUnifiedAuditPolicyConfig | undefined>;
 }
 
 /**
@@ -253,23 +253,23 @@ export interface SecurityPolicyConfigArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security policy configuration. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details to update the SQL Firewall configuration.
      */
-    firewallConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigFirewallConfig>;
+    firewallConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigFirewallConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the security policy corresponding to the security policy configuration.
      */
@@ -277,5 +277,5 @@ export interface SecurityPolicyConfigArgs {
     /**
      * (Updatable) The unified audit policy related configurations.
      */
-    unifiedAuditPolicyConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigUnifiedAuditPolicyConfig>;
+    unifiedAuditPolicyConfig?: pulumi.Input<inputs.DataSafe.SecurityPolicyConfigUnifiedAuditPolicyConfig | undefined>;
 }

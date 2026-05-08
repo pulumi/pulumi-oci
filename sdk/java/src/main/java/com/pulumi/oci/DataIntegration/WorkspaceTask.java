@@ -89,8 +89,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionConfigValuesParentRefArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionParentRefArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -125,18 +125,18 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .resourcePrincipalSource(workspaceTaskAuthConfigResourcePrincipalSource)
  *                 .build())
- *             .authDetails(List.of(Map.ofEntries(
+ *             .authDetails(Arrays.asList(Map.ofEntries(
  *                 Map.entry("key", workspaceTaskAuthDetailsKey),
  *                 Map.entry("modelType", workspaceTaskAuthDetailsModelType),
  *                 Map.entry("modelVersion", workspaceTaskAuthDetailsModelVersion),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskAuthDetailsParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 )))
  *             )))
- *             .cancelEndpoint(List.of(Map.ofEntries(
- *                 Map.entry("configValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *             .cancelEndpoint(Arrays.asList(Map.ofEntries(
+ *                 Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesParameterValue),
@@ -144,7 +144,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskCancelEndpointConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
@@ -154,7 +154,7 @@ import javax.annotation.Nullable;
  *                 Map.entry("modelType", workspaceTaskCancelEndpointModelType),
  *                 Map.entry("modelVersion", workspaceTaskCancelEndpointModelVersion),
  *                 Map.entry("objectStatus", workspaceTaskCancelEndpointObjectStatus),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskCancelEndpointParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 )))
@@ -178,9 +178,9 @@ import javax.annotation.Nullable;
  *                 .methodType(workspaceTaskCancelRestCallConfigMethodType)
  *                 .requestHeaders(workspaceTaskCancelRestCallConfigRequestHeaders)
  *                 .build())
- *             .conditionalCompositeFieldMap(List.of(Map.ofEntries(
- *                 Map.entry("configValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *             .conditionalCompositeFieldMap(Arrays.asList(Map.ofEntries(
+ *                 Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesParameterValue),
@@ -188,16 +188,16 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskConditionalCompositeFieldMapConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
  *                 ))),
  *                 Map.entry("description", workspaceTaskConditionalCompositeFieldMapDescription),
- *                 Map.entry("fieldMapScope", List.of(Map.ofEntries(
+ *                 Map.entry("fieldMapScope", Arrays.asList(Map.ofEntries(
  *                     Map.entry("modelType", workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelType),
- *                     Map.entry("configValues", List.of(Map.ofEntries(
- *                         Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                     Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                             Map.entry("intValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesIntValue),
  *                             Map.entry("objectValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesObjectValue),
  *                             Map.entry("parameterValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesParameterValue),
@@ -205,7 +205,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("rootObjectValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesRootObjectValue),
  *                             Map.entry("stringValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesStringValue)
  *                         ))),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         )))
@@ -222,7 +222,7 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskConditionalCompositeFieldMapFieldMapScopeName),
  *                     Map.entry("names", workspaceTaskConditionalCompositeFieldMapFieldMapScopeNames),
  *                     Map.entry("objectStatus", workspaceTaskConditionalCompositeFieldMapFieldMapScopeObjectStatus),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskConditionalCompositeFieldMapFieldMapScopeParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
@@ -237,7 +237,7 @@ import javax.annotation.Nullable;
  *                 Map.entry("modelType", workspaceTaskConditionalCompositeFieldMapModelType),
  *                 Map.entry("modelVersion", workspaceTaskConditionalCompositeFieldMapModelVersion),
  *                 Map.entry("objectStatus", workspaceTaskConditionalCompositeFieldMapObjectStatus),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskConditionalCompositeFieldMapParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 )))
@@ -248,10 +248,10 @@ import javax.annotation.Nullable;
  *                     .simpleValue(workspaceTaskConfigProviderDelegateBindingsSimpleValue)
  *                     .build())
  *                 .build())
- *             .dataFlow(List.of(Map.ofEntries(
+ *             .dataFlow(Arrays.asList(Map.ofEntries(
  *                 Map.entry("description", workspaceTaskDataFlowDescription),
- *                 Map.entry("flowConfigValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("flowConfigValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesParameterValue),
@@ -259,7 +259,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskDataFlowFlowConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
@@ -267,8 +267,8 @@ import javax.annotation.Nullable;
  *                 Map.entry("identifier", workspaceTaskDataFlowIdentifier),
  *                 Map.entry("key", workspaceTaskDataFlowKey),
  *                 Map.entry("keyMap", workspaceTaskDataFlowKeyMap),
- *                 Map.entry("metadata", List.of(Map.ofEntries(
- *                     Map.entry("aggregator", List.of(Map.ofEntries(
+ *                 Map.entry("metadata", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("aggregator", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskDataFlowMetadataAggregatorDescription),
  *                         Map.entry("identifier", workspaceTaskDataFlowMetadataAggregatorIdentifier),
  *                         Map.entry("key", workspaceTaskDataFlowMetadataAggregatorKey),
@@ -276,7 +276,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("type", workspaceTaskDataFlowMetadataAggregatorType)
  *                     ))),
  *                     Map.entry("aggregatorKey", workspaceTaskDataFlowMetadataAggregatorKey),
- *                     Map.entry("countStatistics", List.of(Map.of("objectTypeCountList", List.of(Map.ofEntries(
+ *                     Map.entry("countStatistics", Arrays.asList(Map.of("objectTypeCountList", Arrays.asList(Map.ofEntries(
  *                         Map.entry("objectCount", workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectCount),
  *                         Map.entry("objectType", workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectType)
  *                     ))))),
@@ -295,10 +295,10 @@ import javax.annotation.Nullable;
  *                 Map.entry("modelType", workspaceTaskDataFlowModelType),
  *                 Map.entry("modelVersion", workspaceTaskDataFlowModelVersion),
  *                 Map.entry("name", workspaceTaskDataFlowName),
- *                 Map.entry("nodes", List.of(Map.ofEntries(
+ *                 Map.entry("nodes", Arrays.asList(Map.ofEntries(
  *                     Map.entry("configProviderDelegate", workspaceTaskDataFlowNodesConfigProviderDelegate),
  *                     Map.entry("description", workspaceTaskDataFlowNodesDescription),
- *                     Map.entry("inputLinks", List.of(Map.ofEntries(
+ *                     Map.entry("inputLinks", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskDataFlowNodesInputLinksDescription),
  *                         Map.entry("fieldMap", workspaceTaskDataFlowNodesInputLinksFieldMap),
  *                         Map.entry("fromLink", workspaceTaskDataFlowNodesInputLinksFromLink),
@@ -306,7 +306,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("modelType", workspaceTaskDataFlowNodesInputLinksModelType),
  *                         Map.entry("modelVersion", workspaceTaskDataFlowNodesInputLinksModelVersion),
  *                         Map.entry("objectStatus", workspaceTaskDataFlowNodesInputLinksObjectStatus),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskDataFlowNodesInputLinksParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         ))),
@@ -318,33 +318,33 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskDataFlowNodesName),
  *                     Map.entry("objectStatus", workspaceTaskDataFlowNodesObjectStatus),
  *                     Map.entry("operator", workspaceTaskDataFlowNodesOperator),
- *                     Map.entry("outputLinks", List.of(Map.ofEntries(
+ *                     Map.entry("outputLinks", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskDataFlowNodesOutputLinksDescription),
  *                         Map.entry("key", workspaceTaskDataFlowNodesOutputLinksKey),
  *                         Map.entry("modelType", workspaceTaskDataFlowNodesOutputLinksModelType),
  *                         Map.entry("modelVersion", workspaceTaskDataFlowNodesOutputLinksModelVersion),
  *                         Map.entry("objectStatus", workspaceTaskDataFlowNodesOutputLinksObjectStatus),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskDataFlowNodesOutputLinksParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         ))),
  *                         Map.entry("port", workspaceTaskDataFlowNodesOutputLinksPort),
  *                         Map.entry("toLinks", workspaceTaskDataFlowNodesOutputLinksToLinks)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskDataFlowNodesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
- *                     Map.entry("uiProperties", List.of(Map.ofEntries(
+ *                     Map.entry("uiProperties", Arrays.asList(Map.ofEntries(
  *                         Map.entry("coordinateX", workspaceTaskDataFlowNodesUiPropertiesCoordinateX),
  *                         Map.entry("coordinateY", workspaceTaskDataFlowNodesUiPropertiesCoordinateY)
  *                     )))
  *                 ))),
  *                 Map.entry("objectStatus", workspaceTaskDataFlowObjectStatus),
  *                 Map.entry("objectVersion", workspaceTaskDataFlowObjectVersion),
- *                 Map.entry("parameters", List.of(Map.ofEntries(
- *                     Map.entry("configValues", List.of(Map.ofEntries(
- *                         Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("parameters", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                             Map.entry("intValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesIntValue),
  *                             Map.entry("objectValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesObjectValue),
  *                             Map.entry("parameterValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesParameterValue),
@@ -352,7 +352,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("rootObjectValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesRootObjectValue),
  *                             Map.entry("stringValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesStringValue)
  *                         ))),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskDataFlowParametersConfigValuesParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         )))
@@ -367,7 +367,7 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskDataFlowParametersName),
  *                     Map.entry("objectStatus", workspaceTaskDataFlowParametersObjectStatus),
  *                     Map.entry("outputAggregationType", workspaceTaskDataFlowParametersOutputAggregationType),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskDataFlowParametersParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
@@ -376,18 +376,18 @@ import javax.annotation.Nullable;
  *                     Map.entry("typeName", workspaceTaskDataFlowParametersTypeName),
  *                     Map.entry("usedFor", workspaceTaskDataFlowParametersUsedFor)
  *                 ))),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskDataFlowParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 ))),
- *                 Map.entry("targetFieldMapSummary", List.of(Map.of("fieldMap", workspaceTaskDataFlowTargetFieldMapSummaryFieldMap))),
- *                 Map.entry("typedObjectMap", List.of(Map.of("typedObject", workspaceTaskDataFlowTypedObjectMapTypedObject)))
+ *                 Map.entry("targetFieldMapSummary", Arrays.asList(Map.of("fieldMap", workspaceTaskDataFlowTargetFieldMapSummaryFieldMap))),
+ *                 Map.entry("typedObjectMap", Arrays.asList(Map.of("typedObject", workspaceTaskDataFlowTypedObjectMapTypedObject)))
  *             )))
- *             .dataflowApplication(List.of(Map.ofEntries(
+ *             .dataflowApplication(Arrays.asList(Map.ofEntries(
  *                 Map.entry("applicationId", testApplication.id()),
  *                 Map.entry("compartmentId", compartmentId),
- *                 Map.entry("configValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesParameterValue),
@@ -395,16 +395,16 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskDataflowApplicationConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
  *                 )))
  *             )))
  *             .description(workspaceTaskDescription)
- *             .endpoint(List.of(Map.ofEntries(
- *                 Map.entry("configValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *             .endpoint(Arrays.asList(Map.ofEntries(
+ *                 Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskEndpointConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskEndpointConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskEndpointConfigValuesConfigParamValuesParameterValue),
@@ -412,7 +412,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskEndpointConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskEndpointConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskEndpointConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
@@ -422,7 +422,7 @@ import javax.annotation.Nullable;
  *                 Map.entry("modelType", workspaceTaskEndpointModelType),
  *                 Map.entry("modelVersion", workspaceTaskEndpointModelVersion),
  *                 Map.entry("objectStatus", workspaceTaskEndpointObjectStatus),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskEndpointParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 )))
@@ -562,10 +562,10 @@ import javax.annotation.Nullable;
  *                 .parent(workspaceTaskParentRefParent)
  *                 .rootDocId(testRootDoc.id())
  *                 .build())
- *             .pipeline(List.of(Map.ofEntries(
+ *             .pipeline(Arrays.asList(Map.ofEntries(
  *                 Map.entry("description", workspaceTaskPipelineDescription),
- *                 Map.entry("flowConfigValues", List.of(Map.ofEntries(
- *                     Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("flowConfigValues", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                         Map.entry("intValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesIntValue),
  *                         Map.entry("objectValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesObjectValue),
  *                         Map.entry("parameterValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesParameterValue),
@@ -573,15 +573,15 @@ import javax.annotation.Nullable;
  *                         Map.entry("rootObjectValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesRootObjectValue),
  *                         Map.entry("stringValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesStringValue)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskPipelineFlowConfigValuesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     )))
  *                 ))),
  *                 Map.entry("identifier", workspaceTaskPipelineIdentifier),
  *                 Map.entry("key", workspaceTaskPipelineKey),
- *                 Map.entry("metadata", List.of(Map.ofEntries(
- *                     Map.entry("aggregator", List.of(Map.ofEntries(
+ *                 Map.entry("metadata", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("aggregator", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskPipelineMetadataAggregatorDescription),
  *                         Map.entry("identifier", workspaceTaskPipelineMetadataAggregatorIdentifier),
  *                         Map.entry("key", workspaceTaskPipelineMetadataAggregatorKey),
@@ -589,7 +589,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("type", workspaceTaskPipelineMetadataAggregatorType)
  *                     ))),
  *                     Map.entry("aggregatorKey", workspaceTaskPipelineMetadataAggregatorKey),
- *                     Map.entry("countStatistics", List.of(Map.of("objectTypeCountList", List.of(Map.ofEntries(
+ *                     Map.entry("countStatistics", Arrays.asList(Map.of("objectTypeCountList", Arrays.asList(Map.ofEntries(
  *                         Map.entry("objectCount", workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectCount),
  *                         Map.entry("objectType", workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectType)
  *                     ))))),
@@ -608,10 +608,10 @@ import javax.annotation.Nullable;
  *                 Map.entry("modelType", workspaceTaskPipelineModelType),
  *                 Map.entry("modelVersion", workspaceTaskPipelineModelVersion),
  *                 Map.entry("name", workspaceTaskPipelineName),
- *                 Map.entry("nodes", List.of(Map.ofEntries(
+ *                 Map.entry("nodes", Arrays.asList(Map.ofEntries(
  *                     Map.entry("configProviderDelegate", workspaceTaskPipelineNodesConfigProviderDelegate),
  *                     Map.entry("description", workspaceTaskPipelineNodesDescription),
- *                     Map.entry("inputLinks", List.of(Map.ofEntries(
+ *                     Map.entry("inputLinks", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskPipelineNodesInputLinksDescription),
  *                         Map.entry("fieldMap", workspaceTaskPipelineNodesInputLinksFieldMap),
  *                         Map.entry("fromLink", workspaceTaskPipelineNodesInputLinksFromLink),
@@ -619,7 +619,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("modelType", workspaceTaskPipelineNodesInputLinksModelType),
  *                         Map.entry("modelVersion", workspaceTaskPipelineNodesInputLinksModelVersion),
  *                         Map.entry("objectStatus", workspaceTaskPipelineNodesInputLinksObjectStatus),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskPipelineNodesInputLinksParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         ))),
@@ -631,33 +631,33 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskPipelineNodesName),
  *                     Map.entry("objectStatus", workspaceTaskPipelineNodesObjectStatus),
  *                     Map.entry("operator", workspaceTaskPipelineNodesOperator),
- *                     Map.entry("outputLinks", List.of(Map.ofEntries(
+ *                     Map.entry("outputLinks", Arrays.asList(Map.ofEntries(
  *                         Map.entry("description", workspaceTaskPipelineNodesOutputLinksDescription),
  *                         Map.entry("key", workspaceTaskPipelineNodesOutputLinksKey),
  *                         Map.entry("modelType", workspaceTaskPipelineNodesOutputLinksModelType),
  *                         Map.entry("modelVersion", workspaceTaskPipelineNodesOutputLinksModelVersion),
  *                         Map.entry("objectStatus", workspaceTaskPipelineNodesOutputLinksObjectStatus),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskPipelineNodesOutputLinksParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         ))),
  *                         Map.entry("port", workspaceTaskPipelineNodesOutputLinksPort),
  *                         Map.entry("toLinks", workspaceTaskPipelineNodesOutputLinksToLinks)
  *                     ))),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskPipelineNodesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
- *                     Map.entry("uiProperties", List.of(Map.ofEntries(
+ *                     Map.entry("uiProperties", Arrays.asList(Map.ofEntries(
  *                         Map.entry("coordinateX", workspaceTaskPipelineNodesUiPropertiesCoordinateX),
  *                         Map.entry("coordinateY", workspaceTaskPipelineNodesUiPropertiesCoordinateY)
  *                     )))
  *                 ))),
  *                 Map.entry("objectStatus", workspaceTaskPipelineObjectStatus),
  *                 Map.entry("objectVersion", workspaceTaskPipelineObjectVersion),
- *                 Map.entry("parameters", List.of(Map.ofEntries(
- *                     Map.entry("configValues", List.of(Map.ofEntries(
- *                         Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("parameters", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                             Map.entry("intValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesIntValue),
  *                             Map.entry("objectValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesObjectValue),
  *                             Map.entry("parameterValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesParameterValue),
@@ -665,7 +665,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("rootObjectValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesRootObjectValue),
  *                             Map.entry("stringValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesStringValue)
  *                         ))),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskPipelineParametersConfigValuesParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         )))
@@ -680,7 +680,7 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskPipelineParametersName),
  *                     Map.entry("objectStatus", workspaceTaskPipelineParametersObjectStatus),
  *                     Map.entry("outputAggregationType", workspaceTaskPipelineParametersOutputAggregationType),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskPipelineParametersParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
@@ -689,13 +689,13 @@ import javax.annotation.Nullable;
  *                     Map.entry("typeName", workspaceTaskPipelineParametersTypeName),
  *                     Map.entry("usedFor", workspaceTaskPipelineParametersUsedFor)
  *                 ))),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskPipelineParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 ))),
- *                 Map.entry("variables", List.of(Map.ofEntries(
- *                     Map.entry("configValues", List.of(Map.ofEntries(
- *                         Map.entry("configParamValues", List.of(Map.ofEntries(
+ *                 Map.entry("variables", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("configValues", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("configParamValues", Arrays.asList(Map.ofEntries(
  *                             Map.entry("intValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesIntValue),
  *                             Map.entry("objectValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesObjectValue),
  *                             Map.entry("parameterValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesParameterValue),
@@ -703,7 +703,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("rootObjectValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesRootObjectValue),
  *                             Map.entry("stringValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesStringValue)
  *                         ))),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskPipelineVariablesConfigValuesParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         )))
@@ -717,16 +717,16 @@ import javax.annotation.Nullable;
  *                     Map.entry("name", workspaceTaskPipelineVariablesName),
  *                     Map.entry("objectStatus", workspaceTaskPipelineVariablesObjectStatus),
  *                     Map.entry("objectVersion", workspaceTaskPipelineVariablesObjectVersion),
- *                     Map.entry("parentRef", List.of(Map.ofEntries(
+ *                     Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                         Map.entry("parent", workspaceTaskPipelineVariablesParentRefParent),
  *                         Map.entry("rootDocId", testRootDoc.id())
  *                     ))),
- *                     Map.entry("rootObjectDefaultValue", List.of(Map.ofEntries(
+ *                     Map.entry("rootObjectDefaultValue", Arrays.asList(Map.ofEntries(
  *                         Map.entry("key", workspaceTaskPipelineVariablesRootObjectDefaultValueKey),
  *                         Map.entry("modelType", workspaceTaskPipelineVariablesRootObjectDefaultValueModelType),
  *                         Map.entry("modelVersion", workspaceTaskPipelineVariablesRootObjectDefaultValueModelVersion),
  *                         Map.entry("objectStatus", workspaceTaskPipelineVariablesRootObjectDefaultValueObjectStatus),
- *                         Map.entry("parentRef", List.of(Map.ofEntries(
+ *                         Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                             Map.entry("parent", workspaceTaskPipelineVariablesRootObjectDefaultValueParentRefParent),
  *                             Map.entry("rootDocId", testRootDoc.id())
  *                         )))
@@ -752,12 +752,12 @@ import javax.annotation.Nullable;
  *                 .methodType(workspaceTaskPollRestCallConfigMethodType)
  *                 .requestHeaders(workspaceTaskPollRestCallConfigRequestHeaders)
  *                 .build())
- *             .script(List.of(Map.ofEntries(
+ *             .script(Arrays.asList(Map.ofEntries(
  *                 Map.entry("key", workspaceTaskScriptKey),
  *                 Map.entry("modelType", workspaceTaskScriptModelType),
  *                 Map.entry("modelVersion", workspaceTaskScriptModelVersion),
  *                 Map.entry("objectStatus", workspaceTaskScriptObjectStatus),
- *                 Map.entry("parentRef", List.of(Map.ofEntries(
+ *                 Map.entry("parentRef", Arrays.asList(Map.ofEntries(
  *                     Map.entry("parent", workspaceTaskScriptParentRefParent),
  *                     Map.entry("rootDocId", testRootDoc.id())
  *                 )))

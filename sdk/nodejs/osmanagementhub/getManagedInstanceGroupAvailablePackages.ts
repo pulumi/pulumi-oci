@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailablePackages = oci.OsManagementHub.getManagedInstanceGroupAvailablePackages({
+ * const testManagedInstanceGroupAvailablePackages = oci.osmanagementhub.getManagedInstanceGroupAvailablePackages({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
  *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
- *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest === "true",
  * });
  * ```
  */
@@ -103,12 +103,12 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailablePackages = oci.OsManagementHub.getManagedInstanceGroupAvailablePackages({
+ * const testManagedInstanceGroupAvailablePackages = oci.osmanagementhub.getManagedInstanceGroupAvailablePackages({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
  *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
- *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest === "true",
  * });
  * ```
  */
@@ -131,20 +131,20 @@ export interface GetManagedInstanceGroupAvailablePackagesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesFilterArgs>[] | undefined>;
     /**
      * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */

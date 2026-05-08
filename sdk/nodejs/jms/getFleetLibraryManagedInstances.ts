@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryManagedInstances = oci.Jms.getFleetLibraryManagedInstances({
+ * const testFleetLibraryManagedInstances = oci.jms.getFleetLibraryManagedInstances({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryManagedInstanceLibraryKey,
  *     applicationId: testApplication.id,
@@ -119,7 +119,7 @@ export interface GetFleetLibraryManagedInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryManagedInstances = oci.Jms.getFleetLibraryManagedInstances({
+ * const testFleetLibraryManagedInstances = oci.jms.getFleetLibraryManagedInstances({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryManagedInstanceLibraryKey,
  *     applicationId: testApplication.id,
@@ -153,8 +153,8 @@ export interface GetFleetLibraryManagedInstancesOutputArgs {
     /**
      * The Fleet-unique identifier of the application.
      */
-    applicationId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetLibraryManagedInstancesFilterArgs>[]>;
+    applicationId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetLibraryManagedInstancesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -162,11 +162,11 @@ export interface GetFleetLibraryManagedInstancesOutputArgs {
     /**
      * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * Filter the list with hostname contains the given value.
      */
-    hostnameContains?: pulumi.Input<string>;
+    hostnameContains?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of a Java library.
      */
@@ -174,13 +174,13 @@ export interface GetFleetLibraryManagedInstancesOutputArgs {
     /**
      * The Fleet-unique identifier of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

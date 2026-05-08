@@ -103,7 +103,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network_download_config_file = oci.database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network["id"],
         base64_encode_content=False)
     ```
@@ -126,9 +126,9 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         id=pulumi.get(__ret__, 'id'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
-def get_vm_cluster_network_download_config_file_output(base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                       exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       vm_cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_network_download_config_file_output(base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                       exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterNetworkDownloadConfigFileResult]:
     """
     This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -141,7 +141,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network_download_config_file = oci.database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network["id"],
         base64_encode_content=False)
     ```

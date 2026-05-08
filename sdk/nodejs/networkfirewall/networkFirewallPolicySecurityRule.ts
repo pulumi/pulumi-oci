@@ -175,38 +175,38 @@ export interface NetworkFirewallPolicySecurityRuleState {
      * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
      */
-    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
+    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition | undefined>;
     /**
      * (Updatable) The description of the security rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of inspection to affect the traffic flow.
      * * INTRUSION_DETECTION - Intrusion detection.
      * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
-    inspection?: pulumi.Input<string>;
+    inspection?: pulumi.Input<string | undefined>;
     /**
      * Name for the Security rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this security rule belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      */
-    positions?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition>[]>;
-    priorityOrder?: pulumi.Input<string>;
+    positions?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition>[] | undefined>;
+    priorityOrder?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -228,17 +228,17 @@ export interface NetworkFirewallPolicySecurityRuleArgs {
     /**
      * (Updatable) The description of the security rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of inspection to affect the traffic flow.
      * * INTRUSION_DETECTION - Intrusion detection.
      * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
-    inspection?: pulumi.Input<string>;
+    inspection?: pulumi.Input<string | undefined>;
     /**
      * Name for the Security rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -246,6 +246,6 @@ export interface NetworkFirewallPolicySecurityRuleArgs {
     /**
      * (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      */
-    positions?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition>[]>;
-    priorityOrder?: pulumi.Input<string>;
+    positions?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition>[] | undefined>;
+    priorityOrder?: pulumi.Input<string | undefined>;
 }

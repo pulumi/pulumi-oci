@@ -32,23 +32,23 @@ class ExadbVmClusterArgs:
                  shape: pulumi.Input[_builtins.str],
                  ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  subnet_id: pulumi.Input[_builtins.str],
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadbVmCluster resource.
 
@@ -278,103 +278,103 @@ class ExadbVmClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']]:
         """
         (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeResources")
-    def node_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]:
+    def node_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]:
         """
         Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "node_resources")
 
     @node_resources.setter
-    def node_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]):
+    def node_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]):
         pulumi.set(self, "node_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -382,96 +382,96 @@ class ExadbVmClusterArgs:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateZoneId")
-    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
 
     @private_zone_id.setter
-    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_zone_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerPortTcp")
-    def scan_listener_port_tcp(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_listener_port_tcp(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
-    def scan_listener_port_tcp(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_listener_port_tcp(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port_tcp", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerPortTcpSsl")
-    def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_listener_port_tcp_ssl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @scan_listener_port_tcp_ssl.setter
-    def scan_listener_port_tcp_ssl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_listener_port_tcp_ssl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeAttribute")
-    def shape_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         """
         return pulumi.get(self, "shape_attribute")
 
     @shape_attribute.setter
-    def shape_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemVersion")
-    def system_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Operating system version of the image.
         """
         return pulumi.get(self, "system_version")
 
     @system_version.setter
-    def system_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
 
@@ -482,56 +482,56 @@ class ExadbVmClusterArgs:
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
 @pulumi.input_type
 class _ExadbVmClusterState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gi_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 grid_image_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]] = None,
-                 last_update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_config: Optional[pulumi.Input['ExadbVmClusterNodeConfigArgs']] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_dns_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 grid_image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]] = None,
+                 last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_config: pulumi.Input[Optional['ExadbVmClusterNodeConfigArgs']] = None,
+                 node_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadbVmCluster resources.
 
@@ -679,163 +679,163 @@ class _ExadbVmClusterState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSubnetId")
-    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
-    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']]:
         """
         (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['ExadbVmClusterDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['ExadbVmClusterDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="exascaleDbStorageVaultId")
-    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exascale_db_storage_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @exascale_db_storage_vault_id.setter
-    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exascale_db_storage_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exascale_db_storage_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="giVersion")
-    def gi_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gi_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A valid Oracle Grid Infrastructure (GI) software version.
         """
         return pulumi.get(self, "gi_version")
 
     @gi_version.setter
-    def gi_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gi_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gi_version", value)
 
     @_builtins.property
     @pulumi.getter(name="gridImageId")
-    def grid_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grid_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grid Setup will be done using this grid image id.
 
@@ -844,24 +844,24 @@ class _ExadbVmClusterState:
         return pulumi.get(self, "grid_image_id")
 
     @grid_image_id.setter
-    def grid_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grid_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grid_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="gridImageType")
-    def grid_image_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grid_image_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Grid Image
         """
         return pulumi.get(self, "grid_image_type")
 
     @grid_image_type.setter
-    def grid_image_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grid_image_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grid_image_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 
@@ -872,96 +872,96 @@ class _ExadbVmClusterState:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]:
+    def iorm_config_caches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]:
         """
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
-    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]):
+    def iorm_config_caches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
-    def last_update_history_entry_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_history_entry_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         """
         return pulumi.get(self, "last_update_history_entry_id")
 
     @last_update_history_entry_id.setter
-    def last_update_history_entry_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_history_entry_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_history_entry_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeConfig")
-    def node_config(self) -> Optional[pulumi.Input['ExadbVmClusterNodeConfigArgs']]:
+    def node_config(self) -> pulumi.Input[Optional['ExadbVmClusterNodeConfigArgs']]:
         """
         (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "node_config")
 
     @node_config.setter
-    def node_config(self, value: Optional[pulumi.Input['ExadbVmClusterNodeConfigArgs']]):
+    def node_config(self, value: pulumi.Input[Optional['ExadbVmClusterNodeConfigArgs']]):
         pulumi.set(self, "node_config", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeResources")
-    def node_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]:
+    def node_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]:
         """
         Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "node_resources")
 
     @node_resources.setter
-    def node_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]):
+    def node_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]]):
         pulumi.set(self, "node_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -969,204 +969,204 @@ class _ExadbVmClusterState:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateZoneId")
-    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
 
     @private_zone_id.setter
-    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_zone_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
-    def scan_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "scan_dns_name")
 
     @scan_dns_name.setter
-    def scan_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanDnsRecordId")
-    def scan_dns_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_dns_record_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "scan_dns_record_id")
 
     @scan_dns_record_id.setter
-    def scan_dns_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_dns_record_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_dns_record_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanIpIds")
-    def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scan_ip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
-    def scan_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scan_ip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scan_ip_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerPortTcp")
-    def scan_listener_port_tcp(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_listener_port_tcp(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
-    def scan_listener_port_tcp(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_listener_port_tcp(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port_tcp", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerPortTcpSsl")
-    def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_listener_port_tcp_ssl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @scan_listener_port_tcp_ssl.setter
-    def scan_listener_port_tcp_ssl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_listener_port_tcp_ssl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of the Exadata VM cluster on Exascale Infrastructure resource
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeAttribute")
-    def shape_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         """
         return pulumi.get(self, "shape_attribute")
 
     @shape_attribute.setter
-    def shape_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ssh_public_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
-    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ssh_public_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_public_keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="systemVersion")
-    def system_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Operating system version of the image.
         """
         return pulumi.get(self, "system_version")
 
     @system_version.setter
-    def system_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
 
@@ -1177,31 +1177,31 @@ class _ExadbVmClusterState:
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
-    def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
         """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
-    def vip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vip_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
         """
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
-    def zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
 
 
@@ -1211,34 +1211,34 @@ class ExadbVmCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+                 node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -1264,9 +1264,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             hostname=exadb_vm_cluster_hostname,
             shape=exadb_vm_cluster_shape,
             node_config={
-                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
-                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
-                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+                "enabled_ecpu_count_per_node": int(exadb_vm_cluster_enabled_ecpu_count_per_node),
+                "total_ecpu_count_per_node": int(exadb_vm_cluster_total_ecpu_count_per_node),
+                "vm_file_system_storage_size_gbs_per_node": int(exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node),
             },
             node_resources=[
                 {
@@ -1281,9 +1281,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
             cluster_name=exadb_vm_cluster_cluster_name,
             data_collection_options={
-                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled == "true",
             },
             defined_tags=exadb_vm_cluster_defined_tags,
             domain=exadb_vm_cluster_domain,
@@ -1293,8 +1293,8 @@ class ExadbVmCluster(pulumi.CustomResource):
             license_model=exadb_vm_cluster_license_model,
             nsg_ids=exadb_vm_cluster_nsg_ids,
             private_zone_id=test_zone["id"],
-            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
-            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            scan_listener_port_tcp=int(exadb_vm_cluster_scan_listener_port_tcp),
+            scan_listener_port_tcp_ssl=int(exadb_vm_cluster_scan_listener_port_tcp_ssl),
             security_attributes=exadb_vm_cluster_security_attributes,
             shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,
@@ -1383,9 +1383,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             hostname=exadb_vm_cluster_hostname,
             shape=exadb_vm_cluster_shape,
             node_config={
-                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
-                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
-                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+                "enabled_ecpu_count_per_node": int(exadb_vm_cluster_enabled_ecpu_count_per_node),
+                "total_ecpu_count_per_node": int(exadb_vm_cluster_total_ecpu_count_per_node),
+                "vm_file_system_storage_size_gbs_per_node": int(exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node),
             },
             node_resources=[
                 {
@@ -1400,9 +1400,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
             cluster_name=exadb_vm_cluster_cluster_name,
             data_collection_options={
-                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled == "true",
             },
             defined_tags=exadb_vm_cluster_defined_tags,
             domain=exadb_vm_cluster_domain,
@@ -1412,8 +1412,8 @@ class ExadbVmCluster(pulumi.CustomResource):
             license_model=exadb_vm_cluster_license_model,
             nsg_ids=exadb_vm_cluster_nsg_ids,
             private_zone_id=test_zone["id"],
-            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
-            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            scan_listener_port_tcp=int(exadb_vm_cluster_scan_listener_port_tcp),
+            scan_listener_port_tcp_ssl=int(exadb_vm_cluster_scan_listener_port_tcp_ssl),
             security_attributes=exadb_vm_cluster_security_attributes,
             shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,
@@ -1445,34 +1445,34 @@ class ExadbVmCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+                 node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1557,49 +1557,49 @@ class ExadbVmCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gi_version: Optional[pulumi.Input[_builtins.str]] = None,
-            grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            grid_image_type: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict']]]]] = None,
-            last_update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_port: Optional[pulumi.Input[_builtins.str]] = None,
-            node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
-            node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_dns_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
-            scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            system_version: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExadbVmCluster':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_collection_options: pulumi.Input[Optional[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+            grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            grid_image_type: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict']]]]] = None,
+            last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+            node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+            node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
+            scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExadbVmCluster':
         """
         Get an existing ExadbVmCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

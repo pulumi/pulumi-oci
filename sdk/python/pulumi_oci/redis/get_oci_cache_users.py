@@ -124,7 +124,7 @@ def get_oci_cache_users(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_users = oci.Redis.get_oci_cache_users(compartment_id=compartment_id,
+    test_oci_cache_users = oci.redis.get_oci_cache_users(compartment_id=compartment_id,
         name=oci_cache_user_name,
         state=oci_cache_user_state)
     ```
@@ -149,10 +149,10 @@ def get_oci_cache_users(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         oci_cache_user_collections=pulumi.get(__ret__, 'oci_cache_user_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_oci_cache_users_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict']]]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oci_cache_users_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict']]]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheUsersResult]:
     """
     This data source provides the list of Oci Cache Users in Oracle Cloud Infrastructure Redis service.
@@ -165,7 +165,7 @@ def get_oci_cache_users_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_users = oci.Redis.get_oci_cache_users(compartment_id=compartment_id,
+    test_oci_cache_users = oci.redis.get_oci_cache_users(compartment_id=compartment_id,
         name=oci_cache_user_name,
         state=oci_cache_user_state)
     ```

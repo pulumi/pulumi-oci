@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailablePackages = oci.OsManagementHub.getManagedInstanceAvailablePackages({
+ * const testManagedInstanceAvailablePackages = oci.osmanagementhub.getManagedInstanceAvailablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceAvailablePackageDisplayName,
@@ -91,7 +91,7 @@ export interface GetManagedInstanceAvailablePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailablePackages = oci.OsManagementHub.getManagedInstanceAvailablePackages({
+ * const testManagedInstanceAvailablePackages = oci.osmanagementhub.getManagedInstanceAvailablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceAvailablePackageDisplayName,
@@ -117,16 +117,16 @@ export interface GetManagedInstanceAvailablePackagesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceAvailablePackagesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceAvailablePackagesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */

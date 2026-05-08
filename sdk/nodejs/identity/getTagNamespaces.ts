@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagNamespaces = oci.Identity.getTagNamespaces({
+ * const testTagNamespaces = oci.identity.getTagNamespaces({
  *     compartmentId: compartmentId,
- *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments === "true",
  *     state: tagNamespaceState,
  * });
  * ```
@@ -87,9 +87,9 @@ export interface GetTagNamespacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagNamespaces = oci.Identity.getTagNamespaces({
+ * const testTagNamespaces = oci.identity.getTagNamespaces({
  *     compartmentId: compartmentId,
- *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments === "true",
  *     state: tagNamespaceState,
  * });
  * ```
@@ -112,13 +112,13 @@ export interface GetTagNamespacesOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagNamespacesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagNamespacesFilterArgs>[] | undefined>;
     /**
      * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
      */
-    includeSubcompartments?: pulumi.Input<boolean>;
+    includeSubcompartments?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

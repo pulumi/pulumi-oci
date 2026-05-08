@@ -95,7 +95,7 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_high_availability_members = oci.DatabaseManagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_high_availability_members = oci.databasemanagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_high_availability_member_collections=pulumi.get(__ret__, 'managed_my_sql_database_high_availability_member_collections'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'))
-def get_managed_my_sql_database_high_availability_members_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict']]]]] = None,
-                                                                 managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_high_availability_members_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict']]]]] = None,
+                                                                 managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseHighAvailabilityMembersResult]:
     """
     This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
@@ -126,7 +126,7 @@ def get_managed_my_sql_database_high_availability_members_output(filters: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_high_availability_members = oci.DatabaseManagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_high_availability_members = oci.databasemanagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

@@ -22,13 +22,13 @@ __all__ = ['StreamPoolArgs', 'StreamPool']
 class StreamPoolArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 custom_encryption_key: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 custom_encryption_key: pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kafka_settings: pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a StreamPool resource.
 
@@ -75,79 +75,79 @@ class StreamPoolArgs:
 
     @_builtins.property
     @pulumi.getter(name="customEncryptionKey")
-    def custom_encryption_key(self) -> Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']]:
+    def custom_encryption_key(self) -> pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']]:
         """
         (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         """
         return pulumi.get(self, "custom_encryption_key")
 
     @custom_encryption_key.setter
-    def custom_encryption_key(self, value: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']]):
+    def custom_encryption_key(self, value: pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']]):
         pulumi.set(self, "custom_encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="kafkaSettings")
-    def kafka_settings(self) -> Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']]:
+    def kafka_settings(self) -> pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']]:
         """
         (Updatable) Settings for the Kafka compatibility layer.
         """
         return pulumi.get(self, "kafka_settings")
 
     @kafka_settings.setter
-    def kafka_settings(self, value: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']]):
+    def kafka_settings(self, value: pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']]):
         pulumi.set(self, "kafka_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointSettings")
-    def private_endpoint_settings(self) -> Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']]:
+    def private_endpoint_settings(self) -> pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']]:
         """
         Optional parameters if a private stream pool is requested.
         """
         return pulumi.get(self, "private_endpoint_settings")
 
     @private_endpoint_settings.setter
-    def private_endpoint_settings(self, value: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']]):
+    def private_endpoint_settings(self, value: pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']]):
         pulumi.set(self, "private_endpoint_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
 
@@ -158,26 +158,26 @@ class StreamPoolArgs:
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
 
 @pulumi.input_type
 class _StreamPoolState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key: pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_settings: pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StreamPool resources.
 
@@ -228,127 +228,127 @@ class _StreamPoolState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the stream.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customEncryptionKey")
-    def custom_encryption_key(self) -> Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']]:
+    def custom_encryption_key(self) -> pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']]:
         """
         (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         """
         return pulumi.get(self, "custom_encryption_key")
 
     @custom_encryption_key.setter
-    def custom_encryption_key(self, value: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']]):
+    def custom_encryption_key(self, value: pulumi.Input[Optional['StreamPoolCustomEncryptionKeyArgs']]):
         pulumi.set(self, "custom_encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointFqdn")
-    def endpoint_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
         """
         return pulumi.get(self, "endpoint_fqdn")
 
     @endpoint_fqdn.setter
-    def endpoint_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
         """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private", value)
 
     @_builtins.property
     @pulumi.getter(name="kafkaSettings")
-    def kafka_settings(self) -> Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']]:
+    def kafka_settings(self) -> pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']]:
         """
         (Updatable) Settings for the Kafka compatibility layer.
         """
         return pulumi.get(self, "kafka_settings")
 
     @kafka_settings.setter
-    def kafka_settings(self, value: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']]):
+    def kafka_settings(self, value: pulumi.Input[Optional['StreamPoolKafkaSettingsArgs']]):
         pulumi.set(self, "kafka_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any additional details about the current state of the stream.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointSettings")
-    def private_endpoint_settings(self) -> Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']]:
+    def private_endpoint_settings(self) -> pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']]:
         """
         Optional parameters if a private stream pool is requested.
         """
         return pulumi.get(self, "private_endpoint_settings")
 
     @private_endpoint_settings.setter
-    def private_endpoint_settings(self, value: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']]):
+    def private_endpoint_settings(self, value: pulumi.Input[Optional['StreamPoolPrivateEndpointSettingsArgs']]):
         pulumi.set(self, "private_endpoint_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
 
@@ -359,31 +359,31 @@ class _StreamPoolState:
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the stream pool.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -393,14 +393,14 @@ class StreamPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
@@ -429,10 +429,10 @@ class StreamPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kafka_settings={
-                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable == "true",
                 "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
-                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
-                "num_partitions": stream_pool_kafka_settings_num_partitions,
+                "log_retention_hours": int(stream_pool_kafka_settings_log_retention_hours),
+                "num_partitions": int(stream_pool_kafka_settings_num_partitions),
             },
             private_endpoint_settings={
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
@@ -499,10 +499,10 @@ class StreamPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kafka_settings={
-                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable == "true",
                 "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
-                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
-                "num_partitions": stream_pool_kafka_settings_num_partitions,
+                "log_retention_hours": int(stream_pool_kafka_settings_log_retention_hours),
+                "num_partitions": int(stream_pool_kafka_settings_num_partitions),
             },
             private_endpoint_settings={
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
@@ -536,14 +536,14 @@ class StreamPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -578,19 +578,19 @@ class StreamPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            endpoint_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-            kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'StreamPool':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'StreamPool':
         """
         Get an existing StreamPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

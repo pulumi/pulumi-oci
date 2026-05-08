@@ -297,7 +297,7 @@ def get_replication(replication_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication = oci.FileStorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
+    test_replication = oci.filestorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_replication(replication_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_replication_output(replication_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_output(replication_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationResult]:
     """
     This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
@@ -343,7 +343,7 @@ def get_replication_output(replication_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_replication = oci.FileStorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
+    test_replication = oci.filestorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
     ```
 
 

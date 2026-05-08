@@ -324,7 +324,7 @@ def get_cloud_cluster(cloud_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster = oci.DatabaseManagement.get_cloud_cluster(cloud_cluster_id=test_cloud_cluster_oci_database_management_cloud_cluster["id"])
+    test_cloud_cluster = oci.databasemanagement.get_cloud_cluster(cloud_cluster_id=test_cloud_cluster_oci_database_management_cloud_cluster["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_cloud_cluster(cloud_cluster_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'),
         vip_configurations=pulumi.get(__ret__, 'vip_configurations'))
-def get_cloud_cluster_output(cloud_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_cluster_output(cloud_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudClusterResult]:
     """
     This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
@@ -372,7 +372,7 @@ def get_cloud_cluster_output(cloud_cluster_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster = oci.DatabaseManagement.get_cloud_cluster(cloud_cluster_id=test_cloud_cluster_oci_database_management_cloud_cluster["id"])
+    test_cloud_cluster = oci.databasemanagement.get_cloud_cluster(cloud_cluster_id=test_cloud_cluster_oci_database_management_cloud_cluster["id"])
     ```
 
 

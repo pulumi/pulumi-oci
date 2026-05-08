@@ -220,7 +220,7 @@ def get_software_package_software_source(arch_types: Optional[Sequence[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package_software_source = oci.OsManagementHub.get_software_package_software_source(compartment_id=compartment_id,
+    test_software_package_software_source = oci.osmanagementhub.get_software_package_software_source(compartment_id=compartment_id,
         software_package_name=test_software_package["name"],
         arch_types=software_package_software_source_arch_type,
         availabilities=software_package_software_source_availability,
@@ -277,18 +277,18 @@ def get_software_package_software_source(arch_types: Optional[Sequence[_builtins
         software_source_collections=pulumi.get(__ret__, 'software_source_collections'),
         software_source_types=pulumi.get(__ret__, 'software_source_types'),
         states=pulumi.get(__ret__, 'states'))
-def get_software_package_software_source_output(arch_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                availabilities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                availability_anywheres: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                availability_at_ocis: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwarePackageSoftwareSourceFilterArgs', 'GetSoftwarePackageSoftwareSourceFilterArgsDict']]]]] = None,
-                                                os_families: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                software_package_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                software_source_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_software_package_software_source_output(arch_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                availabilities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                availability_anywheres: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                availability_at_ocis: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwarePackageSoftwareSourceFilterArgs', 'GetSoftwarePackageSoftwareSourceFilterArgsDict']]]]] = None,
+                                                os_families: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                software_package_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                software_source_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwarePackageSoftwareSourceResult]:
     """
     This data source provides the list of Software Package Software Source in Oracle Cloud Infrastructure Os Management Hub service.
@@ -302,7 +302,7 @@ def get_software_package_software_source_output(arch_types: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package_software_source = oci.OsManagementHub.get_software_package_software_source(compartment_id=compartment_id,
+    test_software_package_software_source = oci.osmanagementhub.get_software_package_software_source(compartment_id=compartment_id,
         software_package_name=test_software_package["name"],
         arch_types=software_package_software_source_arch_type,
         availabilities=software_package_software_source_availability,

@@ -147,7 +147,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.dataflow.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         display_name_starts_with=private_endpoint_display_name_starts_with,
         owner_principal_id=owner_principal_id,
@@ -180,12 +180,12 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
         private_endpoint_collections=pulumi.get(__ret__, 'private_endpoint_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name_starts_with: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
-                                 owner_principal_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
+                                 owner_principal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
     This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
@@ -198,7 +198,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.dataflow.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         display_name_starts_with=private_endpoint_display_name_starts_with,
         owner_principal_id=owner_principal_id,

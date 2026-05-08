@@ -66,8 +66,8 @@ class AwrHubSourceAwrhubsourcesManagementArgs:
 @pulumi.input_type
 class _AwrHubSourceAwrhubsourcesManagementState:
     def __init__(__self__, *,
-                 awr_hub_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None):
+                 awr_hub_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_awrhubsource: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AwrHubSourceAwrhubsourcesManagement resources.
 
@@ -85,19 +85,19 @@ class _AwrHubSourceAwrhubsourcesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="awrHubSourceId")
-    def awr_hub_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def awr_hub_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Awr Hub Source identifier
         """
         return pulumi.get(self, "awr_hub_source_id")
 
     @awr_hub_source_id.setter
-    def awr_hub_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def awr_hub_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "awr_hub_source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableAwrhubsource")
-    def enable_awrhubsource(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_awrhubsource(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -108,7 +108,7 @@ class _AwrHubSourceAwrhubsourcesManagementState:
         return pulumi.get(self, "enable_awrhubsource")
 
     @enable_awrhubsource.setter
-    def enable_awrhubsource(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_awrhubsource(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_awrhubsource", value)
 
 
@@ -118,8 +118,8 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 awr_hub_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None,
+                 awr_hub_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_awrhubsource: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Awr Hub Source Awrhubsources Management resource in Oracle Cloud Infrastructure Opsi service.
@@ -136,7 +136,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         test_awr_hub_source_awrhubsources_management = oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management",
             awr_hub_source_id=test_awr_hub_source["id"],
-            enable_awrhubsource=enable_awrhubsource)
+            enable_awrhubsource=enable_awrhubsource == "true")
         ```
 
 
@@ -170,7 +170,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         test_awr_hub_source_awrhubsources_management = oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management",
             awr_hub_source_id=test_awr_hub_source["id"],
-            enable_awrhubsource=enable_awrhubsource)
+            enable_awrhubsource=enable_awrhubsource == "true")
         ```
 
 
@@ -189,8 +189,8 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 awr_hub_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None,
+                 awr_hub_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_awrhubsource: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -216,8 +216,8 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            awr_hub_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AwrHubSourceAwrhubsourcesManagement':
+            awr_hub_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_awrhubsource: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AwrHubSourceAwrhubsourcesManagement':
         """
         Get an existing AwrHubSourceAwrhubsourcesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

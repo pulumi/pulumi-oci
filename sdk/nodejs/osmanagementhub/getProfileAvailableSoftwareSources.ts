@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileAvailableSoftwareSources = oci.OsManagementHub.getProfileAvailableSoftwareSources({
+ * const testProfileAvailableSoftwareSources = oci.osmanagementhub.getProfileAvailableSoftwareSources({
  *     profileId: testProfile.id,
  *     compartmentId: compartmentId,
  *     displayNames: profileAvailableSoftwareSourceDisplayName,
@@ -94,7 +94,7 @@ export interface GetProfileAvailableSoftwareSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileAvailableSoftwareSources = oci.OsManagementHub.getProfileAvailableSoftwareSources({
+ * const testProfileAvailableSoftwareSources = oci.osmanagementhub.getProfileAvailableSoftwareSources({
  *     profileId: testProfile.id,
  *     compartmentId: compartmentId,
  *     displayNames: profileAvailableSoftwareSourceDisplayName,
@@ -120,16 +120,16 @@ export interface GetProfileAvailableSoftwareSourcesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfileAvailableSoftwareSourcesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfileAvailableSoftwareSourcesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      */

@@ -242,7 +242,7 @@ def get_announcement_subscription(announcement_subscription_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
+    test_announcement_subscription = oci.announcementsservice.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
     ```
 
 
@@ -270,7 +270,7 @@ def get_announcement_subscription(announcement_subscription_id: Optional[_builti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_announcement_subscription_output(announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_announcement_subscription_output(announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementSubscriptionResult]:
     """
     This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -285,7 +285,7 @@ def get_announcement_subscription_output(announcement_subscription_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
+    test_announcement_subscription = oci.announcementsservice.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
     ```
 
 

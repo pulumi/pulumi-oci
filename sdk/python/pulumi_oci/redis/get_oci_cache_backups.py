@@ -147,7 +147,7 @@ def get_oci_cache_backups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backups = oci.Redis.get_oci_cache_backups(compartment_id=compartment_id,
+    test_oci_cache_backups = oci.redis.get_oci_cache_backups(compartment_id=compartment_id,
         display_name=oci_cache_backup_display_name,
         oci_cache_backup_id=test_oci_cache_backup["id"],
         source_cluster_id=test_redis_cluster["id"],
@@ -180,12 +180,12 @@ def get_oci_cache_backups(compartment_id: Optional[_builtins.str] = None,
         oci_cache_backup_id=pulumi.get(__ret__, 'oci_cache_backup_id'),
         source_cluster_id=pulumi.get(__ret__, 'source_cluster_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_oci_cache_backups_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict']]]]] = None,
-                                 oci_cache_backup_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 source_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oci_cache_backups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict']]]]] = None,
+                                 oci_cache_backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 source_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheBackupsResult]:
     """
     This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
@@ -198,7 +198,7 @@ def get_oci_cache_backups_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backups = oci.Redis.get_oci_cache_backups(compartment_id=compartment_id,
+    test_oci_cache_backups = oci.redis.get_oci_cache_backups(compartment_id=compartment_id,
         display_name=oci_cache_backup_display_name,
         oci_cache_backup_id=test_oci_cache_backup["id"],
         source_cluster_id=test_redis_cluster["id"],

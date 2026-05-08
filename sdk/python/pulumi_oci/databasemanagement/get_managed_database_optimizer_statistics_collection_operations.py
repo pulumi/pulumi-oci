@@ -151,7 +151,7 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_operations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_collection_operations = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
         filter_by=managed_database_optimizer_statistics_collection_operation_filter_by,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
@@ -186,13 +186,13 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
         optimizer_statistics_collection_operations_collections=pulumi.get(__ret__, 'optimizer_statistics_collection_operations_collections'),
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         task_type=pulumi.get(__ret__, 'task_type'))
-def get_managed_database_optimizer_statistics_collection_operations_output(end_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                           filter_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict']]]]] = None,
-                                                                           limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                                           managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                           start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                           task_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_optimizer_statistics_collection_operations_output(end_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                           filter_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict']]]]] = None,
+                                                                           limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                                           managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                           start_time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                           task_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult]:
     """
     This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
@@ -211,7 +211,7 @@ def get_managed_database_optimizer_statistics_collection_operations_output(end_t
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_operations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_collection_operations = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
         filter_by=managed_database_optimizer_statistics_collection_operation_filter_by,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,

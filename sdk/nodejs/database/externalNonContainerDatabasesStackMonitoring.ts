@@ -121,15 +121,15 @@ export interface ExternalNonContainerDatabasesStackMonitoringState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableStackMonitoring?: pulumi.Input<boolean>;
+    enableStackMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    externalDatabaseConnectorId?: pulumi.Input<string>;
+    externalDatabaseConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    externalNonContainerDatabaseId?: pulumi.Input<string>;
+    externalNonContainerDatabaseId?: pulumi.Input<string | undefined>;
 }
 
 /**

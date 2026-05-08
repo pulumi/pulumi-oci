@@ -123,42 +123,42 @@ export class VirtualNetwork extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VirtualNetwork resources.
  */
 export interface VirtualNetworkState {
-    byoipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VirtualNetworkByoipv6cidrDetail>[]>;
-    cidrBlock?: pulumi.Input<string>;
-    cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    compartmentId?: pulumi.Input<string>;
-    defaultDhcpOptionsId?: pulumi.Input<string>;
-    defaultRouteTableId?: pulumi.Input<string>;
-    defaultSecurityListId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    dnsLabel?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    isIpv6enabled?: pulumi.Input<boolean>;
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    state?: pulumi.Input<string>;
-    timeCreated?: pulumi.Input<string>;
-    vcnDomainName?: pulumi.Input<string>;
+    byoipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VirtualNetworkByoipv6cidrDetail>[] | undefined>;
+    cidrBlock?: pulumi.Input<string | undefined>;
+    cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    defaultDhcpOptionsId?: pulumi.Input<string | undefined>;
+    defaultRouteTableId?: pulumi.Input<string | undefined>;
+    defaultSecurityListId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    dnsLabel?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    vcnDomainName?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a VirtualNetwork resource.
  */
 export interface VirtualNetworkArgs {
-    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VirtualNetworkByoipv6cidrDetail>[]>;
-    cidrBlock?: pulumi.Input<string>;
-    cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VirtualNetworkByoipv6cidrDetail>[] | undefined>;
+    cidrBlock?: pulumi.Input<string | undefined>;
+    cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    dnsLabel?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    isIpv6enabled?: pulumi.Input<boolean>;
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    dnsLabel?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobJobActivityResources = oci.FleetAppsManagement.getSchedulerJobJobActivityResources({
+ * const testSchedulerJobJobActivityResources = oci.fleetappsmanagement.getSchedulerJobJobActivityResources({
  *     jobActivityId: testJobActivity.id,
  *     schedulerJobId: testJob.id,
  *     resourceTaskId: testResourceTask.id,
@@ -108,7 +108,7 @@ export interface GetSchedulerJobJobActivityResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobJobActivityResources = oci.FleetAppsManagement.getSchedulerJobJobActivityResources({
+ * const testSchedulerJobJobActivityResources = oci.fleetappsmanagement.getSchedulerJobJobActivityResources({
  *     jobActivityId: testJobActivity.id,
  *     schedulerJobId: testJob.id,
  *     resourceTaskId: testResourceTask.id,
@@ -135,7 +135,7 @@ export function getSchedulerJobJobActivityResourcesOutput(args: GetSchedulerJobJ
  * A collection of arguments for invoking getSchedulerJobJobActivityResources.
  */
 export interface GetSchedulerJobJobActivityResourcesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerJobJobActivityResourcesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerJobJobActivityResourcesFilterArgs>[] | undefined>;
     /**
      * unique jobActivity identifier
      */
@@ -143,7 +143,7 @@ export interface GetSchedulerJobJobActivityResourcesOutputArgs {
     /**
      * Task Id
      */
-    resourceTaskId?: pulumi.Input<string>;
+    resourceTaskId?: pulumi.Input<string | undefined>;
     /**
      * unique SchedulerJob identifier
      */
@@ -151,13 +151,13 @@ export interface GetSchedulerJobJobActivityResourcesOutputArgs {
     /**
      * Task Order Sequence
      */
-    sequence?: pulumi.Input<string>;
+    sequence?: pulumi.Input<string | undefined>;
     /**
      * Unique step name
      */
-    stepName?: pulumi.Input<string>;
+    stepName?: pulumi.Input<string | undefined>;
     /**
      * Unique target name
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
 }

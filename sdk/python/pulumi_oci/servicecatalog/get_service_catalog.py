@@ -179,7 +179,7 @@ def get_service_catalog(service_catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
+    test_service_catalog = oci.servicecatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_service_catalog(service_catalog_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_catalog_output(service_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogResult]:
     """
     This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -215,7 +215,7 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
+    test_service_catalog = oci.servicecatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
     ```
 
 

@@ -66,8 +66,8 @@ class SoftwareSourceReplacePackagesManagementArgs:
 @pulumi.input_type
 class _SoftwareSourceReplacePackagesManagementState:
     def __init__(__self__, *,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceReplacePackagesManagement resources.
 
@@ -85,19 +85,19 @@ class _SoftwareSourceReplacePackagesManagementState:
 
     @_builtins.property
     @pulumi.getter
-    def packages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def packages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         """
         return pulumi.get(self, "packages")
 
     @packages.setter
-    def packages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def packages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "packages", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 
@@ -108,7 +108,7 @@ class _SoftwareSourceReplacePackagesManagementState:
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
 
@@ -118,8 +118,8 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Software Source Replace Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -215,8 +215,8 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -242,8 +242,8 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            software_source_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SoftwareSourceReplacePackagesManagement':
+            packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SoftwareSourceReplacePackagesManagement':
         """
         Get an existing SoftwareSourceReplacePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

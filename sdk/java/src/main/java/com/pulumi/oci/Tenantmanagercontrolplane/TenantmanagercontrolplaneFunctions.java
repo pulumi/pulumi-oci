@@ -97,8 +97,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -139,8 +139,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -181,8 +181,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -223,8 +223,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -265,8 +265,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -307,8 +307,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -349,8 +349,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -433,8 +433,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -475,8 +475,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -517,8 +517,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -561,8 +561,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -605,8 +605,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -693,8 +693,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetAssignedSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -737,8 +737,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -779,8 +779,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -821,8 +821,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -863,8 +863,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -947,8 +947,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -989,8 +989,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1031,8 +1031,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1073,8 +1073,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1115,8 +1115,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1157,8 +1157,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1203,8 +1203,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1249,8 +1249,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1295,8 +1295,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1341,8 +1341,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainGovernancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1387,8 +1387,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1433,8 +1433,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1479,8 +1479,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1525,8 +1525,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1571,8 +1571,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1617,8 +1617,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1659,8 +1659,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1701,8 +1701,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1743,8 +1743,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1785,8 +1785,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1827,8 +1827,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1871,8 +1871,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1915,8 +1915,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1959,8 +1959,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2003,8 +2003,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2047,8 +2047,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2091,8 +2091,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2135,8 +2135,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2177,8 +2177,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2219,8 +2219,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2261,8 +2261,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2303,8 +2303,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2345,8 +2345,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenanciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2387,8 +2387,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenanciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2429,8 +2429,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenanciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2471,8 +2471,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenanciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2513,8 +2513,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenanciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2555,8 +2555,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2598,8 +2598,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2641,8 +2641,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2684,8 +2684,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2727,8 +2727,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2770,8 +2770,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2812,8 +2812,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2854,8 +2854,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2896,8 +2896,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2938,8 +2938,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2980,8 +2980,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3022,8 +3022,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3064,8 +3064,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3106,8 +3106,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3148,8 +3148,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3190,8 +3190,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3235,8 +3235,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3280,8 +3280,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3325,8 +3325,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3370,8 +3370,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetRecipientInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3415,8 +3415,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3457,8 +3457,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3499,8 +3499,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3541,8 +3541,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3583,8 +3583,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3625,8 +3625,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3671,8 +3671,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3717,8 +3717,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3763,8 +3763,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3809,8 +3809,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSenderInvitationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3855,8 +3855,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3897,8 +3897,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3939,8 +3939,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3981,8 +3981,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4023,8 +4023,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4065,8 +4065,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionAvailableRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4107,8 +4107,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionAvailableRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4149,8 +4149,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionAvailableRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4191,8 +4191,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionAvailableRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4233,8 +4233,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionAvailableRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4275,8 +4275,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4317,8 +4317,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4359,8 +4359,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4401,8 +4401,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4443,8 +4443,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionLineItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4485,8 +4485,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4527,8 +4527,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4569,8 +4569,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4611,8 +4611,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4653,8 +4653,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4695,8 +4695,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4740,8 +4740,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4785,8 +4785,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4830,8 +4830,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4875,8 +4875,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4920,8 +4920,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4964,8 +4964,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5008,8 +5008,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5052,8 +5052,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5096,8 +5096,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5140,8 +5140,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5184,8 +5184,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
      * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

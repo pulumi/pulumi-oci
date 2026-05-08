@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     projectId: testProject.id,
  *     approvalRules: {
  *         items: [{
- *             minApprovalsCount: projectRepositorySettingApprovalRulesItemsMinApprovalsCount,
+ *             minApprovalsCount: Number(projectRepositorySettingApprovalRulesItemsMinApprovalsCount),
  *             name: projectRepositorySettingApprovalRulesItemsName,
  *             destinationBranch: projectRepositorySettingApprovalRulesItemsDestinationBranch,
  *             reviewers: [{
@@ -129,11 +129,11 @@ export interface ProjectRepositorySettingState {
     /**
      * (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
      */
-    approvalRules?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRules>;
+    approvalRules?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRules | undefined>;
     /**
      * (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
      */
-    mergeSettings?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingMergeSettings>;
+    mergeSettings?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingMergeSettings | undefined>;
     /**
      * Unique project identifier.
      *
@@ -141,7 +141,7 @@ export interface ProjectRepositorySettingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -151,11 +151,11 @@ export interface ProjectRepositorySettingArgs {
     /**
      * (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
      */
-    approvalRules?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRules>;
+    approvalRules?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRules | undefined>;
     /**
      * (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
      */
-    mergeSettings?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingMergeSettings>;
+    mergeSettings?: pulumi.Input<inputs.DevOps.ProjectRepositorySettingMergeSettings | undefined>;
     /**
      * Unique project identifier.
      *

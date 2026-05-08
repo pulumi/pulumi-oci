@@ -95,7 +95,7 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
+    test_user_assessment_user_access_analytics = oci.datasafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[Union['
         id=pulumi.get(__ret__, 'id'),
         user_access_analytics_collections=pulumi.get(__ret__, 'user_access_analytics_collections'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
-def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]]]] = None,
-                                                     user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_assessment_user_access_analytics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]]]] = None,
+                                                     user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentUserAccessAnalyticsResult]:
     """
     This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -126,7 +126,7 @@ def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
+    test_user_assessment_user_access_analytics = oci.datasafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
     ```
 
 

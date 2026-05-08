@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShapes = oci.CloudMigrations.getMigrationPlanAvailableShapes({
+ * const testMigrationPlanAvailableShapes = oci.cloudmigrations.getMigrationPlanAvailableShapes({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -98,7 +98,7 @@ export interface GetMigrationPlanAvailableShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShapes = oci.CloudMigrations.getMigrationPlanAvailableShapes({
+ * const testMigrationPlanAvailableShapes = oci.cloudmigrations.getMigrationPlanAvailableShapes({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -126,16 +126,16 @@ export interface GetMigrationPlanAvailableShapesOutputArgs {
     /**
      * The availability domain in which to list resources.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the Dvh in which to list resources.
      */
-    dvhHostId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationPlanAvailableShapesFilterArgs>[]>;
+    dvhHostId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationPlanAvailableShapesFilterArgs>[] | undefined>;
     /**
      * Unique migration plan identifier
      */
@@ -143,5 +143,5 @@ export interface GetMigrationPlanAvailableShapesOutputArgs {
     /**
      * The reserved capacity ID for which to list resources.
      */
-    reservedCapacityId?: pulumi.Input<string>;
+    reservedCapacityId?: pulumi.Input<string | undefined>;
 }

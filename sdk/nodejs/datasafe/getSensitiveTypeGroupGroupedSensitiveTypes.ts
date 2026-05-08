@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypeGroupGroupedSensitiveTypes = oci.DataSafe.getSensitiveTypeGroupGroupedSensitiveTypes({
+ * const testSensitiveTypeGroupGroupedSensitiveTypes = oci.datasafe.getSensitiveTypeGroupGroupedSensitiveTypes({
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
  * });
@@ -77,7 +77,7 @@ export interface GetSensitiveTypeGroupGroupedSensitiveTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypeGroupGroupedSensitiveTypes = oci.DataSafe.getSensitiveTypeGroupGroupedSensitiveTypes({
+ * const testSensitiveTypeGroupGroupedSensitiveTypes = oci.datasafe.getSensitiveTypeGroupGroupedSensitiveTypes({
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
  * });
@@ -96,7 +96,7 @@ export function getSensitiveTypeGroupGroupedSensitiveTypesOutput(args: GetSensit
  * A collection of arguments for invoking getSensitiveTypeGroupGroupedSensitiveTypes.
  */
 export interface GetSensitiveTypeGroupGroupedSensitiveTypesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs>[] | undefined>;
     /**
      * The OCID of the sensitive type group.
      */
@@ -104,5 +104,5 @@ export interface GetSensitiveTypeGroupGroupedSensitiveTypesOutputArgs {
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
 }

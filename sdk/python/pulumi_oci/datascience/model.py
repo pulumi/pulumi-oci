@@ -25,21 +25,21 @@ class ModelArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  model_artifact: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_setting: Optional[pulumi.Input['ModelBackupSettingArgs']] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 input_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_setting: Optional[pulumi.Input['ModelRetentionSettingArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None):
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_setting: pulumi.Input[Optional['ModelBackupSettingArgs']] = None,
+                 custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
+                 defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_setting: pulumi.Input[Optional['ModelRetentionSettingArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Model resource.
 
@@ -154,217 +154,217 @@ class ModelArgs:
 
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
-    def artifact_content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSetting")
-    def backup_setting(self) -> Optional[pulumi.Input['ModelBackupSettingArgs']]:
+    def backup_setting(self) -> pulumi.Input[Optional['ModelBackupSettingArgs']]:
         """
         (Updatable) Back up setting details of the model.
         """
         return pulumi.get(self, "backup_setting")
 
     @backup_setting.setter
-    def backup_setting(self, value: Optional[pulumi.Input['ModelBackupSettingArgs']]):
+    def backup_setting(self, value: pulumi.Input[Optional['ModelBackupSettingArgs']]):
         pulumi.set(self, "backup_setting", value)
 
     @_builtins.property
     @pulumi.getter(name="customMetadataLists")
-    def custom_metadata_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]:
+    def custom_metadata_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]:
         """
         (Updatable) An array of custom metadata details for the model.
         """
         return pulumi.get(self, "custom_metadata_lists")
 
     @custom_metadata_lists.setter
-    def custom_metadata_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]):
+    def custom_metadata_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]):
         pulumi.set(self, "custom_metadata_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedMetadataLists")
-    def defined_metadata_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]:
+    def defined_metadata_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]:
         """
         (Updatable) An array of defined metadata details for the model.
         """
         return pulumi.get(self, "defined_metadata_lists")
 
     @defined_metadata_lists.setter
-    def defined_metadata_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]):
+    def defined_metadata_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]):
         pulumi.set(self, "defined_metadata_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inputSchema")
-    def input_schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Input schema file content in String format
         """
         return pulumi.get(self, "input_schema")
 
     @input_schema.setter
-    def input_schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_schema", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersionSetId")
-    def model_version_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the model version set that the model is associated to.
         """
         return pulumi.get(self, "model_version_set_id")
 
     @model_version_set_id.setter
-    def model_version_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersionSetName")
-    def model_version_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the model version set that the model is associated to.
         """
         return pulumi.get(self, "model_version_set_name")
 
     @model_version_set_name.setter
-    def model_version_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSchema")
-    def output_schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Output schema file content in String format
         """
         return pulumi.get(self, "output_schema")
 
     @output_schema.setter
-    def output_schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_schema", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionSetting")
-    def retention_setting(self) -> Optional[pulumi.Input['ModelRetentionSettingArgs']]:
+    def retention_setting(self) -> pulumi.Input[Optional['ModelRetentionSettingArgs']]:
         """
         (Updatable) Retention setting details of the model.
         """
         return pulumi.get(self, "retention_setting")
 
     @retention_setting.setter
-    def retention_setting(self, value: Optional[pulumi.Input['ModelRetentionSettingArgs']]):
+    def retention_setting(self, value: pulumi.Input[Optional['ModelRetentionSettingArgs']]):
         pulumi.set(self, "retention_setting", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the model.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="versionLabel")
-    def version_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         return pulumi.get(self, "version_label")
 
     @version_label.setter
-    def version_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_label", value)
 
 
 @pulumi.input_type
 class _ModelState:
     def __init__(__self__, *,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]] = None,
-                 backup_setting: Optional[pulumi.Input['ModelBackupSettingArgs']] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 empty_model: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 input_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_model_by_reference: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]] = None,
-                 retention_setting: Optional[pulumi.Input['ModelRetentionSettingArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None):
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]] = None,
+                 backup_setting: pulumi.Input[Optional['ModelBackupSettingArgs']] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
+                 defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 empty_model: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_model_by_reference: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]] = None,
+                 retention_setting: pulumi.Input[Optional['ModelRetentionSettingArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Model resources.
 
@@ -459,19 +459,19 @@ class _ModelState:
 
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
-    def artifact_content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_length(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content length of the model_artifact.
 
@@ -481,322 +481,322 @@ class _ModelState:
         return pulumi.get(self, "artifact_content_length")
 
     @artifact_content_length.setter
-    def artifact_content_length(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_length(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_content_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "artifact_content_md5")
 
     @artifact_content_md5.setter
-    def artifact_content_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_content_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_content_md5", value)
 
     @_builtins.property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "artifact_last_modified")
 
     @artifact_last_modified.setter
-    def artifact_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_last_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="backupOperationDetails")
-    def backup_operation_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]]:
+    def backup_operation_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]]:
         """
         Backup operation details of the model.
         """
         return pulumi.get(self, "backup_operation_details")
 
     @backup_operation_details.setter
-    def backup_operation_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]]):
+    def backup_operation_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelBackupOperationDetailArgs']]]]):
         pulumi.set(self, "backup_operation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSetting")
-    def backup_setting(self) -> Optional[pulumi.Input['ModelBackupSettingArgs']]:
+    def backup_setting(self) -> pulumi.Input[Optional['ModelBackupSettingArgs']]:
         """
         (Updatable) Back up setting details of the model.
         """
         return pulumi.get(self, "backup_setting")
 
     @backup_setting.setter
-    def backup_setting(self, value: Optional[pulumi.Input['ModelBackupSettingArgs']]):
+    def backup_setting(self, value: pulumi.Input[Optional['ModelBackupSettingArgs']]):
         pulumi.set(self, "backup_setting", value)
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="customMetadataLists")
-    def custom_metadata_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]:
+    def custom_metadata_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]:
         """
         (Updatable) An array of custom metadata details for the model.
         """
         return pulumi.get(self, "custom_metadata_lists")
 
     @custom_metadata_lists.setter
-    def custom_metadata_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]):
+    def custom_metadata_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]]):
         pulumi.set(self, "custom_metadata_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedMetadataLists")
-    def defined_metadata_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]:
+    def defined_metadata_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]:
         """
         (Updatable) An array of defined metadata details for the model.
         """
         return pulumi.get(self, "defined_metadata_lists")
 
     @defined_metadata_lists.setter
-    def defined_metadata_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]):
+    def defined_metadata_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]]):
         pulumi.set(self, "defined_metadata_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emptyModel")
-    def empty_model(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def empty_model(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "empty_model")
 
     @empty_model.setter
-    def empty_model(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def empty_model(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "empty_model", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inputSchema")
-    def input_schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def input_schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Input schema file content in String format
         """
         return pulumi.get(self, "input_schema")
 
     @input_schema.setter
-    def input_schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def input_schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "input_schema", value)
 
     @_builtins.property
     @pulumi.getter(name="isModelByReference")
-    def is_model_by_reference(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_model_by_reference(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
         """
         return pulumi.get(self, "is_model_by_reference")
 
     @is_model_by_reference.setter
-    def is_model_by_reference(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_model_by_reference(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_model_by_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the lifecycle state of the model.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelArtifact")
-    def model_artifact(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_artifact(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         """
         return pulumi.get(self, "model_artifact")
 
     @model_artifact.setter
-    def model_artifact(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_artifact(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_artifact", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersionSetId")
-    def model_version_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the model version set that the model is associated to.
         """
         return pulumi.get(self, "model_version_set_id")
 
     @model_version_set_id.setter
-    def model_version_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersionSetName")
-    def model_version_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the model version set that the model is associated to.
         """
         return pulumi.get(self, "model_version_set_name")
 
     @model_version_set_name.setter
-    def model_version_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSchema")
-    def output_schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Output schema file content in String format
         """
         return pulumi.get(self, "output_schema")
 
     @output_schema.setter
-    def output_schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_schema", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionOperationDetails")
-    def retention_operation_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]]:
+    def retention_operation_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]]:
         """
         Retention operation details for the model.
         """
         return pulumi.get(self, "retention_operation_details")
 
     @retention_operation_details.setter
-    def retention_operation_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]]):
+    def retention_operation_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]]):
         pulumi.set(self, "retention_operation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionSetting")
-    def retention_setting(self) -> Optional[pulumi.Input['ModelRetentionSettingArgs']]:
+    def retention_setting(self) -> pulumi.Input[Optional['ModelRetentionSettingArgs']]:
         """
         (Updatable) Retention setting details of the model.
         """
         return pulumi.get(self, "retention_setting")
 
     @retention_setting.setter
-    def retention_setting(self, value: Optional[pulumi.Input['ModelRetentionSettingArgs']]):
+    def retention_setting(self, value: pulumi.Input[Optional['ModelRetentionSettingArgs']]):
         pulumi.set(self, "retention_setting", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the model.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="versionLabel")
-    def version_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         return pulumi.get(self, "version_label")
 
     @version_label.setter
-    def version_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_label", value)
 
 
@@ -806,25 +806,25 @@ class Model(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_setting: Optional[pulumi.Input[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 input_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_setting: pulumi.Input[Optional[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+                 defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_setting: pulumi.Input[Optional[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Data Science service.
@@ -845,13 +845,13 @@ class Model(pulumi.CustomResource):
             project_id=test_project["id"],
             backup_setting={
                 "backup_region": model_backup_setting_backup_region,
-                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled == "true",
                 "customer_notification_type": model_backup_setting_customer_notification_type,
             },
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
-                "has_artifact": model_custom_metadata_list_has_artifact,
+                "has_artifact": model_custom_metadata_list_has_artifact == "true",
                 "key": model_custom_metadata_list_key,
                 "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
@@ -859,7 +859,7 @@ class Model(pulumi.CustomResource):
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
-                "has_artifact": model_defined_metadata_list_has_artifact,
+                "has_artifact": model_defined_metadata_list_has_artifact == "true",
                 "key": model_defined_metadata_list_key,
                 "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
@@ -875,9 +875,9 @@ class Model(pulumi.CustomResource):
             input_schema=model_input_schema,
             output_schema=model_output_schema,
             retention_setting={
-                "archive_after_days": model_retention_setting_archive_after_days,
+                "archive_after_days": int(model_retention_setting_archive_after_days),
                 "customer_notification_type": model_retention_setting_customer_notification_type,
-                "delete_after_days": model_retention_setting_delete_after_days,
+                "delete_after_days": int(model_retention_setting_delete_after_days),
             },
             version_label=model_version_label)
         ```
@@ -941,13 +941,13 @@ class Model(pulumi.CustomResource):
             project_id=test_project["id"],
             backup_setting={
                 "backup_region": model_backup_setting_backup_region,
-                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled == "true",
                 "customer_notification_type": model_backup_setting_customer_notification_type,
             },
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
-                "has_artifact": model_custom_metadata_list_has_artifact,
+                "has_artifact": model_custom_metadata_list_has_artifact == "true",
                 "key": model_custom_metadata_list_key,
                 "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
@@ -955,7 +955,7 @@ class Model(pulumi.CustomResource):
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
-                "has_artifact": model_defined_metadata_list_has_artifact,
+                "has_artifact": model_defined_metadata_list_has_artifact == "true",
                 "key": model_defined_metadata_list_key,
                 "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
@@ -971,9 +971,9 @@ class Model(pulumi.CustomResource):
             input_schema=model_input_schema,
             output_schema=model_output_schema,
             retention_setting={
-                "archive_after_days": model_retention_setting_archive_after_days,
+                "archive_after_days": int(model_retention_setting_archive_after_days),
                 "customer_notification_type": model_retention_setting_customer_notification_type,
-                "delete_after_days": model_retention_setting_delete_after_days,
+                "delete_after_days": int(model_retention_setting_delete_after_days),
             },
             version_label=model_version_label)
         ```
@@ -1002,25 +1002,25 @@ class Model(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_setting: Optional[pulumi.Input[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 input_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_label: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_setting: pulumi.Input[Optional[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+                 defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_setting: pulumi.Input[Optional[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_label: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1077,35 +1077,35 @@ class Model(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            artifact_content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_content_length: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_content_md5: Optional[pulumi.Input[_builtins.str]] = None,
-            artifact_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelBackupOperationDetailArgs', 'ModelBackupOperationDetailArgsDict']]]]] = None,
-            backup_setting: Optional[pulumi.Input[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
-            defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            empty_model: Optional[pulumi.Input[_builtins.bool]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            input_schema: Optional[pulumi.Input[_builtins.str]] = None,
-            is_model_by_reference: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            model_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-            output_schema: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelRetentionOperationDetailArgs', 'ModelRetentionOperationDetailArgsDict']]]]] = None,
-            retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            version_label: Optional[pulumi.Input[_builtins.str]] = None) -> 'Model':
+            artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelBackupOperationDetailArgs', 'ModelBackupOperationDetailArgsDict']]]]] = None,
+            backup_setting: pulumi.Input[Optional[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict']]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+            defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            empty_model: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+            is_model_by_reference: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            model_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelRetentionOperationDetailArgs', 'ModelRetentionOperationDetailArgsDict']]]]] = None,
+            retention_setting: pulumi.Input[Optional[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version_label: pulumi.Input[Optional[_builtins.str]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

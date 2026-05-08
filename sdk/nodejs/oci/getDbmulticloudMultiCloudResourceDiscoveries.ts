@@ -160,26 +160,26 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs {
     /**
      * A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
      */
-    multiCloudResourceDiscoveryId?: pulumi.Input<string>;
+    multiCloudResourceDiscoveryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
-    oracleDbAzureConnectorId?: pulumi.Input<string>;
+    oracleDbAzureConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The type of Multicloud Resource.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type(s) of resources to discover in the target cloud provider.
      */
-    resourcesFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    resourcesFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

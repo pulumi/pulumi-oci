@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionDatabaseconnectiontypes = oci.DatabaseMigration.getConnectionDatabaseconnectiontypes({
+ * const testConnectionDatabaseconnectiontypes = oci.databasemigration.getConnectionDatabaseconnectiontypes({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionDatabaseconnectiontypeConnectionType,
  *     sourceConnectionId: testConnection.id,
@@ -94,7 +94,7 @@ export interface GetConnectionDatabaseconnectiontypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionDatabaseconnectiontypes = oci.DatabaseMigration.getConnectionDatabaseconnectiontypes({
+ * const testConnectionDatabaseconnectiontypes = oci.databasemigration.getConnectionDatabaseconnectiontypes({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionDatabaseconnectiontypeConnectionType,
  *     sourceConnectionId: testConnection.id,
@@ -124,14 +124,14 @@ export interface GetConnectionDatabaseconnectiontypesOutputArgs {
     /**
      * The array of connection types.
      */
-    connectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetConnectionDatabaseconnectiontypesFilterArgs>[]>;
+    connectionTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetConnectionDatabaseconnectiontypesFilterArgs>[] | undefined>;
     /**
      * The OCID of the source connection.
      */
-    sourceConnectionId?: pulumi.Input<string>;
+    sourceConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The array of technology types.
      */
-    technologyTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    technologyTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

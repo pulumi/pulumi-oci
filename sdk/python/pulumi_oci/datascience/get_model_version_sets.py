@@ -164,7 +164,7 @@ def get_model_version_sets(category: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+    test_model_version_sets = oci.datascience.get_model_version_sets(compartment_id=compartment_id,
         category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,
@@ -204,14 +204,14 @@ def get_model_version_sets(category: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_model_version_sets_output(category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelVersionSetsFilterArgs', 'GetModelVersionSetsFilterArgsDict']]]]] = None,
-                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_version_sets_output(category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelVersionSetsFilterArgs', 'GetModelVersionSetsFilterArgsDict']]]]] = None,
+                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelVersionSetsResult]:
     """
     This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
@@ -224,7 +224,7 @@ def get_model_version_sets_output(category: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+    test_model_version_sets = oci.datascience.get_model_version_sets(compartment_id=compartment_id,
         category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,

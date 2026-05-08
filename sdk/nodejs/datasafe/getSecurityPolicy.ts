@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicy = oci.DataSafe.getSecurityPolicy({
+ * const testSecurityPolicy = oci.datasafe.getSecurityPolicy({
  *     securityPolicyId: testSecurityPolicyOciDataSafeSecurityPolicy.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetSecurityPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicy = oci.DataSafe.getSecurityPolicy({
+ * const testSecurityPolicy = oci.datasafe.getSecurityPolicy({
  *     securityPolicyId: testSecurityPolicyOciDataSafeSecurityPolicy.id,
  * });
  * ```

@@ -24,14 +24,14 @@ import * as utilities from "../utilities";
  *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:core:2.0:User"],
  *     userName: "userName",
- *     active: userActive,
+ *     active: userActive === "true",
  *     addresses: [{
  *         type: userAddressesType,
  *         country: userAddressesCountry,
  *         formatted: userAddressesFormatted,
  *         locality: userAddressesLocality,
  *         postalCode: userAddressesPostalCode,
- *         primary: userAddressesPrimary,
+ *         primary: userAddressesPrimary === "true",
  *         region: userAddressesRegion,
  *         streetAddress: userAddressesStreetAddress,
  *     }],
@@ -45,8 +45,8 @@ import * as utilities from "../utilities";
  *             type: userEmailsType,
  *             value: userEmailsValue,
  *             primary: true,
- *             secondary: userEmailsSecondary,
- *             verified: userEmailsVerified,
+ *             secondary: userEmailsSecondary === "true",
+ *             verified: userEmailsVerified === "true",
  *         },
  *         {
  *             type: "recovery",
@@ -57,16 +57,16 @@ import * as utilities from "../utilities";
  *         type: userEntitlementsType,
  *         value: userEntitlementsValue,
  *         display: userEntitlementsDisplay,
- *         primary: userEntitlementsPrimary,
+ *         primary: userEntitlementsPrimary === "true",
  *     }],
  *     externalId: "externalId",
- *     forceDelete: userForceDelete,
+ *     forceDelete: userForceDelete === "true",
  *     id: userId,
  *     ims: [{
  *         type: userImsType,
  *         value: userImsValue,
  *         display: userImsDisplay,
- *         primary: userImsPrimary,
+ *         primary: userImsPrimary === "true",
  *     }],
  *     locale: userLocale,
  *     name: {
@@ -83,13 +83,13 @@ import * as utilities from "../utilities";
  *     phoneNumbers: [{
  *         type: userPhoneNumbersType,
  *         value: userPhoneNumbersValue,
- *         primary: userPhoneNumbersPrimary,
+ *         primary: userPhoneNumbersPrimary === "true",
  *     }],
  *     photos: [{
  *         type: userPhotosType,
  *         value: userPhotosValue,
  *         display: userPhotosDisplay,
- *         primary: userPhotosPrimary,
+ *         primary: userPhotosPrimary === "true",
  *     }],
  *     preferredLanguage: userPreferredLanguage,
  *     profileUrl: userProfileUrl,
@@ -98,7 +98,7 @@ import * as utilities from "../utilities";
  *         type: userRolesType,
  *         value: userRolesValue,
  *         display: userRolesDisplay,
- *         primary: userRolesPrimary,
+ *         primary: userRolesPrimary === "true",
  *     }],
  *     tags: [{
  *         key: userTagsKey,
@@ -132,7 +132,7 @@ import * as utilities from "../utilities";
  *         riskScores: [{
  *             lastUpdateTimestamp: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresLastUpdateTimestamp,
  *             riskLevel: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresRiskLevel,
- *             score: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresScore,
+ *             score: Number(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresScore),
  *             value: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresValue,
  *             source: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresSource,
  *             status: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresStatus,
@@ -171,7 +171,7 @@ import * as utilities from "../utilities";
  *             status: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesStatus,
  *             thirdPartyVendorName: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesThirdPartyVendorName,
  *         }],
- *         loginAttempts: userUrnietfparamsscimschemasoracleidcsextensionmfaUserLoginAttempts,
+ *         loginAttempts: Number(userUrnietfparamsscimschemasoracleidcsextensionmfaUserLoginAttempts),
  *         mfaEnabledOn: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaEnabledOn,
  *         mfaIgnoredApps: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaIgnoredApps,
  *         mfaStatus: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaStatus,
@@ -197,10 +197,10 @@ import * as utilities from "../utilities";
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionposixUser: {
  *         gecos: userUrnietfparamsscimschemasoracleidcsextensionposixUserGecos,
- *         gidNumber: userUrnietfparamsscimschemasoracleidcsextensionposixUserGidNumber,
+ *         gidNumber: Number(userUrnietfparamsscimschemasoracleidcsextensionposixUserGidNumber),
  *         homeDirectory: userUrnietfparamsscimschemasoracleidcsextensionposixUserHomeDirectory,
  *         loginShell: userUrnietfparamsscimschemasoracleidcsextensionposixUserLoginShell,
- *         uidNumber: userUrnietfparamsscimschemasoracleidcsextensionposixUserUidNumber,
+ *         uidNumber: Number(userUrnietfparamsscimschemasoracleidcsextensionposixUserUidNumber),
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser: {
  *         secQuestions: [{
@@ -210,14 +210,14 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: userUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: userUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser: {
  *         selfRegistrationProfile: {
  *             value: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileValue,
  *             display: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileDisplay,
  *         },
- *         consentGranted: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserConsentGranted,
+ *         consentGranted: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserConsentGranted === "true",
  *         userToken: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserUserToken,
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionsffUser: {
@@ -236,47 +236,47 @@ import * as utilities from "../utilities";
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionuserStateUser: {
  *         locked: {
- *             expired: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedExpired,
+ *             expired: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedExpired === "true",
  *             lockDate: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedLockDate,
- *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOn,
- *             reason: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedReason,
+ *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOn === "true",
+ *             reason: Number(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedReason),
  *         },
- *         maxConcurrentSessions: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserMaxConcurrentSessions,
+ *         maxConcurrentSessions: Number(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserMaxConcurrentSessions),
  *         recoveryLocked: {
  *             lockDate: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedLockDate,
- *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOn,
+ *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOn === "true",
  *         },
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionuserUser: {
  *         userProvider: userUrnietfparamsscimschemasoracleidcsextensionuserUserUserProvider,
- *         accountRecoveryRequired: userUrnietfparamsscimschemasoracleidcsextensionuserUserAccountRecoveryRequired,
- *         bypassNotification: userUrnietfparamsscimschemasoracleidcsextensionuserUserBypassNotification,
+ *         accountRecoveryRequired: userUrnietfparamsscimschemasoracleidcsextensionuserUserAccountRecoveryRequired === "true",
+ *         bypassNotification: userUrnietfparamsscimschemasoracleidcsextensionuserUserBypassNotification === "true",
  *         creationMechanism: userUrnietfparamsscimschemasoracleidcsextensionuserUserCreationMechanism,
  *         delegatedAuthenticationTargetApp: {
  *             type: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppType,
  *             value: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppValue,
  *             display: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppDisplay,
  *         },
- *         doNotShowGettingStarted: userUrnietfparamsscimschemasoracleidcsextensionuserUserDoNotShowGettingStarted,
- *         isAuthenticationDelegated: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsAuthenticationDelegated,
- *         isFederatedUser: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser,
- *         isGroupMembershipNormalized: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized,
- *         isGroupMembershipSyncedToUsersGroups: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups,
+ *         doNotShowGettingStarted: userUrnietfparamsscimschemasoracleidcsextensionuserUserDoNotShowGettingStarted === "true",
+ *         isAuthenticationDelegated: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsAuthenticationDelegated === "true",
+ *         isFederatedUser: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser === "true",
+ *         isGroupMembershipNormalized: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized === "true",
+ *         isGroupMembershipSyncedToUsersGroups: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups === "true",
  *         notificationEmailTemplateId: testNotificationEmailTemplate.id,
  *         preferredUiLandingPage: userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserPreferredUiLandingPage,
- *         serviceUser: userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser,
+ *         serviceUser: userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser === "true",
  *         syncedFromApp: {
  *             type: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppType,
  *             value: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppValue,
  *             display: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppDisplay,
  *         },
- *         userFlowControlledByExternalClient: userUrnietfparamsscimschemasoracleidcsextensionuserUserUserFlowControlledByExternalClient,
+ *         userFlowControlledByExternalClient: userUrnietfparamsscimschemasoracleidcsextensionuserUserUserFlowControlledByExternalClient === "true",
  *     },
  *     userType: userUserType,
  *     x509certificates: [{
  *         value: userX509certificatesValue,
  *         display: userX509certificatesDisplay,
- *         primary: userX509certificatesPrimary,
+ *         primary: userX509certificatesPrimary === "true",
  *         type: userX509certificatesType,
  *     }],
  * });
@@ -1117,7 +1117,7 @@ export interface DomainsUserState {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      *
@@ -1132,19 +1132,19 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    addresses?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserAddress>[]>;
+    addresses?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserAddress>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -1158,7 +1158,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -1172,7 +1172,7 @@ export interface DomainsUserState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Description of the user
      *
@@ -1189,7 +1189,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name
      *
@@ -1206,7 +1206,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1220,7 +1220,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute representing emails
      *
@@ -1235,7 +1235,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    emails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEmail>[]>;
+    emails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEmail>[] | undefined>;
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
      *
@@ -1248,7 +1248,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    entitlements?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEntitlement>[]>;
+    entitlements?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEntitlement>[] | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1264,11 +1264,11 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      *
@@ -1282,7 +1282,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserGroup>[]>;
+    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserGroup>[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -1294,11 +1294,11 @@ export interface DomainsUserState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -1310,7 +1310,7 @@ export interface DomainsUserState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1324,7 +1324,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1337,7 +1337,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) User's instant messaging addresses
      *
@@ -1351,7 +1351,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    ims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIm>[]>;
+    ims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIm>[] | undefined>;
     /**
      * (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -1367,7 +1367,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1381,7 +1381,7 @@ export interface DomainsUserState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserMeta>[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains attributes representing the name
      *
@@ -1395,7 +1395,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    name?: pulumi.Input<inputs.Identity.DomainsUserName>;
+    name?: pulumi.Input<inputs.Identity.DomainsUserName | undefined>;
     /**
      * (Updatable) Nick name
      *
@@ -1412,7 +1412,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    nickName?: pulumi.Input<string>;
+    nickName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1426,7 +1426,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
      *
@@ -1443,7 +1443,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Phone numbers
      *
@@ -1458,7 +1458,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    phoneNumbers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoneNumber>[]>;
+    phoneNumbers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoneNumber>[] | undefined>;
     /**
      * (Updatable) URLs of photos for the User
      *
@@ -1472,7 +1472,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    photos?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoto>[]>;
+    photos?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoto>[] | undefined>;
     /**
      * (Updatable) User's preferred written or spoken language used for localized user interfaces
      *
@@ -1488,7 +1488,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A fully-qualified URL to a page representing the User's online profile
      *
@@ -1505,11 +1505,11 @@ export interface DomainsUserState {
      * * type: reference
      * * uniqueness: none
      */
-    profileUrl?: pulumi.Input<string>;
+    profileUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
      *
@@ -1522,7 +1522,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    roles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserRole>[]>;
+    roles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserRole>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1536,7 +1536,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1550,7 +1550,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1564,7 +1564,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User's timezone
      *
@@ -1582,7 +1582,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Title
      *
@@ -1599,87 +1599,87 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Enterprise User
      */
-    urnietfparamsscimschemasextensionenterprise20user?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user>;
+    urnietfparamsscimschemasextensionenterprise20user?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension defines attributes to manage user's risk score.
      */
-    urnietfparamsscimschemasoracleidcsextensionadaptiveUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>;
+    urnietfparamsscimschemasoracleidcsextensionadaptiveUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser | undefined>;
     /**
      * (Updatable) User's Capabilities
      */
-    urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
+    urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser | undefined>;
     /**
      * (Updatable) The database credentials user extension.
      */
-    urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
+    urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser | undefined>;
     /**
      * (Updatable) DB User extension
      */
-    urnietfparamsscimschemasoracleidcsextensiondbUserUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>[]>;
+    urnietfparamsscimschemasoracleidcsextensiondbUserUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>[] | undefined>;
     /**
      * (Updatable) Kerberos User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionkerberosUserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>;
+    urnietfparamsscimschemasoracleidcsextensionkerberosUserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    urnietfparamsscimschemasoracleidcsextensionmfaUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>;
+    urnietfparamsscimschemasoracleidcsextensionmfaUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>[]>;
+    urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>[] | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    urnietfparamsscimschemasoracleidcsextensionpasswordlessUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>;
+    urnietfparamsscimschemasoracleidcsextensionpasswordlessUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser | undefined>;
     /**
      * (Updatable) POSIX User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
+    urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
-    urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
+    urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser | undefined>;
     /**
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      */
-    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      */
-    urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser | undefined>;
     /**
      * (Updatable) SFF Auth Keys User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionsffUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>;
+    urnietfparamsscimschemasoracleidcsextensionsffUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser | undefined>;
     /**
      * (Updatable) Social User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionsocialAccountUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>;
+    urnietfparamsscimschemasoracleidcsextensionsocialAccountUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser | undefined>;
     /**
      * (Updatable) Terms Of Use extension
      */
-    urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
+    urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser | undefined>;
     /**
      * (Updatable) User's credentials
      */
-    urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>[]>;
+    urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>[] | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
+    urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser | undefined>;
     /**
      * (Updatable) Oracle Identity Cloud Service User
      */
-    urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
+    urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser | undefined>;
     /**
      * (Updatable) User name
      *
@@ -1696,7 +1696,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: global
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Used to identify the organization-to-user relationship
      *
@@ -1713,7 +1713,7 @@ export interface DomainsUserState {
      * * type: string
      * * uniqueness: none
      */
-    userType?: pulumi.Input<string>;
+    userType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of certificates issued to the User.
      *
@@ -1726,7 +1726,7 @@ export interface DomainsUserState {
      * * type: complex
      * * uniqueness: none
      */
-    x509certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserX509certificate>[]>;
+    x509certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserX509certificate>[] | undefined>;
 }
 
 /**
@@ -1748,7 +1748,7 @@ export interface DomainsUserArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      *
@@ -1763,19 +1763,19 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    addresses?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserAddress>[]>;
+    addresses?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserAddress>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Description of the user
      *
@@ -1792,7 +1792,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name
      *
@@ -1809,7 +1809,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute representing emails
      *
@@ -1824,7 +1824,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    emails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEmail>[]>;
+    emails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEmail>[] | undefined>;
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
      *
@@ -1837,7 +1837,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    entitlements?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEntitlement>[]>;
+    entitlements?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserEntitlement>[] | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1853,11 +1853,11 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1875,7 +1875,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    ims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIm>[]>;
+    ims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserIm>[] | undefined>;
     /**
      * (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -1891,7 +1891,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains attributes representing the name
      *
@@ -1905,7 +1905,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    name?: pulumi.Input<inputs.Identity.DomainsUserName>;
+    name?: pulumi.Input<inputs.Identity.DomainsUserName | undefined>;
     /**
      * (Updatable) Nick name
      *
@@ -1922,7 +1922,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    nickName?: pulumi.Input<string>;
+    nickName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1936,7 +1936,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
      *
@@ -1953,7 +1953,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Phone numbers
      *
@@ -1968,7 +1968,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    phoneNumbers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoneNumber>[]>;
+    phoneNumbers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoneNumber>[] | undefined>;
     /**
      * (Updatable) URLs of photos for the User
      *
@@ -1982,7 +1982,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    photos?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoto>[]>;
+    photos?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserPhoto>[] | undefined>;
     /**
      * (Updatable) User's preferred written or spoken language used for localized user interfaces
      *
@@ -1998,7 +1998,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A fully-qualified URL to a page representing the User's online profile
      *
@@ -2015,11 +2015,11 @@ export interface DomainsUserArgs {
      * * type: reference
      * * uniqueness: none
      */
-    profileUrl?: pulumi.Input<string>;
+    profileUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
      *
@@ -2032,7 +2032,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    roles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserRole>[]>;
+    roles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserRole>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -2060,7 +2060,7 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserTag>[] | undefined>;
     /**
      * (Updatable) User's timezone
      *
@@ -2078,7 +2078,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Title
      *
@@ -2095,75 +2095,75 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Enterprise User
      */
-    urnietfparamsscimschemasextensionenterprise20user?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user>;
+    urnietfparamsscimschemasextensionenterprise20user?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension defines attributes to manage user's risk score.
      */
-    urnietfparamsscimschemasoracleidcsextensionadaptiveUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>;
+    urnietfparamsscimschemasoracleidcsextensionadaptiveUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser | undefined>;
     /**
      * (Updatable) User's Capabilities
      */
-    urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
+    urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser | undefined>;
     /**
      * (Updatable) The database credentials user extension.
      */
-    urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
+    urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser | undefined>;
     /**
      * (Updatable) Kerberos User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionkerberosUserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>;
+    urnietfparamsscimschemasoracleidcsextensionkerberosUserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    urnietfparamsscimschemasoracleidcsextensionmfaUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>;
+    urnietfparamsscimschemasoracleidcsextensionmfaUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    urnietfparamsscimschemasoracleidcsextensionpasswordlessUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>;
+    urnietfparamsscimschemasoracleidcsextensionpasswordlessUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser | undefined>;
     /**
      * (Updatable) POSIX User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
+    urnietfparamsscimschemasoracleidcsextensionposixUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
-    urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
+    urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser | undefined>;
     /**
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      */
-    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      */
-    urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser | undefined>;
     /**
      * (Updatable) SFF Auth Keys User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionsffUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>;
+    urnietfparamsscimschemasoracleidcsextensionsffUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser | undefined>;
     /**
      * (Updatable) Social User extension
      */
-    urnietfparamsscimschemasoracleidcsextensionsocialAccountUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>;
+    urnietfparamsscimschemasoracleidcsextensionsocialAccountUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser | undefined>;
     /**
      * (Updatable) Terms Of Use extension
      */
-    urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
+    urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser | undefined>;
     /**
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
+    urnietfparamsscimschemasoracleidcsextensionuserStateUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser | undefined>;
     /**
      * (Updatable) Oracle Identity Cloud Service User
      */
-    urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
+    urnietfparamsscimschemasoracleidcsextensionuserUser?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser | undefined>;
     /**
      * (Updatable) User name
      *
@@ -2197,7 +2197,7 @@ export interface DomainsUserArgs {
      * * type: string
      * * uniqueness: none
      */
-    userType?: pulumi.Input<string>;
+    userType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of certificates issued to the User.
      *
@@ -2210,5 +2210,5 @@ export interface DomainsUserArgs {
      * * type: complex
      * * uniqueness: none
      */
-    x509certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserX509certificate>[]>;
+    x509certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserX509certificate>[] | undefined>;
 }

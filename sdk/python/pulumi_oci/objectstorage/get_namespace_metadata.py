@@ -91,7 +91,7 @@ def get_namespace_metadata(namespace: Optional[_builtins.str] = None,
         default_swift_compartment_id=pulumi.get(__ret__, 'default_swift_compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_namespace_metadata_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_metadata_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceMetadataResult]:
     """
     Use this data source to access information about an existing resource.

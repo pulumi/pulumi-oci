@@ -100,7 +100,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
+    test_volume_backup_policy_assignments = oci.core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
 
 
@@ -117,8 +117,8 @@ def get_volume_backup_policy_assignments(asset_id: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         volume_backup_policy_assignments=pulumi.get(__ret__, 'volume_backup_policy_assignments'))
-def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
+def get_volume_backup_policy_assignments_output(asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
@@ -133,7 +133,7 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
+    test_volume_backup_policy_assignments = oci.core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
 
 

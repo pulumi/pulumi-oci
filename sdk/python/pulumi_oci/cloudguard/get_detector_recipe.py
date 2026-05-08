@@ -264,7 +264,7 @@ def get_detector_recipe(detector_recipe_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
+    test_detector_recipe = oci.cloudguard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_detector_recipe(detector_recipe_id: Optional[_builtins.str] = None,
         target_ids=pulumi.get(__ret__, 'target_ids'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_detector_recipe_output(detector_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectorRecipeResult]:
     """
     This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -307,7 +307,7 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
+    test_detector_recipe = oci.cloudguard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
     ```
 
 

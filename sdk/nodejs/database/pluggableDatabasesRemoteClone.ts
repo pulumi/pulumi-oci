@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     sourceContainerDbAdminPassword: pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword,
  *     targetContainerDatabaseId: testDatabase.id,
  *     pdbAdminPassword: pluggableDatabasesRemoteClonePdbAdminPassword,
- *     shouldPdbAdminAccountBeLocked: pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked,
+ *     shouldPdbAdminAccountBeLocked: pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked === "true",
  *     targetTdeWalletPassword: pluggableDatabasesRemoteCloneTargetTdeWalletPassword,
  * });
  * ```
@@ -244,83 +244,83 @@ export interface PluggableDatabasesRemoteCloneState {
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    clonedPdbName?: pulumi.Input<string>;
+    clonedPdbName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteCloneConnectionString>[]>;
+    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteCloneConnectionString>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    containerDatabaseId?: pulumi.Input<string>;
+    containerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    isRestricted?: pulumi.Input<boolean>;
+    isRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    openMode?: pulumi.Input<string>;
+    openMode?: pulumi.Input<string | undefined>;
     /**
      * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */
-    pdbAdminPassword?: pulumi.Input<string>;
+    pdbAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    pdbName?: pulumi.Input<string>;
+    pdbName?: pulumi.Input<string | undefined>;
     /**
      * Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
      */
-    pdbNodeLevelDetails?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteClonePdbNodeLevelDetail>[]>;
+    pdbNodeLevelDetails?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteClonePdbNodeLevelDetail>[] | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    pluggableDatabaseId?: pulumi.Input<string>;
+    pluggableDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>[]>;
+    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>[] | undefined>;
     /**
      * Pluggable Database Refreshable Clone Configuration.
      */
-    refreshableCloneConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteCloneRefreshableCloneConfig>[]>;
+    refreshableCloneConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasesRemoteCloneRefreshableCloneConfig>[] | undefined>;
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
-    shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
+    shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean | undefined>;
     /**
      * The DB system administrator password of the source CDB.
      */
-    sourceContainerDbAdminPassword?: pulumi.Input<string>;
+    sourceContainerDbAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pluggable database.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
      */
-    targetContainerDatabaseId?: pulumi.Input<string>;
+    targetContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The existing TDE wallet password of the target CDB.
      *
@@ -328,11 +328,11 @@ export interface PluggableDatabasesRemoteCloneState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetTdeWalletPassword?: pulumi.Input<string>;
+    targetTdeWalletPassword?: pulumi.Input<string | undefined>;
     /**
      * The date and time the pluggable database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -346,7 +346,7 @@ export interface PluggableDatabasesRemoteCloneArgs {
     /**
      * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */
-    pdbAdminPassword?: pulumi.Input<string>;
+    pdbAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -354,7 +354,7 @@ export interface PluggableDatabasesRemoteCloneArgs {
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
-    shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
+    shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean | undefined>;
     /**
      * The DB system administrator password of the source CDB.
      */
@@ -370,5 +370,5 @@ export interface PluggableDatabasesRemoteCloneArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetTdeWalletPassword?: pulumi.Input<string>;
+    targetTdeWalletPassword?: pulumi.Input<string | undefined>;
 }

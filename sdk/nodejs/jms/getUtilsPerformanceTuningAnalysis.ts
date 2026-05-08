@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPerformanceTuningAnalysis = oci.Jms.getUtilsPerformanceTuningAnalysis({
+ * const testPerformanceTuningAnalysis = oci.jms.getUtilsPerformanceTuningAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: performanceTuningAnalysiId,
@@ -94,7 +94,7 @@ export interface GetUtilsPerformanceTuningAnalysisResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPerformanceTuningAnalysis = oci.Jms.getUtilsPerformanceTuningAnalysis({
+ * const testPerformanceTuningAnalysis = oci.jms.getUtilsPerformanceTuningAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: performanceTuningAnalysiId,
@@ -121,18 +121,18 @@ export interface GetUtilsPerformanceTuningAnalysisOutputArgs {
     /**
      * The project name of the Performance Tuning Analysis to query for.
      */
-    analysisProjectName?: pulumi.Input<string>;
+    analysisProjectName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetUtilsPerformanceTuningAnalysisFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetUtilsPerformanceTuningAnalysisFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The result of the Performance Tuning Analysis to query for.
      */
-    performanceTuningAnalysisResult?: pulumi.Input<string>;
+    performanceTuningAnalysisResult?: pulumi.Input<string | undefined>;
 }

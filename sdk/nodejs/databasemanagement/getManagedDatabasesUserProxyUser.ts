@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserProxyUser = oci.DatabaseManagement.getManagedDatabasesUserProxyUser({
+ * const testManagedDatabasesUserProxyUser = oci.databasemanagement.getManagedDatabasesUserProxyUser({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserProxyUserName,
@@ -81,7 +81,7 @@ export interface GetManagedDatabasesUserProxyUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserProxyUser = oci.DatabaseManagement.getManagedDatabasesUserProxyUser({
+ * const testManagedDatabasesUserProxyUser = oci.databasemanagement.getManagedDatabasesUserProxyUser({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserProxyUserName,
@@ -108,7 +108,7 @@ export interface GetManagedDatabasesUserProxyUserOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

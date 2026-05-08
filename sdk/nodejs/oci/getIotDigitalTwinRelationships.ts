@@ -158,16 +158,16 @@ export interface GetIotDigitalTwinRelationshipsOutputArgs {
     /**
      * Filters resources that match the content path of the digital twin relationship.
      */
-    contentPath?: pulumi.Input<string>;
+    contentPath?: pulumi.Input<string | undefined>;
     /**
      * Filter resources whose display name matches the specified value.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetIotDigitalTwinRelationshipsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetIotDigitalTwinRelationshipsFilterArgs>[] | undefined>;
     /**
      * Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
      */
@@ -175,13 +175,13 @@ export interface GetIotDigitalTwinRelationshipsOutputArgs {
     /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
      */
-    sourceDigitalTwinInstanceId?: pulumi.Input<string>;
+    sourceDigitalTwinInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Filter resources whose lifecycleState matches the specified value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
      */
-    targetDigitalTwinInstanceId?: pulumi.Input<string>;
+    targetDigitalTwinInstanceId?: pulumi.Input<string | undefined>;
 }

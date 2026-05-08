@@ -124,7 +124,7 @@ def get_cloud_cluster_instances(cloud_cluster_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instances = oci.DatabaseManagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
+    test_cloud_cluster_instances = oci.databasemanagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
         compartment_id=compartment_id,
         display_name=cloud_cluster_instance_display_name)
     ```
@@ -149,10 +149,10 @@ def get_cloud_cluster_instances(cloud_cluster_id: Optional[_builtins.str] = None
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_cloud_cluster_instances_output(cloud_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict']]]]] = None,
+def get_cloud_cluster_instances_output(cloud_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudClusterInstancesResult]:
     """
     This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -165,7 +165,7 @@ def get_cloud_cluster_instances_output(cloud_cluster_id: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instances = oci.DatabaseManagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
+    test_cloud_cluster_instances = oci.databasemanagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
         compartment_id=compartment_id,
         display_name=cloud_cluster_instance_display_name)
     ```

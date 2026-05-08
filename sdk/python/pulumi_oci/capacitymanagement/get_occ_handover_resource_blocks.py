@@ -154,7 +154,7 @@ def get_occ_handover_resource_blocks(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_handover_resource_blocks = oci.CapacityManagement.get_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_occ_handover_resource_blocks = oci.capacitymanagement.get_occ_handover_resource_blocks(compartment_id=compartment_id,
         handover_date_greater_than_or_equal_to=occ_handover_resource_block_handover_date_greater_than_or_equal_to,
         handover_date_less_than_or_equal_to=occ_handover_resource_block_handover_date_less_than_or_equal_to,
         handover_resource_name=test_resource["name"],
@@ -191,13 +191,13 @@ def get_occ_handover_resource_blocks(compartment_id: Optional[_builtins.str] = N
         namespace=pulumi.get(__ret__, 'namespace'),
         occ_handover_resource_block_collections=pulumi.get(__ret__, 'occ_handover_resource_block_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccHandoverResourceBlocksFilterArgs', 'GetOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
-                                            handover_date_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            handover_date_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            handover_resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            occ_handover_resource_block_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_occ_handover_resource_blocks_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccHandoverResourceBlocksFilterArgs', 'GetOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
+                                            handover_date_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            handover_date_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            handover_resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            occ_handover_resource_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccHandoverResourceBlocksResult]:
     """
     This data source provides the list of Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
@@ -210,7 +210,7 @@ def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_handover_resource_blocks = oci.CapacityManagement.get_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_occ_handover_resource_blocks = oci.capacitymanagement.get_occ_handover_resource_blocks(compartment_id=compartment_id,
         handover_date_greater_than_or_equal_to=occ_handover_resource_block_handover_date_greater_than_or_equal_to,
         handover_date_less_than_or_equal_to=occ_handover_resource_block_handover_date_less_than_or_equal_to,
         handover_resource_name=test_resource["name"],

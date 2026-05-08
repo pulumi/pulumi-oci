@@ -95,7 +95,7 @@ def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilter
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_files = oci.Jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
+    test_fleet_drs_files = oci.jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilter
         filters=pulumi.get(__ret__, 'filters'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]]]] = None,
-                               fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_drs_files_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]]]] = None,
+                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetDrsFilesResult]:
     """
     This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
@@ -126,7 +126,7 @@ def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_files = oci.Jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
+    test_fleet_drs_files = oci.jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
     ```
 
 

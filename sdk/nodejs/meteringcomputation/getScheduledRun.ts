@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledRun = oci.MeteringComputation.getScheduledRun({
+ * const testScheduledRun = oci.meteringcomputation.getScheduledRun({
  *     scheduledRunId: testScheduledRunOciMeteringComputationScheduledRun.id,
  * });
  * ```
@@ -78,7 +78,7 @@ export interface GetScheduledRunResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledRun = oci.MeteringComputation.getScheduledRun({
+ * const testScheduledRun = oci.meteringcomputation.getScheduledRun({
  *     scheduledRunId: testScheduledRunOciMeteringComputationScheduledRun.id,
  * });
  * ```

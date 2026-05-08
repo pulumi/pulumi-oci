@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OneSubsription.getBillingSchedules({
+ * const testBillingSchedules = oci.onesubsription.getBillingSchedules({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testSubscribedService.id,
@@ -86,7 +86,7 @@ export interface GetBillingSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OneSubsription.getBillingSchedules({
+ * const testBillingSchedules = oci.onesubsription.getBillingSchedules({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testSubscribedService.id,
@@ -111,11 +111,11 @@ export interface GetBillingSchedulesOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetBillingSchedulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetBillingSchedulesFilterArgs>[] | undefined>;
     /**
      * This param is used to get only the billing schedules for a particular Subscribed Service
      */
-    subscribedServiceId?: pulumi.Input<string>;
+    subscribedServiceId?: pulumi.Input<string | undefined>;
     /**
      * This param is used to get only the billing schedules for a particular Subscription Id
      */

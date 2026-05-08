@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntries({
+ * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntries({
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     scimQuery: securityPolicyReportDatabaseTableAccessEntryScimQuery,
  * });
@@ -80,7 +80,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntries({
+ * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntries({
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     scimQuery: securityPolicyReportDatabaseTableAccessEntryScimQuery,
  * });
@@ -99,13 +99,13 @@ export function getSecurityPolicyReportDatabaseTableAccessEntriesOutput(args: Ge
  * A collection of arguments for invoking getSecurityPolicyReportDatabaseTableAccessEntries.
  */
 export interface GetSecurityPolicyReportDatabaseTableAccessEntriesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs>[] | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security policy report resource.
      */

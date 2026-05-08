@@ -81,7 +81,7 @@ def get_db_node_console_history_content(console_history_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
+    test_db_node_console_history_content = oci.database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
         db_node_id=test_db_node["id"])
     ```
 
@@ -99,8 +99,8 @@ def get_db_node_console_history_content(console_history_id: Optional[_builtins.s
         console_history_id=pulumi.get(__ret__, 'console_history_id'),
         db_node_id=pulumi.get(__ret__, 'db_node_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_db_node_console_history_content_output(console_history_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_node_console_history_content_output(console_history_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleHistoryContentResult]:
     """
     This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_node_console_history_content_output(console_history_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
+    test_db_node_console_history_content = oci.database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
         db_node_id=test_db_node["id"])
     ```
 

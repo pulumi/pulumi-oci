@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPools = oci.Streaming.getStreamPools({
+ * const testStreamPools = oci.streaming.getStreamPools({
  *     compartmentId: compartmentId,
  *     id: streamPoolId,
  *     name: streamPoolName,
@@ -96,7 +96,7 @@ export interface GetStreamPoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPools = oci.Streaming.getStreamPools({
+ * const testStreamPools = oci.streaming.getStreamPools({
  *     compartmentId: compartmentId,
  *     id: streamPoolId,
  *     name: streamPoolName,
@@ -123,17 +123,17 @@ export interface GetStreamPoolsOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Streaming.GetStreamPoolsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Streaming.GetStreamPoolsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given ID exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

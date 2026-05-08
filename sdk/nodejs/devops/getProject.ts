@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = oci.DevOps.getProject({
+ * const testProject = oci.devops.getProject({
  *     projectId: testProjectOciDevopsProject.id,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetProjectResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = oci.DevOps.getProject({
+ * const testProject = oci.devops.getProject({
  *     projectId: testProjectOciDevopsProject.id,
  * });
  * ```

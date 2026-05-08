@@ -118,10 +118,10 @@ export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsOutput
     /**
      * A filter to return only private endpoint that match the entire name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

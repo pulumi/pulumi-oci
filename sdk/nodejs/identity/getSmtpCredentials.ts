@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getSmtpCredentials({
  *     userId: testUser.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetSmtpCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getSmtpCredentials({
  *     userId: testUser.id,
  * });
  * ```
@@ -89,7 +89,7 @@ export function getSmtpCredentialsOutput(args: GetSmtpCredentialsOutputArgs, opt
  * A collection of arguments for invoking getSmtpCredentials.
  */
 export interface GetSmtpCredentialsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetSmtpCredentialsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetSmtpCredentialsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user.
      */

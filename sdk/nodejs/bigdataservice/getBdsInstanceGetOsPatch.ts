@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceGetOsPatch = oci.BigDataService.getBdsInstanceGetOsPatch({
+ * const testBdsInstanceGetOsPatch = oci.bigdataservice.getBdsInstanceGetOsPatch({
  *     bdsInstanceId: testBdsInstance.id,
  *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
@@ -93,7 +93,7 @@ export interface GetBdsInstanceGetOsPatchResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceGetOsPatch = oci.BigDataService.getBdsInstanceGetOsPatch({
+ * const testBdsInstanceGetOsPatch = oci.bigdataservice.getBdsInstanceGetOsPatch({
  *     bdsInstanceId: testBdsInstance.id,
  *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
@@ -116,7 +116,7 @@ export interface GetBdsInstanceGetOsPatchOutputArgs {
      * The OCID of the cluster.
      */
     bdsInstanceId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceGetOsPatchFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceGetOsPatchFilterArgs>[] | undefined>;
     /**
      * The version of the OS patch.
      */

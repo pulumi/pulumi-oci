@@ -31,47 +31,47 @@ import * as utilities from "../utilities";
  *     description: passwordPolicyDescription,
  *     dictionaryDelimiter: passwordPolicyDictionaryDelimiter,
  *     dictionaryLocation: passwordPolicyDictionaryLocation,
- *     dictionaryWordDisallowed: passwordPolicyDictionaryWordDisallowed,
+ *     dictionaryWordDisallowed: passwordPolicyDictionaryWordDisallowed === "true",
  *     disallowedChars: passwordPolicyDisallowedChars,
  *     disallowedSubstrings: passwordPolicyDisallowedSubstrings,
  *     disallowedUserAttributeValues: passwordPolicyDisallowedUserAttributeValues,
- *     distinctCharacters: passwordPolicyDistinctCharacters,
+ *     distinctCharacters: Number(passwordPolicyDistinctCharacters),
  *     externalId: "externalId",
- *     firstNameDisallowed: passwordPolicyFirstNameDisallowed,
- *     forcePasswordReset: passwordPolicyForcePasswordReset,
+ *     firstNameDisallowed: passwordPolicyFirstNameDisallowed === "true",
+ *     forcePasswordReset: passwordPolicyForcePasswordReset === "true",
  *     groups: [{
  *         value: testGroup.id,
  *     }],
  *     id: passwordPolicyId,
- *     lastNameDisallowed: passwordPolicyLastNameDisallowed,
- *     lockoutDuration: passwordPolicyLockoutDuration,
- *     maxIncorrectAttempts: passwordPolicyMaxIncorrectAttempts,
- *     maxLength: passwordPolicyMaxLength,
- *     maxRepeatedChars: passwordPolicyMaxRepeatedChars,
- *     maxSpecialChars: passwordPolicyMaxSpecialChars,
- *     minAlphaNumerals: passwordPolicyMinAlphaNumerals,
- *     minAlphas: passwordPolicyMinAlphas,
- *     minLength: passwordPolicyMinLength,
- *     minLowerCase: passwordPolicyMinLowerCase,
- *     minNumerals: passwordPolicyMinNumerals,
- *     minPasswordAge: passwordPolicyMinPasswordAge,
- *     minSpecialChars: passwordPolicyMinSpecialChars,
- *     minUniqueChars: passwordPolicyMinUniqueChars,
- *     minUpperCase: passwordPolicyMinUpperCase,
- *     numPasswordsInHistory: passwordPolicyNumPasswordsInHistory,
+ *     lastNameDisallowed: passwordPolicyLastNameDisallowed === "true",
+ *     lockoutDuration: Number(passwordPolicyLockoutDuration),
+ *     maxIncorrectAttempts: Number(passwordPolicyMaxIncorrectAttempts),
+ *     maxLength: Number(passwordPolicyMaxLength),
+ *     maxRepeatedChars: Number(passwordPolicyMaxRepeatedChars),
+ *     maxSpecialChars: Number(passwordPolicyMaxSpecialChars),
+ *     minAlphaNumerals: Number(passwordPolicyMinAlphaNumerals),
+ *     minAlphas: Number(passwordPolicyMinAlphas),
+ *     minLength: Number(passwordPolicyMinLength),
+ *     minLowerCase: Number(passwordPolicyMinLowerCase),
+ *     minNumerals: Number(passwordPolicyMinNumerals),
+ *     minPasswordAge: Number(passwordPolicyMinPasswordAge),
+ *     minSpecialChars: Number(passwordPolicyMinSpecialChars),
+ *     minUniqueChars: Number(passwordPolicyMinUniqueChars),
+ *     minUpperCase: Number(passwordPolicyMinUpperCase),
+ *     numPasswordsInHistory: Number(passwordPolicyNumPasswordsInHistory),
  *     ocid: passwordPolicyOcid,
- *     passwordExpireWarning: passwordPolicyPasswordExpireWarning,
- *     passwordExpiresAfter: passwordPolicyPasswordExpiresAfter,
+ *     passwordExpireWarning: Number(passwordPolicyPasswordExpireWarning),
+ *     passwordExpiresAfter: Number(passwordPolicyPasswordExpiresAfter),
  *     passwordStrength: passwordPolicyPasswordStrength,
- *     priority: passwordPolicyPriority,
+ *     priority: Number(passwordPolicyPriority),
  *     requiredChars: passwordPolicyRequiredChars,
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
- *     startsWithAlphabet: passwordPolicyStartsWithAlphabet,
+ *     startsWithAlphabet: passwordPolicyStartsWithAlphabet === "true",
  *     tags: [{
  *         key: passwordPolicyTagsKey,
  *         value: passwordPolicyTagsValue,
  *     }],
- *     userNameDisallowed: passwordPolicyUserNameDisallowed,
+ *     userNameDisallowed: passwordPolicyUserNameDisallowed === "true",
  * });
  * ```
  *
@@ -962,19 +962,19 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    allowedChars?: pulumi.Input<string>;
+    allowedChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -988,7 +988,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      *
@@ -1002,7 +1002,7 @@ export interface DomainsPasswordPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    configuredPasswordPolicyRules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule>[]>;
+    configuredPasswordPolicyRules?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule>[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -1016,7 +1016,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A String that describes the password policy
      *
@@ -1029,7 +1029,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
      *
@@ -1042,7 +1042,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    dictionaryDelimiter?: pulumi.Input<string>;
+    dictionaryDelimiter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      *
@@ -1055,7 +1055,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    dictionaryLocation?: pulumi.Input<string>;
+    dictionaryLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
      *
@@ -1068,7 +1068,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    dictionaryWordDisallowed?: pulumi.Input<boolean>;
+    dictionaryWordDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      *
@@ -1081,7 +1081,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    disallowedChars?: pulumi.Input<string>;
+    disallowedChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      *
@@ -1094,7 +1094,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of User attributes whose values are not allowed in the password.
      *
@@ -1109,7 +1109,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The number of distinct characters between old password and new password
      *
@@ -1124,7 +1124,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    distinctCharacters?: pulumi.Input<number>;
+    distinctCharacters?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1138,7 +1138,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1151,7 +1151,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      *
@@ -1164,7 +1164,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    firstNameDisallowed?: pulumi.Input<boolean>;
+    firstNameDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      *
@@ -1177,7 +1177,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    forcePasswordReset?: pulumi.Input<boolean>;
+    forcePasswordReset?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the password policy belongs to.
      *
@@ -1194,7 +1194,7 @@ export interface DomainsPasswordPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyGroup>[]>;
+    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyGroup>[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -1206,11 +1206,11 @@ export interface DomainsPasswordPolicyState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -1222,7 +1222,7 @@ export interface DomainsPasswordPolicyState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1236,7 +1236,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1249,7 +1249,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      *
@@ -1262,7 +1262,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    lastNameDisallowed?: pulumi.Input<boolean>;
+    lastNameDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      *
@@ -1275,7 +1275,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    lockoutDuration?: pulumi.Input<number>;
+    lockoutDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
      *
@@ -1288,7 +1288,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    maxIncorrectAttempts?: pulumi.Input<number>;
+    maxIncorrectAttempts?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      *
@@ -1302,7 +1302,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    maxLength?: pulumi.Input<number>;
+    maxLength?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      *
@@ -1315,7 +1315,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    maxRepeatedChars?: pulumi.Input<number>;
+    maxRepeatedChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      *
@@ -1328,7 +1328,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    maxSpecialChars?: pulumi.Input<number>;
+    maxSpecialChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1342,7 +1342,7 @@ export interface DomainsPasswordPolicyState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyMeta>[] | undefined>;
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      *
@@ -1355,7 +1355,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minAlphaNumerals?: pulumi.Input<number>;
+    minAlphaNumerals?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      *
@@ -1368,7 +1368,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minAlphas?: pulumi.Input<number>;
+    minAlphas?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      *
@@ -1381,7 +1381,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minLength?: pulumi.Input<number>;
+    minLength?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      *
@@ -1394,7 +1394,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minLowerCase?: pulumi.Input<number>;
+    minLowerCase?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      *
@@ -1407,7 +1407,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minNumerals?: pulumi.Input<number>;
+    minNumerals?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
      *
@@ -1420,7 +1420,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minPasswordAge?: pulumi.Input<number>;
+    minPasswordAge?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      *
@@ -1433,7 +1433,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minSpecialChars?: pulumi.Input<number>;
+    minSpecialChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      *
@@ -1446,7 +1446,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minUniqueChars?: pulumi.Input<number>;
+    minUniqueChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      *
@@ -1459,7 +1459,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    minUpperCase?: pulumi.Input<number>;
+    minUpperCase?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      *
@@ -1473,7 +1473,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: server
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of passwords that will be kept in history that may not be used as a password
      *
@@ -1486,7 +1486,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    numPasswordsInHistory?: pulumi.Input<number>;
+    numPasswordsInHistory?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1500,7 +1500,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
      *
@@ -1513,7 +1513,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    passwordExpireWarning?: pulumi.Input<number>;
+    passwordExpireWarning?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of days after which the password expires automatically
      *
@@ -1526,7 +1526,7 @@ export interface DomainsPasswordPolicyState {
      * * type: integer
      * * uniqueness: none
      */
-    passwordExpiresAfter?: pulumi.Input<number>;
+    passwordExpiresAfter?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
      *
@@ -1539,7 +1539,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    passwordStrength?: pulumi.Input<string>;
+    passwordStrength?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Password policy priority
      *
@@ -1555,7 +1555,7 @@ export interface DomainsPasswordPolicyState {
      * * idcsMinValue: 1
      * * uniqueness: server
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      *
@@ -1568,11 +1568,11 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    requiredChars?: pulumi.Input<string>;
+    requiredChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1586,7 +1586,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Indicates that the password must begin with an alphabetic character
      *
@@ -1599,7 +1599,7 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      */
-    startsWithAlphabet?: pulumi.Input<boolean>;
+    startsWithAlphabet?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1613,7 +1613,7 @@ export interface DomainsPasswordPolicyState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1627,7 +1627,7 @@ export interface DomainsPasswordPolicyState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      *
@@ -1644,7 +1644,7 @@ export interface DomainsPasswordPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userNameDisallowed?: pulumi.Input<boolean>;
+    userNameDisallowed?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -1663,19 +1663,19 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    allowedChars?: pulumi.Input<string>;
+    allowedChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A String that describes the password policy
      *
@@ -1688,7 +1688,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
      *
@@ -1701,7 +1701,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    dictionaryDelimiter?: pulumi.Input<string>;
+    dictionaryDelimiter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      *
@@ -1714,7 +1714,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    dictionaryLocation?: pulumi.Input<string>;
+    dictionaryLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
      *
@@ -1727,7 +1727,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    dictionaryWordDisallowed?: pulumi.Input<boolean>;
+    dictionaryWordDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      *
@@ -1740,7 +1740,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    disallowedChars?: pulumi.Input<string>;
+    disallowedChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      *
@@ -1753,7 +1753,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedSubstrings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of User attributes whose values are not allowed in the password.
      *
@@ -1768,7 +1768,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedUserAttributeValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The number of distinct characters between old password and new password
      *
@@ -1783,7 +1783,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    distinctCharacters?: pulumi.Input<number>;
+    distinctCharacters?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1796,7 +1796,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      *
@@ -1809,7 +1809,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    firstNameDisallowed?: pulumi.Input<boolean>;
+    firstNameDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      *
@@ -1822,7 +1822,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    forcePasswordReset?: pulumi.Input<boolean>;
+    forcePasswordReset?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the password policy belongs to.
      *
@@ -1839,7 +1839,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: complex
      * * uniqueness: none
      */
-    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyGroup>[]>;
+    groups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyGroup>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1856,7 +1856,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    lastNameDisallowed?: pulumi.Input<boolean>;
+    lastNameDisallowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      *
@@ -1869,7 +1869,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    lockoutDuration?: pulumi.Input<number>;
+    lockoutDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
      *
@@ -1882,7 +1882,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxIncorrectAttempts?: pulumi.Input<number>;
+    maxIncorrectAttempts?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      *
@@ -1896,7 +1896,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxLength?: pulumi.Input<number>;
+    maxLength?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      *
@@ -1909,7 +1909,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxRepeatedChars?: pulumi.Input<number>;
+    maxRepeatedChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      *
@@ -1922,7 +1922,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxSpecialChars?: pulumi.Input<number>;
+    maxSpecialChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      *
@@ -1935,7 +1935,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minAlphaNumerals?: pulumi.Input<number>;
+    minAlphaNumerals?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      *
@@ -1948,7 +1948,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minAlphas?: pulumi.Input<number>;
+    minAlphas?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      *
@@ -1961,7 +1961,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minLength?: pulumi.Input<number>;
+    minLength?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      *
@@ -1974,7 +1974,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minLowerCase?: pulumi.Input<number>;
+    minLowerCase?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      *
@@ -1987,7 +1987,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minNumerals?: pulumi.Input<number>;
+    minNumerals?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
      *
@@ -2000,7 +2000,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minPasswordAge?: pulumi.Input<number>;
+    minPasswordAge?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      *
@@ -2013,7 +2013,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minSpecialChars?: pulumi.Input<number>;
+    minSpecialChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      *
@@ -2026,7 +2026,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minUniqueChars?: pulumi.Input<number>;
+    minUniqueChars?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      *
@@ -2039,7 +2039,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    minUpperCase?: pulumi.Input<number>;
+    minUpperCase?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      *
@@ -2053,7 +2053,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: server
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of passwords that will be kept in history that may not be used as a password
      *
@@ -2066,7 +2066,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    numPasswordsInHistory?: pulumi.Input<number>;
+    numPasswordsInHistory?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -2080,7 +2080,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
      *
@@ -2093,7 +2093,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    passwordExpireWarning?: pulumi.Input<number>;
+    passwordExpireWarning?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of days after which the password expires automatically
      *
@@ -2106,7 +2106,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: integer
      * * uniqueness: none
      */
-    passwordExpiresAfter?: pulumi.Input<number>;
+    passwordExpiresAfter?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
      *
@@ -2119,7 +2119,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    passwordStrength?: pulumi.Input<string>;
+    passwordStrength?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Password policy priority
      *
@@ -2135,7 +2135,7 @@ export interface DomainsPasswordPolicyArgs {
      * * idcsMinValue: 1
      * * uniqueness: server
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      *
@@ -2148,11 +2148,11 @@ export interface DomainsPasswordPolicyArgs {
      * * type: string
      * * uniqueness: none
      */
-    requiredChars?: pulumi.Input<string>;
+    requiredChars?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -2179,7 +2179,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    startsWithAlphabet?: pulumi.Input<boolean>;
+    startsWithAlphabet?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -2193,7 +2193,7 @@ export interface DomainsPasswordPolicyArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPasswordPolicyTag>[] | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      *
@@ -2210,5 +2210,5 @@ export interface DomainsPasswordPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userNameDisallowed?: pulumi.Input<boolean>;
+    userNameDisallowed?: pulumi.Input<boolean | undefined>;
 }

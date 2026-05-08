@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicy = oci.Database.getSchedulingPolicy({
+ * const testSchedulingPolicy = oci.database.getSchedulingPolicy({
  *     schedulingPolicyId: testSchedulingPolicyOciDatabaseSchedulingPolicy.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetSchedulingPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicy = oci.Database.getSchedulingPolicy({
+ * const testSchedulingPolicy = oci.database.getSchedulingPolicy({
  *     schedulingPolicyId: testSchedulingPolicyOciDatabaseSchedulingPolicy.id,
  * });
  * ```

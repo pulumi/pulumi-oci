@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaReleases = oci.Jms.getJavaReleases({
+ * const testJavaReleases = oci.jms.getJavaReleases({
  *     familyVersion: javaReleaseFamilyVersion,
  *     jreSecurityStatus: javaReleaseJreSecurityStatus,
  *     licenseType: javaReleaseLicenseType,
@@ -108,7 +108,7 @@ export interface GetJavaReleasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaReleases = oci.Jms.getJavaReleases({
+ * const testJavaReleases = oci.jms.getJavaReleases({
  *     familyVersion: javaReleaseFamilyVersion,
  *     jreSecurityStatus: javaReleaseJreSecurityStatus,
  *     licenseType: javaReleaseLicenseType,
@@ -137,22 +137,22 @@ export interface GetJavaReleasesOutputArgs {
     /**
      * The version identifier for the Java family.
      */
-    familyVersion?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaReleasesFilterArgs>[]>;
+    familyVersion?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaReleasesFilterArgs>[] | undefined>;
     /**
      * The security status of the Java Runtime.
      */
-    jreSecurityStatus?: pulumi.Input<string>;
+    jreSecurityStatus?: pulumi.Input<string | undefined>;
     /**
      * Java license type.
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * Java release type.
      */
-    releaseType?: pulumi.Input<string>;
+    releaseType?: pulumi.Input<string | undefined>;
     /**
      * Unique Java release version identifier
      */
-    releaseVersion?: pulumi.Input<string>;
+    releaseVersion?: pulumi.Input<string | undefined>;
 }

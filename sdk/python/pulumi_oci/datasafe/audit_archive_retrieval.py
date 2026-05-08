@@ -23,10 +23,10 @@ class AuditArchiveRetrievalArgs:
                  end_date: pulumi.Input[_builtins.str],
                  start_date: pulumi.Input[_builtins.str],
                  target_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AuditArchiveRetrieval resource.
 
@@ -110,72 +110,72 @@ class AuditArchiveRetrievalArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the archive retrieval.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _AuditArchiveRetrievalState:
     def __init__(__self__, *,
-                 audit_event_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_expiry: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_requested: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_event_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_requested: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditArchiveRetrieval resources.
 
@@ -235,151 +235,151 @@ class _AuditArchiveRetrievalState:
 
     @_builtins.property
     @pulumi.getter(name="auditEventCount")
-    def audit_event_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_event_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Total count of audit events to be retrieved from the archive for the specified date range.
         """
         return pulumi.get(self, "audit_event_count")
 
     @audit_event_count.setter
-    def audit_event_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_event_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_event_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the archival retrieval.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the archive retrieval.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         End month of the archive retrieval, in the format defined by RFC3339.
         """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
-    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="errorInfo")
-    def error_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Error details of a failed archive retrieval.
         """
         return pulumi.get(self, "error_info")
 
     @error_info.setter
-    def error_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_info", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the archive retrieval.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Start month of the archive retrieval, in the format defined by RFC3339.
         """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
-    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the archive retrieval.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target associated with the archive retrieval.
 
@@ -390,43 +390,43 @@ class _AuditArchiveRetrievalState:
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_completed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_completed")
 
     @time_completed.setter
-    def time_completed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_completed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_completed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfExpiry")
-    def time_of_expiry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_expiry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
         """
         return pulumi.get(self, "time_of_expiry")
 
     @time_of_expiry.setter
-    def time_of_expiry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_expiry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRequested")
-    def time_requested(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_requested(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_requested")
 
     @time_requested.setter
-    def time_requested(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_requested(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_requested", value)
 
 
@@ -436,14 +436,14 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -561,14 +561,14 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -612,22 +612,22 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_event_count: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            error_info: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            start_date: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_expiry: Optional[pulumi.Input[_builtins.str]] = None,
-            time_requested: Optional[pulumi.Input[_builtins.str]] = None) -> 'AuditArchiveRetrieval':
+            audit_event_count: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            error_info: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            start_date: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+            time_requested: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuditArchiveRetrieval':
         """
         Get an existing AuditArchiveRetrieval resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -369,7 +369,7 @@ def get_pipeline_run(pipeline_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=test_pipeline_run_oci_datascience_pipeline_run["id"])
+    test_pipeline_run = oci.datascience.get_pipeline_run(pipeline_run_id=test_pipeline_run_oci_datascience_pipeline_run["id"])
     ```
 
 
@@ -408,7 +408,7 @@ def get_pipeline_run(pipeline_run_id: Optional[_builtins.str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pipeline_run_output(pipeline_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineRunResult]:
     """
     This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -421,7 +421,7 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_run = oci.DataScience.get_pipeline_run(pipeline_run_id=test_pipeline_run_oci_datascience_pipeline_run["id"])
+    test_pipeline_run = oci.datascience.get_pipeline_run(pipeline_run_id=test_pipeline_run_oci_datascience_pipeline_run["id"])
     ```
 
 

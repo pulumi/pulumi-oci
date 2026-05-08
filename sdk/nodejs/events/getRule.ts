@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = oci.Events.getRule({
+ * const testRule = oci.events.getRule({
  *     ruleId: testRuleOciEventsRule.id,
  * });
  * ```
@@ -105,7 +105,7 @@ export interface GetRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = oci.Events.getRule({
+ * const testRule = oci.events.getRule({
  *     ruleId: testRuleOciEventsRule.id,
  * });
  * ```

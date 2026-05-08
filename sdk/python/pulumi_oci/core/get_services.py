@@ -86,7 +86,7 @@ def get_services(filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetS
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Core.get_services()
+    test_services = oci.core.get_services()
     ```
     """
     __args__ = dict()
@@ -98,7 +98,7 @@ def get_services(filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetS
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'))
-def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
+def get_services_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServicesResult]:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
@@ -112,7 +112,7 @@ def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Core.get_services()
+    test_services = oci.core.get_services()
     ```
     """
     __args__ = dict()

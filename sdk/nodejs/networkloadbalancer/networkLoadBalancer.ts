@@ -237,35 +237,35 @@ export interface NetworkLoadBalancerState {
     /**
      * IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
      */
-    assignedIpv6?: pulumi.Input<string>;
+    assignedIpv6?: pulumi.Input<string | undefined>;
     /**
      * Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
      */
-    assignedPrivateIpv4?: pulumi.Input<string>;
+    assignedPrivateIpv4?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Network load balancer identifier, which can be renamed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An array of IP addresses.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress>[]>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress>[] | undefined>;
     /**
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      */
-    isPreserveSourceDestination?: pulumi.Input<boolean>;
+    isPreserveSourceDestination?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      *
@@ -277,18 +277,18 @@ export interface NetworkLoadBalancerState {
      *
      * Example: `true`
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
      * Example: `true`
      * Example: `true`
      */
-    isSymmetricHashEnabled?: pulumi.Input<boolean>;
+    isSymmetricHashEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      *
@@ -300,27 +300,27 @@ export interface NetworkLoadBalancerState {
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) IP version associated with the NLB.
      */
-    nlbIpVersion?: pulumi.Input<string>;
+    nlbIpVersion?: pulumi.Input<string | undefined>;
     /**
      * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      */
-    reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
+    reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[] | undefined>;
     /**
      * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the network load balancer.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
      *
@@ -328,19 +328,19 @@ export interface NetworkLoadBalancerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetIpv6cidr?: pulumi.Input<string>;
+    subnetIpv6cidr?: pulumi.Input<string | undefined>;
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -350,11 +350,11 @@ export interface NetworkLoadBalancerArgs {
     /**
      * IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
      */
-    assignedIpv6?: pulumi.Input<string>;
+    assignedIpv6?: pulumi.Input<string | undefined>;
     /**
      * Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
      */
-    assignedPrivateIpv4?: pulumi.Input<string>;
+    assignedPrivateIpv4?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      */
@@ -362,7 +362,7 @@ export interface NetworkLoadBalancerArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Network load balancer identifier, which can be renamed.
      */
@@ -370,11 +370,11 @@ export interface NetworkLoadBalancerArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      */
-    isPreserveSourceDestination?: pulumi.Input<boolean>;
+    isPreserveSourceDestination?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      *
@@ -386,14 +386,14 @@ export interface NetworkLoadBalancerArgs {
      *
      * Example: `true`
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
      * Example: `true`
      * Example: `true`
      */
-    isSymmetricHashEnabled?: pulumi.Input<boolean>;
+    isSymmetricHashEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      *
@@ -405,19 +405,19 @@ export interface NetworkLoadBalancerArgs {
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) IP version associated with the NLB.
      */
-    nlbIpVersion?: pulumi.Input<string>;
+    nlbIpVersion?: pulumi.Input<string | undefined>;
     /**
      * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      */
-    reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
+    reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[] | undefined>;
     /**
      * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -429,5 +429,5 @@ export interface NetworkLoadBalancerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetIpv6cidr?: pulumi.Input<string>;
+    subnetIpv6cidr?: pulumi.Input<string | undefined>;
 }

@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *             text: webAppFirewallPolicyActionsBodyText,
  *             type: webAppFirewallPolicyActionsBodyType,
  *         },
- *         code: webAppFirewallPolicyActionsCode,
+ *         code: Number(webAppFirewallPolicyActionsCode),
  *         headers: [{
  *             name: webAppFirewallPolicyActionsHeadersName,
  *             value: webAppFirewallPolicyActionsHeadersValue,
@@ -54,18 +54,18 @@ import * as utilities from "../utilities";
  *     },
  *     requestProtection: {
  *         bodyInspectionSizeLimitExceededActionName: webAppFirewallPolicyRequestProtectionBodyInspectionSizeLimitExceededActionName,
- *         bodyInspectionSizeLimitInBytes: webAppFirewallPolicyRequestProtectionBodyInspectionSizeLimitInBytes,
+ *         bodyInspectionSizeLimitInBytes: Number(webAppFirewallPolicyRequestProtectionBodyInspectionSizeLimitInBytes),
  *         rules: [{
  *             actionName: webAppFirewallPolicyRequestProtectionRulesActionName,
  *             name: webAppFirewallPolicyRequestProtectionRulesName,
  *             protectionCapabilities: [{
  *                 key: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesKey,
- *                 version: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesVersion,
+ *                 version: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesVersion),
  *                 actionName: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesActionName,
- *                 collaborativeActionThreshold: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold,
+ *                 collaborativeActionThreshold: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold),
  *                 collaborativeWeights: [{
  *                     key: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsKey,
- *                     weight: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight,
+ *                     weight: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight),
  *                 }],
  *                 exclusions: {
  *                     args: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsArgs,
@@ -75,14 +75,14 @@ import * as utilities from "../utilities";
  *             type: webAppFirewallPolicyRequestProtectionRulesType,
  *             condition: webAppFirewallPolicyRequestProtectionRulesCondition,
  *             conditionLanguage: webAppFirewallPolicyRequestProtectionRulesConditionLanguage,
- *             isBodyInspectionEnabled: webAppFirewallPolicyRequestProtectionRulesIsBodyInspectionEnabled,
+ *             isBodyInspectionEnabled: webAppFirewallPolicyRequestProtectionRulesIsBodyInspectionEnabled === "true",
  *             protectionCapabilitySettings: {
  *                 allowedHttpMethods: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsAllowedHttpMethods,
- *                 maxHttpRequestHeaderLength: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength,
- *                 maxHttpRequestHeaders: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders,
- *                 maxNumberOfArguments: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments,
- *                 maxSingleArgumentLength: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength,
- *                 maxTotalArgumentLength: webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength,
+ *                 maxHttpRequestHeaderLength: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength),
+ *                 maxHttpRequestHeaders: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders),
+ *                 maxNumberOfArguments: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments),
+ *                 maxSingleArgumentLength: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength),
+ *                 maxTotalArgumentLength: Number(webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength),
  *             },
  *         }],
  *     },
@@ -90,9 +90,9 @@ import * as utilities from "../utilities";
  *         rules: [{
  *             actionName: webAppFirewallPolicyRequestRateLimitingRulesActionName,
  *             configurations: [{
- *                 periodInSeconds: webAppFirewallPolicyRequestRateLimitingRulesConfigurationsPeriodInSeconds,
- *                 requestsLimit: webAppFirewallPolicyRequestRateLimitingRulesConfigurationsRequestsLimit,
- *                 actionDurationInSeconds: webAppFirewallPolicyRequestRateLimitingRulesConfigurationsActionDurationInSeconds,
+ *                 periodInSeconds: Number(webAppFirewallPolicyRequestRateLimitingRulesConfigurationsPeriodInSeconds),
+ *                 requestsLimit: Number(webAppFirewallPolicyRequestRateLimitingRulesConfigurationsRequestsLimit),
+ *                 actionDurationInSeconds: Number(webAppFirewallPolicyRequestRateLimitingRulesConfigurationsActionDurationInSeconds),
  *             }],
  *             name: webAppFirewallPolicyRequestRateLimitingRulesName,
  *             type: webAppFirewallPolicyRequestRateLimitingRulesType,
@@ -115,12 +115,12 @@ import * as utilities from "../utilities";
  *             name: webAppFirewallPolicyResponseProtectionRulesName,
  *             protectionCapabilities: [{
  *                 key: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesKey,
- *                 version: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesVersion,
+ *                 version: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesVersion),
  *                 actionName: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesActionName,
- *                 collaborativeActionThreshold: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold,
+ *                 collaborativeActionThreshold: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold),
  *                 collaborativeWeights: [{
  *                     key: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsKey,
- *                     weight: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight,
+ *                     weight: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight),
  *                 }],
  *                 exclusions: {
  *                     args: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsArgs,
@@ -130,14 +130,14 @@ import * as utilities from "../utilities";
  *             type: webAppFirewallPolicyResponseProtectionRulesType,
  *             condition: webAppFirewallPolicyResponseProtectionRulesCondition,
  *             conditionLanguage: webAppFirewallPolicyResponseProtectionRulesConditionLanguage,
- *             isBodyInspectionEnabled: webAppFirewallPolicyResponseProtectionRulesIsBodyInspectionEnabled,
+ *             isBodyInspectionEnabled: webAppFirewallPolicyResponseProtectionRulesIsBodyInspectionEnabled === "true",
  *             protectionCapabilitySettings: {
  *                 allowedHttpMethods: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsAllowedHttpMethods,
- *                 maxHttpRequestHeaderLength: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength,
- *                 maxHttpRequestHeaders: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders,
- *                 maxNumberOfArguments: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments,
- *                 maxSingleArgumentLength: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength,
- *                 maxTotalArgumentLength: webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength,
+ *                 maxHttpRequestHeaderLength: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength),
+ *                 maxHttpRequestHeaders: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders),
+ *                 maxNumberOfArguments: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments),
+ *                 maxSingleArgumentLength: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength),
+ *                 maxTotalArgumentLength: Number(webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength),
  *             },
  *         }],
  *     },
@@ -307,51 +307,51 @@ export interface AppFirewallPolicyState {
     /**
      * (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      */
-    actions?: pulumi.Input<pulumi.Input<inputs.Waf.AppFirewallPolicyAction>[]>;
+    actions?: pulumi.Input<pulumi.Input<inputs.Waf.AppFirewallPolicyAction>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
      */
-    requestAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestAccessControl>;
+    requestAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      */
-    requestProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestProtection>;
+    requestProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestProtection | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      */
-    requestRateLimiting?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestRateLimiting>;
+    requestRateLimiting?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestRateLimiting | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      */
-    responseAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseAccessControl>;
+    responseAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      */
-    responseProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseProtection>;
+    responseProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseProtection | undefined>;
     /**
      * The current state of the WebAppFirewallPolicy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -359,15 +359,15 @@ export interface AppFirewallPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -377,7 +377,7 @@ export interface AppFirewallPolicyArgs {
     /**
      * (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      */
-    actions?: pulumi.Input<pulumi.Input<inputs.Waf.AppFirewallPolicyAction>[]>;
+    actions?: pulumi.Input<pulumi.Input<inputs.Waf.AppFirewallPolicyAction>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -385,35 +385,35 @@ export interface AppFirewallPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
      */
-    requestAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestAccessControl>;
+    requestAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      */
-    requestProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestProtection>;
+    requestProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestProtection | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      */
-    requestRateLimiting?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestRateLimiting>;
+    requestRateLimiting?: pulumi.Input<inputs.Waf.AppFirewallPolicyRequestRateLimiting | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      */
-    responseAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseAccessControl>;
+    responseAccessControl?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      */
-    responseProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseProtection>;
+    responseProtection?: pulumi.Input<inputs.Waf.AppFirewallPolicyResponseProtection | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -421,5 +421,5 @@ export interface AppFirewallPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

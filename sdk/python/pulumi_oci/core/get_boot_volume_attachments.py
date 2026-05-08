@@ -138,7 +138,7 @@ def get_boot_volume_attachments(availability_domain: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+    test_boot_volume_attachments = oci.core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
         compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         instance_id=test_instance["id"])
@@ -168,11 +168,11 @@ def get_boot_volume_attachments(availability_domain: Optional[_builtins.str] = N
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         instance_id=pulumi.get(__ret__, 'instance_id'))
-def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                       boot_volume_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeAttachmentsFilterArgs', 'GetBootVolumeAttachmentsFilterArgsDict']]]]] = None,
-                                       instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_boot_volume_attachments_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                       boot_volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumeAttachmentsFilterArgs', 'GetBootVolumeAttachmentsFilterArgsDict']]]]] = None,
+                                       instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
     """
     This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
@@ -186,7 +186,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+    test_boot_volume_attachments = oci.core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
         compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         instance_id=test_instance["id"])

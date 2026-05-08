@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscription = oci.Ons.getSubscription({
+ * const testSubscription = oci.ons.getSubscription({
  *     subscriptionId: testSubscriptionOciOnsSubscription.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetSubscriptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscription = oci.Ons.getSubscription({
+ * const testSubscription = oci.ons.getSubscription({
  *     subscriptionId: testSubscriptionOciOnsSubscription.id,
  * });
  * ```

@@ -144,7 +144,7 @@ def get_service_provider_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_actions = oci.DelegateAccessControl.get_service_provider_actions(compartment_id=compartment_id,
+    test_service_provider_actions = oci.delegateaccesscontrol.get_service_provider_actions(compartment_id=compartment_id,
         name=service_provider_action_name,
         resource_type=service_provider_action_resource_type,
         service_provider_service_types=service_provider_action_service_provider_service_type,
@@ -177,12 +177,12 @@ def get_service_provider_actions(compartment_id: Optional[_builtins.str] = None,
         service_provider_action_summary_collections=pulumi.get(__ret__, 'service_provider_action_summary_collections'),
         service_provider_service_types=pulumi.get(__ret__, 'service_provider_service_types'),
         state=pulumi.get(__ret__, 'state'))
-def get_service_provider_actions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict']]]]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        service_provider_service_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_provider_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict']]]]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        service_provider_service_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceProviderActionsResult]:
     """
     This data source provides the list of Service Provider Actions in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -195,7 +195,7 @@ def get_service_provider_actions_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_actions = oci.DelegateAccessControl.get_service_provider_actions(compartment_id=compartment_id,
+    test_service_provider_actions = oci.delegateaccesscontrol.get_service_provider_actions(compartment_id=compartment_id,
         name=service_provider_action_name,
         resource_type=service_provider_action_resource_type,
         service_provider_service_types=service_provider_action_service_provider_service_type,

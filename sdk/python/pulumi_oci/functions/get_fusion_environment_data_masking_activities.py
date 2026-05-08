@@ -111,7 +111,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_data_masking_activities = oci.functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
         state=fusion_environment_data_masking_activity_state)
     ```
 
@@ -132,9 +132,9 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_fusion_environment_data_masking_activities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
-                                                          fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fusion_environment_data_masking_activities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
+                                                          fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:
     """
     This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -147,7 +147,7 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_data_masking_activities = oci.functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
         state=fusion_environment_data_masking_activity_state)
     ```
 

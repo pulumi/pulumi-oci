@@ -300,7 +300,7 @@ def get_monitoring_template(monitoring_template_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template = oci.StackMonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
+    test_monitoring_template = oci.stackmonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_monitoring_template(monitoring_template_id: Optional[_builtins.str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_alarm_conditions=pulumi.get(__ret__, 'total_alarm_conditions'),
         total_applied_alarm_conditions=pulumi.get(__ret__, 'total_applied_alarm_conditions'))
-def get_monitoring_template_output(monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_monitoring_template_output(monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoringTemplateResult]:
     """
     This data source provides details about a specific Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -346,7 +346,7 @@ def get_monitoring_template_output(monitoring_template_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template = oci.StackMonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
+    test_monitoring_template = oci.stackmonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
     ```
 
 

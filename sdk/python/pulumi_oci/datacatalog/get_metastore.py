@@ -216,7 +216,7 @@ def get_metastore(metastore_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
+    test_metastore = oci.datacatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_metastore(metastore_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_metastore_output(metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_metastore_output(metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetastoreResult]:
     """
     This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -255,7 +255,7 @@ def get_metastore_output(metastore_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
+    test_metastore = oci.datacatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
     ```
 
 

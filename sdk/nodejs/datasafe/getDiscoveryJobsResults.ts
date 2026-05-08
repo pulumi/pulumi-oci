@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
+ * const testDiscoveryJobsResults = oci.datasafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
  *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
- *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     isResultApplied: discoveryJobsResultIsResultApplied === "true",
  *     objects: discoveryJobsResultObject,
  *     plannedAction: discoveryJobsResultPlannedAction,
  *     schemaNames: discoveryJobsResultSchemaName,
@@ -140,12 +140,12 @@ export interface GetDiscoveryJobsResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
+ * const testDiscoveryJobsResults = oci.datasafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
  *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
- *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     isResultApplied: discoveryJobsResultIsResultApplied === "true",
  *     objects: discoveryJobsResultObject,
  *     plannedAction: discoveryJobsResultPlannedAction,
  *     schemaNames: discoveryJobsResultSchemaName,
@@ -174,11 +174,11 @@ export interface GetDiscoveryJobsResultsOutputArgs {
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
      */
-    confidenceLevels?: pulumi.Input<pulumi.Input<string>[]>;
+    confidenceLevels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the discovery job.
      */
@@ -186,22 +186,22 @@ export interface GetDiscoveryJobsResultsOutputArgs {
     /**
      * A filter to return only the resources that match the specified discovery type.
      */
-    discoveryType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDiscoveryJobsResultsFilterArgs>[]>;
+    discoveryType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDiscoveryJobsResultsFilterArgs>[] | undefined>;
     /**
      * A filter to return the discovery result resources based on the value of their isResultApplied attribute.
      */
-    isResultApplied?: pulumi.Input<boolean>;
+    isResultApplied?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified planned action.
      */
-    plannedAction?: pulumi.Input<string>;
+    plannedAction?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

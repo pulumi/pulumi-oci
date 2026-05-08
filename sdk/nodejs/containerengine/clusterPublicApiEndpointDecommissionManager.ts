@@ -73,9 +73,9 @@ export class ClusterPublicApiEndpointDecommissionManager extends pulumi.CustomRe
  * Input properties used for looking up and filtering ClusterPublicApiEndpointDecommissionManager resources.
  */
 export interface ClusterPublicApiEndpointDecommissionManagerState {
-    clusterId?: pulumi.Input<string>;
-    isPublicApiEndpointDecommissioned?: pulumi.Input<boolean>;
-    rollbackDeadlineDelay?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
+    isPublicApiEndpointDecommissioned?: pulumi.Input<boolean | undefined>;
+    rollbackDeadlineDelay?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -84,5 +84,5 @@ export interface ClusterPublicApiEndpointDecommissionManagerState {
 export interface ClusterPublicApiEndpointDecommissionManagerArgs {
     clusterId: pulumi.Input<string>;
     isPublicApiEndpointDecommissioned: pulumi.Input<boolean>;
-    rollbackDeadlineDelay?: pulumi.Input<string>;
+    rollbackDeadlineDelay?: pulumi.Input<string | undefined>;
 }

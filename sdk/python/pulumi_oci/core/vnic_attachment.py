@@ -23,8 +23,8 @@ class VnicAttachmentArgs:
     def __init__(__self__, *,
                  create_vnic_details: pulumi.Input['VnicAttachmentCreateVnicDetailsArgs'],
                  instance_id: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nic_index: Optional[pulumi.Input[_builtins.int]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nic_index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a VnicAttachment resource.
 
@@ -70,19 +70,19 @@ class VnicAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nicIndex")
-    def nic_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nic_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
 
@@ -93,25 +93,25 @@ class VnicAttachmentArgs:
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
-    def nic_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nic_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nic_index", value)
 
 
 @pulumi.input_type
 class _VnicAttachmentState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_vnic_details: Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nic_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_tag: Optional[pulumi.Input[_builtins.int]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_vnic_details: pulumi.Input[Optional['VnicAttachmentCreateVnicDetailsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nic_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_tag: pulumi.Input[Optional[_builtins.int]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VnicAttachment resources.
 
@@ -159,67 +159,67 @@ class _VnicAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
-    def create_vnic_details(self) -> Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']]:
+    def create_vnic_details(self) -> pulumi.Input[Optional['VnicAttachmentCreateVnicDetailsArgs']]:
         """
         (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
-    def create_vnic_details(self, value: Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']]):
+    def create_vnic_details(self, value: pulumi.Input[Optional['VnicAttachmentCreateVnicDetailsArgs']]):
         pulumi.set(self, "create_vnic_details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nicIndex")
-    def nic_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nic_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
 
@@ -230,79 +230,79 @@ class _VnicAttachmentState:
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
-    def nic_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nic_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nic_index", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the VNIC attachment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet to create the VNIC in.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanTag")
-    def vlan_tag(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vlan_tag(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
         """
         return pulumi.get(self, "vlan_tag")
 
     @vlan_tag.setter
-    def vlan_tag(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vlan_tag(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vlan_tag", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the VNIC. Available after the attachment process is complete.
         """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
@@ -312,10 +312,10 @@ class VnicAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nic_index: Optional[pulumi.Input[_builtins.int]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nic_index: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -335,8 +335,8 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
             create_vnic_details={
-                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
-                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip == "true",
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record == "true",
                 "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
                 "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
                 "display_name": vnic_attachment_create_vnic_details_display_name,
@@ -351,14 +351,14 @@ class VnicAttachment(pulumi.CustomResource):
                 "private_ip": vnic_attachment_create_vnic_details_private_ip,
                 "private_ip_id": test_private_ip["id"],
                 "security_attributes": vnic_attachment_create_vnic_details_security_attributes,
-                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check == "true",
                 "subnet_cidr": vnic_attachment_create_vnic_details_subnet_cidr,
                 "subnet_id": test_subnet["id"],
                 "vlan_id": test_vlan["id"],
             },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
-            nic_index=vnic_attachment_nic_index)
+            nic_index=int(vnic_attachment_nic_index))
         ```
 
         ## Import
@@ -405,8 +405,8 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
             create_vnic_details={
-                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
-                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip == "true",
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record == "true",
                 "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
                 "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
                 "display_name": vnic_attachment_create_vnic_details_display_name,
@@ -421,14 +421,14 @@ class VnicAttachment(pulumi.CustomResource):
                 "private_ip": vnic_attachment_create_vnic_details_private_ip,
                 "private_ip_id": test_private_ip["id"],
                 "security_attributes": vnic_attachment_create_vnic_details_security_attributes,
-                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check == "true",
                 "subnet_cidr": vnic_attachment_create_vnic_details_subnet_cidr,
                 "subnet_id": test_subnet["id"],
                 "vlan_id": test_vlan["id"],
             },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
-            nic_index=vnic_attachment_nic_index)
+            nic_index=int(vnic_attachment_nic_index))
         ```
 
         ## Import
@@ -455,10 +455,10 @@ class VnicAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nic_index: Optional[pulumi.Input[_builtins.int]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nic_index: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -494,18 +494,18 @@ class VnicAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nic_index: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan_tag: Optional[pulumi.Input[_builtins.int]] = None,
-            vnic_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VnicAttachment':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nic_index: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_tag: pulumi.Input[Optional[_builtins.int]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VnicAttachment':
         """
         Get an existing VnicAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

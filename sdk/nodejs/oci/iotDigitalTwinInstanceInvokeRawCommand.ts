@@ -152,31 +152,31 @@ export interface IotDigitalTwinInstanceInvokeRawCommandState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
      */
-    digitalTwinInstanceId?: pulumi.Input<string>;
+    digitalTwinInstanceId?: pulumi.Input<string | undefined>;
     /**
      * base 64 encoded request data
      */
-    requestData?: pulumi.Input<string>;
+    requestData?: pulumi.Input<string | undefined>;
     /**
      * Mime content type of data encoded using base64, default is application/octet-stream
      */
-    requestDataContentType?: pulumi.Input<string>;
+    requestDataContentType?: pulumi.Input<string | undefined>;
     /**
      * data format: json, binary, text
      */
-    requestDataFormat?: pulumi.Input<string>;
+    requestDataFormat?: pulumi.Input<string | undefined>;
     /**
      * Specified duration by which to send the request by.
      */
-    requestDuration?: pulumi.Input<string>;
+    requestDuration?: pulumi.Input<string | undefined>;
     /**
      * Device endpoint where request should be forwarded to.
      */
-    requestEndpoint?: pulumi.Input<string>;
+    requestEndpoint?: pulumi.Input<string | undefined>;
     /**
      * Specified duration by which to receive the response by.
      */
-    responseDuration?: pulumi.Input<string>;
+    responseDuration?: pulumi.Input<string | undefined>;
     /**
      * Device endpoint from which response is expected to come.
      *
@@ -184,7 +184,7 @@ export interface IotDigitalTwinInstanceInvokeRawCommandState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    responseEndpoint?: pulumi.Input<string>;
+    responseEndpoint?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -198,11 +198,11 @@ export interface IotDigitalTwinInstanceInvokeRawCommandArgs {
     /**
      * base 64 encoded request data
      */
-    requestData?: pulumi.Input<string>;
+    requestData?: pulumi.Input<string | undefined>;
     /**
      * Mime content type of data encoded using base64, default is application/octet-stream
      */
-    requestDataContentType?: pulumi.Input<string>;
+    requestDataContentType?: pulumi.Input<string | undefined>;
     /**
      * data format: json, binary, text
      */
@@ -210,7 +210,7 @@ export interface IotDigitalTwinInstanceInvokeRawCommandArgs {
     /**
      * Specified duration by which to send the request by.
      */
-    requestDuration?: pulumi.Input<string>;
+    requestDuration?: pulumi.Input<string | undefined>;
     /**
      * Device endpoint where request should be forwarded to.
      */
@@ -218,7 +218,7 @@ export interface IotDigitalTwinInstanceInvokeRawCommandArgs {
     /**
      * Specified duration by which to receive the response by.
      */
-    responseDuration?: pulumi.Input<string>;
+    responseDuration?: pulumi.Input<string | undefined>;
     /**
      * Device endpoint from which response is expected to come.
      *
@@ -226,5 +226,5 @@ export interface IotDigitalTwinInstanceInvokeRawCommandArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    responseEndpoint?: pulumi.Input<string>;
+    responseEndpoint?: pulumi.Input<string | undefined>;
 }

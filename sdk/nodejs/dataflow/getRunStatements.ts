@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunStatements = oci.DataFlow.getRunStatements({
+ * const testRunStatements = oci.dataflow.getRunStatements({
  *     runId: testRun.id,
  *     state: runStatementState,
  * });
@@ -80,7 +80,7 @@ export interface GetRunStatementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunStatements = oci.DataFlow.getRunStatements({
+ * const testRunStatements = oci.dataflow.getRunStatements({
  *     runId: testRun.id,
  *     state: runStatementState,
  * });
@@ -99,7 +99,7 @@ export function getRunStatementsOutput(args: GetRunStatementsOutputArgs, opts?: 
  * A collection of arguments for invoking getRunStatements.
  */
 export interface GetRunStatementsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetRunStatementsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetRunStatementsFilterArgs>[] | undefined>;
     /**
      * The unique ID for the run
      */
@@ -107,5 +107,5 @@ export interface GetRunStatementsOutputArgs {
     /**
      * The LifecycleState of the statement.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

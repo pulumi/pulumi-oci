@@ -125,7 +125,7 @@ def get_consumer_groups(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_consumer_groups = oci.Queue.get_consumer_groups(display_name=consumer_group_display_name,
+    test_consumer_groups = oci.queue.get_consumer_groups(display_name=consumer_group_display_name,
         id=consumer_group_id,
         queue_id=test_queue["id"],
         state=consumer_group_state)
@@ -153,11 +153,11 @@ def get_consumer_groups(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         queue_id=pulumi.get(__ret__, 'queue_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_consumer_groups_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict']]]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               queue_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_consumer_groups_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict']]]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               queue_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConsumerGroupsResult]:
     """
     This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
@@ -170,7 +170,7 @@ def get_consumer_groups_output(display_name: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_consumer_groups = oci.Queue.get_consumer_groups(display_name=consumer_group_display_name,
+    test_consumer_groups = oci.queue.get_consumer_groups(display_name=consumer_group_display_name,
         id=consumer_group_id,
         queue_id=test_queue["id"],
         state=consumer_group_state)

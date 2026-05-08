@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenerativeAiPrivateEndpoints = oci.GenerativeAi.getGenerativeAiPrivateEndpoints({
+ * const testGenerativeAiPrivateEndpoints = oci.generativeai.getGenerativeAiPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: generativeAiPrivateEndpointDisplayName,
  *     id: generativeAiPrivateEndpointId,
@@ -96,7 +96,7 @@ export interface GetGenerativeAiPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenerativeAiPrivateEndpoints = oci.GenerativeAi.getGenerativeAiPrivateEndpoints({
+ * const testGenerativeAiPrivateEndpoints = oci.generativeai.getGenerativeAiPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: generativeAiPrivateEndpointDisplayName,
  *     id: generativeAiPrivateEndpointId,
@@ -126,14 +126,14 @@ export interface GetGenerativeAiPrivateEndpointsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetGenerativeAiPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetGenerativeAiPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of Generative AI private endpoints.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

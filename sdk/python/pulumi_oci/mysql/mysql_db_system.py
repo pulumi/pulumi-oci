@@ -25,41 +25,41 @@ class MysqlDbSystemArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  shape_name: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
-                 configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
-                 data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_console: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']] = None,
-                 database_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypt_data: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_highly_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
-                 mysql_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_x: Optional[pulumi.Input[_builtins.int]] = None,
-                 read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
-                 rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
-                 secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 telemetry_configuration: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']] = None):
+                 access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy: pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']] = None,
+                 configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
+                 data_storage: pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_console: pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']] = None,
+                 database_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypt_data: pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']] = None,
+                 mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_x: pulumi.Input[Optional[_builtins.int]] = None,
+                 read_endpoint: pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']] = None,
+                 rest: pulumi.Input[Optional['MysqlDbSystemRestArgs']] = None,
+                 secure_connections: pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional['MysqlDbSystemSourceArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 telemetry_configuration: pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']] = None):
         """
         The set of arguments for constructing a MysqlDbSystem resource.
 
@@ -255,7 +255,7 @@ class MysqlDbSystemArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessMode")
-    def access_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
         * UNRESTRICTED (default): the access to the database is not restricted;
@@ -264,132 +264,132 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "access_mode")
 
     @access_mode.setter
-    def access_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username for the administrative user.
         """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
-    def admin_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_username", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicy")
-    def backup_policy(self) -> Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']]:
+    def backup_policy(self) -> pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']]:
         """
         (Updatable) Backup policy as optionally used for DB System Creation.
         """
         return pulumi.get(self, "backup_policy")
 
     @backup_policy.setter
-    def backup_policy(self, value: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']]):
+    def backup_policy(self, value: pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']]):
         pulumi.set(self, "backup_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationId")
-    def configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Configuration to be used for this DB System.
         """
         return pulumi.get(self, "configuration_id")
 
     @configuration_id.setter
-    def configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="crashRecovery")
-    def crash_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crash_recovery(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         """
         return pulumi.get(self, "crash_recovery")
 
     @crash_recovery.setter
-    def crash_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crash_recovery(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crash_recovery", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
         """
         (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorage")
-    def data_storage(self) -> Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]:
+    def data_storage(self) -> pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']]:
         """
         (Updatable) Data Storage configuration properties.
         """
         return pulumi.get(self, "data_storage")
 
     @data_storage.setter
-    def data_storage(self, value: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]):
+    def data_storage(self, value: pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']]):
         pulumi.set(self, "data_storage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConsole")
-    def database_console(self) -> Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]:
+    def database_console(self) -> pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']]:
         """
         (Updatable) Details required to configure the database console while creating a DB System.
         """
         return pulumi.get(self, "database_console")
 
     @database_console.setter
-    def database_console(self, value: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]):
+    def database_console(self, value: pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']]):
         pulumi.set(self, "database_console", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
-    def database_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_management(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Whether to enable monitoring via the Database Management service.
         """
         return pulumi.get(self, "database_management")
 
     @database_management.setter
-    def database_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_management(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_management", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseMode")
-    def database_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
         * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -398,72 +398,72 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "database_mode")
 
     @database_mode.setter
-    def database_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionPolicies")
-    def deletion_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]:
+    def deletion_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]:
         """
         (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         """
         return pulumi.get(self, "deletion_policies")
 
     @deletion_policies.setter
-    def deletion_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]):
+    def deletion_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]):
         pulumi.set(self, "deletion_policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-provided data about the DB System.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptData")
-    def encrypt_data(self) -> Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]:
+    def encrypt_data(self) -> pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']]:
         """
         (Updatable) Encrypt data details.
         """
         return pulumi.get(self, "encrypt_data")
 
     @encrypt_data.setter
-    def encrypt_data(self, value: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]):
+    def encrypt_data(self, value: pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']]):
         pulumi.set(self, "encrypt_data", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 
@@ -474,24 +474,24 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 
@@ -502,24 +502,24 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isHighlyAvailable")
-    def is_highly_available(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_highly_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the DB System is highly available.
 
@@ -528,120 +528,120 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "is_highly_available")
 
     @is_highly_available.setter
-    def is_highly_available(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_highly_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_highly_available", value)
 
     @_builtins.property
     @pulumi.getter
-    def maintenance(self) -> Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]:
+    def maintenance(self) -> pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']]:
         """
         (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         """
         return pulumi.get(self, "maintenance")
 
     @maintenance.setter
-    def maintenance(self, value: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]):
+    def maintenance(self, value: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']]):
         pulumi.set(self, "maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mysql_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The specific MySQL version identifier.
         """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
-    def mysql_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mysql_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mysql_version", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port for primary endpoint of the DB System to listen on.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="portX")
-    def port_x(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_x(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
-    def port_x(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_x(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_x", value)
 
     @_builtins.property
     @pulumi.getter(name="readEndpoint")
-    def read_endpoint(self) -> Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]:
+    def read_endpoint(self) -> pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']]:
         """
         (Updatable) Details required to create a Read Endpoint.
         """
         return pulumi.get(self, "read_endpoint")
 
     @read_endpoint.setter
-    def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
+    def read_endpoint(self, value: pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']]):
         pulumi.set(self, "read_endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def rest(self) -> Optional[pulumi.Input['MysqlDbSystemRestArgs']]:
+    def rest(self) -> pulumi.Input[Optional['MysqlDbSystemRestArgs']]:
         """
         (Updatable) Details required to configure REST while creating a DB System.
         """
         return pulumi.get(self, "rest")
 
     @rest.setter
-    def rest(self, value: Optional[pulumi.Input['MysqlDbSystemRestArgs']]):
+    def rest(self, value: pulumi.Input[Optional['MysqlDbSystemRestArgs']]):
         pulumi.set(self, "rest", value)
 
     @_builtins.property
     @pulumi.getter(name="secureConnections")
-    def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
+    def secure_connections(self) -> pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']]:
         """
         (Updatable) Secure connection configuration details.
         """
         return pulumi.get(self, "secure_connections")
 
     @secure_connections.setter
-    def secure_connections(self, value: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]):
+    def secure_connections(self, value: pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']]):
         pulumi.set(self, "secure_connections", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="shutdownType")
-    def shutdown_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shutdown_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
 
@@ -651,98 +651,98 @@ class MysqlDbSystemArgs:
         return pulumi.get(self, "shutdown_type")
 
     @shutdown_type.setter
-    def shutdown_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shutdown_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shutdown_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['MysqlDbSystemSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['MysqlDbSystemSourceArgs']]:
         """
         Parameters detailing how to provision the initial data of the system.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['MysqlDbSystemSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['MysqlDbSystemSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="telemetryConfiguration")
-    def telemetry_configuration(self) -> Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]:
+    def telemetry_configuration(self) -> pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']]:
         """
         (Updatable) Details required to configure how MySQL telemetry should be exposed.
         """
         return pulumi.get(self, "telemetry_configuration")
 
     @telemetry_configuration.setter
-    def telemetry_configuration(self, value: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]):
+    def telemetry_configuration(self, value: pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']]):
         pulumi.set(self, "telemetry_configuration", value)
 
 
 @pulumi.input_type
 class _MysqlDbSystemState:
     def __init__(__self__, *,
-                 access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
-                 channels: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_placements: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
-                 data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_console: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']] = None,
-                 database_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypt_data: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 heat_wave_clusters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_heat_wave_cluster_attached: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_highly_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
-                 mysql_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_x: Optional[pulumi.Input[_builtins.int]] = None,
-                 read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
-                 rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
-                 secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 telemetry_configuration: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy: pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']] = None,
+                 channels: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_placements: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
+                 data_storage: pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_console: pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']] = None,
+                 database_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypt_data: pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']] = None,
+                 mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 point_in_time_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_x: pulumi.Input[Optional[_builtins.int]] = None,
+                 read_endpoint: pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']] = None,
+                 rest: pulumi.Input[Optional['MysqlDbSystemRestArgs']] = None,
+                 secure_connections: pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional['MysqlDbSystemSourceArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 telemetry_configuration: pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MysqlDbSystem resources.
 
@@ -919,7 +919,7 @@ class _MysqlDbSystemState:
 
     @_builtins.property
     @pulumi.getter(name="accessMode")
-    def access_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
         * UNRESTRICTED (default): the access to the database is not restricted;
@@ -928,36 +928,36 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "access_mode")
 
     @access_mode.setter
-    def access_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username for the administrative user.
         """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
-    def admin_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_username", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 
@@ -968,144 +968,144 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicy")
-    def backup_policy(self) -> Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']]:
+    def backup_policy(self) -> pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']]:
         """
         (Updatable) Backup policy as optionally used for DB System Creation.
         """
         return pulumi.get(self, "backup_policy")
 
     @backup_policy.setter
-    def backup_policy(self, value: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']]):
+    def backup_policy(self, value: pulumi.Input[Optional['MysqlDbSystemBackupPolicyArgs']]):
         pulumi.set(self, "backup_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def channels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]]:
+    def channels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]]:
         """
         A list with a summary of all the Channels attached to the DB System.
         """
         return pulumi.get(self, "channels")
 
     @channels.setter
-    def channels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]]):
+    def channels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]]):
         pulumi.set(self, "channels", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationId")
-    def configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Configuration to be used for this DB System.
         """
         return pulumi.get(self, "configuration_id")
 
     @configuration_id.setter
-    def configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="crashRecovery")
-    def crash_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crash_recovery(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         """
         return pulumi.get(self, "crash_recovery")
 
     @crash_recovery.setter
-    def crash_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crash_recovery(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crash_recovery", value)
 
     @_builtins.property
     @pulumi.getter(name="currentPlacements")
-    def current_placements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]:
+    def current_placements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]:
         """
         The availability domain and fault domain a DB System is placed in.
         """
         return pulumi.get(self, "current_placements")
 
     @current_placements.setter
-    def current_placements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]):
+    def current_placements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]]):
         pulumi.set(self, "current_placements", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]:
         """
         (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorage")
-    def data_storage(self) -> Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]:
+    def data_storage(self) -> pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']]:
         """
         (Updatable) Data Storage configuration properties.
         """
         return pulumi.get(self, "data_storage")
 
     @data_storage.setter
-    def data_storage(self, value: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']]):
+    def data_storage(self, value: pulumi.Input[Optional['MysqlDbSystemDataStorageArgs']]):
         pulumi.set(self, "data_storage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConsole")
-    def database_console(self) -> Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]:
+    def database_console(self) -> pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']]:
         """
         (Updatable) Details required to configure the database console while creating a DB System.
         """
         return pulumi.get(self, "database_console")
 
     @database_console.setter
-    def database_console(self, value: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]):
+    def database_console(self, value: pulumi.Input[Optional['MysqlDbSystemDatabaseConsoleArgs']]):
         pulumi.set(self, "database_console", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
-    def database_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_management(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Whether to enable monitoring via the Database Management service.
         """
         return pulumi.get(self, "database_management")
 
     @database_management.setter
-    def database_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_management(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_management", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseMode")
-    def database_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
         * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -1114,84 +1114,84 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "database_mode")
 
     @database_mode.setter
-    def database_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionPolicies")
-    def deletion_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]:
+    def deletion_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]:
         """
         (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         """
         return pulumi.get(self, "deletion_policies")
 
     @deletion_policies.setter
-    def deletion_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]):
+    def deletion_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]]):
         pulumi.set(self, "deletion_policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-provided data about the DB System.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptData")
-    def encrypt_data(self) -> Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]:
+    def encrypt_data(self) -> pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']]:
         """
         (Updatable) Encrypt data details.
         """
         return pulumi.get(self, "encrypt_data")
 
     @encrypt_data.setter
-    def encrypt_data(self, value: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]):
+    def encrypt_data(self, value: pulumi.Input[Optional['MysqlDbSystemEncryptDataArgs']]):
         pulumi.set(self, "encrypt_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]]:
+    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]]:
         """
         The network endpoints available for this DB System.
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]]):
+    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 
@@ -1202,36 +1202,36 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="heatWaveClusters")
-    def heat_wave_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]]:
+    def heat_wave_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]]:
         """
         A summary of a HeatWave cluster.
         """
         return pulumi.get(self, "heat_wave_clusters")
 
     @heat_wave_clusters.setter
-    def heat_wave_clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]]):
+    def heat_wave_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]]):
         pulumi.set(self, "heat_wave_clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 
@@ -1242,36 +1242,36 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isHeatWaveClusterAttached")
-    def is_heat_wave_cluster_attached(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_heat_wave_cluster_attached(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If the DB System has a HeatWave Cluster attached.
         """
         return pulumi.get(self, "is_heat_wave_cluster_attached")
 
     @is_heat_wave_cluster_attached.setter
-    def is_heat_wave_cluster_attached(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_heat_wave_cluster_attached(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_heat_wave_cluster_attached", value)
 
     @_builtins.property
     @pulumi.getter(name="isHighlyAvailable")
-    def is_highly_available(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_highly_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the DB System is highly available.
 
@@ -1280,144 +1280,144 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "is_highly_available")
 
     @is_highly_available.setter
-    def is_highly_available(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_highly_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_highly_available", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycleState.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def maintenance(self) -> Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]:
+    def maintenance(self) -> pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']]:
         """
         (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         """
         return pulumi.get(self, "maintenance")
 
     @maintenance.setter
-    def maintenance(self, value: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]):
+    def maintenance(self, value: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']]):
         pulumi.set(self, "maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mysql_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The specific MySQL version identifier.
         """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
-    def mysql_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mysql_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mysql_version", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="pointInTimeRecoveryDetails")
-    def point_in_time_recovery_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]:
+    def point_in_time_recovery_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]:
         """
         Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         """
         return pulumi.get(self, "point_in_time_recovery_details")
 
     @point_in_time_recovery_details.setter
-    def point_in_time_recovery_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]):
+    def point_in_time_recovery_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]):
         pulumi.set(self, "point_in_time_recovery_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port for primary endpoint of the DB System to listen on.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="portX")
-    def port_x(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_x(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
-    def port_x(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_x(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_x", value)
 
     @_builtins.property
     @pulumi.getter(name="readEndpoint")
-    def read_endpoint(self) -> Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]:
+    def read_endpoint(self) -> pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']]:
         """
         (Updatable) Details required to create a Read Endpoint.
         """
         return pulumi.get(self, "read_endpoint")
 
     @read_endpoint.setter
-    def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
+    def read_endpoint(self, value: pulumi.Input[Optional['MysqlDbSystemReadEndpointArgs']]):
         pulumi.set(self, "read_endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def rest(self) -> Optional[pulumi.Input['MysqlDbSystemRestArgs']]:
+    def rest(self) -> pulumi.Input[Optional['MysqlDbSystemRestArgs']]:
         """
         (Updatable) Details required to configure REST while creating a DB System.
         """
         return pulumi.get(self, "rest")
 
     @rest.setter
-    def rest(self, value: Optional[pulumi.Input['MysqlDbSystemRestArgs']]):
+    def rest(self, value: pulumi.Input[Optional['MysqlDbSystemRestArgs']]):
         pulumi.set(self, "rest", value)
 
     @_builtins.property
     @pulumi.getter(name="secureConnections")
-    def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
+    def secure_connections(self) -> pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']]:
         """
         (Updatable) Secure connection configuration details.
         """
         return pulumi.get(self, "secure_connections")
 
     @secure_connections.setter
-    def secure_connections(self, value: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]):
+    def secure_connections(self, value: pulumi.Input[Optional['MysqlDbSystemSecureConnectionsArgs']]):
         pulumi.set(self, "secure_connections", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1425,12 +1425,12 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="shutdownType")
-    def shutdown_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shutdown_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
 
@@ -1440,91 +1440,91 @@ class _MysqlDbSystemState:
         return pulumi.get(self, "shutdown_type")
 
     @shutdown_type.setter
-    def shutdown_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shutdown_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shutdown_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['MysqlDbSystemSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['MysqlDbSystemSourceArgs']]:
         """
         Parameters detailing how to provision the initial data of the system.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['MysqlDbSystemSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['MysqlDbSystemSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet the DB System is associated with.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="telemetryConfiguration")
-    def telemetry_configuration(self) -> Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]:
+    def telemetry_configuration(self) -> pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']]:
         """
         (Updatable) Details required to configure how MySQL telemetry should be exposed.
         """
         return pulumi.get(self, "telemetry_configuration")
 
     @telemetry_configuration.setter
-    def telemetry_configuration(self, value: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]):
+    def telemetry_configuration(self, value: pulumi.Input[Optional['MysqlDbSystemTelemetryConfigurationArgs']]):
         pulumi.set(self, "telemetry_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the DB System was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the DB System was last updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -1534,45 +1534,45 @@ class MysqlDbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy: Optional[pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-                 data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
-                 database_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_highly_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
-                 mysql_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_x: Optional[pulumi.Input[_builtins.int]] = None,
-                 read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-                 rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-                 secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+                 access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
+                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+                 database_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+                 mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_x: pulumi.Input[Optional[_builtins.int]] = None,
+                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
+                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -1599,7 +1599,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             backup_policy={
                 "copy_policies": [{
                     "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
-                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                    "backup_copy_retention_in_days": int(mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days),
                 }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
@@ -1607,11 +1607,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "freeform_tags": {
                     "bar-key": "value",
                 },
-                "is_enabled": mysql_db_system_backup_policy_is_enabled,
+                "is_enabled": mysql_db_system_backup_policy_is_enabled == "true",
                 "pitr_policy": {
-                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled,
+                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled == "true",
                 },
-                "retention_in_days": mysql_db_system_backup_policy_retention_in_days,
+                "retention_in_days": int(mysql_db_system_backup_policy_retention_in_days),
                 "soft_delete": mysql_db_system_backup_policy_soft_delete,
                 "window_start_time": mysql_db_system_backup_policy_window_start_time,
             },
@@ -1621,13 +1621,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "email": mysql_db_system_customer_contacts_email,
             }],
             data_storage={
-                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
-                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled == "true",
+                "max_storage_size_in_gbs": int(mysql_db_system_data_storage_max_storage_size_in_gbs),
             },
-            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            data_storage_size_in_gb=int(mysql_db_system_data_storage_size_in_gb),
             database_console={
                 "status": mysql_db_system_database_console_status,
-                "port": mysql_db_system_database_console_port,
+                "port": int(mysql_db_system_database_console_port),
             },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
@@ -1637,7 +1637,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             deletion_policies=[{
                 "automatic_backup_retention": mysql_db_system_deletion_policy_automatic_backup_retention,
                 "final_backup": mysql_db_system_deletion_policy_final_backup,
-                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected,
+                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected == "true",
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
@@ -1651,7 +1651,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
-            is_highly_available=mysql_db_system_is_highly_available,
+            is_highly_available=mysql_db_system_is_highly_available == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1663,17 +1663,17 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
-            port=mysql_db_system_port,
-            port_x=mysql_db_system_port_x,
+            port=int(mysql_db_system_port),
+            port_x=int(mysql_db_system_port_x),
             read_endpoint={
                 "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
-                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
-                "port": mysql_db_system_rest_port,
+                "port": int(mysql_db_system_rest_port),
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
@@ -1800,7 +1800,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             backup_policy={
                 "copy_policies": [{
                     "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
-                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                    "backup_copy_retention_in_days": int(mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days),
                 }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
@@ -1808,11 +1808,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "freeform_tags": {
                     "bar-key": "value",
                 },
-                "is_enabled": mysql_db_system_backup_policy_is_enabled,
+                "is_enabled": mysql_db_system_backup_policy_is_enabled == "true",
                 "pitr_policy": {
-                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled,
+                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled == "true",
                 },
-                "retention_in_days": mysql_db_system_backup_policy_retention_in_days,
+                "retention_in_days": int(mysql_db_system_backup_policy_retention_in_days),
                 "soft_delete": mysql_db_system_backup_policy_soft_delete,
                 "window_start_time": mysql_db_system_backup_policy_window_start_time,
             },
@@ -1822,13 +1822,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "email": mysql_db_system_customer_contacts_email,
             }],
             data_storage={
-                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
-                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled == "true",
+                "max_storage_size_in_gbs": int(mysql_db_system_data_storage_max_storage_size_in_gbs),
             },
-            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            data_storage_size_in_gb=int(mysql_db_system_data_storage_size_in_gb),
             database_console={
                 "status": mysql_db_system_database_console_status,
-                "port": mysql_db_system_database_console_port,
+                "port": int(mysql_db_system_database_console_port),
             },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
@@ -1838,7 +1838,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             deletion_policies=[{
                 "automatic_backup_retention": mysql_db_system_deletion_policy_automatic_backup_retention,
                 "final_backup": mysql_db_system_deletion_policy_final_backup,
-                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected,
+                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected == "true",
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
@@ -1852,7 +1852,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
-            is_highly_available=mysql_db_system_is_highly_available,
+            is_highly_available=mysql_db_system_is_highly_available == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1864,17 +1864,17 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
-            port=mysql_db_system_port,
-            port_x=mysql_db_system_port_x,
+            port=int(mysql_db_system_port),
+            port_x=int(mysql_db_system_port_x),
             read_endpoint={
                 "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
-                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
-                "port": mysql_db_system_rest_port,
+                "port": int(mysql_db_system_rest_port),
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
@@ -1921,45 +1921,45 @@ class MysqlDbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy: Optional[pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-                 data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
-                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
-                 database_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_highly_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
-                 mysql_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_x: Optional[pulumi.Input[_builtins.int]] = None,
-                 read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-                 rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-                 secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+                 access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
+                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+                 database_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+                 mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_x: pulumi.Input[Optional[_builtins.int]] = None,
+                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
+                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2038,55 +2038,55 @@ class MysqlDbSystem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_policy: Optional[pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
-            channels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-            current_placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]]] = None,
-            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-            data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
-            data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
-            database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
-            database_management: Optional[pulumi.Input[_builtins.str]] = None,
-            database_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]]] = None,
-            fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            heat_wave_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]]] = None,
-            hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            is_heat_wave_cluster_attached: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_highly_available: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
-            mysql_version: Optional[pulumi.Input[_builtins.str]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            port_x: Optional[pulumi.Input[_builtins.int]] = None,
-            read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-            rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-            secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MysqlDbSystem':
+            access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
+            channels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+            current_placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
+            data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+            data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+            database_management: pulumi.Input[Optional[_builtins.str]] = None,
+            database_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]]] = None,
+            hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+            mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            point_in_time_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            port_x: pulumi.Input[Optional[_builtins.int]] = None,
+            read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+            rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
+            secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MysqlDbSystem':
         """
         Get an existing MysqlDbSystem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

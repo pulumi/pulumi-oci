@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isDefaultProfile: profileIsDefaultProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     managementStationId: testManagementStation.id,
@@ -271,99 +271,99 @@ export interface ProfileState {
     /**
      * The architecture type.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the registration profile.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
      */
-    isDefaultProfile?: pulumi.Input<boolean>;
+    isDefaultProfile?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
      */
-    isServiceProvidedProfile?: pulumi.Input<boolean>;
+    isServiceProvidedProfile?: pulumi.Input<boolean | undefined>;
     /**
      * Provides identifying information for the specified lifecycle environment.
      */
-    lifecycleEnvironments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleEnvironment>[]>;
+    lifecycleEnvironments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleEnvironment>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * Provides identifying information for the specified lifecycle stage.
      */
-    lifecycleStages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleStage>[]>;
+    lifecycleStages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleStage>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * Provides identifying information for the specified managed instance group.
      */
-    managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileManagedInstanceGroup>[]>;
+    managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileManagedInstanceGroup>[] | undefined>;
     /**
      * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      */
-    managementStationId?: pulumi.Input<string>;
+    managementStationId?: pulumi.Input<string | undefined>;
     /**
      * The operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * The type of profile.
      */
-    profileType?: pulumi.Input<string>;
+    profileType?: pulumi.Input<string | undefined>;
     /**
      * The version of the profile. The version is automatically incremented each time the profiled is edited.
      */
-    profileVersion?: pulumi.Input<string>;
+    profileVersion?: pulumi.Input<string | undefined>;
     /**
      * The type of instance to register.
      */
-    registrationType?: pulumi.Input<string>;
+    registrationType?: pulumi.Input<string | undefined>;
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
-    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of software sources that the registration profile will use.
      */
-    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileSoftwareSource>[]>;
+    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileSoftwareSource>[] | undefined>;
     /**
      * The current state of the registration profile.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeModified?: pulumi.Input<string>;
+    timeModified?: pulumi.Input<string | undefined>;
     /**
      * The vendor of the operating system for the instance.
      *
@@ -371,7 +371,7 @@ export interface ProfileState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -381,7 +381,7 @@ export interface ProfileArgs {
     /**
      * The architecture type.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
@@ -389,11 +389,11 @@ export interface ProfileArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the registration profile.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      */
@@ -401,27 +401,27 @@ export interface ProfileArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
      */
-    isDefaultProfile?: pulumi.Input<boolean>;
+    isDefaultProfile?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      */
-    managementStationId?: pulumi.Input<string>;
+    managementStationId?: pulumi.Input<string | undefined>;
     /**
      * The operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * The type of profile.
      */
@@ -429,11 +429,11 @@ export interface ProfileArgs {
     /**
      * The type of instance to register.
      */
-    registrationType?: pulumi.Input<string>;
+    registrationType?: pulumi.Input<string | undefined>;
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
-    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The vendor of the operating system for the instance.
      *
@@ -441,5 +441,5 @@ export interface ProfileArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }

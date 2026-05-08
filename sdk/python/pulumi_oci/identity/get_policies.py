@@ -128,7 +128,7 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_policies(compartment_id=tenancy_ocid,
+    test_policies = oci.identity.get_policies(compartment_id=tenancy_ocid,
         name=policy_name,
         state=policy_state)
     ```
@@ -153,10 +153,10 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         policies=pulumi.get(__ret__, 'policies'),
         state=pulumi.get(__ret__, 'state'))
-def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
-                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
+                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoliciesResult]:
     """
     This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
@@ -173,7 +173,7 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_policies(compartment_id=tenancy_ocid,
+    test_policies = oci.identity.get_policies(compartment_id=tenancy_ocid,
         name=policy_name,
         state=policy_state)
     ```

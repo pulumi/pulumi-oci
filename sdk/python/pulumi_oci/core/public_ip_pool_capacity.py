@@ -79,9 +79,9 @@ class PublicIpPoolCapacityArgs:
 @pulumi.input_type
 class _PublicIpPoolCapacityState:
     def __init__(__self__, *,
-                 byoip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 byoip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PublicIpPoolCapacity resources.
 
@@ -101,19 +101,19 @@ class _PublicIpPoolCapacityState:
 
     @_builtins.property
     @pulumi.getter(name="byoipId")
-    def byoip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def byoip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Byoip Range Id object to which the cidr block belongs.
         """
         return pulumi.get(self, "byoip_id")
 
     @byoip_id.setter
-    def byoip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def byoip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "byoip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
 
@@ -123,19 +123,19 @@ class _PublicIpPoolCapacityState:
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIpPoolId")
-    def public_ip_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the pool object created by the current tenancy
         """
         return pulumi.get(self, "public_ip_pool_id")
 
     @public_ip_pool_id.setter
-    def public_ip_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip_pool_id", value)
 
 
@@ -145,9 +145,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 byoip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource is used to manage the `cidr_blocks` of Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -233,9 +233,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 byoip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,9 +264,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            byoip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PublicIpPoolCapacity':
+            byoip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PublicIpPoolCapacity':
         """
         Get an existing PublicIpPoolCapacity resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -131,7 +131,7 @@ def get_pipeline_schema_tables(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schema_tables = oci.GoldenGate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
+    test_pipeline_schema_tables = oci.goldengate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
         source_schema_name=pipeline_schema_table_source_schema_name,
         target_schema_name=pipeline_schema_table_target_schema_name,
         display_name=pipeline_schema_table_display_name)
@@ -160,11 +160,11 @@ def get_pipeline_schema_tables(display_name: Optional[_builtins.str] = None,
         pipeline_schema_table_collections=pulumi.get(__ret__, 'pipeline_schema_table_collections'),
         source_schema_name=pulumi.get(__ret__, 'source_schema_name'),
         target_schema_name=pulumi.get(__ret__, 'target_schema_name'))
-def get_pipeline_schema_tables_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict']]]]] = None,
-                                      pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      source_schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                      target_schema_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pipeline_schema_tables_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict']]]]] = None,
+                                      pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      source_schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                      target_schema_name: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineSchemaTablesResult]:
     """
     This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
@@ -177,7 +177,7 @@ def get_pipeline_schema_tables_output(display_name: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schema_tables = oci.GoldenGate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
+    test_pipeline_schema_tables = oci.goldengate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
         source_schema_name=pipeline_schema_table_source_schema_name,
         target_schema_name=pipeline_schema_table_target_schema_name,
         display_name=pipeline_schema_table_display_name)

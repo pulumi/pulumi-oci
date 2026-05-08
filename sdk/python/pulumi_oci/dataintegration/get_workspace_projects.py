@@ -141,7 +141,7 @@ def get_workspace_projects(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+    test_workspace_projects = oci.dataintegration.get_workspace_projects(workspace_id=test_workspace["id"],
         fields=workspace_project_fields,
         identifiers=workspace_project_identifier,
         name=workspace_project_name,
@@ -174,12 +174,12 @@ def get_workspace_projects(fields: Optional[Sequence[_builtins.str]] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         project_summary_collections=pulumi.get(__ret__, 'project_summary_collections'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]]]] = None,
-                                  identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_projects_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]]]] = None,
+                                  identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceProjectsResult]:
     """
     This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
@@ -192,7 +192,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+    test_workspace_projects = oci.dataintegration.get_workspace_projects(workspace_id=test_workspace["id"],
         fields=workspace_project_fields,
         identifiers=workspace_project_identifier,
         name=workspace_project_name,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterPatchHistoryEntries = oci.Database.getVmClusterPatchHistoryEntries({
+ * const testVmClusterPatchHistoryEntries = oci.database.getVmClusterPatchHistoryEntries({
  *     vmClusterId: testVmCluster.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetVmClusterPatchHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterPatchHistoryEntries = oci.Database.getVmClusterPatchHistoryEntries({
+ * const testVmClusterPatchHistoryEntries = oci.database.getVmClusterPatchHistoryEntries({
  *     vmClusterId: testVmCluster.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getVmClusterPatchHistoryEntriesOutput(args: GetVmClusterPatchHis
  * A collection of arguments for invoking getVmClusterPatchHistoryEntries.
  */
 export interface GetVmClusterPatchHistoryEntriesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterPatchHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterPatchHistoryEntriesFilterArgs>[] | undefined>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

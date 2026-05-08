@@ -95,7 +95,7 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
+    test_tag_standard_tag_namespace_templates = oci.identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[_builtins.
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         standard_tag_namespace_templates=pulumi.get(__ret__, 'standard_tag_namespace_templates'))
-def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]]]] = None,
+def get_tag_standard_tag_namespace_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplatesResult]:
     """
     This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
@@ -126,7 +126,7 @@ def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
+    test_tag_standard_tag_namespace_templates = oci.identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
     ```
 
 

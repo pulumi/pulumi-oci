@@ -21,10 +21,10 @@ class JmsPluginArgs:
     def __init__(__self__, *,
                  agent_id: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
-                 agent_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a JmsPlugin resource.
 
@@ -76,43 +76,43 @@ class JmsPluginArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentType")
-    def agent_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent type.
         """
         return pulumi.get(self, "agent_type")
 
     @agent_type.setter
-    def agent_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).) 
 
@@ -123,29 +123,29 @@ class JmsPluginArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _JmsPluginState:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 agent_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_distribution: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_last_seen: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_registered: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_distribution: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_family: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_last_seen: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_registered: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JmsPlugin resources.
 
@@ -205,79 +205,79 @@ class _JmsPluginState:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="agentType")
-    def agent_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent type.
         """
         return pulumi.get(self, "agent_type")
 
     @agent_type.setter
-    def agent_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_type", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability status.
         """
         return pulumi.get(self, "availability_status")
 
     @availability_status.setter
-    def availability_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_status", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).) 
 
@@ -288,115 +288,115 @@ class _JmsPluginState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname of the agent.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="osArchitecture")
-    def os_architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The architecture of the operating system of the plugin.
         """
         return pulumi.get(self, "os_architecture")
 
     @os_architecture.setter
-    def os_architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="osDistribution")
-    def os_distribution(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The distribution of the operating system of the plugin.
         """
         return pulumi.get(self, "os_distribution")
 
     @os_distribution.setter
-    def os_distribution(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_distribution", value)
 
     @_builtins.property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_family(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operating system family for the plugin.
         """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
-    def os_family(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_family(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_family", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the plugin.
         """
         return pulumi.get(self, "plugin_version")
 
     @plugin_version.setter
-    def plugin_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastSeen")
-    def time_last_seen(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_seen(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
         return pulumi.get(self, "time_last_seen")
 
     @time_last_seen.setter
-    def time_last_seen(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_seen(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_seen", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRegistered")
-    def time_registered(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_registered(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the plugin was registered.
         """
         return pulumi.get(self, "time_registered")
 
     @time_registered.setter
-    def time_registered(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_registered(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_registered", value)
 
 
@@ -406,12 +406,12 @@ class JmsPlugin(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 agent_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
@@ -523,12 +523,12 @@ class JmsPlugin(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 agent_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -568,22 +568,22 @@ class JmsPlugin(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            agent_type: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_status: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            os_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-            os_distribution: Optional[pulumi.Input[_builtins.str]] = None,
-            os_family: Optional[pulumi.Input[_builtins.str]] = None,
-            plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_last_seen: Optional[pulumi.Input[_builtins.str]] = None,
-            time_registered: Optional[pulumi.Input[_builtins.str]] = None) -> 'JmsPlugin':
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            os_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            os_distribution: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_last_seen: pulumi.Input[Optional[_builtins.str]] = None,
+            time_registered: pulumi.Input[Optional[_builtins.str]] = None) -> 'JmsPlugin':
         """
         Get an existing JmsPlugin resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

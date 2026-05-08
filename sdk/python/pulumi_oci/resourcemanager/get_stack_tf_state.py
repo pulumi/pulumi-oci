@@ -86,7 +86,7 @@ def get_stack_tf_state(local_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=test_stack["id"])
+    test_stack_tf_state = oci.resourcemanager.get_stack_tf_state(stack_id=test_stack["id"])
     ```
 
 
@@ -103,8 +103,8 @@ def get_stack_tf_state(local_path: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         local_path=pulumi.get(__ret__, 'local_path'),
         stack_id=pulumi.get(__ret__, 'stack_id'))
-def get_stack_tf_state_output(local_path: Optional[pulumi.Input[_builtins.str]] = None,
-                              stack_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stack_tf_state_output(local_path: pulumi.Input[Optional[_builtins.str]] = None,
+                              stack_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStackTfStateResult]:
     """
     This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -119,7 +119,7 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=test_stack["id"])
+    test_stack_tf_state = oci.resourcemanager.get_stack_tf_state(stack_id=test_stack["id"])
     ```
 
 

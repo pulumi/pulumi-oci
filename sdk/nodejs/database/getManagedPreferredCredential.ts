@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasePreferredCredential = oci.Database.getManagedPreferredCredential({
+ * const testManagedDatabasePreferredCredential = oci.database.getManagedPreferredCredential({
  *     credentialName: managedDatabasePreferredCredentialCredentialName,
  *     managedDatabaseId: testManagedDatabase.id,
  * });
@@ -101,7 +101,7 @@ export interface GetManagedPreferredCredentialResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasePreferredCredential = oci.Database.getManagedPreferredCredential({
+ * const testManagedDatabasePreferredCredential = oci.database.getManagedPreferredCredential({
  *     credentialName: managedDatabasePreferredCredentialCredentialName,
  *     managedDatabaseId: testManagedDatabase.id,
  * });
@@ -131,5 +131,5 @@ export interface GetManagedPreferredCredentialOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
      */
-    namedCredentialId?: pulumi.Input<string>;
+    namedCredentialId?: pulumi.Input<string | undefined>;
 }

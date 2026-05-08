@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTool = oci.GenerativeAi.getAgentTool({
+ * const testTool = oci.generativeai.getAgentTool({
  *     toolId: testToolOciGenerativeAiAgentTool.id,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetAgentToolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTool = oci.GenerativeAi.getAgentTool({
+ * const testTool = oci.generativeai.getAgentTool({
  *     toolId: testToolOciGenerativeAiAgentTool.id,
  * });
  * ```

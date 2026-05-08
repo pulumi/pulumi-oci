@@ -139,7 +139,7 @@ def get_compliance_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policies = oci.FleetAppsManagement.get_compliance_policies(compartment_id=compartment_id,
+    test_compliance_policies = oci.fleetappsmanagement.get_compliance_policies(compartment_id=compartment_id,
         display_name=compliance_policy_display_name,
         id=compliance_policy_id,
         state=compliance_policy_state,
@@ -171,12 +171,12 @@ def get_compliance_policies(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compliance_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompliancePoliciesResult]:
     """
     This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -190,7 +190,7 @@ def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policies = oci.FleetAppsManagement.get_compliance_policies(compartment_id=compartment_id,
+    test_compliance_policies = oci.fleetappsmanagement.get_compliance_policies(compartment_id=compartment_id,
         display_name=compliance_policy_display_name,
         id=compliance_policy_id,
         state=compliance_policy_state,

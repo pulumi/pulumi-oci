@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalClusterInstance = oci.DatabaseManagement.getExternalClusterInstance({
+ * const testExternalClusterInstance = oci.databasemanagement.getExternalClusterInstance({
  *     externalClusterInstanceId: testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id,
  * });
  * ```
@@ -130,7 +130,7 @@ export interface GetExternalClusterInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalClusterInstance = oci.DatabaseManagement.getExternalClusterInstance({
+ * const testExternalClusterInstance = oci.databasemanagement.getExternalClusterInstance({
  *     externalClusterInstanceId: testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id,
  * });
  * ```

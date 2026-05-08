@@ -288,7 +288,7 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
+    test_snapshot = oci.filestorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_locked=pulumi.get(__ret__, 'time_locked'))
-def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_snapshot_output(snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSnapshotResult]:
     """
     This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
@@ -333,7 +333,7 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
+    test_snapshot = oci.filestorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
 
 

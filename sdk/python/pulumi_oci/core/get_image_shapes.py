@@ -98,7 +98,7 @@ def get_image_shapes(filters: Optional[Sequence[Union['GetImageShapesFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shapes = oci.Core.get_image_shapes(image_id=test_image["id"])
+    test_image_shapes = oci.core.get_image_shapes(image_id=test_image["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_image_shapes(filters: Optional[Sequence[Union['GetImageShapesFilterArgs'
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
         image_shape_compatibilities=pulumi.get(__ret__, 'image_shape_compatibilities'))
-def get_image_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict']]]]] = None,
-                            image_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_image_shapes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict']]]]] = None,
+                            image_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageShapesResult]:
     """
     This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
@@ -129,7 +129,7 @@ def get_image_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shapes = oci.Core.get_image_shapes(image_id=test_image["id"])
+    test_image_shapes = oci.core.get_image_shapes(image_id=test_image["id"])
     ```
 
 

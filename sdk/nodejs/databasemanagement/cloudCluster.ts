@@ -218,39 +218,39 @@ export interface CloudClusterState {
     /**
      * The additional details of the cloud cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
      */
-    cloudClusterId?: pulumi.Input<string>;
+    cloudClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    cloudConnectorId?: pulumi.Input<string>;
+    cloudConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the cluster is a part of.
      */
-    cloudDbSystemId?: pulumi.Input<string>;
+    cloudDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The name of the cloud cluster.
      */
-    componentName?: pulumi.Input<string>;
+    componentName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
      */
-    dbaasId?: pulumi.Input<string>;
+    dbaasId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the cloud cluster. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -258,55 +258,55 @@ export interface CloudClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    gridHome?: pulumi.Input<string>;
+    gridHome?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      */
-    isFlexCluster?: pulumi.Input<boolean>;
+    isFlexCluster?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The list of network address configurations of the cloud cluster.
      */
-    networkConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterNetworkConfiguration>[]>;
+    networkConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterNetworkConfiguration>[] | undefined>;
     /**
      * The location of the Oracle Cluster Registry (OCR).
      */
-    ocrFileLocation?: pulumi.Input<string>;
+    ocrFileLocation?: pulumi.Input<string | undefined>;
     /**
      * The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
      */
-    scanConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterScanConfiguration>[]>;
+    scanConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterScanConfiguration>[] | undefined>;
     /**
      * The current lifecycle state of the cloud cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cloud cluster was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the cloud cluster was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The cluster version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The list of Virtual IP (VIP) configurations of the cloud cluster.
      */
-    vipConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterVipConfiguration>[]>;
+    vipConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudClusterVipConfiguration>[] | undefined>;
 }
 
 /**
@@ -320,11 +320,11 @@ export interface CloudClusterArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    cloudConnectorId?: pulumi.Input<string>;
+    cloudConnectorId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -332,5 +332,5 @@ export interface CloudClusterArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

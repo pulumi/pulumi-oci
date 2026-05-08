@@ -105,7 +105,7 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=test_repository["id"],
+    test_repository_authors = oci.devops.get_repository_authors(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 
@@ -126,9 +126,9 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_author_collections=pulumi.get(__ret__, 'repository_author_collections'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
-                                  ref_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_authors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
+                                  ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryAuthorsResult]:
     """
     This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
@@ -141,7 +141,7 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=test_repository["id"],
+    test_repository_authors = oci.devops.get_repository_authors(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 

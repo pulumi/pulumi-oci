@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeer = oci.Blockchain.getPeer({
+ * const testPeer = oci.blockchain.getPeer({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     peerId: testPeerOciBlockchainPeer.id,
  * });
@@ -92,7 +92,7 @@ export interface GetPeerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeer = oci.Blockchain.getPeer({
+ * const testPeer = oci.blockchain.getPeer({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     peerId: testPeerOciBlockchainPeer.id,
  * });

@@ -151,9 +151,9 @@ def get_managed_instance_group_managed_instances(compartment_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_managed_instances = oci.OsManagementHub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_managed_instances = oci.osmanagementhub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree == "true",
         display_names=managed_instance_group_managed_instance_display_name,
         display_name_contains=managed_instance_group_managed_instance_display_name_contains,
         managed_instance_id=test_managed_instance["id"])
@@ -188,13 +188,13 @@ def get_managed_instance_group_managed_instances(compartment_id: Optional[_built
         managed_instance_collections=pulumi.get(__ret__, 'managed_instance_collections'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'))
-def get_managed_instance_group_managed_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                        display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict']]]]] = None,
-                                                        managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_instance_group_managed_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                        display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict']]]]] = None,
+                                                        managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupManagedInstancesResult]:
     """
     This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
@@ -207,9 +207,9 @@ def get_managed_instance_group_managed_instances_output(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_managed_instances = oci.OsManagementHub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_managed_instances = oci.osmanagementhub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree == "true",
         display_names=managed_instance_group_managed_instance_display_name,
         display_name_contains=managed_instance_group_managed_instance_display_name_contains,
         managed_instance_id=test_managed_instance["id"])

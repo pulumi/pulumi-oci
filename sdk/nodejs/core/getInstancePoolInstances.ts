@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePoolInstances = oci.Core.getInstancePoolInstances({
+ * const testInstancePoolInstances = oci.core.getInstancePoolInstances({
  *     compartmentId: compartmentId,
  *     instancePoolId: testInstancePool.id,
  *     displayName: instancePoolInstanceDisplayName,
@@ -87,7 +87,7 @@ export interface GetInstancePoolInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePoolInstances = oci.Core.getInstancePoolInstances({
+ * const testInstancePoolInstances = oci.core.getInstancePoolInstances({
  *     compartmentId: compartmentId,
  *     instancePoolId: testInstancePool.id,
  *     displayName: instancePoolInstanceDisplayName,
@@ -115,8 +115,8 @@ export interface GetInstancePoolInstancesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstancePoolInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstancePoolInstancesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */

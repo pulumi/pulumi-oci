@@ -215,83 +215,83 @@ export interface DeploymentState {
     /**
      * The OCID of a compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies the list of artifact override arguments at the time of deployment.
      */
-    deployArtifactOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployArtifactOverrideArguments>;
+    deployArtifactOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployArtifactOverrideArguments | undefined>;
     /**
      * List of all artifacts used in the pipeline.
      */
-    deployPipelineArtifacts?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeployPipelineArtifact>[]>;
+    deployPipelineArtifacts?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeployPipelineArtifact>[] | undefined>;
     /**
      * List of all environments used in the pipeline.
      */
-    deployPipelineEnvironments?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeployPipelineEnvironment>[]>;
+    deployPipelineEnvironments?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeployPipelineEnvironment>[] | undefined>;
     /**
      * The OCID of a pipeline.
      */
-    deployPipelineId?: pulumi.Input<string>;
+    deployPipelineId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the OCID of the stage to be redeployed.
      */
-    deployStageId?: pulumi.Input<string>;
+    deployStageId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      */
-    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments>;
+    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments | undefined>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
-    deploymentArguments?: pulumi.Input<inputs.DevOps.DeploymentDeploymentArguments>;
+    deploymentArguments?: pulumi.Input<inputs.DevOps.DeploymentDeploymentArguments | undefined>;
     /**
      * The execution progress details of a deployment.
      */
-    deploymentExecutionProgresses?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgress>[]>;
+    deploymentExecutionProgresses?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgress>[] | undefined>;
     /**
      * (Updatable) Specifies type for this deployment.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Deployment display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
      */
-    previousDeploymentId?: pulumi.Input<string>;
+    previousDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of a project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
      *
@@ -299,7 +299,7 @@ export interface DeploymentState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
      * is set true each apply will force the destruction and recreation of the resource with the new property values.
      */
-    triggerNewDevopsDeployment?: pulumi.Input<boolean>;
+    triggerNewDevopsDeployment?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -309,11 +309,11 @@ export interface DeploymentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies the list of artifact override arguments at the time of deployment.
      */
-    deployArtifactOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployArtifactOverrideArguments>;
+    deployArtifactOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployArtifactOverrideArguments | undefined>;
     /**
      * The OCID of a pipeline.
      */
@@ -321,15 +321,15 @@ export interface DeploymentArgs {
     /**
      * Specifies the OCID of the stage to be redeployed.
      */
-    deployStageId?: pulumi.Input<string>;
+    deployStageId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      */
-    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments>;
+    deployStageOverrideArguments?: pulumi.Input<inputs.DevOps.DeploymentDeployStageOverrideArguments | undefined>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
-    deploymentArguments?: pulumi.Input<inputs.DevOps.DeploymentDeploymentArguments>;
+    deploymentArguments?: pulumi.Input<inputs.DevOps.DeploymentDeploymentArguments | undefined>;
     /**
      * (Updatable) Specifies type for this deployment.
      */
@@ -337,15 +337,15 @@ export interface DeploymentArgs {
     /**
      * (Updatable) Deployment display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
      */
-    previousDeploymentId?: pulumi.Input<string>;
+    previousDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
      *
@@ -353,5 +353,5 @@ export interface DeploymentArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
      * is set true each apply will force the destruction and recreation of the resource with the new property values.
      */
-    triggerNewDevopsDeployment?: pulumi.Input<boolean>;
+    triggerNewDevopsDeployment?: pulumi.Input<boolean | undefined>;
 }

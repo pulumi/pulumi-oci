@@ -34,8 +34,8 @@ import * as utilities from "../utilities";
  *     additionalEgressRules: [{
  *         description: fusionEnvironmentAdditionalEgressRulesDescription,
  *         destinationCidr: fusionEnvironmentAdditionalEgressRulesDestinationCidr,
- *         maxDestinationPort: fusionEnvironmentAdditionalEgressRulesMaxDestinationPort,
- *         minDestinationPort: fusionEnvironmentAdditionalEgressRulesMinDestinationPort,
+ *         maxDestinationPort: Number(fusionEnvironmentAdditionalEgressRulesMaxDestinationPort),
+ *         minDestinationPort: Number(fusionEnvironmentAdditionalEgressRulesMinDestinationPort),
  *     }],
  *     additionalLanguagePacks: fusionEnvironmentAdditionalLanguagePacks,
  *     definedTags: {
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isIpv6dualStackEnabled: fusionEnvironmentIsIpv6dualStackEnabled,
+ *     isIpv6dualStackEnabled: fusionEnvironmentIsIpv6dualStackEnabled === "true",
  *     kmsKeyId: testKey.id,
  *     maintenancePolicy: {
  *         environmentMaintenanceOverride: fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride,
@@ -322,123 +322,123 @@ export interface FusionEnvironmentState {
     /**
      * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
      */
-    additionalEgressRules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdditionalEgressRule>[]>;
+    additionalEgressRules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdditionalEgressRule>[] | undefined>;
     /**
      * (Updatable) Language packs.
      */
-    additionalLanguagePacks?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalLanguagePacks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Patch bundle names
      */
-    appliedPatchBundles?: pulumi.Input<pulumi.Input<string>[]>;
+    appliedPatchBundles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The credentials for the Fusion Applications service administrator.
      */
-    createFusionEnvironmentAdminUserDetails?: pulumi.Input<inputs.FusionApps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails>;
+    createFusionEnvironmentAdminUserDetails?: pulumi.Input<inputs.FusionApps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) FusionEnvironment Identifier can be renamed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * DNS prefix.
      */
-    dnsPrefix?: pulumi.Input<string>;
+    dnsPrefix?: pulumi.Input<string | undefined>;
     /**
      * The IDCS domain created for the fusion instance
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
      */
-    fusionEnvironmentFamilyId?: pulumi.Input<string>;
+    fusionEnvironmentFamilyId?: pulumi.Input<string | undefined>;
     /**
      * The type of environment. Valid values are Production, Test, or Development.
      */
-    fusionEnvironmentType?: pulumi.Input<string>;
+    fusionEnvironmentType?: pulumi.Input<string | undefined>;
     /**
      * The IDCS Domain URL
      */
-    idcsDomainUrl?: pulumi.Input<string>;
+    idcsDomainUrl?: pulumi.Input<string | undefined>;
     /**
      * If it's true, then the Break Glass feature is enabled
      */
-    isBreakGlassEnabled?: pulumi.Input<boolean>;
+    isBreakGlassEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      */
-    isIpv6dualStackEnabled?: pulumi.Input<boolean>;
+    isIpv6dualStackEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) byok kms keyId
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * BYOK key info
      */
-    kmsKeyInfos?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentKmsKeyInfo>[]>;
+    kmsKeyInfos?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentKmsKeyInfo>[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
      */
-    lockboxId?: pulumi.Input<string>;
+    lockboxId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    maintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentMaintenancePolicy>;
+    maintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentMaintenancePolicy | undefined>;
     /**
      * Public URL
      */
-    publicUrl?: pulumi.Input<string>;
+    publicUrl?: pulumi.Input<string | undefined>;
     /**
      * Describes a refresh of a fusion environment
      */
-    refreshes?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRefresh>[]>;
+    refreshes?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRefresh>[] | undefined>;
     /**
      * (Updatable) Rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRule>[] | undefined>;
     /**
      * The current state of the ServiceInstance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * List of subscription IDs.
      */
-    subscriptionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subscriptionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Environment Specific Guid/ System Name
      */
-    systemName?: pulumi.Input<string>;
+    systemName?: pulumi.Input<string | undefined>;
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The next maintenance for this environment
      */
-    timeUpcomingMaintenance?: pulumi.Input<string>;
+    timeUpcomingMaintenance?: pulumi.Input<string | undefined>;
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Version of Fusion Apps used by this environment
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -448,11 +448,11 @@ export interface FusionEnvironmentArgs {
     /**
      * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
      */
-    additionalEgressRules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdditionalEgressRule>[]>;
+    additionalEgressRules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdditionalEgressRule>[] | undefined>;
     /**
      * (Updatable) Language packs.
      */
-    additionalLanguagePacks?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalLanguagePacks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
      */
@@ -464,7 +464,7 @@ export interface FusionEnvironmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) FusionEnvironment Identifier can be renamed.
      */
@@ -472,11 +472,11 @@ export interface FusionEnvironmentArgs {
     /**
      * DNS prefix.
      */
-    dnsPrefix?: pulumi.Input<string>;
+    dnsPrefix?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
      */
@@ -488,17 +488,17 @@ export interface FusionEnvironmentArgs {
     /**
      * (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      */
-    isIpv6dualStackEnabled?: pulumi.Input<boolean>;
+    isIpv6dualStackEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) byok kms keyId
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    maintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentMaintenancePolicy>;
+    maintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentMaintenancePolicy | undefined>;
     /**
      * (Updatable) Rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRule>[] | undefined>;
 }

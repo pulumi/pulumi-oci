@@ -111,7 +111,7 @@ export interface ProfileDetachManagementStationManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to detach from the profile.
      */
-    managementStationId?: pulumi.Input<string>;
+    managementStationId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      *
@@ -119,7 +119,7 @@ export interface ProfileDetachManagementStationManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
 }
 
 /**

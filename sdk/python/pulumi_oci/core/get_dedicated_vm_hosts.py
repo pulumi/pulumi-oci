@@ -183,11 +183,11 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=compartment_id,
+    test_dedicated_vm_hosts = oci.core.get_dedicated_vm_hosts(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_availability_domain,
         display_name=dedicated_vm_host_display_name,
         instance_shape_name=dedicated_vm_host_instance_shape_name,
-        is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+        is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
         remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
         remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
         state=dedicated_vm_host_state)
@@ -228,15 +228,15 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
         remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
         remaining_ocpus_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_ocpus_greater_than_or_equal_to'),
         state=pulumi.get(__ret__, 'state'))
-def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostsFilterArgs', 'GetDedicatedVmHostsFilterArgsDict']]]]] = None,
-                                  instance_shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  is_memory_encryption_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                  remaining_memory_in_gbs_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                  remaining_ocpus_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostsFilterArgs', 'GetDedicatedVmHostsFilterArgsDict']]]]] = None,
+                                  instance_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  is_memory_encryption_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                  remaining_memory_in_gbs_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                  remaining_ocpus_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostsResult]:
     """
     This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
@@ -252,11 +252,11 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=compartment_id,
+    test_dedicated_vm_hosts = oci.core.get_dedicated_vm_hosts(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_availability_domain,
         display_name=dedicated_vm_host_display_name,
         instance_shape_name=dedicated_vm_host_instance_shape_name,
-        is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+        is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
         remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
         remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
         state=dedicated_vm_host_state)

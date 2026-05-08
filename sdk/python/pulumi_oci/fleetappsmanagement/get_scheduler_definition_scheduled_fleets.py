@@ -108,7 +108,7 @@ def get_scheduler_definition_scheduled_fleets(display_name: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition_scheduled_fleets = oci.FleetAppsManagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
+    test_scheduler_definition_scheduled_fleets = oci.fleetappsmanagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
         display_name=scheduler_definition_scheduled_fleet_display_name)
     ```
 
@@ -129,9 +129,9 @@ def get_scheduler_definition_scheduled_fleets(display_name: Optional[_builtins.s
         id=pulumi.get(__ret__, 'id'),
         scheduled_fleet_collections=pulumi.get(__ret__, 'scheduled_fleet_collections'),
         scheduler_definition_id=pulumi.get(__ret__, 'scheduler_definition_id'))
-def get_scheduler_definition_scheduled_fleets_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict']]]]] = None,
-                                                     scheduler_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduler_definition_scheduled_fleets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict']]]]] = None,
+                                                     scheduler_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionScheduledFleetsResult]:
     """
     This data source provides the list of Scheduler Definition Scheduled Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -144,7 +144,7 @@ def get_scheduler_definition_scheduled_fleets_output(display_name: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition_scheduled_fleets = oci.FleetAppsManagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
+    test_scheduler_definition_scheduled_fleets = oci.fleetappsmanagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
         display_name=scheduler_definition_scheduled_fleet_display_name)
     ```
 

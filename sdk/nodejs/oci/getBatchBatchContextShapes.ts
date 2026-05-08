@@ -105,14 +105,14 @@ export interface GetBatchBatchContextShapesOutputArgs {
     /**
      * The name of the availability domain.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetBatchBatchContextShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetBatchBatchContextShapesFilterArgs>[] | undefined>;
     /**
      * The type of a shape.
      */
-    shapeType?: pulumi.Input<string>;
+    shapeType?: pulumi.Input<string | undefined>;
 }

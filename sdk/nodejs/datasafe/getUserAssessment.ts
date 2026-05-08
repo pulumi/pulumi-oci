@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessment = oci.DataSafe.getUserAssessment({
+ * const testUserAssessment = oci.datasafe.getUserAssessment({
  *     userAssessmentId: testUserAssessmentOciDataSafeUserAssessment.id,
  * });
  * ```
@@ -161,7 +161,7 @@ export interface GetUserAssessmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessment = oci.DataSafe.getUserAssessment({
+ * const testUserAssessment = oci.datasafe.getUserAssessment({
  *     userAssessmentId: testUserAssessmentOciDataSafeUserAssessment.id,
  * });
  * ```

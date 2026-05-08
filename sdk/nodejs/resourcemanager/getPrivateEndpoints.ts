@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.ResourceManager.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.resourcemanager.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     privateEndpointId: testPrivateEndpoint.id,
@@ -106,7 +106,7 @@ export interface GetPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.ResourceManager.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.resourcemanager.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     privateEndpointId: testPrivateEndpoint.id,
@@ -133,18 +133,18 @@ export interface GetPrivateEndpointsOutputArgs {
     /**
      * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ResourceManager.GetPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ResourceManager.GetPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

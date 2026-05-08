@@ -145,7 +145,7 @@ def get_backend_set_health(backend_set_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
+    test_backend_set_health = oci.loadbalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 
@@ -168,8 +168,8 @@ def get_backend_set_health(backend_set_name: Optional[_builtins.str] = None,
         total_backend_count=pulumi.get(__ret__, 'total_backend_count'),
         unknown_state_backend_names=pulumi.get(__ret__, 'unknown_state_backend_names'),
         warning_state_backend_names=pulumi.get(__ret__, 'warning_state_backend_names'))
-def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                  load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_backend_set_health_output(backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendSetHealthResult]:
     """
     This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -182,7 +182,7 @@ def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
+    test_backend_set_health = oci.loadbalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 

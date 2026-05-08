@@ -22,12 +22,12 @@ __all__ = ['DefaultSecurityListArgs', 'DefaultSecurityList']
 class DefaultSecurityListArgs:
     def __init__(__self__, *,
                  manage_default_resource_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None):
         """
         The set of arguments for constructing a DefaultSecurityList resource.
         """
@@ -56,71 +56,71 @@ class DefaultSecurityListArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="egressSecurityRules")
-    def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]:
+    def egress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]:
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
-    def egress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]):
+    def egress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]):
         pulumi.set(self, "egress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressSecurityRules")
-    def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]:
+    def ingress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]:
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
-    def ingress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]):
+    def ingress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]):
         pulumi.set(self, "ingress_security_rules", value)
 
 
 @pulumi.input_type
 class _DefaultSecurityListState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None,
-                 manage_default_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None,
+                 manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DefaultSecurityList resources.
         """
@@ -145,83 +145,83 @@ class _DefaultSecurityListState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="egressSecurityRules")
-    def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]:
+    def egress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]:
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
-    def egress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]):
+    def egress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]]):
         pulumi.set(self, "egress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressSecurityRules")
-    def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]:
+    def ingress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]:
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
-    def ingress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]):
+    def ingress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]]):
         pulumi.set(self, "ingress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="manageDefaultResourceId")
-    def manage_default_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def manage_default_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "manage_default_resource_id")
 
     @manage_default_resource_id.setter
-    def manage_default_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def manage_default_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "manage_default_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -231,13 +231,13 @@ class DefaultSecurityList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
-                 manage_default_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a DefaultSecurityList resource with the given unique name, props, and options.
@@ -269,13 +269,13 @@ class DefaultSecurityList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
-                 manage_default_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -306,15 +306,15 @@ class DefaultSecurityList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
-            manage_default_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'DefaultSecurityList':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+            manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'DefaultSecurityList':
         """
         Get an existing DefaultSecurityList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -518,7 +518,7 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+    test_account_mgmt_info = oci.identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -585,12 +585,12 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[_builtins.str] 
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         uid=pulumi.get(__ret__, 'uid'),
         user_wallet_artifacts=pulumi.get(__ret__, 'user_wallet_artifacts'))
-def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                         attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                         resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_account_mgmt_info_output(account_mgmt_info_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                         attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                         resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAccountMgmtInfoResult]:
     """
     This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -603,7 +603,7 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+    test_account_mgmt_info = oci.identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

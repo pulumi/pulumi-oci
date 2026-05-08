@@ -23,13 +23,13 @@ class OdaInstanceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  shape_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_role_based_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OdaInstance resource.
 
@@ -94,114 +94,114 @@ class OdaInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Digital Assistant instance.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomain")
-    def identity_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
         """
         return pulumi.get(self, "identity_domain")
 
     @identity_domain.setter
-    def identity_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="isRoleBasedAccess")
-    def is_role_based_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_role_based_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         """
         return pulumi.get(self, "is_role_based_access")
 
     @is_role_based_access.setter
-    def is_role_based_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_role_based_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_role_based_access", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Digital Assistant instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _OdaInstanceState:
     def __init__(__self__, *,
-                 attachment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attachment_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_app_console_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_app_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 imported_package_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 imported_package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_role_based_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_sub_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 restricted_operations: Optional[pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_app_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attachment_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_app_console_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_app_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 imported_package_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 imported_package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 restricted_operations: pulumi.Input[Optional[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_app_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaInstance resources.
 
@@ -279,199 +279,199 @@ class _OdaInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="attachmentIds")
-    def attachment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attachment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         """
         return pulumi.get(self, "attachment_ids")
 
     @attachment_ids.setter
-    def attachment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attachment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attachment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="attachmentTypes")
-    def attachment_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attachment_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
         """
         return pulumi.get(self, "attachment_types")
 
     @attachment_types.setter
-    def attachment_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attachment_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attachment_types", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorUrl")
-    def connector_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL for the connector's endpoint.
         """
         return pulumi.get(self, "connector_url")
 
     @connector_url.setter
-    def connector_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_url", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Digital Assistant instance.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="identityAppConsoleUrl")
-    def identity_app_console_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_app_console_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
         """
         return pulumi.get(self, "identity_app_console_url")
 
     @identity_app_console_url.setter
-    def identity_app_console_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_app_console_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_app_console_url", value)
 
     @_builtins.property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_app_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
         """
         return pulumi.get(self, "identity_app_guid")
 
     @identity_app_guid.setter
-    def identity_app_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_app_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_app_guid", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomain")
-    def identity_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
         """
         return pulumi.get(self, "identity_domain")
 
     @identity_domain.setter
-    def identity_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="importedPackageIds")
-    def imported_package_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def imported_package_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
         """
         return pulumi.get(self, "imported_package_ids")
 
     @imported_package_ids.setter
-    def imported_package_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def imported_package_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "imported_package_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="importedPackageNames")
-    def imported_package_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def imported_package_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
         """
         return pulumi.get(self, "imported_package_names")
 
     @imported_package_names.setter
-    def imported_package_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def imported_package_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "imported_package_names", value)
 
     @_builtins.property
     @pulumi.getter(name="isRoleBasedAccess")
-    def is_role_based_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_role_based_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         """
         return pulumi.get(self, "is_role_based_access")
 
     @is_role_based_access.setter
-    def is_role_based_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_role_based_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_role_based_access", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_sub_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current sub-state of the Digital Assistant instance.
         """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @lifecycle_sub_state.setter
-    def lifecycle_sub_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_sub_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_sub_state", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictedOperations")
-    def restricted_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]]:
+    def restricted_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]]:
         """
         A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         """
         return pulumi.get(self, "restricted_operations")
 
     @restricted_operations.setter
-    def restricted_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]]):
+    def restricted_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]]):
         pulumi.set(self, "restricted_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shape or size of the instance.
 
@@ -482,67 +482,67 @@ class _OdaInstanceState:
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Digital Assistant instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
         """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
-    def state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_message", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="webAppUrl")
-    def web_app_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def web_app_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL for the Digital Assistant web application that's associated with the instance.
         """
         return pulumi.get(self, "web_app_url")
 
     @web_app_url.setter
-    def web_app_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def web_app_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "web_app_url", value)
 
 
@@ -552,15 +552,15 @@ class OdaInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_role_based_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -591,7 +591,7 @@ class OdaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             identity_domain=oda_instance_identity_domain,
-            is_role_based_access=oda_instance_is_role_based_access)
+            is_role_based_access=oda_instance_is_role_based_access == "true")
         ```
 
         ## Import
@@ -654,7 +654,7 @@ class OdaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             identity_domain=oda_instance_identity_domain,
-            is_role_based_access=oda_instance_is_role_based_access)
+            is_role_based_access=oda_instance_is_role_based_access == "true")
         ```
 
         ## Import
@@ -681,15 +681,15 @@ class OdaInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_role_based_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -735,28 +735,28 @@ class OdaInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attachment_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connector_url: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            identity_app_console_url: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_app_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            imported_package_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            imported_package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_role_based_access: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_sub_state: Optional[pulumi.Input[_builtins.str]] = None,
-            restricted_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            state_message: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            web_app_url: Optional[pulumi.Input[_builtins.str]] = None) -> 'OdaInstance':
+            attachment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attachment_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_url: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_app_console_url: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_app_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            imported_package_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            imported_package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            restricted_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            web_app_url: pulumi.Input[Optional[_builtins.str]] = None) -> 'OdaInstance':
         """
         Get an existing OdaInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

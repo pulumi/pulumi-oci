@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
+ * const testFleetBlocklists = oci.jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
  *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,
@@ -90,7 +90,7 @@ export interface GetFleetBlocklistsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
+ * const testFleetBlocklists = oci.jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
  *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,
@@ -111,7 +111,7 @@ export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opt
  * A collection of arguments for invoking getFleetBlocklists.
  */
 export interface GetFleetBlocklistsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetBlocklistsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetBlocklistsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -119,9 +119,9 @@ export interface GetFleetBlocklistsOutputArgs {
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The operation type.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
 }

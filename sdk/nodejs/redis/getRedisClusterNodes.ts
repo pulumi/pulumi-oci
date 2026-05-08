@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRedisClusterNodes = oci.Redis.getRedisClusterNodes({
+ * const testRedisClusterNodes = oci.redis.getRedisClusterNodes({
  *     redisClusterId: testRedisCluster.id,
  *     displayName: redisClusterNodeDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetRedisClusterNodesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRedisClusterNodes = oci.Redis.getRedisClusterNodes({
+ * const testRedisClusterNodes = oci.redis.getRedisClusterNodes({
  *     redisClusterId: testRedisCluster.id,
  *     displayName: redisClusterNodeDisplayName,
  * });
@@ -102,8 +102,8 @@ export interface GetRedisClusterNodesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetRedisClusterNodesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetRedisClusterNodesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */

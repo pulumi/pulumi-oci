@@ -193,7 +193,7 @@ def get_tag(tag_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag = oci.Identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
+    test_tag = oci.identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
         tag_namespace_id=test_tag_namespace["id"])
     ```
 
@@ -220,8 +220,8 @@ def get_tag(tag_name: Optional[_builtins.str] = None,
         tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         validators=pulumi.get(__ret__, 'validators'))
-def get_tag_output(tag_name: Optional[pulumi.Input[_builtins.str]] = None,
-                   tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tag_output(tag_name: pulumi.Input[Optional[_builtins.str]] = None,
+                   tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagResult]:
     """
     This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -234,7 +234,7 @@ def get_tag_output(tag_name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag = oci.Identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
+    test_tag = oci.identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
         tag_namespace_id=test_tag_namespace["id"])
     ```
 

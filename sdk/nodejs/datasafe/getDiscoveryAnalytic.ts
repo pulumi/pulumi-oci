@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
+ * const testDiscoveryAnalytic = oci.datasafe.getDiscoveryAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     targetId: testTarget.id,
@@ -102,9 +102,9 @@ export interface GetDiscoveryAnalyticResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
+ * const testDiscoveryAnalytic = oci.datasafe.getDiscoveryAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     targetId: testTarget.id,
@@ -133,17 +133,17 @@ export interface GetDiscoveryAnalyticOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Attribute by which the discovery analytics data should be grouped.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsLogGroups = oci.LogAnalytics.getLogAnalyticsLogGroups({
+ * const testLogAnalyticsLogGroups = oci.loganalytics.getLogAnalyticsLogGroups({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsLogGroupNamespace,
  *     displayName: logAnalyticsLogGroupDisplayName,
@@ -87,7 +87,7 @@ export interface GetLogAnalyticsLogGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsLogGroups = oci.LogAnalytics.getLogAnalyticsLogGroups({
+ * const testLogAnalyticsLogGroups = oci.loganalytics.getLogAnalyticsLogGroups({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsLogGroupNamespace,
  *     displayName: logAnalyticsLogGroupDisplayName,
@@ -115,8 +115,8 @@ export interface GetLogAnalyticsLogGroupsOutputArgs {
     /**
      * A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsLogGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsLogGroupsFilterArgs>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
+ * const testBdsInstancePatchHistories = oci.bigdataservice.getBdsInstancePatchHistories({
  *     bdsInstanceId: testBdsInstance.id,
  *     patchType: bdsInstancePatchHistoryPatchType,
  *     patchVersion: bdsInstancePatchHistoryPatchVersion,
@@ -94,7 +94,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
+ * const testBdsInstancePatchHistories = oci.bigdataservice.getBdsInstancePatchHistories({
  *     bdsInstanceId: testBdsInstance.id,
  *     patchType: bdsInstancePatchHistoryPatchType,
  *     patchVersion: bdsInstancePatchHistoryPatchVersion,
@@ -121,17 +121,17 @@ export interface GetBdsInstancePatchHistoriesOutputArgs {
      * The OCID of the cluster.
      */
     bdsInstanceId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstancePatchHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstancePatchHistoriesFilterArgs>[] | undefined>;
     /**
      * The type of a BDS patch history entity.
      */
-    patchType?: pulumi.Input<string>;
+    patchType?: pulumi.Input<string | undefined>;
     /**
      * The version of the patch
      */
-    patchVersion?: pulumi.Input<string>;
+    patchVersion?: pulumi.Input<string | undefined>;
     /**
      * The status of the patch.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

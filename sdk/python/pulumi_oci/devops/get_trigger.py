@@ -261,7 +261,7 @@ def get_trigger(trigger_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trigger = oci.DevOps.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
+    test_trigger = oci.devops.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_trigger(trigger_id: Optional[_builtins.str] = None,
         trigger_id=pulumi.get(__ret__, 'trigger_id'),
         trigger_source=pulumi.get(__ret__, 'trigger_source'),
         trigger_url=pulumi.get(__ret__, 'trigger_url'))
-def get_trigger_output(trigger_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_trigger_output(trigger_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTriggerResult]:
     """
     This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
@@ -304,7 +304,7 @@ def get_trigger_output(trigger_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trigger = oci.DevOps.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
+    test_trigger = oci.devops.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
     ```
 
 

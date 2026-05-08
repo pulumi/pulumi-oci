@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSource = oci.CloudGuard.getDataSource({
+ * const testDataSource = oci.cloudguard.getDataSource({
  *     dataSourceId: testDataSourceOciCloudGuardDataSource.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetDataSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSource = oci.CloudGuard.getDataSource({
+ * const testDataSource = oci.cloudguard.getDataSource({
  *     dataSourceId: testDataSourceOciCloudGuardDataSource.id,
  * });
  * ```

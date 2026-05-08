@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
+ * const testFleetPerformanceTuningAnalysisResults = oci.jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
  *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,
@@ -124,7 +124,7 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
+ * const testFleetPerformanceTuningAnalysisResults = oci.jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
  *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,
@@ -156,12 +156,12 @@ export interface GetFleetPerformanceTuningAnalysisResultsOutputArgs {
     /**
      * The Fleet-unique identifier of the related application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The name of the application.
      */
-    applicationName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetPerformanceTuningAnalysisResultsFilterArgs>[]>;
+    applicationName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetPerformanceTuningAnalysisResultsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -169,17 +169,17 @@ export interface GetFleetPerformanceTuningAnalysisResultsOutputArgs {
     /**
      * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

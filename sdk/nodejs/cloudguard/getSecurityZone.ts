@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityZone = oci.CloudGuard.getSecurityZone({
+ * const testSecurityZone = oci.cloudguard.getSecurityZone({
  *     securityZoneId: testSecurityZoneOciCloudGuardSecurityZone.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetSecurityZoneResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityZone = oci.CloudGuard.getSecurityZone({
+ * const testSecurityZone = oci.cloudguard.getSecurityZone({
  *     securityZoneId: testSecurityZoneOciCloudGuardSecurityZone.id,
  * });
  * ```

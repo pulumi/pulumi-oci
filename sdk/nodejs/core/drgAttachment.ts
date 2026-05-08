@@ -187,49 +187,49 @@ export interface DrgAttachmentState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
+    drgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      *
      * The DRG route table manages traffic inside the DRG.
      */
-    drgRouteTableId?: pulumi.Input<string>;
+    drgRouteTableId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
      */
-    exportDrgRouteDistributionId?: pulumi.Input<string>;
+    exportDrgRouteDistributionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      */
-    isCrossTenancy?: pulumi.Input<boolean>;
+    isCrossTenancy?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable)
      */
-    networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails>;
+    networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
+    removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
      *
@@ -238,19 +238,19 @@ export interface DrgAttachmentState {
      * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      * This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      */
-    routeTableId?: pulumi.Input<string>;
+    routeTableId?: pulumi.Input<string | undefined>;
     /**
      * The DRG attachment's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -260,11 +260,11 @@ export interface DrgAttachmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
@@ -274,27 +274,27 @@ export interface DrgAttachmentArgs {
      *
      * The DRG route table manages traffic inside the DRG.
      */
-    drgRouteTableId?: pulumi.Input<string>;
+    drgRouteTableId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
      */
-    exportDrgRouteDistributionId?: pulumi.Input<string>;
+    exportDrgRouteDistributionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable)
      */
-    networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails>;
+    networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
+    removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
      *
@@ -303,9 +303,9 @@ export interface DrgAttachmentArgs {
      * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      * This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      */
-    routeTableId?: pulumi.Input<string>;
+    routeTableId?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

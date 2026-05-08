@@ -25,13 +25,13 @@ class MonitoringTemplateArgs:
                  destinations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  display_name: pulumi.Input[_builtins.str],
                  members: pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_alarms_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_split_notification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoringTemplate resource.
 
@@ -120,79 +120,79 @@ class MonitoringTemplateArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAlarmsEnabled")
-    def is_alarms_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_alarms_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
         """
         return pulumi.get(self, "is_alarms_enabled")
 
     @is_alarms_enabled.setter
-    def is_alarms_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_alarms_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_alarms_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSplitNotificationEnabled")
-    def is_split_notification_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_split_notification_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
         """
         return pulumi.get(self, "is_split_notification_enabled")
 
     @is_split_notification_enabled.setter
-    def is_split_notification_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_split_notification_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_split_notification_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format to use for alarm notifications.
         """
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repeat_notification_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
 
@@ -203,32 +203,32 @@ class MonitoringTemplateArgs:
         return pulumi.get(self, "repeat_notification_duration")
 
     @repeat_notification_duration.setter
-    def repeat_notification_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repeat_notification_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repeat_notification_duration", value)
 
 
 @pulumi.input_type
 class _MonitoringTemplateState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_alarms_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_split_notification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_alarm_conditions: Optional[pulumi.Input[_builtins.float]] = None,
-                 total_applied_alarm_conditions: Optional[pulumi.Input[_builtins.float]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_alarm_conditions: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_applied_alarm_conditions: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplate resources.
 
@@ -297,127 +297,127 @@ class _MonitoringTemplateState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment containing the monitoringTemplate.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def destinations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def destinations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
         """
         return pulumi.get(self, "destinations")
 
     @destinations.setter
-    def destinations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def destinations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destinations", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAlarmsEnabled")
-    def is_alarms_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_alarms_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
         """
         return pulumi.get(self, "is_alarms_enabled")
 
     @is_alarms_enabled.setter
-    def is_alarms_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_alarms_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_alarms_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSplitNotificationEnabled")
-    def is_split_notification_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_split_notification_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
         """
         return pulumi.get(self, "is_split_notification_enabled")
 
     @is_split_notification_enabled.setter
-    def is_split_notification_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_split_notification_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_split_notification_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]]:
         """
         (Updatable) List of members of this monitoring template
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format to use for alarm notifications.
         """
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repeat_notification_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
 
@@ -428,103 +428,103 @@ class _MonitoringTemplateState:
         return pulumi.get(self, "repeat_notification_duration")
 
     @repeat_notification_duration.setter
-    def repeat_notification_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repeat_notification_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repeat_notification_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the monitoring template.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the monitoring template i.e. whether it is Applied or NotApplied.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the monitoringTemplate was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="totalAlarmConditions")
-    def total_alarm_conditions(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_alarm_conditions(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Total Alarm Conditions
         """
         return pulumi.get(self, "total_alarm_conditions")
 
     @total_alarm_conditions.setter
-    def total_alarm_conditions(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_alarm_conditions(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_alarm_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="totalAppliedAlarmConditions")
-    def total_applied_alarm_conditions(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_applied_alarm_conditions(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Total Applied Alarm Conditions
         """
         return pulumi.get(self, "total_applied_alarm_conditions")
 
     @total_applied_alarm_conditions.setter
-    def total_applied_alarm_conditions(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_applied_alarm_conditions(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_applied_alarm_conditions", value)
 
 
@@ -534,17 +534,17 @@ class MonitoringTemplate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_alarms_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_split_notification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -576,8 +576,8 @@ class MonitoringTemplate(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_alarms_enabled=monitoring_template_is_alarms_enabled,
-            is_split_notification_enabled=monitoring_template_is_split_notification_enabled,
+            is_alarms_enabled=monitoring_template_is_alarms_enabled == "true",
+            is_split_notification_enabled=monitoring_template_is_split_notification_enabled == "true",
             message_format=monitoring_template_message_format,
             repeat_notification_duration=monitoring_template_repeat_notification_duration)
         ```
@@ -645,8 +645,8 @@ class MonitoringTemplate(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_alarms_enabled=monitoring_template_is_alarms_enabled,
-            is_split_notification_enabled=monitoring_template_is_split_notification_enabled,
+            is_alarms_enabled=monitoring_template_is_alarms_enabled == "true",
+            is_split_notification_enabled=monitoring_template_is_split_notification_enabled == "true",
             message_format=monitoring_template_message_format,
             repeat_notification_duration=monitoring_template_repeat_notification_duration)
         ```
@@ -675,17 +675,17 @@ class MonitoringTemplate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_alarms_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_split_notification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -732,25 +732,25 @@ class MonitoringTemplate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_alarms_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_split_notification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
-            message_format: Optional[pulumi.Input[_builtins.str]] = None,
-            repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            total_alarm_conditions: Optional[pulumi.Input[_builtins.float]] = None,
-            total_applied_alarm_conditions: Optional[pulumi.Input[_builtins.float]] = None) -> 'MonitoringTemplate':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+            message_format: pulumi.Input[Optional[_builtins.str]] = None,
+            repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_alarm_conditions: pulumi.Input[Optional[_builtins.float]] = None,
+            total_applied_alarm_conditions: pulumi.Input[Optional[_builtins.float]] = None) -> 'MonitoringTemplate':
         """
         Get an existing MonitoringTemplate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

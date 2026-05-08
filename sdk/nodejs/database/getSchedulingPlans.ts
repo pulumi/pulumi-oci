@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPlans = oci.Database.getSchedulingPlans({
+ * const testSchedulingPlans = oci.database.getSchedulingPlans({
  *     compartmentId: compartmentId,
  *     displayName: schedulingPlanDisplayName,
  *     id: schedulingPlanId,
@@ -116,7 +116,7 @@ export interface GetSchedulingPlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPlans = oci.Database.getSchedulingPlans({
+ * const testSchedulingPlans = oci.database.getSchedulingPlans({
  *     compartmentId: compartmentId,
  *     displayName: schedulingPlanDisplayName,
  *     id: schedulingPlanId,
@@ -150,22 +150,22 @@ export interface GetSchedulingPlansOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPlansFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPlansFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Schedule Plan id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given resource id exactly.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given scheduling policy id exactly.
      */
-    schedulingPolicyId?: pulumi.Input<string>;
+    schedulingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

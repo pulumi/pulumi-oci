@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListenerRules = oci.LoadBalancer.getListenerRules({
+ * const testListenerRules = oci.loadbalancer.getListenerRules({
  *     listenerName: testListener.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });
@@ -86,7 +86,7 @@ export interface GetListenerRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListenerRules = oci.LoadBalancer.getListenerRules({
+ * const testListenerRules = oci.loadbalancer.getListenerRules({
  *     listenerName: testListener.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });
@@ -105,7 +105,7 @@ export function getListenerRulesOutput(args: GetListenerRulesOutputArgs, opts?: 
  * A collection of arguments for invoking getListenerRules.
  */
 export interface GetListenerRulesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetListenerRulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetListenerRulesFilterArgs>[] | undefined>;
     /**
      * The name of the listener the rules are associated with. Example: `exampleListener`
      */

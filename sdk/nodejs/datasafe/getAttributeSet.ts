@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSet = oci.DataSafe.getAttributeSet({
+ * const testAttributeSet = oci.datasafe.getAttributeSet({
  *     attributeSetId: testAttributeSetOciDataSafeAttributeSet.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetAttributeSetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSet = oci.DataSafe.getAttributeSet({
+ * const testAttributeSet = oci.datasafe.getAttributeSet({
  *     attributeSetId: testAttributeSetOciDataSafeAttributeSet.id,
  * });
  * ```

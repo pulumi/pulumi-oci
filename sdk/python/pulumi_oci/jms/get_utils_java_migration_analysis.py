@@ -112,7 +112,7 @@ def get_utils_java_migration_analysis(analysis_project_name: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysis = oci.Jms.get_utils_java_migration_analysis(analysis_project_name=test_project["name"],
+    test_java_migration_analysis = oci.jms.get_utils_java_migration_analysis(analysis_project_name=test_project["name"],
         compartment_id=compartment_id,
         id=java_migration_analysi_id)
     ```
@@ -136,10 +136,10 @@ def get_utils_java_migration_analysis(analysis_project_name: Optional[_builtins.
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         java_migration_analysis_collections=pulumi.get(__ret__, 'java_migration_analysis_collections'))
-def get_utils_java_migration_analysis_output(analysis_project_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict']]]]] = None,
-                                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_utils_java_migration_analysis_output(analysis_project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict']]]]] = None,
+                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsJavaMigrationAnalysisResult]:
     """
     This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
@@ -152,7 +152,7 @@ def get_utils_java_migration_analysis_output(analysis_project_name: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysis = oci.Jms.get_utils_java_migration_analysis(analysis_project_name=test_project["name"],
+    test_java_migration_analysis = oci.jms.get_utils_java_migration_analysis(analysis_project_name=test_project["name"],
         compartment_id=compartment_id,
         id=java_migration_analysi_id)
     ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataIngestionJobLogContent = oci.GenerativeAi.getAgentDataIngestionJobLogContent({
+ * const testDataIngestionJobLogContent = oci.generativeai.getAgentDataIngestionJobLogContent({
  *     dataIngestionJobId: testDataIngestionJob.id,
  * });
  * ```
@@ -62,7 +62,7 @@ export interface GetAgentDataIngestionJobLogContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataIngestionJobLogContent = oci.GenerativeAi.getAgentDataIngestionJobLogContent({
+ * const testDataIngestionJobLogContent = oci.generativeai.getAgentDataIngestionJobLogContent({
  *     dataIngestionJobId: testDataIngestionJob.id,
  * });
  * ```

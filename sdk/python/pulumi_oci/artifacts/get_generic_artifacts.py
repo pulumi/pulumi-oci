@@ -177,7 +177,7 @@ def get_generic_artifacts(artifact_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+    test_generic_artifacts = oci.artifacts.get_generic_artifacts(compartment_id=compartment_id,
         repository_id=test_repository["id"],
         artifact_path=generic_artifact_artifact_path,
         display_name=generic_artifact_display_name,
@@ -221,15 +221,15 @@ def get_generic_artifacts(artifact_path: Optional[_builtins.str] = None,
         sha256=pulumi.get(__ret__, 'sha256'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGenericArtifactsFilterArgs', 'GetGenericArtifactsFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 sha256: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_generic_artifacts_output(artifact_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGenericArtifactsFilterArgs', 'GetGenericArtifactsFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 sha256: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericArtifactsResult]:
     """
     This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
@@ -242,7 +242,7 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+    test_generic_artifacts = oci.artifacts.get_generic_artifacts(compartment_id=compartment_id,
         repository_id=test_repository["id"],
         artifact_path=generic_artifact_artifact_path,
         display_name=generic_artifact_display_name,

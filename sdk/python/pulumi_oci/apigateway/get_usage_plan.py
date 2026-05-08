@@ -213,7 +213,7 @@ def get_usage_plan(usage_plan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=test_usage_plan_oci_apigateway_usage_plan["id"])
+    test_usage_plan = oci.apigateway.get_usage_plan(usage_plan_id=test_usage_plan_oci_apigateway_usage_plan["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_usage_plan(usage_plan_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         usage_plan_id=pulumi.get(__ret__, 'usage_plan_id'))
-def get_usage_plan_output(usage_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_usage_plan_output(usage_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsagePlanResult]:
     """
     This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
@@ -252,7 +252,7 @@ def get_usage_plan_output(usage_plan_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=test_usage_plan_oci_apigateway_usage_plan["id"])
+    test_usage_plan = oci.apigateway.get_usage_plan(usage_plan_id=test_usage_plan_oci_apigateway_usage_plan["id"])
     ```
 
 

@@ -199,39 +199,39 @@ export interface InternalOccmDemandSignalDeliveryState {
     /**
      * (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
      */
-    acceptedQuantity?: pulumi.Input<string>;
+    acceptedQuantity?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy from which the demand signal delivery resource is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the demand signal under which this delivery will be grouped.
      */
-    demandSignalId?: pulumi.Input<string>;
+    demandSignalId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the demand signal item corresponding to which this delivery is made.
      */
-    demandSignalItemId?: pulumi.Input<string>;
+    demandSignalItemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
      */
-    justification?: pulumi.Input<string>;
+    justification?: pulumi.Input<string | undefined>;
     /**
      * The enum values corresponding to the various states associated with the delivery resource.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This field acts as a notes section for operators.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
      *
@@ -239,19 +239,19 @@ export interface InternalOccmDemandSignalDeliveryState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
      */
-    timeDelivered?: pulumi.Input<string>;
+    timeDelivered?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -269,7 +269,7 @@ export interface InternalOccmDemandSignalDeliveryArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the demand signal under which this delivery will be grouped.
      */
@@ -281,19 +281,19 @@ export interface InternalOccmDemandSignalDeliveryArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
      */
-    justification?: pulumi.Input<string>;
+    justification?: pulumi.Input<string | undefined>;
     /**
      * The enum values corresponding to the various states associated with the delivery resource.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This field acts as a notes section for operators.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
      *

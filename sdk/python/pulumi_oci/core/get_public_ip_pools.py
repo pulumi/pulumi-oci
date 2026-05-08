@@ -122,7 +122,7 @@ def get_public_ip_pools(byoip_range_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=compartment_id,
+    test_public_ip_pools = oci.core.get_public_ip_pools(compartment_id=compartment_id,
         byoip_range_id=test_byoip_range["id"],
         display_name=public_ip_pool_display_name)
     ```
@@ -147,10 +147,10 @@ def get_public_ip_pools(byoip_range_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         public_ip_pool_collections=pulumi.get(__ret__, 'public_ip_pool_collections'))
-def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict']]]]] = None,
+def get_public_ip_pools_output(byoip_range_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpPoolsResult]:
     """
     This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
@@ -164,7 +164,7 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=compartment_id,
+    test_public_ip_pools = oci.core.get_public_ip_pools(compartment_id=compartment_id,
         byoip_range_id=test_byoip_range["id"],
         display_name=public_ip_pool_display_name)
     ```

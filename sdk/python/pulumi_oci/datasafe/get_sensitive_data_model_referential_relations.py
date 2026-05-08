@@ -160,9 +160,9 @@ def get_sensitive_data_model_referential_relations(column_names: Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_referential_relations = oci.DataSafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_referential_relations = oci.datasafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_names=sensitive_data_model_referential_relation_column_name,
-        is_sensitive=sensitive_data_model_referential_relation_is_sensitive,
+        is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true",
         objects=sensitive_data_model_referential_relation_object,
         relation_types=sensitive_data_model_referential_relation_relation_type,
         schema_names=sensitive_data_model_referential_relation_schema_name)
@@ -197,13 +197,13 @@ def get_sensitive_data_model_referential_relations(column_names: Optional[Sequen
         relation_types=pulumi.get(__ret__, 'relation_types'),
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'))
-def get_sensitive_data_model_referential_relations_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict']]]]] = None,
-                                                          is_sensitive: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                          objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                          relation_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                          schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                          sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_data_model_referential_relations_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict']]]]] = None,
+                                                          is_sensitive: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                          objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                          relation_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                          schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                          sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelReferentialRelationsResult]:
     """
     This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
@@ -216,9 +216,9 @@ def get_sensitive_data_model_referential_relations_output(column_names: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_referential_relations = oci.DataSafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_referential_relations = oci.datasafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_names=sensitive_data_model_referential_relation_column_name,
-        is_sensitive=sensitive_data_model_referential_relation_is_sensitive,
+        is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true",
         objects=sensitive_data_model_referential_relation_object,
         relation_types=sensitive_data_model_referential_relation_relation_type,
         schema_names=sensitive_data_model_referential_relation_schema_name)

@@ -102,15 +102,15 @@ export class ContainerConfiguration extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ContainerConfiguration resources.
  */
 export interface ContainerConfigurationState {
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
      */
-    isRepositoryCreatedOnFirstPush?: pulumi.Input<boolean>;
+    isRepositoryCreatedOnFirstPush?: pulumi.Input<boolean | undefined>;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

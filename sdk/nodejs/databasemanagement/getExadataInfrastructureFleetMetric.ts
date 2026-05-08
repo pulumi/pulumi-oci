@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureFleetMetric = oci.DatabaseManagement.getExadataInfrastructureFleetMetric({
+ * const testExadataInfrastructureFleetMetric = oci.databasemanagement.getExadataInfrastructureFleetMetric({
  *     compareBaselineTime: exadataInfrastructureFleetMetricCompareBaselineTime,
  *     compareTargetTime: exadataInfrastructureFleetMetricCompareTargetTime,
  *     compartmentId: compartmentId,
@@ -117,7 +117,7 @@ export interface GetExadataInfrastructureFleetMetricResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureFleetMetric = oci.DatabaseManagement.getExadataInfrastructureFleetMetric({
+ * const testExadataInfrastructureFleetMetric = oci.databasemanagement.getExadataInfrastructureFleetMetric({
  *     compareBaselineTime: exadataInfrastructureFleetMetricCompareBaselineTime,
  *     compareTargetTime: exadataInfrastructureFleetMetricCompareTargetTime,
  *     compartmentId: compartmentId,
@@ -154,7 +154,7 @@ export interface GetExadataInfrastructureFleetMetricOutputArgs {
     /**
      * The time window used for metrics comparison.
      */
-    compareType?: pulumi.Input<string>;
+    compareType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -162,9 +162,9 @@ export interface GetExadataInfrastructureFleetMetricOutputArgs {
     /**
      * The filter used to filter the Exadata infrastructures in the fleet by a specific deployment type.
      */
-    filterByExadataInfrastructureDeploymentType?: pulumi.Input<string>;
+    filterByExadataInfrastructureDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * The filter used to filter the Exadata infrastructure in the fleet by its lifecycle state. If the parameter is not provided, Exdata infrastructures in any state are returned.
      */
-    filterByExadataInfrastructureLifecycleState?: pulumi.Input<string>;
+    filterByExadataInfrastructureLifecycleState?: pulumi.Input<string | undefined>;
 }

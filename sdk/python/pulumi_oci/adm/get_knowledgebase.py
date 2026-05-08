@@ -167,7 +167,7 @@ def get_knowledgebase(knowledge_base_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=test_knowledge_base_oci_adm_knowledge_base["id"])
+    test_knowledge_base = oci.adm.get_knowledgebase(knowledge_base_id=test_knowledge_base_oci_adm_knowledge_base["id"])
     ```
 
 
@@ -189,7 +189,7 @@ def get_knowledgebase(knowledge_base_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_knowledgebase_output(knowledge_base_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKnowledgebaseResult]:
     """
     This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure ADM service.
@@ -202,7 +202,7 @@ def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=test_knowledge_base_oci_adm_knowledge_base["id"])
+    test_knowledge_base = oci.adm.get_knowledgebase(knowledge_base_id=test_knowledge_base_oci_adm_knowledge_base["id"])
     ```
 
 

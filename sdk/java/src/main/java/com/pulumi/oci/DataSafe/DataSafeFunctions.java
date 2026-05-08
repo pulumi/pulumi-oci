@@ -492,8 +492,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -534,8 +534,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -576,8 +576,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -618,8 +618,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -702,8 +702,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -752,8 +752,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -802,8 +802,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -852,8 +852,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -902,8 +902,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -952,8 +952,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1105,8 +1105,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1156,8 +1156,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1207,8 +1207,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1249,8 +1249,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1291,8 +1291,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1333,8 +1333,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1375,8 +1375,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1417,8 +1417,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1460,8 +1460,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1503,8 +1503,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1546,8 +1546,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1589,8 +1589,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1633,8 +1633,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1676,8 +1676,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1719,8 +1719,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1762,8 +1762,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1805,8 +1805,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1847,8 +1847,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1894,8 +1894,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1941,8 +1941,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1988,8 +1988,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2035,8 +2035,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2082,8 +2082,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2124,8 +2124,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2166,8 +2166,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2208,8 +2208,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2250,8 +2250,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2292,8 +2292,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2336,8 +2336,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2380,8 +2380,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2424,8 +2424,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2468,8 +2468,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2525,8 +2525,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2588,8 +2588,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2651,8 +2651,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2714,8 +2714,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2777,8 +2777,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2827,8 +2827,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2869,8 +2869,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2911,8 +2911,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2953,8 +2953,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2995,8 +2995,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3037,8 +3037,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3087,8 +3087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3137,8 +3137,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3187,8 +3187,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3237,8 +3237,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3299,8 +3299,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3356,8 +3356,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3413,8 +3413,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3470,8 +3470,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3527,8 +3527,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3577,8 +3577,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3632,8 +3632,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3687,8 +3687,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3742,8 +3742,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3797,8 +3797,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3859,8 +3859,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3916,8 +3916,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3973,8 +3973,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4030,8 +4030,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4087,8 +4087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4146,8 +4146,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4209,8 +4209,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4272,8 +4272,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4335,8 +4335,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4398,8 +4398,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4447,8 +4447,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4489,8 +4489,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4531,8 +4531,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4573,8 +4573,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4615,8 +4615,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4657,8 +4657,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4699,8 +4699,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4741,8 +4741,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4783,8 +4783,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4825,8 +4825,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4879,8 +4879,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4936,8 +4936,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4993,8 +4993,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5050,8 +5050,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5107,8 +5107,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5152,8 +5152,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5198,8 +5198,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5244,8 +5244,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5290,8 +5290,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5336,8 +5336,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5382,8 +5382,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5428,8 +5428,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5474,8 +5474,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5520,8 +5520,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5566,8 +5566,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5612,8 +5612,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5657,8 +5657,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5702,8 +5702,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5747,8 +5747,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5792,8 +5792,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5837,8 +5837,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5882,8 +5882,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5927,8 +5927,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5972,8 +5972,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6017,8 +6017,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6062,8 +6062,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6105,8 +6105,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6148,8 +6148,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6191,8 +6191,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6234,8 +6234,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6291,8 +6291,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6358,8 +6358,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6425,8 +6425,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6492,8 +6492,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6559,8 +6559,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6612,8 +6612,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6654,8 +6654,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6696,8 +6696,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6738,8 +6738,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6780,8 +6780,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6834,8 +6834,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6892,8 +6892,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6950,8 +6950,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7008,8 +7008,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7066,8 +7066,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7125,8 +7125,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7188,8 +7188,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7251,8 +7251,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7314,8 +7314,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7377,8 +7377,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7432,8 +7432,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7477,8 +7477,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7522,8 +7522,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7567,8 +7567,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7612,8 +7612,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7657,8 +7657,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7702,8 +7702,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7745,8 +7745,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7792,8 +7792,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7839,8 +7839,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7886,8 +7886,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7933,8 +7933,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7977,8 +7977,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8019,8 +8019,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8061,8 +8061,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8103,8 +8103,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8145,8 +8145,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8187,8 +8187,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8229,8 +8229,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8271,8 +8271,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8313,8 +8313,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8355,8 +8355,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8397,8 +8397,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8444,8 +8444,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8491,8 +8491,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8538,8 +8538,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8585,8 +8585,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8632,8 +8632,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8674,8 +8674,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8716,8 +8716,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8758,8 +8758,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8800,8 +8800,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8855,8 +8855,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8919,8 +8919,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8983,8 +8983,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9047,8 +9047,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9111,8 +9111,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9164,8 +9164,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9212,8 +9212,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9260,8 +9260,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9308,8 +9308,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9356,8 +9356,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9404,8 +9404,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9456,8 +9456,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9508,8 +9508,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9560,8 +9560,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9612,8 +9612,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9662,8 +9662,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9704,8 +9704,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9746,8 +9746,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9788,8 +9788,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9830,8 +9830,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9872,8 +9872,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9915,8 +9915,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9958,8 +9958,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10001,8 +10001,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10044,8 +10044,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10087,8 +10087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10136,8 +10136,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10185,8 +10185,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10234,8 +10234,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10283,8 +10283,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10332,8 +10332,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10374,8 +10374,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10416,8 +10416,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10458,8 +10458,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10500,8 +10500,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10542,8 +10542,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10592,8 +10592,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10642,8 +10642,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10692,8 +10692,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10742,8 +10742,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10795,8 +10795,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10848,8 +10848,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10901,8 +10901,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10954,8 +10954,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11007,8 +11007,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11059,8 +11059,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11107,8 +11107,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11155,8 +11155,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11203,8 +11203,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11251,8 +11251,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11299,8 +11299,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11349,8 +11349,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11399,8 +11399,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11449,8 +11449,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11499,8 +11499,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11547,8 +11547,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11598,8 +11598,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11649,8 +11649,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11700,8 +11700,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11751,8 +11751,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11802,8 +11802,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11845,8 +11845,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11888,8 +11888,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11931,8 +11931,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11974,8 +11974,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12017,8 +12017,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12073,8 +12073,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12129,8 +12129,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12185,8 +12185,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12241,8 +12241,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12297,8 +12297,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12339,8 +12339,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12381,8 +12381,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12423,8 +12423,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12465,8 +12465,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12507,8 +12507,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12549,8 +12549,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12591,8 +12591,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12633,8 +12633,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12675,8 +12675,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12717,8 +12717,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12760,8 +12760,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12803,8 +12803,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12846,8 +12846,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12889,8 +12889,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12932,8 +12932,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12981,8 +12981,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13030,8 +13030,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13079,8 +13079,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13128,8 +13128,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13177,8 +13177,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13222,8 +13222,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13267,8 +13267,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13312,8 +13312,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13357,8 +13357,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13402,8 +13402,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13445,8 +13445,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13488,8 +13488,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13531,8 +13531,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13574,8 +13574,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13617,8 +13617,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13663,8 +13663,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13709,8 +13709,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13755,8 +13755,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13801,8 +13801,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13847,8 +13847,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13889,8 +13889,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13931,8 +13931,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13973,8 +13973,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14015,8 +14015,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14057,8 +14057,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14105,8 +14105,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14153,8 +14153,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14201,8 +14201,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14249,8 +14249,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14297,8 +14297,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14340,8 +14340,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14383,8 +14383,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14426,8 +14426,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14469,8 +14469,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskingErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14512,8 +14512,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14559,8 +14559,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14606,8 +14606,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14653,8 +14653,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14700,8 +14700,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14747,8 +14747,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14795,8 +14795,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14843,8 +14843,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14891,8 +14891,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14939,8 +14939,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14987,8 +14987,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15029,8 +15029,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15071,8 +15071,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15113,8 +15113,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15155,8 +15155,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15197,8 +15197,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15244,8 +15244,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15291,8 +15291,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15338,8 +15338,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15385,8 +15385,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15432,8 +15432,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15474,8 +15474,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15516,8 +15516,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15558,8 +15558,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15600,8 +15600,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15642,8 +15642,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15684,8 +15684,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15726,8 +15726,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15768,8 +15768,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15810,8 +15810,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15852,8 +15852,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15894,8 +15894,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15936,8 +15936,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15978,8 +15978,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16020,8 +16020,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16064,8 +16064,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16115,8 +16115,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16166,8 +16166,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16217,8 +16217,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16268,8 +16268,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16317,8 +16317,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16369,8 +16369,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16421,8 +16421,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16473,8 +16473,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16525,8 +16525,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16577,8 +16577,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16619,8 +16619,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16661,8 +16661,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16703,8 +16703,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16745,8 +16745,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16787,8 +16787,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16830,8 +16830,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16873,8 +16873,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16916,8 +16916,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16959,8 +16959,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17002,8 +17002,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17050,8 +17050,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17098,8 +17098,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17146,8 +17146,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17194,8 +17194,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17242,8 +17242,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17290,8 +17290,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17338,8 +17338,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17386,8 +17386,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17434,8 +17434,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17482,8 +17482,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17524,8 +17524,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17566,8 +17566,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17608,8 +17608,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17650,8 +17650,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17692,8 +17692,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17740,8 +17740,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17788,8 +17788,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17836,8 +17836,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17884,8 +17884,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17932,8 +17932,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17975,8 +17975,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18018,8 +18018,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18061,8 +18061,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18104,8 +18104,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18171,8 +18171,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18229,8 +18229,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18287,8 +18287,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18345,8 +18345,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18403,8 +18403,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18497,8 +18497,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18548,8 +18548,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18599,8 +18599,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18650,8 +18650,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18701,8 +18701,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18759,8 +18759,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18811,8 +18811,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18863,8 +18863,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18915,8 +18915,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18967,8 +18967,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19012,8 +19012,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19068,8 +19068,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19124,8 +19124,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19180,8 +19180,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19236,8 +19236,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19305,8 +19305,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19369,8 +19369,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19433,8 +19433,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19497,8 +19497,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19561,8 +19561,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19626,8 +19626,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19688,8 +19688,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19750,8 +19750,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19812,8 +19812,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19874,8 +19874,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19922,8 +19922,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19968,8 +19968,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20014,8 +20014,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20060,8 +20060,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20106,8 +20106,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20166,8 +20166,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20237,8 +20237,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20308,8 +20308,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20379,8 +20379,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20450,8 +20450,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20520,8 +20520,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20581,8 +20581,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20642,8 +20642,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20703,8 +20703,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20764,8 +20764,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20812,8 +20812,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20854,8 +20854,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20896,8 +20896,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20938,8 +20938,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20980,8 +20980,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21022,8 +21022,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21064,8 +21064,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21106,8 +21106,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21148,8 +21148,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21190,8 +21190,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21245,8 +21245,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21308,8 +21308,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21371,8 +21371,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21434,8 +21434,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21497,8 +21497,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21547,8 +21547,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21589,8 +21589,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21631,8 +21631,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21673,8 +21673,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21715,8 +21715,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21757,8 +21757,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21800,8 +21800,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21843,8 +21843,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21886,8 +21886,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21929,8 +21929,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21974,8 +21974,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22022,8 +22022,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22070,8 +22070,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22118,8 +22118,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22166,8 +22166,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22225,8 +22225,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22288,8 +22288,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22351,8 +22351,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22414,8 +22414,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22477,8 +22477,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22527,8 +22527,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22569,8 +22569,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22611,8 +22611,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22653,8 +22653,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22695,8 +22695,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22739,8 +22739,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22784,8 +22784,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22829,8 +22829,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22874,8 +22874,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22919,8 +22919,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22962,8 +22962,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23005,8 +23005,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23048,8 +23048,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23091,8 +23091,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23134,8 +23134,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23179,8 +23179,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23225,8 +23225,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23271,8 +23271,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23317,8 +23317,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23363,8 +23363,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23407,8 +23407,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23450,8 +23450,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23493,8 +23493,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23536,8 +23536,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23579,8 +23579,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23624,8 +23624,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23670,8 +23670,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23716,8 +23716,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23762,8 +23762,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23808,8 +23808,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23865,8 +23865,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23926,8 +23926,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23987,8 +23987,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24048,8 +24048,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24109,8 +24109,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24166,8 +24166,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24228,8 +24228,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24290,8 +24290,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24352,8 +24352,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24414,8 +24414,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveColumnAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24467,8 +24467,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24509,8 +24509,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24551,8 +24551,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24593,8 +24593,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24635,8 +24635,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24732,8 +24732,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24779,8 +24779,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24826,8 +24826,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24873,8 +24873,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24920,8 +24920,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24967,8 +24967,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25012,8 +25012,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25057,8 +25057,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25102,8 +25102,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25147,8 +25147,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25192,8 +25192,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25235,8 +25235,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25278,8 +25278,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25321,8 +25321,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25364,8 +25364,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25407,8 +25407,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25450,8 +25450,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25493,8 +25493,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25536,8 +25536,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25579,8 +25579,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25622,8 +25622,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25672,8 +25672,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25722,8 +25722,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25772,8 +25772,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25822,8 +25822,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25872,8 +25872,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25915,8 +25915,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25958,8 +25958,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26001,8 +26001,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26044,8 +26044,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26087,8 +26087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26147,8 +26147,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26207,8 +26207,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26267,8 +26267,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26327,8 +26327,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26387,8 +26387,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26429,8 +26429,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26471,8 +26471,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26513,8 +26513,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26555,8 +26555,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26597,8 +26597,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26639,8 +26639,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26681,8 +26681,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26723,8 +26723,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26765,8 +26765,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26807,8 +26807,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26850,8 +26850,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26893,8 +26893,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26936,8 +26936,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26979,8 +26979,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupGroupedSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27022,8 +27022,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27071,8 +27071,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27120,8 +27120,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27169,8 +27169,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27218,8 +27218,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27267,8 +27267,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27321,8 +27321,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27375,8 +27375,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27429,8 +27429,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27483,8 +27483,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27537,8 +27537,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27579,8 +27579,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27621,8 +27621,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27663,8 +27663,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27705,8 +27705,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27748,8 +27748,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27798,8 +27798,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27848,8 +27848,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27898,8 +27898,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27948,8 +27948,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27997,8 +27997,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28039,8 +28039,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28081,8 +28081,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28123,8 +28123,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28165,8 +28165,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28220,8 +28220,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28283,8 +28283,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28346,8 +28346,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28409,8 +28409,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28472,8 +28472,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28522,8 +28522,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28567,8 +28567,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28612,8 +28612,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28657,8 +28657,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28702,8 +28702,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28760,8 +28760,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28825,8 +28825,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28890,8 +28890,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28955,8 +28955,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29020,8 +29020,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29072,8 +29072,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29114,8 +29114,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29156,8 +29156,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29198,8 +29198,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29240,8 +29240,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29295,8 +29295,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29354,8 +29354,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29413,8 +29413,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29472,8 +29472,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29531,8 +29531,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29590,8 +29590,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29648,8 +29648,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29706,8 +29706,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29764,8 +29764,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29822,8 +29822,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29880,8 +29880,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29945,8 +29945,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30010,8 +30010,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30075,8 +30075,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30140,8 +30140,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30192,8 +30192,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30234,8 +30234,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30276,8 +30276,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30318,8 +30318,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30360,8 +30360,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30413,8 +30413,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30473,8 +30473,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30533,8 +30533,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30593,8 +30593,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30653,8 +30653,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30702,8 +30702,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30752,8 +30752,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30802,8 +30802,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30852,8 +30852,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30902,8 +30902,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30952,8 +30952,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30997,8 +30997,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31042,8 +31042,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31087,8 +31087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31132,8 +31132,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31177,8 +31177,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31219,8 +31219,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31261,8 +31261,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31303,8 +31303,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31345,8 +31345,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31442,8 +31442,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31484,8 +31484,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31526,8 +31526,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31568,8 +31568,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31610,8 +31610,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31652,8 +31652,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31694,8 +31694,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31736,8 +31736,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31778,8 +31778,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31820,8 +31820,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31862,8 +31862,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31905,8 +31905,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31948,8 +31948,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31991,8 +31991,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32034,8 +32034,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32077,8 +32077,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32127,8 +32127,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32177,8 +32177,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32227,8 +32227,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32277,8 +32277,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32327,8 +32327,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32370,8 +32370,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32413,8 +32413,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32456,8 +32456,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32499,8 +32499,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32542,8 +32542,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32584,8 +32584,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32626,8 +32626,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32668,8 +32668,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32710,8 +32710,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32767,8 +32767,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32813,8 +32813,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32859,8 +32859,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32905,8 +32905,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32951,8 +32951,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32997,8 +32997,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33047,8 +33047,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33097,8 +33097,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33147,8 +33147,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33197,8 +33197,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33247,8 +33247,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33296,8 +33296,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33345,8 +33345,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33394,8 +33394,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33443,8 +33443,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33492,8 +33492,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33537,8 +33537,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33582,8 +33582,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33627,8 +33627,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33672,8 +33672,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33717,8 +33717,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33763,8 +33763,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33809,8 +33809,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33855,8 +33855,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33901,8 +33901,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33960,8 +33960,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34025,8 +34025,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34090,8 +34090,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34155,8 +34155,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34220,8 +34220,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34272,8 +34272,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34314,8 +34314,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34356,8 +34356,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34398,8 +34398,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34440,8 +34440,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34482,8 +34482,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34524,8 +34524,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34566,8 +34566,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34608,8 +34608,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34650,8 +34650,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34705,8 +34705,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34768,8 +34768,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34831,8 +34831,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34894,8 +34894,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34957,8 +34957,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35007,8 +35007,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35049,8 +35049,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35091,8 +35091,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35133,8 +35133,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35175,8 +35175,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35217,8 +35217,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35260,8 +35260,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35303,8 +35303,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35346,8 +35346,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35389,8 +35389,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35442,8 +35442,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35498,8 +35498,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35554,8 +35554,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35610,8 +35610,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35666,8 +35666,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35726,8 +35726,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35787,8 +35787,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35848,8 +35848,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35909,8 +35909,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35970,8 +35970,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36031,8 +36031,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36104,8 +36104,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36177,8 +36177,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36250,8 +36250,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36323,8 +36323,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36382,8 +36382,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36424,8 +36424,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36466,8 +36466,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36508,8 +36508,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36550,8 +36550,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36606,8 +36606,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36678,8 +36678,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36750,8 +36750,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36822,8 +36822,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36894,8 +36894,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36955,8 +36955,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37021,8 +37021,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37087,8 +37087,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37153,8 +37153,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37219,8 +37219,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37296,8 +37296,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37366,8 +37366,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37436,8 +37436,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37506,8 +37506,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37576,8 +37576,8 @@ public final class DataSafeFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataSafe.DataSafeFunctions;
      * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

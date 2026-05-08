@@ -109,8 +109,8 @@ def get_byoasns(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_byoasns_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict']]]]] = None,
+def get_byoasns_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoasnsResult]:
     """
     This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.

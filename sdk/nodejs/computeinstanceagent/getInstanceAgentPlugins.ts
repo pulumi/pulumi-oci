@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAgentPlugins = oci.ComputeInstanceAgent.getInstanceAgentPlugins({
+ * const testInstanceAgentPlugins = oci.computeinstanceagent.getInstanceAgentPlugins({
  *     instanceagentId: testInstanceagent.id,
  *     name: instanceAgentPluginName,
  *     status: instanceAgentPluginStatus,
@@ -90,7 +90,7 @@ export interface GetInstanceAgentPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAgentPlugins = oci.ComputeInstanceAgent.getInstanceAgentPlugins({
+ * const testInstanceAgentPlugins = oci.computeinstanceagent.getInstanceAgentPlugins({
  *     instanceagentId: testInstanceagent.id,
  *     name: instanceAgentPluginName,
  *     status: instanceAgentPluginStatus,
@@ -113,7 +113,7 @@ export function getInstanceAgentPluginsOutput(args: GetInstanceAgentPluginsOutpu
  */
 export interface GetInstanceAgentPluginsOutputArgs {
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ComputeInstanceAgent.GetInstanceAgentPluginsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ComputeInstanceAgent.GetInstanceAgentPluginsFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
@@ -121,9 +121,9 @@ export interface GetInstanceAgentPluginsOutputArgs {
     /**
      * The plugin name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The plugin status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

@@ -138,10 +138,10 @@ def get_multicloud_multicloudsubscriptions(compartment_id: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         limit=pulumi.get(__ret__, 'limit'),
         multicloud_subscription_collections=pulumi.get(__ret__, 'multicloud_subscription_collections'))
-def get_multicloud_multicloudsubscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict']]]]] = None,
-                                                  limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_multicloud_multicloudsubscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict']]]]] = None,
+                                                  limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudMulticloudsubscriptionsResult]:
     """
     This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.

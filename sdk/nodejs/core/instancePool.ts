@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip === "true",
  *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: testSubnet.id,
@@ -45,10 +45,10 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip === "true",
  *         }],
  *     }],
- *     size: instancePoolSize,
+ *     size: Number(instancePoolSize),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -61,19 +61,19 @@ import * as utilities from "../utilities";
  *     lifecycleManagement: {
  *         lifecycleActions: {
  *             preTermination: {
- *                 isEnabled: instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled,
+ *                 isEnabled: instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled === "true",
  *                 onTimeout: {
  *                     preserveBlockVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBlockVolumeMode,
  *                     preserveBootVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBootVolumeMode,
  *                 },
- *                 timeout: instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout,
+ *                 timeout: Number(instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout),
  *             },
  *         },
  *     },
  *     loadBalancers: [{
  *         backendSetName: testBackendSet.name,
  *         loadBalancerId: testLoadBalancer.id,
- *         port: instancePoolLoadBalancersPort,
+ *         port: Number(instancePoolLoadBalancersPort),
  *         vnicSelection: instancePoolLoadBalancersVnicSelection,
  *     }],
  * });
@@ -252,57 +252,57 @@ export interface InstancePoolState {
     /**
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      */
-    actualSize?: pulumi.Input<number>;
+    actualSize?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Count of instance in running state associated to the Instance Pool.
      */
-    currentSize?: pulumi.Input<number>;
+    currentSize?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
-    instanceConfigurationId?: pulumi.Input<string>;
+    instanceConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
      */
-    instanceDisplayNameFormatter?: pulumi.Input<string>;
+    instanceDisplayNameFormatter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
-    instanceHostnameFormatter?: pulumi.Input<string>;
+    instanceHostnameFormatter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lifecycle management options for the instance pool.
      */
-    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement>;
+    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement | undefined>;
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
-    loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
+    loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[] | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
      * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      */
-    placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
+    placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[] | undefined>;
     /**
      * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
      *
@@ -310,11 +310,11 @@ export interface InstancePoolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -328,15 +328,15 @@ export interface InstancePoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
@@ -344,19 +344,19 @@ export interface InstancePoolArgs {
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
      */
-    instanceDisplayNameFormatter?: pulumi.Input<string>;
+    instanceDisplayNameFormatter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
-    instanceHostnameFormatter?: pulumi.Input<string>;
+    instanceHostnameFormatter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lifecycle management options for the instance pool.
      */
-    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement>;
+    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement | undefined>;
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
-    loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
+    loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[] | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
@@ -374,5 +374,5 @@ export interface InstancePoolArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

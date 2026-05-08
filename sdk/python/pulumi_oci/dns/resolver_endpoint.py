@@ -23,12 +23,12 @@ class ResolverEndpointInitArgs:
                  is_listening: pulumi.Input[_builtins.bool],
                  resolver_id: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 forwarding_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 listening_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
 
@@ -118,95 +118,95 @@ class ResolverEndpointInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def forwarding_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         """
         return pulumi.get(self, "forwarding_address")
 
     @forwarding_address.setter
-    def forwarding_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def forwarding_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "forwarding_address", value)
 
     @_builtins.property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listening_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         """
         return pulumi.get(self, "listening_address")
 
     @listening_address.setter
-    def listening_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listening_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listening_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value must be `PRIVATE` when creating private name resolver endpoints.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ResolverEndpointState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 forwarding_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_forwarding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_listening: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listening_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 self: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_forwarding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_listening: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 self: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResolverEndpoint resources.
 
@@ -263,151 +263,151 @@ class _ResolverEndpointState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def forwarding_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         """
         return pulumi.get(self, "forwarding_address")
 
     @forwarding_address.setter
-    def forwarding_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def forwarding_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "forwarding_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isForwarding")
-    def is_forwarding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_forwarding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         """
         return pulumi.get(self, "is_forwarding")
 
     @is_forwarding.setter
-    def is_forwarding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_forwarding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_forwarding", value)
 
     @_builtins.property
     @pulumi.getter(name="isListening")
-    def is_listening(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_listening(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean flag indicating whether or not the resolver endpoint is for listening.
         """
         return pulumi.get(self, "is_listening")
 
     @is_listening.setter
-    def is_listening(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_listening(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_listening", value)
 
     @_builtins.property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listening_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         """
         return pulumi.get(self, "listening_address")
 
     @listening_address.setter
-    def listening_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listening_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listening_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="resolverId")
-    def resolver_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolver_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target resolver.
         """
         return pulumi.get(self, "resolver_id")
 
     @resolver_id.setter
-    def resolver_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolver_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolver_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value must be `PRIVATE` when creating private name resolver endpoints.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def self(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def self(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical absolute URL of the resource.
         """
         return pulumi.get(self, "self")
 
     @self.setter
-    def self(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def self(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "self", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 
@@ -418,31 +418,31 @@ class _ResolverEndpointState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -452,16 +452,16 @@ class ResolverEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 forwarding_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_forwarding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_listening: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listening_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_forwarding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_listening: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
@@ -478,8 +478,8 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
-            is_forwarding=resolver_endpoint_is_forwarding,
-            is_listening=resolver_endpoint_is_listening,
+            is_forwarding=resolver_endpoint_is_forwarding == "true",
+            is_listening=resolver_endpoint_is_listening == "true",
             name=resolver_endpoint_name,
             resolver_id=test_resolver["id"],
             subnet_id=test_subnet["id"],
@@ -537,8 +537,8 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
-            is_forwarding=resolver_endpoint_is_forwarding,
-            is_listening=resolver_endpoint_is_listening,
+            is_forwarding=resolver_endpoint_is_forwarding == "true",
+            is_listening=resolver_endpoint_is_listening == "true",
             name=resolver_endpoint_name,
             resolver_id=test_resolver["id"],
             subnet_id=test_subnet["id"],
@@ -573,16 +573,16 @@ class ResolverEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 forwarding_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_forwarding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_listening: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listening_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_forwarding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_listening: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -625,21 +625,21 @@ class ResolverEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            forwarding_address: Optional[pulumi.Input[_builtins.str]] = None,
-            is_forwarding: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_listening: Optional[pulumi.Input[_builtins.bool]] = None,
-            listening_address: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            self: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ResolverEndpoint':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_forwarding: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_listening: pulumi.Input[Optional[_builtins.bool]] = None,
+            listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ResolverEndpoint':
         """
         Get an existing ResolverEndpoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -122,7 +122,7 @@ def get_utils_performance_tuning_analysis(analysis_project_name: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysis = oci.Jms.get_utils_performance_tuning_analysis(analysis_project_name=test_project["name"],
+    test_performance_tuning_analysis = oci.jms.get_utils_performance_tuning_analysis(analysis_project_name=test_project["name"],
         compartment_id=compartment_id,
         id=performance_tuning_analysi_id,
         performance_tuning_analysis_result=performance_tuning_analysi_performance_tuning_analysis_result)
@@ -150,11 +150,11 @@ def get_utils_performance_tuning_analysis(analysis_project_name: Optional[_built
         id=pulumi.get(__ret__, 'id'),
         performance_tuning_analysis_collections=pulumi.get(__ret__, 'performance_tuning_analysis_collections'),
         performance_tuning_analysis_result=pulumi.get(__ret__, 'performance_tuning_analysis_result'))
-def get_utils_performance_tuning_analysis_output(analysis_project_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict']]]]] = None,
-                                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 performance_tuning_analysis_result: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_utils_performance_tuning_analysis_output(analysis_project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict']]]]] = None,
+                                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 performance_tuning_analysis_result: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsPerformanceTuningAnalysisResult]:
     """
     This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
@@ -167,7 +167,7 @@ def get_utils_performance_tuning_analysis_output(analysis_project_name: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysis = oci.Jms.get_utils_performance_tuning_analysis(analysis_project_name=test_project["name"],
+    test_performance_tuning_analysis = oci.jms.get_utils_performance_tuning_analysis(analysis_project_name=test_project["name"],
         compartment_id=compartment_id,
         id=performance_tuning_analysi_id,
         performance_tuning_analysis_result=performance_tuning_analysi_performance_tuning_analysis_result)

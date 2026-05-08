@@ -147,7 +147,7 @@ def get_boot_volume_replicas(availability_domain: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_replicas = oci.Core.get_boot_volume_replicas(availability_domain=boot_volume_replica_availability_domain,
+    test_boot_volume_replicas = oci.core.get_boot_volume_replicas(availability_domain=boot_volume_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=boot_volume_replica_display_name,
         state=boot_volume_replica_state,
@@ -180,12 +180,12 @@ def get_boot_volume_replicas(availability_domain: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
-def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    volume_group_replica_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_boot_volume_replicas_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    volume_group_replica_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeReplicasResult]:
     """
     This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
@@ -198,7 +198,7 @@ def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_replicas = oci.Core.get_boot_volume_replicas(availability_domain=boot_volume_replica_availability_domain,
+    test_boot_volume_replicas = oci.core.get_boot_volume_replicas(availability_domain=boot_volume_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=boot_volume_replica_display_name,
         state=boot_volume_replica_state,

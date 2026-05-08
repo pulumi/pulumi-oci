@@ -396,7 +396,7 @@ def get_external_listener(external_listener_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener = oci.DatabaseManagement.get_external_listener(external_listener_id=test_external_listener_oci_database_management_external_listener["id"])
+    test_external_listener = oci.databasemanagement.get_external_listener(external_listener_id=test_external_listener_oci_database_management_external_listener["id"])
     ```
 
 
@@ -437,7 +437,7 @@ def get_external_listener(external_listener_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trace_directory=pulumi.get(__ret__, 'trace_directory'),
         version=pulumi.get(__ret__, 'version'))
-def get_external_listener_output(external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_listener_output(external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalListenerResult]:
     """
     This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -450,7 +450,7 @@ def get_external_listener_output(external_listener_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener = oci.DatabaseManagement.get_external_listener(external_listener_id=test_external_listener_oci_database_management_external_listener["id"])
+    test_external_listener = oci.databasemanagement.get_external_listener(external_listener_id=test_external_listener_oci_database_management_external_listener["id"])
     ```
 
 

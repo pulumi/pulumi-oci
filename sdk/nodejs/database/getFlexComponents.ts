@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFlexComponents = oci.Database.getFlexComponents({
+ * const testFlexComponents = oci.database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
  *     shape: flexComponentShape,
@@ -87,7 +87,7 @@ export interface GetFlexComponentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFlexComponents = oci.Database.getFlexComponents({
+ * const testFlexComponents = oci.database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
  *     shape: flexComponentShape,
@@ -112,13 +112,13 @@ export interface GetFlexComponentsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetFlexComponentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetFlexComponentsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }

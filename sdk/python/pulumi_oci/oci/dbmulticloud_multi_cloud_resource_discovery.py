@@ -25,9 +25,9 @@ class DbmulticloudMultiCloudResourceDiscoveryArgs:
                  display_name: pulumi.Input[_builtins.str],
                  oracle_db_connector_id: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudMultiCloudResourceDiscovery resource.
 
@@ -104,31 +104,31 @@ class DbmulticloudMultiCloudResourceDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcesFilter")
-    def resources_filter(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def resources_filter(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}` 
 
@@ -139,27 +139,27 @@ class DbmulticloudMultiCloudResourceDiscoveryArgs:
         return pulumi.get(self, "resources_filter")
 
     @resources_filter.setter
-    def resources_filter(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def resources_filter(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resources_filter", value)
 
 
 @pulumi.input_type
 class _DbmulticloudMultiCloudResourceDiscoveryState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]] = None,
-                 resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]] = None,
+                 resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudMultiCloudResourceDiscovery resources.
 
@@ -213,115 +213,115 @@ class _DbmulticloudMultiCloudResourceDiscoveryState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModification")
-    def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the latest modification of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "last_modification")
 
     @last_modification.setter
-    def last_modification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modification", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the current lifecycle state in more detail.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleDbConnectorId")
-    def oracle_db_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_db_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
     @oracle_db_connector_id.setter
-    def oracle_db_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_db_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_db_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource Type to discover.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]]:
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]]:
         """
         List of All Discovered resources.
         """
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]]):
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudMultiCloudResourceDiscoveryResourceArgs']]]]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcesFilter")
-    def resources_filter(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def resources_filter(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}` 
 
@@ -332,55 +332,55 @@ class _DbmulticloudMultiCloudResourceDiscoveryState:
         return pulumi.get(self, "resources_filter")
 
     @resources_filter.setter
-    def resources_filter(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def resources_filter(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resources_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the discovered resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -390,13 +390,13 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -507,13 +507,13 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -555,20 +555,20 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            last_modification: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict']]]]] = None,
-            resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbmulticloudMultiCloudResourceDiscovery':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict']]]]] = None,
+            resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbmulticloudMultiCloudResourceDiscovery':
         """
         Get an existing DbmulticloudMultiCloudResourceDiscovery resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

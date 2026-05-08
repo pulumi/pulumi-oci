@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamily = oci.Jms.getJavaFamily({
+ * const testJavaFamily = oci.jms.getJavaFamily({
  *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```
@@ -99,7 +99,7 @@ export interface GetJavaFamilyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamily = oci.Jms.getJavaFamily({
+ * const testJavaFamily = oci.jms.getJavaFamily({
  *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```

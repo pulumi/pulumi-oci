@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessorJob = oci.AiDocument.getProcessorJob({
+ * const testProcessorJob = oci.aidocument.getProcessorJob({
  *     processorJobId: testProcessorJobOciAiDocumentProcessorJob.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetProcessorJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessorJob = oci.AiDocument.getProcessorJob({
+ * const testProcessorJob = oci.aidocument.getProcessorJob({
  *     processorJobId: testProcessorJobOciAiDocumentProcessorJob.id,
  * });
  * ```

@@ -22,8 +22,8 @@ __all__ = ['DrgAttachmentsListArgs', 'DrgAttachmentsList']
 class DrgAttachmentsListArgs:
     def __init__(__self__, *,
                  drg_id: pulumi.Input[_builtins.str],
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None):
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DrgAttachmentsList resource.
 
@@ -55,19 +55,19 @@ class DrgAttachmentsListArgs:
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type for the network resource attached to the DRG.
         """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isCrossTenancy")
-    def is_cross_tenancy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cross_tenancy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the DRG attachment lives in a different tenancy than the DRG.
 
@@ -78,17 +78,17 @@ class DrgAttachmentsListArgs:
         return pulumi.get(self, "is_cross_tenancy")
 
     @is_cross_tenancy.setter
-    def is_cross_tenancy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cross_tenancy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cross_tenancy", value)
 
 
 @pulumi.input_type
 class _DrgAttachmentsListState:
     def __init__(__self__, *,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None):
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_all_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DrgAttachmentsList resources.
 
@@ -112,43 +112,43 @@ class _DrgAttachmentsListState:
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type for the network resource attached to the DRG.
         """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="drgAllAttachments")
-    def drg_all_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]]:
+    def drg_all_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]]:
         """
         The list of drg_attachments.
         """
         return pulumi.get(self, "drg_all_attachments")
 
     @drg_all_attachments.setter
-    def drg_all_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]]):
+    def drg_all_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]]):
         pulumi.set(self, "drg_all_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="drgId")
-    def drg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
-    def drg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isCrossTenancy")
-    def is_cross_tenancy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cross_tenancy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the DRG attachment lives in a different tenancy than the DRG.
 
@@ -159,7 +159,7 @@ class _DrgAttachmentsListState:
         return pulumi.get(self, "is_cross_tenancy")
 
     @is_cross_tenancy.setter
-    def is_cross_tenancy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cross_tenancy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cross_tenancy", value)
 
 
@@ -169,9 +169,9 @@ class DrgAttachmentsList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Drg Attachments List resource in Oracle Cloud Infrastructure Core service.
@@ -190,7 +190,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
             drg_id=test_drg["id"],
             attachment_type=drg_attachments_list_attachment_type,
-            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy == "true")
         ```
 
         ## Import
@@ -231,7 +231,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
             drg_id=test_drg["id"],
             attachment_type=drg_attachments_list_attachment_type,
-            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy == "true")
         ```
 
         ## Import
@@ -254,9 +254,9 @@ class DrgAttachmentsList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -282,10 +282,10 @@ class DrgAttachmentsList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrgAttachmentsListDrgAllAttachmentArgs', 'DrgAttachmentsListDrgAllAttachmentArgsDict']]]]] = None,
-            drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DrgAttachmentsList':
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_all_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrgAttachmentsListDrgAllAttachmentArgs', 'DrgAttachmentsListDrgAllAttachmentArgsDict']]]]] = None,
+            drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DrgAttachmentsList':
         """
         Get an existing DrgAttachmentsList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

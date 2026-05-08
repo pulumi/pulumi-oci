@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssociation = oci.CertificatesManagement.getAssociation({
+ * const testAssociation = oci.certificatesmanagement.getAssociation({
  *     associationId: testAssociationOciCertificatesManagementAssociation.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetAssociationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssociation = oci.CertificatesManagement.getAssociation({
+ * const testAssociation = oci.certificatesmanagement.getAssociation({
  *     associationId: testAssociationOciCertificatesManagementAssociation.id,
  * });
  * ```

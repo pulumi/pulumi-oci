@@ -321,7 +321,7 @@ def get_vb_instance(vb_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
+    test_vb_instance = oci.visualbuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_vb_instance(vb_instance_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vb_instance_id=pulumi.get(__ret__, 'vb_instance_id'))
-def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vb_instance_output(vb_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVbInstanceResult]:
     """
     This data source provides details about a specific Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
@@ -369,7 +369,7 @@ def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
+    test_vb_instance = oci.visualbuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
     ```
 
 

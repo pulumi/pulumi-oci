@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  * const testExadataIormConfig = new oci.database.ExadataIormConfig("test_exadata_iorm_config", {
  *     dbPlans: [{
  *         dbName: exadataIormConfigDbPlansDbName,
- *         share: exadataIormConfigDbPlansShare,
+ *         share: Number(exadataIormConfigDbPlansShare),
  *     }],
  *     dbSystemId: testDbSystem.id,
  *     objective: "AUTO",
@@ -138,15 +138,15 @@ export interface ExadataIormConfigState {
     /**
      * (Updatable) Array of IORM Setting for all the database in this Exadata DB System
      */
-    dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.ExadataIormConfigDbPlan>[]>;
+    dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.ExadataIormConfigDbPlan>[] | undefined>;
     /**
      * (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value for the IORM objective Default is "Auto" 
      *
@@ -154,11 +154,11 @@ export interface ExadataIormConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    objective?: pulumi.Input<string>;
+    objective?: pulumi.Input<string | undefined>;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -180,5 +180,5 @@ export interface ExadataIormConfigArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    objective?: pulumi.Input<string>;
+    objective?: pulumi.Input<string | undefined>;
 }

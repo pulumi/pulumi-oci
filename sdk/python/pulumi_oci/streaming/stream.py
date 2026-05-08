@@ -20,12 +20,12 @@ __all__ = ['StreamArgs', 'Stream']
 class StreamArgs:
     def __init__(__self__, *,
                  partitions: pulumi.Input[_builtins.int],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Stream resource.
 
@@ -69,67 +69,67 @@ class StreamArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the stream.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionInHours")
-    def retention_in_hours(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_in_hours(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         """
         return pulumi.get(self, "retention_in_hours")
 
     @retention_in_hours.setter
-    def retention_in_hours(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_in_hours(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_in_hours", value)
 
     @_builtins.property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the stream pool that contains the stream.
 
@@ -140,24 +140,24 @@ class StreamArgs:
         return pulumi.get(self, "stream_pool_id")
 
     @stream_pool_id.setter
-    def stream_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_pool_id", value)
 
 
 @pulumi.input_type
 class _StreamState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 messages_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partitions: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partitions: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Stream resources.
 
@@ -202,115 +202,115 @@ class _StreamState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the stream.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any additional details about the current state of the stream.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="messagesEndpoint")
-    def messages_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def messages_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
         """
         return pulumi.get(self, "messages_endpoint")
 
     @messages_endpoint.setter
-    def messages_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def messages_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "messages_endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def partitions(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def partitions(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of partitions in the stream.
         """
         return pulumi.get(self, "partitions")
 
     @partitions.setter
-    def partitions(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def partitions(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "partitions", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionInHours")
-    def retention_in_hours(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_in_hours(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         """
         return pulumi.get(self, "retention_in_hours")
 
     @retention_in_hours.setter
-    def retention_in_hours(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_in_hours(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_in_hours", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the stream.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the stream pool that contains the stream.
 
@@ -321,19 +321,19 @@ class _StreamState:
         return pulumi.get(self, "stream_pool_id")
 
     @stream_pool_id.setter
-    def stream_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -343,13 +343,13 @@ class Stream(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partitions: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partitions: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Stream resource in Oracle Cloud Infrastructure Streaming service.
@@ -371,13 +371,13 @@ class Stream(pulumi.CustomResource):
 
         test_stream = oci.streaming.Stream("test_stream",
             name=stream_name,
-            partitions=stream_partitions,
+            partitions=int(stream_partitions),
             compartment_id=compartment_id,
             defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=stream_retention_in_hours,
+            retention_in_hours=int(stream_retention_in_hours),
             stream_pool_id=test_stream_pool["id"])
         ```
 
@@ -430,13 +430,13 @@ class Stream(pulumi.CustomResource):
 
         test_stream = oci.streaming.Stream("test_stream",
             name=stream_name,
-            partitions=stream_partitions,
+            partitions=int(stream_partitions),
             compartment_id=compartment_id,
             defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=stream_retention_in_hours,
+            retention_in_hours=int(stream_retention_in_hours),
             stream_pool_id=test_stream_pool["id"])
         ```
 
@@ -464,13 +464,13 @@ class Stream(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partitions: Optional[pulumi.Input[_builtins.int]] = None,
-                 retention_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partitions: pulumi.Input[Optional[_builtins.int]] = None,
+                 retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -503,17 +503,17 @@ class Stream(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            messages_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            partitions: Optional[pulumi.Input[_builtins.int]] = None,
-            retention_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Stream':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            partitions: pulumi.Input[Optional[_builtins.int]] = None,
+            retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Stream':
         """
         Get an existing Stream resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

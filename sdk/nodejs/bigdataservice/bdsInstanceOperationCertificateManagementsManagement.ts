@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
  *     services: bdsInstanceOperationCertificateManagementsManagementServices,
- *     enableOperationCertificateManagement: enableOperationCertificateManagement,
- *     renewOperationCertificateManagement: renewOperationCertificateManagement,
+ *     enableOperationCertificateManagement: enableOperationCertificateManagement === "true",
+ *     renewOperationCertificateManagement: renewOperationCertificateManagement === "true",
  *     hostCertDetails: [{
  *         certificate: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate,
  *         hostName: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName,
@@ -161,19 +161,19 @@ export interface BdsInstanceOperationCertificateManagementsManagementState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      */
-    enableOperationCertificateManagement?: pulumi.Input<boolean>;
+    enableOperationCertificateManagement?: pulumi.Input<boolean | undefined>;
     /**
      * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
      */
-    hostCertDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>[]>;
+    hostCertDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>[] | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
      *
@@ -181,19 +181,19 @@ export interface BdsInstanceOperationCertificateManagementsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    renewOperationCertificateManagement?: pulumi.Input<boolean>;
+    renewOperationCertificateManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
      */
-    rootCertificate?: pulumi.Input<string>;
+    rootCertificate?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for CA certificate's private key. This value can be empty.
      */
-    serverKeyPassword?: pulumi.Input<string>;
+    serverKeyPassword?: pulumi.Input<string | undefined>;
     /**
      * List of services for which certificate needs to be enabled.
      */
-    services?: pulumi.Input<pulumi.Input<string>[]>;
+    services?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -215,7 +215,7 @@ export interface BdsInstanceOperationCertificateManagementsManagementArgs {
     /**
      * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
      */
-    hostCertDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>[]>;
+    hostCertDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>[] | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
      *
@@ -227,11 +227,11 @@ export interface BdsInstanceOperationCertificateManagementsManagementArgs {
     /**
      * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
      */
-    rootCertificate?: pulumi.Input<string>;
+    rootCertificate?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for CA certificate's private key. This value can be empty.
      */
-    serverKeyPassword?: pulumi.Input<string>;
+    serverKeyPassword?: pulumi.Input<string | undefined>;
     /**
      * List of services for which certificate needs to be enabled.
      */

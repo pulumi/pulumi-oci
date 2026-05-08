@@ -27,9 +27,9 @@ class MonitoringTemplateAlarmConditionArgs:
                  monitoring_template_id: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
-                 composite_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 composite_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MonitoringTemplateAlarmCondition resource.
 
@@ -138,58 +138,58 @@ class MonitoringTemplateAlarmConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="compositeType")
-    def composite_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def composite_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
         """
         return pulumi.get(self, "composite_type")
 
     @composite_type.setter
-    def composite_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def composite_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "composite_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _MonitoringTemplateAlarmConditionState:
     def __init__(__self__, *,
-                 composite_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 composite_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplateAlarmCondition resources.
 
@@ -243,103 +243,103 @@ class _MonitoringTemplateAlarmConditionState:
 
     @_builtins.property
     @pulumi.getter(name="compositeType")
-    def composite_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def composite_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
         """
         return pulumi.get(self, "composite_type")
 
     @composite_type.setter
-    def composite_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def composite_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "composite_type", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionType")
-    def condition_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of defined monitoring template.
         """
         return pulumi.get(self, "condition_type")
 
     @condition_type.setter
-    def condition_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]]:
         """
         (Updatable) Monitoring template conditions.
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The metric name.
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringTemplateId")
-    def monitoring_template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitoring_template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
         """
         return pulumi.get(self, "monitoring_template_id")
 
     @monitoring_template_id.setter
-    def monitoring_template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitoring_template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitoring_template_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resource group OCID.
 
@@ -350,67 +350,67 @@ class _MonitoringTemplateAlarmConditionState:
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the monitoring template
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the monitoring template i.e. whether it is Published or Unpublished
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm condition was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the alarm condition was updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -420,15 +420,15 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composite_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 composite_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -450,8 +450,8 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
                 "query": monitoring_template_alarm_condition_conditions_query,
                 "severity": monitoring_template_alarm_condition_conditions_severity,
                 "body": monitoring_template_alarm_condition_conditions_body,
-                "should_append_note": monitoring_template_alarm_condition_conditions_should_append_note,
-                "should_append_url": monitoring_template_alarm_condition_conditions_should_append_url,
+                "should_append_note": monitoring_template_alarm_condition_conditions_should_append_note == "true",
+                "should_append_url": monitoring_template_alarm_condition_conditions_should_append_url == "true",
                 "trigger_delay": monitoring_template_alarm_condition_conditions_trigger_delay,
             }],
             metric_name=test_metric["name"],
@@ -518,8 +518,8 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
                 "query": monitoring_template_alarm_condition_conditions_query,
                 "severity": monitoring_template_alarm_condition_conditions_severity,
                 "body": monitoring_template_alarm_condition_conditions_body,
-                "should_append_note": monitoring_template_alarm_condition_conditions_should_append_note,
-                "should_append_url": monitoring_template_alarm_condition_conditions_should_append_url,
+                "should_append_note": monitoring_template_alarm_condition_conditions_should_append_note == "true",
+                "should_append_url": monitoring_template_alarm_condition_conditions_should_append_url == "true",
                 "trigger_delay": monitoring_template_alarm_condition_conditions_trigger_delay,
             }],
             metric_name=test_metric["name"],
@@ -559,15 +559,15 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composite_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 composite_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -613,20 +613,20 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            composite_type: Optional[pulumi.Input[_builtins.str]] = None,
-            condition_type: Optional[pulumi.Input[_builtins.str]] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-            monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoringTemplateAlarmCondition':
+            composite_type: pulumi.Input[Optional[_builtins.str]] = None,
+            condition_type: pulumi.Input[Optional[_builtins.str]] = None,
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+            monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoringTemplateAlarmCondition':
         """
         Get an existing MonitoringTemplateAlarmCondition resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

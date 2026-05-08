@@ -24,12 +24,12 @@ class ReplicationArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  source_id: pulumi.Input[_builtins.str],
                  target_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
-                 replication_interval: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
+                 replication_interval: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Replication resource.
 
@@ -104,96 +104,96 @@ class ReplicationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationInterval")
-    def replication_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Duration in minutes between replication snapshots.
         """
         return pulumi.get(self, "replication_interval")
 
     @replication_interval.setter
-    def replication_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_interval", value)
 
 
 @pulumi.input_type
 class _ReplicationState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delta_progress: Optional[pulumi.Input[_builtins.str]] = None,
-                 delta_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
-                 recovery_point_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delta_progress: pulumi.Input[Optional[_builtins.str]] = None,
+                 delta_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
+                 recovery_point_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Replication resources.
 
@@ -261,208 +261,208 @@ class _ReplicationState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deltaProgress")
-    def delta_progress(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delta_progress(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Percentage progress of the current replication cycle.
         """
         return pulumi.get(self, "delta_progress")
 
     @delta_progress.setter
-    def delta_progress(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delta_progress(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delta_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="deltaStatus")
-    def delta_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delta_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the snapshot during replication operations.
         """
         return pulumi.get(self, "delta_status")
 
     @delta_status.setter
-    def delta_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delta_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delta_status", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="lastSnapshotId")
-    def last_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         """
         return pulumi.get(self, "last_snapshot_id")
 
     @last_snapshot_id.setter
-    def last_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointTime")
-    def recovery_point_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         """
         return pulumi.get(self, "recovery_point_time")
 
     @recovery_point_time.setter
-    def recovery_point_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_time", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationInterval")
-    def replication_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Duration in minutes between replication snapshots.
         """
         return pulumi.get(self, "replication_interval")
 
     @replication_interval.setter
-    def replication_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationTargetId")
-    def replication_target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         """
         return pulumi.get(self, "replication_target_id")
 
     @replication_target_id.setter
-    def replication_target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
 
@@ -473,19 +473,19 @@ class _ReplicationState:
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -495,15 +495,15 @@ class Replication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
-                 replication_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+                 replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Replication resource in Oracle Cloud Infrastructure File Storage service.
@@ -679,15 +679,15 @@ class Replication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
-                 replication_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+                 replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -732,25 +732,25 @@ class Replication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            delta_progress: Optional[pulumi.Input[_builtins.str]] = None,
-            delta_status: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
-            recovery_point_time: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_interval: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Replication':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delta_progress: pulumi.Input[Optional[_builtins.str]] = None,
+            delta_status: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+            recovery_point_time: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Replication':
         """
         Get an existing Replication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

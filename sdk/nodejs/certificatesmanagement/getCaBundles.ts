@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundles = oci.CertificatesManagement.getCaBundles({
+ * const testCaBundles = oci.certificatesmanagement.getCaBundles({
  *     caBundleId: testCaBundle.id,
  *     compartmentId: compartmentId,
  *     name: caBundleName,
@@ -100,7 +100,7 @@ export interface GetCaBundlesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundles = oci.CertificatesManagement.getCaBundles({
+ * const testCaBundles = oci.certificatesmanagement.getCaBundles({
  *     caBundleId: testCaBundle.id,
  *     compartmentId: compartmentId,
  *     name: caBundleName,
@@ -127,18 +127,18 @@ export interface GetCaBundlesOutputArgs {
     /**
      * The OCID of the CA bundle.
      */
-    caBundleId?: pulumi.Input<string>;
+    caBundleId?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCaBundlesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCaBundlesFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources that match the specified name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

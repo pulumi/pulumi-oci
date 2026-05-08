@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     name: indexName,
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
- *     isIfNotExists: indexIsIfNotExists,
+ *     isIfNotExists: indexIsIfNotExists === "true",
  * });
  * ```
  *
@@ -162,35 +162,35 @@ export interface IndexState {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      */
-    isIfNotExists?: pulumi.Input<boolean>;
+    isIfNotExists?: pulumi.Input<boolean | undefined>;
     /**
      * A set of keys for a secondary index.
      */
-    keys?: pulumi.Input<pulumi.Input<inputs.Nosql.IndexKey>[]>;
+    keys?: pulumi.Input<pulumi.Input<inputs.Nosql.IndexKey>[] | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Index name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The state of an index.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * the OCID of the table to which this index belongs.
      */
-    tableId?: pulumi.Input<string>;
+    tableId?: pulumi.Input<string | undefined>;
     /**
      * The name of the table to which this index belongs.
      */
-    tableName?: pulumi.Input<string>;
+    tableName?: pulumi.Input<string | undefined>;
     /**
      * A table name within the compartment, or a table OCID.
      *
@@ -198,7 +198,7 @@ export interface IndexState {
      * ** IMPORTANT **
      * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
-    tableNameOrId?: pulumi.Input<string>;
+    tableNameOrId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -208,11 +208,11 @@ export interface IndexArgs {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      */
-    isIfNotExists?: pulumi.Input<boolean>;
+    isIfNotExists?: pulumi.Input<boolean | undefined>;
     /**
      * A set of keys for a secondary index.
      */
@@ -220,7 +220,7 @@ export interface IndexArgs {
     /**
      * Index name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A table name within the compartment, or a table OCID.
      *

@@ -201,7 +201,7 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
+    test_stream_distribution_channel = oci.mediaservices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
     ```
 
 
@@ -226,7 +226,7 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[_bu
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_stream_distribution_channel_output(stream_distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stream_distribution_channel_output(stream_distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamDistributionChannelResult]:
     """
     This data source provides details about a specific Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -239,7 +239,7 @@ def get_stream_distribution_channel_output(stream_distribution_channel_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
+    test_stream_distribution_channel = oci.mediaservices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
     ```
 
 

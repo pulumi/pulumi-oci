@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
+ * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
@@ -171,10 +171,10 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
+ * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
@@ -219,7 +219,7 @@ export interface GetSecurityAssessmentSecurityFeaturesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -227,54 +227,54 @@ export interface GetSecurityAssessmentSecurityFeaturesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentSecurityFeaturesFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentSecurityFeaturesFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets that enable the DB security feature - Column Encryption enabled/disabled.
      */
-    targetsWithColumnEncryption?: pulumi.Input<string>;
+    targetsWithColumnEncryption?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Database Vault enabled/disabled.
      */
-    targetsWithDatabaseVault?: pulumi.Input<string>;
+    targetsWithDatabaseVault?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - External Authentication enabled/disabled.
      */
-    targetsWithExternalAuthentication?: pulumi.Input<string>;
+    targetsWithExternalAuthentication?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Fine Grained Audit enabled/disabled.
      */
-    targetsWithFineGrainedAudit?: pulumi.Input<string>;
+    targetsWithFineGrainedAudit?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Global Authentication enabled/disabled.
      */
-    targetsWithGlobalAuthentication?: pulumi.Input<string>;
+    targetsWithGlobalAuthentication?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Network Encryption enabled/disabled.
      */
-    targetsWithNetworkEncryption?: pulumi.Input<string>;
+    targetsWithNetworkEncryption?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Password Authentication enabled/disabled.
      */
-    targetsWithPasswordAuthentication?: pulumi.Input<string>;
+    targetsWithPasswordAuthentication?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Privilege Analysis enabled/disabled.
      */
-    targetsWithPrivilegeAnalysis?: pulumi.Input<string>;
+    targetsWithPrivilegeAnalysis?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Tablespace Encryption enabled/disabled.
      */
-    targetsWithTablespaceEncryption?: pulumi.Input<string>;
+    targetsWithTablespaceEncryption?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Traditional Audit enabled/disabled.
      */
-    targetsWithTraditionalAudit?: pulumi.Input<string>;
+    targetsWithTraditionalAudit?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the targets with the DB security feature - Unified Audit enabled/disabled.
      */
-    targetsWithUnifiedAudit?: pulumi.Input<string>;
+    targetsWithUnifiedAudit?: pulumi.Input<string | undefined>;
 }

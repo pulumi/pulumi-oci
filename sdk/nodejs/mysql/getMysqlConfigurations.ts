@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
+ * const testMysqlConfigurations = oci.mysql.getMysqlConfigurations({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     displayName: mysqlConfigurationDisplayName,
@@ -131,7 +131,7 @@ export interface GetMysqlConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
+ * const testMysqlConfigurations = oci.mysql.getMysqlConfigurations({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     displayName: mysqlConfigurationDisplayName,
@@ -165,22 +165,22 @@ export interface GetMysqlConfigurationsOutputArgs {
     /**
      * The requested Configuration instance.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resource matching the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlConfigurationsFilterArgs>[] | undefined>;
     /**
      * The requested Shape name.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * Configuration Lifecycle State
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The requested Configuration types.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

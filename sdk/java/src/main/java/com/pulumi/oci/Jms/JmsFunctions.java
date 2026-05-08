@@ -199,8 +199,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -289,8 +289,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -334,8 +334,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -379,8 +379,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -424,8 +424,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -469,8 +469,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -514,8 +514,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -558,8 +558,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -602,8 +602,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -646,8 +646,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -690,8 +690,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -734,8 +734,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -778,8 +778,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -822,8 +822,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -864,8 +864,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -906,8 +906,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -948,8 +948,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -990,8 +990,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1032,8 +1032,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1074,8 +1074,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1116,8 +1116,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1158,8 +1158,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1200,8 +1200,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1242,8 +1242,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1284,8 +1284,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1326,8 +1326,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1368,8 +1368,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1410,8 +1410,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1452,8 +1452,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1496,8 +1496,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1540,8 +1540,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1584,8 +1584,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1628,8 +1628,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1672,8 +1672,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1721,8 +1721,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1770,8 +1770,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1819,8 +1819,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1868,8 +1868,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1917,8 +1917,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1960,8 +1960,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2003,8 +2003,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2046,8 +2046,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2089,8 +2089,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2132,8 +2132,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2183,8 +2183,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2234,8 +2234,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2285,8 +2285,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2336,8 +2336,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2387,8 +2387,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2429,8 +2429,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2471,8 +2471,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2513,8 +2513,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2555,8 +2555,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2597,8 +2597,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2640,8 +2640,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2683,8 +2683,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2726,8 +2726,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2769,8 +2769,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2812,8 +2812,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2854,8 +2854,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2896,8 +2896,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2938,8 +2938,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2980,8 +2980,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3022,8 +3022,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3065,8 +3065,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3108,8 +3108,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3151,8 +3151,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3194,8 +3194,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3237,8 +3237,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3280,8 +3280,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3323,8 +3323,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3371,8 +3371,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3419,8 +3419,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3467,8 +3467,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3515,8 +3515,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3563,8 +3563,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3611,8 +3611,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3659,8 +3659,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3701,8 +3701,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3743,8 +3743,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3785,8 +3785,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3827,8 +3827,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3869,8 +3869,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3911,8 +3911,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3953,8 +3953,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3995,8 +3995,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4037,8 +4037,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4079,8 +4079,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4122,8 +4122,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4165,8 +4165,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4208,8 +4208,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4251,8 +4251,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4294,8 +4294,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4341,8 +4341,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4388,8 +4388,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4435,8 +4435,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4482,8 +4482,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4529,8 +4529,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4578,8 +4578,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4627,8 +4627,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4676,8 +4676,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4725,8 +4725,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4774,8 +4774,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4823,8 +4823,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4872,8 +4872,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4921,8 +4921,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4970,8 +4970,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5019,8 +5019,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5062,8 +5062,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5105,8 +5105,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5148,8 +5148,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5191,8 +5191,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5234,8 +5234,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5282,8 +5282,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5330,8 +5330,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5378,8 +5378,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5426,8 +5426,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5495,8 +5495,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5542,8 +5542,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5589,8 +5589,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5636,8 +5636,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5683,8 +5683,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5730,8 +5730,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5777,8 +5777,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5824,8 +5824,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5871,8 +5871,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5918,8 +5918,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5965,8 +5965,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6012,8 +6012,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6059,8 +6059,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6106,8 +6106,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6153,8 +6153,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6201,8 +6201,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6248,8 +6248,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6295,8 +6295,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6342,8 +6342,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6389,8 +6389,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6436,8 +6436,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6483,8 +6483,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6529,8 +6529,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6582,8 +6582,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6635,8 +6635,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6688,8 +6688,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6741,8 +6741,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6794,8 +6794,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6847,8 +6847,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6900,8 +6900,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6953,8 +6953,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7006,8 +7006,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7061,8 +7061,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7112,8 +7112,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7163,8 +7163,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7214,8 +7214,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7265,8 +7265,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7314,8 +7314,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7356,8 +7356,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7398,8 +7398,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7440,8 +7440,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7482,8 +7482,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7524,8 +7524,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7566,8 +7566,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7608,8 +7608,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7650,8 +7650,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7692,8 +7692,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7734,8 +7734,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7779,8 +7779,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7824,8 +7824,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7869,8 +7869,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7914,8 +7914,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7959,8 +7959,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8001,8 +8001,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8043,8 +8043,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8085,8 +8085,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8127,8 +8127,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8169,8 +8169,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8217,8 +8217,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8265,8 +8265,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8313,8 +8313,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8361,8 +8361,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8409,8 +8409,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8451,8 +8451,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8493,8 +8493,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8535,8 +8535,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8577,8 +8577,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8619,8 +8619,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8661,8 +8661,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8703,8 +8703,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8745,8 +8745,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8787,8 +8787,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8829,8 +8829,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8875,8 +8875,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8921,8 +8921,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8967,8 +8967,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9013,8 +9013,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9059,8 +9059,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9102,8 +9102,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9145,8 +9145,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9188,8 +9188,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9231,8 +9231,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9274,8 +9274,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9317,8 +9317,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9361,8 +9361,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9406,8 +9406,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9451,8 +9451,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9496,8 +9496,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9541,8 +9541,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9586,8 +9586,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9631,8 +9631,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9675,8 +9675,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9717,8 +9717,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9759,8 +9759,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9801,8 +9801,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9843,8 +9843,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9885,8 +9885,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9927,8 +9927,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9969,8 +9969,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10011,8 +10011,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10053,8 +10053,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10095,8 +10095,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10141,8 +10141,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10187,8 +10187,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10233,8 +10233,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10279,8 +10279,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10325,8 +10325,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10371,8 +10371,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10417,8 +10417,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10459,8 +10459,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10501,8 +10501,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10543,8 +10543,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10585,8 +10585,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10627,8 +10627,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10679,8 +10679,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10731,8 +10731,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10783,8 +10783,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10835,8 +10835,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10887,8 +10887,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10939,8 +10939,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10991,8 +10991,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11038,8 +11038,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11085,8 +11085,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11132,8 +11132,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11179,8 +11179,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11226,8 +11226,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11273,8 +11273,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11320,8 +11320,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11363,8 +11363,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11406,8 +11406,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11449,8 +11449,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11492,8 +11492,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11535,8 +11535,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11578,8 +11578,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11621,8 +11621,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11669,8 +11669,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11717,8 +11717,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11765,8 +11765,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11813,8 +11813,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11861,8 +11861,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11909,8 +11909,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11957,8 +11957,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12001,8 +12001,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12045,8 +12045,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12089,8 +12089,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12133,8 +12133,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12177,8 +12177,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12221,8 +12221,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12265,8 +12265,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12308,8 +12308,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12351,8 +12351,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12394,8 +12394,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12437,8 +12437,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12480,8 +12480,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12526,8 +12526,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12572,8 +12572,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12618,8 +12618,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12664,8 +12664,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12710,8 +12710,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12752,8 +12752,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12794,8 +12794,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12836,8 +12836,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12878,8 +12878,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12920,8 +12920,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12962,8 +12962,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13004,8 +13004,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13046,8 +13046,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13088,8 +13088,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13130,8 +13130,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13174,8 +13174,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13218,8 +13218,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13262,8 +13262,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13306,8 +13306,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13350,8 +13350,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13394,8 +13394,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13438,8 +13438,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13480,8 +13480,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13522,8 +13522,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13564,8 +13564,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13606,8 +13606,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13648,8 +13648,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13693,8 +13693,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13738,8 +13738,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13783,8 +13783,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13828,8 +13828,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13873,8 +13873,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13918,8 +13918,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13963,8 +13963,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14005,8 +14005,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14047,8 +14047,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14089,8 +14089,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14131,8 +14131,8 @@ public final class JmsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Jms.JmsFunctions;
      * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

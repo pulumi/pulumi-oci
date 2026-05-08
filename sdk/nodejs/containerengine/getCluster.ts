@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCluster = oci.ContainerEngine.getCluster({
+ * const testCluster = oci.containerengine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
- *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile === "true",
  * });
  * ```
  */
@@ -143,9 +143,9 @@ export interface GetClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCluster = oci.ContainerEngine.getCluster({
+ * const testCluster = oci.containerengine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
- *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile === "true",
  * });
  * ```
  */
@@ -168,5 +168,5 @@ export interface GetClusterOutputArgs {
     /**
      * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
      */
-    shouldIncludeOidcConfigFile?: pulumi.Input<boolean>;
+    shouldIncludeOidcConfigFile?: pulumi.Input<boolean | undefined>;
 }

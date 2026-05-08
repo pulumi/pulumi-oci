@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceApiKey = oci.BigDataService.getBdsInstanceApiKey({
+ * const testBdsInstanceApiKey = oci.bigdataservice.getBdsInstanceApiKey({
  *     apiKeyId: testApiKey.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });
@@ -102,7 +102,7 @@ export interface GetBdsInstanceApiKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceApiKey = oci.BigDataService.getBdsInstanceApiKey({
+ * const testBdsInstanceApiKey = oci.bigdataservice.getBdsInstanceApiKey({
  *     apiKeyId: testApiKey.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });

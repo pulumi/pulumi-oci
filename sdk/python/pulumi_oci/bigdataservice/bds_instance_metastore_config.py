@@ -24,8 +24,8 @@ class BdsInstanceMetastoreConfigArgs:
                  bds_instance_id: pulumi.Input[_builtins.str],
                  cluster_admin_password: pulumi.Input[_builtins.str],
                  metastore_id: pulumi.Input[_builtins.str],
-                 activate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceMetastoreConfig resource.
 
@@ -113,7 +113,7 @@ class BdsInstanceMetastoreConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="activateTrigger")
-    def activate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def activate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
 
@@ -124,36 +124,36 @@ class BdsInstanceMetastoreConfigArgs:
         return pulumi.get(self, "activate_trigger")
 
     @activate_trigger.setter
-    def activate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def activate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "activate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the metastore configuration
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
 
 @pulumi.input_type
 class _BdsInstanceMetastoreConfigState:
     def __init__(__self__, *,
-                 activate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 bds_api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_api_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 bds_api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_api_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
 
@@ -198,7 +198,7 @@ class _BdsInstanceMetastoreConfigState:
 
     @_builtins.property
     @pulumi.getter(name="activateTrigger")
-    def activate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def activate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
 
@@ -209,127 +209,127 @@ class _BdsInstanceMetastoreConfigState:
         return pulumi.get(self, "activate_trigger")
 
     @activate_trigger.setter
-    def activate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def activate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "activate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsApiKeyId")
-    def bds_api_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_api_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
         """
         return pulumi.get(self, "bds_api_key_id")
 
     @bds_api_key_id.setter
-    def bds_api_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_api_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_api_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsApiKeyPassphrase")
-    def bds_api_key_passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_api_key_passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         """
         return pulumi.get(self, "bds_api_key_passphrase")
 
     @bds_api_key_passphrase.setter
-    def bds_api_key_passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_api_key_passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_api_key_passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base-64 encoded password for the cluster admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the metastore configuration
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metastore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Data Catalog metastore.
         """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
-    def metastore_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metastore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metastore_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metastoreType")
-    def metastore_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metastore_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the metastore in the metastore configuration.
         """
         return pulumi.get(self, "metastore_type")
 
     @metastore_type.setter
-    def metastore_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metastore_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metastore_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the lifecycle state of the metastore configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -339,13 +339,13 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 bds_api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_api_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 bds_api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_api_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -446,13 +446,13 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 bds_api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_api_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 bds_api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_api_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -495,17 +495,17 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            bds_api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bds_api_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metastore_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceMetastoreConfig':
+            activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            bds_api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_api_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metastore_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceMetastoreConfig':
         """
         Get an existing BdsInstanceMetastoreConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

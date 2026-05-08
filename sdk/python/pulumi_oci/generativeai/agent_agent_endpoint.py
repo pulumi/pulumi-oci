@@ -23,21 +23,21 @@ class AgentAgentEndpointArgs:
     def __init__(__self__, *,
                  agent_id: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
-                 content_moderation_config: Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']] = None,
-                 human_input_config: Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']] = None,
-                 provisioned_capacity_config: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']] = None,
-                 session_config: Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']] = None,
-                 should_enable_citation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_multi_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_session: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None):
+                 content_moderation_config: pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guardrail_config: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']] = None,
+                 human_input_config: pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 output_config: pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']] = None,
+                 session_config: pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']] = None,
+                 should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AgentAgentEndpoint resource.
 
@@ -122,175 +122,175 @@ class AgentAgentEndpointArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentModerationConfig")
-    def content_moderation_config(self) -> Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']]:
+    def content_moderation_config(self) -> pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']]:
         """
         (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         """
         return pulumi.get(self, "content_moderation_config")
 
     @content_moderation_config.setter
-    def content_moderation_config(self, value: Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']]):
+    def content_moderation_config(self, value: pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']]):
         pulumi.set(self, "content_moderation_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional description of the endpoint.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="guardrailConfig")
-    def guardrail_config(self) -> Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']]:
+    def guardrail_config(self) -> pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']]:
         """
         (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
         """
         return pulumi.get(self, "guardrail_config")
 
     @guardrail_config.setter
-    def guardrail_config(self, value: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']]):
+    def guardrail_config(self, value: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']]):
         pulumi.set(self, "guardrail_config", value)
 
     @_builtins.property
     @pulumi.getter(name="humanInputConfig")
-    def human_input_config(self) -> Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']]:
+    def human_input_config(self) -> pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']]:
         """
         (Updatable) Human Input Configuration for an AgentEndpoint.
         """
         return pulumi.get(self, "human_input_config")
 
     @human_input_config.setter
-    def human_input_config(self, value: Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']]):
+    def human_input_config(self, value: pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']]):
         pulumi.set(self, "human_input_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Key-value pairs to allow additional configurations.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="outputConfig")
-    def output_config(self) -> Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']]:
+    def output_config(self) -> pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']]:
         """
         (Updatable) Configuration to store results generated by agent.
         """
         return pulumi.get(self, "output_config")
 
     @output_config.setter
-    def output_config(self, value: Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']]):
+    def output_config(self, value: pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']]):
         pulumi.set(self, "output_config", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionedCapacityConfig")
-    def provisioned_capacity_config(self) -> Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']]:
+    def provisioned_capacity_config(self) -> pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']]:
         """
         (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
         """
         return pulumi.get(self, "provisioned_capacity_config")
 
     @provisioned_capacity_config.setter
-    def provisioned_capacity_config(self, value: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']]):
+    def provisioned_capacity_config(self, value: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']]):
         pulumi.set(self, "provisioned_capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionConfig")
-    def session_config(self) -> Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']]:
+    def session_config(self) -> pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']]:
         """
         (Updatable) Session Configuration on AgentEndpoint.
         """
         return pulumi.get(self, "session_config")
 
     @session_config.setter
-    def session_config(self, value: Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']]):
+    def session_config(self, value: pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']]):
         pulumi.set(self, "session_config", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableCitation")
-    def should_enable_citation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_citation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to show citations in the chat result.
         """
         return pulumi.get(self, "should_enable_citation")
 
     @should_enable_citation.setter
-    def should_enable_citation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_citation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_citation", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableMultiLanguage")
-    def should_enable_multi_language(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_multi_language(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable multi-language for chat.
         """
         return pulumi.get(self, "should_enable_multi_language")
 
     @should_enable_multi_language.setter
-    def should_enable_multi_language(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_multi_language(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_multi_language", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableSession")
-    def should_enable_session(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_session(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to enable Session-based chat.
         """
         return pulumi.get(self, "should_enable_session")
 
     @should_enable_session.setter
-    def should_enable_session(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_session(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_session", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableTrace")
-    def should_enable_trace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_trace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to show traces in the chat result.
 
@@ -301,35 +301,35 @@ class AgentAgentEndpointArgs:
         return pulumi.get(self, "should_enable_trace")
 
     @should_enable_trace.setter
-    def should_enable_trace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_trace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_trace", value)
 
 
 @pulumi.input_type
 class _AgentAgentEndpointState:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_moderation_config: Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']] = None,
-                 human_input_config: Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']] = None,
-                 provisioned_capacity_config: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']] = None,
-                 session_config: Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']] = None,
-                 should_enable_citation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_multi_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_session: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_moderation_config: pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guardrail_config: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']] = None,
+                 human_input_config: pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 output_config: pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']] = None,
+                 session_config: pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']] = None,
+                 should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgentAgentEndpoint resources.
 
@@ -407,211 +407,211 @@ class _AgentAgentEndpointState:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the agent that this endpoint is associated with.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contentModerationConfig")
-    def content_moderation_config(self) -> Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']]:
+    def content_moderation_config(self) -> pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']]:
         """
         (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         """
         return pulumi.get(self, "content_moderation_config")
 
     @content_moderation_config.setter
-    def content_moderation_config(self, value: Optional[pulumi.Input['AgentAgentEndpointContentModerationConfigArgs']]):
+    def content_moderation_config(self, value: pulumi.Input[Optional['AgentAgentEndpointContentModerationConfigArgs']]):
         pulumi.set(self, "content_moderation_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional description of the endpoint.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="guardrailConfig")
-    def guardrail_config(self) -> Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']]:
+    def guardrail_config(self) -> pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']]:
         """
         (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
         """
         return pulumi.get(self, "guardrail_config")
 
     @guardrail_config.setter
-    def guardrail_config(self, value: Optional[pulumi.Input['AgentAgentEndpointGuardrailConfigArgs']]):
+    def guardrail_config(self, value: pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigArgs']]):
         pulumi.set(self, "guardrail_config", value)
 
     @_builtins.property
     @pulumi.getter(name="humanInputConfig")
-    def human_input_config(self) -> Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']]:
+    def human_input_config(self) -> pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']]:
         """
         (Updatable) Human Input Configuration for an AgentEndpoint.
         """
         return pulumi.get(self, "human_input_config")
 
     @human_input_config.setter
-    def human_input_config(self, value: Optional[pulumi.Input['AgentAgentEndpointHumanInputConfigArgs']]):
+    def human_input_config(self, value: pulumi.Input[Optional['AgentAgentEndpointHumanInputConfigArgs']]):
         pulumi.set(self, "human_input_config", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Key-value pairs to allow additional configurations.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="outputConfig")
-    def output_config(self) -> Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']]:
+    def output_config(self) -> pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']]:
         """
         (Updatable) Configuration to store results generated by agent.
         """
         return pulumi.get(self, "output_config")
 
     @output_config.setter
-    def output_config(self, value: Optional[pulumi.Input['AgentAgentEndpointOutputConfigArgs']]):
+    def output_config(self, value: pulumi.Input[Optional['AgentAgentEndpointOutputConfigArgs']]):
         pulumi.set(self, "output_config", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionedCapacityConfig")
-    def provisioned_capacity_config(self) -> Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']]:
+    def provisioned_capacity_config(self) -> pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']]:
         """
         (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
         """
         return pulumi.get(self, "provisioned_capacity_config")
 
     @provisioned_capacity_config.setter
-    def provisioned_capacity_config(self, value: Optional[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigArgs']]):
+    def provisioned_capacity_config(self, value: pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigArgs']]):
         pulumi.set(self, "provisioned_capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionConfig")
-    def session_config(self) -> Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']]:
+    def session_config(self) -> pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']]:
         """
         (Updatable) Session Configuration on AgentEndpoint.
         """
         return pulumi.get(self, "session_config")
 
     @session_config.setter
-    def session_config(self, value: Optional[pulumi.Input['AgentAgentEndpointSessionConfigArgs']]):
+    def session_config(self, value: pulumi.Input[Optional['AgentAgentEndpointSessionConfigArgs']]):
         pulumi.set(self, "session_config", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableCitation")
-    def should_enable_citation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_citation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to show citations in the chat result.
         """
         return pulumi.get(self, "should_enable_citation")
 
     @should_enable_citation.setter
-    def should_enable_citation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_citation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_citation", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableMultiLanguage")
-    def should_enable_multi_language(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_multi_language(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable multi-language for chat.
         """
         return pulumi.get(self, "should_enable_multi_language")
 
     @should_enable_multi_language.setter
-    def should_enable_multi_language(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_multi_language(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_multi_language", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableSession")
-    def should_enable_session(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_session(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to enable Session-based chat.
         """
         return pulumi.get(self, "should_enable_session")
 
     @should_enable_session.setter
-    def should_enable_session(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_session(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_session", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableTrace")
-    def should_enable_trace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_enable_trace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to show traces in the chat result.
 
@@ -622,55 +622,55 @@ class _AgentAgentEndpointState:
         return pulumi.get(self, "should_enable_trace")
 
     @should_enable_trace.setter
-    def should_enable_trace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_enable_trace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_enable_trace", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the endpoint.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -680,23 +680,23 @@ class AgentAgentEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_moderation_config: Optional[pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: Optional[pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-                 human_input_config: Optional[pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: Optional[pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-                 provisioned_capacity_config: Optional[pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-                 session_config: Optional[pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
-                 should_enable_citation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_multi_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_session: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
+                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
+                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+                 should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -716,8 +716,8 @@ class AgentAgentEndpoint(pulumi.CustomResource):
             agent_id=test_agent["id"],
             compartment_id=compartment_id,
             content_moderation_config={
-                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input,
-                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output,
+                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input == "true",
+                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output == "true",
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -741,7 +741,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 },
             },
             human_input_config={
-                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input,
+                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input == "true",
             },
             metadata=agent_endpoint_metadata,
             output_config={
@@ -751,7 +751,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                     "output_location_type": agent_endpoint_output_config_output_location_output_location_type,
                     "prefix": agent_endpoint_output_config_output_location_prefix,
                 },
-                "retention_period_in_minutes": agent_endpoint_output_config_retention_period_in_minutes,
+                "retention_period_in_minutes": int(agent_endpoint_output_config_retention_period_in_minutes),
             },
             provisioned_capacity_config={
                 "provisioned_capacity_id": test_provisioned_capacity["id"],
@@ -765,12 +765,12 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 }],
             },
             session_config={
-                "idle_timeout_in_seconds": agent_endpoint_session_config_idle_timeout_in_seconds,
+                "idle_timeout_in_seconds": int(agent_endpoint_session_config_idle_timeout_in_seconds),
             },
-            should_enable_citation=agent_endpoint_should_enable_citation,
-            should_enable_multi_language=agent_endpoint_should_enable_multi_language,
-            should_enable_session=agent_endpoint_should_enable_session,
-            should_enable_trace=agent_endpoint_should_enable_trace)
+            should_enable_citation=agent_endpoint_should_enable_citation == "true",
+            should_enable_multi_language=agent_endpoint_should_enable_multi_language == "true",
+            should_enable_session=agent_endpoint_should_enable_session == "true",
+            should_enable_trace=agent_endpoint_should_enable_trace == "true")
         ```
 
         ## Import
@@ -830,8 +830,8 @@ class AgentAgentEndpoint(pulumi.CustomResource):
             agent_id=test_agent["id"],
             compartment_id=compartment_id,
             content_moderation_config={
-                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input,
-                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output,
+                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input == "true",
+                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output == "true",
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -855,7 +855,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 },
             },
             human_input_config={
-                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input,
+                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input == "true",
             },
             metadata=agent_endpoint_metadata,
             output_config={
@@ -865,7 +865,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                     "output_location_type": agent_endpoint_output_config_output_location_output_location_type,
                     "prefix": agent_endpoint_output_config_output_location_prefix,
                 },
-                "retention_period_in_minutes": agent_endpoint_output_config_retention_period_in_minutes,
+                "retention_period_in_minutes": int(agent_endpoint_output_config_retention_period_in_minutes),
             },
             provisioned_capacity_config={
                 "provisioned_capacity_id": test_provisioned_capacity["id"],
@@ -879,12 +879,12 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 }],
             },
             session_config={
-                "idle_timeout_in_seconds": agent_endpoint_session_config_idle_timeout_in_seconds,
+                "idle_timeout_in_seconds": int(agent_endpoint_session_config_idle_timeout_in_seconds),
             },
-            should_enable_citation=agent_endpoint_should_enable_citation,
-            should_enable_multi_language=agent_endpoint_should_enable_multi_language,
-            should_enable_session=agent_endpoint_should_enable_session,
-            should_enable_trace=agent_endpoint_should_enable_trace)
+            should_enable_citation=agent_endpoint_should_enable_citation == "true",
+            should_enable_multi_language=agent_endpoint_should_enable_multi_language == "true",
+            should_enable_session=agent_endpoint_should_enable_session == "true",
+            should_enable_trace=agent_endpoint_should_enable_trace == "true")
         ```
 
         ## Import
@@ -911,23 +911,23 @@ class AgentAgentEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_moderation_config: Optional[pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: Optional[pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-                 human_input_config: Optional[pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: Optional[pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-                 provisioned_capacity_config: Optional[pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-                 session_config: Optional[pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
-                 should_enable_citation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_multi_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_session: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
+                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
+                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+                 should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -973,28 +973,28 @@ class AgentAgentEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            content_moderation_config: Optional[pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guardrail_config: Optional[pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-            human_input_config: Optional[pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            output_config: Optional[pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-            provisioned_capacity_config: Optional[pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-            session_config: Optional[pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
-            should_enable_citation: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_enable_multi_language: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_enable_session: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AgentAgentEndpoint':
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
+            human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
+            provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
+            session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+            should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AgentAgentEndpoint':
         """
         Get an existing AgentAgentEndpoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

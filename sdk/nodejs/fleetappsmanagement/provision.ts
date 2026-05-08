@@ -289,99 +289,99 @@ export interface ProvisionState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A display Name of the Catalog Item in the Catalog.
      */
-    configCatalogItemDisplayName?: pulumi.Input<string>;
+    configCatalogItemDisplayName?: pulumi.Input<string | undefined>;
     /**
      * A [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
      */
-    configCatalogItemId?: pulumi.Input<string>;
+    configCatalogItemId?: pulumi.Input<string | undefined>;
     /**
      * A listing ID of the Catalog Item in the Catalog.
      */
-    configCatalogItemListingId?: pulumi.Input<string>;
+    configCatalogItemListingId?: pulumi.Input<string | undefined>;
     /**
      * A listing version of the Catalog Item in the Catalog.
      */
-    configCatalogItemListingVersion?: pulumi.Input<string>;
+    configCatalogItemListingVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The deployed resources and their summary
      */
-    deployedResources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.ProvisionDeployedResource>[]>;
+    deployedResources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.ProvisionDeployedResource>[] | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message that describes the current state of the FamProvision in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A display Name of the Catalog Item in the Catalog.
      */
-    packageCatalogItemDisplayName?: pulumi.Input<string>;
+    packageCatalogItemDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item.
      */
-    packageCatalogItemId?: pulumi.Input<string>;
+    packageCatalogItemId?: pulumi.Input<string | undefined>;
     /**
      * A listing ID of the Catalog Item in the Catalog.
      */
-    packageCatalogItemListingId?: pulumi.Input<string>;
+    packageCatalogItemListingId?: pulumi.Input<string | undefined>;
     /**
      * A listing version of the Catalog Item in the Catalog.
      */
-    packageCatalogItemListingVersion?: pulumi.Input<string>;
+    packageCatalogItemListingVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A description of the provision.
      */
-    provisionDescription?: pulumi.Input<string>;
+    provisionDescription?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS APPLY Job.
      */
-    rmsApplyJobId?: pulumi.Input<string>;
+    rmsApplyJobId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS Stack.
      */
-    stackId?: pulumi.Input<string>;
+    stackId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the FamProvision.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Outputs from the pulumi up job
      */
-    tfOutputs?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.ProvisionTfOutput>[]>;
+    tfOutputs?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.ProvisionTfOutput>[] | undefined>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    tfVariableCompartmentId?: pulumi.Input<string>;
+    tfVariableCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    tfVariableCurrentUserId?: pulumi.Input<string>;
+    tfVariableCurrentUserId?: pulumi.Input<string | undefined>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    tfVariableRegionId?: pulumi.Input<string>;
+    tfVariableRegionId?: pulumi.Input<string | undefined>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      *
@@ -389,15 +389,15 @@ export interface ProvisionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tfVariableTenancyId?: pulumi.Input<string>;
+    tfVariableTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the FamProvision was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the FamProvision was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -415,11 +415,11 @@ export interface ProvisionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -427,7 +427,7 @@ export interface ProvisionArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item.
      */
@@ -435,15 +435,15 @@ export interface ProvisionArgs {
     /**
      * (Updatable) A description of the provision.
      */
-    provisionDescription?: pulumi.Input<string>;
+    provisionDescription?: pulumi.Input<string | undefined>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    tfVariableCompartmentId?: pulumi.Input<string>;
+    tfVariableCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    tfVariableCurrentUserId?: pulumi.Input<string>;
+    tfVariableCurrentUserId?: pulumi.Input<string | undefined>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */

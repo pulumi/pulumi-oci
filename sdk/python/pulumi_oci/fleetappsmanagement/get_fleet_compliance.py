@@ -107,7 +107,7 @@ def get_fleet_compliance(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_compliance = oci.FleetAppsManagement.get_fleet_compliance(fleet_id=test_fleet["id"])
+    test_fleet_compliance = oci.fleetappsmanagement.get_fleet_compliance(fleet_id=test_fleet["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_fleet_compliance(fleet_id: Optional[_builtins.str] = None,
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'),
         non_compliant_target_count=pulumi.get(__ret__, 'non_compliant_target_count'))
-def get_fleet_compliance_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_compliance_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetComplianceResult]:
     """
     This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -137,7 +137,7 @@ def get_fleet_compliance_output(fleet_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_compliance = oci.FleetAppsManagement.get_fleet_compliance(fleet_id=test_fleet["id"])
+    test_fleet_compliance = oci.fleetappsmanagement.get_fleet_compliance(fleet_id=test_fleet["id"])
     ```
 
 

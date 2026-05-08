@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdateHistoryEntries = oci.Database.getExadbVmClusterUpdateHistoryEntries({
+ * const testExadbVmClusterUpdateHistoryEntries = oci.database.getExadbVmClusterUpdateHistoryEntries({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateType: exadbVmClusterUpdateHistoryEntryUpdateType,
  * });
@@ -77,7 +77,7 @@ export interface GetExadbVmClusterUpdateHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdateHistoryEntries = oci.Database.getExadbVmClusterUpdateHistoryEntries({
+ * const testExadbVmClusterUpdateHistoryEntries = oci.database.getExadbVmClusterUpdateHistoryEntries({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateType: exadbVmClusterUpdateHistoryEntryUpdateType,
  * });
@@ -100,9 +100,9 @@ export interface GetExadbVmClusterUpdateHistoryEntriesOutputArgs {
      * The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
      */
     exadbVmClusterId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClusterUpdateHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExadbVmClusterUpdateHistoryEntriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given update type exactly.
      */
-    updateType?: pulumi.Input<string>;
+    updateType?: pulumi.Input<string | undefined>;
 }

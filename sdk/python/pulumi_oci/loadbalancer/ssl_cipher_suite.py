@@ -21,7 +21,7 @@ class SslCipherSuiteArgs:
     def __init__(__self__, *,
                  ciphers: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  load_balancer_id: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SslCipherSuite resource.
 
@@ -75,7 +75,7 @@ class SslCipherSuiteArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 
@@ -101,17 +101,17 @@ class SslCipherSuiteArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _SslCipherSuiteState:
     def __init__(__self__, *,
-                 ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 ciphers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SslCipherSuite resources.
 
@@ -148,28 +148,28 @@ class _SslCipherSuiteState:
 
     @_builtins.property
     @pulumi.getter
-    def ciphers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ciphers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ciphers")
 
     @ciphers.setter
-    def ciphers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ciphers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ciphers", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 
@@ -195,16 +195,16 @@ class _SslCipherSuiteState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -214,9 +214,9 @@ class SslCipherSuite(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 ciphers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -321,9 +321,9 @@ class SslCipherSuite(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 ciphers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -351,10 +351,10 @@ class SslCipherSuite(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'SslCipherSuite':
+            ciphers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'SslCipherSuite':
         """
         Get an existing SslCipherSuite resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

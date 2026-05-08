@@ -149,23 +149,23 @@ export interface FusionEnvironmentAdminUserState {
     /**
      * The email address for the administrator.
      */
-    emailAddress?: pulumi.Input<string>;
+    emailAddress?: pulumi.Input<string | undefined>;
     /**
      * The administrator's first name.
      */
-    firstName?: pulumi.Input<string>;
+    firstName?: pulumi.Input<string | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
-    fusionEnvironmentId?: pulumi.Input<string>;
+    fusionEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * A page of AdminUserSummary objects.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdminUserItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentAdminUserItem>[] | undefined>;
     /**
      * The administrator's last name.
      */
-    lastName?: pulumi.Input<string>;
+    lastName?: pulumi.Input<string | undefined>;
     /**
      * The username for the administrator.
      *
@@ -173,7 +173,7 @@ export interface FusionEnvironmentAdminUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped,
+ *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped === "true",
  *     subscriptionId: testSubscription.id,
  * });
  * ```
@@ -278,81 +278,81 @@ export interface ProtectedDatabaseState {
     /**
      * (Updatable) The OCID of the compartment that contains the protected database.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the protected database.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      */
-    databaseSize?: pulumi.Input<string>;
+    databaseSize?: pulumi.Input<string | undefined>;
     /**
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
      */
-    dbUniqueName?: pulumi.Input<string>;
+    dbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
      * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
      * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
      */
-    deletionSchedule?: pulumi.Input<string>;
+    deletionSchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates the protection status of the database.
      */
-    health?: pulumi.Input<string>;
+    health?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current health of the protected database.
      */
-    healthDetails?: pulumi.Input<string>;
+    healthDetails?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
      */
-    isReadOnlyResource?: pulumi.Input<boolean>;
+    isReadOnlyResource?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      */
-    isRedoLogsShipped?: pulumi.Input<boolean>;
+    isRedoLogsShipped?: pulumi.Input<boolean | undefined>;
     /**
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Backup performance and storage utilization metrics for the protected database.
      */
-    metrics?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseMetric>[]>;
+    metrics?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseMetric>[] | undefined>;
     /**
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
      */
-    policyLockedDateTime?: pulumi.Input<string>;
+    policyLockedDateTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the protection policy associated with the protected database.
      */
-    protectionPolicyId?: pulumi.Input<string>;
+    protectionPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of recovery service subnet resources associated with the protected database.
      */
-    recoveryServiceSubnets?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet>[]>;
+    recoveryServiceSubnets?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet>[] | undefined>;
     /**
      * The current state of the Protected Database.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
      *
@@ -360,23 +360,23 @@ export interface ProtectedDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      */
-    vpcUserName?: pulumi.Input<string>;
+    vpcUserName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -390,11 +390,11 @@ export interface ProtectedDatabaseArgs {
     /**
      * The OCID of the protected database.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      */
-    databaseSize?: pulumi.Input<string>;
+    databaseSize?: pulumi.Input<string | undefined>;
     /**
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
      */
@@ -402,13 +402,13 @@ export interface ProtectedDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
      * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
      * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
      */
-    deletionSchedule?: pulumi.Input<string>;
+    deletionSchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
@@ -416,11 +416,11 @@ export interface ProtectedDatabaseArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      */
-    isRedoLogsShipped?: pulumi.Input<boolean>;
+    isRedoLogsShipped?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
@@ -440,5 +440,5 @@ export interface ProtectedDatabaseArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

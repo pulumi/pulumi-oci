@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetResources = oci.FleetAppsManagement.getFleetResources({
+ * const testFleetResources = oci.fleetappsmanagement.getFleetResources({
  *     fleetId: testFleet.id,
  *     displayName: fleetResourceDisplayName,
  *     fleetResourceType: fleetResourceFleetResourceType,
@@ -100,7 +100,7 @@ export interface GetFleetResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetResources = oci.FleetAppsManagement.getFleetResources({
+ * const testFleetResources = oci.fleetappsmanagement.getFleetResources({
  *     fleetId: testFleet.id,
  *     displayName: fleetResourceDisplayName,
  *     fleetResourceType: fleetResourceFleetResourceType,
@@ -128,8 +128,8 @@ export interface GetFleetResourcesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetResourcesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetResourcesFilterArgs>[] | undefined>;
     /**
      * Unique Fleet identifier.
      */
@@ -137,13 +137,13 @@ export interface GetFleetResourcesOutputArgs {
     /**
      * A filter to return only resources whose resourceType matches the given resourceType.
      */
-    fleetResourceType?: pulumi.Input<string>;
+    fleetResourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose identifier matches the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

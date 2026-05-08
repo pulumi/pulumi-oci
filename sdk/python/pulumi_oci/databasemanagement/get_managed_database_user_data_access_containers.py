@@ -128,7 +128,7 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_data_access_containers = oci.databasemanagement.get_managed_database_user_data_access_containers(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_data_access_container_name,
         opc_named_credential_id=managed_database_user_data_access_container_opc_named_credential_id)
@@ -157,11 +157,11 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_data_access_containers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]]]] = None,
-                                                            managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            user_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_user_data_access_containers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]]]] = None,
+                                                            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            user_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserDataAccessContainersResult]:
     """
     This data source provides the list of Managed Database User Data Access Containers in Oracle Cloud Infrastructure Database Management service.
@@ -174,7 +174,7 @@ def get_managed_database_user_data_access_containers_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_containers = oci.DatabaseManagement.get_managed_database_user_data_access_containers(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_data_access_containers = oci.databasemanagement.get_managed_database_user_data_access_containers(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_data_access_container_name,
         opc_named_credential_id=managed_database_user_data_access_container_opc_named_credential_id)

@@ -23,10 +23,10 @@ import * as utilities from "../utilities";
  * const testWorkspaceExportRequest = new oci.dataintegration.WorkspaceExportRequest("test_workspace_export_request", {
  *     bucket: workspaceExportRequestBucket,
  *     workspaceId: testWorkspace.id,
- *     areReferencesIncluded: workspaceExportRequestAreReferencesIncluded,
+ *     areReferencesIncluded: workspaceExportRequestAreReferencesIncluded === "true",
  *     fileName: workspaceExportRequestFileName,
  *     filters: workspaceExportRequestFilters,
- *     isObjectOverwriteEnabled: workspaceExportRequestIsObjectOverwriteEnabled,
+ *     isObjectOverwriteEnabled: workspaceExportRequestIsObjectOverwriteEnabled === "true",
  *     objectKeys: workspaceExportRequestObjectKeys,
  *     objectStorageRegion: workspaceExportRequestObjectStorageRegion,
  *     objectStorageTenancyId: testTenancy.id,
@@ -222,75 +222,75 @@ export interface WorkspaceExportRequestState {
     /**
      * This field controls if the references will be exported along with the objects
      */
-    areReferencesIncluded?: pulumi.Input<boolean>;
+    areReferencesIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Object Storage bucket where the object will be exported.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * Name of the user who initiated export request.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Contains key of the error
      */
-    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The array of exported object details.
      */
-    exportedItems?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceExportRequestExportedItem>[]>;
+    exportedItems?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceExportRequestExportedItem>[] | undefined>;
     /**
      * Name of the exported zip file.
      */
-    fileName?: pulumi.Input<string>;
+    fileName?: pulumi.Input<string | undefined>;
     /**
      * Filters for exported objects
      */
-    filters?: pulumi.Input<pulumi.Input<string>[]>;
+    filters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      */
-    isObjectOverwriteEnabled?: pulumi.Input<boolean>;
+    isObjectOverwriteEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Export object request key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Name of the export request.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Field is used to specify which object keys to export
      */
-    objectKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    objectKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    objectStorageRegion?: pulumi.Input<string>;
+    objectStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    objectStorageTenancyId?: pulumi.Input<string>;
+    objectStorageTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The array of exported referenced objects.
      */
-    referencedItems?: pulumi.Input<string>;
+    referencedItems?: pulumi.Input<string | undefined>;
     /**
      * Export Objects request status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Time at which the request was completely processed.
      */
-    timeEndedInMillis?: pulumi.Input<string>;
+    timeEndedInMillis?: pulumi.Input<string | undefined>;
     /**
      * Time at which the request started getting processed.
      */
-    timeStartedInMillis?: pulumi.Input<string>;
+    timeStartedInMillis?: pulumi.Input<string | undefined>;
     /**
      * Number of objects that are exported.
      */
-    totalExportedObjectCount?: pulumi.Input<number>;
+    totalExportedObjectCount?: pulumi.Input<number | undefined>;
     /**
      * The workspace ID.
      *
@@ -298,7 +298,7 @@ export interface WorkspaceExportRequestState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,7 +308,7 @@ export interface WorkspaceExportRequestArgs {
     /**
      * This field controls if the references will be exported along with the objects
      */
-    areReferencesIncluded?: pulumi.Input<boolean>;
+    areReferencesIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Object Storage bucket where the object will be exported.
      */
@@ -316,27 +316,27 @@ export interface WorkspaceExportRequestArgs {
     /**
      * Name of the exported zip file.
      */
-    fileName?: pulumi.Input<string>;
+    fileName?: pulumi.Input<string | undefined>;
     /**
      * Filters for exported objects
      */
-    filters?: pulumi.Input<pulumi.Input<string>[]>;
+    filters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      */
-    isObjectOverwriteEnabled?: pulumi.Input<boolean>;
+    isObjectOverwriteEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Field is used to specify which object keys to export
      */
-    objectKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    objectKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    objectStorageRegion?: pulumi.Input<string>;
+    objectStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    objectStorageTenancyId?: pulumi.Input<string>;
+    objectStorageTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *

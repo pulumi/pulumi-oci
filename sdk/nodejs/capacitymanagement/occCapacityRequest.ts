@@ -278,63 +278,63 @@ export interface OccCapacityRequestState {
     /**
      * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
      */
-    dateExpectedCapacityHandover?: pulumi.Input<string>;
+    dateExpectedCapacityHandover?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Meaningful text about the capacity request.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of different resources requested by the user.
      */
-    details?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestDetail>[] | undefined>;
     /**
      * (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the availability catalog against which capacity request is made.
      */
-    occAvailabilityCatalogId?: pulumi.Input<string>;
+    occAvailabilityCatalogId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the customer group to which this customer belongs to.
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestPatchOperation>[] | undefined>;
     /**
      * The name of the region for which the capacity request is made.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      */
-    requestState?: pulumi.Input<string>;
+    requestState?: pulumi.Input<string | undefined>;
     /**
      * Type of Capacity Request(New or Transfer)
      *
@@ -342,23 +342,23 @@ export interface OccCapacityRequestState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the capacity request was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the capacity request was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -368,7 +368,7 @@ export interface OccCapacityRequestArgs {
     /**
      * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
@@ -380,11 +380,11 @@ export interface OccCapacityRequestArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Meaningful text about the capacity request.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of different resources requested by the user.
      */
@@ -396,11 +396,11 @@ export interface OccCapacityRequestArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */
@@ -412,7 +412,7 @@ export interface OccCapacityRequestArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.OccCapacityRequestPatchOperation>[] | undefined>;
     /**
      * The name of the region for which the capacity request is made.
      */
@@ -420,7 +420,7 @@ export interface OccCapacityRequestArgs {
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      */
-    requestState?: pulumi.Input<string>;
+    requestState?: pulumi.Input<string | undefined>;
     /**
      * Type of Capacity Request(New or Transfer)
      *
@@ -428,5 +428,5 @@ export interface OccCapacityRequestArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
 }

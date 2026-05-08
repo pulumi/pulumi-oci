@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceApiKey = oci.BigDataService.getBdsInstanceApiKey({
+ * const testBdsInstanceApiKey = oci.bigdataservice.getBdsInstanceApiKey({
  *     apiKeyId: testApiKey.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });
@@ -89,7 +89,7 @@ export interface GetBdsInstanceApiKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceApiKey = oci.BigDataService.getBdsInstanceApiKey({
+ * const testBdsInstanceApiKey = oci.bigdataservice.getBdsInstanceApiKey({
  *     apiKeyId: testApiKey.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });
@@ -114,14 +114,14 @@ export interface GetBdsInstanceApiKeysOutputArgs {
      * The OCID of the cluster.
      */
     bdsInstanceId: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceApiKeysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceApiKeysFilterArgs>[] | undefined>;
     /**
      * The current status of the API key.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The user OCID for which this API key was created.
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }

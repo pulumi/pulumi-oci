@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
+ * const testFleetJavaMigrationAnalysisResults = oci.jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
  *     hostName: fleetJavaMigrationAnalysisResultHostName,
@@ -114,7 +114,7 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
+ * const testFleetJavaMigrationAnalysisResults = oci.jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
  *     hostName: fleetJavaMigrationAnalysisResultHostName,
@@ -144,8 +144,8 @@ export interface GetFleetJavaMigrationAnalysisResultsOutputArgs {
     /**
      * The name of the application.
      */
-    applicationName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetJavaMigrationAnalysisResultsFilterArgs>[]>;
+    applicationName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetJavaMigrationAnalysisResultsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -153,17 +153,17 @@ export interface GetFleetJavaMigrationAnalysisResultsOutputArgs {
     /**
      * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

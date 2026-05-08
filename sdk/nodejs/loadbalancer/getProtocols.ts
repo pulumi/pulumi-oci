@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerProtocols = oci.LoadBalancer.getProtocols({
+ * const testLoadBalancerProtocols = oci.loadbalancer.getProtocols({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetProtocolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerProtocols = oci.LoadBalancer.getProtocols({
+ * const testLoadBalancerProtocols = oci.loadbalancer.getProtocols({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetProtocolsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer protocols to list.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetProtocolsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetProtocolsFilterArgs>[] | undefined>;
 }

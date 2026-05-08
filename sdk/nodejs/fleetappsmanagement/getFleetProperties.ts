@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetProperties = oci.FleetAppsManagement.getFleetProperties({
+ * const testFleetProperties = oci.fleetappsmanagement.getFleetProperties({
  *     fleetId: testFleet.id,
  *     displayName: fleetPropertyDisplayName,
  *     id: fleetPropertyId,
@@ -93,7 +93,7 @@ export interface GetFleetPropertiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetProperties = oci.FleetAppsManagement.getFleetProperties({
+ * const testFleetProperties = oci.fleetappsmanagement.getFleetProperties({
  *     fleetId: testFleet.id,
  *     displayName: fleetPropertyDisplayName,
  *     id: fleetPropertyId,
@@ -119,8 +119,8 @@ export interface GetFleetPropertiesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetPropertiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetPropertiesFilterArgs>[] | undefined>;
     /**
      * Unique Fleet identifier.
      */
@@ -128,9 +128,9 @@ export interface GetFleetPropertiesOutputArgs {
     /**
      * A filter to return only resources whose fleetProperty identifier matches the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

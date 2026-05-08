@@ -158,10 +158,10 @@ def get_software_packages(architecture: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_packages = oci.OsManagementHub.get_software_packages(architecture=software_package_architecture,
+    test_software_packages = oci.osmanagementhub.get_software_packages(architecture=software_package_architecture,
         display_name=software_package_display_name,
         display_name_contains=software_package_display_name_contains,
-        is_latest=software_package_is_latest,
+        is_latest=software_package_is_latest == "true",
         os_family=software_package_os_family,
         version=software_package_version)
     ```
@@ -195,13 +195,13 @@ def get_software_packages(architecture: Optional[_builtins.str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         software_package_collections=pulumi.get(__ret__, 'software_package_collections'),
         version=pulumi.get(__ret__, 'version'))
-def get_software_packages_output(architecture: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwarePackagesFilterArgs', 'GetSoftwarePackagesFilterArgsDict']]]]] = None,
-                                 is_latest: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_software_packages_output(architecture: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwarePackagesFilterArgs', 'GetSoftwarePackagesFilterArgsDict']]]]] = None,
+                                 is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwarePackagesResult]:
     """
     This data source provides the list of Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -215,10 +215,10 @@ def get_software_packages_output(architecture: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_software_packages = oci.OsManagementHub.get_software_packages(architecture=software_package_architecture,
+    test_software_packages = oci.osmanagementhub.get_software_packages(architecture=software_package_architecture,
         display_name=software_package_display_name,
         display_name_contains=software_package_display_name_contains,
-        is_latest=software_package_is_latest,
+        is_latest=software_package_is_latest == "true",
         os_family=software_package_os_family,
         version=software_package_version)
     ```

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddcs = oci.Ocvp.getSddcs({
+ * const testSddcs = oci.ocvp.getSddcs({
  *     compartmentId: compartmentId,
  *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
  *     displayName: sddcDisplayName,
@@ -102,7 +102,7 @@ export interface GetSddcsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddcs = oci.Ocvp.getSddcs({
+ * const testSddcs = oci.ocvp.getSddcs({
  *     compartmentId: compartmentId,
  *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
  *     displayName: sddcDisplayName,
@@ -132,14 +132,14 @@ export interface GetSddcsOutputArgs {
     /**
      * The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
      */
-    computeAvailabilityDomain?: pulumi.Input<string>;
+    computeAvailabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSddcsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSddcsFilterArgs>[] | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

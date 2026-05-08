@@ -356,7 +356,7 @@ def get_instance_maintenance_event(instance_maintenance_event_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_event = oci.Core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
+    test_instance_maintenance_event = oci.core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
     ```
 
 
@@ -394,7 +394,7 @@ def get_instance_maintenance_event(instance_maintenance_event_id: Optional[_buil
         time_hard_due_date=pulumi.get(__ret__, 'time_hard_due_date'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_window_start=pulumi.get(__ret__, 'time_window_start'))
-def get_instance_maintenance_event_output(instance_maintenance_event_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_maintenance_event_output(instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceEventResult]:
     """
     This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
@@ -407,7 +407,7 @@ def get_instance_maintenance_event_output(instance_maintenance_event_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_event = oci.Core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
+    test_instance_maintenance_event = oci.core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
     ```
 
 

@@ -106,21 +106,21 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
  * A collection of arguments for invoking getSecurityAssessmentFinding.
  */
 export interface GetSecurityAssessmentFindingOutputArgs {
-    accessLevel?: pulumi.Input<string>;
-    category?: pulumi.Input<string>;
-    compartmentId?: pulumi.Input<string>;
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
-    containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingFilterArgs>[]>;
-    findingKey?: pulumi.Input<string>;
-    isTopFinding?: pulumi.Input<boolean>;
-    references?: pulumi.Input<string>;
-    scimQuery?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
+    category?: pulumi.Input<string | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    containsReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    containsSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingFilterArgs>[] | undefined>;
+    findingKey?: pulumi.Input<string | undefined>;
+    isTopFinding?: pulumi.Input<boolean | undefined>;
+    references?: pulumi.Input<string | undefined>;
+    scimQuery?: pulumi.Input<string | undefined>;
     securityAssessmentId: pulumi.Input<string>;
-    severity?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    targetId?: pulumi.Input<string>;
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    severity?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    targetId?: pulumi.Input<string | undefined>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

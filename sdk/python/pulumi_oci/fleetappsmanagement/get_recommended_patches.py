@@ -167,7 +167,7 @@ def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommended_patches = oci.FleetAppsManagement.get_recommended_patches(compartment_id=compartment_id,
+    test_recommended_patches = oci.fleetappsmanagement.get_recommended_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_id=test_patch["id"],
@@ -208,14 +208,14 @@ def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
         severity=pulumi.get(__ret__, 'severity'),
         target_id=pulumi.get(__ret__, 'target_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
-def get_recommended_patches_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict']]]]] = None,
-                                   patch_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   patch_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   patch_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   target_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recommended_patches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict']]]]] = None,
+                                   patch_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   patch_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   target_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendedPatchesResult]:
     """
     This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -228,7 +228,7 @@ def get_recommended_patches_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_recommended_patches = oci.FleetAppsManagement.get_recommended_patches(compartment_id=compartment_id,
+    test_recommended_patches = oci.fleetappsmanagement.get_recommended_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_id=test_patch["id"],

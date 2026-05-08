@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyNatRules = oci.NetworkFirewall.getNetworkFirewallPolicyNatRules({
+ * const testNetworkFirewallPolicyNatRules = oci.networkfirewall.getNetworkFirewallPolicyNatRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyNatRuleDisplayName,
- *     natRulePriorityOrder: networkFirewallPolicyNatRuleNatRulePriorityOrder,
+ *     natRulePriorityOrder: Number(networkFirewallPolicyNatRuleNatRulePriorityOrder),
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetNetworkFirewallPolicyNatRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyNatRules = oci.NetworkFirewall.getNetworkFirewallPolicyNatRules({
+ * const testNetworkFirewallPolicyNatRules = oci.networkfirewall.getNetworkFirewallPolicyNatRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyNatRuleDisplayName,
- *     natRulePriorityOrder: networkFirewallPolicyNatRuleNatRulePriorityOrder,
+ *     natRulePriorityOrder: Number(networkFirewallPolicyNatRuleNatRulePriorityOrder),
  * });
  * ```
  */
@@ -105,12 +105,12 @@ export interface GetNetworkFirewallPolicyNatRulesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyNatRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyNatRulesFilterArgs>[] | undefined>;
     /**
      * Unique priority order for NAT rules in the Network Firewall policy.
      */
-    natRulePriorityOrder?: pulumi.Input<number>;
+    natRulePriorityOrder?: pulumi.Input<number | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

@@ -125,7 +125,7 @@ def get_opa_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+    test_opa_instances = oci.opa.get_opa_instances(compartment_id=compartment_id,
         display_name=opa_instance_display_name,
         id=opa_instance_id,
         state=opa_instance_state)
@@ -153,11 +153,11 @@ def get_opa_instances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         opa_instance_collections=pulumi.get(__ret__, 'opa_instance_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]]]] = None,
-                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_opa_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]]]] = None,
+                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpaInstancesResult]:
     """
     This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
@@ -170,7 +170,7 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+    test_opa_instances = oci.opa.get_opa_instances(compartment_id=compartment_id,
         display_name=opa_instance_display_name,
         id=opa_instance_id,
         state=opa_instance_state)

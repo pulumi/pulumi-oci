@@ -294,7 +294,7 @@ def get_queue(queue_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
+    test_queue = oci.queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
     ```
 
 
@@ -327,7 +327,7 @@ def get_queue(queue_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         visibility_in_seconds=pulumi.get(__ret__, 'visibility_in_seconds'))
-def get_queue_output(queue_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_queue_output(queue_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueueResult]:
     """
     This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
@@ -340,7 +340,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
+    test_queue = oci.queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
     ```
 
 

@@ -136,7 +136,7 @@ def get_fleets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+    test_fleets = oci.jms.get_fleets(compartment_id=compartment_id,
         display_name=fleet_display_name,
         display_name_contains=fleet_display_name_contains,
         id=fleet_id,
@@ -168,12 +168,12 @@ def get_fleets(compartment_id: Optional[_builtins.str] = None,
         fleet_collections=pulumi.get(__ret__, 'fleet_collections'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleets_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetsResult]:
     """
     This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
@@ -187,7 +187,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+    test_fleets = oci.jms.get_fleets(compartment_id=compartment_id,
         display_name=fleet_display_name,
         display_name_contains=fleet_display_name_contains,
         id=fleet_id,

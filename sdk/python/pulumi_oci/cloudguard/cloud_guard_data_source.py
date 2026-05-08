@@ -24,10 +24,10 @@ class CloudGuardDataSourceArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  data_source_feed_provider: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 data_source_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_source_details: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudGuardDataSource resource.
 
@@ -95,31 +95,31 @@ class CloudGuardDataSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataSourceDetails")
-    def data_source_details(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']]:
+    def data_source_details(self) -> pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']]:
         """
         (Updatable) Details specific to the data source type.
         """
         return pulumi.get(self, "data_source_details")
 
     @data_source_details.setter
-    def data_source_details(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']]):
+    def data_source_details(self, value: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']]):
         pulumi.set(self, "data_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
@@ -128,12 +128,12 @@ class CloudGuardDataSourceArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enablement status of data source.
 
@@ -144,26 +144,26 @@ class CloudGuardDataSourceArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _CloudGuardDataSourceState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_source_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
-                 data_source_detector_mapping_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]] = None,
-                 data_source_feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 region_status_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_source_details: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
+                 data_source_detector_mapping_infos: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]] = None,
+                 data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 region_status_details: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudGuardDataSource resources.
 
@@ -216,79 +216,79 @@ class _CloudGuardDataSourceState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment OCID of the data source
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceDetails")
-    def data_source_details(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']]:
+    def data_source_details(self) -> pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']]:
         """
         (Updatable) Details specific to the data source type.
         """
         return pulumi.get(self, "data_source_details")
 
     @data_source_details.setter
-    def data_source_details(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']]):
+    def data_source_details(self, value: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsArgs']]):
         pulumi.set(self, "data_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceDetectorMappingInfos")
-    def data_source_detector_mapping_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]]:
+    def data_source_detector_mapping_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]]:
         """
         Information about the detector recipe and rule attached
         """
         return pulumi.get(self, "data_source_detector_mapping_infos")
 
     @data_source_detector_mapping_infos.setter
-    def data_source_detector_mapping_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]]):
+    def data_source_detector_mapping_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]]):
         pulumi.set(self, "data_source_detector_mapping_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceFeedProvider")
-    def data_source_feed_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_feed_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of data source feed provider (LoggingQuery)
         """
         return pulumi.get(self, "data_source_feed_provider")
 
     @data_source_feed_provider.setter
-    def data_source_feed_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_feed_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_feed_provider", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Data source display name
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
@@ -297,36 +297,36 @@ class _CloudGuardDataSourceState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="regionStatusDetails")
-    def region_status_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]]:
+    def region_status_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]]:
         """
         Information about the region and status of query replication
         """
         return pulumi.get(self, "region_status_details")
 
     @region_status_details.setter
-    def region_status_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]]):
+    def region_status_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]]):
         pulumi.set(self, "region_status_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enablement status of data source.
 
@@ -337,43 +337,43 @@ class _CloudGuardDataSourceState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Data source was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the data source was updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -383,13 +383,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
-                 data_source_feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+                 data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -412,13 +412,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             data_source_details={
                 "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
-                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "additional_entities_count": int(data_source_data_source_details_additional_entities_count),
                 "description": data_source_data_source_details_description,
-                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
-                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "interval_in_minutes": int(data_source_data_source_details_interval_in_minutes),
+                "interval_in_seconds": int(data_source_data_source_details_interval_in_seconds),
                 "logging_query_details": {
                     "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
-                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                    "key_entities_count": int(data_source_data_source_details_logging_query_details_key_entities_count),
                 },
                 "logging_query_type": data_source_data_source_details_logging_query_type,
                 "operator": data_source_data_source_details_operator,
@@ -433,7 +433,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
                     "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
                 }],
-                "threshold": data_source_data_source_details_threshold,
+                "threshold": int(data_source_data_source_details_threshold),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -496,13 +496,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             data_source_details={
                 "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
-                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "additional_entities_count": int(data_source_data_source_details_additional_entities_count),
                 "description": data_source_data_source_details_description,
-                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
-                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "interval_in_minutes": int(data_source_data_source_details_interval_in_minutes),
+                "interval_in_seconds": int(data_source_data_source_details_interval_in_seconds),
                 "logging_query_details": {
                     "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
-                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                    "key_entities_count": int(data_source_data_source_details_logging_query_details_key_entities_count),
                 },
                 "logging_query_type": data_source_data_source_details_logging_query_type,
                 "operator": data_source_data_source_details_operator,
@@ -517,7 +517,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
                     "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
                 }],
-                "threshold": data_source_data_source_details_threshold,
+                "threshold": int(data_source_data_source_details_threshold),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -552,13 +552,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
-                 data_source_feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+                 data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -597,19 +597,19 @@ class CloudGuardDataSource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
-            data_source_detector_mapping_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]]] = None,
-            data_source_feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            region_status_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudGuardDataSource':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+            data_source_detector_mapping_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]]] = None,
+            data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            region_status_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudGuardDataSource':
         """
         Get an existing CloudGuardDataSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

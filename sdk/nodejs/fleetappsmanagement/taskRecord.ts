@@ -41,9 +41,9 @@ import * as utilities from "../utilities";
  *                 id: taskRecordDetailsExecutionDetailsCredentialsId,
  *             }],
  *             endpoint: taskRecordDetailsExecutionDetailsEndpoint,
- *             isExecutableContent: taskRecordDetailsExecutionDetailsIsExecutableContent,
- *             isLocked: taskRecordDetailsExecutionDetailsIsLocked,
- *             isReadOutputVariableEnabled: taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+ *             isExecutableContent: taskRecordDetailsExecutionDetailsIsExecutableContent === "true",
+ *             isLocked: taskRecordDetailsExecutionDetailsIsLocked === "true",
+ *             isReadOutputVariableEnabled: taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled === "true",
  *             systemVariables: taskRecordDetailsExecutionDetailsSystemVariables,
  *             targetCompartmentId: testCompartment.id,
  *             variables: {
@@ -56,14 +56,14 @@ import * as utilities from "../utilities";
  *             },
  *         },
  *         scope: taskRecordDetailsScope,
- *         isApplySubjectTask: taskRecordDetailsIsApplySubjectTask,
- *         isDiscoveryOutputTask: taskRecordDetailsIsDiscoveryOutputTask,
+ *         isApplySubjectTask: taskRecordDetailsIsApplySubjectTask === "true",
+ *         isDiscoveryOutputTask: taskRecordDetailsIsDiscoveryOutputTask === "true",
  *         operation: taskRecordDetailsOperation,
  *         osType: taskRecordDetailsOsType,
  *         platform: taskRecordDetailsPlatform,
  *         properties: {
- *             numRetries: taskRecordDetailsPropertiesNumRetries,
- *             timeoutInSeconds: taskRecordDetailsPropertiesTimeoutInSeconds,
+ *             numRetries: Number(taskRecordDetailsPropertiesNumRetries),
+ *             timeoutInSeconds: Number(taskRecordDetailsPropertiesTimeoutInSeconds),
  *         },
  *     },
  *     displayName: taskRecordDisplayName,
@@ -239,23 +239,23 @@ export interface TaskRecordState {
     /**
      * (Updatable)
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details of the task.
      */
-    details?: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetails>;
+    details?: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetails | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
      *
@@ -263,39 +263,39 @@ export interface TaskRecordState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Associated region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the task record.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Task type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The version of the task record.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -309,11 +309,11 @@ export interface TaskRecordArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details of the task.
      */
@@ -329,5 +329,5 @@ export interface TaskRecordArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

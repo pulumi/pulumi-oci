@@ -110,8 +110,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -210,8 +210,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -260,8 +260,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -310,8 +310,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -360,8 +360,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -410,8 +410,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -515,8 +515,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -561,8 +561,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -653,8 +653,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -699,8 +699,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -745,8 +745,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityNotificationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -787,8 +787,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityNotificationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -829,8 +829,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityNotificationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -871,8 +871,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityNotificationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -913,8 +913,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityNotificationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -955,8 +955,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1051,8 +1051,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1099,8 +1099,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1147,8 +1147,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1195,8 +1195,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1237,8 +1237,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1279,8 +1279,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1321,8 +1321,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1363,8 +1363,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1405,8 +1405,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1453,8 +1453,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1501,8 +1501,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1549,8 +1549,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1597,8 +1597,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1645,8 +1645,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1693,8 +1693,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1741,8 +1741,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1789,8 +1789,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1837,8 +1837,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1885,8 +1885,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1933,8 +1933,8 @@ public final class DblmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dblm.DblmFunctions;
      * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

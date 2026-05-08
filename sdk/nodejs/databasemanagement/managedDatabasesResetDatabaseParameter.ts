@@ -147,19 +147,19 @@ export interface ManagedDatabasesResetDatabaseParameterState {
     /**
      * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials | undefined>;
     /**
      * The credential to connect to the database to perform tablespace administration tasks.
      */
-    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential>;
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
-    managedDatabaseId?: pulumi.Input<string>;
+    managedDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * A list of database parameter names.
      */
-    parameters?: pulumi.Input<pulumi.Input<string>[]>;
+    parameters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The clause used to specify when the parameter change takes effect.
      *
@@ -169,7 +169,7 @@ export interface ManagedDatabasesResetDatabaseParameterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,11 +179,11 @@ export interface ManagedDatabasesResetDatabaseParameterArgs {
     /**
      * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials | undefined>;
     /**
      * The credential to connect to the database to perform tablespace administration tasks.
      */
-    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential>;
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

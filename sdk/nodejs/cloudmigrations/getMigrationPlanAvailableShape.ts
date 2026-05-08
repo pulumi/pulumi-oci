@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShape = oci.CloudMigrations.getMigrationPlanAvailableShape({
+ * const testMigrationPlanAvailableShape = oci.cloudmigrations.getMigrationPlanAvailableShape({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -95,7 +95,7 @@ export interface GetMigrationPlanAvailableShapeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShape = oci.CloudMigrations.getMigrationPlanAvailableShape({
+ * const testMigrationPlanAvailableShape = oci.cloudmigrations.getMigrationPlanAvailableShape({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -122,15 +122,15 @@ export interface GetMigrationPlanAvailableShapeOutputArgs {
     /**
      * The availability domain in which to list resources.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the Dvh in which to list resources.
      */
-    dvhHostId?: pulumi.Input<string>;
+    dvhHostId?: pulumi.Input<string | undefined>;
     /**
      * Unique migration plan identifier
      */
@@ -138,5 +138,5 @@ export interface GetMigrationPlanAvailableShapeOutputArgs {
     /**
      * The reserved capacity ID for which to list resources.
      */
-    reservedCapacityId?: pulumi.Input<string>;
+    reservedCapacityId?: pulumi.Input<string | undefined>;
 }

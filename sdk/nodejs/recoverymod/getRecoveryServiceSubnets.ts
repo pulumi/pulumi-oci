@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecoveryServiceSubnets = oci.RecoveryMod.getRecoveryServiceSubnets({
+ * const testRecoveryServiceSubnets = oci.recoverymod.getRecoveryServiceSubnets({
  *     compartmentId: compartmentId,
  *     displayName: recoveryServiceSubnetDisplayName,
  *     id: recoveryServiceSubnetId,
@@ -106,7 +106,7 @@ export interface GetRecoveryServiceSubnetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecoveryServiceSubnets = oci.RecoveryMod.getRecoveryServiceSubnets({
+ * const testRecoveryServiceSubnets = oci.recoverymod.getRecoveryServiceSubnets({
  *     compartmentId: compartmentId,
  *     displayName: recoveryServiceSubnetDisplayName,
  *     id: recoveryServiceSubnetId,
@@ -138,18 +138,18 @@ export interface GetRecoveryServiceSubnetsOutputArgs {
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetRecoveryServiceSubnetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetRecoveryServiceSubnetsFilterArgs>[] | undefined>;
     /**
      * The recovery service subnet OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

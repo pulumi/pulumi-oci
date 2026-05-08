@@ -143,7 +143,7 @@ def get_budgets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budgets = oci.Budget.get_budgets(compartment_id=tenancy_ocid,
+    test_budgets = oci.budget.get_budgets(compartment_id=tenancy_ocid,
         display_name=budget_display_name,
         state=budget_state,
         target_type=budget_target_type)
@@ -175,11 +175,11 @@ def get_budgets(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         target_type=pulumi.get(__ret__, 'target_type'))
-def get_budgets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict']]]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_budgets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict']]]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       target_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBudgetsResult]:
     """
     This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
@@ -198,7 +198,7 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_budgets = oci.Budget.get_budgets(compartment_id=tenancy_ocid,
+    test_budgets = oci.budget.get_budgets(compartment_id=tenancy_ocid,
         display_name=budget_display_name,
         state=budget_state,
         target_type=budget_target_type)

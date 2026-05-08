@@ -105,7 +105,7 @@ def get_supported_commitments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_commitments = oci.Ocvp.get_supported_commitments(compartment_id=compartment_id,
+    test_supported_commitments = oci.ocvp.get_supported_commitments(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 
@@ -126,9 +126,9 @@ def get_supported_commitments(compartment_id: Optional[_builtins.str] = None,
         host_shape_name=pulumi.get(__ret__, 'host_shape_name'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedCommitmentsFilterArgs', 'GetSupportedCommitmentsFilterArgsDict']]]]] = None,
-                                     host_shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_supported_commitments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedCommitmentsFilterArgs', 'GetSupportedCommitmentsFilterArgsDict']]]]] = None,
+                                     host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedCommitmentsResult]:
     """
     This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -141,7 +141,7 @@ def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_commitments = oci.Ocvp.get_supported_commitments(compartment_id=compartment_id,
+    test_supported_commitments = oci.ocvp.get_supported_commitments(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 

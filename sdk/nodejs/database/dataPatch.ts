@@ -78,10 +78,10 @@ export class DataPatch extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DataPatch resources.
  */
 export interface DataPatchState {
-    action?: pulumi.Input<string>;
-    dataPatchOptions?: pulumi.Input<pulumi.Input<inputs.Database.DataPatchDataPatchOption>[]>;
-    databaseId?: pulumi.Input<string>;
-    pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
+    action?: pulumi.Input<string | undefined>;
+    dataPatchOptions?: pulumi.Input<pulumi.Input<inputs.Database.DataPatchDataPatchOption>[] | undefined>;
+    databaseId?: pulumi.Input<string | undefined>;
+    pluggableDatabases?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -89,7 +89,7 @@ export interface DataPatchState {
  */
 export interface DataPatchArgs {
     action: pulumi.Input<string>;
-    dataPatchOptions?: pulumi.Input<pulumi.Input<inputs.Database.DataPatchDataPatchOption>[]>;
+    dataPatchOptions?: pulumi.Input<pulumi.Input<inputs.Database.DataPatchDataPatchOption>[] | undefined>;
     databaseId: pulumi.Input<string>;
-    pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
+    pluggableDatabases?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

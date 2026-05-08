@@ -138,7 +138,7 @@ def get_internal_occm_demand_signals(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signals = oci.CapacityManagement.get_internal_occm_demand_signals(compartment_id=compartment_id,
+    test_internal_occm_demand_signals = oci.capacitymanagement.get_internal_occm_demand_signals(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         display_name=internal_occm_demand_signal_display_name,
         id=internal_occm_demand_signal_id,
@@ -170,12 +170,12 @@ def get_internal_occm_demand_signals(compartment_id: Optional[_builtins.str] = N
         internal_occm_demand_signal_collections=pulumi.get(__ret__, 'internal_occm_demand_signal_collections'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'))
-def get_internal_occm_demand_signals_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict']]]]] = None,
-                                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            lifecycle_details: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_internal_occm_demand_signals_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict']]]]] = None,
+                                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            lifecycle_details: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccmDemandSignalsResult]:
     """
     This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
@@ -188,7 +188,7 @@ def get_internal_occm_demand_signals_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signals = oci.CapacityManagement.get_internal_occm_demand_signals(compartment_id=compartment_id,
+    test_internal_occm_demand_signals = oci.capacitymanagement.get_internal_occm_demand_signals(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         display_name=internal_occm_demand_signal_display_name,
         id=internal_occm_demand_signal_id,

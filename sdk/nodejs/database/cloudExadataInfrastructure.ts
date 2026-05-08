@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     displayName: cloudExadataInfrastructureDisplayName,
  *     shape: cloudExadataInfrastructureShape,
  *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
- *     computeCount: cloudExadataInfrastructureComputeCount,
+ *     computeCount: Number(cloudExadataInfrastructureComputeCount),
  *     customerContacts: [{
  *         email: cloudExadataInfrastructureCustomerContactsEmail,
  *     }],
@@ -36,14 +36,14 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
+ *         customActionTimeoutInMins: Number(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
  *         hoursOfDays: cloudExadataInfrastructureMaintenanceWindowHoursOfDay,
- *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
- *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
- *         leadTimeInWeeks: cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
+ *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled === "true",
+ *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled === "true",
+ *         leadTimeInWeeks: Number(cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
  *         months: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *         preference: cloudExadataInfrastructureMaintenanceWindowPreference,
  *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
- *     storageCount: cloudExadataInfrastructureStorageCount,
+ *     storageCount: Number(cloudExadataInfrastructureStorageCount),
  *     storageServerType: cloudExadataInfrastructureStorageServerType,
  *     subscriptionId: tenantSubscriptionId,
  * });
@@ -378,147 +378,147 @@ export interface CloudExadataInfrastructureState {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    activatedStorageCount?: pulumi.Input<number>;
+    activatedStorageCount?: pulumi.Input<number | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    additionalStorageCount?: pulumi.Input<number>;
+    additionalStorageCount?: pulumi.Input<number | undefined>;
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    availableStorageSizeInGbs?: pulumi.Input<number>;
+    availableStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of compute servers for the cloud Exadata infrastructure.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * The total number of CPU cores allocated.
      */
-    cpuCount?: pulumi.Input<number>;
+    cpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Customer contacts.
      */
-    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[]>;
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[] | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    dataStorageSizeInTbs?: pulumi.Input<number>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    databaseServerType?: pulumi.Input<string>;
+    databaseServerType?: pulumi.Input<string | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    dbServerVersion?: pulumi.Input<string>;
+    dbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * Details of the file system configuration of the Exadata infrastructure.
      */
-    definedFileSystemConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureDefinedFileSystemConfiguration>[]>;
+    definedFileSystemConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureDefinedFileSystemConfiguration>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
      */
-    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureExascaleConfig>[]>;
+    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureExascaleConfig>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If true, the infrastructure is using granular maintenance scheduling preference.
      */
-    isSchedulingPolicyAssociated?: pulumi.Input<boolean>;
+    isSchedulingPolicyAssociated?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow | undefined>;
     /**
      * The total number of CPU cores available.
      */
-    maxCpuCount?: pulumi.Input<number>;
+    maxCpuCount?: pulumi.Input<number | undefined>;
     /**
      * The total available DATA disk group size.
      */
-    maxDataStorageInTbs?: pulumi.Input<number>;
+    maxDataStorageInTbs?: pulumi.Input<number | undefined>;
     /**
      * The total local node storage available in GBs.
      */
-    maxDbNodeStorageInGbs?: pulumi.Input<number>;
+    maxDbNodeStorageInGbs?: pulumi.Input<number | undefined>;
     /**
      * The total memory available in GBs.
      */
-    maxMemoryInGbs?: pulumi.Input<number>;
+    maxMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    monthlyDbServerVersion?: pulumi.Input<string>;
+    monthlyDbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    monthlyStorageServerVersion?: pulumi.Input<string>;
+    monthlyStorageServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The shape of the cloud Exadata infrastructure resource.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    storageServerType?: pulumi.Input<string>;
+    storageServerType?: pulumi.Input<string | undefined>;
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    storageServerVersion?: pulumi.Input<string>;
+    storageServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      *
@@ -526,19 +526,19 @@ export interface CloudExadataInfrastructureState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    totalStorageSizeInGbs?: pulumi.Input<number>;
+    totalStorageSizeInGbs?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -552,7 +552,7 @@ export interface CloudExadataInfrastructureArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -560,19 +560,19 @@ export interface CloudExadataInfrastructureArgs {
     /**
      * (Updatable) The number of compute servers for the cloud Exadata infrastructure.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Customer contacts.
      */
-    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[]>;
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[] | undefined>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    databaseServerType?: pulumi.Input<string>;
+    databaseServerType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
@@ -580,11 +580,11 @@ export interface CloudExadataInfrastructureArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow | undefined>;
     /**
      * The shape of the cloud Exadata infrastructure resource.
      */
@@ -592,11 +592,11 @@ export interface CloudExadataInfrastructureArgs {
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    storageServerType?: pulumi.Input<string>;
+    storageServerType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      *
@@ -604,5 +604,5 @@ export interface CloudExadataInfrastructureArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

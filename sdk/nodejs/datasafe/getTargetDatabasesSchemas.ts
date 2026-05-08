@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesSchemas = oci.DataSafe.getTargetDatabasesSchemas({
+ * const testTargetDatabasesSchemas = oci.datasafe.getTargetDatabasesSchemas({
  *     targetDatabaseId: testTargetDatabase.id,
- *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained === "true",
  *     schemaNames: targetDatabasesSchemaSchemaName,
  *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });
@@ -94,9 +94,9 @@ export interface GetTargetDatabasesSchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesSchemas = oci.DataSafe.getTargetDatabasesSchemas({
+ * const testTargetDatabasesSchemas = oci.datasafe.getTargetDatabasesSchemas({
  *     targetDatabaseId: testTargetDatabase.id,
- *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained === "true",
  *     schemaNames: targetDatabasesSchemaSchemaName,
  *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });
@@ -117,19 +117,19 @@ export function getTargetDatabasesSchemasOutput(args: GetTargetDatabasesSchemasO
  * A collection of arguments for invoking getTargetDatabasesSchemas.
  */
 export interface GetTargetDatabasesSchemasOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesSchemasFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesSchemasFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to specific type of schema.
      */
-    isOracleMaintained?: pulumi.Input<boolean>;
+    isOracleMaintained?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items if schema name contains a specific string.
      */
-    schemaNameContains?: pulumi.Input<string>;
+    schemaNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */

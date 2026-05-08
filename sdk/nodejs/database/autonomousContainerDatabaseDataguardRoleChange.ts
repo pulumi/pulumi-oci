@@ -79,10 +79,10 @@ export class AutonomousContainerDatabaseDataguardRoleChange extends pulumi.Custo
  * Input properties used for looking up and filtering AutonomousContainerDatabaseDataguardRoleChange resources.
  */
 export interface AutonomousContainerDatabaseDataguardRoleChangeState {
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
-    connectionStringsType?: pulumi.Input<string>;
-    role?: pulumi.Input<string>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string | undefined>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
+    connectionStringsType?: pulumi.Input<string | undefined>;
+    role?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -91,6 +91,6 @@ export interface AutonomousContainerDatabaseDataguardRoleChangeState {
 export interface AutonomousContainerDatabaseDataguardRoleChangeArgs {
     autonomousContainerDatabaseDataguardAssociationId: pulumi.Input<string>;
     autonomousContainerDatabaseId: pulumi.Input<string>;
-    connectionStringsType?: pulumi.Input<string>;
+    connectionStringsType?: pulumi.Input<string | undefined>;
     role: pulumi.Input<string>;
 }

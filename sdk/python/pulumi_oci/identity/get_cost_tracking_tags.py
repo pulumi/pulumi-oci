@@ -99,7 +99,7 @@ def get_cost_tracking_tags(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=compartment_id)
+    test_cost_tracking_tags = oci.identity.get_cost_tracking_tags(compartment_id=compartment_id)
     ```
 
 
@@ -116,8 +116,8 @@ def get_cost_tracking_tags(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]]]] = None,
+def get_cost_tracking_tags_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostTrackingTagsResult]:
     """
     This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
@@ -131,7 +131,7 @@ def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=compartment_id)
+    test_cost_tracking_tags = oci.identity.get_cost_tracking_tags(compartment_id=compartment_id)
     ```
 
 

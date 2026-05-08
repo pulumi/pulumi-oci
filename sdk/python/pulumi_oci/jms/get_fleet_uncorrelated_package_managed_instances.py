@@ -148,7 +148,7 @@ def get_fleet_uncorrelated_package_managed_instances(application_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_uncorrelated_package_managed_instances = oci.Jms.get_fleet_uncorrelated_package_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_uncorrelated_package_managed_instances = oci.jms.get_fleet_uncorrelated_package_managed_instances(fleet_id=test_fleet["id"],
         package_name=fleet_uncorrelated_package_managed_instance_package_name,
         application_id=test_application["id"],
         managed_instance_id=test_managed_instance["id"],
@@ -185,13 +185,13 @@ def get_fleet_uncorrelated_package_managed_instances(application_id: Optional[_b
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'),
         uncorrelated_package_managed_instance_usage_collections=pulumi.get(__ret__, 'uncorrelated_package_managed_instance_usage_collections'))
-def get_fleet_uncorrelated_package_managed_instances_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict']]]]] = None,
-                                                            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                            managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            package_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                            time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_uncorrelated_package_managed_instances_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict']]]]] = None,
+                                                            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                            managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            package_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                            time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetUncorrelatedPackageManagedInstancesResult]:
     """
     This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
@@ -204,7 +204,7 @@ def get_fleet_uncorrelated_package_managed_instances_output(application_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_uncorrelated_package_managed_instances = oci.Jms.get_fleet_uncorrelated_package_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_uncorrelated_package_managed_instances = oci.jms.get_fleet_uncorrelated_package_managed_instances(fleet_id=test_fleet["id"],
         package_name=fleet_uncorrelated_package_managed_instance_package_name,
         application_id=test_application["id"],
         managed_instance_id=test_managed_instance["id"],

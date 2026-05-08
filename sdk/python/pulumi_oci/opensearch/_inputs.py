@@ -40,19 +40,19 @@ __all__ = [
 ]
 
 class ClusterCertificateConfigArgsDict(TypedDict):
-    cluster_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_certificate_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
     """
-    dashboard_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+    dashboard_certificate_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
     """
-    open_search_api_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    open_search_api_certificate_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) certificate to be used for OpenSearch cluster api communication
     """
-    open_search_dashboard_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    open_search_dashboard_certificate_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) certificate to be used for OpenSearch dashboard api communication
     """
@@ -60,10 +60,10 @@ class ClusterCertificateConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterCertificateConfigArgs:
     def __init__(__self__, *,
-                 cluster_certificate_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 dashboard_certificate_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_search_api_certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_search_dashboard_certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_certificate_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 dashboard_certificate_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_search_api_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_search_dashboard_certificate_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cluster_certificate_mode: (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
         :param pulumi.Input[_builtins.str] dashboard_certificate_mode: (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
@@ -81,50 +81,50 @@ class ClusterCertificateConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="clusterCertificateMode")
-    def cluster_certificate_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_certificate_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
         """
         return pulumi.get(self, "cluster_certificate_mode")
 
     @cluster_certificate_mode.setter
-    def cluster_certificate_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_certificate_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_certificate_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="dashboardCertificateMode")
-    def dashboard_certificate_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dashboard_certificate_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
         """
         return pulumi.get(self, "dashboard_certificate_mode")
 
     @dashboard_certificate_mode.setter
-    def dashboard_certificate_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dashboard_certificate_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dashboard_certificate_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="openSearchApiCertificateId")
-    def open_search_api_certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_search_api_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) certificate to be used for OpenSearch cluster api communication
         """
         return pulumi.get(self, "open_search_api_certificate_id")
 
     @open_search_api_certificate_id.setter
-    def open_search_api_certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_search_api_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_search_api_certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="openSearchDashboardCertificateId")
-    def open_search_dashboard_certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_search_dashboard_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) certificate to be used for OpenSearch dashboard api communication
         """
         return pulumi.get(self, "open_search_dashboard_certificate_id")
 
     @open_search_dashboard_certificate_id.setter
-    def open_search_dashboard_certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_search_dashboard_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_search_dashboard_certificate_id", value)
 
 
@@ -133,11 +133,11 @@ class ClusterLoadBalancerConfigArgsDict(TypedDict):
     """
     (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
     """
-    load_balancer_max_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    load_balancer_max_bandwidth_in_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
     """
-    load_balancer_min_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    load_balancer_min_bandwidth_in_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
     """
@@ -146,8 +146,8 @@ class ClusterLoadBalancerConfigArgsDict(TypedDict):
 class ClusterLoadBalancerConfigArgs:
     def __init__(__self__, *,
                  load_balancer_service_type: pulumi.Input[_builtins.str],
-                 load_balancer_max_bandwidth_in_mbps: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_balancer_min_bandwidth_in_mbps: Optional[pulumi.Input[_builtins.int]] = None):
+                 load_balancer_max_bandwidth_in_mbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_balancer_min_bandwidth_in_mbps: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] load_balancer_service_type: (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
         :param pulumi.Input[_builtins.int] load_balancer_max_bandwidth_in_mbps: (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
@@ -173,43 +173,43 @@ class ClusterLoadBalancerConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerMaxBandwidthInMbps")
-    def load_balancer_max_bandwidth_in_mbps(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def load_balancer_max_bandwidth_in_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
         """
         return pulumi.get(self, "load_balancer_max_bandwidth_in_mbps")
 
     @load_balancer_max_bandwidth_in_mbps.setter
-    def load_balancer_max_bandwidth_in_mbps(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def load_balancer_max_bandwidth_in_mbps(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "load_balancer_max_bandwidth_in_mbps", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerMinBandwidthInMbps")
-    def load_balancer_min_bandwidth_in_mbps(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def load_balancer_min_bandwidth_in_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
         """
         return pulumi.get(self, "load_balancer_min_bandwidth_in_mbps")
 
     @load_balancer_min_bandwidth_in_mbps.setter
-    def load_balancer_min_bandwidth_in_mbps(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def load_balancer_min_bandwidth_in_mbps(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "load_balancer_min_bandwidth_in_mbps", value)
 
 
 class ClusterMaintenanceDetailsArgsDict(TypedDict):
-    end_time: NotRequired[pulumi.Input[_builtins.str]]
+    end_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     End time of the maintenance activity
     """
-    notification_email_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    notification_email_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The Email IDs given by the customer to get notified about maintenance activities
     """
-    start_time: NotRequired[pulumi.Input[_builtins.str]]
+    start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Start time of the maintenance activity
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the cluster.
     """
@@ -217,10 +217,10 @@ class ClusterMaintenanceDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterMaintenanceDetailsArgs:
     def __init__(__self__, *,
-                 end_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_email_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] end_time: End time of the maintenance activity
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notification_email_ids: (Updatable) The Email IDs given by the customer to get notified about maintenance activities
@@ -238,50 +238,50 @@ class ClusterMaintenanceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="endTime")
-    def end_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         End time of the maintenance activity
         """
         return pulumi.get(self, "end_time")
 
     @end_time.setter
-    def end_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_time", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmailIds")
-    def notification_email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notification_email_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The Email IDs given by the customer to get notified about maintenance activities
         """
         return pulumi.get(self, "notification_email_ids")
 
     @notification_email_ids.setter
-    def notification_email_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notification_email_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notification_email_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Start time of the maintenance activity
         """
         return pulumi.get(self, "start_time")
 
     @start_time.setter
-    def start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the cluster.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -341,15 +341,15 @@ class ClusterOutboundClusterConfigOutboundClusterArgsDict(TypedDict):
     """
     (Updatable) OCID of the Outbound cluster
     """
-    is_skip_unavailable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_skip_unavailable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Mode for the cross cluster connection
     """
-    ping_schedule: NotRequired[pulumi.Input[_builtins.str]]
+    ping_schedule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
     """
@@ -359,9 +359,9 @@ class ClusterOutboundClusterConfigOutboundClusterArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  seed_cluster_id: pulumi.Input[_builtins.str],
-                 is_skip_unavailable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ping_schedule: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_skip_unavailable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ping_schedule: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] seed_cluster_id: (Updatable) OCID of the Outbound cluster
@@ -404,47 +404,47 @@ class ClusterOutboundClusterConfigOutboundClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="isSkipUnavailable")
-    def is_skip_unavailable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_skip_unavailable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
         """
         return pulumi.get(self, "is_skip_unavailable")
 
     @is_skip_unavailable.setter
-    def is_skip_unavailable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_skip_unavailable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_skip_unavailable", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Mode for the cross cluster connection
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter(name="pingSchedule")
-    def ping_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ping_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
         """
         return pulumi.get(self, "ping_schedule")
 
     @ping_schedule.setter
-    def ping_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ping_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ping_schedule", value)
 
 
 class ClusterReverseConnectionEndpointArgsDict(TypedDict):
-    customer_ip: NotRequired[pulumi.Input[_builtins.str]]
+    customer_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP addresses of the endpoint in customer VCN
     """
-    nat_ip: NotRequired[pulumi.Input[_builtins.str]]
+    nat_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The NAT IP addresses of the endpoint in service VCN
     """
@@ -452,8 +452,8 @@ class ClusterReverseConnectionEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterReverseConnectionEndpointArgs:
     def __init__(__self__, *,
-                 customer_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 customer_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] customer_ip: The IP addresses of the endpoint in customer VCN
         :param pulumi.Input[_builtins.str] nat_ip: The NAT IP addresses of the endpoint in service VCN
@@ -465,26 +465,26 @@ class ClusterReverseConnectionEndpointArgs:
 
     @_builtins.property
     @pulumi.getter(name="customerIp")
-    def customer_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP addresses of the endpoint in customer VCN
         """
         return pulumi.get(self, "customer_ip")
 
     @customer_ip.setter
-    def customer_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="natIp")
-    def nat_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nat_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
 
     @nat_ip.setter
-    def nat_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nat_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nat_ip", value)
 
 
@@ -501,19 +501,19 @@ class ClusterSecuritySamlConfigArgsDict(TypedDict):
     """
     A flag determine whether SAML is enabled
     """
-    admin_backend_role: NotRequired[pulumi.Input[_builtins.str]]
+    admin_backend_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The backend role of admins who have all permissions like local master user
     """
-    opendashboard_url: NotRequired[pulumi.Input[_builtins.str]]
+    opendashboard_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The endpoint of opendashboard
     """
-    roles_key: NotRequired[pulumi.Input[_builtins.str]]
+    roles_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The roles key is sued to get backend roles from SAML assertion
     """
-    subject_key: NotRequired[pulumi.Input[_builtins.str]]
+    subject_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subject key is used to get username from SAML assertion. By default, it is NameID
     """
@@ -524,10 +524,10 @@ class ClusterSecuritySamlConfigArgs:
                  idp_entity_id: pulumi.Input[_builtins.str],
                  idp_metadata_content: pulumi.Input[_builtins.str],
                  is_enabled: pulumi.Input[_builtins.bool],
-                 admin_backend_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 opendashboard_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 roles_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 admin_backend_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 opendashboard_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 roles_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] idp_entity_id: The unique name for a identity provider entity
         :param pulumi.Input[_builtins.str] idp_metadata_content: The content of identity provider metadata
@@ -587,50 +587,50 @@ class ClusterSecuritySamlConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="adminBackendRole")
-    def admin_backend_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_backend_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The backend role of admins who have all permissions like local master user
         """
         return pulumi.get(self, "admin_backend_role")
 
     @admin_backend_role.setter
-    def admin_backend_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_backend_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_backend_role", value)
 
     @_builtins.property
     @pulumi.getter(name="opendashboardUrl")
-    def opendashboard_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opendashboard_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The endpoint of opendashboard
         """
         return pulumi.get(self, "opendashboard_url")
 
     @opendashboard_url.setter
-    def opendashboard_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opendashboard_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opendashboard_url", value)
 
     @_builtins.property
     @pulumi.getter(name="rolesKey")
-    def roles_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def roles_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The roles key is sued to get backend roles from SAML assertion
         """
         return pulumi.get(self, "roles_key")
 
     @roles_key.setter
-    def roles_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def roles_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "roles_key", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectKey")
-    def subject_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject key is used to get username from SAML assertion. By default, it is NameID
         """
         return pulumi.get(self, "subject_key")
 
     @subject_key.setter
-    def subject_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_key", value)
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogOccAvailabilities = oci.CapacityManagement.getOccAvailabilityCatalogOccAvailabilities({
+ * const testOccAvailabilityCatalogOccAvailabilities = oci.capacitymanagement.getOccAvailabilityCatalogOccAvailabilities({
  *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
  *     dateExpectedCapacityHandover: occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
  *     resourceName: testResource.name,
@@ -107,7 +107,7 @@ export interface GetOccAvailabilityCatalogOccAvailabilitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogOccAvailabilities = oci.CapacityManagement.getOccAvailabilityCatalogOccAvailabilities({
+ * const testOccAvailabilityCatalogOccAvailabilities = oci.capacitymanagement.getOccAvailabilityCatalogOccAvailabilities({
  *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
  *     dateExpectedCapacityHandover: occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
  *     resourceName: testResource.name,
@@ -135,8 +135,8 @@ export interface GetOccAvailabilityCatalogOccAvailabilitiesOutputArgs {
     /**
      * The capacity handover date of the capacity constraint to filter the list of capacity constraints.
      */
-    dateExpectedCapacityHandover?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs>[]>;
+    dateExpectedCapacityHandover?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs>[] | undefined>;
     /**
      * The OCID of the availability catalog.
      */
@@ -144,13 +144,13 @@ export interface GetOccAvailabilityCatalogOccAvailabilitiesOutputArgs {
     /**
      * The name of the resource to filter the list of capacity constraints.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * Resource type using which the capacity constraints of an availability catalog can be filtered.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Workload type using the resources in an availability catalog can be filtered.
      */
-    workloadType?: pulumi.Input<string>;
+    workloadType?: pulumi.Input<string | undefined>;
 }

@@ -108,7 +108,7 @@ def get_discovery_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=compartment_id,
+    test_discovery_jobs = oci.stackmonitoring.get_discovery_jobs(compartment_id=compartment_id,
         name=discovery_job_name)
     ```
 
@@ -129,9 +129,9 @@ def get_discovery_jobs(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobsFilterArgs', 'GetDiscoveryJobsFilterArgsDict']]]]] = None,
-                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_discovery_jobs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryJobsFilterArgs', 'GetDiscoveryJobsFilterArgsDict']]]]] = None,
+                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobsResult]:
     """
     This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -144,7 +144,7 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=compartment_id,
+    test_discovery_jobs = oci.stackmonitoring.get_discovery_jobs(compartment_id=compartment_id,
         name=discovery_job_name)
     ```
 

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupInstalledPackages = oci.OsManagementHub.getManagedInstanceGroupInstalledPackages({
+ * const testManagedInstanceGroupInstalledPackages = oci.osmanagementhub.getManagedInstanceGroupInstalledPackages({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupInstalledPackageDisplayName,
@@ -104,7 +104,7 @@ export interface GetManagedInstanceGroupInstalledPackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupInstalledPackages = oci.OsManagementHub.getManagedInstanceGroupInstalledPackages({
+ * const testManagedInstanceGroupInstalledPackages = oci.osmanagementhub.getManagedInstanceGroupInstalledPackages({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupInstalledPackageDisplayName,
@@ -134,16 +134,16 @@ export interface GetManagedInstanceGroupInstalledPackagesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupInstalledPackagesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupInstalledPackagesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -151,9 +151,9 @@ export interface GetManagedInstanceGroupInstalledPackagesOutputArgs {
     /**
      * A filter to return only packages that were installed on or before the date provided, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
      */
-    timeInstallDateEnd?: pulumi.Input<string>;
+    timeInstallDateEnd?: pulumi.Input<string | undefined>;
     /**
      * The install date after which to list all packages, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
      */
-    timeInstallDateStart?: pulumi.Input<string>;
+    timeInstallDateStart?: pulumi.Input<string | undefined>;
 }

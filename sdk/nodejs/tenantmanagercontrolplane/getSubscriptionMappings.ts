@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionMappings = oci.Tenantmanagercontrolplane.getSubscriptionMappings({
+ * const testSubscriptionMappings = oci.tenantmanagercontrolplane.getSubscriptionMappings({
  *     subscriptionId: testSubscription.id,
  *     compartmentId: compartmentId,
  *     state: subscriptionMappingState,
@@ -97,7 +97,7 @@ export interface GetSubscriptionMappingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionMappings = oci.Tenantmanagercontrolplane.getSubscriptionMappings({
+ * const testSubscriptionMappings = oci.tenantmanagercontrolplane.getSubscriptionMappings({
  *     subscriptionId: testSubscription.id,
  *     compartmentId: compartmentId,
  *     state: subscriptionMappingState,
@@ -123,12 +123,12 @@ export interface GetSubscriptionMappingsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetSubscriptionMappingsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetSubscriptionMappingsFilterArgs>[] | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * OCID of the subscription.
      */
@@ -136,5 +136,5 @@ export interface GetSubscriptionMappingsOutputArgs {
     /**
      * A unique ID for subscription and tenancy mapping.
      */
-    subscriptionMappingId?: pulumi.Input<string>;
+    subscriptionMappingId?: pulumi.Input<string | undefined>;
 }

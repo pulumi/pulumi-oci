@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
+ * const testLoadBalancers = oci.loadbalancer.getLoadBalancers({
  *     compartmentId: compartmentId,
  *     detail: loadBalancerDetail,
  *     displayName: loadBalancerDisplayName,
@@ -105,7 +105,7 @@ export interface GetLoadBalancersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
+ * const testLoadBalancers = oci.loadbalancer.getLoadBalancers({
  *     compartmentId: compartmentId,
  *     detail: loadBalancerDetail,
  *     displayName: loadBalancerDisplayName,
@@ -135,14 +135,14 @@ export interface GetLoadBalancersOutputArgs {
     /**
      * The level of detail to return for each result. Can be `full` or `simple`.  Example: `full`
      */
-    detail?: pulumi.Input<string>;
+    detail?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetLoadBalancersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetLoadBalancersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

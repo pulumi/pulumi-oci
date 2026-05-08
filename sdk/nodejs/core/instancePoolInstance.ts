@@ -180,32 +180,32 @@ export class InstancePoolInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering InstancePoolInstance resources.
  */
 export interface InstancePoolInstanceState {
-    autoTerminateInstanceOnDelete?: pulumi.Input<boolean>;
+    autoTerminateInstanceOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The availability domain the instance is running in.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      */
-    compartmentId?: pulumi.Input<string>;
-    decrementSizeOnDelete?: pulumi.Input<boolean>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    decrementSizeOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The fault domain the instance is running in.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      */
-    instanceConfigurationId?: pulumi.Input<string>;
+    instanceConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      *
@@ -213,35 +213,35 @@ export interface InstancePoolInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    instancePoolId?: pulumi.Input<string>;
+    instancePoolId?: pulumi.Input<string | undefined>;
     /**
      * The load balancer backends that are configured for the instance pool instance.
      */
-    loadBalancerBackends?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolInstanceLoadBalancerBackend>[]>;
+    loadBalancerBackends?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolInstanceLoadBalancerBackend>[] | undefined>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a InstancePoolInstance resource.
  */
 export interface InstancePoolInstanceArgs {
-    autoTerminateInstanceOnDelete?: pulumi.Input<boolean>;
-    decrementSizeOnDelete?: pulumi.Input<boolean>;
+    autoTerminateInstanceOnDelete?: pulumi.Input<boolean | undefined>;
+    decrementSizeOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */

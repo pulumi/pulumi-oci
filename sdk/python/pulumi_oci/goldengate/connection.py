@@ -25,113 +25,113 @@ class ConnectionArgs:
                  connection_type: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  technology_type: pulumi.Input[_builtins.str],
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
-                 authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
-                 catalog: Optional[pulumi.Input['ConnectionCatalogArgs']] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 core_site_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 does_use_secret_ids: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 jndi_connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_initial_context_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_provider_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_principal: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 producer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_use_jndi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_use_resource_principal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_validate_server_certificate: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_server_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input['ConnectionStorageArgs']] = None,
-                 storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_refresh: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trust_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
+                 catalog: pulumi.Input[Optional['ConnectionCatalogArgs']] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 core_site_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_use_secret_ids: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_provider_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_principal: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 producer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_jndi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_use_resource_principal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_validate_server_certificate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional['ConnectionStorageArgs']] = None,
+                 storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_ca_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_refresh: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
 
@@ -596,92 +596,92 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
     @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
-    def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
     @account_key.setter
-    def account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
-    def account_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         """
         return pulumi.get(self, "account_key_secret_id")
 
     @account_key_secret_id.setter
-    def account_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountName")
-    def account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sets the Azure storage account name.
         """
         return pulumi.get(self, "account_name")
 
     @account_name.setter
-    def account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_name", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
+    def additional_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
         """
         (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
+    def additional_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationMode")
-    def authentication_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         """
         return pulumi.get(self, "authentication_mode")
 
     @authentication_mode.setter
-    def authentication_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationType")
-    def authentication_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "authentication_type")
 
     @authentication_type.setter
-    def authentication_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_type", value)
 
     @_builtins.property
     @pulumi.getter(name="azureAuthorityHost")
-    def azure_authority_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_authority_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
         * Azure China: https://login.chinacloudapi.cn/
@@ -690,289 +690,289 @@ class ConnectionArgs:
         return pulumi.get(self, "azure_authority_host")
 
     @azure_authority_host.setter
-    def azure_authority_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_authority_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_authority_host", value)
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
-    def azure_tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         """
         return pulumi.get(self, "azure_tenant_id")
 
     @azure_tenant_id.setter
-    def azure_tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapServers")
-    def bootstrap_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]:
+    def bootstrap_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]:
         """
         (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         """
         return pulumi.get(self, "bootstrap_servers")
 
     @bootstrap_servers.setter
-    def bootstrap_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]):
+    def bootstrap_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]):
         pulumi.set(self, "bootstrap_servers", value)
 
     @_builtins.property
     @pulumi.getter
-    def catalog(self) -> Optional[pulumi.Input['ConnectionCatalogArgs']]:
+    def catalog(self) -> pulumi.Input[Optional['ConnectionCatalogArgs']]:
         """
         (Updatable) The information about a new catalog of given type used in an Iceberg connection.
         """
         return pulumi.get(self, "catalog")
 
     @catalog.setter
-    def catalog(self, value: Optional[pulumi.Input['ConnectionCatalogArgs']]):
+    def catalog(self, value: pulumi.Input[Optional['ConnectionCatalogArgs']]):
         pulumi.set(self, "catalog", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
     @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
-    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
-    def client_secret_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
     @client_secret_secret_id.setter
-    def client_secret_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFactory")
-    def connection_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         """
         return pulumi.get(self, "connection_factory")
 
     @connection_factory.setter
-    def connection_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_string", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionUrl")
-    def connection_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
     @connection_url.setter
-    def connection_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_url", value)
 
     @_builtins.property
     @pulumi.getter(name="consumerProperties")
-    def consumer_properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumer_properties(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the consumer.properties file.
         """
         return pulumi.get(self, "consumer_properties")
 
     @consumer_properties.setter
-    def consumer_properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumer_properties(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumer_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="coreSiteXml")
-    def core_site_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def core_site_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "core_site_xml")
 
     @core_site_xml.setter
-    def core_site_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def core_site_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "core_site_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the database.
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
-    def deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metadata about this specific object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="doesUseSecretIds")
-    def does_use_secret_ids(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_use_secret_ids(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that sensitive attributes are provided via Secrets.
         """
         return pulumi.get(self, "does_use_secret_ids")
 
     @does_use_secret_ids.setter
-    def does_use_secret_ids(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_use_secret_ids(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_use_secret_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
         """
         return pulumi.get(self, "endpoint")
 
     @endpoint.setter
-    def endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
 
@@ -981,438 +981,438 @@ class ConnectionArgs:
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiConnectionFactory")
-    def jndi_connection_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_connection_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         """
         return pulumi.get(self, "jndi_connection_factory")
 
     @jndi_connection_factory.setter
-    def jndi_connection_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_connection_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_connection_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiInitialContextFactory")
-    def jndi_initial_context_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_initial_context_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         """
         return pulumi.get(self, "jndi_initial_context_factory")
 
     @jndi_initial_context_factory.setter
-    def jndi_initial_context_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_initial_context_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_initial_context_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiProviderUrl")
-    def jndi_provider_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_provider_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
         """
         return pulumi.get(self, "jndi_provider_url")
 
     @jndi_provider_url.setter
-    def jndi_provider_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_provider_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_provider_url", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
     @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
-    def jndi_security_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "jndi_security_credentials")
 
     @jndi_security_credentials.setter
-    def jndi_security_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentialsSecretId")
-    def jndi_security_credentials_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_credentials_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         """
         return pulumi.get(self, "jndi_security_credentials_secret_id")
 
     @jndi_security_credentials_secret_id.setter
-    def jndi_security_credentials_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_credentials_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_credentials_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityPrincipal")
-    def jndi_security_principal(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_principal(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         """
         return pulumi.get(self, "jndi_security_principal")
 
     @jndi_security_principal.setter
-    def jndi_security_principal(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_principal(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_principal", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
     @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
-    def key_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store")
 
     @key_store.setter
-    def key_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
     @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
-    def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
-    def key_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePasswordSecretId")
-    def key_store_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         """
         return pulumi.get(self, "key_store_password_secret_id")
 
     @key_store_password_secret_id.setter
-    def key_store_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreSecretId")
-    def key_store_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         """
         return pulumi.get(self, "key_store_secret_id")
 
     @key_store_secret_id.setter
-    def key_store_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port of an endpoint usually specified for a connection.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
     @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
-    def private_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_file")
 
     @private_key_file.setter
-    def private_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFileSecretId")
-    def private_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         """
         return pulumi.get(self, "private_key_file_secret_id")
 
     @private_key_file_secret_id.setter
-    def private_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
     @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
-    def private_key_passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_passphrase")
 
     @private_key_passphrase.setter
-    def private_key_passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphraseSecretId")
-    def private_key_passphrase_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_passphrase_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         """
         return pulumi.get(self, "private_key_passphrase_secret_id")
 
     @private_key_passphrase_secret_id.setter
-    def private_key_passphrase_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_passphrase_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_passphrase_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="producerProperties")
-    def producer_properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def producer_properties(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the producer.properties file.
         """
         return pulumi.get(self, "producer_properties")
 
     @producer_properties.setter
-    def producer_properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def producer_properties(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "producer_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyFingerprint")
-    def public_key_fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         """
         return pulumi.get(self, "public_key_fingerprint")
 
     @public_key_fingerprint.setter
-    def public_key_fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="redisClusterId")
-    def redis_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         """
         return pulumi.get(self, "redis_cluster_id")
 
     @redis_cluster_id.setter
-    def redis_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="routingMethod")
-    def routing_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         """
         return pulumi.get(self, "routing_method")
 
     @routing_method.setter
-    def routing_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_method", value)
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
     @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
-    def sas_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sas_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "sas_token")
 
     @sas_token.setter
-    def sas_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sas_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sas_token", value)
 
     @_builtins.property
     @pulumi.getter(name="sasTokenSecretId")
-    def sas_token_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sas_token_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         """
         return pulumi.get(self, "sas_token_secret_id")
 
     @sas_token_secret_id.setter
-    def sas_token_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sas_token_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sas_token_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
     @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
-    def secret_access_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
     @secret_access_key_secret_id.setter
-    def secret_access_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "security_protocol")
 
     @security_protocol.setter
-    def security_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def servers(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def servers(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         """
         return pulumi.get(self, "servers")
 
     @servers.setter
-    def servers(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def servers(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "servers", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
     @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
-    def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
     @service_account_key_file.setter
-    def service_account_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
-    def service_account_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         """
         return pulumi.get(self, "service_account_key_file_secret_id")
 
     @service_account_key_file_secret_id.setter
-    def service_account_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
 
@@ -1423,73 +1423,73 @@ class ConnectionArgs:
         return pulumi.get(self, "session_mode")
 
     @session_mode.setter
-    def session_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldUseJndi")
-    def should_use_jndi(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_use_jndi(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         """
         return pulumi.get(self, "should_use_jndi")
 
     @should_use_jndi.setter
-    def should_use_jndi(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_use_jndi(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_use_jndi", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldUseResourcePrincipal")
-    def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_use_resource_principal(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
     @should_use_resource_principal.setter
-    def should_use_resource_principal(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_use_resource_principal(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_use_resource_principal", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldValidateServerCertificate")
-    def should_validate_server_certificate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_validate_server_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         """
         return pulumi.get(self, "should_validate_server_certificate")
 
     @should_validate_server_certificate.setter
-    def should_validate_server_certificate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_validate_server_certificate(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_validate_server_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_ca")
 
     @ssl_ca.setter
-    def ssl_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_cert")
 
     @ssl_cert.setter
-    def ssl_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
     @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
-    def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -1498,12 +1498,12 @@ class ConnectionArgs:
         return pulumi.get(self, "ssl_client_keystash")
 
     @ssl_client_keystash.setter
-    def ssl_client_keystash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystash", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystashSecretId")
-    def ssl_client_keystash_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystash_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -1512,13 +1512,13 @@ class ConnectionArgs:
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
     @ssl_client_keystash_secret_id.setter
-    def ssl_client_keystash_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystash_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystash_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
     @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
-    def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystoredb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -1527,12 +1527,12 @@ class ConnectionArgs:
         return pulumi.get(self, "ssl_client_keystoredb")
 
     @ssl_client_keystoredb.setter
-    def ssl_client_keystoredb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystoredb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystoredb", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredbSecretId")
-    def ssl_client_keystoredb_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystoredb_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -1541,62 +1541,62 @@ class ConnectionArgs:
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
     @ssl_client_keystoredb_secret_id.setter
-    def ssl_client_keystoredb_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystoredb_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystoredb_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_crl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_crl")
 
     @ssl_crl.setter
-    def ssl_crl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_crl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_crl", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
     @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
-    def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key")
 
     @ssl_key.setter
-    def ssl_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
     @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
-    def ssl_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key_password")
 
     @ssl_key_password.setter
-    def ssl_key_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPasswordSecretId")
-    def ssl_key_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         """
         return pulumi.get(self, "ssl_key_password_secret_id")
 
     @ssl_key_password_secret_id.setter
-    def ssl_key_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeySecretId")
-    def ssl_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
         * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
@@ -1604,170 +1604,170 @@ class ConnectionArgs:
         return pulumi.get(self, "ssl_key_secret_id")
 
     @ssl_key_secret_id.setter
-    def ssl_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SSL modes for PostgreSQL.
         """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
-    def ssl_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="sslServerCertificate")
-    def ssl_server_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_server_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_server_certificate")
 
     @ssl_server_certificate.setter
-    def ssl_server_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_server_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_server_certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def storage(self) -> Optional[pulumi.Input['ConnectionStorageArgs']]:
+    def storage(self) -> pulumi.Input[Optional['ConnectionStorageArgs']]:
         """
         (Updatable) The information about a new storage of given type used in an Iceberg connection.
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: Optional[pulumi.Input['ConnectionStorageArgs']]):
+    def storage(self, value: pulumi.Input[Optional['ConnectionStorageArgs']]):
         pulumi.set(self, "storage", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCredentialName")
-    def storage_credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         """
         return pulumi.get(self, "storage_credential_name")
 
     @storage_credential_name.setter
-    def storage_credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         """
         return pulumi.get(self, "stream_pool_id")
 
     @stream_pool_id.setter
-    def stream_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCaFile")
-    def tls_ca_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_ca_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "tls_ca_file")
 
     @tls_ca_file.setter
-    def tls_ca_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_ca_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_ca_file", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
     @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
-    def tls_certificate_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "tls_certificate_key_file")
 
     @tls_certificate_key_file.setter
-    def tls_certificate_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
     @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
-    def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "tls_certificate_key_file_password")
 
     @tls_certificate_key_file_password.setter
-    def tls_certificate_key_file_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_password", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
-    def tls_certificate_key_file_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         """
         return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
 
     @tls_certificate_key_file_password_secret_id.setter
-    def tls_certificate_key_file_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFileSecretId")
-    def tls_certificate_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
         * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
@@ -1775,132 +1775,132 @@ class ConnectionArgs:
         return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @tls_certificate_key_file_secret_id.setter
-    def tls_certificate_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="triggerRefresh")
-    def trigger_refresh(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trigger_refresh(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "trigger_refresh")
 
     @trigger_refresh.setter
-    def trigger_refresh(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trigger_refresh(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trigger_refresh", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
     @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
-    def trust_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store")
 
     @trust_store.setter
-    def trust_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
     @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
-    def trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store_password")
 
     @trust_store_password.setter
-    def trust_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStorePasswordSecretId")
-    def trust_store_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         """
         return pulumi.get(self, "trust_store_password_secret_id")
 
     @trust_store_password_secret_id.setter
-    def trust_store_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStoreSecretId")
-    def trust_store_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         """
         return pulumi.get(self, "trust_store_secret_id")
 
     @trust_store_secret_id.setter
-    def trust_store_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
-    def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "wallet")
 
     @wallet.setter
-    def wallet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
 
@@ -1911,131 +1911,131 @@ class ConnectionArgs:
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 @pulumi.input_type
 class _ConnectionState:
     def __init__(__self__, *,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
-                 authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
-                 catalog: Optional[pulumi.Input['ConnectionCatalogArgs']] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 core_site_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 does_use_secret_ids: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 jndi_connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_initial_context_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_provider_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_principal: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 producer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_use_jndi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_use_resource_principal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_validate_server_certificate: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_server_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input['ConnectionStorageArgs']] = None,
-                 storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_refresh: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trust_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
+                 catalog: pulumi.Input[Optional['ConnectionCatalogArgs']] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 core_site_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_use_secret_ids: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_provider_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_principal: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 producer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_jndi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_use_resource_principal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_validate_server_certificate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional['ConnectionStorageArgs']] = None,
+                 storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_ca_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_refresh: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
 
@@ -2477,92 +2477,92 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
     @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
-    def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
     @account_key.setter
-    def account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
-    def account_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         """
         return pulumi.get(self, "account_key_secret_id")
 
     @account_key_secret_id.setter
-    def account_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountName")
-    def account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sets the Azure storage account name.
         """
         return pulumi.get(self, "account_name")
 
     @account_name.setter
-    def account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_name", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
+    def additional_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
         """
         (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
+    def additional_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationMode")
-    def authentication_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         """
         return pulumi.get(self, "authentication_mode")
 
     @authentication_mode.setter
-    def authentication_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationType")
-    def authentication_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "authentication_type")
 
     @authentication_type.setter
-    def authentication_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_type", value)
 
     @_builtins.property
     @pulumi.getter(name="azureAuthorityHost")
-    def azure_authority_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_authority_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
         * Azure China: https://login.chinacloudapi.cn/
@@ -2571,325 +2571,325 @@ class _ConnectionState:
         return pulumi.get(self, "azure_authority_host")
 
     @azure_authority_host.setter
-    def azure_authority_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_authority_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_authority_host", value)
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
-    def azure_tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def azure_tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         """
         return pulumi.get(self, "azure_tenant_id")
 
     @azure_tenant_id.setter
-    def azure_tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def azure_tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "azure_tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapServers")
-    def bootstrap_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]:
+    def bootstrap_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]:
         """
         (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         """
         return pulumi.get(self, "bootstrap_servers")
 
     @bootstrap_servers.setter
-    def bootstrap_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]):
+    def bootstrap_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]]):
         pulumi.set(self, "bootstrap_servers", value)
 
     @_builtins.property
     @pulumi.getter
-    def catalog(self) -> Optional[pulumi.Input['ConnectionCatalogArgs']]:
+    def catalog(self) -> pulumi.Input[Optional['ConnectionCatalogArgs']]:
         """
         (Updatable) The information about a new catalog of given type used in an Iceberg connection.
         """
         return pulumi.get(self, "catalog")
 
     @catalog.setter
-    def catalog(self, value: Optional[pulumi.Input['ConnectionCatalogArgs']]):
+    def catalog(self, value: pulumi.Input[Optional['ConnectionCatalogArgs']]):
         pulumi.set(self, "catalog", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
     @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
-    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
-    def client_secret_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
     @client_secret_secret_id.setter
-    def client_secret_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFactory")
-    def connection_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         """
         return pulumi.get(self, "connection_factory")
 
     @connection_factory.setter
-    def connection_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_string", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The connection type.
         """
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionUrl")
-    def connection_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         """
         return pulumi.get(self, "connection_url")
 
     @connection_url.setter
-    def connection_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_url", value)
 
     @_builtins.property
     @pulumi.getter(name="consumerProperties")
-    def consumer_properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumer_properties(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the consumer.properties file.
         """
         return pulumi.get(self, "consumer_properties")
 
     @consumer_properties.setter
-    def consumer_properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumer_properties(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumer_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="coreSiteXml")
-    def core_site_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def core_site_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "core_site_xml")
 
     @core_site_xml.setter
-    def core_site_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def core_site_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "core_site_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the database.
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
-    def deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metadata about this specific object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An object's Display Name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="doesUseSecretIds")
-    def does_use_secret_ids(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_use_secret_ids(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that sensitive attributes are provided via Secrets.
         """
         return pulumi.get(self, "does_use_secret_ids")
 
     @does_use_secret_ids.setter
-    def does_use_secret_ids(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_use_secret_ids(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_use_secret_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
         """
         return pulumi.get(self, "endpoint")
 
     @endpoint.setter
-    def endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
 
@@ -2898,474 +2898,474 @@ class _ConnectionState:
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressIps")
-    def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]:
+    def ingress_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]:
         """
         List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
 
     @ingress_ips.setter
-    def ingress_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]):
+    def ingress_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]):
         pulumi.set(self, "ingress_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiConnectionFactory")
-    def jndi_connection_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_connection_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         """
         return pulumi.get(self, "jndi_connection_factory")
 
     @jndi_connection_factory.setter
-    def jndi_connection_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_connection_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_connection_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiInitialContextFactory")
-    def jndi_initial_context_factory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_initial_context_factory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         """
         return pulumi.get(self, "jndi_initial_context_factory")
 
     @jndi_initial_context_factory.setter
-    def jndi_initial_context_factory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_initial_context_factory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_initial_context_factory", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiProviderUrl")
-    def jndi_provider_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_provider_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
         """
         return pulumi.get(self, "jndi_provider_url")
 
     @jndi_provider_url.setter
-    def jndi_provider_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_provider_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_provider_url", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
     @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
-    def jndi_security_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "jndi_security_credentials")
 
     @jndi_security_credentials.setter
-    def jndi_security_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentialsSecretId")
-    def jndi_security_credentials_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_credentials_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         """
         return pulumi.get(self, "jndi_security_credentials_secret_id")
 
     @jndi_security_credentials_secret_id.setter
-    def jndi_security_credentials_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_credentials_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_credentials_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityPrincipal")
-    def jndi_security_principal(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def jndi_security_principal(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         """
         return pulumi.get(self, "jndi_security_principal")
 
     @jndi_security_principal.setter
-    def jndi_security_principal(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def jndi_security_principal(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "jndi_security_principal", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
     @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
-    def key_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store")
 
     @key_store.setter
-    def key_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
     @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
-    def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
-    def key_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePasswordSecretId")
-    def key_store_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
         """
         return pulumi.get(self, "key_store_password_secret_id")
 
     @key_store_password_secret_id.setter
-    def key_store_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreSecretId")
-    def key_store_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         """
         return pulumi.get(self, "key_store_secret_id")
 
     @key_store_secret_id.setter
-    def key_store_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port of an endpoint usually specified for a connection.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
     @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
-    def private_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_file")
 
     @private_key_file.setter
-    def private_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFileSecretId")
-    def private_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         """
         return pulumi.get(self, "private_key_file_secret_id")
 
     @private_key_file_secret_id.setter
-    def private_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
     @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
-    def private_key_passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "private_key_passphrase")
 
     @private_key_passphrase.setter
-    def private_key_passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphraseSecretId")
-    def private_key_passphrase_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_passphrase_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         """
         return pulumi.get(self, "private_key_passphrase_secret_id")
 
     @private_key_passphrase_secret_id.setter
-    def private_key_passphrase_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_passphrase_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_passphrase_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="producerProperties")
-    def producer_properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def producer_properties(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the producer.properties file.
         """
         return pulumi.get(self, "producer_properties")
 
     @producer_properties.setter
-    def producer_properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def producer_properties(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "producer_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyFingerprint")
-    def public_key_fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         """
         return pulumi.get(self, "public_key_fingerprint")
 
     @public_key_fingerprint.setter
-    def public_key_fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="redisClusterId")
-    def redis_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         """
         return pulumi.get(self, "redis_cluster_id")
 
     @redis_cluster_id.setter
-    def redis_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="routingMethod")
-    def routing_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         """
         return pulumi.get(self, "routing_method")
 
     @routing_method.setter
-    def routing_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_method", value)
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
     @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
-    def sas_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sas_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "sas_token")
 
     @sas_token.setter
-    def sas_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sas_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sas_token", value)
 
     @_builtins.property
     @pulumi.getter(name="sasTokenSecretId")
-    def sas_token_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sas_token_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         """
         return pulumi.get(self, "sas_token_secret_id")
 
     @sas_token_secret_id.setter
-    def sas_token_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sas_token_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sas_token_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
     @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
-    def secret_access_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
     @secret_access_key_secret_id.setter
-    def secret_access_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "security_protocol")
 
     @security_protocol.setter
-    def security_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def servers(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def servers(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         """
         return pulumi.get(self, "servers")
 
     @servers.setter
-    def servers(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def servers(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "servers", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
     @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
-    def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
     @service_account_key_file.setter
-    def service_account_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
-    def service_account_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         """
         return pulumi.get(self, "service_account_key_file_secret_id")
 
     @service_account_key_file_secret_id.setter
-    def service_account_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
 
@@ -3376,73 +3376,73 @@ class _ConnectionState:
         return pulumi.get(self, "session_mode")
 
     @session_mode.setter
-    def session_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldUseJndi")
-    def should_use_jndi(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_use_jndi(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         """
         return pulumi.get(self, "should_use_jndi")
 
     @should_use_jndi.setter
-    def should_use_jndi(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_use_jndi(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_use_jndi", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldUseResourcePrincipal")
-    def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_use_resource_principal(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
     @should_use_resource_principal.setter
-    def should_use_resource_principal(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_use_resource_principal(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_use_resource_principal", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldValidateServerCertificate")
-    def should_validate_server_certificate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_validate_server_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         """
         return pulumi.get(self, "should_validate_server_certificate")
 
     @should_validate_server_certificate.setter
-    def should_validate_server_certificate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_validate_server_certificate(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_validate_server_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_ca")
 
     @ssl_ca.setter
-    def ssl_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_cert")
 
     @ssl_cert.setter
-    def ssl_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
     @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
-    def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -3451,12 +3451,12 @@ class _ConnectionState:
         return pulumi.get(self, "ssl_client_keystash")
 
     @ssl_client_keystash.setter
-    def ssl_client_keystash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystash", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystashSecretId")
-    def ssl_client_keystash_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystash_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -3465,13 +3465,13 @@ class _ConnectionState:
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
     @ssl_client_keystash_secret_id.setter
-    def ssl_client_keystash_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystash_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystash_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
     @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
-    def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystoredb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -3480,12 +3480,12 @@ class _ConnectionState:
         return pulumi.get(self, "ssl_client_keystoredb")
 
     @ssl_client_keystoredb.setter
-    def ssl_client_keystoredb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystoredb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystoredb", value)
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredbSecretId")
-    def ssl_client_keystoredb_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_client_keystoredb_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 
@@ -3494,62 +3494,62 @@ class _ConnectionState:
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
     @ssl_client_keystoredb_secret_id.setter
-    def ssl_client_keystoredb_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_client_keystoredb_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_client_keystoredb_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_crl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_crl")
 
     @ssl_crl.setter
-    def ssl_crl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_crl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_crl", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
     @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
-    def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key")
 
     @ssl_key.setter
-    def ssl_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
     @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
-    def ssl_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_key_password")
 
     @ssl_key_password.setter
-    def ssl_key_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPasswordSecretId")
-    def ssl_key_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         """
         return pulumi.get(self, "ssl_key_password_secret_id")
 
     @ssl_key_password_secret_id.setter
-    def ssl_key_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKeySecretId")
-    def ssl_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
         * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
@@ -3557,230 +3557,230 @@ class _ConnectionState:
         return pulumi.get(self, "ssl_key_secret_id")
 
     @ssl_key_secret_id.setter
-    def ssl_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SSL modes for PostgreSQL.
         """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
-    def ssl_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="sslServerCertificate")
-    def ssl_server_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_server_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_server_certificate")
 
     @ssl_server_certificate.setter
-    def ssl_server_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_server_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_server_certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible lifecycle states for connection.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def storage(self) -> Optional[pulumi.Input['ConnectionStorageArgs']]:
+    def storage(self) -> pulumi.Input[Optional['ConnectionStorageArgs']]:
         """
         (Updatable) The information about a new storage of given type used in an Iceberg connection.
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: Optional[pulumi.Input['ConnectionStorageArgs']]):
+    def storage(self, value: pulumi.Input[Optional['ConnectionStorageArgs']]):
         pulumi.set(self, "storage", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCredentialName")
-    def storage_credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         """
         return pulumi.get(self, "storage_credential_name")
 
     @storage_credential_name.setter
-    def storage_credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         """
         return pulumi.get(self, "stream_pool_id")
 
     @stream_pool_id.setter
-    def stream_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="technologyType")
-    def technology_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Kafka (e.g. Confluent) Schema Registry technology type.
         """
         return pulumi.get(self, "technology_type")
 
     @technology_type.setter
-    def technology_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology_type", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCaFile")
-    def tls_ca_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_ca_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "tls_ca_file")
 
     @tls_ca_file.setter
-    def tls_ca_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_ca_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_ca_file", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
     @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
-    def tls_certificate_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "tls_certificate_key_file")
 
     @tls_certificate_key_file.setter
-    def tls_certificate_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
     @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
-    def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "tls_certificate_key_file_password")
 
     @tls_certificate_key_file_password.setter
-    def tls_certificate_key_file_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_password", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePasswordSecretId")
-    def tls_certificate_key_file_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         """
         return pulumi.get(self, "tls_certificate_key_file_password_secret_id")
 
     @tls_certificate_key_file_password_secret_id.setter
-    def tls_certificate_key_file_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFileSecretId")
-    def tls_certificate_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tls_certificate_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
         * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
@@ -3788,132 +3788,132 @@ class _ConnectionState:
         return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @tls_certificate_key_file_secret_id.setter
-    def tls_certificate_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tls_certificate_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tls_certificate_key_file_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="triggerRefresh")
-    def trigger_refresh(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trigger_refresh(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "trigger_refresh")
 
     @trigger_refresh.setter
-    def trigger_refresh(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trigger_refresh(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trigger_refresh", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
     @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
-    def trust_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store")
 
     @trust_store.setter
-    def trust_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
     @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
-    def trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "trust_store_password")
 
     @trust_store_password.setter
-    def trust_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStorePasswordSecretId")
-    def trust_store_password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
         """
         return pulumi.get(self, "trust_store_password_secret_id")
 
     @trust_store_password_secret_id.setter
-    def trust_store_password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStoreSecretId")
-    def trust_store_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         """
         return pulumi.get(self, "trust_store_secret_id")
 
     @trust_store_secret_id.setter
-    def trust_store_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
-    def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "wallet")
 
     @wallet.setter
-    def wallet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
 
@@ -3924,7 +3924,7 @@ class _ConnectionState:
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
@@ -3934,117 +3934,117 @@ class Connection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-                 catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 core_site_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 does_use_secret_ids: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 jndi_connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_initial_context_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_provider_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_principal: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 producer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_use_jndi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_use_resource_principal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_validate_server_certificate: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_server_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
-                 storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_refresh: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trust_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+                 authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
+                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 core_site_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_use_secret_ids: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_provider_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_principal: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 producer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_jndi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_use_resource_principal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_validate_server_certificate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+                 storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_ca_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_refresh: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -4079,7 +4079,7 @@ class Connection(pulumi.CustomResource):
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
-                "port": connection_bootstrap_servers_port,
+                "port": int(connection_bootstrap_servers_port),
             }],
             catalog={
                 "catalog_type": connection_catalog_catalog_type,
@@ -4112,7 +4112,7 @@ class Connection(pulumi.CustomResource):
             },
             deployment_id=test_deployment["id"],
             description=connection_description,
-            does_use_secret_ids=connection_does_use_secret_ids,
+            does_use_secret_ids=connection_does_use_secret_ids == "true",
             endpoint=connection_endpoint,
             fingerprint=connection_fingerprint,
             freeform_tags={
@@ -4137,7 +4137,7 @@ class Connection(pulumi.CustomResource):
             nsg_ids=connection_nsg_ids,
             password=connection_password,
             password_secret_id=test_secret["id"],
-            port=connection_port,
+            port=int(connection_port),
             private_key_file=connection_private_key_file,
             private_key_file_secret_id=test_secret["id"],
             private_key_passphrase=connection_private_key_passphrase,
@@ -4157,9 +4157,9 @@ class Connection(pulumi.CustomResource):
             service_account_key_file=connection_service_account_key_file,
             service_account_key_file_secret_id=test_secret["id"],
             session_mode=connection_session_mode,
-            should_use_jndi=connection_should_use_jndi,
-            should_use_resource_principal=connection_should_use_resource_principal,
-            should_validate_server_certificate=connection_should_validate_server_certificate,
+            should_use_jndi=connection_should_use_jndi == "true",
+            should_use_resource_principal=connection_should_use_resource_principal == "true",
+            should_validate_server_certificate=connection_should_validate_server_certificate == "true",
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
             ssl_client_keystash=connection_ssl_client_keystash,
@@ -4395,7 +4395,7 @@ class Connection(pulumi.CustomResource):
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
-                "port": connection_bootstrap_servers_port,
+                "port": int(connection_bootstrap_servers_port),
             }],
             catalog={
                 "catalog_type": connection_catalog_catalog_type,
@@ -4428,7 +4428,7 @@ class Connection(pulumi.CustomResource):
             },
             deployment_id=test_deployment["id"],
             description=connection_description,
-            does_use_secret_ids=connection_does_use_secret_ids,
+            does_use_secret_ids=connection_does_use_secret_ids == "true",
             endpoint=connection_endpoint,
             fingerprint=connection_fingerprint,
             freeform_tags={
@@ -4453,7 +4453,7 @@ class Connection(pulumi.CustomResource):
             nsg_ids=connection_nsg_ids,
             password=connection_password,
             password_secret_id=test_secret["id"],
-            port=connection_port,
+            port=int(connection_port),
             private_key_file=connection_private_key_file,
             private_key_file_secret_id=test_secret["id"],
             private_key_passphrase=connection_private_key_passphrase,
@@ -4473,9 +4473,9 @@ class Connection(pulumi.CustomResource):
             service_account_key_file=connection_service_account_key_file,
             service_account_key_file_secret_id=test_secret["id"],
             session_mode=connection_session_mode,
-            should_use_jndi=connection_should_use_jndi,
-            should_use_resource_principal=connection_should_use_resource_principal,
-            should_validate_server_certificate=connection_should_validate_server_certificate,
+            should_use_jndi=connection_should_use_jndi == "true",
+            should_use_resource_principal=connection_should_use_resource_principal == "true",
+            should_validate_server_certificate=connection_should_validate_server_certificate == "true",
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
             ssl_client_keystash=connection_ssl_client_keystash,
@@ -4553,117 +4553,117 @@ class Connection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-                 catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 core_site_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 does_use_secret_ids: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 jndi_connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_initial_context_factory: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_provider_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 jndi_security_principal: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_passphrase_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 producer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_use_jndi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_use_resource_principal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_validate_server_certificate: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystash_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_client_keystoredb_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_server_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
-                 storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_certificate_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_refresh: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trust_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+                 authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
+                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 core_site_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_use_secret_ids: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_provider_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 jndi_security_principal: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_passphrase_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 producer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 sas_token_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_jndi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_use_resource_principal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_validate_server_certificate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystash_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_client_keystoredb_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+                 storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_ca_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_certificate_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_refresh: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -4811,124 +4811,124 @@ class Connection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            account_key: Optional[pulumi.Input[_builtins.str]] = None,
-            account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            account_name: Optional[pulumi.Input[_builtins.str]] = None,
-            additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-            authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
-            azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-            catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
-            client_id: Optional[pulumi.Input[_builtins.str]] = None,
-            client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_url: Optional[pulumi.Input[_builtins.str]] = None,
-            consumer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-            core_site_xml: Optional[pulumi.Input[_builtins.str]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            does_use_secret_ids: Optional[pulumi.Input[_builtins.bool]] = None,
-            endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            jndi_connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
-            jndi_initial_context_factory: Optional[pulumi.Input[_builtins.str]] = None,
-            jndi_provider_url: Optional[pulumi.Input[_builtins.str]] = None,
-            jndi_security_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-            jndi_security_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            jndi_security_principal: Optional[pulumi.Input[_builtins.str]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key_passphrase_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            producer_properties: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_method: Optional[pulumi.Input[_builtins.str]] = None,
-            sas_token: Optional[pulumi.Input[_builtins.str]] = None,
-            sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            servers: Optional[pulumi.Input[_builtins.str]] = None,
-            service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-            service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            session_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            should_use_jndi: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_use_resource_principal: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_validate_server_certificate: Optional[pulumi.Input[_builtins.bool]] = None,
-            ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_client_keystash: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_client_keystash_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_client_keystoredb: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_client_keystoredb_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_key_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_server_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage: Optional[pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
-            storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_certificate_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_certificate_key_file_password: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_certificate_key_file_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_certificate_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            trigger_refresh: Optional[pulumi.Input[_builtins.bool]] = None,
-            trust_store: Optional[pulumi.Input[_builtins.str]] = None,
-            trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-            trust_store_password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            trust_store_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            user_id: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            wallet: Optional[pulumi.Input[_builtins.str]] = None,
-            wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Connection':
+            access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            account_key: pulumi.Input[Optional[_builtins.str]] = None,
+            account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            account_name: pulumi.Input[Optional[_builtins.str]] = None,
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+            authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
+            catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+            client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_url: pulumi.Input[Optional[_builtins.str]] = None,
+            consumer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+            core_site_xml: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            does_use_secret_ids: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
+            jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
+            jndi_provider_url: pulumi.Input[Optional[_builtins.str]] = None,
+            jndi_security_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+            jndi_security_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            jndi_security_principal: pulumi.Input[Optional[_builtins.str]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key_passphrase_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            producer_properties: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_method: pulumi.Input[Optional[_builtins.str]] = None,
+            sas_token: pulumi.Input[Optional[_builtins.str]] = None,
+            sas_token_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            servers: pulumi.Input[Optional[_builtins.str]] = None,
+            service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+            service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            should_use_jndi: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_use_resource_principal: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_validate_server_certificate: pulumi.Input[Optional[_builtins.bool]] = None,
+            ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_client_keystash: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_client_keystash_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_client_keystoredb: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_client_keystoredb_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+            storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_ca_file: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_certificate_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_certificate_key_file_password: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_certificate_key_file_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_certificate_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger_refresh: pulumi.Input[Optional[_builtins.bool]] = None,
+            trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            wallet: pulumi.Input[Optional[_builtins.str]] = None,
+            wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connection':
         """
         Get an existing Connection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

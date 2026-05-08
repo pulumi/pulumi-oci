@@ -186,7 +186,7 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configuration = oci.BigDataService.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configuration = oci.bigdataservice.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
         resource_principal_configuration_id=test_configuration["id"])
     ```
 
@@ -213,8 +213,8 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
         time_token_expiry=pulumi.get(__ret__, 'time_token_expiry'),
         time_token_refreshed=pulumi.get(__ret__, 'time_token_refreshed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                             resource_principal_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_resource_principal_configuration_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                             resource_principal_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceResourcePrincipalConfigurationResult]:
     """
     This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -227,7 +227,7 @@ def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configuration = oci.BigDataService.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configuration = oci.bigdataservice.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
         resource_principal_configuration_id=test_configuration["id"])
     ```
 

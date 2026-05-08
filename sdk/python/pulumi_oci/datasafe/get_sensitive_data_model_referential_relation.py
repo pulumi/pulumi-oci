@@ -160,8 +160,8 @@ def get_sensitive_data_model_referential_relation(key: Optional[_builtins.str] =
         relation_type=pulumi.get(__ret__, 'relation_type'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_sensitive_data_model_referential_relation_output(key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_data_model_referential_relation_output(key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelReferentialRelationResult]:
     """
     This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.

@@ -107,7 +107,7 @@ export interface IotIotDomainGroupConfigureDataAccessState {
     /**
      * This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
      */
-    dbAllowListedVcnIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dbAllowListedVcnIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
      *
@@ -115,7 +115,7 @@ export interface IotIotDomainGroupConfigureDataAccessState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    iotDomainGroupId?: pulumi.Input<string>;
+    iotDomainGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**

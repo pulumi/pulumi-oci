@@ -221,15 +221,15 @@ class AdhocQueryAdhocQueryDetailsArgs:
 
 
 class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict(TypedDict):
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Region in which adhoc query needs to be run
     """
-    resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    resource_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of OCIDs on which query needs to be run
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of resource
     """
@@ -237,9 +237,9 @@ class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict(TypedDict):
 @pulumi.input_type
 class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs:
     def __init__(__self__, *,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] region: Region in which adhoc query needs to be run
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_ids: List of OCIDs on which query needs to be run
@@ -254,67 +254,67 @@ class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region in which adhoc query needs to be run
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceIds")
-    def resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def resource_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of OCIDs on which query needs to be run
         """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
-    def resource_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def resource_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of resource
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
 
 class AdhocQueryAdhocQueryRegionalDetailArgsDict(TypedDict):
-    expected_count: NotRequired[pulumi.Input[_builtins.str]]
+    expected_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Expected number of instances on which query should run
     """
-    expired_count: NotRequired[pulumi.Input[_builtins.str]]
+    expired_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Number of instances on which query expired
     """
-    failed_count: NotRequired[pulumi.Input[_builtins.str]]
+    failed_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Number of instances on which query failed
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Region name
     """
-    regional_error: NotRequired[pulumi.Input[_builtins.str]]
+    regional_error: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     error message to show if adhoc query fails in a region
     """
-    regional_status: NotRequired[pulumi.Input[_builtins.str]]
+    regional_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     adhoc query status of the region
     """
-    succeeded_count: NotRequired[pulumi.Input[_builtins.str]]
+    succeeded_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Number of instances on which query succeeded
     """
@@ -322,13 +322,13 @@ class AdhocQueryAdhocQueryRegionalDetailArgsDict(TypedDict):
 @pulumi.input_type
 class AdhocQueryAdhocQueryRegionalDetailArgs:
     def __init__(__self__, *,
-                 expected_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 expired_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 regional_error: Optional[pulumi.Input[_builtins.str]] = None,
-                 regional_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 succeeded_count: Optional[pulumi.Input[_builtins.str]] = None):
+                 expected_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 expired_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 regional_error: pulumi.Input[Optional[_builtins.str]] = None,
+                 regional_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 succeeded_count: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] expected_count: Expected number of instances on which query should run
         :param pulumi.Input[_builtins.str] expired_count: Number of instances on which query expired
@@ -355,86 +355,86 @@ class AdhocQueryAdhocQueryRegionalDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="expectedCount")
-    def expected_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expected_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Expected number of instances on which query should run
         """
         return pulumi.get(self, "expected_count")
 
     @expected_count.setter
-    def expected_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expected_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expected_count", value)
 
     @_builtins.property
     @pulumi.getter(name="expiredCount")
-    def expired_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expired_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of instances on which query expired
         """
         return pulumi.get(self, "expired_count")
 
     @expired_count.setter
-    def expired_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expired_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expired_count", value)
 
     @_builtins.property
     @pulumi.getter(name="failedCount")
-    def failed_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failed_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of instances on which query failed
         """
         return pulumi.get(self, "failed_count")
 
     @failed_count.setter
-    def failed_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failed_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failed_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region name
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="regionalError")
-    def regional_error(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regional_error(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         error message to show if adhoc query fails in a region
         """
         return pulumi.get(self, "regional_error")
 
     @regional_error.setter
-    def regional_error(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regional_error(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regional_error", value)
 
     @_builtins.property
     @pulumi.getter(name="regionalStatus")
-    def regional_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regional_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         adhoc query status of the region
         """
         return pulumi.get(self, "regional_status")
 
     @regional_status.setter
-    def regional_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regional_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regional_status", value)
 
     @_builtins.property
     @pulumi.getter(name="succeededCount")
-    def succeeded_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def succeeded_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of instances on which query succeeded
         """
         return pulumi.get(self, "succeeded_count")
 
     @succeeded_count.setter
-    def succeeded_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def succeeded_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "succeeded_count", value)
 
 
@@ -443,51 +443,51 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of data source feed provider (LoggingQuery)
     """
-    additional_entities_count: NotRequired[pulumi.Input[_builtins.int]]
+    additional_entities_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The additional entities count used for data source query
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Description text for the query
     """
-    interval_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    interval_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Interval in minutes that query is run periodically.
     """
-    interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    interval_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Interval in seconds which query is run periodically.
     """
-    logging_query_details: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict']]
+    logging_query_details: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]]
     """
     (Updatable) Details for a logging query for a data source.
     """
-    logging_query_type: NotRequired[pulumi.Input[_builtins.str]]
+    logging_query_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of logging query for data source (Sighting/Insight)
     """
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) DEPRECATED - Operator used in data source
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The continuous query expression that is run periodically.
     """
-    query_start_time: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict']]
+    query_start_time: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]]
     """
     (Updatable) DEPRECATED - Start policy for continuous query
     """
-    regions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    regions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of logging query regions
     """
-    scheduled_query_scope_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict']]]]
+    scheduled_query_scope_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]]
     """
     (Updatable) Target information in which scheduled query will be run
     """
-    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
     """
@@ -496,18 +496,18 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
 class CloudGuardDataSourceDataSourceDetailsArgs:
     def __init__(__self__, *,
                  data_source_feed_provider: pulumi.Input[_builtins.str],
-                 additional_entities_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 logging_query_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']] = None,
-                 logging_query_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_start_time: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']] = None,
-                 regions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scheduled_query_scope_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]] = None,
-                 threshold: Optional[pulumi.Input[_builtins.int]] = None):
+                 additional_entities_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 logging_query_details: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']] = None,
+                 logging_query_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_start_time: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']] = None,
+                 regions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scheduled_query_scope_details: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] data_source_feed_provider: (Updatable) Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[_builtins.int] additional_entities_count: (Updatable) The additional entities count used for data source query
@@ -563,146 +563,146 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalEntitiesCount")
-    def additional_entities_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def additional_entities_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The additional entities count used for data source query
         """
         return pulumi.get(self, "additional_entities_count")
 
     @additional_entities_count.setter
-    def additional_entities_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def additional_entities_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "additional_entities_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description text for the query
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="intervalInMinutes")
-    def interval_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Interval in minutes that query is run periodically.
         """
         return pulumi.get(self, "interval_in_minutes")
 
     @interval_in_minutes.setter
-    def interval_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Interval in seconds which query is run periodically.
         """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
-    def interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingQueryDetails")
-    def logging_query_details(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]:
+    def logging_query_details(self) -> pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]:
         """
         (Updatable) Details for a logging query for a data source.
         """
         return pulumi.get(self, "logging_query_details")
 
     @logging_query_details.setter
-    def logging_query_details(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]):
+    def logging_query_details(self, value: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]):
         pulumi.set(self, "logging_query_details", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingQueryType")
-    def logging_query_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logging_query_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of logging query for data source (Sighting/Insight)
         """
         return pulumi.get(self, "logging_query_type")
 
     @logging_query_type.setter
-    def logging_query_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logging_query_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logging_query_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) DEPRECATED - Operator used in data source
         """
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The continuous query expression that is run periodically.
         """
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter(name="queryStartTime")
-    def query_start_time(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]:
+    def query_start_time(self) -> pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]:
         """
         (Updatable) DEPRECATED - Start policy for continuous query
         """
         return pulumi.get(self, "query_start_time")
 
     @query_start_time.setter
-    def query_start_time(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]):
+    def query_start_time(self, value: pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]):
         pulumi.set(self, "query_start_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def regions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def regions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of logging query regions
         """
         return pulumi.get(self, "regions")
 
     @regions.setter
-    def regions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def regions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "regions", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryScopeDetails")
-    def scheduled_query_scope_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]:
+    def scheduled_query_scope_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]:
         """
         (Updatable) Target information in which scheduled query will be run
         """
         return pulumi.get(self, "scheduled_query_scope_details")
 
     @scheduled_query_scope_details.setter
-    def scheduled_query_scope_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]):
+    def scheduled_query_scope_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]):
         pulumi.set(self, "scheduled_query_scope_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
-    def threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threshold", value)
 
 
@@ -711,7 +711,7 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict(TypedDict
     """
     (Updatable) Logging query type for data source
     """
-    key_entities_count: NotRequired[pulumi.Input[_builtins.int]]
+    key_entities_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The key entities count used for data source query
     """
@@ -720,7 +720,7 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict(TypedDict
 class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
     def __init__(__self__, *,
                  logging_query_type: pulumi.Input[_builtins.str],
-                 key_entities_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 key_entities_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] logging_query_type: (Updatable) Logging query type for data source
         :param pulumi.Input[_builtins.int] key_entities_count: (Updatable) The key entities count used for data source query
@@ -743,14 +743,14 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyEntitiesCount")
-    def key_entities_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_entities_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The key entities count used for data source query
         """
         return pulumi.get(self, "key_entities_count")
 
     @key_entities_count.setter
-    def key_entities_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_entities_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_entities_count", value)
 
 
@@ -759,7 +759,7 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict(TypedDict):
     """
     (Updatable) Start policy delay timing
     """
-    query_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    query_start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Time when the query can start. If not specified it can start immediately
     """
@@ -768,7 +768,7 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict(TypedDict):
 class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
     def __init__(__self__, *,
                  start_policy_type: pulumi.Input[_builtins.str],
-                 query_start_time: Optional[pulumi.Input[_builtins.str]] = None):
+                 query_start_time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] start_policy_type: (Updatable) Start policy delay timing
         :param pulumi.Input[_builtins.str] query_start_time: (Updatable) Time when the query can start. If not specified it can start immediately
@@ -791,27 +791,27 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
 
     @_builtins.property
     @pulumi.getter(name="queryStartTime")
-    def query_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Time when the query can start. If not specified it can start immediately
         """
         return pulumi.get(self, "query_start_time")
 
     @query_start_time.setter
-    def query_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_start_time", value)
 
 
 class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict(TypedDict):
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) region on which scheduled query needs to be run
     """
-    resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    resource_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of OCIDs on scheduled query needs to run
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of resource
     """
@@ -819,9 +819,9 @@ class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict(Typ
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs:
     def __init__(__self__, *,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] region: (Updatable) region on which scheduled query needs to be run
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_ids: (Updatable) List of OCIDs on scheduled query needs to run
@@ -836,47 +836,47 @@ class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) region on which scheduled query needs to be run
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceIds")
-    def resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def resource_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of OCIDs on scheduled query needs to run
         """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
-    def resource_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def resource_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of resource
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
 
 class CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict(TypedDict):
-    detector_recipe_id: NotRequired[pulumi.Input[_builtins.str]]
+    detector_recipe_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the detector recipe attached to the data source
     """
-    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    detector_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the detector rule attached to the data source
     """
@@ -884,8 +884,8 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict(TypedDict):
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
     def __init__(__self__, *,
-                 detector_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector_rule_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 detector_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector_rule_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] detector_recipe_id: ID of the detector recipe attached to the data source
         :param pulumi.Input[_builtins.str] detector_rule_id: ID of the detector rule attached to the data source
@@ -897,35 +897,35 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="detectorRecipeId")
-    def detector_recipe_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector_recipe_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the detector recipe attached to the data source
         """
         return pulumi.get(self, "detector_recipe_id")
 
     @detector_recipe_id.setter
-    def detector_recipe_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector_recipe_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector_recipe_id", value)
 
     @_builtins.property
     @pulumi.getter(name="detectorRuleId")
-    def detector_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the detector rule attached to the data source
         """
         return pulumi.get(self, "detector_rule_id")
 
     @detector_rule_id.setter
-    def detector_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector_rule_id", value)
 
 
 class CloudGuardDataSourceRegionStatusDetailArgsDict(TypedDict):
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data source replication region
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Enablement status of data source.
 
@@ -937,8 +937,8 @@ class CloudGuardDataSourceRegionStatusDetailArgsDict(TypedDict):
 @pulumi.input_type
 class CloudGuardDataSourceRegionStatusDetailArgs:
     def __init__(__self__, *,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] region: Data source replication region
         :param pulumi.Input[_builtins.str] status: (Updatable) Enablement status of data source.
@@ -954,19 +954,19 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data source replication region
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enablement status of data source.
 
@@ -977,7 +977,7 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -986,7 +986,7 @@ class DataMaskRuleTargetSelectedArgsDict(TypedDict):
     """
     (Updatable) Kind of target selection to be used
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Types of targets
 
@@ -999,7 +999,7 @@ class DataMaskRuleTargetSelectedArgsDict(TypedDict):
 class DataMaskRuleTargetSelectedArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[_builtins.str],
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) Kind of target selection to be used
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Types of targets
@@ -1026,7 +1026,7 @@ class DataMaskRuleTargetSelectedArgs:
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Types of targets
 
@@ -1037,7 +1037,7 @@ class DataMaskRuleTargetSelectedArgs:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -1050,71 +1050,71 @@ class DetectorRecipeDetectorRuleArgsDict(TypedDict):
     """
     (Updatable) Detector recipe rule ID
     """
-    candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict']]]]
+    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]]
     """
     List of responder rules that can be used to remediate this detector rule
     """
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe description.
 
     Avoid entering confidential information.
     """
-    detector: NotRequired[pulumi.Input[_builtins.str]]
+    detector: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector for the rule
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]]
     """
     Data source entities mapping for the detector rule
     """
-    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cloneable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is the rule cloneable?
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    managed_list_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of managed list types related to this rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommendation for DetectorRecipeDetectorRule resource
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Resource type of the configuration to which the rule is applied
     """
-    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]]
     """
     Detector rule type
     """
-    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    service_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Service type of the configuration to which the rule is applied
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the resource
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the detector recipe was created Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the detector recipe was last updated Format defined by RFC3339.
     """
@@ -1124,22 +1124,22 @@ class DetectorRecipeDetectorRuleArgs:
     def __init__(__self__, *,
                  details: pulumi.Input['DetectorRecipeDetectorRuleDetailsArgs'],
                  detector_rule_id: pulumi.Input[_builtins.str],
-                 candidate_responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]] = None,
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
-                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
-                 service_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 candidate_responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]] = None,
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_types: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
+                 service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['DetectorRecipeDetectorRuleDetailsArgs'] details: (Updatable) Parameters to be updated for a detector rule within a detector recipe.
         :param pulumi.Input[_builtins.str] detector_rule_id: (Updatable) Detector recipe rule ID
@@ -1225,31 +1225,31 @@ class DetectorRecipeDetectorRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="candidateResponderRules")
-    def candidate_responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]:
+    def candidate_responder_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]:
         """
         List of responder rules that can be used to remediate this detector rule
         """
         return pulumi.get(self, "candidate_responder_rules")
 
     @candidate_responder_rules.setter
-    def candidate_responder_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]):
+    def candidate_responder_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]):
         pulumi.set(self, "candidate_responder_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe description.
 
@@ -1258,24 +1258,24 @@ class DetectorRecipeDetectorRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def detector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector for the rule
         """
         return pulumi.get(self, "detector")
 
     @detector.setter
-    def detector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -1284,154 +1284,154 @@ class DetectorRecipeDetectorRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
         """
         Data source entities mapping for the detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloneable")
-    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloneable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is the rule cloneable?
         """
         return pulumi.get(self, "is_cloneable")
 
     @is_cloneable.setter
-    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloneable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloneable", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListTypes")
-    def managed_list_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_list_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed list types related to this rule
         """
         return pulumi.get(self, "managed_list_types")
 
     @managed_list_types.setter
-    def managed_list_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_list_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_list_types", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommendation for DetectorRecipeDetectorRule resource
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTypes")
-    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]:
+    def rule_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]:
         """
         Detector rule type
         """
         return pulumi.get(self, "rule_types")
 
     @rule_types.setter
-    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]):
+    def rule_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]):
         pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
-    def service_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "service_type")
 
     @service_type.setter
-    def service_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the resource
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the detector recipe was created Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the detector recipe was last updated Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID for detector recipe
     """
-    is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
+    is_preferred: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is this the preferred state?
     """
@@ -1439,9 +1439,9 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_preferred: Optional[pulumi.Input[_builtins.bool]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_preferred: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
@@ -1458,7 +1458,7 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -1467,31 +1467,31 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID for detector recipe
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isPreferred")
-    def is_preferred(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preferred(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is this the preferred state?
         """
         return pulumi.get(self, "is_preferred")
 
     @is_preferred.setter
-    def is_preferred(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preferred(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preferred", value)
 
 
@@ -1504,35 +1504,35 @@ class DetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
     """
     (Updatable) The risk level of the detector rule
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]]
     """
     (Updatable) List of detector rule configurations
     """
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique identifier of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Description for the detector rule
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]]
     """
     (Updatable) Data source entities mapping for a detector rule
     """
-    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_configuration_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Can the rule be configured?
     """
-    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) User-defined labels for a detector rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Recommendation for the detector rule
     """
@@ -1542,14 +1542,14 @@ class DetectorRecipeDetectorRuleDetailsArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
                  risk_level: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]] = None,
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]] = None,
-                 is_configuration_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]] = None,
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]] = None,
+                 is_configuration_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enablement status of the detector rule
         :param pulumi.Input[_builtins.str] risk_level: (Updatable) The risk level of the detector rule
@@ -1607,98 +1607,98 @@ class DetectorRecipeDetectorRuleDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]:
         """
         (Updatable) List of detector rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for the detector rule
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]:
         """
         (Updatable) Data source entities mapping for a detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isConfigurationAllowed")
-    def is_configuration_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_configuration_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Can the rule be configured?
         """
         return pulumi.get(self, "is_configuration_allowed")
 
     @is_configuration_allowed.setter
-    def is_configuration_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_configuration_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_configuration_allowed", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) User-defined labels for a detector rule
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Recommendation for the detector rule
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
 
@@ -1711,27 +1711,27 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
     """
     (Updatable) Configuration name
     """
-    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]]
     """
     (Updatable) Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]]
     """
     (Updatable) Map of possible values for configuration
     """
-    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_values_data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Map property Value data type
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Configuration data type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Configuration value
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]]
     """
     (Updatable) List of configuration values
     """
@@ -1741,12 +1741,12 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
     def __init__(__self__, *,
                  config_key: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
-                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
-                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
-                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
+                 additional_properties: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] config_key: (Updatable) Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] name: (Updatable) Configuration name
@@ -1798,87 +1798,87 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
+    def additional_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
         """
         (Updatable) Map of additional property values for configuration
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
+    def additional_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
         pulumi.set(self, "additional_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
+    def allowed_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
         """
         (Updatable) Map of possible values for configuration
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
+    def allowed_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValuesDataType")
-    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_values_data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Map property Value data type
         """
         return pulumi.get(self, "allowed_values_data_type")
 
     @allowed_values_data_type.setter
-    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_values_data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Configuration data type
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]:
         """
         (Updatable) List of configuration values
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
 
 
 class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name for Additional Property, for example, "interpreter", "router"
     """
-    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    property_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Property Type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Value for Property Name, for example, "generic", "cloudguard"
     """
@@ -1886,9 +1886,9 @@ class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(T
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) Name for Additional Property, for example, "interpreter", "router"
         :param pulumi.Input[_builtins.str] property_type: (Updatable) Property Type
@@ -1903,38 +1903,38 @@ class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name for Additional Property, for example, "interpreter", "router"
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyType")
-    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Property Type
         """
         return pulumi.get(self, "property_type")
 
     @property_type.setter
-    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value for Property Name, for example, "generic", "cloudguard"
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -2056,11 +2056,11 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict(TypedDict):
     """
     (Updatable) The entity value mapped to a data source query
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name of the entity
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of entity
     """
@@ -2069,8 +2069,8 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict(TypedDict):
 class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
     def __init__(__self__, *,
                  query_field: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] query_field: (Updatable) The entity value mapped to a data source query
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the entity
@@ -2096,41 +2096,41 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name of the entity
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
 
 class DetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of entity
     """
-    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    query_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity value mapped to a data source query
     """
@@ -2138,9 +2138,9 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeDetectorRuleEntitiesMappingArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
@@ -2157,7 +2157,7 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -2166,40 +2166,40 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryField")
-    def query_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
 
     @query_field.setter
-    def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field", value)
 
 
 class DetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Detector rule type value
     """
@@ -2207,8 +2207,8 @@ class DetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeDetectorRuleRuleTypeArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Detector rule type value
@@ -2220,103 +2220,103 @@ class DetectorRecipeDetectorRuleRuleTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
-    candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict']]]]
+    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]]
     """
     List of responder rules that can be used to remediate this detector rule
     """
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe description.
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]]
     """
     Detailed information for a detector.
     """
-    detector: NotRequired[pulumi.Input[_builtins.str]]
+    detector: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector for the rule
     """
-    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    detector_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]]
     """
     Data source entities mapping for the detector rule
     """
-    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cloneable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is the rule cloneable?
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    managed_list_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of managed list types related to this rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommendation for DetectorRecipeDetectorRule resource
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Resource type of the configuration to which the rule is applied
     """
-    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]]
     """
     Detector rule type
     """
-    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    service_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Service type of the configuration to which the rule is applied
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the resource
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the detector recipe was created Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the detector recipe was last updated Format defined by RFC3339.
     """
@@ -2324,24 +2324,24 @@ class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleArgs:
     def __init__(__self__, *,
-                 candidate_responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]] = None,
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
-                 detector: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
-                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
-                 service_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 candidate_responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]] = None,
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
+                 detector: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_types: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
+                 service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]] candidate_responder_rules: List of responder rules that can be used to remediate this detector rule
         :param pulumi.Input[_builtins.str] data_source_id: The ID of the attached data source
@@ -2405,31 +2405,31 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="candidateResponderRules")
-    def candidate_responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]:
+    def candidate_responder_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]:
         """
         List of responder rules that can be used to remediate this detector rule
         """
         return pulumi.get(self, "candidate_responder_rules")
 
     @candidate_responder_rules.setter
-    def candidate_responder_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]):
+    def candidate_responder_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]):
         pulumi.set(self, "candidate_responder_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe description.
 
@@ -2438,48 +2438,48 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]:
+    def details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]:
         """
         Detailed information for a detector.
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]):
+    def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter
-    def detector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector for the rule
         """
         return pulumi.get(self, "detector")
 
     @detector.setter
-    def detector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector", value)
 
     @_builtins.property
     @pulumi.getter(name="detectorRuleId")
-    def detector_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule.
         """
         return pulumi.get(self, "detector_rule_id")
 
     @detector_rule_id.setter
-    def detector_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -2488,154 +2488,154 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
         """
         Data source entities mapping for the detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloneable")
-    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloneable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is the rule cloneable?
         """
         return pulumi.get(self, "is_cloneable")
 
     @is_cloneable.setter
-    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloneable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloneable", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListTypes")
-    def managed_list_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_list_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed list types related to this rule
         """
         return pulumi.get(self, "managed_list_types")
 
     @managed_list_types.setter
-    def managed_list_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_list_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_list_types", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommendation for DetectorRecipeDetectorRule resource
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTypes")
-    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
+    def rule_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
         """
         Detector rule type
         """
         return pulumi.get(self, "rule_types")
 
     @rule_types.setter
-    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
+    def rule_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
         pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
-    def service_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "service_type")
 
     @service_type.setter
-    def service_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the resource
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the detector recipe was created Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the detector recipe was last updated Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID for detector recipe
     """
-    is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
+    is_preferred: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is this the preferred state?
     """
@@ -2643,9 +2643,9 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict(TypedDic
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_preferred: Optional[pulumi.Input[_builtins.bool]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_preferred: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
@@ -2662,7 +2662,7 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -2671,74 +2671,74 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID for detector recipe
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isPreferred")
-    def is_preferred(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preferred(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is this the preferred state?
         """
         return pulumi.get(self, "is_preferred")
 
     @is_preferred.setter
-    def is_preferred(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preferred(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preferred", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]]
     """
     List of detector rule configurations
     """
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe description.
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]]
     """
     Data source entities mapping for the detector rule
     """
-    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_configuration_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Can the rule be configured?
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enablement status for the rule
     """
-    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     User-defined labels for a detector rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommendation for DetectorRecipeDetectorRule resource
     """
-    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    risk_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The risk level for the rule
     """
@@ -2746,16 +2746,16 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailArgs:
     def __init__(__self__, *,
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]] = None,
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]] = None,
-                 is_configuration_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None,
-                 risk_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]] = None,
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]] = None,
+                 is_configuration_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None,
+                 risk_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: The base condition resource.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]] configurations: List of detector rule configurations
@@ -2793,43 +2793,43 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]:
         """
         List of detector rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe description.
 
@@ -2838,112 +2838,112 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]:
         """
         Data source entities mapping for the detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isConfigurationAllowed")
-    def is_configuration_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_configuration_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Can the rule be configured?
         """
         return pulumi.get(self, "is_configuration_allowed")
 
     @is_configuration_allowed.setter
-    def is_configuration_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_configuration_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_configuration_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enablement status for the rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User-defined labels for a detector rule
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommendation for DetectorRecipeDetectorRule resource
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
     @_builtins.property
     @pulumi.getter(name="riskLevel")
-    def risk_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def risk_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The risk level for the rule
         """
         return pulumi.get(self, "risk_level")
 
     @risk_level.setter
-    def risk_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def risk_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "risk_level", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]]
     """
     Map of possible values for configuration
     """
-    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_values_data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Map property Value data type
     """
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration data type
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector rule type value
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]]
     """
     List of configuration values
     """
@@ -2951,14 +2951,14 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     def __init__(__self__, *,
-                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
-                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
-                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
+                 additional_properties: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
@@ -2988,111 +2988,111 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
+    def additional_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
         """
         Map of additional property values for configuration
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
+    def additional_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
         pulumi.set(self, "additional_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
+    def allowed_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
         """
         Map of possible values for configuration
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
+    def allowed_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValuesDataType")
-    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_values_data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Map property Value data type
         """
         return pulumi.get(self, "allowed_values_data_type")
 
     @allowed_values_data_type.setter
-    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_values_data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration data type
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]:
         """
         List of configuration values
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    property_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Property Type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector rule type value
     """
@@ -3100,9 +3100,9 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyAr
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] property_type: Property Type
@@ -3117,47 +3117,47 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyAr
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyType")
-    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Type
         """
         return pulumi.get(self, "property_type")
 
     @property_type.setter
-    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector rule type value
     """
@@ -3165,8 +3165,8 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] value: Detector rule type value
@@ -3178,39 +3178,39 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
-    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration list item type (CUSTOM or MANAGED)
     """
-    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    managed_list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of content in the managed list
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector rule type value
     """
@@ -3218,9 +3218,9 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedD
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
     def __init__(__self__, *,
-                 list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] list_type: Configuration list item type (CUSTOM or MANAGED)
         :param pulumi.Input[_builtins.str] managed_list_type: Type of content in the managed list
@@ -3235,53 +3235,53 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
 
     @_builtins.property
     @pulumi.getter(name="listType")
-    def list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration list item type (CUSTOM or MANAGED)
         """
         return pulumi.get(self, "list_type")
 
     @list_type.setter
-    def list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "list_type", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListType")
-    def managed_list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of content in the managed list
         """
         return pulumi.get(self, "managed_list_type")
 
     @managed_list_type.setter
-    def managed_list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_list_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of entity
     """
-    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    query_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity value mapped to a data source query
     """
@@ -3289,9 +3289,9 @@ class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict(TypedDict
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
@@ -3308,7 +3308,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -3317,46 +3317,46 @@ class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryField")
-    def query_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
 
     @query_field.setter
-    def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Detector recipe display name.
 
     Avoid entering confidential information.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of entity
     """
-    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    query_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity value mapped to a data source query
     """
@@ -3364,9 +3364,9 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
@@ -3383,7 +3383,7 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detector recipe display name.
 
@@ -3392,40 +3392,40 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryField")
-    def query_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
 
     @query_field.setter
-    def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field", value)
 
 
 class DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Detector rule type value
     """
@@ -3433,8 +3433,8 @@ class DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Detector rule type value
@@ -3446,79 +3446,79 @@ class DetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Detector rule type value
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
 class ResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Compartment OCID
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Responder recipe description.
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]]
     """
     Detailed information for a responder rule
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Responder recipe display name.
 
     Avoid entering confidential information.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of policies
     """
-    responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    responder_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier for the responder rule
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the example
     """
-    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    supported_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Supported execution modes for the responder rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the responder recipe was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the responder recipe was last updated. Format defined by RFC3339.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of responder
     """
@@ -3526,18 +3526,18 @@ class ResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 responder_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 responder_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[_builtins.str] description: (Updatable) Responder recipe description.
@@ -3583,19 +3583,19 @@ class ResponderRecipeEffectiveResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Responder recipe description.
 
@@ -3604,24 +3604,24 @@ class ResponderRecipeEffectiveResponderRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]:
+    def details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]:
         """
         Detailed information for a responder rule
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]):
+    def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Responder recipe display name.
 
@@ -3630,120 +3630,120 @@ class ResponderRecipeEffectiveResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policies
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policies", value)
 
     @_builtins.property
     @pulumi.getter(name="responderRuleId")
-    def responder_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def responder_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the responder rule
         """
         return pulumi.get(self, "responder_rule_id")
 
     @responder_rule_id.setter
-    def responder_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def responder_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "responder_rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the example
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedModes")
-    def supported_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def supported_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Supported execution modes for the responder rule
         """
         return pulumi.get(self, "supported_modes")
 
     @supported_modes.setter
-    def supported_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def supported_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the responder recipe was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the responder recipe was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of responder
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class ResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]]
     """
     List of responder rule configurations
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enabled state for the responder rule
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Execution mode for the responder rule
     """
@@ -3751,10 +3751,10 @@ class ResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleDetailArgs:
     def __init__(__self__, *,
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: The base condition resource.
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]] configurations: List of responder rule configurations
@@ -3772,63 +3772,63 @@ class ResponderRecipeEffectiveResponderRuleDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]:
         """
         List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabled state for the responder rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Execution mode for the responder rule
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
 class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -3836,9 +3836,9 @@ class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
     def __init__(__self__, *,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] name: Configuration name
@@ -3853,38 +3853,38 @@ class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -3897,47 +3897,47 @@ class ResponderRecipeResponderRuleArgsDict(TypedDict):
     """
     (Updatable) Unique identifier for the responder rule
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Compartment OCID
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Responder recipe description.
 
     Avoid entering confidential information.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Responder recipe display name.
 
     Avoid entering confidential information.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of policies
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the example
     """
-    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    supported_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Supported execution modes for the responder rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the responder recipe was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the responder recipe was last updated. Format defined by RFC3339.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of responder
     """
@@ -3947,16 +3947,16 @@ class ResponderRecipeResponderRuleArgs:
     def __init__(__self__, *,
                  details: pulumi.Input['ResponderRecipeResponderRuleDetailsArgs'],
                  responder_rule_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['ResponderRecipeResponderRuleDetailsArgs'] details: (Updatable) Parameters to be updated for a responder rule within a responder recipe.
         :param pulumi.Input[_builtins.str] responder_rule_id: (Updatable) Unique identifier for the responder rule
@@ -4024,19 +4024,19 @@ class ResponderRecipeResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Responder recipe description.
 
@@ -4045,12 +4045,12 @@ class ResponderRecipeResponderRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Responder recipe display name.
 
@@ -4059,91 +4059,91 @@ class ResponderRecipeResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policies
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the example
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedModes")
-    def supported_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def supported_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Supported execution modes for the responder rule
         """
         return pulumi.get(self, "supported_modes")
 
     @supported_modes.setter
-    def supported_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def supported_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the responder recipe was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the responder recipe was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of responder
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -4152,15 +4152,15 @@ class ResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
     """
     (Updatable) Enablement state for the responder rule
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]]
     """
     List of responder rule configurations
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Execution mode for the responder rule
     """
@@ -4169,9 +4169,9 @@ class ResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
 class ResponderRecipeResponderRuleDetailsArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enablement state for the responder rule
         :param pulumi.Input[_builtins.str] condition: The base condition resource.
@@ -4200,51 +4200,51 @@ class ResponderRecipeResponderRuleDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]:
         """
         List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Execution mode for the responder rule
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
 class ResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -4252,9 +4252,9 @@ class ResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ResponderRecipeResponderRuleDetailsConfigurationArgs:
     def __init__(__self__, *,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] name: Configuration name
@@ -4269,55 +4269,55 @@ class ResponderRecipeResponderRuleDetailsConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetailArgsDict(TypedDict):
-    security_zone_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    security_zone_display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the security zone to associate with this compartment.
     """
-    security_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    security_zone_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the security zone to associate with this compartment
     """
-    target_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    target_resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of resource that target support (COMPARTMENT/FACLOUD)
     """
-    target_security_zone_recipes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgsDict']]]]
+    target_security_zone_recipes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]]
     """
     The list of security zone recipes to associate with this compartment
     """
@@ -4325,10 +4325,10 @@ class TargetTargetDetailArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetailArgs:
     def __init__(__self__, *,
-                 security_zone_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_security_zone_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]] = None):
+                 security_zone_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_security_zone_recipes: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] security_zone_display_name: The name of the security zone to associate with this compartment.
         :param pulumi.Input[_builtins.str] security_zone_id: The OCID of the security zone to associate with this compartment
@@ -4346,109 +4346,109 @@ class TargetTargetDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="securityZoneDisplayName")
-    def security_zone_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_zone_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the security zone to associate with this compartment.
         """
         return pulumi.get(self, "security_zone_display_name")
 
     @security_zone_display_name.setter
-    def security_zone_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_zone_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_zone_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="securityZoneId")
-    def security_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the security zone to associate with this compartment
         """
         return pulumi.get(self, "security_zone_id")
 
     @security_zone_id.setter
-    def security_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_zone_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of resource that target support (COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
     @target_resource_type.setter
-    def target_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="targetSecurityZoneRecipes")
-    def target_security_zone_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]:
+    def target_security_zone_recipes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]:
         """
         The list of security zone recipes to associate with this compartment
         """
         return pulumi.get(self, "target_security_zone_recipes")
 
     @target_security_zone_recipes.setter
-    def target_security_zone_recipes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]):
+    def target_security_zone_recipes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]):
         pulumi.set(self, "target_security_zone_recipes", value)
 
 
 class TargetTargetDetailTargetSecurityZoneRecipeArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
     Avoid entering confidential information.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of target responder recipe that can't be changed after creation
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of target responder recipe
     """
-    security_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    security_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of security policy IDs that are included in the recipe
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
@@ -4456,19 +4456,19 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetailTargetSecurityZoneRecipeArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4519,31 +4519,31 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -4552,12 +4552,12 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -4566,12 +4566,12 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
@@ -4580,103 +4580,103 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of target responder recipe that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of target responder recipe
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicies")
-    def security_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of security policy IDs that are included in the recipe
         """
         return pulumi.get(self, "security_policies")
 
     @security_policies.setter
-    def security_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -4685,55 +4685,55 @@ class TargetTargetDetectorRecipeArgsDict(TypedDict):
     """
     Unique identifier for the target detector recipe
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    detector: NotRequired[pulumi.Input[_builtins.str]]
+    detector: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector type for the rule
     """
-    detector_recipe_type: NotRequired[pulumi.Input[_builtins.str]]
+    detector_recipe_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recipe type ( STANDARD, ENTERPRISE )
     """
-    detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgsDict']]]]
+    detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]]
     """
     (Updatable) List of overrides to be applied to detector rules associated with the target
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    effective_detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict']]]]
+    effective_detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]]
     """
     List of currently enabled detector rules for the detector type for recipe after applying defaults
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of target responder recipe that can't be changed after creation
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of target responder recipe
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
@@ -4742,18 +4742,18 @@ class TargetTargetDetectorRecipeArgsDict(TypedDict):
 class TargetTargetDetectorRecipeArgs:
     def __init__(__self__, *,
                  detector_recipe_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector_recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 effective_detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector_recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 effective_detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] detector_recipe_id: Unique identifier for the target detector recipe
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
@@ -4813,19 +4813,19 @@ class TargetTargetDetectorRecipeArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -4834,48 +4834,48 @@ class TargetTargetDetectorRecipeArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def detector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector type for the rule
         """
         return pulumi.get(self, "detector")
 
     @detector.setter
-    def detector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector", value)
 
     @_builtins.property
     @pulumi.getter(name="detectorRecipeType")
-    def detector_recipe_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector_recipe_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recipe type ( STANDARD, ENTERPRISE )
         """
         return pulumi.get(self, "detector_recipe_type")
 
     @detector_recipe_type.setter
-    def detector_recipe_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector_recipe_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector_recipe_type", value)
 
     @_builtins.property
     @pulumi.getter(name="detectorRules")
-    def detector_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]:
+    def detector_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]:
         """
         (Updatable) List of overrides to be applied to detector rules associated with the target
         """
         return pulumi.get(self, "detector_rules")
 
     @detector_rules.setter
-    def detector_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]):
+    def detector_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]):
         pulumi.set(self, "detector_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -4884,79 +4884,79 @@ class TargetTargetDetectorRecipeArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="effectiveDetectorRules")
-    def effective_detector_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]:
+    def effective_detector_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]:
         """
         List of currently enabled detector rules for the detector type for recipe after applying defaults
         """
         return pulumi.get(self, "effective_detector_rules")
 
     @effective_detector_rules.setter
-    def effective_detector_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]):
+    def effective_detector_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]):
         pulumi.set(self, "effective_detector_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of target responder recipe that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of target responder recipe
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -4969,67 +4969,67 @@ class TargetTargetDetectorRecipeDetectorRuleArgsDict(TypedDict):
     """
     (Updatable) Unique identifier for the detector rule
     """
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    detector: NotRequired[pulumi.Input[_builtins.str]]
+    detector: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector type for the rule
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]]
     """
     Data source entities mapping for a detector rule
     """
-    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cloneable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is the rule cloneable?
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    managed_list_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of managed list types related to this rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommendation for TargetDetectorRecipeDetectorRule resource
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
     """
-    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]]
     """
     Rule category type
     """
-    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    service_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Service type of the configuration to which the rule is applied
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
@@ -5039,21 +5039,21 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
     def __init__(__self__, *,
                  details: pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgs'],
                  detector_rule_id: pulumi.Input[_builtins.str],
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
-                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
-                 service_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_types: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
+                 service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgs'] details: (Updatable) Parameters to update detector rule configuration details in a detector recipe attached to a target.
         :param pulumi.Input[_builtins.str] detector_rule_id: (Updatable) Unique identifier for the detector rule
@@ -5136,19 +5136,19 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -5157,24 +5157,24 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def detector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector type for the rule
         """
         return pulumi.get(self, "detector")
 
     @detector.setter
-    def detector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -5183,164 +5183,164 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
         """
         Data source entities mapping for a detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloneable")
-    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloneable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is the rule cloneable?
         """
         return pulumi.get(self, "is_cloneable")
 
     @is_cloneable.setter
-    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloneable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloneable", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListTypes")
-    def managed_list_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_list_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed list types related to this rule
         """
         return pulumi.get(self, "managed_list_types")
 
     @managed_list_types.setter
-    def managed_list_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_list_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_list_types", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommendation for TargetDetectorRecipeDetectorRule resource
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTypes")
-    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]:
+    def rule_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]:
         """
         Rule category type
         """
         return pulumi.get(self, "rule_types")
 
     @rule_types.setter
-    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]):
+    def rule_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]):
         pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
-    def service_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "service_type")
 
     @service_type.setter
-    def service_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
-    condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict']]]]
+    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]]
     """
     (Updatable) Condition group corresponding to each compartment
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]]
     """
     List of responder rule configurations
     """
-    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_configuration_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Configuration allowed or not
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enabled state for the responder rule
     """
-    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     User-defined labels for a detector rule
     """
-    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    risk_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The risk level of the detector rule
     """
@@ -5348,12 +5348,12 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsArgs:
     def __init__(__self__, *,
-                 condition_groups: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]] = None,
-                 is_configuration_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 risk_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_groups: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]] = None,
+                 is_configuration_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 risk_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]] condition_groups: (Updatable) Condition group corresponding to each compartment
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]] configurations: List of responder rule configurations
@@ -5377,74 +5377,74 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="conditionGroups")
-    def condition_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]:
+    def condition_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]:
         """
         (Updatable) Condition group corresponding to each compartment
         """
         return pulumi.get(self, "condition_groups")
 
     @condition_groups.setter
-    def condition_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]):
+    def condition_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]):
         pulumi.set(self, "condition_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]:
         """
         List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="isConfigurationAllowed")
-    def is_configuration_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_configuration_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Configuration allowed or not
         """
         return pulumi.get(self, "is_configuration_allowed")
 
     @is_configuration_allowed.setter
-    def is_configuration_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_configuration_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_configuration_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabled state for the responder rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User-defined labels for a detector rule
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter(name="riskLevel")
-    def risk_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def risk_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The risk level of the detector rule
         """
         return pulumi.get(self, "risk_level")
 
     @risk_level.setter
-    def risk_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def risk_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "risk_level", value)
 
 
@@ -5496,35 +5496,35 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]]
     """
     Map of possible values for configuration
     """
-    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_values_data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Map property Value data type
     """
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration data type
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]]
     """
     List of configuration values
     """
@@ -5532,14 +5532,14 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDi
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
     def __init__(__self__, *,
-                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
-                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
-                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
+                 additional_properties: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
@@ -5569,111 +5569,111 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
+    def additional_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
         """
         Map of additional property values for configuration
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
+    def additional_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
         pulumi.set(self, "additional_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
+    def allowed_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
         """
         Map of possible values for configuration
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
+    def allowed_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValuesDataType")
-    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_values_data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Map property Value data type
         """
         return pulumi.get(self, "allowed_values_data_type")
 
     @allowed_values_data_type.setter
-    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_values_data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration data type
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]:
         """
         List of configuration values
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    property_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Property Type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -5681,9 +5681,9 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProper
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] property_type: Property Type
@@ -5698,47 +5698,47 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProper
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyType")
-    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Type
         """
         return pulumi.get(self, "property_type")
 
     @property_type.setter
-    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -5746,8 +5746,8 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] value: Configuration value
@@ -5759,39 +5759,39 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(TypedDict):
-    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration list item type (CUSTOM or MANAGED)
     """
-    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    managed_list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of content in the managed list
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -5799,9 +5799,9 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(Ty
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
     def __init__(__self__, *,
-                 list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] list_type: Configuration list item type (CUSTOM or MANAGED)
         :param pulumi.Input[_builtins.str] managed_list_type: Type of content in the managed list
@@ -5816,53 +5816,53 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
 
     @_builtins.property
     @pulumi.getter(name="listType")
-    def list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration list item type (CUSTOM or MANAGED)
         """
         return pulumi.get(self, "list_type")
 
     @list_type.setter
-    def list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "list_type", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListType")
-    def managed_list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of content in the managed list
         """
         return pulumi.get(self, "managed_list_type")
 
     @managed_list_type.setter
-    def managed_list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_list_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of entity
     """
-    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    query_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity value mapped to a data source query
     """
@@ -5870,9 +5870,9 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for the target.
                
@@ -5889,7 +5889,7 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -5898,40 +5898,40 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryField")
-    def query_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
 
     @query_field.setter
-    def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field", value)
 
 
 class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Configuration value
     """
@@ -5939,8 +5939,8 @@ class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Configuration value
@@ -5952,99 +5952,99 @@ class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Configuration value
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
-    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    data_source_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the attached data source
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]]
     """
     Detailed information for a responder rule
     """
-    detector: NotRequired[pulumi.Input[_builtins.str]]
+    detector: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Detector type for the rule
     """
-    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    detector_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]]
     """
     Data source entities mapping for a detector rule
     """
-    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cloneable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Is the rule cloneable?
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    managed_list_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of managed list types related to this rule
     """
-    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    recommendation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommendation for TargetDetectorRecipeDetectorRule resource
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
     """
-    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]]
     """
     Rule category type
     """
-    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    service_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Service type of the configuration to which the rule is applied
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
@@ -6052,23 +6052,23 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
     def __init__(__self__, *,
-                 data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
-                 detector: Optional[pulumi.Input[_builtins.str]] = None,
-                 detector_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
-                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendation: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
-                 service_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
+                 detector: pulumi.Input[Optional[_builtins.str]] = None,
+                 detector_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entities_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendation: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_types: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
+                 service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] data_source_id: The ID of the attached data source
         :param pulumi.Input[_builtins.str] description: The target description.
@@ -6129,19 +6129,19 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
-    def data_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the attached data source
         """
         return pulumi.get(self, "data_source_id")
 
     @data_source_id.setter
-    def data_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -6150,48 +6150,48 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]:
+    def details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]:
         """
         Detailed information for a responder rule
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]):
+    def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter
-    def detector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detector type for the rule
         """
         return pulumi.get(self, "detector")
 
     @detector.setter
-    def detector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector", value)
 
     @_builtins.property
     @pulumi.getter(name="detectorRuleId")
-    def detector_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detector_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule
         """
         return pulumi.get(self, "detector_rule_id")
 
     @detector_rule_id.setter
-    def detector_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detector_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detector_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -6200,164 +6200,164 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entitiesMappings")
-    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
+    def entities_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
         """
         Data source entities mapping for a detector rule
         """
         return pulumi.get(self, "entities_mappings")
 
     @entities_mappings.setter
-    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
+    def entities_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloneable")
-    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloneable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is the rule cloneable?
         """
         return pulumi.get(self, "is_cloneable")
 
     @is_cloneable.setter
-    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloneable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloneable", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListTypes")
-    def managed_list_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_list_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed list types related to this rule
         """
         return pulumi.get(self, "managed_list_types")
 
     @managed_list_types.setter
-    def managed_list_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_list_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_list_types", value)
 
     @_builtins.property
     @pulumi.getter
-    def recommendation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommendation for TargetDetectorRecipeDetectorRule resource
         """
         return pulumi.get(self, "recommendation")
 
     @recommendation.setter
-    def recommendation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTypes")
-    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
+    def rule_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
         """
         Rule category type
         """
         return pulumi.get(self, "rule_types")
 
     @rule_types.setter
-    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
+    def rule_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
         pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
-    def service_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "service_type")
 
     @service_type.setter
-    def service_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
-    condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict']]]]
+    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]]
     """
     Condition group corresponding to each compartment
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]]
     """
     List of responder rule configurations
     """
-    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_configuration_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Configuration allowed or not
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enabled state for the responder rule
     """
-    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     User-defined labels for a detector rule
     """
-    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    risk_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The risk level of the detector rule
     """
@@ -6365,12 +6365,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs:
     def __init__(__self__, *,
-                 condition_groups: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]] = None,
-                 is_configuration_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 risk_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_groups: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]] = None,
+                 is_configuration_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 risk_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]] condition_groups: Condition group corresponding to each compartment
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]] configurations: List of responder rule configurations
@@ -6394,83 +6394,83 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="conditionGroups")
-    def condition_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]:
+    def condition_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]:
         """
         Condition group corresponding to each compartment
         """
         return pulumi.get(self, "condition_groups")
 
     @condition_groups.setter
-    def condition_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]):
+    def condition_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]):
         pulumi.set(self, "condition_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]:
         """
         List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="isConfigurationAllowed")
-    def is_configuration_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_configuration_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Configuration allowed or not
         """
         return pulumi.get(self, "is_configuration_allowed")
 
     @is_configuration_allowed.setter
-    def is_configuration_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_configuration_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_configuration_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabled state for the responder rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User-defined labels for a detector rule
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter(name="riskLevel")
-    def risk_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def risk_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The risk level of the detector rule
         """
         return pulumi.get(self, "risk_level")
 
     @risk_level.setter
-    def risk_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def risk_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "risk_level", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base condition resource.
     """
@@ -6478,8 +6478,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDic
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[_builtins.str] condition: The base condition resource.
@@ -6491,59 +6491,59 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]]
     """
     Map of possible values for configuration
     """
-    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_values_data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Map property Value data type
     """
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration data type
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]]
     """
     List of configuration values
     """
@@ -6551,14 +6551,14 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     def __init__(__self__, *,
-                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
-                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
-                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
+                 additional_properties: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
@@ -6588,111 +6588,111 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
+    def additional_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
         """
         Map of additional property values for configuration
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
+    def additional_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
         pulumi.set(self, "additional_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
+    def allowed_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
         """
         Map of possible values for configuration
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
+    def allowed_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedValuesDataType")
-    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_values_data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Map property Value data type
         """
         return pulumi.get(self, "allowed_values_data_type")
 
     @allowed_values_data_type.setter
-    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_values_data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration data type
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]:
         """
         List of configuration values
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    property_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Property Type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -6700,9 +6700,9 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAddition
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] property_type: Property Type
@@ -6717,47 +6717,47 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAddition
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyType")
-    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Property Type
         """
         return pulumi.get(self, "property_type")
 
     @property_type.setter
-    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -6765,8 +6765,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedV
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[_builtins.str] value: Configuration value
@@ -6778,39 +6778,39 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedV
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
-    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration list item type (CUSTOM or MANAGED)
     """
-    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    managed_list_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of content in the managed list
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -6818,9 +6818,9 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArg
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
     def __init__(__self__, *,
-                 list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_list_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_list_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] list_type: Configuration list item type (CUSTOM or MANAGED)
         :param pulumi.Input[_builtins.str] managed_list_type: Type of content in the managed list
@@ -6835,53 +6835,53 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArg
 
     @_builtins.property
     @pulumi.getter(name="listType")
-    def list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration list item type (CUSTOM or MANAGED)
         """
         return pulumi.get(self, "list_type")
 
     @list_type.setter
-    def list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "list_type", value)
 
     @_builtins.property
     @pulumi.getter(name="managedListType")
-    def managed_list_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_list_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of content in the managed list
         """
         return pulumi.get(self, "managed_list_type")
 
     @managed_list_type.setter
-    def managed_list_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_list_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_list_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of entity
     """
-    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    query_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity value mapped to a data source query
     """
@@ -6889,9 +6889,9 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(Typ
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for the target.
                
@@ -6908,7 +6908,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -6917,40 +6917,40 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of entity
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryField")
-    def query_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
 
     @query_field.setter
-    def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field", value)
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the detector rule type
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Configuration value
     """
@@ -6958,8 +6958,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict)
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Configuration value
@@ -6971,26 +6971,26 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the detector rule type
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Configuration value
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -6999,43 +6999,43 @@ class TargetTargetResponderRecipeArgsDict(TypedDict):
     """
     Unique identifier for responder recipe
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    effective_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgsDict']]]]
+    effective_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]]
     """
     List of currently enabled responder rules for the responder type for recipe after applying defaults
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of target responder recipe that can't be changed after creation
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of target responder recipe
     """
-    responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgsDict']]]]
+    responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]]
     """
     (Updatable) List of overrides to be applied to responder rules associated with the target
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
@@ -7044,15 +7044,15 @@ class TargetTargetResponderRecipeArgsDict(TypedDict):
 class TargetTargetResponderRecipeArgs:
     def __init__(__self__, *,
                  responder_recipe_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 effective_responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 effective_responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] responder_recipe_id: Unique identifier for responder recipe
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
@@ -7103,19 +7103,19 @@ class TargetTargetResponderRecipeArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -7124,12 +7124,12 @@ class TargetTargetResponderRecipeArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -7138,132 +7138,132 @@ class TargetTargetResponderRecipeArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="effectiveResponderRules")
-    def effective_responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]:
+    def effective_responder_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]:
         """
         List of currently enabled responder rules for the responder type for recipe after applying defaults
         """
         return pulumi.get(self, "effective_responder_rules")
 
     @effective_responder_rules.setter
-    def effective_responder_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]):
+    def effective_responder_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]):
         pulumi.set(self, "effective_responder_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of target responder recipe that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of target responder recipe
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="responderRules")
-    def responder_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]:
+    def responder_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]:
         """
         (Updatable) List of overrides to be applied to responder rules associated with the target
         """
         return pulumi.get(self, "responder_rules")
 
     @responder_rules.setter
-    def responder_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]):
+    def responder_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]):
         pulumi.set(self, "responder_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class TargetTargetResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]]
     """
     Detailed information for a responder rule
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of policies
     """
-    responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    responder_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier for the responder rule
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    supported_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Supported execution modes for the responder rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of responder
     """
@@ -7271,18 +7271,18 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 responder_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 responder_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[_builtins.str] description: The target description.
@@ -7328,19 +7328,19 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -7349,24 +7349,24 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]:
+    def details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]:
         """
         Detailed information for a responder rule
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]):
+    def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -7375,120 +7375,120 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policies
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policies", value)
 
     @_builtins.property
     @pulumi.getter(name="responderRuleId")
-    def responder_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def responder_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the responder rule
         """
         return pulumi.get(self, "responder_rule_id")
 
     @responder_rule_id.setter
-    def responder_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def responder_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "responder_rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedModes")
-    def supported_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def supported_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Supported execution modes for the responder rule
         """
         return pulumi.get(self, "supported_modes")
 
     @supported_modes.setter
-    def supported_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def supported_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of responder
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]]
     """
     List of responder rule configurations
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enabled state for the responder rule
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Execution mode for the responder rule
     """
@@ -7496,10 +7496,10 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict)
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
     def __init__(__self__, *,
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: The base condition resource.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]] configurations: List of responder rule configurations
@@ -7517,63 +7517,63 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]:
         """
         List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabled state for the responder rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Execution mode for the responder rule
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier of the configuration
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Configuration value
     """
@@ -7581,9 +7581,9 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDi
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
     def __init__(__self__, *,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] name: Configuration name
@@ -7598,38 +7598,38 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the configuration
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -7646,47 +7646,47 @@ class TargetTargetResponderRecipeResponderRuleArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment OCID where the resource is created
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target description.
 
     Avoid entering confidential information.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for the target.
 
     Avoid entering confidential information.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of policies
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The enablement state of the detector rule
     """
-    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    supported_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Supported execution modes for the responder rule
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was created. Format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the target was last updated. Format defined by RFC3339.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of responder
     """
@@ -7696,16 +7696,16 @@ class TargetTargetResponderRecipeResponderRuleArgs:
     def __init__(__self__, *,
                  details: pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgs'],
                  responder_rule_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgs'] details: (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
         :param pulumi.Input[_builtins.str] responder_rule_id: (Updatable) Unique identifier for target detector recipe
@@ -7781,19 +7781,19 @@ class TargetTargetResponderRecipeResponderRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target description.
 
@@ -7802,12 +7802,12 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for the target.
 
@@ -7816,108 +7816,108 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policies
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policies", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedModes")
-    def supported_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def supported_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Supported execution modes for the responder rule
         """
         return pulumi.get(self, "supported_modes")
 
     @supported_modes.setter
-    def supported_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def supported_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was created. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of responder
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class TargetTargetResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]]
     """
     (Updatable) List of responder rule configurations
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Enabled state for the responder rule
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Execution mode for the responder rule
     """
@@ -7925,10 +7925,10 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class TargetTargetResponderRecipeResponderRuleDetailsArgs:
     def __init__(__self__, *,
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: (Updatable) The base condition resource.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]] configurations: (Updatable) List of responder rule configurations
@@ -7946,50 +7946,50 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base condition resource.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]:
         """
         (Updatable) List of responder rule configurations
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabled state for the responder rule
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Execution mode for the responder rule
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 

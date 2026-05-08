@@ -136,10 +136,10 @@ def get_resource_analytics_monitored_regions(filters: Optional[Sequence[Union['G
         monitored_region_collections=pulumi.get(__ret__, 'monitored_region_collections'),
         resource_analytics_instance_id=pulumi.get(__ret__, 'resource_analytics_instance_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_resource_analytics_monitored_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict']]]]] = None,
-                                                    id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    resource_analytics_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_analytics_monitored_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict']]]]] = None,
+                                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    resource_analytics_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAnalyticsMonitoredRegionsResult]:
     """
     This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.

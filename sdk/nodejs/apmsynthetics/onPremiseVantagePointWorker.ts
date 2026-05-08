@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     priority: onPremiseVantagePointWorkerPriority,
+ *     priority: Number(onPremiseVantagePointWorkerPriority),
  *     status: onPremiseVantagePointWorkerStatus,
  *     workerType: onPremiseVantagePointWorkerWorkerType,
  * });
@@ -252,87 +252,87 @@ export interface OnPremiseVantagePointWorkerState {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    apmDomainId?: pulumi.Input<string>;
+    apmDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration details of the On-premise VP worker.
      */
-    configurationDetails?: pulumi.Input<string>;
+    configurationDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Geographical information of the On-premise VP worker.
      */
-    geoInfo?: pulumi.Input<string>;
+    geoInfo?: pulumi.Input<string | undefined>;
     /**
      * Domain details of the On-premise VP worker.
      */
-    identityInfos?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerIdentityInfo>[]>;
+    identityInfos?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerIdentityInfo>[] | undefined>;
     /**
      * Monitors list assigned to the On-premise VP worker.
      */
-    monitorLists?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerMonitorList>[]>;
+    monitorLists?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerMonitorList>[] | undefined>;
     /**
      * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the On-premise vantage point.
      */
-    onPremiseVantagePointId?: pulumi.Input<string>;
+    onPremiseVantagePointId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
      */
-    opvpId?: pulumi.Input<string>;
+    opvpId?: pulumi.Input<string | undefined>;
     /**
      * On-premise vantage point name.
      */
-    opvpName?: pulumi.Input<string>;
+    opvpName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Priority of the On-premise VP worker to schedule monitors.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * public key for resource Principal Token based validation to be used in further calls.
      */
-    resourcePrincipalTokenPublicKey?: pulumi.Input<string>;
+    resourcePrincipalTokenPublicKey?: pulumi.Input<string | undefined>;
     /**
      * The runtime assigned id of the On-premise VP worker.
      */
-    runtimeId?: pulumi.Input<string>;
+    runtimeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Enables or disables the On-premise VP worker.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    timeLastSyncUp?: pulumi.Input<string>;
+    timeLastSyncUp?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Image version of the On-premise VP worker.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * Image version details of the On-premise VP worker.
      */
-    versionDetails?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerVersionDetail>[]>;
+    versionDetails?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.OnPremiseVantagePointWorkerVersionDetail>[] | undefined>;
     /**
      * Type of the On-premise VP worker.
      *
@@ -340,7 +340,7 @@ export interface OnPremiseVantagePointWorkerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workerType?: pulumi.Input<string>;
+    workerType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -354,19 +354,19 @@ export interface OnPremiseVantagePointWorkerArgs {
     /**
      * (Updatable) Configuration details of the On-premise VP worker.
      */
-    configurationDetails?: pulumi.Input<string>;
+    configurationDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the On-premise vantage point.
      */
@@ -374,7 +374,7 @@ export interface OnPremiseVantagePointWorkerArgs {
     /**
      * (Updatable) Priority of the On-premise VP worker to schedule monitors.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * public key for resource Principal Token based validation to be used in further calls.
      */
@@ -382,7 +382,7 @@ export interface OnPremiseVantagePointWorkerArgs {
     /**
      * (Updatable) Enables or disables the On-premise VP worker.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Image version of the On-premise VP worker.
      */
@@ -394,5 +394,5 @@ export interface OnPremiseVantagePointWorkerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workerType?: pulumi.Input<string>;
+    workerType?: pulumi.Input<string | undefined>;
 }

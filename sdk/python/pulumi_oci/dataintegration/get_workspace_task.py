@@ -430,9 +430,9 @@ def get_workspace_task(expand_references: Optional[_builtins.str] = None,
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         typed_expressions=pulumi.get(__ret__, 'typed_expressions'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_task_output(expand_references: Optional[pulumi.Input[_builtins.str]] = None,
-                              key: Optional[pulumi.Input[_builtins.str]] = None,
-                              workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_task_output(expand_references: pulumi.Input[Optional[_builtins.str]] = None,
+                              key: pulumi.Input[Optional[_builtins.str]] = None,
+                              workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceTaskResult]:
     """
     This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.

@@ -25,15 +25,15 @@ class SensitiveDataModelsSensitiveColumnArgs:
                  object: pulumi.Input[_builtins.str],
                  schema_name: pulumi.Input[_builtins.str],
                  sensitive_data_model_id: pulumi.Input[_builtins.str],
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SensitiveDataModelsSensitiveColumn resource.
 
@@ -128,103 +128,103 @@ class SensitiveDataModelsSensitiveColumnArgs:
 
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def app_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @app_defined_child_column_keys.setter
-    def app_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def app_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "app_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The data type of the sensitive column.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @db_defined_child_column_keys.setter
-    def db_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the database object that contains the sensitive column.
         """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
-    def object_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type", value)
 
     @_builtins.property
     @pulumi.getter(name="parentColumnKeys")
-    def parent_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def parent_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "parent_column_keys")
 
     @parent_column_keys.setter
-    def parent_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def parent_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parent_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def relation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         """
         return pulumi.get(self, "relation_type")
 
     @relation_type.setter
-    def relation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def relation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "relation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
         """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
 
@@ -235,37 +235,37 @@ class SensitiveDataModelsSensitiveColumnArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _SensitiveDataModelsSensitiveColumnState:
     def __init__(__self__, *,
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 estimated_data_value_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModelsSensitiveColumn resources.
 
@@ -349,259 +349,259 @@ class _SensitiveDataModelsSensitiveColumnState:
 
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def app_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @app_defined_child_column_keys.setter
-    def app_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def app_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "app_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="columnGroups")
-    def column_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def column_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
         """
         return pulumi.get(self, "column_groups")
 
     @column_groups.setter
-    def column_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def column_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "column_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter(name="confidenceLevel")
-    def confidence_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confidence_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
         """
         return pulumi.get(self, "confidence_level")
 
     @confidence_level.setter
-    def confidence_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confidence_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confidence_level", value)
 
     @_builtins.property
     @pulumi.getter(name="confidenceLevelDetails")
-    def confidence_level_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]]:
+    def confidence_level_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]]:
         """
         List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "confidence_level_details")
 
     @confidence_level_details.setter
-    def confidence_level_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]]):
+    def confidence_level_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs']]]]):
         pulumi.set(self, "confidence_level_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The data type of the sensitive column.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @db_defined_child_column_keys.setter
-    def db_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedDataValueCount")
-    def estimated_data_value_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_data_value_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The estimated number of data values the column has in the associated database.
         """
         return pulumi.get(self, "estimated_data_value_count")
 
     @estimated_data_value_count.setter
-    def estimated_data_value_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_data_value_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_data_value_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the sensitive column.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database object that contains the sensitive column.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the database object that contains the sensitive column.
         """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
-    def object_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type", value)
 
     @_builtins.property
     @pulumi.getter(name="parentColumnKeys")
-    def parent_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def parent_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
         """
         return pulumi.get(self, "parent_column_keys")
 
     @parent_column_keys.setter
-    def parent_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def parent_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parent_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def relation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         """
         return pulumi.get(self, "relation_type")
 
     @relation_type.setter
-    def relation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def relation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "relation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sampleDataValues")
-    def sample_data_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sample_data_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
         """
         return pulumi.get(self, "sample_data_values")
 
     @sample_data_values.setter
-    def sample_data_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sample_data_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sample_data_values", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database schema that contains the sensitive column.
         """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
-    def schema_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveDataModelId")
-    def sensitive_data_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_data_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the sensitive data model.
         """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
-    def sensitive_data_model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_data_model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_data_model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
         """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the sensitive column.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
 
@@ -612,31 +612,31 @@ class _SensitiveDataModelsSensitiveColumnState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -646,19 +646,19 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -779,19 +779,19 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -843,30 +843,30 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            column_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            column_name: Optional[pulumi.Input[_builtins.str]] = None,
-            confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
-            confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict']]]]] = None,
-            data_type: Optional[pulumi.Input[_builtins.str]] = None,
-            db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            estimated_data_value_count: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            object: Optional[pulumi.Input[_builtins.str]] = None,
-            object_type: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            relation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'SensitiveDataModelsSensitiveColumn':
+            app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            column_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveDataModelsSensitiveColumn':
         """
         Get an existing SensitiveDataModelsSensitiveColumn resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

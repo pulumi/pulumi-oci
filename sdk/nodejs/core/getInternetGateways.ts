@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternetGateways = oci.Core.getInternetGateways({
+ * const testInternetGateways = oci.core.getInternetGateways({
  *     compartmentId: compartmentId,
  *     displayName: internetGatewayDisplayName,
  *     state: internetGatewayState,
@@ -102,7 +102,7 @@ export interface GetInternetGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternetGateways = oci.Core.getInternetGateways({
+ * const testInternetGateways = oci.core.getInternetGateways({
  *     compartmentId: compartmentId,
  *     displayName: internetGatewayDisplayName,
  *     state: internetGatewayState,
@@ -132,14 +132,14 @@ export interface GetInternetGatewaysOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInternetGatewaysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInternetGatewaysFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

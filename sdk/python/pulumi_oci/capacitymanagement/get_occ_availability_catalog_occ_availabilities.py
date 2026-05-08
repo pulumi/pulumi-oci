@@ -147,7 +147,7 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_occ_availabilities = oci.CapacityManagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
+    test_occ_availability_catalog_occ_availabilities = oci.capacitymanagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
         date_expected_capacity_handover=occ_availability_catalog_occ_availability_date_expected_capacity_handover,
         resource_name=test_resource["name"],
         resource_type=occ_availability_catalog_occ_availability_resource_type,
@@ -180,12 +180,12 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacity_handover: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]]]] = None,
-                                                           occ_availability_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                           resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           workload_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacity_handover: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]]]] = None,
+                                                           occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                           resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           workload_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogOccAvailabilitiesResult]:
     """
     This data source provides the list of Occ Availability Catalog Occ Availabilities in Oracle Cloud Infrastructure Capacity Management service.
@@ -198,7 +198,7 @@ def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacit
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_occ_availabilities = oci.CapacityManagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
+    test_occ_availability_catalog_occ_availabilities = oci.capacitymanagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
         date_expected_capacity_handover=occ_availability_catalog_occ_availability_date_expected_capacity_handover,
         resource_name=test_resource["name"],
         resource_type=occ_availability_catalog_occ_availability_resource_type,

@@ -143,8 +143,8 @@ def get_network_firewall_policy_application_group(name: Optional[_builtins.str] 
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         total_apps=pulumi.get(__ret__, 'total_apps'))
-def get_network_firewall_policy_application_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_application_group_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationGroupResult]:
     """
     This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.

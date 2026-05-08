@@ -125,7 +125,7 @@ def get_compute_capacity_topologies(availability_domain: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topologies = oci.Core.get_compute_capacity_topologies(compartment_id=compartment_id,
+    test_compute_capacity_topologies = oci.core.get_compute_capacity_topologies(compartment_id=compartment_id,
         availability_domain=compute_capacity_topology_availability_domain,
         display_name=compute_capacity_topology_display_name)
     ```
@@ -150,10 +150,10 @@ def get_compute_capacity_topologies(availability_domain: Optional[_builtins.str]
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologiesFilterArgs', 'GetComputeCapacityTopologiesFilterArgsDict']]]]] = None,
+def get_compute_capacity_topologies_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityTopologiesFilterArgs', 'GetComputeCapacityTopologiesFilterArgsDict']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologiesResult]:
     """
     This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
@@ -167,7 +167,7 @@ def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topologies = oci.Core.get_compute_capacity_topologies(compartment_id=compartment_id,
+    test_compute_capacity_topologies = oci.core.get_compute_capacity_topologies(compartment_id=compartment_id,
         availability_domain=compute_capacity_topology_availability_domain,
         display_name=compute_capacity_topology_display_name)
     ```

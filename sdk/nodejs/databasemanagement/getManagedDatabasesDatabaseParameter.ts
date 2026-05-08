@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameter = oci.DatabaseManagement.getManagedDatabasesDatabaseParameter({
+ * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });
@@ -104,9 +104,9 @@ export interface GetManagedDatabasesDatabaseParameterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameter = oci.DatabaseManagement.getManagedDatabasesDatabaseParameter({
+ * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });
@@ -129,7 +129,7 @@ export interface GetManagedDatabasesDatabaseParameterOutputArgs {
     /**
      * When true, results include a list of valid values for parameters (if applicable).
      */
-    isAllowedValuesIncluded?: pulumi.Input<boolean>;
+    isAllowedValuesIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -137,9 +137,9 @@ export interface GetManagedDatabasesDatabaseParameterOutputArgs {
     /**
      * A filter to return all parameters that have the text given in their names.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
 }

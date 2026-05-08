@@ -115,7 +115,7 @@ export interface ImportStandardTagsManagementState {
     /**
      * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The name of standard tag namespace that will be imported in bulk 
      *
@@ -123,8 +123,8 @@ export interface ImportStandardTagsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    standardTagNamespaceName?: pulumi.Input<string>;
-    workRequestId?: pulumi.Input<string>;
+    standardTagNamespaceName?: pulumi.Input<string | undefined>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }
 
 /**

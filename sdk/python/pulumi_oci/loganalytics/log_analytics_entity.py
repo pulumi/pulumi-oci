@@ -24,17 +24,17 @@ class LogAnalyticsEntityArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  entity_type_name: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 cloud_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_discovered: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone_region: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone_region: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntity resource.
 
@@ -121,127 +121,127 @@ class LogAnalyticsEntityArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloudResourceId")
-    def cloud_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         """
         return pulumi.get(self, "cloud_resource_id")
 
     @cloud_resource_id.setter
-    def cloud_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Management Agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']]:
         """
         (Updatable) Details of Entity Metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Log analytics entity name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastDiscovered")
-    def time_last_discovered(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_discovered(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_discovered")
 
     @time_last_discovered.setter
-    def time_last_discovered(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_discovered(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_discovered", value)
 
     @_builtins.property
     @pulumi.getter(name="timezoneRegion")
-    def timezone_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timezone region of the log analytics entity. 
 
@@ -252,36 +252,36 @@ class LogAnalyticsEntityArgs:
         return pulumi.get(self, "timezone_region")
 
     @timezone_region.setter
-    def timezone_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone_region", value)
 
 
 @pulumi.input_type
 class _LogAnalyticsEntityState:
     def __init__(__self__, *,
-                 are_logs_collected: Optional[pulumi.Input[_builtins.bool]] = None,
-                 associated_sources_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 cloud_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_type_internal_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_discovered: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone_region: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_logs_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+                 associated_sources_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_type_internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone_region: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
 
@@ -362,271 +362,271 @@ class _LogAnalyticsEntityState:
 
     @_builtins.property
     @pulumi.getter(name="areLogsCollected")
-    def are_logs_collected(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_logs_collected(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         """
         return pulumi.get(self, "are_logs_collected")
 
     @are_logs_collected.setter
-    def are_logs_collected(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_logs_collected(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_logs_collected", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedSourcesCount")
-    def associated_sources_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def associated_sources_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The count of associated log sources for a given log analytics entity.
         """
         return pulumi.get(self, "associated_sources_count")
 
     @associated_sources_count.setter
-    def associated_sources_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def associated_sources_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "associated_sources_count", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudResourceId")
-    def cloud_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         """
         return pulumi.get(self, "cloud_resource_id")
 
     @cloud_resource_id.setter
-    def cloud_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTypeInternalName")
-    def entity_type_internal_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type_internal_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal name for the log analytics entity type.
         """
         return pulumi.get(self, "entity_type_internal_name")
 
     @entity_type_internal_name.setter
-    def entity_type_internal_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type_internal_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type_internal_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTypeName")
-    def entity_type_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type name.
         """
         return pulumi.get(self, "entity_type_name")
 
     @entity_type_name.setter
-    def entity_type_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentCompartmentId")
-    def management_agent_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management agent (management-agents resource kind) compartment OCID
         """
         return pulumi.get(self, "management_agent_compartment_id")
 
     @management_agent_compartment_id.setter
-    def management_agent_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentDisplayName")
-    def management_agent_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management agent (management-agents resource kind) display name
         """
         return pulumi.get(self, "management_agent_display_name")
 
     @management_agent_display_name.setter
-    def management_agent_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Management Agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']]:
         """
         (Updatable) Details of Entity Metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['LogAnalyticsEntityMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Log analytics entity name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the log analytics entity.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastDiscovered")
-    def time_last_discovered(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_discovered(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_discovered")
 
     @time_last_discovered.setter
-    def time_last_discovered(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_discovered(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_discovered", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timezoneRegion")
-    def timezone_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timezone region of the log analytics entity. 
 
@@ -637,7 +637,7 @@ class _LogAnalyticsEntityState:
         return pulumi.get(self, "timezone_region")
 
     @timezone_region.setter
-    def timezone_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone_region", value)
 
 
@@ -647,20 +647,20 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_discovered: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -804,20 +804,20 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_discovered: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -866,29 +866,29 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            are_logs_collected: Optional[pulumi.Input[_builtins.bool]] = None,
-            associated_sources_count: Optional[pulumi.Input[_builtins.int]] = None,
-            cloud_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            entity_type_internal_name: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_discovered: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone_region: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogAnalyticsEntity':
+            are_logs_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+            associated_sources_count: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            entity_type_internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone_region: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsEntity':
         """
         Get an existing LogAnalyticsEntity resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

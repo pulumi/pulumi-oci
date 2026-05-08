@@ -408,7 +408,7 @@ def get_fsu_cycle(fsu_cycle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycle = oci.FleetSoftwareUpdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
+    test_fsu_cycle = oci.fleetsoftwareupdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_fsu_cycle(fsu_cycle_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         upgrade_details=pulumi.get(__ret__, 'upgrade_details'))
-def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fsu_cycle_output(fsu_cycle_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCycleResult]:
     """
     This data source provides details about a specific Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
@@ -463,7 +463,7 @@ def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycle = oci.FleetSoftwareUpdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
+    test_fsu_cycle = oci.fleetsoftwareupdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
     ```
 
 

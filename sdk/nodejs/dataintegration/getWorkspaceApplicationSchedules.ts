@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationSchedules = oci.DataIntegration.getWorkspaceApplicationSchedules({
+ * const testWorkspaceApplicationSchedules = oci.dataintegration.getWorkspaceApplicationSchedules({
  *     applicationKey: workspaceApplicationScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationScheduleIdentifier,
@@ -114,7 +114,7 @@ export interface GetWorkspaceApplicationSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationSchedules = oci.DataIntegration.getWorkspaceApplicationSchedules({
+ * const testWorkspaceApplicationSchedules = oci.dataintegration.getWorkspaceApplicationSchedules({
  *     applicationKey: workspaceApplicationScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationScheduleIdentifier,
@@ -145,23 +145,23 @@ export interface GetWorkspaceApplicationSchedulesOutputArgs {
      * The application key.
      */
     applicationKey: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationSchedulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationSchedulesFilterArgs>[] | undefined>;
     /**
      * Used to filter by the identifier of the object.
      */
-    identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    identifiers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the key of the object.
      */
-    keys?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The workspace ID.
      */

@@ -62,11 +62,11 @@ __all__ = [
 ]
 
 class FsuCollectionActiveFsuCycleArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
     """
@@ -74,8 +74,8 @@ class FsuCollectionActiveFsuCycleArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCollectionActiveFsuCycleArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
@@ -87,26 +87,26 @@ class FsuCollectionActiveFsuCycleArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
@@ -119,7 +119,7 @@ class FsuCollectionComponentArgsDict(TypedDict):
     """
     Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
     """
-    fleet_discovery: NotRequired[pulumi.Input['FsuCollectionComponentFleetDiscoveryArgsDict']]
+    fleet_discovery: NotRequired[pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgs']]]
     """
     Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
     """
@@ -129,7 +129,7 @@ class FsuCollectionComponentArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
                  source_major_version: pulumi.Input[_builtins.str],
-                 fleet_discovery: Optional[pulumi.Input['FsuCollectionComponentFleetDiscoveryArgs']] = None):
+                 fleet_discovery: pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: Type of component in an Exadata software stack.
         :param pulumi.Input[_builtins.str] source_major_version: Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
@@ -166,14 +166,14 @@ class FsuCollectionComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="fleetDiscovery")
-    def fleet_discovery(self) -> Optional[pulumi.Input['FsuCollectionComponentFleetDiscoveryArgs']]:
+    def fleet_discovery(self) -> pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgs']]:
         """
         Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         """
         return pulumi.get(self, "fleet_discovery")
 
     @fleet_discovery.setter
-    def fleet_discovery(self, value: Optional[pulumi.Input['FsuCollectionComponentFleetDiscoveryArgs']]):
+    def fleet_discovery(self, value: pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgs']]):
         pulumi.set(self, "fleet_discovery", value)
 
 
@@ -182,19 +182,19 @@ class FsuCollectionComponentFleetDiscoveryArgsDict(TypedDict):
     """
     Supported fleet discovery strategies.
     """
-    filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgsDict']]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]]
     """
     Filters to perform the target discovery.
     """
-    fsu_discovery_id: NotRequired[pulumi.Input[_builtins.str]]
+    fsu_discovery_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
     """
-    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
     """
@@ -203,10 +203,10 @@ class FsuCollectionComponentFleetDiscoveryArgsDict(TypedDict):
 class FsuCollectionComponentFleetDiscoveryArgs:
     def __init__(__self__, *,
                  strategy: pulumi.Input[_builtins.str],
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]] = None,
-                 fsu_discovery_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]] = None,
+                 fsu_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] strategy: Supported fleet discovery strategies.
         :param pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]] filters: Filters to perform the target discovery.
@@ -238,50 +238,50 @@ class FsuCollectionComponentFleetDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]:
+    def filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]:
         """
         Filters to perform the target discovery.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]):
+    def filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="fsuDiscoveryId")
-    def fsu_discovery_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fsu_discovery_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         """
         return pulumi.get(self, "fsu_discovery_id")
 
     @fsu_discovery_id.setter
-    def fsu_discovery_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fsu_discovery_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fsu_discovery_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         """
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
 
@@ -290,31 +290,31 @@ class FsuCollectionComponentFleetDiscoveryFilterArgsDict(TypedDict):
     """
     Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of resource to match in the discovery.
     """
-    exadata_releases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exadata_releases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    identifiers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    identifiers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
     """
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of join for each element in this filter.
     """
-    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgsDict']]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]]
     """
     [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
@@ -323,13 +323,13 @@ class FsuCollectionComponentFleetDiscoveryFilterArgsDict(TypedDict):
 class FsuCollectionComponentFleetDiscoveryFilterArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_releases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identifiers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]] = None,
-                 versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_releases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identifiers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
         :param pulumi.Input[_builtins.str] entity_type: Type of resource to match in the discovery.
@@ -370,99 +370,99 @@ class FsuCollectionComponentFleetDiscoveryFilterArgs:
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of resource to match in the discovery.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataReleases")
-    def exadata_releases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exadata_releases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "exadata_releases")
 
     @exadata_releases.setter
-    def exadata_releases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exadata_releases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exadata_releases", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifiers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def identifiers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
         """
         return pulumi.get(self, "identifiers")
 
     @identifiers.setter
-    def identifiers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def identifiers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "identifiers", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of join for each element in this filter.
         """
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]:
         """
         [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "versions")
 
     @versions.setter
-    def versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "versions", value)
 
 
 class FsuCollectionComponentFleetDiscoveryFilterTagArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Freeform tag key.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Defined tag namespace.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Freeform tag value.
     """
@@ -470,9 +470,9 @@ class FsuCollectionComponentFleetDiscoveryFilterTagArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCollectionComponentFleetDiscoveryFilterTagArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: Freeform tag key.
         :param pulumi.Input[_builtins.str] namespace: Defined tag namespace.
@@ -487,38 +487,38 @@ class FsuCollectionComponentFleetDiscoveryFilterTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Freeform tag key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defined tag namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Freeform tag value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -527,19 +527,19 @@ class FsuCollectionFleetDiscoveryArgsDict(TypedDict):
     """
     Supported fleet discovery strategies.
     """
-    filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgsDict']]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]]
     """
     Filters to perform the target discovery.
     """
-    fsu_discovery_id: NotRequired[pulumi.Input[_builtins.str]]
+    fsu_discovery_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
     """
-    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
     """
@@ -548,10 +548,10 @@ class FsuCollectionFleetDiscoveryArgsDict(TypedDict):
 class FsuCollectionFleetDiscoveryArgs:
     def __init__(__self__, *,
                  strategy: pulumi.Input[_builtins.str],
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]] = None,
-                 fsu_discovery_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]] = None,
+                 fsu_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] strategy: Supported fleet discovery strategies.
         :param pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]] filters: Filters to perform the target discovery.
@@ -583,50 +583,50 @@ class FsuCollectionFleetDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]:
+    def filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]:
         """
         Filters to perform the target discovery.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]):
+    def filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="fsuDiscoveryId")
-    def fsu_discovery_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fsu_discovery_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         """
         return pulumi.get(self, "fsu_discovery_id")
 
     @fsu_discovery_id.setter
-    def fsu_discovery_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fsu_discovery_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fsu_discovery_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         """
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "targets", value)
 
 
@@ -635,35 +635,35 @@ class FsuCollectionFleetDiscoveryFilterArgsDict(TypedDict):
     """
     Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of resource to match in the discovery.
     """
-    exadata_releases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exadata_releases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    identifiers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    identifiers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
     """
-    mode: NotRequired[pulumi.Input[_builtins.str]]
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
     """
-    names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of Database unique names to include in the discovery.
     """
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of join for each element in this filter.
     """
-    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgsDict']]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]]
     """
     [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
-    versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
@@ -672,14 +672,14 @@ class FsuCollectionFleetDiscoveryFilterArgsDict(TypedDict):
 class FsuCollectionFleetDiscoveryFilterArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_releases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identifiers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]] = None,
-                 versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_releases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identifiers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
         :param pulumi.Input[_builtins.str] entity_type: Type of resource to match in the discovery.
@@ -723,111 +723,111 @@ class FsuCollectionFleetDiscoveryFilterArgs:
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of resource to match in the discovery.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataReleases")
-    def exadata_releases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exadata_releases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "exadata_releases")
 
     @exadata_releases.setter
-    def exadata_releases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exadata_releases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exadata_releases", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifiers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def identifiers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
         """
         return pulumi.get(self, "identifiers")
 
     @identifiers.setter
-    def identifiers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def identifiers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "identifiers", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Database unique names to include in the discovery.
         """
         return pulumi.get(self, "names")
 
     @names.setter
-    def names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "names", value)
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of join for each element in this filter.
         """
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]:
         """
         [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         """
         return pulumi.get(self, "versions")
 
     @versions.setter
-    def versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "versions", value)
 
 
 class FsuCollectionFleetDiscoveryFilterTagArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Freeform tag key.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Defined tag namespace.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Freeform tag value.
     """
@@ -835,9 +835,9 @@ class FsuCollectionFleetDiscoveryFilterTagArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCollectionFleetDiscoveryFilterTagArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: Freeform tag key.
         :param pulumi.Input[_builtins.str] namespace: Defined tag namespace.
@@ -852,38 +852,38 @@ class FsuCollectionFleetDiscoveryFilterTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Freeform tag key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defined tag namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Freeform tag value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -935,19 +935,19 @@ class FsuCycleApplyActionScheduleArgs:
 
 
 class FsuCycleBatchingStrategyArgsDict(TypedDict):
-    is_force_rolling: NotRequired[pulumi.Input[_builtins.bool]]
+    is_force_rolling: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) True to force rolling patching.
     """
-    is_wait_for_batch_resume: NotRequired[pulumi.Input[_builtins.bool]]
+    is_wait_for_batch_resume: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) True to wait for customer to resume the Apply Action once the first half is done. False to automatically patch the second half.
     """
-    percentage: NotRequired[pulumi.Input[_builtins.int]]
+    percentage: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Percentage of availability in the service during the Patch operation.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Supported batching strategies.
     """
@@ -955,10 +955,10 @@ class FsuCycleBatchingStrategyArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCycleBatchingStrategyArgs:
     def __init__(__self__, *,
-                 is_force_rolling: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_wait_for_batch_resume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_force_rolling: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_wait_for_batch_resume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_force_rolling: (Updatable) True to force rolling patching.
         :param pulumi.Input[_builtins.bool] is_wait_for_batch_resume: (Updatable) True to wait for customer to resume the Apply Action once the first half is done. False to automatically patch the second half.
@@ -976,55 +976,55 @@ class FsuCycleBatchingStrategyArgs:
 
     @_builtins.property
     @pulumi.getter(name="isForceRolling")
-    def is_force_rolling(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_rolling(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True to force rolling patching.
         """
         return pulumi.get(self, "is_force_rolling")
 
     @is_force_rolling.setter
-    def is_force_rolling(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_rolling(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_rolling", value)
 
     @_builtins.property
     @pulumi.getter(name="isWaitForBatchResume")
-    def is_wait_for_batch_resume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_wait_for_batch_resume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True to wait for customer to resume the Apply Action once the first half is done. False to automatically patch the second half.
         """
         return pulumi.get(self, "is_wait_for_batch_resume")
 
     @is_wait_for_batch_resume.setter
-    def is_wait_for_batch_resume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_wait_for_batch_resume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_wait_for_batch_resume", value)
 
     @_builtins.property
     @pulumi.getter
-    def percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Percentage of availability in the service during the Patch operation.
         """
         return pulumi.get(self, "percentage")
 
     @percentage.setter
-    def percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "percentage", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Supported batching strategies.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class FsuCycleDiagnosticsCollectionArgsDict(TypedDict):
-    log_collection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    log_collection_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Enable incident logs and trace collection.  Allow Oracle to collect incident logs and traces to enable fault diagnosis and issue resolution according to the selected mode.
     """
@@ -1032,7 +1032,7 @@ class FsuCycleDiagnosticsCollectionArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCycleDiagnosticsCollectionArgs:
     def __init__(__self__, *,
-                 log_collection_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 log_collection_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] log_collection_mode: (Updatable) Enable incident logs and trace collection.  Allow Oracle to collect incident logs and traces to enable fault diagnosis and issue resolution according to the selected mode.
         """
@@ -1041,14 +1041,14 @@ class FsuCycleDiagnosticsCollectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="logCollectionMode")
-    def log_collection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_collection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enable incident logs and trace collection.  Allow Oracle to collect incident logs and traces to enable fault diagnosis and issue resolution according to the selected mode.
         """
         return pulumi.get(self, "log_collection_mode")
 
     @log_collection_mode.setter
-    def log_collection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_collection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_collection_mode", value)
 
 
@@ -1057,23 +1057,23 @@ class FsuCycleGoalVersionDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of goal version specified
     """
-    components: NotRequired[pulumi.Input[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgsDict']]]]
+    components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]]
     """
     (Updatable) Details of goal versions for components in an Exadata software stack.
     """
-    home_policy: NotRequired[pulumi.Input[_builtins.str]]
+    home_policy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
     """
-    new_home_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    new_home_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
     """
-    software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    software_image_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
     """
@@ -1082,11 +1082,11 @@ class FsuCycleGoalVersionDetailsArgsDict(TypedDict):
 class FsuCycleGoalVersionDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 components: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]] = None,
-                 home_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_home_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 components: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]] = None,
+                 home_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_home_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of goal version specified
         :param pulumi.Input[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]] components: (Updatable) Details of goal versions for components in an Exadata software stack.
@@ -1121,62 +1121,62 @@ class FsuCycleGoalVersionDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]:
+    def components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]:
         """
         (Updatable) Details of goal versions for components in an Exadata software stack.
         """
         return pulumi.get(self, "components")
 
     @components.setter
-    def components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]):
+    def components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]):
         pulumi.set(self, "components", value)
 
     @_builtins.property
     @pulumi.getter(name="homePolicy")
-    def home_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         """
         return pulumi.get(self, "home_policy")
 
     @home_policy.setter
-    def home_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="newHomePrefix")
-    def new_home_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def new_home_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         """
         return pulumi.get(self, "new_home_prefix")
 
     @new_home_prefix.setter
-    def new_home_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def new_home_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "new_home_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareImageId")
-    def software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         """
         return pulumi.get(self, "software_image_id")
 
     @software_image_id.setter
-    def software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_image_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -1189,11 +1189,11 @@ class FsuCycleGoalVersionDetailsComponentArgsDict(TypedDict):
     """
     (Updatable) Details of goal 'GUEST_OS' software version.
     """
-    home_policy: NotRequired[pulumi.Input[_builtins.str]]
+    home_policy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
     """
-    new_home_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    new_home_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
     """
@@ -1203,8 +1203,8 @@ class FsuCycleGoalVersionDetailsComponentArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
                  goal_version_details: pulumi.Input['FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs'],
-                 home_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_home_prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 home_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_home_prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: (Updatable) Type of component in an Exadata software stack.
         :param pulumi.Input['FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs'] goal_version_details: (Updatable) Details of goal 'GUEST_OS' software version.
@@ -1244,26 +1244,26 @@ class FsuCycleGoalVersionDetailsComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="homePolicy")
-    def home_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         """
         return pulumi.get(self, "home_policy")
 
     @home_policy.setter
-    def home_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="newHomePrefix")
-    def new_home_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def new_home_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         """
         return pulumi.get(self, "new_home_prefix")
 
     @new_home_prefix.setter
-    def new_home_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def new_home_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "new_home_prefix", value)
 
 
@@ -1276,7 +1276,7 @@ class FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgsDict(TypedDict):
     """
     (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
     """
-    goal_version: NotRequired[pulumi.Input[_builtins.str]]
+    goal_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
     """
@@ -1286,7 +1286,7 @@ class FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs:
     def __init__(__self__, *,
                  goal_software_image_id: pulumi.Input[_builtins.str],
                  goal_type: pulumi.Input[_builtins.str],
-                 goal_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 goal_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] goal_software_image_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
         :param pulumi.Input[_builtins.str] goal_type: (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
@@ -1323,23 +1323,23 @@ class FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="goalVersion")
-    def goal_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def goal_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
         """
         return pulumi.get(self, "goal_version")
 
     @goal_version.setter
-    def goal_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def goal_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "goal_version", value)
 
 
 class FsuCycleNextActionToExecuteArgsDict(TypedDict):
-    time_to_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_to_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of Exadata Fleet Update Cycle.
     """
@@ -1347,8 +1347,8 @@ class FsuCycleNextActionToExecuteArgsDict(TypedDict):
 @pulumi.input_type
 class FsuCycleNextActionToExecuteArgs:
     def __init__(__self__, *,
-                 time_to_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_to_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] time_to_start: The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
@@ -1360,26 +1360,26 @@ class FsuCycleNextActionToExecuteArgs:
 
     @_builtins.property
     @pulumi.getter(name="timeToStart")
-    def time_to_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_to_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_to_start")
 
     @time_to_start.setter
-    def time_to_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_to_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_to_start", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -1435,23 +1435,23 @@ class FsuCycleUpgradeDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of Exadata Fleet Update collection being upgraded.
     """
-    is_ignore_post_upgrade_errors: NotRequired[pulumi.Input[_builtins.bool]]
+    is_ignore_post_upgrade_errors: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
     """
-    is_ignore_prerequisites: NotRequired[pulumi.Input[_builtins.bool]]
+    is_ignore_prerequisites: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
     """
-    is_recompile_invalid_objects: NotRequired[pulumi.Input[_builtins.bool]]
+    is_recompile_invalid_objects: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables or disables the recompilation of invalid objects.
     """
-    is_time_zone_upgrade: NotRequired[pulumi.Input[_builtins.bool]]
+    is_time_zone_upgrade: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables or disables time zone upgrade.
     """
-    max_drain_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    max_drain_timeout_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Service drain timeout specified in seconds. 
 
@@ -1464,11 +1464,11 @@ class FsuCycleUpgradeDetailsArgsDict(TypedDict):
 class FsuCycleUpgradeDetailsArgs:
     def __init__(__self__, *,
                  collection_type: pulumi.Input[_builtins.str],
-                 is_ignore_post_upgrade_errors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ignore_prerequisites: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_recompile_invalid_objects: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_time_zone_upgrade: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_drain_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 is_ignore_post_upgrade_errors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ignore_prerequisites: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_recompile_invalid_objects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_time_zone_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_drain_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] collection_type: (Updatable) Type of Exadata Fleet Update collection being upgraded.
         :param pulumi.Input[_builtins.bool] is_ignore_post_upgrade_errors: (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
@@ -1507,55 +1507,55 @@ class FsuCycleUpgradeDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isIgnorePostUpgradeErrors")
-    def is_ignore_post_upgrade_errors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ignore_post_upgrade_errors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
         """
         return pulumi.get(self, "is_ignore_post_upgrade_errors")
 
     @is_ignore_post_upgrade_errors.setter
-    def is_ignore_post_upgrade_errors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ignore_post_upgrade_errors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ignore_post_upgrade_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="isIgnorePrerequisites")
-    def is_ignore_prerequisites(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ignore_prerequisites(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
         """
         return pulumi.get(self, "is_ignore_prerequisites")
 
     @is_ignore_prerequisites.setter
-    def is_ignore_prerequisites(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ignore_prerequisites(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ignore_prerequisites", value)
 
     @_builtins.property
     @pulumi.getter(name="isRecompileInvalidObjects")
-    def is_recompile_invalid_objects(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_recompile_invalid_objects(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables or disables the recompilation of invalid objects.
         """
         return pulumi.get(self, "is_recompile_invalid_objects")
 
     @is_recompile_invalid_objects.setter
-    def is_recompile_invalid_objects(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_recompile_invalid_objects(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_recompile_invalid_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="isTimeZoneUpgrade")
-    def is_time_zone_upgrade(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_time_zone_upgrade(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables or disables time zone upgrade.
         """
         return pulumi.get(self, "is_time_zone_upgrade")
 
     @is_time_zone_upgrade.setter
-    def is_time_zone_upgrade(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_time_zone_upgrade(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_time_zone_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDrainTimeoutInSeconds")
-    def max_drain_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_drain_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Service drain timeout specified in seconds. 
 
@@ -1566,24 +1566,24 @@ class FsuCycleUpgradeDetailsArgs:
         return pulumi.get(self, "max_drain_timeout_in_seconds")
 
     @max_drain_timeout_in_seconds.setter
-    def max_drain_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_drain_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_drain_timeout_in_seconds", value)
 
 
 class FsuReadinessCheckIssueArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Description of the patching issue.
     """
-    impacted_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    impacted_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the patching issue.
     """
-    recommended_action: NotRequired[pulumi.Input[_builtins.str]]
+    recommended_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recommended action to perform to address or further triage the patching issue.
     """
@@ -1591,10 +1591,10 @@ class FsuReadinessCheckIssueArgsDict(TypedDict):
 @pulumi.input_type
 class FsuReadinessCheckIssueArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 impacted_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommended_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 impacted_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommended_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: Description of the patching issue.
         :param pulumi.Input[_builtins.str] impacted_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
@@ -1612,50 +1612,50 @@ class FsuReadinessCheckIssueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the patching issue.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="impactedResourceId")
-    def impacted_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def impacted_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
         """
         return pulumi.get(self, "impacted_resource_id")
 
     @impacted_resource_id.setter
-    def impacted_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def impacted_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "impacted_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the patching issue.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendedAction")
-    def recommended_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommended_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recommended action to perform to address or further triage the patching issue.
         """
         return pulumi.get(self, "recommended_action")
 
     @recommended_action.setter
-    def recommended_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommended_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommended_action", value)
 
 

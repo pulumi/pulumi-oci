@@ -25,10 +25,10 @@ class ScriptArgs:
                  content: pulumi.Input[_builtins.str],
                  content_type: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 content_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None):
+                 content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None):
         """
         The set of arguments for constructing a Script resource.
 
@@ -104,69 +104,69 @@ class ScriptArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentFileName")
-    def content_file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) File name of uploaded script content.
         """
         return pulumi.get(self, "content_file_name")
 
     @content_file_name.setter
-    def content_file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_file_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
         """
         (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]]):
         pulumi.set(self, "parameters", value)
 
 
 @pulumi.input_type
 class _ScriptState:
     def __init__(__self__, *,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_size_in_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_uploaded: Optional[pulumi.Input[_builtins.str]] = None):
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_size_in_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_uploaded: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Script resources.
 
@@ -213,158 +213,158 @@ class _ScriptState:
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="contentFileName")
-    def content_file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) File name of uploaded script content.
         """
         return pulumi.get(self, "content_file_name")
 
     @content_file_name.setter
-    def content_file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_file_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contentSizeInBytes")
-    def content_size_in_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def content_size_in_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Size of the script content.
         """
         return pulumi.get(self, "content_size_in_bytes")
 
     @content_size_in_bytes.setter
-    def content_size_in_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def content_size_in_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "content_size_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Content type of script.
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]]:
+    def monitor_status_count_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]]:
         """
         Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         """
         return pulumi.get(self, "monitor_status_count_maps")
 
     @monitor_status_count_maps.setter
-    def monitor_status_count_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]]):
+    def monitor_status_count_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]]):
         pulumi.set(self, "monitor_status_count_maps", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
         """
         (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterArgs']]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUploaded")
-    def time_uploaded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_uploaded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the script was uploaded.
         """
         return pulumi.get(self, "time_uploaded")
 
     @time_uploaded.setter
-    def time_uploaded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_uploaded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_uploaded", value)
 
 
@@ -374,14 +374,14 @@ class Script(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -411,7 +411,7 @@ class Script(pulumi.CustomResource):
             },
             parameters=[{
                 "param_name": script_parameters_param_name,
-                "is_secret": script_parameters_is_secret,
+                "is_secret": script_parameters_is_secret == "true",
                 "param_value": script_parameters_param_value,
             }])
         ```
@@ -470,7 +470,7 @@ class Script(pulumi.CustomResource):
             },
             parameters=[{
                 "param_name": script_parameters_param_name,
-                "is_secret": script_parameters_is_secret,
+                "is_secret": script_parameters_is_secret == "true",
                 "param_value": script_parameters_param_value,
             }])
         ```
@@ -499,14 +499,14 @@ class Script(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -547,19 +547,19 @@ class Script(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            content_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-            content_size_in_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            content_type: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptMonitorStatusCountMapArgs', 'ScriptMonitorStatusCountMapArgsDict']]]]] = None,
-            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_uploaded: Optional[pulumi.Input[_builtins.str]] = None) -> 'Script':
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            content_size_in_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptMonitorStatusCountMapArgs', 'ScriptMonitorStatusCountMapArgsDict']]]]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_uploaded: pulumi.Input[Optional[_builtins.str]] = None) -> 'Script':
         """
         Get an existing Script resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

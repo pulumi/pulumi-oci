@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpes = oci.Core.getCpes({
+ * const testCpes = oci.core.getCpes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetCpesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpes = oci.Core.getCpes({
+ * const testCpes = oci.core.getCpes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetCpesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCpesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCpesFilterArgs>[] | undefined>;
 }

@@ -85,7 +85,7 @@ def get_regions(filters: Optional[Sequence[Union['GetRegionsFilterArgs', 'GetReg
     import pulumi
     import pulumi_oci as oci
 
-    test_regions = oci.Identity.get_regions()
+    test_regions = oci.identity.get_regions()
     ```
     """
     __args__ = dict()
@@ -97,7 +97,7 @@ def get_regions(filters: Optional[Sequence[Union['GetRegionsFilterArgs', 'GetReg
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         regions=pulumi.get(__ret__, 'regions'))
-def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRegionsFilterArgs', 'GetRegionsFilterArgsDict']]]]] = None,
+def get_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRegionsFilterArgs', 'GetRegionsFilterArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRegionsResult]:
     """
     This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
@@ -110,7 +110,7 @@ def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_regions = oci.Identity.get_regions()
+    test_regions = oci.identity.get_regions()
     ```
     """
     __args__ = dict()

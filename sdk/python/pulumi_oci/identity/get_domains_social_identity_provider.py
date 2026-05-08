@@ -594,7 +594,7 @@ def get_domains_social_identity_provider(authorization: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_provider = oci.Identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
+    test_social_identity_provider = oci.identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
         social_identity_provider_id=test_identity_provider["id"],
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version)
@@ -661,10 +661,10 @@ def get_domains_social_identity_provider(authorization: Optional[_builtins.str] 
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-def get_domains_social_identity_provider_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                social_identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_social_identity_provider_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                social_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSocialIdentityProviderResult]:
     """
     This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -677,7 +677,7 @@ def get_domains_social_identity_provider_output(authorization: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_provider = oci.Identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
+    test_social_identity_provider = oci.identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
         social_identity_provider_id=test_identity_provider["id"],
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version)

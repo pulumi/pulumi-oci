@@ -23,49 +23,49 @@ class DomainsPasswordPolicyArgs:
     def __init__(__self__, *,
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 allowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_word_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 disallowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 distinct_characters: Optional[pulumi.Input[_builtins.int]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_password_reset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
-                 last_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lockout_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_incorrect_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_repeated_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alpha_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alphas: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_lower_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_password_age: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_unique_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_upper_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_passwords_in_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_expire_warning: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_expires_after: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_strength: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 required_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 starts_with_alphabet: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
-                 user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 allowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_word_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 disallowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 disallowed_substrings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disallowed_user_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 distinct_characters: pulumi.Input[Optional[_builtins.int]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_password_reset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
+                 last_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lockout_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_incorrect_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_repeated_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alpha_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alphas: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_lower_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_password_age: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_unique_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_upper_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_passwords_in_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_expire_warning: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_expires_after: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_strength: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 required_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 starts_with_alphabet: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
+                 user_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DomainsPasswordPolicy resource.
 
@@ -620,7 +620,7 @@ class DomainsPasswordPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedChars")
-    def allowed_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
 
@@ -636,48 +636,48 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "allowed_chars")
 
     @allowed_chars.setter
-    def allowed_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String that describes the password policy
 
@@ -693,12 +693,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryDelimiter")
-    def dictionary_delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dictionary_delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A delimiter used to separate characters in the dictionary file
 
@@ -714,12 +714,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "dictionary_delimiter")
 
     @dictionary_delimiter.setter
-    def dictionary_delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dictionary_delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dictionary_delimiter", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryLocation")
-    def dictionary_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dictionary_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
 
@@ -735,12 +735,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "dictionary_location")
 
     @dictionary_location.setter
-    def dictionary_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dictionary_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dictionary_location", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryWordDisallowed")
-    def dictionary_word_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dictionary_word_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the password can match a dictionary word
 
@@ -756,12 +756,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "dictionary_word_disallowed")
 
     @dictionary_word_disallowed.setter
-    def dictionary_word_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dictionary_word_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dictionary_word_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedChars")
-    def disallowed_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disallowed_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
 
@@ -777,12 +777,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "disallowed_chars")
 
     @disallowed_chars.setter
-    def disallowed_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disallowed_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disallowed_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedSubstrings")
-    def disallowed_substrings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disallowed_substrings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
 
@@ -798,12 +798,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "disallowed_substrings")
 
     @disallowed_substrings.setter
-    def disallowed_substrings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disallowed_substrings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_substrings", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedUserAttributeValues")
-    def disallowed_user_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disallowed_user_attribute_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of User attributes whose values are not allowed in the password.
 
@@ -821,12 +821,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "disallowed_user_attribute_values")
 
     @disallowed_user_attribute_values.setter
-    def disallowed_user_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disallowed_user_attribute_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_user_attribute_values", value)
 
     @_builtins.property
     @pulumi.getter(name="distinctCharacters")
-    def distinct_characters(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def distinct_characters(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of distinct characters between old password and new password
 
@@ -844,12 +844,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "distinct_characters")
 
     @distinct_characters.setter
-    def distinct_characters(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def distinct_characters(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "distinct_characters", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -865,12 +865,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="firstNameDisallowed")
-    def first_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def first_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
 
@@ -886,12 +886,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "first_name_disallowed")
 
     @first_name_disallowed.setter
-    def first_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def first_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "first_name_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="forcePasswordReset")
-    def force_password_reset(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_password_reset(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
 
@@ -907,12 +907,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "force_password_reset")
 
     @force_password_reset.setter
-    def force_password_reset(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_password_reset(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_password_reset", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]:
+    def groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]:
         """
         (Updatable) A list of groups that the password policy belongs to.
 
@@ -932,12 +932,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]):
+    def groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter(name="lastNameDisallowed")
-    def last_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def last_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
 
@@ -953,12 +953,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "last_name_disallowed")
 
     @last_name_disallowed.setter
-    def last_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def last_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "last_name_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="lockoutDuration")
-    def lockout_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def lockout_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
 
@@ -974,12 +974,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "lockout_duration")
 
     @lockout_duration.setter
-    def lockout_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def lockout_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "lockout_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="maxIncorrectAttempts")
-    def max_incorrect_attempts(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_incorrect_attempts(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An integer that represents the maximum number of failed logins before an account is locked
 
@@ -995,12 +995,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "max_incorrect_attempts")
 
     @max_incorrect_attempts.setter
-    def max_incorrect_attempts(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_incorrect_attempts(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_incorrect_attempts", value)
 
     @_builtins.property
     @pulumi.getter(name="maxLength")
-    def max_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
 
@@ -1017,12 +1017,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "max_length")
 
     @max_length.setter
-    def max_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxRepeatedChars")
-    def max_repeated_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_repeated_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
 
@@ -1038,12 +1038,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "max_repeated_chars")
 
     @max_repeated_chars.setter
-    def max_repeated_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_repeated_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_repeated_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSpecialChars")
-    def max_special_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_special_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
 
@@ -1059,12 +1059,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "max_special_chars")
 
     @max_special_chars.setter
-    def max_special_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_special_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_special_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="minAlphaNumerals")
-    def min_alpha_numerals(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_alpha_numerals(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
 
@@ -1080,12 +1080,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_alpha_numerals")
 
     @min_alpha_numerals.setter
-    def min_alpha_numerals(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_alpha_numerals(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_alpha_numerals", value)
 
     @_builtins.property
     @pulumi.getter(name="minAlphas")
-    def min_alphas(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_alphas(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
 
@@ -1101,12 +1101,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_alphas")
 
     @min_alphas.setter
-    def min_alphas(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_alphas(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_alphas", value)
 
     @_builtins.property
     @pulumi.getter(name="minLength")
-    def min_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
 
@@ -1122,12 +1122,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_length")
 
     @min_length.setter
-    def min_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_length", value)
 
     @_builtins.property
     @pulumi.getter(name="minLowerCase")
-    def min_lower_case(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_lower_case(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
 
@@ -1143,12 +1143,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_lower_case")
 
     @min_lower_case.setter
-    def min_lower_case(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_lower_case(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_lower_case", value)
 
     @_builtins.property
     @pulumi.getter(name="minNumerals")
-    def min_numerals(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_numerals(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
 
@@ -1164,12 +1164,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_numerals")
 
     @min_numerals.setter
-    def min_numerals(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_numerals(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_numerals", value)
 
     @_builtins.property
     @pulumi.getter(name="minPasswordAge")
-    def min_password_age(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_password_age(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Minimum time after which the user can resubmit the reset password request
 
@@ -1185,12 +1185,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_password_age")
 
     @min_password_age.setter
-    def min_password_age(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_password_age(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_password_age", value)
 
     @_builtins.property
     @pulumi.getter(name="minSpecialChars")
-    def min_special_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_special_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
 
@@ -1206,12 +1206,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_special_chars")
 
     @min_special_chars.setter
-    def min_special_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_special_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_special_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="minUniqueChars")
-    def min_unique_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_unique_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
 
@@ -1227,12 +1227,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_unique_chars")
 
     @min_unique_chars.setter
-    def min_unique_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_unique_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_unique_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="minUpperCase")
-    def min_upper_case(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_upper_case(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
 
@@ -1248,12 +1248,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "min_upper_case")
 
     @min_upper_case.setter
-    def min_upper_case(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_upper_case(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_upper_case", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
 
@@ -1270,12 +1270,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numPasswordsInHistory")
-    def num_passwords_in_history(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_passwords_in_history(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of passwords that will be kept in history that may not be used as a password
 
@@ -1291,12 +1291,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "num_passwords_in_history")
 
     @num_passwords_in_history.setter
-    def num_passwords_in_history(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_passwords_in_history(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_passwords_in_history", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1313,12 +1313,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordExpireWarning")
-    def password_expire_warning(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_expire_warning(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
 
@@ -1334,12 +1334,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "password_expire_warning")
 
     @password_expire_warning.setter
-    def password_expire_warning(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_expire_warning(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_expire_warning", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordExpiresAfter")
-    def password_expires_after(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_expires_after(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of days after which the password expires automatically
 
@@ -1355,12 +1355,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "password_expires_after")
 
     @password_expires_after.setter
-    def password_expires_after(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_expires_after(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_expires_after", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordStrength")
-    def password_strength(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_strength(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
 
@@ -1376,12 +1376,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "password_strength")
 
     @password_strength.setter
-    def password_strength(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_strength(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_strength", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Password policy priority
 
@@ -1400,12 +1400,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="requiredChars")
-    def required_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def required_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
 
@@ -1421,24 +1421,24 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "required_chars")
 
     @required_chars.setter
-    def required_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def required_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "required_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="startsWithAlphabet")
-    def starts_with_alphabet(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def starts_with_alphabet(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that the password must begin with an alphabetic character
 
@@ -1454,12 +1454,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "starts_with_alphabet")
 
     @starts_with_alphabet.setter
-    def starts_with_alphabet(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def starts_with_alphabet(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "starts_with_alphabet", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1476,12 +1476,12 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="userNameDisallowed")
-    def user_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def user_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
 
@@ -1501,68 +1501,68 @@ class DomainsPasswordPolicyArgs:
         return pulumi.get(self, "user_name_disallowed")
 
     @user_name_disallowed.setter
-    def user_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def user_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "user_name_disallowed", value)
 
 
 @pulumi.input_type
 class _DomainsPasswordPolicyState:
     def __init__(__self__, *,
-                 allowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 configured_password_policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_word_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 disallowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 distinct_characters: Optional[pulumi.Input[_builtins.int]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_password_reset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 last_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lockout_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_incorrect_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_repeated_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]] = None,
-                 min_alpha_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alphas: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_lower_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_password_age: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_unique_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_upper_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_passwords_in_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_expire_warning: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_expires_after: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_strength: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 required_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 starts_with_alphabet: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 allowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 configured_password_policy_rules: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_word_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 disallowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 disallowed_substrings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disallowed_user_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 distinct_characters: pulumi.Input[Optional[_builtins.int]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_password_reset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 last_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lockout_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_incorrect_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_repeated_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]] = None,
+                 min_alpha_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alphas: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_lower_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_password_age: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_unique_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_upper_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_passwords_in_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_expire_warning: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_expires_after: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_strength: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 required_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 starts_with_alphabet: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DomainsPasswordPolicy resources.
 
@@ -2210,7 +2210,7 @@ class _DomainsPasswordPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="allowedChars")
-    def allowed_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
 
@@ -2226,48 +2226,48 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "allowed_chars")
 
     @allowed_chars.setter
-    def allowed_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -2284,12 +2284,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="configuredPasswordPolicyRules")
-    def configured_password_policy_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]]:
+    def configured_password_policy_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]]:
         """
         (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
 
@@ -2306,12 +2306,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "configured_password_policy_rules")
 
     @configured_password_policy_rules.setter
-    def configured_password_policy_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]]):
+    def configured_password_policy_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]]):
         pulumi.set(self, "configured_password_policy_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -2328,12 +2328,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String that describes the password policy
 
@@ -2349,12 +2349,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryDelimiter")
-    def dictionary_delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dictionary_delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A delimiter used to separate characters in the dictionary file
 
@@ -2370,12 +2370,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "dictionary_delimiter")
 
     @dictionary_delimiter.setter
-    def dictionary_delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dictionary_delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dictionary_delimiter", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryLocation")
-    def dictionary_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dictionary_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
 
@@ -2391,12 +2391,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "dictionary_location")
 
     @dictionary_location.setter
-    def dictionary_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dictionary_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dictionary_location", value)
 
     @_builtins.property
     @pulumi.getter(name="dictionaryWordDisallowed")
-    def dictionary_word_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dictionary_word_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the password can match a dictionary word
 
@@ -2412,12 +2412,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "dictionary_word_disallowed")
 
     @dictionary_word_disallowed.setter
-    def dictionary_word_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dictionary_word_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dictionary_word_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedChars")
-    def disallowed_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disallowed_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
 
@@ -2433,12 +2433,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "disallowed_chars")
 
     @disallowed_chars.setter
-    def disallowed_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disallowed_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disallowed_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedSubstrings")
-    def disallowed_substrings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disallowed_substrings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
 
@@ -2454,12 +2454,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "disallowed_substrings")
 
     @disallowed_substrings.setter
-    def disallowed_substrings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disallowed_substrings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_substrings", value)
 
     @_builtins.property
     @pulumi.getter(name="disallowedUserAttributeValues")
-    def disallowed_user_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disallowed_user_attribute_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of User attributes whose values are not allowed in the password.
 
@@ -2477,12 +2477,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "disallowed_user_attribute_values")
 
     @disallowed_user_attribute_values.setter
-    def disallowed_user_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disallowed_user_attribute_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disallowed_user_attribute_values", value)
 
     @_builtins.property
     @pulumi.getter(name="distinctCharacters")
-    def distinct_characters(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def distinct_characters(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of distinct characters between old password and new password
 
@@ -2500,12 +2500,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "distinct_characters")
 
     @distinct_characters.setter
-    def distinct_characters(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def distinct_characters(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "distinct_characters", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -2522,12 +2522,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -2543,12 +2543,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="firstNameDisallowed")
-    def first_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def first_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
 
@@ -2564,12 +2564,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "first_name_disallowed")
 
     @first_name_disallowed.setter
-    def first_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def first_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "first_name_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="forcePasswordReset")
-    def force_password_reset(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_password_reset(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
 
@@ -2585,12 +2585,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "force_password_reset")
 
     @force_password_reset.setter
-    def force_password_reset(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_password_reset(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_password_reset", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]:
+    def groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]:
         """
         (Updatable) A list of groups that the password policy belongs to.
 
@@ -2610,12 +2610,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]):
+    def groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -2630,24 +2630,24 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -2662,12 +2662,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -2684,12 +2684,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -2705,12 +2705,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="lastNameDisallowed")
-    def last_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def last_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
 
@@ -2726,12 +2726,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "last_name_disallowed")
 
     @last_name_disallowed.setter
-    def last_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def last_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "last_name_disallowed", value)
 
     @_builtins.property
     @pulumi.getter(name="lockoutDuration")
-    def lockout_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def lockout_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
 
@@ -2747,12 +2747,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "lockout_duration")
 
     @lockout_duration.setter
-    def lockout_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def lockout_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "lockout_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="maxIncorrectAttempts")
-    def max_incorrect_attempts(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_incorrect_attempts(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An integer that represents the maximum number of failed logins before an account is locked
 
@@ -2768,12 +2768,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "max_incorrect_attempts")
 
     @max_incorrect_attempts.setter
-    def max_incorrect_attempts(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_incorrect_attempts(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_incorrect_attempts", value)
 
     @_builtins.property
     @pulumi.getter(name="maxLength")
-    def max_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
 
@@ -2790,12 +2790,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "max_length")
 
     @max_length.setter
-    def max_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxRepeatedChars")
-    def max_repeated_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_repeated_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
 
@@ -2811,12 +2811,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "max_repeated_chars")
 
     @max_repeated_chars.setter
-    def max_repeated_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_repeated_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_repeated_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSpecialChars")
-    def max_special_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_special_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
 
@@ -2832,12 +2832,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "max_special_chars")
 
     @max_special_chars.setter
-    def max_special_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_special_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_special_chars", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -2854,12 +2854,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter(name="minAlphaNumerals")
-    def min_alpha_numerals(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_alpha_numerals(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
 
@@ -2875,12 +2875,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_alpha_numerals")
 
     @min_alpha_numerals.setter
-    def min_alpha_numerals(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_alpha_numerals(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_alpha_numerals", value)
 
     @_builtins.property
     @pulumi.getter(name="minAlphas")
-    def min_alphas(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_alphas(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
 
@@ -2896,12 +2896,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_alphas")
 
     @min_alphas.setter
-    def min_alphas(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_alphas(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_alphas", value)
 
     @_builtins.property
     @pulumi.getter(name="minLength")
-    def min_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
 
@@ -2917,12 +2917,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_length")
 
     @min_length.setter
-    def min_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_length", value)
 
     @_builtins.property
     @pulumi.getter(name="minLowerCase")
-    def min_lower_case(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_lower_case(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
 
@@ -2938,12 +2938,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_lower_case")
 
     @min_lower_case.setter
-    def min_lower_case(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_lower_case(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_lower_case", value)
 
     @_builtins.property
     @pulumi.getter(name="minNumerals")
-    def min_numerals(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_numerals(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
 
@@ -2959,12 +2959,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_numerals")
 
     @min_numerals.setter
-    def min_numerals(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_numerals(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_numerals", value)
 
     @_builtins.property
     @pulumi.getter(name="minPasswordAge")
-    def min_password_age(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_password_age(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Minimum time after which the user can resubmit the reset password request
 
@@ -2980,12 +2980,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_password_age")
 
     @min_password_age.setter
-    def min_password_age(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_password_age(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_password_age", value)
 
     @_builtins.property
     @pulumi.getter(name="minSpecialChars")
-    def min_special_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_special_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
 
@@ -3001,12 +3001,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_special_chars")
 
     @min_special_chars.setter
-    def min_special_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_special_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_special_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="minUniqueChars")
-    def min_unique_chars(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_unique_chars(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
 
@@ -3022,12 +3022,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_unique_chars")
 
     @min_unique_chars.setter
-    def min_unique_chars(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_unique_chars(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_unique_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="minUpperCase")
-    def min_upper_case(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_upper_case(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
 
@@ -3043,12 +3043,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "min_upper_case")
 
     @min_upper_case.setter
-    def min_upper_case(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_upper_case(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_upper_case", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
 
@@ -3065,12 +3065,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numPasswordsInHistory")
-    def num_passwords_in_history(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_passwords_in_history(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of passwords that will be kept in history that may not be used as a password
 
@@ -3086,12 +3086,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "num_passwords_in_history")
 
     @num_passwords_in_history.setter
-    def num_passwords_in_history(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_passwords_in_history(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_passwords_in_history", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -3108,12 +3108,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordExpireWarning")
-    def password_expire_warning(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_expire_warning(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
 
@@ -3129,12 +3129,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "password_expire_warning")
 
     @password_expire_warning.setter
-    def password_expire_warning(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_expire_warning(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_expire_warning", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordExpiresAfter")
-    def password_expires_after(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_expires_after(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of days after which the password expires automatically
 
@@ -3150,12 +3150,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "password_expires_after")
 
     @password_expires_after.setter
-    def password_expires_after(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_expires_after(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_expires_after", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordStrength")
-    def password_strength(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_strength(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
 
@@ -3171,12 +3171,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "password_strength")
 
     @password_strength.setter
-    def password_strength(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_strength(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_strength", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Password policy priority
 
@@ -3195,12 +3195,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="requiredChars")
-    def required_chars(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def required_chars(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
 
@@ -3216,24 +3216,24 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "required_chars")
 
     @required_chars.setter
-    def required_chars(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def required_chars(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "required_chars", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -3250,12 +3250,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="startsWithAlphabet")
-    def starts_with_alphabet(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def starts_with_alphabet(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that the password must begin with an alphabetic character
 
@@ -3271,12 +3271,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "starts_with_alphabet")
 
     @starts_with_alphabet.setter
-    def starts_with_alphabet(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def starts_with_alphabet(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "starts_with_alphabet", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -3293,12 +3293,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -3315,12 +3315,12 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="userNameDisallowed")
-    def user_name_disallowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def user_name_disallowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
 
@@ -3340,7 +3340,7 @@ class _DomainsPasswordPolicyState:
         return pulumi.get(self, "user_name_disallowed")
 
     @user_name_disallowed.setter
-    def user_name_disallowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def user_name_disallowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "user_name_disallowed", value)
 
 
@@ -3350,51 +3350,51 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_word_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 disallowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 distinct_characters: Optional[pulumi.Input[_builtins.int]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_password_reset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lockout_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_incorrect_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_repeated_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alpha_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alphas: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_lower_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_password_age: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_unique_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_upper_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_passwords_in_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_expire_warning: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_expires_after: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_strength: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 required_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 starts_with_alphabet: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
-                 user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 allowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_word_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 disallowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 disallowed_substrings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disallowed_user_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 distinct_characters: pulumi.Input[Optional[_builtins.int]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_password_reset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lockout_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_incorrect_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_repeated_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alpha_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alphas: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_lower_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_password_age: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_unique_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_upper_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_passwords_in_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_expire_warning: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_expires_after: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_strength: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 required_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 starts_with_alphabet: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
+                 user_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -3421,47 +3421,47 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             description=password_policy_description,
             dictionary_delimiter=password_policy_dictionary_delimiter,
             dictionary_location=password_policy_dictionary_location,
-            dictionary_word_disallowed=password_policy_dictionary_word_disallowed,
+            dictionary_word_disallowed=password_policy_dictionary_word_disallowed == "true",
             disallowed_chars=password_policy_disallowed_chars,
             disallowed_substrings=password_policy_disallowed_substrings,
             disallowed_user_attribute_values=password_policy_disallowed_user_attribute_values,
-            distinct_characters=password_policy_distinct_characters,
+            distinct_characters=int(password_policy_distinct_characters),
             external_id="externalId",
-            first_name_disallowed=password_policy_first_name_disallowed,
-            force_password_reset=password_policy_force_password_reset,
+            first_name_disallowed=password_policy_first_name_disallowed == "true",
+            force_password_reset=password_policy_force_password_reset == "true",
             groups=[{
                 "value": test_group["id"],
             }],
             id=password_policy_id,
-            last_name_disallowed=password_policy_last_name_disallowed,
-            lockout_duration=password_policy_lockout_duration,
-            max_incorrect_attempts=password_policy_max_incorrect_attempts,
-            max_length=password_policy_max_length,
-            max_repeated_chars=password_policy_max_repeated_chars,
-            max_special_chars=password_policy_max_special_chars,
-            min_alpha_numerals=password_policy_min_alpha_numerals,
-            min_alphas=password_policy_min_alphas,
-            min_length=password_policy_min_length,
-            min_lower_case=password_policy_min_lower_case,
-            min_numerals=password_policy_min_numerals,
-            min_password_age=password_policy_min_password_age,
-            min_special_chars=password_policy_min_special_chars,
-            min_unique_chars=password_policy_min_unique_chars,
-            min_upper_case=password_policy_min_upper_case,
-            num_passwords_in_history=password_policy_num_passwords_in_history,
+            last_name_disallowed=password_policy_last_name_disallowed == "true",
+            lockout_duration=int(password_policy_lockout_duration),
+            max_incorrect_attempts=int(password_policy_max_incorrect_attempts),
+            max_length=int(password_policy_max_length),
+            max_repeated_chars=int(password_policy_max_repeated_chars),
+            max_special_chars=int(password_policy_max_special_chars),
+            min_alpha_numerals=int(password_policy_min_alpha_numerals),
+            min_alphas=int(password_policy_min_alphas),
+            min_length=int(password_policy_min_length),
+            min_lower_case=int(password_policy_min_lower_case),
+            min_numerals=int(password_policy_min_numerals),
+            min_password_age=int(password_policy_min_password_age),
+            min_special_chars=int(password_policy_min_special_chars),
+            min_unique_chars=int(password_policy_min_unique_chars),
+            min_upper_case=int(password_policy_min_upper_case),
+            num_passwords_in_history=int(password_policy_num_passwords_in_history),
             ocid=password_policy_ocid,
-            password_expire_warning=password_policy_password_expire_warning,
-            password_expires_after=password_policy_password_expires_after,
+            password_expire_warning=int(password_policy_password_expire_warning),
+            password_expires_after=int(password_policy_password_expires_after),
             password_strength=password_policy_password_strength,
-            priority=password_policy_priority,
+            priority=int(password_policy_priority),
             required_chars=password_policy_required_chars,
             resource_type_schema_version=password_policy_resource_type_schema_version,
-            starts_with_alphabet=password_policy_starts_with_alphabet,
+            starts_with_alphabet=password_policy_starts_with_alphabet == "true",
             tags=[{
                 "key": password_policy_tags_key,
                 "value": password_policy_tags_value,
             }],
-            user_name_disallowed=password_policy_user_name_disallowed)
+            user_name_disallowed=password_policy_user_name_disallowed == "true")
         ```
 
         ## Import
@@ -3932,47 +3932,47 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             description=password_policy_description,
             dictionary_delimiter=password_policy_dictionary_delimiter,
             dictionary_location=password_policy_dictionary_location,
-            dictionary_word_disallowed=password_policy_dictionary_word_disallowed,
+            dictionary_word_disallowed=password_policy_dictionary_word_disallowed == "true",
             disallowed_chars=password_policy_disallowed_chars,
             disallowed_substrings=password_policy_disallowed_substrings,
             disallowed_user_attribute_values=password_policy_disallowed_user_attribute_values,
-            distinct_characters=password_policy_distinct_characters,
+            distinct_characters=int(password_policy_distinct_characters),
             external_id="externalId",
-            first_name_disallowed=password_policy_first_name_disallowed,
-            force_password_reset=password_policy_force_password_reset,
+            first_name_disallowed=password_policy_first_name_disallowed == "true",
+            force_password_reset=password_policy_force_password_reset == "true",
             groups=[{
                 "value": test_group["id"],
             }],
             id=password_policy_id,
-            last_name_disallowed=password_policy_last_name_disallowed,
-            lockout_duration=password_policy_lockout_duration,
-            max_incorrect_attempts=password_policy_max_incorrect_attempts,
-            max_length=password_policy_max_length,
-            max_repeated_chars=password_policy_max_repeated_chars,
-            max_special_chars=password_policy_max_special_chars,
-            min_alpha_numerals=password_policy_min_alpha_numerals,
-            min_alphas=password_policy_min_alphas,
-            min_length=password_policy_min_length,
-            min_lower_case=password_policy_min_lower_case,
-            min_numerals=password_policy_min_numerals,
-            min_password_age=password_policy_min_password_age,
-            min_special_chars=password_policy_min_special_chars,
-            min_unique_chars=password_policy_min_unique_chars,
-            min_upper_case=password_policy_min_upper_case,
-            num_passwords_in_history=password_policy_num_passwords_in_history,
+            last_name_disallowed=password_policy_last_name_disallowed == "true",
+            lockout_duration=int(password_policy_lockout_duration),
+            max_incorrect_attempts=int(password_policy_max_incorrect_attempts),
+            max_length=int(password_policy_max_length),
+            max_repeated_chars=int(password_policy_max_repeated_chars),
+            max_special_chars=int(password_policy_max_special_chars),
+            min_alpha_numerals=int(password_policy_min_alpha_numerals),
+            min_alphas=int(password_policy_min_alphas),
+            min_length=int(password_policy_min_length),
+            min_lower_case=int(password_policy_min_lower_case),
+            min_numerals=int(password_policy_min_numerals),
+            min_password_age=int(password_policy_min_password_age),
+            min_special_chars=int(password_policy_min_special_chars),
+            min_unique_chars=int(password_policy_min_unique_chars),
+            min_upper_case=int(password_policy_min_upper_case),
+            num_passwords_in_history=int(password_policy_num_passwords_in_history),
             ocid=password_policy_ocid,
-            password_expire_warning=password_policy_password_expire_warning,
-            password_expires_after=password_policy_password_expires_after,
+            password_expire_warning=int(password_policy_password_expire_warning),
+            password_expires_after=int(password_policy_password_expires_after),
             password_strength=password_policy_password_strength,
-            priority=password_policy_priority,
+            priority=int(password_policy_priority),
             required_chars=password_policy_required_chars,
             resource_type_schema_version=password_policy_resource_type_schema_version,
-            starts_with_alphabet=password_policy_starts_with_alphabet,
+            starts_with_alphabet=password_policy_starts_with_alphabet == "true",
             tags=[{
                 "key": password_policy_tags_key,
                 "value": password_policy_tags_value,
             }],
-            user_name_disallowed=password_policy_user_name_disallowed)
+            user_name_disallowed=password_policy_user_name_disallowed == "true")
         ```
 
         ## Import
@@ -3999,51 +3999,51 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 dictionary_word_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 disallowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 distinct_characters: Optional[pulumi.Input[_builtins.int]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_password_reset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lockout_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_incorrect_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_repeated_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alpha_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_alphas: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_lower_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_password_age: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_unique_chars: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_upper_case: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_passwords_in_history: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_expire_warning: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_expires_after: Optional[pulumi.Input[_builtins.int]] = None,
-                 password_strength: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 required_chars: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 starts_with_alphabet: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
-                 user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 allowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 dictionary_word_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 disallowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 disallowed_substrings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disallowed_user_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 distinct_characters: pulumi.Input[Optional[_builtins.int]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_password_reset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lockout_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_incorrect_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_repeated_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alpha_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_alphas: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_lower_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_password_age: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_unique_chars: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_upper_case: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_passwords_in_history: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_expire_warning: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_expires_after: pulumi.Input[Optional[_builtins.int]] = None,
+                 password_strength: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 required_chars: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 starts_with_alphabet: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
+                 user_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -4124,61 +4124,61 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            configured_password_policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs', 'DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgsDict']]]]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dictionary_delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-            dictionary_location: Optional[pulumi.Input[_builtins.str]] = None,
-            dictionary_word_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            disallowed_chars: Optional[pulumi.Input[_builtins.str]] = None,
-            disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            distinct_characters: Optional[pulumi.Input[_builtins.int]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            first_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            force_password_reset: Optional[pulumi.Input[_builtins.bool]] = None,
-            groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsCreatedByArgs', 'DomainsPasswordPolicyIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsLastModifiedByArgs', 'DomainsPasswordPolicyIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            last_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            lockout_duration: Optional[pulumi.Input[_builtins.int]] = None,
-            max_incorrect_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-            max_length: Optional[pulumi.Input[_builtins.int]] = None,
-            max_repeated_chars: Optional[pulumi.Input[_builtins.int]] = None,
-            max_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyMetaArgs', 'DomainsPasswordPolicyMetaArgsDict']]]]] = None,
-            min_alpha_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-            min_alphas: Optional[pulumi.Input[_builtins.int]] = None,
-            min_length: Optional[pulumi.Input[_builtins.int]] = None,
-            min_lower_case: Optional[pulumi.Input[_builtins.int]] = None,
-            min_numerals: Optional[pulumi.Input[_builtins.int]] = None,
-            min_password_age: Optional[pulumi.Input[_builtins.int]] = None,
-            min_special_chars: Optional[pulumi.Input[_builtins.int]] = None,
-            min_unique_chars: Optional[pulumi.Input[_builtins.int]] = None,
-            min_upper_case: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            num_passwords_in_history: Optional[pulumi.Input[_builtins.int]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            password_expire_warning: Optional[pulumi.Input[_builtins.int]] = None,
-            password_expires_after: Optional[pulumi.Input[_builtins.int]] = None,
-            password_strength: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            required_chars: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            starts_with_alphabet: Optional[pulumi.Input[_builtins.bool]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DomainsPasswordPolicy':
+            allowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            configured_password_policy_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs', 'DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgsDict']]]]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dictionary_delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+            dictionary_location: pulumi.Input[Optional[_builtins.str]] = None,
+            dictionary_word_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            disallowed_chars: pulumi.Input[Optional[_builtins.str]] = None,
+            disallowed_substrings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            disallowed_user_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            distinct_characters: pulumi.Input[Optional[_builtins.int]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            first_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            force_password_reset: pulumi.Input[Optional[_builtins.bool]] = None,
+            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsCreatedByArgs', 'DomainsPasswordPolicyIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsLastModifiedByArgs', 'DomainsPasswordPolicyIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            last_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            lockout_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            max_incorrect_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+            max_length: pulumi.Input[Optional[_builtins.int]] = None,
+            max_repeated_chars: pulumi.Input[Optional[_builtins.int]] = None,
+            max_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyMetaArgs', 'DomainsPasswordPolicyMetaArgsDict']]]]] = None,
+            min_alpha_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+            min_alphas: pulumi.Input[Optional[_builtins.int]] = None,
+            min_length: pulumi.Input[Optional[_builtins.int]] = None,
+            min_lower_case: pulumi.Input[Optional[_builtins.int]] = None,
+            min_numerals: pulumi.Input[Optional[_builtins.int]] = None,
+            min_password_age: pulumi.Input[Optional[_builtins.int]] = None,
+            min_special_chars: pulumi.Input[Optional[_builtins.int]] = None,
+            min_unique_chars: pulumi.Input[Optional[_builtins.int]] = None,
+            min_upper_case: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            num_passwords_in_history: pulumi.Input[Optional[_builtins.int]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            password_expire_warning: pulumi.Input[Optional[_builtins.int]] = None,
+            password_expires_after: pulumi.Input[Optional[_builtins.int]] = None,
+            password_strength: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            required_chars: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            starts_with_alphabet: pulumi.Input[Optional[_builtins.bool]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            user_name_disallowed: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DomainsPasswordPolicy':
         """
         Get an existing DomainsPasswordPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

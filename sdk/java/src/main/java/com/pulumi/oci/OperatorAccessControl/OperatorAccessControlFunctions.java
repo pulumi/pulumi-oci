@@ -58,8 +58,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -100,8 +100,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -142,8 +142,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -184,8 +184,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -226,8 +226,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -268,8 +268,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -311,8 +311,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -354,8 +354,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -397,8 +397,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -440,8 +440,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -483,8 +483,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -525,8 +525,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -567,8 +567,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -609,8 +609,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -651,8 +651,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -693,8 +693,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -740,8 +740,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -787,8 +787,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -834,8 +834,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -881,8 +881,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -928,8 +928,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -970,8 +970,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1012,8 +1012,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1096,8 +1096,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1138,8 +1138,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1183,8 +1183,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1228,8 +1228,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1273,8 +1273,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1318,8 +1318,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1363,8 +1363,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1405,8 +1405,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1447,8 +1447,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1489,8 +1489,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1531,8 +1531,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1573,8 +1573,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1615,8 +1615,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1657,8 +1657,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1699,8 +1699,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1741,8 +1741,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1783,8 +1783,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1829,8 +1829,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1875,8 +1875,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1921,8 +1921,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1967,8 +1967,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2013,8 +2013,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2058,8 +2058,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2103,8 +2103,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2148,8 +2148,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2193,8 +2193,8 @@ public final class OperatorAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
      * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

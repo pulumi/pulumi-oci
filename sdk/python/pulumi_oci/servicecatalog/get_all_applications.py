@@ -181,11 +181,11 @@ def get_all_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_all_applications = oci.ServiceCatalog.get_all_applications(compartment_id=compartment_id,
+    test_all_applications = oci.servicecatalog.get_all_applications(compartment_id=compartment_id,
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured,
+        is_featured=all_application_is_featured == "true",
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])
@@ -226,15 +226,15 @@ def get_all_applications(compartment_id: Optional[_builtins.str] = None,
         package_types=pulumi.get(__ret__, 'package_types'),
         pricings=pulumi.get(__ret__, 'pricings'),
         publisher_ids=pulumi.get(__ret__, 'publisher_ids'))
-def get_all_applications_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                entity_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAllApplicationsFilterArgs', 'GetAllApplicationsFilterArgsDict']]]]] = None,
-                                is_featured: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                package_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                pricings: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                publisher_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_all_applications_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                entity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAllApplicationsFilterArgs', 'GetAllApplicationsFilterArgsDict']]]]] = None,
+                                is_featured: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                package_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                pricings: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                publisher_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllApplicationsResult]:
     """
     This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
@@ -248,11 +248,11 @@ def get_all_applications_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_all_applications = oci.ServiceCatalog.get_all_applications(compartment_id=compartment_id,
+    test_all_applications = oci.servicecatalog.get_all_applications(compartment_id=compartment_id,
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured,
+        is_featured=all_application_is_featured == "true",
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])

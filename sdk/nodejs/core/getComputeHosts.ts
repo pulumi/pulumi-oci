@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHosts = oci.Core.getComputeHosts({
+ * const testComputeHosts = oci.core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
- *     computeHostInSubtree: computeHostComputeHostInSubtree,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree === "true",
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,
@@ -139,12 +139,12 @@ export interface GetComputeHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHosts = oci.Core.getComputeHosts({
+ * const testComputeHosts = oci.core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
- *     computeHostInSubtree: computeHostComputeHostInSubtree,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree === "true",
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,
@@ -173,7 +173,7 @@ export interface GetComputeHostsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -181,29 +181,29 @@ export interface GetComputeHostsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
      */
-    computeHostGroupId?: pulumi.Input<string>;
+    computeHostGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      */
-    computeHostHealth?: pulumi.Input<string>;
+    computeHostHealth?: pulumi.Input<string | undefined>;
     /**
      * When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
      */
-    computeHostInSubtree?: pulumi.Input<boolean>;
+    computeHostInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
      */
-    computeHostLifecycleState?: pulumi.Input<string>;
+    computeHostLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeHostsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeHostsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host network resoruce.
      * * Customer-unique HPC island ID
      * * Customer-unique network block ID
      * * Customer-unique local block ID
      */
-    networkResourceId?: pulumi.Input<string>;
+    networkResourceId?: pulumi.Input<string | undefined>;
 }

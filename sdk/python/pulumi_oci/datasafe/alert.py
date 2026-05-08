@@ -20,11 +20,11 @@ __all__ = ['AlertArgs', 'Alert']
 class AlertArgs:
     def __init__(__self__, *,
                  alert_id: pulumi.Input[_builtins.str],
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Alert resource.
 
@@ -65,55 +65,55 @@ class AlertArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comment can be entered to track the alert changes done by the user.
         """
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the alert.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the alert.
 
@@ -124,37 +124,37 @@ class AlertArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _AlertState:
     def __init__(__self__, *,
-                 alert_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_policy_rule_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_policy_rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 alert_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_policy_rule_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_policy_rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Alert resources.
 
@@ -238,223 +238,223 @@ class _AlertState:
 
     @_builtins.property
     @pulumi.getter(name="alertId")
-    def alert_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of alert.
         """
         return pulumi.get(self, "alert_id")
 
     @alert_id.setter
-    def alert_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_id", value)
 
     @_builtins.property
     @pulumi.getter(name="alertPolicyRuleKey")
-    def alert_policy_rule_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_policy_rule_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key of the rule of alert policy that triggered alert.
         """
         return pulumi.get(self, "alert_policy_rule_key")
 
     @alert_policy_rule_key.setter
-    def alert_policy_rule_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_policy_rule_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_policy_rule_key", value)
 
     @_builtins.property
     @pulumi.getter(name="alertPolicyRuleName")
-    def alert_policy_rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_policy_rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the rule of alert policy that triggered alert.
         """
         return pulumi.get(self, "alert_policy_rule_name")
 
     @alert_policy_rule_name.setter
-    def alert_policy_rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_policy_rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_policy_rule_name", value)
 
     @_builtins.property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the alert. Indicates the Data Safe feature triggering the alert.
         """
         return pulumi.get(self, "alert_type")
 
     @alert_type.setter
-    def alert_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comment can be entered to track the alert changes done by the user.
         """
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the alert.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the alert.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the alert.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def feature_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def feature_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "feature_details", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operation (event) that triggered alert.
         """
         return pulumi.get(self, "operation")
 
     @operation.setter
-    def operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation", value)
 
     @_builtins.property
     @pulumi.getter(name="operationStatus")
-    def operation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The result of the operation (event) that triggered alert.
         """
         return pulumi.get(self, "operation_status")
 
     @operation_status.setter
-    def operation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_status", value)
 
     @_builtins.property
     @pulumi.getter(name="operationTime")
-    def operation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "operation_time")
 
     @operation_time.setter
-    def operation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_time", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the policy that triggered alert.
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource endpoint that triggered the alert.
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Severity level of the alert.
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the alert.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the alert.
 
@@ -465,67 +465,67 @@ class _AlertState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def target_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Array of OCIDs of the target database which are associated with the alert.
         """
         return pulumi.get(self, "target_ids")
 
     @target_ids.setter
-    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def target_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="targetNames")
-    def target_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def target_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Array of names of the target database.
         """
         return pulumi.get(self, "target_names")
 
     @target_names.setter
-    def target_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def target_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_names", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -535,12 +535,12 @@ class Alert(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alert_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 alert_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
@@ -610,12 +610,12 @@ class Alert(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alert_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 alert_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -661,30 +661,30 @@ class Alert(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alert_id: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_policy_rule_key: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_policy_rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-            comment: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            feature_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            operation: Optional[pulumi.Input[_builtins.str]] = None,
-            operation_status: Optional[pulumi.Input[_builtins.str]] = None,
-            operation_time: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            target_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Alert':
+            alert_id: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_policy_rule_key: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_policy_rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            operation_status: pulumi.Input[Optional[_builtins.str]] = None,
+            operation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Alert':
         """
         Get an existing Alert resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

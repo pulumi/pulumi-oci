@@ -160,11 +160,11 @@ def get_channels(channel_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=compartment_id,
+    test_channels = oci.mysql.get_channels(compartment_id=compartment_id,
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled,
+        is_enabled=channel_is_enabled == "true",
         state=channel_state)
     ```
 
@@ -197,13 +197,13 @@ def get_channels(channel_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
         state=pulumi.get(__ret__, 'state'))
-def get_channels_output(channel_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict']]]]] = None,
-                        is_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_channels_output(channel_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict']]]]] = None,
+                        is_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetChannelsResult]:
     """
     This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
@@ -216,11 +216,11 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=compartment_id,
+    test_channels = oci.mysql.get_channels(compartment_id=compartment_id,
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled,
+        is_enabled=channel_is_enabled == "true",
         state=channel_state)
     ```
 

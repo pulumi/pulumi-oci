@@ -24,10 +24,10 @@ class RrsetArgs:
                  domain: pulumi.Input[_builtins.str],
                  rtype: pulumi.Input[_builtins.str],
                  zone_name_or_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Rrset resource.
 
@@ -107,7 +107,7 @@ class RrsetArgs:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     @_utilities.deprecated("""Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.""")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment the zone belongs to.
 
@@ -116,12 +116,12 @@ class RrsetArgs:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
         (Updatable) 
         **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
@@ -129,45 +129,45 @@ class RrsetArgs:
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.""")
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def view_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
-    def view_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def view_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "view_id", value)
 
 
 @pulumi.input_type
 class _RrsetState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Rrset resources.
 
@@ -210,7 +210,7 @@ class _RrsetState:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     @_utilities.deprecated("""Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.""")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment the zone belongs to.
 
@@ -219,24 +219,24 @@ class _RrsetState:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target fully-qualified domain name (FQDN) within the target zone.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
         (Updatable) 
         **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
@@ -244,49 +244,49 @@ class _RrsetState:
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter
-    def rtype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rtype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the target RRSet within the target zone.
         """
         return pulumi.get(self, "rtype")
 
     @rtype.setter
-    def rtype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rtype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rtype", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.""")
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def view_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
-    def view_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def view_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "view_id", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneNameOrId")
-    def zone_name_or_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_name_or_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name or OCID of the target zone.
 
@@ -297,7 +297,7 @@ class _RrsetState:
         return pulumi.get(self, "zone_name_or_id")
 
     @zone_name_or_id.setter
-    def zone_name_or_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_name_or_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_name_or_id", value)
 
 
@@ -307,13 +307,13 @@ class Rrset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -340,7 +340,7 @@ class Rrset(pulumi.CustomResource):
                 "domain": rrset_items_domain,
                 "rdata": rrset_items_rdata,
                 "rtype": rrset_items_rtype,
-                "ttl": rrset_items_ttl,
+                "ttl": int(rrset_items_ttl),
             }],
             scope=rrset_scope,
             view_id=test_view["id"])
@@ -409,7 +409,7 @@ class Rrset(pulumi.CustomResource):
                 "domain": rrset_items_domain,
                 "rdata": rrset_items_rdata,
                 "rtype": rrset_items_rtype,
-                "ttl": rrset_items_ttl,
+                "ttl": int(rrset_items_ttl),
             }],
             scope=rrset_scope,
             view_id=test_view["id"])
@@ -445,13 +445,13 @@ class Rrset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 view_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 view_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -484,13 +484,13 @@ class Rrset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
-            rtype: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            view_id: Optional[pulumi.Input[_builtins.str]] = None,
-            zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Rrset':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+            rtype: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            view_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Rrset':
         """
         Get an existing Rrset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

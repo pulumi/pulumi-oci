@@ -168,12 +168,12 @@ def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+    test_namespace_effective_properties = oci.loganalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
         agent_id=test_agent["id"],
         entity_id=test_log_analytics_entity["id"],
-        is_include_patterns=namespace_effective_property_is_include_patterns,
+        is_include_patterns=namespace_effective_property_is_include_patterns == "true",
         name=namespace_effective_property_name,
-        pattern_id=test_pattern["id"],
+        pattern_id=int(test_pattern["id"]),
         pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```
@@ -213,15 +213,15 @@ def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
         pattern_id=pulumi.get(__ret__, 'pattern_id'),
         pattern_id_long=pulumi.get(__ret__, 'pattern_id_long'),
         source_name=pulumi.get(__ret__, 'source_name'))
-def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict']]]]] = None,
-                                              is_include_patterns: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                              pattern_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                              pattern_id_long: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              source_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_effective_properties_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict']]]]] = None,
+                                              is_include_patterns: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                              pattern_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                              pattern_id_long: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              source_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceEffectivePropertiesResult]:
     """
     This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
@@ -234,12 +234,12 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+    test_namespace_effective_properties = oci.loganalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
         agent_id=test_agent["id"],
         entity_id=test_log_analytics_entity["id"],
-        is_include_patterns=namespace_effective_property_is_include_patterns,
+        is_include_patterns=namespace_effective_property_is_include_patterns == "true",
         name=namespace_effective_property_name,
-        pattern_id=test_pattern["id"],
+        pattern_id=int(test_pattern["id"]),
         pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```

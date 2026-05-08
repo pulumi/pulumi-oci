@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailableWindowsUpdates = oci.OsManagementHub.getManagedInstanceAvailableWindowsUpdates({
+ * const testManagedInstanceAvailableWindowsUpdates = oci.osmanagementhub.getManagedInstanceAvailableWindowsUpdates({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceAvailableWindowsUpdateClassificationType,
  *     compartmentId: compartmentId,
@@ -112,7 +112,7 @@ export interface GetManagedInstanceAvailableWindowsUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailableWindowsUpdates = oci.OsManagementHub.getManagedInstanceAvailableWindowsUpdates({
+ * const testManagedInstanceAvailableWindowsUpdates = oci.osmanagementhub.getManagedInstanceAvailableWindowsUpdates({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceAvailableWindowsUpdateClassificationType,
  *     compartmentId: compartmentId,
@@ -144,24 +144,24 @@ export interface GetManagedInstanceAvailableWindowsUpdatesOutputArgs {
     /**
      * A filter to return only packages that match the given update classification type.
      */
-    classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    classificationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceAvailableWindowsUpdatesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceAvailableWindowsUpdatesFilterArgs>[] | undefined>;
     /**
      * Indicates if the update can be installed by the OS Management Hub service.
      */
-    isInstallable?: pulumi.Input<string>;
+    isInstallable?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
@@ -169,5 +169,5 @@ export interface GetManagedInstanceAvailableWindowsUpdatesOutputArgs {
     /**
      * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -304,7 +304,7 @@ def get_dbmulticloud_oracle_db_gcp_key_ring(oracle_db_gcp_key_ring_id: Optional[
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_dbmulticloud_oracle_db_gcp_key_ring_output(oracle_db_gcp_key_ring_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_gcp_key_ring_output(oracle_db_gcp_key_ring_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbGcpKeyRingResult]:
     """
     This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.

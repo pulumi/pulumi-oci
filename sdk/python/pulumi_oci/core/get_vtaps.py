@@ -188,9 +188,9 @@ def get_vtaps(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+    test_vtaps = oci.core.get_vtaps(compartment_id=compartment_id,
         display_name=vtap_display_name,
-        is_vtap_enabled=vtap_is_vtap_enabled,
+        is_vtap_enabled=vtap_is_vtap_enabled == "true",
         source=vtap_source,
         state=vtap_state,
         target_id=test_target["id"],
@@ -235,15 +235,15 @@ def get_vtaps(compartment_id: Optional[_builtins.str] = None,
         target_ip=pulumi.get(__ret__, 'target_ip'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vtaps=pulumi.get(__ret__, 'vtaps'))
-def get_vtaps_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]]]] = None,
-                     is_vtap_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                     source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     target_ip: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vtaps_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]]]] = None,
+                     is_vtap_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                     source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     target_ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVtapsResult]:
     """
     This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
@@ -256,9 +256,9 @@ def get_vtaps_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+    test_vtaps = oci.core.get_vtaps(compartment_id=compartment_id,
         display_name=vtap_display_name,
-        is_vtap_enabled=vtap_is_vtap_enabled,
+        is_vtap_enabled=vtap_is_vtap_enabled == "true",
         source=vtap_source,
         state=vtap_state,
         target_id=test_target["id"],

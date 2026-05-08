@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSchedules = oci.CloudMigrations.getReplicationSchedules({
+ * const testReplicationSchedules = oci.cloudmigrations.getReplicationSchedules({
  *     compartmentId: compartmentId,
  *     displayName: replicationScheduleDisplayName,
  *     replicationScheduleId: testReplicationSchedule.id,
@@ -98,7 +98,7 @@ export interface GetReplicationSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSchedules = oci.CloudMigrations.getReplicationSchedules({
+ * const testReplicationSchedules = oci.cloudmigrations.getReplicationSchedules({
  *     compartmentId: compartmentId,
  *     displayName: replicationScheduleDisplayName,
  *     replicationScheduleId: testReplicationSchedule.id,
@@ -125,18 +125,18 @@ export interface GetReplicationSchedulesOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetReplicationSchedulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetReplicationSchedulesFilterArgs>[] | undefined>;
     /**
      * Unique replication schedule identifier in query
      */
-    replicationScheduleId?: pulumi.Input<string>;
+    replicationScheduleId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the replication schedule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

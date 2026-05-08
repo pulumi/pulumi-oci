@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstance = oci.Oce.getOceInstance({
+ * const testOceInstance = oci.oce.getOceInstance({
  *     oceInstanceId: testOceInstanceOciOceOceInstance.id,
  * });
  * ```
@@ -159,7 +159,7 @@ export interface GetOceInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstance = oci.Oce.getOceInstance({
+ * const testOceInstance = oci.oce.getOceInstance({
  *     oceInstanceId: testOceInstanceOciOceOceInstance.id,
  * });
  * ```

@@ -148,7 +148,7 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_clusters = oci.Ocvp.get_datastore_clusters(compartment_id=compartment_id,
+    test_datastore_clusters = oci.ocvp.get_datastore_clusters(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_cluster_id=test_datastore_cluster["id"],
         display_name=datastore_cluster_display_name,
@@ -181,12 +181,12 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_datastore_clusters_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  datastore_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatastoreClustersFilterArgs', 'GetDatastoreClustersFilterArgsDict']]]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_datastore_clusters_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  datastore_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatastoreClustersFilterArgs', 'GetDatastoreClustersFilterArgsDict']]]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastoreClustersResult]:
     """
     This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -200,7 +200,7 @@ def get_datastore_clusters_output(cluster_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_clusters = oci.Ocvp.get_datastore_clusters(compartment_id=compartment_id,
+    test_datastore_clusters = oci.ocvp.get_datastore_clusters(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_cluster_id=test_datastore_cluster["id"],
         display_name=datastore_cluster_display_name,

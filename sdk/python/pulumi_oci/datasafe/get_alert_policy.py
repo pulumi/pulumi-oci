@@ -237,7 +237,7 @@ def get_alert_policy(alert_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy = oci.DataSafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
+    test_alert_policy = oci.datasafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_alert_policy(alert_policy_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_alert_policy_output(alert_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_alert_policy_output(alert_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertPolicyResult]:
     """
     This data source provides details about a specific Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -278,7 +278,7 @@ def get_alert_policy_output(alert_policy_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy = oci.DataSafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
+    test_alert_policy = oci.datasafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
     ```
 
 

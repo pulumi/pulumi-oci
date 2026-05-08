@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     typeKey: connectionTypeKey,
  *     description: connectionDescription,
  *     encProperties: connectionEncProperties,
- *     isDefault: connectionIsDefault,
+ *     isDefault: connectionIsDefault === "true",
  * });
  * ```
  *
@@ -218,59 +218,59 @@ export interface ConnectionState {
     /**
      * Unique catalog identifier.
      */
-    catalogId?: pulumi.Input<string>;
+    catalogId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the user who created the connection.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * Unique data asset key.
      */
-    dataAssetKey?: pulumi.Input<string>;
+    dataAssetKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A description of the connection.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique external key of this object from the source system.
      */
-    externalKey?: pulumi.Input<string>;
+    externalKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * Unique connection key that is immutable.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the connection.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeStatusUpdated?: pulumi.Input<string>;
+    timeStatusUpdated?: pulumi.Input<string | undefined>;
     /**
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *
@@ -278,15 +278,15 @@ export interface ConnectionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    typeKey?: pulumi.Input<string>;
+    typeKey?: pulumi.Input<string | undefined>;
     /**
      * OCID of the user who modified the connection.
      */
-    updatedById?: pulumi.Input<string>;
+    updatedById?: pulumi.Input<string | undefined>;
     /**
      * URI to the connection instance in the API.
      */
-    uri?: pulumi.Input<string>;
+    uri?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -304,7 +304,7 @@ export interface ConnectionArgs {
     /**
      * (Updatable) A description of the connection.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -312,11 +312,11 @@ export interface ConnectionArgs {
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
      */

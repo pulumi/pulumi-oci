@@ -109,7 +109,7 @@ export interface LogAnalyticsPreferencesManagementState {
     /**
      * An array of tenant preference details.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
@@ -117,7 +117,7 @@ export interface LogAnalyticsPreferencesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -127,7 +127,7 @@ export interface LogAnalyticsPreferencesManagementArgs {
     /**
      * An array of tenant preference details.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *

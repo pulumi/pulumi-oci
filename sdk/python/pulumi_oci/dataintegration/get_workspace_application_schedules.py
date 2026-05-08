@@ -157,7 +157,7 @@ def get_workspace_application_schedules(application_key: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedules = oci.dataintegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_schedule_identifier,
         keys=workspace_application_schedule_key,
@@ -194,13 +194,13 @@ def get_workspace_application_schedules(application_key: Optional[_builtins.str]
         schedule_summary_collections=pulumi.get(__ret__, 'schedule_summary_collections'),
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_schedules_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict']]]]] = None,
-                                               identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                               keys: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                               workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_schedules_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict']]]]] = None,
+                                               identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                               keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                               workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationSchedulesResult]:
     """
     This data source provides the list of Workspace Application Schedules in Oracle Cloud Infrastructure Data Integration service.
@@ -213,7 +213,7 @@ def get_workspace_application_schedules_output(application_key: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedules = oci.dataintegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_schedule_identifier,
         keys=workspace_application_schedule_key,

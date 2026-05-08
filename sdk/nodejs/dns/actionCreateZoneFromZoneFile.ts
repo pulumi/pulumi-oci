@@ -216,65 +216,65 @@ export interface ActionCreateZoneFromZoneFileState {
     /**
      * The OCID of the compartment the resource belongs to.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The zone file contents.
      */
-    createZoneFromZoneFileDetails?: pulumi.Input<string>;
+    createZoneFromZoneFileDetails?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    dnssecConfigs?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig>[]>;
-    dnssecState?: pulumi.Input<string>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    dnssecConfigs?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig>[] | undefined>;
+    dnssecState?: pulumi.Input<string | undefined>;
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream>[]>;
+    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream>[] | undefined>;
     /**
      * External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileExternalMaster>[]>;
+    externalMasters?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileExternalMaster>[] | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    isProtected?: pulumi.Input<boolean>;
+    isProtected?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the zone.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The authoritative nameservers for the zone.
      */
-    nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileNameserver>[]>;
+    nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileNameserver>[] | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    self?: pulumi.Input<string>;
+    self?: pulumi.Input<string | undefined>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    serial?: pulumi.Input<string>;
+    serial?: pulumi.Input<string | undefined>;
     /**
      * The current state of the zone resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the resource is associated with.
      *
@@ -282,15 +282,15 @@ export interface ActionCreateZoneFromZoneFileState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer>[]>;
+    zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer>[] | undefined>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      */
-    zoneType?: pulumi.Input<string>;
+    zoneType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,7 +308,7 @@ export interface ActionCreateZoneFromZoneFileArgs {
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the resource is associated with.
      *
@@ -316,5 +316,5 @@ export interface ActionCreateZoneFromZoneFileArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
 }

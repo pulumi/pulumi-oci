@@ -96,7 +96,7 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
+    test_autonomous_db_preview_versions = oci.database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
     ```
 
 
@@ -113,8 +113,8 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[_builtins.str] =
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDbPreviewVersionsFilterArgs', 'GetAutonomousDbPreviewVersionsFilterArgsDict']]]]] = None,
+def get_autonomous_db_preview_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDbPreviewVersionsFilterArgs', 'GetAutonomousDbPreviewVersionsFilterArgsDict']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDbPreviewVersionsResult]:
     """
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
@@ -128,7 +128,7 @@ def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
+    test_autonomous_db_preview_versions = oci.database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
     ```
 
 

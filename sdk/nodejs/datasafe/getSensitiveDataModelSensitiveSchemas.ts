@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveSchemas = oci.DataSafe.getSensitiveDataModelSensitiveSchemas({
+ * const testSensitiveDataModelSensitiveSchemas = oci.datasafe.getSensitiveDataModelSensitiveSchemas({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     schemaNames: sensitiveDataModelSensitiveSchemaSchemaName,
  * });
@@ -77,7 +77,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveSchemas = oci.DataSafe.getSensitiveDataModelSensitiveSchemas({
+ * const testSensitiveDataModelSensitiveSchemas = oci.datasafe.getSensitiveDataModelSensitiveSchemas({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     schemaNames: sensitiveDataModelSensitiveSchemaSchemaName,
  * });
@@ -96,11 +96,11 @@ export function getSensitiveDataModelSensitiveSchemasOutput(args: GetSensitiveDa
  * A collection of arguments for invoking getSensitiveDataModelSensitiveSchemas.
  */
 export interface GetSensitiveDataModelSensitiveSchemasOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveSchemasFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveSchemasFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */

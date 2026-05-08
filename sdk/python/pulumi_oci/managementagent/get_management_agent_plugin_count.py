@@ -95,7 +95,7 @@ def get_management_agent_plugin_count(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=compartment_id,
+    test_management_agent_plugin_count = oci.managementagent.get_management_agent_plugin_count(compartment_id=compartment_id,
         group_by=management_agent_plugin_count_group_by)
     ```
 
@@ -114,8 +114,8 @@ def get_management_agent_plugin_count(compartment_id: Optional[_builtins.str] = 
         group_by=pulumi.get(__ret__, 'group_by'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             group_by: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_agent_plugin_count_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             group_by: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentPluginCountResult]:
     """
     This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -129,7 +129,7 @@ def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=compartment_id,
+    test_management_agent_plugin_count = oci.managementagent.get_management_agent_plugin_count(compartment_id=compartment_id,
         group_by=management_agent_plugin_count_group_by)
     ```
 

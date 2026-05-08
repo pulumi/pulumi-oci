@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
+ * const testDatabaseToolsConnections = oci.databasetools.getDatabaseToolsConnections({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsConnectionDisplayName,
  *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
@@ -127,7 +127,7 @@ export interface GetDatabaseToolsConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
+ * const testDatabaseToolsConnections = oci.databasetools.getDatabaseToolsConnections({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsConnectionDisplayName,
  *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
@@ -163,26 +163,26 @@ export interface GetDatabaseToolsConnectionsOutputArgs {
     /**
      * A filter to return only resources that match the entire specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsConnectionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsConnectionsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      */
-    relatedResourceIdentifier?: pulumi.Input<string>;
+    relatedResourceIdentifier?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with one of the specified runtimeIdentity values.
      */
-    runtimeIdentities?: pulumi.Input<pulumi.Input<string>[]>;
+    runtimeIdentities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources with one of the specified type values.
      */
-    runtimeSupports?: pulumi.Input<pulumi.Input<string>[]>;
+    runtimeSupports?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their type matches the specified type.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

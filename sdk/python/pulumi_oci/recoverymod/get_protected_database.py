@@ -354,7 +354,7 @@ def get_protected_database(protected_database_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
+    test_protected_database = oci.recoverymod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
     ```
 
 
@@ -392,7 +392,7 @@ def get_protected_database(protected_database_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vpc_user_name=pulumi.get(__ret__, 'vpc_user_name'))
-def get_protected_database_output(protected_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protected_database_output(protected_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedDatabaseResult]:
     """
     This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -405,7 +405,7 @@ def get_protected_database_output(protected_database_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
+    test_protected_database = oci.recoverymod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
     ```
 
 

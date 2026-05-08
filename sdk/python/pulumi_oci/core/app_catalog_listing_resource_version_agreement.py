@@ -58,12 +58,12 @@ class AppCatalogListingResourceVersionAgreementArgs:
 @pulumi.input_type
 class _AppCatalogListingResourceVersionAgreementState:
     def __init__(__self__, *,
-                 eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_retrieved: Optional[pulumi.Input[_builtins.str]] = None):
+                 eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_retrieved: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppCatalogListingResourceVersionAgreement resources.
 
@@ -89,74 +89,74 @@ class _AppCatalogListingResourceVersionAgreementState:
 
     @_builtins.property
     @pulumi.getter(name="eulaLink")
-    def eula_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eula_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         EULA link
         """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
-    def eula_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eula_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eula_link", value)
 
     @_builtins.property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the listing.
         """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
-    def listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingResourceVersion")
-    def listing_resource_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_resource_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listing Resource Version.
         """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
-    def listing_resource_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_resource_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_resource_version", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleTermsOfUseLink")
-    def oracle_terms_of_use_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_terms_of_use_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle TOU link
         """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @oracle_terms_of_use_link.setter
-    def oracle_terms_of_use_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_terms_of_use_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_terms_of_use_link", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A generated signature for this agreement retrieval operation which should be used in the create subscription call.
         """
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRetrieved")
-    def time_retrieved(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_retrieved(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
         """
         return pulumi.get(self, "time_retrieved")
 
     @time_retrieved.setter
-    def time_retrieved(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_retrieved(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_retrieved", value)
 
 
@@ -166,8 +166,8 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
@@ -225,8 +225,8 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,12 +256,12 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-            signature: Optional[pulumi.Input[_builtins.str]] = None,
-            time_retrieved: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppCatalogListingResourceVersionAgreement':
+            eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None,
+            time_retrieved: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppCatalogListingResourceVersionAgreement':
         """
         Get an existing AppCatalogListingResourceVersionAgreement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

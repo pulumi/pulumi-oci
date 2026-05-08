@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
  *     compartmentId: compartmentId,
  *     displayName: protectedDatabaseDisplayName,
  *     id: protectedDatabaseId,
@@ -116,7 +116,7 @@ export interface GetProtectedDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
  *     compartmentId: compartmentId,
  *     displayName: protectedDatabaseDisplayName,
  *     id: protectedDatabaseId,
@@ -150,22 +150,22 @@ export interface GetProtectedDatabasesOutputArgs {
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetProtectedDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetProtectedDatabasesFilterArgs>[] | undefined>;
     /**
      * The protected database OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The protection policy OCID.
      */
-    protectionPolicyId?: pulumi.Input<string>;
+    protectionPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The recovery service subnet OCID.
      */
-    recoveryServiceSubnetId?: pulumi.Input<string>;
+    recoveryServiceSubnetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

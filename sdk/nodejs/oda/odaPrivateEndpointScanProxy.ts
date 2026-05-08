@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     scanListenerInfos: [{
  *         scanListenerFqdn: odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn,
  *         scanListenerIp: odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp,
- *         scanListenerPort: odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort,
+ *         scanListenerPort: Number(odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort),
  *     }],
  *     scanListenerType: odaPrivateEndpointScanProxyScanListenerType,
  * });
@@ -152,15 +152,15 @@ export interface OdaPrivateEndpointScanProxyState {
     /**
      * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    odaPrivateEndpointId?: pulumi.Input<string>;
+    odaPrivateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * The protocol used for communication between client, scanProxy and RAC's scan listeners
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
      */
-    scanListenerInfos?: pulumi.Input<pulumi.Input<inputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo>[]>;
+    scanListenerInfos?: pulumi.Input<pulumi.Input<inputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo>[] | undefined>;
     /**
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs 
      *
@@ -168,15 +168,15 @@ export interface OdaPrivateEndpointScanProxyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    scanListenerType?: pulumi.Input<string>;
+    scanListenerType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

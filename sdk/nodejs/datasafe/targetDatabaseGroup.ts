@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         include: {
  *             compartments: [{
  *                 id: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsId,
- *                 isIncludeSubtree: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsIsIncludeSubtree,
+ *                 isIncludeSubtree: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsIsIncludeSubtree === "true",
  *             }],
  *             definedTags: {
  *                 "Operations.CostCenter": "42",
@@ -203,55 +203,55 @@ export interface TargetDatabaseGroupState {
     /**
      * (Updatable) The OCID of the compartment to create the target database group.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the target database group (optional).
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the target database group.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details for the lifecycle status of the target database group.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
      */
-    matchingCriteria?: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteria>;
+    matchingCriteria?: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteria | undefined>;
     /**
      * The number of target databases in the specified target database group.
      */
-    membershipCount?: pulumi.Input<number>;
+    membershipCount?: pulumi.Input<number | undefined>;
     /**
      * Time when the members of the target database group were last changed, i.e. the list was refreshed, a target database was added or removed.
      */
-    membershipUpdateTime?: pulumi.Input<string>;
+    membershipUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle status of the target database group.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Time when the target database group was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the target database group was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -265,11 +265,11 @@ export interface TargetDatabaseGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the target database group (optional).
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the target database group.
      */
@@ -277,7 +277,7 @@ export interface TargetDatabaseGroupArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
      */

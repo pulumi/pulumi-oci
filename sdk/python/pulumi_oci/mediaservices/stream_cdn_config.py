@@ -24,11 +24,11 @@ class StreamCdnConfigArgs:
                  config: pulumi.Input['StreamCdnConfigConfigArgs'],
                  display_name: pulumi.Input[_builtins.str],
                  distribution_channel_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamCdnConfig resource.
 
@@ -92,79 +92,79 @@ class StreamCdnConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether publishing to CDN is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
 
 @pulumi.input_type
 class _StreamCdnConfigState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input['StreamCdnConfigConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional['StreamCdnConfigConfigArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StreamCdnConfig resources.
 
@@ -213,167 +213,167 @@ class _StreamCdnConfigState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input['StreamCdnConfigConfigArgs']]:
+    def config(self) -> pulumi.Input[Optional['StreamCdnConfigConfigArgs']]:
         """
         (Updatable) Base fields of the StreamCdnConfig configuration object.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input['StreamCdnConfigConfigArgs']]):
+    def config(self, value: pulumi.Input[Optional['StreamCdnConfigConfigArgs']]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distribution_channel_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Distribution Channel Identifier.
         """
         return pulumi.get(self, "distribution_channel_id")
 
     @distribution_channel_id.setter
-    def distribution_channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distribution_channel_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distribution_channel_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether publishing to CDN is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecyle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
 
     @lifecyle_details.setter
-    def lifecyle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecyle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecyle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the CDN Configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the CDN Config was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -383,14 +383,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -413,7 +413,7 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
                 "edge_token_key": stream_cdn_config_config_edge_token_key,
                 "edge_token_salt": stream_cdn_config_config_edge_token_salt,
-                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth == "true",
                 "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
                 "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
                 "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
@@ -429,7 +429,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=stream_cdn_config_is_enabled,
+            is_enabled=stream_cdn_config_is_enabled == "true",
             locks=[{
                 "compartment_id": compartment_id,
                 "type": stream_cdn_config_locks_type,
@@ -485,7 +485,7 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
                 "edge_token_key": stream_cdn_config_config_edge_token_key,
                 "edge_token_salt": stream_cdn_config_config_edge_token_salt,
-                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth == "true",
                 "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
                 "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
                 "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
@@ -501,7 +501,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=stream_cdn_config_is_enabled,
+            is_enabled=stream_cdn_config_is_enabled == "true",
             locks=[{
                 "compartment_id": compartment_id,
                 "type": stream_cdn_config_locks_type,
@@ -535,14 +535,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -582,20 +582,20 @@ class StreamCdnConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'StreamCdnConfig':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'StreamCdnConfig':
         """
         Get an existing StreamCdnConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

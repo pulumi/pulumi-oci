@@ -154,7 +154,7 @@ def get_oci_cache_default_config_set(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_default_config_set = oci.Redis.get_oci_cache_default_config_set(compartment_id=compartment_id,
+    test_oci_cache_default_config_set = oci.redis.get_oci_cache_default_config_set(compartment_id=compartment_id,
         oci_cache_default_config_set_id=test_oci_cache_default_config_set_oci_redis_oci_cache_default_config_set["id"])
     ```
 
@@ -178,8 +178,8 @@ def get_oci_cache_default_config_set(compartment_id: Optional[_builtins.str] = N
         software_version=pulumi.get(__ret__, 'software_version'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_oci_cache_default_config_set_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            oci_cache_default_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oci_cache_default_config_set_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            oci_cache_default_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheDefaultConfigSetResult]:
     """
     This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
@@ -192,7 +192,7 @@ def get_oci_cache_default_config_set_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_default_config_set = oci.Redis.get_oci_cache_default_config_set(compartment_id=compartment_id,
+    test_oci_cache_default_config_set = oci.redis.get_oci_cache_default_config_set(compartment_id=compartment_id,
         oci_cache_default_config_set_id=test_oci_cache_default_config_set_oci_redis_oci_cache_default_config_set["id"])
     ```
 

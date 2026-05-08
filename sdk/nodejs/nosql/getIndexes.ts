@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIndexes = oci.Nosql.getIndexes({
+ * const testIndexes = oci.nosql.getIndexes({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  *     name: indexName,
@@ -97,7 +97,7 @@ export interface GetIndexesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIndexes = oci.Nosql.getIndexes({
+ * const testIndexes = oci.nosql.getIndexes({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  *     name: indexName,
@@ -123,16 +123,16 @@ export interface GetIndexesOutputArgs {
     /**
      * The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Nosql.GetIndexesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Nosql.GetIndexesFilterArgs>[] | undefined>;
     /**
      * A shell-globbing-style (*?[]) filter for names.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter list by the lifecycle state of the item.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A table name within the compartment, or a table OCID.
      */

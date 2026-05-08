@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceConnectors = oci.Sch.getServiceConnectors({
+ * const testServiceConnectors = oci.sch.getServiceConnectors({
  *     compartmentId: compartmentId,
  *     displayName: serviceConnectorDisplayName,
  *     state: serviceConnectorState,
@@ -94,7 +94,7 @@ export interface GetServiceConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceConnectors = oci.Sch.getServiceConnectors({
+ * const testServiceConnectors = oci.sch.getServiceConnectors({
  *     compartmentId: compartmentId,
  *     displayName: serviceConnectorDisplayName,
  *     state: serviceConnectorState,
@@ -122,10 +122,10 @@ export interface GetServiceConnectorsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Sch.GetServiceConnectorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Sch.GetServiceConnectorsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

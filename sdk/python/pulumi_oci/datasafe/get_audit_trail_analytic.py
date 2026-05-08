@@ -139,9 +139,9 @@ def get_audit_trail_analytic(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=compartment_id,
+    test_audit_trail_analytic = oci.datasafe.get_audit_trail_analytic(compartment_id=compartment_id,
         access_level=audit_trail_analytic_access_level,
-        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_trail_analytic_group_by,
         target_id=test_target["id"])
     ```
@@ -170,11 +170,11 @@ def get_audit_trail_analytic(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_audit_trail_analytic_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                    target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_audit_trail_analytic_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                    target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditTrailAnalyticResult]:
     """
     This data source provides details about a specific Audit Trail Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -199,9 +199,9 @@ def get_audit_trail_analytic_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=compartment_id,
+    test_audit_trail_analytic = oci.datasafe.get_audit_trail_analytic(compartment_id=compartment_id,
         access_level=audit_trail_analytic_access_level,
-        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_trail_analytic_group_by,
         target_id=test_target["id"])
     ```

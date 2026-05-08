@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisions = oci.FleetAppsManagement.getProvisions({
+ * const testProvisions = oci.fleetappsmanagement.getProvisions({
  *     compartmentId: compartmentId,
  *     displayName: provisionDisplayName,
  *     fleetId: testFleet.id,
@@ -109,7 +109,7 @@ export interface GetProvisionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisions = oci.FleetAppsManagement.getProvisions({
+ * const testProvisions = oci.fleetappsmanagement.getProvisions({
  *     compartmentId: compartmentId,
  *     displayName: provisionDisplayName,
  *     fleetId: testFleet.id,
@@ -138,22 +138,22 @@ export interface GetProvisionsOutputArgs {
     /**
      * (Updatable) The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetProvisionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetProvisionsFilterArgs>[] | undefined>;
     /**
      * unique Fleet identifier
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier or OCID for listing a single provision by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

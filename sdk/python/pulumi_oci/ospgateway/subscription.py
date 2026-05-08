@@ -113,32 +113,32 @@ class SubscriptionArgs:
 @pulumi.input_type
 class _SubscriptionState:
     def __init__(__self__, *,
-                 account_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bill_to_cust_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 currency_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 gsi_org_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_corporate_conversion_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_intent_to_pay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 organization_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 payment_gateways: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]] = None,
-                 payment_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ship_to_cust_acct_role_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ship_to_cust_acct_site_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription: Optional[pulumi.Input['SubscriptionSubscriptionArgs']] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_plan_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]] = None,
-                 time_personal_to_corporate_conv: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_plan_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_state_details: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bill_to_cust_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 billing_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 currency_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 gsi_org_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_corporate_conversion_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_intent_to_pay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 organization_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 payment_gateways: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]] = None,
+                 payment_options: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ship_to_cust_acct_role_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ship_to_cust_acct_site_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription: pulumi.Input[Optional['SubscriptionSubscriptionArgs']] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_plan_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_infos: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]] = None,
+                 time_personal_to_corporate_conv: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_plan_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_state_details: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subscription resources.
 
@@ -228,223 +228,223 @@ class _SubscriptionState:
 
     @_builtins.property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Account type.
         """
         return pulumi.get(self, "account_type")
 
     @account_type.setter
-    def account_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_type", value)
 
     @_builtins.property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bill_to_cust_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bill to customer Account id.
         """
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @bill_to_cust_account_id.setter
-    def bill_to_cust_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bill_to_cust_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bill_to_cust_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]]:
+    def billing_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]]:
         """
         Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
     @billing_addresses.setter
-    def billing_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]]):
+    def billing_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]]):
         pulumi.set(self, "billing_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def currency_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Currency code
         """
         return pulumi.get(self, "currency_code")
 
     @currency_code.setter
-    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def currency_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "currency_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User email
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gsi_org_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GSI Subscription external code.
         """
         return pulumi.get(self, "gsi_org_code")
 
     @gsi_org_code.setter
-    def gsi_org_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gsi_org_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gsi_org_code", value)
 
     @_builtins.property
     @pulumi.getter(name="isCorporateConversionAllowed")
-    def is_corporate_conversion_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_corporate_conversion_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Corporate conversion allowed status
         """
         return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @is_corporate_conversion_allowed.setter
-    def is_corporate_conversion_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_corporate_conversion_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_corporate_conversion_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_intent_to_pay(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Payment intension.
         """
         return pulumi.get(self, "is_intent_to_pay")
 
     @is_intent_to_pay.setter
-    def is_intent_to_pay(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_intent_to_pay(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_intent_to_pay", value)
 
     @_builtins.property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Language short code (en, de, hu, etc)
         """
         return pulumi.get(self, "language_code")
 
     @language_code.setter
-    def language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language_code", value)
 
     @_builtins.property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organization_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GSI organization external identifier.
         """
         return pulumi.get(self, "organization_id")
 
     @organization_id.setter
-    def organization_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organization_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organization_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ospHomeRegion")
-    def osp_home_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def osp_home_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The home region's public name of the logged in user.
         """
         return pulumi.get(self, "osp_home_region")
 
     @osp_home_region.setter
-    def osp_home_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def osp_home_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "osp_home_region", value)
 
     @_builtins.property
     @pulumi.getter(name="paymentGateways")
-    def payment_gateways(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]]:
+    def payment_gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]]:
         """
         Payment gateway details.
         """
         return pulumi.get(self, "payment_gateways")
 
     @payment_gateways.setter
-    def payment_gateways(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]]):
+    def payment_gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]]):
         pulumi.set(self, "payment_gateways", value)
 
     @_builtins.property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]]:
+    def payment_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]]:
         """
         Payment option list of a subscription.
         """
         return pulumi.get(self, "payment_options")
 
     @payment_options.setter
-    def payment_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]]):
+    def payment_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]]):
         pulumi.set(self, "payment_options", value)
 
     @_builtins.property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Subscription plan type.
         """
         return pulumi.get(self, "plan_type")
 
     @plan_type.setter
-    def plan_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ship_to_cust_acct_role_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Ship to customer account role.
         """
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @ship_to_cust_acct_role_id.setter
-    def ship_to_cust_acct_role_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ship_to_cust_acct_role_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ship_to_cust_acct_role_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ship_to_cust_acct_site_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Ship to customer account site address id.
         """
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @ship_to_cust_acct_site_id.setter
-    def ship_to_cust_acct_site_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ship_to_cust_acct_site_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ship_to_cust_acct_site_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def subscription(self) -> Optional[pulumi.Input['SubscriptionSubscriptionArgs']]:
+    def subscription(self) -> pulumi.Input[Optional['SubscriptionSubscriptionArgs']]:
         """
         (Updatable) Subscription details object which extends the SubscriptionSummary
         """
         return pulumi.get(self, "subscription")
 
     @subscription.setter
-    def subscription(self, value: Optional[pulumi.Input['SubscriptionSubscriptionArgs']]):
+    def subscription(self, value: pulumi.Input[Optional['SubscriptionSubscriptionArgs']]):
         pulumi.set(self, "subscription", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Subscription id(OCID).
 
@@ -455,91 +455,91 @@ class _SubscriptionState:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionPlanNumber")
-    def subscription_plan_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_plan_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Subscription plan number.
         """
         return pulumi.get(self, "subscription_plan_number")
 
     @subscription_plan_number.setter
-    def subscription_plan_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_plan_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_plan_number", value)
 
     @_builtins.property
     @pulumi.getter(name="taxInfos")
-    def tax_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]]:
+    def tax_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]]:
         """
         Tax details.
         """
         return pulumi.get(self, "tax_infos")
 
     @tax_infos.setter
-    def tax_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]]):
+    def tax_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]]):
         pulumi.set(self, "tax_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_personal_to_corporate_conv(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         """
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @time_personal_to_corporate_conv.setter
-    def time_personal_to_corporate_conv(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_personal_to_corporate_conv(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_personal_to_corporate_conv", value)
 
     @_builtins.property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_plan_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         """
         return pulumi.get(self, "time_plan_upgrade")
 
     @time_plan_upgrade.setter
-    def time_plan_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_plan_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_plan_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Start date of the subscription.
         """
         return pulumi.get(self, "time_start")
 
     @time_start.setter
-    def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the upgrade.
         """
         return pulumi.get(self, "upgrade_state")
 
     @upgrade_state.setter
-    def upgrade_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_state", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
         return pulumi.get(self, "upgrade_state_details")
 
     @upgrade_state_details.setter
-    def upgrade_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_state_details", value)
 
 
@@ -549,11 +549,11 @@ class Subscription(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription: pulumi.Input[Optional[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -622,11 +622,11 @@ class Subscription(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription: pulumi.Input[Optional[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -682,32 +682,32 @@ class Subscription(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_type: Optional[pulumi.Input[_builtins.str]] = None,
-            bill_to_cust_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionBillingAddressArgs', 'SubscriptionBillingAddressArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            currency_code: Optional[pulumi.Input[_builtins.str]] = None,
-            email: Optional[pulumi.Input[_builtins.str]] = None,
-            gsi_org_code: Optional[pulumi.Input[_builtins.str]] = None,
-            is_corporate_conversion_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_intent_to_pay: Optional[pulumi.Input[_builtins.bool]] = None,
-            language_code: Optional[pulumi.Input[_builtins.str]] = None,
-            organization_id: Optional[pulumi.Input[_builtins.str]] = None,
-            osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-            payment_gateways: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentGatewayArgs', 'SubscriptionPaymentGatewayArgsDict']]]]] = None,
-            payment_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentOptionArgs', 'SubscriptionPaymentOptionArgsDict']]]]] = None,
-            plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ship_to_cust_acct_role_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ship_to_cust_acct_site_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_plan_number: Optional[pulumi.Input[_builtins.str]] = None,
-            tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionTaxInfoArgs', 'SubscriptionTaxInfoArgsDict']]]]] = None,
-            time_personal_to_corporate_conv: Optional[pulumi.Input[_builtins.str]] = None,
-            time_plan_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-            time_start: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_state: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_state_details: Optional[pulumi.Input[_builtins.str]] = None) -> 'Subscription':
+            account_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bill_to_cust_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            billing_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionBillingAddressArgs', 'SubscriptionBillingAddressArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            currency_code: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            gsi_org_code: pulumi.Input[Optional[_builtins.str]] = None,
+            is_corporate_conversion_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_intent_to_pay: pulumi.Input[Optional[_builtins.bool]] = None,
+            language_code: pulumi.Input[Optional[_builtins.str]] = None,
+            organization_id: pulumi.Input[Optional[_builtins.str]] = None,
+            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            payment_gateways: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionPaymentGatewayArgs', 'SubscriptionPaymentGatewayArgsDict']]]]] = None,
+            payment_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionPaymentOptionArgs', 'SubscriptionPaymentOptionArgsDict']]]]] = None,
+            plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ship_to_cust_acct_role_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ship_to_cust_acct_site_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription: pulumi.Input[Optional[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_plan_number: pulumi.Input[Optional[_builtins.str]] = None,
+            tax_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionTaxInfoArgs', 'SubscriptionTaxInfoArgsDict']]]]] = None,
+            time_personal_to_corporate_conv: pulumi.Input[Optional[_builtins.str]] = None,
+            time_plan_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_state: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_state_details: pulumi.Input[Optional[_builtins.str]] = None) -> 'Subscription':
         """
         Get an existing Subscription resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

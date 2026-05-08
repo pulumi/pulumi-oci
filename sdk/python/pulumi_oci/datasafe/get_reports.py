@@ -216,9 +216,9 @@ def get_reports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+    test_reports = oci.datasafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
-        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        compartment_id_in_subtree=report_compartment_id_in_subtree == "true",
         data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,
@@ -277,18 +277,18 @@ def get_reports(access_level: Optional[_builtins.str] = None,
         time_generated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_generated_greater_than_or_equal_to'),
         time_generated_less_than=pulumi.get(__ret__, 'time_generated_less_than'),
         type=pulumi.get(__ret__, 'type'))
-def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                       data_source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]]]] = None,
-                       mime_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       report_definition_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       time_generated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       time_generated_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_reports_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                       data_source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]]]] = None,
+                       mime_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       report_definition_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       time_generated_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       time_generated_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportsResult]:
     """
     This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -301,9 +301,9 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+    test_reports = oci.datasafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
-        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        compartment_id_in_subtree=report_compartment_id_in_subtree == "true",
         data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,

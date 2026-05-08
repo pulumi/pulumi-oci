@@ -32,11 +32,11 @@ import (
 //			_, err := apmconfig.GetConfigs(ctx, &apmconfig.GetConfigsArgs{
 //				ApmDomainId:       testApmDomain.Id,
 //				ConfigType:        pulumi.StringRef(configConfigType),
-//				DefinedTagEquals:  configDefinedTagEquals,
-//				DefinedTagExists:  configDefinedTagExists,
+//				DefinedTagEquals:  pulumi.ToArray(configDefinedTagEquals),
+//				DefinedTagExists:  pulumi.ToArray(configDefinedTagExists),
 //				DisplayName:       pulumi.StringRef(configDisplayName),
-//				FreeformTagEquals: configFreeformTagEquals,
-//				FreeformTagExists: configFreeformTagExists,
+//				FreeformTagEquals: pulumi.ToArray(configFreeformTagEquals),
+//				FreeformTagExists: pulumi.ToArray(configFreeformTagExists),
 //				OptionsGroup:      pulumi.StringRef(configOptionsGroup),
 //			}, nil)
 //			if err != nil {

@@ -22,27 +22,27 @@ __all__ = ['MonitoredResourcesSearchArgs', 'MonitoredResourcesSearch']
 class MonitoredResourcesSearchArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearch resource.
 
@@ -139,199 +139,199 @@ class MonitoredResourcesSearchArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentIds")
-    def compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compartment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_ids")
 
     @compartment_ids.setter
-    def compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compartment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compartment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeFields")
-    def exclude_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclude_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         """
         return pulumi.get(self, "exclude_fields")
 
     @exclude_fields.setter
-    def exclude_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclude_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclude_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         """
         return pulumi.get(self, "fields")
 
     @fields.setter
-    def fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fields", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostNameContains")
-    def host_name_contains(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name_contains(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with host name pattern.
         """
         return pulumi.get(self, "host_name_contains")
 
     @host_name_contains.setter
-    def host_name_contains(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name_contains(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name_contains", value)
 
     @_builtins.property
     @pulumi.getter
-    def license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         License edition of the monitored resource.
         """
         return pulumi.get(self, "license")
 
     @license.setter
-    def license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStates")
-    def lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def lifecycle_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Multiple lifecycle states filter.
         """
         return pulumi.get(self, "lifecycle_states")
 
     @lifecycle_states.setter
-    def lifecycle_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def lifecycle_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_states", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with matching management agent id.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameContains")
-    def name_contains(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_contains(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match resource name pattern given. The match is not case sensitive.
         """
         return pulumi.get(self, "name_contains")
 
     @name_contains.setter
-    def name_contains(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_contains(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_contains", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyEquals")
-    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def property_equals(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Criteria based on resource property.
         """
         return pulumi.get(self, "property_equals")
 
     @property_equals.setter
-    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def property_equals(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "property_equals", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCategory")
-    def resource_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource category filter.
         """
         return pulumi.get(self, "resource_category")
 
     @resource_category.setter
-    def resource_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_category", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTimeZone")
-    def resource_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
-    def resource_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source type filter.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with matching lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedGreaterThanOrEqualTo")
-    def time_created_greater_than_or_equal_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created_greater_than_or_equal_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -340,12 +340,12 @@ class MonitoredResourcesSearchArgs:
         return pulumi.get(self, "time_created_greater_than_or_equal_to")
 
     @time_created_greater_than_or_equal_to.setter
-    def time_created_greater_than_or_equal_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created_greater_than_or_equal_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created_greater_than_or_equal_to", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedLessThan")
-    def time_created_less_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created_less_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -354,12 +354,12 @@ class MonitoredResourcesSearchArgs:
         return pulumi.get(self, "time_created_less_than")
 
     @time_created_less_than.setter
-    def time_created_less_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created_less_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created_less_than", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdatedGreaterThanOrEqualTo")
-    def time_updated_greater_than_or_equal_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated_greater_than_or_equal_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -368,12 +368,12 @@ class MonitoredResourcesSearchArgs:
         return pulumi.get(self, "time_updated_greater_than_or_equal_to")
 
     @time_updated_greater_than_or_equal_to.setter
-    def time_updated_greater_than_or_equal_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated_greater_than_or_equal_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated_greater_than_or_equal_to", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdatedLessThan")
-    def time_updated_less_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated_less_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -382,12 +382,12 @@ class MonitoredResourcesSearchArgs:
         return pulumi.get(self, "time_updated_less_than")
 
     @time_updated_less_than.setter
-    def time_updated_less_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated_less_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated_less_than", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match resource type. 
 
@@ -398,36 +398,36 @@ class MonitoredResourcesSearchArgs:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _MonitoredResourcesSearchState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearch resources.
 
@@ -516,223 +516,223 @@ class _MonitoredResourcesSearchState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentIds")
-    def compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compartment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_ids")
 
     @compartment_ids.setter
-    def compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compartment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compartment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeFields")
-    def exclude_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclude_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         """
         return pulumi.get(self, "exclude_fields")
 
     @exclude_fields.setter
-    def exclude_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclude_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclude_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         """
         return pulumi.get(self, "fields")
 
     @fields.setter
-    def fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fields", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with host name match.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostNameContains")
-    def host_name_contains(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name_contains(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with host name pattern.
         """
         return pulumi.get(self, "host_name_contains")
 
     @host_name_contains.setter
-    def host_name_contains(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name_contains(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name_contains", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]]:
         """
         List of monitored resources.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter
-    def license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         License edition of the monitored resource.
         """
         return pulumi.get(self, "license")
 
     @license.setter
-    def license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStates")
-    def lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def lifecycle_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Multiple lifecycle states filter.
         """
         return pulumi.get(self, "lifecycle_states")
 
     @lifecycle_states.setter
-    def lifecycle_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def lifecycle_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_states", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with matching management agent id.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameContains")
-    def name_contains(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_contains(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match resource name pattern given. The match is not case sensitive.
         """
         return pulumi.get(self, "name_contains")
 
     @name_contains.setter
-    def name_contains(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_contains(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_contains", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyEquals")
-    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def property_equals(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Criteria based on resource property.
         """
         return pulumi.get(self, "property_equals")
 
     @property_equals.setter
-    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def property_equals(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "property_equals", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCategory")
-    def resource_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource category filter.
         """
         return pulumi.get(self, "resource_category")
 
     @resource_category.setter
-    def resource_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_category", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTimeZone")
-    def resource_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
-    def resource_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source type filter.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources with matching lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedGreaterThanOrEqualTo")
-    def time_created_greater_than_or_equal_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created_greater_than_or_equal_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -741,12 +741,12 @@ class _MonitoredResourcesSearchState:
         return pulumi.get(self, "time_created_greater_than_or_equal_to")
 
     @time_created_greater_than_or_equal_to.setter
-    def time_created_greater_than_or_equal_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created_greater_than_or_equal_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created_greater_than_or_equal_to", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedLessThan")
-    def time_created_less_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created_less_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -755,12 +755,12 @@ class _MonitoredResourcesSearchState:
         return pulumi.get(self, "time_created_less_than")
 
     @time_created_less_than.setter
-    def time_created_less_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created_less_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created_less_than", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdatedGreaterThanOrEqualTo")
-    def time_updated_greater_than_or_equal_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated_greater_than_or_equal_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -769,12 +769,12 @@ class _MonitoredResourcesSearchState:
         return pulumi.get(self, "time_updated_greater_than_or_equal_to")
 
     @time_updated_greater_than_or_equal_to.setter
-    def time_updated_greater_than_or_equal_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated_greater_than_or_equal_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated_greater_than_or_equal_to", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdatedLessThan")
-    def time_updated_less_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated_less_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 
@@ -783,12 +783,12 @@ class _MonitoredResourcesSearchState:
         return pulumi.get(self, "time_updated_less_than")
 
     @time_updated_less_than.setter
-    def time_updated_less_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated_less_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated_less_than", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return resources that match resource type. 
 
@@ -799,7 +799,7 @@ class _MonitoredResourcesSearchState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -809,28 +809,28 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -986,28 +986,28 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1052,29 +1052,29 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            host_name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]]] = None,
-            license: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            name_contains: Optional[pulumi.Input[_builtins.str]] = None,
-            property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredResourcesSearch':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]]] = None,
+            license: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+            property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourcesSearch':
         """
         Get an existing MonitoredResourcesSearch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

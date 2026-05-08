@@ -67,8 +67,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -109,8 +109,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -151,8 +151,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -193,8 +193,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -235,8 +235,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -277,8 +277,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -324,8 +324,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -371,8 +371,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -418,8 +418,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -465,8 +465,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -512,8 +512,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -554,8 +554,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -596,8 +596,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -638,8 +638,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -680,8 +680,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -722,8 +722,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -769,8 +769,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -816,8 +816,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -863,8 +863,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -910,8 +910,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -957,8 +957,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -999,8 +999,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1041,8 +1041,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1083,8 +1083,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1125,8 +1125,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1167,8 +1167,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1214,8 +1214,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1261,8 +1261,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1308,8 +1308,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1355,8 +1355,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1402,8 +1402,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1443,8 +1443,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1484,8 +1484,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1525,8 +1525,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1566,8 +1566,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1648,8 +1648,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1689,8 +1689,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1731,8 +1731,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1773,8 +1773,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1815,8 +1815,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1857,8 +1857,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1899,8 +1899,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1946,8 +1946,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1993,8 +1993,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2040,8 +2040,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2087,8 +2087,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2134,8 +2134,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2177,8 +2177,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2220,8 +2220,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2263,8 +2263,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2306,8 +2306,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2350,8 +2350,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2395,8 +2395,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2440,8 +2440,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2485,8 +2485,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2530,8 +2530,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2574,8 +2574,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2621,8 +2621,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2668,8 +2668,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2715,8 +2715,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2762,8 +2762,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2809,8 +2809,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2851,8 +2851,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2893,8 +2893,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2935,8 +2935,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2977,8 +2977,8 @@ public final class WaasFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
      * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

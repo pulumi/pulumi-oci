@@ -288,7 +288,7 @@ def get_dataset(dataset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
+    test_dataset = oci.datalabellingservice.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_dataset(dataset_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dataset_output(dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dataset_output(dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatasetResult]:
     """
     This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -333,7 +333,7 @@ def get_dataset_output(dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
+    test_dataset = oci.datalabellingservice.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
 
 

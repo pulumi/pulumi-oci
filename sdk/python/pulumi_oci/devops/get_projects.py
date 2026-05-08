@@ -125,7 +125,7 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+    test_projects = oci.devops.get_projects(compartment_id=compartment_id,
         id=project_id,
         name=project_name,
         state=project_state)
@@ -153,11 +153,11 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         project_collections=pulumi.get(__ret__, 'project_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_projects_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectsResult]:
     """
     This data source provides the list of Projects in Oracle Cloud Infrastructure Devops service.
@@ -170,7 +170,7 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+    test_projects = oci.devops.get_projects(compartment_id=compartment_id,
         id=project_id,
         name=project_name,
         state=project_state)

@@ -21,7 +21,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs:
     def __init__(__self__, *,
                  enable_external_mysql_database: pulumi.Input[_builtins.bool],
                  external_my_sql_database_id: pulumi.Input[_builtins.str],
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalMySqlDatabaseExternalMysqlDatabasesManagement resource.
 
@@ -68,23 +68,23 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectorId")
-    def connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of External MySQL Database connector.
         """
         return pulumi.get(self, "connector_id")
 
     @connector_id.setter
-    def connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_id", value)
 
 
 @pulumi.input_type
 class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
     def __init__(__self__, *,
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_external_mysql_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_mysql_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabaseExternalMysqlDatabasesManagement resources.
 
@@ -105,19 +105,19 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="connectorId")
-    def connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of External MySQL Database connector.
         """
         return pulumi.get(self, "connector_id")
 
     @connector_id.setter
-    def connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableExternalMysqlDatabase")
-    def enable_external_mysql_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_external_mysql_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -128,19 +128,19 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
         return pulumi.get(self, "enable_external_mysql_database")
 
     @enable_external_mysql_database.setter
-    def enable_external_mysql_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_external_mysql_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_external_mysql_database", value)
 
     @_builtins.property
     @pulumi.getter(name="externalMySqlDatabaseId")
-    def external_my_sql_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_my_sql_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the External MySQL Database.
         """
         return pulumi.get(self, "external_my_sql_database_id")
 
     @external_my_sql_database_id.setter
-    def external_my_sql_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_my_sql_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_my_sql_database_id", value)
 
 
@@ -150,9 +150,9 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_external_mysql_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_mysql_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External My Sql Database External Mysql Databases Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -169,7 +169,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
 
         test_external_my_sql_database_external_mysql_databases_management = oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management",
             external_my_sql_database_id=test_external_my_sql_database["id"],
-            enable_external_mysql_database=enable_external_mysql_database,
+            enable_external_mysql_database=enable_external_mysql_database == "true",
             connector_id=test_connector["id"])
         ```
 
@@ -205,7 +205,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
 
         test_external_my_sql_database_external_mysql_databases_management = oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management",
             external_my_sql_database_id=test_external_my_sql_database["id"],
-            enable_external_mysql_database=enable_external_mysql_database,
+            enable_external_mysql_database=enable_external_mysql_database == "true",
             connector_id=test_connector["id"])
         ```
 
@@ -225,9 +225,9 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_external_mysql_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_mysql_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -254,9 +254,9 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_external_mysql_database: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalMySqlDatabaseExternalMysqlDatabasesManagement':
+            connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_external_mysql_database: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalMySqlDatabaseExternalMysqlDatabasesManagement':
         """
         Get an existing ExternalMySqlDatabaseExternalMysqlDatabasesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

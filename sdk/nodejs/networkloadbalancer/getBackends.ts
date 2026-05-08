@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackends = oci.NetworkLoadBalancer.getBackends({
+ * const testBackends = oci.networkloadbalancer.getBackends({
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
@@ -74,7 +74,7 @@ export interface GetBackendsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackends = oci.NetworkLoadBalancer.getBackends({
+ * const testBackends = oci.networkloadbalancer.getBackends({
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
@@ -97,7 +97,7 @@ export interface GetBackendsOutputArgs {
      * The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      */
     backendSetName: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetBackendsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetBackendsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */

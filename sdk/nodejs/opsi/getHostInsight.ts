@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsight = oci.Opsi.getHostInsight({
+ * const testHostInsight = oci.opsi.getHostInsight({
  *     hostInsightId: testHostInsightOciOpsiHostInsight.id,
  * });
  * ```
@@ -159,7 +159,7 @@ export interface GetHostInsightResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsight = oci.Opsi.getHostInsight({
+ * const testHostInsight = oci.opsi.getHostInsight({
  *     hostInsightId: testHostInsightOciOpsiHostInsight.id,
  * });
  * ```

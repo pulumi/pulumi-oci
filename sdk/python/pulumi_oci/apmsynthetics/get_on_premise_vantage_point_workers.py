@@ -154,7 +154,7 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_workers = oci.apmsynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         capability=on_premise_vantage_point_worker_capability,
         display_name=on_premise_vantage_point_worker_display_name,
@@ -191,13 +191,13 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[_builtins.str] 
         on_premise_vantage_point_id=pulumi.get(__ret__, 'on_premise_vantage_point_id'),
         status=pulumi.get(__ret__, 'status'),
         worker_collections=pulumi.get(__ret__, 'worker_collections'))
-def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                capability: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnPremiseVantagePointWorkersFilterArgs', 'GetOnPremiseVantagePointWorkersFilterArgsDict']]]]] = None,
-                                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_on_premise_vantage_point_workers_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                capability: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnPremiseVantagePointWorkersFilterArgs', 'GetOnPremiseVantagePointWorkersFilterArgsDict']]]]] = None,
+                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointWorkersResult]:
     """
     This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -210,7 +210,7 @@ def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_workers = oci.apmsynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         capability=on_premise_vantage_point_worker_capability,
         display_name=on_premise_vantage_point_worker_display_name,

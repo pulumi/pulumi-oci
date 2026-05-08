@@ -163,8 +163,8 @@ def get_secret_version_sdk_v2(secret_id: Optional[_builtins.str] = None,
         time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_secret_version_sdk_v2_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     secret_version_number: Optional[pulumi.Input[_builtins.str]] = None,
+def get_secret_version_sdk_v2_output(secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     secret_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretVersionSdkV2Result]:
     """
     Use this data source to access information about an existing resource.

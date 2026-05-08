@@ -121,7 +121,7 @@ def get_cluster_network_instances(cluster_network_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
+    test_cluster_network_instances = oci.core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
         compartment_id=compartment_id,
         display_name=cluster_network_instance_display_name)
     ```
@@ -146,10 +146,10 @@ def get_cluster_network_instances(cluster_network_id: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         instances=pulumi.get(__ret__, 'instances'))
-def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict']]]]] = None,
+def get_cluster_network_instances_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterNetworkInstancesResult]:
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
@@ -162,7 +162,7 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
+    test_cluster_network_instances = oci.core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
         compartment_id=compartment_id,
         display_name=cluster_network_instance_display_name)
     ```

@@ -95,7 +95,7 @@ def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvalu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
+    test_model_evaluation_results = oci.ailanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvalu
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         model_id=pulumi.get(__ret__, 'model_id'))
-def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]]]] = None,
-                                        model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_evaluation_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]]]] = None,
+                                        model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelEvaluationResultsResult]:
     """
     This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
@@ -126,7 +126,7 @@ def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
+    test_model_evaluation_results = oci.ailanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
 
 

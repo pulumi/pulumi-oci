@@ -25,16 +25,16 @@ import * as utilities from "../utilities";
  *     taskDetails: {
  *         type: monitoredResourceTaskTaskDetailsType,
  *         agentId: testAgent.id,
- *         availabilityProxyMetricCollectionInterval: monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval,
+ *         availabilityProxyMetricCollectionInterval: Number(monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval),
  *         availabilityProxyMetrics: monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics,
  *         consolePathPrefix: monitoredResourceTaskTaskDetailsConsolePathPrefix,
  *         externalIdMapping: monitoredResourceTaskTaskDetailsExternalIdMapping,
  *         handlerType: monitoredResourceTaskTaskDetailsHandlerType,
- *         isEnable: monitoredResourceTaskTaskDetailsIsEnable,
+ *         isEnable: monitoredResourceTaskTaskDetailsIsEnable === "true",
  *         lifecycleStatusMappingsForUpStatuses: monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus,
  *         namespace: monitoredResourceTaskTaskDetailsNamespace,
  *         receiverProperties: {
- *             listenerPort: monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort,
+ *             listenerPort: Number(monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort),
  *         },
  *         resourceGroup: monitoredResourceTaskTaskDetailsResourceGroup,
  *         resourceNameFilter: monitoredResourceTaskTaskDetailsResourceNameFilter,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *         resourceTypeMapping: monitoredResourceTaskTaskDetailsResourceTypeMapping,
  *         resourceTypesConfigurations: [{
  *             availabilityMetricsConfig: {
- *                 collectionIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds,
+ *                 collectionIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds),
  *                 metrics: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics,
  *             },
  *             handlerConfig: {
@@ -59,26 +59,26 @@ import * as utilities from "../utilities";
  *                 }],
  *                 metricMappings: [{
  *                     collectorMetricName: testMetric.name,
- *                     isSkipUpload: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload,
- *                     metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds,
+ *                     isSkipUpload: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload === "true",
+ *                     metricUploadIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds),
  *                     telemetryMetricName: testMetric.name,
  *                 }],
  *                 metricNameConfig: {
  *                     excludePatternOnPrefix: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix,
- *                     isPrefixWithCollectorType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType,
+ *                     isPrefixWithCollectorType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType === "true",
  *                 },
- *                 metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds,
+ *                 metricUploadIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds),
  *                 telegrafResourceNameConfig: {
  *                     excludeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags,
  *                     includeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags,
- *                     isUseTagsOnly: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly,
+ *                     isUseTagsOnly: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly === "true",
  *                 },
  *                 telemetryResourceGroup: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup,
  *             },
  *             resourceType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType,
  *         }],
  *         serviceBaseUrl: monitoredResourceTaskTaskDetailsServiceBaseUrl,
- *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus,
+ *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus === "true",
  *         source: monitoredResourceTaskTaskDetailsSource,
  *     },
  *     definedTags: {
@@ -234,51 +234,51 @@ export interface MonitoredResourceTaskState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The current state of the stack monitoring resource task.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The request details for the performing the task.
      */
-    taskDetails?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetails>;
+    taskDetails?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Type of the task.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      */
-    workRequestIds?: pulumi.Input<pulumi.Input<string>[]>;
+    workRequestIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -292,15 +292,15 @@ export interface MonitoredResourceTaskArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The request details for the performing the task.
      */

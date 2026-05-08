@@ -70,8 +70,8 @@ export class SensitiveDataModelsApplyDiscoveryJobResults extends pulumi.CustomRe
  * Input properties used for looking up and filtering SensitiveDataModelsApplyDiscoveryJobResults resources.
  */
 export interface SensitiveDataModelsApplyDiscoveryJobResultsState {
-    discoveryJobId?: pulumi.Input<string>;
-    sensitiveDataModelId?: pulumi.Input<string>;
+    discoveryJobId?: pulumi.Input<string | undefined>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
 }
 
 /**

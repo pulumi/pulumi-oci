@@ -525,8 +525,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -567,8 +567,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -609,8 +609,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -651,8 +651,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -693,8 +693,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -735,8 +735,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -778,8 +778,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -821,8 +821,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -864,8 +864,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -907,8 +907,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -950,8 +950,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -992,8 +992,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1034,8 +1034,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1076,8 +1076,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1118,8 +1118,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1160,8 +1160,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1204,8 +1204,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1248,8 +1248,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1292,8 +1292,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1336,8 +1336,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1380,8 +1380,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1424,8 +1424,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1468,8 +1468,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1511,8 +1511,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1554,8 +1554,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1597,8 +1597,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1640,8 +1640,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1683,8 +1683,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1725,8 +1725,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1767,8 +1767,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1809,8 +1809,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1851,8 +1851,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1893,8 +1893,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1939,8 +1939,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1985,8 +1985,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2031,8 +2031,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2077,8 +2077,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2123,8 +2123,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2169,8 +2169,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2215,8 +2215,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2257,8 +2257,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2299,8 +2299,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2341,8 +2341,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2383,8 +2383,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2426,8 +2426,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2473,8 +2473,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2520,8 +2520,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2567,8 +2567,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2614,8 +2614,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2660,8 +2660,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2702,8 +2702,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2744,8 +2744,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2786,8 +2786,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2828,8 +2828,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2870,8 +2870,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2916,8 +2916,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2962,8 +2962,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3008,8 +3008,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3054,8 +3054,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3100,8 +3100,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3142,8 +3142,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3184,8 +3184,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3226,8 +3226,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3268,8 +3268,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3310,8 +3310,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3356,8 +3356,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3402,8 +3402,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3448,8 +3448,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3494,8 +3494,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3540,8 +3540,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3586,8 +3586,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3632,8 +3632,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3676,8 +3676,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3720,8 +3720,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3764,8 +3764,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3808,8 +3808,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3852,8 +3852,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3896,8 +3896,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3940,8 +3940,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3982,8 +3982,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4024,8 +4024,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4066,8 +4066,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4108,8 +4108,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4211,8 +4211,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4254,8 +4254,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4297,8 +4297,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4340,8 +4340,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4383,8 +4383,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4425,8 +4425,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4467,8 +4467,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4509,8 +4509,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4551,8 +4551,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4593,8 +4593,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4636,8 +4636,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4681,8 +4681,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4726,8 +4726,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4771,8 +4771,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4816,8 +4816,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4860,8 +4860,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4902,8 +4902,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4944,8 +4944,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4986,8 +4986,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5028,8 +5028,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5070,8 +5070,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5115,8 +5115,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5160,8 +5160,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5205,8 +5205,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5250,8 +5250,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5295,8 +5295,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5337,8 +5337,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5379,8 +5379,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5421,8 +5421,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5463,8 +5463,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5505,8 +5505,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5549,8 +5549,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5593,8 +5593,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5637,8 +5637,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5681,8 +5681,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5726,8 +5726,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5771,8 +5771,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5816,8 +5816,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5861,8 +5861,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5906,8 +5906,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5950,8 +5950,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5992,8 +5992,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6034,8 +6034,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6076,8 +6076,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6118,8 +6118,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6160,8 +6160,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6202,8 +6202,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6244,8 +6244,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6286,8 +6286,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6328,8 +6328,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6370,8 +6370,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6414,8 +6414,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6458,8 +6458,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6502,8 +6502,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6546,8 +6546,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6590,8 +6590,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6634,8 +6634,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6678,8 +6678,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6722,8 +6722,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6766,8 +6766,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6813,8 +6813,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6861,8 +6861,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6909,8 +6909,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6957,8 +6957,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7005,8 +7005,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7051,8 +7051,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7096,8 +7096,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7141,8 +7141,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7186,8 +7186,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7231,8 +7231,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7275,8 +7275,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7317,8 +7317,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7359,8 +7359,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7401,8 +7401,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7443,8 +7443,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7485,8 +7485,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7532,8 +7532,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7579,8 +7579,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7626,8 +7626,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7673,8 +7673,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7720,8 +7720,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7764,8 +7764,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7808,8 +7808,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7852,8 +7852,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7896,8 +7896,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7940,8 +7940,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7985,8 +7985,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8030,8 +8030,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8075,8 +8075,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8120,8 +8120,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8166,8 +8166,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8209,8 +8209,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8252,8 +8252,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8295,8 +8295,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8338,8 +8338,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8381,8 +8381,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8426,8 +8426,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8471,8 +8471,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8516,8 +8516,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8561,8 +8561,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8605,8 +8605,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8647,8 +8647,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8689,8 +8689,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8731,8 +8731,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8773,8 +8773,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8815,8 +8815,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8858,8 +8858,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8901,8 +8901,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8944,8 +8944,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8987,8 +8987,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9030,8 +9030,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9073,8 +9073,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9116,8 +9116,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9159,8 +9159,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9202,8 +9202,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9245,8 +9245,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9288,8 +9288,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9331,8 +9331,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9374,8 +9374,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9417,8 +9417,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9460,8 +9460,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9503,8 +9503,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9546,8 +9546,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9588,8 +9588,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9630,8 +9630,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9672,8 +9672,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9714,8 +9714,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9756,8 +9756,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9798,8 +9798,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9840,8 +9840,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9882,8 +9882,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9924,8 +9924,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClusterInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9966,8 +9966,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10012,8 +10012,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10058,8 +10058,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10104,8 +10104,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10150,8 +10150,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10196,8 +10196,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10238,8 +10238,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10280,8 +10280,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10322,8 +10322,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10364,8 +10364,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10406,8 +10406,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10455,8 +10455,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10504,8 +10504,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10553,8 +10553,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10602,8 +10602,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10651,8 +10651,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10693,8 +10693,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10735,8 +10735,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10777,8 +10777,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10819,8 +10819,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10861,8 +10861,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10903,8 +10903,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10945,8 +10945,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10987,8 +10987,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11029,8 +11029,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11071,8 +11071,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11113,8 +11113,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11155,8 +11155,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11197,8 +11197,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11239,8 +11239,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11281,8 +11281,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11330,8 +11330,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11379,8 +11379,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11428,8 +11428,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11477,8 +11477,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11526,8 +11526,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11569,8 +11569,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11612,8 +11612,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11655,8 +11655,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11698,8 +11698,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11741,8 +11741,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11785,8 +11785,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11829,8 +11829,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11873,8 +11873,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11917,8 +11917,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11961,8 +11961,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12005,8 +12005,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12049,8 +12049,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12094,8 +12094,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12139,8 +12139,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12184,8 +12184,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12229,8 +12229,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12276,8 +12276,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12322,8 +12322,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12368,8 +12368,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12414,8 +12414,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12460,8 +12460,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12512,8 +12512,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12562,8 +12562,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12612,8 +12612,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12662,8 +12662,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12712,8 +12712,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12766,8 +12766,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12819,8 +12819,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12872,8 +12872,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12925,8 +12925,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12978,8 +12978,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13031,8 +13031,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13084,8 +13084,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13125,8 +13125,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13167,8 +13167,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13209,8 +13209,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13251,8 +13251,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13293,8 +13293,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCpesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13335,8 +13335,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13377,8 +13377,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13419,8 +13419,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13461,8 +13461,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13503,8 +13503,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13545,8 +13545,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13587,8 +13587,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13629,8 +13629,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13671,8 +13671,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13713,8 +13713,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13755,8 +13755,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13799,8 +13799,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13843,8 +13843,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13887,8 +13887,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13931,8 +13931,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13976,8 +13976,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14019,8 +14019,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14062,8 +14062,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14105,8 +14105,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14148,8 +14148,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14192,8 +14192,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14236,8 +14236,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14280,8 +14280,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14324,8 +14324,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14368,8 +14368,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14410,8 +14410,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14452,8 +14452,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14494,8 +14494,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14536,8 +14536,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14578,8 +14578,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14621,8 +14621,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14667,8 +14667,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14713,8 +14713,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14759,8 +14759,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14805,8 +14805,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14850,8 +14850,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14892,8 +14892,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14934,8 +14934,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14976,8 +14976,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15018,8 +15018,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15061,8 +15061,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15106,8 +15106,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15151,8 +15151,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15196,8 +15196,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15241,8 +15241,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15285,8 +15285,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15330,8 +15330,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15375,8 +15375,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15420,8 +15420,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15465,8 +15465,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15510,8 +15510,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15554,8 +15554,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15598,8 +15598,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15642,8 +15642,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15686,8 +15686,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15733,8 +15733,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15785,8 +15785,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15837,8 +15837,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15889,8 +15889,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15941,8 +15941,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15993,8 +15993,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16041,8 +16041,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16089,8 +16089,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16137,8 +16137,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16185,8 +16185,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16235,8 +16235,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16289,8 +16289,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16343,8 +16343,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16397,8 +16397,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16451,8 +16451,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16500,8 +16500,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16542,8 +16542,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16584,8 +16584,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16626,8 +16626,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16668,8 +16668,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16710,8 +16710,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16752,8 +16752,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16794,8 +16794,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16836,8 +16836,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16878,8 +16878,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16923,8 +16923,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16970,8 +16970,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17017,8 +17017,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17064,8 +17064,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17111,8 +17111,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17155,8 +17155,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17197,8 +17197,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17239,8 +17239,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17281,8 +17281,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17323,8 +17323,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17365,8 +17365,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17408,8 +17408,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17451,8 +17451,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17494,8 +17494,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17537,8 +17537,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17582,8 +17582,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17629,8 +17629,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17676,8 +17676,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17723,8 +17723,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17770,8 +17770,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17815,8 +17815,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17857,8 +17857,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17899,8 +17899,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17941,8 +17941,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17983,8 +17983,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18026,8 +18026,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18069,8 +18069,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18112,8 +18112,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18155,8 +18155,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18198,8 +18198,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18241,8 +18241,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18285,8 +18285,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18329,8 +18329,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18373,8 +18373,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18417,8 +18417,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18466,8 +18466,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18514,8 +18514,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18562,8 +18562,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18610,8 +18610,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18658,8 +18658,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18700,8 +18700,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18742,8 +18742,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18784,8 +18784,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18826,8 +18826,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18868,8 +18868,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18970,8 +18970,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19012,8 +19012,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19054,8 +19054,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19096,8 +19096,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19138,8 +19138,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19180,8 +19180,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19223,8 +19223,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19266,8 +19266,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19309,8 +19309,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19352,8 +19352,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19395,8 +19395,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19437,8 +19437,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19479,8 +19479,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19521,8 +19521,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19563,8 +19563,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19615,8 +19615,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19674,8 +19674,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19733,8 +19733,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19792,8 +19792,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19851,8 +19851,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19903,8 +19903,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19948,8 +19948,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19993,8 +19993,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20038,8 +20038,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20083,8 +20083,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20125,8 +20125,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20167,8 +20167,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20209,8 +20209,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20251,8 +20251,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20293,8 +20293,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20335,8 +20335,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20377,8 +20377,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20419,8 +20419,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20461,8 +20461,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20503,8 +20503,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20547,8 +20547,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20592,8 +20592,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20637,8 +20637,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20682,8 +20682,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20727,8 +20727,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20771,8 +20771,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20814,8 +20814,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20857,8 +20857,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20900,8 +20900,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20943,8 +20943,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20985,8 +20985,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21029,8 +21029,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21073,8 +21073,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21117,8 +21117,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21161,8 +21161,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21205,8 +21205,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21247,8 +21247,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21289,8 +21289,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21331,8 +21331,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21373,8 +21373,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21415,8 +21415,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21463,8 +21463,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21511,8 +21511,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21559,8 +21559,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21607,8 +21607,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21656,8 +21656,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21699,8 +21699,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21742,8 +21742,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21785,8 +21785,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21828,8 +21828,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21870,8 +21870,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21912,8 +21912,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21954,8 +21954,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21996,8 +21996,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22038,8 +22038,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22080,8 +22080,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22122,8 +22122,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22164,8 +22164,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22206,8 +22206,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22248,8 +22248,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22290,8 +22290,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22334,8 +22334,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22378,8 +22378,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22422,8 +22422,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22466,8 +22466,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22510,8 +22510,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22553,8 +22553,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22596,8 +22596,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22639,8 +22639,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22682,8 +22682,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22725,8 +22725,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22769,8 +22769,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22813,8 +22813,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22857,8 +22857,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22901,8 +22901,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22950,8 +22950,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23002,8 +23002,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23054,8 +23054,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23106,8 +23106,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23158,8 +23158,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23206,8 +23206,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23252,8 +23252,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23298,8 +23298,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23344,8 +23344,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23390,8 +23390,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23435,8 +23435,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23477,8 +23477,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23519,8 +23519,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23561,8 +23561,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23603,8 +23603,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23645,8 +23645,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23687,8 +23687,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23729,8 +23729,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23771,8 +23771,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23813,8 +23813,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23855,8 +23855,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23899,8 +23899,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23943,8 +23943,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23987,8 +23987,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24031,8 +24031,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24074,8 +24074,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24113,8 +24113,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24152,8 +24152,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24191,8 +24191,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24230,8 +24230,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24269,8 +24269,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24308,8 +24308,8 @@ public final class CoreFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24351,8 +24351,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24396,8 +24396,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24441,8 +24441,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24486,8 +24486,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24531,8 +24531,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24573,8 +24573,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24616,8 +24616,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24659,8 +24659,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24702,8 +24702,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24745,8 +24745,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24788,8 +24788,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24831,8 +24831,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24874,8 +24874,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24917,8 +24917,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24960,8 +24960,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25003,8 +25003,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25047,8 +25047,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25091,8 +25091,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25135,8 +25135,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25179,8 +25179,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25223,8 +25223,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25265,8 +25265,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25307,8 +25307,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25349,8 +25349,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25391,8 +25391,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25434,8 +25434,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25479,8 +25479,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25524,8 +25524,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25569,8 +25569,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25614,8 +25614,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25659,8 +25659,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25702,8 +25702,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25745,8 +25745,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25788,8 +25788,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25831,8 +25831,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25876,8 +25876,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6Args;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25921,8 +25921,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6Args;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25966,8 +25966,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6Args;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26011,8 +26011,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6Args;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26056,8 +26056,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6Args;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26105,8 +26105,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26156,8 +26156,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26207,8 +26207,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26258,8 +26258,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26309,8 +26309,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26360,8 +26360,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26411,8 +26411,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26455,8 +26455,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26497,8 +26497,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26539,8 +26539,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26581,8 +26581,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26623,8 +26623,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26696,8 +26696,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26740,8 +26740,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26784,8 +26784,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26828,8 +26828,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26872,8 +26872,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26915,8 +26915,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26957,8 +26957,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26999,8 +26999,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27041,8 +27041,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27083,8 +27083,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27126,8 +27126,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27172,8 +27172,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27218,8 +27218,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27264,8 +27264,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27310,8 +27310,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27361,8 +27361,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27409,8 +27409,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27457,8 +27457,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27505,8 +27505,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27553,8 +27553,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27595,8 +27595,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27638,8 +27638,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27681,8 +27681,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27724,8 +27724,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27767,8 +27767,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27810,8 +27810,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27852,8 +27852,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27894,8 +27894,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27936,8 +27936,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27978,8 +27978,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28021,8 +28021,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28068,8 +28068,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28115,8 +28115,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28162,8 +28162,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28209,8 +28209,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28256,8 +28256,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28303,8 +28303,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28350,8 +28350,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28392,8 +28392,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28434,8 +28434,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28476,8 +28476,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28518,8 +28518,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28560,8 +28560,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28602,8 +28602,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28646,8 +28646,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28691,8 +28691,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28736,8 +28736,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28781,8 +28781,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28826,8 +28826,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28883,8 +28883,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28914,8 +28914,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28945,8 +28945,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29008,8 +29008,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29039,8 +29039,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29070,8 +29070,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29133,8 +29133,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29164,8 +29164,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29195,8 +29195,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29258,8 +29258,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29289,8 +29289,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29320,8 +29320,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29383,8 +29383,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29414,8 +29414,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29445,8 +29445,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29508,8 +29508,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29539,8 +29539,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29570,8 +29570,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29633,8 +29633,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29664,8 +29664,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29695,8 +29695,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29754,8 +29754,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29786,8 +29786,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29818,8 +29818,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29871,8 +29871,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29903,8 +29903,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29935,8 +29935,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29988,8 +29988,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30020,8 +30020,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30052,8 +30052,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30105,8 +30105,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30137,8 +30137,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30169,8 +30169,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30222,8 +30222,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30254,8 +30254,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30286,8 +30286,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30339,8 +30339,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30371,8 +30371,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30403,8 +30403,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30456,8 +30456,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30488,8 +30488,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30520,8 +30520,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30562,8 +30562,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30604,8 +30604,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30646,8 +30646,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30688,8 +30688,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30730,8 +30730,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30773,8 +30773,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30818,8 +30818,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30863,8 +30863,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30908,8 +30908,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30953,8 +30953,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31016,8 +31016,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31081,8 +31081,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31146,8 +31146,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31211,8 +31211,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31276,8 +31276,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31323,8 +31323,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31367,8 +31367,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31411,8 +31411,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31455,8 +31455,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31499,8 +31499,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31545,8 +31545,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31593,8 +31593,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31641,8 +31641,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31689,8 +31689,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31737,8 +31737,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31783,8 +31783,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31829,8 +31829,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31875,8 +31875,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31921,8 +31921,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31967,8 +31967,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32013,8 +32013,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32058,8 +32058,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32103,8 +32103,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32148,8 +32148,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32193,8 +32193,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32238,8 +32238,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32280,8 +32280,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32322,8 +32322,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32364,8 +32364,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32406,8 +32406,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32448,8 +32448,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32490,8 +32490,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32547,8 +32547,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32593,8 +32593,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32639,8 +32639,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32685,8 +32685,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32731,8 +32731,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32776,8 +32776,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32818,8 +32818,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32860,8 +32860,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32902,8 +32902,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32944,8 +32944,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32987,8 +32987,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33033,8 +33033,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33079,8 +33079,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33125,8 +33125,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33171,8 +33171,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33216,8 +33216,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33259,8 +33259,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33302,8 +33302,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33345,8 +33345,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33388,8 +33388,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33431,8 +33431,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33473,8 +33473,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33515,8 +33515,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33557,8 +33557,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33599,8 +33599,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33645,8 +33645,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33693,8 +33693,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33741,8 +33741,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33789,8 +33789,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33837,8 +33837,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33881,8 +33881,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33923,8 +33923,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33965,8 +33965,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34007,8 +34007,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34049,8 +34049,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34091,8 +34091,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34133,8 +34133,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34175,8 +34175,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34217,8 +34217,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34259,8 +34259,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34304,8 +34304,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34349,8 +34349,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34394,8 +34394,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34439,8 +34439,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34484,8 +34484,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34527,8 +34527,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34571,8 +34571,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34615,8 +34615,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34659,8 +34659,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34703,8 +34703,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34746,8 +34746,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34790,8 +34790,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34834,8 +34834,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34878,8 +34878,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34922,8 +34922,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34981,8 +34981,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35023,8 +35023,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35065,8 +35065,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35107,8 +35107,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35149,8 +35149,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35191,8 +35191,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35236,8 +35236,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35281,8 +35281,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35326,8 +35326,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35371,8 +35371,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35419,8 +35419,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35464,8 +35464,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35509,8 +35509,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35554,8 +35554,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35599,8 +35599,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35643,8 +35643,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35690,8 +35690,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35737,8 +35737,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35784,8 +35784,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35831,8 +35831,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35876,8 +35876,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35918,8 +35918,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35960,8 +35960,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36002,8 +36002,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36044,8 +36044,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36090,8 +36090,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36139,8 +36139,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36188,8 +36188,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36237,8 +36237,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36286,8 +36286,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36334,8 +36334,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36379,8 +36379,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36424,8 +36424,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36469,8 +36469,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36514,8 +36514,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36559,8 +36559,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36604,8 +36604,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36648,8 +36648,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36692,8 +36692,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36736,8 +36736,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36780,8 +36780,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36824,8 +36824,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36866,8 +36866,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36912,8 +36912,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36958,8 +36958,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37004,8 +37004,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37050,8 +37050,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37097,8 +37097,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37142,8 +37142,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37187,8 +37187,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37232,8 +37232,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37277,8 +37277,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37321,8 +37321,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37363,8 +37363,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37405,8 +37405,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37447,8 +37447,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37489,8 +37489,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37532,8 +37532,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37578,8 +37578,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37624,8 +37624,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37670,8 +37670,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37716,8 +37716,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37762,8 +37762,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37808,8 +37808,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37854,8 +37854,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37900,8 +37900,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37946,8 +37946,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37991,8 +37991,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38038,8 +38038,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38085,8 +38085,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38132,8 +38132,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38179,8 +38179,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38226,8 +38226,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38273,8 +38273,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38320,8 +38320,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38362,8 +38362,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38404,8 +38404,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38446,8 +38446,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38488,8 +38488,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38530,8 +38530,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38579,8 +38579,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38628,8 +38628,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38677,8 +38677,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -38726,8 +38726,8 @@ public final class CoreFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Core.CoreFunctions;
      * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

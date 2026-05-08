@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitBandwidthShapes = oci.Core.getVirtualCircuitBandwidthShapes({
+ * const testVirtualCircuitBandwidthShapes = oci.core.getVirtualCircuitBandwidthShapes({
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  * });
  * ```
@@ -73,7 +73,7 @@ export interface GetVirtualCircuitBandwidthShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitBandwidthShapes = oci.Core.getVirtualCircuitBandwidthShapes({
+ * const testVirtualCircuitBandwidthShapes = oci.core.getVirtualCircuitBandwidthShapes({
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  * });
  * ```
@@ -90,7 +90,7 @@ export function getVirtualCircuitBandwidthShapesOutput(args: GetVirtualCircuitBa
  * A collection of arguments for invoking getVirtualCircuitBandwidthShapes.
  */
 export interface GetVirtualCircuitBandwidthShapesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitBandwidthShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitBandwidthShapesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
      */

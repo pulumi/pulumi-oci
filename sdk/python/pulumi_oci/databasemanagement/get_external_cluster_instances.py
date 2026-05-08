@@ -124,7 +124,7 @@ def get_external_cluster_instances(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=compartment_id,
+    test_external_cluster_instances = oci.databasemanagement.get_external_cluster_instances(compartment_id=compartment_id,
         display_name=external_cluster_instance_display_name,
         external_cluster_id=test_external_cluster["id"])
     ```
@@ -149,10 +149,10 @@ def get_external_cluster_instances(compartment_id: Optional[_builtins.str] = Non
         external_cluster_instance_collections=pulumi.get(__ret__, 'external_cluster_instance_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          external_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]]]] = None,
+def get_external_cluster_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          external_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClusterInstancesResult]:
     """
     This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -165,7 +165,7 @@ def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=compartment_id,
+    test_external_cluster_instances = oci.databasemanagement.get_external_cluster_instances(compartment_id=compartment_id,
         display_name=external_cluster_instance_display_name,
         external_cluster_id=test_external_cluster["id"])
     ```

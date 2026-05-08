@@ -93,8 +93,8 @@ export interface BdsInstanceSoftwareUpdateActionState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
-    softwareUpdateKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
+    softwareUpdateKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

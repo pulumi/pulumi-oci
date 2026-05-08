@@ -19,20 +19,20 @@ __all__ = ['AuditTrailManagementArgs', 'AuditTrailManagement']
 @pulumi.input_type
 class AuditTrailManagementArgs:
     def __init__(__self__, *,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resume_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 start_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuditTrailManagement resource.
 
@@ -86,7 +86,7 @@ class AuditTrailManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
 
@@ -97,191 +97,191 @@ class AuditTrailManagementArgs:
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
-    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_update_last_archive_time_on_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         """
         return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @can_update_last_archive_time_on_target.setter
-    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_update_last_archive_time_on_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the target.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the audit trail.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoPurgeEnabled")
-    def is_auto_purge_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_purge_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         """
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @is_auto_purge_enabled.setter
-    def is_auto_purge_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_purge_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_purge_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="resumeTrigger")
-    def resume_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def resume_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Resume.
         """
         return pulumi.get(self, "resume_trigger")
 
     @resume_trigger.setter
-    def resume_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def resume_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "resume_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="startTrigger")
-    def start_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def start_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Start.
         """
         return pulumi.get(self, "start_trigger")
 
     @start_trigger.setter
-    def start_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def start_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "start_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Audit Trail Management. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stopTrigger")
-    def stop_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def stop_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Stop.
         """
         return pulumi.get(self, "stop_trigger")
 
     @stop_trigger.setter
-    def stop_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def stop_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "stop_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
-    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_location", value)
 
 
 @pulumi.input_type
 class _AuditTrailManagementState:
     def __init__(__self__, *,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resume_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 start_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_collected: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_collected: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditTrailManagement resources.
 
@@ -359,7 +359,7 @@ class _AuditTrailManagementState:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
 
@@ -370,259 +370,259 @@ class _AuditTrailManagementState:
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the  parent audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
-    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_update_last_archive_time_on_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         """
         return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @can_update_last_archive_time_on_target.setter
-    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_update_last_archive_time_on_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the target.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the audit trail.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoPurgeEnabled")
-    def is_auto_purge_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_purge_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         """
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @is_auto_purge_enabled.setter
-    def is_auto_purge_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_purge_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_purge_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the audit trail in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resumeTrigger")
-    def resume_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def resume_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Resume.
         """
         return pulumi.get(self, "resume_trigger")
 
     @resume_trigger.setter
-    def resume_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def resume_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "resume_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="startTrigger")
-    def start_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def start_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Start.
         """
         return pulumi.get(self, "start_trigger")
 
     @start_trigger.setter
-    def start_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def start_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "start_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Audit Trail Management. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current sub-state of the audit trail.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="stopTrigger")
-    def stop_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def stop_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true triggers Stop.
         """
         return pulumi.get(self, "stop_trigger")
 
     @stop_trigger.setter
-    def stop_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def stop_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "stop_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit trail was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastCollected")
-    def time_last_collected(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_collected(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
     @time_last_collected.setter
-    def time_last_collected(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_collected(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_collected", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit trail was updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
-    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_location", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the workrequest for audit trail which collects audit records.
         """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
@@ -632,20 +632,20 @@ class AuditTrailManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resume_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 start_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
@@ -665,7 +665,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
             trail_location=audit_trail_management_trail_location,
-            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
+            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -674,7 +674,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled == "true")
         ```
 
         ## Import
@@ -727,7 +727,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
             trail_location=audit_trail_management_trail_location,
-            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
+            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -736,7 +736,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled == "true")
         ```
 
         ## Import
@@ -759,20 +759,20 @@ class AuditTrailManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resume_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 start_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -814,28 +814,28 @@ class AuditTrailManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-            audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            resume_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            start_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_collected: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trail_location: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AuditTrailManagement':
+            audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_collected: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuditTrailManagement':
         """
         Get an existing AuditTrailManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

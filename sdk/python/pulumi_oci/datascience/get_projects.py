@@ -138,7 +138,7 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DataScience.get_projects(compartment_id=compartment_id,
+    test_projects = oci.datascience.get_projects(compartment_id=compartment_id,
         created_by=project_created_by,
         display_name=project_display_name,
         id=project_id,
@@ -170,12 +170,12 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         projects=pulumi.get(__ret__, 'projects'),
         state=pulumi.get(__ret__, 'state'))
-def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_projects_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectsResult]:
     """
     This data source provides the list of Projects in Oracle Cloud Infrastructure Data Science service.
@@ -188,7 +188,7 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DataScience.get_projects(compartment_id=compartment_id,
+    test_projects = oci.datascience.get_projects(compartment_id=compartment_id,
         created_by=project_created_by,
         display_name=project_display_name,
         id=project_id,

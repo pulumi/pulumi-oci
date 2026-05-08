@@ -70,51 +70,51 @@ __all__ = [
 ]
 
 class OccAvailabilityCatalogDetailArgsDict(TypedDict):
-    available_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    available_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The quantity of resource currently available that the customer can request.
     """
-    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the availability catalog.
     """
-    date_expected_capacity_handover: NotRequired[pulumi.Input[_builtins.str]]
+    date_expected_capacity_handover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
     """
-    date_final_customer_order: NotRequired[pulumi.Input[_builtins.str]]
+    date_final_customer_order: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
     """
-    demanded_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    demanded_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The quantity of resource currently demanded by the customer.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
     """
-    resource_name: NotRequired[pulumi.Input[_builtins.str]]
+    resource_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the resource that the customer can request.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The different types of resources against which customers can place capacity requests.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    total_available_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    total_available_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total quantity of resource that the customer can request.
     """
-    unit: NotRequired[pulumi.Input[_builtins.str]]
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unit in which the resource available is measured.
     """
-    workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    workload_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of workload (Generic/ROW).
     """
@@ -122,18 +122,18 @@ class OccAvailabilityCatalogDetailArgsDict(TypedDict):
 @pulumi.input_type
 class OccAvailabilityCatalogDetailArgs:
     def __init__(__self__, *,
-                 available_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_expected_capacity_handover: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_final_customer_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 demanded_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 total_available_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 available_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_expected_capacity_handover: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_final_customer_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 demanded_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 total_available_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] available_quantity: The quantity of resource currently available that the customer can request.
         :param pulumi.Input[_builtins.str] catalog_id: The OCID of the availability catalog.
@@ -175,146 +175,146 @@ class OccAvailabilityCatalogDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="availableQuantity")
-    def available_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def available_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The quantity of resource currently available that the customer can request.
         """
         return pulumi.get(self, "available_quantity")
 
     @available_quantity.setter
-    def available_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def available_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "available_quantity", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogId")
-    def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the availability catalog.
         """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
-    def catalog_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "catalog_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dateExpectedCapacityHandover")
-    def date_expected_capacity_handover(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_expected_capacity_handover(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         """
         return pulumi.get(self, "date_expected_capacity_handover")
 
     @date_expected_capacity_handover.setter
-    def date_expected_capacity_handover(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_expected_capacity_handover(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_expected_capacity_handover", value)
 
     @_builtins.property
     @pulumi.getter(name="dateFinalCustomerOrder")
-    def date_final_customer_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_final_customer_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
         """
         return pulumi.get(self, "date_final_customer_order")
 
     @date_final_customer_order.setter
-    def date_final_customer_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_final_customer_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_final_customer_order", value)
 
     @_builtins.property
     @pulumi.getter(name="demandedQuantity")
-    def demanded_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def demanded_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The quantity of resource currently demanded by the customer.
         """
         return pulumi.get(self, "demanded_quantity")
 
     @demanded_quantity.setter
-    def demanded_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def demanded_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "demanded_quantity", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource that the customer can request.
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The different types of resources against which customers can place capacity requests.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="totalAvailableQuantity")
-    def total_available_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_available_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total quantity of resource that the customer can request.
         """
         return pulumi.get(self, "total_available_quantity")
 
     @total_available_quantity.setter
-    def total_available_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_available_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_available_quantity", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unit in which the resource available is measured.
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadType")
-    def workload_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of workload (Generic/ROW).
         """
         return pulumi.get(self, "workload_type")
 
     @workload_type.setter
-    def workload_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_type", value)
 
 
@@ -363,31 +363,31 @@ class OccCapacityRequestDetailArgsDict(TypedDict):
     """
     The type of the workload (Generic/ROW).
     """
-    actual_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    actual_handover_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The actual handed over quantity of resources at the time of request resolution.
     """
-    associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict']]]]
+    associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]]
     """
     A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
     """
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
     """
-    date_actual_handover: NotRequired[pulumi.Input[_builtins.str]]
+    date_actual_handover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date on which the actual handover quantity of resources is delivered.
     """
-    date_expected_handover: NotRequired[pulumi.Input[_builtins.str]]
+    date_expected_handover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date on which the latest increment to supplied quantity of resources was delivered.
     """
-    expected_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    expected_handover_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The incremental quantity of resources supplied as the provisioning is underway.
     """
-    source_workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    source_workload_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The WorkloadType from where capacity request are to be transferred.
     """
@@ -399,13 +399,13 @@ class OccCapacityRequestDetailArgs:
                  resource_name: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
                  workload_type: pulumi.Input[_builtins.str],
-                 actual_handover_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 associated_occ_handover_resource_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_actual_handover: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_expected_handover: Optional[pulumi.Input[_builtins.str]] = None,
-                 expected_handover_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_workload_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 actual_handover_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 associated_occ_handover_resource_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_actual_handover: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_expected_handover: pulumi.Input[Optional[_builtins.str]] = None,
+                 expected_handover_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_workload_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] demand_quantity: The number of compute server's with name <resourceName> required by the user.
         :param pulumi.Input[_builtins.str] resource_name: The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
@@ -488,95 +488,95 @@ class OccCapacityRequestDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="actualHandoverQuantity")
-    def actual_handover_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def actual_handover_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The actual handed over quantity of resources at the time of request resolution.
         """
         return pulumi.get(self, "actual_handover_quantity")
 
     @actual_handover_quantity.setter
-    def actual_handover_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def actual_handover_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "actual_handover_quantity", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedOccHandoverResourceBlockLists")
-    def associated_occ_handover_resource_block_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]:
+    def associated_occ_handover_resource_block_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]:
         """
         A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
         """
         return pulumi.get(self, "associated_occ_handover_resource_block_lists")
 
     @associated_occ_handover_resource_block_lists.setter
-    def associated_occ_handover_resource_block_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]):
+    def associated_occ_handover_resource_block_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]):
         pulumi.set(self, "associated_occ_handover_resource_block_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="dateActualHandover")
-    def date_actual_handover(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_actual_handover(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date on which the actual handover quantity of resources is delivered.
         """
         return pulumi.get(self, "date_actual_handover")
 
     @date_actual_handover.setter
-    def date_actual_handover(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_actual_handover(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_actual_handover", value)
 
     @_builtins.property
     @pulumi.getter(name="dateExpectedHandover")
-    def date_expected_handover(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_expected_handover(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date on which the latest increment to supplied quantity of resources was delivered.
         """
         return pulumi.get(self, "date_expected_handover")
 
     @date_expected_handover.setter
-    def date_expected_handover(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_expected_handover(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_expected_handover", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedHandoverQuantity")
-    def expected_handover_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expected_handover_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The incremental quantity of resources supplied as the provisioning is underway.
         """
         return pulumi.get(self, "expected_handover_quantity")
 
     @expected_handover_quantity.setter
-    def expected_handover_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expected_handover_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expected_handover_quantity", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceWorkloadType")
-    def source_workload_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_workload_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The WorkloadType from where capacity request are to be transferred.
         """
         return pulumi.get(self, "source_workload_type")
 
     @source_workload_type.setter
-    def source_workload_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_workload_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_workload_type", value)
 
 
 class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict(TypedDict):
-    handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    handover_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total quantity of the resource that was made available to the customer as part of this resource block
     """
-    occ_handover_resource_block_id: NotRequired[pulumi.Input[_builtins.str]]
+    occ_handover_resource_block_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the handed over resource block.
     """
@@ -584,8 +584,8 @@ class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict(Typ
 @pulumi.input_type
 class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
     def __init__(__self__, *,
-                 handover_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 occ_handover_resource_block_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 handover_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 occ_handover_resource_block_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] handover_quantity: The total quantity of the resource that was made available to the customer as part of this resource block
         :param pulumi.Input[_builtins.str] occ_handover_resource_block_id: The OCID of the handed over resource block.
@@ -597,26 +597,26 @@ class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
 
     @_builtins.property
     @pulumi.getter(name="handoverQuantity")
-    def handover_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def handover_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total quantity of the resource that was made available to the customer as part of this resource block
         """
         return pulumi.get(self, "handover_quantity")
 
     @handover_quantity.setter
-    def handover_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def handover_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "handover_quantity", value)
 
     @_builtins.property
     @pulumi.getter(name="occHandoverResourceBlockId")
-    def occ_handover_resource_block_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def occ_handover_resource_block_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the handed over resource block.
         """
         return pulumi.get(self, "occ_handover_resource_block_id")
 
     @occ_handover_resource_block_id.setter
-    def occ_handover_resource_block_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def occ_handover_resource_block_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "occ_handover_resource_block_id", value)
 
 
@@ -637,11 +637,11 @@ class OccCapacityRequestPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    position: NotRequired[pulumi.Input[_builtins.str]]
+    position: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable)
     """
-    selected_item: NotRequired[pulumi.Input[_builtins.str]]
+    selected_item: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable)
     """
@@ -653,8 +653,8 @@ class OccCapacityRequestPatchOperationArgs:
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
                  value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
-                 position: Optional[pulumi.Input[_builtins.str]] = None,
-                 selected_item: Optional[pulumi.Input[_builtins.str]] = None):
+                 position: pulumi.Input[Optional[_builtins.str]] = None,
+                 selected_item: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] from_: (Updatable)
         :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
@@ -722,26 +722,26 @@ class OccCapacityRequestPatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def position(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def position(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="selectedItem")
-    def selected_item(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def selected_item(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "selected_item")
 
     @selected_item.setter
-    def selected_item(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def selected_item(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "selected_item", value)
 
 
@@ -754,15 +754,15 @@ class OccCustomerGroupCustomersListArgsDict(TypedDict):
     """
     The OCID of the tenancy belonging to the customer.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The description about the customer group.
     """
-    occ_customer_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    occ_customer_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the customer group.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     To determine whether the customer is enabled/disabled.
     """
@@ -772,9 +772,9 @@ class OccCustomerGroupCustomersListArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  tenancy_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: The display name for the customer.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
@@ -817,38 +817,38 @@ class OccCustomerGroupCustomersListArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description about the customer group.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="occCustomerGroupId")
-    def occ_customer_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def occ_customer_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the customer group.
         """
         return pulumi.get(self, "occ_customer_group_id")
 
     @occ_customer_group_id.setter
-    def occ_customer_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def occ_customer_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "occ_customer_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         To determine whether the customer is enabled/disabled.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 

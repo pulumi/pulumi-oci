@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedEntityCounts = oci.FleetAppsManagement.getManagedEntityCounts({
+ * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetManagedEntityCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedEntityCounts = oci.FleetAppsManagement.getManagedEntityCounts({
+ * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -98,10 +98,10 @@ export interface GetManagedEntityCountsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetManagedEntityCountsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetManagedEntityCountsFilterArgs>[] | undefined>;
 }

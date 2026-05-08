@@ -121,7 +121,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
+    test_remediation_run_application_dependency_recommendations = oci.adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
         gav=remediation_run_application_dependency_recommendation_gav,
         purl=remediation_run_application_dependency_recommendation_purl)
     ```
@@ -146,10 +146,10 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
         id=pulumi.get(__ret__, 'id'),
         purl=pulumi.get(__ret__, 'purl'),
         remediation_run_id=pulumi.get(__ret__, 'remediation_run_id'))
-def get_remediation_run_application_dependency_recommendations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]]]] = None,
-                                                                      gav: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                      purl: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                      remediation_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_remediation_run_application_dependency_recommendations_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]]]] = None,
+                                                                      gav: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                      purl: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                      remediation_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRunApplicationDependencyRecommendationsResult]:
     """
     This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
@@ -162,7 +162,7 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
+    test_remediation_run_application_dependency_recommendations = oci.adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
         gav=remediation_run_application_dependency_recommendation_gav,
         purl=remediation_run_application_dependency_recommendation_purl)
     ```

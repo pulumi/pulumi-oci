@@ -297,7 +297,7 @@ def get_management_appliance(management_appliance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliance = oci.Ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
+    test_management_appliance = oci.ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_management_appliance(management_appliance_id: Optional[_builtins.str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_heartbeat=pulumi.get(__ret__, 'time_last_heartbeat'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_management_appliance_output(management_appliance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_appliance_output(management_appliance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementApplianceResult]:
     """
     This data source provides details about a specific Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -343,7 +343,7 @@ def get_management_appliance_output(management_appliance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliance = oci.Ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
+    test_management_appliance = oci.ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
     ```
 
 

@@ -160,29 +160,29 @@ export interface GetMulticloudExternalLocationsMetadataOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The resource type query (i.e. dbsystem, instance etc.)
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Service Provider region.
      */
-    externalLocation?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationsMetadataFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    externalLocation?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationsMetadataFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      */
-    linkedCompartmentId?: pulumi.Input<string>;
+    linkedCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * Oracle Cloud Infrastructure Logical AD to filter the response.
      */
-    logicalZone?: pulumi.Input<string>;
+    logicalZone?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */

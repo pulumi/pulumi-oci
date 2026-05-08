@@ -115,7 +115,7 @@ def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
+    test_db_system_shapes = oci.database.get_db_system_shapes(compartment_id=compartment_id,
         availability_domain=db_system_shape_availability_domain,
         shape_attribute=db_system_shape_shape_attribute)
     ```
@@ -140,10 +140,10 @@ def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         shape_attribute=pulumi.get(__ret__, 'shape_attribute'))
-def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]]]] = None,
-                                shape_attribute: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_system_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]]]] = None,
+                                shape_attribute: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemShapesResult]:
     """
     This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -156,7 +156,7 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
+    test_db_system_shapes = oci.database.get_db_system_shapes(compartment_id=compartment_id,
         availability_domain=db_system_shape_availability_domain,
         shape_attribute=db_system_shape_shape_attribute)
     ```

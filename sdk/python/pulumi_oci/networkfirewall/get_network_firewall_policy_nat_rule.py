@@ -177,7 +177,7 @@ def get_network_firewall_policy_nat_rule(nat_rule_name: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_nat_rule = oci.NetworkFirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
+    test_network_firewall_policy_nat_rule = oci.networkfirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
         network_firewall_policy_id=test_network_firewall_policy["id"])
     ```
 
@@ -203,8 +203,8 @@ def get_network_firewall_policy_nat_rule(nat_rule_name: Optional[_builtins.str] 
         positions=pulumi.get(__ret__, 'positions'),
         priority_order=pulumi.get(__ret__, 'priority_order'),
         type=pulumi.get(__ret__, 'type'))
-def get_network_firewall_policy_nat_rule_output(nat_rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_nat_rule_output(nat_rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyNatRuleResult]:
     """
     This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -217,7 +217,7 @@ def get_network_firewall_policy_nat_rule_output(nat_rule_name: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_nat_rule = oci.NetworkFirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
+    test_network_firewall_policy_nat_rule = oci.networkfirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
         network_firewall_policy_id=test_network_firewall_policy["id"])
     ```
 

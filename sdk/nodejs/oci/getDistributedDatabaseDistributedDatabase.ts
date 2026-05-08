@@ -227,5 +227,5 @@ export interface GetDistributedDatabaseDistributedDatabaseOutputArgs {
     /**
      * Comma separated names of argument corresponding to which metadata need to be retrived.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
 }

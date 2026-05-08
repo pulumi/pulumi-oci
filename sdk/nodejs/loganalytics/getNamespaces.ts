@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaces = oci.LogAnalytics.getNamespaces({
+ * const testNamespaces = oci.loganalytics.getNamespaces({
  *     compartmentId: compartmentId,
- *     isCompartmentDelete: namespaceIsCompartmentDelete,
+ *     isCompartmentDelete: namespaceIsCompartmentDelete === "true",
  * });
  * ```
  */
@@ -79,9 +79,9 @@ export interface GetNamespacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaces = oci.LogAnalytics.getNamespaces({
+ * const testNamespaces = oci.loganalytics.getNamespaces({
  *     compartmentId: compartmentId,
- *     isCompartmentDelete: namespaceIsCompartmentDelete,
+ *     isCompartmentDelete: namespaceIsCompartmentDelete === "true",
  * });
  * ```
  */
@@ -102,9 +102,9 @@ export interface GetNamespacesOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespacesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespacesFilterArgs>[] | undefined>;
     /**
      * if true, the request is from compartment delete service.
      */
-    isCompartmentDelete?: pulumi.Input<boolean>;
+    isCompartmentDelete?: pulumi.Input<boolean | undefined>;
 }

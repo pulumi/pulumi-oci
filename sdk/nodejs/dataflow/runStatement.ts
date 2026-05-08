@@ -143,15 +143,15 @@ export interface RunStatementState {
     /**
      * The statement code to execute. Example: `println(sc.version)`
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * The execution output of a statement.
      */
-    outputs?: pulumi.Input<pulumi.Input<inputs.DataFlow.RunStatementOutput>[]>;
+    outputs?: pulumi.Input<pulumi.Input<inputs.DataFlow.RunStatementOutput>[] | undefined>;
     /**
      * The execution progress.
      */
-    progress?: pulumi.Input<number>;
+    progress?: pulumi.Input<number | undefined>;
     /**
      * The unique ID for the run 
      *
@@ -159,19 +159,19 @@ export interface RunStatementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    runId?: pulumi.Input<string>;
+    runId?: pulumi.Input<string | undefined>;
     /**
      * The current state of this statement.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      */
-    timeCompleted?: pulumi.Input<string>;
+    timeCompleted?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

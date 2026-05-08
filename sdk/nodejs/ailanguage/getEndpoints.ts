@@ -122,22 +122,22 @@ export interface GetEndpointsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.AiLanguage.GetEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AiLanguage.GetEndpointsFilterArgs>[] | undefined>;
     /**
      * Unique identifier endpoint OCID of an endpoint that is immutable on creation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The ID of the trained model for which to list the endpoints.
      */
-    modelId?: pulumi.Input<string>;
+    modelId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the project for which to list the objects.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

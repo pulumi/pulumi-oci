@@ -227,7 +227,7 @@ def get_recipient_invitation(recipient_invitation_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_recipient_invitation = oci.Tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
+    test_recipient_invitation = oci.tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_recipient_invitation(recipient_invitation_id: Optional[_builtins.str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_recipient_invitation_output(recipient_invitation_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_recipient_invitation_output(recipient_invitation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecipientInvitationResult]:
     """
     This data source provides details about a specific Recipient Invitation resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -267,7 +267,7 @@ def get_recipient_invitation_output(recipient_invitation_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_recipient_invitation = oci.Tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
+    test_recipient_invitation = oci.tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
     ```
 
 

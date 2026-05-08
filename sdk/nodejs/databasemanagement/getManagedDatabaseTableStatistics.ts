@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseTableStatistics = oci.DatabaseManagement.getManagedDatabaseTableStatistics({
+ * const testManagedDatabaseTableStatistics = oci.databasemanagement.getManagedDatabaseTableStatistics({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetManagedDatabaseTableStatisticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseTableStatistics = oci.DatabaseManagement.getManagedDatabaseTableStatistics({
+ * const testManagedDatabaseTableStatistics = oci.databasemanagement.getManagedDatabaseTableStatistics({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabase
  * A collection of arguments for invoking getManagedDatabaseTableStatistics.
  */
 export interface GetManagedDatabaseTableStatisticsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseTableStatisticsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseTableStatisticsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

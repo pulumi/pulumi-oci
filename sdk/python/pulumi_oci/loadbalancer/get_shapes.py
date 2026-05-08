@@ -95,7 +95,7 @@ def get_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=compartment_id)
+    test_load_balancer_shapes = oci.loadbalancer.get_shapes(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_shapes(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         shapes=pulumi.get(__ret__, 'shapes'))
-def get_shapes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
+def get_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=compartment_id)
+    test_load_balancer_shapes = oci.loadbalancer.get_shapes(compartment_id=compartment_id)
     ```
 
 

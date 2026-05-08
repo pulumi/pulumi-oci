@@ -64,11 +64,11 @@ export function getPsaPrivateServiceAccessesOutput(args?: GetPsaPrivateServiceAc
  * A collection of arguments for invoking getPsaPrivateServiceAccesses.
  */
 export interface GetPsaPrivateServiceAccessesOutputArgs {
-    compartmentId?: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPrivateServiceAccessesFilterArgs>[]>;
-    id?: pulumi.Input<string>;
-    serviceId?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    vcnId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPrivateServiceAccessesFilterArgs>[] | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    serviceId?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

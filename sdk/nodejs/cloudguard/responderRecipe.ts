@@ -183,45 +183,45 @@ export interface ResponderRecipeState {
     /**
      * (Updatable) Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Responder recipe description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Responder recipe display name.
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      */
-    effectiveResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRule>[]>;
+    effectiveResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRule>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Owner of responder recipe
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of responder rules to override from source responder recipe
      */
-    responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
+    responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[] | undefined>;
     /**
      * The unique identifier of the source responder recipe
      *
@@ -229,23 +229,23 @@ export interface ResponderRecipeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceResponderRecipeId?: pulumi.Input<string>;
+    sourceResponderRecipeId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the example
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the responder recipe was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the responder recipe was last updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -259,13 +259,13 @@ export interface ResponderRecipeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Responder recipe description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Responder recipe display name.
      *
@@ -277,11 +277,11 @@ export interface ResponderRecipeArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of responder rules to override from source responder recipe
      */
-    responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
+    responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[] | undefined>;
     /**
      * The unique identifier of the source responder recipe
      *

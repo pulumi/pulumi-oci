@@ -111,7 +111,7 @@ export interface ManagementStationSynchronizeMirrorsManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
-    managementStationId?: pulumi.Input<string>;
+    managementStationId?: pulumi.Input<string | undefined>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      *
@@ -119,7 +119,7 @@ export interface ManagementStationSynchronizeMirrorsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSourceLists?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

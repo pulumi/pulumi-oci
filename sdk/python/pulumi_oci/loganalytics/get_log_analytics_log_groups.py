@@ -121,7 +121,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+    test_log_analytics_log_groups = oci.loganalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
         namespace=log_analytics_log_group_namespace,
         display_name=log_analytics_log_group_display_name)
     ```
@@ -146,10 +146,10 @@ def get_log_analytics_log_groups(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         log_analytics_log_group_summary_collections=pulumi.get(__ret__, 'log_analytics_log_group_summary_collections'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsLogGroupsFilterArgs', 'GetLogAnalyticsLogGroupsFilterArgsDict']]]]] = None,
-                                        namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_log_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsLogGroupsFilterArgs', 'GetLogAnalyticsLogGroupsFilterArgsDict']]]]] = None,
+                                        namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsResult]:
     """
     This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
@@ -162,7 +162,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+    test_log_analytics_log_groups = oci.loganalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
         namespace=log_analytics_log_group_namespace,
         display_name=log_analytics_log_group_display_name)
     ```

@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const target = oci.Dns.getZone({
+ * const target = oci.dns.getZone({
  *     zoneNameOrId: zoneOcid,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const targetByName = oci.Dns.getZone({
+ * const targetByName = oci.dns.getZone({
  *     zoneNameOrId: `${testTenancy.name}.example.internal.`,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -179,7 +179,7 @@ export interface GetZoneResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const target = oci.Dns.getZone({
+ * const target = oci.dns.getZone({
  *     zoneNameOrId: zoneOcid,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -191,7 +191,7 @@ export interface GetZoneResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const targetByName = oci.Dns.getZone({
+ * const targetByName = oci.dns.getZone({
  *     zoneNameOrId: `${testTenancy.name}.example.internal.`,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -215,15 +215,15 @@ export interface GetZoneOutputArgs {
     /**
      * The OCID of the compartment the zone belongs to. This parameter is deprecated by the service for `GetZone` and should be omitted in most cases.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope. Allowed values: `GLOBAL`, `PRIVATE`. Required to access private zones by name.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      */

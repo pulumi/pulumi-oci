@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * const testOperationsInsightsWarehouseUser = new oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user", {
  *     compartmentId: compartmentId,
  *     connectionPassword: operationsInsightsWarehouseUserConnectionPassword,
- *     isAwrDataAccess: operationsInsightsWarehouseUserIsAwrDataAccess,
+ *     isAwrDataAccess: operationsInsightsWarehouseUserIsAwrDataAccess === "true",
  *     name: operationsInsightsWarehouseUserName,
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     definedTags: {
@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEmDataAccess: operationsInsightsWarehouseUserIsEmDataAccess,
- *     isOpsiDataAccess: operationsInsightsWarehouseUserIsOpsiDataAccess,
+ *     isEmDataAccess: operationsInsightsWarehouseUserIsEmDataAccess === "true",
+ *     isOpsiDataAccess: operationsInsightsWarehouseUserIsOpsiDataAccess === "true",
  * });
  * ```
  *
@@ -203,39 +203,39 @@ export interface OperationsInsightsWarehouseUserState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
-    connectionPassword?: pulumi.Input<string>;
+    connectionPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicate whether user has access to AWR data.
      */
-    isAwrDataAccess?: pulumi.Input<boolean>;
+    isAwrDataAccess?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicate whether user has access to EM data.
      */
-    isEmDataAccess?: pulumi.Input<boolean>;
+    isEmDataAccess?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicate whether user has access to OPSI data.
      */
-    isOpsiDataAccess?: pulumi.Input<boolean>;
+    isOpsiDataAccess?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * OPSI Warehouse OCID
      *
@@ -243,23 +243,23 @@ export interface OperationsInsightsWarehouseUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    operationsInsightsWarehouseId?: pulumi.Input<string>;
+    operationsInsightsWarehouseId?: pulumi.Input<string | undefined>;
     /**
      * Possible lifecycle states
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -277,11 +277,11 @@ export interface OperationsInsightsWarehouseUserArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicate whether user has access to AWR data.
      */
@@ -289,15 +289,15 @@ export interface OperationsInsightsWarehouseUserArgs {
     /**
      * (Updatable) Indicate whether user has access to EM data.
      */
-    isEmDataAccess?: pulumi.Input<boolean>;
+    isEmDataAccess?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicate whether user has access to OPSI data.
      */
-    isOpsiDataAccess?: pulumi.Input<boolean>;
+    isOpsiDataAccess?: pulumi.Input<boolean | undefined>;
     /**
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * OPSI Warehouse OCID
      *

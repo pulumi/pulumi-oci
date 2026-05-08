@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendedPatches = oci.FleetAppsManagement.getRecommendedPatches({
+ * const testRecommendedPatches = oci.fleetappsmanagement.getRecommendedPatches({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,
@@ -121,7 +121,7 @@ export interface GetRecommendedPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendedPatches = oci.FleetAppsManagement.getRecommendedPatches({
+ * const testRecommendedPatches = oci.fleetappsmanagement.getRecommendedPatches({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,
@@ -154,29 +154,29 @@ export interface GetRecommendedPatchesOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRecommendedPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRecommendedPatchesFilterArgs>[] | undefined>;
     /**
      * Patch identifier.
      */
-    patchId?: pulumi.Input<string>;
+    patchId?: pulumi.Input<string | undefined>;
     /**
      * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      */
-    patchLevel?: pulumi.Input<string>;
+    patchLevel?: pulumi.Input<string | undefined>;
     /**
      * Patch type.
      */
-    patchType?: pulumi.Input<string>;
+    patchType?: pulumi.Input<string | undefined>;
     /**
      * Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * Fleet target identifier.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Fleet target name.
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
 }

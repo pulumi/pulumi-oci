@@ -37,8 +37,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -79,8 +79,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -121,8 +121,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -163,8 +163,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -205,8 +205,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -247,8 +247,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -290,8 +290,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -333,8 +333,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -376,8 +376,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -419,8 +419,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -462,8 +462,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -506,8 +506,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -594,8 +594,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -638,8 +638,8 @@ public final class VisualBuilderFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
      * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

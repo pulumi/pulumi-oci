@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProperty = oci.FleetAppsManagement.getProperty({
+ * const testProperty = oci.fleetappsmanagement.getProperty({
  *     propertyId: testPropertyOciFleetAppsManagementProperty.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetPropertyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProperty = oci.FleetAppsManagement.getProperty({
+ * const testProperty = oci.fleetappsmanagement.getProperty({
  *     propertyId: testPropertyOciFleetAppsManagementProperty.id,
  * });
  * ```

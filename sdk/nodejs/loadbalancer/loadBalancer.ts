@@ -60,9 +60,9 @@ import * as utilities from "../utilities";
  *     },
  *     ipMode: loadBalancerIpMode,
  *     ipv6subnetCidr: loadBalancerIpv6subnetCidr,
- *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled,
- *     isPrivate: loadBalancerIsPrivate,
- *     isRequestIdEnabled: loadBalancerIsRequestIdEnabled,
+ *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled === "true",
+ *     isPrivate: loadBalancerIsPrivate === "true",
+ *     isRequestIdEnabled: loadBalancerIsRequestIdEnabled === "true",
  *     networkSecurityGroupIds: loadBalancerNetworkSecurityGroupIds,
  *     requestIdHeader: loadBalancerRequestIdHeader,
  *     reservedIps: [{
@@ -70,8 +70,8 @@ import * as utilities from "../utilities";
  *     }],
  *     securityAttributes: loadBalancerSecurityAttributes,
  *     shapeDetails: {
- *         maximumBandwidthInMbps: loadBalancerShapeDetailsMaximumBandwidthInMbps,
- *         minimumBandwidthInMbps: loadBalancerShapeDetailsMinimumBandwidthInMbps,
+ *         maximumBandwidthInMbps: Number(loadBalancerShapeDetailsMaximumBandwidthInMbps),
+ *         minimumBandwidthInMbps: Number(loadBalancerShapeDetailsMinimumBandwidthInMbps),
  *     },
  * });
  * ```
@@ -336,30 +336,30 @@ export interface LoadBalancerState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An array of IP addresses.
      */
-    ipAddressDetails?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerIpAddressDetail>[]>;
+    ipAddressDetails?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerIpAddressDetail>[] | undefined>;
     /**
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      *
      * @deprecated The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
      *
@@ -369,7 +369,7 @@ export interface LoadBalancerState {
      *
      * Example: "ipMode":"IPV6"
      */
-    ipMode?: pulumi.Input<string>;
+    ipMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Applies to IPV6 LB creation only. 
      *
@@ -377,7 +377,7 @@ export interface LoadBalancerState {
      *
      * Example: "2002::1234:abcd:ffff:c0a8:101/64"
      */
-    ipv6subnetCidr?: pulumi.Input<string>;
+    ipv6subnetCidr?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *
@@ -387,7 +387,7 @@ export interface LoadBalancerState {
      *
      * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
      */
-    isDeleteProtectionEnabled?: pulumi.Input<boolean>;
+    isDeleteProtectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
@@ -399,7 +399,7 @@ export interface LoadBalancerState {
      *
      * Example: `true`
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
      *
@@ -411,7 +411,7 @@ export interface LoadBalancerState {
      *
      * Example: `true`
      */
-    isRequestIdEnabled?: pulumi.Input<boolean>;
+    isRequestIdEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      *
@@ -423,7 +423,7 @@ export interface LoadBalancerState {
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
      *
@@ -437,27 +437,27 @@ export interface LoadBalancerState {
      * * Unless the header name is "" it must start with "X-" prefix.
      * * Setting the header name to "" will set it to the default: X-Request-Id.
      */
-    requestIdHeader?: pulumi.Input<string>;
+    requestIdHeader?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
-    reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
+    reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[] | undefined>;
     /**
      * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      */
-    shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails>;
+    shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails | undefined>;
     /**
      * The current state of the load balancer.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -465,15 +465,15 @@ export interface LoadBalancerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -487,7 +487,7 @@ export interface LoadBalancerArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      */
@@ -495,7 +495,7 @@ export interface LoadBalancerArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
      *
@@ -505,7 +505,7 @@ export interface LoadBalancerArgs {
      *
      * Example: "ipMode":"IPV6"
      */
-    ipMode?: pulumi.Input<string>;
+    ipMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Applies to IPV6 LB creation only. 
      *
@@ -513,7 +513,7 @@ export interface LoadBalancerArgs {
      *
      * Example: "2002::1234:abcd:ffff:c0a8:101/64"
      */
-    ipv6subnetCidr?: pulumi.Input<string>;
+    ipv6subnetCidr?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *
@@ -523,7 +523,7 @@ export interface LoadBalancerArgs {
      *
      * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
      */
-    isDeleteProtectionEnabled?: pulumi.Input<boolean>;
+    isDeleteProtectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
@@ -535,7 +535,7 @@ export interface LoadBalancerArgs {
      *
      * Example: `true`
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
      *
@@ -547,7 +547,7 @@ export interface LoadBalancerArgs {
      *
      * Example: `true`
      */
-    isRequestIdEnabled?: pulumi.Input<boolean>;
+    isRequestIdEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      *
@@ -559,7 +559,7 @@ export interface LoadBalancerArgs {
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
      *
@@ -573,15 +573,15 @@ export interface LoadBalancerArgs {
      * * Unless the header name is "" it must start with "X-" prefix.
      * * Setting the header name to "" will set it to the default: X-Request-Id.
      */
-    requestIdHeader?: pulumi.Input<string>;
+    requestIdHeader?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
-    reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
+    reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[] | undefined>;
     /**
      * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
@@ -589,7 +589,7 @@ export interface LoadBalancerArgs {
     /**
      * (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      */
-    shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails>;
+    shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails | undefined>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *

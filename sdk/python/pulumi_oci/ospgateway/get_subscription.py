@@ -362,7 +362,7 @@ def get_subscription(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=compartment_id,
+    test_subscription = oci.ospgateway.get_subscription(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region,
         subscription_id=test_subscription_oci_osp_gateway_subscription["id"])
     ```
@@ -407,9 +407,9 @@ def get_subscription(compartment_id: Optional[_builtins.str] = None,
         time_start=pulumi.get(__ret__, 'time_start'),
         upgrade_state=pulumi.get(__ret__, 'upgrade_state'),
         upgrade_state_details=pulumi.get(__ret__, 'upgrade_state_details'))
-def get_subscription_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
     This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -422,7 +422,7 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=compartment_id,
+    test_subscription = oci.ospgateway.get_subscription(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region,
         subscription_id=test_subscription_oci_osp_gateway_subscription["id"])
     ```

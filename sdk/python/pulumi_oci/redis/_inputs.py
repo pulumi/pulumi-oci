@@ -127,7 +127,7 @@ class OciCacheConfigSetConfigurationDetailsItemArgs:
 
 
 class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict(TypedDict):
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     """
@@ -135,7 +135,7 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict(TypedDict):
 @pulumi.input_type
 class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs:
     def __init__(__self__, *,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
@@ -144,14 +144,14 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
@@ -160,7 +160,7 @@ class OciCacheUserAuthenticationModeArgsDict(TypedDict):
     """
     (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
     """
-    hashed_passwords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hashed_passwords: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
     """
@@ -169,7 +169,7 @@ class OciCacheUserAuthenticationModeArgsDict(TypedDict):
 class OciCacheUserAuthenticationModeArgs:
     def __init__(__self__, *,
                  authentication_type: pulumi.Input[_builtins.str],
-                 hashed_passwords: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 hashed_passwords: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hashed_passwords: (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
@@ -192,19 +192,19 @@ class OciCacheUserAuthenticationModeArgs:
 
     @_builtins.property
     @pulumi.getter(name="hashedPasswords")
-    def hashed_passwords(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hashed_passwords(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
         """
         return pulumi.get(self, "hashed_passwords")
 
     @hashed_passwords.setter
-    def hashed_passwords(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hashed_passwords(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hashed_passwords", value)
 
 
 class OciCacheUserGetRedisClusterOciCacheClusterArgsDict(TypedDict):
-    oci_cache_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    oci_cache_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the OciCacheCluster
     """
@@ -212,7 +212,7 @@ class OciCacheUserGetRedisClusterOciCacheClusterArgsDict(TypedDict):
 @pulumi.input_type
 class OciCacheUserGetRedisClusterOciCacheClusterArgs:
     def __init__(__self__, *,
-                 oci_cache_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 oci_cache_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] oci_cache_cluster_id: OCID of the OciCacheCluster
         """
@@ -221,19 +221,19 @@ class OciCacheUserGetRedisClusterOciCacheClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="ociCacheClusterId")
-    def oci_cache_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_cache_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the OciCacheCluster
         """
         return pulumi.get(self, "oci_cache_cluster_id")
 
     @oci_cache_cluster_id.setter
-    def oci_cache_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_cache_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_cluster_id", value)
 
 
 class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):
-    oci_cache_user_id: NotRequired[pulumi.Input[_builtins.str]]
+    oci_cache_user_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the OciCacheUser
     """
@@ -241,7 +241,7 @@ class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):
 @pulumi.input_type
 class RedisClusterGetOciCacheUserOciCacheUserArgs:
     def __init__(__self__, *,
-                 oci_cache_user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 oci_cache_user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] oci_cache_user_id: OCID of the OciCacheUser
         """
@@ -250,14 +250,14 @@ class RedisClusterGetOciCacheUserOciCacheUserArgs:
 
     @_builtins.property
     @pulumi.getter(name="ociCacheUserId")
-    def oci_cache_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_cache_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the OciCacheUser
         """
         return pulumi.get(self, "oci_cache_user_id")
 
     @oci_cache_user_id.setter
-    def oci_cache_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_cache_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_user_id", value)
 
 
@@ -356,7 +356,7 @@ class RedisClusterImportFromObjectStorageDetailsObjectArgs:
 
 
 class RedisClusterNodeCollectionArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]]
     """
     Collection of node objects.
     """
@@ -364,7 +364,7 @@ class RedisClusterNodeCollectionArgsDict(TypedDict):
 @pulumi.input_type
 class RedisClusterNodeCollectionArgs:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]] items: Collection of node objects.
         """
@@ -373,27 +373,27 @@ class RedisClusterNodeCollectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]:
         """
         Collection of node objects.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 class RedisClusterNodeCollectionItemArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    private_endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint_fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
     """
-    private_endpoint_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The private IP address of the API endpoint to access a specific node.
     """
@@ -401,9 +401,9 @@ class RedisClusterNodeCollectionItemArgsDict(TypedDict):
 @pulumi.input_type
 class RedisClusterNodeCollectionItemArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
@@ -418,38 +418,38 @@ class RedisClusterNodeCollectionItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointFqdn")
-    def private_endpoint_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
         """
         return pulumi.get(self, "private_endpoint_fqdn")
 
     @private_endpoint_fqdn.setter
-    def private_endpoint_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP address of the API endpoint to access a specific node.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @private_endpoint_ip_address.setter
-    def private_endpoint_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip_address", value)
 
 

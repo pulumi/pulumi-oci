@@ -23,11 +23,11 @@ class CaptureFilterArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  filter_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
         """
         The set of arguments for constructing a CaptureFilter resource.
 
@@ -78,77 +78,77 @@ class CaptureFilterArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="flowLogCaptureFilterRules")
-    def flow_log_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
+    def flow_log_capture_filter_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
         """
         (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         """
         return pulumi.get(self, "flow_log_capture_filter_rules")
 
     @flow_log_capture_filter_rules.setter
-    def flow_log_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
+    def flow_log_capture_filter_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
         pulumi.set(self, "flow_log_capture_filter_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="vtapCaptureFilterRules")
-    def vtap_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]:
+    def vtap_capture_filter_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]:
         """
         (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
         return pulumi.get(self, "vtap_capture_filter_rules")
 
     @vtap_capture_filter_rules.setter
-    def vtap_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]):
+    def vtap_capture_filter_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]):
         pulumi.set(self, "vtap_capture_filter_rules", value)
 
 
 @pulumi.input_type
 class _CaptureFilterState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
         """
         Input properties used for looking up and filtering CaptureFilter resources.
 
@@ -183,110 +183,110 @@ class _CaptureFilterState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates which service will use this capture filter
         """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
-    def filter_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_type", value)
 
     @_builtins.property
     @pulumi.getter(name="flowLogCaptureFilterRules")
-    def flow_log_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
+    def flow_log_capture_filter_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
         """
         (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         """
         return pulumi.get(self, "flow_log_capture_filter_rules")
 
     @flow_log_capture_filter_rules.setter
-    def flow_log_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
+    def flow_log_capture_filter_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
         pulumi.set(self, "flow_log_capture_filter_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The capture filter's current administrative state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vtapCaptureFilterRules")
-    def vtap_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]:
+    def vtap_capture_filter_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]:
         """
         (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
         return pulumi.get(self, "vtap_capture_filter_rules")
 
     @vtap_capture_filter_rules.setter
-    def vtap_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]):
+    def vtap_capture_filter_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]]):
         pulumi.set(self, "vtap_capture_filter_rules", value)
 
 
@@ -296,13 +296,13 @@ class CaptureFilter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -337,33 +337,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "destination_cidr": capture_filter_flow_log_capture_filter_rules_destination_cidr,
                 "flow_log_type": capture_filter_flow_log_capture_filter_rules_flow_log_type,
                 "icmp_options": {
-                    "type": capture_filter_flow_log_capture_filter_rules_icmp_options_type,
-                    "code": capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+                    "type": int(capture_filter_flow_log_capture_filter_rules_icmp_options_type),
+                    "code": int(capture_filter_flow_log_capture_filter_rules_icmp_options_code),
                 },
-                "is_enabled": capture_filter_flow_log_capture_filter_rules_is_enabled,
-                "priority": capture_filter_flow_log_capture_filter_rules_priority,
+                "is_enabled": capture_filter_flow_log_capture_filter_rules_is_enabled == "true",
+                "priority": int(capture_filter_flow_log_capture_filter_rules_priority),
                 "protocol": capture_filter_flow_log_capture_filter_rules_protocol,
                 "rule_action": capture_filter_flow_log_capture_filter_rules_rule_action,
-                "sampling_rate": capture_filter_flow_log_capture_filter_rules_sampling_rate,
+                "sampling_rate": int(capture_filter_flow_log_capture_filter_rules_sampling_rate),
                 "source_cidr": capture_filter_flow_log_capture_filter_rules_source_cidr,
                 "tcp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min),
                     },
                 },
             }],
@@ -374,30 +374,30 @@ class CaptureFilter(pulumi.CustomResource):
                 "traffic_direction": capture_filter_vtap_capture_filter_rules_traffic_direction,
                 "destination_cidr": capture_filter_vtap_capture_filter_rules_destination_cidr,
                 "icmp_options": {
-                    "type": capture_filter_vtap_capture_filter_rules_icmp_options_type,
-                    "code": capture_filter_vtap_capture_filter_rules_icmp_options_code,
+                    "type": int(capture_filter_vtap_capture_filter_rules_icmp_options_type),
+                    "code": int(capture_filter_vtap_capture_filter_rules_icmp_options_code),
                 },
                 "protocol": capture_filter_vtap_capture_filter_rules_protocol,
                 "rule_action": capture_filter_vtap_capture_filter_rules_rule_action,
                 "source_cidr": capture_filter_vtap_capture_filter_rules_source_cidr,
                 "tcp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min),
                     },
                 },
             }])
@@ -461,33 +461,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "destination_cidr": capture_filter_flow_log_capture_filter_rules_destination_cidr,
                 "flow_log_type": capture_filter_flow_log_capture_filter_rules_flow_log_type,
                 "icmp_options": {
-                    "type": capture_filter_flow_log_capture_filter_rules_icmp_options_type,
-                    "code": capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+                    "type": int(capture_filter_flow_log_capture_filter_rules_icmp_options_type),
+                    "code": int(capture_filter_flow_log_capture_filter_rules_icmp_options_code),
                 },
-                "is_enabled": capture_filter_flow_log_capture_filter_rules_is_enabled,
-                "priority": capture_filter_flow_log_capture_filter_rules_priority,
+                "is_enabled": capture_filter_flow_log_capture_filter_rules_is_enabled == "true",
+                "priority": int(capture_filter_flow_log_capture_filter_rules_priority),
                 "protocol": capture_filter_flow_log_capture_filter_rules_protocol,
                 "rule_action": capture_filter_flow_log_capture_filter_rules_rule_action,
-                "sampling_rate": capture_filter_flow_log_capture_filter_rules_sampling_rate,
+                "sampling_rate": int(capture_filter_flow_log_capture_filter_rules_sampling_rate),
                 "source_cidr": capture_filter_flow_log_capture_filter_rules_source_cidr,
                 "tcp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
-                        "min": capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+                        "max": int(capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max),
+                        "min": int(capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min),
                     },
                 },
             }],
@@ -498,30 +498,30 @@ class CaptureFilter(pulumi.CustomResource):
                 "traffic_direction": capture_filter_vtap_capture_filter_rules_traffic_direction,
                 "destination_cidr": capture_filter_vtap_capture_filter_rules_destination_cidr,
                 "icmp_options": {
-                    "type": capture_filter_vtap_capture_filter_rules_icmp_options_type,
-                    "code": capture_filter_vtap_capture_filter_rules_icmp_options_code,
+                    "type": int(capture_filter_vtap_capture_filter_rules_icmp_options_type),
+                    "code": int(capture_filter_vtap_capture_filter_rules_icmp_options_code),
                 },
                 "protocol": capture_filter_vtap_capture_filter_rules_protocol,
                 "rule_action": capture_filter_vtap_capture_filter_rules_rule_action,
                 "source_cidr": capture_filter_vtap_capture_filter_rules_source_cidr,
                 "tcp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
                     "destination_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min),
                     },
                     "source_port_range": {
-                        "max": capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
-                        "min": capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
+                        "max": int(capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max),
+                        "min": int(capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min),
                     },
                 },
             }])
@@ -551,13 +551,13 @@ class CaptureFilter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -590,15 +590,15 @@ class CaptureFilter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-            flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None) -> 'CaptureFilter':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+            flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None) -> 'CaptureFilter':
         """
         Get an existing CaptureFilter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

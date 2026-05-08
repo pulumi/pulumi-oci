@@ -93,15 +93,15 @@ export interface ShapeManagementState {
     /**
      * The OCID of the compartment containing the image.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Image to which the shape should be added.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * The compatible shape that is to be added to the compatible shapes list for the image.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
 }
 
 /**

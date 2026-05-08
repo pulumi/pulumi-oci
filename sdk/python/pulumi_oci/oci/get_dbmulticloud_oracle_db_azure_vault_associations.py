@@ -197,13 +197,13 @@ def get_dbmulticloud_oracle_db_azure_vault_associations(compartment_id: Optional
         oracle_db_azure_vault_association_summary_collections=pulumi.get(__ret__, 'oracle_db_azure_vault_association_summary_collections'),
         oracle_db_azure_vault_id=pulumi.get(__ret__, 'oracle_db_azure_vault_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_dbmulticloud_oracle_db_azure_vault_associations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs', 'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict']]]]] = None,
-                                                               oracle_db_azure_connector_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               oracle_db_azure_vault_association_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               oracle_db_azure_vault_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dbmulticloud_oracle_db_azure_vault_associations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs', 'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict']]]]] = None,
+                                                               oracle_db_azure_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               oracle_db_azure_vault_association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               oracle_db_azure_vault_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureVaultAssociationsResult]:
     """
     This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.

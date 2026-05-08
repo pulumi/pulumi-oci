@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstance = oci.VisualBuilder.getVbInstance({
+ * const testVbInstance = oci.visualbuilder.getVbInstance({
  *     vbInstanceId: testVbInstanceOciVisualBuilderVbInstance.id,
  * });
  * ```
@@ -141,7 +141,7 @@ export interface GetVbInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstance = oci.VisualBuilder.getVbInstance({
+ * const testVbInstance = oci.visualbuilder.getVbInstance({
  *     vbInstanceId: testVbInstanceOciVisualBuilderVbInstance.id,
  * });
  * ```

@@ -105,7 +105,7 @@ def get_subscription_redeemable_users(filters: Optional[Sequence[Union['GetSubsc
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
+    test_subscription_redeemable_users = oci.usageproxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_subscription_redeemable_users(filters: Optional[Sequence[Union['GetSubsc
         redeemable_user_collections=pulumi.get(__ret__, 'redeemable_user_collections'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-def get_subscription_redeemable_users_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict']]]]] = None,
-                                             subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_redeemable_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict']]]]] = None,
+                                             subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedeemableUsersResult]:
     """
     This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
@@ -141,7 +141,7 @@ def get_subscription_redeemable_users_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
+    test_subscription_redeemable_users = oci.usageproxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 

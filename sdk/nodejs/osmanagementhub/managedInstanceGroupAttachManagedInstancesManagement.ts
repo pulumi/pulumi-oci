@@ -119,15 +119,15 @@ export interface ManagedInstanceGroupAttachManagedInstancesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the group.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -145,5 +145,5 @@ export interface ManagedInstanceGroupAttachManagedInstancesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails | undefined>;
 }

@@ -369,7 +369,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
+    test_autonomous_database_backup = oci.database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
     ```
 
 
@@ -408,7 +408,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
         time_started=pulumi.get(__ret__, 'time_started'),
         type=pulumi.get(__ret__, 'type'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-def get_autonomous_database_backup_output(autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_database_backup_output(autonomous_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseBackupResult]:
     """
     This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -421,7 +421,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
+    test_autonomous_database_backup = oci.database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
     ```
 
 

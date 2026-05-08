@@ -22,9 +22,9 @@ class RecordArgs:
                  domain: pulumi.Input[_builtins.str],
                  rtype: pulumi.Input[_builtins.str],
                  zone_name_or_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rdata: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rdata: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Record resource.
 
@@ -103,53 +103,53 @@ class RecordArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rdata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rdata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
-    def rdata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rdata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rdata", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The Time To Live for the record, in seconds.
         """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
 
 @pulumi.input_type
 class _RecordState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rdata: Optional[pulumi.Input[_builtins.str]] = None,
-                 record_hash: Optional[pulumi.Input[_builtins.str]] = None,
-                 rrset_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rdata: pulumi.Input[Optional[_builtins.str]] = None,
+                 record_hash: pulumi.Input[Optional[_builtins.str]] = None,
+                 rrset_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Record resources.
 
@@ -197,106 +197,106 @@ class _RecordState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified domain name where the record can be located. Domain value is case insensitive.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_protected(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
         """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
-    def is_protected(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_protected(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_protected", value)
 
     @_builtins.property
     @pulumi.getter
-    def rdata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rdata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
-    def rdata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rdata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rdata", value)
 
     @_builtins.property
     @pulumi.getter(name="recordHash")
-    def record_hash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def record_hash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the record within its zone.
         """
         return pulumi.get(self, "record_hash")
 
     @record_hash.setter
-    def record_hash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def record_hash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "record_hash", value)
 
     @_builtins.property
     @pulumi.getter(name="rrsetVersion")
-    def rrset_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rrset_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The latest version of the record's zone in which its RRSet differs from the preceding version.
         """
         return pulumi.get(self, "rrset_version")
 
     @rrset_version.setter
-    def rrset_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rrset_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rrset_version", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-    def rtype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rtype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
         return pulumi.get(self, "rtype")
 
     @rtype.setter
-    def rtype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rtype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rtype", value)
 
     @_builtins.property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The Time To Live for the record, in seconds.
         """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneNameOrId")
     @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-    def zone_name_or_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_name_or_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name or OCID of the target zone.
 
@@ -307,7 +307,7 @@ class _RecordState:
         return pulumi.get(self, "zone_name_or_id")
 
     @zone_name_or_id.setter
-    def zone_name_or_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_name_or_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_name_or_id", value)
 
 
@@ -317,12 +317,12 @@ class Record(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 rdata: Optional[pulumi.Input[_builtins.str]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 rdata: pulumi.Input[Optional[_builtins.str]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
@@ -352,7 +352,7 @@ class Record(pulumi.CustomResource):
             domain=record_items_domain,
             rtype=record_items_rtype,
             rdata=record_items_rdata,
-            ttl=record_items_ttl)
+            ttl=int(record_items_ttl))
         ```
 
         ## Import
@@ -407,7 +407,7 @@ class Record(pulumi.CustomResource):
             domain=record_items_domain,
             rtype=record_items_rtype,
             rdata=record_items_rdata,
-            ttl=record_items_ttl)
+            ttl=int(record_items_ttl))
         ```
 
         ## Import
@@ -430,12 +430,12 @@ class Record(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 rdata: Optional[pulumi.Input[_builtins.str]] = None,
-                 rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 ttl: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 rdata: pulumi.Input[Optional[_builtins.str]] = None,
+                 rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None,
+                 zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -470,15 +470,15 @@ class Record(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
-            rdata: Optional[pulumi.Input[_builtins.str]] = None,
-            record_hash: Optional[pulumi.Input[_builtins.str]] = None,
-            rrset_version: Optional[pulumi.Input[_builtins.str]] = None,
-            rtype: Optional[pulumi.Input[_builtins.str]] = None,
-            ttl: Optional[pulumi.Input[_builtins.int]] = None,
-            zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Record':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+            rdata: pulumi.Input[Optional[_builtins.str]] = None,
+            record_hash: pulumi.Input[Optional[_builtins.str]] = None,
+            rrset_version: pulumi.Input[Optional[_builtins.str]] = None,
+            rtype: pulumi.Input[Optional[_builtins.str]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Record':
         """
         Get an existing Record resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

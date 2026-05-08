@@ -131,7 +131,7 @@ def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlColl
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
+    test_sql_collection_log_insights = oci.datasafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
         time_ended=sql_collection_log_insight_time_ended,
         time_started=sql_collection_log_insight_time_started,
         group_by=sql_collection_log_insight_group_by)
@@ -160,11 +160,11 @@ def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlColl
         sql_collection_log_insights_collections=pulumi.get(__ret__, 'sql_collection_log_insights_collections'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict']]]]] = None,
-                                           group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           sql_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                                           time_started: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sql_collection_log_insights_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict']]]]] = None,
+                                           group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           sql_collection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                                           time_started: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionLogInsightsResult]:
     """
     This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
@@ -177,7 +177,7 @@ def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
+    test_sql_collection_log_insights = oci.datasafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
         time_ended=sql_collection_log_insight_time_ended,
         time_started=sql_collection_log_insight_time_started,
         group_by=sql_collection_log_insight_group_by)

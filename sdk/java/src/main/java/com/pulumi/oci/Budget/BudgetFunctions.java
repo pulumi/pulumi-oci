@@ -61,8 +61,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -104,8 +104,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -147,8 +147,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -233,8 +233,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -276,8 +276,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -320,8 +320,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -364,8 +364,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -408,8 +408,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -452,8 +452,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -496,8 +496,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -538,8 +538,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -580,8 +580,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -622,8 +622,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -664,8 +664,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -712,8 +712,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -763,8 +763,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -814,8 +814,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -865,8 +865,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -916,8 +916,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -961,8 +961,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1045,8 +1045,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1087,8 +1087,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1129,8 +1129,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1171,8 +1171,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1215,8 +1215,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1259,8 +1259,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1303,8 +1303,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1347,8 +1347,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1391,8 +1391,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1433,8 +1433,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1475,8 +1475,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1517,8 +1517,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1559,8 +1559,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1601,8 +1601,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1651,8 +1651,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1701,8 +1701,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1751,8 +1751,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1801,8 +1801,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1851,8 +1851,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1901,8 +1901,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2001,8 +2001,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2051,8 +2051,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2101,8 +2101,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2143,8 +2143,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2185,8 +2185,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2227,8 +2227,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2269,8 +2269,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2311,8 +2311,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2357,8 +2357,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2403,8 +2403,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2449,8 +2449,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2495,8 +2495,8 @@ public final class BudgetFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Budget.BudgetFunctions;
      * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

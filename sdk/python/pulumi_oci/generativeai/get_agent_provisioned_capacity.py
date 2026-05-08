@@ -191,7 +191,7 @@ def get_agent_provisioned_capacity(provisioned_capacity_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacity = oci.GenerativeAi.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
+    test_provisioned_capacity = oci.generativeai.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_agent_provisioned_capacity(provisioned_capacity_id: Optional[_builtins.s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_agent_provisioned_capacity_output(provisioned_capacity_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_provisioned_capacity_output(provisioned_capacity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentProvisionedCapacityResult]:
     """
     This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -228,7 +228,7 @@ def get_agent_provisioned_capacity_output(provisioned_capacity_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacity = oci.GenerativeAi.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
+    test_provisioned_capacity = oci.generativeai.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
     ```
 
 

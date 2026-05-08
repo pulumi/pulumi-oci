@@ -228,7 +228,7 @@ def get_cost_anomaly_monitor(cost_anomaly_monitor_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitor = oci.Budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
+    test_cost_anomaly_monitor = oci.budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_cost_anomaly_monitor(cost_anomaly_monitor_id: Optional[_builtins.str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_cost_anomaly_monitor_output(cost_anomaly_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cost_anomaly_monitor_output(cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostAnomalyMonitorResult]:
     """
     This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
@@ -268,7 +268,7 @@ def get_cost_anomaly_monitor_output(cost_anomaly_monitor_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitor = oci.Budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
+    test_cost_anomaly_monitor = oci.budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
     ```
 
 

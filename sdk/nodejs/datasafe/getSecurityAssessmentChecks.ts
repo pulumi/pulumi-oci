@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentChecks = oci.DataSafe.getSecurityAssessmentChecks({
+ * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,
@@ -115,10 +115,10 @@ export interface GetSecurityAssessmentChecksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentChecks = oci.DataSafe.getSecurityAssessmentChecks({
+ * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,
@@ -147,24 +147,24 @@ export interface GetSecurityAssessmentChecksOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
      */
-    containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    containsReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
      */
-    containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentChecksFilterArgs>[]>;
+    containsSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentChecksFilterArgs>[] | undefined>;
     /**
      * Each check in security assessment has an associated key (think of key as a check's name). For a given check, the key will be the same across targets. The user can use these keys to filter the checks.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      */
@@ -172,5 +172,5 @@ export interface GetSecurityAssessmentChecksOutputArgs {
     /**
      * A filter to return only checks of a particular risk level.
      */
-    suggestedSeverity?: pulumi.Input<string>;
+    suggestedSeverity?: pulumi.Input<string | undefined>;
 }

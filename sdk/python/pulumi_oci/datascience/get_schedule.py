@@ -288,7 +288,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.DataScience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
+    test_schedule = oci.datascience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
         time_next_scheduled_run=pulumi.get(__ret__, 'time_next_scheduled_run'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggers=pulumi.get(__ret__, 'triggers'))
-def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_schedule_output(schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduleResult]:
     """
     This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
@@ -333,7 +333,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.DataScience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
+    test_schedule = oci.datascience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
     ```
 
 

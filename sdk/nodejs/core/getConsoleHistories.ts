@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistories = oci.Core.getConsoleHistories({
+ * const testConsoleHistories = oci.core.getConsoleHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: consoleHistoryAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -100,7 +100,7 @@ export interface GetConsoleHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistories = oci.Core.getConsoleHistories({
+ * const testConsoleHistories = oci.core.getConsoleHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: consoleHistoryAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -126,18 +126,18 @@ export interface GetConsoleHistoriesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetConsoleHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetConsoleHistoriesFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

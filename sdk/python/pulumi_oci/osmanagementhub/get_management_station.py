@@ -429,7 +429,7 @@ def get_management_station(management_station_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station = oci.OsManagementHub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
+    test_management_station = oci.osmanagementhub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
     ```
 
 
@@ -473,7 +473,7 @@ def get_management_station(management_station_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         total_mirrors=pulumi.get(__ret__, 'total_mirrors'))
-def get_management_station_output(management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_station_output(management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationResult]:
     """
     This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -486,7 +486,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station = oci.OsManagementHub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
+    test_management_station = oci.osmanagementhub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
     ```
 
 

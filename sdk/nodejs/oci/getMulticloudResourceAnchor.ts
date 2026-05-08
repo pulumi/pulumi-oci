@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     resourceAnchorId: resourceAnchorId,
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  * });
  * ```
  */
@@ -153,7 +153,7 @@ export interface GetMulticloudResourceAnchorResult {
  *     resourceAnchorId: resourceAnchorId,
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  * });
  * ```
  */
@@ -178,7 +178,7 @@ export interface GetMulticloudResourceAnchorOutputArgs {
     /**
      * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      */
-    shouldFetchCompartmentName?: pulumi.Input<boolean>;
+    shouldFetchCompartmentName?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */

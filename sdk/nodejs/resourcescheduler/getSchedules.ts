@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.ResourceScheduler.getSchedules({
+ * const testSchedules = oci.resourcescheduler.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     resourceId: testResource.id,
@@ -103,7 +103,7 @@ export interface GetSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.ResourceScheduler.getSchedules({
+ * const testSchedules = oci.resourcescheduler.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     resourceId: testResource.id,
@@ -130,22 +130,22 @@ export interface GetSchedulesOutputArgs {
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * This is a filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.GetSchedulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.GetSchedulesFilterArgs>[] | undefined>;
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
-    scheduleId?: pulumi.Input<string>;
+    scheduleId?: pulumi.Input<string | undefined>;
     /**
      * This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

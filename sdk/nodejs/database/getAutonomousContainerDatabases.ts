@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabases = oci.Database.getAutonomousContainerDatabases({
+ * const testAutonomousContainerDatabases = oci.database.getAutonomousContainerDatabases({
  *     compartmentId: compartmentId,
  *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
  *     autonomousVmClusterId: testAutonomousVmCluster.id,
@@ -150,7 +150,7 @@ export interface GetAutonomousContainerDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabases = oci.Database.getAutonomousContainerDatabases({
+ * const testAutonomousContainerDatabases = oci.database.getAutonomousContainerDatabases({
  *     compartmentId: compartmentId,
  *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
  *     autonomousVmClusterId: testAutonomousVmCluster.id,
@@ -186,19 +186,19 @@ export interface GetAutonomousContainerDatabasesOutputArgs {
     /**
      * The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousExadataInfrastructureId?: pulumi.Input<string>;
+    autonomousExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousVmClusterId?: pulumi.Input<string>;
+    autonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given availability domain exactly.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    cloudAutonomousVmClusterId?: pulumi.Input<string>;
+    cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -206,18 +206,18 @@ export interface GetAutonomousContainerDatabasesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given service-level agreement type exactly.
      */
-    serviceLevelAgreementType?: pulumi.Input<string>;
+    serviceLevelAgreementType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

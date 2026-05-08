@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCycles = oci.FleetSoftwareUpdate.getFsuCycles({
+ * const testFsuCycles = oci.fleetsoftwareupdate.getFsuCycles({
  *     compartmentId: compartmentId,
  *     collectionType: fsuCycleCollectionType,
  *     displayName: fsuCycleDisplayName,
@@ -117,7 +117,7 @@ export interface GetFsuCyclesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCycles = oci.FleetSoftwareUpdate.getFsuCycles({
+ * const testFsuCycles = oci.fleetsoftwareupdate.getFsuCycles({
  *     compartmentId: compartmentId,
  *     collectionType: fsuCycleCollectionType,
  *     displayName: fsuCycleDisplayName,
@@ -147,7 +147,7 @@ export interface GetFsuCyclesOutputArgs {
     /**
      * A filter to return only resources whose Collection type matches the given type.
      */
-    collectionType?: pulumi.Input<string>;
+    collectionType?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -155,18 +155,18 @@ export interface GetFsuCyclesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuCyclesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuCyclesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources whose fsuCollectionId matches the given fsuCollectionId.
      */
-    fsuCollectionId?: pulumi.Input<string>;
+    fsuCollectionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only entries whose targetVersion matches the given targetVersion.
      */
-    targetVersion?: pulumi.Input<string>;
+    targetVersion?: pulumi.Input<string | undefined>;
 }

@@ -46,6 +46,6 @@ export function getPsaPsaWorkRequestLogsOutput(args: GetPsaPsaWorkRequestLogsOut
  * A collection of arguments for invoking getPsaPsaWorkRequestLogs.
  */
 export interface GetPsaPsaWorkRequestLogsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaWorkRequestLogsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaWorkRequestLogsFilterArgs>[] | undefined>;
     workRequestId: pulumi.Input<string>;
 }

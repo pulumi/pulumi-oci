@@ -20,7 +20,7 @@ __all__ = ['FusionEnvironmentDataMaskingActivityArgs', 'FusionEnvironmentDataMas
 class FusionEnvironmentDataMaskingActivityArgs:
     def __init__(__self__, *,
                  fusion_environment_id: pulumi.Input[_builtins.str],
-                 is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentDataMaskingActivity resource.
 
@@ -49,7 +49,7 @@ class FusionEnvironmentDataMaskingActivityArgs:
 
     @_builtins.property
     @pulumi.getter(name="isResumeDataMasking")
-    def is_resume_data_masking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_resume_data_masking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
 
@@ -60,18 +60,18 @@ class FusionEnvironmentDataMaskingActivityArgs:
         return pulumi.get(self, "is_resume_data_masking")
 
     @is_resume_data_masking.setter
-    def is_resume_data_masking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_resume_data_masking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resume_data_masking", value)
 
 
 @pulumi.input_type
 class _FusionEnvironmentDataMaskingActivityState:
     def __init__(__self__, *,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_masking_finish: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_masking_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_masking_finish: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_masking_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentDataMaskingActivity resources.
 
@@ -98,19 +98,19 @@ class _FusionEnvironmentDataMaskingActivityState:
 
     @_builtins.property
     @pulumi.getter(name="fusionEnvironmentId")
-    def fusion_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fusion_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique FusionEnvironment identifier
         """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
-    def fusion_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fusion_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fusion_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isResumeDataMasking")
-    def is_resume_data_masking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_resume_data_masking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
 
@@ -121,43 +121,43 @@ class _FusionEnvironmentDataMaskingActivityState:
         return pulumi.get(self, "is_resume_data_masking")
 
     @is_resume_data_masking.setter
-    def is_resume_data_masking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_resume_data_masking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resume_data_masking", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the DataMaskingActivity.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaskingFinish")
-    def time_masking_finish(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_masking_finish(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the data masking activity ended. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_masking_finish")
 
     @time_masking_finish.setter
-    def time_masking_finish(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_masking_finish(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_masking_finish", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMaskingStart")
-    def time_masking_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_masking_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the data masking activity started. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_masking_start")
 
     @time_masking_start.setter
-    def time_masking_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_masking_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_masking_start", value)
 
 
@@ -167,8 +167,8 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -186,7 +186,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         test_fusion_environment_data_masking_activity = oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity",
             fusion_environment_id=test_fusion_environment["id"],
-            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking)
+            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking == "true")
         ```
 
         ## Import
@@ -229,7 +229,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         test_fusion_environment_data_masking_activity = oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity",
             fusion_environment_id=test_fusion_environment["id"],
-            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking)
+            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking == "true")
         ```
 
         ## Import
@@ -256,8 +256,8 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,11 +284,11 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_masking_finish: Optional[pulumi.Input[_builtins.str]] = None,
-            time_masking_start: Optional[pulumi.Input[_builtins.str]] = None) -> 'FusionEnvironmentDataMaskingActivity':
+            fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_finish: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_start: pulumi.Input[Optional[_builtins.str]] = None) -> 'FusionEnvironmentDataMaskingActivity':
         """
         Get an existing FusionEnvironmentDataMaskingActivity resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

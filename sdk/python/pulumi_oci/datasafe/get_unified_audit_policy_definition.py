@@ -239,7 +239,7 @@ def get_unified_audit_policy_definition(unified_audit_policy_definition_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definition = oci.DataSafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
+    test_unified_audit_policy_definition = oci.datasafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_unified_audit_policy_definition(unified_audit_policy_definition_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         unified_audit_policy_definition_id=pulumi.get(__ret__, 'unified_audit_policy_definition_id'))
-def get_unified_audit_policy_definition_output(unified_audit_policy_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_unified_audit_policy_definition_output(unified_audit_policy_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAuditPolicyDefinitionResult]:
     """
     This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -280,7 +280,7 @@ def get_unified_audit_policy_definition_output(unified_audit_policy_definition_i
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definition = oci.DataSafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
+    test_unified_audit_policy_definition = oci.datasafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
     ```
 
 

@@ -1586,7 +1586,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'),
         wallet_secret_id=pulumi.get(__ret__, 'wallet_secret_id'))
-def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_connection_output(connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
     """
     This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.

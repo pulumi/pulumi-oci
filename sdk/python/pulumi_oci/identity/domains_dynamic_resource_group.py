@@ -25,14 +25,14 @@ class DomainsDynamicResourceGroupArgs:
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  matching_rule: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None):
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None):
         """
         The set of arguments for constructing a DomainsDynamicResourceGroup resource.
 
@@ -212,43 +212,43 @@ class DomainsDynamicResourceGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) text that explains the purpose of this Dynamic Resource Group
 
@@ -267,12 +267,12 @@ class DomainsDynamicResourceGroupArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -289,24 +289,24 @@ class DomainsDynamicResourceGroupArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -323,48 +323,48 @@ class DomainsDynamicResourceGroupArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
 
 @pulumi.input_type
 class _DomainsDynamicResourceGroupState:
     def __init__(__self__, *,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_group_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]] = None,
-                 grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 matching_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None):
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_group_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]] = None,
+                 grants: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 matching_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsDynamicResourceGroup resources.
 
@@ -609,43 +609,43 @@ class _DomainsDynamicResourceGroupState:
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -662,12 +662,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -684,12 +684,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) text that explains the purpose of this Dynamic Resource Group
 
@@ -708,12 +708,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly, mutable identifier
 
@@ -731,12 +731,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -753,12 +753,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicGroupAppRoles")
-    def dynamic_group_app_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]]:
+    def dynamic_group_app_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]]:
         """
         (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
 
@@ -776,12 +776,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "dynamic_group_app_roles")
 
     @dynamic_group_app_roles.setter
-    def dynamic_group_app_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]]):
+    def dynamic_group_app_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs']]]]):
         pulumi.set(self, "dynamic_group_app_roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]]:
+    def grants(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]]:
         """
         (Updatable) Grants assigned to group
 
@@ -798,12 +798,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "grants")
 
     @grants.setter
-    def grants(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]]):
+    def grants(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupGrantArgs']]]]):
         pulumi.set(self, "grants", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -818,24 +818,24 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -850,12 +850,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -872,12 +872,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -893,12 +893,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="matchingRule")
-    def matching_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def matching_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
 
@@ -914,12 +914,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "matching_rule")
 
     @matching_rule.setter
-    def matching_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def matching_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "matching_rule", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -936,12 +936,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -958,24 +958,24 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -992,12 +992,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1014,12 +1014,12 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -1036,19 +1036,19 @@ class _DomainsDynamicResourceGroupState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
 
@@ -1058,18 +1058,18 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 matching_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 matching_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1273,18 +1273,18 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 matching_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 matching_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1335,29 +1335,29 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            dynamic_group_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict']]]]] = None,
-            grants: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            matching_rule: Optional[pulumi.Input[_builtins.str]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict']]]]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None) -> 'DomainsDynamicResourceGroup':
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            dynamic_group_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict']]]]] = None,
+            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            matching_rule: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None) -> 'DomainsDynamicResourceGroup':
         """
         Get an existing DomainsDynamicResourceGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

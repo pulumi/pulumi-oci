@@ -161,7 +161,7 @@ def get_network_security_group(network_security_group_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
+    test_network_security_group = oci.core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
     ```
 
 
@@ -182,7 +182,7 @@ def get_network_security_group(network_security_group_id: Optional[_builtins.str
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_network_security_group_output(network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_security_group_output(network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupResult]:
     """
     This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
@@ -201,7 +201,7 @@ def get_network_security_group_output(network_security_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
+    test_network_security_group = oci.core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
     ```
 
 

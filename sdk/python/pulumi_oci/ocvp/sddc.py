@@ -24,38 +24,38 @@ class SddcArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  ssh_authorized_keys: pulumi.Input[_builtins.str],
                  vmware_software_version: pulumi.Input[_builtins.str],
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hcx_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]] = None,
-                 initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hcx_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_single_host_sddc: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']] = None,
-                 vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]] = None,
+                 initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hcx_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_single_host_sddc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']] = None,
+                 vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Sddc resource.
 
@@ -275,70 +275,70 @@ class SddcArgs:
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     @_utilities.deprecated("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacity_reservation_id` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
     @_utilities.deprecated("""The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def compute_availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `compute_availability_domain` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "compute_availability_domain")
 
     @compute_availability_domain.setter
-    def compute_availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_availability_domain", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def datastores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]]:
+    def datastores(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]]:
         """
         (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "datastores")
 
     @datastores.setter
-    def datastores(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]]):
+    def datastores(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]]):
         pulumi.set(self, "datastores", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiHostsCount")
     @_utilities.deprecated("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def esxi_hosts_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def esxi_hosts_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC. **Deprecated**. Please use `esxi_hosts_count` of `initial_cluster_configurations` instead.
 
@@ -347,113 +347,113 @@ class SddcArgs:
         return pulumi.get(self, "esxi_hosts_count")
 
     @esxi_hosts_count.setter
-    def esxi_hosts_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def esxi_hosts_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "esxi_hosts_count", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiSoftwareVersion")
-    def esxi_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def esxi_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ESXi software bundle to install on the ESXi hosts in the SDDC.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         """
         return pulumi.get(self, "esxi_software_version")
 
     @esxi_software_version.setter
-    def esxi_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def esxi_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "esxi_software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxAction")
-    def hcx_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         """
         return pulumi.get(self, "hcx_action")
 
     @hcx_action.setter
-    def hcx_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_action", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxVlanId")
     @_utilities.deprecated("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def hcx_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcx_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "hcx_vlan_id")
 
     @hcx_vlan_id.setter
-    def hcx_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="initialConfigurations")
-    def initial_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]:
+    def initial_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]:
         """
         Details of SDDC initial configuration
         """
         return pulumi.get(self, "initial_configurations")
 
     @initial_configurations.setter
-    def initial_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]):
+    def initial_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]):
         pulumi.set(self, "initial_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
     @_utilities.deprecated("""The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def initial_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_host_ocpu_count")
 
     @initial_host_ocpu_count.setter
-    def initial_host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def initial_host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "initial_host_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostShapeName")
     @_utilities.deprecated("""The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_host_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_host_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_host_shape_name")
 
     @initial_host_shape_name.setter
-    def initial_host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_host_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="initialSku")
     @_utilities.deprecated("""The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_sku")
 
     @initial_sku.setter
-    def initial_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def instance_display_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_display_name_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
 
@@ -462,63 +462,63 @@ class SddcArgs:
         return pulumi.get(self, "instance_display_name_prefix")
 
     @instance_display_name_prefix.setter
-    def instance_display_name_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_display_name_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_display_name_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="isHcxEnabled")
-    def is_hcx_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hcx_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         """
         return pulumi.get(self, "is_hcx_enabled")
 
     @is_hcx_enabled.setter
-    def is_hcx_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hcx_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hcx_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isShieldedInstanceEnabled")
     @_utilities.deprecated("""The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def is_shielded_instance_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shielded_instance_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "is_shielded_instance_enabled")
 
     @is_shielded_instance_enabled.setter
-    def is_shielded_instance_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shielded_instance_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shielded_instance_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSingleHostSddc")
-    def is_single_host_sddc(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_single_host_sddc(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this SDDC is designated for only single ESXi host.
         """
         return pulumi.get(self, "is_single_host_sddc")
 
     @is_single_host_sddc.setter
-    def is_single_host_sddc(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_single_host_sddc(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_single_host_sddc", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_uplink1vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink1vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsx_edge_uplink1vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @nsx_edge_uplink1vlan_id.setter
-    def nsx_edge_uplink1vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink1vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink1vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_uplink2vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink2vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsx_edge_uplink2vlan_id` of `network_configuration` instead.
 
@@ -527,153 +527,153 @@ class SddcArgs:
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @nsx_edge_uplink2vlan_id.setter
-    def nsx_edge_uplink2vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink2vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink2vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeVtepVlanId")
     @_utilities.deprecated("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_vtep_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_vtep_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsx_edge_vtep_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_edge_vtep_vlan_id")
 
     @nsx_edge_vtep_vlan_id.setter
-    def nsx_edge_vtep_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_vtep_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_vtep_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxVtepVlanId")
     @_utilities.deprecated("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_vtep_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_vtep_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsx_vtep_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_vtep_vlan_id")
 
     @nsx_vtep_vlan_id.setter
-    def nsx_vtep_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_vtep_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_vtep_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningSubnetId")
     @_utilities.deprecated("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def provisioning_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "provisioning_subnet_id")
 
     @provisioning_subnet_id.setter
-    def provisioning_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
     @_utilities.deprecated("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def provisioning_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @provisioning_vlan_id.setter
-    def provisioning_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshHcxLicenseStatus")
-    def refresh_hcx_license_status(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def refresh_hcx_license_status(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         """
         return pulumi.get(self, "refresh_hcx_license_status")
 
     @refresh_hcx_license_status.setter
-    def refresh_hcx_license_status(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def refresh_hcx_license_status(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "refresh_hcx_license_status", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationVlanId")
     @_utilities.deprecated("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def replication_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "replication_vlan_id")
 
     @replication_vlan_id.setter
-    def replication_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservingHcxOnPremiseLicenseKeys")
-    def reserving_hcx_on_premise_license_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def reserving_hcx_on_premise_license_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
         """
         return pulumi.get(self, "reserving_hcx_on_premise_license_keys")
 
     @reserving_hcx_on_premise_license_keys.setter
-    def reserving_hcx_on_premise_license_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def reserving_hcx_on_premise_license_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "reserving_hcx_on_premise_license_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="sddcByolAllocationDetails")
-    def sddc_byol_allocation_details(self) -> Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]:
+    def sddc_byol_allocation_details(self) -> pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']]:
         """
         (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         """
         return pulumi.get(self, "sddc_byol_allocation_details")
 
     @sddc_byol_allocation_details.setter
-    def sddc_byol_allocation_details(self, value: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]):
+    def sddc_byol_allocation_details(self, value: pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']]):
         pulumi.set(self, "sddc_byol_allocation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="vmotionVlanId")
     @_utilities.deprecated("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vmotion_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmotion_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotion_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vmotion_vlan_id")
 
     @vmotion_vlan_id.setter
-    def vmotion_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmotion_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmotion_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsanVlanId")
     @_utilities.deprecated("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vsan_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsan_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vsan_vlan_id")
 
     @vsan_vlan_id.setter
-    def vsan_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsan_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsan_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereVlanId")
     @_utilities.deprecated("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vsphere_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsphere_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vsphere_vlan_id")
 
     @vsphere_vlan_id.setter
-    def vsphere_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsphere_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsphere_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadNetworkCidr")
     @_utilities.deprecated("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def workload_network_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
 
@@ -684,77 +684,77 @@ class SddcArgs:
         return pulumi.get(self, "workload_network_cidr")
 
     @workload_network_cidr.setter
-    def workload_network_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_network_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_network_cidr", value)
 
 
 @pulumi.input_type
 class _SddcState:
     def __init__(__self__, *,
-                 actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 clusters_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hcx_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_on_prem_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_on_prem_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]] = None,
-                 hcx_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]] = None,
-                 initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hcx_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hcx_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hcx_pending_downgrade: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_single_host_sddc: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_manager_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_manager_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_manager_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_manager_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_overlay_segment_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']] = None,
-                 ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_hcx_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_hcx_license_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]] = None,
-                 vcenter_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcenter_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcenter_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcenter_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_upgrade_guide: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+                 actual_esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 clusters_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_on_prem_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_on_prem_licenses: pulumi.Input[Optional[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]] = None,
+                 hcx_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]] = None,
+                 initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hcx_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hcx_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hcx_pending_downgrade: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_single_host_sddc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_manager_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_manager_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_manager_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_manager_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_overlay_segment_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']] = None,
+                 ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_hcx_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_hcx_license_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_licenses: pulumi.Input[Optional[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]] = None,
+                 vcenter_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcenter_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcenter_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcenter_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_upgrade_guide: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_upgrade_objects: pulumi.Input[Optional[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Sddc resources.
 
@@ -1058,107 +1058,107 @@ class _SddcState:
     @_builtins.property
     @pulumi.getter(name="actualEsxiHostsCount")
     @_utilities.deprecated("""The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def actual_esxi_hosts_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def actual_esxi_hosts_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         """
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @actual_esxi_hosts_count.setter
-    def actual_esxi_hosts_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def actual_esxi_hosts_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "actual_esxi_hosts_count", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     @_utilities.deprecated("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacity_reservation_id` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clustersCount")
-    def clusters_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clusters_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of Clusters in the SDDC.
         """
         return pulumi.get(self, "clusters_count")
 
     @clusters_count.setter
-    def clusters_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clusters_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clusters_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
     @_utilities.deprecated("""The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def compute_availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `compute_availability_domain` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "compute_availability_domain")
 
     @compute_availability_domain.setter
-    def compute_availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_availability_domain", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def datastores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]]:
+    def datastores(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]]:
         """
         (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "datastores")
 
     @datastores.setter
-    def datastores(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]]):
+    def datastores(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcDatastoreArgs']]]]):
         pulumi.set(self, "datastores", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiHostsCount")
     @_utilities.deprecated("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def esxi_hosts_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def esxi_hosts_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC. **Deprecated**. Please use `esxi_hosts_count` of `initial_cluster_configurations` instead.
 
@@ -1167,187 +1167,187 @@ class _SddcState:
         return pulumi.get(self, "esxi_hosts_count")
 
     @esxi_hosts_count.setter
-    def esxi_hosts_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def esxi_hosts_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "esxi_hosts_count", value)
 
     @_builtins.property
     @pulumi.getter(name="esxiSoftwareVersion")
-    def esxi_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def esxi_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ESXi software bundle to install on the ESXi hosts in the SDDC.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         """
         return pulumi.get(self, "esxi_software_version")
 
     @esxi_software_version.setter
-    def esxi_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def esxi_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "esxi_software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxAction")
-    def hcx_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         """
         return pulumi.get(self, "hcx_action")
 
     @hcx_action.setter
-    def hcx_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_action", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxFqdn")
-    def hcx_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         """
         return pulumi.get(self, "hcx_fqdn")
 
     @hcx_fqdn.setter
-    def hcx_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxInitialPassword")
     @_utilities.deprecated("""The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.""")
-    def hcx_initial_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_initial_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value. **Deprecated**. Please use the `ocvp_get_retrieve_password` data source instead.
         """
         return pulumi.get(self, "hcx_initial_password")
 
     @hcx_initial_password.setter
-    def hcx_initial_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_initial_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_initial_password", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxMode")
-    def hcx_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         HCX configuration of the SDDC.
         """
         return pulumi.get(self, "hcx_mode")
 
     @hcx_mode.setter
-    def hcx_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxOnPremKey")
     @_utilities.deprecated("""The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def hcx_on_prem_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_on_prem_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcx_on_prem_licenses` instead.
         """
         return pulumi.get(self, "hcx_on_prem_key")
 
     @hcx_on_prem_key.setter
-    def hcx_on_prem_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_on_prem_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_on_prem_key", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxOnPremLicenses")
-    def hcx_on_prem_licenses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]]:
+    def hcx_on_prem_licenses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]]:
         """
         The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
         """
         return pulumi.get(self, "hcx_on_prem_licenses")
 
     @hcx_on_prem_licenses.setter
-    def hcx_on_prem_licenses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]]):
+    def hcx_on_prem_licenses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]]):
         pulumi.set(self, "hcx_on_prem_licenses", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxPrivateIpId")
-    def hcx_private_ip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_private_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
         """
         return pulumi.get(self, "hcx_private_ip_id")
 
     @hcx_private_ip_id.setter
-    def hcx_private_ip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_private_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_private_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hcxVlanId")
     @_utilities.deprecated("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def hcx_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hcx_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcx_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "hcx_vlan_id")
 
     @hcx_vlan_id.setter
-    def hcx_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hcx_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hcx_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="initialConfigurations")
-    def initial_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]:
+    def initial_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]:
         """
         Details of SDDC initial configuration
         """
         return pulumi.get(self, "initial_configurations")
 
     @initial_configurations.setter
-    def initial_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]):
+    def initial_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationArgs']]]]):
         pulumi.set(self, "initial_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
     @_utilities.deprecated("""The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def initial_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_host_ocpu_count")
 
     @initial_host_ocpu_count.setter
-    def initial_host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def initial_host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "initial_host_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostShapeName")
     @_utilities.deprecated("""The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_host_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_host_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_host_shape_name")
 
     @initial_host_shape_name.setter
-    def initial_host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_host_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="initialSku")
     @_utilities.deprecated("""The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def initial_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def initial_sku(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "initial_sku")
 
     @initial_sku.setter
-    def initial_sku(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def initial_sku(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def instance_display_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_display_name_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
 
@@ -1356,88 +1356,88 @@ class _SddcState:
         return pulumi.get(self, "instance_display_name_prefix")
 
     @instance_display_name_prefix.setter
-    def instance_display_name_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_display_name_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_display_name_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="isHcxEnabled")
-    def is_hcx_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hcx_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         """
         return pulumi.get(self, "is_hcx_enabled")
 
     @is_hcx_enabled.setter
-    def is_hcx_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hcx_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hcx_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHcxEnterpriseEnabled")
     @_utilities.deprecated("""The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def is_hcx_enterprise_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hcx_enterprise_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
         """
         return pulumi.get(self, "is_hcx_enterprise_enabled")
 
     @is_hcx_enterprise_enabled.setter
-    def is_hcx_enterprise_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hcx_enterprise_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hcx_enterprise_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHcxPendingDowngrade")
-    def is_hcx_pending_downgrade(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hcx_pending_downgrade(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
         """
         return pulumi.get(self, "is_hcx_pending_downgrade")
 
     @is_hcx_pending_downgrade.setter
-    def is_hcx_pending_downgrade(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hcx_pending_downgrade(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hcx_pending_downgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="isShieldedInstanceEnabled")
     @_utilities.deprecated("""The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def is_shielded_instance_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shielded_instance_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "is_shielded_instance_enabled")
 
     @is_shielded_instance_enabled.setter
-    def is_shielded_instance_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shielded_instance_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shielded_instance_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSingleHostSddc")
-    def is_single_host_sddc(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_single_host_sddc(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this SDDC is designated for only single ESXi host.
         """
         return pulumi.get(self, "is_single_host_sddc")
 
     @is_single_host_sddc.setter
-    def is_single_host_sddc(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_single_host_sddc(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_single_host_sddc", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_uplink1vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink1vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsx_edge_uplink1vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @nsx_edge_uplink1vlan_id.setter
-    def nsx_edge_uplink1vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink1vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink1vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_uplink2vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink2vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsx_edge_uplink2vlan_id` of `network_configuration` instead.
 
@@ -1446,411 +1446,411 @@ class _SddcState:
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @nsx_edge_uplink2vlan_id.setter
-    def nsx_edge_uplink2vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink2vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink2vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplinkIpId")
-    def nsx_edge_uplink_ip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_uplink_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
         """
         return pulumi.get(self, "nsx_edge_uplink_ip_id")
 
     @nsx_edge_uplink_ip_id.setter
-    def nsx_edge_uplink_ip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_uplink_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_uplink_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeVtepVlanId")
     @_utilities.deprecated("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_edge_vtep_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_edge_vtep_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsx_edge_vtep_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_edge_vtep_vlan_id")
 
     @nsx_edge_vtep_vlan_id.setter
-    def nsx_edge_vtep_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_edge_vtep_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_edge_vtep_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxManagerFqdn")
-    def nsx_manager_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_manager_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         """
         return pulumi.get(self, "nsx_manager_fqdn")
 
     @nsx_manager_fqdn.setter
-    def nsx_manager_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_manager_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_manager_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxManagerInitialPassword")
     @_utilities.deprecated("""The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.""")
-    def nsx_manager_initial_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_manager_initial_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value. **Deprecated**. Please use the `ocvp_get_retrieve_password` data source instead.
         """
         return pulumi.get(self, "nsx_manager_initial_password")
 
     @nsx_manager_initial_password.setter
-    def nsx_manager_initial_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_manager_initial_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_manager_initial_password", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxManagerPrivateIpId")
-    def nsx_manager_private_ip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_manager_private_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
         """
         return pulumi.get(self, "nsx_manager_private_ip_id")
 
     @nsx_manager_private_ip_id.setter
-    def nsx_manager_private_ip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_manager_private_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_manager_private_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxManagerUsername")
-    def nsx_manager_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_manager_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
         """
         return pulumi.get(self, "nsx_manager_username")
 
     @nsx_manager_username.setter
-    def nsx_manager_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_manager_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_manager_username", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxOverlaySegmentName")
     @_utilities.deprecated("""The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def nsx_overlay_segment_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_overlay_segment_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
         """
         return pulumi.get(self, "nsx_overlay_segment_name")
 
     @nsx_overlay_segment_name.setter
-    def nsx_overlay_segment_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_overlay_segment_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_overlay_segment_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nsxVtepVlanId")
     @_utilities.deprecated("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def nsx_vtep_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nsx_vtep_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsx_vtep_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "nsx_vtep_vlan_id")
 
     @nsx_vtep_vlan_id.setter
-    def nsx_vtep_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nsx_vtep_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nsx_vtep_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningSubnetId")
     @_utilities.deprecated("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def provisioning_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "provisioning_subnet_id")
 
     @provisioning_subnet_id.setter
-    def provisioning_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
     @_utilities.deprecated("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def provisioning_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @provisioning_vlan_id.setter
-    def provisioning_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshHcxLicenseStatus")
-    def refresh_hcx_license_status(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def refresh_hcx_license_status(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         """
         return pulumi.get(self, "refresh_hcx_license_status")
 
     @refresh_hcx_license_status.setter
-    def refresh_hcx_license_status(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def refresh_hcx_license_status(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "refresh_hcx_license_status", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationVlanId")
     @_utilities.deprecated("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def replication_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "replication_vlan_id")
 
     @replication_vlan_id.setter
-    def replication_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservingHcxOnPremiseLicenseKeys")
-    def reserving_hcx_on_premise_license_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def reserving_hcx_on_premise_license_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
         """
         return pulumi.get(self, "reserving_hcx_on_premise_license_keys")
 
     @reserving_hcx_on_premise_license_keys.setter
-    def reserving_hcx_on_premise_license_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def reserving_hcx_on_premise_license_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "reserving_hcx_on_premise_license_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="sddcByolAllocationDetails")
-    def sddc_byol_allocation_details(self) -> Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]:
+    def sddc_byol_allocation_details(self) -> pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']]:
         """
         (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         """
         return pulumi.get(self, "sddc_byol_allocation_details")
 
     @sddc_byol_allocation_details.setter
-    def sddc_byol_allocation_details(self, value: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]):
+    def sddc_byol_allocation_details(self, value: pulumi.Input[Optional['SddcSddcByolAllocationDetailsArgs']]):
         pulumi.set(self, "sddc_byol_allocation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sshAuthorizedKeys")
-    def ssh_authorized_keys(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_authorized_keys(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         """
         return pulumi.get(self, "ssh_authorized_keys")
 
     @ssh_authorized_keys.setter
-    def ssh_authorized_keys(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_authorized_keys(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_authorized_keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the SDDC.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeHcxBillingCycleEnd")
-    def time_hcx_billing_cycle_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_hcx_billing_cycle_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_hcx_billing_cycle_end")
 
     @time_hcx_billing_cycle_end.setter
-    def time_hcx_billing_cycle_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_hcx_billing_cycle_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_hcx_billing_cycle_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeHcxLicenseStatusUpdated")
-    def time_hcx_license_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_hcx_license_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_hcx_license_status_updated")
 
     @time_hcx_license_status_updated.setter
-    def time_hcx_license_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_hcx_license_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_hcx_license_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeLicenses")
     @_utilities.deprecated("""The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
-    def upgrade_licenses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]:
+    def upgrade_licenses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]:
         """
         (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
         """
         return pulumi.get(self, "upgrade_licenses")
 
     @upgrade_licenses.setter
-    def upgrade_licenses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]):
+    def upgrade_licenses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]):
         pulumi.set(self, "upgrade_licenses", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterFqdn")
-    def vcenter_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         """
         return pulumi.get(self, "vcenter_fqdn")
 
     @vcenter_fqdn.setter
-    def vcenter_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterInitialPassword")
     @_utilities.deprecated("""The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.""")
-    def vcenter_initial_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_initial_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value. **Deprecated**. Please use the `ocvp_get_retrieve_password` data source instead.
         """
         return pulumi.get(self, "vcenter_initial_password")
 
     @vcenter_initial_password.setter
-    def vcenter_initial_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_initial_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_initial_password", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterPrivateIpId")
-    def vcenter_private_ip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_private_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
         """
         return pulumi.get(self, "vcenter_private_ip_id")
 
     @vcenter_private_ip_id.setter
-    def vcenter_private_ip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_private_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_private_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterUsername")
-    def vcenter_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
         """
         return pulumi.get(self, "vcenter_username")
 
     @vcenter_username.setter
-    def vcenter_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_username", value)
 
     @_builtins.property
     @pulumi.getter(name="vmotionVlanId")
     @_utilities.deprecated("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vmotion_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmotion_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotion_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vmotion_vlan_id")
 
     @vmotion_vlan_id.setter
-    def vmotion_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmotion_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmotion_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareSoftwareVersion")
-    def vmware_software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmware_software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         """
         return pulumi.get(self, "vmware_software_version")
 
     @vmware_software_version.setter
-    def vmware_software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmware_software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmware_software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="vsanVlanId")
     @_utilities.deprecated("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vsan_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsan_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vsan_vlan_id")
 
     @vsan_vlan_id.setter
-    def vsan_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsan_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsan_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereUpgradeGuide")
     @_utilities.deprecated("""The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def vsphere_upgrade_guide(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsphere_upgrade_guide(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (**Deprecated**) The link to guidance for upgrading vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_guide")
 
     @vsphere_upgrade_guide.setter
-    def vsphere_upgrade_guide(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsphere_upgrade_guide(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsphere_upgrade_guide", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereUpgradeObjects")
     @_utilities.deprecated("""The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
-    def vsphere_upgrade_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]:
+    def vsphere_upgrade_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]:
         """
         (**Deprecated**) The links to binary objects needed to upgrade vSphere.
         """
         return pulumi.get(self, "vsphere_upgrade_objects")
 
     @vsphere_upgrade_objects.setter
-    def vsphere_upgrade_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]):
+    def vsphere_upgrade_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]):
         pulumi.set(self, "vsphere_upgrade_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="vsphereVlanId")
     @_utilities.deprecated("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def vsphere_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsphere_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         """
         return pulumi.get(self, "vsphere_vlan_id")
 
     @vsphere_vlan_id.setter
-    def vsphere_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsphere_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsphere_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadNetworkCidr")
     @_utilities.deprecated("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
-    def workload_network_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
 
@@ -1861,7 +1861,7 @@ class _SddcState:
         return pulumi.get(self, "workload_network_cidr")
 
     @workload_network_cidr.setter
-    def workload_network_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_network_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_network_cidr", value)
 
 
@@ -1871,41 +1871,41 @@ class Sddc(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hcx_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
-                 initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hcx_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_single_host_sddc: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
-                 ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+                 initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hcx_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_single_host_sddc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+                 ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -1931,7 +1931,7 @@ class Sddc(pulumi.CustomResource):
             initial_configurations=[{
                 "initial_cluster_configurations": [{
                     "compute_availability_domain": sddc_initial_configuration_initial_cluster_configurations_compute_availability_domain,
-                    "esxi_hosts_count": sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count,
+                    "esxi_hosts_count": int(sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count),
                     "network_configuration": {
                         "nsx_edge_vtep_vlan_id": test_vlan["id"],
                         "nsx_vtep_vlan_id": test_vlan["id"],
@@ -1962,7 +1962,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_host_shape_name": test_shape["name"],
                     "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
-                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
+                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled == "true",
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
                 }],
             }],
@@ -1975,13 +1975,13 @@ class Sddc(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_single_host_sddc=sddc_is_single_host_sddc,
+            is_single_host_sddc=sddc_is_single_host_sddc == "true",
             sddc_byol_allocation_details={
                 "load_balancer_byol_allocation_id": test_byol_allocation["id"],
-                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+                "load_balancer_instance_count": int(sddc_sddc_byol_allocation_details_load_balancer_instance_count),
             },
             hcx_action=hcx_action,
-            is_hcx_enabled=sddc_is_hcx_enabled)
+            is_hcx_enabled=sddc_is_hcx_enabled == "true")
         ```
 
         ## How to migrate from deprecated fields to new fields
@@ -2080,7 +2080,7 @@ class Sddc(pulumi.CustomResource):
             initial_configurations=[{
                 "initial_cluster_configurations": [{
                     "compute_availability_domain": sddc_initial_configuration_initial_cluster_configurations_compute_availability_domain,
-                    "esxi_hosts_count": sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count,
+                    "esxi_hosts_count": int(sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count),
                     "network_configuration": {
                         "nsx_edge_vtep_vlan_id": test_vlan["id"],
                         "nsx_vtep_vlan_id": test_vlan["id"],
@@ -2111,7 +2111,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_host_shape_name": test_shape["name"],
                     "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
-                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
+                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled == "true",
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
                 }],
             }],
@@ -2124,13 +2124,13 @@ class Sddc(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_single_host_sddc=sddc_is_single_host_sddc,
+            is_single_host_sddc=sddc_is_single_host_sddc == "true",
             sddc_byol_allocation_details={
                 "load_balancer_byol_allocation_id": test_byol_allocation["id"],
-                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+                "load_balancer_instance_count": int(sddc_sddc_byol_allocation_details_load_balancer_instance_count),
             },
             hcx_action=hcx_action,
-            is_hcx_enabled=sddc_is_hcx_enabled)
+            is_hcx_enabled=sddc_is_hcx_enabled == "true")
         ```
 
         ## How to migrate from deprecated fields to new fields
@@ -2166,41 +2166,41 @@ class Sddc(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hcx_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
-                 initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_sku: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hcx_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_single_host_sddc: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_edge_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsx_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
-                 replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
-                 ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+                 initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hcx_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_single_host_sddc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_edge_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsx_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
+                 replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+                 ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2290,70 +2290,70 @@ class Sddc(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-            capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            clusters_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
-            esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hcx_action: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_on_prem_key: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_on_prem_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict']]]]] = None,
-            hcx_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hcx_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            initial_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
-            initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-            initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            initial_sku: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            is_hcx_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_hcx_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_hcx_pending_downgrade: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_single_host_sddc: Optional[pulumi.Input[_builtins.bool]] = None,
-            nsx_edge_uplink1vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_edge_uplink2vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_edge_uplink_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_edge_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_manager_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_manager_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_manager_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_manager_username: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_overlay_segment_name: Optional[pulumi.Input[_builtins.str]] = None,
-            nsx_vtep_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            provisioning_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            provisioning_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
-            replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
-            ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_hcx_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
-            time_hcx_license_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict']]]]] = None,
-            vcenter_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-            vcenter_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-            vcenter_private_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vcenter_username: Optional[pulumi.Input[_builtins.str]] = None,
-            vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
-            vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vsphere_upgrade_guide: Optional[pulumi.Input[_builtins.str]] = None,
-            vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict']]]]] = None,
-            vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None) -> 'Sddc':
+            actual_esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            clusters_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+            esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_on_prem_key: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_on_prem_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict']]]]] = None,
+            hcx_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+            initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hcx_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_hcx_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_hcx_pending_downgrade: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_single_host_sddc: pulumi.Input[Optional[_builtins.bool]] = None,
+            nsx_edge_uplink1vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_edge_uplink2vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_edge_uplink_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_edge_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_manager_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_manager_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_manager_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_manager_username: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_overlay_segment_name: pulumi.Input[Optional[_builtins.str]] = None,
+            nsx_vtep_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioning_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioning_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
+            replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+            ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_hcx_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_hcx_license_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict']]]]] = None,
+            vcenter_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            vcenter_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+            vcenter_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vcenter_username: pulumi.Input[Optional[_builtins.str]] = None,
+            vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vsphere_upgrade_guide: pulumi.Input[Optional[_builtins.str]] = None,
+            vsphere_upgrade_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict']]]]] = None,
+            vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None) -> 'Sddc':
         """
         Get an existing Sddc resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

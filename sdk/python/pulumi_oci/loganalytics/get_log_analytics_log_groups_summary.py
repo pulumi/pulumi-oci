@@ -90,7 +90,7 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=compartment_id,
+    test_log_analytics_log_groups_summary = oci.loganalytics.get_log_analytics_log_groups_summary(compartment_id=compartment_id,
         namespace=log_analytics_log_groups_summary_namespace)
     ```
 
@@ -109,8 +109,8 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         log_group_count=pulumi.get(__ret__, 'log_group_count'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_log_groups_summary_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsSummaryResult]:
     """
     This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -123,7 +123,7 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=compartment_id,
+    test_log_analytics_log_groups_summary = oci.loganalytics.get_log_analytics_log_groups_summary(compartment_id=compartment_id,
         namespace=log_analytics_log_groups_summary_namespace)
     ```
 

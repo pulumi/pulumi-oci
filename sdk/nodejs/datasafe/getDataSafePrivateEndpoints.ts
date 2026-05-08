@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
+ * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -114,10 +114,10 @@ export interface GetDataSafePrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
+ * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -144,7 +144,7 @@ export interface GetDataSafePrivateEndpointsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -152,18 +152,18 @@ export interface GetDataSafePrivateEndpointsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDataSafePrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDataSafePrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified VCN OCID.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

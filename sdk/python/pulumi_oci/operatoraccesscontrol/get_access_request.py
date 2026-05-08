@@ -516,7 +516,7 @@ def get_access_request(access_request_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
+    test_access_request = oci.operatoraccesscontrol.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
     ```
 
 
@@ -567,7 +567,7 @@ def get_access_request(access_request_id: Optional[_builtins.str] = None,
         time_requested_for_future_access=pulumi.get(__ret__, 'time_requested_for_future_access'),
         user_id=pulumi.get(__ret__, 'user_id'),
         workflow_ids=pulumi.get(__ret__, 'workflow_ids'))
-def get_access_request_output(access_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_access_request_output(access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestResult]:
     """
     This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -580,7 +580,7 @@ def get_access_request_output(access_request_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
+    test_access_request = oci.operatoraccesscontrol.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
     ```
 
 

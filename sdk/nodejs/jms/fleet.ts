@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAdvancedFeaturesEnabled: fleetIsAdvancedFeaturesEnabled,
+ *     isAdvancedFeaturesEnabled: fleetIsAdvancedFeaturesEnabled === "true",
  *     operationLog: {
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
@@ -236,79 +236,79 @@ export interface FleetState {
     /**
      * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateApplicationCount?: pulumi.Input<number>;
+    approximateApplicationCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateInstallationCount?: pulumi.Input<number>;
+    approximateInstallationCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateJavaServerCount?: pulumi.Input<number>;
+    approximateJavaServerCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateJreCount?: pulumi.Input<number>;
+    approximateJreCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateLibraryCount?: pulumi.Input<number>;
+    approximateLibraryCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateLibraryVulnerabilityCount?: pulumi.Input<number>;
+    approximateLibraryVulnerabilityCount?: pulumi.Input<number | undefined>;
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    approximateManagedInstanceCount?: pulumi.Input<number>;
+    approximateManagedInstanceCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    inventoryLog?: pulumi.Input<inputs.Jms.FleetInventoryLog>;
+    inventoryLog?: pulumi.Input<inputs.Jms.FleetInventoryLog | undefined>;
     /**
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      */
-    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether or not export setting is enabled in this Fleet.
      */
-    isExportSettingEnabled?: pulumi.Input<boolean>;
+    isExportSettingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    operationLog?: pulumi.Input<inputs.Jms.FleetOperationLog>;
+    operationLog?: pulumi.Input<inputs.Jms.FleetOperationLog | undefined>;
     /**
      * The lifecycle state of the Fleet.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -322,11 +322,11 @@ export interface FleetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
      */
@@ -334,7 +334,7 @@ export interface FleetArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
@@ -342,9 +342,9 @@ export interface FleetArgs {
     /**
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      */
-    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    operationLog?: pulumi.Input<inputs.Jms.FleetOperationLog>;
+    operationLog?: pulumi.Input<inputs.Jms.FleetOperationLog | undefined>;
 }

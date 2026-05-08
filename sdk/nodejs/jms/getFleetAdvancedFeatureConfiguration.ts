@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetAdvancedFeatureConfiguration = oci.Jms.getFleetAdvancedFeatureConfiguration({
+ * const testFleetAdvancedFeatureConfiguration = oci.jms.getFleetAdvancedFeatureConfiguration({
  *     fleetId: testFleet.id,
  * });
  * ```
@@ -93,7 +93,7 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetAdvancedFeatureConfiguration = oci.Jms.getFleetAdvancedFeatureConfiguration({
+ * const testFleetAdvancedFeatureConfiguration = oci.jms.getFleetAdvancedFeatureConfiguration({
  *     fleetId: testFleet.id,
  * });
  * ```

@@ -22,7 +22,7 @@ class SteeringPolicyAttachmentArgs:
                  domain_name: pulumi.Input[_builtins.str],
                  steering_policy_id: pulumi.Input[_builtins.str],
                  zone_id: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SteeringPolicyAttachment resource.
 
@@ -83,29 +83,29 @@ class SteeringPolicyAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
 
 @pulumi.input_type
 class _SteeringPolicyAttachmentState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rtypes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 self: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 steering_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rtypes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 self: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 steering_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SteeringPolicyAttachment resources.
 
@@ -144,103 +144,103 @@ class _SteeringPolicyAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment containing the steering policy attachment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The attached domain within the attached zone. `domain_name` is case insensitive.
         """
         return pulumi.get(self, "domain_name")
 
     @domain_name.setter
-    def domain_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rtypes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def rtypes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
         """
         return pulumi.get(self, "rtypes")
 
     @rtypes.setter
-    def rtypes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def rtypes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "rtypes", value)
 
     @_builtins.property
     @pulumi.getter
-    def self(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def self(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical absolute URL of the resource.
         """
         return pulumi.get(self, "self")
 
     @self.setter
-    def self(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def self(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "self", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="steeringPolicyId")
-    def steering_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def steering_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the attached steering policy.
         """
         return pulumi.get(self, "steering_policy_id")
 
     @steering_policy_id.setter
-    def steering_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def steering_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "steering_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the attached zone. Must be a public zone.
 
@@ -251,7 +251,7 @@ class _SteeringPolicyAttachmentState:
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
-    def zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
 
 
@@ -261,10 +261,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 steering_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 steering_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
@@ -372,10 +372,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 steering_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 steering_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -410,15 +410,15 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rtypes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            self: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            steering_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SteeringPolicyAttachment':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rtypes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            steering_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SteeringPolicyAttachment':
         """
         Get an existing SteeringPolicyAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

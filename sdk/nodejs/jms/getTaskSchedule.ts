@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedule = oci.Jms.getTaskSchedule({
+ * const testTaskSchedule = oci.jms.getTaskSchedule({
  *     taskScheduleId: testTaskScheduleOciJmsTaskSchedule.id,
  *     fleetId: testFleet.id,
  * });
@@ -106,7 +106,7 @@ export interface GetTaskScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedule = oci.Jms.getTaskSchedule({
+ * const testTaskSchedule = oci.jms.getTaskSchedule({
  *     taskScheduleId: testTaskScheduleOciJmsTaskSchedule.id,
  *     fleetId: testFleet.id,
  * });
@@ -127,7 +127,7 @@ export interface GetTaskScheduleOutputArgs {
     /**
      * The ID of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
      */

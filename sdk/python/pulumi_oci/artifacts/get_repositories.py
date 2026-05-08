@@ -138,10 +138,10 @@ def get_repositories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=compartment_id,
+    test_repositories = oci.artifacts.get_repositories(compartment_id=compartment_id,
         display_name=repository_display_name,
         id=repository_id,
-        is_immutable=repository_is_immutable,
+        is_immutable=repository_is_immutable == "true",
         state=repository_state)
     ```
 
@@ -170,12 +170,12 @@ def get_repositories(compartment_id: Optional[_builtins.str] = None,
         is_immutable=pulumi.get(__ret__, 'is_immutable'),
         repository_collections=pulumi.get(__ret__, 'repository_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_repositories_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]]]] = None,
-                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            is_immutable: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_repositories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]]]] = None,
+                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            is_immutable: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoriesResult]:
     """
     This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
@@ -188,10 +188,10 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=compartment_id,
+    test_repositories = oci.artifacts.get_repositories(compartment_id=compartment_id,
         display_name=repository_display_name,
         id=repository_id,
-        is_immutable=repository_is_immutable,
+        is_immutable=repository_is_immutable == "true",
         state=repository_state)
     ```
 

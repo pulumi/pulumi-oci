@@ -23,15 +23,15 @@ class MediaWorkflowJobArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  workflow_identifier_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
-                 media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 media_workflow_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
+                 media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MediaWorkflowJob resource.
 
@@ -101,134 +101,134 @@ class MediaWorkflowJobArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def media_workflow_configuration_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Configurations to be applied to this run of the workflow.
         """
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @media_workflow_configuration_ids.setter
-    def media_workflow_configuration_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def media_workflow_configuration_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "media_workflow_configuration_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowId")
-    def media_workflow_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def media_workflow_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the MediaWorkflow that should be run.
         """
         return pulumi.get(self, "media_workflow_id")
 
     @media_workflow_id.setter
-    def media_workflow_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def media_workflow_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "media_workflow_id", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowName")
-    def media_workflow_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def media_workflow_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the system MediaWorkflow that should be run.
         """
         return pulumi.get(self, "media_workflow_name")
 
     @media_workflow_name.setter
-    def media_workflow_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def media_workflow_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "media_workflow_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parameters(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parameters(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parameters", value)
 
 
 @pulumi.input_type
 class _MediaWorkflowJobState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
-                 media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 media_workflow_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 outputs: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]] = None,
-                 parameters: Optional[pulumi.Input[_builtins.str]] = None,
-                 runnable: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 task_lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
+                 media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 outputs: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]] = None,
+                 parameters: pulumi.Input[Optional[_builtins.str]] = None,
+                 runnable: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 task_lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 workflow_identifier_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowJob resources.
 
@@ -302,244 +302,244 @@ class _MediaWorkflowJobState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) ID of the compartment in which the job should be created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle details of MediaWorkflowJob task.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def media_workflow_configuration_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Configurations to be applied to this run of the workflow.
         """
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @media_workflow_configuration_ids.setter
-    def media_workflow_configuration_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def media_workflow_configuration_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "media_workflow_configuration_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowId")
-    def media_workflow_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def media_workflow_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the MediaWorkflow that should be run.
         """
         return pulumi.get(self, "media_workflow_id")
 
     @media_workflow_id.setter
-    def media_workflow_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def media_workflow_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "media_workflow_id", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaWorkflowName")
-    def media_workflow_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def media_workflow_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the system MediaWorkflow that should be run.
         """
         return pulumi.get(self, "media_workflow_name")
 
     @media_workflow_name.setter
-    def media_workflow_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def media_workflow_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "media_workflow_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]]:
+    def outputs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]]:
         """
         A list of JobOutput for the workflowJob.
         """
         return pulumi.get(self, "outputs")
 
     @outputs.setter
-    def outputs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]]):
+    def outputs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]]):
         pulumi.set(self, "outputs", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parameters(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parameters(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def runnable(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runnable(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
         """
         return pulumi.get(self, "runnable")
 
     @runnable.setter
-    def runnable(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runnable(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runnable", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the MediaWorkflowJob task.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="taskLifecycleStates")
-    def task_lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]]:
+    def task_lifecycle_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]]:
         """
         Status of each task.
         """
         return pulumi.get(self, "task_lifecycle_states")
 
     @task_lifecycle_states.setter
-    def task_lifecycle_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]]):
+    def task_lifecycle_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]]):
         pulumi.set(self, "task_lifecycle_states", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation time of the job. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the job finished. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
-    def time_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the job started to execute. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Updated time of the job. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="workflowIdentifierType")
-    def workflow_identifier_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workflow_identifier_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
 
@@ -550,7 +550,7 @@ class _MediaWorkflowJobState:
         return pulumi.get(self, "workflow_identifier_type")
 
     @workflow_identifier_type.setter
-    def workflow_identifier_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workflow_identifier_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workflow_identifier_type", value)
 
 
@@ -560,17 +560,17 @@ class MediaWorkflowJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
-                 media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 media_workflow_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[_builtins.str]] = None,
-                 workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+                 media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[_builtins.str]] = None,
+                 workflow_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
@@ -702,17 +702,17 @@ class MediaWorkflowJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
-                 media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 media_workflow_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[_builtins.str]] = None,
-                 workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+                 media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[_builtins.str]] = None,
+                 workflow_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -757,27 +757,27 @@ class MediaWorkflowJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
-            media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            media_workflow_id: Optional[pulumi.Input[_builtins.str]] = None,
-            media_workflow_name: Optional[pulumi.Input[_builtins.str]] = None,
-            outputs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict']]]]] = None,
-            parameters: Optional[pulumi.Input[_builtins.str]] = None,
-            runnable: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            task_lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'MediaWorkflowJob':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+            media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+            media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict']]]]] = None,
+            parameters: pulumi.Input[Optional[_builtins.str]] = None,
+            runnable: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            task_lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            workflow_identifier_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'MediaWorkflowJob':
         """
         Get an existing MediaWorkflowJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

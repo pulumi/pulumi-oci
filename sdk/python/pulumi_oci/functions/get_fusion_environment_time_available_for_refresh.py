@@ -84,7 +84,7 @@ def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refresh = oci.functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Opt
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_fusion_environment_time_available_for_refresh_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_time_available_for_refresh_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshResult]:
     """
     This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -112,7 +112,7 @@ def get_fusion_environment_time_available_for_refresh_output(fusion_environment_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refresh = oci.functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

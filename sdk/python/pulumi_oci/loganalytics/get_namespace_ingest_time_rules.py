@@ -173,7 +173,7 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=compartment_id,
+    test_namespace_ingest_time_rules = oci.loganalytics.get_namespace_ingest_time_rules(compartment_id=compartment_id,
         namespace=namespace_ingest_time_rule_namespace,
         condition_kind=namespace_ingest_time_rule_condition_kind,
         display_name=namespace_ingest_time_rule_display_name,
@@ -214,14 +214,14 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[_builtins.str] = No
         ingest_time_rule_summary_collections=pulumi.get(__ret__, 'ingest_time_rule_summary_collections'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           condition_kind: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           field_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           field_value: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]]]] = None,
-                                           namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_ingest_time_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           condition_kind: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           field_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           field_value: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]]]] = None,
+                                           namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceIngestTimeRulesResult]:
     """
     This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -234,7 +234,7 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=compartment_id,
+    test_namespace_ingest_time_rules = oci.loganalytics.get_namespace_ingest_time_rules(compartment_id=compartment_id,
         namespace=namespace_ingest_time_rule_namespace,
         condition_kind=namespace_ingest_time_rule_condition_kind,
         display_name=namespace_ingest_time_rule_display_name,

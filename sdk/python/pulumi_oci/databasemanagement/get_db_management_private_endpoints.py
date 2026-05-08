@@ -163,9 +163,9 @@ def get_db_management_private_endpoints(compartment_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=compartment_id,
-        is_cluster=db_management_private_endpoint_is_cluster,
-        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
+    test_db_management_private_endpoints = oci.databasemanagement.get_db_management_private_endpoints(compartment_id=compartment_id,
+        is_cluster=db_management_private_endpoint_is_cluster == "true",
+        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled == "true",
         name=db_management_private_endpoint_name,
         state=db_management_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -200,13 +200,13 @@ def get_db_management_private_endpoints(compartment_id: Optional[_builtins.str] 
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]]]] = None,
-                                               is_cluster: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                               is_dns_resolution_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_management_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]]]] = None,
+                                               is_cluster: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                               is_dns_resolution_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointsResult]:
     """
     This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
@@ -219,9 +219,9 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=compartment_id,
-        is_cluster=db_management_private_endpoint_is_cluster,
-        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
+    test_db_management_private_endpoints = oci.databasemanagement.get_db_management_private_endpoints(compartment_id=compartment_id,
+        is_cluster=db_management_private_endpoint_is_cluster == "true",
+        is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled == "true",
         name=db_management_private_endpoint_name,
         state=db_management_private_endpoint_state,
         vcn_id=test_vcn["id"])

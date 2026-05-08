@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystems = oci.DatabaseManagement.getExternalDbSystems({
+ * const testExternalDbSystems = oci.databasemanagement.getExternalDbSystems({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetExternalDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystems = oci.DatabaseManagement.getExternalDbSystems({
+ * const testExternalDbSystems = oci.databasemanagement.getExternalDbSystems({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemDisplayName,
  * });
@@ -106,6 +106,6 @@ export interface GetExternalDbSystemsOutputArgs {
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalDbSystemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalDbSystemsFilterArgs>[] | undefined>;
 }

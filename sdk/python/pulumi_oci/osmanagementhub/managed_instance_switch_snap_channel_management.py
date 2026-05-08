@@ -22,8 +22,8 @@ __all__ = ['ManagedInstanceSwitchSnapChannelManagementArgs', 'ManagedInstanceSwi
 class ManagedInstanceSwitchSnapChannelManagementArgs:
     def __init__(__self__, *,
                  managed_instance_id: pulumi.Input[_builtins.str],
-                 snap_details: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']] = None):
+                 snap_details: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceSwitchSnapChannelManagement resource.
 
@@ -51,35 +51,35 @@ class ManagedInstanceSwitchSnapChannelManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="snapDetails")
-    def snap_details(self) -> Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]:
+    def snap_details(self) -> pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]:
         """
         Provides the information used to switch a snap channel.
         """
         return pulumi.get(self, "snap_details")
 
     @snap_details.setter
-    def snap_details(self, value: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]):
+    def snap_details(self, value: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]):
         pulumi.set(self, "snap_details", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceSwitchSnapChannelManagementState:
     def __init__(__self__, *,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceSwitchSnapChannelManagement resources.
 
@@ -96,38 +96,38 @@ class _ManagedInstanceSwitchSnapChannelManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "managed_instance_id")
 
     @managed_instance_id.setter
-    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="snapDetails")
-    def snap_details(self) -> Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]:
+    def snap_details(self) -> pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]:
         """
         Provides the information used to switch a snap channel.
         """
         return pulumi.get(self, "snap_details")
 
     @snap_details.setter
-    def snap_details(self, value: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]):
+    def snap_details(self, value: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs']]):
         pulumi.set(self, "snap_details", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Switch Snap Channel Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -238,9 +238,9 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -265,9 +265,9 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            snap_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceSwitchSnapChannelManagement':
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceSwitchSnapChannelManagement':
         """
         Get an existing ManagedInstanceSwitchSnapChannelManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

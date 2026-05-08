@@ -30,15 +30,15 @@ __all__ = [
 ]
 
 class ScheduledQueryScheduledQueryProcessingConfigurationArgsDict(TypedDict):
-    custom_metric: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict']]
+    custom_metric: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]]
     """
     (Updatable) Definition of the Custom Metric.
     """
-    object_storage: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict']]
+    object_storage: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]]
     """
     (Updatable) Definition of the object storage.
     """
-    streaming: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict']]
+    streaming: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]]
     """
     (Updatable) Definition of the Stream.
     """
@@ -46,9 +46,9 @@ class ScheduledQueryScheduledQueryProcessingConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationArgs:
     def __init__(__self__, *,
-                 custom_metric: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']] = None,
-                 object_storage: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']] = None,
-                 streaming: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']] = None):
+                 custom_metric: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']] = None,
+                 object_storage: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']] = None,
+                 streaming: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']] = None):
         """
         :param pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs'] custom_metric: (Updatable) Definition of the Custom Metric.
         :param pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs'] object_storage: (Updatable) Definition of the object storage.
@@ -63,38 +63,38 @@ class ScheduledQueryScheduledQueryProcessingConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="customMetric")
-    def custom_metric(self) -> Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]:
+    def custom_metric(self) -> pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]:
         """
         (Updatable) Definition of the Custom Metric.
         """
         return pulumi.get(self, "custom_metric")
 
     @custom_metric.setter
-    def custom_metric(self, value: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]):
+    def custom_metric(self, value: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]):
         pulumi.set(self, "custom_metric", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorage")
-    def object_storage(self) -> Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]:
+    def object_storage(self) -> pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]:
         """
         (Updatable) Definition of the object storage.
         """
         return pulumi.get(self, "object_storage")
 
     @object_storage.setter
-    def object_storage(self, value: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]):
+    def object_storage(self, value: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]):
         pulumi.set(self, "object_storage", value)
 
     @_builtins.property
     @pulumi.getter
-    def streaming(self) -> Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]:
+    def streaming(self) -> pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]:
         """
         (Updatable) Definition of the Stream.
         """
         return pulumi.get(self, "streaming")
 
     @streaming.setter
-    def streaming(self, value: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]):
+    def streaming(self, value: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]):
         pulumi.set(self, "streaming", value)
 
 
@@ -103,31 +103,31 @@ class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict(Ty
     """
     (Updatable) Name of the Custom Metric.
     """
-    compartment: NotRequired[pulumi.Input[_builtins.str]]
+    compartment: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Description of the Custom Metric.
     """
-    is_anomaly_detection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_anomaly_detection_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
     """
-    is_metric_published: NotRequired[pulumi.Input[_builtins.bool]]
+    is_metric_published: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Resource Group of the Custom Metric.
     """
-    unit: NotRequired[pulumi.Input[_builtins.str]]
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unit in which the metric value is reported. For example 'ms'.
     """
@@ -136,13 +136,13 @@ class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict(Ty
 class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 compartment: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_anomaly_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_metric_published: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_anomaly_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_metric_published: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of the Custom Metric.
         :param pulumi.Input[_builtins.str] compartment: (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
@@ -183,99 +183,99 @@ class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def compartment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
         """
         return pulumi.get(self, "compartment")
 
     @compartment.setter
-    def compartment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Custom Metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isAnomalyDetectionEnabled")
-    def is_anomaly_detection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_anomaly_detection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
         """
         return pulumi.get(self, "is_anomaly_detection_enabled")
 
     @is_anomaly_detection_enabled.setter
-    def is_anomaly_detection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_anomaly_detection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_anomaly_detection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMetricPublished")
-    def is_metric_published(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_metric_published(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
         """
         return pulumi.get(self, "is_metric_published")
 
     @is_metric_published.setter
-    def is_metric_published(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_metric_published(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_metric_published", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource Group of the Custom Metric.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unit in which the metric value is reported. For example 'ms'.
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
 
 class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Bucket name in the object store.
     """
-    name_space: NotRequired[pulumi.Input[_builtins.str]]
+    name_space: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace in the object store.
     """
-    object_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    object_name_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Object name prefix in the object store.
     """
@@ -283,9 +283,9 @@ class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict(T
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_space: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_name_prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_space: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_name_prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Bucket name in the object store.
         :param pulumi.Input[_builtins.str] name_space: (Updatable) Namespace in the object store.
@@ -300,43 +300,43 @@ class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Bucket name in the object store.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="nameSpace")
-    def name_space(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_space(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace in the object store.
         """
         return pulumi.get(self, "name_space")
 
     @name_space.setter
-    def name_space(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_space(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_space", value)
 
     @_builtins.property
     @pulumi.getter(name="objectNamePrefix")
-    def object_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_name_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Object name prefix in the object store.
         """
         return pulumi.get(self, "object_name_prefix")
 
     @object_name_prefix.setter
-    def object_name_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_name_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_name_prefix", value)
 
 
 class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict(TypedDict):
-    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    stream_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Stream Id.
     """
@@ -344,7 +344,7 @@ class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict(Typed
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs:
     def __init__(__self__, *,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] stream_id: (Updatable) Stream Id.
         """
@@ -353,14 +353,14 @@ class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs:
 
     @_builtins.property
     @pulumi.getter(name="streamId")
-    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Stream Id.
         """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
-    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_id", value)
 
 

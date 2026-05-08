@@ -22,11 +22,11 @@ __all__ = ['ManagedInstanceArgs', 'ManagedInstance']
 class ManagedInstanceArgs:
     def __init__(__self__, *,
                  managed_instance_id: pulumi.Input[_builtins.str],
-                 autonomous_settings: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_settings: pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedInstance resource.
 
@@ -67,55 +67,55 @@ class ManagedInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousSettings")
-    def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]:
+    def autonomous_settings(self) -> pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']]:
         """
         (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
     @autonomous_settings.setter
-    def autonomous_settings(self, value: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]):
+    def autonomous_settings(self, value: pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']]):
         pulumi.set(self, "autonomous_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         """
         return pulumi.get(self, "notification_topic_id")
 
     @notification_topic_id.setter
-    def notification_topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_topic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryManagementStationId")
-    def primary_management_station_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
         """
         return pulumi.get(self, "primary_management_station_id")
 
     @primary_management_station_id.setter
-    def primary_management_station_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_management_station_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_management_station_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryManagementStationId")
-    def secondary_management_station_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
 
@@ -126,55 +126,55 @@ class ManagedInstanceArgs:
         return pulumi.get(self, "secondary_management_station_id")
 
     @secondary_management_station_id.setter
-    def secondary_management_station_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_management_station_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_management_station_id", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceState:
     def __init__(__self__, *,
-                 agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 are_sources_managed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 autonomous_settings: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']] = None,
-                 bug_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enhancement_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-                 installed_packages: Optional[pulumi.Input[_builtins.int]] = None,
-                 installed_windows_updates: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_management_station: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_reboot_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ksplice_effective_kernel_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_environments: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]] = None,
-                 lifecycle_stages: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_kernel_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 other_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_job_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-                 software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_boot: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_checkin: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_software_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-                 work_request_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 are_sources_managed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 autonomous_settings: pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']] = None,
+                 bug_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enhancement_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+                 installed_packages: pulumi.Input[Optional[_builtins.int]] = None,
+                 installed_windows_updates: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_management_station: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reboot_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ksplice_effective_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]] = None,
+                 lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_family: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 other_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_job_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+                 software_sources: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_boot: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_checkin: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_software_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+                 work_request_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ManagedInstance resources.
 
@@ -312,367 +312,367 @@ class _ManagedInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="agentVersion")
-    def agent_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of osmh-agent running on the managed instance
         """
         return pulumi.get(self, "agent_version")
 
     @agent_version.setter
-    def agent_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CPU architecture type of the managed instance.
         """
         return pulumi.get(self, "architecture")
 
     @architecture.setter
-    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="areSourcesManaged")
-    def are_sources_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_sources_managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
         """
         return pulumi.get(self, "are_sources_managed")
 
     @are_sources_managed.setter
-    def are_sources_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_sources_managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_sources_managed", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousSettings")
-    def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]:
+    def autonomous_settings(self) -> pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']]:
         """
         (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
     @autonomous_settings.setter
-    def autonomous_settings(self, value: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]):
+    def autonomous_settings(self, value: pulumi.Input[Optional['ManagedInstanceAutonomousSettingsArgs']]):
         pulumi.set(self, "autonomous_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="bugUpdatesAvailable")
-    def bug_updates_available(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bug_updates_available(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of bug fix type updates available for installation.
         """
         return pulumi.get(self, "bug_updates_available")
 
     @bug_updates_available.setter
-    def bug_updates_available(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bug_updates_available(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bug_updates_available", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Software source name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enhancementUpdatesAvailable")
-    def enhancement_updates_available(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def enhancement_updates_available(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of enhancement type updates available for installation.
         """
         return pulumi.get(self, "enhancement_updates_available")
 
     @enhancement_updates_available.setter
-    def enhancement_updates_available(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def enhancement_updates_available(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "enhancement_updates_available", value)
 
     @_builtins.property
     @pulumi.getter(name="installedPackages")
-    def installed_packages(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def installed_packages(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of packages installed on the instance.
         """
         return pulumi.get(self, "installed_packages")
 
     @installed_packages.setter
-    def installed_packages(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def installed_packages(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "installed_packages", value)
 
     @_builtins.property
     @pulumi.getter(name="installedWindowsUpdates")
-    def installed_windows_updates(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def installed_windows_updates(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of Windows updates installed on the instance.
         """
         return pulumi.get(self, "installed_windows_updates")
 
     @installed_windows_updates.setter
-    def installed_windows_updates(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def installed_windows_updates(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "installed_windows_updates", value)
 
     @_builtins.property
     @pulumi.getter(name="isManagedByAutonomousLinux")
-    def is_managed_by_autonomous_linux(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed_by_autonomous_linux(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Autonomous Linux service manages the instance.
         """
         return pulumi.get(self, "is_managed_by_autonomous_linux")
 
     @is_managed_by_autonomous_linux.setter
-    def is_managed_by_autonomous_linux(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed_by_autonomous_linux(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed_by_autonomous_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="isManagementStation")
-    def is_management_station(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_management_station(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this managed instance is acting as an on-premises management station.
         """
         return pulumi.get(self, "is_management_station")
 
     @is_management_station.setter
-    def is_management_station(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_management_station(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_management_station", value)
 
     @_builtins.property
     @pulumi.getter(name="isRebootRequired")
-    def is_reboot_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reboot_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether a reboot is required to complete installation of updates.
         """
         return pulumi.get(self, "is_reboot_required")
 
     @is_reboot_required.setter
-    def is_reboot_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reboot_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reboot_required", value)
 
     @_builtins.property
     @pulumi.getter(name="kspliceEffectiveKernelVersion")
-    def ksplice_effective_kernel_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ksplice_effective_kernel_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ksplice effective kernel version.
         """
         return pulumi.get(self, "ksplice_effective_kernel_version")
 
     @ksplice_effective_kernel_version.setter
-    def ksplice_effective_kernel_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ksplice_effective_kernel_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ksplice_effective_kernel_version", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleEnvironments")
-    def lifecycle_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]]:
+    def lifecycle_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]]:
         """
         Id and name of a resource to simplify the display for the user.
         """
         return pulumi.get(self, "lifecycle_environments")
 
     @lifecycle_environments.setter
-    def lifecycle_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]]):
+    def lifecycle_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleEnvironmentArgs']]]]):
         pulumi.set(self, "lifecycle_environments", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStages")
-    def lifecycle_stages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]]:
+    def lifecycle_stages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]]:
         """
         Id and name of a resource to simplify the display for the user.
         """
         return pulumi.get(self, "lifecycle_stages")
 
     @lifecycle_stages.setter
-    def lifecycle_stages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]]):
+    def lifecycle_stages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceLifecycleStageArgs']]]]):
         pulumi.set(self, "lifecycle_stages", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the managed instance.
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroups")
-    def managed_instance_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]]:
+    def managed_instance_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]]:
         """
         Id and name of a resource to simplify the display for the user.
         """
         return pulumi.get(self, "managed_instance_groups")
 
     @managed_instance_groups.setter
-    def managed_instance_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]]):
+    def managed_instance_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]]):
         pulumi.set(self, "managed_instance_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "managed_instance_id")
 
     @managed_instance_id.setter
-    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationTopicId")
-    def notification_topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         """
         return pulumi.get(self, "notification_topic_id")
 
     @notification_topic_id.setter
-    def notification_topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_topic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_family(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operating system type of the managed instance.
         """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
-    def os_family(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_family(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_family", value)
 
     @_builtins.property
     @pulumi.getter(name="osKernelVersion")
-    def os_kernel_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_kernel_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating system kernel version.
         """
         return pulumi.get(self, "os_kernel_version")
 
     @os_kernel_version.setter
-    def os_kernel_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_kernel_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_kernel_version", value)
 
     @_builtins.property
     @pulumi.getter(name="osName")
-    def os_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating system name.
         """
         return pulumi.get(self, "os_name")
 
     @os_name.setter
-    def os_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_name", value)
 
     @_builtins.property
     @pulumi.getter(name="osVersion")
-    def os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating system version.
         """
         return pulumi.get(self, "os_version")
 
     @os_version.setter
-    def os_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_version", value)
 
     @_builtins.property
     @pulumi.getter(name="otherUpdatesAvailable")
-    def other_updates_available(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def other_updates_available(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of non-classified (other) updates available for installation.
         """
         return pulumi.get(self, "other_updates_available")
 
     @other_updates_available.setter
-    def other_updates_available(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def other_updates_available(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "other_updates_available", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryManagementStationId")
-    def primary_management_station_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
         """
         return pulumi.get(self, "primary_management_station_id")
 
     @primary_management_station_id.setter
-    def primary_management_station_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_management_station_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_management_station_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The profile that was used to register this instance with the service.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="profileVersion")
-    def profile_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the profile that was used to register this instance with the service.
         """
         return pulumi.get(self, "profile_version")
 
     @profile_version.setter
-    def profile_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_version", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledJobCount")
-    def scheduled_job_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scheduled_job_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of scheduled jobs associated with this instance.
         """
         return pulumi.get(self, "scheduled_job_count")
 
     @scheduled_job_count.setter
-    def scheduled_job_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scheduled_job_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scheduled_job_count", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryManagementStationId")
-    def secondary_management_station_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
 
@@ -683,139 +683,139 @@ class _ManagedInstanceState:
         return pulumi.get(self, "secondary_management_station_id")
 
     @secondary_management_station_id.setter
-    def secondary_management_station_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_management_station_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_management_station_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityUpdatesAvailable")
-    def security_updates_available(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def security_updates_available(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of security type updates available for installation.
         """
         return pulumi.get(self, "security_updates_available")
 
     @security_updates_available.setter
-    def security_updates_available(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def security_updates_available(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "security_updates_available", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]]:
+    def software_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]]:
         """
         The list of software sources currently attached to the managed instance.
         """
         return pulumi.get(self, "software_sources")
 
     @software_sources.setter
-    def software_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]]):
+    def software_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceSoftwareSourceArgs']]]]):
         pulumi.set(self, "software_sources", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current status of the managed instance.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastBoot")
-    def time_last_boot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_boot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_boot")
 
     @time_last_boot.setter
-    def time_last_boot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_boot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastCheckin")
-    def time_last_checkin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_checkin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_checkin")
 
     @time_last_checkin.setter
-    def time_last_checkin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_checkin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_checkin", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastSoftwareRefresh")
-    def time_last_software_refresh(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_software_refresh(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_software_refresh")
 
     @time_last_software_refresh.setter
-    def time_last_software_refresh(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_software_refresh(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_software_refresh", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="updatesAvailable")
-    def updates_available(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def updates_available(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of updates available for installation.
         """
         return pulumi.get(self, "updates_available")
 
     @updates_available.setter
-    def updates_available(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def updates_available(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "updates_available", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestCount")
-    def work_request_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def work_request_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of work requests associated with this instance.
         """
         return pulumi.get(self, "work_request_count")
 
     @work_request_count.setter
-    def work_request_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def work_request_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "work_request_count", value)
 
 
@@ -825,12 +825,12 @@ class ManagedInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -900,12 +900,12 @@ class ManagedInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -969,48 +969,48 @@ class ManagedInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_version: Optional[pulumi.Input[_builtins.str]] = None,
-            architecture: Optional[pulumi.Input[_builtins.str]] = None,
-            are_sources_managed: Optional[pulumi.Input[_builtins.bool]] = None,
-            autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
-            bug_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enhancement_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-            installed_packages: Optional[pulumi.Input[_builtins.int]] = None,
-            installed_windows_updates: Optional[pulumi.Input[_builtins.int]] = None,
-            is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_management_station: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_reboot_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            ksplice_effective_kernel_version: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict']]]]] = None,
-            lifecycle_stages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict']]]]] = None,
-            location: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]]] = None,
-            managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_topic_id: Optional[pulumi.Input[_builtins.str]] = None,
-            os_family: Optional[pulumi.Input[_builtins.str]] = None,
-            os_kernel_version: Optional[pulumi.Input[_builtins.str]] = None,
-            os_name: Optional[pulumi.Input[_builtins.str]] = None,
-            os_version: Optional[pulumi.Input[_builtins.str]] = None,
-            other_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-            primary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_version: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_job_count: Optional[pulumi.Input[_builtins.int]] = None,
-            secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-            software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_boot: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_checkin: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_software_refresh: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            updates_available: Optional[pulumi.Input[_builtins.int]] = None,
-            work_request_count: Optional[pulumi.Input[_builtins.int]] = None) -> 'ManagedInstance':
+            agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+            architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            are_sources_managed: pulumi.Input[Optional[_builtins.bool]] = None,
+            autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+            bug_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enhancement_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            installed_packages: pulumi.Input[Optional[_builtins.int]] = None,
+            installed_windows_updates: pulumi.Input[Optional[_builtins.int]] = None,
+            is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_management_station: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reboot_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            ksplice_effective_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict']]]]] = None,
+            lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict']]]]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]]] = None,
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            os_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+            os_name: pulumi.Input[Optional[_builtins.str]] = None,
+            os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            other_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_version: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_job_count: pulumi.Input[Optional[_builtins.int]] = None,
+            secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_boot: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_checkin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_software_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            work_request_count: pulumi.Input[Optional[_builtins.int]] = None) -> 'ManagedInstance':
         """
         Get an existing ManagedInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

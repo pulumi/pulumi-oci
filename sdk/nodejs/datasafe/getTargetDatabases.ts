@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
+ * const testTargetDatabases = oci.datasafe.getTargetDatabases({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseAccessLevel,
  *     associatedResourceId: testAssociatedResource.id,
- *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
  *     infrastructureType: targetDatabaseInfrastructureType,
@@ -138,11 +138,11 @@ export interface GetTargetDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
+ * const testTargetDatabases = oci.datasafe.getTargetDatabases({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseAccessLevel,
  *     associatedResourceId: testAssociatedResource.id,
- *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
  *     infrastructureType: targetDatabaseInfrastructureType,
@@ -174,11 +174,11 @@ export interface GetTargetDatabasesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target databases that are associated to the resource id passed in as a parameter value.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -186,26 +186,26 @@ export interface GetTargetDatabasesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only target databases that match the specified database type.
      */
-    databaseType?: pulumi.Input<string>;
+    databaseType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only target databases that match the specified infrastructure type.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only target databases that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database that matches the specified OCID.
      */
-    targetDatabaseId?: pulumi.Input<string>;
+    targetDatabaseId?: pulumi.Input<string | undefined>;
 }

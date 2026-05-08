@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlan = oci.DisasterRecovery.getDrPlan({
+ * const testDrPlan = oci.disasterrecovery.getDrPlan({
  *     drPlanId: testDrPlanOciDisasterRecoveryDrPlan.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetDrPlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlan = oci.DisasterRecovery.getDrPlan({
+ * const testDrPlan = oci.disasterrecovery.getDrPlan({
  *     drPlanId: testDrPlanOciDisasterRecoveryDrPlan.id,
  * });
  * ```

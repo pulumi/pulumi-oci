@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnic = oci.Core.getVnic({
+ * const testVnic = oci.core.getVnic({
  *     vnicId: testVnicOciCoreVnic.id,
  * });
  * ```
@@ -140,7 +140,7 @@ export interface GetVnicResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnic = oci.Core.getVnic({
+ * const testVnic = oci.core.getVnic({
  *     vnicId: testVnicOciCoreVnic.id,
  * });
  * ```

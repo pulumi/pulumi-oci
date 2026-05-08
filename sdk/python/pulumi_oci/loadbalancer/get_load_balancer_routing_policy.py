@@ -124,7 +124,7 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
+    test_load_balancer_routing_policy = oci.loadbalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
 
@@ -146,8 +146,8 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[_builtins.str] =
         routing_policy_name=pulumi.get(__ret__, 'routing_policy_name'),
         rules=pulumi.get(__ret__, 'rules'),
         state=pulumi.get(__ret__, 'state'))
-def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_load_balancer_routing_policy_output(load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancerRoutingPolicyResult]:
     """
     This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -160,7 +160,7 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
+    test_load_balancer_routing_policy = oci.loadbalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
 

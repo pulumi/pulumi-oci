@@ -110,7 +110,7 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
+    test_ipsec_algorithm = oci.core.get_ipsec_algorithm()
     ```
     """
     __args__ = dict()
@@ -135,7 +135,7 @@ def get_ipsec_algorithm_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
+    test_ipsec_algorithm = oci.core.get_ipsec_algorithm()
     ```
     """
     __args__ = dict()

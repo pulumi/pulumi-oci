@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusters = oci.Database.getVmClusters({
+ * const testVmClusters = oci.database.getVmClusters({
  *     compartmentId: compartmentId,
  *     displayName: vmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
@@ -112,7 +112,7 @@ export interface GetVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusters = oci.Database.getVmClusters({
+ * const testVmClusters = oci.database.getVmClusters({
  *     compartmentId: compartmentId,
  *     displayName: vmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
@@ -144,18 +144,18 @@ export interface GetVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the given Exadata Infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClustersFilterArgs>[]>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClustersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only vmclusters that match the given vmcluster type exactly.
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string | undefined>;
 }

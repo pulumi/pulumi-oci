@@ -228,75 +228,75 @@ export interface AlertState {
     /**
      * The OCID of alert.
      */
-    alertId?: pulumi.Input<string>;
+    alertId?: pulumi.Input<string | undefined>;
     /**
      * The key of the rule of alert policy that triggered alert.
      */
-    alertPolicyRuleKey?: pulumi.Input<string>;
+    alertPolicyRuleKey?: pulumi.Input<string | undefined>;
     /**
      * The display name of the rule of alert policy that triggered alert.
      */
-    alertPolicyRuleName?: pulumi.Input<string>;
+    alertPolicyRuleName?: pulumi.Input<string | undefined>;
     /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
-    alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      */
-    comment?: pulumi.Input<string>;
+    comment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the alert.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The description of the alert.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The display name of the alert.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    featureDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    featureDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The operation (event) that triggered alert.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * The result of the operation (event) that triggered alert.
      */
-    operationStatus?: pulumi.Input<string>;
+    operationStatus?: pulumi.Input<string | undefined>;
     /**
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    operationTime?: pulumi.Input<string>;
+    operationTime?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the policy that triggered alert.
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
     /**
      * The resource endpoint that triggered the alert.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * Severity level of the alert.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * The current state of the alert.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of the alert.
      *
@@ -304,27 +304,27 @@ export interface AlertState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Array of OCIDs of the target database which are associated with the alert.
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Array of names of the target database.
      */
-    targetNames?: pulumi.Input<pulumi.Input<string>[]>;
+    targetNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -338,19 +338,19 @@ export interface AlertArgs {
     /**
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      */
-    comment?: pulumi.Input<string>;
+    comment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the alert.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The status of the alert.
      *
@@ -358,5 +358,5 @@ export interface AlertArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

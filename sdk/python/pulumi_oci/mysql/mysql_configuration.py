@@ -23,14 +23,14 @@ class MysqlConfigurationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  shape_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
-                 parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 init_variables: pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
+                 parent_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional['MysqlConfigurationVariablesArgs']] = None):
         """
         The set of arguments for constructing a MysqlConfiguration resource.
 
@@ -96,121 +96,121 @@ class MysqlConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-provided data about the Configuration.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the Configuration.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
     @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
-    def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
+    def init_variables(self) -> pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
-    def init_variables(self, value: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]):
+    def init_variables(self, value: pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']]):
         pulumi.set(self, "init_variables", value)
 
     @_builtins.property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
+    def options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
         """
         The MySQL options defined in the Configuration.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
+    def options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
-    def parent_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         """
         return pulumi.get(self, "parent_configuration_id")
 
     @parent_configuration_id.setter
-    def parent_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
-    def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['MysqlConfigurationVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['MysqlConfigurationVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
 @pulumi.input_type
 class _MysqlConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
-                 parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 init_variables: pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
+                 parent_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional['MysqlConfigurationVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering MysqlConfiguration resources.
 
@@ -269,184 +269,184 @@ class _MysqlConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-provided data about the Configuration.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the Configuration.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
     @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
-    def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
+    def init_variables(self) -> pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
-    def init_variables(self, value: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]):
+    def init_variables(self, value: pulumi.Input[Optional['MysqlConfigurationInitVariablesArgs']]):
         pulumi.set(self, "init_variables", value)
 
     @_builtins.property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
+    def options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
         """
         The MySQL options defined in the Configuration.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
+    def options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
-    def parent_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         """
         return pulumi.get(self, "parent_configuration_id")
 
     @parent_configuration_id.setter
-    def parent_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the associated Shape.
         """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Configuration type, DEFAULT or CUSTOM.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
-    def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['MysqlConfigurationVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['MysqlConfigurationVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
@@ -456,16 +456,16 @@ class MysqlConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
-                 parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 init_variables: pulumi.Input[Optional[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
+                 parent_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -501,124 +501,124 @@ class MysqlConfiguration(pulumi.CustomResource):
             }],
             parent_configuration_id=test_configuration["id"],
             variables={
-                "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
-                "auto_increment_offset": mysql_configuration_variables_auto_increment_offset,
-                "autocommit": mysql_configuration_variables_autocommit,
-                "big_tables": mysql_configuration_variables_big_tables,
-                "binlog_expire_logs_seconds": mysql_configuration_variables_binlog_expire_logs_seconds,
-                "binlog_group_commit_sync_delay": mysql_configuration_variables_binlog_group_commit_sync_delay,
-                "binlog_group_commit_sync_no_delay_count": mysql_configuration_variables_binlog_group_commit_sync_no_delay_count,
+                "auto_increment_increment": int(mysql_configuration_variables_auto_increment_increment),
+                "auto_increment_offset": int(mysql_configuration_variables_auto_increment_offset),
+                "autocommit": mysql_configuration_variables_autocommit == "true",
+                "big_tables": mysql_configuration_variables_big_tables == "true",
+                "binlog_expire_logs_seconds": int(mysql_configuration_variables_binlog_expire_logs_seconds),
+                "binlog_group_commit_sync_delay": int(mysql_configuration_variables_binlog_group_commit_sync_delay),
+                "binlog_group_commit_sync_no_delay_count": int(mysql_configuration_variables_binlog_group_commit_sync_no_delay_count),
                 "binlog_row_metadata": mysql_configuration_variables_binlog_row_metadata,
                 "binlog_row_value_options": mysql_configuration_variables_binlog_row_value_options,
-                "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression,
+                "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression == "true",
                 "block_encryption_mode": mysql_configuration_variables_block_encryption_mode,
                 "character_set_server": mysql_configuration_variables_character_set_server,
                 "collation_server": mysql_configuration_variables_collation_server,
                 "completion_type": mysql_configuration_variables_completion_type,
-                "connect_timeout": mysql_configuration_variables_connect_timeout,
-                "connection_memory_chunk_size": mysql_configuration_variables_connection_memory_chunk_size,
+                "connect_timeout": int(mysql_configuration_variables_connect_timeout),
+                "connection_memory_chunk_size": int(mysql_configuration_variables_connection_memory_chunk_size),
                 "connection_memory_limit": mysql_configuration_variables_connection_memory_limit,
                 "cte_max_recursion_depth": mysql_configuration_variables_cte_max_recursion_depth,
                 "default_authentication_plugin": mysql_configuration_variables_default_authentication_plugin,
                 "explain_format": mysql_configuration_variables_explain_format,
-                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp,
-                "foreign_key_checks": mysql_configuration_variables_foreign_key_checks,
-                "generated_random_password_length": mysql_configuration_variables_generated_random_password_length,
+                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp == "true",
+                "foreign_key_checks": mysql_configuration_variables_foreign_key_checks == "true",
+                "generated_random_password_length": int(mysql_configuration_variables_generated_random_password_length),
                 "global_connection_memory_limit": mysql_configuration_variables_global_connection_memory_limit,
-                "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking,
+                "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking == "true",
                 "group_concat_max_len": mysql_configuration_variables_group_concat_max_len,
                 "group_replication_consistency": mysql_configuration_variables_group_replication_consistency,
-                "information_schema_stats_expiry": mysql_configuration_variables_information_schema_stats_expiry,
-                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index,
-                "innodb_autoinc_lock_mode": mysql_configuration_variables_innodb_autoinc_lock_mode,
-                "innodb_buffer_pool_dump_pct": mysql_configuration_variables_innodb_buffer_pool_dump_pct,
-                "innodb_buffer_pool_instances": mysql_configuration_variables_innodb_buffer_pool_instances,
+                "information_schema_stats_expiry": int(mysql_configuration_variables_information_schema_stats_expiry),
+                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index == "true",
+                "innodb_autoinc_lock_mode": int(mysql_configuration_variables_innodb_autoinc_lock_mode),
+                "innodb_buffer_pool_dump_pct": int(mysql_configuration_variables_innodb_buffer_pool_dump_pct),
+                "innodb_buffer_pool_instances": int(mysql_configuration_variables_innodb_buffer_pool_instances),
                 "innodb_buffer_pool_size": mysql_configuration_variables_innodb_buffer_pool_size,
                 "innodb_change_buffering": mysql_configuration_variables_innodb_change_buffering,
                 "innodb_ddl_buffer_size": mysql_configuration_variables_innodb_ddl_buffer_size,
-                "innodb_ddl_threads": mysql_configuration_variables_innodb_ddl_threads,
-                "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword,
-                "innodb_ft_max_token_size": mysql_configuration_variables_innodb_ft_max_token_size,
-                "innodb_ft_min_token_size": mysql_configuration_variables_innodb_ft_min_token_size,
-                "innodb_ft_num_word_optimize": mysql_configuration_variables_innodb_ft_num_word_optimize,
+                "innodb_ddl_threads": int(mysql_configuration_variables_innodb_ddl_threads),
+                "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword == "true",
+                "innodb_ft_max_token_size": int(mysql_configuration_variables_innodb_ft_max_token_size),
+                "innodb_ft_min_token_size": int(mysql_configuration_variables_innodb_ft_min_token_size),
+                "innodb_ft_num_word_optimize": int(mysql_configuration_variables_innodb_ft_num_word_optimize),
                 "innodb_ft_result_cache_limit": mysql_configuration_variables_innodb_ft_result_cache_limit,
                 "innodb_ft_server_stopword_table": mysql_configuration_variables_innodb_ft_server_stopword_table,
-                "innodb_lock_wait_timeout": mysql_configuration_variables_innodb_lock_wait_timeout,
-                "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads,
+                "innodb_lock_wait_timeout": int(mysql_configuration_variables_innodb_lock_wait_timeout),
+                "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads == "true",
                 "innodb_max_purge_lag": mysql_configuration_variables_innodb_max_purge_lag,
-                "innodb_max_purge_lag_delay": mysql_configuration_variables_innodb_max_purge_lag_delay,
-                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave,
+                "innodb_max_purge_lag_delay": int(mysql_configuration_variables_innodb_max_purge_lag_delay),
+                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave == "true",
                 "innodb_online_alter_log_max_size": mysql_configuration_variables_innodb_online_alter_log_max_size,
                 "innodb_redo_log_capacity": mysql_configuration_variables_innodb_redo_log_capacity,
-                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout,
-                "innodb_sort_buffer_size": mysql_configuration_variables_innodb_sort_buffer_size,
+                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout == "true",
+                "innodb_sort_buffer_size": int(mysql_configuration_variables_innodb_sort_buffer_size),
                 "innodb_stats_persistent_sample_pages": mysql_configuration_variables_innodb_stats_persistent_sample_pages,
                 "innodb_stats_transient_sample_pages": mysql_configuration_variables_innodb_stats_transient_sample_pages,
-                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode,
-                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate,
-                "interactive_timeout": mysql_configuration_variables_interactive_timeout,
+                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode == "true",
+                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate == "true",
+                "interactive_timeout": int(mysql_configuration_variables_interactive_timeout),
                 "join_buffer_size": mysql_configuration_variables_join_buffer_size,
-                "local_infile": mysql_configuration_variables_local_infile,
-                "long_query_time": mysql_configuration_variables_long_query_time,
+                "local_infile": mysql_configuration_variables_local_infile == "true",
+                "long_query_time": int(mysql_configuration_variables_long_query_time),
                 "mandatory_roles": mysql_configuration_variables_mandatory_roles,
-                "max_allowed_packet": mysql_configuration_variables_max_allowed_packet,
+                "max_allowed_packet": int(mysql_configuration_variables_max_allowed_packet),
                 "max_binlog_cache_size": mysql_configuration_variables_max_binlog_cache_size,
                 "max_connect_errors": mysql_configuration_variables_max_connect_errors,
-                "max_connections": mysql_configuration_variables_max_connections,
+                "max_connections": int(mysql_configuration_variables_max_connections),
                 "max_execution_time": mysql_configuration_variables_max_execution_time,
                 "max_heap_table_size": mysql_configuration_variables_max_heap_table_size,
-                "max_prepared_stmt_count": mysql_configuration_variables_max_prepared_stmt_count,
+                "max_prepared_stmt_count": int(mysql_configuration_variables_max_prepared_stmt_count),
                 "max_seeks_for_key": mysql_configuration_variables_max_seeks_for_key,
                 "max_user_connections": mysql_configuration_variables_max_user_connections,
-                "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode,
-                "mysql_zstd_default_compression_level": mysql_configuration_variables_mysql_zstd_default_compression_level,
-                "mysqlx_connect_timeout": mysql_configuration_variables_mysqlx_connect_timeout,
-                "mysqlx_deflate_default_compression_level": mysql_configuration_variables_mysqlx_deflate_default_compression_level,
-                "mysqlx_deflate_max_client_compression_level": mysql_configuration_variables_mysqlx_deflate_max_client_compression_level,
-                "mysqlx_document_id_unique_prefix": mysql_configuration_variables_mysqlx_document_id_unique_prefix,
-                "mysqlx_enable_hello_notice": mysql_configuration_variables_mysqlx_enable_hello_notice,
-                "mysqlx_idle_worker_thread_timeout": mysql_configuration_variables_mysqlx_idle_worker_thread_timeout,
-                "mysqlx_interactive_timeout": mysql_configuration_variables_mysqlx_interactive_timeout,
-                "mysqlx_lz4default_compression_level": mysql_configuration_variables_mysqlx_lz4default_compression_level,
-                "mysqlx_lz4max_client_compression_level": mysql_configuration_variables_mysqlx_lz4max_client_compression_level,
-                "mysqlx_max_allowed_packet": mysql_configuration_variables_mysqlx_max_allowed_packet,
-                "mysqlx_min_worker_threads": mysql_configuration_variables_mysqlx_min_worker_threads,
-                "mysqlx_read_timeout": mysql_configuration_variables_mysqlx_read_timeout,
-                "mysqlx_wait_timeout": mysql_configuration_variables_mysqlx_wait_timeout,
-                "mysqlx_write_timeout": mysql_configuration_variables_mysqlx_write_timeout,
-                "mysqlx_zstd_default_compression_level": mysql_configuration_variables_mysqlx_zstd_default_compression_level,
-                "mysqlx_zstd_max_client_compression_level": mysql_configuration_variables_mysqlx_zstd_max_client_compression_level,
-                "net_read_timeout": mysql_configuration_variables_net_read_timeout,
-                "net_write_timeout": mysql_configuration_variables_net_write_timeout,
+                "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode == "true",
+                "mysql_zstd_default_compression_level": int(mysql_configuration_variables_mysql_zstd_default_compression_level),
+                "mysqlx_connect_timeout": int(mysql_configuration_variables_mysqlx_connect_timeout),
+                "mysqlx_deflate_default_compression_level": int(mysql_configuration_variables_mysqlx_deflate_default_compression_level),
+                "mysqlx_deflate_max_client_compression_level": int(mysql_configuration_variables_mysqlx_deflate_max_client_compression_level),
+                "mysqlx_document_id_unique_prefix": int(mysql_configuration_variables_mysqlx_document_id_unique_prefix),
+                "mysqlx_enable_hello_notice": mysql_configuration_variables_mysqlx_enable_hello_notice == "true",
+                "mysqlx_idle_worker_thread_timeout": int(mysql_configuration_variables_mysqlx_idle_worker_thread_timeout),
+                "mysqlx_interactive_timeout": int(mysql_configuration_variables_mysqlx_interactive_timeout),
+                "mysqlx_lz4default_compression_level": int(mysql_configuration_variables_mysqlx_lz4default_compression_level),
+                "mysqlx_lz4max_client_compression_level": int(mysql_configuration_variables_mysqlx_lz4max_client_compression_level),
+                "mysqlx_max_allowed_packet": int(mysql_configuration_variables_mysqlx_max_allowed_packet),
+                "mysqlx_min_worker_threads": int(mysql_configuration_variables_mysqlx_min_worker_threads),
+                "mysqlx_read_timeout": int(mysql_configuration_variables_mysqlx_read_timeout),
+                "mysqlx_wait_timeout": int(mysql_configuration_variables_mysqlx_wait_timeout),
+                "mysqlx_write_timeout": int(mysql_configuration_variables_mysqlx_write_timeout),
+                "mysqlx_zstd_default_compression_level": int(mysql_configuration_variables_mysqlx_zstd_default_compression_level),
+                "mysqlx_zstd_max_client_compression_level": int(mysql_configuration_variables_mysqlx_zstd_max_client_compression_level),
+                "net_read_timeout": int(mysql_configuration_variables_net_read_timeout),
+                "net_write_timeout": int(mysql_configuration_variables_net_write_timeout),
                 "optimizer_switch": mysql_configuration_variables_optimizer_switch,
                 "parser_max_mem_size": mysql_configuration_variables_parser_max_mem_size,
                 "query_alloc_block_size": mysql_configuration_variables_query_alloc_block_size,
                 "query_prealloc_size": mysql_configuration_variables_query_prealloc_size,
                 "range_optimizer_max_mem_size": mysql_configuration_variables_range_optimizer_max_mem_size,
-                "regexp_time_limit": mysql_configuration_variables_regexp_time_limit,
+                "regexp_time_limit": int(mysql_configuration_variables_regexp_time_limit),
                 "relay_log_space_limit": mysql_configuration_variables_relay_log_space_limit,
-                "replica_net_timeout": mysql_configuration_variables_replica_net_timeout,
-                "replica_parallel_workers": mysql_configuration_variables_replica_parallel_workers,
+                "replica_net_timeout": int(mysql_configuration_variables_replica_net_timeout),
+                "replica_parallel_workers": int(mysql_configuration_variables_replica_parallel_workers),
                 "replica_type_conversions": mysql_configuration_variables_replica_type_conversions,
-                "require_secure_transport": mysql_configuration_variables_require_secure_transport,
-                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve,
+                "require_secure_transport": mysql_configuration_variables_require_secure_transport == "true",
+                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve == "true",
                 "sort_buffer_size": mysql_configuration_variables_sort_buffer_size,
-                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key,
+                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key == "true",
                 "sql_mode": mysql_configuration_variables_sql_mode,
-                "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key,
-                "sql_warnings": mysql_configuration_variables_sql_warnings,
-                "table_definition_cache": mysql_configuration_variables_table_definition_cache,
-                "table_open_cache": mysql_configuration_variables_table_open_cache,
+                "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key == "true",
+                "sql_warnings": mysql_configuration_variables_sql_warnings == "true",
+                "table_definition_cache": int(mysql_configuration_variables_table_definition_cache),
+                "table_open_cache": int(mysql_configuration_variables_table_open_cache),
                 "temptable_max_ram": mysql_configuration_variables_temptable_max_ram,
-                "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners,
-                "thread_pool_max_transactions_limit": mysql_configuration_variables_thread_pool_max_transactions_limit,
-                "thread_pool_query_threads_per_group": mysql_configuration_variables_thread_pool_query_threads_per_group,
-                "thread_pool_size": mysql_configuration_variables_thread_pool_size,
-                "thread_pool_transaction_delay": mysql_configuration_variables_thread_pool_transaction_delay,
+                "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners == "true",
+                "thread_pool_max_transactions_limit": int(mysql_configuration_variables_thread_pool_max_transactions_limit),
+                "thread_pool_query_threads_per_group": int(mysql_configuration_variables_thread_pool_query_threads_per_group),
+                "thread_pool_size": int(mysql_configuration_variables_thread_pool_size),
+                "thread_pool_transaction_delay": int(mysql_configuration_variables_thread_pool_transaction_delay),
                 "time_zone": mysql_configuration_variables_time_zone,
                 "tmp_table_size": mysql_configuration_variables_tmp_table_size,
                 "transaction_isolation": mysql_configuration_variables_transaction_isolation,
-                "wait_timeout": mysql_configuration_variables_wait_timeout,
+                "wait_timeout": int(mysql_configuration_variables_wait_timeout),
             })
         ```
 
@@ -684,124 +684,124 @@ class MysqlConfiguration(pulumi.CustomResource):
             }],
             parent_configuration_id=test_configuration["id"],
             variables={
-                "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
-                "auto_increment_offset": mysql_configuration_variables_auto_increment_offset,
-                "autocommit": mysql_configuration_variables_autocommit,
-                "big_tables": mysql_configuration_variables_big_tables,
-                "binlog_expire_logs_seconds": mysql_configuration_variables_binlog_expire_logs_seconds,
-                "binlog_group_commit_sync_delay": mysql_configuration_variables_binlog_group_commit_sync_delay,
-                "binlog_group_commit_sync_no_delay_count": mysql_configuration_variables_binlog_group_commit_sync_no_delay_count,
+                "auto_increment_increment": int(mysql_configuration_variables_auto_increment_increment),
+                "auto_increment_offset": int(mysql_configuration_variables_auto_increment_offset),
+                "autocommit": mysql_configuration_variables_autocommit == "true",
+                "big_tables": mysql_configuration_variables_big_tables == "true",
+                "binlog_expire_logs_seconds": int(mysql_configuration_variables_binlog_expire_logs_seconds),
+                "binlog_group_commit_sync_delay": int(mysql_configuration_variables_binlog_group_commit_sync_delay),
+                "binlog_group_commit_sync_no_delay_count": int(mysql_configuration_variables_binlog_group_commit_sync_no_delay_count),
                 "binlog_row_metadata": mysql_configuration_variables_binlog_row_metadata,
                 "binlog_row_value_options": mysql_configuration_variables_binlog_row_value_options,
-                "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression,
+                "binlog_transaction_compression": mysql_configuration_variables_binlog_transaction_compression == "true",
                 "block_encryption_mode": mysql_configuration_variables_block_encryption_mode,
                 "character_set_server": mysql_configuration_variables_character_set_server,
                 "collation_server": mysql_configuration_variables_collation_server,
                 "completion_type": mysql_configuration_variables_completion_type,
-                "connect_timeout": mysql_configuration_variables_connect_timeout,
-                "connection_memory_chunk_size": mysql_configuration_variables_connection_memory_chunk_size,
+                "connect_timeout": int(mysql_configuration_variables_connect_timeout),
+                "connection_memory_chunk_size": int(mysql_configuration_variables_connection_memory_chunk_size),
                 "connection_memory_limit": mysql_configuration_variables_connection_memory_limit,
                 "cte_max_recursion_depth": mysql_configuration_variables_cte_max_recursion_depth,
                 "default_authentication_plugin": mysql_configuration_variables_default_authentication_plugin,
                 "explain_format": mysql_configuration_variables_explain_format,
-                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp,
-                "foreign_key_checks": mysql_configuration_variables_foreign_key_checks,
-                "generated_random_password_length": mysql_configuration_variables_generated_random_password_length,
+                "explicit_defaults_for_timestamp": mysql_configuration_variables_explicit_defaults_for_timestamp == "true",
+                "foreign_key_checks": mysql_configuration_variables_foreign_key_checks == "true",
+                "generated_random_password_length": int(mysql_configuration_variables_generated_random_password_length),
                 "global_connection_memory_limit": mysql_configuration_variables_global_connection_memory_limit,
-                "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking,
+                "global_connection_memory_tracking": mysql_configuration_variables_global_connection_memory_tracking == "true",
                 "group_concat_max_len": mysql_configuration_variables_group_concat_max_len,
                 "group_replication_consistency": mysql_configuration_variables_group_replication_consistency,
-                "information_schema_stats_expiry": mysql_configuration_variables_information_schema_stats_expiry,
-                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index,
-                "innodb_autoinc_lock_mode": mysql_configuration_variables_innodb_autoinc_lock_mode,
-                "innodb_buffer_pool_dump_pct": mysql_configuration_variables_innodb_buffer_pool_dump_pct,
-                "innodb_buffer_pool_instances": mysql_configuration_variables_innodb_buffer_pool_instances,
+                "information_schema_stats_expiry": int(mysql_configuration_variables_information_schema_stats_expiry),
+                "innodb_adaptive_hash_index": mysql_configuration_variables_innodb_adaptive_hash_index == "true",
+                "innodb_autoinc_lock_mode": int(mysql_configuration_variables_innodb_autoinc_lock_mode),
+                "innodb_buffer_pool_dump_pct": int(mysql_configuration_variables_innodb_buffer_pool_dump_pct),
+                "innodb_buffer_pool_instances": int(mysql_configuration_variables_innodb_buffer_pool_instances),
                 "innodb_buffer_pool_size": mysql_configuration_variables_innodb_buffer_pool_size,
                 "innodb_change_buffering": mysql_configuration_variables_innodb_change_buffering,
                 "innodb_ddl_buffer_size": mysql_configuration_variables_innodb_ddl_buffer_size,
-                "innodb_ddl_threads": mysql_configuration_variables_innodb_ddl_threads,
-                "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword,
-                "innodb_ft_max_token_size": mysql_configuration_variables_innodb_ft_max_token_size,
-                "innodb_ft_min_token_size": mysql_configuration_variables_innodb_ft_min_token_size,
-                "innodb_ft_num_word_optimize": mysql_configuration_variables_innodb_ft_num_word_optimize,
+                "innodb_ddl_threads": int(mysql_configuration_variables_innodb_ddl_threads),
+                "innodb_ft_enable_stopword": mysql_configuration_variables_innodb_ft_enable_stopword == "true",
+                "innodb_ft_max_token_size": int(mysql_configuration_variables_innodb_ft_max_token_size),
+                "innodb_ft_min_token_size": int(mysql_configuration_variables_innodb_ft_min_token_size),
+                "innodb_ft_num_word_optimize": int(mysql_configuration_variables_innodb_ft_num_word_optimize),
                 "innodb_ft_result_cache_limit": mysql_configuration_variables_innodb_ft_result_cache_limit,
                 "innodb_ft_server_stopword_table": mysql_configuration_variables_innodb_ft_server_stopword_table,
-                "innodb_lock_wait_timeout": mysql_configuration_variables_innodb_lock_wait_timeout,
-                "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads,
+                "innodb_lock_wait_timeout": int(mysql_configuration_variables_innodb_lock_wait_timeout),
+                "innodb_log_writer_threads": mysql_configuration_variables_innodb_log_writer_threads == "true",
                 "innodb_max_purge_lag": mysql_configuration_variables_innodb_max_purge_lag,
-                "innodb_max_purge_lag_delay": mysql_configuration_variables_innodb_max_purge_lag_delay,
-                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave,
+                "innodb_max_purge_lag_delay": int(mysql_configuration_variables_innodb_max_purge_lag_delay),
+                "innodb_numa_interleave": mysql_configuration_variables_innodb_numa_interleave == "true",
                 "innodb_online_alter_log_max_size": mysql_configuration_variables_innodb_online_alter_log_max_size,
                 "innodb_redo_log_capacity": mysql_configuration_variables_innodb_redo_log_capacity,
-                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout,
-                "innodb_sort_buffer_size": mysql_configuration_variables_innodb_sort_buffer_size,
+                "innodb_rollback_on_timeout": mysql_configuration_variables_innodb_rollback_on_timeout == "true",
+                "innodb_sort_buffer_size": int(mysql_configuration_variables_innodb_sort_buffer_size),
                 "innodb_stats_persistent_sample_pages": mysql_configuration_variables_innodb_stats_persistent_sample_pages,
                 "innodb_stats_transient_sample_pages": mysql_configuration_variables_innodb_stats_transient_sample_pages,
-                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode,
-                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate,
-                "interactive_timeout": mysql_configuration_variables_interactive_timeout,
+                "innodb_strict_mode": mysql_configuration_variables_innodb_strict_mode == "true",
+                "innodb_undo_log_truncate": mysql_configuration_variables_innodb_undo_log_truncate == "true",
+                "interactive_timeout": int(mysql_configuration_variables_interactive_timeout),
                 "join_buffer_size": mysql_configuration_variables_join_buffer_size,
-                "local_infile": mysql_configuration_variables_local_infile,
-                "long_query_time": mysql_configuration_variables_long_query_time,
+                "local_infile": mysql_configuration_variables_local_infile == "true",
+                "long_query_time": int(mysql_configuration_variables_long_query_time),
                 "mandatory_roles": mysql_configuration_variables_mandatory_roles,
-                "max_allowed_packet": mysql_configuration_variables_max_allowed_packet,
+                "max_allowed_packet": int(mysql_configuration_variables_max_allowed_packet),
                 "max_binlog_cache_size": mysql_configuration_variables_max_binlog_cache_size,
                 "max_connect_errors": mysql_configuration_variables_max_connect_errors,
-                "max_connections": mysql_configuration_variables_max_connections,
+                "max_connections": int(mysql_configuration_variables_max_connections),
                 "max_execution_time": mysql_configuration_variables_max_execution_time,
                 "max_heap_table_size": mysql_configuration_variables_max_heap_table_size,
-                "max_prepared_stmt_count": mysql_configuration_variables_max_prepared_stmt_count,
+                "max_prepared_stmt_count": int(mysql_configuration_variables_max_prepared_stmt_count),
                 "max_seeks_for_key": mysql_configuration_variables_max_seeks_for_key,
                 "max_user_connections": mysql_configuration_variables_max_user_connections,
-                "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode,
-                "mysql_zstd_default_compression_level": mysql_configuration_variables_mysql_zstd_default_compression_level,
-                "mysqlx_connect_timeout": mysql_configuration_variables_mysqlx_connect_timeout,
-                "mysqlx_deflate_default_compression_level": mysql_configuration_variables_mysqlx_deflate_default_compression_level,
-                "mysqlx_deflate_max_client_compression_level": mysql_configuration_variables_mysqlx_deflate_max_client_compression_level,
-                "mysqlx_document_id_unique_prefix": mysql_configuration_variables_mysqlx_document_id_unique_prefix,
-                "mysqlx_enable_hello_notice": mysql_configuration_variables_mysqlx_enable_hello_notice,
-                "mysqlx_idle_worker_thread_timeout": mysql_configuration_variables_mysqlx_idle_worker_thread_timeout,
-                "mysqlx_interactive_timeout": mysql_configuration_variables_mysqlx_interactive_timeout,
-                "mysqlx_lz4default_compression_level": mysql_configuration_variables_mysqlx_lz4default_compression_level,
-                "mysqlx_lz4max_client_compression_level": mysql_configuration_variables_mysqlx_lz4max_client_compression_level,
-                "mysqlx_max_allowed_packet": mysql_configuration_variables_mysqlx_max_allowed_packet,
-                "mysqlx_min_worker_threads": mysql_configuration_variables_mysqlx_min_worker_threads,
-                "mysqlx_read_timeout": mysql_configuration_variables_mysqlx_read_timeout,
-                "mysqlx_wait_timeout": mysql_configuration_variables_mysqlx_wait_timeout,
-                "mysqlx_write_timeout": mysql_configuration_variables_mysqlx_write_timeout,
-                "mysqlx_zstd_default_compression_level": mysql_configuration_variables_mysqlx_zstd_default_compression_level,
-                "mysqlx_zstd_max_client_compression_level": mysql_configuration_variables_mysqlx_zstd_max_client_compression_level,
-                "net_read_timeout": mysql_configuration_variables_net_read_timeout,
-                "net_write_timeout": mysql_configuration_variables_net_write_timeout,
+                "mysql_firewall_mode": mysql_configuration_variables_mysql_firewall_mode == "true",
+                "mysql_zstd_default_compression_level": int(mysql_configuration_variables_mysql_zstd_default_compression_level),
+                "mysqlx_connect_timeout": int(mysql_configuration_variables_mysqlx_connect_timeout),
+                "mysqlx_deflate_default_compression_level": int(mysql_configuration_variables_mysqlx_deflate_default_compression_level),
+                "mysqlx_deflate_max_client_compression_level": int(mysql_configuration_variables_mysqlx_deflate_max_client_compression_level),
+                "mysqlx_document_id_unique_prefix": int(mysql_configuration_variables_mysqlx_document_id_unique_prefix),
+                "mysqlx_enable_hello_notice": mysql_configuration_variables_mysqlx_enable_hello_notice == "true",
+                "mysqlx_idle_worker_thread_timeout": int(mysql_configuration_variables_mysqlx_idle_worker_thread_timeout),
+                "mysqlx_interactive_timeout": int(mysql_configuration_variables_mysqlx_interactive_timeout),
+                "mysqlx_lz4default_compression_level": int(mysql_configuration_variables_mysqlx_lz4default_compression_level),
+                "mysqlx_lz4max_client_compression_level": int(mysql_configuration_variables_mysqlx_lz4max_client_compression_level),
+                "mysqlx_max_allowed_packet": int(mysql_configuration_variables_mysqlx_max_allowed_packet),
+                "mysqlx_min_worker_threads": int(mysql_configuration_variables_mysqlx_min_worker_threads),
+                "mysqlx_read_timeout": int(mysql_configuration_variables_mysqlx_read_timeout),
+                "mysqlx_wait_timeout": int(mysql_configuration_variables_mysqlx_wait_timeout),
+                "mysqlx_write_timeout": int(mysql_configuration_variables_mysqlx_write_timeout),
+                "mysqlx_zstd_default_compression_level": int(mysql_configuration_variables_mysqlx_zstd_default_compression_level),
+                "mysqlx_zstd_max_client_compression_level": int(mysql_configuration_variables_mysqlx_zstd_max_client_compression_level),
+                "net_read_timeout": int(mysql_configuration_variables_net_read_timeout),
+                "net_write_timeout": int(mysql_configuration_variables_net_write_timeout),
                 "optimizer_switch": mysql_configuration_variables_optimizer_switch,
                 "parser_max_mem_size": mysql_configuration_variables_parser_max_mem_size,
                 "query_alloc_block_size": mysql_configuration_variables_query_alloc_block_size,
                 "query_prealloc_size": mysql_configuration_variables_query_prealloc_size,
                 "range_optimizer_max_mem_size": mysql_configuration_variables_range_optimizer_max_mem_size,
-                "regexp_time_limit": mysql_configuration_variables_regexp_time_limit,
+                "regexp_time_limit": int(mysql_configuration_variables_regexp_time_limit),
                 "relay_log_space_limit": mysql_configuration_variables_relay_log_space_limit,
-                "replica_net_timeout": mysql_configuration_variables_replica_net_timeout,
-                "replica_parallel_workers": mysql_configuration_variables_replica_parallel_workers,
+                "replica_net_timeout": int(mysql_configuration_variables_replica_net_timeout),
+                "replica_parallel_workers": int(mysql_configuration_variables_replica_parallel_workers),
                 "replica_type_conversions": mysql_configuration_variables_replica_type_conversions,
-                "require_secure_transport": mysql_configuration_variables_require_secure_transport,
-                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve,
+                "require_secure_transport": mysql_configuration_variables_require_secure_transport == "true",
+                "skip_name_resolve": mysql_configuration_variables_skip_name_resolve == "true",
                 "sort_buffer_size": mysql_configuration_variables_sort_buffer_size,
-                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key,
+                "sql_generate_invisible_primary_key": mysql_configuration_variables_sql_generate_invisible_primary_key == "true",
                 "sql_mode": mysql_configuration_variables_sql_mode,
-                "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key,
-                "sql_warnings": mysql_configuration_variables_sql_warnings,
-                "table_definition_cache": mysql_configuration_variables_table_definition_cache,
-                "table_open_cache": mysql_configuration_variables_table_open_cache,
+                "sql_require_primary_key": mysql_configuration_variables_sql_require_primary_key == "true",
+                "sql_warnings": mysql_configuration_variables_sql_warnings == "true",
+                "table_definition_cache": int(mysql_configuration_variables_table_definition_cache),
+                "table_open_cache": int(mysql_configuration_variables_table_open_cache),
                 "temptable_max_ram": mysql_configuration_variables_temptable_max_ram,
-                "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners,
-                "thread_pool_max_transactions_limit": mysql_configuration_variables_thread_pool_max_transactions_limit,
-                "thread_pool_query_threads_per_group": mysql_configuration_variables_thread_pool_query_threads_per_group,
-                "thread_pool_size": mysql_configuration_variables_thread_pool_size,
-                "thread_pool_transaction_delay": mysql_configuration_variables_thread_pool_transaction_delay,
+                "thread_pool_dedicated_listeners": mysql_configuration_variables_thread_pool_dedicated_listeners == "true",
+                "thread_pool_max_transactions_limit": int(mysql_configuration_variables_thread_pool_max_transactions_limit),
+                "thread_pool_query_threads_per_group": int(mysql_configuration_variables_thread_pool_query_threads_per_group),
+                "thread_pool_size": int(mysql_configuration_variables_thread_pool_size),
+                "thread_pool_transaction_delay": int(mysql_configuration_variables_thread_pool_transaction_delay),
                 "time_zone": mysql_configuration_variables_time_zone,
                 "tmp_table_size": mysql_configuration_variables_tmp_table_size,
                 "transaction_isolation": mysql_configuration_variables_transaction_isolation,
-                "wait_timeout": mysql_configuration_variables_wait_timeout,
+                "wait_timeout": int(mysql_configuration_variables_wait_timeout),
             })
         ```
 
@@ -829,16 +829,16 @@ class MysqlConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
-                 parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 init_variables: pulumi.Input[Optional[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
+                 parent_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -877,21 +877,21 @@ class MysqlConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
-            options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
-            parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None) -> 'MysqlConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            init_variables: pulumi.Input[Optional[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+            options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
+            parent_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            variables: pulumi.Input[Optional[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None) -> 'MysqlConfiguration':
         """
         Get an existing MysqlConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

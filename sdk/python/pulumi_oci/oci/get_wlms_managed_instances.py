@@ -153,11 +153,11 @@ def get_wlms_managed_instances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         managed_instance_collections=pulumi.get(__ret__, 'managed_instance_collections'),
         plugin_status=pulumi.get(__ret__, 'plugin_status'))
-def get_wlms_managed_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict']]]]] = None,
-                                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      plugin_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_wlms_managed_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict']]]]] = None,
+                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      plugin_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstancesResult]:
     """
     This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.

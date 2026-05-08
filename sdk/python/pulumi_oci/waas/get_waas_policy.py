@@ -228,7 +228,7 @@ def get_waas_policy(waas_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
+    test_waas_policy = oci.waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_waas_policy(waas_policy_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'),
         waf_configs=pulumi.get(__ret__, 'waf_configs'))
-def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_waas_policy_output(waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWaasPolicyResult]:
     """
     This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -268,7 +268,7 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
+    test_waas_policy = oci.waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
     ```
 
 

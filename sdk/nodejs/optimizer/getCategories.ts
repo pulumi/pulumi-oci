@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Optimizer.getCategories({
+ * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization,
+ *     includeOrganization: categoryIncludeOrganization === "true",
  *     name: categoryName,
  *     state: categoryState,
  * });
@@ -123,11 +123,11 @@ export interface GetCategoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Optimizer.getCategories({
+ * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization,
+ *     includeOrganization: categoryIncludeOrganization === "true",
  *     name: categoryName,
  *     state: categoryState,
  * });
@@ -159,7 +159,7 @@ export interface GetCategoriesOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -170,7 +170,7 @@ export interface GetCategoriesOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetCategoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetCategoriesFilterArgs>[] | undefined>;
     /**
      * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
      *
@@ -178,13 +178,13 @@ export interface GetCategoriesOutputArgs {
      *
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
-    includeOrganization?: pulumi.Input<boolean>;
+    includeOrganization?: pulumi.Input<boolean | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

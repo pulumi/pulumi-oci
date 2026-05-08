@@ -156,40 +156,40 @@ export interface LogAnalyticsEntityTypeState {
     /**
      * Log analytics entity type category. Category will be used for grouping and filtering.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
      */
-    cloudType?: pulumi.Input<string>;
+    cloudType?: pulumi.Input<string | undefined>;
     /**
      * Internal name for the log analytics entity type.
      */
-    internalName?: pulumi.Input<string>;
-    managementAgentEligibilityStatus?: pulumi.Input<string>;
+    internalName?: pulumi.Input<string | undefined>;
+    managementAgentEligibilityStatus?: pulumi.Input<string | undefined>;
     /**
      * Log analytics entity type name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Log analytics entity type property definition.
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityTypeProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityTypeProperty>[] | undefined>;
     /**
      * The current lifecycle state of the log analytics entity type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -199,11 +199,11 @@ export interface LogAnalyticsEntityTypeArgs {
     /**
      * Log analytics entity type category. Category will be used for grouping and filtering.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * Log analytics entity type name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -211,5 +211,5 @@ export interface LogAnalyticsEntityTypeArgs {
     /**
      * Log analytics entity type property definition.
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityTypeProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityTypeProperty>[] | undefined>;
 }

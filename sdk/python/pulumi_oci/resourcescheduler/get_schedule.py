@@ -300,7 +300,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.ResourceScheduler.get_schedule(schedule_id=test_schedule_oci_resource_scheduler_schedule["id"])
+    test_schedule = oci.resourcescheduler.get_schedule(schedule_id=test_schedule_oci_resource_scheduler_schedule["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
         time_next_run=pulumi.get(__ret__, 'time_next_run'),
         time_starts=pulumi.get(__ret__, 'time_starts'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_schedule_output(schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduleResult]:
     """
     This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
@@ -346,7 +346,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.ResourceScheduler.get_schedule(schedule_id=test_schedule_oci_resource_scheduler_schedule["id"])
+    test_schedule = oci.resourcescheduler.get_schedule(schedule_id=test_schedule_oci_resource_scheduler_schedule["id"])
     ```
 
 

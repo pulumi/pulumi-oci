@@ -25,11 +25,11 @@ class StreamPackagingConfigArgs:
                  distribution_channel_id: pulumi.Input[_builtins.str],
                  segment_time_in_seconds: pulumi.Input[_builtins.int],
                  stream_packaging_format: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 encryption: pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamPackagingConfig resource.
 
@@ -115,79 +115,79 @@ class StreamPackagingConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def encryption(self) -> Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']]:
+    def encryption(self) -> pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']]:
         """
         The encryption used by the stream packaging configuration.
         """
         return pulumi.get(self, "encryption")
 
     @encryption.setter
-    def encryption(self, value: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']]):
+    def encryption(self, value: pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']]):
         pulumi.set(self, "encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
 
 @pulumi.input_type
 class _StreamPackagingConfigState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]] = None,
-                 segment_time_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]] = None,
+                 segment_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_packaging_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StreamPackagingConfig resources.
 
@@ -240,124 +240,124 @@ class _StreamPackagingConfigState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distribution_channel_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
         """
         return pulumi.get(self, "distribution_channel_id")
 
     @distribution_channel_id.setter
-    def distribution_channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distribution_channel_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distribution_channel_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def encryption(self) -> Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']]:
+    def encryption(self) -> pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']]:
         """
         The encryption used by the stream packaging configuration.
         """
         return pulumi.get(self, "encryption")
 
     @encryption.setter
-    def encryption(self, value: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']]):
+    def encryption(self, value: pulumi.Input[Optional['StreamPackagingConfigEncryptionArgs']]):
         pulumi.set(self, "encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StreamPackagingConfigLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="segmentTimeInSeconds")
-    def segment_time_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def segment_time_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration in seconds for each fragment.
         """
         return pulumi.get(self, "segment_time_in_seconds")
 
     @segment_time_in_seconds.setter
-    def segment_time_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def segment_time_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "segment_time_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Packaging Configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="streamPackagingFormat")
-    def stream_packaging_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_packaging_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The output format for the package.
 
@@ -368,43 +368,43 @@ class _StreamPackagingConfigState:
         return pulumi.get(self, "stream_packaging_format")
 
     @stream_packaging_format.setter
-    def stream_packaging_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_packaging_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_packaging_format", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -414,15 +414,15 @@ class StreamPackagingConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
-                 segment_time_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
+                 segment_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 stream_packaging_format: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -441,7 +441,7 @@ class StreamPackagingConfig(pulumi.CustomResource):
         test_stream_packaging_config = oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config",
             display_name=stream_packaging_config_display_name,
             distribution_channel_id=test_channel["id"],
-            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            segment_time_in_seconds=int(stream_packaging_config_segment_time_in_seconds),
             stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -509,7 +509,7 @@ class StreamPackagingConfig(pulumi.CustomResource):
         test_stream_packaging_config = oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config",
             display_name=stream_packaging_config_display_name,
             distribution_channel_id=test_channel["id"],
-            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            segment_time_in_seconds=int(stream_packaging_config_segment_time_in_seconds),
             stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -554,15 +554,15 @@ class StreamPackagingConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
-                 segment_time_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
+                 segment_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 stream_packaging_format: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -604,20 +604,20 @@ class StreamPackagingConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
-            segment_time_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'StreamPackagingConfig':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption: pulumi.Input[Optional[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
+            segment_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_packaging_format: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'StreamPackagingConfig':
         """
         Get an existing StreamPackagingConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -312,7 +312,7 @@ def get_external_non_container_database(external_non_container_database_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
+    test_external_non_container_database = oci.database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_external_non_container_database(external_non_container_database_id: Opti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
-def get_external_non_container_database_output(external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_non_container_database_output(external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalNonContainerDatabaseResult]:
     """
     This data source provides details about a specific External Non Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -359,7 +359,7 @@ def get_external_non_container_database_output(external_non_container_database_i
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
+    test_external_non_container_database = oci.database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
     ```
 
 

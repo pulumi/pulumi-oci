@@ -173,7 +173,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+    test_database_tools_connections = oci.databasetools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
         runtime_identities=database_tools_connection_runtime_identity,
@@ -214,14 +214,14 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
         runtime_supports=pulumi.get(__ret__, 'runtime_supports'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
-def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]]]] = None,
-                                          related_resource_identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          runtime_identities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          runtime_supports: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_database_tools_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]]]] = None,
+                                          related_resource_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          runtime_identities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          runtime_supports: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsConnectionsResult]:
     """
     This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
@@ -234,7 +234,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+    test_database_tools_connections = oci.databasetools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
         runtime_identities=database_tools_connection_runtime_identity,

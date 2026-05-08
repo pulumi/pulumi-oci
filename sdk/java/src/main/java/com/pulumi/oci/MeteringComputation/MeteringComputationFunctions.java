@@ -76,8 +76,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -118,8 +118,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -202,8 +202,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -341,8 +341,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -383,8 +383,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -425,8 +425,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -467,8 +467,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -509,8 +509,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -551,8 +551,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -593,8 +593,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -635,8 +635,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -677,8 +677,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -719,8 +719,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -761,8 +761,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -804,8 +804,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -847,8 +847,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -890,8 +890,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -933,8 +933,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -976,8 +976,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1018,8 +1018,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1060,8 +1060,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1102,8 +1102,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1144,8 +1144,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1186,8 +1186,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1228,8 +1228,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1270,8 +1270,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1312,8 +1312,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1354,8 +1354,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1396,8 +1396,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1438,8 +1438,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1480,8 +1480,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1522,8 +1522,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1564,8 +1564,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1606,8 +1606,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1648,8 +1648,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1690,8 +1690,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1732,8 +1732,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1774,8 +1774,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1816,8 +1816,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1858,8 +1858,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1900,8 +1900,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1942,8 +1942,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1984,8 +1984,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2026,8 +2026,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2069,8 +2069,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2112,8 +2112,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2155,8 +2155,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2198,8 +2198,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2241,8 +2241,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2283,8 +2283,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2325,8 +2325,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2367,8 +2367,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2409,8 +2409,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2451,8 +2451,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2493,8 +2493,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2535,8 +2535,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2577,8 +2577,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2619,8 +2619,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2661,8 +2661,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2703,8 +2703,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2745,8 +2745,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2787,8 +2787,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2829,8 +2829,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2871,8 +2871,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2915,8 +2915,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2959,8 +2959,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3003,8 +3003,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3047,8 +3047,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3091,8 +3091,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3134,8 +3134,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3177,8 +3177,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3220,8 +3220,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3263,8 +3263,8 @@ public final class MeteringComputationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
      * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

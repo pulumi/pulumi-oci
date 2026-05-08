@@ -288,103 +288,103 @@ export interface InstanceState {
     /**
      * (Updatable) a list of add-on features for the ocm instance
      */
-    addOnFeatures?: pulumi.Input<pulumi.Input<string>[]>;
+    addOnFeatures?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Admin Email for Notification
      */
-    adminEmail?: pulumi.Input<string>;
+    adminEmail?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) OceInstance description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) disaster recovery paired ragion name
      */
-    drRegion?: pulumi.Input<string>;
+    drRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique GUID identifier that is immutable on creation
      */
-    guid?: pulumi.Input<string>;
+    guid?: pulumi.Input<string | undefined>;
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      */
-    idcsAccessToken?: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
      * IDCS Tenancy Identifier
      */
-    idcsTenancy?: pulumi.Input<string>;
+    idcsTenancy?: pulumi.Input<string | undefined>;
     /**
      * Flag indicating whether the instance access is private or public
      */
-    instanceAccessType?: pulumi.Input<string>;
+    instanceAccessType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      */
-    instanceLicenseType?: pulumi.Input<string>;
+    instanceLicenseType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Instance type based on its usage
      */
-    instanceUsageType?: pulumi.Input<string>;
+    instanceUsageType?: pulumi.Input<string | undefined>;
     /**
      * Details of the current state of the instance lifecycle
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * OceInstance Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Object Storage Namespace of Tenancy
      */
-    objectStorageNamespace?: pulumi.Input<string>;
+    objectStorageNamespace?: pulumi.Input<string | undefined>;
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    service?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    service?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the instance lifecycle.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    stateMessage?: pulumi.Input<string>;
+    stateMessage?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Tenancy Identifier
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * Tenancy Name
      */
-    tenancyName?: pulumi.Input<string>;
+    tenancyName?: pulumi.Input<string | undefined>;
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      */
-    upgradeSchedule?: pulumi.Input<string>;
+    upgradeSchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
@@ -392,7 +392,7 @@ export interface InstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    wafPrimaryDomain?: pulumi.Input<string>;
+    wafPrimaryDomain?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -402,7 +402,7 @@ export interface InstanceArgs {
     /**
      * (Updatable) a list of add-on features for the ocm instance
      */
-    addOnFeatures?: pulumi.Input<pulumi.Input<string>[]>;
+    addOnFeatures?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Admin Email for Notification
      */
@@ -414,19 +414,19 @@ export interface InstanceArgs {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) OceInstance description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) disaster recovery paired ragion name
      */
-    drRegion?: pulumi.Input<string>;
+    drRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      */
@@ -434,19 +434,19 @@ export interface InstanceArgs {
     /**
      * Flag indicating whether the instance access is private or public
      */
-    instanceAccessType?: pulumi.Input<string>;
+    instanceAccessType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      */
-    instanceLicenseType?: pulumi.Input<string>;
+    instanceLicenseType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Instance type based on its usage
      */
-    instanceUsageType?: pulumi.Input<string>;
+    instanceUsageType?: pulumi.Input<string | undefined>;
     /**
      * OceInstance Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Object Storage Namespace of Tenancy
      */
@@ -462,7 +462,7 @@ export interface InstanceArgs {
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      */
-    upgradeSchedule?: pulumi.Input<string>;
+    upgradeSchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
@@ -470,5 +470,5 @@ export interface InstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    wafPrimaryDomain?: pulumi.Input<string>;
+    wafPrimaryDomain?: pulumi.Input<string | undefined>;
 }

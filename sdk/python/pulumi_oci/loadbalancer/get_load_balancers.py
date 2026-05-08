@@ -138,7 +138,7 @@ def get_load_balancers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=compartment_id,
+    test_load_balancers = oci.loadbalancer.get_load_balancers(compartment_id=compartment_id,
         detail=load_balancer_detail,
         display_name=load_balancer_display_name,
         state=load_balancer_state)
@@ -167,11 +167,11 @@ def get_load_balancers(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
         state=pulumi.get(__ret__, 'state'))
-def get_load_balancers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              detail: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_load_balancers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              detail: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancersResult]:
     """
     This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
@@ -188,7 +188,7 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=compartment_id,
+    test_load_balancers = oci.loadbalancer.get_load_balancers(compartment_id=compartment_id,
         detail=load_balancer_detail,
         display_name=load_balancer_display_name,
         state=load_balancer_state)

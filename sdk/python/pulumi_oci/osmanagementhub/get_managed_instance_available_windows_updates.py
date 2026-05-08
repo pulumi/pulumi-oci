@@ -158,7 +158,7 @@ def get_managed_instance_available_windows_updates(classification_types: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_windows_updates = oci.OsManagementHub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_windows_updates = oci.osmanagementhub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_available_windows_update_classification_type,
         compartment_id=compartment_id,
         display_name=managed_instance_available_windows_update_display_name,
@@ -199,14 +199,14 @@ def get_managed_instance_available_windows_updates(classification_types: Optiona
         is_installable=pulumi.get(__ret__, 'is_installable'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         names=pulumi.get(__ret__, 'names'))
-def get_managed_instance_available_windows_updates_output(classification_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceAvailableWindowsUpdatesFilterArgs', 'GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict']]]]] = None,
-                                                          is_installable: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_managed_instance_available_windows_updates_output(classification_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceAvailableWindowsUpdatesFilterArgs', 'GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict']]]]] = None,
+                                                          is_installable: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceAvailableWindowsUpdatesResult]:
     """
     This data source provides the list of Managed Instance Available Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
@@ -219,7 +219,7 @@ def get_managed_instance_available_windows_updates_output(classification_types: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_windows_updates = oci.OsManagementHub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_windows_updates = oci.osmanagementhub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_available_windows_update_classification_type,
         compartment_id=compartment_id,
         display_name=managed_instance_available_windows_update_display_name,

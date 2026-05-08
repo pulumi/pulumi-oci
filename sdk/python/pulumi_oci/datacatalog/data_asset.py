@@ -22,8 +22,8 @@ class DataAssetArgs:
                  catalog_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  type_key: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DataAsset resource.
 
@@ -87,47 +87,47 @@ class DataAssetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detailed description of the data asset.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
 
 
 @pulumi.input_type
 class _DataAssetState:
     def __init__(__self__, *,
-                 catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_harvested: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_harvested: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataAsset resources.
 
@@ -184,151 +184,151 @@ class _DataAssetState:
 
     @_builtins.property
     @pulumi.getter(name="catalogId")
-    def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique catalog identifier.
         """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
-    def catalog_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "catalog_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the user who created the data asset.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detailed description of the data asset.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKey")
-    def external_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External URI that can be used to reference the object. Format will differ based on the type of object.
         """
         return pulumi.get(self, "external_key")
 
     @external_key.setter
-    def external_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique data asset key that is immutable.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the data asset.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeHarvested")
-    def time_harvested(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_harvested(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_harvested")
 
     @time_harvested.setter
-    def time_harvested(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_harvested(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_harvested", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="typeKey")
-    def type_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key of the data asset type. This can be obtained via the '/types' endpoint.
 
@@ -339,31 +339,31 @@ class _DataAssetState:
         return pulumi.get(self, "type_key")
 
     @type_key.setter
-    def type_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_key", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedById")
-    def updated_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the user who last modified the data asset.
         """
         return pulumi.get(self, "updated_by_id")
 
     @updated_by_id.setter
-    def updated_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URI to the data asset instance in the API.
         """
         return pulumi.get(self, "uri")
 
     @uri.setter
-    def uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uri", value)
 
 
@@ -373,11 +373,11 @@ class DataAsset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 type_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 type_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -474,11 +474,11 @@ class DataAsset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 type_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 type_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -519,21 +519,21 @@ class DataAsset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_key: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_harvested: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type_key: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            uri: Optional[pulumi.Input[_builtins.str]] = None) -> 'DataAsset':
+            catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_harvested: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type_key: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            uri: pulumi.Input[Optional[_builtins.str]] = None) -> 'DataAsset':
         """
         Get an existing DataAsset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

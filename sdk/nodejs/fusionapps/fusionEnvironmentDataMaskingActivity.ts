@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testFusionEnvironmentDataMaskingActivity = new oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity", {
  *     fusionEnvironmentId: testFusionEnvironment.id,
- *     isResumeDataMasking: fusionEnvironmentDataMaskingActivityIsResumeDataMasking,
+ *     isResumeDataMasking: fusionEnvironmentDataMaskingActivityIsResumeDataMasking === "true",
  * });
  * ```
  *
@@ -126,7 +126,7 @@ export interface FusionEnvironmentDataMaskingActivityState {
     /**
      * unique FusionEnvironment identifier
      */
-    fusionEnvironmentId?: pulumi.Input<string>;
+    fusionEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      *
@@ -134,19 +134,19 @@ export interface FusionEnvironmentDataMaskingActivityState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isResumeDataMasking?: pulumi.Input<boolean>;
+    isResumeDataMasking?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the DataMaskingActivity.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      */
-    timeMaskingFinish?: pulumi.Input<string>;
+    timeMaskingFinish?: pulumi.Input<string | undefined>;
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      */
-    timeMaskingStart?: pulumi.Input<string>;
+    timeMaskingStart?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,5 +164,5 @@ export interface FusionEnvironmentDataMaskingActivityArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isResumeDataMasking?: pulumi.Input<boolean>;
+    isResumeDataMasking?: pulumi.Input<boolean | undefined>;
 }

@@ -140,30 +140,30 @@ export interface GetDataAssetsOutputArgs {
     /**
      * OCID of the user who created the resource.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * Unique external identifier of this resource in the external source system.
      */
-    externalKey?: pulumi.Input<string>;
+    externalKey?: pulumi.Input<string | undefined>;
     /**
      * Specifies the fields to return in a data asset summary response.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetDataAssetsFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetDataAssetsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The key of the object type.
      */
-    typeKey?: pulumi.Input<string>;
+    typeKey?: pulumi.Input<string | undefined>;
 }

@@ -261,7 +261,7 @@ def get_cloud_db_system_discovery(cloud_db_system_discovery_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discovery = oci.DatabaseManagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
+    test_cloud_db_system_discovery = oci.databasemanagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_cloud_db_system_discovery(cloud_db_system_discovery_id: Optional[_builti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cloud_db_system_discovery_output(cloud_db_system_discovery_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_db_system_discovery_output(cloud_db_system_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemDiscoveryResult]:
     """
     This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
@@ -304,7 +304,7 @@ def get_cloud_db_system_discovery_output(cloud_db_system_discovery_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discovery = oci.DatabaseManagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
+    test_cloud_db_system_discovery = oci.databasemanagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
     ```
 
 

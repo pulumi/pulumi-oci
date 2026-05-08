@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetMulticloudExternalLocationMappingMetadata(ctx, &oci.GetMulticloudExternalLocationMappingMetadataArgs{
 //				CompartmentId:            compartmentId,
-//				SubscriptionServiceNames: subscriptionServiceNameList,
+//				SubscriptionServiceNames: pulumi.ToArray(subscriptionServiceNameList),
 //				SubscriptionId:           pulumi.StringRef(subscriptionId),
 //			}, nil)
 //			if err != nil {

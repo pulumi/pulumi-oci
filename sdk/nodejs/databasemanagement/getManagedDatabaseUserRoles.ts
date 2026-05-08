@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
+ * const testManagedDatabaseUserRoles = oci.databasemanagement.getManagedDatabaseUserRoles({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserRoleName,
@@ -91,7 +91,7 @@ export interface GetManagedDatabaseUserRolesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
+ * const testManagedDatabaseUserRoles = oci.databasemanagement.getManagedDatabaseUserRoles({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserRoleName,
@@ -114,7 +114,7 @@ export function getManagedDatabaseUserRolesOutput(args: GetManagedDatabaseUserRo
  * A collection of arguments for invoking getManagedDatabaseUserRoles.
  */
 export interface GetManagedDatabaseUserRolesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseUserRolesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseUserRolesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -122,11 +122,11 @@ export interface GetManagedDatabaseUserRolesOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

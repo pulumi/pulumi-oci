@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppFirewall = oci.Waf.getWebAppFirewall({
+ * const testWebAppFirewall = oci.waf.getWebAppFirewall({
  *     webAppFirewallId: testWebAppFirewallOciWafWebAppFirewall.id,
  * });
  * ```
@@ -106,7 +106,7 @@ export interface GetWebAppFirewallResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppFirewall = oci.Waf.getWebAppFirewall({
+ * const testWebAppFirewall = oci.waf.getWebAppFirewall({
  *     webAppFirewallId: testWebAppFirewallOciWafWebAppFirewall.id,
  * });
  * ```

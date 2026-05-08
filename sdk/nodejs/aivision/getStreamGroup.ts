@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamGroup = oci.AiVision.getStreamGroup({
+ * const testStreamGroup = oci.aivision.getStreamGroup({
  *     streamGroupId: testStreamGroupOciAiVisionStreamGroup.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetStreamGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamGroup = oci.AiVision.getStreamGroup({
+ * const testStreamGroup = oci.aivision.getStreamGroup({
  *     streamGroupId: testStreamGroupOciAiVisionStreamGroup.id,
  * });
  * ```

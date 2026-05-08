@@ -138,7 +138,7 @@ def get_deploy_stages(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=compartment_id,
+    test_deploy_stages = oci.devops.get_deploy_stages(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deploy_stage_display_name,
         id=deploy_stage_id,
@@ -170,12 +170,12 @@ def get_deploy_stages(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             deploy_pipeline_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict']]]]] = None,
-                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deploy_stages_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             deploy_pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict']]]]] = None,
+                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployStagesResult]:
     """
     This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
@@ -188,7 +188,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=compartment_id,
+    test_deploy_stages = oci.devops.get_deploy_stages(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deploy_stage_display_name,
         id=deploy_stage_id,

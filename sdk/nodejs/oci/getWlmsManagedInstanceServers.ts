@@ -99,7 +99,7 @@ export function getWlmsManagedInstanceServersOutput(args: GetWlmsManagedInstance
  * A collection of arguments for invoking getWlmsManagedInstanceServers.
  */
 export interface GetWlmsManagedInstanceServersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceServersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceServersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
@@ -107,5 +107,5 @@ export interface GetWlmsManagedInstanceServersOutputArgs {
     /**
      * The name of the resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

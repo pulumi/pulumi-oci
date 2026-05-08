@@ -125,7 +125,7 @@ def get_connect_harnesses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=compartment_id,
+    test_connect_harnesses = oci.streaming.get_connect_harnesses(compartment_id=compartment_id,
         id=connect_harness_id,
         name=connect_harness_name,
         state=connect_harness_state)
@@ -153,11 +153,11 @@ def get_connect_harnesses(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_connect_harnesses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectHarnessesResult]:
     """
     This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
@@ -170,7 +170,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=compartment_id,
+    test_connect_harnesses = oci.streaming.get_connect_harnesses(compartment_id=compartment_id,
         id=connect_harness_id,
         name=connect_harness_name,
         state=connect_harness_state)

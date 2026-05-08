@@ -93,7 +93,7 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_exadata_infrastructure_download_config_file = oci.database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         base64_encode_content=False)
     ```
 
@@ -112,8 +112,8 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
         content=pulumi.get(__ret__, 'content'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_exadata_infrastructure_download_config_file_output(base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                           exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_exadata_infrastructure_download_config_file_output(base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                           exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInfrastructureDownloadConfigFileResult]:
     """
     This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_exadata_infrastructure_download_config_file = oci.database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         base64_encode_content=False)
     ```
 

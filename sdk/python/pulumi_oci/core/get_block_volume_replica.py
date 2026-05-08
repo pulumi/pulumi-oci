@@ -212,7 +212,7 @@ def get_block_volume_replica(block_volume_replica_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=test_block_volume_replica_oci_core_block_volume_replica["id"])
+    test_block_volume_replica = oci.core.get_block_volume_replica(block_volume_replica_id=test_block_volume_replica_oci_core_block_volume_replica["id"])
     ```
 
 
@@ -238,7 +238,7 @@ def get_block_volume_replica(block_volume_replica_id: Optional[_builtins.str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
-def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_block_volume_replica_output(block_volume_replica_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockVolumeReplicaResult]:
     """
     This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -251,7 +251,7 @@ def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=test_block_volume_replica_oci_core_block_volume_replica["id"])
+    test_block_volume_replica = oci.core.get_block_volume_replica(block_volume_replica_id=test_block_volume_replica_oci_core_block_volume_replica["id"])
     ```
 
 

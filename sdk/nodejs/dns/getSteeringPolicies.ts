@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicies = oci.Dns.getSteeringPolicies({
+ * const testSteeringPolicies = oci.dns.getSteeringPolicies({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyDisplayName,
  *     displayNameContains: steeringPolicyDisplayNameContains,
@@ -137,7 +137,7 @@ export interface GetSteeringPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicies = oci.Dns.getSteeringPolicies({
+ * const testSteeringPolicies = oci.dns.getSteeringPolicies({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyDisplayName,
  *     displayNameContains: steeringPolicyDisplayNameContains,
@@ -177,34 +177,34 @@ export interface GetSteeringPoliciesOutputArgs {
     /**
      * The displayName of a resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The partial displayName of a resource. Will match any resource whose name (case-insensitive) contains the provided value.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetSteeringPoliciesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetSteeringPoliciesFilterArgs>[] | undefined>;
     /**
      * Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
      */
-    healthCheckMonitorId?: pulumi.Input<string>;
+    healthCheckMonitorId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of a resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Search by steering template type. Will match any resource whose template type matches the provided value.
      */
-    template?: pulumi.Input<string>;
+    template?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

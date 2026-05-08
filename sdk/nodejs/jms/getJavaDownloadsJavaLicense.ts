@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicense = oci.Jms.getJavaDownloadsJavaLicense({
+ * const testJavaLicense = oci.jms.getJavaDownloadsJavaLicense({
  *     licenseType: javaLicenseLicenseType,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetJavaDownloadsJavaLicenseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicense = oci.Jms.getJavaDownloadsJavaLicense({
+ * const testJavaLicense = oci.jms.getJavaDownloadsJavaLicense({
  *     licenseType: javaLicenseLicenseType,
  * });
  * ```

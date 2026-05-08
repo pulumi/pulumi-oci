@@ -31,24 +31,24 @@ import * as utilities from "../utilities";
  *     endTimeMillis: workspaceApplicationTaskScheduleEndTimeMillis,
  *     expectedDuration: workspaceApplicationTaskScheduleExpectedDuration,
  *     expectedDurationUnit: workspaceApplicationTaskScheduleExpectedDurationUnit,
- *     isBackfillEnabled: workspaceApplicationTaskScheduleIsBackfillEnabled,
- *     isConcurrentAllowed: workspaceApplicationTaskScheduleIsConcurrentAllowed,
- *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     isBackfillEnabled: workspaceApplicationTaskScheduleIsBackfillEnabled === "true",
+ *     isConcurrentAllowed: workspaceApplicationTaskScheduleIsConcurrentAllowed === "true",
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled === "true",
  *     key: workspaceApplicationTaskScheduleKey,
  *     modelVersion: workspaceApplicationTaskScheduleModelVersion,
- *     numberOfRetries: workspaceApplicationTaskScheduleNumberOfRetries,
- *     objectStatus: workspaceApplicationTaskScheduleObjectStatus,
- *     objectVersion: workspaceApplicationTaskScheduleObjectVersion,
+ *     numberOfRetries: Number(workspaceApplicationTaskScheduleNumberOfRetries),
+ *     objectStatus: Number(workspaceApplicationTaskScheduleObjectStatus),
+ *     objectVersion: Number(workspaceApplicationTaskScheduleObjectVersion),
  *     parentRef: {
  *         parent: workspaceApplicationTaskScheduleParentRefParent,
  *         rootDocId: testRootDoc.id,
  *     },
  *     registryMetadata: {
  *         aggregatorKey: workspaceApplicationTaskScheduleRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceApplicationTaskScheduleRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceApplicationTaskScheduleRegistryMetadataIsFavorite === "true",
  *         key: workspaceApplicationTaskScheduleRegistryMetadataKey,
  *         labels: workspaceApplicationTaskScheduleRegistryMetadataLabels,
- *         registryVersion: workspaceApplicationTaskScheduleRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceApplicationTaskScheduleRegistryMetadataRegistryVersion),
  *     },
  *     retryDelay: workspaceApplicationTaskScheduleRetryDelay,
  *     retryDelayUnit: workspaceApplicationTaskScheduleRetryDelayUnit,
@@ -60,16 +60,16 @@ import * as utilities from "../utilities";
  *             dayOfWeek: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsDayOfWeek,
  *             days: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsDays,
  *             frequency: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsFrequency,
- *             interval: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsInterval,
+ *             interval: Number(workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsInterval),
  *             time: {
- *                 hour: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeHour,
- *                 minute: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeMinute,
- *                 second: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeSecond,
+ *                 hour: Number(workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeHour),
+ *                 minute: Number(workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeMinute),
+ *                 second: Number(workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeSecond),
  *             },
  *             weekOfMonth: workspaceApplicationTaskScheduleScheduleRefFrequencyDetailsWeekOfMonth,
  *         },
  *         identifier: workspaceApplicationTaskScheduleScheduleRefIdentifier,
- *         isDaylightAdjustmentEnabled: workspaceApplicationTaskScheduleScheduleRefIsDaylightAdjustmentEnabled,
+ *         isDaylightAdjustmentEnabled: workspaceApplicationTaskScheduleScheduleRefIsDaylightAdjustmentEnabled === "true",
  *         key: workspaceApplicationTaskScheduleScheduleRefKey,
  *         metadata: {
  *             aggregator: {
@@ -90,9 +90,9 @@ import * as utilities from "../utilities";
  *             createdByName: workspaceApplicationTaskScheduleScheduleRefMetadataCreatedByName,
  *             identifierPath: workspaceApplicationTaskScheduleScheduleRefMetadataIdentifierPath,
  *             infoFields: workspaceApplicationTaskScheduleScheduleRefMetadataInfoFields,
- *             isFavorite: workspaceApplicationTaskScheduleScheduleRefMetadataIsFavorite,
+ *             isFavorite: workspaceApplicationTaskScheduleScheduleRefMetadataIsFavorite === "true",
  *             labels: workspaceApplicationTaskScheduleScheduleRefMetadataLabels,
- *             registryVersion: workspaceApplicationTaskScheduleScheduleRefMetadataRegistryVersion,
+ *             registryVersion: Number(workspaceApplicationTaskScheduleScheduleRefMetadataRegistryVersion),
  *             timeCreated: workspaceApplicationTaskScheduleScheduleRefMetadataTimeCreated,
  *             timeUpdated: workspaceApplicationTaskScheduleScheduleRefMetadataTimeUpdated,
  *             updatedBy: workspaceApplicationTaskScheduleScheduleRefMetadataUpdatedBy,
@@ -101,8 +101,8 @@ import * as utilities from "../utilities";
  *         modelType: workspaceApplicationTaskScheduleScheduleRefModelType,
  *         modelVersion: workspaceApplicationTaskScheduleScheduleRefModelVersion,
  *         name: workspaceApplicationTaskScheduleScheduleRefName,
- *         objectStatus: workspaceApplicationTaskScheduleScheduleRefObjectStatus,
- *         objectVersion: workspaceApplicationTaskScheduleScheduleRefObjectVersion,
+ *         objectStatus: Number(workspaceApplicationTaskScheduleScheduleRefObjectStatus),
+ *         objectVersion: Number(workspaceApplicationTaskScheduleScheduleRefObjectVersion),
  *         parentRef: {
  *             parent: workspaceApplicationTaskScheduleScheduleRefParentRefParent,
  *             rootDocId: testRootDoc.id,
@@ -362,112 +362,112 @@ export interface WorkspaceApplicationTaskScheduleState {
     /**
      * The application key.
      */
-    applicationKey?: pulumi.Input<string>;
+    applicationKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The authorization mode for the task.
      */
-    authMode?: pulumi.Input<string>;
+    authMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The information about the configuration provider.
      */
-    configProviderDelegate?: pulumi.Input<string>;
+    configProviderDelegate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The end time in milliseconds.
      */
-    endTimeMillis?: pulumi.Input<string>;
+    endTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The expected duration of the task execution.
      */
-    expectedDuration?: pulumi.Input<number>;
+    expectedDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The expected duration unit of the task execution.
      */
-    expectedDurationUnit?: pulumi.Input<string>;
+    expectedDurationUnit?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the backfill is enabled.
      */
-    isBackfillEnabled?: pulumi.Input<boolean>;
+    isBackfillEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the same task can be executed concurrently.
      */
-    isConcurrentAllowed?: pulumi.Input<boolean>;
+    isConcurrentAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the task schedule is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The last run details for the task run.
      */
-    lastRunDetails?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail>[]>;
+    lastRunDetails?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail>[] | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata>[] | undefined>;
     /**
      * The type of the object.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
-    nextRunTimeMillis?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    nextRunTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of retries.
      */
-    numberOfRetries?: pulumi.Input<number>;
+    numberOfRetries?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef>;
+    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata | undefined>;
     /**
      * The number of retry attempts.
      */
-    retryAttempts?: pulumi.Input<number>;
+    retryAttempts?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
      */
-    retryDelay?: pulumi.Input<number>;
+    retryDelay?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The unit for the retry delay.
      */
-    retryDelayUnit?: pulumi.Input<string>;
+    retryDelayUnit?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The schedule object
      */
-    scheduleRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef>;
+    scheduleRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef | undefined>;
     /**
      * (Updatable) The start time in milliseconds.
      */
-    startTimeMillis?: pulumi.Input<string>;
+    startTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *
@@ -475,7 +475,7 @@ export interface WorkspaceApplicationTaskScheduleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -489,27 +489,27 @@ export interface WorkspaceApplicationTaskScheduleArgs {
     /**
      * (Updatable) The authorization mode for the task.
      */
-    authMode?: pulumi.Input<string>;
+    authMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The information about the configuration provider.
      */
-    configProviderDelegate?: pulumi.Input<string>;
+    configProviderDelegate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The end time in milliseconds.
      */
-    endTimeMillis?: pulumi.Input<string>;
+    endTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The expected duration of the task execution.
      */
-    expectedDuration?: pulumi.Input<number>;
+    expectedDuration?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The expected duration unit of the task execution.
      */
-    expectedDurationUnit?: pulumi.Input<string>;
+    expectedDurationUnit?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -517,64 +517,64 @@ export interface WorkspaceApplicationTaskScheduleArgs {
     /**
      * (Updatable) Whether the backfill is enabled.
      */
-    isBackfillEnabled?: pulumi.Input<boolean>;
+    isBackfillEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the same task can be executed concurrently.
      */
-    isConcurrentAllowed?: pulumi.Input<boolean>;
+    isConcurrentAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the task schedule is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
-    nextRunTimeMillis?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    nextRunTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of retries.
      */
-    numberOfRetries?: pulumi.Input<number>;
+    numberOfRetries?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef>;
+    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata | undefined>;
     /**
      * (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
      */
-    retryDelay?: pulumi.Input<number>;
+    retryDelay?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The unit for the retry delay.
      */
-    retryDelayUnit?: pulumi.Input<string>;
+    retryDelayUnit?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The schedule object
      */
-    scheduleRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef>;
+    scheduleRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef | undefined>;
     /**
      * (Updatable) The start time in milliseconds.
      */
-    startTimeMillis?: pulumi.Input<string>;
+    startTimeMillis?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *

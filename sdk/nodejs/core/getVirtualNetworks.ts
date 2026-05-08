@@ -55,7 +55,7 @@ export function getVirtualNetworksOutput(args: GetVirtualNetworksOutputArgs, opt
  */
 export interface GetVirtualNetworksOutputArgs {
     compartmentId: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualNetworksFilterArgs>[]>;
-    state?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualNetworksFilterArgs>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -85,7 +85,7 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[Union['GetNet
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
+    test_network_load_balancers_policies = oci.networkloadbalancer.get_network_load_balancers_policies()
     ```
     """
     __args__ = dict()
@@ -97,7 +97,7 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[Union['GetNet
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_load_balancers_policy_collections=pulumi.get(__ret__, 'network_load_balancers_policy_collections'))
-def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkLoadBalancersPoliciesFilterArgs', 'GetNetworkLoadBalancersPoliciesFilterArgsDict']]]]] = None,
+def get_network_load_balancers_policies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersPoliciesFilterArgs', 'GetNetworkLoadBalancersPoliciesFilterArgsDict']]]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancersPoliciesResult]:
     """
     This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -110,7 +110,7 @@ def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
+    test_network_load_balancers_policies = oci.networkloadbalancer.get_network_load_balancers_policies()
     ```
     """
     __args__ = dict()

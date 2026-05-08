@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
+ * const testReplicationTargets = oci.filestorage.getReplicationTargets({
  *     availabilityDomain: replicationTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: replicationTargetDisplayName,
@@ -106,7 +106,7 @@ export interface GetReplicationTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
+ * const testReplicationTargets = oci.filestorage.getReplicationTargets({
  *     availabilityDomain: replicationTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: replicationTargetDisplayName,
@@ -142,14 +142,14 @@ export interface GetReplicationTargetsOutputArgs {
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetReplicationTargetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetReplicationTargetsFilterArgs>[] | undefined>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

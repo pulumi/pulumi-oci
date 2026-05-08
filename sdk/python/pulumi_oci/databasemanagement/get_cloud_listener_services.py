@@ -119,7 +119,7 @@ def get_cloud_listener_services(cloud_listener_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener_services = oci.DatabaseManagement.get_cloud_listener_services(cloud_listener_id=test_cloud_listener["id"],
+    test_cloud_listener_services = oci.databasemanagement.get_cloud_listener_services(cloud_listener_id=test_cloud_listener["id"],
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=cloud_listener_service_opc_named_credential_id)
     ```
@@ -144,10 +144,10 @@ def get_cloud_listener_services(cloud_listener_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-def get_cloud_listener_services_output(cloud_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict']]]]] = None,
-                                       managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_listener_services_output(cloud_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict']]]]] = None,
+                                       managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudListenerServicesResult]:
     """
     This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
@@ -161,7 +161,7 @@ def get_cloud_listener_services_output(cloud_listener_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener_services = oci.DatabaseManagement.get_cloud_listener_services(cloud_listener_id=test_cloud_listener["id"],
+    test_cloud_listener_services = oci.databasemanagement.get_cloud_listener_services(cloud_listener_id=test_cloud_listener["id"],
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=cloud_listener_service_opc_named_credential_id)
     ```

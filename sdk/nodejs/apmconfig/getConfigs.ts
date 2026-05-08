@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigs = oci.ApmConfig.getConfigs({
+ * const testConfigs = oci.apmconfig.getConfigs({
  *     apmDomainId: testApmDomain.id,
  *     configType: configConfigType,
  *     definedTagEquals: configDefinedTagEquals,
@@ -125,7 +125,7 @@ export interface GetConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigs = oci.ApmConfig.getConfigs({
+ * const testConfigs = oci.apmconfig.getConfigs({
  *     apmDomainId: testApmDomain.id,
  *     configType: configConfigType,
  *     definedTagEquals: configDefinedTagEquals,
@@ -163,30 +163,30 @@ export interface GetConfigsOutputArgs {
     /**
      * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
      */
-    definedTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
      */
-    definedTagExists?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTagExists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources that match the given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApmConfig.GetConfigsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApmConfig.GetConfigsFilterArgs>[] | undefined>;
     /**
      * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
      */
-    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
      */
-    freeformTagExists?: pulumi.Input<pulumi.Input<string>[]>;
+    freeformTagExists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return OPTIONS resources that match the given group.
      */
-    optionsGroup?: pulumi.Input<string>;
+    optionsGroup?: pulumi.Input<string | undefined>;
 }

@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *         domain: rrsetItemsDomain,
  *         rdata: rrsetItemsRdata,
  *         rtype: rrsetItemsRtype,
- *         ttl: rrsetItemsTtl,
+ *         ttl: Number(rrsetItemsTtl),
  *     }],
  *     scope: rrsetScope,
  *     viewId: testView.id,
@@ -175,30 +175,30 @@ export interface RrsetState {
      *
      * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) 
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
-    items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
     /**
      * The type of the target RRSet within the target zone.
      */
-    rtype?: pulumi.Input<string>;
+    rtype?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      *
      * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      *
@@ -206,7 +206,7 @@ export interface RrsetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    zoneNameOrId?: pulumi.Input<string>;
+    zoneNameOrId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -220,7 +220,7 @@ export interface RrsetArgs {
      *
      * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
@@ -229,7 +229,7 @@ export interface RrsetArgs {
      * (Updatable) 
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
-    items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
     /**
      * The type of the target RRSet within the target zone.
      */
@@ -239,11 +239,11 @@ export interface RrsetArgs {
      *
      * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      *

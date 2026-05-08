@@ -22,7 +22,7 @@ class OciCacheBackupExportToObjectStorageArgs:
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  oci_cache_backup_id: pulumi.Input[_builtins.str],
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OciCacheBackupExportToObjectStorage resource.
 
@@ -79,7 +79,7 @@ class OciCacheBackupExportToObjectStorageArgs:
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional prefix under which the service will place the exported object(s).
 
@@ -90,17 +90,17 @@ class OciCacheBackupExportToObjectStorageArgs:
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
 @pulumi.input_type
 class _OciCacheBackupExportToObjectStorageState:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oci_cache_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheBackupExportToObjectStorage resources.
 
@@ -124,43 +124,43 @@ class _OciCacheBackupExportToObjectStorageState:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target Object Storage bucket name.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace name.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="ociCacheBackupId")
-    def oci_cache_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_cache_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure Cache Backup identifier.
         """
         return pulumi.get(self, "oci_cache_backup_id")
 
     @oci_cache_backup_id.setter
-    def oci_cache_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_cache_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_backup_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional prefix under which the service will place the exported object(s).
 
@@ -171,7 +171,7 @@ class _OciCacheBackupExportToObjectStorageState:
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
@@ -181,10 +181,10 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oci_cache_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oci Cache Backup Export To Object Storage resource in Oracle Cloud Infrastructure Redis service.
@@ -270,10 +270,10 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 oci_cache_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -303,10 +303,10 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            oci_cache_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            prefix: Optional[pulumi.Input[_builtins.str]] = None) -> 'OciCacheBackupExportToObjectStorage':
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            prefix: pulumi.Input[Optional[_builtins.str]] = None) -> 'OciCacheBackupExportToObjectStorage':
         """
         Get an existing OciCacheBackupExportToObjectStorage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

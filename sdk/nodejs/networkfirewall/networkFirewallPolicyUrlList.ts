@@ -138,27 +138,27 @@ export interface NetworkFirewallPolicyUrlListState {
     /**
      * (Updatable) The description of the Url list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this URL List belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Total count of URLs in the URL List
      */
-    totalUrls?: pulumi.Input<number>;
+    totalUrls?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) List of urls.
      */
-    urls?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyUrlListUrl>[]>;
+    urls?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyUrlListUrl>[] | undefined>;
 }
 
 /**
@@ -168,11 +168,11 @@ export interface NetworkFirewallPolicyUrlListArgs {
     /**
      * (Updatable) The description of the Url list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

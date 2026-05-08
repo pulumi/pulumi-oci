@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPublicApiEndpointDecommissionStatus = oci.ContainerEngine.getClusterPublicApiEndpointDecommissionStatus({
+ * const testClusterPublicApiEndpointDecommissionStatus = oci.containerengine.getClusterPublicApiEndpointDecommissionStatus({
  *     clusterId: testCluster.id,
  * });
  * ```
@@ -66,7 +66,7 @@ export interface GetClusterPublicApiEndpointDecommissionStatusResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPublicApiEndpointDecommissionStatus = oci.ContainerEngine.getClusterPublicApiEndpointDecommissionStatus({
+ * const testClusterPublicApiEndpointDecommissionStatus = oci.containerengine.getClusterPublicApiEndpointDecommissionStatus({
  *     clusterId: testCluster.id,
  * });
  * ```

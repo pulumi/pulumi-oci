@@ -148,7 +148,7 @@ def get_accepted_agreements(accepted_agreement_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=compartment_id,
+    test_accepted_agreements = oci.marketplace.get_accepted_agreements(compartment_id=compartment_id,
         accepted_agreement_id=test_accepted_agreement["id"],
         display_name=accepted_agreement_display_name,
         listing_id=test_listing["id"],
@@ -181,12 +181,12 @@ def get_accepted_agreements(accepted_agreement_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'),
         package_version=pulumi.get(__ret__, 'package_version'))
-def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]]]] = None,
-                                   listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   package_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_accepted_agreements_output(accepted_agreement_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]]]] = None,
+                                   listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   package_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:
     """
     This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -200,7 +200,7 @@ def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=compartment_id,
+    test_accepted_agreements = oci.marketplace.get_accepted_agreements(compartment_id=compartment_id,
         accepted_agreement_id=test_accepted_agreement["id"],
         display_name=accepted_agreement_display_name,
         listing_id=test_listing["id"],

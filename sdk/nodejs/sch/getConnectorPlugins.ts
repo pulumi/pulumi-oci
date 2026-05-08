@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
+ * const testConnectorPlugins = oci.sch.getConnectorPlugins({
  *     displayName: connectorPluginDisplayName,
  *     name: connectorPluginName,
  *     state: connectorPluginState,
@@ -91,7 +91,7 @@ export interface GetConnectorPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
+ * const testConnectorPlugins = oci.sch.getConnectorPlugins({
  *     displayName: connectorPluginDisplayName,
  *     name: connectorPluginName,
  *     state: connectorPluginState,
@@ -116,14 +116,14 @@ export interface GetConnectorPluginsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Sch.GetConnectorPluginsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Sch.GetConnectorPluginsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

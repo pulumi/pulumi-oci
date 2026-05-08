@@ -48,107 +48,107 @@ __all__ = [
 ]
 
 class AddressActionVerificationAddressArgsDict(TypedDict):
-    address_key: NotRequired[pulumi.Input[_builtins.str]]
+    address_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address identifier.
     """
-    city: NotRequired[pulumi.Input[_builtins.str]]
+    city: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the city.
     """
-    company_name: NotRequired[pulumi.Input[_builtins.str]]
+    company_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the customer company.
     """
-    contributor_class: NotRequired[pulumi.Input[_builtins.str]]
+    contributor_class: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Contributor class of the customer company.
     """
-    country: NotRequired[pulumi.Input[_builtins.str]]
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Country of the address.
     """
-    county: NotRequired[pulumi.Input[_builtins.str]]
+    county: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     County of the address.
     """
-    department_name: NotRequired[pulumi.Input[_builtins.str]]
+    department_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Department name of the customer company.
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Contact person email address.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     First name of the contact person.
     """
-    internal_number: NotRequired[pulumi.Input[_builtins.str]]
+    internal_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Internal number of the customer company.
     """
-    job_title: NotRequired[pulumi.Input[_builtins.str]]
+    job_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Job title of the contact person.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Last name of the contact person.
     """
-    line1: NotRequired[pulumi.Input[_builtins.str]]
+    line1: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 1.
     """
-    line2: NotRequired[pulumi.Input[_builtins.str]]
+    line2: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 2.
     """
-    line3: NotRequired[pulumi.Input[_builtins.str]]
+    line3: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 3.
     """
-    line4: NotRequired[pulumi.Input[_builtins.str]]
+    line4: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 4.
     """
-    middle_name: NotRequired[pulumi.Input[_builtins.str]]
+    middle_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Middle name of the contact person.
     """
-    municipal_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    municipal_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Municipal Inscription.
     """
-    phone_country_code: NotRequired[pulumi.Input[_builtins.str]]
+    phone_country_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phone country code of the contact person.
     """
-    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    phone_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phone number of the contact person.
     """
-    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    postal_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Post code of the address.
     """
-    province: NotRequired[pulumi.Input[_builtins.str]]
+    province: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Province of the address.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     State of the address.
     """
-    state_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    state_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     State Inscription.
     """
-    street_name: NotRequired[pulumi.Input[_builtins.str]]
+    street_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Street name of the address.
     """
-    street_number: NotRequired[pulumi.Input[_builtins.str]]
+    street_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Street number of the address.
 
@@ -160,32 +160,32 @@ class AddressActionVerificationAddressArgsDict(TypedDict):
 @pulumi.input_type
 class AddressActionVerificationAddressArgs:
     def __init__(__self__, *,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
         :param pulumi.Input[_builtins.str] city: Name of the city.
@@ -273,307 +273,307 @@ class AddressActionVerificationAddressArgs:
 
     @_builtins.property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address identifier.
         """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
-    def address_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def company_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
-    def company_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def company_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "company_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contributor_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
-    def contributor_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contributor_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contributor_class", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Country of the address.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def county(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def county(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         County of the address.
         """
         return pulumi.get(self, "county")
 
     @county.setter
-    def county(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def county(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "county", value)
 
     @_builtins.property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def department_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
-    def department_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def department_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "department_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contact person email address.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First name of the contact person.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
-    def internal_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_number", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last name of the contact person.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def line1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line1(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 1.
         """
         return pulumi.get(self, "line1")
 
     @line1.setter
-    def line1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line1", value)
 
     @_builtins.property
     @pulumi.getter
-    def line2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 2.
         """
         return pulumi.get(self, "line2")
 
     @line2.setter
-    def line2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line2", value)
 
     @_builtins.property
     @pulumi.getter
-    def line3(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line3(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 3.
         """
         return pulumi.get(self, "line3")
 
     @line3.setter
-    def line3(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line3(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line3", value)
 
     @_builtins.property
     @pulumi.getter
-    def line4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 4.
         """
         return pulumi.get(self, "line4")
 
     @line4.setter
-    def line4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line4", value)
 
     @_builtins.property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def middle_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
-    def middle_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def middle_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "middle_name", value)
 
     @_builtins.property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def municipal_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
-    def municipal_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def municipal_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "municipal_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
-    def phone_country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
-    def phone_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_number", value)
 
     @_builtins.property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def postal_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
-    def postal_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def postal_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "postal_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Province of the address.
         """
         return pulumi.get(self, "province")
 
     @province.setter
-    def province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "province", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the address.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
-    def state_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
-    def street_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street number of the address.
 
@@ -584,112 +584,112 @@ class AddressActionVerificationAddressArgs:
         return pulumi.get(self, "street_number")
 
     @street_number.setter
-    def street_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_number", value)
 
 
 class SubscriptionBillingAddressArgsDict(TypedDict):
-    address_key: NotRequired[pulumi.Input[_builtins.str]]
+    address_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address identifier.
     """
-    city: NotRequired[pulumi.Input[_builtins.str]]
+    city: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the city.
     """
-    company_name: NotRequired[pulumi.Input[_builtins.str]]
+    company_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the customer company.
     """
-    contributor_class: NotRequired[pulumi.Input[_builtins.str]]
+    contributor_class: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Contributor class of the customer company.
     """
-    country: NotRequired[pulumi.Input[_builtins.str]]
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Country of the address.
     """
-    county: NotRequired[pulumi.Input[_builtins.str]]
+    county: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     County of the address.
     """
-    department_name: NotRequired[pulumi.Input[_builtins.str]]
+    department_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Department name of the customer company.
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The email address of the paypal user.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     First name of the paypal user.
     """
-    internal_number: NotRequired[pulumi.Input[_builtins.str]]
+    internal_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Internal number of the customer company.
     """
-    job_title: NotRequired[pulumi.Input[_builtins.str]]
+    job_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Job title of the contact person.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Last name of the paypal user.
     """
-    line1: NotRequired[pulumi.Input[_builtins.str]]
+    line1: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 1.
     """
-    line2: NotRequired[pulumi.Input[_builtins.str]]
+    line2: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 2.
     """
-    line3: NotRequired[pulumi.Input[_builtins.str]]
+    line3: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 3.
     """
-    line4: NotRequired[pulumi.Input[_builtins.str]]
+    line4: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Address line 4.
     """
-    middle_name: NotRequired[pulumi.Input[_builtins.str]]
+    middle_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Middle name of the contact person.
     """
-    municipal_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    municipal_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Municipal Inscription.
     """
-    phone_country_code: NotRequired[pulumi.Input[_builtins.str]]
+    phone_country_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phone country code of the contact person.
     """
-    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    phone_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phone number of the contact person.
     """
-    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    postal_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Post code of the address.
     """
-    province: NotRequired[pulumi.Input[_builtins.str]]
+    province: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Province of the address.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     State of the address.
     """
-    state_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    state_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     State Inscription.
     """
-    street_name: NotRequired[pulumi.Input[_builtins.str]]
+    street_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Street name of the address.
     """
-    street_number: NotRequired[pulumi.Input[_builtins.str]]
+    street_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Street number of the address.
     """
@@ -697,32 +697,32 @@ class SubscriptionBillingAddressArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionBillingAddressArgs:
     def __init__(__self__, *,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
         :param pulumi.Input[_builtins.str] city: Name of the city.
@@ -806,319 +806,319 @@ class SubscriptionBillingAddressArgs:
 
     @_builtins.property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address identifier.
         """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
-    def address_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def company_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
-    def company_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def company_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "company_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contributor_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
-    def contributor_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contributor_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contributor_class", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Country of the address.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def county(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def county(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         County of the address.
         """
         return pulumi.get(self, "county")
 
     @county.setter
-    def county(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def county(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "county", value)
 
     @_builtins.property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def department_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
-    def department_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def department_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "department_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email address of the paypal user.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First name of the paypal user.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
-    def internal_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_number", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last name of the paypal user.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def line1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line1(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 1.
         """
         return pulumi.get(self, "line1")
 
     @line1.setter
-    def line1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line1", value)
 
     @_builtins.property
     @pulumi.getter
-    def line2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 2.
         """
         return pulumi.get(self, "line2")
 
     @line2.setter
-    def line2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line2", value)
 
     @_builtins.property
     @pulumi.getter
-    def line3(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line3(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 3.
         """
         return pulumi.get(self, "line3")
 
     @line3.setter
-    def line3(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line3(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line3", value)
 
     @_builtins.property
     @pulumi.getter
-    def line4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 4.
         """
         return pulumi.get(self, "line4")
 
     @line4.setter
-    def line4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line4", value)
 
     @_builtins.property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def middle_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
-    def middle_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def middle_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "middle_name", value)
 
     @_builtins.property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def municipal_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
-    def municipal_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def municipal_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "municipal_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
-    def phone_country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
-    def phone_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_number", value)
 
     @_builtins.property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def postal_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
-    def postal_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def postal_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "postal_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Province of the address.
         """
         return pulumi.get(self, "province")
 
     @province.setter
-    def province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "province", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the address.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
-    def state_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
-    def street_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street number of the address.
         """
         return pulumi.get(self, "street_number")
 
     @street_number.setter
-    def street_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_number", value)
 
 
 class SubscriptionPaymentGatewayArgsDict(TypedDict):
-    merchant_defined_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]]]
+    merchant_defined_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]]
     """
     Merchant details.
     """
@@ -1126,7 +1126,7 @@ class SubscriptionPaymentGatewayArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionPaymentGatewayArgs:
     def __init__(__self__, *,
-                 merchant_defined_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]] = None):
+                 merchant_defined_datas: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]] merchant_defined_datas: Merchant details.
         """
@@ -1135,23 +1135,23 @@ class SubscriptionPaymentGatewayArgs:
 
     @_builtins.property
     @pulumi.getter(name="merchantDefinedDatas")
-    def merchant_defined_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]:
+    def merchant_defined_datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]:
         """
         Merchant details.
         """
         return pulumi.get(self, "merchant_defined_datas")
 
     @merchant_defined_datas.setter
-    def merchant_defined_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]):
+    def merchant_defined_datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]):
         pulumi.set(self, "merchant_defined_datas", value)
 
 
 class SubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDict):
-    cloud_account_name: NotRequired[pulumi.Input[_builtins.str]]
+    cloud_account_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Cloud account name.
     """
-    promo_type: NotRequired[pulumi.Input[_builtins.str]]
+    promo_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Promotion type code.
     """
@@ -1159,8 +1159,8 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
     def __init__(__self__, *,
-                 cloud_account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 promo_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 promo_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cloud_account_name: Cloud account name.
         :param pulumi.Input[_builtins.str] promo_type: Promotion type code.
@@ -1172,71 +1172,71 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud account name.
         """
         return pulumi.get(self, "cloud_account_name")
 
     @cloud_account_name.setter
-    def cloud_account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_account_name", value)
 
     @_builtins.property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def promo_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Promotion type code.
         """
         return pulumi.get(self, "promo_type")
 
     @promo_type.setter
-    def promo_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def promo_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "promo_type", value)
 
 
 class SubscriptionPaymentOptionArgsDict(TypedDict):
-    credit_card_type: NotRequired[pulumi.Input[_builtins.str]]
+    credit_card_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credit card type.
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The email address of the paypal user.
     """
-    ext_billing_agreement_id: NotRequired[pulumi.Input[_builtins.str]]
+    ext_billing_agreement_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Agreement id for the paypal account.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     First name of the paypal user.
     """
-    last_digits: NotRequired[pulumi.Input[_builtins.str]]
+    last_digits: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Last four digits of the card.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Last name of the paypal user.
     """
-    name_on_card: NotRequired[pulumi.Input[_builtins.str]]
+    name_on_card: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name on the credit card.
     """
-    payment_method: NotRequired[pulumi.Input[_builtins.str]]
+    payment_method: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Payment method
     """
-    time_expiration: NotRequired[pulumi.Input[_builtins.str]]
+    time_expiration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Expired date of the credit card.
     """
-    wallet_instrument_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_instrument_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Wallet instrument internal id.
     """
-    wallet_transaction_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_transaction_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Wallet transaction id.
     """
@@ -1244,17 +1244,17 @@ class SubscriptionPaymentOptionArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionPaymentOptionArgs:
     def __init__(__self__, *,
-                 credit_card_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_billing_agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_digits: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_on_card: Optional[pulumi.Input[_builtins.str]] = None,
-                 payment_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_instrument_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credit_card_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_billing_agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_digits: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_on_card: pulumi.Input[Optional[_builtins.str]] = None,
+                 payment_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_instrument_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credit_card_type: Credit card type.
         :param pulumi.Input[_builtins.str] email_address: The email address of the paypal user.
@@ -1293,134 +1293,134 @@ class SubscriptionPaymentOptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credit_card_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credit card type.
         """
         return pulumi.get(self, "credit_card_type")
 
     @credit_card_type.setter
-    def credit_card_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credit_card_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credit_card_type", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email address of the paypal user.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_billing_agreement_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Agreement id for the paypal account.
         """
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @ext_billing_agreement_id.setter
-    def ext_billing_agreement_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_billing_agreement_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_billing_agreement_id", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First name of the paypal user.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_digits(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last four digits of the card.
         """
         return pulumi.get(self, "last_digits")
 
     @last_digits.setter
-    def last_digits(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_digits(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_digits", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last name of the paypal user.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_on_card(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name on the credit card.
         """
         return pulumi.get(self, "name_on_card")
 
     @name_on_card.setter
-    def name_on_card(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_on_card(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_on_card", value)
 
     @_builtins.property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def payment_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Payment method
         """
         return pulumi.get(self, "payment_method")
 
     @payment_method.setter
-    def payment_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def payment_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "payment_method", value)
 
     @_builtins.property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Expired date of the credit card.
         """
         return pulumi.get(self, "time_expiration")
 
     @time_expiration.setter
-    def time_expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_instrument_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Wallet instrument internal id.
         """
         return pulumi.get(self, "wallet_instrument_id")
 
     @wallet_instrument_id.setter
-    def wallet_instrument_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_instrument_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_instrument_id", value)
 
     @_builtins.property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Wallet transaction id.
         """
         return pulumi.get(self, "wallet_transaction_id")
 
     @wallet_transaction_id.setter
-    def wallet_transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_transaction_id", value)
 
 
@@ -1429,87 +1429,87 @@ class SubscriptionSubscriptionArgsDict(TypedDict):
     """
     (Updatable) Subscription plan number.
     """
-    account_type: NotRequired[pulumi.Input[_builtins.str]]
+    account_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Account type.
     """
-    bill_to_cust_account_id: NotRequired[pulumi.Input[_builtins.str]]
+    bill_to_cust_account_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Bill to customer Account id.
     """
-    billing_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgsDict']]]]
+    billing_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]]
     """
     (Updatable) Address details model.
     """
-    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    currency_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Currency code
     """
-    gsi_org_code: NotRequired[pulumi.Input[_builtins.str]]
+    gsi_org_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GSI Subscription external code.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Subscription id identifier (OCID).
     """
-    is_corporate_conversion_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_corporate_conversion_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Corporate conversion allowed status
     """
-    is_intent_to_pay: NotRequired[pulumi.Input[_builtins.bool]]
+    is_intent_to_pay: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Payment intension.
     """
-    language_code: NotRequired[pulumi.Input[_builtins.str]]
+    language_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Language short code (en, de, hu, etc)
     """
-    organization_id: NotRequired[pulumi.Input[_builtins.str]]
+    organization_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GSI organization external identifier.
     """
-    payment_gateway: NotRequired[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgsDict']]
+    payment_gateway: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgs']]]
     """
     (Updatable) Payment gateway details.
     """
-    payment_options: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgsDict']]]]
+    payment_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]]
     """
     (Updatable) Payment option list of a subscription.
     """
-    plan_type: NotRequired[pulumi.Input[_builtins.str]]
+    plan_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Subscription plan type.
     """
-    ship_to_cust_acct_role_id: NotRequired[pulumi.Input[_builtins.str]]
+    ship_to_cust_acct_role_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Ship to customer account role.
     """
-    ship_to_cust_acct_site_id: NotRequired[pulumi.Input[_builtins.str]]
+    ship_to_cust_acct_site_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Ship to customer account site address id.
     """
-    tax_info: NotRequired[pulumi.Input['SubscriptionSubscriptionTaxInfoArgsDict']]
+    tax_info: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgs']]]
     """
     (Updatable) Tax details.
     """
-    time_personal_to_corporate_conv: NotRequired[pulumi.Input[_builtins.str]]
+    time_personal_to_corporate_conv: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
     """
-    time_plan_upgrade: NotRequired[pulumi.Input[_builtins.str]]
+    time_plan_upgrade: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
     """
-    time_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Start date of the subscription.
     """
-    upgrade_state: NotRequired[pulumi.Input[_builtins.str]]
+    upgrade_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Status of the upgrade.
     """
-    upgrade_state_details: NotRequired[pulumi.Input[_builtins.str]]
+    upgrade_state_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
     """
@@ -1518,27 +1518,27 @@ class SubscriptionSubscriptionArgsDict(TypedDict):
 class SubscriptionSubscriptionArgs:
     def __init__(__self__, *,
                  subscription_plan_number: pulumi.Input[_builtins.str],
-                 account_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bill_to_cust_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]] = None,
-                 currency_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 gsi_org_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_corporate_conversion_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_intent_to_pay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 organization_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 payment_gateway: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgs']] = None,
-                 payment_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ship_to_cust_acct_role_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ship_to_cust_acct_site_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_info: Optional[pulumi.Input['SubscriptionSubscriptionTaxInfoArgs']] = None,
-                 time_personal_to_corporate_conv: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_plan_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_state_details: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bill_to_cust_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 billing_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]] = None,
+                 currency_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 gsi_org_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_corporate_conversion_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_intent_to_pay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 organization_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 payment_gateway: pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgs']] = None,
+                 payment_options: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ship_to_cust_acct_role_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ship_to_cust_acct_site_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_info: pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgs']] = None,
+                 time_personal_to_corporate_conv: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_plan_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_state_details: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] subscription_plan_number: (Updatable) Subscription plan number.
         :param pulumi.Input[_builtins.str] account_type: (Updatable) Account type.
@@ -1621,359 +1621,359 @@ class SubscriptionSubscriptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Account type.
         """
         return pulumi.get(self, "account_type")
 
     @account_type.setter
-    def account_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_type", value)
 
     @_builtins.property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bill_to_cust_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Bill to customer Account id.
         """
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @bill_to_cust_account_id.setter
-    def bill_to_cust_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bill_to_cust_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bill_to_cust_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]:
+    def billing_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]:
         """
         (Updatable) Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
     @billing_addresses.setter
-    def billing_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]):
+    def billing_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]):
         pulumi.set(self, "billing_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def currency_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Currency code
         """
         return pulumi.get(self, "currency_code")
 
     @currency_code.setter
-    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def currency_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "currency_code", value)
 
     @_builtins.property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gsi_org_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GSI Subscription external code.
         """
         return pulumi.get(self, "gsi_org_code")
 
     @gsi_org_code.setter
-    def gsi_org_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gsi_org_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gsi_org_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isCorporateConversionAllowed")
-    def is_corporate_conversion_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_corporate_conversion_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Corporate conversion allowed status
         """
         return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @is_corporate_conversion_allowed.setter
-    def is_corporate_conversion_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_corporate_conversion_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_corporate_conversion_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_intent_to_pay(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Payment intension.
         """
         return pulumi.get(self, "is_intent_to_pay")
 
     @is_intent_to_pay.setter
-    def is_intent_to_pay(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_intent_to_pay(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_intent_to_pay", value)
 
     @_builtins.property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Language short code (en, de, hu, etc)
         """
         return pulumi.get(self, "language_code")
 
     @language_code.setter
-    def language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language_code", value)
 
     @_builtins.property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organization_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GSI organization external identifier.
         """
         return pulumi.get(self, "organization_id")
 
     @organization_id.setter
-    def organization_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organization_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organization_id", value)
 
     @_builtins.property
     @pulumi.getter(name="paymentGateway")
-    def payment_gateway(self) -> Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgs']]:
+    def payment_gateway(self) -> pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgs']]:
         """
         (Updatable) Payment gateway details.
         """
         return pulumi.get(self, "payment_gateway")
 
     @payment_gateway.setter
-    def payment_gateway(self, value: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgs']]):
+    def payment_gateway(self, value: pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgs']]):
         pulumi.set(self, "payment_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]:
+    def payment_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]:
         """
         (Updatable) Payment option list of a subscription.
         """
         return pulumi.get(self, "payment_options")
 
     @payment_options.setter
-    def payment_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]):
+    def payment_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]):
         pulumi.set(self, "payment_options", value)
 
     @_builtins.property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subscription plan type.
         """
         return pulumi.get(self, "plan_type")
 
     @plan_type.setter
-    def plan_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ship_to_cust_acct_role_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Ship to customer account role.
         """
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @ship_to_cust_acct_role_id.setter
-    def ship_to_cust_acct_role_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ship_to_cust_acct_role_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ship_to_cust_acct_role_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ship_to_cust_acct_site_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Ship to customer account site address id.
         """
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @ship_to_cust_acct_site_id.setter
-    def ship_to_cust_acct_site_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ship_to_cust_acct_site_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ship_to_cust_acct_site_id", value)
 
     @_builtins.property
     @pulumi.getter(name="taxInfo")
-    def tax_info(self) -> Optional[pulumi.Input['SubscriptionSubscriptionTaxInfoArgs']]:
+    def tax_info(self) -> pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgs']]:
         """
         (Updatable) Tax details.
         """
         return pulumi.get(self, "tax_info")
 
     @tax_info.setter
-    def tax_info(self, value: Optional[pulumi.Input['SubscriptionSubscriptionTaxInfoArgs']]):
+    def tax_info(self, value: pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgs']]):
         pulumi.set(self, "tax_info", value)
 
     @_builtins.property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_personal_to_corporate_conv(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         """
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @time_personal_to_corporate_conv.setter
-    def time_personal_to_corporate_conv(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_personal_to_corporate_conv(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_personal_to_corporate_conv", value)
 
     @_builtins.property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_plan_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         """
         return pulumi.get(self, "time_plan_upgrade")
 
     @time_plan_upgrade.setter
-    def time_plan_upgrade(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_plan_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_plan_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Start date of the subscription.
         """
         return pulumi.get(self, "time_start")
 
     @time_start.setter
-    def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the upgrade.
         """
         return pulumi.get(self, "upgrade_state")
 
     @upgrade_state.setter
-    def upgrade_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_state", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
         return pulumi.get(self, "upgrade_state_details")
 
     @upgrade_state_details.setter
-    def upgrade_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_state_details", value)
 
 
 class SubscriptionSubscriptionBillingAddressArgsDict(TypedDict):
-    address_key: NotRequired[pulumi.Input[_builtins.str]]
+    address_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Address identifier.
     """
-    city: NotRequired[pulumi.Input[_builtins.str]]
+    city: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the city.
     """
-    company_name: NotRequired[pulumi.Input[_builtins.str]]
+    company_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the customer company.
     """
-    contributor_class: NotRequired[pulumi.Input[_builtins.str]]
+    contributor_class: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Contributor class of the customer company.
     """
-    country: NotRequired[pulumi.Input[_builtins.str]]
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Country of the address.
     """
-    county: NotRequired[pulumi.Input[_builtins.str]]
+    county: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) County of the address.
     """
-    department_name: NotRequired[pulumi.Input[_builtins.str]]
+    department_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Department name of the customer company.
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Contact person email address.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) First name of the contact person.
     """
-    internal_number: NotRequired[pulumi.Input[_builtins.str]]
+    internal_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Internal number of the customer company.
     """
-    job_title: NotRequired[pulumi.Input[_builtins.str]]
+    job_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Job title of the contact person.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Last name of the contact person.
     """
-    line1: NotRequired[pulumi.Input[_builtins.str]]
+    line1: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Address line 1.
     """
-    line2: NotRequired[pulumi.Input[_builtins.str]]
+    line2: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Address line 2.
     """
-    line3: NotRequired[pulumi.Input[_builtins.str]]
+    line3: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Address line 3.
     """
-    line4: NotRequired[pulumi.Input[_builtins.str]]
+    line4: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Address line 4.
     """
-    middle_name: NotRequired[pulumi.Input[_builtins.str]]
+    middle_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Middle name of the contact person.
     """
-    municipal_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    municipal_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Municipal Inscription.
     """
-    phone_country_code: NotRequired[pulumi.Input[_builtins.str]]
+    phone_country_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Phone country code of the contact person.
     """
-    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    phone_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Phone number of the contact person.
     """
-    postal_code: NotRequired[pulumi.Input[_builtins.str]]
+    postal_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Post code of the address.
     """
-    province: NotRequired[pulumi.Input[_builtins.str]]
+    province: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Province of the address.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) State of the address.
     """
-    state_inscription: NotRequired[pulumi.Input[_builtins.str]]
+    state_inscription: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) State Inscription.
     """
-    street_name: NotRequired[pulumi.Input[_builtins.str]]
+    street_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Street name of the address.
     """
-    street_number: NotRequired[pulumi.Input[_builtins.str]]
+    street_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Street number of the address.
     """
@@ -1981,32 +1981,32 @@ class SubscriptionSubscriptionBillingAddressArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionSubscriptionBillingAddressArgs:
     def __init__(__self__, *,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address_key: (Updatable) Address identifier.
         :param pulumi.Input[_builtins.str] city: (Updatable) Name of the city.
@@ -2090,319 +2090,319 @@ class SubscriptionSubscriptionBillingAddressArgs:
 
     @_builtins.property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Address identifier.
         """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
-    def address_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def company_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
-    def company_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def company_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "company_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contributor_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
-    def contributor_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contributor_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contributor_class", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Country of the address.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def county(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def county(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) County of the address.
         """
         return pulumi.get(self, "county")
 
     @county.setter
-    def county(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def county(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "county", value)
 
     @_builtins.property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def department_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
-    def department_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def department_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "department_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Contact person email address.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) First name of the contact person.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
-    def internal_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_number", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Last name of the contact person.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def line1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line1(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Address line 1.
         """
         return pulumi.get(self, "line1")
 
     @line1.setter
-    def line1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line1", value)
 
     @_builtins.property
     @pulumi.getter
-    def line2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Address line 2.
         """
         return pulumi.get(self, "line2")
 
     @line2.setter
-    def line2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line2", value)
 
     @_builtins.property
     @pulumi.getter
-    def line3(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line3(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Address line 3.
         """
         return pulumi.get(self, "line3")
 
     @line3.setter
-    def line3(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line3(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line3", value)
 
     @_builtins.property
     @pulumi.getter
-    def line4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Address line 4.
         """
         return pulumi.get(self, "line4")
 
     @line4.setter
-    def line4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line4", value)
 
     @_builtins.property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def middle_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
-    def middle_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def middle_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "middle_name", value)
 
     @_builtins.property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def municipal_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
-    def municipal_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def municipal_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "municipal_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
-    def phone_country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
-    def phone_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_number", value)
 
     @_builtins.property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def postal_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
-    def postal_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def postal_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "postal_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Province of the address.
         """
         return pulumi.get(self, "province")
 
     @province.setter
-    def province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "province", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) State of the address.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
-    def state_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
-    def street_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Street number of the address.
         """
         return pulumi.get(self, "street_number")
 
     @street_number.setter
-    def street_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_number", value)
 
 
 class SubscriptionSubscriptionPaymentGatewayArgsDict(TypedDict):
-    merchant_defined_data: NotRequired[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]
+    merchant_defined_data: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]]
     """
     (Updatable) Merchant details.
     """
@@ -2410,7 +2410,7 @@ class SubscriptionSubscriptionPaymentGatewayArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionSubscriptionPaymentGatewayArgs:
     def __init__(__self__, *,
-                 merchant_defined_data: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']] = None):
+                 merchant_defined_data: pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']] = None):
         """
         :param pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_data: (Updatable) Merchant details.
         """
@@ -2419,23 +2419,23 @@ class SubscriptionSubscriptionPaymentGatewayArgs:
 
     @_builtins.property
     @pulumi.getter(name="merchantDefinedData")
-    def merchant_defined_data(self) -> Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]:
+    def merchant_defined_data(self) -> pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]:
         """
         (Updatable) Merchant details.
         """
         return pulumi.get(self, "merchant_defined_data")
 
     @merchant_defined_data.setter
-    def merchant_defined_data(self, value: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]):
+    def merchant_defined_data(self, value: pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]):
         pulumi.set(self, "merchant_defined_data", value)
 
 
 class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDict):
-    cloud_account_name: NotRequired[pulumi.Input[_builtins.str]]
+    cloud_account_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Cloud account name.
     """
-    promo_type: NotRequired[pulumi.Input[_builtins.str]]
+    promo_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Promotion type code.
     """
@@ -2443,8 +2443,8 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDic
 @pulumi.input_type
 class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
     def __init__(__self__, *,
-                 cloud_account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 promo_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 promo_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cloud_account_name: (Updatable) Cloud account name.
         :param pulumi.Input[_builtins.str] promo_type: (Updatable) Promotion type code.
@@ -2456,26 +2456,26 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cloud account name.
         """
         return pulumi.get(self, "cloud_account_name")
 
     @cloud_account_name.setter
-    def cloud_account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_account_name", value)
 
     @_builtins.property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def promo_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Promotion type code.
         """
         return pulumi.get(self, "promo_type")
 
     @promo_type.setter
-    def promo_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def promo_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "promo_type", value)
 
 
@@ -2484,43 +2484,43 @@ class SubscriptionSubscriptionPaymentOptionArgsDict(TypedDict):
     """
     (Updatable) Payment method
     """
-    credit_card_type: NotRequired[pulumi.Input[_builtins.str]]
+    credit_card_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Credit card type.
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The email address of the paypal user.
     """
-    ext_billing_agreement_id: NotRequired[pulumi.Input[_builtins.str]]
+    ext_billing_agreement_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Agreement id for the paypal account.
     """
-    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) First name of the paypal user.
     """
-    last_digits: NotRequired[pulumi.Input[_builtins.str]]
+    last_digits: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Last four digits of the card.
     """
-    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Last name of the paypal user.
     """
-    name_on_card: NotRequired[pulumi.Input[_builtins.str]]
+    name_on_card: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name on the credit card.
     """
-    time_expiration: NotRequired[pulumi.Input[_builtins.str]]
+    time_expiration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Expired date of the credit card.
     """
-    wallet_instrument_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_instrument_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Wallet instrument internal id.
     """
-    wallet_transaction_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_transaction_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Wallet transaction id.
     """
@@ -2529,16 +2529,16 @@ class SubscriptionSubscriptionPaymentOptionArgsDict(TypedDict):
 class SubscriptionSubscriptionPaymentOptionArgs:
     def __init__(__self__, *,
                  payment_method: pulumi.Input[_builtins.str],
-                 credit_card_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_billing_agreement_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_digits: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_on_card: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_instrument_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credit_card_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_billing_agreement_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_digits: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_on_card: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_instrument_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] payment_method: (Updatable) Payment method
         :param pulumi.Input[_builtins.str] credit_card_type: (Updatable) Credit card type.
@@ -2588,143 +2588,143 @@ class SubscriptionSubscriptionPaymentOptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credit_card_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Credit card type.
         """
         return pulumi.get(self, "credit_card_type")
 
     @credit_card_type.setter
-    def credit_card_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credit_card_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credit_card_type", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email address of the paypal user.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_billing_agreement_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Agreement id for the paypal account.
         """
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @ext_billing_agreement_id.setter
-    def ext_billing_agreement_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_billing_agreement_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_billing_agreement_id", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) First name of the paypal user.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_digits(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Last four digits of the card.
         """
         return pulumi.get(self, "last_digits")
 
     @last_digits.setter
-    def last_digits(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_digits(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_digits", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Last name of the paypal user.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name_on_card(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name on the credit card.
         """
         return pulumi.get(self, "name_on_card")
 
     @name_on_card.setter
-    def name_on_card(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name_on_card(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name_on_card", value)
 
     @_builtins.property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Expired date of the credit card.
         """
         return pulumi.get(self, "time_expiration")
 
     @time_expiration.setter
-    def time_expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_instrument_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Wallet instrument internal id.
         """
         return pulumi.get(self, "wallet_instrument_id")
 
     @wallet_instrument_id.setter
-    def wallet_instrument_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_instrument_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_instrument_id", value)
 
     @_builtins.property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Wallet transaction id.
         """
         return pulumi.get(self, "wallet_transaction_id")
 
     @wallet_transaction_id.setter
-    def wallet_transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_transaction_id", value)
 
 
 class SubscriptionSubscriptionTaxInfoArgsDict(TypedDict):
-    no_tax_reason_code: NotRequired[pulumi.Input[_builtins.str]]
+    no_tax_reason_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Tax exemption reason code.
     """
-    no_tax_reason_code_details: NotRequired[pulumi.Input[_builtins.str]]
+    no_tax_reason_code_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Tax exemption reason description.
     """
-    tax_cnpj: NotRequired[pulumi.Input[_builtins.str]]
+    tax_cnpj: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Brazilian companies' CNPJ number.
     """
-    tax_payer_id: NotRequired[pulumi.Input[_builtins.str]]
+    tax_payer_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Tay payer identifier.
     """
-    tax_reg_number: NotRequired[pulumi.Input[_builtins.str]]
+    tax_reg_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Tax registration number.
     """
@@ -2732,11 +2732,11 @@ class SubscriptionSubscriptionTaxInfoArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionSubscriptionTaxInfoArgs:
     def __init__(__self__, *,
-                 no_tax_reason_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_tax_reason_code_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_cnpj: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_payer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_reg_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 no_tax_reason_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_tax_reason_code_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_cnpj: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_payer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_reg_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] no_tax_reason_code: (Updatable) Tax exemption reason code.
         :param pulumi.Input[_builtins.str] no_tax_reason_code_details: (Updatable) Tax exemption reason description.
@@ -2757,87 +2757,87 @@ class SubscriptionSubscriptionTaxInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def no_tax_reason_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tax exemption reason code.
         """
         return pulumi.get(self, "no_tax_reason_code")
 
     @no_tax_reason_code.setter
-    def no_tax_reason_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def no_tax_reason_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "no_tax_reason_code", value)
 
     @_builtins.property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def no_tax_reason_code_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tax exemption reason description.
         """
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @no_tax_reason_code_details.setter
-    def no_tax_reason_code_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def no_tax_reason_code_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "no_tax_reason_code_details", value)
 
     @_builtins.property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_cnpj(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Brazilian companies' CNPJ number.
         """
         return pulumi.get(self, "tax_cnpj")
 
     @tax_cnpj.setter
-    def tax_cnpj(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_cnpj(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_cnpj", value)
 
     @_builtins.property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_payer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tay payer identifier.
         """
         return pulumi.get(self, "tax_payer_id")
 
     @tax_payer_id.setter
-    def tax_payer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_payer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_payer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_reg_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tax registration number.
         """
         return pulumi.get(self, "tax_reg_number")
 
     @tax_reg_number.setter
-    def tax_reg_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_reg_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_reg_number", value)
 
 
 class SubscriptionTaxInfoArgsDict(TypedDict):
-    giro: NotRequired[pulumi.Input[_builtins.str]]
+    giro: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Companies' GIRO code
     """
-    no_tax_reason_code: NotRequired[pulumi.Input[_builtins.str]]
+    no_tax_reason_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Tax exemption reason code.
     """
-    no_tax_reason_code_details: NotRequired[pulumi.Input[_builtins.str]]
+    no_tax_reason_code_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Tax exemption reason description.
     """
-    tax_cnpj: NotRequired[pulumi.Input[_builtins.str]]
+    tax_cnpj: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Brazilian companies' CNPJ number.
     """
-    tax_payer_id: NotRequired[pulumi.Input[_builtins.str]]
+    tax_payer_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Tay payer identifier.
     """
-    tax_reg_number: NotRequired[pulumi.Input[_builtins.str]]
+    tax_reg_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Tax registration number.
     """
@@ -2845,12 +2845,12 @@ class SubscriptionTaxInfoArgsDict(TypedDict):
 @pulumi.input_type
 class SubscriptionTaxInfoArgs:
     def __init__(__self__, *,
-                 giro: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_tax_reason_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_tax_reason_code_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_cnpj: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_payer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tax_reg_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 giro: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_tax_reason_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_tax_reason_code_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_cnpj: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_payer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tax_reg_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] giro: Companies' GIRO code
         :param pulumi.Input[_builtins.str] no_tax_reason_code: Tax exemption reason code.
@@ -2874,74 +2874,74 @@ class SubscriptionTaxInfoArgs:
 
     @_builtins.property
     @pulumi.getter
-    def giro(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def giro(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Companies' GIRO code
         """
         return pulumi.get(self, "giro")
 
     @giro.setter
-    def giro(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def giro(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "giro", value)
 
     @_builtins.property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def no_tax_reason_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tax exemption reason code.
         """
         return pulumi.get(self, "no_tax_reason_code")
 
     @no_tax_reason_code.setter
-    def no_tax_reason_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def no_tax_reason_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "no_tax_reason_code", value)
 
     @_builtins.property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def no_tax_reason_code_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tax exemption reason description.
         """
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @no_tax_reason_code_details.setter
-    def no_tax_reason_code_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def no_tax_reason_code_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "no_tax_reason_code_details", value)
 
     @_builtins.property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_cnpj(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Brazilian companies' CNPJ number.
         """
         return pulumi.get(self, "tax_cnpj")
 
     @tax_cnpj.setter
-    def tax_cnpj(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_cnpj(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_cnpj", value)
 
     @_builtins.property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_payer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tay payer identifier.
         """
         return pulumi.get(self, "tax_payer_id")
 
     @tax_payer_id.setter
-    def tax_payer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_payer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_payer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tax_reg_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tax registration number.
         """
         return pulumi.get(self, "tax_reg_number")
 
     @tax_reg_number.setter
-    def tax_reg_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tax_reg_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tax_reg_number", value)
 
 

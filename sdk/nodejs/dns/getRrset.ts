@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = oci.Dns.getRrset({
+ * const testRrset = oci.dns.getRrset({
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
@@ -101,7 +101,7 @@ export interface GetRrsetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = oci.Dns.getRrset({
+ * const testRrset = oci.dns.getRrset({
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
@@ -126,7 +126,7 @@ export function getRrsetOutput(args: GetRrsetOutputArgs, opts?: pulumi.InvokeOut
  * A collection of arguments for invoking getRrset.
  */
 export interface GetRrsetOutputArgs {
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
@@ -135,11 +135,11 @@ export interface GetRrsetOutputArgs {
      * The type of the target RRSet within the target zone.
      */
     rtype: pulumi.Input<string>;
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      */
@@ -147,5 +147,5 @@ export interface GetRrsetOutputArgs {
     /**
      * The version of the zone for which data is requested.
      */
-    zoneVersion?: pulumi.Input<string>;
+    zoneVersion?: pulumi.Input<string | undefined>;
 }

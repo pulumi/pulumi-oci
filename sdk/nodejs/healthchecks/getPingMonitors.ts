@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitors = oci.HealthChecks.getPingMonitors({
+ * const testPingMonitors = oci.healthchecks.getPingMonitors({
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
  *     homeRegion: pingMonitorHomeRegion,
@@ -96,7 +96,7 @@ export interface GetPingMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitors = oci.HealthChecks.getPingMonitors({
+ * const testPingMonitors = oci.healthchecks.getPingMonitors({
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
  *     homeRegion: pingMonitorHomeRegion,
@@ -124,10 +124,10 @@ export interface GetPingMonitorsOutputArgs {
     /**
      * Filters results that exactly match the `displayName` field.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetPingMonitorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetPingMonitorsFilterArgs>[] | undefined>;
     /**
      * Filters results that match the `homeRegion`.
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
 }

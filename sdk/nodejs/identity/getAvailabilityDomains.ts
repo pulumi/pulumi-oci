@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailabilityDomains = oci.Identity.getAvailabilityDomains({
+ * const testAvailabilityDomains = oci.identity.getAvailabilityDomains({
  *     compartmentId: tenancyOcid,
  * });
  * ```
@@ -78,7 +78,7 @@ export interface GetAvailabilityDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailabilityDomains = oci.Identity.getAvailabilityDomains({
+ * const testAvailabilityDomains = oci.identity.getAvailabilityDomains({
  *     compartmentId: tenancyOcid,
  * });
  * ```
@@ -99,5 +99,5 @@ export interface GetAvailabilityDomainsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAvailabilityDomainsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAvailabilityDomainsFilterArgs>[] | undefined>;
 }

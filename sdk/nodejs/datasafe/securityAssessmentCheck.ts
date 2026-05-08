@@ -154,40 +154,40 @@ export interface SecurityAssessmentCheckState {
     /**
      * The category to which the check belongs to.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the check.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Provides a recommended approach to take to remediate the check reported.
      */
-    oneline?: pulumi.Input<string>;
+    oneline?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckPatchOperation>[] | undefined>;
     /**
      * Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
      */
-    references?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckReference>[]>;
+    references?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckReference>[] | undefined>;
     /**
      * The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      */
-    remarks?: pulumi.Input<string>;
+    remarks?: pulumi.Input<string | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
      */
-    suggestedSeverity?: pulumi.Input<string>;
+    suggestedSeverity?: pulumi.Input<string | undefined>;
     /**
      * The short title for the check.
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -197,7 +197,7 @@ export interface SecurityAssessmentCheckArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckPatchOperation>[] | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

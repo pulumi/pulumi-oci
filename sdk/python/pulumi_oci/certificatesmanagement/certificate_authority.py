@@ -23,14 +23,14 @@ class CertificateAuthorityArgs:
     def __init__(__self__, *,
                  certificate_authority_config: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'],
                  compartment_id: pulumi.Input[_builtins.str],
-                 certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
-                 certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CertificateAuthority resource.
 
@@ -94,91 +94,91 @@ class CertificateAuthorityArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityRules")
-    def certificate_authority_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
+    def certificate_authority_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
         """
         (Updatable) A list of rules that control how the CA is used and managed.
         """
         return pulumi.get(self, "certificate_authority_rules")
 
     @certificate_authority_rules.setter
-    def certificate_authority_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]):
+    def certificate_authority_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]):
         pulumi.set(self, "certificate_authority_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateRevocationListDetails")
-    def certificate_revocation_list_details(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
+    def certificate_revocation_list_details(self) -> pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
         """
         (Updatable) The details of the certificate revocation list (CRL).
         """
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @certificate_revocation_list_details.setter
-    def certificate_revocation_list_details(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]):
+    def certificate_revocation_list_details(self, value: pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']]):
         pulumi.set(self, "certificate_revocation_list_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the CA.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyDescription")
-    def external_key_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         """
         return pulumi.get(self, "external_key_description")
 
     @external_key_description.setter
-    def external_key_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 
@@ -189,32 +189,32 @@ class CertificateAuthorityArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _CertificateAuthorityState:
     def __init__(__self__, *,
-                 certificate_authority_config: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']] = None,
-                 certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
-                 certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_versions: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 issuer_certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate_authority_config: pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigArgs']] = None,
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_versions: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 issuer_certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subjects: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CertificateAuthority resources.
 
@@ -283,163 +283,163 @@ class _CertificateAuthorityState:
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityConfig")
-    def certificate_authority_config(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']]:
+    def certificate_authority_config(self) -> pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigArgs']]:
         """
         (Updatable) The configuration details for creating a certificate authority (CA).
         """
         return pulumi.get(self, "certificate_authority_config")
 
     @certificate_authority_config.setter
-    def certificate_authority_config(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']]):
+    def certificate_authority_config(self, value: pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigArgs']]):
         pulumi.set(self, "certificate_authority_config", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityRules")
-    def certificate_authority_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
+    def certificate_authority_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
         """
         (Updatable) A list of rules that control how the CA is used and managed.
         """
         return pulumi.get(self, "certificate_authority_rules")
 
     @certificate_authority_rules.setter
-    def certificate_authority_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]):
+    def certificate_authority_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]):
         pulumi.set(self, "certificate_authority_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateRevocationListDetails")
-    def certificate_revocation_list_details(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
+    def certificate_revocation_list_details(self) -> pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
         """
         (Updatable) The details of the certificate revocation list (CRL).
         """
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @certificate_revocation_list_details.setter
-    def certificate_revocation_list_details(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]):
+    def certificate_revocation_list_details(self, value: pulumi.Input[Optional['CertificateAuthorityCertificateRevocationListDetailsArgs']]):
         pulumi.set(self, "certificate_revocation_list_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment in which you want to create the CA.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configType")
-    def config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The origin of the CA.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
-    def config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="currentVersions")
-    def current_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]]:
+    def current_versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]]:
         """
         The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         """
         return pulumi.get(self, "current_versions")
 
     @current_versions.setter
-    def current_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]]):
+    def current_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]]):
         pulumi.set(self, "current_versions", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the CA.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyDescription")
-    def external_key_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         """
         return pulumi.get(self, "external_key_description")
 
     @external_key_description.setter
-    def external_key_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="issuerCertificateAuthorityId")
-    def issuer_certificate_authority_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer_certificate_authority_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         """
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @issuer_certificate_authority_id.setter
-    def issuer_certificate_authority_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer_certificate_authority_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer_certificate_authority_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current CA lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 
@@ -450,67 +450,67 @@ class _CertificateAuthorityState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="signingAlgorithm")
-    def signing_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signing_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The algorithm used to sign public key certificates that the CA issues.
         """
         return pulumi.get(self, "signing_algorithm")
 
     @signing_algorithm.setter
-    def signing_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signing_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signing_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the certificate authority.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def subjects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]]:
+    def subjects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]]:
         """
         The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         """
         return pulumi.get(self, "subjects")
 
     @subjects.setter
-    def subjects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]]):
+    def subjects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]]):
         pulumi.set(self, "subjects", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
 
@@ -520,16 +520,16 @@ class CertificateAuthority(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_authority_config: Optional[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-                 certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-                 certificate_revocation_list_details: Optional[pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -603,16 +603,16 @@ class CertificateAuthority(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_authority_config: Optional[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-                 certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-                 certificate_revocation_list_details: Optional[pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -655,25 +655,25 @@ class CertificateAuthority(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_authority_config: Optional[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-            certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-            certificate_revocation_list_details: Optional[pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_type: Optional[pulumi.Input[_builtins.str]] = None,
-            current_versions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            issuer_certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subjects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None) -> 'CertificateAuthority':
+            certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
+            certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
+            certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            issuer_certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None) -> 'CertificateAuthority':
         """
         Get an existing CertificateAuthority resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

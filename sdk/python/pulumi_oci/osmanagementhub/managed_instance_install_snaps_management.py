@@ -22,8 +22,8 @@ __all__ = ['ManagedInstanceInstallSnapsManagementArgs', 'ManagedInstanceInstallS
 class ManagedInstanceInstallSnapsManagementArgs:
     def __init__(__self__, *,
                  managed_instance_id: pulumi.Input[_builtins.str],
-                 snap_details: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']] = None):
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceInstallSnapsManagement resource.
 
@@ -51,35 +51,35 @@ class ManagedInstanceInstallSnapsManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="snapDetails")
-    def snap_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]:
+    def snap_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]:
         """
         The array of snaps to install.
         """
         return pulumi.get(self, "snap_details")
 
     @snap_details.setter
-    def snap_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]):
+    def snap_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]):
         pulumi.set(self, "snap_details", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceInstallSnapsManagementState:
     def __init__(__self__, *,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceInstallSnapsManagement resources.
 
@@ -96,38 +96,38 @@ class _ManagedInstanceInstallSnapsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "managed_instance_id")
 
     @managed_instance_id.setter
-    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="snapDetails")
-    def snap_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]:
+    def snap_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]:
         """
         The array of snaps to install.
         """
         return pulumi.get(self, "snap_details")
 
     @snap_details.setter
-    def snap_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]):
+    def snap_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedInstanceInstallSnapsManagementSnapDetailArgs']]]]):
         pulumi.set(self, "snap_details", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Install Snaps Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -160,7 +160,7 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
             snap_details=[{
                 "name": managed_instance_install_snaps_management_snap_details_name,
                 "channel": managed_instance_install_snaps_management_snap_details_channel,
-                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed,
+                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed == "true",
                 "mode": managed_instance_install_snaps_management_snap_details_mode,
                 "revision": managed_instance_install_snaps_management_snap_details_revision,
             }],
@@ -210,7 +210,7 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
             snap_details=[{
                 "name": managed_instance_install_snaps_management_snap_details_name,
                 "channel": managed_instance_install_snaps_management_snap_details_channel,
-                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed,
+                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed == "true",
                 "mode": managed_instance_install_snaps_management_snap_details_mode,
                 "revision": managed_instance_install_snaps_management_snap_details_revision,
             }],
@@ -244,9 +244,9 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -271,9 +271,9 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            snap_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceInstallSnapsManagement':
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceInstallSnapsManagementSnapDetailArgs', 'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict']]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceInstallSnapsManagement':
         """
         Get an existing ManagedInstanceInstallSnapsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

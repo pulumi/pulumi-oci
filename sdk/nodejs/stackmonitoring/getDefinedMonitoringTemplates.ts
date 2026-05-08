@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefinedMonitoringTemplates = oci.StackMonitoring.getDefinedMonitoringTemplates({
+ * const testDefinedMonitoringTemplates = oci.stackmonitoring.getDefinedMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: definedMonitoringTemplateDisplayName,
  *     resourceTypes: definedMonitoringTemplateResourceTypes,
@@ -84,7 +84,7 @@ export interface GetDefinedMonitoringTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefinedMonitoringTemplates = oci.StackMonitoring.getDefinedMonitoringTemplates({
+ * const testDefinedMonitoringTemplates = oci.stackmonitoring.getDefinedMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: definedMonitoringTemplateDisplayName,
  *     resourceTypes: definedMonitoringTemplateResourceTypes,
@@ -112,10 +112,10 @@ export interface GetDefinedMonitoringTemplatesOutputArgs {
     /**
      * A filter to return monitoring template based on name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDefinedMonitoringTemplatesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDefinedMonitoringTemplatesFilterArgs>[] | undefined>;
     /**
      * Multiple resource types filter.
      */
-    resourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

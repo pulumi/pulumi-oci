@@ -175,8 +175,8 @@ def get_metrics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
-        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+    test_metrics = oci.monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree == "true",
         dimension_filters=metric_dimension_filters,
         group_bies=metric_group_by,
         name=metric_name,
@@ -218,14 +218,14 @@ def get_metrics(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         resource_group=pulumi.get(__ret__, 'resource_group'))
-def get_metrics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                       dimension_filters: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricsFilterArgs', 'GetMetricsFilterArgsDict']]]]] = None,
-                       group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_metrics_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                       dimension_filters: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetricsFilterArgs', 'GetMetricsFilterArgsDict']]]]] = None,
+                       group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricsResult]:
     """
     This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
@@ -246,8 +246,8 @@ def get_metrics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
-        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+    test_metrics = oci.monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree == "true",
         dimension_filters=metric_dimension_filters,
         group_bies=metric_group_by,
         name=metric_name,

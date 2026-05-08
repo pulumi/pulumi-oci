@@ -130,17 +130,17 @@ export interface GetMulticloudOmHubMulticloudResourcesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Service Provider region.
      */
-    externalLocation?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudOmHubMulticloudResourcesFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    externalLocation?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudOmHubMulticloudResourcesFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
      */
-    resourceAnchorId?: pulumi.Input<string>;
+    resourceAnchorId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */

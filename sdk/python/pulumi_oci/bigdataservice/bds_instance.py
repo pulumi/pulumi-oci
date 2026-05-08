@@ -31,27 +31,27 @@ class BdsInstanceArgs:
                  master_node: pulumi.Input['BdsInstanceMasterNodeArgs'],
                  util_node: pulumi.Input['BdsInstanceUtilNodeArgs'],
                  worker_node: pulumi.Input['BdsInstanceWorkerNodeArgs'],
-                 bds_cluster_version_summary: Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
-                 cluster_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_cloud_sql_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_remove_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_stop_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kafka_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
-                 kerberos_realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_cluster_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 bds_cluster_version_summary: pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+                 cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 edge_node: pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_broker_node: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']] = None,
+                 kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_config: pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
 
@@ -254,286 +254,286 @@ class BdsInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="bdsClusterVersionSummary")
-    def bds_cluster_version_summary(self) -> Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']]:
+    def bds_cluster_version_summary(self) -> pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']]:
         """
         Cluster version details including bds and odh version information.
         """
         return pulumi.get(self, "bds_cluster_version_summary")
 
     @bds_cluster_version_summary.setter
-    def bds_cluster_version_summary(self, value: Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']]):
+    def bds_cluster_version_summary(self, value: pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']]):
         pulumi.set(self, "bds_cluster_version_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapScriptUrl")
-    def bootstrap_script_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bootstrap_script_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         """
         return pulumi.get(self, "bootstrap_script_url")
 
     @bootstrap_script_url.setter
-    def bootstrap_script_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bootstrap_script_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bootstrap_script_url", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudSqlDetails")
-    def cloud_sql_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
+    def cloud_sql_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
         """
         The information about added Cloud SQL capability
         """
         return pulumi.get(self, "cloud_sql_details")
 
     @cloud_sql_details.setter
-    def cloud_sql_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]):
+    def cloud_sql_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]):
         pulumi.set(self, "cloud_sql_details", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterProfile")
-    def cluster_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Profile of the Big Data Service cluster.
         """
         return pulumi.get(self, "cluster_profile")
 
     @cluster_profile.setter
-    def cluster_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="computeOnlyWorkerNode")
-    def compute_only_worker_node(self) -> Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']]:
+    def compute_only_worker_node(self) -> pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']]:
         return pulumi.get(self, "compute_only_worker_node")
 
     @compute_only_worker_node.setter
-    def compute_only_worker_node(self, value: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']]):
+    def compute_only_worker_node(self, value: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']]):
         pulumi.set(self, "compute_only_worker_node", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="edgeNode")
-    def edge_node(self) -> Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]:
+    def edge_node(self) -> pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']]:
         return pulumi.get(self, "edge_node")
 
     @edge_node.setter
-    def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
+    def edge_node(self, value: pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']]):
         pulumi.set(self, "edge_node", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreExistingNodesShapes")
-    def ignore_existing_nodes_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ignore_existing_nodes_shapes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         """
         return pulumi.get(self, "ignore_existing_nodes_shapes")
 
     @ignore_existing_nodes_shapes.setter
-    def ignore_existing_nodes_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ignore_existing_nodes_shapes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ignore_existing_nodes_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloudSqlConfigured")
-    def is_cloud_sql_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloud_sql_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         """
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @is_cloud_sql_configured.setter
-    def is_cloud_sql_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloud_sql_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloud_sql_configured", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceRemoveEnabled")
-    def is_force_remove_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_remove_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_force_remove_enabled")
 
     @is_force_remove_enabled.setter
-    def is_force_remove_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_remove_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_remove_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceStopJobs")
-    def is_force_stop_jobs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_stop_jobs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         """
         return pulumi.get(self, "is_force_stop_jobs")
 
     @is_force_stop_jobs.setter
-    def is_force_stop_jobs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_stop_jobs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_stop_jobs", value)
 
     @_builtins.property
     @pulumi.getter(name="isKafkaConfigured")
-    def is_kafka_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kafka_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag specifying whether or not Kafka should be configured.
         """
         return pulumi.get(self, "is_kafka_configured")
 
     @is_kafka_configured.setter
-    def is_kafka_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kafka_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kafka_configured", value)
 
     @_builtins.property
     @pulumi.getter(name="kafkaBrokerNode")
-    def kafka_broker_node(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]:
+    def kafka_broker_node(self) -> pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']]:
         """
         The kafka broker node in the BDS instance
         """
         return pulumi.get(self, "kafka_broker_node")
 
     @kafka_broker_node.setter
-    def kafka_broker_node(self, value: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]):
+    def kafka_broker_node(self, value: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']]):
         pulumi.set(self, "kafka_broker_node", value)
 
     @_builtins.property
     @pulumi.getter(name="kerberosRealmName")
-    def kerberos_realm_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kerberos_realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined kerberos realm name.
         """
         return pulumi.get(self, "kerberos_realm_name")
 
     @kerberos_realm_name.setter
-    def kerberos_realm_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kerberos_realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kerberos_realm_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Key Management master encryption key.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfig")
-    def network_config(self) -> Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]:
+    def network_config(self) -> pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']]:
         """
         (Updatable) Additional configuration of the user's network.
         """
         return pulumi.get(self, "network_config")
 
     @network_config.setter
-    def network_config(self, value: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]):
+    def network_config(self, value: pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']]):
         pulumi.set(self, "network_config", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchVersion")
-    def os_patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the patch to be upated.
         """
         return pulumi.get(self, "os_patch_version")
 
     @os_patch_version.setter
-    def os_patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_version", value)
 
     @_builtins.property
     @pulumi.getter(name="removeNode")
-    def remove_node(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remove_node(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         """
         return pulumi.get(self, "remove_node")
 
     @remove_node.setter
-    def remove_node(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remove_node(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remove_node", value)
 
     @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
-    def start_cluster_shape_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
+    def start_cluster_shape_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
         return pulumi.get(self, "start_cluster_shape_configs")
 
     @start_cluster_shape_configs.setter
-    def start_cluster_shape_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]):
+    def start_cluster_shape_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]):
         pulumi.set(self, "start_cluster_shape_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _BdsInstanceState:
     def __init__(__self__, *,
-                 bds_cluster_version_summary: Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]] = None,
-                 cluster_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_cloud_sql_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_remove_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_stop_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kafka_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_secure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
-                 kerberos_realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 master_node: Optional[pulumi.Input['BdsInstanceMasterNodeArgs']] = None,
-                 network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]] = None,
-                 number_of_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[_builtins.int]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_cluster_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 util_node: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']] = None,
-                 worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None):
+                 bds_cluster_version_summary: pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]] = None,
+                 cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_node: pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_broker_node: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']] = None,
+                 kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_node: pulumi.Input[Optional['BdsInstanceMasterNodeArgs']] = None,
+                 network_config: pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]] = None,
+                 number_of_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 number_of_nodes_requiring_maintenance_reboot: pulumi.Input[Optional[_builtins.int]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 util_node: pulumi.Input[Optional['BdsInstanceUtilNodeArgs']] = None,
+                 worker_node: pulumi.Input[Optional['BdsInstanceWorkerNodeArgs']] = None):
         """
         Input properties used for looking up and filtering BdsInstance resources.
 
@@ -650,443 +650,443 @@ class _BdsInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="bdsClusterVersionSummary")
-    def bds_cluster_version_summary(self) -> Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']]:
+    def bds_cluster_version_summary(self) -> pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']]:
         """
         Cluster version details including bds and odh version information.
         """
         return pulumi.get(self, "bds_cluster_version_summary")
 
     @bds_cluster_version_summary.setter
-    def bds_cluster_version_summary(self, value: Optional[pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs']]):
+    def bds_cluster_version_summary(self, value: pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']]):
         pulumi.set(self, "bds_cluster_version_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapScriptUrl")
-    def bootstrap_script_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bootstrap_script_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         """
         return pulumi.get(self, "bootstrap_script_url")
 
     @bootstrap_script_url.setter
-    def bootstrap_script_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bootstrap_script_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bootstrap_script_url", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudSqlDetails")
-    def cloud_sql_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
+    def cloud_sql_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
         """
         The information about added Cloud SQL capability
         """
         return pulumi.get(self, "cloud_sql_details")
 
     @cloud_sql_details.setter
-    def cloud_sql_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]):
+    def cloud_sql_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]):
         pulumi.set(self, "cloud_sql_details", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterDetails")
-    def cluster_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]]:
+    def cluster_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]]:
         """
         Specific info about a Hadoop cluster
         """
         return pulumi.get(self, "cluster_details")
 
     @cluster_details.setter
-    def cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]]):
+    def cluster_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]]):
         pulumi.set(self, "cluster_details", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterProfile")
-    def cluster_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Profile of the Big Data Service cluster.
         """
         return pulumi.get(self, "cluster_profile")
 
     @cluster_profile.setter
-    def cluster_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPublicKey")
-    def cluster_public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SSH public key used to authenticate the cluster connection.
         """
         return pulumi.get(self, "cluster_public_key")
 
     @cluster_public_key.setter
-    def cluster_public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_public_key", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the Hadoop distribution
         """
         return pulumi.get(self, "cluster_version")
 
     @cluster_version.setter
-    def cluster_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_version", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeOnlyWorkerNode")
-    def compute_only_worker_node(self) -> Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']]:
+    def compute_only_worker_node(self) -> pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']]:
         return pulumi.get(self, "compute_only_worker_node")
 
     @compute_only_worker_node.setter
-    def compute_only_worker_node(self, value: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']]):
+    def compute_only_worker_node(self, value: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']]):
         pulumi.set(self, "compute_only_worker_node", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the cluster.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the BDS instance
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="edgeNode")
-    def edge_node(self) -> Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]:
+    def edge_node(self) -> pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']]:
         return pulumi.get(self, "edge_node")
 
     @edge_node.setter
-    def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
+    def edge_node(self, value: pulumi.Input[Optional['BdsInstanceEdgeNodeArgs']]):
         pulumi.set(self, "edge_node", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreExistingNodesShapes")
-    def ignore_existing_nodes_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ignore_existing_nodes_shapes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         """
         return pulumi.get(self, "ignore_existing_nodes_shapes")
 
     @ignore_existing_nodes_shapes.setter
-    def ignore_existing_nodes_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ignore_existing_nodes_shapes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ignore_existing_nodes_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="isCloudSqlConfigured")
-    def is_cloud_sql_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cloud_sql_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         """
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @is_cloud_sql_configured.setter
-    def is_cloud_sql_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cloud_sql_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cloud_sql_configured", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceRemoveEnabled")
-    def is_force_remove_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_remove_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_force_remove_enabled")
 
     @is_force_remove_enabled.setter
-    def is_force_remove_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_remove_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_remove_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceStopJobs")
-    def is_force_stop_jobs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_stop_jobs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         """
         return pulumi.get(self, "is_force_stop_jobs")
 
     @is_force_stop_jobs.setter
-    def is_force_stop_jobs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_stop_jobs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_stop_jobs", value)
 
     @_builtins.property
     @pulumi.getter(name="isHighAvailability")
-    def is_high_availability(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_high_availability(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag specifying whether or not the cluster is HA
         """
         return pulumi.get(self, "is_high_availability")
 
     @is_high_availability.setter
-    def is_high_availability(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_high_availability(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_high_availability", value)
 
     @_builtins.property
     @pulumi.getter(name="isKafkaConfigured")
-    def is_kafka_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kafka_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag specifying whether or not Kafka should be configured.
         """
         return pulumi.get(self, "is_kafka_configured")
 
     @is_kafka_configured.setter
-    def is_kafka_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kafka_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kafka_configured", value)
 
     @_builtins.property
     @pulumi.getter(name="isSecure")
-    def is_secure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_secure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag specifying whether or not the cluster should be setup as secure.
         """
         return pulumi.get(self, "is_secure")
 
     @is_secure.setter
-    def is_secure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_secure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_secure", value)
 
     @_builtins.property
     @pulumi.getter(name="kafkaBrokerNode")
-    def kafka_broker_node(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]:
+    def kafka_broker_node(self) -> pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']]:
         """
         The kafka broker node in the BDS instance
         """
         return pulumi.get(self, "kafka_broker_node")
 
     @kafka_broker_node.setter
-    def kafka_broker_node(self, value: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']]):
+    def kafka_broker_node(self, value: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']]):
         pulumi.set(self, "kafka_broker_node", value)
 
     @_builtins.property
     @pulumi.getter(name="kerberosRealmName")
-    def kerberos_realm_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kerberos_realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined kerberos realm name.
         """
         return pulumi.get(self, "kerberos_realm_name")
 
     @kerberos_realm_name.setter
-    def kerberos_realm_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kerberos_realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kerberos_realm_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Key Management master encryption key.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="masterNode")
-    def master_node(self) -> Optional[pulumi.Input['BdsInstanceMasterNodeArgs']]:
+    def master_node(self) -> pulumi.Input[Optional['BdsInstanceMasterNodeArgs']]:
         """
         The master node in the BDS instance
         """
         return pulumi.get(self, "master_node")
 
     @master_node.setter
-    def master_node(self, value: Optional[pulumi.Input['BdsInstanceMasterNodeArgs']]):
+    def master_node(self, value: pulumi.Input[Optional['BdsInstanceMasterNodeArgs']]):
         pulumi.set(self, "master_node", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfig")
-    def network_config(self) -> Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]:
+    def network_config(self) -> pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']]:
         """
         (Updatable) Additional configuration of the user's network.
         """
         return pulumi.get(self, "network_config")
 
     @network_config.setter
-    def network_config(self, value: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]):
+    def network_config(self, value: pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']]):
         pulumi.set(self, "network_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]]:
         """
         The list of nodes in the Big Data Service cluster.
         """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]]):
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfNodes")
-    def number_of_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
-    def number_of_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
-    def number_of_nodes_requiring_maintenance_reboot(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_nodes_requiring_maintenance_reboot(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of nodes that require a maintenance reboot
         """
         return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
 
     @number_of_nodes_requiring_maintenance_reboot.setter
-    def number_of_nodes_requiring_maintenance_reboot(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_nodes_requiring_maintenance_reboot(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_nodes_requiring_maintenance_reboot", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchVersion")
-    def os_patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the patch to be upated.
         """
         return pulumi.get(self, "os_patch_version")
 
     @os_patch_version.setter
-    def os_patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_version", value)
 
     @_builtins.property
     @pulumi.getter(name="removeNode")
-    def remove_node(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remove_node(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         """
         return pulumi.get(self, "remove_node")
 
     @remove_node.setter
-    def remove_node(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remove_node(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remove_node", value)
 
     @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
-    def start_cluster_shape_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
+    def start_cluster_shape_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
         return pulumi.get(self, "start_cluster_shape_configs")
 
     @start_cluster_shape_configs.setter
-    def start_cluster_shape_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]):
+    def start_cluster_shape_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]):
         pulumi.set(self, "start_cluster_shape_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the BDS instance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the BDS instance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="utilNode")
-    def util_node(self) -> Optional[pulumi.Input['BdsInstanceUtilNodeArgs']]:
+    def util_node(self) -> pulumi.Input[Optional['BdsInstanceUtilNodeArgs']]:
         """
         The utility node in the BDS instance
         """
         return pulumi.get(self, "util_node")
 
     @util_node.setter
-    def util_node(self, value: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']]):
+    def util_node(self, value: pulumi.Input[Optional['BdsInstanceUtilNodeArgs']]):
         pulumi.set(self, "util_node", value)
 
     @_builtins.property
     @pulumi.getter(name="workerNode")
-    def worker_node(self) -> Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']]:
+    def worker_node(self) -> pulumi.Input[Optional['BdsInstanceWorkerNodeArgs']]:
         return pulumi.get(self, "worker_node")
 
     @worker_node.setter
-    def worker_node(self, value: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']]):
+    def worker_node(self, value: pulumi.Input[Optional['BdsInstanceWorkerNodeArgs']]):
         pulumi.set(self, "worker_node", value)
 
 
@@ -1096,37 +1096,37 @@ class BdsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_cluster_version_summary: Optional[pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_cloud_sql_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_remove_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_stop_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kafka_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_secure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_broker_node: Optional[pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
-                 kerberos_realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 master_node: Optional[pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-                 network_config: Optional[pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_cluster_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 util_node: Optional[pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-                 worker_node: Optional[pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
+                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+                 kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
+                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
+                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -1148,61 +1148,61 @@ class BdsInstance(pulumi.CustomResource):
             cluster_version=bds_instance_cluster_version,
             compartment_id=compartment_id,
             display_name=bds_instance_display_name,
-            is_high_availability=bds_instance_is_high_availability,
-            is_secure=bds_instance_is_secure,
+            is_high_availability=bds_instance_is_high_availability == "true",
+            is_secure=bds_instance_is_secure == "true",
             master_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             util_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             worker_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             compute_only_worker_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             edge_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             kafka_broker_node={
@@ -1211,9 +1211,9 @@ class BdsInstance(pulumi.CustomResource):
                 "number_of_nodes": bds_instance_number_of_nodes,
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             bds_cluster_version_summary={
@@ -1229,7 +1229,7 @@ class BdsInstance(pulumi.CustomResource):
             ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
             network_config={
                 "cidr_block": bds_instance_network_config_cidr_block,
-                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required,
+                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required == "true",
             })
         ```
 
@@ -1297,61 +1297,61 @@ class BdsInstance(pulumi.CustomResource):
             cluster_version=bds_instance_cluster_version,
             compartment_id=compartment_id,
             display_name=bds_instance_display_name,
-            is_high_availability=bds_instance_is_high_availability,
-            is_secure=bds_instance_is_secure,
+            is_high_availability=bds_instance_is_high_availability == "true",
+            is_secure=bds_instance_is_secure == "true",
             master_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             util_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             worker_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             compute_only_worker_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             edge_node={
                 "shape": bds_instance_nodes_shape,
                 "subnet_id": test_subnet["id"],
-                "number_of_nodes": bds_instance_number_of_nodes,
+                "number_of_nodes": int(bds_instance_number_of_nodes),
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             kafka_broker_node={
@@ -1360,9 +1360,9 @@ class BdsInstance(pulumi.CustomResource):
                 "number_of_nodes": bds_instance_number_of_nodes,
                 "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
                 "shape_config": {
-                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
-                    "nvmes": bds_instance_nodes_shape_config_nvmes,
-                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_instance_nodes_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_instance_nodes_shape_config_nvmes),
+                    "ocpus": int(bds_instance_nodes_shape_config_ocpus),
                 },
             },
             bds_cluster_version_summary={
@@ -1378,7 +1378,7 @@ class BdsInstance(pulumi.CustomResource):
             ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
             network_config={
                 "cidr_block": bds_instance_network_config_cidr_block,
-                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required,
+                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required == "true",
             })
         ```
 
@@ -1406,37 +1406,37 @@ class BdsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_cluster_version_summary: Optional[pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_cloud_sql_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_remove_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_stop_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_kafka_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_secure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_broker_node: Optional[pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
-                 kerberos_realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 master_node: Optional[pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-                 network_config: Optional[pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_cluster_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 util_node: Optional[pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-                 worker_node: Optional[pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
+                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+                 kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
+                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
+                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1516,44 +1516,44 @@ class BdsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_cluster_version_summary: Optional[pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
-            bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict']]]]] = None,
-            cluster_profile: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_version: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_cloud_sql_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_force_remove_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_force_stop_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_kafka_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_secure: Optional[pulumi.Input[_builtins.bool]] = None,
-            kafka_broker_node: Optional[pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
-            kerberos_realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            master_node: Optional[pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-            network_config: Optional[pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict']]]]] = None,
-            number_of_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-            number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[_builtins.int]] = None,
-            os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-            remove_node: Optional[pulumi.Input[_builtins.str]] = None,
-            start_cluster_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            util_node: Optional[pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-            worker_node: Optional[pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None) -> 'BdsInstance':
+            bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+            bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict']]]]] = None,
+            cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
+            kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+            kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
+            network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict']]]]] = None,
+            number_of_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+            number_of_nodes_requiring_maintenance_reboot: pulumi.Input[Optional[_builtins.int]] = None,
+            os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+            start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
+            worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None) -> 'BdsInstance':
         """
         Get an existing BdsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

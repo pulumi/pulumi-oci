@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testExternalDbSystemStackMonitoringsManagement = new oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management", {
  *     externalDbSystemId: testExternalDbSystem.id,
- *     enableStackMonitoring: enableStackMonitoring,
- *     isEnabled: externalDbSystemStackMonitoringsManagementIsEnabled,
+ *     enableStackMonitoring: enableStackMonitoring === "true",
+ *     isEnabled: externalDbSystemStackMonitoringsManagementIsEnabled === "true",
  *     metadata: externalDbSystemStackMonitoringsManagementMetadata,
  * });
  * ```
@@ -121,19 +121,19 @@ export interface ExternalDbSystemStackMonitoringsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableStackMonitoring?: pulumi.Input<boolean>;
+    enableStackMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    externalDbSystemId?: pulumi.Input<string>;
+    externalDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The status of the associated service.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -155,9 +155,9 @@ export interface ExternalDbSystemStackMonitoringsManagementArgs {
     /**
      * The status of the associated service.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
 }

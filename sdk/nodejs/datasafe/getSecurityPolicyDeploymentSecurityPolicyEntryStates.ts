@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeploymentSecurityPolicyEntryStates = oci.DataSafe.getSecurityPolicyDeploymentSecurityPolicyEntryStates({
+ * const testSecurityPolicyDeploymentSecurityPolicyEntryStates = oci.datasafe.getSecurityPolicyDeploymentSecurityPolicyEntryStates({
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     deploymentStatus: securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
  *     securityPolicyEntryId: testSecurityPolicyEntry.id,
@@ -111,7 +111,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeploymentSecurityPolicyEntryStates = oci.DataSafe.getSecurityPolicyDeploymentSecurityPolicyEntryStates({
+ * const testSecurityPolicyDeploymentSecurityPolicyEntryStates = oci.datasafe.getSecurityPolicyDeploymentSecurityPolicyEntryStates({
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     deploymentStatus: securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
  *     securityPolicyEntryId: testSecurityPolicyEntry.id,
@@ -139,8 +139,8 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs 
     /**
      * The current state of the security policy deployment.
      */
-    deploymentStatus?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs>[]>;
+    deploymentStatus?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs>[] | undefined>;
     /**
      * The OCID of the security policy deployment resource.
      */
@@ -148,13 +148,13 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs 
     /**
      * An optional filter to return only resources that match the specified security policy entry OCID.
      */
-    securityPolicyEntryId?: pulumi.Input<string>;
+    securityPolicyEntryId?: pulumi.Input<string | undefined>;
     /**
      * The type of the security policy deployment.
      */
-    securityPolicyEntryType?: pulumi.Input<string>;
+    securityPolicyEntryType?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified target id.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

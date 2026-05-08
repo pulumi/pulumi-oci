@@ -191,7 +191,7 @@ def get_replication_schedule(replication_schedule_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
+    test_replication_schedule = oci.cloudmigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_replication_schedule(replication_schedule_id: Optional[_builtins.str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_replication_schedule_output(replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_schedule_output(replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationScheduleResult]:
     """
     This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -228,7 +228,7 @@ def get_replication_schedule_output(replication_schedule_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
+    test_replication_schedule = oci.cloudmigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
     ```
 
 

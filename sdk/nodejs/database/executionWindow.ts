@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     executionResourceId: testResource.id,
  *     timeScheduled: executionWindowTimeScheduled,
- *     windowDurationInMins: executionWindowWindowDurationInMins,
+ *     windowDurationInMins: Number(executionWindowWindowDurationInMins),
  *     definedTags: executionWindowDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnforcedDuration: executionWindowIsEnforcedDuration,
+ *     isEnforcedDuration: executionWindowIsEnforcedDuration === "true",
  * });
  * ```
  *
@@ -223,71 +223,71 @@ export interface ExecutionWindowState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Description of the execution window.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the execution window. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The estimated time of the execution window in minutes.
      */
-    estimatedTimeInMins?: pulumi.Input<number>;
+    estimatedTimeInMins?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
      */
-    executionResourceId?: pulumi.Input<string>;
+    executionResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
      */
-    isEnforcedDuration?: pulumi.Input<boolean>;
+    isEnforcedDuration?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
      */
-    lifecycleSubstate?: pulumi.Input<string>;
+    lifecycleSubstate?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the execution window was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the execution window ended.
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduled start date and time of the execution window.
      */
-    timeScheduled?: pulumi.Input<string>;
+    timeScheduled?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the execution window was started.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The last date and time that the execution window was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The total time taken by corresponding resource activity in minutes.
      */
-    totalTimeTakenInMins?: pulumi.Input<number>;
+    totalTimeTakenInMins?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
      *
@@ -295,11 +295,11 @@ export interface ExecutionWindowState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    windowDurationInMins?: pulumi.Input<number>;
+    windowDurationInMins?: pulumi.Input<number | undefined>;
     /**
      * The execution window is of PLANNED or UNPLANNED type.
      */
-    windowType?: pulumi.Input<string>;
+    windowType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -313,7 +313,7 @@ export interface ExecutionWindowArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
      */
@@ -321,11 +321,11 @@ export interface ExecutionWindowArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
      */
-    isEnforcedDuration?: pulumi.Input<boolean>;
+    isEnforcedDuration?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The scheduled start date and time of the execution window.
      */

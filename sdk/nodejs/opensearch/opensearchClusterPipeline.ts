@@ -24,9 +24,9 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dataPrepperConfigurationBody: opensearchClusterPipelineDataPrepperConfigurationBody,
  *     displayName: opensearchClusterPipelineDisplayName,
- *     memoryGb: opensearchClusterPipelineMemoryGb,
- *     nodeCount: opensearchClusterPipelineNodeCount,
- *     ocpuCount: opensearchClusterPipelineOcpuCount,
+ *     memoryGb: Number(opensearchClusterPipelineMemoryGb),
+ *     nodeCount: Number(opensearchClusterPipelineNodeCount),
+ *     ocpuCount: Number(opensearchClusterPipelineOcpuCount),
  *     pipelineConfigurationBody: opensearchClusterPipelinePipelineConfigurationBody,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     },
  *     nodeShape: opensearchClusterPipelineNodeShape,
  *     nsgId: testNsg.id,
- *     opcDryRun: opensearchClusterPipelineOpcDryRun,
+ *     opcDryRun: opensearchClusterPipelineOpcDryRun === "true",
  *     reverseConnectionEndpoints: [{
  *         customerFqdn: opensearchClusterPipelineReverseConnectionEndpointsCustomerFqdn,
  *         customerIp: opensearchClusterPipelineReverseConnectionEndpointsCustomerIp,
@@ -282,95 +282,95 @@ export interface OpensearchClusterPipelineState {
     /**
      * The OCID of the compartment to create the pipeline in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
      */
-    dataPrepperConfigurationBody?: pulumi.Input<string>;
+    dataPrepperConfigurationBody?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the cluster pipeline. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for each pipeline node.
      */
-    memoryGb?: pulumi.Input<number>;
+    memoryGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The number of nodes configured for the pipeline.
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The pipeline node shape.
      */
-    nodeShape?: pulumi.Input<string>;
+    nodeShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
-    nsgId?: pulumi.Input<string>;
+    nsgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for each pipeline node.
      */
-    ocpuCount?: pulumi.Input<number>;
+    ocpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    opcDryRun?: pulumi.Input<boolean>;
+    opcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    opensearchPipelineFqdn?: pulumi.Input<string>;
+    opensearchPipelineFqdn?: pulumi.Input<string | undefined>;
     /**
      * The pipeline's private IP address.
      */
-    opensearchPipelinePrivateIp?: pulumi.Input<string>;
+    opensearchPipelinePrivateIp?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
      */
-    pipelineConfigurationBody?: pulumi.Input<string>;
+    pipelineConfigurationBody?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pipeline.
      */
-    pipelineMode?: pulumi.Input<string>;
+    pipelineMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
      */
-    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint>[]>;
+    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint>[] | undefined>;
     /**
      * The current state of the cluster backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's subnet is located.
      */
-    subnetCompartmentId?: pulumi.Input<string>;
+    subnetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the pipeline's subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The amount of time in milliseconds since the pipeline was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's VCN is located.
      */
-    vcnCompartmentId?: pulumi.Input<string>;
+    vcnCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the pipeline's VCN.
      *
@@ -378,7 +378,7 @@ export interface OpensearchClusterPipelineState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -396,7 +396,7 @@ export interface OpensearchClusterPipelineArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the cluster pipeline. Avoid entering confidential information.
      */
@@ -404,7 +404,7 @@ export interface OpensearchClusterPipelineArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The amount of memory in GB, for each pipeline node.
      */
@@ -416,11 +416,11 @@ export interface OpensearchClusterPipelineArgs {
     /**
      * (Updatable) The pipeline node shape.
      */
-    nodeShape?: pulumi.Input<string>;
+    nodeShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
-    nsgId?: pulumi.Input<string>;
+    nsgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of OCPUs configured for each pipeline node.
      */
@@ -428,7 +428,7 @@ export interface OpensearchClusterPipelineArgs {
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    opcDryRun?: pulumi.Input<boolean>;
+    opcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
      */
@@ -436,19 +436,19 @@ export interface OpensearchClusterPipelineArgs {
     /**
      * (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
      */
-    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint>[]>;
+    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint>[] | undefined>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's subnet is located.
      */
-    subnetCompartmentId?: pulumi.Input<string>;
+    subnetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the pipeline's subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's VCN is located.
      */
-    vcnCompartmentId?: pulumi.Input<string>;
+    vcnCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the pipeline's VCN.
      *
@@ -456,5 +456,5 @@ export interface OpensearchClusterPipelineArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

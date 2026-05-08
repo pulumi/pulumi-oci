@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.GoldenGate.getConnections({
+ * const testConnections = oci.goldengate.getConnections({
  *     compartmentId: compartmentId,
  *     assignableDeploymentId: testDeployment.id,
  *     assignableDeploymentType: connectionAssignableDeploymentType,
@@ -128,7 +128,7 @@ export interface GetConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.GoldenGate.getConnections({
+ * const testConnections = oci.goldengate.getConnections({
  *     compartmentId: compartmentId,
  *     assignableDeploymentId: testDeployment.id,
  *     assignableDeploymentType: connectionAssignableDeploymentType,
@@ -162,15 +162,15 @@ export interface GetConnectionsOutputArgs {
     /**
      * Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
      */
-    assignableDeploymentId?: pulumi.Input<string>;
+    assignableDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * Filters for connections which can be assigned to the latest version of the specified deployment type.
      */
-    assignableDeploymentType?: pulumi.Input<string>;
+    assignableDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the deployment which for the connection must be assigned.
      */
-    assignedDeploymentId?: pulumi.Input<string>;
+    assignedDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
@@ -178,18 +178,18 @@ export interface GetConnectionsOutputArgs {
     /**
      * The array of connection types.
      */
-    connectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    connectionTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetConnectionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetConnectionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only connections having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The array of technology types.
      */
-    technologyTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    technologyTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

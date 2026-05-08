@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsights = oci.Opsi.getHostInsights({
+ * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,
@@ -136,9 +136,9 @@ export interface GetHostInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsights = oci.Opsi.getHostInsights({
+ * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,
@@ -171,34 +171,34 @@ export interface GetHostInsightsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Unique Enterprise Manager bridge identifier
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      */
-    exadataInsightId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetHostInsightsFilterArgs>[]>;
+    exadataInsightId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetHostInsightsFilterArgs>[] | undefined>;
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
-    hostTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    hostTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource Status
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

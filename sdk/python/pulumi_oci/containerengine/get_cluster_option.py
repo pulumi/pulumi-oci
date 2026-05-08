@@ -116,9 +116,9 @@ def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
+    test_cluster_option = oci.containerengine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
         compartment_id=compartment_id,
-        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions == "true")
     ```
 
 
@@ -140,9 +140,9 @@ def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'),
         should_list_all_patch_versions=pulumi.get(__ret__, 'should_list_all_patch_versions'))
-def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              should_list_all_patch_versions: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_cluster_option_output(cluster_option_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              should_list_all_patch_versions: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterOptionResult]:
     """
     This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -155,9 +155,9 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
+    test_cluster_option = oci.containerengine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
         compartment_id=compartment_id,
-        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions == "true")
     ```
 
 

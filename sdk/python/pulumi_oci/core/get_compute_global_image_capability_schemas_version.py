@@ -132,7 +132,7 @@ def get_compute_global_image_capability_schemas_version(compute_global_image_cap
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+    test_compute_global_image_capability_schemas_version = oci.core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
         compute_global_image_capability_schema_version_name=compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name)
     ```
 
@@ -154,8 +154,8 @@ def get_compute_global_image_capability_schemas_version(compute_global_image_cap
         name=pulumi.get(__ret__, 'name'),
         schema_data=pulumi.get(__ret__, 'schema_data'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_compute_global_image_capability_schemas_version_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                               compute_global_image_capability_schema_version_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_global_image_capability_schemas_version_output(compute_global_image_capability_schema_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                               compute_global_image_capability_schema_version_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionResult]:
     """
     This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
@@ -168,7 +168,7 @@ def get_compute_global_image_capability_schemas_version_output(compute_global_im
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+    test_compute_global_image_capability_schemas_version = oci.core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
         compute_global_image_capability_schema_version_name=compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name)
     ```
 

@@ -24,16 +24,16 @@ import * as utilities from "../utilities";
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
  *     monitorType: monitorMonitorType,
- *     repeatIntervalInSeconds: monitorRepeatIntervalInSeconds,
+ *     repeatIntervalInSeconds: Number(monitorRepeatIntervalInSeconds),
  *     vantagePoints: [{
  *         name: monitorVantagePointsName,
  *         displayName: monitorVantagePointsParamDisplayName,
  *     }],
  *     availabilityConfiguration: {
- *         maxAllowedFailuresPerInterval: monitorAvailabilityConfigurationMaxAllowedFailuresPerInterval,
- *         minAllowedRunsPerInterval: monitorAvailabilityConfigurationMinAllowedRunsPerInterval,
+ *         maxAllowedFailuresPerInterval: Number(monitorAvailabilityConfigurationMaxAllowedFailuresPerInterval),
+ *         minAllowedRunsPerInterval: Number(monitorAvailabilityConfigurationMinAllowedRunsPerInterval),
  *     },
- *     batchIntervalInSeconds: monitorBatchIntervalInSeconds,
+ *     batchIntervalInSeconds: Number(monitorBatchIntervalInSeconds),
  *     configuration: {
  *         clientCertificateDetails: {
  *             clientCertificate: {
@@ -63,10 +63,10 @@ import * as utilities from "../utilities";
  *             serviceName: testService.name,
  *         },
  *         dnsConfiguration: {
- *             isOverrideDns: monitorConfigurationDnsConfigurationIsOverrideDns,
+ *             isOverrideDns: monitorConfigurationDnsConfigurationIsOverrideDns === "true",
  *             overrideDnsIp: monitorConfigurationDnsConfigurationOverrideDnsIp,
  *         },
- *         downloadSizeLimitInBytes: monitorConfigurationDownloadSizeLimitInBytes,
+ *         downloadSizeLimitInBytes: Number(monitorConfigurationDownloadSizeLimitInBytes),
  *         ftpBasicAuthenticationDetails: {
  *             password: {
  *                 password: monitorConfigurationFtpBasicAuthenticationDetailsPasswordPassword,
@@ -77,19 +77,19 @@ import * as utilities from "../utilities";
  *         },
  *         ftpProtocol: monitorConfigurationFtpProtocol,
  *         ftpRequestType: monitorConfigurationFtpRequestType,
- *         isActiveMode: monitorConfigurationIsActiveMode,
- *         isCertificateValidationEnabled: monitorConfigurationIsCertificateValidationEnabled,
- *         isDefaultSnapshotEnabled: monitorConfigurationIsDefaultSnapshotEnabled,
- *         isFailureRetried: monitorConfigurationIsFailureRetried,
- *         isQueryRecursive: monitorConfigurationIsQueryRecursive,
- *         isRedirectionEnabled: monitorConfigurationIsRedirectionEnabled,
+ *         isActiveMode: monitorConfigurationIsActiveMode === "true",
+ *         isCertificateValidationEnabled: monitorConfigurationIsCertificateValidationEnabled === "true",
+ *         isDefaultSnapshotEnabled: monitorConfigurationIsDefaultSnapshotEnabled === "true",
+ *         isFailureRetried: monitorConfigurationIsFailureRetried === "true",
+ *         isQueryRecursive: monitorConfigurationIsQueryRecursive === "true",
+ *         isRedirectionEnabled: monitorConfigurationIsRedirectionEnabled === "true",
  *         nameServer: monitorConfigurationNameServer,
  *         networkConfiguration: {
- *             numberOfHops: monitorConfigurationNetworkConfigurationNumberOfHops,
+ *             numberOfHops: Number(monitorConfigurationNetworkConfigurationNumberOfHops),
  *             probeMode: monitorConfigurationNetworkConfigurationProbeMode,
- *             probePerHop: monitorConfigurationNetworkConfigurationProbePerHop,
+ *             probePerHop: Number(monitorConfigurationNetworkConfigurationProbePerHop),
  *             protocol: monitorConfigurationNetworkConfigurationProtocol,
- *             transmissionRate: monitorConfigurationNetworkConfigurationTransmissionRate,
+ *             transmissionRate: Number(monitorConfigurationNetworkConfigurationTransmissionRate),
  *         },
  *         protocol: monitorConfigurationProtocol,
  *         query: monitorConfigurationQuery,
@@ -118,7 +118,7 @@ import * as utilities from "../utilities";
  *             paramName: monitorConfigurationRequestQueryParamsParamName,
  *             paramValue: monitorConfigurationRequestQueryParamsParamValue,
  *         }],
- *         uploadFileSizeInBytes: monitorConfigurationUploadFileSizeInBytes,
+ *         uploadFileSizeInBytes: Number(monitorConfigurationUploadFileSizeInBytes),
  *         verifyResponseCodes: monitorConfigurationVerifyResponseCodes,
  *         verifyResponseContent: monitorConfigurationVerifyResponseContent,
  *         verifyTexts: [{
@@ -131,9 +131,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isIpv6: monitorIsIpv6,
- *     isRunNow: monitorIsRunNow,
- *     isRunOnce: monitorIsRunOnce,
+ *     isIpv6: monitorIsIpv6 === "true",
+ *     isRunNow: monitorIsRunNow === "true",
+ *     isRunOnce: monitorIsRunOnce === "true",
  *     maintenanceWindowSchedule: {
  *         timeEnded: monitorMaintenanceWindowScheduleTimeEnded,
  *         timeStarted: monitorMaintenanceWindowScheduleTimeStarted,
@@ -146,7 +146,7 @@ import * as utilities from "../utilities";
  *     }],
  *     status: monitorStatus,
  *     target: monitorTarget,
- *     timeoutInSeconds: monitorTimeoutInSeconds,
+ *     timeoutInSeconds: Number(monitorTimeoutInSeconds),
  * });
  * ```
  *
@@ -396,107 +396,107 @@ export interface ConfigState {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    apmDomainId?: pulumi.Input<string>;
+    apmDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Monitor availability configuration details.
      */
-    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration | undefined>;
     /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
-    batchIntervalInSeconds?: pulumi.Input<number>;
+    batchIntervalInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details of monitor configuration.
      */
-    configuration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfiguration>;
+    configuration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfiguration | undefined>;
     /**
      * Content type of the script.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * Name of the user that created the monitor.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) If enabled, domain name will resolve to an IPv6 address.
      */
-    isIpv6?: pulumi.Input<boolean>;
+    isIpv6?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
-    isRunNow?: pulumi.Input<boolean>;
+    isRunNow?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
-    isRunOnce?: pulumi.Input<boolean>;
+    isRunOnce?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the user that recently updated the monitor.
      */
-    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details required to schedule maintenance window.
      */
-    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
+    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule | undefined>;
     /**
      * Type of monitor.
      */
-    monitorType?: pulumi.Input<string>;
+    monitorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
-    repeatIntervalInSeconds?: pulumi.Input<number>;
+    repeatIntervalInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
-    schedulingPolicy?: pulumi.Input<string>;
+    schedulingPolicy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    scriptId?: pulumi.Input<string>;
+    scriptId?: pulumi.Input<string | undefined>;
     /**
      * Name of the script.
      */
-    scriptName?: pulumi.Input<string>;
+    scriptName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
      */
-    scriptParameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigScriptParameter>[]>;
+    scriptParameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigScriptParameter>[] | undefined>;
     /**
      * (Updatable) Enables or disables the monitor.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * Number of vantage points where monitor is running.
      */
-    vantagePointCount?: pulumi.Input<number>;
+    vantagePointCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
      *
@@ -504,7 +504,7 @@ export interface ConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePoints?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigVantagePoint>[]>;
+    vantagePoints?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigVantagePoint>[] | undefined>;
 }
 
 /**
@@ -518,19 +518,19 @@ export interface ConfigArgs {
     /**
      * (Updatable) Monitor availability configuration details.
      */
-    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration | undefined>;
     /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
-    batchIntervalInSeconds?: pulumi.Input<number>;
+    batchIntervalInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details of monitor configuration.
      */
-    configuration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfiguration>;
+    configuration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfiguration | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
@@ -538,23 +538,23 @@ export interface ConfigArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) If enabled, domain name will resolve to an IPv6 address.
      */
-    isIpv6?: pulumi.Input<boolean>;
+    isIpv6?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
-    isRunNow?: pulumi.Input<boolean>;
+    isRunNow?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
-    isRunOnce?: pulumi.Input<boolean>;
+    isRunOnce?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Details required to schedule maintenance window.
      */
-    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
+    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule | undefined>;
     /**
      * Type of monitor.
      */
@@ -566,31 +566,31 @@ export interface ConfigArgs {
     /**
      * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
-    schedulingPolicy?: pulumi.Input<string>;
+    schedulingPolicy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    scriptId?: pulumi.Input<string>;
+    scriptId?: pulumi.Input<string | undefined>;
     /**
      * Name of the script.
      */
-    scriptName?: pulumi.Input<string>;
+    scriptName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
      */
-    scriptParameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigScriptParameter>[]>;
+    scriptParameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigScriptParameter>[] | undefined>;
     /**
      * (Updatable) Enables or disables the monitor.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
      *

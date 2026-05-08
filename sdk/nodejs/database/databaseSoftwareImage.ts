@@ -218,59 +218,59 @@ export interface DatabaseSoftwareImageState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * List of one-off patches for Database Homes.
      */
-    databaseSoftwareImageIncludedPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseSoftwareImageIncludedPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of one-off patches for Database Homes.
      */
-    databaseSoftwareImageOneOffPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseSoftwareImageOneOffPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The database version with which the database software image is to be built.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * To what shape the image is meant for.
      */
-    imageShapeFamily?: pulumi.Input<string>;
+    imageShapeFamily?: pulumi.Input<string | undefined>;
     /**
      * The type of software image. Can be grid or database.
      */
-    imageType?: pulumi.Input<string>;
+    imageType?: pulumi.Input<string | undefined>;
     /**
      * The patches included in the image and the version of the image.
      */
-    includedPatchesSummary?: pulumi.Input<string>;
+    includedPatchesSummary?: pulumi.Input<string | undefined>;
     /**
      * True if this Database software image is supported for Upgrade.
      */
-    isUpgradeSupported?: pulumi.Input<boolean>;
+    isUpgradeSupported?: pulumi.Input<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */
-    lsInventory?: pulumi.Input<string>;
+    lsInventory?: pulumi.Input<string | undefined>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    patchSet?: pulumi.Input<string>;
+    patchSet?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      *
@@ -278,19 +278,19 @@ export interface DatabaseSoftwareImageState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceDbHomeId?: pulumi.Input<string>;
+    sourceDbHomeId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the database software image.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the database software image was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -304,15 +304,15 @@ export interface DatabaseSoftwareImageArgs {
     /**
      * List of one-off patches for Database Homes.
      */
-    databaseSoftwareImageOneOffPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseSoftwareImageOneOffPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The database version with which the database software image is to be built.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
      */
@@ -320,23 +320,23 @@ export interface DatabaseSoftwareImageArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * To what shape the image is meant for.
      */
-    imageShapeFamily?: pulumi.Input<string>;
+    imageShapeFamily?: pulumi.Input<string | undefined>;
     /**
      * The type of software image. Can be grid or database.
      */
-    imageType?: pulumi.Input<string>;
+    imageType?: pulumi.Input<string | undefined>;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */
-    lsInventory?: pulumi.Input<string>;
+    lsInventory?: pulumi.Input<string | undefined>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    patchSet?: pulumi.Input<string>;
+    patchSet?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      *
@@ -344,5 +344,5 @@ export interface DatabaseSoftwareImageArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceDbHomeId?: pulumi.Input<string>;
+    sourceDbHomeId?: pulumi.Input<string | undefined>;
 }

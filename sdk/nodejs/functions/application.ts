@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     },
  *     networkSecurityGroupIds: applicationNetworkSecurityGroupIds,
  *     imagePolicyConfig: {
- *         isPolicyEnabled: applicationImagePolicyConfigIsPolicyEnabled,
+ *         isPolicyEnabled: applicationImagePolicyConfigIsPolicyEnabled === "true",
  *         keyDetails: [{
  *             kmsKeyId: testKey.id,
  *         }],
@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *     syslogUrl: applicationSyslogUrl,
  *     traceConfig: {
  *         domainId: testDomain.id,
- *         isEnabled: applicationTraceConfigIsEnabled,
+ *         isEnabled: applicationTraceConfigIsEnabled === "true",
  *     },
  * });
  * ```
@@ -225,69 +225,69 @@ export interface ApplicationState {
     /**
      * (Updatable) The OCID of the compartment to create the application within.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    config?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Define the image signature verification policy for an application.
      */
-    imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig>;
+    imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig | undefined>;
     /**
      * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
      */
-    logging?: pulumi.Input<inputs.Functions.ApplicationLogging>;
+    logging?: pulumi.Input<inputs.Functions.ApplicationLogging | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current state of the application.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      */
-    subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
      */
-    syslogUrl?: pulumi.Input<string>;
+    syslogUrl?: pulumi.Input<string | undefined>;
     /**
      * The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Define the tracing configuration for an application.
      */
-    traceConfig?: pulumi.Input<inputs.Functions.ApplicationTraceConfig>;
+    traceConfig?: pulumi.Input<inputs.Functions.ApplicationTraceConfig | undefined>;
 }
 
 /**
@@ -303,11 +303,11 @@ export interface ApplicationArgs {
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    config?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
      */
@@ -315,27 +315,27 @@ export interface ApplicationArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Define the image signature verification policy for an application.
      */
-    imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig>;
+    imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig | undefined>;
     /**
      * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
      */
-    logging?: pulumi.Input<inputs.Functions.ApplicationLogging>;
+    logging?: pulumi.Input<inputs.Functions.ApplicationLogging | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      */
@@ -343,9 +343,9 @@ export interface ApplicationArgs {
     /**
      * (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
      */
-    syslogUrl?: pulumi.Input<string>;
+    syslogUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Define the tracing configuration for an application.
      */
-    traceConfig?: pulumi.Input<inputs.Functions.ApplicationTraceConfig>;
+    traceConfig?: pulumi.Input<inputs.Functions.ApplicationTraceConfig | undefined>;
 }

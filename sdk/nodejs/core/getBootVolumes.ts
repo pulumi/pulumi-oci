@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumes = oci.Core.getBootVolumes({
+ * const testBootVolumes = oci.core.getBootVolumes({
  *     availabilityDomain: bootVolumeAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     volumeGroupId: testVolumeGroup.id,
@@ -91,7 +91,7 @@ export interface GetBootVolumesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumes = oci.Core.getBootVolumes({
+ * const testBootVolumes = oci.core.getBootVolumes({
  *     availabilityDomain: bootVolumeAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     volumeGroupId: testVolumeGroup.id,
@@ -116,14 +116,14 @@ export interface GetBootVolumesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumesFilterArgs>[] | undefined>;
     /**
      * The OCID of the volume group.
      */
-    volumeGroupId?: pulumi.Input<string>;
+    volumeGroupId?: pulumi.Input<string | undefined>;
 }

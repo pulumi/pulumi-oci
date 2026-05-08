@@ -64,7 +64,7 @@ export class AdvancedClusterFileSystemMount extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AdvancedClusterFileSystemMount resources.
  */
 export interface AdvancedClusterFileSystemMountState {
-    advancedClusterFileSystemId?: pulumi.Input<string>;
+    advancedClusterFileSystemId?: pulumi.Input<string | undefined>;
 }
 
 /**

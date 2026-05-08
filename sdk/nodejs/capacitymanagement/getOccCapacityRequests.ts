@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
+ * const testOccCapacityRequests = oci.capacitymanagement.getOccCapacityRequests({
  *     compartmentId: compartmentId,
  *     displayName: occCapacityRequestDisplayName,
  *     id: occCapacityRequestId,
@@ -116,7 +116,7 @@ export interface GetOccCapacityRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
+ * const testOccCapacityRequests = oci.capacitymanagement.getOccCapacityRequests({
  *     compartmentId: compartmentId,
  *     displayName: occCapacityRequestDisplayName,
  *     id: occCapacityRequestId,
@@ -150,22 +150,22 @@ export interface GetOccCapacityRequestsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccCapacityRequestsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccCapacityRequestsFilterArgs>[] | undefined>;
     /**
      * A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The namespace by which we would filter the list.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
      */
-    occAvailabilityCatalogId?: pulumi.Input<string>;
+    occAvailabilityCatalogId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the request type. The match is not case sensitive.
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
 }

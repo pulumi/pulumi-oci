@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
+ * const testAcceptedAgreements = oci.marketplace.getAcceptedAgreements({
  *     compartmentId: compartmentId,
  *     acceptedAgreementId: testAcceptedAgreement.id,
  *     displayName: acceptedAgreementDisplayName,
@@ -109,7 +109,7 @@ export interface GetAcceptedAgreementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
+ * const testAcceptedAgreements = oci.marketplace.getAcceptedAgreements({
  *     compartmentId: compartmentId,
  *     acceptedAgreementId: testAcceptedAgreement.id,
  *     displayName: acceptedAgreementDisplayName,
@@ -137,7 +137,7 @@ export interface GetAcceptedAgreementsOutputArgs {
     /**
      * The unique identifier for the accepted terms of use agreement.
      */
-    acceptedAgreementId?: pulumi.Input<string>;
+    acceptedAgreementId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the compartment.
      */
@@ -145,14 +145,14 @@ export interface GetAcceptedAgreementsOutputArgs {
     /**
      * The display name of the resource.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetAcceptedAgreementsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetAcceptedAgreementsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the listing.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * The version of the package. Package versions are unique within a listing.
      */
-    packageVersion?: pulumi.Input<string>;
+    packageVersion?: pulumi.Input<string | undefined>;
 }

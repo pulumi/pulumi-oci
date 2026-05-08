@@ -107,12 +107,12 @@ export interface GetComputedUsagesOutputArgs {
     /**
      * Product part number for Computed Usage .
      */
-    computedProduct?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetComputedUsagesFilterArgs>[]>;
+    computedProduct?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetComputedUsagesFilterArgs>[] | undefined>;
     /**
      * Product part number for subscribed service line, called parent product.
      */
-    parentProduct?: pulumi.Input<string>;
+    parentProduct?: pulumi.Input<string | undefined>;
     /**
      * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      */

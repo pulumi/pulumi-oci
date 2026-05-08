@@ -124,10 +124,10 @@ def get_repository_path(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_path = oci.DevOps.get_repository_path(repository_id=test_repository["id"],
+    test_repository_path = oci.devops.get_repository_path(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree,
+        paths_in_subtree=repository_path_paths_in_subtree == "true",
         ref=repository_path_ref)
     ```
 
@@ -155,11 +155,11 @@ def get_repository_path(display_name: Optional[_builtins.str] = None,
         paths_in_subtree=pulumi.get(__ret__, 'paths_in_subtree'),
         ref=pulumi.get(__ret__, 'ref'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_path_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               folder_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               paths_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               ref: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_path_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               folder_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               paths_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               ref: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryPathResult]:
     """
     This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
@@ -172,10 +172,10 @@ def get_repository_path_output(display_name: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_path = oci.DevOps.get_repository_path(repository_id=test_repository["id"],
+    test_repository_path = oci.devops.get_repository_path(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree,
+        paths_in_subtree=repository_path_paths_in_subtree == "true",
         ref=repository_path_ref)
     ```
 

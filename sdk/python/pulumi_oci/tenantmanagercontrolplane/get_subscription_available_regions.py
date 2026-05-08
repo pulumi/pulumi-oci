@@ -95,7 +95,7 @@ def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubs
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_available_regions = oci.Tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
+    test_subscription_available_regions = oci.tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubs
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_subscription_available_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict']]]]] = None,
-                                              subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_available_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict']]]]] = None,
+                                              subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionAvailableRegionsResult]:
     """
     This data source provides the list of Subscription Available Regions in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -126,7 +126,7 @@ def get_subscription_available_regions_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_available_regions = oci.Tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
+    test_subscription_available_regions = oci.tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
     ```
 
 

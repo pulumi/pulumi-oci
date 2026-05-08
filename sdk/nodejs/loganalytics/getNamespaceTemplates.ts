@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceTemplates = oci.LogAnalytics.getNamespaceTemplates({
+ * const testNamespaceTemplates = oci.loganalytics.getNamespaceTemplates({
  *     compartmentId: compartmentId,
  *     namespace: namespaceTemplateNamespace,
  *     name: namespaceTemplateName,
@@ -121,7 +121,7 @@ export interface GetNamespaceTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceTemplates = oci.LogAnalytics.getNamespaceTemplates({
+ * const testNamespaceTemplates = oci.loganalytics.getNamespaceTemplates({
  *     compartmentId: compartmentId,
  *     namespace: namespaceTemplateNamespace,
  *     name: namespaceTemplateName,
@@ -154,11 +154,11 @@ export interface GetNamespaceTemplatesOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceTemplatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceTemplatesFilterArgs>[] | undefined>;
     /**
      * The template name used for filtering.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -166,17 +166,17 @@ export interface GetNamespaceTemplatesOutputArgs {
     /**
      * filter
      */
-    namespaceTemplateFilter?: pulumi.Input<string>;
+    namespaceTemplateFilter?: pulumi.Input<string | undefined>;
     /**
      * The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The template display text used for filtering. Only templates with the specified name or description will be returned.
      */
-    templateDisplayText?: pulumi.Input<string>;
+    templateDisplayText?: pulumi.Input<string | undefined>;
     /**
      * The template type used for filtering. Only templates of the specified type will be returned.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

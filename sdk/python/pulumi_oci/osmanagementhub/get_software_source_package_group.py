@@ -177,7 +177,7 @@ def get_software_source_package_group(package_group_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=test_group["id"],
+    test_software_source_package_group = oci.osmanagementhub.get_software_source_package_group(package_group_id=test_group["id"],
         software_source_id=test_software_source["id"])
     ```
 
@@ -203,8 +203,8 @@ def get_software_source_package_group(package_group_id: Optional[_builtins.str] 
         packages=pulumi.get(__ret__, 'packages'),
         repositories=pulumi.get(__ret__, 'repositories'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-def get_software_source_package_group_output(package_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_package_group_output(package_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupResult]:
     """
     This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -217,7 +217,7 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=test_group["id"],
+    test_software_source_package_group = oci.osmanagementhub.get_software_source_package_group(package_group_id=test_group["id"],
         software_source_id=test_software_source["id"])
     ```
 

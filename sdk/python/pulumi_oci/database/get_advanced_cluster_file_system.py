@@ -251,7 +251,7 @@ def get_advanced_cluster_file_system(advanced_cluster_file_system_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_system = oci.Database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
+    test_advanced_cluster_file_system = oci.database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_advanced_cluster_file_system(advanced_cluster_file_system_id: Optional[_
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_advanced_cluster_file_system_output(advanced_cluster_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_advanced_cluster_file_system_output(advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAdvancedClusterFileSystemResult]:
     """
     This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
@@ -293,7 +293,7 @@ def get_advanced_cluster_file_system_output(advanced_cluster_file_system_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_system = oci.Database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
+    test_advanced_cluster_file_system = oci.database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
     ```
 
 

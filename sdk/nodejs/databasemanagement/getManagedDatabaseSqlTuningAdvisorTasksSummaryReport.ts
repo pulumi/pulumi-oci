@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
+ * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecIdGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
@@ -125,7 +125,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
+ * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecIdGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
@@ -158,11 +158,11 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs 
     /**
      * The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
-    beginExecIdGreaterThanOrEqualTo?: pulumi.Input<string>;
+    beginExecIdGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
      */
-    endExecIdLessThanOrEqualTo?: pulumi.Input<string>;
+    endExecIdLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -170,11 +170,11 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs 
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      */
-    searchPeriod?: pulumi.Input<string>;
+    searchPeriod?: pulumi.Input<string | undefined>;
     /**
      * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -182,9 +182,9 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs 
     /**
      * The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAutonomousVmClusterAcdResourceUsages = oci.Database.getCloudAutonomousVmClusterAcdResourceUsages({
+ * const testCloudAutonomousVmClusterAcdResourceUsages = oci.database.getCloudAutonomousVmClusterAcdResourceUsages({
  *     cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     compartmentId: compartmentId,
  * });
@@ -76,7 +76,7 @@ export interface GetCloudAutonomousVmClusterAcdResourceUsagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAutonomousVmClusterAcdResourceUsages = oci.Database.getCloudAutonomousVmClusterAcdResourceUsages({
+ * const testCloudAutonomousVmClusterAcdResourceUsages = oci.database.getCloudAutonomousVmClusterAcdResourceUsages({
  *     cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     compartmentId: compartmentId,
  * });
@@ -102,6 +102,6 @@ export interface GetCloudAutonomousVmClusterAcdResourceUsagesOutputArgs {
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs>[] | undefined>;
 }

@@ -101,7 +101,7 @@ def get_volume_backup_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
+    test_volume_backup_policies = oci.core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
 
 
@@ -118,8 +118,8 @@ def get_volume_backup_policies(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         volume_backup_policies=pulumi.get(__ret__, 'volume_backup_policies'))
-def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict']]]]] = None,
+def get_volume_backup_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupPoliciesResult]:
     """
     This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
@@ -135,7 +135,7 @@ def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
+    test_volume_backup_policies = oci.core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
 
 

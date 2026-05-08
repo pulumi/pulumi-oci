@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApis = oci.ApiGateway.getApis({
+ * const testApis = oci.apigateway.getApis({
  *     compartmentId: compartmentId,
  *     displayName: apiDisplayName,
  *     state: apiState,
@@ -90,7 +90,7 @@ export interface GetApisResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApis = oci.ApiGateway.getApis({
+ * const testApis = oci.apigateway.getApis({
  *     compartmentId: compartmentId,
  *     displayName: apiDisplayName,
  *     state: apiState,
@@ -118,10 +118,10 @@ export interface GetApisOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetApisFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetApisFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

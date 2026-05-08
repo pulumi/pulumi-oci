@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusterIormConfig = oci.Database.getCloudVmClusterIormConfig({
+ * const testCloudVmClusterIormConfig = oci.database.getCloudVmClusterIormConfig({
  *     cloudVmClusterId: testCloudVmCluster.id,
  * });
  * ```
@@ -79,7 +79,7 @@ export interface GetCloudVmClusterIormConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusterIormConfig = oci.Database.getCloudVmClusterIormConfig({
+ * const testCloudVmClusterIormConfig = oci.database.getCloudVmClusterIormConfig({
  *     cloudVmClusterId: testCloudVmCluster.id,
  * });
  * ```

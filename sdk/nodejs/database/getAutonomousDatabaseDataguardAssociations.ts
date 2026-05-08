@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseDataguardAssociations = oci.Database.getAutonomousDatabaseDataguardAssociations({
+ * const testAutonomousDatabaseDataguardAssociations = oci.database.getAutonomousDatabaseDataguardAssociations({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseDataguardAssociations = oci.Database.getAutonomousDatabaseDataguardAssociations({
+ * const testAutonomousDatabaseDataguardAssociations = oci.database.getAutonomousDatabaseDataguardAssociations({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetAutonomousDatabaseDataguardAssociationsOutputArgs {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseDataguardAssociationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseDataguardAssociationsFilterArgs>[] | undefined>;
 }

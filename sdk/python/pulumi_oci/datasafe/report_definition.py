@@ -28,9 +28,9 @@ class ReportDefinitionArgs:
                  display_name: pulumi.Input[_builtins.str],
                  parent_id: pulumi.Input[_builtins.str],
                  summaries: pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ReportDefinition resource.
 
@@ -145,71 +145,71 @@ class ReportDefinitionArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the report definition.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ReportDefinitionState:
     def __init__(__self__, *,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]] = None,
-                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
-                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 data_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_order: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_seeded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 record_time_span: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_report_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_report_mime_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_report_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_report_row_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 scim_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 column_filters: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]] = None,
+                 column_infos: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
+                 column_sortings: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compliance_standards: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 data_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_order: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_seeded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 record_time_span: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_report_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_report_mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_report_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_report_row_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 scim_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ReportDefinition resources.
 
@@ -298,326 +298,326 @@ class _ReportDefinitionState:
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the name of the category that this report belongs to.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter(name="columnFilters")
-    def column_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]]:
+    def column_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]]:
         """
         (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         """
         return pulumi.get(self, "column_filters")
 
     @column_filters.setter
-    def column_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]]):
+    def column_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]]):
         pulumi.set(self, "column_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="columnInfos")
-    def column_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]]:
+    def column_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]]:
         """
         (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         """
         return pulumi.get(self, "column_infos")
 
     @column_infos.setter
-    def column_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]]):
+    def column_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]]):
         pulumi.set(self, "column_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="columnSortings")
-    def column_sortings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]]:
+    def column_sortings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]]:
         """
         (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         """
         return pulumi.get(self, "column_sortings")
 
     @column_sortings.setter
-    def column_sortings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]]):
+    def column_sortings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]]):
         pulumi.set(self, "column_sortings", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment containing the report definition.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="complianceStandards")
-    def compliance_standards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compliance_standards(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         """
         return pulumi.get(self, "compliance_standards")
 
     @compliance_standards.setter
-    def compliance_standards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compliance_standards(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compliance_standards", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSource")
-    def data_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the name of a resource that provides data for the report. For example alerts, events.
         """
         return pulumi.get(self, "data_source")
 
     @data_source.setter
-    def data_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_source", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the report definition.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the name of the report definition.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="displayOrder")
-    def display_order(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def display_order(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies the order in which the summary must be displayed.
         """
         return pulumi.get(self, "display_order")
 
     @display_order.setter
-    def display_order(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def display_order(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "display_order", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeeded")
-    def is_seeded(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_seeded(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_seeded")
 
     @is_seeded.setter
-    def is_seeded(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_seeded(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_seeded", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the report definition in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the parent report definition.
         """
         return pulumi.get(self, "parent_id")
 
     @parent_id.setter
-    def parent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="recordTimeSpan")
-    def record_time_span(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def record_time_span(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         """
         return pulumi.get(self, "record_time_span")
 
     @record_time_span.setter
-    def record_time_span(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def record_time_span(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "record_time_span", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReportCompartmentId")
-    def scheduled_report_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_report_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment in which the scheduled resource will be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
     @scheduled_report_compartment_id.setter
-    def scheduled_report_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_report_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_report_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReportMimeType")
-    def scheduled_report_mime_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_report_mime_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the format of the report ( either .xls or .pdf or .json)
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
     @scheduled_report_mime_type.setter
-    def scheduled_report_mime_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_report_mime_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_report_mime_type", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReportName")
-    def scheduled_report_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_report_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the report to be scheduled.
         """
         return pulumi.get(self, "scheduled_report_name")
 
     @scheduled_report_name.setter
-    def scheduled_report_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_report_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_report_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReportRowLimit")
-    def scheduled_report_row_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scheduled_report_row_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies the limit on the number of rows in the report.
         """
         return pulumi.get(self, "scheduled_report_row_limit")
 
     @scheduled_report_row_limit.setter
-    def scheduled_report_row_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scheduled_report_row_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scheduled_report_row_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="scimFilter")
-    def scim_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scim_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional scim filters used to get the specific summary.
         """
         return pulumi.get(self, "scim_filter")
 
     @scim_filter.setter
-    def scim_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scim_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scim_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the report.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]]:
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]]:
         """
         (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         """
         return pulumi.get(self, "summaries")
 
     @summaries.setter
-    def summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]]):
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]]):
         pulumi.set(self, "summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the date and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the report definition was updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -627,16 +627,16 @@ class ReportDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
-                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
-                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
+                 column_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+                 column_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+                 column_sortings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -656,33 +656,33 @@ class ReportDefinition(pulumi.CustomResource):
             column_filters=[{
                 "expressions": report_definition_column_filters_expressions,
                 "field_name": report_definition_column_filters_field_name,
-                "is_enabled": report_definition_column_filters_is_enabled,
-                "is_hidden": report_definition_column_filters_is_hidden,
+                "is_enabled": report_definition_column_filters_is_enabled == "true",
+                "is_hidden": report_definition_column_filters_is_hidden == "true",
                 "operator": report_definition_column_filters_operator,
             }],
             column_infos=[{
                 "display_name": report_definition_column_info_display_name,
-                "display_order": report_definition_column_info_display_order,
+                "display_order": int(report_definition_column_info_display_order),
                 "field_name": report_definition_column_info_field_name,
-                "is_hidden": report_definition_column_info_is_hidden,
+                "is_hidden": report_definition_column_info_is_hidden == "true",
                 "applicable_operators": report_definition_column_info_applicable_operators,
                 "data_type": report_definition_column_info_data_type,
-                "is_virtual": report_definition_column_info_is_virtual,
+                "is_virtual": report_definition_column_info_is_virtual == "true",
             }],
             column_sortings=[{
                 "field_name": report_definition_column_sortings_field_name,
-                "is_ascending": report_definition_column_sortings_is_ascending,
-                "sorting_order": report_definition_column_sortings_sorting_order,
+                "is_ascending": report_definition_column_sortings_is_ascending == "true",
+                "sorting_order": int(report_definition_column_sortings_sorting_order),
             }],
             compartment_id=compartment_id,
             display_name=report_definition_display_name,
             parent_id=test_parent["id"],
             summaries=[{
-                "display_order": report_definition_summary_display_order,
+                "display_order": int(report_definition_summary_display_order),
                 "name": report_definition_summary_name,
                 "count_of": report_definition_summary_count_of,
                 "group_by_field_name": report_definition_summary_group_by_field_name,
-                "is_hidden": report_definition_summary_is_hidden,
+                "is_hidden": report_definition_summary_is_hidden == "true",
                 "scim_filter": report_definition_summary_scim_filter,
             }],
             defined_tags={
@@ -740,33 +740,33 @@ class ReportDefinition(pulumi.CustomResource):
             column_filters=[{
                 "expressions": report_definition_column_filters_expressions,
                 "field_name": report_definition_column_filters_field_name,
-                "is_enabled": report_definition_column_filters_is_enabled,
-                "is_hidden": report_definition_column_filters_is_hidden,
+                "is_enabled": report_definition_column_filters_is_enabled == "true",
+                "is_hidden": report_definition_column_filters_is_hidden == "true",
                 "operator": report_definition_column_filters_operator,
             }],
             column_infos=[{
                 "display_name": report_definition_column_info_display_name,
-                "display_order": report_definition_column_info_display_order,
+                "display_order": int(report_definition_column_info_display_order),
                 "field_name": report_definition_column_info_field_name,
-                "is_hidden": report_definition_column_info_is_hidden,
+                "is_hidden": report_definition_column_info_is_hidden == "true",
                 "applicable_operators": report_definition_column_info_applicable_operators,
                 "data_type": report_definition_column_info_data_type,
-                "is_virtual": report_definition_column_info_is_virtual,
+                "is_virtual": report_definition_column_info_is_virtual == "true",
             }],
             column_sortings=[{
                 "field_name": report_definition_column_sortings_field_name,
-                "is_ascending": report_definition_column_sortings_is_ascending,
-                "sorting_order": report_definition_column_sortings_sorting_order,
+                "is_ascending": report_definition_column_sortings_is_ascending == "true",
+                "sorting_order": int(report_definition_column_sortings_sorting_order),
             }],
             compartment_id=compartment_id,
             display_name=report_definition_display_name,
             parent_id=test_parent["id"],
             summaries=[{
-                "display_order": report_definition_summary_display_order,
+                "display_order": int(report_definition_summary_display_order),
                 "name": report_definition_summary_name,
                 "count_of": report_definition_summary_count_of,
                 "group_by_field_name": report_definition_summary_group_by_field_name,
-                "is_hidden": report_definition_summary_is_hidden,
+                "is_hidden": report_definition_summary_is_hidden == "true",
                 "scim_filter": report_definition_summary_scim_filter,
             }],
             defined_tags={
@@ -802,16 +802,16 @@ class ReportDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
-                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
-                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
+                 column_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+                 column_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+                 column_sortings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -872,33 +872,33 @@ class ReportDefinition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
-            column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
-            column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            data_source: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            display_order: Optional[pulumi.Input[_builtins.int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_seeded: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            record_time_span: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_report_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_report_mime_type: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_report_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_report_row_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            scim_filter: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ReportDefinition':
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            column_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+            column_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+            column_sortings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compliance_standards: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            data_source: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            display_order: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_seeded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            record_time_span: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_row_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            scim_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ReportDefinition':
         """
         Get an existing ReportDefinition resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

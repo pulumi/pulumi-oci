@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnects = oci.Core.getCrossConnects({
+ * const testCrossConnects = oci.core.getCrossConnects({
  *     compartmentId: compartmentId,
  *     crossConnectGroupId: testCrossConnectGroup.id,
  *     displayName: crossConnectDisplayName,
@@ -102,7 +102,7 @@ export interface GetCrossConnectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnects = oci.Core.getCrossConnects({
+ * const testCrossConnects = oci.core.getCrossConnects({
  *     compartmentId: compartmentId,
  *     crossConnectGroupId: testCrossConnectGroup.id,
  *     displayName: crossConnectDisplayName,
@@ -132,14 +132,14 @@ export interface GetCrossConnectsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
      */
-    crossConnectGroupId?: pulumi.Input<string>;
+    crossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCrossConnectsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCrossConnectsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

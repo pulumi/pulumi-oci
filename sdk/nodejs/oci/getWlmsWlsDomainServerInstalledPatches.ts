@@ -95,7 +95,7 @@ export function getWlmsWlsDomainServerInstalledPatchesOutput(args: GetWlmsWlsDom
  * A collection of arguments for invoking getWlmsWlsDomainServerInstalledPatches.
  */
 export interface GetWlmsWlsDomainServerInstalledPatchesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServerInstalledPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServerInstalledPatchesFilterArgs>[] | undefined>;
     /**
      * The unique identifier of a server.
      *

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEncryptedData = oci.Kms.getEncryptedData({
+ * const testEncryptedData = oci.kms.getEncryptedData({
  *     cryptoEndpoint: encryptedDataCryptoEndpoint,
  *     keyId: testKey.id,
  *     plaintext: encryptedDataPlaintext,
@@ -87,7 +87,7 @@ export interface GetEncryptedDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEncryptedData = oci.Kms.getEncryptedData({
+ * const testEncryptedData = oci.kms.getEncryptedData({
  *     cryptoEndpoint: encryptedDataCryptoEndpoint,
  *     keyId: testKey.id,
  *     plaintext: encryptedDataPlaintext,
@@ -112,7 +112,7 @@ export interface GetEncryptedDataOutputArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */

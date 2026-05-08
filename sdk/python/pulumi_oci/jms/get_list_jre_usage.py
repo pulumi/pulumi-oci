@@ -140,7 +140,7 @@ def get_list_jre_usage(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+    test_list_jre_usage = oci.jms.get_list_jre_usage(application_id=test_application["id"],
         application_name=test_application["name"],
         compartment_id=compartment_id,
         host_id=test_host["id"],
@@ -175,12 +175,12 @@ def get_list_jre_usage(application_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              application_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              host_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_list_jre_usage_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              host_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListJreUsageResult]:
     """
     This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
@@ -193,7 +193,7 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+    test_list_jre_usage = oci.jms.get_list_jre_usage(application_id=test_application["id"],
         application_name=test_application["name"],
         compartment_id=compartment_id,
         host_id=test_host["id"],

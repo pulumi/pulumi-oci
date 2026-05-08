@@ -100,15 +100,15 @@ __all__ = [
 ]
 
 class CertificateExtensionArgsDict(TypedDict):
-    is_critical: NotRequired[pulumi.Input[_builtins.bool]]
+    is_critical: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The certificate extension name.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The certificate extension value.
     """
@@ -116,9 +116,9 @@ class CertificateExtensionArgsDict(TypedDict):
 @pulumi.input_type
 class CertificateExtensionArgs:
     def __init__(__self__, *,
-                 is_critical: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_critical: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_critical: The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
         :param pulumi.Input[_builtins.str] name: The certificate extension name.
@@ -133,67 +133,67 @@ class CertificateExtensionArgs:
 
     @_builtins.property
     @pulumi.getter(name="isCritical")
-    def is_critical(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_critical(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
         """
         return pulumi.get(self, "is_critical")
 
     @is_critical.setter
-    def is_critical(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_critical(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_critical", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate extension name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate extension value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class CertificateIssuerNameArgsDict(TypedDict):
-    common_name: NotRequired[pulumi.Input[_builtins.str]]
+    common_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The fully qualified domain name used for DNS lookups of the server.
     """
-    country: NotRequired[pulumi.Input[_builtins.str]]
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The email address of the server's administrator.
     """
-    locality: NotRequired[pulumi.Input[_builtins.str]]
+    locality: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The city in which the organization is located.
     """
-    organization: NotRequired[pulumi.Input[_builtins.str]]
+    organization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The organization name.
     """
-    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    organizational_unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field to differentiate between divisions within an organization.
     """
-    state_province: NotRequired[pulumi.Input[_builtins.str]]
+    state_province: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The province where the organization is located.
     """
@@ -201,13 +201,13 @@ class CertificateIssuerNameArgsDict(TypedDict):
 @pulumi.input_type
 class CertificateIssuerNameArgs:
     def __init__(__self__, *,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 locality: Optional[pulumi.Input[_builtins.str]] = None,
-                 organization: Optional[pulumi.Input[_builtins.str]] = None,
-                 organizational_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_province: Optional[pulumi.Input[_builtins.str]] = None):
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 locality: pulumi.Input[Optional[_builtins.str]] = None,
+                 organization: pulumi.Input[Optional[_builtins.str]] = None,
+                 organizational_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_province: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] common_name: The fully qualified domain name used for DNS lookups of the server.
         :param pulumi.Input[_builtins.str] country: ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
@@ -234,99 +234,99 @@ class CertificateIssuerNameArgs:
 
     @_builtins.property
     @pulumi.getter(name="commonName")
-    def common_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def common_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified domain name used for DNS lookups of the server.
         """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
-    def common_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def common_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "common_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email address of the server's administrator.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def locality(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locality(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city in which the organization is located.
         """
         return pulumi.get(self, "locality")
 
     @locality.setter
-    def locality(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locality(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locality", value)
 
     @_builtins.property
     @pulumi.getter
-    def organization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The organization name.
         """
         return pulumi.get(self, "organization")
 
     @organization.setter
-    def organization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organization", value)
 
     @_builtins.property
     @pulumi.getter(name="organizationalUnit")
-    def organizational_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organizational_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field to differentiate between divisions within an organization.
         """
         return pulumi.get(self, "organizational_unit")
 
     @organizational_unit.setter
-    def organizational_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organizational_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organizational_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="stateProvince")
-    def state_province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The province where the organization is located.
         """
         return pulumi.get(self, "state_province")
 
     @state_province.setter
-    def state_province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_province", value)
 
 
 class CertificatePublicKeyInfoArgsDict(TypedDict):
-    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The algorithm identifier and parameters for the public key.
     """
-    exponent: NotRequired[pulumi.Input[_builtins.int]]
+    exponent: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The private key exponent.
     """
-    key_size: NotRequired[pulumi.Input[_builtins.int]]
+    key_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of bits in a key used by a cryptographic algorithm.
     """
@@ -334,9 +334,9 @@ class CertificatePublicKeyInfoArgsDict(TypedDict):
 @pulumi.input_type
 class CertificatePublicKeyInfoArgs:
     def __init__(__self__, *,
-                 algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 exponent: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_size: Optional[pulumi.Input[_builtins.int]] = None):
+                 algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 exponent: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_size: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] algorithm: The algorithm identifier and parameters for the public key.
         :param pulumi.Input[_builtins.int] exponent: The private key exponent.
@@ -351,67 +351,67 @@ class CertificatePublicKeyInfoArgs:
 
     @_builtins.property
     @pulumi.getter
-    def algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The algorithm identifier and parameters for the public key.
         """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
-    def algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def exponent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def exponent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The private key exponent.
         """
         return pulumi.get(self, "exponent")
 
     @exponent.setter
-    def exponent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def exponent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "exponent", value)
 
     @_builtins.property
     @pulumi.getter(name="keySize")
-    def key_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of bits in a key used by a cryptographic algorithm.
         """
         return pulumi.get(self, "key_size")
 
     @key_size.setter
-    def key_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_size", value)
 
 
 class CertificateSubjectNameArgsDict(TypedDict):
-    common_name: NotRequired[pulumi.Input[_builtins.str]]
+    common_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The fully qualified domain name used for DNS lookups of the server.
     """
-    country: NotRequired[pulumi.Input[_builtins.str]]
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
     """
-    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    email_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The email address of the server's administrator.
     """
-    locality: NotRequired[pulumi.Input[_builtins.str]]
+    locality: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The city in which the organization is located.
     """
-    organization: NotRequired[pulumi.Input[_builtins.str]]
+    organization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The organization name.
     """
-    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    organizational_unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field to differentiate between divisions within an organization.
     """
-    state_province: NotRequired[pulumi.Input[_builtins.str]]
+    state_province: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The province where the organization is located.
     """
@@ -419,13 +419,13 @@ class CertificateSubjectNameArgsDict(TypedDict):
 @pulumi.input_type
 class CertificateSubjectNameArgs:
     def __init__(__self__, *,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 locality: Optional[pulumi.Input[_builtins.str]] = None,
-                 organization: Optional[pulumi.Input[_builtins.str]] = None,
-                 organizational_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_province: Optional[pulumi.Input[_builtins.str]] = None):
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 locality: pulumi.Input[Optional[_builtins.str]] = None,
+                 organization: pulumi.Input[Optional[_builtins.str]] = None,
+                 organizational_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_province: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] common_name: The fully qualified domain name used for DNS lookups of the server.
         :param pulumi.Input[_builtins.str] country: ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
@@ -452,86 +452,86 @@ class CertificateSubjectNameArgs:
 
     @_builtins.property
     @pulumi.getter(name="commonName")
-    def common_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def common_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified domain name used for DNS lookups of the server.
         """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
-    def common_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def common_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "common_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email address of the server's administrator.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def locality(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locality(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city in which the organization is located.
         """
         return pulumi.get(self, "locality")
 
     @locality.setter
-    def locality(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locality(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locality", value)
 
     @_builtins.property
     @pulumi.getter
-    def organization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The organization name.
         """
         return pulumi.get(self, "organization")
 
     @organization.setter
-    def organization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organization", value)
 
     @_builtins.property
     @pulumi.getter(name="organizationalUnit")
-    def organizational_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organizational_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field to differentiate between divisions within an organization.
         """
         return pulumi.get(self, "organizational_unit")
 
     @organizational_unit.setter
-    def organizational_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organizational_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organizational_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="stateProvince")
-    def state_province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The province where the organization is located.
         """
         return pulumi.get(self, "state_province")
 
     @state_province.setter
-    def state_province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_province", value)
 
 
@@ -556,7 +556,7 @@ class HttpRedirectTargetArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Port number of the target destination of the redirect, default to match protocol
     """
@@ -568,7 +568,7 @@ class HttpRedirectTargetArgs:
                  path: pulumi.Input[_builtins.str],
                  protocol: pulumi.Input[_builtins.str],
                  query: pulumi.Input[_builtins.str],
-                 port: Optional[pulumi.Input[_builtins.int]] = None):
+                 port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] host: (Updatable) The host portion of the redirect.
         :param pulumi.Input[_builtins.str] path: (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
@@ -641,14 +641,14 @@ class HttpRedirectTargetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Port number of the target destination of the redirect, default to match protocol
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
 
@@ -658,15 +658,15 @@ class PolicyOriginArgsDict(TypedDict):
     """
     (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
     """
-    custom_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgsDict']]]]
+    custom_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]]
     """
     (Updatable) A list of HTTP headers to forward to your origin.
     """
-    http_port: NotRequired[pulumi.Input[_builtins.int]]
+    http_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
     """
-    https_port: NotRequired[pulumi.Input[_builtins.int]]
+    https_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
     """
@@ -676,9 +676,9 @@ class PolicyOriginArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[_builtins.str],
                  uri: pulumi.Input[_builtins.str],
-                 custom_headers: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]] = None,
-                 http_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 https_port: Optional[pulumi.Input[_builtins.int]] = None):
+                 custom_headers: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]] = None,
+                 http_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 https_port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] uri: (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]] custom_headers: (Updatable) A list of HTTP headers to forward to your origin.
@@ -717,38 +717,38 @@ class PolicyOriginArgs:
 
     @_builtins.property
     @pulumi.getter(name="customHeaders")
-    def custom_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]:
+    def custom_headers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]:
         """
         (Updatable) A list of HTTP headers to forward to your origin.
         """
         return pulumi.get(self, "custom_headers")
 
     @custom_headers.setter
-    def custom_headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]):
+    def custom_headers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]):
         pulumi.set(self, "custom_headers", value)
 
     @_builtins.property
     @pulumi.getter(name="httpPort")
-    def http_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def http_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
         """
         return pulumi.get(self, "http_port")
 
     @http_port.setter
-    def http_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def http_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "http_port", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsPort")
-    def https_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def https_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
         """
         return pulumi.get(self, "https_port")
 
     @https_port.setter
-    def https_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def https_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "https_port", value)
 
 
@@ -835,13 +835,13 @@ class PolicyOriginGroupOriginGroupArgsDict(TypedDict):
     """
     The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
     """
-    weight: NotRequired[pulumi.Input[_builtins.int]]
+    weight: NotRequired[pulumi.Input[Optional[_builtins.int]]]
 
 @pulumi.input_type
 class PolicyOriginGroupOriginGroupArgs:
     def __init__(__self__, *,
                  origin: pulumi.Input[_builtins.str],
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] origin: The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
         """
@@ -863,25 +863,25 @@ class PolicyOriginGroupOriginGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
 class PolicyPolicyConfigArgsDict(TypedDict):
-    certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
     """
-    cipher_group: NotRequired[pulumi.Input[_builtins.str]]
+    cipher_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
     * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
     """
-    client_address_header: NotRequired[pulumi.Input[_builtins.str]]
+    client_address_header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
 
@@ -896,43 +896,43 @@ class PolicyPolicyConfigArgsDict(TypedDict):
     * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
     * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
     """
-    health_checks: NotRequired[pulumi.Input['PolicyPolicyConfigHealthChecksArgsDict']]
+    health_checks: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgs']]]
     """
     (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
     """
-    is_behind_cdn: NotRequired[pulumi.Input[_builtins.bool]]
+    is_behind_cdn: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
     """
-    is_cache_control_respected: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cache_control_respected: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
     """
-    is_https_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_https_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
     """
-    is_https_forced: NotRequired[pulumi.Input[_builtins.bool]]
+    is_https_forced: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
     """
-    is_origin_compression_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_origin_compression_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
     """
-    is_response_buffering_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_response_buffering_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
     """
-    is_sni_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_sni_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
     """
-    load_balancing_method: NotRequired[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgsDict']]
+    load_balancing_method: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgs']]]
     """
     (Updatable) An object that represents a load balancing method and its properties.
     """
-    tls_protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    tls_protocols: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
     * **TLS_V1:** corresponds to TLS 1.0 specification.
@@ -942,7 +942,7 @@ class PolicyPolicyConfigArgsDict(TypedDict):
 
     Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
     """
-    websocket_path_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    websocket_path_prefixes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
     """
@@ -950,20 +950,20 @@ class PolicyPolicyConfigArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyPolicyConfigArgs:
     def __init__(__self__, *,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cipher_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_address_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_checks: Optional[pulumi.Input['PolicyPolicyConfigHealthChecksArgs']] = None,
-                 is_behind_cdn: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cache_control_respected: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_forced: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_origin_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_response_buffering_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sni_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_balancing_method: Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']] = None,
-                 tls_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 websocket_path_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cipher_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_address_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_checks: pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgs']] = None,
+                 is_behind_cdn: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cache_control_respected: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_forced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_origin_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_response_buffering_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sni_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_balancing_method: pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgs']] = None,
+                 tls_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 websocket_path_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
         :param pulumi.Input[_builtins.str] cipher_group: (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
@@ -1029,19 +1029,19 @@ class PolicyPolicyConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
         """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cipherGroup")
-    def cipher_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cipher_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
         * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
@@ -1049,12 +1049,12 @@ class PolicyPolicyConfigArgs:
         return pulumi.get(self, "cipher_group")
 
     @cipher_group.setter
-    def cipher_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cipher_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cipher_group", value)
 
     @_builtins.property
     @pulumi.getter(name="clientAddressHeader")
-    def client_address_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_address_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
 
@@ -1072,120 +1072,120 @@ class PolicyPolicyConfigArgs:
         return pulumi.get(self, "client_address_header")
 
     @client_address_header.setter
-    def client_address_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_address_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_address_header", value)
 
     @_builtins.property
     @pulumi.getter(name="healthChecks")
-    def health_checks(self) -> Optional[pulumi.Input['PolicyPolicyConfigHealthChecksArgs']]:
+    def health_checks(self) -> pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgs']]:
         """
         (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
         """
         return pulumi.get(self, "health_checks")
 
     @health_checks.setter
-    def health_checks(self, value: Optional[pulumi.Input['PolicyPolicyConfigHealthChecksArgs']]):
+    def health_checks(self, value: pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgs']]):
         pulumi.set(self, "health_checks", value)
 
     @_builtins.property
     @pulumi.getter(name="isBehindCdn")
-    def is_behind_cdn(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_behind_cdn(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
         """
         return pulumi.get(self, "is_behind_cdn")
 
     @is_behind_cdn.setter
-    def is_behind_cdn(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_behind_cdn(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_behind_cdn", value)
 
     @_builtins.property
     @pulumi.getter(name="isCacheControlRespected")
-    def is_cache_control_respected(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cache_control_respected(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
         """
         return pulumi.get(self, "is_cache_control_respected")
 
     @is_cache_control_respected.setter
-    def is_cache_control_respected(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cache_control_respected(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cache_control_respected", value)
 
     @_builtins.property
     @pulumi.getter(name="isHttpsEnabled")
-    def is_https_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_https_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
         """
         return pulumi.get(self, "is_https_enabled")
 
     @is_https_enabled.setter
-    def is_https_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_https_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_https_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHttpsForced")
-    def is_https_forced(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_https_forced(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
         """
         return pulumi.get(self, "is_https_forced")
 
     @is_https_forced.setter
-    def is_https_forced(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_https_forced(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_https_forced", value)
 
     @_builtins.property
     @pulumi.getter(name="isOriginCompressionEnabled")
-    def is_origin_compression_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_origin_compression_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
         """
         return pulumi.get(self, "is_origin_compression_enabled")
 
     @is_origin_compression_enabled.setter
-    def is_origin_compression_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_origin_compression_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_origin_compression_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isResponseBufferingEnabled")
-    def is_response_buffering_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_response_buffering_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
         """
         return pulumi.get(self, "is_response_buffering_enabled")
 
     @is_response_buffering_enabled.setter
-    def is_response_buffering_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_response_buffering_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_response_buffering_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSniEnabled")
-    def is_sni_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sni_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
         """
         return pulumi.get(self, "is_sni_enabled")
 
     @is_sni_enabled.setter
-    def is_sni_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sni_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sni_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancingMethod")
-    def load_balancing_method(self) -> Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']]:
+    def load_balancing_method(self) -> pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgs']]:
         """
         (Updatable) An object that represents a load balancing method and its properties.
         """
         return pulumi.get(self, "load_balancing_method")
 
     @load_balancing_method.setter
-    def load_balancing_method(self, value: Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']]):
+    def load_balancing_method(self, value: pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgs']]):
         pulumi.set(self, "load_balancing_method", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsProtocols")
-    def tls_protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tls_protocols(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
         * **TLS_V1:** corresponds to TLS 1.0 specification.
@@ -1198,24 +1198,24 @@ class PolicyPolicyConfigArgs:
         return pulumi.get(self, "tls_protocols")
 
     @tls_protocols.setter
-    def tls_protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tls_protocols(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tls_protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="websocketPathPrefixes")
-    def websocket_path_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def websocket_path_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
         """
         return pulumi.get(self, "websocket_path_prefixes")
 
     @websocket_path_prefixes.setter
-    def websocket_path_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def websocket_path_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "websocket_path_prefixes", value)
 
 
 class PolicyPolicyConfigHealthChecksArgsDict(TypedDict):
-    expected_response_code_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    expected_response_code_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The HTTP response codes that signify a healthy state.
     * **2XX:** Success response code group.
@@ -1223,45 +1223,45 @@ class PolicyPolicyConfigHealthChecksArgsDict(TypedDict):
     * **4XX:** Client errors response code group.
     * **5XX:** Server errors response code group.
     """
-    expected_response_text: NotRequired[pulumi.Input[_builtins.str]]
+    expected_response_text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
     """
-    headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    headers: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 
     **Note:** The only currently-supported header fields are Host and User-Agent.
     """
-    healthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    healthy_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of successful health checks after which the server is marked up.
     """
-    interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    interval_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Time between health checks of an individual origin server, in seconds.
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables or disables the health checks.
     """
-    is_response_text_check_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_response_text_check_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables or disables additional check for predefined text in addition to response code.
     """
-    method: NotRequired[pulumi.Input[_builtins.str]]
+    method: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Path to visit on your origins when performing the health check.
     """
-    timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
     """
-    unhealthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    unhealthy_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of failed health checks after which the server is marked down.
     """
@@ -1269,17 +1269,17 @@ class PolicyPolicyConfigHealthChecksArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyPolicyConfigHealthChecksArgs:
     def __init__(__self__, *,
-                 expected_response_code_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 expected_response_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 healthy_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_response_text_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 method: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 unhealthy_threshold: Optional[pulumi.Input[_builtins.int]] = None):
+                 expected_response_code_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 expected_response_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 healthy_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_response_text_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 method: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 unhealthy_threshold: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] expected_response_code_groups: (Updatable) The HTTP response codes that signify a healthy state.
                * **2XX:** Success response code group.
@@ -1324,7 +1324,7 @@ class PolicyPolicyConfigHealthChecksArgs:
 
     @_builtins.property
     @pulumi.getter(name="expectedResponseCodeGroups")
-    def expected_response_code_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def expected_response_code_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The HTTP response codes that signify a healthy state.
         * **2XX:** Success response code group.
@@ -1335,24 +1335,24 @@ class PolicyPolicyConfigHealthChecksArgs:
         return pulumi.get(self, "expected_response_code_groups")
 
     @expected_response_code_groups.setter
-    def expected_response_code_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def expected_response_code_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "expected_response_code_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedResponseText")
-    def expected_response_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expected_response_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
         """
         return pulumi.get(self, "expected_response_text")
 
     @expected_response_text.setter
-    def expected_response_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expected_response_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expected_response_text", value)
 
     @_builtins.property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def headers(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 
@@ -1361,103 +1361,103 @@ class PolicyPolicyConfigHealthChecksArgs:
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def headers(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "headers", value)
 
     @_builtins.property
     @pulumi.getter(name="healthyThreshold")
-    def healthy_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def healthy_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of successful health checks after which the server is marked up.
         """
         return pulumi.get(self, "healthy_threshold")
 
     @healthy_threshold.setter
-    def healthy_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def healthy_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "healthy_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Time between health checks of an individual origin server, in seconds.
         """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
-    def interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables or disables the health checks.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isResponseTextCheckEnabled")
-    def is_response_text_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_response_text_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables or disables additional check for predefined text in addition to response code.
         """
         return pulumi.get(self, "is_response_text_check_enabled")
 
     @is_response_text_check_enabled.setter
-    def is_response_text_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_response_text_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_response_text_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
         """
         return pulumi.get(self, "method")
 
     @method.setter
-    def method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "method", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Path to visit on your origins when performing the health check.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="unhealthyThreshold")
-    def unhealthy_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def unhealthy_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of failed health checks after which the server is marked down.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
     @unhealthy_threshold.setter
-    def unhealthy_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def unhealthy_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "unhealthy_threshold", value)
 
 
@@ -1469,15 +1469,15 @@ class PolicyPolicyConfigLoadBalancingMethodArgsDict(TypedDict):
     * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
     * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
     """
-    domain: NotRequired[pulumi.Input[_builtins.str]]
+    domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
     """
-    expiration_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    expiration_time_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
     """
@@ -1486,9 +1486,9 @@ class PolicyPolicyConfigLoadBalancingMethodArgsDict(TypedDict):
 class PolicyPolicyConfigLoadBalancingMethodArgs:
     def __init__(__self__, *,
                  method: pulumi.Input[_builtins.str],
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration_time_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] method: (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
                * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -1523,87 +1523,87 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationTimeInSeconds")
-    def expiration_time_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiration_time_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
         """
         return pulumi.get(self, "expiration_time_in_seconds")
 
     @expiration_time_in_seconds.setter
-    def expiration_time_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiration_time_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiration_time_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class PolicyWafConfigArgsDict(TypedDict):
-    access_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgsDict']]]]
+    access_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]]
     """
     (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
     """
-    address_rate_limiting: NotRequired[pulumi.Input['PolicyWafConfigAddressRateLimitingArgsDict']]
+    address_rate_limiting: NotRequired[pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgs']]]
     """
     (Updatable) The settings used to limit the number of requests from an IP address.
     """
-    caching_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgsDict']]]]
+    caching_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]]
     """
     (Updatable) A list of caching rules applied to the web application.
     """
-    captchas: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgsDict']]]]
+    captchas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]]
     """
     (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
     """
-    custom_protection_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgsDict']]]]
+    custom_protection_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]]
     """
     (Updatable) A list of the custom protection rule OCIDs and their actions.
     """
-    device_fingerprint_challenge: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgsDict']]
+    device_fingerprint_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgs']]]
     """
     (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
     """
-    human_interaction_challenge: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgsDict']]
+    human_interaction_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgs']]]
     """
     (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
     """
-    js_challenge: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeArgsDict']]
+    js_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeArgs']]]
     """
     (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
     """
-    origin: NotRequired[pulumi.Input[_builtins.str]]
+    origin: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
     """
-    origin_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    origin_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
     """
-    protection_settings: NotRequired[pulumi.Input['PolicyWafConfigProtectionSettingsArgsDict']]
+    protection_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgs']]]
     """
     (Updatable) The settings applied to protection rules.
     """
-    whitelists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgsDict']]]]
+    whitelists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]]
     """
     (Updatable) A list of IP addresses that bypass the Web Application Firewall.
     """
@@ -1611,18 +1611,18 @@ class PolicyWafConfigArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyWafConfigArgs:
     def __init__(__self__, *,
-                 access_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]] = None,
-                 address_rate_limiting: Optional[pulumi.Input['PolicyWafConfigAddressRateLimitingArgs']] = None,
-                 caching_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]] = None,
-                 captchas: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]] = None,
-                 custom_protection_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]] = None,
-                 device_fingerprint_challenge: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs']] = None,
-                 human_interaction_challenge: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs']] = None,
-                 js_challenge: Optional[pulumi.Input['PolicyWafConfigJsChallengeArgs']] = None,
-                 origin: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 protection_settings: Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']] = None,
-                 whitelists: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]] = None):
+                 access_rules: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]] = None,
+                 address_rate_limiting: pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgs']] = None,
+                 caching_rules: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]] = None,
+                 captchas: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]] = None,
+                 custom_protection_rules: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]] = None,
+                 device_fingerprint_challenge: pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgs']] = None,
+                 human_interaction_challenge: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgs']] = None,
+                 js_challenge: pulumi.Input[Optional['PolicyWafConfigJsChallengeArgs']] = None,
+                 origin: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 protection_settings: pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgs']] = None,
+                 whitelists: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]] access_rules: (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
         :param pulumi.Input['PolicyWafConfigAddressRateLimitingArgs'] address_rate_limiting: (Updatable) The settings used to limit the number of requests from an IP address.
@@ -1664,146 +1664,146 @@ class PolicyWafConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessRules")
-    def access_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]:
+    def access_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]:
         """
         (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
         """
         return pulumi.get(self, "access_rules")
 
     @access_rules.setter
-    def access_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]):
+    def access_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]):
         pulumi.set(self, "access_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="addressRateLimiting")
-    def address_rate_limiting(self) -> Optional[pulumi.Input['PolicyWafConfigAddressRateLimitingArgs']]:
+    def address_rate_limiting(self) -> pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgs']]:
         """
         (Updatable) The settings used to limit the number of requests from an IP address.
         """
         return pulumi.get(self, "address_rate_limiting")
 
     @address_rate_limiting.setter
-    def address_rate_limiting(self, value: Optional[pulumi.Input['PolicyWafConfigAddressRateLimitingArgs']]):
+    def address_rate_limiting(self, value: pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgs']]):
         pulumi.set(self, "address_rate_limiting", value)
 
     @_builtins.property
     @pulumi.getter(name="cachingRules")
-    def caching_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]:
+    def caching_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]:
         """
         (Updatable) A list of caching rules applied to the web application.
         """
         return pulumi.get(self, "caching_rules")
 
     @caching_rules.setter
-    def caching_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]):
+    def caching_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]):
         pulumi.set(self, "caching_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def captchas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]:
+    def captchas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]:
         """
         (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
         """
         return pulumi.get(self, "captchas")
 
     @captchas.setter
-    def captchas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]):
+    def captchas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]):
         pulumi.set(self, "captchas", value)
 
     @_builtins.property
     @pulumi.getter(name="customProtectionRules")
-    def custom_protection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]:
+    def custom_protection_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]:
         """
         (Updatable) A list of the custom protection rule OCIDs and their actions.
         """
         return pulumi.get(self, "custom_protection_rules")
 
     @custom_protection_rules.setter
-    def custom_protection_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]):
+    def custom_protection_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]):
         pulumi.set(self, "custom_protection_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="deviceFingerprintChallenge")
-    def device_fingerprint_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs']]:
+    def device_fingerprint_challenge(self) -> pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgs']]:
         """
         (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
         """
         return pulumi.get(self, "device_fingerprint_challenge")
 
     @device_fingerprint_challenge.setter
-    def device_fingerprint_challenge(self, value: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs']]):
+    def device_fingerprint_challenge(self, value: pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgs']]):
         pulumi.set(self, "device_fingerprint_challenge", value)
 
     @_builtins.property
     @pulumi.getter(name="humanInteractionChallenge")
-    def human_interaction_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs']]:
+    def human_interaction_challenge(self) -> pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgs']]:
         """
         (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
         """
         return pulumi.get(self, "human_interaction_challenge")
 
     @human_interaction_challenge.setter
-    def human_interaction_challenge(self, value: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs']]):
+    def human_interaction_challenge(self, value: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgs']]):
         pulumi.set(self, "human_interaction_challenge", value)
 
     @_builtins.property
     @pulumi.getter(name="jsChallenge")
-    def js_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeArgs']]:
+    def js_challenge(self) -> pulumi.Input[Optional['PolicyWafConfigJsChallengeArgs']]:
         """
         (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
         """
         return pulumi.get(self, "js_challenge")
 
     @js_challenge.setter
-    def js_challenge(self, value: Optional[pulumi.Input['PolicyWafConfigJsChallengeArgs']]):
+    def js_challenge(self, value: pulumi.Input[Optional['PolicyWafConfigJsChallengeArgs']]):
         pulumi.set(self, "js_challenge", value)
 
     @_builtins.property
     @pulumi.getter
-    def origin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
         """
         return pulumi.get(self, "origin")
 
     @origin.setter
-    def origin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin", value)
 
     @_builtins.property
     @pulumi.getter(name="originGroups")
-    def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def origin_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
         """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
-    def origin_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def origin_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "origin_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionSettings")
-    def protection_settings(self) -> Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']]:
+    def protection_settings(self) -> pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgs']]:
         """
         (Updatable) The settings applied to protection rules.
         """
         return pulumi.get(self, "protection_settings")
 
     @protection_settings.setter
-    def protection_settings(self, value: Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']]):
+    def protection_settings(self, value: pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgs']]):
         pulumi.set(self, "protection_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def whitelists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]:
+    def whitelists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]:
         """
         (Updatable) A list of IP addresses that bypass the Web Application Firewall.
         """
         return pulumi.get(self, "whitelists")
 
     @whitelists.setter
-    def whitelists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]):
+    def whitelists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]):
         pulumi.set(self, "whitelists", value)
 
 
@@ -1828,27 +1828,27 @@ class PolicyWafConfigAccessRuleArgsDict(TypedDict):
     """
     (Updatable) The unique name of the access rule.
     """
-    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    block_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
     """
-    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
     """
-    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
     """
-    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    bypass_challenges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    bypass_challenges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
     * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -1856,33 +1856,33 @@ class PolicyWafConfigAccessRuleArgsDict(TypedDict):
     * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
     * **CAPTCHA:** Bypasses CAPTCHA Challenge.
     """
-    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_footer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
     """
-    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
     """
-    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_submit_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
     """
-    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
     """
-    redirect_response_code: NotRequired[pulumi.Input[_builtins.str]]
+    redirect_response_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The response status code to return when `action` is set to `REDIRECT`.
     * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
     * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
     """
-    redirect_url: NotRequired[pulumi.Input[_builtins.str]]
+    redirect_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
     """
-    response_header_manipulations: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict']]]]
+    response_header_manipulations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]]
     """
     (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
     """
@@ -1893,19 +1893,19 @@ class PolicyWafConfigAccessRuleArgs:
                  action: pulumi.Input[_builtins.str],
                  criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgs']]],
                  name: pulumi.Input[_builtins.str],
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 bypass_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 captcha_footer: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_submit_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_response_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_header_manipulations: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]] = None):
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 bypass_challenges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 captcha_footer: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_submit_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_response_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_header_manipulations: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
                * **ALLOW:** Takes no action, just logs the request.
@@ -2014,67 +2014,67 @@ class PolicyWafConfigAccessRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageCode")
-    def block_error_page_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
         """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
-    def block_error_page_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_code", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageDescription")
-    def block_error_page_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
         """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
-    def block_error_page_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_description", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageMessage")
-    def block_error_page_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
         """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
-    def block_error_page_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_message", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="bypassChallenges")
-    def bypass_challenges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def bypass_challenges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
         * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -2085,60 +2085,60 @@ class PolicyWafConfigAccessRuleArgs:
         return pulumi.get(self, "bypass_challenges")
 
     @bypass_challenges.setter
-    def bypass_challenges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def bypass_challenges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "bypass_challenges", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaFooter")
-    def captcha_footer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_footer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
         """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
-    def captcha_footer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_footer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_footer", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaHeader")
-    def captcha_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
         """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
-    def captcha_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_header", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaSubmitLabel")
-    def captcha_submit_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_submit_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
         """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
-    def captcha_submit_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_submit_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_submit_label", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaTitle")
-    def captcha_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
         """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
-    def captcha_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_title", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectResponseCode")
-    def redirect_response_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redirect_response_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The response status code to return when `action` is set to `REDIRECT`.
         * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
@@ -2147,31 +2147,31 @@ class PolicyWafConfigAccessRuleArgs:
         return pulumi.get(self, "redirect_response_code")
 
     @redirect_response_code.setter
-    def redirect_response_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redirect_response_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redirect_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUrl")
-    def redirect_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redirect_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
         """
         return pulumi.get(self, "redirect_url")
 
     @redirect_url.setter
-    def redirect_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redirect_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redirect_url", value)
 
     @_builtins.property
     @pulumi.getter(name="responseHeaderManipulations")
-    def response_header_manipulations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]:
+    def response_header_manipulations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]:
         """
         (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
         """
         return pulumi.get(self, "response_header_manipulations")
 
     @response_header_manipulations.setter
-    def response_header_manipulations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]):
+    def response_header_manipulations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]):
         pulumi.set(self, "response_header_manipulations", value)
 
 
@@ -2209,7 +2209,7 @@ class PolicyWafConfigAccessRuleCriteriaArgsDict(TypedDict):
     """
     (Updatable) The criteria value.
     """
-    is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    is_case_sensitive: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When enabled, the condition will be matched with case-sensitive rules.
     """
@@ -2219,7 +2219,7 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
     def __init__(__self__, *,
                  condition: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 is_case_sensitive: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_case_sensitive: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
                * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
@@ -2306,14 +2306,14 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
 
     @_builtins.property
     @pulumi.getter(name="isCaseSensitive")
-    def is_case_sensitive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_case_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
         return pulumi.get(self, "is_case_sensitive")
 
     @is_case_sensitive.setter
-    def is_case_sensitive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_case_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_case_sensitive", value)
 
 
@@ -2326,7 +2326,7 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict(TypedDict):
     """
     (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
     """
@@ -2336,7 +2336,7 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  header: pulumi.Input[_builtins.str],
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param pulumi.Input[_builtins.str] header: (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
@@ -2373,14 +2373,14 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -2389,15 +2389,15 @@ class PolicyWafConfigAddressRateLimitingArgsDict(TypedDict):
     """
     (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
     """
-    allowed_rate_per_address: NotRequired[pulumi.Input[_builtins.int]]
+    allowed_rate_per_address: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    max_delayed_count_per_address: NotRequired[pulumi.Input[_builtins.int]]
+    max_delayed_count_per_address: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
     """
@@ -2406,9 +2406,9 @@ class PolicyWafConfigAddressRateLimitingArgsDict(TypedDict):
 class PolicyWafConfigAddressRateLimitingArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 allowed_rate_per_address: Optional[pulumi.Input[_builtins.int]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_delayed_count_per_address: Optional[pulumi.Input[_builtins.int]] = None):
+                 allowed_rate_per_address: pulumi.Input[Optional[_builtins.int]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_delayed_count_per_address: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
         :param pulumi.Input[_builtins.int] allowed_rate_per_address: (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -2437,38 +2437,38 @@ class PolicyWafConfigAddressRateLimitingArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedRatePerAddress")
-    def allowed_rate_per_address(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def allowed_rate_per_address(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
         """
         return pulumi.get(self, "allowed_rate_per_address")
 
     @allowed_rate_per_address.setter
-    def allowed_rate_per_address(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def allowed_rate_per_address(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "allowed_rate_per_address", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDelayedCountPerAddress")
-    def max_delayed_count_per_address(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_delayed_count_per_address(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
         """
         return pulumi.get(self, "max_delayed_count_per_address")
 
     @max_delayed_count_per_address.setter
-    def max_delayed_count_per_address(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_delayed_count_per_address(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_delayed_count_per_address", value)
 
 
@@ -2487,19 +2487,19 @@ class PolicyWafConfigCachingRuleArgsDict(TypedDict):
     """
     (Updatable) The name of the caching rule.
     """
-    caching_duration: NotRequired[pulumi.Input[_builtins.str]]
+    caching_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
     """
-    client_caching_duration: NotRequired[pulumi.Input[_builtins.str]]
+    client_caching_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
     """
-    is_client_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_client_caching_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique key for the caching rule.
     """
@@ -2510,10 +2510,10 @@ class PolicyWafConfigCachingRuleArgs:
                  action: pulumi.Input[_builtins.str],
                  criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgs']]],
                  name: pulumi.Input[_builtins.str],
-                 caching_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_caching_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_client_caching_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None):
+                 caching_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_caching_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_client_caching_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the criteria of a caching rule are met.
                * **CACHE:** Caches requested content when the criteria of the rule are met.
@@ -2577,50 +2577,50 @@ class PolicyWafConfigCachingRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="cachingDuration")
-    def caching_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def caching_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         """
         return pulumi.get(self, "caching_duration")
 
     @caching_duration.setter
-    def caching_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def caching_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "caching_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="clientCachingDuration")
-    def client_caching_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_caching_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         """
         return pulumi.get(self, "client_caching_duration")
 
     @client_caching_duration.setter
-    def client_caching_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_caching_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_caching_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="isClientCachingEnabled")
-    def is_client_caching_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_client_caching_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
         """
         return pulumi.get(self, "is_client_caching_enabled")
 
     @is_client_caching_enabled.setter
-    def is_client_caching_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_client_caching_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_client_caching_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique key for the caching rule.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
 
@@ -2710,11 +2710,11 @@ class PolicyWafConfigCaptchaArgsDict(TypedDict):
     """
     (Updatable) The unique URL path at which to show the CAPTCHA challenge.
     """
-    footer_text: NotRequired[pulumi.Input[_builtins.str]]
+    footer_text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
     """
-    header_text: NotRequired[pulumi.Input[_builtins.str]]
+    header_text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
     """
@@ -2727,8 +2727,8 @@ class PolicyWafConfigCaptchaArgs:
                  submit_label: pulumi.Input[_builtins.str],
                  title: pulumi.Input[_builtins.str],
                  url: pulumi.Input[_builtins.str],
-                 footer_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 header_text: Optional[pulumi.Input[_builtins.str]] = None):
+                 footer_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 header_text: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] failure_message: (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
         :param pulumi.Input[_builtins.int] session_expiration_in_seconds: (Updatable) The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
@@ -2810,39 +2810,39 @@ class PolicyWafConfigCaptchaArgs:
 
     @_builtins.property
     @pulumi.getter(name="footerText")
-    def footer_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def footer_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
         """
         return pulumi.get(self, "footer_text")
 
     @footer_text.setter
-    def footer_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def footer_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "footer_text", value)
 
     @_builtins.property
     @pulumi.getter(name="headerText")
-    def header_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def header_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
         """
         return pulumi.get(self, "header_text")
 
     @header_text.setter
-    def header_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def header_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "header_text", value)
 
 
 class PolicyWafConfigCustomProtectionRuleArgsDict(TypedDict):
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
     """
-    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgsDict']]]]
+    exclusions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]]
     """
     (Updatable)
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
     """
@@ -2850,9 +2850,9 @@ class PolicyWafConfigCustomProtectionRuleArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyWafConfigCustomProtectionRuleArgs:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]] exclusions: (Updatable)
@@ -2867,47 +2867,47 @@ class PolicyWafConfigCustomProtectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]:
+    def exclusions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]):
+    def exclusions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
 class PolicyWafConfigCustomProtectionRuleExclusionArgsDict(TypedDict):
-    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exclusions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
     """
-    target: NotRequired[pulumi.Input[_builtins.str]]
+    target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The target of the exclusion.
     """
@@ -2915,8 +2915,8 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyWafConfigCustomProtectionRuleExclusionArgs:
     def __init__(__self__, *,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclusions: (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         :param pulumi.Input[_builtins.str] target: (Updatable) The target of the exclusion.
@@ -2928,26 +2928,26 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclusions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclusions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target of the exclusion.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
 
@@ -2956,31 +2956,31 @@ class PolicyWafConfigDeviceFingerprintChallengeArgsDict(TypedDict):
     """
     (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
     """
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
     """
-    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    action_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
     """
-    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict']]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
-    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
     """
-    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
     """
-    max_address_count: NotRequired[pulumi.Input[_builtins.int]]
+    max_address_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
     """
-    max_address_count_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    max_address_count_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
     """
@@ -2989,13 +2989,13 @@ class PolicyWafConfigDeviceFingerprintChallengeArgsDict(TypedDict):
 class PolicyWafConfigDeviceFingerprintChallengeArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 challenge_settings: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']] = None,
-                 failure_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 failure_threshold_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_address_count_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 challenge_settings: pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']] = None,
+                 failure_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 failure_threshold_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_address_count_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3036,123 +3036,123 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="actionExpirationInSeconds")
-    def action_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
         """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
-    def action_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="challengeSettings")
-    def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]:
+    def challenge_settings(self) -> pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]:
         """
         (Updatable) The challenge settings if `action` is set to `BLOCK`.
         """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
-    def challenge_settings(self, value: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]):
+    def challenge_settings(self, value: pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]):
         pulumi.set(self, "challenge_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
         """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
-    def failure_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThresholdExpirationInSeconds")
-    def failure_threshold_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
         """
         return pulumi.get(self, "failure_threshold_expiration_in_seconds")
 
     @failure_threshold_expiration_in_seconds.setter
-    def failure_threshold_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="maxAddressCount")
-    def max_address_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_address_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
         """
         return pulumi.get(self, "max_address_count")
 
     @max_address_count.setter
-    def max_address_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_address_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_address_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxAddressCountExpirationInSeconds")
-    def max_address_count_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_address_count_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
         """
         return pulumi.get(self, "max_address_count_expiration_in_seconds")
 
     @max_address_count_expiration_in_seconds.setter
-    def max_address_count_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_address_count_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_address_count_expiration_in_seconds", value)
 
 
 class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict(TypedDict):
-    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    block_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
     """
-    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
     """
-    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
     """
-    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_footer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
     """
-    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
     """
-    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_submit_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
     """
-    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
     """
@@ -3160,15 +3160,15 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict(TypedDi
 @pulumi.input_type
 class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     def __init__(__self__, *,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 captcha_footer: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_submit_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_title: Optional[pulumi.Input[_builtins.str]] = None):
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 captcha_footer: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_submit_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] block_action: (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         :param pulumi.Input[_builtins.str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
@@ -3201,110 +3201,110 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageCode")
-    def block_error_page_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
         """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
-    def block_error_page_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_code", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageDescription")
-    def block_error_page_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
         """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
-    def block_error_page_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_description", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageMessage")
-    def block_error_page_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
         """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
-    def block_error_page_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_message", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaFooter")
-    def captcha_footer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_footer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
         """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
-    def captcha_footer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_footer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_footer", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaHeader")
-    def captcha_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
         """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
-    def captcha_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_header", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaSubmitLabel")
-    def captcha_submit_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_submit_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
-    def captcha_submit_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_submit_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_submit_label", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaTitle")
-    def captcha_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
-    def captcha_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_title", value)
 
 
@@ -3313,39 +3313,39 @@ class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
     """
     (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
     """
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
     """
-    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    action_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
     """
-    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict']]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
-    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
     """
-    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
     """
-    interaction_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    interaction_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
     """
-    is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_nat_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
     """
-    recording_period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    recording_period_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
     """
-    set_http_header: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict']]
+    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]]
     """
     (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
     """
@@ -3354,15 +3354,15 @@ class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
 class PolicyWafConfigHumanInteractionChallengeArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 challenge_settings: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']] = None,
-                 failure_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 failure_threshold_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 interaction_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 recording_period_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 set_http_header: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 challenge_settings: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']] = None,
+                 failure_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 failure_threshold_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 interaction_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 recording_period_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 set_http_header: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3409,147 +3409,147 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="actionExpirationInSeconds")
-    def action_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
         """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
-    def action_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="challengeSettings")
-    def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]:
+    def challenge_settings(self) -> pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]:
         """
         (Updatable) The challenge settings if `action` is set to `BLOCK`.
         """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
-    def challenge_settings(self, value: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]):
+    def challenge_settings(self, value: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]):
         pulumi.set(self, "challenge_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
         """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
-    def failure_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThresholdExpirationInSeconds")
-    def failure_threshold_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
         """
         return pulumi.get(self, "failure_threshold_expiration_in_seconds")
 
     @failure_threshold_expiration_in_seconds.setter
-    def failure_threshold_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="interactionThreshold")
-    def interaction_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interaction_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
         """
         return pulumi.get(self, "interaction_threshold")
 
     @interaction_threshold.setter
-    def interaction_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interaction_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interaction_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="isNatEnabled")
-    def is_nat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_nat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
         """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
-    def is_nat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_nat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_nat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="recordingPeriodInSeconds")
-    def recording_period_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def recording_period_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
         """
         return pulumi.get(self, "recording_period_in_seconds")
 
     @recording_period_in_seconds.setter
-    def recording_period_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def recording_period_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "recording_period_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="setHttpHeader")
-    def set_http_header(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]:
+    def set_http_header(self) -> pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]:
         """
         (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         """
         return pulumi.get(self, "set_http_header")
 
     @set_http_header.setter
-    def set_http_header(self, value: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]):
+    def set_http_header(self, value: pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]):
         pulumi.set(self, "set_http_header", value)
 
 
 class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict(TypedDict):
-    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    block_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
     """
-    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
     """
-    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
     """
-    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_footer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
     """
-    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
     """
-    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_submit_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
     """
-    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
     """
@@ -3557,15 +3557,15 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict(TypedDic
 @pulumi.input_type
 class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     def __init__(__self__, *,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 captcha_footer: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_submit_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_title: Optional[pulumi.Input[_builtins.str]] = None):
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 captcha_footer: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_submit_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] block_action: (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         :param pulumi.Input[_builtins.str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
@@ -3598,110 +3598,110 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageCode")
-    def block_error_page_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
         """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
-    def block_error_page_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_code", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageDescription")
-    def block_error_page_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
         """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
-    def block_error_page_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_description", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageMessage")
-    def block_error_page_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
         """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
-    def block_error_page_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_message", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaFooter")
-    def captcha_footer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_footer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
         """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
-    def captcha_footer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_footer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_footer", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaHeader")
-    def captcha_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
         """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
-    def captcha_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_header", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaSubmitLabel")
-    def captcha_submit_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_submit_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
-    def captcha_submit_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_submit_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_submit_label", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaTitle")
-    def captcha_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
-    def captcha_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_title", value)
 
 
@@ -3757,35 +3757,35 @@ class PolicyWafConfigJsChallengeArgsDict(TypedDict):
     """
     (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
     """
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
     """
-    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    action_expiration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
     """
-    are_redirects_challenged: NotRequired[pulumi.Input[_builtins.bool]]
+    are_redirects_challenged: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
     """
-    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgsDict']]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgs']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
-    criterias: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgsDict']]]]
+    criterias: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]]
     """
     (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
     """
-    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
     """
-    is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_nat_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
     """
-    set_http_header: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgsDict']]
+    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]]
     """
     (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
     """
@@ -3794,14 +3794,14 @@ class PolicyWafConfigJsChallengeArgsDict(TypedDict):
 class PolicyWafConfigJsChallengeArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_expiration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 are_redirects_challenged: Optional[pulumi.Input[_builtins.bool]] = None,
-                 challenge_settings: Optional[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs']] = None,
-                 criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]] = None,
-                 failure_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 set_http_header: Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_expiration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 are_redirects_challenged: pulumi.Input[Optional[_builtins.bool]] = None,
+                 challenge_settings: pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgs']] = None,
+                 criterias: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]] = None,
+                 failure_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 set_http_header: pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgs']] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3845,135 +3845,135 @@ class PolicyWafConfigJsChallengeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="actionExpirationInSeconds")
-    def action_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
         """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
-    def action_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="areRedirectsChallenged")
-    def are_redirects_challenged(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_redirects_challenged(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
         """
         return pulumi.get(self, "are_redirects_challenged")
 
     @are_redirects_challenged.setter
-    def are_redirects_challenged(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_redirects_challenged(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_redirects_challenged", value)
 
     @_builtins.property
     @pulumi.getter(name="challengeSettings")
-    def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs']]:
+    def challenge_settings(self) -> pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgs']]:
         """
         (Updatable) The challenge settings if `action` is set to `BLOCK`.
         """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
-    def challenge_settings(self, value: Optional[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs']]):
+    def challenge_settings(self, value: pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgs']]):
         pulumi.set(self, "challenge_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]:
+    def criterias(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]:
         """
         (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
         """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]):
+    def criterias(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]):
         pulumi.set(self, "criterias", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
         """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
-    def failure_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="isNatEnabled")
-    def is_nat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_nat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
         """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
-    def is_nat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_nat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_nat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="setHttpHeader")
-    def set_http_header(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]:
+    def set_http_header(self) -> pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]:
         """
         (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         """
         return pulumi.get(self, "set_http_header")
 
     @set_http_header.setter
-    def set_http_header(self, value: Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]):
+    def set_http_header(self, value: pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]):
         pulumi.set(self, "set_http_header", value)
 
 
 class PolicyWafConfigJsChallengeChallengeSettingsArgsDict(TypedDict):
-    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    block_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
     """
-    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
     """
-    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
     """
-    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_footer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
     """
-    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
     """
-    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_submit_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
     """
-    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    captcha_title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
     """
@@ -3981,15 +3981,15 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     def __init__(__self__, *,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 captcha_footer: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_submit_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 captcha_title: Optional[pulumi.Input[_builtins.str]] = None):
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 captcha_footer: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_submit_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 captcha_title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] block_action: (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         :param pulumi.Input[_builtins.str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
@@ -4022,110 +4022,110 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageCode")
-    def block_error_page_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
         """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
-    def block_error_page_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_code", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageDescription")
-    def block_error_page_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
         """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
-    def block_error_page_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_description", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageMessage")
-    def block_error_page_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
         """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
-    def block_error_page_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_message", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaFooter")
-    def captcha_footer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_footer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
         """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
-    def captcha_footer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_footer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_footer", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaHeader")
-    def captcha_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
         """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
-    def captcha_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_header", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaSubmitLabel")
-    def captcha_submit_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_submit_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
-    def captcha_submit_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_submit_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_submit_label", value)
 
     @_builtins.property
     @pulumi.getter(name="captchaTitle")
-    def captcha_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captcha_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
-    def captcha_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captcha_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captcha_title", value)
 
 
@@ -4163,7 +4163,7 @@ class PolicyWafConfigJsChallengeCriteriaArgsDict(TypedDict):
     """
     (Updatable) The criteria value.
     """
-    is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    is_case_sensitive: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When enabled, the condition will be matched with case-sensitive rules.
     """
@@ -4173,7 +4173,7 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
     def __init__(__self__, *,
                  condition: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 is_case_sensitive: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_case_sensitive: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] condition: (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
                * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
@@ -4260,14 +4260,14 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
 
     @_builtins.property
     @pulumi.getter(name="isCaseSensitive")
-    def is_case_sensitive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_case_sensitive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
         return pulumi.get(self, "is_case_sensitive")
 
     @is_case_sensitive.setter
-    def is_case_sensitive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_case_sensitive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_case_sensitive", value)
 
 
@@ -4319,53 +4319,53 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
 
 
 class PolicyWafConfigProtectionSettingsArgsDict(TypedDict):
-    allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allowed_http_methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
     """
-    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    block_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
     """
-    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
     """
-    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
     """
-    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    block_error_page_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
     """
-    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    block_response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
     """
-    is_response_inspected: NotRequired[pulumi.Input[_builtins.bool]]
+    is_response_inspected: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
 
     **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
     """
-    max_argument_count: NotRequired[pulumi.Input[_builtins.int]]
+    max_argument_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
     """
-    max_name_length_per_argument: NotRequired[pulumi.Input[_builtins.int]]
+    max_name_length_per_argument: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
     """
-    max_response_size_in_ki_b: NotRequired[pulumi.Input[_builtins.int]]
+    max_response_size_in_ki_b: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
     """
-    max_total_name_length_of_arguments: NotRequired[pulumi.Input[_builtins.int]]
+    max_total_name_length_of_arguments: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
     """
-    media_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    media_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 
@@ -4389,7 +4389,7 @@ class PolicyWafConfigProtectionSettingsArgsDict(TypedDict):
     * application/xml
     * text/xml
     """
-    recommendations_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    recommendations_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
 
@@ -4399,19 +4399,19 @@ class PolicyWafConfigProtectionSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class PolicyWafConfigProtectionSettingsArgs:
     def __init__(__self__, *,
-                 allowed_http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 block_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_error_page_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 block_response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_response_inspected: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_argument_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_name_length_per_argument: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_response_size_in_ki_b: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_name_length_of_arguments: Optional[pulumi.Input[_builtins.int]] = None,
-                 media_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recommendations_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 allowed_http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 block_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_error_page_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 block_response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_response_inspected: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_argument_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_name_length_per_argument: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_response_size_in_ki_b: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_name_length_of_arguments: pulumi.Input[Optional[_builtins.int]] = None,
+                 media_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recommendations_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_http_methods: (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
         :param pulumi.Input[_builtins.str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -4480,79 +4480,79 @@ class PolicyWafConfigProtectionSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
         """
         return pulumi.get(self, "allowed_http_methods")
 
     @allowed_http_methods.setter
-    def allowed_http_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_http_methods", value)
 
     @_builtins.property
     @pulumi.getter(name="blockAction")
-    def block_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
         """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
-    def block_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_action", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageCode")
-    def block_error_page_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
         """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
-    def block_error_page_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_code", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageDescription")
-    def block_error_page_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
         """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
-    def block_error_page_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_description", value)
 
     @_builtins.property
     @pulumi.getter(name="blockErrorPageMessage")
-    def block_error_page_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_error_page_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
         """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
-    def block_error_page_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_error_page_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_error_page_message", value)
 
     @_builtins.property
     @pulumi.getter(name="blockResponseCode")
-    def block_response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
         """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
-    def block_response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="isResponseInspected")
-    def is_response_inspected(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_response_inspected(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
 
@@ -4561,60 +4561,60 @@ class PolicyWafConfigProtectionSettingsArgs:
         return pulumi.get(self, "is_response_inspected")
 
     @is_response_inspected.setter
-    def is_response_inspected(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_response_inspected(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_response_inspected", value)
 
     @_builtins.property
     @pulumi.getter(name="maxArgumentCount")
-    def max_argument_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_argument_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
         """
         return pulumi.get(self, "max_argument_count")
 
     @max_argument_count.setter
-    def max_argument_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_argument_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_argument_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNameLengthPerArgument")
-    def max_name_length_per_argument(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_name_length_per_argument(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
         """
         return pulumi.get(self, "max_name_length_per_argument")
 
     @max_name_length_per_argument.setter
-    def max_name_length_per_argument(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_name_length_per_argument(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_name_length_per_argument", value)
 
     @_builtins.property
     @pulumi.getter(name="maxResponseSizeInKiB")
-    def max_response_size_in_ki_b(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_response_size_in_ki_b(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
         """
         return pulumi.get(self, "max_response_size_in_ki_b")
 
     @max_response_size_in_ki_b.setter
-    def max_response_size_in_ki_b(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_response_size_in_ki_b(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_response_size_in_ki_b", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTotalNameLengthOfArguments")
-    def max_total_name_length_of_arguments(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_total_name_length_of_arguments(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
         """
         return pulumi.get(self, "max_total_name_length_of_arguments")
 
     @max_total_name_length_of_arguments.setter
-    def max_total_name_length_of_arguments(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_total_name_length_of_arguments(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_total_name_length_of_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="mediaTypes")
-    def media_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def media_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 
@@ -4641,12 +4641,12 @@ class PolicyWafConfigProtectionSettingsArgs:
         return pulumi.get(self, "media_types")
 
     @media_types.setter
-    def media_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def media_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "media_types", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendationsPeriodInDays")
-    def recommendations_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def recommendations_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
 
@@ -4655,7 +4655,7 @@ class PolicyWafConfigProtectionSettingsArgs:
         return pulumi.get(self, "recommendations_period_in_days")
 
     @recommendations_period_in_days.setter
-    def recommendations_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def recommendations_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "recommendations_period_in_days", value)
 
 
@@ -4668,11 +4668,11 @@ class PolicyWafConfigWhitelistArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    address_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
     """
-    addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
     """
@@ -4681,8 +4681,8 @@ class PolicyWafConfigWhitelistArgsDict(TypedDict):
 class PolicyWafConfigWhitelistArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 address_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The unique name of the whitelist.
                
@@ -4716,35 +4716,35 @@ class PolicyWafConfigWhitelistArgs:
 
     @_builtins.property
     @pulumi.getter(name="addressLists")
-    def address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def address_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
         """
         return pulumi.get(self, "address_lists")
 
     @address_lists.setter
-    def address_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def address_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "address_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
         """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "addresses", value)
 
 
 class ProtectionRuleExclusionArgsDict(TypedDict):
-    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exclusions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
     """
-    target: NotRequired[pulumi.Input[_builtins.str]]
+    target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target of the exclusion.
 
@@ -4755,8 +4755,8 @@ class ProtectionRuleExclusionArgsDict(TypedDict):
 @pulumi.input_type
 class ProtectionRuleExclusionArgs:
     def __init__(__self__, *,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         :param pulumi.Input[_builtins.str] target: The target of the exclusion.
@@ -4771,19 +4771,19 @@ class ProtectionRuleExclusionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclusions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclusions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target of the exclusion.
 
@@ -4793,7 +4793,7 @@ class ProtectionRuleExclusionArgs:
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
 

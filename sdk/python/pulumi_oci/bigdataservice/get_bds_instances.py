@@ -124,7 +124,7 @@ def get_bds_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=compartment_id,
+    test_bds_instances = oci.bigdataservice.get_bds_instances(compartment_id=compartment_id,
         display_name=bds_instance_display_name,
         state=bds_instance_state)
     ```
@@ -149,10 +149,10 @@ def get_bds_instances(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict']]]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict']]]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstancesResult]:
     """
     This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
@@ -165,7 +165,7 @@ def get_bds_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=compartment_id,
+    test_bds_instances = oci.bigdataservice.get_bds_instances(compartment_id=compartment_id,
         display_name=bds_instance_display_name,
         state=bds_instance_state)
     ```

@@ -288,7 +288,7 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
+    test_virtual_node_pool = oci.containerengine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         virtual_node_pool_id=pulumi.get(__ret__, 'virtual_node_pool_id'),
         virtual_node_tags=pulumi.get(__ret__, 'virtual_node_tags'))
-def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_node_pool_output(virtual_node_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualNodePoolResult]:
     """
     This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -333,7 +333,7 @@ def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
+    test_virtual_node_pool = oci.containerengine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
     ```
 
 

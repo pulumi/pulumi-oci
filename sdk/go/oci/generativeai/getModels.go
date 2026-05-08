@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := generativeai.GetModels(ctx, &generativeai.GetModelsArgs{
 //				CompartmentId: compartmentId,
-//				Capabilities:  modelCapability,
+//				Capabilities:  pulumi.ToArray(modelCapability),
 //				DisplayName:   pulumi.StringRef(modelDisplayName),
 //				Id:            pulumi.StringRef(modelId),
 //				State:         pulumi.StringRef(modelState),

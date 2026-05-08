@@ -119,11 +119,11 @@ class ApplicationApplicationLogConfigArgs:
 
 
 class ApplicationDriverShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -131,8 +131,8 @@ class ApplicationDriverShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ApplicationDriverShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -144,35 +144,35 @@ class ApplicationDriverShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
 class ApplicationExecutorShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -180,8 +180,8 @@ class ApplicationExecutorShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ApplicationExecutorShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -193,26 +193,26 @@ class ApplicationExecutorShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
@@ -311,11 +311,11 @@ class InvokeRunApplicationLogConfigArgs:
 
 
 class InvokeRunDriverShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -323,8 +323,8 @@ class InvokeRunDriverShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class InvokeRunDriverShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -336,35 +336,35 @@ class InvokeRunDriverShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
 class InvokeRunExecutorShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -372,8 +372,8 @@ class InvokeRunExecutorShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class InvokeRunExecutorShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -385,26 +385,26 @@ class InvokeRunExecutorShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
@@ -456,19 +456,19 @@ class InvokeRunParameterArgs:
 
 
 class PoolConfigurationArgsDict(TypedDict):
-    max: NotRequired[pulumi.Input[_builtins.int]]
+    max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of compute instances in the pool for a given compute shape.
     """
-    min: NotRequired[pulumi.Input[_builtins.int]]
+    min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Minimum number of compute instances in the pool for a given compute shape.
     """
-    shape: NotRequired[pulumi.Input[_builtins.str]]
+    shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The compute shape of the resources you would like to provision.
     """
-    shape_config: NotRequired[pulumi.Input['PoolConfigurationShapeConfigArgsDict']]
+    shape_config: NotRequired[pulumi.Input[Optional['PoolConfigurationShapeConfigArgs']]]
     """
     (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
     """
@@ -476,10 +476,10 @@ class PoolConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class PoolConfigurationArgs:
     def __init__(__self__, *,
-                 max: Optional[pulumi.Input[_builtins.int]] = None,
-                 min: Optional[pulumi.Input[_builtins.int]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_config: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']] = None):
+                 max: pulumi.Input[Optional[_builtins.int]] = None,
+                 min: pulumi.Input[Optional[_builtins.int]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config: pulumi.Input[Optional['PoolConfigurationShapeConfigArgs']] = None):
         """
         :param pulumi.Input[_builtins.int] max: (Updatable) Maximum number of compute instances in the pool for a given compute shape.
         :param pulumi.Input[_builtins.int] min: (Updatable) Minimum number of compute instances in the pool for a given compute shape.
@@ -497,59 +497,59 @@ class PoolConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of compute instances in the pool for a given compute shape.
         """
         return pulumi.get(self, "max")
 
     @max.setter
-    def max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max", value)
 
     @_builtins.property
     @pulumi.getter
-    def min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Minimum number of compute instances in the pool for a given compute shape.
         """
         return pulumi.get(self, "min")
 
     @min.setter
-    def min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compute shape of the resources you would like to provision.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
-    def shape_config(self) -> Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']]:
+    def shape_config(self) -> pulumi.Input[Optional['PoolConfigurationShapeConfigArgs']]:
         """
         (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
-    def shape_config(self, value: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']]):
+    def shape_config(self, value: pulumi.Input[Optional['PoolConfigurationShapeConfigArgs']]):
         pulumi.set(self, "shape_config", value)
 
 
 class PoolConfigurationShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -557,8 +557,8 @@ class PoolConfigurationShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class PoolConfigurationShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -570,51 +570,51 @@ class PoolConfigurationShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
 class PoolPoolMetricArgsDict(TypedDict):
-    active_runs_count: NotRequired[pulumi.Input[_builtins.str]]
+    active_runs_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The number of runs that are currently running that are using this pool.
     """
-    actively_used_node_counts: NotRequired[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgsDict']]]]
+    actively_used_node_counts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]]
     """
     A count of the nodes that are currently being used for each shape in this pool.
     """
-    time_last_metrics_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_metrics_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The last time the mertics were updated for this.
     """
-    time_last_started: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_started: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The last time this pool was started.
     """
-    time_last_stopped: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_stopped: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The last time this pool was stopped.
     """
-    time_last_used: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_used: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The last time a run used this pool.
     """
@@ -622,12 +622,12 @@ class PoolPoolMetricArgsDict(TypedDict):
 @pulumi.input_type
 class PoolPoolMetricArgs:
     def __init__(__self__, *,
-                 active_runs_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 actively_used_node_counts: Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]] = None,
-                 time_last_metrics_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_stopped: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_used: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_runs_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 actively_used_node_counts: pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]] = None,
+                 time_last_metrics_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_stopped: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_used: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] active_runs_count: The number of runs that are currently running that are using this pool.
         :param pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
@@ -651,83 +651,83 @@ class PoolPoolMetricArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeRunsCount")
-    def active_runs_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_runs_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The number of runs that are currently running that are using this pool.
         """
         return pulumi.get(self, "active_runs_count")
 
     @active_runs_count.setter
-    def active_runs_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_runs_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_runs_count", value)
 
     @_builtins.property
     @pulumi.getter(name="activelyUsedNodeCounts")
-    def actively_used_node_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]:
+    def actively_used_node_counts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]:
         """
         A count of the nodes that are currently being used for each shape in this pool.
         """
         return pulumi.get(self, "actively_used_node_counts")
 
     @actively_used_node_counts.setter
-    def actively_used_node_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]):
+    def actively_used_node_counts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]):
         pulumi.set(self, "actively_used_node_counts", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastMetricsUpdated")
-    def time_last_metrics_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_metrics_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time the mertics were updated for this.
         """
         return pulumi.get(self, "time_last_metrics_updated")
 
     @time_last_metrics_updated.setter
-    def time_last_metrics_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_metrics_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_metrics_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastStarted")
-    def time_last_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time this pool was started.
         """
         return pulumi.get(self, "time_last_started")
 
     @time_last_started.setter
-    def time_last_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastStopped")
-    def time_last_stopped(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_stopped(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time this pool was stopped.
         """
         return pulumi.get(self, "time_last_stopped")
 
     @time_last_stopped.setter
-    def time_last_stopped(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_stopped(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_stopped", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastUsed")
-    def time_last_used(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_used(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last time a run used this pool.
         """
         return pulumi.get(self, "time_last_used")
 
     @time_last_used.setter
-    def time_last_used(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_used(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_used", value)
 
 
 class PoolPoolMetricActivelyUsedNodeCountArgsDict(TypedDict):
-    logical_shape: NotRequired[pulumi.Input[_builtins.str]]
+    logical_shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The compute shape of the nodes that the count is for.
     """
-    pool_count: NotRequired[pulumi.Input[_builtins.int]]
+    pool_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The node count of this compute shape.
     """
@@ -735,8 +735,8 @@ class PoolPoolMetricActivelyUsedNodeCountArgsDict(TypedDict):
 @pulumi.input_type
 class PoolPoolMetricActivelyUsedNodeCountArgs:
     def __init__(__self__, *,
-                 logical_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 logical_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 pool_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] logical_shape: The compute shape of the nodes that the count is for.
         :param pulumi.Input[_builtins.int] pool_count: The node count of this compute shape.
@@ -748,39 +748,39 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
 
     @_builtins.property
     @pulumi.getter(name="logicalShape")
-    def logical_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logical_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute shape of the nodes that the count is for.
         """
         return pulumi.get(self, "logical_shape")
 
     @logical_shape.setter
-    def logical_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logical_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logical_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="poolCount")
-    def pool_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pool_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The node count of this compute shape.
         """
         return pulumi.get(self, "pool_count")
 
     @pool_count.setter
-    def pool_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pool_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pool_count", value)
 
 
 class PoolScheduleArgsDict(TypedDict):
-    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    day_of_week: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Day of the week SUN-SAT
     """
-    start_time: NotRequired[pulumi.Input[_builtins.int]]
+    start_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Hour of the day to start or stop pool.
     """
-    stop_time: NotRequired[pulumi.Input[_builtins.int]]
+    stop_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Hour of the day to stop the pool.
     """
@@ -788,9 +788,9 @@ class PoolScheduleArgsDict(TypedDict):
 @pulumi.input_type
 class PoolScheduleArgs:
     def __init__(__self__, *,
-                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_time: Optional[pulumi.Input[_builtins.int]] = None):
+                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_time: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) Day of the week SUN-SAT
         :param pulumi.Input[_builtins.int] start_time: (Updatable) Hour of the day to start or stop pool.
@@ -805,47 +805,47 @@ class PoolScheduleArgs:
 
     @_builtins.property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def day_of_week(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Day of the week SUN-SAT
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def day_of_week(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "day_of_week", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Hour of the day to start or stop pool.
         """
         return pulumi.get(self, "start_time")
 
     @start_time.setter
-    def start_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="stopTime")
-    def stop_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Hour of the day to stop the pool.
         """
         return pulumi.get(self, "stop_time")
 
     @stop_time.setter
-    def stop_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_time", value)
 
 
 class PrivateEndpointScanDetailArgsDict(TypedDict):
-    fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A fully-qualified domain name (FQDN).
     """
-    port: NotRequired[pulumi.Input[_builtins.str]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The port number of the FQDN
     """
@@ -853,8 +853,8 @@ class PrivateEndpointScanDetailArgsDict(TypedDict):
 @pulumi.input_type
 class PrivateEndpointScanDetailArgs:
     def __init__(__self__, *,
-                 fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.str]] = None):
+                 fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] fqdn: (Updatable) A fully-qualified domain name (FQDN).
         :param pulumi.Input[_builtins.str] port: (Updatable) The port number of the FQDN
@@ -866,47 +866,47 @@ class PrivateEndpointScanDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A fully-qualified domain name (FQDN).
         """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
-    def fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fqdn", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The port number of the FQDN
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "port", value)
 
 
 class RunStatementOutputArgsDict(TypedDict):
-    datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgsDict']]]]
+    datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]]
     """
     An object representing execution output of a statement.
     """
-    error_name: NotRequired[pulumi.Input[_builtins.str]]
+    error_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the error in the statement output.
     """
-    error_value: NotRequired[pulumi.Input[_builtins.str]]
+    error_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The value of the error in the statement output.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Status of the statement output.
     """
-    tracebacks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    tracebacks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The traceback of the statement output.
     """
@@ -914,11 +914,11 @@ class RunStatementOutputArgsDict(TypedDict):
 @pulumi.input_type
 class RunStatementOutputArgs:
     def __init__(__self__, *,
-                 datas: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]] = None,
-                 error_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tracebacks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 datas: pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]] = None,
+                 error_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tracebacks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]] datas: An object representing execution output of a statement.
         :param pulumi.Input[_builtins.str] error_name: The name of the error in the statement output.
@@ -939,71 +939,71 @@ class RunStatementOutputArgs:
 
     @_builtins.property
     @pulumi.getter
-    def datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]:
+    def datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]:
         """
         An object representing execution output of a statement.
         """
         return pulumi.get(self, "datas")
 
     @datas.setter
-    def datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]):
+    def datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]):
         pulumi.set(self, "datas", value)
 
     @_builtins.property
     @pulumi.getter(name="errorName")
-    def error_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the error in the statement output.
         """
         return pulumi.get(self, "error_name")
 
     @error_name.setter
-    def error_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_name", value)
 
     @_builtins.property
     @pulumi.getter(name="errorValue")
-    def error_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value of the error in the statement output.
         """
         return pulumi.get(self, "error_value")
 
     @error_value.setter
-    def error_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the statement output.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tracebacks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tracebacks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The traceback of the statement output.
         """
         return pulumi.get(self, "tracebacks")
 
     @tracebacks.setter
-    def tracebacks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tracebacks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tracebacks", value)
 
 
 class RunStatementOutputDataArgsDict(TypedDict):
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The statement code execution output in html format.
     """
@@ -1011,8 +1011,8 @@ class RunStatementOutputDataArgsDict(TypedDict):
 @pulumi.input_type
 class RunStatementOutputDataArgs:
     def __init__(__self__, *,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         :param pulumi.Input[_builtins.str] value: The statement code execution output in html format.
@@ -1024,35 +1024,35 @@ class RunStatementOutputDataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The statement code execution output in html format.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class SqlEndpointDriverShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -1060,8 +1060,8 @@ class SqlEndpointDriverShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class SqlEndpointDriverShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -1073,35 +1073,35 @@ class SqlEndpointDriverShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
 class SqlEndpointExecutorShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The amount of memory used for the driver or executors.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -1109,8 +1109,8 @@ class SqlEndpointExecutorShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class SqlEndpointExecutorShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: The amount of memory used for the driver or executors.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -1122,26 +1122,26 @@ class SqlEndpointExecutorShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory used for the driver or executors.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
@@ -1150,31 +1150,31 @@ class SqlEndpointNetworkConfigurationArgsDict(TypedDict):
     """
     The type of network configuration.
     """
-    access_control_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgsDict']]]]
+    access_control_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]]
     """
     A list of SecureAccessControlRule's to which access is limited to
     """
-    host_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    host_name_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name prefix.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The OCIDs of Network Security Groups (NSGs).
     """
-    private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Ip Address of private endpoint
     """
-    public_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    public_endpoint_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Ip Address of public endpoint
     """
-    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VCN Subnet OCID.
     """
-    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    vcn_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VCN OCID.
     """
@@ -1183,13 +1183,13 @@ class SqlEndpointNetworkConfigurationArgsDict(TypedDict):
 class SqlEndpointNetworkConfigurationArgs:
     def __init__(__self__, *,
                  network_type: pulumi.Input[_builtins.str],
-                 access_control_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]] = None,
-                 host_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_control_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]] = None,
+                 host_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] network_type: The type of network configuration.
         :param pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
@@ -1230,99 +1230,99 @@ class SqlEndpointNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessControlRules")
-    def access_control_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]:
+    def access_control_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]:
         """
         A list of SecureAccessControlRule's to which access is limited to
         """
         return pulumi.get(self, "access_control_rules")
 
     @access_control_rules.setter
-    def access_control_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]):
+    def access_control_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]):
         pulumi.set(self, "access_control_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="hostNamePrefix")
-    def host_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name prefix.
         """
         return pulumi.get(self, "host_name_prefix")
 
     @host_name_prefix.setter
-    def host_name_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The OCIDs of Network Security Groups (NSGs).
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Ip Address of private endpoint
         """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
-    def private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="publicEndpointIp")
-    def public_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Ip Address of public endpoint
         """
         return pulumi.get(self, "public_endpoint_ip")
 
     @public_endpoint_ip.setter
-    def public_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VCN Subnet OCID.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VCN OCID.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
 class SqlEndpointNetworkConfigurationAccessControlRuleArgsDict(TypedDict):
-    ip_notation: NotRequired[pulumi.Input[_builtins.str]]
+    ip_notation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of IP notation.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The associated value of the selected IP notation.
     """
-    vcn_ips: NotRequired[pulumi.Input[_builtins.str]]
+    vcn_ips: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A comma-separated IP or CIDR address for VCN OCID IP notation selection.
     """
@@ -1330,9 +1330,9 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgsDict(TypedDict):
 @pulumi.input_type
 class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
     def __init__(__self__, *,
-                 ip_notation: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_ips: Optional[pulumi.Input[_builtins.str]] = None):
+                 ip_notation: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_ips: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ip_notation: The type of IP notation.
         :param pulumi.Input[_builtins.str] value: The associated value of the selected IP notation.
@@ -1347,38 +1347,38 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipNotation")
-    def ip_notation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_notation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of IP notation.
         """
         return pulumi.get(self, "ip_notation")
 
     @ip_notation.setter
-    def ip_notation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_notation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_notation", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated value of the selected IP notation.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnIps")
-    def vcn_ips(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_ips(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma-separated IP or CIDR address for VCN OCID IP notation selection.
         """
         return pulumi.get(self, "vcn_ips")
 
     @vcn_ips.setter
-    def vcn_ips(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_ips(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_ips", value)
 
 

@@ -23,22 +23,22 @@ class MonitoredResourceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
-                 additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
-                 aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
-                 credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
-                 database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
+                 aliases: pulumi.Input[Optional['MonitoredResourceAliasesArgs']] = None,
+                 credentials: pulumi.Input[Optional['MonitoredResourceCredentialsArgs']] = None,
+                 database_connection_details: pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResource resource.
 
@@ -130,225 +130,225 @@ class MonitoredResourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalAliases")
-    def additional_aliases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
+    def additional_aliases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
         """
         (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
         """
         return pulumi.get(self, "additional_aliases")
 
     @additional_aliases.setter
-    def additional_aliases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]):
+    def additional_aliases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]):
         pulumi.set(self, "additional_aliases", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalCredentials")
-    def additional_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
+    def additional_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
         """
         (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
         """
         return pulumi.get(self, "additional_credentials")
 
     @additional_credentials.setter
-    def additional_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]):
+    def additional_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]):
         pulumi.set(self, "additional_credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def aliases(self) -> Optional[pulumi.Input['MonitoredResourceAliasesArgs']]:
+    def aliases(self) -> pulumi.Input[Optional['MonitoredResourceAliasesArgs']]:
         """
         (Updatable) Monitored Resource Alias Credential Details
         """
         return pulumi.get(self, "aliases")
 
     @aliases.setter
-    def aliases(self, value: Optional[pulumi.Input['MonitoredResourceAliasesArgs']]):
+    def aliases(self, value: pulumi.Input[Optional['MonitoredResourceAliasesArgs']]):
         pulumi.set(self, "aliases", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['MonitoredResourceCredentialsArgs']]:
         """
         (Updatable) Monitored Resource Credential Details.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['MonitoredResourceCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]:
+    def database_connection_details(self) -> pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']]:
         """
         (Updatable) Connection details for the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]):
+    def database_connection_details(self, value: pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']]):
         pulumi.set(self, "database_connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Monitored resource display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalResourceId")
-    def external_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         """
         return pulumi.get(self, "external_resource_id")
 
     @external_resource_id.setter
-    def external_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host name of the monitored resource.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         """
         return pulumi.get(self, "license")
 
     @license.setter
-    def license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
         """
         (Updatable) List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTimeZone")
-    def resource_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
-    def resource_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_time_zone", value)
 
 
 @pulumi.input_type
 class _MonitoredResourceState:
     def __init__(__self__, *,
-                 additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
-                 additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
-                 aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
-                 database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
-                 resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
+                 aliases: pulumi.Input[Optional['MonitoredResourceAliasesArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional['MonitoredResourceCredentialsArgs']] = None,
+                 database_connection_details: pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
+                 resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResource resources.
 
@@ -435,295 +435,295 @@ class _MonitoredResourceState:
 
     @_builtins.property
     @pulumi.getter(name="additionalAliases")
-    def additional_aliases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
+    def additional_aliases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]:
         """
         (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
         """
         return pulumi.get(self, "additional_aliases")
 
     @additional_aliases.setter
-    def additional_aliases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]):
+    def additional_aliases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]]):
         pulumi.set(self, "additional_aliases", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalCredentials")
-    def additional_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
+    def additional_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]:
         """
         (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
         """
         return pulumi.get(self, "additional_credentials")
 
     @additional_credentials.setter
-    def additional_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]):
+    def additional_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]]):
         pulumi.set(self, "additional_credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def aliases(self) -> Optional[pulumi.Input['MonitoredResourceAliasesArgs']]:
+    def aliases(self) -> pulumi.Input[Optional['MonitoredResourceAliasesArgs']]:
         """
         (Updatable) Monitored Resource Alias Credential Details
         """
         return pulumi.get(self, "aliases")
 
     @aliases.setter
-    def aliases(self, value: Optional[pulumi.Input['MonitoredResourceAliasesArgs']]):
+    def aliases(self, value: pulumi.Input[Optional['MonitoredResourceAliasesArgs']]):
         pulumi.set(self, "aliases", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['MonitoredResourceCredentialsArgs']]:
         """
         (Updatable) Monitored Resource Credential Details.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['MonitoredResourceCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]:
+    def database_connection_details(self) -> pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']]:
         """
         (Updatable) Connection details for the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']]):
+    def database_connection_details(self, value: pulumi.Input[Optional['MonitoredResourceDatabaseConnectionDetailsArgs']]):
         pulumi.set(self, "database_connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Monitored resource display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalResourceId")
-    def external_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         """
         return pulumi.get(self, "external_resource_id")
 
     @external_resource_id.setter
-    def external_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host name of the monitored resource.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         """
         return pulumi.get(self, "license")
 
     @license.setter
-    def license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]:
         """
         (Updatable) List of monitored resource properties.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCategory")
-    def resource_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource Category to indicate the kind of resource type.
         """
         return pulumi.get(self, "resource_category")
 
     @resource_category.setter
-    def resource_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_category", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTimeZone")
-    def resource_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
 
     @resource_time_zone.setter
-    def resource_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lifecycle state of the monitored resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Monitored Resource Type. 
 
@@ -734,7 +734,7 @@ class _MonitoredResourceState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -744,24 +744,24 @@ class MonitoredResource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-                 additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-                 aliases: Optional[pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-                 database_connection_details: Optional[pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
+                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
+                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -826,7 +826,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "type": monitored_resource_credentials_type,
             },
             database_connection_details={
-                "port": monitored_resource_database_connection_details_port,
+                "port": int(monitored_resource_database_connection_details_port),
                 "protocol": monitored_resource_database_connection_details_protocol,
                 "service_name": monitored_resource_database_service_name,
                 "connector_id": monitored_resource_database_connector_id,
@@ -956,7 +956,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "type": monitored_resource_credentials_type,
             },
             database_connection_details={
-                "port": monitored_resource_database_connection_details_port,
+                "port": int(monitored_resource_database_connection_details_port),
                 "protocol": monitored_resource_database_connection_details_protocol,
                 "service_name": monitored_resource_database_service_name,
                 "connector_id": monitored_resource_database_connector_id,
@@ -1007,24 +1007,24 @@ class MonitoredResource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-                 additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-                 aliases: Optional[pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-                 database_connection_details: Optional[pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 license: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
-                 resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
+                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
+                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 license: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+                 resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1073,31 +1073,31 @@ class MonitoredResource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-            additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-            aliases: Optional[pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credentials: Optional[pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-            database_connection_details: Optional[pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            license: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
-            resource_category: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredResource':
+            additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
+            additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
+            aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
+            database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            license: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+            resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResource':
         """
         Get an existing MonitoredResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

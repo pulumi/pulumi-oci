@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
+ * const testManagedDatabaseSqlTuningSets = oci.databasemanagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     opcNamedCredentialId: managedDatabaseSqlTuningSetOpcNamedCredentialId,
@@ -94,7 +94,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
+ * const testManagedDatabaseSqlTuningSets = oci.databasemanagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     opcNamedCredentialId: managedDatabaseSqlTuningSetOpcNamedCredentialId,
@@ -117,7 +117,7 @@ export function getManagedDatabaseSqlTuningSetsOutput(args: GetManagedDatabaseSq
  * A collection of arguments for invoking getManagedDatabaseSqlTuningSets.
  */
 export interface GetManagedDatabaseSqlTuningSetsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -125,13 +125,13 @@ export interface GetManagedDatabaseSqlTuningSetsOutputArgs {
     /**
      * Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The owner of the SQL tuning set.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
 }

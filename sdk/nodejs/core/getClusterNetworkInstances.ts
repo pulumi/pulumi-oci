@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
+ * const testClusterNetworkInstances = oci.core.getClusterNetworkInstances({
  *     clusterNetworkId: testClusterNetwork.id,
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkInstanceDisplayName,
@@ -87,7 +87,7 @@ export interface GetClusterNetworkInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
+ * const testClusterNetworkInstances = oci.core.getClusterNetworkInstances({
  *     clusterNetworkId: testClusterNetwork.id,
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkInstanceDisplayName,
@@ -119,6 +119,6 @@ export interface GetClusterNetworkInstancesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetClusterNetworkInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetClusterNetworkInstancesFilterArgs>[] | undefined>;
 }

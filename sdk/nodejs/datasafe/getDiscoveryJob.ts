@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJob = oci.DataSafe.getDiscoveryJob({
+ * const testDiscoveryJob = oci.datasafe.getDiscoveryJob({
  *     discoveryJobId: testDiscoveryJobOciDataSafeDiscoveryJob.id,
  * });
  * ```
@@ -160,7 +160,7 @@ export interface GetDiscoveryJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJob = oci.DataSafe.getDiscoveryJob({
+ * const testDiscoveryJob = oci.datasafe.getDiscoveryJob({
  *     discoveryJobId: testDiscoveryJobOciDataSafeDiscoveryJob.id,
  * });
  * ```

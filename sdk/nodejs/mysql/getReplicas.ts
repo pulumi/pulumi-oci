@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicas = oci.Mysql.getReplicas({
+ * const testReplicas = oci.mysql.getReplicas({
  *     compartmentId: compartmentId,
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate,
+ *     isUpToDate: replicaIsUpToDate === "true",
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });
@@ -124,12 +124,12 @@ export interface GetReplicasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicas = oci.Mysql.getReplicas({
+ * const testReplicas = oci.mysql.getReplicas({
  *     compartmentId: compartmentId,
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate,
+ *     isUpToDate: replicaIsUpToDate === "true",
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });
@@ -160,26 +160,26 @@ export interface GetReplicasOutputArgs {
     /**
      * The requested Configuration instance.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resource matching the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetReplicasFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetReplicasFilterArgs>[] | undefined>;
     /**
      * Filter instances if they are using the latest revision of the Configuration they are associated with.
      */
-    isUpToDate?: pulumi.Input<boolean>;
+    isUpToDate?: pulumi.Input<boolean | undefined>;
     /**
      * The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    replicaId?: pulumi.Input<string>;
+    replicaId?: pulumi.Input<string | undefined>;
     /**
      * The LifecycleState of the read replica.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

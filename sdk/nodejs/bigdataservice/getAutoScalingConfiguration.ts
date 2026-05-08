@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfiguration = oci.BigDataService.getAutoScalingConfiguration({
+ * const testAutoScalingConfiguration = oci.bigdataservice.getAutoScalingConfiguration({
  *     autoScalingConfigurationId: testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });
@@ -97,7 +97,7 @@ export interface GetAutoScalingConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfiguration = oci.BigDataService.getAutoScalingConfiguration({
+ * const testAutoScalingConfiguration = oci.bigdataservice.getAutoScalingConfiguration({
  *     autoScalingConfigurationId: testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id,
  *     bdsInstanceId: testBdsInstance.id,
  * });

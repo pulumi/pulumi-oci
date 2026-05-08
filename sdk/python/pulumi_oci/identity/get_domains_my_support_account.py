@@ -294,7 +294,7 @@ def get_domains_my_support_account(authorization: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
+    test_my_support_account = oci.identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
         my_support_account_id=test_my_support_account_oci_identity_domains_my_support_account["id"],
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version)
@@ -336,10 +336,10 @@ def get_domains_my_support_account(authorization: Optional[_builtins.str] = None
         token=pulumi.get(__ret__, 'token'),
         user_id=pulumi.get(__ret__, 'user_id'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_support_account_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                          my_support_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_support_account_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                          my_support_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMySupportAccountResult]:
     """
     This data source provides details about a specific My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -352,7 +352,7 @@ def get_domains_my_support_account_output(authorization: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
+    test_my_support_account = oci.identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
         my_support_account_id=test_my_support_account_oci_identity_domains_my_support_account["id"],
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version)

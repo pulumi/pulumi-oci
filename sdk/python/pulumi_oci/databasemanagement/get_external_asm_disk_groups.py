@@ -105,7 +105,7 @@ def get_external_asm_disk_groups(external_asm_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
+    test_external_asm_disk_groups = oci.databasemanagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
         opc_named_credential_id=external_asm_disk_group_opc_named_credential_id)
     ```
 
@@ -126,9 +126,9 @@ def get_external_asm_disk_groups(external_asm_id: Optional[_builtins.str] = None
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]]]] = None,
-                                        opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_asm_disk_groups_output(external_asm_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]]]] = None,
+                                        opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
     """
     This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
@@ -141,7 +141,7 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
+    test_external_asm_disk_groups = oci.databasemanagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
         opc_named_credential_id=external_asm_disk_group_opc_named_credential_id)
     ```
 

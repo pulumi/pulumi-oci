@@ -130,7 +130,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_comparison = oci.datasafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
 
@@ -152,8 +152,8 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
         state=pulumi.get(__ret__, 'state'),
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_security_assessment_comparison_output(comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_assessment_comparison_output(comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
     """
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -166,7 +166,7 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_comparison = oci.datasafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
 

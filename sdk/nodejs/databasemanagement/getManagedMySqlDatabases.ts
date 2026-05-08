@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
+ * const testManagedMySqlDatabases = oci.databasemanagement.getManagedMySqlDatabases({
  *     compartmentId: compartmentId,
  *     filterByMySqlDatabaseTypeParam: managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
  * });
@@ -77,7 +77,7 @@ export interface GetManagedMySqlDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
+ * const testManagedMySqlDatabases = oci.databasemanagement.getManagedMySqlDatabases({
  *     compartmentId: compartmentId,
  *     filterByMySqlDatabaseTypeParam: managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
  * });
@@ -103,6 +103,6 @@ export interface GetManagedMySqlDatabasesOutputArgs {
     /**
      * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
      */
-    filterByMySqlDatabaseTypeParam?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabasesFilterArgs>[]>;
+    filterByMySqlDatabaseTypeParam?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabasesFilterArgs>[] | undefined>;
 }

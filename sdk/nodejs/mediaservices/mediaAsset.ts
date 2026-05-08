@@ -230,92 +230,92 @@ export interface MediaAssetState {
     /**
      * The name of the object storage bucket where this asset is located.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[] | undefined>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
-    masterMediaAssetId?: pulumi.Input<string>;
+    masterMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) list of tags for the MediaAsset.
      */
-    mediaAssetTags?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMediaAssetTag>[]>;
+    mediaAssetTags?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMediaAssetTag>[] | undefined>;
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */
-    mediaWorkflowJobId?: pulumi.Input<string>;
+    mediaWorkflowJobId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of Metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[] | undefined>;
     /**
      * The object storage namespace where this asset is located.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The object storage object name that identifies this asset.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * eTag of the underlying object storage object.
      */
-    objectEtag?: pulumi.Input<string>;
+    objectEtag?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the parent asset from which this asset is derived.
      */
-    parentMediaAssetId?: pulumi.Input<string>;
+    parentMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * The end index for video segment files.
      */
-    segmentRangeEndIndex?: pulumi.Input<string>;
+    segmentRangeEndIndex?: pulumi.Input<string | undefined>;
     /**
      * The start index for video segment files.
      */
-    segmentRangeStartIndex?: pulumi.Input<string>;
+    segmentRangeStartIndex?: pulumi.Input<string | undefined>;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowId?: pulumi.Input<string>;
+    sourceMediaWorkflowId?: pulumi.Input<string | undefined>;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowVersion?: pulumi.Input<string>;
+    sourceMediaWorkflowVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the MediaAsset.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the media asset.
      *
@@ -323,7 +323,7 @@ export interface MediaAssetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -333,7 +333,7 @@ export interface MediaAssetArgs {
     /**
      * The name of the object storage bucket where this asset is located.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -341,68 +341,68 @@ export interface MediaAssetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[] | undefined>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
-    masterMediaAssetId?: pulumi.Input<string>;
+    masterMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) list of tags for the MediaAsset.
      */
-    mediaAssetTags?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMediaAssetTag>[]>;
+    mediaAssetTags?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMediaAssetTag>[] | undefined>;
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */
-    mediaWorkflowJobId?: pulumi.Input<string>;
+    mediaWorkflowJobId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of Metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[] | undefined>;
     /**
      * The object storage namespace where this asset is located.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The object storage object name that identifies this asset.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * eTag of the underlying object storage object.
      */
-    objectEtag?: pulumi.Input<string>;
+    objectEtag?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the parent asset from which this asset is derived.
      */
-    parentMediaAssetId?: pulumi.Input<string>;
+    parentMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * The end index for video segment files.
      */
-    segmentRangeEndIndex?: pulumi.Input<string>;
+    segmentRangeEndIndex?: pulumi.Input<string | undefined>;
     /**
      * The start index for video segment files.
      */
-    segmentRangeStartIndex?: pulumi.Input<string>;
+    segmentRangeStartIndex?: pulumi.Input<string | undefined>;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowId?: pulumi.Input<string>;
+    sourceMediaWorkflowId?: pulumi.Input<string | undefined>;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowVersion?: pulumi.Input<string>;
+    sourceMediaWorkflowVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the media asset.
      *

@@ -203,7 +203,7 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference_oci_data_safe_sdm_masking_policy_difference["id"])
+    test_sdm_masking_policy_difference = oci.datasafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference_oci_data_safe_sdm_masking_policy_difference["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_creation_started=pulumi.get(__ret__, 'time_creation_started'))
-def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceResult]:
     """
     This data source provides details about a specific Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
@@ -241,7 +241,7 @@ def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference_oci_data_safe_sdm_masking_policy_difference["id"])
+    test_sdm_masking_policy_difference = oci.datasafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=test_sdm_masking_policy_difference_oci_data_safe_sdm_masking_policy_difference["id"])
     ```
 
 

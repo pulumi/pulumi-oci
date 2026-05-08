@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelReferentialRelations = oci.DataSafe.getSensitiveDataModelReferentialRelations({
+ * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,
@@ -117,10 +117,10 @@ export interface GetSensitiveDataModelReferentialRelationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelReferentialRelations = oci.DataSafe.getSensitiveDataModelReferentialRelations({
+ * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,
@@ -147,24 +147,24 @@ export interface GetSensitiveDataModelReferentialRelationsOutputArgs {
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelReferentialRelationsFilterArgs>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelReferentialRelationsFilterArgs>[] | undefined>;
     /**
      * Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
      */
-    isSensitive?: pulumi.Input<boolean>;
+    isSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
      */
-    relationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    relationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */

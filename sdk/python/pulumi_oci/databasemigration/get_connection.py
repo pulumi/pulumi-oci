@@ -551,7 +551,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
+    test_connection = oci.databasemigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
     ```
 
 
@@ -606,7 +606,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
         username=pulumi.get(__ret__, 'username'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'))
-def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_connection_output(connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
     """
     This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
@@ -621,7 +621,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
+    test_connection = oci.databasemigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
     ```
 
 

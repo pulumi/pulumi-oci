@@ -21,10 +21,10 @@ class OracleManagedCustomEndpointArgs:
     def __init__(__self__, *,
                  hostname: pulumi.Input[_builtins.str],
                  integration_instance_id: pulumi.Input[_builtins.str],
-                 dns_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_zone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OracleManagedCustomEndpoint resource.
         """
@@ -59,50 +59,50 @@ class OracleManagedCustomEndpointArgs:
 
     @_builtins.property
     @pulumi.getter(name="dnsType")
-    def dns_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dns_type")
 
     @dns_type.setter
-    def dns_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsZoneName")
-    def dns_zone_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_zone_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dns_zone_name")
 
     @dns_zone_name.setter
-    def dns_zone_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_zone_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_zone_name", value)
 
     @_builtins.property
     @pulumi.getter(name="managedType")
-    def managed_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "managed_type")
 
     @managed_type.setter
-    def managed_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _OracleManagedCustomEndpointState:
     def __init__(__self__, *,
-                 dns_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_zone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 integration_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OracleManagedCustomEndpoint resources.
         """
@@ -121,56 +121,56 @@ class _OracleManagedCustomEndpointState:
 
     @_builtins.property
     @pulumi.getter(name="dnsType")
-    def dns_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dns_type")
 
     @dns_type.setter
-    def dns_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsZoneName")
-    def dns_zone_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_zone_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dns_zone_name")
 
     @dns_zone_name.setter
-    def dns_zone_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_zone_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_zone_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="integrationInstanceId")
-    def integration_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def integration_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "integration_instance_id")
 
     @integration_instance_id.setter
-    def integration_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def integration_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "integration_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managedType")
-    def managed_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "managed_type")
 
     @managed_type.setter
-    def managed_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -180,12 +180,12 @@ class OracleManagedCustomEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dns_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_zone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 integration_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a OracleManagedCustomEndpoint resource with the given unique name, props, and options.
@@ -217,12 +217,12 @@ class OracleManagedCustomEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dns_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_zone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 integration_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -252,12 +252,12 @@ class OracleManagedCustomEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dns_type: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_zone_name: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            integration_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'OracleManagedCustomEndpoint':
+            dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'OracleManagedCustomEndpoint':
         """
         Get an existing OracleManagedCustomEndpoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

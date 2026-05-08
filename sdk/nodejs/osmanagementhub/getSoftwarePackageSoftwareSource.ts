@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackageSoftwareSource = oci.OsManagementHub.getSoftwarePackageSoftwareSource({
+ * const testSoftwarePackageSoftwareSource = oci.osmanagementhub.getSoftwarePackageSoftwareSource({
  *     compartmentId: compartmentId,
  *     softwarePackageName: testSoftwarePackage.name,
  *     archTypes: softwarePackageSoftwareSourceArchType,
@@ -163,7 +163,7 @@ export interface GetSoftwarePackageSoftwareSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackageSoftwareSource = oci.OsManagementHub.getSoftwarePackageSoftwareSource({
+ * const testSoftwarePackageSoftwareSource = oci.osmanagementhub.getSoftwarePackageSoftwareSource({
  *     compartmentId: compartmentId,
  *     softwarePackageName: testSoftwarePackage.name,
  *     archTypes: softwarePackageSoftwareSourceArchType,
@@ -203,19 +203,19 @@ export interface GetSoftwarePackageSoftwareSourceOutputArgs {
     /**
      * A filter to return only instances whose architecture type matches the given architecture.
      */
-    archTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    archTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source in a non-OCI environment for a tenancy.
      */
-    availabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source. Use this query parameter to filter across availabilities in different environments.
      */
-    availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The availability of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      */
-    availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[]>;
+    availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
@@ -223,16 +223,16 @@ export interface GetSoftwarePackageSoftwareSourceOutputArgs {
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwarePackageSoftwareSourceFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwarePackageSoftwareSourceFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+    osFamilies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the software package.
      */
@@ -240,9 +240,9 @@ export interface GetSoftwarePackageSoftwareSourceOutputArgs {
     /**
      * The type of the software source.
      */
-    softwareSourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only software sources whose state matches the given state.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

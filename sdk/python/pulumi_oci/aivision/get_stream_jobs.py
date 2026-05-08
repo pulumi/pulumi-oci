@@ -125,7 +125,7 @@ def get_stream_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_jobs = oci.AiVision.get_stream_jobs(compartment_id=compartment_id,
+    test_stream_jobs = oci.aivision.get_stream_jobs(compartment_id=compartment_id,
         display_name=stream_job_display_name,
         id=stream_job_id,
         state=stream_job_state)
@@ -153,11 +153,11 @@ def get_stream_jobs(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         stream_job_collections=pulumi.get(__ret__, 'stream_job_collections'))
-def get_stream_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict']]]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stream_jobs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict']]]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamJobsResult]:
     """
     This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
@@ -170,7 +170,7 @@ def get_stream_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_jobs = oci.AiVision.get_stream_jobs(compartment_id=compartment_id,
+    test_stream_jobs = oci.aivision.get_stream_jobs(compartment_id=compartment_id,
         display_name=stream_job_display_name,
         id=stream_job_id,
         state=stream_job_state)

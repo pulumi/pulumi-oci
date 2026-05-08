@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OneSubsription.getComputedUsage({
+ * const testComputedUsage = oci.onesubsription.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOnesubscriptionComputedUsage.id,
  *     fields: computedUsageFields,
@@ -170,7 +170,7 @@ export interface GetComputedUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OneSubsription.getComputedUsage({
+ * const testComputedUsage = oci.onesubsription.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOnesubscriptionComputedUsage.id,
  *     fields: computedUsageFields,
@@ -201,5 +201,5 @@ export interface GetComputedUsageOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

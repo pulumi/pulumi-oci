@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
+ * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
@@ -163,9 +163,9 @@ export interface GetDatabaseInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
+ * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
@@ -204,46 +204,46 @@ export interface GetDatabaseInsightsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
      */
-    databaseIds?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      */
-    databaseTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique Enterprise Manager bridge identifier
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      */
-    exadataInsightId?: pulumi.Input<string>;
+    exadataInsightId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetDatabaseInsightsFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetDatabaseInsightsFilterArgs>[] | undefined>;
     /**
      * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Unique Operations Insights PrivateEndpoint identifier
      */
-    opsiPrivateEndpointId?: pulumi.Input<string>;
+    opsiPrivateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource Status
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

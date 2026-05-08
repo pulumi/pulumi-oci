@@ -219,7 +219,7 @@ def get_occ_customer_group(occ_customer_group_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_group = oci.CapacityManagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
+    test_occ_customer_group = oci.capacitymanagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
     ```
 
 
@@ -245,7 +245,7 @@ def get_occ_customer_group(occ_customer_group_id: Optional[_builtins.str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_occ_customer_group_output(occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_occ_customer_group_output(occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCustomerGroupResult]:
     """
     This data source provides details about a specific Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -258,7 +258,7 @@ def get_occ_customer_group_output(occ_customer_group_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_group = oci.CapacityManagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
+    test_occ_customer_group = oci.capacitymanagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
     ```
 
 

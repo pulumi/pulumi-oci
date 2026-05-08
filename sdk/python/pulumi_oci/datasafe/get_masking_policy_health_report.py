@@ -215,7 +215,7 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report = oci.DataSafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
+    test_masking_policy_health_report = oci.datasafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[_
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         warning_count=pulumi.get(__ret__, 'warning_count'))
-def get_masking_policy_health_report_output(masking_policy_health_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_masking_policy_health_report_output(masking_policy_health_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyHealthReportResult]:
     """
     This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -254,7 +254,7 @@ def get_masking_policy_health_report_output(masking_policy_health_report_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report = oci.DataSafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
+    test_masking_policy_health_report = oci.datasafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
     ```
 
 

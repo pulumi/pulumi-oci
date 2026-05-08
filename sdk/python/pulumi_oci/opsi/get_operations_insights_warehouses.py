@@ -126,7 +126,7 @@ def get_operations_insights_warehouses(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
+    test_operations_insights_warehouses = oci.opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
         display_name=operations_insights_warehouse_display_name,
         id=operations_insights_warehouse_id,
         states=operations_insights_warehouse_state)
@@ -154,11 +154,11 @@ def get_operations_insights_warehouses(compartment_id: Optional[_builtins.str] =
         id=pulumi.get(__ret__, 'id'),
         operations_insights_warehouse_summary_collections=pulumi.get(__ret__, 'operations_insights_warehouse_summary_collections'),
         states=pulumi.get(__ret__, 'states'))
-def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOperationsInsightsWarehousesFilterArgs', 'GetOperationsInsightsWarehousesFilterArgsDict']]]]] = None,
-                                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_operations_insights_warehouses_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOperationsInsightsWarehousesFilterArgs', 'GetOperationsInsightsWarehousesFilterArgsDict']]]]] = None,
+                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehousesResult]:
     """
     This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
@@ -172,7 +172,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
+    test_operations_insights_warehouses = oci.opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
         display_name=operations_insights_warehouse_display_name,
         id=operations_insights_warehouse_id,
         states=operations_insights_warehouse_state)

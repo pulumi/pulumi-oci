@@ -247,7 +247,7 @@ def get_public_ip(id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=test_public_ip_id)
+    test_oci_core_public_ip_by_id = oci.core.get_public_ip(id=test_public_ip_id)
     ```
 
     ### Get a public ip by private ip id
@@ -255,7 +255,7 @@ def get_public_ip(id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
+    test_oci_core_public_ip_by_private_ip_id = oci.core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
     ```
 
     ### Get a public ip by public ip address
@@ -263,7 +263,7 @@ def get_public_ip(id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=test_public_ip_ip_address)
+    test_oci_core_public_ip_by_ip = oci.core.get_public_ip(ip_address=test_public_ip_ip_address)
     ```
 
 
@@ -294,9 +294,9 @@ def get_public_ip(id: Optional[_builtins.str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_public_ip_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         ip_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         private_ip_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_public_ip_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         ip_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         private_ip_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpResult]:
     """
     This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
@@ -320,7 +320,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=test_public_ip_id)
+    test_oci_core_public_ip_by_id = oci.core.get_public_ip(id=test_public_ip_id)
     ```
 
     ### Get a public ip by private ip id
@@ -328,7 +328,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
+    test_oci_core_public_ip_by_private_ip_id = oci.core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
     ```
 
     ### Get a public ip by public ip address
@@ -336,7 +336,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=test_public_ip_ip_address)
+    test_oci_core_public_ip_by_ip = oci.core.get_public_ip(ip_address=test_public_ip_ip_address)
     ```
 
 

@@ -189,53 +189,53 @@ export interface ManagedListState {
     /**
      * (Updatable) Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Managed list display name.
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Provider of the managed list feed
      */
-    feedProvider?: pulumi.Input<string>;
+    feedProvider?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Managed list type group
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * Is this list editable?
      */
-    isEditable?: pulumi.Input<boolean>;
+    isEditable?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of items in the managed list
      */
-    listItems?: pulumi.Input<pulumi.Input<string>[]>;
+    listItems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of information stored in the list
      */
-    listType?: pulumi.Input<string>;
+    listType?: pulumi.Input<string | undefined>;
     /**
      * OCID of the source managed list
      *
@@ -243,23 +243,23 @@ export interface ManagedListState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceManagedListId?: pulumi.Input<string>;
+    sourceManagedListId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the resource
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the managed list was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the managed list was last updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -273,13 +273,13 @@ export interface ManagedListArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Managed list display name.
      *
@@ -291,19 +291,19 @@ export interface ManagedListArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Managed list type group
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of items in the managed list
      */
-    listItems?: pulumi.Input<pulumi.Input<string>[]>;
+    listItems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of information stored in the list
      */
-    listType?: pulumi.Input<string>;
+    listType?: pulumi.Input<string | undefined>;
     /**
      * OCID of the source managed list
      *
@@ -311,5 +311,5 @@ export interface ManagedListArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceManagedListId?: pulumi.Input<string>;
+    sourceManagedListId?: pulumi.Input<string | undefined>;
 }

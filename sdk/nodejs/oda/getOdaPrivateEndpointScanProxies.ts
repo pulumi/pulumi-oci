@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointScanProxies = oci.Oda.getOdaPrivateEndpointScanProxies({
+ * const testOdaPrivateEndpointScanProxies = oci.oda.getOdaPrivateEndpointScanProxies({
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointScanProxyState,
  * });
@@ -87,7 +87,7 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointScanProxies = oci.Oda.getOdaPrivateEndpointScanProxies({
+ * const testOdaPrivateEndpointScanProxies = oci.oda.getOdaPrivateEndpointScanProxies({
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointScanProxyState,
  * });
@@ -106,7 +106,7 @@ export function getOdaPrivateEndpointScanProxiesOutput(args: GetOdaPrivateEndpoi
  * A collection of arguments for invoking getOdaPrivateEndpointScanProxies.
  */
 export interface GetOdaPrivateEndpointScanProxiesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointScanProxiesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointScanProxiesFilterArgs>[] | undefined>;
     /**
      * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -114,5 +114,5 @@ export interface GetOdaPrivateEndpointScanProxiesOutputArgs {
     /**
      * List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

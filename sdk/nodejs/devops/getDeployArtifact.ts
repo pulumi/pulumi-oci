@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployArtifact = oci.DevOps.getDeployArtifact({
+ * const testDeployArtifact = oci.devops.getDeployArtifact({
  *     deployArtifactId: testDeployArtifactOciDevopsDeployArtifact.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetDeployArtifactResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployArtifact = oci.DevOps.getDeployArtifact({
+ * const testDeployArtifact = oci.devops.getDeployArtifact({
  *     deployArtifactId: testDeployArtifactOciDevopsDeployArtifact.id,
  * });
  * ```

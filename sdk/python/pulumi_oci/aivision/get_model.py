@@ -384,7 +384,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.AiVision.get_model(model_id=test_model_oci_ai_vision_model["id"])
+    test_model = oci.aivision.get_model(model_id=test_model_oci_ai_vision_model["id"])
     ```
 
 
@@ -424,7 +424,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
         trained_duration_in_hours=pulumi.get(__ret__, 'trained_duration_in_hours'),
         training_datasets=pulumi.get(__ret__, 'training_datasets'),
         validation_datasets=pulumi.get(__ret__, 'validation_datasets'))
-def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_output(model_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelResult]:
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -437,7 +437,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.AiVision.get_model(model_id=test_model_oci_ai_vision_model["id"])
+    test_model = oci.aivision.get_model(model_id=test_model_oci_ai_vision_model["id"])
     ```
 
 

@@ -33,8 +33,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     gpuMemoryClusterScaleConfig: {
- *         isUpsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled,
- *         isDownsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled,
+ *         isUpsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled === "true",
+ *         isDownsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled === "true",
  *         targetSize: computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize,
  *     },
  *     gpuMemoryFabricId: testGpuMemoryFabric.id,
@@ -208,43 +208,43 @@ export interface ComputeGpuMemoryClusterState {
     /**
      * The availability domain of the GPU Memory Cluster.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      */
-    computeClusterId?: pulumi.Input<string>;
+    computeClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration settings for GPU Memory Cluster scaling.
      */
-    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig>;
+    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */
-    gpuMemoryFabricId?: pulumi.Input<string>;
+    gpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Instance Configuration to be used for this GPU Memory Cluster
      */
-    instanceConfigurationId?: pulumi.Input<string>;
+    instanceConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
      */
-    privateIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    privateIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The desired number of instances for the GPU Memory Cluster. 
      *
@@ -252,19 +252,19 @@ export interface ComputeGpuMemoryClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    size?: pulumi.Input<string>;
+    size?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the GPU Memory Cluster
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -286,23 +286,23 @@ export interface ComputeGpuMemoryClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration settings for GPU Memory Cluster scaling.
      */
-    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig>;
+    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */
-    gpuMemoryFabricId?: pulumi.Input<string>;
+    gpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Instance Configuration to be used for this GPU Memory Cluster
      */
@@ -310,7 +310,7 @@ export interface ComputeGpuMemoryClusterArgs {
     /**
      * (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
      */
-    privateIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    privateIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The desired number of instances for the GPU Memory Cluster. 
      *
@@ -318,5 +318,5 @@ export interface ComputeGpuMemoryClusterArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    size?: pulumi.Input<string>;
+    size?: pulumi.Input<string | undefined>;
 }

@@ -300,7 +300,7 @@ def get_cloud_asm(cloud_asm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm = oci.DatabaseManagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
+    test_cloud_asm = oci.databasemanagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_cloud_asm(cloud_asm_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloud_asm_output(cloud_asm_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_asm_output(cloud_asm_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAsmResult]:
     """
     This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
@@ -346,7 +346,7 @@ def get_cloud_asm_output(cloud_asm_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm = oci.DatabaseManagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
+    test_cloud_asm = oci.databasemanagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
     ```
 
 

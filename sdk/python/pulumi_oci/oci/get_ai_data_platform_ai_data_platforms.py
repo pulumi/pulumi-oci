@@ -181,13 +181,13 @@ def get_ai_data_platform_ai_data_platforms(compartment_id: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         include_legacy=pulumi.get(__ret__, 'include_legacy'),
         state=pulumi.get(__ret__, 'state'))
-def get_ai_data_platform_ai_data_platforms_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  exclude_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAiDataPlatformAiDataPlatformsFilterArgs', 'GetAiDataPlatformAiDataPlatformsFilterArgsDict']]]]] = None,
-                                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  include_legacy: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ai_data_platform_ai_data_platforms_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  exclude_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAiDataPlatformAiDataPlatformsFilterArgs', 'GetAiDataPlatformAiDataPlatformsFilterArgsDict']]]]] = None,
+                                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  include_legacy: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAiDataPlatformAiDataPlatformsResult]:
     """
     This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControlAssignment = oci.OperatorAccessControl.getControlAssignment({
+ * const testOperatorControlAssignment = oci.operatoraccesscontrol.getControlAssignment({
  *     operatorControlAssignmentId: testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id,
  * });
  * ```
@@ -175,7 +175,7 @@ export interface GetControlAssignmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControlAssignment = oci.OperatorAccessControl.getControlAssignment({
+ * const testOperatorControlAssignment = oci.operatoraccesscontrol.getControlAssignment({
  *     operatorControlAssignmentId: testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id,
  * });
  * ```

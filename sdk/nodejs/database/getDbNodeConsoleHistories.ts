@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleHistories = oci.Database.getDbNodeConsoleHistories({
+ * const testDbNodeConsoleHistories = oci.database.getDbNodeConsoleHistories({
  *     dbNodeId: testDbNode.id,
  *     displayName: dbNodeConsoleHistoryDisplayName,
  *     state: dbNodeConsoleHistoryState,
@@ -90,7 +90,7 @@ export interface GetDbNodeConsoleHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleHistories = oci.Database.getDbNodeConsoleHistories({
+ * const testDbNodeConsoleHistories = oci.database.getDbNodeConsoleHistories({
  *     dbNodeId: testDbNode.id,
  *     displayName: dbNodeConsoleHistoryDisplayName,
  *     state: dbNodeConsoleHistoryState,
@@ -118,10 +118,10 @@ export interface GetDbNodeConsoleHistoriesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodeConsoleHistoriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodeConsoleHistoriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

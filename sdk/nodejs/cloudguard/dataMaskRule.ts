@@ -209,63 +209,63 @@ export interface DataMaskRuleState {
     /**
      * (Updatable) Compartment OCID where the resource is created
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Data mask rule categories
      */
-    dataMaskCategories?: pulumi.Input<pulumi.Input<string>[]>;
+    dataMaskCategories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The current status of the data mask rule
      */
-    dataMaskRuleStatus?: pulumi.Input<string>;
+    dataMaskRuleStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The data mask rule description Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Data mask rule display name
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) IAM group ID associated with the data mask rule
      */
-    iamGroupId?: pulumi.Input<string>;
+    iamGroupId?: pulumi.Input<string | undefined>;
     /**
      * Additional details on the substate of the lifecycle state [DEPRECATE]
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the data mask rule
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */
-    targetSelected?: pulumi.Input<inputs.CloudGuard.DataMaskRuleTargetSelected>;
+    targetSelected?: pulumi.Input<inputs.CloudGuard.DataMaskRuleTargetSelected | undefined>;
     /**
      * The date and time the target was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the target was updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -283,15 +283,15 @@ export interface DataMaskRuleArgs {
     /**
      * (Updatable) The current status of the data mask rule
      */
-    dataMaskRuleStatus?: pulumi.Input<string>;
+    dataMaskRuleStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The data mask rule description Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Data mask rule display name
      *
@@ -303,7 +303,7 @@ export interface DataMaskRuleArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) IAM group ID associated with the data mask rule
      */
@@ -311,7 +311,7 @@ export interface DataMaskRuleArgs {
     /**
      * The current lifecycle state of the data mask rule
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */

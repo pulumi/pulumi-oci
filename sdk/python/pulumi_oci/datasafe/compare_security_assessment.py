@@ -66,8 +66,8 @@ class CompareSecurityAssessmentArgs:
 @pulumi.input_type
 class _CompareSecurityAssessmentState:
     def __init__(__self__, *,
-                 comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CompareSecurityAssessment resources.
 
@@ -85,19 +85,19 @@ class _CompareSecurityAssessmentState:
 
     @_builtins.property
     @pulumi.getter(name="comparisonSecurityAssessmentId")
-    def comparison_security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comparison_security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         """
         return pulumi.get(self, "comparison_security_assessment_id")
 
     @comparison_security_assessment_id.setter
-    def comparison_security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comparison_security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comparison_security_assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
-    def security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the security assessment.
 
@@ -108,7 +108,7 @@ class _CompareSecurityAssessmentState:
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
-    def security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_assessment_id", value)
 
 
@@ -118,8 +118,8 @@ class CompareSecurityAssessment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Compare Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -209,8 +209,8 @@ class CompareSecurityAssessment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -236,8 +236,8 @@ class CompareSecurityAssessment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            comparison_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CompareSecurityAssessment':
+            comparison_security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CompareSecurityAssessment':
         """
         Get an existing CompareSecurityAssessment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

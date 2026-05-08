@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBase = oci.GenerativeAi.getAgentKnowledgeBase({
+ * const testKnowledgeBase = oci.generativeai.getAgentKnowledgeBase({
  *     knowledgeBaseId: testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetAgentKnowledgeBaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBase = oci.GenerativeAi.getAgentKnowledgeBase({
+ * const testKnowledgeBase = oci.generativeai.getAgentKnowledgeBase({
  *     knowledgeBaseId: testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id,
  * });
  * ```

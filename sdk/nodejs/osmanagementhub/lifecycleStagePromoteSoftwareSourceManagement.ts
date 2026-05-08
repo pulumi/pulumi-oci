@@ -118,15 +118,15 @@ export interface LifecycleStagePromoteSoftwareSourceManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -140,9 +140,9 @@ export interface LifecycleStagePromoteSoftwareSourceManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails | undefined>;
 }

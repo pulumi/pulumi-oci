@@ -64,7 +64,7 @@ export class AddSdmColumns extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AddSdmColumns resources.
  */
 export interface AddSdmColumnsState {
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

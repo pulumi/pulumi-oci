@@ -842,7 +842,7 @@ def get_domains_setting(attribute_sets: Optional[Sequence[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=test_domain["url"],
+    test_setting = oci.identity.get_domains_setting(idcs_endpoint=test_domain["url"],
         setting_id="Settings",
         attribute_sets=["all"],
         attributes="",
@@ -936,12 +936,12 @@ def get_domains_setting(attribute_sets: Optional[Sequence[_builtins.str]] = None
         tenant_custom_claims=pulumi.get(__ret__, 'tenant_custom_claims'),
         terms_of_use_url=pulumi.get(__ret__, 'terms_of_use_url'),
         timezone=pulumi.get(__ret__, 'timezone'))
-def get_domains_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                               resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               setting_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_setting_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                               resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               setting_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSettingResult]:
     """
     This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -954,7 +954,7 @@ def get_domains_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=test_domain["url"],
+    test_setting = oci.identity.get_domains_setting(idcs_endpoint=test_domain["url"],
         setting_id="Settings",
         attribute_sets=["all"],
         attributes="",

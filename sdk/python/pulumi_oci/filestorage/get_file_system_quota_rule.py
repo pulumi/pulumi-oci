@@ -178,7 +178,7 @@ def get_file_system_quota_rule(are_violators_only: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rule = oci.FileStorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
+    test_file_system_quota_rule = oci.filestorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
         quota_rule_id=test_rule["id"])
     ```
 
@@ -205,9 +205,9 @@ def get_file_system_quota_rule(are_violators_only: Optional[_builtins.str] = Non
         quota_rule_id=pulumi.get(__ret__, 'quota_rule_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_file_system_quota_rule_output(are_violators_only: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      quota_rule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_system_quota_rule_output(are_violators_only: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      quota_rule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileSystemQuotaRuleResult]:
     """
     This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
@@ -220,7 +220,7 @@ def get_file_system_quota_rule_output(are_violators_only: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rule = oci.FileStorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
+    test_file_system_quota_rule = oci.filestorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
         quota_rule_id=test_rule["id"])
     ```
 

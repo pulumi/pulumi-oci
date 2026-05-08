@@ -158,9 +158,9 @@ def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OsubSubscription.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.osubsubscription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required,
+        is_commit_info_required=subscription_is_commit_info_required == "true",
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"],
         x_one_gateway_subscription_id=subscription_x_one_gateway_subscription_id,
@@ -199,14 +199,14 @@ def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
         subscriptions=pulumi.get(__ret__, 'subscriptions'),
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
-                             is_commit_info_required: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             plan_number: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             x_one_origin_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subscriptions_output(buyer_email: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             is_commit_info_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             plan_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             x_one_gateway_subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osub Subscription service.
@@ -222,9 +222,9 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OsubSubscription.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.osubsubscription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required,
+        is_commit_info_required=subscription_is_commit_info_required == "true",
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"],
         x_one_gateway_subscription_id=subscription_x_one_gateway_subscription_id,

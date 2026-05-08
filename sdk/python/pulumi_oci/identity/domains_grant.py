@@ -25,16 +25,16 @@ class DomainsGrantArgs:
                  grantee: pulumi.Input['DomainsGrantGranteeArgs'],
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 app: Optional[pulumi.Input['DomainsGrantAppArgs']] = None,
-                 app_entitlement_collection: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlement: Optional[pulumi.Input['DomainsGrantEntitlementArgs']] = None,
-                 granted_attribute_values_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None):
+                 app: pulumi.Input[Optional['DomainsGrantAppArgs']] = None,
+                 app_entitlement_collection: pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlement: pulumi.Input[Optional['DomainsGrantEntitlementArgs']] = None,
+                 granted_attribute_values_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsGrant resource.
 
@@ -257,7 +257,7 @@ class DomainsGrantArgs:
 
     @_builtins.property
     @pulumi.getter
-    def app(self) -> Optional[pulumi.Input['DomainsGrantAppArgs']]:
+    def app(self) -> pulumi.Input[Optional['DomainsGrantAppArgs']]:
         """
         Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 
@@ -274,12 +274,12 @@ class DomainsGrantArgs:
         return pulumi.get(self, "app")
 
     @app.setter
-    def app(self, value: Optional[pulumi.Input['DomainsGrantAppArgs']]):
+    def app(self, value: pulumi.Input[Optional['DomainsGrantAppArgs']]):
         pulumi.set(self, "app", value)
 
     @_builtins.property
     @pulumi.getter(name="appEntitlementCollection")
-    def app_entitlement_collection(self) -> Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]:
+    def app_entitlement_collection(self) -> pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']]:
         """
         Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 
@@ -297,48 +297,48 @@ class DomainsGrantArgs:
         return pulumi.get(self, "app_entitlement_collection")
 
     @app_entitlement_collection.setter
-    def app_entitlement_collection(self, value: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]):
+    def app_entitlement_collection(self, value: pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']]):
         pulumi.set(self, "app_entitlement_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlement(self) -> Optional[pulumi.Input['DomainsGrantEntitlementArgs']]:
+    def entitlement(self) -> pulumi.Input[Optional['DomainsGrantEntitlementArgs']]:
         """
         The entitlement or privilege that is being granted
 
@@ -354,12 +354,12 @@ class DomainsGrantArgs:
         return pulumi.get(self, "entitlement")
 
     @entitlement.setter
-    def entitlement(self, value: Optional[pulumi.Input['DomainsGrantEntitlementArgs']]):
+    def entitlement(self, value: pulumi.Input[Optional['DomainsGrantEntitlementArgs']]):
         pulumi.set(self, "entitlement", value)
 
     @_builtins.property
     @pulumi.getter(name="grantedAttributeValuesJson")
-    def granted_attribute_values_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def granted_attribute_values_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
 
@@ -377,12 +377,12 @@ class DomainsGrantArgs:
         return pulumi.get(self, "granted_attribute_values_json")
 
     @granted_attribute_values_json.setter
-    def granted_attribute_values_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def granted_attribute_values_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "granted_attribute_values_json", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -399,24 +399,24 @@ class DomainsGrantArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
         """
         A list of tags on this resource.
 
@@ -433,39 +433,39 @@ class DomainsGrantArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _DomainsGrantState:
     def __init__(__self__, *,
-                 app: Optional[pulumi.Input['DomainsGrantAppArgs']] = None,
-                 app_entitlement_collection: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 composite_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlement: Optional[pulumi.Input['DomainsGrantEntitlementArgs']] = None,
-                 grant_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 granted_attribute_values_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 grantee: Optional[pulumi.Input['DomainsGrantGranteeArgs']] = None,
-                 grantors: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_fulfilled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
+                 app: pulumi.Input[Optional['DomainsGrantAppArgs']] = None,
+                 app_entitlement_collection: pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 composite_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlement: pulumi.Input[Optional['DomainsGrantEntitlementArgs']] = None,
+                 grant_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 granted_attribute_values_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 grantee: pulumi.Input[Optional['DomainsGrantGranteeArgs']] = None,
+                 grantors: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_fulfilled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsGrant resources.
 
@@ -765,7 +765,7 @@ class _DomainsGrantState:
 
     @_builtins.property
     @pulumi.getter
-    def app(self) -> Optional[pulumi.Input['DomainsGrantAppArgs']]:
+    def app(self) -> pulumi.Input[Optional['DomainsGrantAppArgs']]:
         """
         Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 
@@ -782,12 +782,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "app")
 
     @app.setter
-    def app(self, value: Optional[pulumi.Input['DomainsGrantAppArgs']]):
+    def app(self, value: pulumi.Input[Optional['DomainsGrantAppArgs']]):
         pulumi.set(self, "app", value)
 
     @_builtins.property
     @pulumi.getter(name="appEntitlementCollection")
-    def app_entitlement_collection(self) -> Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]:
+    def app_entitlement_collection(self) -> pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']]:
         """
         Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 
@@ -805,48 +805,48 @@ class _DomainsGrantState:
         return pulumi.get(self, "app_entitlement_collection")
 
     @app_entitlement_collection.setter
-    def app_entitlement_collection(self, value: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]):
+    def app_entitlement_collection(self, value: pulumi.Input[Optional['DomainsGrantAppEntitlementCollectionArgs']]):
         pulumi.set(self, "app_entitlement_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -863,12 +863,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="compositeKey")
-    def composite_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def composite_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
 
@@ -887,12 +887,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "composite_key")
 
     @composite_key.setter
-    def composite_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def composite_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "composite_key", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -909,12 +909,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -931,12 +931,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlement(self) -> Optional[pulumi.Input['DomainsGrantEntitlementArgs']]:
+    def entitlement(self) -> pulumi.Input[Optional['DomainsGrantEntitlementArgs']]:
         """
         The entitlement or privilege that is being granted
 
@@ -952,12 +952,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "entitlement")
 
     @entitlement.setter
-    def entitlement(self, value: Optional[pulumi.Input['DomainsGrantEntitlementArgs']]):
+    def entitlement(self, value: pulumi.Input[Optional['DomainsGrantEntitlementArgs']]):
         pulumi.set(self, "entitlement", value)
 
     @_builtins.property
     @pulumi.getter(name="grantMechanism")
-    def grant_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grant_mechanism(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
         * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
@@ -978,12 +978,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "grant_mechanism")
 
     @grant_mechanism.setter
-    def grant_mechanism(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grant_mechanism(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grant_mechanism", value)
 
     @_builtins.property
     @pulumi.getter(name="grantedAttributeValuesJson")
-    def granted_attribute_values_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def granted_attribute_values_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
 
@@ -1001,12 +1001,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "granted_attribute_values_json")
 
     @granted_attribute_values_json.setter
-    def granted_attribute_values_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def granted_attribute_values_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "granted_attribute_values_json", value)
 
     @_builtins.property
     @pulumi.getter
-    def grantee(self) -> Optional[pulumi.Input['DomainsGrantGranteeArgs']]:
+    def grantee(self) -> pulumi.Input[Optional['DomainsGrantGranteeArgs']]:
         """
         Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
 
@@ -1023,12 +1023,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "grantee")
 
     @grantee.setter
-    def grantee(self, value: Optional[pulumi.Input['DomainsGrantGranteeArgs']]):
+    def grantee(self, value: pulumi.Input[Optional['DomainsGrantGranteeArgs']]):
         pulumi.set(self, "grantee", value)
 
     @_builtins.property
     @pulumi.getter
-    def grantors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]]:
+    def grantors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]]:
         """
         (Updatable) User conferring the grant to the beneficiary
 
@@ -1044,12 +1044,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "grantors")
 
     @grantors.setter
-    def grantors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]]):
+    def grantors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]]):
         pulumi.set(self, "grantors", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -1064,24 +1064,24 @@ class _DomainsGrantState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -1096,12 +1096,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -1118,12 +1118,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -1139,12 +1139,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="isFulfilled")
-    def is_fulfilled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_fulfilled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, this Grant has been fulfilled successfully.
 
@@ -1160,12 +1160,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "is_fulfilled")
 
     @is_fulfilled.setter
-    def is_fulfilled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_fulfilled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_fulfilled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -1182,12 +1182,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1204,24 +1204,24 @@ class _DomainsGrantState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -1238,12 +1238,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
         """
         A list of tags on this resource.
 
@@ -1260,12 +1260,12 @@ class _DomainsGrantState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -1286,7 +1286,7 @@ class _DomainsGrantState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
 
@@ -1296,20 +1296,20 @@ class DomainsGrant(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
-                 app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
-                 grant_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 granted_attribute_values_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
+                 app: pulumi.Input[Optional[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+                 app_entitlement_collection: pulumi.Input[Optional[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlement: pulumi.Input[Optional[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
+                 grant_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 granted_attribute_values_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 grantee: pulumi.Input[Optional[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1552,20 +1552,20 @@ class DomainsGrant(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
-                 app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
-                 grant_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-                 granted_attribute_values_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
+                 app: pulumi.Input[Optional[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+                 app_entitlement_collection: pulumi.Input[Optional[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlement: pulumi.Input[Optional[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
+                 grant_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+                 granted_attribute_values_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 grantee: pulumi.Input[Optional[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1619,32 +1619,32 @@ class DomainsGrant(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
-            app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            composite_key: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
-            grant_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
-            granted_attribute_values_json: Optional[pulumi.Input[_builtins.str]] = None,
-            grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
-            grantors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantGrantorArgs', 'DomainsGrantGrantorArgsDict']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsCreatedByArgs', 'DomainsGrantIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsLastModifiedByArgs', 'DomainsGrantIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_fulfilled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantMetaArgs', 'DomainsGrantMetaArgsDict']]]]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsGrant':
+            app: pulumi.Input[Optional[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+            app_entitlement_collection: pulumi.Input[Optional[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            composite_key: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            entitlement: pulumi.Input[Optional[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
+            grant_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            granted_attribute_values_json: pulumi.Input[Optional[_builtins.str]] = None,
+            grantee: pulumi.Input[Optional[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
+            grantors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantGrantorArgs', 'DomainsGrantGrantorArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantIdcsCreatedByArgs', 'DomainsGrantIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantIdcsLastModifiedByArgs', 'DomainsGrantIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_fulfilled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantMetaArgs', 'DomainsGrantMetaArgsDict']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsGrant':
         """
         Get an existing DomainsGrant resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

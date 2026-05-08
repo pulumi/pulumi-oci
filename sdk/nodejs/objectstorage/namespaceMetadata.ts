@@ -70,16 +70,16 @@ export class NamespaceMetadata extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NamespaceMetadata resources.
  */
 export interface NamespaceMetadataState {
-    defaultS3compartmentId?: pulumi.Input<string>;
-    defaultSwiftCompartmentId?: pulumi.Input<string>;
-    namespace?: pulumi.Input<string>;
+    defaultS3compartmentId?: pulumi.Input<string | undefined>;
+    defaultSwiftCompartmentId?: pulumi.Input<string | undefined>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a NamespaceMetadata resource.
  */
 export interface NamespaceMetadataArgs {
-    defaultS3compartmentId?: pulumi.Input<string>;
-    defaultSwiftCompartmentId?: pulumi.Input<string>;
+    defaultS3compartmentId?: pulumi.Input<string | undefined>;
+    defaultSwiftCompartmentId?: pulumi.Input<string | undefined>;
     namespace: pulumi.Input<string>;
 }

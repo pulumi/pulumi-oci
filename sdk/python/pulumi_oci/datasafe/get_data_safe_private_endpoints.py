@@ -157,9 +157,9 @@ def get_data_safe_private_endpoints(access_level: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
+    test_data_safe_private_endpoints = oci.datasafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
         access_level=data_safe_private_endpoint_access_level,
-        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree,
+        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree == "true",
         display_name=data_safe_private_endpoint_display_name,
         state=data_safe_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -194,13 +194,13 @@ def get_data_safe_private_endpoints(access_level: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict']]]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_data_safe_private_endpoints_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict']]]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafePrivateEndpointsResult]:
     """
     This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
@@ -213,9 +213,9 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
+    test_data_safe_private_endpoints = oci.datasafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
         access_level=data_safe_private_endpoint_access_level,
-        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree,
+        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree == "true",
         display_name=data_safe_private_endpoint_display_name,
         state=data_safe_private_endpoint_state,
         vcn_id=test_vcn["id"])

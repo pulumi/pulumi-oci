@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnection = oci.DevOps.getConnection({
+ * const testConnection = oci.devops.getConnection({
  *     connectionId: testConnectionOciDevopsConnection.id,
  * });
  * ```
@@ -128,7 +128,7 @@ export interface GetConnectionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnection = oci.DevOps.getConnection({
+ * const testConnection = oci.devops.getConnection({
  *     connectionId: testConnectionOciDevopsConnection.id,
  * });
  * ```

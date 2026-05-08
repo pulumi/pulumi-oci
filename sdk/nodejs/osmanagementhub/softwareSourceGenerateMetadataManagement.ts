@@ -103,7 +103,7 @@ export interface SoftwareSourceGenerateMetadataManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
 }
 
 /**

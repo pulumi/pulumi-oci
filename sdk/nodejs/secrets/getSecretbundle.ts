@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundle = oci.Secrets.getSecretbundle({
+ * const testSecretbundle = oci.secrets.getSecretbundle({
  *     secretId: testSecret.id,
  *     secretVersionName: testSecretVersion.name,
  *     stage: secretbundleStage,
@@ -117,7 +117,7 @@ export interface GetSecretbundleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundle = oci.Secrets.getSecretbundle({
+ * const testSecretbundle = oci.secrets.getSecretbundle({
  *     secretId: testSecret.id,
  *     secretVersionName: testSecretVersion.name,
  *     stage: secretbundleStage,
@@ -146,13 +146,13 @@ export interface GetSecretbundleOutputArgs {
     /**
      * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
      */
-    secretVersionName?: pulumi.Input<string>;
+    secretVersionName?: pulumi.Input<string | undefined>;
     /**
      * The rotation state of the secret version.
      */
-    stage?: pulumi.Input<string>;
+    stage?: pulumi.Input<string | undefined>;
     /**
      * The version number of the secret.
      */
-    versionNumber?: pulumi.Input<string>;
+    versionNumber?: pulumi.Input<string | undefined>;
 }

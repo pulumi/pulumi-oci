@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
+ * const testLogAnalyticsObjectCollectionRules = oci.loganalytics.getLogAnalyticsObjectCollectionRules({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  *     name: logAnalyticsObjectCollectionRuleName,
@@ -97,7 +97,7 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
+ * const testLogAnalyticsObjectCollectionRules = oci.loganalytics.getLogAnalyticsObjectCollectionRules({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  *     name: logAnalyticsObjectCollectionRuleName,
@@ -124,11 +124,11 @@ export interface GetLogAnalyticsObjectCollectionRulesOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsObjectCollectionRulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsObjectCollectionRulesFilterArgs>[] | undefined>;
     /**
      * A filter to return rules only matching with this name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -136,5 +136,5 @@ export interface GetLogAnalyticsObjectCollectionRulesOutputArgs {
     /**
      * Lifecycle state filter.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

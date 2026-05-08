@@ -220,71 +220,71 @@ export interface DrPlanState {
     /**
      * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    drProtectionGroupId?: pulumi.Input<string>;
+    drProtectionGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the DR plan's current state in more detail.
      */
-    lifeCycleDetails?: pulumi.Input<string>;
+    lifeCycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the DR plan.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    peerDrProtectionGroupId?: pulumi.Input<string>;
+    peerDrProtectionGroupId?: pulumi.Input<string | undefined>;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    peerRegion?: pulumi.Input<string>;
+    peerRegion?: pulumi.Input<string | undefined>;
     /**
      * The list of groups in this DR plan.
      */
-    planGroups?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroup>[]>;
+    planGroups?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroup>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    sourcePlanId?: pulumi.Input<string>;
+    sourcePlanId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the DR plan.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The type of DR plan to be created.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
      *
@@ -292,7 +292,7 @@ export interface DrPlanState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    verifyTrigger?: pulumi.Input<number>;
+    verifyTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -302,7 +302,7 @@ export interface DrPlanArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      */
@@ -314,15 +314,15 @@ export interface DrPlanArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    sourcePlanId?: pulumi.Input<string>;
+    sourcePlanId?: pulumi.Input<string | undefined>;
     /**
      * The type of DR plan to be created.
      */
@@ -334,5 +334,5 @@ export interface DrPlanArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    verifyTrigger?: pulumi.Input<number>;
+    verifyTrigger?: pulumi.Input<number | undefined>;
 }

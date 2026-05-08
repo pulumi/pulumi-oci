@@ -227,7 +227,7 @@ def get_model_group_version_history(model_group_version_history_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_history = oci.DataScience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
+    test_model_group_version_history = oci.datascience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_model_group_version_history(model_group_version_history_id: Optional[_bu
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_model_group_version_history_output(model_group_version_history_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_group_version_history_output(model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelGroupVersionHistoryResult]:
     """
     This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
@@ -267,7 +267,7 @@ def get_model_group_version_history_output(model_group_version_history_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_history = oci.DataScience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
+    test_model_group_version_history = oci.datascience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
     ```
 
 

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreams = oci.Streaming.getStreams({
+ * const testStreams = oci.streaming.getStreams({
  *     compartmentId: compartmentId,
  *     id: streamId,
  *     name: streamName,
@@ -113,7 +113,7 @@ export interface GetStreamsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreams = oci.Streaming.getStreams({
+ * const testStreams = oci.streaming.getStreams({
  *     compartmentId: compartmentId,
  *     id: streamId,
  *     name: streamName,
@@ -142,22 +142,22 @@ export interface GetStreamsOutputArgs {
     /**
      * The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Streaming.GetStreamsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Streaming.GetStreamsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given ID exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
      */
-    streamPoolId?: pulumi.Input<string>;
+    streamPoolId?: pulumi.Input<string | undefined>;
 }

@@ -121,7 +121,7 @@ def get_app_catalog_listings(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
+    test_app_catalog_listings = oci.core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```
@@ -146,10 +146,10 @@ def get_app_catalog_listings(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         publisher_name=pulumi.get(__ret__, 'publisher_name'),
         publisher_type=pulumi.get(__ret__, 'publisher_type'))
-def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingsFilterArgs', 'GetAppCatalogListingsFilterArgsDict']]]]] = None,
-                                    publisher_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    publisher_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_catalog_listings_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppCatalogListingsFilterArgs', 'GetAppCatalogListingsFilterArgsDict']]]]] = None,
+                                    publisher_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    publisher_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogListingsResult]:
     """
     This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
@@ -162,7 +162,7 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
+    test_app_catalog_listings = oci.core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```

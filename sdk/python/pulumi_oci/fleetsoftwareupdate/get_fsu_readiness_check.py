@@ -240,7 +240,7 @@ def get_fsu_readiness_check(fsu_readiness_check_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_check = oci.FleetSoftwareUpdate.get_fsu_readiness_check(fsu_readiness_check_id=test_fsu_readiness_check_oci_fleet_software_update_fsu_readiness_check["id"])
+    test_fsu_readiness_check = oci.fleetsoftwareupdate.get_fsu_readiness_check(fsu_readiness_check_id=test_fsu_readiness_check_oci_fleet_software_update_fsu_readiness_check["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_fsu_readiness_check(fsu_readiness_check_id: Optional[_builtins.str] = No
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_fsu_readiness_check_output(fsu_readiness_check_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fsu_readiness_check_output(fsu_readiness_check_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuReadinessCheckResult]:
     """
     This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
@@ -281,7 +281,7 @@ def get_fsu_readiness_check_output(fsu_readiness_check_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_check = oci.FleetSoftwareUpdate.get_fsu_readiness_check(fsu_readiness_check_id=test_fsu_readiness_check_oci_fleet_software_update_fsu_readiness_check["id"])
+    test_fsu_readiness_check = oci.fleetsoftwareupdate.get_fsu_readiness_check(fsu_readiness_check_id=test_fsu_readiness_check_oci_fleet_software_update_fsu_readiness_check["id"])
     ```
 
 

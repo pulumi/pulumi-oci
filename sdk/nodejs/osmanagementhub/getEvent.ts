@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvent = oci.OsManagementHub.getEvent({
+ * const testEvent = oci.osmanagementhub.getEvent({
  *     eventId: testEventOciOsManagementHubEvent.id,
  * });
  * ```
@@ -134,7 +134,7 @@ export interface GetEventResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvent = oci.OsManagementHub.getEvent({
+ * const testEvent = oci.osmanagementhub.getEvent({
  *     eventId: testEventOciOsManagementHubEvent.id,
  * });
  * ```

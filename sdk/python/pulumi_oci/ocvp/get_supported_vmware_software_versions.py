@@ -129,7 +129,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
+    test_supported_vmware_software_versions = oci.ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
         version=supported_vmware_software_version_version,
         version_to_upgrade=supported_vmware_software_version_version_to_upgrade)
@@ -158,11 +158,11 @@ def get_supported_vmware_software_versions(compartment_id: Optional[_builtins.st
         items=pulumi.get(__ret__, 'items'),
         version=pulumi.get(__ret__, 'version'),
         version_to_upgrade=pulumi.get(__ret__, 'version_to_upgrade'))
-def get_supported_vmware_software_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
-                                                  host_shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  version_to_upgrade: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_supported_vmware_software_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
+                                                  host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  version_to_upgrade: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:
     """
     This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -176,7 +176,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
+    test_supported_vmware_software_versions = oci.ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
         version=supported_vmware_software_version_version,
         version_to_upgrade=supported_vmware_software_version_version_to_upgrade)

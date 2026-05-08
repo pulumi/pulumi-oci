@@ -90,7 +90,7 @@ class BackendSetBackendArgsDict(TypedDict):
     """
     (Updatable) The communication port for the backend server.  Example: `8080`
     """
-    backup: NotRequired[pulumi.Input[_builtins.bool]]
+    backup: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 
@@ -98,11 +98,11 @@ class BackendSetBackendArgsDict(TypedDict):
 
     Example: `false`
     """
-    drain: NotRequired[pulumi.Input[_builtins.bool]]
+    drain: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
     """
-    max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    max_connections: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
 
@@ -110,7 +110,7 @@ class BackendSetBackendArgsDict(TypedDict):
 
     Example: `300`
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A friendly name for the backend set. It must be unique and it cannot be changed.
 
@@ -118,11 +118,11 @@ class BackendSetBackendArgsDict(TypedDict):
 
     Example: `example_backend_set`
     """
-    offline: NotRequired[pulumi.Input[_builtins.bool]]
+    offline: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
     """
-    weight: NotRequired[pulumi.Input[_builtins.int]]
+    weight: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
     """
@@ -132,12 +132,12 @@ class BackendSetBackendArgs:
     def __init__(__self__, *,
                  ip_address: pulumi.Input[_builtins.str],
                  port: pulumi.Input[_builtins.int],
-                 backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 drain: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drain: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[_builtins.int] port: (Updatable) The communication port for the backend server.  Example: `8080`
@@ -201,7 +201,7 @@ class BackendSetBackendArgs:
 
     @_builtins.property
     @pulumi.getter
-    def backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 
@@ -212,24 +212,24 @@ class BackendSetBackendArgs:
         return pulumi.get(self, "backup")
 
     @backup.setter
-    def backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "backup", value)
 
     @_builtins.property
     @pulumi.getter
-    def drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def drain(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "drain")
 
     @drain.setter
-    def drain(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def drain(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "drain", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConnections")
-    def max_connections(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_connections(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
 
@@ -240,12 +240,12 @@ class BackendSetBackendArgs:
         return pulumi.get(self, "max_connections")
 
     @max_connections.setter
-    def max_connections(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_connections(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
@@ -256,31 +256,31 @@ class BackendSetBackendArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def offline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def offline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "offline")
 
     @offline.setter
-    def offline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def offline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "offline", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
@@ -289,11 +289,11 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
     """
     (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
     """
-    interval_ms: NotRequired[pulumi.Input[_builtins.int]]
+    interval_ms: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
     """
-    is_force_plain_text: NotRequired[pulumi.Input[_builtins.bool]]
+    is_force_plain_text: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 
@@ -303,27 +303,27 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
 
     Example: `false`
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
     """
-    response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
+    response_body_regex: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
     """
-    retries: NotRequired[pulumi.Input[_builtins.int]]
+    retries: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
     """
-    return_code: NotRequired[pulumi.Input[_builtins.int]]
+    return_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The status code a healthy backend server should return.  Example: `200`
     """
-    timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_millis: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
     """
-    url_path: NotRequired[pulumi.Input[_builtins.str]]
+    url_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The path against which to run the health check.  Example: `/healthcheck`
     """
@@ -332,14 +332,14 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
 class BackendSetHealthCheckerArgs:
     def __init__(__self__, *,
                  protocol: pulumi.Input[_builtins.str],
-                 interval_ms: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_force_plain_text: Optional[pulumi.Input[_builtins.bool]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 response_body_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 return_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeout_in_millis: Optional[pulumi.Input[_builtins.int]] = None,
-                 url_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 interval_ms: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_force_plain_text: pulumi.Input[Optional[_builtins.bool]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 response_body_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 return_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeout_in_millis: pulumi.Input[Optional[_builtins.int]] = None,
+                 url_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] protocol: (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
         :param pulumi.Input[_builtins.int] interval_ms: (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
@@ -389,19 +389,19 @@ class BackendSetHealthCheckerArgs:
 
     @_builtins.property
     @pulumi.getter(name="intervalMs")
-    def interval_ms(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval_ms(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
         """
         return pulumi.get(self, "interval_ms")
 
     @interval_ms.setter
-    def interval_ms(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval_ms(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_ms", value)
 
     @_builtins.property
     @pulumi.getter(name="isForcePlainText")
-    def is_force_plain_text(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_plain_text(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 
@@ -414,84 +414,84 @@ class BackendSetHealthCheckerArgs:
         return pulumi.get(self, "is_force_plain_text")
 
     @is_force_plain_text.setter
-    def is_force_plain_text(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_plain_text(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_plain_text", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="responseBodyRegex")
-    def response_body_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def response_body_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
         """
         return pulumi.get(self, "response_body_regex")
 
     @response_body_regex.setter
-    def response_body_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def response_body_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "response_body_regex", value)
 
     @_builtins.property
     @pulumi.getter
-    def retries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
         """
         return pulumi.get(self, "retries")
 
     @retries.setter
-    def retries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retries", value)
 
     @_builtins.property
     @pulumi.getter(name="returnCode")
-    def return_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def return_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The status code a healthy backend server should return.  Example: `200`
         """
         return pulumi.get(self, "return_code")
 
     @return_code.setter
-    def return_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def return_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "return_code", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInMillis")
-    def timeout_in_millis(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_millis(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
         """
         return pulumi.get(self, "timeout_in_millis")
 
     @timeout_in_millis.setter
-    def timeout_in_millis(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_millis(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="urlPath")
-    def url_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
         return pulumi.get(self, "url_path")
 
     @url_path.setter
-    def url_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url_path", value)
 
 
 class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
-    cookie_name: NotRequired[pulumi.Input[_builtins.str]]
+    cookie_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
 
@@ -499,11 +499,11 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
     *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
     *  If a backend server and the load balancer both insert cookies with the same name, the client or browser behavior can vary depending on the domain and path values associated with the cookie. If the name, domain, and path values of the `Set-cookie` generated by a backend server and the `Set-cookie` generated by the load balancer are all the same, the client or browser treats them as one cookie and returns only one of the cookie values in subsequent requests. If both `Set-cookie` names are the same, but the domain and path names are different, the client or browser treats them as two different cookies.
     """
-    disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
+    disable_fallback: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
     """
-    domain: NotRequired[pulumi.Input[_builtins.str]]
+    domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
 
@@ -517,11 +517,11 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
 
     Example: `example.com`
     """
-    is_http_only: NotRequired[pulumi.Input[_builtins.bool]]
+    is_http_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
     """
-    is_secure: NotRequired[pulumi.Input[_builtins.bool]]
+    is_secure: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
 
@@ -529,7 +529,7 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
 
     Example: `true`
     """
-    max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    max_age_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
 
@@ -537,7 +537,7 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
 
     Example: `3600`
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
 
@@ -551,13 +551,13 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class BackendSetLbCookieSessionPersistenceConfigurationArgs:
     def __init__(__self__, *,
-                 cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_fallback: Optional[pulumi.Input[_builtins.bool]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_http_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_secure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_age_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None):
+                 cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_fallback: pulumi.Input[Optional[_builtins.bool]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_http_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_age_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cookie_name: (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
                
@@ -612,7 +612,7 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="cookieName")
-    def cookie_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cookie_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
 
@@ -623,24 +623,24 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         return pulumi.get(self, "cookie_name")
 
     @cookie_name.setter
-    def cookie_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cookie_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cookie_name", value)
 
     @_builtins.property
     @pulumi.getter(name="disableFallback")
-    def disable_fallback(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_fallback(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
         return pulumi.get(self, "disable_fallback")
 
     @disable_fallback.setter
-    def disable_fallback(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_fallback(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_fallback", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
 
@@ -657,24 +657,24 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="isHttpOnly")
-    def is_http_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_http_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
         """
         return pulumi.get(self, "is_http_only")
 
     @is_http_only.setter
-    def is_http_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_http_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_http_only", value)
 
     @_builtins.property
     @pulumi.getter(name="isSecure")
-    def is_secure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_secure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
 
@@ -685,12 +685,12 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         return pulumi.get(self, "is_secure")
 
     @is_secure.setter
-    def is_secure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_secure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_secure", value)
 
     @_builtins.property
     @pulumi.getter(name="maxAgeInSeconds")
-    def max_age_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_age_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
 
@@ -701,12 +701,12 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         return pulumi.get(self, "max_age_in_seconds")
 
     @max_age_in_seconds.setter
-    def max_age_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_age_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_age_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
 
@@ -719,7 +719,7 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
 
@@ -728,7 +728,7 @@ class BackendSetSessionPersistenceConfigurationArgsDict(TypedDict):
     """
     (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
     """
-    disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
+    disable_fallback: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
     """
@@ -737,7 +737,7 @@ class BackendSetSessionPersistenceConfigurationArgsDict(TypedDict):
 class BackendSetSessionPersistenceConfigurationArgs:
     def __init__(__self__, *,
                  cookie_name: pulumi.Input[_builtins.str],
-                 disable_fallback: Optional[pulumi.Input[_builtins.bool]] = None):
+                 disable_fallback: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] cookie_name: (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         :param pulumi.Input[_builtins.bool] disable_fallback: (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
@@ -760,27 +760,27 @@ class BackendSetSessionPersistenceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="disableFallback")
-    def disable_fallback(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_fallback(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
         return pulumi.get(self, "disable_fallback")
 
     @disable_fallback.setter
-    def disable_fallback(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_fallback(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_fallback", value)
 
 
 class BackendSetSslConfigurationArgsDict(TypedDict):
-    certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    certificate_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
     """
-    certificate_name: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
     """
-    cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
+    cipher_suite_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
@@ -797,7 +797,7 @@ class BackendSetSslConfigurationArgsDict(TypedDict):
 
     example: `example_cipher_suite`
     """
-    protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    protocols: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
@@ -820,21 +820,21 @@ class BackendSetSslConfigurationArgsDict(TypedDict):
 
     example: `["TLSv1.1", "TLSv1.2"]`
     """
-    server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
+    server_order_preference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
     **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
     """
-    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
     """
-    verify_depth: NotRequired[pulumi.Input[_builtins.int]]
+    verify_depth: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
     """
-    verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
+    verify_peer_certificate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
@@ -845,14 +845,14 @@ class BackendSetSslConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class BackendSetSslConfigurationArgs:
     def __init__(__self__, *,
-                 certificate_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cipher_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 server_order_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_authority_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 verify_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 verify_peer_certificate: Optional[pulumi.Input[_builtins.bool]] = None):
+                 certificate_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cipher_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 server_order_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_authority_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 verify_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 verify_peer_certificate: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
         :param pulumi.Input[_builtins.str] certificate_name: (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
@@ -919,31 +919,31 @@ class BackendSetSslConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateIds")
-    def certificate_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def certificate_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
         """
         return pulumi.get(self, "certificate_ids")
 
     @certificate_ids.setter
-    def certificate_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def certificate_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "certificate_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateName")
-    def certificate_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         """
         return pulumi.get(self, "certificate_name")
 
     @certificate_name.setter
-    def certificate_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_name", value)
 
     @_builtins.property
     @pulumi.getter(name="cipherSuiteName")
-    def cipher_suite_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cipher_suite_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
@@ -963,12 +963,12 @@ class BackendSetSslConfigurationArgs:
         return pulumi.get(self, "cipher_suite_name")
 
     @cipher_suite_name.setter
-    def cipher_suite_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cipher_suite_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cipher_suite_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def protocols(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
@@ -994,12 +994,12 @@ class BackendSetSslConfigurationArgs:
         return pulumi.get(self, "protocols")
 
     @protocols.setter
-    def protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def protocols(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="serverOrderPreference")
-    def server_order_preference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_order_preference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
@@ -1008,36 +1008,36 @@ class BackendSetSslConfigurationArgs:
         return pulumi.get(self, "server_order_preference")
 
     @server_order_preference.setter
-    def server_order_preference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_order_preference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_order_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateAuthorityIds")
-    def trusted_certificate_authority_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def trusted_certificate_authority_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         """
         return pulumi.get(self, "trusted_certificate_authority_ids")
 
     @trusted_certificate_authority_ids.setter
-    def trusted_certificate_authority_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def trusted_certificate_authority_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "trusted_certificate_authority_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="verifyDepth")
-    def verify_depth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def verify_depth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
         """
         return pulumi.get(self, "verify_depth")
 
     @verify_depth.setter
-    def verify_depth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def verify_depth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "verify_depth", value)
 
     @_builtins.property
     @pulumi.getter(name="verifyPeerCertificate")
-    def verify_peer_certificate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def verify_peer_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
@@ -1047,7 +1047,7 @@ class BackendSetSslConfigurationArgs:
         return pulumi.get(self, "verify_peer_certificate")
 
     @verify_peer_certificate.setter
-    def verify_peer_certificate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def verify_peer_certificate(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "verify_peer_certificate", value)
 
 
@@ -1060,11 +1060,11 @@ class ListenerConnectionConfigurationArgsDict(TypedDict):
 
     Example: `1200`
     """
-    backend_tcp_proxy_protocol_options: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    backend_tcp_proxy_protocol_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
     """
-    backend_tcp_proxy_protocol_version: NotRequired[pulumi.Input[_builtins.int]]
+    backend_tcp_proxy_protocol_version: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
     """
@@ -1073,8 +1073,8 @@ class ListenerConnectionConfigurationArgsDict(TypedDict):
 class ListenerConnectionConfigurationArgs:
     def __init__(__self__, *,
                  idle_timeout_in_seconds: pulumi.Input[_builtins.str],
-                 backend_tcp_proxy_protocol_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backend_tcp_proxy_protocol_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 backend_tcp_proxy_protocol_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backend_tcp_proxy_protocol_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] idle_timeout_in_seconds: (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
                
@@ -1108,39 +1108,39 @@ class ListenerConnectionConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="backendTcpProxyProtocolOptions")
-    def backend_tcp_proxy_protocol_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backend_tcp_proxy_protocol_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
         """
         return pulumi.get(self, "backend_tcp_proxy_protocol_options")
 
     @backend_tcp_proxy_protocol_options.setter
-    def backend_tcp_proxy_protocol_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backend_tcp_proxy_protocol_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backend_tcp_proxy_protocol_options", value)
 
     @_builtins.property
     @pulumi.getter(name="backendTcpProxyProtocolVersion")
-    def backend_tcp_proxy_protocol_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backend_tcp_proxy_protocol_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         """
         return pulumi.get(self, "backend_tcp_proxy_protocol_version")
 
     @backend_tcp_proxy_protocol_version.setter
-    def backend_tcp_proxy_protocol_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backend_tcp_proxy_protocol_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backend_tcp_proxy_protocol_version", value)
 
 
 class ListenerSslConfigurationArgsDict(TypedDict):
-    certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    certificate_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
     """
-    certificate_name: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
     """
-    cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
+    cipher_suite_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
@@ -1157,11 +1157,11 @@ class ListenerSslConfigurationArgsDict(TypedDict):
 
     example: `example_cipher_suite`
     """
-    has_session_resumption: NotRequired[pulumi.Input[_builtins.bool]]
+    has_session_resumption: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
     """
-    protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    protocols: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
@@ -1184,21 +1184,21 @@ class ListenerSslConfigurationArgsDict(TypedDict):
 
     example: `["TLSv1.1", "TLSv1.2"]`
     """
-    server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
+    server_order_preference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
     **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
     """
-    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
     """
-    verify_depth: NotRequired[pulumi.Input[_builtins.int]]
+    verify_depth: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
     """
-    verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
+    verify_peer_certificate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
@@ -1210,15 +1210,15 @@ class ListenerSslConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ListenerSslConfigurationArgs:
     def __init__(__self__, *,
-                 certificate_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 certificate_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cipher_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_session_resumption: Optional[pulumi.Input[_builtins.bool]] = None,
-                 protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 server_order_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_authority_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 verify_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 verify_peer_certificate: Optional[pulumi.Input[_builtins.bool]] = None):
+                 certificate_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cipher_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_session_resumption: pulumi.Input[Optional[_builtins.bool]] = None,
+                 protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 server_order_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_authority_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 verify_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 verify_peer_certificate: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] certificate_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
         :param pulumi.Input[_builtins.str] certificate_name: (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
@@ -1289,31 +1289,31 @@ class ListenerSslConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateIds")
-    def certificate_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def certificate_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
         """
         return pulumi.get(self, "certificate_ids")
 
     @certificate_ids.setter
-    def certificate_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def certificate_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "certificate_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateName")
-    def certificate_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         """
         return pulumi.get(self, "certificate_name")
 
     @certificate_name.setter
-    def certificate_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_name", value)
 
     @_builtins.property
     @pulumi.getter(name="cipherSuiteName")
-    def cipher_suite_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cipher_suite_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
@@ -1333,24 +1333,24 @@ class ListenerSslConfigurationArgs:
         return pulumi.get(self, "cipher_suite_name")
 
     @cipher_suite_name.setter
-    def cipher_suite_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cipher_suite_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cipher_suite_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hasSessionResumption")
-    def has_session_resumption(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_session_resumption(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
         """
         return pulumi.get(self, "has_session_resumption")
 
     @has_session_resumption.setter
-    def has_session_resumption(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_session_resumption(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_session_resumption", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def protocols(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
@@ -1376,12 +1376,12 @@ class ListenerSslConfigurationArgs:
         return pulumi.get(self, "protocols")
 
     @protocols.setter
-    def protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def protocols(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="serverOrderPreference")
-    def server_order_preference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_order_preference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
@@ -1390,36 +1390,36 @@ class ListenerSslConfigurationArgs:
         return pulumi.get(self, "server_order_preference")
 
     @server_order_preference.setter
-    def server_order_preference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_order_preference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_order_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateAuthorityIds")
-    def trusted_certificate_authority_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def trusted_certificate_authority_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         """
         return pulumi.get(self, "trusted_certificate_authority_ids")
 
     @trusted_certificate_authority_ids.setter
-    def trusted_certificate_authority_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def trusted_certificate_authority_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "trusted_certificate_authority_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="verifyDepth")
-    def verify_depth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def verify_depth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
         """
         return pulumi.get(self, "verify_depth")
 
     @verify_depth.setter
-    def verify_depth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def verify_depth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "verify_depth", value)
 
     @_builtins.property
     @pulumi.getter(name="verifyPeerCertificate")
-    def verify_peer_certificate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def verify_peer_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
@@ -1430,27 +1430,27 @@ class ListenerSslConfigurationArgs:
         return pulumi.get(self, "verify_peer_certificate")
 
     @verify_peer_certificate.setter
-    def verify_peer_certificate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def verify_peer_certificate(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "verify_peer_certificate", value)
 
 
 class LoadBalancerIpAddressDetailArgsDict(TypedDict):
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An IP address.  Example: `192.168.0.3`
     """
-    is_public: NotRequired[pulumi.Input[_builtins.bool]]
+    is_public: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the IP address is public or private.
     """
-    reserved_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgsDict']]]]
+    reserved_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]]
 
 @pulumi.input_type
 class LoadBalancerIpAddressDetailArgs:
     def __init__(__self__, *,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]] = None):
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] ip_address: An IP address.  Example: `192.168.0.3`
         :param pulumi.Input[_builtins.bool] is_public: Whether the IP address is public or private.
@@ -1464,40 +1464,40 @@ class LoadBalancerIpAddressDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An IP address.  Example: `192.168.0.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_public(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the IP address is public or private.
         """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
-    def is_public(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_public(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIps")
-    def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]:
+    def reserved_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]:
         return pulumi.get(self, "reserved_ips")
 
     @reserved_ips.setter
-    def reserved_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]):
+    def reserved_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]):
         pulumi.set(self, "reserved_ips", value)
 
 
 class LoadBalancerIpAddressDetailReservedIpArgsDict(TypedDict):
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Ocid of the Reserved IP/Public Ip created with VCN.
     """
@@ -1505,7 +1505,7 @@ class LoadBalancerIpAddressDetailReservedIpArgsDict(TypedDict):
 @pulumi.input_type
 class LoadBalancerIpAddressDetailReservedIpArgs:
     def __init__(__self__, *,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP/Public Ip created with VCN.
         """
@@ -1514,19 +1514,19 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Ocid of the Reserved IP/Public Ip created with VCN.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
 class LoadBalancerReservedIpArgsDict(TypedDict):
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
@@ -1544,7 +1544,7 @@ class LoadBalancerReservedIpArgsDict(TypedDict):
 @pulumi.input_type
 class LoadBalancerReservedIpArgs:
     def __init__(__self__, *,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] id: (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
                
@@ -1563,7 +1563,7 @@ class LoadBalancerReservedIpArgs:
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
@@ -1580,7 +1580,7 @@ class LoadBalancerReservedIpArgs:
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
@@ -1912,7 +1912,7 @@ class RuleSetItemArgsDict(TypedDict):
     """
     (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
     """
-    allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allowed_methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of HTTP methods allowed for this listener.
 
@@ -1924,37 +1924,37 @@ class RuleSetItemArgsDict(TypedDict):
 
     Example: ["GET", "PUT", "POST", "PROPFIND"]
     """
-    are_invalid_characters_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    are_invalid_characters_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
     """
-    conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgsDict']]]]
+    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]]
     """
     (Updatable)
     """
-    default_max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    default_max_connections: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 
     example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
     """
-    header: NotRequired[pulumi.Input[_builtins.str]]
+    header: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
     """
-    http_large_header_size_in_kb: NotRequired[pulumi.Input[_builtins.int]]
+    http_large_header_size_in_kb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
     """
-    ip_max_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgsDict']]]]
+    ip_max_connections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]]
     """
     (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
     *  value cannot contain `$`
@@ -1962,7 +1962,7 @@ class RuleSetItemArgsDict(TypedDict):
 
     Example: `example_prefix_value`
     """
-    redirect_uri: NotRequired[pulumi.Input['RuleSetItemRedirectUriArgsDict']]
+    redirect_uri: NotRequired[pulumi.Input[Optional['RuleSetItemRedirectUriArgs']]]
     """
     (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 
@@ -1989,7 +1989,7 @@ class RuleSetItemArgsDict(TypedDict):
 
     `/example/video123{path}`
     """
-    response_code: NotRequired[pulumi.Input[_builtins.int]]
+    response_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The HTTP status code to return when the incoming request is redirected.
 
@@ -2004,11 +2004,11 @@ class RuleSetItemArgsDict(TypedDict):
 
     Example: `301`
     """
-    status_code: NotRequired[pulumi.Input[_builtins.int]]
+    status_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
     """
-    suffix: NotRequired[pulumi.Input[_builtins.str]]
+    suffix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
     *  value cannot contain `$`
@@ -2016,7 +2016,7 @@ class RuleSetItemArgsDict(TypedDict):
 
     Example: `example_suffix_value`
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
     *  value cannot contain `$`
@@ -2029,20 +2029,20 @@ class RuleSetItemArgsDict(TypedDict):
 class RuleSetItemArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
-                 allowed_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 are_invalid_characters_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]] = None,
-                 default_max_connections: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 header: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_large_header_size_in_kb: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_max_connections: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 redirect_uri: Optional[pulumi.Input['RuleSetItemRedirectUriArgs']] = None,
-                 response_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 suffix: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 are_invalid_characters_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]] = None,
+                 default_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 header: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_large_header_size_in_kb: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_max_connections: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 redirect_uri: pulumi.Input[Optional['RuleSetItemRedirectUriArgs']] = None,
+                 response_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 suffix: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_methods: (Updatable) The list of HTTP methods allowed for this listener.
@@ -2160,7 +2160,7 @@ class RuleSetItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedMethods")
-    def allowed_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of HTTP methods allowed for this listener.
 
@@ -2175,48 +2175,48 @@ class RuleSetItemArgs:
         return pulumi.get(self, "allowed_methods")
 
     @allowed_methods.setter
-    def allowed_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_methods", value)
 
     @_builtins.property
     @pulumi.getter(name="areInvalidCharactersAllowed")
-    def are_invalid_characters_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_invalid_characters_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         """
         return pulumi.get(self, "are_invalid_characters_allowed")
 
     @are_invalid_characters_allowed.setter
-    def are_invalid_characters_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_invalid_characters_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_invalid_characters_allowed", value)
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultMaxConnections")
-    def default_max_connections(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def default_max_connections(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
         """
         return pulumi.get(self, "default_max_connections")
 
     @default_max_connections.setter
-    def default_max_connections(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def default_max_connections(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "default_max_connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 
@@ -2225,48 +2225,48 @@ class RuleSetItemArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
         """
         return pulumi.get(self, "header")
 
     @header.setter
-    def header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "header", value)
 
     @_builtins.property
     @pulumi.getter(name="httpLargeHeaderSizeInKb")
-    def http_large_header_size_in_kb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def http_large_header_size_in_kb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         """
         return pulumi.get(self, "http_large_header_size_in_kb")
 
     @http_large_header_size_in_kb.setter
-    def http_large_header_size_in_kb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def http_large_header_size_in_kb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "http_large_header_size_in_kb", value)
 
     @_builtins.property
     @pulumi.getter(name="ipMaxConnections")
-    def ip_max_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]:
+    def ip_max_connections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]:
         """
         (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
         """
         return pulumi.get(self, "ip_max_connections")
 
     @ip_max_connections.setter
-    def ip_max_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]):
+    def ip_max_connections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]):
         pulumi.set(self, "ip_max_connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         *  value cannot contain `$`
@@ -2277,12 +2277,12 @@ class RuleSetItemArgs:
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="redirectUri")
-    def redirect_uri(self) -> Optional[pulumi.Input['RuleSetItemRedirectUriArgs']]:
+    def redirect_uri(self) -> pulumi.Input[Optional['RuleSetItemRedirectUriArgs']]:
         """
         (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 
@@ -2312,12 +2312,12 @@ class RuleSetItemArgs:
         return pulumi.get(self, "redirect_uri")
 
     @redirect_uri.setter
-    def redirect_uri(self, value: Optional[pulumi.Input['RuleSetItemRedirectUriArgs']]):
+    def redirect_uri(self, value: pulumi.Input[Optional['RuleSetItemRedirectUriArgs']]):
         pulumi.set(self, "redirect_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="responseCode")
-    def response_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def response_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The HTTP status code to return when the incoming request is redirected.
 
@@ -2335,24 +2335,24 @@ class RuleSetItemArgs:
         return pulumi.get(self, "response_code")
 
     @response_code.setter
-    def response_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def response_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "response_code", value)
 
     @_builtins.property
     @pulumi.getter(name="statusCode")
-    def status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
         """
         return pulumi.get(self, "status_code")
 
     @status_code.setter
-    def status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "status_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def suffix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def suffix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         *  value cannot contain `$`
@@ -2363,12 +2363,12 @@ class RuleSetItemArgs:
         return pulumi.get(self, "suffix")
 
     @suffix.setter
-    def suffix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def suffix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "suffix", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
         *  value cannot contain `$`
@@ -2379,7 +2379,7 @@ class RuleSetItemArgs:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -2395,7 +2395,7 @@ class RuleSetItemConditionArgsDict(TypedDict):
     - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
     - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
     """
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
@@ -2409,7 +2409,7 @@ class RuleSetItemConditionArgs:
     def __init__(__self__, *,
                  attribute_name: pulumi.Input[_builtins.str],
                  attribute_value: pulumi.Input[_builtins.str],
-                 operator: Optional[pulumi.Input[_builtins.str]] = None):
+                 operator: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] attribute_name: (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
         :param pulumi.Input[_builtins.str] attribute_value: (Updatable) Depends on `attribute_name`:
@@ -2456,7 +2456,7 @@ class RuleSetItemConditionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
         *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
@@ -2467,16 +2467,16 @@ class RuleSetItemConditionArgs:
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
 
 class RuleSetItemIpMaxConnectionArgsDict(TypedDict):
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
     """
-    max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    max_connections: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
     """
@@ -2484,8 +2484,8 @@ class RuleSetItemIpMaxConnectionArgsDict(TypedDict):
 @pulumi.input_type
 class RuleSetItemIpMaxConnectionArgs:
     def __init__(__self__, *,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 max_connections: Optional[pulumi.Input[_builtins.int]] = None):
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 max_connections: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
         :param pulumi.Input[_builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
@@ -2497,31 +2497,31 @@ class RuleSetItemIpMaxConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConnections")
-    def max_connections(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_connections(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
         """
         return pulumi.get(self, "max_connections")
 
     @max_connections.setter
-    def max_connections(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_connections(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_connections", value)
 
 
 class RuleSetItemRedirectUriArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
 
@@ -2536,7 +2536,7 @@ class RuleSetItemRedirectUriArgsDict(TypedDict):
     *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
     *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The HTTP URI path to use in the redirect URI.
 
@@ -2555,7 +2555,7 @@ class RuleSetItemRedirectUriArgsDict(TypedDict):
     *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
     *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The communication port to use in the redirect URI.
 
@@ -2565,7 +2565,7 @@ class RuleSetItemRedirectUriArgsDict(TypedDict):
 
     Example: `8081`
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The HTTP protocol to use in the redirect URI.
 
@@ -2578,7 +2578,7 @@ class RuleSetItemRedirectUriArgsDict(TypedDict):
 
     Example: `HTTPS`
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The query string to use in the redirect URI.
 
@@ -2603,11 +2603,11 @@ class RuleSetItemRedirectUriArgsDict(TypedDict):
 @pulumi.input_type
 class RuleSetItemRedirectUriArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host: (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
                
@@ -2686,7 +2686,7 @@ class RuleSetItemRedirectUriArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
 
@@ -2704,12 +2704,12 @@ class RuleSetItemRedirectUriArgs:
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The HTTP URI path to use in the redirect URI.
 
@@ -2731,12 +2731,12 @@ class RuleSetItemRedirectUriArgs:
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The communication port to use in the redirect URI.
 
@@ -2749,12 +2749,12 @@ class RuleSetItemRedirectUriArgs:
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The HTTP protocol to use in the redirect URI.
 
@@ -2770,12 +2770,12 @@ class RuleSetItemRedirectUriArgs:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The query string to use in the redirect URI.
 
@@ -2799,7 +2799,7 @@ class RuleSetItemRedirectUriArgs:
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
 

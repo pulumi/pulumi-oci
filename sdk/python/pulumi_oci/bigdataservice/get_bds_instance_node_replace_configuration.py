@@ -178,7 +178,7 @@ def get_bds_instance_node_replace_configuration(bds_instance_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_replace_configuration = oci.BigDataService.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_replace_configuration = oci.bigdataservice.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
         node_replace_configuration_id=test_configuration["id"])
     ```
 
@@ -204,8 +204,8 @@ def get_bds_instance_node_replace_configuration(bds_instance_id: Optional[_built
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_bds_instance_node_replace_configuration_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       node_replace_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_node_replace_configuration_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       node_replace_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceNodeReplaceConfigurationResult]:
     """
     This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -218,7 +218,7 @@ def get_bds_instance_node_replace_configuration_output(bds_instance_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_replace_configuration = oci.BigDataService.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_replace_configuration = oci.bigdataservice.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
         node_replace_configuration_id=test_configuration["id"])
     ```
 

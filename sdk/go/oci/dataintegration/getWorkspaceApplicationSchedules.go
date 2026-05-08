@@ -32,10 +32,10 @@ import (
 //			_, err := dataintegration.GetWorkspaceApplicationSchedules(ctx, &dataintegration.GetWorkspaceApplicationSchedulesArgs{
 //				ApplicationKey: workspaceApplicationScheduleApplicationKey,
 //				WorkspaceId:    testWorkspace.Id,
-//				Identifiers:    workspaceApplicationScheduleIdentifier,
-//				Keys:           workspaceApplicationScheduleKey,
+//				Identifiers:    pulumi.ToArray(workspaceApplicationScheduleIdentifier),
+//				Keys:           pulumi.ToArray(workspaceApplicationScheduleKey),
 //				Name:           pulumi.StringRef(workspaceApplicationScheduleName),
-//				Types:          workspaceApplicationScheduleType,
+//				Types:          pulumi.ToArray(workspaceApplicationScheduleType),
 //			}, nil)
 //			if err != nil {
 //				return err

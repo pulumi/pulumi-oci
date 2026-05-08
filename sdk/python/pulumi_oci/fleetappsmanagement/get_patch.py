@@ -285,7 +285,7 @@ def get_patch(patch_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_patch = oci.FleetAppsManagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
+    test_patch = oci.fleetappsmanagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_patch(patch_id: Optional[_builtins.str] = None,
         time_released=pulumi.get(__ret__, 'time_released'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_patch_output(patch_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_patch_output(patch_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPatchResult]:
     """
     This data source provides details about a specific Patch resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -330,7 +330,7 @@ def get_patch_output(patch_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_patch = oci.FleetAppsManagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
+    test_patch = oci.fleetappsmanagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
     ```
 
 

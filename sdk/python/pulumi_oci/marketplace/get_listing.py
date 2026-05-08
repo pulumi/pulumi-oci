@@ -444,7 +444,7 @@ def get_listing(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing = oci.Marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
+    test_listing = oci.marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
         compartment_id=compartment_id)
     ```
 
@@ -491,8 +491,8 @@ def get_listing(compartment_id: Optional[_builtins.str] = None,
         usage_information=pulumi.get(__ret__, 'usage_information'),
         version=pulumi.get(__ret__, 'version'),
         videos=pulumi.get(__ret__, 'videos'))
-def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       listing_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listing_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingResult]:
     """
     This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
@@ -519,7 +519,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_listing = oci.Marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
+    test_listing = oci.marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
         compartment_id=compartment_id)
     ```
 

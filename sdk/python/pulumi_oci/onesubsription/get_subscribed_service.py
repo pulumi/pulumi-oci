@@ -1405,7 +1405,7 @@ def get_subscribed_service(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
+    test_subscribed_service = oci.onesubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
         fields=subscribed_service_fields)
     ```
 
@@ -1533,8 +1533,8 @@ def get_subscribed_service(fields: Optional[Sequence[_builtins.str]] = None,
         type=pulumi.get(__ret__, 'type'),
         updated_by=pulumi.get(__ret__, 'updated_by'),
         used_amount=pulumi.get(__ret__, 'used_amount'))
-def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                  subscribed_service_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscribed_service_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                  subscribed_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscribedServiceResult]:
     """
     This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -1547,7 +1547,7 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
+    test_subscribed_service = oci.onesubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
         fields=subscribed_service_fields)
     ```
 

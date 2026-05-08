@@ -232,7 +232,7 @@ def get_workspace_folder(folder_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
+    test_workspace_folder = oci.dataintegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -263,8 +263,8 @@ def get_workspace_folder(folder_key: Optional[_builtins.str] = None,
         parent_reves=pulumi.get(__ret__, 'parent_reves'),
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_folder_output(folder_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_folder_output(folder_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceFolderResult]:
     """
     This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
@@ -277,7 +277,7 @@ def get_workspace_folder_output(folder_key: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
+    test_workspace_folder = oci.dataintegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
         workspace_id=test_workspace["id"])
     ```
 

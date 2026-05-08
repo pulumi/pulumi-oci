@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
+ * const testReportDefinitions = oci.datasafe.getReportDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded,
+ *     isSeeded: reportDefinitionIsSeeded === "true",
  *     state: reportDefinitionState,
  * });
  * ```
@@ -138,14 +138,14 @@ export interface GetReportDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
+ * const testReportDefinitions = oci.datasafe.getReportDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded,
+ *     isSeeded: reportDefinitionIsSeeded === "true",
  *     state: reportDefinitionState,
  * });
  * ```
@@ -172,11 +172,11 @@ export interface GetReportDefinitionsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified category.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -184,22 +184,22 @@ export interface GetReportDefinitionsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the name of a resource that provides data for the report. For example  alerts, events.
      */
-    dataSource?: pulumi.Input<string>;
+    dataSource?: pulumi.Input<string | undefined>;
     /**
      * The name of the report definition to query.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetReportDefinitionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetReportDefinitionsFilterArgs>[] | undefined>;
     /**
      * A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
      */
-    isSeeded?: pulumi.Input<boolean>;
+    isSeeded?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

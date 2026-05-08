@@ -122,7 +122,7 @@ def get_internal_occm_demand_signal_deliveries(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_deliveries = oci.CapacityManagement.get_internal_occm_demand_signal_deliveries(compartment_id=compartment_id,
+    test_internal_occm_demand_signal_deliveries = oci.capacitymanagement.get_internal_occm_demand_signal_deliveries(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         id=internal_occm_demand_signal_delivery_id,
         occm_demand_signal_item_id=test_occm_demand_signal_item["id"])
@@ -150,11 +150,11 @@ def get_internal_occm_demand_signal_deliveries(compartment_id: Optional[_builtin
         internal_occm_demand_signal_delivery_collections=pulumi.get(__ret__, 'internal_occm_demand_signal_delivery_collections'),
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'),
         occm_demand_signal_item_id=pulumi.get(__ret__, 'occm_demand_signal_item_id'))
-def get_internal_occm_demand_signal_deliveries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccmDemandSignalDeliveriesFilterArgs', 'GetInternalOccmDemandSignalDeliveriesFilterArgsDict']]]]] = None,
-                                                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      occm_demand_signal_item_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_internal_occm_demand_signal_deliveries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalDeliveriesFilterArgs', 'GetInternalOccmDemandSignalDeliveriesFilterArgsDict']]]]] = None,
+                                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      occm_demand_signal_item_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccmDemandSignalDeliveriesResult]:
     """
     This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
@@ -167,7 +167,7 @@ def get_internal_occm_demand_signal_deliveries_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_deliveries = oci.CapacityManagement.get_internal_occm_demand_signal_deliveries(compartment_id=compartment_id,
+    test_internal_occm_demand_signal_deliveries = oci.capacitymanagement.get_internal_occm_demand_signal_deliveries(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         id=internal_occm_demand_signal_delivery_id,
         occm_demand_signal_item_id=test_occm_demand_signal_item["id"])

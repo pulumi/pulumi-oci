@@ -309,7 +309,7 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
+    test_occ_capacity_request = oci.capacitymanagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
 
 
@@ -343,7 +343,7 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[_builtins.str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_occ_capacity_request_output(occ_capacity_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCapacityRequestResult]:
     """
     This data source provides details about a specific Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -356,7 +356,7 @@ def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
+    test_occ_capacity_request = oci.capacitymanagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
 
 

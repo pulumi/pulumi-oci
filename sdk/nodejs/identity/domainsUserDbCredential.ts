@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *         value: userDbCredentialTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     user: {
  *         value: testUser.id,
@@ -499,15 +499,15 @@ export interface DomainsUserDbCredentialState {
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -521,7 +521,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * The user's database password.
      *
@@ -531,7 +531,7 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * required: true
      */
-    dbPassword?: pulumi.Input<string>;
+    dbPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -545,7 +545,7 @@ export interface DomainsUserDbCredentialState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * Description
      *
@@ -558,7 +558,7 @@ export interface DomainsUserDbCredentialState {
      * * required: false
      * * returned: default
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -572,7 +572,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates that the database password has expired.
      *
@@ -581,7 +581,7 @@ export interface DomainsUserDbCredentialState {
      * * mutability: readOnly
      * * returned: default
      */
-    expired?: pulumi.Input<boolean>;
+    expired?: pulumi.Input<boolean | undefined>;
     /**
      * When the user credential expires.
      *
@@ -597,7 +597,7 @@ export interface DomainsUserDbCredentialState {
      * * type: dateTime
      * * uniqueness: none
      */
-    expiresOn?: pulumi.Input<string>;
+    expiresOn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -609,11 +609,11 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -625,7 +625,7 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -639,7 +639,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -652,7 +652,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      *
@@ -661,7 +661,7 @@ export interface DomainsUserDbCredentialState {
      * * mutability: readOnly
      * * returned: default
      */
-    lastSetDate?: pulumi.Input<string>;
+    lastSetDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -675,7 +675,7 @@ export interface DomainsUserDbCredentialState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialMeta>[] | undefined>;
     /**
      * (Updatable) The user's database password with mixed salt.
      *
@@ -685,7 +685,7 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * required: false
      */
-    mixedDbPassword?: pulumi.Input<string>;
+    mixedDbPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The mixed salt of the password.
      *
@@ -695,7 +695,7 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * required: false
      */
-    mixedSalt?: pulumi.Input<string>;
+    mixedSalt?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name
      *
@@ -708,7 +708,7 @@ export interface DomainsUserDbCredentialState {
      * * required: false
      * * returned: default
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -722,11 +722,11 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The salt of the password.
      *
@@ -736,7 +736,7 @@ export interface DomainsUserDbCredentialState {
      * * returned: default
      * * required: false
      */
-    salt?: pulumi.Input<string>;
+    salt?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -750,7 +750,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * User credential status
      *
@@ -766,7 +766,7 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -780,7 +780,7 @@ export interface DomainsUserDbCredentialState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -794,11 +794,11 @@ export interface DomainsUserDbCredentialState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */
-    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * The user linked to the database credential.
      *
@@ -813,7 +813,7 @@ export interface DomainsUserDbCredentialState {
      * * type: complex
      * * uniqueness: none
      */
-    user?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUser>;
+    user?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUser | undefined>;
 }
 
 /**
@@ -823,15 +823,15 @@ export interface DomainsUserDbCredentialArgs {
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * The user's database password.
      *
@@ -854,7 +854,7 @@ export interface DomainsUserDbCredentialArgs {
      * * required: false
      * * returned: default
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * When the user credential expires.
      *
@@ -870,7 +870,7 @@ export interface DomainsUserDbCredentialArgs {
      * * type: dateTime
      * * uniqueness: none
      */
-    expiresOn?: pulumi.Input<string>;
+    expiresOn?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -888,11 +888,11 @@ export interface DomainsUserDbCredentialArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -922,7 +922,7 @@ export interface DomainsUserDbCredentialArgs {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -936,11 +936,11 @@ export interface DomainsUserDbCredentialArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserDbCredentialTag>[] | undefined>;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */
-    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    urnietfparamsscimschemasoracleidcsextensionselfChangeUser?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * The user linked to the database credential.
      *
@@ -955,5 +955,5 @@ export interface DomainsUserDbCredentialArgs {
      * * type: complex
      * * uniqueness: none
      */
-    user?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUser>;
+    user?: pulumi.Input<inputs.Identity.DomainsUserDbCredentialUser | undefined>;
 }

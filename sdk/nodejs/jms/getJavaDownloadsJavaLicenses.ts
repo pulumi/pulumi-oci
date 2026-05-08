@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenses = oci.Jms.getJavaDownloadsJavaLicenses({
+ * const testJavaLicenses = oci.jms.getJavaDownloadsJavaLicenses({
  *     displayName: javaLicenseDisplayName,
  *     licenseType: javaLicenseLicenseType,
  * });
@@ -81,7 +81,7 @@ export interface GetJavaDownloadsJavaLicensesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenses = oci.Jms.getJavaDownloadsJavaLicenses({
+ * const testJavaLicenses = oci.jms.getJavaDownloadsJavaLicenses({
  *     displayName: javaLicenseDisplayName,
  *     licenseType: javaLicenseLicenseType,
  * });
@@ -104,10 +104,10 @@ export interface GetJavaDownloadsJavaLicensesOutputArgs {
     /**
      * A filter to return only resources that match the display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaLicensesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaDownloadsJavaLicensesFilterArgs>[] | undefined>;
     /**
      * Unique Java license type.
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
 }

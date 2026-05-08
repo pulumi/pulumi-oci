@@ -23,10 +23,10 @@ class DatabaseDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  database_id: pulumi.Input[_builtins.str],
                  enable_database_dbm_feature: pulumi.Input[_builtins.bool],
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
-                 modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None):
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
+                 modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
 
@@ -79,53 +79,53 @@ class DatabaseDbmFeaturesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
-    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_disable_all_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "can_disable_all_pdbs")
 
     @can_disable_all_pdbs.setter
-    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_disable_all_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_disable_all_pdbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def feature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "feature")
 
     @feature.setter
-    def feature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modifyDatabaseDbmFeature")
-    def modify_database_dbm_feature(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def modify_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "modify_database_dbm_feature")
 
     @modify_database_dbm_feature.setter
-    def modify_database_dbm_feature(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def modify_database_dbm_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "modify_database_dbm_feature", value)
 
 
 @pulumi.input_type
 class _DatabaseDbmFeaturesManagementState:
     def __init__(__self__, *,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
-                 modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None):
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
+                 modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DatabaseDbmFeaturesManagement resources.
 
@@ -152,28 +152,28 @@ class _DatabaseDbmFeaturesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
-    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_disable_all_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "can_disable_all_pdbs")
 
     @can_disable_all_pdbs.setter
-    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_disable_all_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_disable_all_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDatabaseDbmFeature")
-    def enable_database_dbm_feature(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -184,37 +184,37 @@ class _DatabaseDbmFeaturesManagementState:
         return pulumi.get(self, "enable_database_dbm_feature")
 
     @enable_database_dbm_feature.setter
-    def enable_database_dbm_feature(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_database_dbm_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_database_dbm_feature", value)
 
     @_builtins.property
     @pulumi.getter
-    def feature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "feature")
 
     @feature.setter
-    def feature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modifyDatabaseDbmFeature")
-    def modify_database_dbm_feature(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def modify_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "modify_database_dbm_feature")
 
     @modify_database_dbm_feature.setter
-    def modify_database_dbm_feature(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def modify_database_dbm_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "modify_database_dbm_feature", value)
 
 
@@ -224,12 +224,12 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
-                 modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -246,7 +246,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
 
         test_database_dbm_features_management = oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management",
             database_id=test_database["id"],
-            enable_database_dbm_feature=enable_database_dbm_feature,
+            enable_database_dbm_feature=enable_database_dbm_feature == "true",
             feature_details={
                 "feature": database_dbm_features_management_feature_details_feature,
                 "enable_database_dbm_feature": enable_database_dbm_feature,
@@ -268,13 +268,13 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                     },
                     "connection_string": {
                         "connection_type": database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
                 },
-                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "management_type": database_dbm_features_management_feature_details_management_type,
             })
         ```
@@ -311,7 +311,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
 
         test_database_dbm_features_management = oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management",
             database_id=test_database["id"],
-            enable_database_dbm_feature=enable_database_dbm_feature,
+            enable_database_dbm_feature=enable_database_dbm_feature == "true",
             feature_details={
                 "feature": database_dbm_features_management_feature_details_feature,
                 "enable_database_dbm_feature": enable_database_dbm_feature,
@@ -333,13 +333,13 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                     },
                     "connection_string": {
                         "connection_type": database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
                 },
-                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "management_type": database_dbm_features_management_feature_details_management_type,
             })
         ```
@@ -360,12 +360,12 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
-                 modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -395,12 +395,12 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-            feature: Optional[pulumi.Input[_builtins.str]] = None,
-            feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
-            modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DatabaseDbmFeaturesManagement':
+            can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+            modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DatabaseDbmFeaturesManagement':
         """
         Get an existing DatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

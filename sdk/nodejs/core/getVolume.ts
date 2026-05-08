@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolume = oci.Core.getVolume({
+ * const testVolume = oci.core.getVolume({
  *     volumeId: testVolumeOciCoreVolume.id,
  * });
  * ```
@@ -153,7 +153,7 @@ export interface GetVolumeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolume = oci.Core.getVolume({
+ * const testVolume = oci.core.getVolume({
  *     volumeId: testVolumeOciCoreVolume.id,
  * });
  * ```

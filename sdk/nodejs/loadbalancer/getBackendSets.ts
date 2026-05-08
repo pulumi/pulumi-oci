@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackendSets = oci.LoadBalancer.getBackendSets({
+ * const testBackendSets = oci.loadbalancer.getBackendSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -75,7 +75,7 @@ export interface GetBackendSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackendSets = oci.LoadBalancer.getBackendSets({
+ * const testBackendSets = oci.loadbalancer.getBackendSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -92,7 +92,7 @@ export function getBackendSetsOutput(args: GetBackendSetsOutputArgs, opts?: pulu
  * A collection of arguments for invoking getBackendSets.
  */
 export interface GetBackendSetsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetBackendSetsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetBackendSetsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
      */

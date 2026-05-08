@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDrgAttachmentsList = new oci.core.DrgAttachmentsList("test_drg_attachments_list", {
  *     drgId: testDrg.id,
  *     attachmentType: drgAttachmentsListAttachmentType,
- *     isCrossTenancy: drgAttachmentsListIsCrossTenancy,
+ *     isCrossTenancy: drgAttachmentsListIsCrossTenancy === "true",
  * });
  * ```
  *
@@ -119,15 +119,15 @@ export interface DrgAttachmentsListState {
     /**
      * The type for the network resource attached to the DRG.
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * The list of drg_attachments.
      */
-    drgAllAttachments?: pulumi.Input<pulumi.Input<inputs.Core.DrgAttachmentsListDrgAllAttachment>[]>;
+    drgAllAttachments?: pulumi.Input<pulumi.Input<inputs.Core.DrgAttachmentsListDrgAllAttachment>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
+    drgId?: pulumi.Input<string | undefined>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      *
@@ -135,7 +135,7 @@ export interface DrgAttachmentsListState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isCrossTenancy?: pulumi.Input<boolean>;
+    isCrossTenancy?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -145,7 +145,7 @@ export interface DrgAttachmentsListArgs {
     /**
      * The type for the network resource attached to the DRG.
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
@@ -157,5 +157,5 @@ export interface DrgAttachmentsListArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isCrossTenancy?: pulumi.Input<boolean>;
+    isCrossTenancy?: pulumi.Input<boolean | undefined>;
 }

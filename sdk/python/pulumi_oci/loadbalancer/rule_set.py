@@ -23,7 +23,7 @@ class RuleSetArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]],
                  load_balancer_id: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RuleSet resource.
 
@@ -66,7 +66,7 @@ class RuleSetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
 
@@ -77,17 +77,17 @@ class RuleSetArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _RuleSetState:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemArgs']]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RuleSet resources.
 
@@ -110,31 +110,31 @@ class _RuleSetState:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemArgs']]]]:
         """
         (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
 
@@ -145,16 +145,16 @@ class _RuleSetState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -164,9 +164,9 @@ class RuleSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -187,30 +187,30 @@ class RuleSet(pulumi.CustomResource):
             items=[{
                 "action": rule_set_items_action,
                 "allowed_methods": rule_set_items_allowed_methods,
-                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed,
+                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed == "true",
                 "conditions": [{
                     "attribute_name": rule_set_items_conditions_attribute_name,
                     "attribute_value": rule_set_items_conditions_attribute_value,
                     "operator": rule_set_items_conditions_operator,
                 }],
-                "default_max_connections": rule_set_items_default_max_connections,
+                "default_max_connections": int(rule_set_items_default_max_connections),
                 "description": rule_set_items_description,
                 "header": rule_set_items_header,
-                "http_large_header_size_in_kb": rule_set_items_http_large_header_size_in_kb,
+                "http_large_header_size_in_kb": int(rule_set_items_http_large_header_size_in_kb),
                 "ip_max_connections": [{
                     "ip_addresses": rule_set_items_ip_max_connections_ip_addresses,
-                    "max_connections": rule_set_items_ip_max_connections_max_connections,
+                    "max_connections": int(rule_set_items_ip_max_connections_max_connections),
                 }],
                 "prefix": rule_set_items_prefix,
                 "redirect_uri": {
                     "host": rule_set_items_redirect_uri_host,
                     "path": rule_set_items_redirect_uri_path,
-                    "port": rule_set_items_redirect_uri_port,
+                    "port": int(rule_set_items_redirect_uri_port),
                     "protocol": rule_set_items_redirect_uri_protocol,
                     "query": rule_set_items_redirect_uri_query,
                 },
-                "response_code": rule_set_items_response_code,
-                "status_code": rule_set_items_status_code,
+                "response_code": int(rule_set_items_response_code),
+                "status_code": int(rule_set_items_status_code),
                 "suffix": rule_set_items_suffix,
                 "value": rule_set_items_value,
             }],
@@ -262,30 +262,30 @@ class RuleSet(pulumi.CustomResource):
             items=[{
                 "action": rule_set_items_action,
                 "allowed_methods": rule_set_items_allowed_methods,
-                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed,
+                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed == "true",
                 "conditions": [{
                     "attribute_name": rule_set_items_conditions_attribute_name,
                     "attribute_value": rule_set_items_conditions_attribute_value,
                     "operator": rule_set_items_conditions_operator,
                 }],
-                "default_max_connections": rule_set_items_default_max_connections,
+                "default_max_connections": int(rule_set_items_default_max_connections),
                 "description": rule_set_items_description,
                 "header": rule_set_items_header,
-                "http_large_header_size_in_kb": rule_set_items_http_large_header_size_in_kb,
+                "http_large_header_size_in_kb": int(rule_set_items_http_large_header_size_in_kb),
                 "ip_max_connections": [{
                     "ip_addresses": rule_set_items_ip_max_connections_ip_addresses,
-                    "max_connections": rule_set_items_ip_max_connections_max_connections,
+                    "max_connections": int(rule_set_items_ip_max_connections_max_connections),
                 }],
                 "prefix": rule_set_items_prefix,
                 "redirect_uri": {
                     "host": rule_set_items_redirect_uri_host,
                     "path": rule_set_items_redirect_uri_path,
-                    "port": rule_set_items_redirect_uri_port,
+                    "port": int(rule_set_items_redirect_uri_port),
                     "protocol": rule_set_items_redirect_uri_protocol,
                     "query": rule_set_items_redirect_uri_query,
                 },
-                "response_code": rule_set_items_response_code,
-                "status_code": rule_set_items_status_code,
+                "response_code": int(rule_set_items_response_code),
+                "status_code": int(rule_set_items_status_code),
                 "suffix": rule_set_items_suffix,
                 "value": rule_set_items_value,
             }],
@@ -317,9 +317,9 @@ class RuleSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -347,10 +347,10 @@ class RuleSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'RuleSet':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'RuleSet':
         """
         Get an existing RuleSet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

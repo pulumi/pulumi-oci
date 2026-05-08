@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLinks = oci.Tenantmanagercontrolplane.getLinks({
+ * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,
@@ -91,7 +91,7 @@ export interface GetLinksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLinks = oci.Tenantmanagercontrolplane.getLinks({
+ * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,
@@ -116,14 +116,14 @@ export interface GetLinksOutputArgs {
     /**
      * The ID of the child tenancy this link is associated with.
      */
-    childTenancyId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetLinksFilterArgs>[]>;
+    childTenancyId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetLinksFilterArgs>[] | undefined>;
     /**
      * The ID of the parent tenancy this link is associated with.
      */
-    parentTenancyId?: pulumi.Input<string>;
+    parentTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -134,7 +134,7 @@ def get_replication_schedules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=compartment_id,
+    test_replication_schedules = oci.cloudmigrations.get_replication_schedules(compartment_id=compartment_id,
         display_name=replication_schedule_display_name,
         replication_schedule_id=test_replication_schedule["id"],
         state=replication_schedule_state)
@@ -163,11 +163,11 @@ def get_replication_schedules(compartment_id: Optional[_builtins.str] = None,
         replication_schedule_collections=pulumi.get(__ret__, 'replication_schedule_collections'),
         replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]]]] = None,
-                                     replication_schedule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_replication_schedules_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]]]] = None,
+                                     replication_schedule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationSchedulesResult]:
     """
     This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -180,7 +180,7 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=compartment_id,
+    test_replication_schedules = oci.cloudmigrations.get_replication_schedules(compartment_id=compartment_id,
         display_name=replication_schedule_display_name,
         replication_schedule_id=test_replication_schedule["id"],
         state=replication_schedule_state)

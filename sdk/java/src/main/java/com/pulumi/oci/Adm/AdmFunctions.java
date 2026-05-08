@@ -70,8 +70,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -112,8 +112,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -154,8 +154,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -196,8 +196,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -238,8 +238,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -281,8 +281,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -327,8 +327,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -373,8 +373,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -419,8 +419,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -465,8 +465,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -511,8 +511,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -557,8 +557,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -602,8 +602,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -644,8 +644,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -686,8 +686,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -728,8 +728,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -770,8 +770,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -813,8 +813,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -859,8 +859,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -951,8 +951,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -997,8 +997,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1043,8 +1043,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1089,8 +1089,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1134,8 +1134,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1176,8 +1176,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1218,8 +1218,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1260,8 +1260,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1302,8 +1302,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1344,8 +1344,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1388,8 +1388,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1432,8 +1432,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1476,8 +1476,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1520,8 +1520,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1564,8 +1564,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1650,8 +1650,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1693,8 +1693,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1736,8 +1736,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1779,8 +1779,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1823,8 +1823,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1867,8 +1867,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1911,8 +1911,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1955,8 +1955,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2000,8 +2000,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2047,8 +2047,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2094,8 +2094,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2141,8 +2141,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2188,8 +2188,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2235,8 +2235,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2282,8 +2282,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2328,8 +2328,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2370,8 +2370,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2412,8 +2412,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2454,8 +2454,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2496,8 +2496,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2538,8 +2538,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2588,8 +2588,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2638,8 +2638,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2688,8 +2688,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2738,8 +2738,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2788,8 +2788,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2836,8 +2836,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2884,8 +2884,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2932,8 +2932,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2980,8 +2980,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3044,8 +3044,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3095,8 +3095,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3146,8 +3146,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3197,8 +3197,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3248,8 +3248,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3299,8 +3299,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3350,8 +3350,8 @@ public final class AdmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Adm.AdmFunctions;
      * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

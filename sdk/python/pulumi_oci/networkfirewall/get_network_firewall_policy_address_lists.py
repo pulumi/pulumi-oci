@@ -105,7 +105,7 @@ def get_network_firewall_policy_address_lists(display_name: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_address_lists = oci.NetworkFirewall.get_network_firewall_policy_address_lists(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_address_lists = oci.networkfirewall.get_network_firewall_policy_address_lists(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_address_list_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_network_firewall_policy_address_lists(display_name: Optional[_builtins.s
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-def get_network_firewall_policy_address_lists_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict']]]]] = None,
-                                                     network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_address_lists_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict']]]]] = None,
+                                                     network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyAddressListsResult]:
     """
     This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
@@ -141,7 +141,7 @@ def get_network_firewall_policy_address_lists_output(display_name: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_address_lists = oci.NetworkFirewall.get_network_firewall_policy_address_lists(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_address_lists = oci.networkfirewall.get_network_firewall_policy_address_lists(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_address_list_display_name)
     ```
 

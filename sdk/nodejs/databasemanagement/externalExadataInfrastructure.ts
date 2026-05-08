@@ -245,67 +245,67 @@ export interface ExternalExadataInfrastructureState {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      */
-    databaseCompartments?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseCompartments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of DB systems.
      */
-    databaseSystems?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem>[]>;
+    databaseSystems?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem>[] | undefined>;
     /**
      * (Updatable) The list of DB systems in the Exadata infrastructure.
      */
-    dbSystemIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dbSystemIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The unique key of the discovery request.
      */
-    discoveryKey?: pulumi.Input<string>;
+    discoveryKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the Exadata infrastructure.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The internal ID of the Exadata resource.
      */
-    internalId?: pulumi.Input<string>;
+    internalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The rack size of the Exadata infrastructure.
      */
-    rackSize?: pulumi.Input<string>;
+    rackSize?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the database resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The status of the Exadata resource.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The Exadata storage server grid of the Exadata infrastructure.
      */
-    storageGrids?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid>[]>;
+    storageGrids?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid>[] | undefined>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      *
@@ -313,23 +313,23 @@ export interface ExternalExadataInfrastructureState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    storageServerNames?: pulumi.Input<pulumi.Input<string>[]>;
+    storageServerNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The version of the Exadata resource.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -347,11 +347,11 @@ export interface ExternalExadataInfrastructureArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The unique key of the discovery request.
      */
-    discoveryKey?: pulumi.Input<string>;
+    discoveryKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the Exadata infrastructure.
      */
@@ -359,11 +359,11 @@ export interface ExternalExadataInfrastructureArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      *
@@ -371,5 +371,5 @@ export interface ExternalExadataInfrastructureArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    storageServerNames?: pulumi.Input<pulumi.Input<string>[]>;
+    storageServerNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

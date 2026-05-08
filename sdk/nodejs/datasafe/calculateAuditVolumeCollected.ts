@@ -123,15 +123,15 @@ export interface CalculateAuditVolumeCollectedState {
     /**
      * The OCID of the audit.
      */
-    auditProfileId?: pulumi.Input<string>;
+    auditProfileId?: pulumi.Input<string | undefined>;
     /**
      * List of collected audit volumes.
      */
-    collectedAuditVolumes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CalculateAuditVolumeCollectedCollectedAuditVolume>[]>;
+    collectedAuditVolumes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CalculateAuditVolumeCollectedCollectedAuditVolume>[] | undefined>;
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
      */
-    timeFromMonth?: pulumi.Input<string>;
+    timeFromMonth?: pulumi.Input<string | undefined>;
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
      *
@@ -139,7 +139,7 @@ export interface CalculateAuditVolumeCollectedState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeToMonth?: pulumi.Input<string>;
+    timeToMonth?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -161,5 +161,5 @@ export interface CalculateAuditVolumeCollectedArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeToMonth?: pulumi.Input<string>;
+    timeToMonth?: pulumi.Input<string | undefined>;
 }

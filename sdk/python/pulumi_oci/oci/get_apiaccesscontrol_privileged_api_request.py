@@ -476,7 +476,7 @@ def get_apiaccesscontrol_privileged_api_request(privileged_api_request_id: Optio
         time_created=pulumi.get(__ret__, 'time_created'),
         time_requested_for_future_access=pulumi.get(__ret__, 'time_requested_for_future_access'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_apiaccesscontrol_privileged_api_request_output(privileged_api_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_apiaccesscontrol_privileged_api_request_output(privileged_api_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiaccesscontrolPrivilegedApiRequestResult]:
     """
     This data source provides details about a specific Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.

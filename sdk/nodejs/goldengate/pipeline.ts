@@ -288,99 +288,99 @@ export interface PipelineState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Minimum number of OCPUs to be made available for this Deployment.
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineIngressIp>[]>;
+    ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineIngressIp>[] | undefined>;
     /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    isAutoScalingEnabled?: pulumi.Input<boolean>;
+    isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Possible lifecycle substates when retrieving a pipeline.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineLock>[] | undefined>;
     /**
      * Mapping for source/target schema/tables for the pipeline data replication.
      */
-    mappingRules?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineMappingRule>[]>;
+    mappingRules?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineMappingRule>[] | undefined>;
     /**
      * Information regarding the pipeline diagnostic collection
      */
-    pipelineDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelinePipelineDiagnosticData>[]>;
+    pipelineDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelinePipelineDiagnosticData>[] | undefined>;
     /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      */
-    processOptions?: pulumi.Input<inputs.GoldenGate.PipelineProcessOptions>;
+    processOptions?: pulumi.Input<inputs.GoldenGate.PipelineProcessOptions | undefined>;
     /**
      * (Updatable) The type of the recipe
      */
-    recipeType?: pulumi.Input<string>;
+    recipeType?: pulumi.Input<string | undefined>;
     /**
      * The source connection details for creating a pipeline.
      */
-    sourceConnectionDetails?: pulumi.Input<inputs.GoldenGate.PipelineSourceConnectionDetails>;
+    sourceConnectionDetails?: pulumi.Input<inputs.GoldenGate.PipelineSourceConnectionDetails | undefined>;
     /**
      * Lifecycle state of the pipeline.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target connection details for creating a pipeline.
      */
-    targetConnectionDetails?: pulumi.Input<inputs.GoldenGate.PipelineTargetConnectionDetails>;
+    targetConnectionDetails?: pulumi.Input<inputs.GoldenGate.PipelineTargetConnectionDetails | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
      */
-    timeLastRecorded?: pulumi.Input<string>;
+    timeLastRecorded?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -394,11 +394,11 @@ export interface PipelineArgs {
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
@@ -406,7 +406,7 @@ export interface PipelineArgs {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
@@ -414,11 +414,11 @@ export interface PipelineArgs {
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineLock>[] | undefined>;
     /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      */
-    processOptions?: pulumi.Input<inputs.GoldenGate.PipelineProcessOptions>;
+    processOptions?: pulumi.Input<inputs.GoldenGate.PipelineProcessOptions | undefined>;
     /**
      * (Updatable) The type of the recipe
      */
@@ -430,7 +430,7 @@ export interface PipelineArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The target connection details for creating a pipeline.
      */

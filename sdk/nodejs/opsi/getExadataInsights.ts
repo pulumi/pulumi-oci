@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsights = oci.Opsi.getExadataInsights({
+ * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,
@@ -126,9 +126,9 @@ export interface GetExadataInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsights = oci.Opsi.getExadataInsights({
+ * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,
@@ -159,30 +159,30 @@ export interface GetExadataInsightsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Unique Enterprise Manager bridge identifier
      */
-    enterpriseManagerBridgeId?: pulumi.Input<string>;
+    enterpriseManagerBridgeId?: pulumi.Input<string | undefined>;
     /**
      * Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
      */
-    exadataTypes?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetExadataInsightsFilterArgs>[]>;
+    exadataTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetExadataInsightsFilterArgs>[] | undefined>;
     /**
      * Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource Status
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

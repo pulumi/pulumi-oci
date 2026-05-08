@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
+ * const testLogAnalyticsEntity = oci.loganalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
  *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
@@ -162,7 +162,7 @@ export interface GetLogAnalyticsEntityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
+ * const testLogAnalyticsEntity = oci.loganalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
  *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
@@ -185,7 +185,7 @@ export interface GetLogAnalyticsEntityOutputArgs {
     /**
      * Option to return count of associated log sources for log analytics entity(s).
      */
-    isShowAssociatedSourcesCount?: pulumi.Input<string>;
+    isShowAssociatedSourcesCount?: pulumi.Input<string | undefined>;
     /**
      * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      */

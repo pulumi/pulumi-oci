@@ -148,10 +148,10 @@ def get_gi_version_minor_versions(availability_domain: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_version_minor_versions = oci.Database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
+    test_gi_version_minor_versions = oci.database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
         availability_domain=gi_version_minor_version_availability_domain,
         compartment_id=compartment_id,
-        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning,
+        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning == "true",
         shape=gi_version_minor_version_shape,
         shape_family=gi_version_minor_version_shape_family)
     ```
@@ -185,13 +185,13 @@ def get_gi_version_minor_versions(availability_domain: Optional[_builtins.str] =
         shape=pulumi.get(__ret__, 'shape'),
         shape_family=pulumi.get(__ret__, 'shape_family'),
         version=pulumi.get(__ret__, 'version'))
-def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]]]] = None,
-                                         is_gi_version_for_provisioning: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                         shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         shape_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_gi_version_minor_versions_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]]]] = None,
+                                         is_gi_version_for_provisioning: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                         shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         shape_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         version: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGiVersionMinorVersionsResult]:
     """
     This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
@@ -204,10 +204,10 @@ def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_version_minor_versions = oci.Database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
+    test_gi_version_minor_versions = oci.database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
         availability_domain=gi_version_minor_version_availability_domain,
         compartment_id=compartment_id,
-        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning,
+        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning == "true",
         shape=gi_version_minor_version_shape,
         shape_family=gi_version_minor_version_shape_family)
     ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudListener = oci.DatabaseManagement.getCloudListener({
+ * const testCloudListener = oci.databasemanagement.getCloudListener({
  *     cloudListenerId: testCloudListenerOciDatabaseManagementCloudListener.id,
  * });
  * ```
@@ -172,7 +172,7 @@ export interface GetCloudListenerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudListener = oci.DatabaseManagement.getCloudListener({
+ * const testCloudListener = oci.databasemanagement.getCloudListener({
  *     cloudListenerId: testCloudListenerOciDatabaseManagementCloudListener.id,
  * });
  * ```

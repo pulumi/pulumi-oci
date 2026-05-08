@@ -153,7 +153,7 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+    test_vm_cluster_patch_history_entry = oci.database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 
@@ -177,8 +177,8 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[_builtin
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntryResult]:
     """
     This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -191,7 +191,7 @@ def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+    test_vm_cluster_patch_history_entry = oci.database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 

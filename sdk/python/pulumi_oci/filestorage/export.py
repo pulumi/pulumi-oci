@@ -24,10 +24,10 @@ class ExportArgs:
                  export_set_id: pulumi.Input[_builtins.str],
                  file_system_id: pulumi.Input[_builtins.str],
                  path: pulumi.Input[_builtins.str],
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
-                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]] = None):
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
+                 is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]] = None):
         """
         The set of arguments for constructing a Export resource.
 
@@ -114,7 +114,7 @@ class ExportArgs:
 
     @_builtins.property
     @pulumi.getter(name="exportOptions")
-    def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
+    def export_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
         """
         (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
 
@@ -131,55 +131,55 @@ class ExportArgs:
         return pulumi.get(self, "export_options")
 
     @export_options.setter
-    def export_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]):
+    def export_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]]):
         pulumi.set(self, "export_options", value)
 
     @_builtins.property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
-    def is_idmap_groups_for_sys_auth(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_idmap_groups_for_sys_auth(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @is_idmap_groups_for_sys_auth.setter
-    def is_idmap_groups_for_sys_auth(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_idmap_groups_for_sys_auth(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_idmap_groups_for_sys_auth", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
 
 @pulumi.input_type
 class _ExportState:
     def __init__(__self__, *,
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
-                 export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
+                 export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Export resources.
 
@@ -231,7 +231,7 @@ class _ExportState:
 
     @_builtins.property
     @pulumi.getter(name="exportOptions")
-    def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
+    def export_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
         """
         (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
 
@@ -248,69 +248,69 @@ class _ExportState:
         return pulumi.get(self, "export_options")
 
     @export_options.setter
-    def export_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]):
+    def export_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExportExportOptionArgs']]]]):
         pulumi.set(self, "export_options", value)
 
     @_builtins.property
     @pulumi.getter(name="exportSetId")
-    def export_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def export_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         """
         return pulumi.get(self, "export_set_id")
 
     @export_set_id.setter
-    def export_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def export_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "export_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         """
         return pulumi.get(self, "file_system_id")
 
     @file_system_id.setter
-    def file_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
-    def is_idmap_groups_for_sys_auth(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_idmap_groups_for_sys_auth(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @is_idmap_groups_for_sys_auth.setter
-    def is_idmap_groups_for_sys_auth(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_idmap_groups_for_sys_auth(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_idmap_groups_for_sys_auth", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExportLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path used to access the associated file system.
 
@@ -325,31 +325,31 @@ class _ExportState:
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this export.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -359,13 +359,13 @@ class Export(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
-                 export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+                 export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
@@ -393,10 +393,10 @@ class Export(pulumi.CustomResource):
                 "anonymous_gid": export_export_options_anonymous_gid,
                 "anonymous_uid": export_export_options_anonymous_uid,
                 "identity_squash": export_export_options_identity_squash,
-                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
-                "require_privileged_source_port": export_export_options_require_privileged_source_port,
+                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed == "true",
+                "require_privileged_source_port": export_export_options_require_privileged_source_port == "true",
             }],
-            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth,
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth == "true",
             locks=[{
                 "type": export_locks_type,
                 "message": export_locks_message,
@@ -473,10 +473,10 @@ class Export(pulumi.CustomResource):
                 "anonymous_gid": export_export_options_anonymous_gid,
                 "anonymous_uid": export_export_options_anonymous_uid,
                 "identity_squash": export_export_options_identity_squash,
-                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
-                "require_privileged_source_port": export_export_options_require_privileged_source_port,
+                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed == "true",
+                "require_privileged_source_port": export_export_options_require_privileged_source_port == "true",
             }],
-            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth,
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth == "true",
             locks=[{
                 "type": export_locks_type,
                 "message": export_locks_message,
@@ -509,13 +509,13 @@ class Export(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
-                 export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+                 export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -550,15 +550,15 @@ class Export(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
-            export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-            file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_idmap_groups_for_sys_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
-            path: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Export':
+            export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+            export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Export':
         """
         Get an existing Export resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

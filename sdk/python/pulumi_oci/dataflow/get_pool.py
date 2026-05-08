@@ -252,7 +252,7 @@ def get_pool(pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
+    test_pool = oci.dataflow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_pool(pool_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_pool_output(pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pool_output(pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoolResult]:
     """
     This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
@@ -294,7 +294,7 @@ def get_pool_output(pool_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
+    test_pool = oci.dataflow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
 
 

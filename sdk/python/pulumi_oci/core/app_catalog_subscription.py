@@ -25,7 +25,7 @@ class AppCatalogSubscriptionArgs:
                  oracle_terms_of_use_link: pulumi.Input[_builtins.str],
                  signature: pulumi.Input[_builtins.str],
                  time_retrieved: pulumi.Input[_builtins.str],
-                 eula_link: Optional[pulumi.Input[_builtins.str]] = None):
+                 eula_link: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppCatalogSubscription resource.
 
@@ -128,32 +128,32 @@ class AppCatalogSubscriptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="eulaLink")
-    def eula_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eula_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         EULA link
         """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
-    def eula_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eula_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eula_link", value)
 
 
 @pulumi.input_type
 class _AppCatalogSubscriptionState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 publisher_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_retrieved: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 publisher_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_retrieved: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppCatalogSubscription resources.
 
@@ -201,139 +201,139 @@ class _AppCatalogSubscriptionState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartmentID for the subscription.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="eulaLink")
-    def eula_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eula_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         EULA link
         """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
-    def eula_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eula_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eula_link", value)
 
     @_builtins.property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the listing.
         """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
-    def listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingResourceId")
-    def listing_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listing resource id.
         """
         return pulumi.get(self, "listing_resource_id")
 
     @listing_resource_id.setter
-    def listing_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingResourceVersion")
-    def listing_resource_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_resource_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listing resource version.
         """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
-    def listing_resource_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_resource_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_resource_version", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleTermsOfUseLink")
-    def oracle_terms_of_use_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_terms_of_use_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle TOU link
         """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @oracle_terms_of_use_link.setter
-    def oracle_terms_of_use_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_terms_of_use_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_terms_of_use_link", value)
 
     @_builtins.property
     @pulumi.getter(name="publisherName")
-    def publisher_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def publisher_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the publisher who published this listing.
         """
         return pulumi.get(self, "publisher_name")
 
     @publisher_name.setter
-    def publisher_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def publisher_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "publisher_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A generated signature for this listing resource version retrieved the agreements API.
         """
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
     @_builtins.property
     @pulumi.getter
-    def summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The short summary to the listing.
         """
         return pulumi.get(self, "summary")
 
     @summary.setter
-    def summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "summary", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRetrieved")
-    def time_retrieved(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_retrieved(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
 
@@ -344,7 +344,7 @@ class _AppCatalogSubscriptionState:
         return pulumi.get(self, "time_retrieved")
 
     @time_retrieved.setter
-    def time_retrieved(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_retrieved(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_retrieved", value)
 
 
@@ -354,13 +354,13 @@ class AppCatalogSubscription(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_retrieved: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_retrieved: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
@@ -463,13 +463,13 @@ class AppCatalogSubscription(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_retrieved: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_retrieved: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -513,18 +513,18 @@ class AppCatalogSubscription(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            eula_link: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_resource_version: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_terms_of_use_link: Optional[pulumi.Input[_builtins.str]] = None,
-            publisher_name: Optional[pulumi.Input[_builtins.str]] = None,
-            signature: Optional[pulumi.Input[_builtins.str]] = None,
-            summary: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_retrieved: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppCatalogSubscription':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            eula_link: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_resource_version: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_terms_of_use_link: pulumi.Input[Optional[_builtins.str]] = None,
+            publisher_name: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_retrieved: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppCatalogSubscription':
         """
         Get an existing AppCatalogSubscription resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

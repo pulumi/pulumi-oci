@@ -204,7 +204,7 @@ def get_sender(sender_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
+    test_sender = oci.email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_sender(sender_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_sender_output(sender_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sender_output(sender_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSenderResult]:
     """
     This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
@@ -242,7 +242,7 @@ def get_sender_output(sender_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
+    test_sender = oci.email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
 
 

@@ -146,7 +146,7 @@ def get_job_advisor_report(job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=test_job["id"])
+    test_job_advisor_report = oci.databasemigration.get_job_advisor_report(job_id=test_job["id"])
     ```
 
 
@@ -166,7 +166,7 @@ def get_job_advisor_report(job_id: Optional[_builtins.str] = None,
         number_of_warnings=pulumi.get(__ret__, 'number_of_warnings'),
         report_location_details=pulumi.get(__ret__, 'report_location_details'),
         result=pulumi.get(__ret__, 'result'))
-def get_job_advisor_report_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_advisor_report_output(job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobAdvisorReportResult]:
     """
     This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
@@ -181,7 +181,7 @@ def get_job_advisor_report_output(job_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=test_job["id"])
+    test_job_advisor_report = oci.databasemigration.get_job_advisor_report(job_id=test_job["id"])
     ```
 
 

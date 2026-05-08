@@ -125,7 +125,7 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
+    test_managed_my_sql_database_sql_data = oci.databasemanagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
         managed_my_sql_database_id=test_managed_my_sql_database["id"],
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)
@@ -168,11 +168,11 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = Non
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_data_collections=pulumi.get(__ret__, 'my_sql_data_collections'),
         start_time=pulumi.get(__ret__, 'start_time'))
-def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filter_column: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
-                                                managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                start_time: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_sql_data_output(end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filter_column: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
+                                                managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                start_time: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:
     """
     This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
@@ -185,7 +185,7 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
+    test_managed_my_sql_database_sql_data = oci.databasemanagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
         managed_my_sql_database_id=test_managed_my_sql_database["id"],
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)

@@ -103,7 +103,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
+    test_protected_database_fetch_configuration = oci.recoverymod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
         base64_encode_content=True,
         configuration_type=protected_database_fetch_configuration_configuration_type)
     ```
@@ -126,9 +126,9 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[_
         content=pulumi.get(__ret__, 'content'),
         id=pulumi.get(__ret__, 'id'),
         protected_database_id=pulumi.get(__ret__, 'protected_database_id'))
-def get_protected_database_fetch_configuration_output(base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                      configuration_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      protected_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protected_database_fetch_configuration_output(base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                      configuration_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      protected_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedDatabaseFetchConfigurationResult]:
     """
     This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
@@ -141,7 +141,7 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
+    test_protected_database_fetch_configuration = oci.recoverymod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
         base64_encode_content=True,
         configuration_type=protected_database_fetch_configuration_configuration_type)
     ```

@@ -378,7 +378,7 @@ def get_domains_my_user_db_credential(authorization: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_my_user_db_credential = oci.identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
         my_user_db_credential_id=test_db_credential["id"],
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version)
@@ -427,10 +427,10 @@ def get_domains_my_user_db_credential(authorization: Optional[_builtins.str] = N
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_user_db_credential_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                             my_user_db_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_user_db_credential_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                             my_user_db_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyUserDbCredentialResult]:
     """
     This data source provides details about a specific My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -443,7 +443,7 @@ def get_domains_my_user_db_credential_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_my_user_db_credential = oci.identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
         my_user_db_credential_id=test_db_credential["id"],
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version)

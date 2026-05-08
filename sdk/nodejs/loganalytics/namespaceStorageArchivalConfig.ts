@@ -111,15 +111,15 @@ export interface NamespaceStorageArchivalConfigState {
     /**
      * (Updatable) This is the configuration for data archiving in object storage
      */
-    archivingConfiguration?: pulumi.Input<inputs.LogAnalytics.NamespaceStorageArchivalConfigArchivingConfiguration>;
+    archivingConfiguration?: pulumi.Input<inputs.LogAnalytics.NamespaceStorageArchivalConfigArchivingConfiguration | undefined>;
     /**
      * This indicates if old data can be archived for a tenancy
      */
-    isArchivingEnabled?: pulumi.Input<boolean>;
+    isArchivingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

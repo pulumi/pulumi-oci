@@ -207,7 +207,7 @@ def get_library_masking_format(library_masking_format_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
+    test_library_masking_format = oci.datasafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
     ```
 
 
@@ -232,7 +232,7 @@ def get_library_masking_format(library_masking_format_id: Optional[_builtins.str
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_library_masking_format_output(library_masking_format_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_library_masking_format_output(library_masking_format_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLibraryMaskingFormatResult]:
     """
     This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
@@ -245,7 +245,7 @@ def get_library_masking_format_output(library_masking_format_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
+    test_library_masking_format = oci.datasafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
     ```
 
 

@@ -184,43 +184,43 @@ export interface JobState {
     /**
      * Information regarding the DB trace and alert log collection
      */
-    collectTracesDatas?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobCollectTracesData>[]>;
+    collectTracesDatas?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobCollectTracesData>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Name of the job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the job
      */
-    jobId?: pulumi.Input<string>;
+    jobId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Migration that this job belongs to.
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * A list of parameter file versions that can be viewed or edited for the current job.
      */
-    parameterFileVersions?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobParameterFileVersion>[]>;
+    parameterFileVersions?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobParameterFileVersion>[] | undefined>;
     /**
      * Percent progress of job phase.
      */
-    progresses?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobProgress>[]>;
+    progresses?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobProgress>[] | undefined>;
     /**
      * The current state of the migration job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
      *
@@ -228,27 +228,27 @@ export interface JobState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    suspendTrigger?: pulumi.Input<number>;
+    suspendTrigger?: pulumi.Input<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Migration Job was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Migration Job was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Type of unsupported object
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Database objects not supported.
      */
-    unsupportedObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobUnsupportedObject>[]>;
+    unsupportedObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobUnsupportedObject>[] | undefined>;
 }
 
 /**
@@ -258,15 +258,15 @@ export interface JobArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Name of the job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the job
      */
@@ -278,5 +278,5 @@ export interface JobArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    suspendTrigger?: pulumi.Input<number>;
+    suspendTrigger?: pulumi.Input<number | undefined>;
 }

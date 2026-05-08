@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAwsKeyEnabled: oracleDbAwsKeyIsAwsKeyEnabled,
+ *     isAwsKeyEnabled: oracleDbAwsKeyIsAwsKeyEnabled === "true",
  *     location: oracleDbAwsKeyLocation,
  *     properties: oracleDbAwsKeyProperties,
  *     type: oracleDbAwsKeyType,
@@ -225,75 +225,75 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DbmulticloudOracleDbAwsKey resources.
  */
 export interface DbmulticloudOracleDbAwsKeyState {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * AWS Account ID.
      */
-    awsAccountId?: pulumi.Input<string>;
+    awsAccountId?: pulumi.Input<string | undefined>;
     /**
      * Amazon resource name of AWS Key.
      */
-    awsKeyArn?: pulumi.Input<string>;
+    awsKeyArn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB AWS Key resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB AWS Key resource name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Oracle AWS Key resource is enabled or disabled at AWS.
      */
-    isAwsKeyEnabled?: pulumi.Input<boolean>;
+    isAwsKeyEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * AWS Key resource Location.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
-    oracleDbConnectorId?: pulumi.Input<string>;
+    oracleDbConnectorId?: pulumi.Input<string | undefined>;
     /**
      * AWS Key resource's properties.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Replication metadata, it has information about replication and target region.
      */
-    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAwsKeyReplicationMetadata>[]>;
+    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAwsKeyReplicationMetadata>[] | undefined>;
     /**
      * The lifecycle state of the Oracle DB AWS Key resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target region, where resource is replicated.
      */
-    targetRegion?: pulumi.Input<string>;
+    targetRegion?: pulumi.Input<string | undefined>;
     /**
      * Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * AWS Key resource type.
      *
@@ -301,22 +301,22 @@ export interface DbmulticloudOracleDbAwsKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DbmulticloudOracleDbAwsKey resource.
  */
 export interface DbmulticloudOracleDbAwsKeyArgs {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * AWS Account ID.
      */
-    awsAccountId?: pulumi.Input<string>;
+    awsAccountId?: pulumi.Input<string | undefined>;
     /**
      * Amazon resource name of AWS Key.
      */
-    awsKeyArn?: pulumi.Input<string>;
+    awsKeyArn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB AWS Key resource.
      */
@@ -324,7 +324,7 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB AWS Key resource name.
      */
@@ -332,15 +332,15 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Oracle AWS Key resource is enabled or disabled at AWS.
      */
-    isAwsKeyEnabled?: pulumi.Input<boolean>;
+    isAwsKeyEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * AWS Key resource Location.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
@@ -348,11 +348,11 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
     /**
      * AWS Key resource's properties.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target region, where resource is replicated.
      */
-    targetRegion?: pulumi.Input<string>;
+    targetRegion?: pulumi.Input<string | undefined>;
     /**
      * AWS Key resource type.
      *
@@ -360,5 +360,5 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

@@ -138,7 +138,7 @@ def get_oci_cache_config_sets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_sets = oci.Redis.get_oci_cache_config_sets(compartment_id=compartment_id,
+    test_oci_cache_config_sets = oci.redis.get_oci_cache_config_sets(compartment_id=compartment_id,
         display_name=oci_cache_config_set_display_name,
         id=oci_cache_config_set_id,
         software_version=oci_cache_config_set_software_version,
@@ -170,12 +170,12 @@ def get_oci_cache_config_sets(compartment_id: Optional[_builtins.str] = None,
         oci_cache_config_set_collections=pulumi.get(__ret__, 'oci_cache_config_set_collections'),
         software_version=pulumi.get(__ret__, 'software_version'),
         state=pulumi.get(__ret__, 'state'))
-def get_oci_cache_config_sets_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOciCacheConfigSetsFilterArgs', 'GetOciCacheConfigSetsFilterArgsDict']]]]] = None,
-                                     id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     software_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oci_cache_config_sets_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheConfigSetsFilterArgs', 'GetOciCacheConfigSetsFilterArgsDict']]]]] = None,
+                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     software_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheConfigSetsResult]:
     """
     This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
@@ -188,7 +188,7 @@ def get_oci_cache_config_sets_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_sets = oci.Redis.get_oci_cache_config_sets(compartment_id=compartment_id,
+    test_oci_cache_config_sets = oci.redis.get_oci_cache_config_sets(compartment_id=compartment_id,
         display_name=oci_cache_config_set_display_name,
         id=oci_cache_config_set_id,
         software_version=oci_cache_config_set_software_version,

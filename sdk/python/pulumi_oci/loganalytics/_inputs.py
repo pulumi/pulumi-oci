@@ -96,7 +96,7 @@ __all__ = [
 ]
 
 class LogAnalyticsEntityMetadataArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgsDict']]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]]
     """
     (Updatable) An array of entity metadata details.
     """
@@ -104,7 +104,7 @@ class LogAnalyticsEntityMetadataArgsDict(TypedDict):
 @pulumi.input_type
 class LogAnalyticsEntityMetadataArgs:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]] items: (Updatable) An array of entity metadata details.
         """
@@ -113,27 +113,27 @@ class LogAnalyticsEntityMetadataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]:
         """
         (Updatable) An array of entity metadata details.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 class LogAnalyticsEntityMetadataItemArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The metadata name.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The metadata type.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The metadata value.
     """
@@ -141,9 +141,9 @@ class LogAnalyticsEntityMetadataItemArgsDict(TypedDict):
 @pulumi.input_type
 class LogAnalyticsEntityMetadataItemArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The metadata name.
         :param pulumi.Input[_builtins.str] type: (Updatable) The metadata type.
@@ -158,38 +158,38 @@ class LogAnalyticsEntityMetadataItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The metadata name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The metadata type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The metadata value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -202,7 +202,7 @@ class LogAnalyticsEntityTypePropertyArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Description for the log analytics entity type property.
     """
@@ -211,7 +211,7 @@ class LogAnalyticsEntityTypePropertyArgsDict(TypedDict):
 class LogAnalyticsEntityTypePropertyArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: Log analytics entity type property name. 
                
@@ -242,51 +242,51 @@ class LogAnalyticsEntityTypePropertyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description for the log analytics entity type property.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 
 class LogAnalyticsImportCustomContentChangeListArgsDict(TypedDict):
-    conflict_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    conflict_field_display_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of field display names with conflicts.
     """
-    conflict_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    conflict_parser_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of parser names with conflicts.
     """
-    conflict_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    conflict_source_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of source names with conflicts.
     """
-    created_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    created_field_display_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of created field display names.
     """
-    created_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    created_parser_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of created parser names.
     """
-    created_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    created_source_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of created source names.
     """
-    updated_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    updated_field_display_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of updated field display names.
     """
-    updated_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    updated_parser_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of updated parser names.
     """
-    updated_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    updated_source_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An array of updated source names.
     """
@@ -294,15 +294,15 @@ class LogAnalyticsImportCustomContentChangeListArgsDict(TypedDict):
 @pulumi.input_type
 class LogAnalyticsImportCustomContentChangeListArgs:
     def __init__(__self__, *,
-                 conflict_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 conflict_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 conflict_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 updated_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 updated_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 updated_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 conflict_field_display_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 conflict_parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 conflict_source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_field_display_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated_field_display_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated_parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated_source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] conflict_field_display_names: A list of field display names with conflicts.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] conflict_parser_names: A list of parser names with conflicts.
@@ -335,126 +335,126 @@ class LogAnalyticsImportCustomContentChangeListArgs:
 
     @_builtins.property
     @pulumi.getter(name="conflictFieldDisplayNames")
-    def conflict_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def conflict_field_display_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of field display names with conflicts.
         """
         return pulumi.get(self, "conflict_field_display_names")
 
     @conflict_field_display_names.setter
-    def conflict_field_display_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def conflict_field_display_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "conflict_field_display_names", value)
 
     @_builtins.property
     @pulumi.getter(name="conflictParserNames")
-    def conflict_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def conflict_parser_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of parser names with conflicts.
         """
         return pulumi.get(self, "conflict_parser_names")
 
     @conflict_parser_names.setter
-    def conflict_parser_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def conflict_parser_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "conflict_parser_names", value)
 
     @_builtins.property
     @pulumi.getter(name="conflictSourceNames")
-    def conflict_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def conflict_source_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of source names with conflicts.
         """
         return pulumi.get(self, "conflict_source_names")
 
     @conflict_source_names.setter
-    def conflict_source_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def conflict_source_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "conflict_source_names", value)
 
     @_builtins.property
     @pulumi.getter(name="createdFieldDisplayNames")
-    def created_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def created_field_display_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of created field display names.
         """
         return pulumi.get(self, "created_field_display_names")
 
     @created_field_display_names.setter
-    def created_field_display_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def created_field_display_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "created_field_display_names", value)
 
     @_builtins.property
     @pulumi.getter(name="createdParserNames")
-    def created_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def created_parser_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of created parser names.
         """
         return pulumi.get(self, "created_parser_names")
 
     @created_parser_names.setter
-    def created_parser_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def created_parser_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "created_parser_names", value)
 
     @_builtins.property
     @pulumi.getter(name="createdSourceNames")
-    def created_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def created_source_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of created source names.
         """
         return pulumi.get(self, "created_source_names")
 
     @created_source_names.setter
-    def created_source_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def created_source_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "created_source_names", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedFieldDisplayNames")
-    def updated_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def updated_field_display_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of updated field display names.
         """
         return pulumi.get(self, "updated_field_display_names")
 
     @updated_field_display_names.setter
-    def updated_field_display_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def updated_field_display_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "updated_field_display_names", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedParserNames")
-    def updated_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def updated_parser_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of updated parser names.
         """
         return pulumi.get(self, "updated_parser_names")
 
     @updated_parser_names.setter
-    def updated_parser_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def updated_parser_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "updated_parser_names", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedSourceNames")
-    def updated_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def updated_source_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of updated source names.
         """
         return pulumi.get(self, "updated_source_names")
 
     @updated_source_names.setter
-    def updated_source_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def updated_source_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "updated_source_names", value)
 
 
 class LogAnalyticsObjectCollectionRuleOverrideArgsDict(TypedDict):
-    match_type: NotRequired[pulumi.Input[_builtins.str]]
-    match_value: NotRequired[pulumi.Input[_builtins.str]]
-    property_name: NotRequired[pulumi.Input[_builtins.str]]
-    property_value: NotRequired[pulumi.Input[_builtins.str]]
+    match_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    match_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    property_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    property_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class LogAnalyticsObjectCollectionRuleOverrideArgs:
     def __init__(__self__, *,
-                 match_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 property_value: Optional[pulumi.Input[_builtins.str]] = None):
+                 match_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 property_value: pulumi.Input[Optional[_builtins.str]] = None):
         if match_type is not None:
             pulumi.set(__self__, "match_type", match_type)
         if match_value is not None:
@@ -466,47 +466,47 @@ class LogAnalyticsObjectCollectionRuleOverrideArgs:
 
     @_builtins.property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "match_type")
 
     @match_type.setter
-    def match_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_type", value)
 
     @_builtins.property
     @pulumi.getter(name="matchValue")
-    def match_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "match_value")
 
     @match_value.setter
-    def match_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_value", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyName")
-    def property_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "property_name")
 
     @property_name.setter
-    def property_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_name", value)
 
     @_builtins.property
     @pulumi.getter(name="propertyValue")
-    def property_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def property_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "property_value")
 
     @property_value.setter
-    def property_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def property_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "property_value", value)
 
 
 class LogAnalyticsPreferencesManagementItemArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The preference name.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The preference value.
     """
@@ -514,8 +514,8 @@ class LogAnalyticsPreferencesManagementItemArgsDict(TypedDict):
 @pulumi.input_type
 class LogAnalyticsPreferencesManagementItemArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The preference name.
         :param pulumi.Input[_builtins.str] value: The preference value.
@@ -527,26 +527,26 @@ class LogAnalyticsPreferencesManagementItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The preference name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The preference value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -555,11 +555,11 @@ class NamespaceAssociationAssociationPropertyArgsDict(TypedDict):
     """
     The name of the association property.
     """
-    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgsDict']]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]]
     """
     A list of pattern level overrides for this property.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The value of the association property.
     """
@@ -568,8 +568,8 @@ class NamespaceAssociationAssociationPropertyArgsDict(TypedDict):
 class NamespaceAssociationAssociationPropertyArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 patterns: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 patterns: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The name of the association property.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]] patterns: A list of pattern level overrides for this property.
@@ -595,26 +595,26 @@ class NamespaceAssociationAssociationPropertyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]:
+    def patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]:
         """
         A list of pattern level overrides for this property.
         """
         return pulumi.get(self, "patterns")
 
     @patterns.setter
-    def patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]):
+    def patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]):
         pulumi.set(self, "patterns", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value of the association property.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -627,14 +627,14 @@ class NamespaceAssociationAssociationPropertyPatternArgsDict(TypedDict):
     """
     (Updatable) The value of the property.
     """
-    effective_level: NotRequired[pulumi.Input[_builtins.str]]
+    effective_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class NamespaceAssociationAssociationPropertyPatternArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 effective_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 effective_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] id: The pattern id.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the property.
@@ -670,11 +670,11 @@ class NamespaceAssociationAssociationPropertyPatternArgs:
 
     @_builtins.property
     @pulumi.getter(name="effectiveLevel")
-    def effective_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def effective_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "effective_level")
 
     @effective_level.setter
-    def effective_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def effective_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "effective_level", value)
 
 
@@ -695,11 +695,11 @@ class NamespaceIngestTimeRuleActionArgsDict(TypedDict):
     """
     (Updatable) Discriminator.
     """
-    dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
     """
@@ -711,8 +711,8 @@ class NamespaceIngestTimeRuleActionArgs:
                  metric_name: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param pulumi.Input[_builtins.str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -780,26 +780,26 @@ class NamespaceIngestTimeRuleActionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
@@ -820,7 +820,7 @@ class NamespaceIngestTimeRuleConditionsArgsDict(TypedDict):
     """
     (Updatable) Discriminator.
     """
-    additional_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict']]]]
+    additional_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]]
     """
     (Updatable) Optional additional condition(s) to be evaluated.
     """
@@ -832,7 +832,7 @@ class NamespaceIngestTimeRuleConditionsArgs:
                  field_operator: pulumi.Input[_builtins.str],
                  field_value: pulumi.Input[_builtins.str],
                  kind: pulumi.Input[_builtins.str],
-                 additional_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None):
+                 additional_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] field_name: (Updatable) The field name to be evaluated.
         :param pulumi.Input[_builtins.str] field_operator: (Updatable) The operator to be used for evaluating the field.
@@ -897,14 +897,14 @@ class NamespaceIngestTimeRuleConditionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalConditions")
-    def additional_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]:
+    def additional_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]:
         """
         (Updatable) Optional additional condition(s) to be evaluated.
         """
         return pulumi.get(self, "additional_conditions")
 
     @additional_conditions.setter
-    def additional_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]):
+    def additional_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]):
         pulumi.set(self, "additional_conditions", value)
 
 
@@ -975,23 +975,23 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
 
 
 class NamespaceLookupCategoryArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The category description.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The category display name.
     """
-    is_system: NotRequired[pulumi.Input[_builtins.bool]]
+    is_system: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unique name that identifies the category.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
     """
@@ -999,11 +999,11 @@ class NamespaceLookupCategoryArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceLookupCategoryArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_system: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_system: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) The category description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The category display name.
@@ -1024,91 +1024,91 @@ class NamespaceLookupCategoryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The category description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The category display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystem")
-    def is_system(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_system(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
         """
         return pulumi.get(self, "is_system")
 
     @is_system.setter
-    def is_system(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_system(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_system", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique name that identifies the category.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class NamespaceLookupFieldArgsDict(TypedDict):
-    common_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    common_field_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The common field name.
     """
-    default_match_value: NotRequired[pulumi.Input[_builtins.str]]
+    default_match_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The default match value.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The display name.
     """
-    is_common_field: NotRequired[pulumi.Input[_builtins.bool]]
+    is_common_field: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) A flag indicating whether or not the field is a common field.
     """
-    match_operator: NotRequired[pulumi.Input[_builtins.str]]
+    match_operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The match operator.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The field name.
     """
-    position: NotRequired[pulumi.Input[_builtins.str]]
+    position: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The position.
     """
@@ -1116,13 +1116,13 @@ class NamespaceLookupFieldArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceLookupFieldArgs:
     def __init__(__self__, *,
-                 common_field_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_common_field: Optional[pulumi.Input[_builtins.bool]] = None,
-                 match_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[_builtins.str]] = None):
+                 common_field_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_common_field: pulumi.Input[Optional[_builtins.bool]] = None,
+                 match_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] common_field_name: (Updatable) The common field name.
         :param pulumi.Input[_builtins.str] default_match_value: (Updatable) The default match value.
@@ -1149,95 +1149,95 @@ class NamespaceLookupFieldArgs:
 
     @_builtins.property
     @pulumi.getter(name="commonFieldName")
-    def common_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def common_field_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The common field name.
         """
         return pulumi.get(self, "common_field_name")
 
     @common_field_name.setter
-    def common_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def common_field_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "common_field_name", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultMatchValue")
-    def default_match_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_match_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default match value.
         """
         return pulumi.get(self, "default_match_value")
 
     @default_match_value.setter
-    def default_match_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_match_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_match_value", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isCommonField")
-    def is_common_field(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_common_field(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A flag indicating whether or not the field is a common field.
         """
         return pulumi.get(self, "is_common_field")
 
     @is_common_field.setter
-    def is_common_field(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_common_field(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_common_field", value)
 
     @_builtins.property
     @pulumi.getter(name="matchOperator")
-    def match_operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The match operator.
         """
         return pulumi.get(self, "match_operator")
 
     @match_operator.setter
-    def match_operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The field name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def position(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The position.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def position(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "position", value)
 
 
 class NamespaceLookupReferringSourceArgsDict(TypedDict):
-    canonical_link: NotRequired[pulumi.Input[_builtins.str]]
+    canonical_link: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The canonical link.
     """
-    total_count: NotRequired[pulumi.Input[_builtins.str]]
+    total_count: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total count.
     """
@@ -1245,8 +1245,8 @@ class NamespaceLookupReferringSourceArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceLookupReferringSourceArgs:
     def __init__(__self__, *,
-                 canonical_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_count: Optional[pulumi.Input[_builtins.str]] = None):
+                 canonical_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_count: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] canonical_link: The canonical link.
         :param pulumi.Input[_builtins.str] total_count: The total count.
@@ -1258,47 +1258,47 @@ class NamespaceLookupReferringSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="canonicalLink")
-    def canonical_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def canonical_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical link.
         """
         return pulumi.get(self, "canonical_link")
 
     @canonical_link.setter
-    def canonical_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def canonical_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "canonical_link", value)
 
     @_builtins.property
     @pulumi.getter(name="totalCount")
-    def total_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total count.
         """
         return pulumi.get(self, "total_count")
 
     @total_count.setter
-    def total_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_count", value)
 
 
 class NamespaceLookupStatusSummaryArgsDict(TypedDict):
-    chunks_processed: NotRequired[pulumi.Input[_builtins.str]]
+    chunks_processed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The number of chunks processed.
     """
-    failure_details: NotRequired[pulumi.Input[_builtins.str]]
+    failure_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The failure details, if any.
     """
-    filename: NotRequired[pulumi.Input[_builtins.str]]
+    filename: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The filename.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status.
     """
-    total_chunks: NotRequired[pulumi.Input[_builtins.str]]
+    total_chunks: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total number of chunks.
     """
@@ -1306,11 +1306,11 @@ class NamespaceLookupStatusSummaryArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceLookupStatusSummaryArgs:
     def __init__(__self__, *,
-                 chunks_processed: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_chunks: Optional[pulumi.Input[_builtins.str]] = None):
+                 chunks_processed: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_chunks: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] chunks_processed: The number of chunks processed.
         :param pulumi.Input[_builtins.str] failure_details: The failure details, if any.
@@ -1331,62 +1331,62 @@ class NamespaceLookupStatusSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="chunksProcessed")
-    def chunks_processed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def chunks_processed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The number of chunks processed.
         """
         return pulumi.get(self, "chunks_processed")
 
     @chunks_processed.setter
-    def chunks_processed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def chunks_processed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "chunks_processed", value)
 
     @_builtins.property
     @pulumi.getter(name="failureDetails")
-    def failure_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failure_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The failure details, if any.
         """
         return pulumi.get(self, "failure_details")
 
     @failure_details.setter
-    def failure_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failure_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failure_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filename.
         """
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filename", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="totalChunks")
-    def total_chunks(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def total_chunks(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of chunks.
         """
         return pulumi.get(self, "total_chunks")
 
     @total_chunks.setter
-    def total_chunks(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def total_chunks(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "total_chunks", value)
 
 
@@ -1395,35 +1395,35 @@ class NamespaceScheduledTaskActionArgsDict(TypedDict):
     """
     Action type discriminator.
     """
-    compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    compartment_id_in_subtree: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     if true, purge child compartments data
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     the type of the log data to be purged
     """
-    metric_extraction: NotRequired[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgsDict']]
+    metric_extraction: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgs']]]
     """
     Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
     """
-    purge_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    purge_compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     the compartment OCID under which the data will be purged
     """
-    purge_duration: NotRequired[pulumi.Input[_builtins.str]]
+    purge_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
     """
-    query_string: NotRequired[pulumi.Input[_builtins.str]]
+    query_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Purge query string.
     """
-    saved_search_id: NotRequired[pulumi.Input[_builtins.str]]
+    saved_search_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
     """
-    template_details: NotRequired[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgsDict']]
+    template_details: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgs']]]
     """
     details for scheduled task using template
     """
@@ -1432,14 +1432,14 @@ class NamespaceScheduledTaskActionArgsDict(TypedDict):
 class NamespaceScheduledTaskActionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_extraction: Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']] = None,
-                 purge_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_search_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_details: Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']] = None):
+                 compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_extraction: pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgs']] = None,
+                 purge_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_details: pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] type: Action type discriminator.
         :param pulumi.Input[_builtins.bool] compartment_id_in_subtree: if true, purge child compartments data
@@ -1483,119 +1483,119 @@ class NamespaceScheduledTaskActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def compartment_id_in_subtree(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         if true, purge child compartments data
         """
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @compartment_id_in_subtree.setter
-    def compartment_id_in_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def compartment_id_in_subtree(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "compartment_id_in_subtree", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the type of the log data to be purged
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="metricExtraction")
-    def metric_extraction(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']]:
+    def metric_extraction(self) -> pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgs']]:
         """
         Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         """
         return pulumi.get(self, "metric_extraction")
 
     @metric_extraction.setter
-    def metric_extraction(self, value: Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']]):
+    def metric_extraction(self, value: pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgs']]):
         pulumi.set(self, "metric_extraction", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeCompartmentId")
-    def purge_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the compartment OCID under which the data will be purged
         """
         return pulumi.get(self, "purge_compartment_id")
 
     @purge_compartment_id.setter
-    def purge_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeDuration")
-    def purge_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         """
         return pulumi.get(self, "purge_duration")
 
     @purge_duration.setter
-    def purge_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="queryString")
-    def query_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Purge query string.
         """
         return pulumi.get(self, "query_string")
 
     @query_string.setter
-    def query_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_string", value)
 
     @_builtins.property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def saved_search_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
         """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
-    def saved_search_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def saved_search_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "saved_search_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateDetails")
-    def template_details(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']]:
+    def template_details(self) -> pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgs']]:
         """
         details for scheduled task using template
         """
         return pulumi.get(self, "template_details")
 
     @template_details.setter
-    def template_details(self, value: Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']]):
+    def template_details(self, value: pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgs']]):
         pulumi.set(self, "template_details", value)
 
 
 class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
     """
-    metric_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict']]]]
+    metric_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]]
     """
     Details for the metrics to be collected.
     """
-    metric_name: NotRequired[pulumi.Input[_builtins.str]]
+    metric_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
     """
@@ -1603,11 +1603,11 @@ class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_collections: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_collections: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]] metric_collections: Details for the metrics to be collected.
@@ -1628,79 +1628,79 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricCollections")
-    def metric_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]:
+    def metric_collections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]:
         """
         Details for the metrics to be collected.
         """
         return pulumi.get(self, "metric_collections")
 
     @metric_collections.setter
-    def metric_collections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]):
+    def metric_collections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]):
         pulumi.set(self, "metric_collections", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(TypedDict):
-    dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict']]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]]
     """
     Selected dimension fields for the metric collection.
     """
-    metric_name: NotRequired[pulumi.Input[_builtins.str]]
+    metric_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
     """
-    metric_query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    metric_query_field_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Output field in the query to be used as the metric value.
     """
-    query_table_name: NotRequired[pulumi.Input[_builtins.str]]
+    query_table_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Output table in the query.
     """
@@ -1708,10 +1708,10 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(Typed
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_query_field_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_table_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_query_field_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_table_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]] dimensions: Selected dimension fields for the metric collection.
         :param pulumi.Input[_builtins.str] metric_name: The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -1729,59 +1729,59 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]:
         """
         Selected dimension fields for the metric collection.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter(name="metricQueryFieldName")
-    def metric_query_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_query_field_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Output field in the query to be used as the metric value.
         """
         return pulumi.get(self, "metric_query_field_name")
 
     @metric_query_field_name.setter
-    def metric_query_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_query_field_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_query_field_name", value)
 
     @_builtins.property
     @pulumi.getter(name="queryTableName")
-    def query_table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Output table in the query.
         """
         return pulumi.get(self, "query_table_name")
 
     @query_table_name.setter
-    def query_table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_table_name", value)
 
 
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict(TypedDict):
-    dimension_name: NotRequired[pulumi.Input[_builtins.str]]
+    dimension_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Dimension name to be stored with the metric.
     """
-    query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    query_field_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Output field in the query to be used as the source for the metric dimension.
     """
@@ -1789,8 +1789,8 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsD
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs:
     def __init__(__self__, *,
-                 dimension_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_field_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimension_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_field_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dimension_name: Dimension name to be stored with the metric.
         :param pulumi.Input[_builtins.str] query_field_name: Output field in the query to be used as the source for the metric dimension.
@@ -1802,35 +1802,35 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs:
 
     @_builtins.property
     @pulumi.getter(name="dimensionName")
-    def dimension_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dimension_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dimension name to be stored with the metric.
         """
         return pulumi.get(self, "dimension_name")
 
     @dimension_name.setter
-    def dimension_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dimension_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dimension_name", value)
 
     @_builtins.property
     @pulumi.getter(name="queryFieldName")
-    def query_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query_field_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Output field in the query to be used as the source for the metric dimension.
         """
         return pulumi.get(self, "query_field_name")
 
     @query_field_name.setter
-    def query_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query_field_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query_field_name", value)
 
 
 class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
-    template_id: NotRequired[pulumi.Input[_builtins.str]]
+    template_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The template Id of a particular template.  Should not be provided when a saved search ID is present.
     """
-    template_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict']]]]
+    template_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]]
     """
     To store macro params.
     """
@@ -1838,8 +1838,8 @@ class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceScheduledTaskActionTemplateDetailsArgs:
     def __init__(__self__, *,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_params: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]] = None):
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_params: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] template_id: The template Id of a particular template.  Should not be provided when a saved search ID is present.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]] template_params: To store macro params.
@@ -1851,35 +1851,35 @@ class NamespaceScheduledTaskActionTemplateDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The template Id of a particular template.  Should not be provided when a saved search ID is present.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateParams")
-    def template_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]:
+    def template_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]:
         """
         To store macro params.
         """
         return pulumi.get(self, "template_params")
 
     @template_params.setter
-    def template_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]):
+    def template_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]):
         pulumi.set(self, "template_params", value)
 
 
 class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict(TypedDict):
-    key_field: NotRequired[pulumi.Input[_builtins.str]]
+    key_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Contains a template parameter's name.
     """
-    value_field: NotRequired[pulumi.Input[_builtins.str]]
+    value_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Contains the desired value for a given parameter.
     """
@@ -1887,8 +1887,8 @@ class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict(TypedDict
 @pulumi.input_type
 class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs:
     def __init__(__self__, *,
-                 key_field: Optional[pulumi.Input[_builtins.str]] = None,
-                 value_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 key_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key_field: Contains a template parameter's name.
         :param pulumi.Input[_builtins.str] value_field: Contains the desired value for a given parameter.
@@ -1900,26 +1900,26 @@ class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyField")
-    def key_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contains a template parameter's name.
         """
         return pulumi.get(self, "key_field")
 
     @key_field.setter
-    def key_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_field", value)
 
     @_builtins.property
     @pulumi.getter(name="valueField")
-    def value_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contains the desired value for a given parameter.
         """
         return pulumi.get(self, "value_field")
 
     @value_field.setter
-    def value_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value_field", value)
 
 
@@ -1947,31 +1947,31 @@ class NamespaceScheduledTaskSchedulesScheduleArgsDict(TypedDict):
     """
     Schedule type discriminator.
     """
-    expression: NotRequired[pulumi.Input[_builtins.str]]
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Value in cron format.
     """
-    misfire_policy: NotRequired[pulumi.Input[_builtins.str]]
+    misfire_policy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Schedule misfire retry policy.
     """
-    query_offset_secs: NotRequired[pulumi.Input[_builtins.int]]
+    query_offset_secs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
     """
-    recurring_interval: NotRequired[pulumi.Input[_builtins.str]]
+    recurring_interval: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
     """
-    repeat_count: NotRequired[pulumi.Input[_builtins.int]]
+    repeat_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
     """
-    time_end: NotRequired[pulumi.Input[_builtins.str]]
+    time_end: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     End time for the schedule, even if the schedule would otherwise have remaining executions.
     """
-    time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    time_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Time zone, by default UTC.
     """
@@ -1980,13 +1980,13 @@ class NamespaceScheduledTaskSchedulesScheduleArgsDict(TypedDict):
 class NamespaceScheduledTaskSchedulesScheduleArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 misfire_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_offset_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 recurring_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 misfire_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_offset_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 recurring_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Schedule type discriminator.
         :param pulumi.Input[_builtins.str] expression: Value in cron format.
@@ -2027,99 +2027,99 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value in cron format.
         """
         return pulumi.get(self, "expression")
 
     @expression.setter
-    def expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expression", value)
 
     @_builtins.property
     @pulumi.getter(name="misfirePolicy")
-    def misfire_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def misfire_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Schedule misfire retry policy.
         """
         return pulumi.get(self, "misfire_policy")
 
     @misfire_policy.setter
-    def misfire_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def misfire_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "misfire_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="queryOffsetSecs")
-    def query_offset_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def query_offset_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
         """
         return pulumi.get(self, "query_offset_secs")
 
     @query_offset_secs.setter
-    def query_offset_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def query_offset_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "query_offset_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="recurringInterval")
-    def recurring_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recurring_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 
     @recurring_interval.setter
-    def recurring_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recurring_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recurring_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatCount")
-    def repeat_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def repeat_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
 
     @repeat_count.setter
-    def repeat_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def repeat_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "repeat_count", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         End time for the schedule, even if the schedule would otherwise have remaining executions.
         """
         return pulumi.get(self, "time_end")
 
     @time_end.setter
-    def time_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time zone, by default UTC.
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
 class NamespaceStorageArchivalConfigArchivingConfigurationArgsDict(TypedDict):
-    active_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
+    active_storage_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
     """
-    archival_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
+    archival_storage_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
     """
-    time_oldest_active_bucket_ended: NotRequired[pulumi.Input[_builtins.str]]
+    time_oldest_active_bucket_ended: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) end time of the oldest active CoreGroup
     """
@@ -2127,9 +2127,9 @@ class NamespaceStorageArchivalConfigArchivingConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class NamespaceStorageArchivalConfigArchivingConfigurationArgs:
     def __init__(__self__, *,
-                 active_storage_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 archival_storage_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_oldest_active_bucket_ended: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_storage_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 archival_storage_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_oldest_active_bucket_ended: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] active_storage_duration: (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         :param pulumi.Input[_builtins.str] archival_storage_duration: (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
@@ -2144,38 +2144,38 @@ class NamespaceStorageArchivalConfigArchivingConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeStorageDuration")
-    def active_storage_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_storage_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         """
         return pulumi.get(self, "active_storage_duration")
 
     @active_storage_duration.setter
-    def active_storage_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_storage_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_storage_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="archivalStorageDuration")
-    def archival_storage_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def archival_storage_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         """
         return pulumi.get(self, "archival_storage_duration")
 
     @archival_storage_duration.setter
-    def archival_storage_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def archival_storage_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "archival_storage_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOldestActiveBucketEnded")
-    def time_oldest_active_bucket_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_oldest_active_bucket_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) end time of the oldest active CoreGroup
         """
         return pulumi.get(self, "time_oldest_active_bucket_ended")
 
     @time_oldest_active_bucket_ended.setter
-    def time_oldest_active_bucket_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_oldest_active_bucket_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_oldest_active_bucket_ended", value)
 
 

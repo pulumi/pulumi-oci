@@ -117,7 +117,7 @@ def get_namespace_rules_summary(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=compartment_id,
+    test_namespace_rules_summary = oci.loganalytics.get_namespace_rules_summary(compartment_id=compartment_id,
         namespace=namespace_rules_summary_namespace)
     ```
 
@@ -138,8 +138,8 @@ def get_namespace_rules_summary(compartment_id: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         saved_search_rules_count=pulumi.get(__ret__, 'saved_search_rules_count'),
         total_count=pulumi.get(__ret__, 'total_count'))
-def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_rules_summary_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceRulesSummaryResult]:
     """
     This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -152,7 +152,7 @@ def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=compartment_id,
+    test_namespace_rules_summary = oci.loganalytics.get_namespace_rules_summary(compartment_id=compartment_id,
         namespace=namespace_rules_summary_namespace)
     ```
 

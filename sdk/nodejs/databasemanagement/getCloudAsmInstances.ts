@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmInstances = oci.DatabaseManagement.getCloudAsmInstances({
+ * const testCloudAsmInstances = oci.databasemanagement.getCloudAsmInstances({
  *     cloudAsmId: testCloudAsm.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudAsmInstanceDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudAsmInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmInstances = oci.DatabaseManagement.getCloudAsmInstances({
+ * const testCloudAsmInstances = oci.databasemanagement.getCloudAsmInstances({
  *     cloudAsmId: testCloudAsm.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudAsmInstanceDisplayName,
@@ -116,14 +116,14 @@ export interface GetCloudAsmInstancesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
      */
-    cloudAsmId?: pulumi.Input<string>;
+    cloudAsmId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudAsmInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudAsmInstancesFilterArgs>[] | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ * const testBootVolumeAttachments = oci.core.getBootVolumeAttachments({
  *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     bootVolumeId: testBootVolume.id,
@@ -103,7 +103,7 @@ export interface GetBootVolumeAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ * const testBootVolumeAttachments = oci.core.getBootVolumeAttachments({
  *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     bootVolumeId: testBootVolume.id,
@@ -134,14 +134,14 @@ export interface GetBootVolumeAttachmentsOutputArgs {
     /**
      * The OCID of the boot volume.
      */
-    bootVolumeId?: pulumi.Input<string>;
+    bootVolumeId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumeAttachmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumeAttachmentsFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
 }

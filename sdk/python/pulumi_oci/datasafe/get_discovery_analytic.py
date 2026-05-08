@@ -132,8 +132,8 @@ def get_discovery_analytic(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytic = oci.DataSafe.get_discovery_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytic = oci.datasafe.get_discovery_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         target_id=test_target["id"])
@@ -163,11 +163,11 @@ def get_discovery_analytic(compartment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                  group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_discovery_analytic_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                  group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  sensitive_data_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryAnalyticResult]:
     """
     This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -182,8 +182,8 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytic = oci.DataSafe.get_discovery_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytic = oci.datasafe.get_discovery_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         target_id=test_target["id"])

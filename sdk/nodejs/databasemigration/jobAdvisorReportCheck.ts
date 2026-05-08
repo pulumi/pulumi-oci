@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testJobAdvisorReportCheck = new oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check", {
  *     advisorReportCheckId: testAdvisorReportCheck.id,
- *     isReviewed: jobAdvisorReportCheckIsReviewed,
+ *     isReviewed: jobAdvisorReportCheckIsReviewed === "true",
  *     jobId: testJob.id,
  * });
  * ```
@@ -135,15 +135,15 @@ export interface JobAdvisorReportCheckState {
     /**
      * The ID of the advisor check
      */
-    advisorReportCheckId?: pulumi.Input<string>;
+    advisorReportCheckId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User flag for advisor report check.
      */
-    isReviewed?: pulumi.Input<boolean>;
+    isReviewed?: pulumi.Input<boolean | undefined>;
     /**
      * Array of advisor check items.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckItem>[] | undefined>;
     /**
      * The OCID of the job 
      *
@@ -151,11 +151,11 @@ export interface JobAdvisorReportCheckState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    jobId?: pulumi.Input<string>;
+    jobId?: pulumi.Input<string | undefined>;
     /**
      * Pre-Migration extended advisor report summary.
      */
-    summaries?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckSummary>[]>;
+    summaries?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckSummary>[] | undefined>;
 }
 
 /**

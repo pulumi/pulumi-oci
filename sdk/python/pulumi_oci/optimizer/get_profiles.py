@@ -124,7 +124,7 @@ def get_profiles(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+    test_profiles = oci.optimizer.get_profiles(compartment_id=compartment_id,
         name=profile_name,
         state=profile_state)
     ```
@@ -149,10 +149,10 @@ def get_profiles(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         profile_collections=pulumi.get(__ret__, 'profile_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_profiles_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
-                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_profiles_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
+                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfilesResult]:
     """
     This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
@@ -165,7 +165,7 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+    test_profiles = oci.optimizer.get_profiles(compartment_id=compartment_id,
         name=profile_name,
         state=profile_state)
     ```

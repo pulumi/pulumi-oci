@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceErrata = oci.OsManagementHub.getManagedInstanceErrata({
+ * const testManagedInstanceErrata = oci.osmanagementhub.getManagedInstanceErrata({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceErrataClassificationType,
  *     compartmentId: compartmentId,
@@ -98,7 +98,7 @@ export interface GetManagedInstanceErrataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceErrata = oci.OsManagementHub.getManagedInstanceErrata({
+ * const testManagedInstanceErrata = oci.osmanagementhub.getManagedInstanceErrata({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceErrataClassificationType,
  *     compartmentId: compartmentId,
@@ -126,12 +126,12 @@ export interface GetManagedInstanceErrataOutputArgs {
     /**
      * A filter to return only packages that match the given update classification type.
      */
-    classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    classificationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceErrataFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceErrataFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
@@ -139,9 +139,9 @@ export interface GetManagedInstanceErrataOutputArgs {
     /**
      * A filter to return resources that may partially match the erratum name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

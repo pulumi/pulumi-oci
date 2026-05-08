@@ -24,8 +24,8 @@ class AnalyticsInstanceVanityUrlArgs:
                  hosts: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  private_key: pulumi.Input[_builtins.str],
                  public_certificate: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstanceVanityUrl resource.
 
@@ -117,39 +117,39 @@ class AnalyticsInstanceVanityUrlArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Passphrase for the PEM Private key (if any).
         """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
-    def passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "passphrase", value)
 
 
 @pulumi.input_type
 class _AnalyticsInstanceVanityUrlState:
     def __init__(__self__, *,
-                 analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None):
+                 analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstanceVanityUrl resources.
 
@@ -182,79 +182,79 @@ class _AnalyticsInstanceVanityUrlState:
 
     @_builtins.property
     @pulumi.getter(name="analyticsInstanceId")
-    def analytics_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def analytics_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the AnalyticsInstance.
         """
         return pulumi.get(self, "analytics_instance_id")
 
     @analytics_instance_id.setter
-    def analytics_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def analytics_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "analytics_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="caCertificate")
-    def ca_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
         """
         return pulumi.get(self, "ca_certificate")
 
     @ca_certificate.setter
-    def ca_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of fully qualified hostnames supported by this vanity URL definition (max of 3).
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Passphrase for the PEM Private key (if any).
         """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
-    def passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) PEM Private key for HTTPS connections.
         """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
-    def private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="publicCertificate")
-    def public_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) PEM certificate for HTTPS connections. 
 
@@ -265,7 +265,7 @@ class _AnalyticsInstanceVanityUrlState:
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
-    def public_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_certificate", value)
 
 
@@ -275,13 +275,13 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
+                 analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
@@ -386,13 +386,13 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
+                 analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -431,13 +431,13 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ca_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key: Optional[pulumi.Input[_builtins.str]] = None,
-            public_certificate: Optional[pulumi.Input[_builtins.str]] = None) -> 'AnalyticsInstanceVanityUrl':
+            analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None) -> 'AnalyticsInstanceVanityUrl':
         """
         Get an existing AnalyticsInstanceVanityUrl resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

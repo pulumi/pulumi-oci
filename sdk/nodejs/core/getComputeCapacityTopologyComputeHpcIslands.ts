@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
+ * const testComputeCapacityTopologyComputeHpcIslands = oci.core.getComputeCapacityTopologyComputeHpcIslands({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -84,7 +84,7 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
+ * const testComputeCapacityTopologyComputeHpcIslands = oci.core.getComputeCapacityTopologyComputeHpcIslands({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -108,14 +108,14 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity topology.
      */
     computeCapacityTopologyId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologyComputeHpcIslandsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologyComputeHpcIslandsFilterArgs>[] | undefined>;
 }

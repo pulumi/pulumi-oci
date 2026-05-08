@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilyLimitsAndUsage = oci.Functions.getFusionEnvironmentFamilyLimitsAndUsage({
+ * const testFusionEnvironmentFamilyLimitsAndUsage = oci.functions.getFusionEnvironmentFamilyLimitsAndUsage({
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilyLimitsAndUsage = oci.Functions.getFusionEnvironmentFamilyLimitsAndUsage({
+ * const testFusionEnvironmentFamilyLimitsAndUsage = oci.functions.getFusionEnvironmentFamilyLimitsAndUsage({
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```

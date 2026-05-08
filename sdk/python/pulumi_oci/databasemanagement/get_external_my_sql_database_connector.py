@@ -327,7 +327,7 @@ def get_external_my_sql_database_connector(external_my_sql_database_connector_id
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connector = oci.DatabaseManagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
+    test_external_my_sql_database_connector = oci.databasemanagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
     ```
 
 
@@ -363,7 +363,7 @@ def get_external_my_sql_database_connector(external_my_sql_database_connector_id
         time_connection_status_updated=pulumi.get(__ret__, 'time_connection_status_updated'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_external_my_sql_database_connector_output(external_my_sql_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_my_sql_database_connector_output(external_my_sql_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabaseConnectorResult]:
     """
     This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -376,7 +376,7 @@ def get_external_my_sql_database_connector_output(external_my_sql_database_conne
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connector = oci.DatabaseManagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
+    test_external_my_sql_database_connector = oci.databasemanagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
     ```
 
 

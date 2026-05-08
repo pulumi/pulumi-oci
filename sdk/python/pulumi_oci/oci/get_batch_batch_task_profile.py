@@ -255,7 +255,7 @@ def get_batch_batch_task_profile(batch_task_profile_id: Optional[_builtins.str] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_batch_batch_task_profile_output(batch_task_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_batch_batch_task_profile_output(batch_task_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchTaskProfileResult]:
     """
     This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.

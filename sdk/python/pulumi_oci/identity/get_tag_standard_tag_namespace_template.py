@@ -121,7 +121,7 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
+    test_tag_standard_tag_namespace_template = oci.identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
         standard_tag_namespace_name=test_tag_namespace["name"])
     ```
 
@@ -142,8 +142,8 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[_builtins.s
         standard_tag_namespace_name=pulumi.get(__ret__, 'standard_tag_namespace_name'),
         status=pulumi.get(__ret__, 'status'),
         tag_definition_templates=pulumi.get(__ret__, 'tag_definition_templates'))
-def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tag_standard_tag_namespace_template_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplateResult]:
     """
     This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
@@ -156,7 +156,7 @@ def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
+    test_tag_standard_tag_namespace_template = oci.identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
         standard_tag_namespace_name=test_tag_namespace["name"])
     ```
 

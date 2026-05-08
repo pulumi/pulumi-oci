@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.GoldenGate.getDeployments({
+ * const testDeployments = oci.goldengate.getDeployments({
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,
@@ -141,7 +141,7 @@ export interface GetDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.GoldenGate.getDeployments({
+ * const testDeployments = oci.goldengate.getDeployments({
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,
@@ -177,11 +177,11 @@ export interface GetDeploymentsOutputArgs {
     /**
      * Return the deployments to which the specified connectionId may be assigned.
      */
-    assignableConnectionId?: pulumi.Input<string>;
+    assignableConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the connection which for the deployment must be assigned.
      */
-    assignedConnectionId?: pulumi.Input<string>;
+    assignedConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
@@ -189,26 +189,26 @@ export interface GetDeploymentsOutputArgs {
     /**
      * A filter that returns only the resources matching the specified 'deploymentType'.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the 'fqdn' given.
      */
-    fqdn?: pulumi.Input<string>;
+    fqdn?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the 'lifecycleSubState' given.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the deployments having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The connection type which the deployment must support.
      */
-    supportedConnectionType?: pulumi.Input<string>;
+    supportedConnectionType?: pulumi.Input<string | undefined>;
 }

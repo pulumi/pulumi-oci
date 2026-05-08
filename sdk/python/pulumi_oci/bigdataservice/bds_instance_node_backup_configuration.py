@@ -24,10 +24,10 @@ class BdsInstanceNodeBackupConfigurationArgs:
                  bds_instance_id: pulumi.Input[_builtins.str],
                  level_type_details: pulumi.Input['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs'],
                  schedule: pulumi.Input[_builtins.str],
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_backups_to_retain: Optional[pulumi.Input[_builtins.int]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeBackupConfiguration resource.
 
@@ -93,43 +93,43 @@ class BdsInstanceNodeBackupConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
-    def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfBackupsToRetain")
-    def number_of_backups_to_retain(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_backups_to_retain(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of backup copies to retain.
         """
         return pulumi.get(self, "number_of_backups_to_retain")
 
     @number_of_backups_to_retain.setter
-    def number_of_backups_to_retain(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_backups_to_retain(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_backups_to_retain", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 
@@ -140,23 +140,23 @@ class BdsInstanceNodeBackupConfigurationArgs:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _BdsInstanceNodeBackupConfigurationState:
     def __init__(__self__, *,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']] = None,
-                 number_of_backups_to_retain: Optional[pulumi.Input[_builtins.int]] = None,
-                 schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']] = None,
+                 number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
+                 schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceNodeBackupConfiguration resources.
 
@@ -198,115 +198,115 @@ class _BdsInstanceNodeBackupConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
-    def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="levelTypeDetails")
-    def level_type_details(self) -> Optional[pulumi.Input['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']]:
+    def level_type_details(self) -> pulumi.Input[Optional['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']]:
         """
         (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         """
         return pulumi.get(self, "level_type_details")
 
     @level_type_details.setter
-    def level_type_details(self, value: Optional[pulumi.Input['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']]):
+    def level_type_details(self, value: pulumi.Input[Optional['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs']]):
         pulumi.set(self, "level_type_details", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfBackupsToRetain")
-    def number_of_backups_to_retain(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_backups_to_retain(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of backup copies to retain.
         """
         return pulumi.get(self, "number_of_backups_to_retain")
 
     @number_of_backups_to_retain.setter
-    def number_of_backups_to_retain(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_backups_to_retain(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_backups_to_retain", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the NodeBackupConfiguration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 
@@ -317,7 +317,7 @@ class _BdsInstanceNodeBackupConfigurationState:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
@@ -327,13 +327,13 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
-                 number_of_backups_to_retain: Optional[pulumi.Input[_builtins.int]] = None,
-                 schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
+                 schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -359,7 +359,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
             schedule=bds_instance_node_backup_configuration_schedule,
             backup_type=bds_instance_node_backup_configuration_backup_type,
             display_name=bds_instance_node_backup_configuration_display_name,
-            number_of_backups_to_retain=bds_instance_node_backup_configuration_number_of_backups_to_retain,
+            number_of_backups_to_retain=int(bds_instance_node_backup_configuration_number_of_backups_to_retain),
             timezone=bds_instance_node_backup_configuration_timezone)
         ```
 
@@ -416,7 +416,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
             schedule=bds_instance_node_backup_configuration_schedule,
             backup_type=bds_instance_node_backup_configuration_backup_type,
             display_name=bds_instance_node_backup_configuration_display_name,
-            number_of_backups_to_retain=bds_instance_node_backup_configuration_number_of_backups_to_retain,
+            number_of_backups_to_retain=int(bds_instance_node_backup_configuration_number_of_backups_to_retain),
             timezone=bds_instance_node_backup_configuration_timezone)
         ```
 
@@ -444,13 +444,13 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
-                 number_of_backups_to_retain: Optional[pulumi.Input[_builtins.int]] = None,
-                 schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
+                 schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -486,16 +486,16 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
-            number_of_backups_to_retain: Optional[pulumi.Input[_builtins.int]] = None,
-            schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceNodeBackupConfiguration':
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+            number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
+            schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceNodeBackupConfiguration':
         """
         Get an existing BdsInstanceNodeBackupConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

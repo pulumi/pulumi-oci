@@ -105,7 +105,7 @@ def get_publishers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+    test_publishers = oci.marketplace.get_publishers(compartment_id=compartment_id,
         publisher_id=test_publisher["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_publishers(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         publisher_id=pulumi.get(__ret__, 'publisher_id'),
         publishers=pulumi.get(__ret__, 'publishers'))
-def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]]]] = None,
-                          publisher_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_publishers_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]]]] = None,
+                          publisher_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublishersResult]:
     """
     This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
@@ -141,7 +141,7 @@ def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+    test_publishers = oci.marketplace.get_publishers(compartment_id=compartment_id,
         publisher_id=test_publisher["id"])
     ```
 

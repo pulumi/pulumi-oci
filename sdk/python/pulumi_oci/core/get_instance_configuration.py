@@ -171,7 +171,7 @@ def get_instance_configuration(instance_configuration_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
+    test_instance_configuration = oci.core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
     ```
 
 
@@ -194,7 +194,7 @@ def get_instance_configuration(instance_configuration_id: Optional[_builtins.str
         instance_id=pulumi.get(__ret__, 'instance_id'),
         source=pulumi.get(__ret__, 'source'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_instance_configuration_output(instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_configuration_output(instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceConfigurationResult]:
     """
     This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -207,7 +207,7 @@ def get_instance_configuration_output(instance_configuration_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
+    test_instance_configuration = oci.core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
     ```
 
 

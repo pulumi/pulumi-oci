@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequests = oci.DelegateAccessControl.getDelegatedResourceAccessRequests({
+ * const testDelegatedResourceAccessRequests = oci.delegateaccesscontrol.getDelegatedResourceAccessRequests({
  *     compartmentId: compartmentId,
  *     delegationControlId: testDelegationControl.id,
  *     requestStatus: delegatedResourceAccessRequestRequestStatus,
@@ -124,7 +124,7 @@ export interface GetDelegatedResourceAccessRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequests = oci.DelegateAccessControl.getDelegatedResourceAccessRequests({
+ * const testDelegatedResourceAccessRequests = oci.delegateaccesscontrol.getDelegatedResourceAccessRequests({
  *     compartmentId: compartmentId,
  *     delegationControlId: testDelegationControl.id,
  *     requestStatus: delegatedResourceAccessRequestRequestStatus,
@@ -160,26 +160,26 @@ export interface GetDelegatedResourceAccessRequestsOutputArgs {
     /**
      * unique Delegation Control identifier
      */
-    delegationControlId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegatedResourceAccessRequestsFilterArgs>[]>;
+    delegationControlId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetDelegatedResourceAccessRequestsFilterArgs>[] | undefined>;
     /**
      * A filter to return only Delegated Resource Access Requests whose status matches the given Delegated Resource Access Request status.
      */
-    requestStatus?: pulumi.Input<string>;
+    requestStatus?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Delegated Resource Access Requests for the given resource identifier.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the given Delegated Resource Access Request lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used together.
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used together.
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

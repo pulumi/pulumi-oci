@@ -97,7 +97,7 @@ def get_deployment_type(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=compartment_id,
+    test_deployment_type = oci.goldengate.get_deployment_type(compartment_id=compartment_id,
         display_name=deployment_type_display_name)
     ```
 
@@ -116,8 +116,8 @@ def get_deployment_type(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_deployment_type_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deployment_type_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentTypeResult]:
     """
     This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -130,7 +130,7 @@ def get_deployment_type_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=compartment_id,
+    test_deployment_type = oci.goldengate.get_deployment_type(compartment_id=compartment_id,
         display_name=deployment_type_display_name)
     ```
 

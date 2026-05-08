@@ -139,7 +139,7 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
+    test_network_load_balancer_health = oci.networkloadbalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 
@@ -158,7 +158,7 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[_builtin
         total_backend_set_count=pulumi.get(__ret__, 'total_backend_set_count'),
         unknown_state_backend_set_names=pulumi.get(__ret__, 'unknown_state_backend_set_names'),
         warning_state_backend_set_names=pulumi.get(__ret__, 'warning_state_backend_set_names'))
-def get_network_load_balancer_health_output(network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_load_balancer_health_output(network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancerHealthResult]:
     """
     This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -171,7 +171,7 @@ def get_network_load_balancer_health_output(network_load_balancer_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
+    test_network_load_balancer_health = oci.networkloadbalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 

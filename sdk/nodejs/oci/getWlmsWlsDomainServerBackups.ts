@@ -95,7 +95,7 @@ export function getWlmsWlsDomainServerBackupsOutput(args: GetWlmsWlsDomainServer
  * A collection of arguments for invoking getWlmsWlsDomainServerBackups.
  */
 export interface GetWlmsWlsDomainServerBackupsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServerBackupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServerBackupsFilterArgs>[] | undefined>;
     /**
      * The unique identifier of a server.
      *

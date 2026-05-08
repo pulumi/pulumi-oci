@@ -85,11 +85,11 @@ class AppFirewallPolicyActionArgsDict(TypedDict):
     * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
     * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
     """
-    body: NotRequired[pulumi.Input['AppFirewallPolicyActionBodyArgsDict']]
+    body: NotRequired[pulumi.Input[Optional['AppFirewallPolicyActionBodyArgs']]]
     """
     (Updatable) Type of returned HTTP response body.
     """
-    code: NotRequired[pulumi.Input[_builtins.int]]
+    code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Response code.
 
@@ -109,7 +109,7 @@ class AppFirewallPolicyActionArgsDict(TypedDict):
 
     Example: `200`
     """
-    headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgsDict']]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]]
     """
     (Updatable) Adds headers defined in this array for HTTP response.
 
@@ -129,9 +129,9 @@ class AppFirewallPolicyActionArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 body: Optional[pulumi.Input['AppFirewallPolicyActionBodyArgs']] = None,
-                 code: Optional[pulumi.Input[_builtins.int]] = None,
-                 headers: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]] = None):
+                 body: pulumi.Input[Optional['AppFirewallPolicyActionBodyArgs']] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 headers: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Action name. Can be used to reference the action.
         :param pulumi.Input[_builtins.str] type: (Updatable) 
@@ -206,19 +206,19 @@ class AppFirewallPolicyActionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input['AppFirewallPolicyActionBodyArgs']]:
+    def body(self) -> pulumi.Input[Optional['AppFirewallPolicyActionBodyArgs']]:
         """
         (Updatable) Type of returned HTTP response body.
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input['AppFirewallPolicyActionBodyArgs']]):
+    def body(self, value: pulumi.Input[Optional['AppFirewallPolicyActionBodyArgs']]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Response code.
 
@@ -241,12 +241,12 @@ class AppFirewallPolicyActionArgs:
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]:
+    def headers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]:
         """
         (Updatable) Adds headers defined in this array for HTTP response.
 
@@ -263,7 +263,7 @@ class AppFirewallPolicyActionArgs:
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]):
+    def headers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]):
         pulumi.set(self, "headers", value)
 
 
@@ -272,8 +272,8 @@ class AppFirewallPolicyActionBodyArgsDict(TypedDict):
     """
     (Updatable) Type of HttpResponseBody.
     """
-    template: NotRequired[pulumi.Input[_builtins.str]]
-    text: NotRequired[pulumi.Input[_builtins.str]]
+    template: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Static response body text.
     """
@@ -282,8 +282,8 @@ class AppFirewallPolicyActionBodyArgsDict(TypedDict):
 class AppFirewallPolicyActionBodyArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 template: Optional[pulumi.Input[_builtins.str]] = None,
-                 text: Optional[pulumi.Input[_builtins.str]] = None):
+                 template: pulumi.Input[Optional[_builtins.str]] = None,
+                 text: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of HttpResponseBody.
         :param pulumi.Input[_builtins.str] text: (Updatable) Static response body text.
@@ -308,32 +308,32 @@ class AppFirewallPolicyActionBodyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "template")
 
     @template.setter
-    def template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template", value)
 
     @_builtins.property
     @pulumi.getter
-    def text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Static response body text.
         """
         return pulumi.get(self, "text")
 
     @text.setter
-    def text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "text", value)
 
 
 class AppFirewallPolicyActionHeaderArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the header field.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the header field.
     """
@@ -341,8 +341,8 @@ class AppFirewallPolicyActionHeaderArgsDict(TypedDict):
 @pulumi.input_type
 class AppFirewallPolicyActionHeaderArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the header field.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the header field.
@@ -354,26 +354,26 @@ class AppFirewallPolicyActionHeaderArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the header field.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the header field.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -384,7 +384,7 @@ class AppFirewallPolicyRequestAccessControlArgsDict(TypedDict):
     * **ALLOW** continues execution of other modules and their rules.
     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
     """
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgsDict']]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]]
     """
     (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
     """
@@ -393,7 +393,7 @@ class AppFirewallPolicyRequestAccessControlArgsDict(TypedDict):
 class AppFirewallPolicyRequestAccessControlArgs:
     def __init__(__self__, *,
                  default_action_name: pulumi.Input[_builtins.str],
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]] = None):
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] default_action_name: (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
                * **ALLOW** continues execution of other modules and their rules.
@@ -420,14 +420,14 @@ class AppFirewallPolicyRequestAccessControlArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]:
         """
         (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -444,11 +444,11 @@ class AppFirewallPolicyRequestAccessControlRuleArgsDict(TypedDict):
     """
     (Updatable) Type of WebAppFirewallPolicyRule.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An expression that determines whether or not the rule action should be executed.
     """
-    condition_language: NotRequired[pulumi.Input[_builtins.str]]
+    condition_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The language used to parse condition from field `condition`. Available languages:
     * **JMESPATH** an extended JMESPath language syntax.
@@ -460,8 +460,8 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
                  action_name: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_language: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_language: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param pulumi.Input[_builtins.str] name: (Updatable) Rule name. Must be unique within the module.
@@ -516,19 +516,19 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An expression that determines whether or not the rule action should be executed.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The language used to parse condition from field `condition`. Available languages:
         * **JMESPATH** an extended JMESPath language syntax.
@@ -536,12 +536,12 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
         return pulumi.get(self, "condition_language")
 
     @condition_language.setter
-    def condition_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language", value)
 
 
 class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
-    body_inspection_size_limit_exceeded_action_name: NotRequired[pulumi.Input[_builtins.str]]
+    body_inspection_size_limit_exceeded_action_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
 
@@ -550,7 +550,7 @@ class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
     Allowed action types:
     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
     """
-    body_inspection_size_limit_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    body_inspection_size_limit_in_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
 
@@ -558,7 +558,7 @@ class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
 
     For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
     """
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgsDict']]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]]
     """
     (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
     """
@@ -566,9 +566,9 @@ class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionArgs:
     def __init__(__self__, *,
-                 body_inspection_size_limit_exceeded_action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 body_inspection_size_limit_in_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]] = None):
+                 body_inspection_size_limit_exceeded_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 body_inspection_size_limit_in_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] body_inspection_size_limit_exceeded_action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
                
@@ -592,7 +592,7 @@ class AppFirewallPolicyRequestProtectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
-    def body_inspection_size_limit_exceeded_action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body_inspection_size_limit_exceeded_action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
 
@@ -604,12 +604,12 @@ class AppFirewallPolicyRequestProtectionArgs:
         return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
 
     @body_inspection_size_limit_exceeded_action_name.setter
-    def body_inspection_size_limit_exceeded_action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body_inspection_size_limit_exceeded_action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body_inspection_size_limit_exceeded_action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bodyInspectionSizeLimitInBytes")
-    def body_inspection_size_limit_in_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def body_inspection_size_limit_in_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
 
@@ -620,19 +620,19 @@ class AppFirewallPolicyRequestProtectionArgs:
         return pulumi.get(self, "body_inspection_size_limit_in_bytes")
 
     @body_inspection_size_limit_in_bytes.setter
-    def body_inspection_size_limit_in_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def body_inspection_size_limit_in_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "body_inspection_size_limit_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]:
         """
         (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -653,20 +653,20 @@ class AppFirewallPolicyRequestProtectionRuleArgsDict(TypedDict):
     """
     (Updatable) Type of WebAppFirewallPolicyRule.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An expression that determines whether or not the rule action should be executed.
     """
-    condition_language: NotRequired[pulumi.Input[_builtins.str]]
+    condition_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The language used to parse condition from field `condition`. Available languages:
     * **JMESPATH** an extended JMESPath language syntax.
     """
-    is_body_inspection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_body_inspection_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
     """
-    protection_capability_settings: NotRequired[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict']]
+    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]]
     """
     (Updatable) Settings for protection capabilities
     """
@@ -678,10 +678,10 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
                  name: pulumi.Input[_builtins.str],
                  protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]],
                  type: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_body_inspection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_body_inspection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 protection_capability_settings: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param pulumi.Input[_builtins.str] name: (Updatable) Rule name. Must be unique within the module.
@@ -756,19 +756,19 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An expression that determines whether or not the rule action should be executed.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The language used to parse condition from field `condition`. Available languages:
         * **JMESPATH** an extended JMESPath language syntax.
@@ -776,31 +776,31 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
         return pulumi.get(self, "condition_language")
 
     @condition_language.setter
-    def condition_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language", value)
 
     @_builtins.property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_body_inspection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         """
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @is_body_inspection_enabled.setter
-    def is_body_inspection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_body_inspection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_body_inspection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]:
+    def protection_capability_settings(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]:
         """
         (Updatable) Settings for protection capabilities
         """
         return pulumi.get(self, "protection_capability_settings")
 
     @protection_capability_settings.setter
-    def protection_capability_settings(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]):
+    def protection_capability_settings(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]):
         pulumi.set(self, "protection_capability_settings", value)
 
 
@@ -813,19 +813,19 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict(TypedDi
     """
     (Updatable) Version of referenced protection capability.
     """
-    action_name: NotRequired[pulumi.Input[_builtins.str]]
+    action_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
     """
-    collaborative_action_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    collaborative_action_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
     """
-    collaborative_weights: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]
+    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]]
     """
     (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
     """
-    exclusions: NotRequired[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict']]
+    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]]
     """
     (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
     """
@@ -835,10 +835,10 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 collaborative_action_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 collaborative_weights: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
-                 exclusions: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']] = None):
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 collaborative_action_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 collaborative_weights: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
+                 exclusions: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) Unique key of referenced protection capability.
         :param pulumi.Input[_builtins.int] version: (Updatable) Version of referenced protection capability.
@@ -884,50 +884,50 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         """
         return pulumi.get(self, "action_name")
 
     @action_name.setter
-    def action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def collaborative_action_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
     @collaborative_action_threshold.setter
-    def collaborative_action_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def collaborative_action_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "collaborative_action_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]:
+    def collaborative_weights(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]:
         """
         (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         """
         return pulumi.get(self, "collaborative_weights")
 
     @collaborative_weights.setter
-    def collaborative_weights(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]):
+    def collaborative_weights(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]):
         pulumi.set(self, "collaborative_weights", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]:
+    def exclusions(self) -> pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]:
         """
         (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]):
+    def exclusions(self, value: pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]):
         pulumi.set(self, "exclusions", value)
 
 
@@ -979,11 +979,11 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
 
 
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict(TypedDict):
-    args: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    args: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
     """
-    request_cookies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    request_cookies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
     """
@@ -991,8 +991,8 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDi
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs:
     def __init__(__self__, *,
-                 args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_cookies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_cookies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
@@ -1004,51 +1004,51 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def args(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         """
         return pulumi.get(self, "args")
 
     @args.setter
-    def args(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def args(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "args", value)
 
     @_builtins.property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def request_cookies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
         return pulumi.get(self, "request_cookies")
 
     @request_cookies.setter
-    def request_cookies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def request_cookies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "request_cookies", value)
 
 
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict(TypedDict):
-    allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allowed_http_methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
     """
-    max_http_request_header_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_http_request_header_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
     """
-    max_http_request_headers: NotRequired[pulumi.Input[_builtins.int]]
+    max_http_request_headers: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
     """
-    max_number_of_arguments: NotRequired[pulumi.Input[_builtins.int]]
+    max_number_of_arguments: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
     """
-    max_single_argument_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_single_argument_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
     """
-    max_total_argument_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_total_argument_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
     """
@@ -1056,12 +1056,12 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
     def __init__(__self__, *,
-                 allowed_http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 max_http_request_header_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_http_request_headers: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_number_of_arguments: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_single_argument_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_argument_length: Optional[pulumi.Input[_builtins.int]] = None):
+                 allowed_http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 max_http_request_header_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_http_request_headers: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_number_of_arguments: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_single_argument_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_argument_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_http_methods: (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
         :param pulumi.Input[_builtins.int] max_http_request_header_length: (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
@@ -1085,79 +1085,79 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
         """
         return pulumi.get(self, "allowed_http_methods")
 
     @allowed_http_methods.setter
-    def allowed_http_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_http_methods", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_http_request_header_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
         """
         return pulumi.get(self, "max_http_request_header_length")
 
     @max_http_request_header_length.setter
-    def max_http_request_header_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_http_request_header_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_http_request_header_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_http_request_headers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
         """
         return pulumi.get(self, "max_http_request_headers")
 
     @max_http_request_headers.setter
-    def max_http_request_headers(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_http_request_headers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_http_request_headers", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_number_of_arguments(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
         """
         return pulumi.get(self, "max_number_of_arguments")
 
     @max_number_of_arguments.setter
-    def max_number_of_arguments(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_number_of_arguments(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_number_of_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_single_argument_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         """
         return pulumi.get(self, "max_single_argument_length")
 
     @max_single_argument_length.setter
-    def max_single_argument_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_single_argument_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_single_argument_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_total_argument_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
         return pulumi.get(self, "max_total_argument_length")
 
     @max_total_argument_length.setter
-    def max_total_argument_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_total_argument_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_total_argument_length", value)
 
 
 class AppFirewallPolicyRequestRateLimitingArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgsDict']]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]]
     """
     (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
     """
@@ -1165,7 +1165,7 @@ class AppFirewallPolicyRequestRateLimitingArgsDict(TypedDict):
 @pulumi.input_type
 class AppFirewallPolicyRequestRateLimitingArgs:
     def __init__(__self__, *,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]] = None):
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]] rules: (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
         """
@@ -1174,14 +1174,14 @@ class AppFirewallPolicyRequestRateLimitingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]:
         """
         (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -1202,11 +1202,11 @@ class AppFirewallPolicyRequestRateLimitingRuleArgsDict(TypedDict):
     """
     (Updatable) Type of WebAppFirewallPolicyRule.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An expression that determines whether or not the rule action should be executed.
     """
-    condition_language: NotRequired[pulumi.Input[_builtins.str]]
+    condition_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The language used to parse condition from field `condition`. Available languages:
     * **JMESPATH** an extended JMESPath language syntax.
@@ -1219,8 +1219,8 @@ class AppFirewallPolicyRequestRateLimitingRuleArgs:
                  configurations: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs']]],
                  name: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_language: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_language: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs']]] configurations: (Updatable) Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
@@ -1289,19 +1289,19 @@ class AppFirewallPolicyRequestRateLimitingRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An expression that determines whether or not the rule action should be executed.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The language used to parse condition from field `condition`. Available languages:
         * **JMESPATH** an extended JMESPath language syntax.
@@ -1309,7 +1309,7 @@ class AppFirewallPolicyRequestRateLimitingRuleArgs:
         return pulumi.get(self, "condition_language")
 
     @condition_language.setter
-    def condition_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language", value)
 
 
@@ -1322,7 +1322,7 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgsDict(TypedDict):
     """
     (Updatable) Requests allowed per evaluation period.
     """
-    action_duration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    action_duration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
     """
@@ -1332,7 +1332,7 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
     def __init__(__self__, *,
                  period_in_seconds: pulumi.Input[_builtins.int],
                  requests_limit: pulumi.Input[_builtins.int],
-                 action_duration_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 action_duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] period_in_seconds: (Updatable) Evaluation period in seconds.
         :param pulumi.Input[_builtins.int] requests_limit: (Updatable) Requests allowed per evaluation period.
@@ -1369,19 +1369,19 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionDurationInSeconds")
-    def action_duration_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_duration_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
         """
         return pulumi.get(self, "action_duration_in_seconds")
 
     @action_duration_in_seconds.setter
-    def action_duration_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_duration_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_duration_in_seconds", value)
 
 
 class AppFirewallPolicyResponseAccessControlArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgsDict']]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]]
     """
     (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
     """
@@ -1389,7 +1389,7 @@ class AppFirewallPolicyResponseAccessControlArgsDict(TypedDict):
 @pulumi.input_type
 class AppFirewallPolicyResponseAccessControlArgs:
     def __init__(__self__, *,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]] = None):
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]] rules: (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
@@ -1398,14 +1398,14 @@ class AppFirewallPolicyResponseAccessControlArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]:
         """
         (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -1422,11 +1422,11 @@ class AppFirewallPolicyResponseAccessControlRuleArgsDict(TypedDict):
     """
     (Updatable) Type of WebAppFirewallPolicyRule.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An expression that determines whether or not the rule action should be executed.
     """
-    condition_language: NotRequired[pulumi.Input[_builtins.str]]
+    condition_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The language used to parse condition from field `condition`. Available languages:
     * **JMESPATH** an extended JMESPath language syntax.
@@ -1438,8 +1438,8 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
                  action_name: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_language: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_language: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param pulumi.Input[_builtins.str] name: (Updatable) Rule name. Must be unique within the module.
@@ -1494,19 +1494,19 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An expression that determines whether or not the rule action should be executed.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The language used to parse condition from field `condition`. Available languages:
         * **JMESPATH** an extended JMESPath language syntax.
@@ -1514,12 +1514,12 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
         return pulumi.get(self, "condition_language")
 
     @condition_language.setter
-    def condition_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language", value)
 
 
 class AppFirewallPolicyResponseProtectionArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgsDict']]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]]
     """
     (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
     """
@@ -1527,7 +1527,7 @@ class AppFirewallPolicyResponseProtectionArgsDict(TypedDict):
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionArgs:
     def __init__(__self__, *,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]] = None):
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
@@ -1536,14 +1536,14 @@ class AppFirewallPolicyResponseProtectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]:
         """
         (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -1564,20 +1564,20 @@ class AppFirewallPolicyResponseProtectionRuleArgsDict(TypedDict):
     """
     (Updatable) Type of WebAppFirewallPolicyRule.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An expression that determines whether or not the rule action should be executed.
     """
-    condition_language: NotRequired[pulumi.Input[_builtins.str]]
+    condition_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The language used to parse condition from field `condition`. Available languages:
     * **JMESPATH** an extended JMESPath language syntax.
     """
-    is_body_inspection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_body_inspection_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
     """
-    protection_capability_settings: NotRequired[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict']]
+    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]]
     """
     (Updatable) Settings for protection capabilities
     """
@@ -1589,10 +1589,10 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
                  name: pulumi.Input[_builtins.str],
                  protection_capabilities: pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]],
                  type: pulumi.Input[_builtins.str],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_body_inspection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_body_inspection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 protection_capability_settings: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param pulumi.Input[_builtins.str] name: (Updatable) Rule name. Must be unique within the module.
@@ -1667,19 +1667,19 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An expression that determines whether or not the rule action should be executed.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The language used to parse condition from field `condition`. Available languages:
         * **JMESPATH** an extended JMESPath language syntax.
@@ -1687,31 +1687,31 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
         return pulumi.get(self, "condition_language")
 
     @condition_language.setter
-    def condition_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language", value)
 
     @_builtins.property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_body_inspection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         """
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @is_body_inspection_enabled.setter
-    def is_body_inspection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_body_inspection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_body_inspection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]:
+    def protection_capability_settings(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]:
         """
         (Updatable) Settings for protection capabilities
         """
         return pulumi.get(self, "protection_capability_settings")
 
     @protection_capability_settings.setter
-    def protection_capability_settings(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]):
+    def protection_capability_settings(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]):
         pulumi.set(self, "protection_capability_settings", value)
 
 
@@ -1724,19 +1724,19 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict(TypedD
     """
     (Updatable) Version of referenced protection capability.
     """
-    action_name: NotRequired[pulumi.Input[_builtins.str]]
+    action_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
     """
-    collaborative_action_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    collaborative_action_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
     """
-    collaborative_weights: NotRequired[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]
+    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]]
     """
     (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
     """
-    exclusions: NotRequired[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict']]
+    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]]
     """
     (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
     """
@@ -1746,10 +1746,10 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.int],
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 collaborative_action_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 collaborative_weights: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
-                 exclusions: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']] = None):
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 collaborative_action_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 collaborative_weights: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]] = None,
+                 exclusions: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) Unique key of referenced protection capability.
         :param pulumi.Input[_builtins.int] version: (Updatable) Version of referenced protection capability.
@@ -1795,50 +1795,50 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         """
         return pulumi.get(self, "action_name")
 
     @action_name.setter
-    def action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def collaborative_action_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
         """
         return pulumi.get(self, "collaborative_action_threshold")
 
     @collaborative_action_threshold.setter
-    def collaborative_action_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def collaborative_action_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "collaborative_action_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]:
+    def collaborative_weights(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]:
         """
         (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         """
         return pulumi.get(self, "collaborative_weights")
 
     @collaborative_weights.setter
-    def collaborative_weights(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]):
+    def collaborative_weights(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]):
         pulumi.set(self, "collaborative_weights", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]:
+    def exclusions(self) -> pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]:
         """
         (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]):
+    def exclusions(self, value: pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]):
         pulumi.set(self, "exclusions", value)
 
 
@@ -1890,11 +1890,11 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
 
 
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict(TypedDict):
-    args: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    args: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
     """
-    request_cookies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    request_cookies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
     """
@@ -1902,8 +1902,8 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsD
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs:
     def __init__(__self__, *,
-                 args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_cookies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_cookies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
@@ -1915,51 +1915,51 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def args(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         """
         return pulumi.get(self, "args")
 
     @args.setter
-    def args(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def args(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "args", value)
 
     @_builtins.property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def request_cookies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
         return pulumi.get(self, "request_cookies")
 
     @request_cookies.setter
-    def request_cookies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def request_cookies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "request_cookies", value)
 
 
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict(TypedDict):
-    allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allowed_http_methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
     """
-    max_http_request_header_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_http_request_header_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
     """
-    max_http_request_headers: NotRequired[pulumi.Input[_builtins.int]]
+    max_http_request_headers: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
     """
-    max_number_of_arguments: NotRequired[pulumi.Input[_builtins.int]]
+    max_number_of_arguments: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
     """
-    max_single_argument_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_single_argument_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
     """
-    max_total_argument_length: NotRequired[pulumi.Input[_builtins.int]]
+    max_total_argument_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
     """
@@ -1967,12 +1967,12 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDic
 @pulumi.input_type
 class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs:
     def __init__(__self__, *,
-                 allowed_http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 max_http_request_header_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_http_request_headers: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_number_of_arguments: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_single_argument_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_argument_length: Optional[pulumi.Input[_builtins.int]] = None):
+                 allowed_http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 max_http_request_header_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_http_request_headers: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_number_of_arguments: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_single_argument_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_argument_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_http_methods: (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
         :param pulumi.Input[_builtins.int] max_http_request_header_length: (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
@@ -1996,83 +1996,83 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
         """
         return pulumi.get(self, "allowed_http_methods")
 
     @allowed_http_methods.setter
-    def allowed_http_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_http_methods", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_http_request_header_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
         """
         return pulumi.get(self, "max_http_request_header_length")
 
     @max_http_request_header_length.setter
-    def max_http_request_header_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_http_request_header_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_http_request_header_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_http_request_headers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
         """
         return pulumi.get(self, "max_http_request_headers")
 
     @max_http_request_headers.setter
-    def max_http_request_headers(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_http_request_headers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_http_request_headers", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_number_of_arguments(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
         """
         return pulumi.get(self, "max_number_of_arguments")
 
     @max_number_of_arguments.setter
-    def max_number_of_arguments(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_number_of_arguments(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_number_of_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_single_argument_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         """
         return pulumi.get(self, "max_single_argument_length")
 
     @max_single_argument_length.setter
-    def max_single_argument_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_single_argument_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_single_argument_length", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_total_argument_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
         return pulumi.get(self, "max_total_argument_length")
 
     @max_total_argument_length.setter
-    def max_total_argument_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_total_argument_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_total_argument_length", value)
 
 
 class NetworkAddressListVcnAddressArgsDict(TypedDict):
-    addresses: NotRequired[pulumi.Input[_builtins.str]]
+    addresses: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A private IP address or CIDR IP address range.
     """
-    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    vcn_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 
@@ -2084,8 +2084,8 @@ class NetworkAddressListVcnAddressArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkAddressListVcnAddressArgs:
     def __init__(__self__, *,
-                 addresses: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 addresses: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] addresses: (Updatable) A private IP address or CIDR IP address range.
         :param pulumi.Input[_builtins.str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -2101,19 +2101,19 @@ class NetworkAddressListVcnAddressArgs:
 
     @_builtins.property
     @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def addresses(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A private IP address or CIDR IP address range.
         """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def addresses(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 
@@ -2124,7 +2124,7 @@ class NetworkAddressListVcnAddressArgs:
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 

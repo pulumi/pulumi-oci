@@ -105,8 +105,8 @@ def get_plugin_error_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_error_analytics = oci.Jms.get_plugin_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree)
+    test_plugin_error_analytics = oci.jms.get_plugin_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 
@@ -126,9 +126,9 @@ def get_plugin_error_analytics(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         plugin_error_aggregation_collections=pulumi.get(__ret__, 'plugin_error_aggregation_collections'))
-def get_plugin_error_analytics_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict']]]]] = None,
+def get_plugin_error_analytics_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluginErrorAnalyticsResult]:
     """
     This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
@@ -141,8 +141,8 @@ def get_plugin_error_analytics_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_error_analytics = oci.Jms.get_plugin_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree)
+    test_plugin_error_analytics = oci.jms.get_plugin_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 

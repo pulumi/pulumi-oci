@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoverySchedules = oci.CloudBridge.getDiscoverySchedules({
+ * const testDiscoverySchedules = oci.cloudbridge.getDiscoverySchedules({
  *     compartmentId: compartmentId,
  *     discoveryScheduleId: testDiscoverySchedule.id,
  *     displayName: discoveryScheduleDisplayName,
@@ -97,7 +97,7 @@ export interface GetDiscoverySchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoverySchedules = oci.CloudBridge.getDiscoverySchedules({
+ * const testDiscoverySchedules = oci.cloudbridge.getDiscoverySchedules({
  *     compartmentId: compartmentId,
  *     discoveryScheduleId: testDiscoverySchedule.id,
  *     displayName: discoveryScheduleDisplayName,
@@ -127,14 +127,14 @@ export interface GetDiscoverySchedulesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
      */
-    discoveryScheduleId?: pulumi.Input<string>;
+    discoveryScheduleId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetDiscoverySchedulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetDiscoverySchedulesFilterArgs>[] | undefined>;
     /**
      * The current state of the discovery schedule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

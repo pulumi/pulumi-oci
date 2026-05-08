@@ -128,7 +128,7 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_attachments = oci.Oda.get_oda_private_endpoint_attachments(compartment_id=compartment_id,
+    test_oda_private_endpoint_attachments = oci.oda.get_oda_private_endpoint_attachments(compartment_id=compartment_id,
         oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_attachment_state)
     ```
@@ -153,10 +153,10 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[_builtins.str]
         oda_private_endpoint_attachment_collections=pulumi.get(__ret__, 'oda_private_endpoint_attachment_collections'),
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict']]]]] = None,
-                                                oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oda_private_endpoint_attachments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict']]]]] = None,
+                                                oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentsResult]:
     """
     This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
@@ -173,7 +173,7 @@ def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_attachments = oci.Oda.get_oda_private_endpoint_attachments(compartment_id=compartment_id,
+    test_oda_private_endpoint_attachments = oci.oda.get_oda_private_endpoint_attachments(compartment_id=compartment_id,
         oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_attachment_state)
     ```

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookExportStatuses = oci.FleetAppsManagement.getRunbookExportStatuses({
+ * const testRunbookExportStatuses = oci.fleetappsmanagement.getRunbookExportStatuses({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -68,7 +68,7 @@ export interface GetRunbookExportStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookExportStatuses = oci.FleetAppsManagement.getRunbookExportStatuses({
+ * const testRunbookExportStatuses = oci.fleetappsmanagement.getRunbookExportStatuses({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -90,6 +90,6 @@ export interface GetRunbookExportStatusesOutputArgs {
      * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbookExportStatusesFilterArgs>[]>;
-    id?: pulumi.Input<string>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbookExportStatusesFilterArgs>[] | undefined>;
+    id?: pulumi.Input<string | undefined>;
 }

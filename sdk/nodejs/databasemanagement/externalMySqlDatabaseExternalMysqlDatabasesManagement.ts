@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalMySqlDatabaseExternalMysqlDatabasesManagement = new oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management", {
  *     externalMySqlDatabaseId: testExternalMySqlDatabase.id,
- *     enableExternalMysqlDatabase: enableExternalMysqlDatabase,
+ *     enableExternalMysqlDatabase: enableExternalMysqlDatabase === "true",
  *     connectorId: testConnector.id,
  * });
  * ```
@@ -109,7 +109,7 @@ export interface ExternalMySqlDatabaseExternalMysqlDatabasesManagementState {
     /**
      * OCID of External MySQL Database connector.
      */
-    connectorId?: pulumi.Input<string>;
+    connectorId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -117,11 +117,11 @@ export interface ExternalMySqlDatabaseExternalMysqlDatabasesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableExternalMysqlDatabase?: pulumi.Input<boolean>;
+    enableExternalMysqlDatabase?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the External MySQL Database.
      */
-    externalMySqlDatabaseId?: pulumi.Input<string>;
+    externalMySqlDatabaseId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -131,7 +131,7 @@ export interface ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs {
     /**
      * OCID of External MySQL Database connector.
      */
-    connectorId?: pulumi.Input<string>;
+    connectorId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *

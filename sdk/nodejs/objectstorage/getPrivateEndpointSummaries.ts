@@ -51,6 +51,6 @@ export function getPrivateEndpointSummariesOutput(args: GetPrivateEndpointSummar
  */
 export interface GetPrivateEndpointSummariesOutputArgs {
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetPrivateEndpointSummariesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetPrivateEndpointSummariesFilterArgs>[] | undefined>;
     namespace: pulumi.Input<string>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectGroups = oci.Core.getCrossConnectGroups({
+ * const testCrossConnectGroups = oci.core.getCrossConnectGroups({
  *     compartmentId: compartmentId,
  *     displayName: crossConnectGroupDisplayName,
  *     state: crossConnectGroupState,
@@ -90,7 +90,7 @@ export interface GetCrossConnectGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectGroups = oci.Core.getCrossConnectGroups({
+ * const testCrossConnectGroups = oci.core.getCrossConnectGroups({
  *     compartmentId: compartmentId,
  *     displayName: crossConnectGroupDisplayName,
  *     state: crossConnectGroupState,
@@ -118,10 +118,10 @@ export interface GetCrossConnectGroupsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCrossConnectGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCrossConnectGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

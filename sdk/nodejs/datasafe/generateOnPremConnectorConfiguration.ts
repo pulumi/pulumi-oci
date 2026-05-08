@@ -110,7 +110,7 @@ export interface GenerateOnPremConnectorConfigurationState {
     /**
      * The OCID of the on-premises connector.
      */
-    onPremConnectorId?: pulumi.Input<string>;
+    onPremConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
      *
@@ -118,7 +118,7 @@ export interface GenerateOnPremConnectorConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
 }
 
 /**

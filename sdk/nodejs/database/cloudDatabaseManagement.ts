@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *         userName: databaseCloudDatabaseManagementDetailsUserName,
  *         passwordSecretId: databaseCloudDatabaseManagementDetailsPasswordSecretId,
  *     },
- *     enableManagement: databaseCloudDatabaseManagementDetailsEnableManagement,
- *     port: cloudDatabaseManagementPort,
+ *     enableManagement: databaseCloudDatabaseManagementDetailsEnableManagement === "true",
+ *     port: Number(cloudDatabaseManagementPort),
  *     protocol: cloudDatabaseManagementProtocol,
  *     role: cloudDatabaseManagementRole,
  *     sslSecretId: testSecret.id,
@@ -177,49 +177,49 @@ export class CloudDatabaseManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudDatabaseManagement resources.
  */
 export interface CloudDatabaseManagementState {
-    credentialdetails?: pulumi.Input<inputs.Database.CloudDatabaseManagementCredentialdetails>;
+    credentialdetails?: pulumi.Input<inputs.Database.CloudDatabaseManagementCredentialdetails | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Use this flag to enable/disable database management
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableManagement?: pulumi.Input<boolean>;
+    enableManagement?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Specifies database management type
      * enum:
      * - `BASIC`
      * - `ADVANCED`
      */
-    managementType?: pulumi.Input<string>;
+    managementType?: pulumi.Input<string | undefined>;
     /**
      * The port used to connect to the database.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    privateEndPointId?: pulumi.Input<string>;
+    privateEndPointId?: pulumi.Input<string | undefined>;
     /**
      * Protocol used by the database connection.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The role of the user that will be connecting to the database.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
-    serviceName?: pulumi.Input<string>;
+    serviceName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    sslSecretId?: pulumi.Input<string>;
+    sslSecretId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -248,7 +248,7 @@ export interface CloudDatabaseManagementArgs {
     /**
      * The port used to connect to the database.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
@@ -256,11 +256,11 @@ export interface CloudDatabaseManagementArgs {
     /**
      * Protocol used by the database connection.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The role of the user that will be connecting to the database.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
@@ -268,5 +268,5 @@ export interface CloudDatabaseManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    sslSecretId?: pulumi.Input<string>;
+    sslSecretId?: pulumi.Input<string | undefined>;
 }

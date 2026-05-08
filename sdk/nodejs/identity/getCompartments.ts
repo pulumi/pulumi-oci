@@ -34,10 +34,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartments = oci.Identity.getCompartments({
+ * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
  *     name: compartmentName,
  *     state: compartmentState,
  * });
@@ -140,10 +140,10 @@ export interface GetCompartmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartments = oci.Identity.getCompartments({
+ * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
  *     name: compartmentName,
  *     state: compartmentState,
  * });
@@ -170,7 +170,7 @@ export interface GetCompartmentsOutputArgs {
      *
      * When set to `ANY` permissions are not checked.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
@@ -178,14 +178,14 @@ export interface GetCompartmentsOutputArgs {
     /**
      * Default is false. Can only be set to true when performing ListCompartments on the tenancy (root compartment). When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetCompartmentsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetCompartmentsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

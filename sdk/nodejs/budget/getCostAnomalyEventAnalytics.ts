@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyEventAnalytics = oci.Budget.getCostAnomalyEventAnalytics({
+ * const testCostAnomalyEventAnalytics = oci.budget.getCostAnomalyEventAnalytics({
  *     compartmentId: compartmentId,
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
  *     costImpact: costAnomalyEventAnalyticCostImpact,
@@ -123,7 +123,7 @@ export interface GetCostAnomalyEventAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyEventAnalytics = oci.Budget.getCostAnomalyEventAnalytics({
+ * const testCostAnomalyEventAnalytics = oci.budget.getCostAnomalyEventAnalytics({
  *     compartmentId: compartmentId,
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
  *     costImpact: costAnomalyEventAnalyticCostImpact,
@@ -163,34 +163,34 @@ export interface GetCostAnomalyEventAnalyticsOutputArgs {
     /**
      * The cost monitor ocid.
      */
-    costAnomalyMonitorId?: pulumi.Input<string>;
+    costAnomalyMonitorId?: pulumi.Input<string | undefined>;
     /**
      * cost impact (absolute) of the anomaly event.
      */
-    costImpact?: pulumi.Input<number>;
+    costImpact?: pulumi.Input<number | undefined>;
     /**
      * cost impact (percentage) of the anomaly event.
      */
-    costImpactPercentage?: pulumi.Input<number>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetCostAnomalyEventAnalyticsFilterArgs>[]>;
+    costImpactPercentage?: pulumi.Input<number | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetCostAnomalyEventAnalyticsFilterArgs>[] | undefined>;
     /**
      * Unique, non-changeable resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * region of the anomaly event.
      */
-    regions?: pulumi.Input<pulumi.Input<string>[]>;
+    regions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target tenantId ocid filter param.
      */
-    targetTenantIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetTenantIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * endDate for anomaly event date.
      */
-    timeAnomalyEventEndDate?: pulumi.Input<string>;
+    timeAnomalyEventEndDate?: pulumi.Input<string | undefined>;
     /**
      * startDate for anomaly event date.
      */
-    timeAnomalyEventStartDate?: pulumi.Input<string>;
+    timeAnomalyEventStartDate?: pulumi.Input<string | undefined>;
 }

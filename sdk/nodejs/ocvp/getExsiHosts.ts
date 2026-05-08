@@ -25,13 +25,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ * const testEsxiHosts = oci.ocvp.getExsiHosts({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });
@@ -151,13 +151,13 @@ export interface GetExsiHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ * const testEsxiHosts = oci.ocvp.getExsiHosts({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });
@@ -186,34 +186,34 @@ export interface GetExsiHostsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      */
-    computeInstanceId?: pulumi.Input<string>;
+    computeInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetExsiHostsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetExsiHostsFilterArgs>[] | undefined>;
     /**
      * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
      */
-    isBillingDonorsOnly?: pulumi.Input<boolean>;
+    isBillingDonorsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * If this flag/param is set to True, we return only active hosts.
      */
-    isSwapBillingOnly?: pulumi.Input<boolean>;
+    isSwapBillingOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */
-    sddcId?: pulumi.Input<string>;
+    sddcId?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

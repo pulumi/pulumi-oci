@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListener = oci.DatabaseManagement.getExternalListener({
+ * const testExternalListener = oci.databasemanagement.getExternalListener({
  *     externalListenerId: testExternalListenerOciDatabaseManagementExternalListener.id,
  * });
  * ```
@@ -168,7 +168,7 @@ export interface GetExternalListenerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListener = oci.DatabaseManagement.getExternalListener({
+ * const testExternalListener = oci.databasemanagement.getExternalListener({
  *     externalListenerId: testExternalListenerOciDatabaseManagementExternalListener.id,
  * });
  * ```

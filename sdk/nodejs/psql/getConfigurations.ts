@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigurations = oci.Psql.getConfigurations({
+ * const testConfigurations = oci.psql.getConfigurations({
  *     compartmentId: compartmentId,
  *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -148,14 +148,14 @@ export interface GetConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigurations = oci.Psql.getConfigurations({
+ * const testConfigurations = oci.psql.getConfigurations({
  *     compartmentId: compartmentId,
  *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -185,38 +185,38 @@ export interface GetConfigurationsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources if their `configType` matches the given `configType`.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the configuration.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * Version of the PostgreSQL database, such as 14.9.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetConfigurationsFilterArgs>[] | undefined>;
     /**
      * The instance memory size in GBs for the configuration.
      */
-    instanceMemorySizeInGbs?: pulumi.Input<number>;
+    instanceMemorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The instance ocpu count for the configuration.
      */
-    instanceOcpuCount?: pulumi.Input<number>;
+    instanceOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * The compute name of the shape for the configuration.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

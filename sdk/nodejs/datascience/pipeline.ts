@@ -202,77 +202,77 @@ export interface PipelineState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration details of a pipeline.
      */
-    configurationDetails?: pulumi.Input<inputs.DataScience.PipelineConfigurationDetails>;
+    configurationDetails?: pulumi.Input<inputs.DataScience.PipelineConfigurationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    deleteRelatedPipelineRuns?: pulumi.Input<boolean>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    deleteRelatedPipelineRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A short description of the pipeline.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The infrastructure configuration details of a pipeline or a step.
      */
-    infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails>;
+    infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The pipeline log configuration details.
      */
-    logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails>;
+    logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails | undefined>;
     /**
      * (Updatable) Parameters used in the pipeline.
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pipeline.
      */
-    state?: pulumi.Input<string>;
-    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[]>;
+    state?: pulumi.Input<string | undefined>;
+    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[] | undefined>;
     /**
      * (Updatable) Array of step details for each step.
      */
-    stepDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepDetail>[]>;
+    stepDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepDetail>[] | undefined>;
     /**
      * (Updatable) The storage mount details to mount to the instance running the pipeline step.
      */
-    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[]>;
+    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -286,41 +286,41 @@ export interface PipelineArgs {
     /**
      * (Updatable) The configuration details of a pipeline.
      */
-    configurationDetails?: pulumi.Input<inputs.DataScience.PipelineConfigurationDetails>;
+    configurationDetails?: pulumi.Input<inputs.DataScience.PipelineConfigurationDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    deleteRelatedPipelineRuns?: pulumi.Input<boolean>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    deleteRelatedPipelineRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A short description of the pipeline.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The infrastructure configuration details of a pipeline or a step.
      */
-    infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails>;
+    infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails | undefined>;
     /**
      * (Updatable) The pipeline log configuration details.
      */
-    logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails>;
+    logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails | undefined>;
     /**
      * (Updatable) Parameters used in the pipeline.
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
     projectId: pulumi.Input<string>;
-    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[]>;
+    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[] | undefined>;
     /**
      * (Updatable) Array of step details for each step.
      */
@@ -328,5 +328,5 @@ export interface PipelineArgs {
     /**
      * (Updatable) The storage mount details to mount to the instance running the pipeline step.
      */
-    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[]>;
+    storageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStorageMountConfigurationDetailsList>[] | undefined>;
 }

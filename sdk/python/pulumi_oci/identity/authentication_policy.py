@@ -22,8 +22,8 @@ __all__ = ['AuthenticationPolicyArgs', 'AuthenticationPolicy']
 class AuthenticationPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
-                 password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
+                 network_policy: pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']] = None,
+                 password_policy: pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         The set of arguments for constructing a AuthenticationPolicy resource.
 
@@ -51,35 +51,35 @@ class AuthenticationPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkPolicy")
-    def network_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]:
+    def network_policy(self) -> pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']]:
         """
         (Updatable) Network policy, Consists of a list of Network Source ids.
         """
         return pulumi.get(self, "network_policy")
 
     @network_policy.setter
-    def network_policy(self, value: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]):
+    def network_policy(self, value: pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']]):
         pulumi.set(self, "network_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordPolicy")
-    def password_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]:
+    def password_policy(self) -> pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']]:
         """
         (Updatable) Password policy, currently set for the given compartment.
         """
         return pulumi.get(self, "password_policy")
 
     @password_policy.setter
-    def password_policy(self, value: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]):
+    def password_policy(self, value: pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']]):
         pulumi.set(self, "password_policy", value)
 
 
 @pulumi.input_type
 class _AuthenticationPolicyState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
-                 password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_policy: pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']] = None,
+                 password_policy: pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         Input properties used for looking up and filtering AuthenticationPolicy resources.
 
@@ -96,38 +96,38 @@ class _AuthenticationPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkPolicy")
-    def network_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]:
+    def network_policy(self) -> pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']]:
         """
         (Updatable) Network policy, Consists of a list of Network Source ids.
         """
         return pulumi.get(self, "network_policy")
 
     @network_policy.setter
-    def network_policy(self, value: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]):
+    def network_policy(self, value: pulumi.Input[Optional['AuthenticationPolicyNetworkPolicyArgs']]):
         pulumi.set(self, "network_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordPolicy")
-    def password_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]:
+    def password_policy(self) -> pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']]:
         """
         (Updatable) Password policy, currently set for the given compartment.
         """
         return pulumi.get(self, "password_policy")
 
     @password_policy.setter
-    def password_policy(self, value: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]):
+    def password_policy(self, value: pulumi.Input[Optional['AuthenticationPolicyPasswordPolicyArgs']]):
         pulumi.set(self, "password_policy", value)
 
 
@@ -137,9 +137,9 @@ class AuthenticationPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
-                 password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_policy: pulumi.Input[Optional[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+                 password_policy: pulumi.Input[Optional[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -161,12 +161,12 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 "network_source_ids": authentication_policy_network_policy_network_source_ids,
             },
             password_policy={
-                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
-                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
-                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
-                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
-                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
-                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required == "true",
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required == "true",
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required == "true",
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required == "true",
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed == "true",
+                "minimum_password_length": int(authentication_policy_password_policy_minimum_password_length),
             })
         ```
 
@@ -211,12 +211,12 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 "network_source_ids": authentication_policy_network_policy_network_source_ids,
             },
             password_policy={
-                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
-                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
-                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
-                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
-                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
-                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required == "true",
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required == "true",
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required == "true",
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required == "true",
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed == "true",
+                "minimum_password_length": int(authentication_policy_password_policy_minimum_password_length),
             })
         ```
 
@@ -244,9 +244,9 @@ class AuthenticationPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
-                 password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_policy: pulumi.Input[Optional[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+                 password_policy: pulumi.Input[Optional[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -271,9 +271,9 @@ class AuthenticationPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
-            password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None) -> 'AuthenticationPolicy':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_policy: pulumi.Input[Optional[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+            password_policy: pulumi.Input[Optional[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None) -> 'AuthenticationPolicy':
         """
         Get an existing AuthenticationPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

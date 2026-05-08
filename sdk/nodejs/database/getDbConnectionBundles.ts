@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundles = oci.Database.getDbConnectionBundles({
+ * const testDbConnectionBundles = oci.database.getDbConnectionBundles({
  *     compartmentId: compartmentId,
  *     associatedResourceId: testResource.id,
  *     dbConnectionBundleType: dbConnectionBundleDbConnectionBundleType,
@@ -107,7 +107,7 @@ export interface GetDbConnectionBundlesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundles = oci.Database.getDbConnectionBundles({
+ * const testDbConnectionBundles = oci.database.getDbConnectionBundles({
  *     compartmentId: compartmentId,
  *     associatedResourceId: testResource.id,
  *     dbConnectionBundleType: dbConnectionBundleDbConnectionBundleType,
@@ -135,7 +135,7 @@ export interface GetDbConnectionBundlesOutputArgs {
     /**
      * The OCID of the VM cluster associated with the connection bundle. If the parameter is set to null, all bundles are returned.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -143,14 +143,14 @@ export interface GetDbConnectionBundlesOutputArgs {
     /**
      * A filter that returns only resources that match the specified database connection bundle type.
      */
-    dbConnectionBundleType?: pulumi.Input<string>;
+    dbConnectionBundleType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbConnectionBundlesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbConnectionBundlesFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

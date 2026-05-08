@@ -94,7 +94,7 @@ def get_repository_author(ref_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=test_repository["id"],
+    test_repository_author = oci.devops.get_repository_author(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 
@@ -113,8 +113,8 @@ def get_repository_author(ref_name: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_author_output(ref_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_author_output(ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryAuthorResult]:
     """
     This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
@@ -127,7 +127,7 @@ def get_repository_author_output(ref_name: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=test_repository["id"],
+    test_repository_author = oci.devops.get_repository_author(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 

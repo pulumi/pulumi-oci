@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         edgePathPrefix: streamCdnConfigConfigEdgePathPrefix,
  *         edgeTokenKey: streamCdnConfigConfigEdgeTokenKey,
  *         edgeTokenSalt: streamCdnConfigConfigEdgeTokenSalt,
- *         isEdgeTokenAuth: streamCdnConfigConfigIsEdgeTokenAuth,
+ *         isEdgeTokenAuth: streamCdnConfigConfigIsEdgeTokenAuth === "true",
  *         originAuthSecretKeyA: streamCdnConfigConfigOriginAuthSecretKeyA,
  *         originAuthSecretKeyB: streamCdnConfigConfigOriginAuthSecretKeyB,
  *         originAuthSecretKeyNonceA: streamCdnConfigConfigOriginAuthSecretKeyNonceA,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: streamCdnConfigIsEnabled,
+ *     isEnabled: streamCdnConfigIsEnabled === "true",
  *     locks: [{
  *         compartmentId: compartmentId,
  *         type: streamCdnConfigLocksType,
@@ -209,56 +209,56 @@ export interface StreamCdnConfigState {
     /**
      * The compartment ID of the lock.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base fields of the StreamCdnConfig configuration object.
      */
-    config?: pulumi.Input<inputs.MediaServices.StreamCdnConfigConfig>;
+    config?: pulumi.Input<inputs.MediaServices.StreamCdnConfigConfig | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Distribution Channel Identifier.
      */
-    distributionChannelId?: pulumi.Input<string>;
+    distributionChannelId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[] | undefined>;
     /**
      * The current state of the CDN Configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the CDN Config was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the CDN Config was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -272,7 +272,7 @@ export interface StreamCdnConfigArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
@@ -284,14 +284,14 @@ export interface StreamCdnConfigArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[] | undefined>;
 }

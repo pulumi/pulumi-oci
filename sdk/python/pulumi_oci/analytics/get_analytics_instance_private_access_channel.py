@@ -187,7 +187,7 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
+    test_analytics_instance_private_access_channel = oci.analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
         private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
 
@@ -214,8 +214,8 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
         private_source_scan_hosts=pulumi.get(__ret__, 'private_source_scan_hosts'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_analytics_instance_private_access_channel_output(analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         private_access_channel_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_analytics_instance_private_access_channel_output(analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         private_access_channel_key: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstancePrivateAccessChannelResult]:
     """
     This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
@@ -228,7 +228,7 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
+    test_analytics_instance_private_access_channel = oci.analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
         private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
 

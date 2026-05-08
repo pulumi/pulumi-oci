@@ -121,7 +121,7 @@ def get_preauthrequests(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_requests = oci.objectstorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```
@@ -146,10 +146,10 @@ def get_preauthrequests(bucket: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         object_name_prefix=pulumi.get(__ret__, 'object_name_prefix'),
         preauthenticated_requests=pulumi.get(__ret__, 'preauthenticated_requests'))
-def get_preauthrequests_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]]]] = None,
-                               namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                               object_name_prefix: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_preauthrequests_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]]]] = None,
+                               namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                               object_name_prefix: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPreauthrequestsResult]:
     """
     This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
@@ -162,7 +162,7 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_requests = oci.objectstorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```

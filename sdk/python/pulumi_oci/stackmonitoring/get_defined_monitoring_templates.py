@@ -118,7 +118,7 @@ def get_defined_monitoring_templates(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_defined_monitoring_templates = oci.StackMonitoring.get_defined_monitoring_templates(compartment_id=compartment_id,
+    test_defined_monitoring_templates = oci.stackmonitoring.get_defined_monitoring_templates(compartment_id=compartment_id,
         display_name=defined_monitoring_template_display_name,
         resource_types=defined_monitoring_template_resource_types)
     ```
@@ -143,10 +143,10 @@ def get_defined_monitoring_templates(compartment_id: Optional[_builtins.str] = N
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         resource_types=pulumi.get(__ret__, 'resource_types'))
-def get_defined_monitoring_templates_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict']]]]] = None,
-                                            resource_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_defined_monitoring_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict']]]]] = None,
+                                            resource_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefinedMonitoringTemplatesResult]:
     """
     This data source provides the list of Defined Monitoring Templates in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -159,7 +159,7 @@ def get_defined_monitoring_templates_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_defined_monitoring_templates = oci.StackMonitoring.get_defined_monitoring_templates(compartment_id=compartment_id,
+    test_defined_monitoring_templates = oci.stackmonitoring.get_defined_monitoring_templates(compartment_id=compartment_id,
         display_name=defined_monitoring_template_display_name,
         resource_types=defined_monitoring_template_resource_types)
     ```

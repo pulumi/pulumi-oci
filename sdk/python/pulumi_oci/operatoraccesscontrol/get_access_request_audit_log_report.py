@@ -129,8 +129,8 @@ def get_access_request_audit_log_report(access_request_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request_audit_log_report = oci.OperatorAccessControl.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
-        enable_process_tree=access_request_audit_log_report_enable_process_tree)
+    test_access_request_audit_log_report = oci.operatoraccesscontrol.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
+        enable_process_tree=int(access_request_audit_log_report_enable_process_tree))
     ```
 
 
@@ -151,8 +151,8 @@ def get_access_request_audit_log_report(access_request_id: Optional[_builtins.st
         process_tree=pulumi.get(__ret__, 'process_tree'),
         report=pulumi.get(__ret__, 'report'),
         time_of_report_generation=pulumi.get(__ret__, 'time_of_report_generation'))
-def get_access_request_audit_log_report_output(access_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               enable_process_tree: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_access_request_audit_log_report_output(access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               enable_process_tree: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestAuditLogReportResult]:
     """
     This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -165,8 +165,8 @@ def get_access_request_audit_log_report_output(access_request_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request_audit_log_report = oci.OperatorAccessControl.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
-        enable_process_tree=access_request_audit_log_report_enable_process_tree)
+    test_access_request_audit_log_report = oci.operatoraccesscontrol.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
+        enable_process_tree=int(access_request_audit_log_report_enable_process_tree))
     ```
 
 

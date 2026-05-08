@@ -118,7 +118,7 @@ def get_external_exadata_storage_servers(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
+    test_external_exadata_storage_servers = oci.databasemanagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         display_name=external_exadata_storage_server_display_name)
     ```
@@ -143,10 +143,10 @@ def get_external_exadata_storage_servers(compartment_id: Optional[_builtins.str]
         external_exadata_storage_server_collections=pulumi.get(__ret__, 'external_exadata_storage_server_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_exadata_storage_servers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                external_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalExadataStorageServersFilterArgs', 'GetExternalExadataStorageServersFilterArgsDict']]]]] = None,
+def get_external_exadata_storage_servers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalExadataStorageServersFilterArgs', 'GetExternalExadataStorageServersFilterArgsDict']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServersResult]:
     """
     This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
@@ -159,7 +159,7 @@ def get_external_exadata_storage_servers_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
+    test_external_exadata_storage_servers = oci.databasemanagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         display_name=external_exadata_storage_server_display_name)
     ```

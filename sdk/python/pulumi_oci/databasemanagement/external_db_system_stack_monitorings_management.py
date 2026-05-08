@@ -21,8 +21,8 @@ class ExternalDbSystemStackMonitoringsManagementArgs:
     def __init__(__self__, *,
                  enable_stack_monitoring: pulumi.Input[_builtins.bool],
                  external_db_system_id: pulumi.Input[_builtins.str],
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemStackMonitoringsManagement resource.
 
@@ -72,36 +72,36 @@ class ExternalDbSystemStackMonitoringsManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The status of the associated service.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
 @pulumi.input_type
 class _ExternalDbSystemStackMonitoringsManagementState:
     def __init__(__self__, *,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemStackMonitoringsManagement resources.
 
@@ -125,7 +125,7 @@ class _ExternalDbSystemStackMonitoringsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableStackMonitoring")
-    def enable_stack_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_stack_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -136,43 +136,43 @@ class _ExternalDbSystemStackMonitoringsManagementState:
         return pulumi.get(self, "enable_stack_monitoring")
 
     @enable_stack_monitoring.setter
-    def enable_stack_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_stack_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_stack_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
-    def external_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The status of the associated service.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
@@ -182,10 +182,10 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External Db System Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -203,8 +203,8 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         test_external_db_system_stack_monitorings_management = oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_stack_monitoring=enable_stack_monitoring,
-            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            enable_stack_monitoring=enable_stack_monitoring == "true",
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled == "true",
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
 
@@ -242,8 +242,8 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         test_external_db_system_stack_monitorings_management = oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_stack_monitoring=enable_stack_monitoring,
-            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            enable_stack_monitoring=enable_stack_monitoring == "true",
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled == "true",
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
 
@@ -263,10 +263,10 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -294,10 +294,10 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_stack_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalDbSystemStackMonitoringsManagement':
+            enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalDbSystemStackMonitoringsManagement':
         """
         Get an existing ExternalDbSystemStackMonitoringsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

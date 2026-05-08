@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplates = oci.StackMonitoring.getMonitoringTemplates({
+ * const testMonitoringTemplates = oci.stackmonitoring.getMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: monitoringTemplateDisplayName,
  *     metricNames: testMetric.name,
@@ -129,7 +129,7 @@ export interface GetMonitoringTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplates = oci.StackMonitoring.getMonitoringTemplates({
+ * const testMonitoringTemplates = oci.stackmonitoring.getMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: monitoringTemplateDisplayName,
  *     metricNames: testMetric.name,
@@ -164,34 +164,34 @@ export interface GetMonitoringTemplatesOutputArgs {
     /**
      * The ID of the compartment in which data is listed.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return monitoring template based on name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoringTemplatesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoringTemplatesFilterArgs>[] | undefined>;
     /**
      * metricName filter.
      */
-    metricNames?: pulumi.Input<pulumi.Input<string>[]>;
+    metricNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return monitoring template based on input monitoringTemplateId
      */
-    monitoringTemplateId?: pulumi.Input<string>;
+    monitoringTemplateId?: pulumi.Input<string | undefined>;
     /**
      * namespace filter.
      */
-    namespaces?: pulumi.Input<pulumi.Input<string>[]>;
+    namespaces?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Multiple resource types filter.
      */
-    resourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return monitoring template based on Lifecycle State
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return monitoring template based on input status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

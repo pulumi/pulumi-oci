@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
+ * const testSecurityRecipes = oci.cloudguard.getSecurityRecipes({
  *     compartmentId: compartmentId,
  *     displayName: securityRecipeDisplayName,
  *     id: securityRecipeId,
@@ -98,7 +98,7 @@ export interface GetSecurityRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
+ * const testSecurityRecipes = oci.cloudguard.getSecurityRecipes({
  *     compartmentId: compartmentId,
  *     displayName: securityRecipeDisplayName,
  *     id: securityRecipeId,
@@ -128,14 +128,14 @@ export interface GetSecurityRecipesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSecurityRecipesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSecurityRecipesFilterArgs>[] | undefined>;
     /**
      * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

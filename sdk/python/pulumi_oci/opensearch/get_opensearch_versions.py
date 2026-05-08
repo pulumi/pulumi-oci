@@ -104,7 +104,7 @@ def get_opensearch_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=compartment_id)
+    test_opensearch_versions = oci.opensearch.get_opensearch_versions(compartment_id=compartment_id)
     ```
 
 
@@ -121,8 +121,8 @@ def get_opensearch_versions(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         opensearch_versions_collections=pulumi.get(__ret__, 'opensearch_versions_collections'))
-def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict']]]]] = None,
+def get_opensearch_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchVersionsResult]:
     """
     This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
@@ -144,7 +144,7 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_versions = oci.Opensearch.get_opensearch_versions(compartment_id=compartment_id)
+    test_opensearch_versions = oci.opensearch.get_opensearch_versions(compartment_id=compartment_id)
     ```
 
 

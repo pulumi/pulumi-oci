@@ -23,12 +23,12 @@ class LicenseRecordArgs:
                  is_perpetual: pulumi.Input[_builtins.bool],
                  is_unlimited: pulumi.Input[_builtins.bool],
                  product_license_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_end_date: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_end_date: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LicenseRecord resource.
 
@@ -114,67 +114,67 @@ class LicenseRecordArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseCount")
-    def license_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def license_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of license units added by a user in a license record. Default 1
         """
         return pulumi.get(self, "license_count")
 
     @license_count.setter
-    def license_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def license_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "license_count", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record product ID.
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter(name="supportEndDate")
-    def support_end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def support_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
 
@@ -185,30 +185,30 @@ class LicenseRecordArgs:
         return pulumi.get(self, "support_end_date")
 
     @support_end_date.setter
-    def support_end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def support_end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "support_end_date", value)
 
 
 @pulumi.input_type
 class _LicenseRecordState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_perpetual: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_license: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_perpetual: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_license: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LicenseRecord resources.
 
@@ -271,163 +271,163 @@ class _LicenseRecordState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) License record name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isPerpetual")
-    def is_perpetual(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_perpetual(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the license record term is perpertual.
         """
         return pulumi.get(self, "is_perpetual")
 
     @is_perpetual.setter
-    def is_perpetual(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_perpetual(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_perpetual", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unlimited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the license count is unlimited.
         """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
-    def is_unlimited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unlimited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unlimited", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseCount")
-    def license_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def license_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of license units added by a user in a license record. Default 1
         """
         return pulumi.get(self, "license_count")
 
     @license_count.setter
-    def license_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def license_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "license_count", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product license unit.
         """
         return pulumi.get(self, "license_unit")
 
     @license_unit.setter
-    def license_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record product ID.
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter(name="productLicense")
-    def product_license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product license name with which the license record is associated.
         """
         return pulumi.get(self, "product_license")
 
     @product_license.setter
-    def product_license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_license", value)
 
     @_builtins.property
     @pulumi.getter(name="productLicenseId")
-    def product_license_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_license_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique product license identifier.
         """
         return pulumi.get(self, "product_license_id")
 
     @product_license_id.setter
-    def product_license_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_license_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_license_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current license record state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportEndDate")
-    def support_end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def support_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
 
@@ -438,43 +438,43 @@ class _LicenseRecordState:
         return pulumi.get(self, "support_end_date")
 
     @support_end_date.setter
-    def support_end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def support_end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "support_end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -484,16 +484,16 @@ class LicenseRecord(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_perpetual: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_perpetual: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_end_date: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -511,8 +511,8 @@ class LicenseRecord(pulumi.CustomResource):
 
         test_license_record = oci.licensemanager.LicenseRecord("test_license_record",
             display_name=license_record_display_name,
-            is_perpetual=license_record_is_perpetual,
-            is_unlimited=license_record_is_unlimited,
+            is_perpetual=license_record_is_perpetual == "true",
+            is_unlimited=license_record_is_unlimited == "true",
             product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -521,7 +521,7 @@ class LicenseRecord(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=license_record_license_count,
+            license_count=int(license_record_license_count),
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```
@@ -574,8 +574,8 @@ class LicenseRecord(pulumi.CustomResource):
 
         test_license_record = oci.licensemanager.LicenseRecord("test_license_record",
             display_name=license_record_display_name,
-            is_perpetual=license_record_is_perpetual,
-            is_unlimited=license_record_is_unlimited,
+            is_perpetual=license_record_is_perpetual == "true",
+            is_unlimited=license_record_is_unlimited == "true",
             product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -584,7 +584,7 @@ class LicenseRecord(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=license_record_license_count,
+            license_count=int(license_record_license_count),
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```
@@ -613,16 +613,16 @@ class LicenseRecord(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_perpetual: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_perpetual: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_end_date: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -667,23 +667,23 @@ class LicenseRecord(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_perpetual: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-            license_count: Optional[pulumi.Input[_builtins.int]] = None,
-            license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-            product_id: Optional[pulumi.Input[_builtins.str]] = None,
-            product_license: Optional[pulumi.Input[_builtins.str]] = None,
-            product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'LicenseRecord':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_perpetual: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_count: pulumi.Input[Optional[_builtins.int]] = None,
+            license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            product_license: pulumi.Input[Optional[_builtins.str]] = None,
+            product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            support_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'LicenseRecord':
         """
         Get an existing LicenseRecord resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

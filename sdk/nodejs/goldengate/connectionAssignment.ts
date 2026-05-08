@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testConnectionAssignment = new oci.goldengate.ConnectionAssignment("test_connection_assignment", {
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
- *     isLockOverride: connectionAssignmentIsLockOverride,
+ *     isLockOverride: connectionAssignmentIsLockOverride === "true",
  * });
  * ```
  *
@@ -148,19 +148,19 @@ export interface ConnectionAssignmentState {
     /**
      * Credential store alias.
      */
-    aliasName?: pulumi.Input<string>;
+    aliasName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    deploymentId?: pulumi.Input<string>;
+    deploymentId?: pulumi.Input<string | undefined>;
     /**
      * Whether to override locks (if any exist).
      *
@@ -168,19 +168,19 @@ export interface ConnectionAssignmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Possible lifecycle states for connection assignments.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -202,5 +202,5 @@ export interface ConnectionAssignmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
 }

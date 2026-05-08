@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     type: networkFirewallPolicyServiceType,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     portRanges: [{
- *         minimumPort: networkFirewallPolicyServicePortRangesMinimumPort,
- *         maximumPort: networkFirewallPolicyServicePortRangesMaximumPort,
+ *         minimumPort: Number(networkFirewallPolicyServicePortRangesMinimumPort),
+ *         maximumPort: Number(networkFirewallPolicyServicePortRangesMaximumPort),
  *     }],
  *     description: networkFirewallPolicyServiceDescription,
  * });
@@ -146,23 +146,23 @@ export interface NetworkFirewallPolicyServiceState {
     /**
      * (Updatable) The description of the service. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the service
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this service belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of port-ranges to be used.
      */
-    portRanges?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange>[]>;
+    portRanges?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange>[] | undefined>;
     /**
      * Describes the type of Service. The accepted values are 
      *
@@ -170,7 +170,7 @@ export interface NetworkFirewallPolicyServiceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -180,11 +180,11 @@ export interface NetworkFirewallPolicyServiceArgs {
     /**
      * (Updatable) The description of the service. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the service
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

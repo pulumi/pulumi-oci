@@ -118,7 +118,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
+    test_compute_capacity_reservation_instance_shapes = oci.core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_instance_shape_availability_domain,
         display_name=compute_capacity_reservation_instance_shape_display_name)
     ```
@@ -143,10 +143,10 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_capacity_reservation_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityReservationInstanceShapesFilterArgs', 'GetComputeCapacityReservationInstanceShapesFilterArgsDict']]]]] = None,
+def get_compute_capacity_reservation_instance_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityReservationInstanceShapesFilterArgs', 'GetComputeCapacityReservationInstanceShapesFilterArgsDict']]]]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityReservationInstanceShapesResult]:
     """
     This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -159,7 +159,7 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
+    test_compute_capacity_reservation_instance_shapes = oci.core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_instance_shape_availability_domain,
         display_name=compute_capacity_reservation_instance_shape_display_name)
     ```

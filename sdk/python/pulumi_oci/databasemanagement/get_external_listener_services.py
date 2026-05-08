@@ -119,7 +119,7 @@ def get_external_listener_services(external_listener_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
+    test_external_listener_services = oci.databasemanagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```
@@ -144,10 +144,10 @@ def get_external_listener_services(external_listener_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-def get_external_listener_services_output(external_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]]]] = None,
-                                          managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_listener_services_output(external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]]]] = None,
+                                          managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalListenerServicesResult]:
     """
     This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
@@ -161,7 +161,7 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
+    test_external_listener_services = oci.databasemanagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```

@@ -129,8 +129,8 @@ def get_delegated_resource_access_request_audit_log_report(delegated_resource_ac
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_audit_log_report = oci.DelegateAccessControl.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
-        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled)
+    test_delegated_resource_access_request_audit_log_report = oci.delegateaccesscontrol.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
+        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled == "true")
     ```
 
 
@@ -151,8 +151,8 @@ def get_delegated_resource_access_request_audit_log_report(delegated_resource_ac
         process_tree=pulumi.get(__ret__, 'process_tree'),
         report=pulumi.get(__ret__, 'report'),
         time_report_generated=pulumi.get(__ret__, 'time_report_generated'))
-def get_delegated_resource_access_request_audit_log_report_output(delegated_resource_access_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  is_process_tree_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_delegated_resource_access_request_audit_log_report_output(delegated_resource_access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  is_process_tree_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestAuditLogReportResult]:
     """
     This data source provides details about a specific Delegated Resource Access Request Audit Log Report resource in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -165,8 +165,8 @@ def get_delegated_resource_access_request_audit_log_report_output(delegated_reso
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_audit_log_report = oci.DelegateAccessControl.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
-        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled)
+    test_delegated_resource_access_request_audit_log_report = oci.delegateaccesscontrol.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
+        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled == "true")
     ```
 
 

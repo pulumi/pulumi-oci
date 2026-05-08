@@ -20,9 +20,9 @@ __all__ = ['ExportSetArgs', 'ExportSet']
 class ExportSetArgs:
     def __init__(__self__, *,
                  mount_target_id: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_files: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExportSet resource.
 
@@ -56,31 +56,31 @@ class ExportSetArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFsStatBytes")
-    def max_fs_stat_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_fs_stat_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
         """
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @max_fs_stat_bytes.setter
-    def max_fs_stat_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_fs_stat_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_fs_stat_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFsStatFiles")
-    def max_fs_stat_files(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_fs_stat_files(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
 
@@ -90,22 +90,22 @@ class ExportSetArgs:
         return pulumi.get(self, "max_fs_stat_files")
 
     @max_fs_stat_files.setter
-    def max_fs_stat_files(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_fs_stat_files(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_fs_stat_files", value)
 
 
 @pulumi.input_type
 class _ExportSetState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_files: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExportSet resources.
 
@@ -143,55 +143,55 @@ class _ExportSetState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFsStatBytes")
-    def max_fs_stat_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_fs_stat_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
         """
         return pulumi.get(self, "max_fs_stat_bytes")
 
     @max_fs_stat_bytes.setter
-    def max_fs_stat_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_fs_stat_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_fs_stat_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFsStatFiles")
-    def max_fs_stat_files(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_fs_stat_files(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'. 
 
@@ -201,55 +201,55 @@ class _ExportSetState:
         return pulumi.get(self, "max_fs_stat_files")
 
     @max_fs_stat_files.setter
-    def max_fs_stat_files(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_fs_stat_files(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_fs_stat_files", value)
 
     @_builtins.property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mount_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the mount target that the export set is associated with
         """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
-    def mount_target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mount_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mount_target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the export set.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
@@ -259,10 +259,10 @@ class ExportSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_files: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Export Set resource in Oracle Cloud Infrastructure File Storage service.
@@ -379,10 +379,10 @@ class ExportSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_fs_stat_files: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -413,15 +413,15 @@ class ExportSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            max_fs_stat_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-            max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None,
-            mount_target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExportSet':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            max_fs_stat_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            max_fs_stat_files: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExportSet':
         """
         Get an existing ExportSet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

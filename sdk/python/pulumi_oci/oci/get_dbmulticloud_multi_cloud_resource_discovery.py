@@ -268,7 +268,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery(multi_cloud_resource_discove
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dbmulticloud_multi_cloud_resource_discovery_output(multi_cloud_resource_discovery_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_multi_cloud_resource_discovery_output(multi_cloud_resource_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudMultiCloudResourceDiscoveryResult]:
     """
     This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbCredentials = oci.Identity.getDbCredentials({
+ * const testDbCredentials = oci.identity.getDbCredentials({
  *     userId: testUser.id,
  *     name: dbCredentialName,
  *     state: dbCredentialState,
@@ -87,7 +87,7 @@ export interface GetDbCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbCredentials = oci.Identity.getDbCredentials({
+ * const testDbCredentials = oci.identity.getDbCredentials({
  *     userId: testUser.id,
  *     name: dbCredentialName,
  *     state: dbCredentialState,
@@ -108,15 +108,15 @@ export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: 
  * A collection of arguments for invoking getDbCredentials.
  */
 export interface GetDbCredentialsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDbCredentialsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDbCredentialsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user.
      */

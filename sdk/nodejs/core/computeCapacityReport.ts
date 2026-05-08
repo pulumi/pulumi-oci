@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         instanceShapeConfig: {
  *             baselineOcpuUtilization: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization,
  *             memoryInGbs: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs,
- *             nvmes: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes,
+ *             nvmes: Number(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes),
  *             ocpus: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus,
  *         },
  *     }],
@@ -139,19 +139,19 @@ export interface ComputeCapacityReportState {
     /**
      * The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Information about the shapes in the capacity report.
      */
-    shapeAvailabilities?: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReportShapeAvailability>[]>;
+    shapeAvailabilities?: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReportShapeAvailability>[] | undefined>;
     /**
      * The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

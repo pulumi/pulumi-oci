@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
+ * const testMaskingReportsMaskedColumns = oci.datasafe.getMaskingReportMaskedColumns({
  *     maskingReportId: testMaskingReport.id,
  *     columnNames: maskingReportsMaskedColumnColumnName,
  *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
@@ -127,7 +127,7 @@ export interface GetMaskingReportMaskedColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
+ * const testMaskingReportsMaskedColumns = oci.datasafe.getMaskingReportMaskedColumns({
  *     maskingReportId: testMaskingReport.id,
  *     columnNames: maskingReportsMaskedColumnColumnName,
  *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
@@ -159,12 +159,12 @@ export interface GetMaskingReportMaskedColumnsOutputArgs {
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingReportMaskedColumnsFilterArgs>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingReportMaskedColumnsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified masking column group.
      */
-    maskingColumnGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    maskingColumnGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the masking report.
      */
@@ -172,17 +172,17 @@ export interface GetMaskingReportMaskedColumnsOutputArgs {
     /**
      * A filter to return only items related to a specific object type.
      */
-    objectTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    objectTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
 }

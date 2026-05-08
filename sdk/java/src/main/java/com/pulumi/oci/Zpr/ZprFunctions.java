@@ -38,8 +38,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -81,8 +81,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -167,8 +167,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -210,8 +210,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -252,8 +252,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -296,8 +296,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -340,8 +340,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -384,8 +384,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -428,8 +428,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -472,8 +472,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -516,8 +516,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -560,8 +560,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -602,8 +602,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -644,8 +644,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -686,8 +686,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -728,8 +728,8 @@ public final class ZprFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Zpr.ZprFunctions;
      * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

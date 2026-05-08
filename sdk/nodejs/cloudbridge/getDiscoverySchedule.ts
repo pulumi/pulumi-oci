@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoverySchedule = oci.CloudBridge.getDiscoverySchedule({
+ * const testDiscoverySchedule = oci.cloudbridge.getDiscoverySchedule({
  *     discoveryScheduleId: testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetDiscoveryScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoverySchedule = oci.CloudBridge.getDiscoverySchedule({
+ * const testDiscoverySchedule = oci.cloudbridge.getDiscoverySchedule({
  *     discoveryScheduleId: testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id,
  * });
  * ```

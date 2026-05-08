@@ -124,7 +124,7 @@ def get_external_db_homes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_homes = oci.DatabaseManagement.get_external_db_homes(compartment_id=compartment_id,
+    test_external_db_homes = oci.databasemanagement.get_external_db_homes(compartment_id=compartment_id,
         display_name=external_db_home_display_name,
         external_db_system_id=test_external_db_system["id"])
     ```
@@ -149,10 +149,10 @@ def get_external_db_homes(compartment_id: Optional[_builtins.str] = None,
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_db_homes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 external_db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict']]]]] = None,
+def get_external_db_homes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbHomesResult]:
     """
     This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
@@ -165,7 +165,7 @@ def get_external_db_homes_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_homes = oci.DatabaseManagement.get_external_db_homes(compartment_id=compartment_id,
+    test_external_db_homes = oci.databasemanagement.get_external_db_homes(compartment_id=compartment_id,
         display_name=external_db_home_display_name,
         external_db_system_id=test_external_db_system["id"])
     ```

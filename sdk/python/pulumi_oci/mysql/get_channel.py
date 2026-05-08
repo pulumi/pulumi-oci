@@ -227,7 +227,7 @@ def get_channel(channel_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
+    test_channel = oci.mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_channel(channel_id: Optional[_builtins.str] = None,
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_channel_output(channel_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_channel_output(channel_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetChannelResult]:
     """
     This data source provides details about a specific Channel resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -269,7 +269,7 @@ def get_channel_output(channel_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
+    test_channel = oci.mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
     ```
 
 

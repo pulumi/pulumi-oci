@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     shouldPropagateTagsToDiscoveredResources: discoveryJobShouldPropagateTagsToDiscoveredResources,
+ *     shouldPropagateTagsToDiscoveredResources: discoveryJobShouldPropagateTagsToDiscoveredResources === "true",
  * });
  * ```
  *
@@ -214,27 +214,27 @@ export interface DiscoveryJobState {
     /**
      * The OCID of Compartment
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Client who submits discovery job.
      */
-    discoveryClient?: pulumi.Input<string>;
+    discoveryClient?: pulumi.Input<string | undefined>;
     /**
      * The request of DiscoveryJob Resource details.
      */
-    discoveryDetails?: pulumi.Input<inputs.StackMonitoring.DiscoveryJobDiscoveryDetails>;
+    discoveryDetails?: pulumi.Input<inputs.StackMonitoring.DiscoveryJobDiscoveryDetails | undefined>;
     /**
      * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      */
-    discoveryType?: pulumi.Input<string>;
+    discoveryType?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
      *
@@ -242,35 +242,35 @@ export interface DiscoveryJobState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean>;
+    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the DiscoveryJob Resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Specifies the status of the discovery job
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The short summary of the status of the discovery job
      */
-    statusMessage?: pulumi.Input<string>;
+    statusMessage?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of Tenant
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The time the discovery Job was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of user in which the job is submitted
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -284,11 +284,11 @@ export interface DiscoveryJobArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Client who submits discovery job.
      */
-    discoveryClient?: pulumi.Input<string>;
+    discoveryClient?: pulumi.Input<string | undefined>;
     /**
      * The request of DiscoveryJob Resource details.
      */
@@ -296,11 +296,11 @@ export interface DiscoveryJobArgs {
     /**
      * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      */
-    discoveryType?: pulumi.Input<string>;
+    discoveryType?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
      *
@@ -308,5 +308,5 @@ export interface DiscoveryJobArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean>;
+    shouldPropagateTagsToDiscoveredResources?: pulumi.Input<boolean | undefined>;
 }

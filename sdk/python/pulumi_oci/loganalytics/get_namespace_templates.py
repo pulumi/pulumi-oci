@@ -167,7 +167,7 @@ def get_namespace_templates(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_templates = oci.LogAnalytics.get_namespace_templates(compartment_id=compartment_id,
+    test_namespace_templates = oci.loganalytics.get_namespace_templates(compartment_id=compartment_id,
         namespace=namespace_template_namespace,
         name=namespace_template_name,
         namespace_template_filter=namespace_template_namespace_template_filter,
@@ -208,14 +208,14 @@ def get_namespace_templates(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         template_display_text=pulumi.get(__ret__, 'template_display_text'),
         type=pulumi.get(__ret__, 'type'))
-def get_namespace_templates_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict']]]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                   namespace_template_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   template_display_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict']]]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                   namespace_template_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   template_display_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceTemplatesResult]:
     """
     This data source provides the list of Namespace Templates in Oracle Cloud Infrastructure Log Analytics service.
@@ -228,7 +228,7 @@ def get_namespace_templates_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_templates = oci.LogAnalytics.get_namespace_templates(compartment_id=compartment_id,
+    test_namespace_templates = oci.loganalytics.get_namespace_templates(compartment_id=compartment_id,
         namespace=namespace_template_namespace,
         name=namespace_template_name,
         namespace_template_filter=namespace_template_namespace_template_filter,

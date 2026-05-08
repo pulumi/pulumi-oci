@@ -44,13 +44,13 @@ import * as utilities from "../utilities";
  *     schedules: [{
  *         period: filesystemSnapshotPolicySchedulesPeriod,
  *         timeZone: filesystemSnapshotPolicySchedulesTimeZone,
- *         dayOfMonth: filesystemSnapshotPolicySchedulesDayOfMonth,
+ *         dayOfMonth: Number(filesystemSnapshotPolicySchedulesDayOfMonth),
  *         dayOfWeek: filesystemSnapshotPolicySchedulesDayOfWeek,
- *         hourOfDay: filesystemSnapshotPolicySchedulesHourOfDay,
+ *         hourOfDay: Number(filesystemSnapshotPolicySchedulesHourOfDay),
  *         lockDurationDetails: {
- *             lockDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration,
+ *             lockDuration: Number(filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration),
  *             lockMode: filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode,
- *             coolOffDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration,
+ *             coolOffDuration: Number(filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration),
  *         },
  *         month: filesystemSnapshotPolicySchedulesMonth,
  *         retentionDurationInSeconds: filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,
@@ -206,38 +206,38 @@ export interface FilesystemSnapshotPolicyState {
     /**
      * The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[] | undefined>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
-    policyPrefix?: pulumi.Input<string>;
+    policyPrefix?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
      * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[] | undefined>;
     /**
      * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -245,15 +245,15 @@ export interface FilesystemSnapshotPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -271,30 +271,30 @@ export interface FilesystemSnapshotPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[] | undefined>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
-    policyPrefix?: pulumi.Input<string>;
+    policyPrefix?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
      * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[]>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicySchedule>[] | undefined>;
     /**
      * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -302,5 +302,5 @@ export interface FilesystemSnapshotPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

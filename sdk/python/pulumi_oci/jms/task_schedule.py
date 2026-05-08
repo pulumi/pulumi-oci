@@ -75,16 +75,16 @@ class TaskScheduleArgs:
 @pulumi.input_type
 class _TaskScheduleState:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 execution_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_details: Optional[pulumi.Input['TaskScheduleTaskDetailsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_run: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_details: pulumi.Input[Optional['TaskScheduleTaskDetailsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_run: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TaskSchedule resources.
 
@@ -122,122 +122,122 @@ class _TaskScheduleState:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the task creator.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="executionRecurrences")
-    def execution_recurrences(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def execution_recurrences(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
         """
         return pulumi.get(self, "execution_recurrences")
 
     @execution_recurrences.setter
-    def execution_recurrences(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def execution_recurrences(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "execution_recurrences", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the task schedule.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         All possible status of task schedule.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="taskDetails")
-    def task_details(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsArgs']]:
+    def task_details(self) -> pulumi.Input[Optional['TaskScheduleTaskDetailsArgs']]:
         """
         (Updatable) The minimum details of a task.
         """
         return pulumi.get(self, "task_details")
 
     @task_details.setter
-    def task_details(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsArgs']]):
+    def task_details(self, value: pulumi.Input[Optional['TaskScheduleTaskDetailsArgs']]):
         pulumi.set(self, "task_details", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastRun")
-    def time_last_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_run")
 
     @time_last_run.setter
-    def time_last_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_run", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_updated")
 
     @time_last_updated.setter
-    def time_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNextRun")
-    def time_next_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_next_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_next_run")
 
     @time_next_run.setter
-    def time_next_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_next_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_next_run", value)
 
 
@@ -247,9 +247,9 @@ class TaskSchedule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 execution_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_details: Optional[pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+                 execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
@@ -504,9 +504,9 @@ class TaskSchedule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 execution_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_details: Optional[pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+                 execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -542,16 +542,16 @@ class TaskSchedule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            execution_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            task_details: Optional[pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_run: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_next_run: Optional[pulumi.Input[_builtins.str]] = None) -> 'TaskSchedule':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_run: pulumi.Input[Optional[_builtins.str]] = None) -> 'TaskSchedule':
         """
         Get an existing TaskSchedule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStacks = oci.ResourceManager.getStacks({
+ * const testStacks = oci.resourcemanager.getStacks({
  *     compartmentId: compartmentId,
  *     displayName: stackDisplayName,
  *     id: stackId,
@@ -104,7 +104,7 @@ export interface GetStacksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStacks = oci.ResourceManager.getStacks({
+ * const testStacks = oci.resourcemanager.getStacks({
  *     compartmentId: compartmentId,
  *     displayName: stackDisplayName,
  *     id: stackId,
@@ -134,14 +134,14 @@ export interface GetStacksOutputArgs {
     /**
      * Display name on which to query.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ResourceManager.GetStacksFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ResourceManager.GetStacksFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -182,23 +182,23 @@ export interface AdhocQueryState {
     /**
      * Detailed information about the adhoc query.
      */
-    adhocQueryDetails?: pulumi.Input<inputs.CloudGuard.AdhocQueryAdhocQueryDetails>;
+    adhocQueryDetails?: pulumi.Input<inputs.CloudGuard.AdhocQueryAdhocQueryDetails | undefined>;
     /**
      * Instance level status for each region
      */
-    adhocQueryRegionalDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.AdhocQueryAdhocQueryRegionalDetail>[]>;
+    adhocQueryRegionalDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.AdhocQueryAdhocQueryRegionalDetail>[] | undefined>;
     /**
      * Compartment OCID of adhoc query
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Error message to show on UI in case of failure
      */
-    errorMessage?: pulumi.Input<string>;
+    errorMessage?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
@@ -208,27 +208,27 @@ export interface AdhocQueryState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Status of the adhoc query
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the adhoc query was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the adhoc query was updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -246,7 +246,7 @@ export interface AdhocQueryArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
@@ -256,5 +256,5 @@ export interface AdhocQueryArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

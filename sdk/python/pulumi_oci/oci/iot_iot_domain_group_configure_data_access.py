@@ -66,8 +66,8 @@ class IotIotDomainGroupConfigureDataAccessArgs:
 @pulumi.input_type
 class _IotIotDomainGroupConfigureDataAccessState:
     def __init__(__self__, *,
-                 db_allow_listed_vcn_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 db_allow_listed_vcn_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainGroupConfigureDataAccess resources.
 
@@ -85,19 +85,19 @@ class _IotIotDomainGroupConfigureDataAccessState:
 
     @_builtins.property
     @pulumi.getter(name="dbAllowListedVcnIds")
-    def db_allow_listed_vcn_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_allow_listed_vcn_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         """
         return pulumi.get(self, "db_allow_listed_vcn_ids")
 
     @db_allow_listed_vcn_ids.setter
-    def db_allow_listed_vcn_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_allow_listed_vcn_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_allow_listed_vcn_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="iotDomainGroupId")
-    def iot_domain_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iot_domain_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
 
@@ -108,7 +108,7 @@ class _IotIotDomainGroupConfigureDataAccessState:
         return pulumi.get(self, "iot_domain_group_id")
 
     @iot_domain_group_id.setter
-    def iot_domain_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iot_domain_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iot_domain_group_id", value)
 
 
@@ -118,8 +118,8 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_allow_listed_vcn_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_allow_listed_vcn_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Iot Domain Group Configure Data Access resource in Oracle Cloud Infrastructure Iot service.
@@ -199,8 +199,8 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_allow_listed_vcn_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_allow_listed_vcn_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -226,8 +226,8 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_allow_listed_vcn_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IotIotDomainGroupConfigureDataAccess':
+            db_allow_listed_vcn_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IotIotDomainGroupConfigureDataAccess':
         """
         Get an existing IotIotDomainGroupConfigureDataAccess resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

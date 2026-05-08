@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testConfiguration = new oci.audit.Configuration("test_configuration", {
  *     compartmentId: tenancyOcid,
- *     retentionPeriodDays: configurationRetentionPeriodDays,
+ *     retentionPeriodDays: Number(configurationRetentionPeriodDays),
  * });
  * ```
  *
@@ -105,7 +105,7 @@ export interface ConfigurationState {
     /**
      * ID of the root compartment (tenancy)
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
      *
@@ -113,7 +113,7 @@ export interface ConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionPeriodDays?: pulumi.Input<number>;
+    retentionPeriodDays?: pulumi.Input<number | undefined>;
 }
 
 /**

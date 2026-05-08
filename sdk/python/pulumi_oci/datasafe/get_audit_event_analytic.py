@@ -175,9 +175,9 @@ def get_audit_event_analytic(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=compartment_id,
+    test_audit_event_analytic = oci.datasafe.get_audit_event_analytic(compartment_id=compartment_id,
         access_level=audit_event_analytic_access_level,
-        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_event_analytic_group_by,
         query_time_zone=audit_event_analytic_query_time_zone,
         scim_query=audit_event_analytic_scim_query,
@@ -224,15 +224,15 @@ def get_audit_event_analytic(access_level: Optional[_builtins.str] = None,
         summary_fields=pulumi.get(__ret__, 'summary_fields'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                    query_time_zone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    summary_fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                    time_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    time_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_audit_event_analytic_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                    query_time_zone: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    summary_fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                    time_ended: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    time_started: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditEventAnalyticResult]:
     """
     This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -250,9 +250,9 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=compartment_id,
+    test_audit_event_analytic = oci.datasafe.get_audit_event_analytic(compartment_id=compartment_id,
         access_level=audit_event_analytic_access_level,
-        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_event_analytic_group_by,
         query_time_zone=audit_event_analytic_query_time_zone,
         scim_query=audit_event_analytic_scim_query,

@@ -95,7 +95,7 @@ def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
+    test_fleet_diagnoses = oci.jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilte
         fleet_diagnosis_collections=pulumi.get(__ret__, 'fleet_diagnosis_collections'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]]]] = None,
-                               fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_diagnoses_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]]]] = None,
+                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetDiagnosesResult]:
     """
     This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
@@ -126,7 +126,7 @@ def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
+    test_fleet_diagnoses = oci.jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
     ```
 
 

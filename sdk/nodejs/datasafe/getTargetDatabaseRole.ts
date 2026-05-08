@@ -62,10 +62,10 @@ export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArg
  * A collection of arguments for invoking getTargetDatabaseRole.
  */
 export interface GetTargetDatabaseRoleOutputArgs {
-    authenticationType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabaseRoleFilterArgs>[]>;
-    isOracleMaintained?: pulumi.Input<boolean>;
-    roleNameContains?: pulumi.Input<string>;
-    roleNames?: pulumi.Input<pulumi.Input<string>[]>;
+    authenticationType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabaseRoleFilterArgs>[] | undefined>;
+    isOracleMaintained?: pulumi.Input<boolean | undefined>;
+    roleNameContains?: pulumi.Input<string | undefined>;
+    roleNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     targetDatabaseId: pulumi.Input<string>;
 }

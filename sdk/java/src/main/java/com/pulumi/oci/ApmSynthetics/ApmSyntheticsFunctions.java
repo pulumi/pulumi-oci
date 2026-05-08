@@ -67,8 +67,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -110,8 +110,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -153,8 +153,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -196,8 +196,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -239,8 +239,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -282,8 +282,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -327,8 +327,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -372,8 +372,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -417,8 +417,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -462,8 +462,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -507,8 +507,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -593,8 +593,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -636,8 +636,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -679,8 +679,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -722,8 +722,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -771,8 +771,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -820,8 +820,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -869,8 +869,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -918,8 +918,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -967,8 +967,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1010,8 +1010,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1053,8 +1053,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1096,8 +1096,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1139,8 +1139,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1182,8 +1182,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1226,8 +1226,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1270,8 +1270,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1314,8 +1314,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1358,8 +1358,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1402,8 +1402,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1449,8 +1449,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1496,8 +1496,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1543,8 +1543,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1590,8 +1590,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointWorkersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1637,8 +1637,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1681,8 +1681,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1725,8 +1725,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1769,8 +1769,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1813,8 +1813,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetOnPremiseVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1857,8 +1857,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1904,8 +1904,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1998,8 +1998,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2045,8 +2045,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2092,8 +2092,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2135,8 +2135,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2178,8 +2178,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2221,8 +2221,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2264,8 +2264,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2307,8 +2307,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2351,8 +2351,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2395,8 +2395,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2439,8 +2439,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2483,8 +2483,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2527,8 +2527,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2571,8 +2571,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2615,8 +2615,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2659,8 +2659,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2703,8 +2703,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2747,8 +2747,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2791,8 +2791,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2835,8 +2835,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2879,8 +2879,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2923,8 +2923,8 @@ public final class ApmSyntheticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
      * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

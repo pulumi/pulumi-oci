@@ -24,9 +24,9 @@ class AddonArgs:
                  addon_name: pulumi.Input[_builtins.str],
                  cluster_id: pulumi.Input[_builtins.str],
                  remove_addon_resources_on_delete: pulumi.Input[_builtins.bool],
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
-                 override_existing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
+                 override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Addon resource.
 
@@ -89,31 +89,31 @@ class AddonArgs:
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]]:
         """
         (Updatable) Addon configuration details
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideExisting")
-    def override_existing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def override_existing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         """
         return pulumi.get(self, "override_existing")
 
     @override_existing.setter
-    def override_existing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def override_existing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "override_existing", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of addon to be installed.
 
@@ -124,23 +124,23 @@ class AddonArgs:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 @pulumi.input_type
 class _AddonState:
     def __init__(__self__, *,
-                 addon_errors: Optional[pulumi.Input[Sequence[pulumi.Input['AddonAddonErrorArgs']]]] = None,
-                 addon_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
-                 current_installed_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 override_existing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_addon_resources_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 addon_errors: pulumi.Input[Optional[Sequence[pulumi.Input['AddonAddonErrorArgs']]]] = None,
+                 addon_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
+                 current_installed_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Addon resources.
 
@@ -182,115 +182,115 @@ class _AddonState:
 
     @_builtins.property
     @pulumi.getter(name="addonErrors")
-    def addon_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddonAddonErrorArgs']]]]:
+    def addon_errors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddonAddonErrorArgs']]]]:
         """
         The error info of the addon.
         """
         return pulumi.get(self, "addon_errors")
 
     @addon_errors.setter
-    def addon_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddonAddonErrorArgs']]]]):
+    def addon_errors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddonAddonErrorArgs']]]]):
         pulumi.set(self, "addon_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="addonName")
-    def addon_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def addon_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the addon.
         """
         return pulumi.get(self, "addon_name")
 
     @addon_name.setter
-    def addon_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def addon_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "addon_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]]:
         """
         (Updatable) Addon configuration details
         """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddonConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="currentInstalledVersion")
-    def current_installed_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_installed_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         current installed version of the addon
         """
         return pulumi.get(self, "current_installed_version")
 
     @current_installed_version.setter
-    def current_installed_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_installed_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_installed_version", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideExisting")
-    def override_existing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def override_existing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         """
         return pulumi.get(self, "override_existing")
 
     @override_existing.setter
-    def override_existing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def override_existing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "override_existing", value)
 
     @_builtins.property
     @pulumi.getter(name="removeAddonResourcesOnDelete")
-    def remove_addon_resources_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_addon_resources_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to remove addon resource in deletion.
         """
         return pulumi.get(self, "remove_addon_resources_on_delete")
 
     @remove_addon_resources_on_delete.setter
-    def remove_addon_resources_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_addon_resources_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_addon_resources_on_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the addon.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the cluster was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of addon to be installed.
 
@@ -301,7 +301,7 @@ class _AddonState:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -311,12 +311,12 @@ class Addon(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 addon_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
-                 override_existing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_addon_resources_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
+                 addon_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+                 override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
@@ -386,12 +386,12 @@ class Addon(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 addon_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
-                 override_existing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_addon_resources_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
+                 addon_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+                 override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -427,16 +427,16 @@ class Addon(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            addon_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict']]]]] = None,
-            addon_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
-            current_installed_version: Optional[pulumi.Input[_builtins.str]] = None,
-            override_existing: Optional[pulumi.Input[_builtins.bool]] = None,
-            remove_addon_resources_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'Addon':
+            addon_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict']]]]] = None,
+            addon_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+            current_installed_version: pulumi.Input[Optional[_builtins.str]] = None,
+            override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Addon':
         """
         Get an existing Addon resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

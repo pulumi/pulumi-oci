@@ -228,7 +228,7 @@ def get_database_tools_identity(database_tools_identity_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identity = oci.DatabaseTools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
+    test_database_tools_identity = oci.databasetools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_database_tools_identity(database_tools_identity_id: Optional[_builtins.s
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_database_tools_identity_output(database_tools_identity_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_tools_identity_output(database_tools_identity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsIdentityResult]:
     """
     This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
@@ -268,7 +268,7 @@ def get_database_tools_identity_output(database_tools_identity_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identity = oci.DatabaseTools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
+    test_database_tools_identity = oci.databasetools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
     ```
 
 

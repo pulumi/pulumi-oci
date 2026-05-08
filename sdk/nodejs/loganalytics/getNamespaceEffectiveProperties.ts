@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
+ * const testNamespaceEffectiveProperties = oci.loganalytics.getNamespaceEffectiveProperties({
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
  *     name: namespaceEffectivePropertyName,
- *     patternId: testPattern.id,
+ *     patternId: Number(testPattern.id),
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
@@ -119,13 +119,13 @@ export interface GetNamespaceEffectivePropertiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
+ * const testNamespaceEffectiveProperties = oci.loganalytics.getNamespaceEffectiveProperties({
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
  *     name: namespaceEffectivePropertyName,
- *     patternId: testPattern.id,
+ *     patternId: Number(testPattern.id),
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
@@ -153,20 +153,20 @@ export interface GetNamespaceEffectivePropertiesOutputArgs {
     /**
      * The agent ocid.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * The entity ocid.
      */
-    entityId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceEffectivePropertiesFilterArgs>[]>;
+    entityId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceEffectivePropertiesFilterArgs>[] | undefined>;
     /**
      * The include pattern flag.
      */
-    isIncludePatterns?: pulumi.Input<boolean>;
+    isIncludePatterns?: pulumi.Input<boolean | undefined>;
     /**
      * The property name used for filtering.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -174,13 +174,13 @@ export interface GetNamespaceEffectivePropertiesOutputArgs {
     /**
      * The pattern id.
      */
-    patternId?: pulumi.Input<number>;
+    patternId?: pulumi.Input<number | undefined>;
     /**
      * The pattern id (long).
      */
-    patternIdLong?: pulumi.Input<string>;
+    patternIdLong?: pulumi.Input<string | undefined>;
     /**
      * The source name.
      */
-    sourceName?: pulumi.Input<string>;
+    sourceName?: pulumi.Input<string | undefined>;
 }

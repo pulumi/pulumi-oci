@@ -181,11 +181,11 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * The list of Db server Ids to configure network.
      */
-    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dbServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the VM cluster network. The name does not need to be unique.
      */
@@ -193,15 +193,15 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    dns?: pulumi.Input<pulumi.Input<string>[]>;
+    dns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The DR SCAN TCPIP port. Default is 1521.
      */
-    drScanListenerPortTcp?: pulumi.Input<number>;
+    drScanListenerPortTcp?: pulumi.Input<number | undefined>;
     /**
      * The DR SCAN TCPIP SSL port. Default is 2484.
      */
-    drScanListenerPortTcpSsl?: pulumi.Input<number>;
+    drScanListenerPortTcpSsl?: pulumi.Input<number | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -209,7 +209,7 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of parameters for generation of the client and backup networks.
      */
@@ -217,13 +217,13 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    ntps?: pulumi.Input<pulumi.Input<string>[]>;
+    ntps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The SCAN TCPIP port. Default is 1521.
      */
-    scanListenerPortTcp?: pulumi.Input<number>;
+    scanListenerPortTcp?: pulumi.Input<number | undefined>;
     /**
      * The SCAN TCPIP SSL port. Default is 2484.
      */
-    scanListenerPortTcpSsl?: pulumi.Input<number>;
+    scanListenerPortTcpSsl?: pulumi.Input<number | undefined>;
 }

@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testPublication = new oci.marketplace.Publication("test_publication", {
  *     compartmentId: compartmentId,
- *     isAgreementAcknowledged: publicationIsAgreementAcknowledged,
+ *     isAgreementAcknowledged: publicationIsAgreementAcknowledged === "true",
  *     listingType: publicationListingType,
  *     name: publicationName,
  *     packageDetails: {
@@ -233,67 +233,67 @@ export interface PublicationState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The model for upload data for images and icons.
      */
-    icons?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationIcon>[]>;
+    icons?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationIcon>[] | undefined>;
     /**
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
      */
-    isAgreementAcknowledged?: pulumi.Input<boolean>;
+    isAgreementAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      */
-    listingType?: pulumi.Input<string>;
+    listingType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A long description of the publication to use in the listing.
      */
-    longDescription?: pulumi.Input<string>;
+    longDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the publication, which is also used in the listing.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A base object for creating a publication package.
      */
-    packageDetails?: pulumi.Input<inputs.Marketplace.PublicationPackageDetails>;
+    packageDetails?: pulumi.Input<inputs.Marketplace.PublicationPackageDetails | undefined>;
     /**
      * The listing's package type.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A short description of the publication to use in the listing.
      */
-    shortDescription?: pulumi.Input<string>;
+    shortDescription?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the publication.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contact information for getting support from the publisher for the listing.
      */
-    supportContacts?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationSupportContact>[]>;
+    supportContacts?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationSupportContact>[] | undefined>;
     /**
      * The list of operating systems supported by the listing.
      */
-    supportedOperatingSystems?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationSupportedOperatingSystem>[]>;
+    supportedOperatingSystems?: pulumi.Input<pulumi.Input<inputs.Marketplace.PublicationSupportedOperatingSystem>[] | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -307,11 +307,11 @@ export interface PublicationArgs {
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
      */
@@ -323,11 +323,11 @@ export interface PublicationArgs {
     /**
      * (Updatable) A long description of the publication to use in the listing.
      */
-    longDescription?: pulumi.Input<string>;
+    longDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the publication, which is also used in the listing.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A base object for creating a publication package.
      */

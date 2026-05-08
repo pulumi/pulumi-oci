@@ -248,77 +248,77 @@ export interface TargetState {
     /**
      * Compartment OCID where the resource is created
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name for the target.
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of inherited compartments
      */
-    inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[]>;
+    inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * Total number of recipes attached to target
      */
-    recipeCount?: pulumi.Input<number>;
+    recipeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The enablement state of the detector rule
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details specific to the target type.
      */
-    targetDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetail>[]>;
+    targetDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetail>[] | undefined>;
     /**
      * (Updatable) List of detector recipes to attach to target
      */
-    targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[]>;
+    targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[] | undefined>;
     /**
      * Resource ID which the target uses to monitor
      */
-    targetResourceId?: pulumi.Input<string>;
+    targetResourceId?: pulumi.Input<string | undefined>;
     /**
      * Type of resource that target support (COMPARTMENT/FACLOUD)
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of responder recipes to attach to target
      */
-    targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[]>;
+    targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[] | undefined>;
     /**
      * The date and time the target was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the target was last updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -332,13 +332,13 @@ export interface TargetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name for the target.
      *
@@ -350,15 +350,15 @@ export interface TargetArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The enablement state of the detector rule
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of detector recipes to attach to target
      */
-    targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[]>;
+    targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[] | undefined>;
     /**
      * Resource ID which the target uses to monitor
      */
@@ -370,5 +370,5 @@ export interface TargetArgs {
     /**
      * (Updatable) List of responder recipes to attach to target
      */
-    targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[]>;
+    targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[] | undefined>;
 }

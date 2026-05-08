@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
+ * const testAutonomousDatabaseBackups = oci.database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,
@@ -138,7 +138,7 @@ export interface GetAutonomousDatabaseBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
+ * const testAutonomousDatabaseBackups = oci.database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,
@@ -173,34 +173,34 @@ export interface GetAutonomousDatabaseBackupsOutputArgs {
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that have the given backup destination id.
      */
-    backupDestinationId?: pulumi.Input<string>;
+    backupDestinationId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseBackupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that have the given key store id.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only backups that matches with the given type of Backup.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

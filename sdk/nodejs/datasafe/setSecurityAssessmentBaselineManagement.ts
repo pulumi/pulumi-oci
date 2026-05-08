@@ -111,7 +111,7 @@ export class SetSecurityAssessmentBaselineManagement extends pulumi.CustomResour
  * Input properties used for looking up and filtering SetSecurityAssessmentBaselineManagement resources.
  */
 export interface SetSecurityAssessmentBaselineManagementState {
-    assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The compartment OCID of the target.
      *
@@ -119,12 +119,12 @@ export interface SetSecurityAssessmentBaselineManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    compartmentId?: pulumi.Input<string>;
-    securityAssessmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The target OCID for which SA needs to be set as baseline.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }
 
 /**

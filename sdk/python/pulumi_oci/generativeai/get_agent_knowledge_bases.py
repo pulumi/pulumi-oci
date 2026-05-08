@@ -124,7 +124,7 @@ def get_agent_knowledge_bases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.GenerativeAi.get_agent_knowledge_bases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.generativeai.get_agent_knowledge_bases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         state=knowledge_base_state)
     ```
@@ -149,10 +149,10 @@ def get_agent_knowledge_bases(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         knowledge_base_collections=pulumi.get(__ret__, 'knowledge_base_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_agent_knowledge_bases_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentKnowledgeBasesFilterArgs', 'GetAgentKnowledgeBasesFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_knowledge_bases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentKnowledgeBasesFilterArgs', 'GetAgentKnowledgeBasesFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentKnowledgeBasesResult]:
     """
     This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -165,7 +165,7 @@ def get_agent_knowledge_bases_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.GenerativeAi.get_agent_knowledge_bases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.generativeai.get_agent_knowledge_bases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         state=knowledge_base_state)
     ```

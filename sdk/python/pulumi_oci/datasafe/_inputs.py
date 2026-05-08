@@ -332,11 +332,11 @@ class AlertPolicyAlertPolicyRuleDetailArgsDict(TypedDict):
     """
     The conditional expression of the alert policy rule which evaluates to boolean value.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Describes the alert policy rule.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The display name of the alert policy rule.
     """
@@ -345,8 +345,8 @@ class AlertPolicyAlertPolicyRuleDetailArgsDict(TypedDict):
 class AlertPolicyAlertPolicyRuleDetailArgs:
     def __init__(__self__, *,
                  expression: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param pulumi.Input[_builtins.str] description: Describes the alert policy rule.
@@ -372,43 +372,43 @@ class AlertPolicyAlertPolicyRuleDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes the alert policy rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the alert policy rule.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
 
 class AuditPolicyAuditConditionArgsDict(TypedDict):
-    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgsDict']]]]
+    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]]
     """
     Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
     """
-    is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
+    is_data_safe_service_account_audited: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the Data Safe user activity on the target database will be audited by the policy.
     """
-    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the privileged user list is managed by Data Safe.
     """
@@ -416,10 +416,10 @@ class AuditPolicyAuditConditionArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyAuditConditionArgs:
     def __init__(__self__, *,
-                 audit_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]] = None,
-                 is_data_safe_service_account_audited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_priv_users_managed_by_data_safe: Optional[pulumi.Input[_builtins.bool]] = None):
+                 audit_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]] = None,
+                 is_data_safe_service_account_audited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_priv_users_managed_by_data_safe: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
@@ -437,67 +437,67 @@ class AuditPolicyAuditConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyName")
-    def audit_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
-    def audit_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enableConditions")
-    def enable_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]:
+    def enable_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]:
         """
         Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
         """
         return pulumi.get(self, "enable_conditions")
 
     @enable_conditions.setter
-    def enable_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]):
+    def enable_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]):
         pulumi.set(self, "enable_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataSafeServiceAccountAudited")
-    def is_data_safe_service_account_audited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_safe_service_account_audited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         """
         return pulumi.get(self, "is_data_safe_service_account_audited")
 
     @is_data_safe_service_account_audited.setter
-    def is_data_safe_service_account_audited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_safe_service_account_audited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_safe_service_account_audited", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivUsersManagedByDataSafe")
-    def is_priv_users_managed_by_data_safe(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_priv_users_managed_by_data_safe(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
         """
         return pulumi.get(self, "is_priv_users_managed_by_data_safe")
 
     @is_priv_users_managed_by_data_safe.setter
-    def is_priv_users_managed_by_data_safe(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_priv_users_managed_by_data_safe(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_priv_users_managed_by_data_safe", value)
 
 
 class AuditPolicyAuditConditionEnableConditionArgsDict(TypedDict):
-    entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    entity_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of users or roles that the policy must be enabled for.
     """
-    entity_selection: NotRequired[pulumi.Input[_builtins.str]]
+    entity_selection: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity include or exclude selection.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity type that the policy must be enabled for.
     """
-    operation_status: NotRequired[pulumi.Input[_builtins.str]]
+    operation_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The operation status that the policy must be enabled for.
     """
@@ -505,10 +505,10 @@ class AuditPolicyAuditConditionEnableConditionArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyAuditConditionEnableConditionArgs:
     def __init__(__self__, *,
-                 entity_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_selection: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 entity_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_selection: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] entity_names: List of users or roles that the policy must be enabled for.
         :param pulumi.Input[_builtins.str] entity_selection: The entity include or exclude selection.
@@ -526,95 +526,95 @@ class AuditPolicyAuditConditionEnableConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="entityNames")
-    def entity_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def entity_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of users or roles that the policy must be enabled for.
         """
         return pulumi.get(self, "entity_names")
 
     @entity_names.setter
-    def entity_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def entity_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entity_names", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySelection")
-    def entity_selection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_selection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity include or exclude selection.
         """
         return pulumi.get(self, "entity_selection")
 
     @entity_selection.setter
-    def entity_selection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_selection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_selection", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity type that the policy must be enabled for.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="operationStatus")
-    def operation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operation status that the policy must be enabled for.
         """
         return pulumi.get(self, "operation_status")
 
     @operation_status.setter
-    def operation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_status", value)
 
 
 class AuditPolicyAuditSpecificationArgsDict(TypedDict):
-    audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_category: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The category to which the audit policy belongs.
     """
-    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    database_policy_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Indicates the names of corresponding database policy ( or policies) in the target database.
     """
-    enable_status: NotRequired[pulumi.Input[_builtins.str]]
+    enable_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
     """
-    enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
+    enabled_entities: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates on whom the audit policy is enabled.
     """
-    is_created: NotRequired[pulumi.Input[_builtins.bool]]
+    is_created: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the policy is already created on the target database.
     """
-    is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled_for_all_users: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
     """
-    is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    is_seeded_in_data_safe: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
     """
-    is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
+    is_seeded_in_target: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
     """
-    is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
+    is_view_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
     """
-    partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
+    partially_enabled_msg: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Provides information about the policy that has been only partially enabled.
     """
@@ -622,17 +622,17 @@ class AuditPolicyAuditSpecificationArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyAuditSpecificationArgs:
     def __init__(__self__, *,
-                 audit_policy_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enable_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled_entities: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_created: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled_for_all_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_seeded_in_data_safe: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_seeded_in_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_view_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 partially_enabled_msg: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_policy_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_policy_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enable_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled_entities: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_created: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled_for_all_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_seeded_in_data_safe: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_seeded_in_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_view_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 partially_enabled_msg: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_policy_category: The category to which the audit policy belongs.
         :param pulumi.Input[_builtins.str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -671,155 +671,155 @@ class AuditPolicyAuditSpecificationArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyCategory")
-    def audit_policy_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The category to which the audit policy belongs.
         """
         return pulumi.get(self, "audit_policy_category")
 
     @audit_policy_category.setter
-    def audit_policy_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_category", value)
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyName")
-    def audit_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
-    def audit_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="databasePolicyNames")
-    def database_policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def database_policy_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Indicates the names of corresponding database policy ( or policies) in the target database.
         """
         return pulumi.get(self, "database_policy_names")
 
     @database_policy_names.setter
-    def database_policy_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def database_policy_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_policy_names", value)
 
     @_builtins.property
     @pulumi.getter(name="enableStatus")
-    def enable_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enable_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
         """
         return pulumi.get(self, "enable_status")
 
     @enable_status.setter
-    def enable_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enable_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enable_status", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledEntities")
-    def enabled_entities(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enabled_entities(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates on whom the audit policy is enabled.
         """
         return pulumi.get(self, "enabled_entities")
 
     @enabled_entities.setter
-    def enabled_entities(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enabled_entities(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enabled_entities", value)
 
     @_builtins.property
     @pulumi.getter(name="isCreated")
-    def is_created(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_created(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the policy is already created on the target database.
         """
         return pulumi.get(self, "is_created")
 
     @is_created.setter
-    def is_created(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_created(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_created", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabledForAllUsers")
-    def is_enabled_for_all_users(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled_for_all_users(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
         """
         return pulumi.get(self, "is_enabled_for_all_users")
 
     @is_enabled_for_all_users.setter
-    def is_enabled_for_all_users(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled_for_all_users(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled_for_all_users", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeededInDataSafe")
-    def is_seeded_in_data_safe(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_seeded_in_data_safe(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
         """
         return pulumi.get(self, "is_seeded_in_data_safe")
 
     @is_seeded_in_data_safe.setter
-    def is_seeded_in_data_safe(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_seeded_in_data_safe(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_seeded_in_data_safe", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeededInTarget")
-    def is_seeded_in_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_seeded_in_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
         """
         return pulumi.get(self, "is_seeded_in_target")
 
     @is_seeded_in_target.setter
-    def is_seeded_in_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_seeded_in_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_seeded_in_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isViewOnly")
-    def is_view_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_view_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         """
         return pulumi.get(self, "is_view_only")
 
     @is_view_only.setter
-    def is_view_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_view_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_view_only", value)
 
     @_builtins.property
     @pulumi.getter(name="partiallyEnabledMsg")
-    def partially_enabled_msg(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def partially_enabled_msg(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provides information about the policy that has been only partially enabled.
         """
         return pulumi.get(self, "partially_enabled_msg")
 
     @partially_enabled_msg.setter
-    def partially_enabled_msg(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def partially_enabled_msg(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "partially_enabled_msg", value)
 
 
 class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
-    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgsDict']]]]
+    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]]
     """
     Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
     """
-    is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
+    is_data_safe_service_account_audited: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the Data Safe user activity on the target database will be audited by the policy.
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
     """
-    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the privileged user list is managed by Data Safe.
 
@@ -831,11 +831,11 @@ class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyManagementAuditConditionArgs:
     def __init__(__self__, *,
-                 audit_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]] = None,
-                 is_data_safe_service_account_audited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_priv_users_managed_by_data_safe: Optional[pulumi.Input[_builtins.bool]] = None):
+                 audit_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]] = None,
+                 is_data_safe_service_account_audited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_priv_users_managed_by_data_safe: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
@@ -860,55 +860,55 @@ class AuditPolicyManagementAuditConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyName")
-    def audit_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
-    def audit_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enableConditions")
-    def enable_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]:
+    def enable_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]:
         """
         Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
         """
         return pulumi.get(self, "enable_conditions")
 
     @enable_conditions.setter
-    def enable_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]):
+    def enable_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]):
         pulumi.set(self, "enable_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataSafeServiceAccountAudited")
-    def is_data_safe_service_account_audited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_safe_service_account_audited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         """
         return pulumi.get(self, "is_data_safe_service_account_audited")
 
     @is_data_safe_service_account_audited.setter
-    def is_data_safe_service_account_audited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_safe_service_account_audited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_safe_service_account_audited", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivUsersManagedByDataSafe")
-    def is_priv_users_managed_by_data_safe(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_priv_users_managed_by_data_safe(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
 
@@ -919,24 +919,24 @@ class AuditPolicyManagementAuditConditionArgs:
         return pulumi.get(self, "is_priv_users_managed_by_data_safe")
 
     @is_priv_users_managed_by_data_safe.setter
-    def is_priv_users_managed_by_data_safe(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_priv_users_managed_by_data_safe(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_priv_users_managed_by_data_safe", value)
 
 
 class AuditPolicyManagementAuditConditionEnableConditionArgsDict(TypedDict):
-    entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    entity_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of users or roles that the policy must be enabled for.
     """
-    entity_selection: NotRequired[pulumi.Input[_builtins.str]]
+    entity_selection: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity include or exclude selection.
     """
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity type that the policy must be enabled for.
     """
-    operation_status: NotRequired[pulumi.Input[_builtins.str]]
+    operation_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The operation status that the policy must be enabled for.
     """
@@ -944,10 +944,10 @@ class AuditPolicyManagementAuditConditionEnableConditionArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyManagementAuditConditionEnableConditionArgs:
     def __init__(__self__, *,
-                 entity_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_selection: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 entity_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_selection: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] entity_names: List of users or roles that the policy must be enabled for.
         :param pulumi.Input[_builtins.str] entity_selection: The entity include or exclude selection.
@@ -965,95 +965,95 @@ class AuditPolicyManagementAuditConditionEnableConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="entityNames")
-    def entity_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def entity_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of users or roles that the policy must be enabled for.
         """
         return pulumi.get(self, "entity_names")
 
     @entity_names.setter
-    def entity_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def entity_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entity_names", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySelection")
-    def entity_selection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_selection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity include or exclude selection.
         """
         return pulumi.get(self, "entity_selection")
 
     @entity_selection.setter
-    def entity_selection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_selection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_selection", value)
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity type that the policy must be enabled for.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="operationStatus")
-    def operation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operation status that the policy must be enabled for.
         """
         return pulumi.get(self, "operation_status")
 
     @operation_status.setter
-    def operation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_status", value)
 
 
 class AuditPolicyManagementAuditSpecificationArgsDict(TypedDict):
-    audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_category: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The category to which the audit policy belongs.
     """
-    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    audit_policy_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    database_policy_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Indicates the names of corresponding database policy ( or policies) in the target database.
     """
-    enable_status: NotRequired[pulumi.Input[_builtins.str]]
+    enable_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
     """
-    enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
+    enabled_entities: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicates on whom the audit policy is enabled.
     """
-    is_created: NotRequired[pulumi.Input[_builtins.bool]]
+    is_created: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the policy is already created on the target database.
     """
-    is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled_for_all_users: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
     """
-    is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    is_seeded_in_data_safe: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
     """
-    is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
+    is_seeded_in_target: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
     """
-    is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
+    is_view_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
     """
-    partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
+    partially_enabled_msg: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Provides information about the policy that has been only partially enabled.
     """
@@ -1061,17 +1061,17 @@ class AuditPolicyManagementAuditSpecificationArgsDict(TypedDict):
 @pulumi.input_type
 class AuditPolicyManagementAuditSpecificationArgs:
     def __init__(__self__, *,
-                 audit_policy_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enable_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled_entities: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_created: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled_for_all_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_seeded_in_data_safe: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_seeded_in_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_view_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 partially_enabled_msg: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_policy_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_policy_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enable_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled_entities: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_created: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled_for_all_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_seeded_in_data_safe: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_seeded_in_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_view_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 partially_enabled_msg: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_policy_category: The category to which the audit policy belongs.
         :param pulumi.Input[_builtins.str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -1110,235 +1110,235 @@ class AuditPolicyManagementAuditSpecificationArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyCategory")
-    def audit_policy_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The category to which the audit policy belongs.
         """
         return pulumi.get(self, "audit_policy_category")
 
     @audit_policy_category.setter
-    def audit_policy_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_category", value)
 
     @_builtins.property
     @pulumi.getter(name="auditPolicyName")
-    def audit_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
-    def audit_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="databasePolicyNames")
-    def database_policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def database_policy_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Indicates the names of corresponding database policy ( or policies) in the target database.
         """
         return pulumi.get(self, "database_policy_names")
 
     @database_policy_names.setter
-    def database_policy_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def database_policy_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_policy_names", value)
 
     @_builtins.property
     @pulumi.getter(name="enableStatus")
-    def enable_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enable_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
         """
         return pulumi.get(self, "enable_status")
 
     @enable_status.setter
-    def enable_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enable_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enable_status", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledEntities")
-    def enabled_entities(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enabled_entities(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates on whom the audit policy is enabled.
         """
         return pulumi.get(self, "enabled_entities")
 
     @enabled_entities.setter
-    def enabled_entities(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enabled_entities(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enabled_entities", value)
 
     @_builtins.property
     @pulumi.getter(name="isCreated")
-    def is_created(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_created(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the policy is already created on the target database.
         """
         return pulumi.get(self, "is_created")
 
     @is_created.setter
-    def is_created(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_created(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_created", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabledForAllUsers")
-    def is_enabled_for_all_users(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled_for_all_users(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
         """
         return pulumi.get(self, "is_enabled_for_all_users")
 
     @is_enabled_for_all_users.setter
-    def is_enabled_for_all_users(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled_for_all_users(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled_for_all_users", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeededInDataSafe")
-    def is_seeded_in_data_safe(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_seeded_in_data_safe(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
         """
         return pulumi.get(self, "is_seeded_in_data_safe")
 
     @is_seeded_in_data_safe.setter
-    def is_seeded_in_data_safe(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_seeded_in_data_safe(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_seeded_in_data_safe", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeededInTarget")
-    def is_seeded_in_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_seeded_in_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
         """
         return pulumi.get(self, "is_seeded_in_target")
 
     @is_seeded_in_target.setter
-    def is_seeded_in_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_seeded_in_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_seeded_in_target", value)
 
     @_builtins.property
     @pulumi.getter(name="isViewOnly")
-    def is_view_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_view_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         """
         return pulumi.get(self, "is_view_only")
 
     @is_view_only.setter
-    def is_view_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_view_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_view_only", value)
 
     @_builtins.property
     @pulumi.getter(name="partiallyEnabledMsg")
-    def partially_enabled_msg(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def partially_enabled_msg(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provides information about the policy that has been only partially enabled.
         """
         return pulumi.get(self, "partially_enabled_msg")
 
     @partially_enabled_msg.setter
-    def partially_enabled_msg(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def partially_enabled_msg(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "partially_enabled_msg", value)
 
 
 class AuditProfileAuditTrailArgsDict(TypedDict):
-    audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    audit_collection_start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date from which the audit trail must start collecting data, in the format defined by RFC3339.
     """
-    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    audit_profile_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the  parent audit.
     """
-    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compartment where you want to create the audit profile.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the audit profile.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the audit profile.
     """
-    is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_purge_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Details about the current state of the audit profile in Data Safe.
     """
-    peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
+    peer_target_database_key: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The secondary id assigned for the peer database registered with Data Safe.
     """
-    purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the audit trail purge job that ran on the "purgeJobTime".
     """
-    purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current status of the audit trail purge job.
     """
-    purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the audit profile.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current sub-state of the audit trail.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the target database or target database group for which the audit profile is created.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the audit profile was created, in the format defined by RFC3339.
     """
-    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_collected: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the audit profile was updated, in the format defined by RFC3339.
     """
-    trail_location: NotRequired[pulumi.Input[_builtins.str]]
+    trail_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
     """
-    trail_source: NotRequired[pulumi.Input[_builtins.str]]
+    trail_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The underlying source of unified audit trail.
     """
-    work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    work_request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the workrequest for audit trail which collects audit records.
     """
@@ -1346,31 +1346,31 @@ class AuditProfileAuditTrailArgsDict(TypedDict):
 @pulumi.input_type
 class AuditProfileAuditTrailArgs:
     def __init__(__self__, *,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_target_database_key: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_job_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_job_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_job_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_collected: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_target_database_key: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_job_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_job_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_job_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_collected: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
@@ -1451,403 +1451,403 @@ class AuditProfileAuditTrailArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         """
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the  parent audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
-    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_update_last_archive_time_on_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         """
         return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @can_update_last_archive_time_on_target.setter
-    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_update_last_archive_time_on_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the audit profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit profile.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoPurgeEnabled")
-    def is_auto_purge_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_purge_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         """
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @is_auto_purge_enabled.setter
-    def is_auto_purge_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_purge_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_purge_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the audit profile in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseKey")
-    def peer_target_database_key(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def peer_target_database_key(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The secondary id assigned for the peer database registered with Data Safe.
         """
         return pulumi.get(self, "peer_target_database_key")
 
     @peer_target_database_key.setter
-    def peer_target_database_key(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def peer_target_database_key(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "peer_target_database_key", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobDetails")
-    def purge_job_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the audit trail purge job that ran on the "purgeJobTime".
         """
         return pulumi.get(self, "purge_job_details")
 
     @purge_job_details.setter
-    def purge_job_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_details", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobStatus")
-    def purge_job_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the audit trail purge job.
         """
         return pulumi.get(self, "purge_job_status")
 
     @purge_job_status.setter
-    def purge_job_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_status", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobTime")
-    def purge_job_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         """
         return pulumi.get(self, "purge_job_time")
 
     @purge_job_time.setter
-    def purge_job_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the audit profile.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current sub-state of the audit trail.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastCollected")
-    def time_last_collected(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_collected(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
     @time_last_collected.setter
-    def time_last_collected(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_collected(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_collected", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit profile was updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
-    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_location", value)
 
     @_builtins.property
     @pulumi.getter(name="trailSource")
-    def trail_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The underlying source of unified audit trail.
         """
         return pulumi.get(self, "trail_source")
 
     @trail_source.setter
-    def trail_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_source", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the workrequest for audit trail which collects audit records.
         """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
 class AuditProfileManagementAuditTrailArgsDict(TypedDict):
-    audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    audit_collection_start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date from which the audit trail must start collecting data, in the format defined by RFC3339.
     """
-    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    audit_profile_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the  parent audit.
     """
-    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compartment where you want to create the audit profile.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the audit profile.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the audit profile.
     """
-    is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_purge_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Details about the current state of the audit profile in Data Safe.
     """
-    peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
+    peer_target_database_key: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The secondary id assigned for the peer database registered with Data Safe.
     """
-    purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the audit trail purge job that ran on the "purgeJobTime".
     """
-    purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current status of the audit trail purge job.
     """
-    purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
+    purge_job_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the audit profile.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current sub-state of the audit trail.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the target database or target database group for which the audit profile is created.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the audit profile was created, in the format defined by RFC3339.
     """
-    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_collected: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the audit profile was updated, in the format defined by RFC3339.
     """
-    trail_location: NotRequired[pulumi.Input[_builtins.str]]
+    trail_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
     """
-    trail_source: NotRequired[pulumi.Input[_builtins.str]]
+    trail_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The underlying source of unified audit trail.
     """
-    work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    work_request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the workrequest for audit trail which collects audit records.
     """
@@ -1855,31 +1855,31 @@ class AuditProfileManagementAuditTrailArgsDict(TypedDict):
 @pulumi.input_type
 class AuditProfileManagementAuditTrailArgs:
     def __init__(__self__, *,
-                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_target_database_key: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_job_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_job_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_job_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_collected: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_target_database_key: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_job_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_job_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_job_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_collected: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
@@ -1960,321 +1960,321 @@ class AuditProfileManagementAuditTrailArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         """
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
-    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_collection_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_collection_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the  parent audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
-    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_update_last_archive_time_on_target(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         """
         return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @can_update_last_archive_time_on_target.setter
-    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_update_last_archive_time_on_target(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the audit profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit profile.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoPurgeEnabled")
-    def is_auto_purge_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_purge_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         """
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @is_auto_purge_enabled.setter
-    def is_auto_purge_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_purge_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_purge_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the audit profile in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseKey")
-    def peer_target_database_key(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def peer_target_database_key(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The secondary id assigned for the peer database registered with Data Safe.
         """
         return pulumi.get(self, "peer_target_database_key")
 
     @peer_target_database_key.setter
-    def peer_target_database_key(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def peer_target_database_key(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "peer_target_database_key", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobDetails")
-    def purge_job_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the audit trail purge job that ran on the "purgeJobTime".
         """
         return pulumi.get(self, "purge_job_details")
 
     @purge_job_details.setter
-    def purge_job_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_details", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobStatus")
-    def purge_job_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the audit trail purge job.
         """
         return pulumi.get(self, "purge_job_status")
 
     @purge_job_status.setter
-    def purge_job_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_status", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeJobTime")
-    def purge_job_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_job_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         """
         return pulumi.get(self, "purge_job_time")
 
     @purge_job_time.setter
-    def purge_job_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_job_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_job_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the audit profile.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current sub-state of the audit trail.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastCollected")
-    def time_last_collected(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_collected(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_last_collected")
 
     @time_last_collected.setter
-    def time_last_collected(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_collected(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_collected", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the audit profile was updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
-    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_location", value)
 
     @_builtins.property
     @pulumi.getter(name="trailSource")
-    def trail_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The underlying source of unified audit trail.
         """
         return pulumi.get(self, "trail_source")
 
     @trail_source.setter
-    def trail_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_source", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the workrequest for audit trail which collects audit records.
         """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
 class CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict(TypedDict):
-    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    audit_profile_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the audit.
     """
-    month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
-    trail_location: NotRequired[pulumi.Input[_builtins.str]]
-    volume: NotRequired[pulumi.Input[_builtins.str]]
+    month_in_consideration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    trail_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    volume: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class CalculateAuditVolumeAvailableAvailableAuditVolumeArgs:
     def __init__(__self__, *,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 month_in_consideration: Optional[pulumi.Input[_builtins.str]] = None,
-                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 month_in_consideration: pulumi.Input[Optional[_builtins.str]] = None,
+                 trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         """
@@ -2289,60 +2289,60 @@ class CalculateAuditVolumeAvailableAvailableAuditVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="monthInConsideration")
-    def month_in_consideration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def month_in_consideration(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "month_in_consideration")
 
     @month_in_consideration.setter
-    def month_in_consideration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def month_in_consideration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "month_in_consideration", value)
 
     @_builtins.property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trail_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
-    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trail_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trail_location", value)
 
     @_builtins.property
     @pulumi.getter
-    def volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "volume")
 
     @volume.setter
-    def volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume", value)
 
 
 class CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict(TypedDict):
-    archived_volume: NotRequired[pulumi.Input[_builtins.str]]
-    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    archived_volume: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    audit_profile_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the audit.
     """
-    month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
-    online_volume: NotRequired[pulumi.Input[_builtins.str]]
+    month_in_consideration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    online_volume: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class CalculateAuditVolumeCollectedCollectedAuditVolumeArgs:
     def __init__(__self__, *,
-                 archived_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 month_in_consideration: Optional[pulumi.Input[_builtins.str]] = None,
-                 online_volume: Optional[pulumi.Input[_builtins.str]] = None):
+                 archived_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 month_in_consideration: pulumi.Input[Optional[_builtins.str]] = None,
+                 online_volume: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         """
@@ -2357,54 +2357,54 @@ class CalculateAuditVolumeCollectedCollectedAuditVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="archivedVolume")
-    def archived_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def archived_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "archived_volume")
 
     @archived_volume.setter
-    def archived_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def archived_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "archived_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="monthInConsideration")
-    def month_in_consideration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def month_in_consideration(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "month_in_consideration")
 
     @month_in_consideration.setter
-    def month_in_consideration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def month_in_consideration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "month_in_consideration", value)
 
     @_builtins.property
     @pulumi.getter(name="onlineVolume")
-    def online_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def online_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "online_volume")
 
     @online_volume.setter
-    def online_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def online_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "online_volume", value)
 
 
 class DataSafeConfigurationGlobalSettingArgsDict(TypedDict):
-    is_paid_usage: NotRequired[pulumi.Input[_builtins.bool]]
+    is_paid_usage: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     The paid usage option chosen by the customer admin.
     """
-    offline_retention_period: NotRequired[pulumi.Input[_builtins.int]]
+    offline_retention_period: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The offline retention period in months.
     """
-    online_retention_period: NotRequired[pulumi.Input[_builtins.int]]
+    online_retention_period: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The online retention period in months.
     """
@@ -2412,9 +2412,9 @@ class DataSafeConfigurationGlobalSettingArgsDict(TypedDict):
 @pulumi.input_type
 class DataSafeConfigurationGlobalSettingArgs:
     def __init__(__self__, *,
-                 is_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 offline_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 online_retention_period: Optional[pulumi.Input[_builtins.int]] = None):
+                 is_paid_usage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 offline_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 online_retention_period: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_paid_usage: The paid usage option chosen by the customer admin.
         :param pulumi.Input[_builtins.int] offline_retention_period: The offline retention period in months.
@@ -2429,55 +2429,55 @@ class DataSafeConfigurationGlobalSettingArgs:
 
     @_builtins.property
     @pulumi.getter(name="isPaidUsage")
-    def is_paid_usage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_paid_usage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The paid usage option chosen by the customer admin.
         """
         return pulumi.get(self, "is_paid_usage")
 
     @is_paid_usage.setter
-    def is_paid_usage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_paid_usage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_paid_usage", value)
 
     @_builtins.property
     @pulumi.getter(name="offlineRetentionPeriod")
-    def offline_retention_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def offline_retention_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The offline retention period in months.
         """
         return pulumi.get(self, "offline_retention_period")
 
     @offline_retention_period.setter
-    def offline_retention_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def offline_retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "offline_retention_period", value)
 
     @_builtins.property
     @pulumi.getter(name="onlineRetentionPeriod")
-    def online_retention_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def online_retention_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The online retention period in months.
         """
         return pulumi.get(self, "online_retention_period")
 
     @online_retention_period.setter
-    def online_retention_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def online_retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "online_retention_period", value)
 
 
 class DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict(TypedDict):
-    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    exclude_job: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
     """
-    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_status_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The most recent time when the firewall status is updated, in the format defined by RFC3339.
     """
-    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    violation_log_auto_purge: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
     """
@@ -2485,10 +2485,10 @@ class DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseSecurityConfigManagementSqlFirewallConfigArgs:
     def __init__(__self__, *,
-                 exclude_job: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 violation_log_auto_purge: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_job: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 violation_log_auto_purge: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         :param pulumi.Input[_builtins.str] status: (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
@@ -2506,67 +2506,67 @@ class DatabaseSecurityConfigManagementSqlFirewallConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeJob")
-    def exclude_job(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exclude_job(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         """
         return pulumi.get(self, "exclude_job")
 
     @exclude_job.setter
-    def exclude_job(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exclude_job(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exclude_job", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The most recent time when the firewall status is updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
-    def time_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="violationLogAutoPurge")
-    def violation_log_auto_purge(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def violation_log_auto_purge(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
         """
         return pulumi.get(self, "violation_log_auto_purge")
 
     @violation_log_auto_purge.setter
-    def violation_log_auto_purge(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def violation_log_auto_purge(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
 class DatabaseSecurityConfigSqlFirewallConfigArgsDict(TypedDict):
-    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    exclude_job: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
     """
-    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_status_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The most recent time when the firewall status is updated, in the format defined by RFC3339.
     """
-    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    violation_log_auto_purge: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
     """
@@ -2574,10 +2574,10 @@ class DatabaseSecurityConfigSqlFirewallConfigArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseSecurityConfigSqlFirewallConfigArgs:
     def __init__(__self__, *,
-                 exclude_job: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 violation_log_auto_purge: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_job: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 violation_log_auto_purge: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         :param pulumi.Input[_builtins.str] status: (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
@@ -2595,70 +2595,70 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeJob")
-    def exclude_job(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exclude_job(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         """
         return pulumi.get(self, "exclude_job")
 
     @exclude_job.setter
-    def exclude_job(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exclude_job(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exclude_job", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The most recent time when the firewall status is updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
-    def time_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="violationLogAutoPurge")
-    def violation_log_auto_purge(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def violation_log_auto_purge(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
         """
         return pulumi.get(self, "violation_log_auto_purge")
 
     @violation_log_auto_purge.setter
-    def violation_log_auto_purge(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def violation_log_auto_purge(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
 class DiscoveryJobsResultConfidenceLevelDetailArgsDict(TypedDict):
-    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
-    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-    has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_comment_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_data_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_name_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
 
 @pulumi.input_type
 class DiscoveryJobsResultConfidenceLevelDetailArgs:
     def __init__(__self__, *,
-                 does_column_lead_to_pii_in_non_tables: Optional[pulumi.Input[_builtins.bool]] = None,
-                 does_column_lead_to_pii_in_same_related_tables: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_comment_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_data_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_name_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[pulumi.Input[_builtins.bool]] = None):
+                 does_column_lead_to_pii_in_non_tables: pulumi.Input[Optional[_builtins.bool]] = None,
+                 does_column_lead_to_pii_in_same_related_tables: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_comment_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_data_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_name_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: pulumi.Input[Optional[_builtins.bool]] = None):
         if does_column_lead_to_pii_in_non_tables is not None:
             pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
         if does_column_lead_to_pii_in_same_related_tables is not None:
@@ -2674,65 +2674,65 @@ class DiscoveryJobsResultConfidenceLevelDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
-    def does_column_lead_to_pii_in_non_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_column_lead_to_pii_in_non_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
 
     @does_column_lead_to_pii_in_non_tables.setter
-    def does_column_lead_to_pii_in_non_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_column_lead_to_pii_in_non_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_column_lead_to_pii_in_non_tables", value)
 
     @_builtins.property
     @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
-    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_column_lead_to_pii_in_same_related_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
 
     @does_column_lead_to_pii_in_same_related_tables.setter
-    def does_column_lead_to_pii_in_same_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_column_lead_to_pii_in_same_related_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_column_lead_to_pii_in_same_related_tables", value)
 
     @_builtins.property
     @pulumi.getter(name="hasCommentPatternMatched")
-    def has_comment_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_comment_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_comment_pattern_matched")
 
     @has_comment_pattern_matched.setter
-    def has_comment_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_comment_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_comment_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="hasDataPatternMatched")
-    def has_data_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_data_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_data_pattern_matched")
 
     @has_data_pattern_matched.setter
-    def has_data_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_data_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_data_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="hasNamePatternMatched")
-    def has_name_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_name_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_name_pattern_matched")
 
     @has_name_pattern_matched.setter
-    def has_name_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_name_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_name_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
-    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
     @is_sensitive_type_from_same_context_found_in_same_or_related_tables.setter
-    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
 class DiscoveryJobsResultModifiedAttributeArgsDict(TypedDict):
-    app_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    app_defined_child_column_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
     """
-    db_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    db_defined_child_column_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
     """
@@ -2740,8 +2740,8 @@ class DiscoveryJobsResultModifiedAttributeArgsDict(TypedDict):
 @pulumi.input_type
 class DiscoveryJobsResultModifiedAttributeArgs:
     def __init__(__self__, *,
-                 app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -2753,26 +2753,26 @@ class DiscoveryJobsResultModifiedAttributeArgs:
 
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def app_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         """
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @app_defined_child_column_keys.setter
-    def app_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def app_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "app_defined_child_column_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_defined_child_column_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @db_defined_child_column_keys.setter
-    def db_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_defined_child_column_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_defined_child_column_keys", value)
 
 
@@ -2781,7 +2781,7 @@ class DiscoveryModTablesForDiscoveryArgsDict(TypedDict):
     """
     This contains the name of the schema.
     """
-    table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    table_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     This contains an optional list of the table names.
 
@@ -2794,7 +2794,7 @@ class DiscoveryModTablesForDiscoveryArgsDict(TypedDict):
 class DiscoveryModTablesForDiscoveryArgs:
     def __init__(__self__, *,
                  schema_name: pulumi.Input[_builtins.str],
-                 table_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 table_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] schema_name: This contains the name of the schema.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] table_names: This contains an optional list of the table names.
@@ -2821,7 +2821,7 @@ class DiscoveryModTablesForDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter(name="tableNames")
-    def table_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def table_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         This contains an optional list of the table names.
 
@@ -2832,7 +2832,7 @@ class DiscoveryModTablesForDiscoveryArgs:
         return pulumi.get(self, "table_names")
 
     @table_names.setter
-    def table_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def table_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "table_names", value)
 
 
@@ -2841,59 +2841,59 @@ class LibraryMasingFormatFormatEntryArgsDict(TypedDict):
     """
     (Updatable) The type of the format entry.
     """
-    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    column_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the substitution column.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the format entry.
     """
-    end_date: NotRequired[pulumi.Input[_builtins.str]]
+    end_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
     """
-    end_length: NotRequired[pulumi.Input[_builtins.int]]
+    end_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
     """
-    end_value: NotRequired[pulumi.Input[_builtins.float]]
+    end_value: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
     """
-    fixed_number: NotRequired[pulumi.Input[_builtins.float]]
+    fixed_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The constant number to be used for masking.
     """
-    fixed_string: NotRequired[pulumi.Input[_builtins.str]]
+    fixed_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The constant string to be used for masking.
     """
-    grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    grouping_columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
     """
-    length: NotRequired[pulumi.Input[_builtins.int]]
+    length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
     """
-    library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
+    library_masking_format_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the library masking format.
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The pattern that should be used to mask data.
     """
-    post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
+    post_processing_function: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
     """
-    random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    random_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
     """
-    regular_expression: NotRequired[pulumi.Input[_builtins.str]]
+    regular_expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
@@ -2901,39 +2901,39 @@ class LibraryMasingFormatFormatEntryArgsDict(TypedDict):
 
     If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
     """
-    replace_with: NotRequired[pulumi.Input[_builtins.str]]
+    replace_with: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
     """
-    schema_name: NotRequired[pulumi.Input[_builtins.str]]
+    schema_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the schema that contains the substitution column.
     """
-    sql_expression: NotRequired[pulumi.Input[_builtins.str]]
+    sql_expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
     """
-    start_date: NotRequired[pulumi.Input[_builtins.str]]
+    start_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
     """
-    start_length: NotRequired[pulumi.Input[_builtins.int]]
+    start_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
     """
-    start_position: NotRequired[pulumi.Input[_builtins.int]]
+    start_position: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
     """
-    start_value: NotRequired[pulumi.Input[_builtins.float]]
+    start_value: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
     """
-    table_name: NotRequired[pulumi.Input[_builtins.str]]
+    table_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the table that contains the substitution column.
     """
-    user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
+    user_defined_function: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
     """
@@ -2942,29 +2942,29 @@ class LibraryMasingFormatFormatEntryArgsDict(TypedDict):
 class LibraryMasingFormatFormatEntryArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 end_value: Optional[pulumi.Input[_builtins.float]] = None,
-                 fixed_number: Optional[pulumi.Input[_builtins.float]] = None,
-                 fixed_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 grouping_columns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 length: Optional[pulumi.Input[_builtins.int]] = None,
-                 library_masking_format_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_processing_function: Optional[pulumi.Input[_builtins.str]] = None,
-                 random_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_with: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sql_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_position: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_value: Optional[pulumi.Input[_builtins.float]] = None,
-                 table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_defined_function: Optional[pulumi.Input[_builtins.str]] = None):
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 end_value: pulumi.Input[Optional[_builtins.float]] = None,
+                 fixed_number: pulumi.Input[Optional[_builtins.float]] = None,
+                 fixed_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 grouping_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 length: pulumi.Input[Optional[_builtins.int]] = None,
+                 library_masking_format_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_processing_function: pulumi.Input[Optional[_builtins.str]] = None,
+                 random_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_with: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sql_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_position: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_value: pulumi.Input[Optional[_builtins.float]] = None,
+                 table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_defined_function: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the format entry.
         :param pulumi.Input[_builtins.str] column_name: (Updatable) The name of the substitution column.
@@ -3057,163 +3057,163 @@ class LibraryMasingFormatFormatEntryArgs:
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the substitution column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the format entry.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
         """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
-    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="endLength")
-    def end_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def end_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
         """
         return pulumi.get(self, "end_length")
 
     @end_length.setter
-    def end_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def end_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "end_length", value)
 
     @_builtins.property
     @pulumi.getter(name="endValue")
-    def end_value(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def end_value(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
         """
         return pulumi.get(self, "end_value")
 
     @end_value.setter
-    def end_value(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def end_value(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "end_value", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedNumber")
-    def fixed_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def fixed_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The constant number to be used for masking.
         """
         return pulumi.get(self, "fixed_number")
 
     @fixed_number.setter
-    def fixed_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def fixed_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "fixed_number", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedString")
-    def fixed_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fixed_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The constant string to be used for masking.
         """
         return pulumi.get(self, "fixed_string")
 
     @fixed_string.setter
-    def fixed_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fixed_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fixed_string", value)
 
     @_builtins.property
     @pulumi.getter(name="groupingColumns")
-    def grouping_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def grouping_columns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         """
         return pulumi.get(self, "grouping_columns")
 
     @grouping_columns.setter
-    def grouping_columns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def grouping_columns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "grouping_columns", value)
 
     @_builtins.property
     @pulumi.getter
-    def length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         """
         return pulumi.get(self, "length")
 
     @length.setter
-    def length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "length", value)
 
     @_builtins.property
     @pulumi.getter(name="libraryMaskingFormatId")
-    def library_masking_format_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def library_masking_format_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
 
     @library_masking_format_id.setter
-    def library_masking_format_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def library_masking_format_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "library_masking_format_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The pattern that should be used to mask data.
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="postProcessingFunction")
-    def post_processing_function(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_processing_function(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
         return pulumi.get(self, "post_processing_function")
 
     @post_processing_function.setter
-    def post_processing_function(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_processing_function(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_processing_function", value)
 
     @_builtins.property
     @pulumi.getter(name="randomLists")
-    def random_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def random_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         """
         return pulumi.get(self, "random_lists")
 
     @random_lists.setter
-    def random_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def random_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "random_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="regularExpression")
-    def regular_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regular_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
@@ -3224,115 +3224,115 @@ class LibraryMasingFormatFormatEntryArgs:
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
-    def regular_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regular_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regular_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="replaceWith")
-    def replace_with(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replace_with(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
     @replace_with.setter
-    def replace_with(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replace_with(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replace_with", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the schema that contains the substitution column.
         """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
-    def schema_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlExpression")
-    def sql_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sql_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
     @sql_expression.setter
-    def sql_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sql_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sql_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
-    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
 
     @_builtins.property
     @pulumi.getter(name="startLength")
-    def start_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         """
         return pulumi.get(self, "start_length")
 
     @start_length.setter
-    def start_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_length", value)
 
     @_builtins.property
     @pulumi.getter(name="startPosition")
-    def start_position(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_position(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
         """
         return pulumi.get(self, "start_position")
 
     @start_position.setter
-    def start_position(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_position(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_position", value)
 
     @_builtins.property
     @pulumi.getter(name="startValue")
-    def start_value(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def start_value(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
         """
         return pulumi.get(self, "start_value")
 
     @start_value.setter
-    def start_value(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def start_value(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "start_value", value)
 
     @_builtins.property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the table that contains the substitution column.
         """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
-    def table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_name", value)
 
     @_builtins.property
     @pulumi.getter(name="userDefinedFunction")
-    def user_defined_function(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_defined_function(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
         return pulumi.get(self, "user_defined_function")
 
     @user_defined_function.setter
-    def user_defined_function(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_defined_function(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_defined_function", value)
 
 
@@ -3372,11 +3372,11 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgsDict(TypedDict):
     """
     (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
     """
-    condition: NotRequired[pulumi.Input[_builtins.str]]
+    condition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the masking format.
     """
@@ -3385,8 +3385,8 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgsDict(TypedDict):
 class MaskingPoliciesMaskingColumnMaskingFormatArgs:
     def __init__(__self__, *,
                  format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]],
-                 condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         :param pulumi.Input[_builtins.str] condition: (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -3412,26 +3412,26 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the masking format.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 
@@ -3440,59 +3440,59 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict(TypedDict):
     """
     (Updatable) The type of the format entry.
     """
-    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    column_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the substitution column.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the format entry.
     """
-    end_date: NotRequired[pulumi.Input[_builtins.str]]
+    end_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
     """
-    end_length: NotRequired[pulumi.Input[_builtins.int]]
+    end_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
     """
-    end_value: NotRequired[pulumi.Input[_builtins.float]]
+    end_value: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
     """
-    fixed_number: NotRequired[pulumi.Input[_builtins.float]]
+    fixed_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The constant number to be used for masking.
     """
-    fixed_string: NotRequired[pulumi.Input[_builtins.str]]
+    fixed_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The constant string to be used for masking.
     """
-    grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    grouping_columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
     """
-    length: NotRequired[pulumi.Input[_builtins.int]]
+    length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
     """
-    library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
+    library_masking_format_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the library masking format.
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The pattern that should be used to mask data.
     """
-    post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
+    post_processing_function: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
     """
-    random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    random_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
     """
-    regular_expression: NotRequired[pulumi.Input[_builtins.str]]
+    regular_expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
@@ -3500,39 +3500,39 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict(TypedDict):
 
     If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
     """
-    replace_with: NotRequired[pulumi.Input[_builtins.str]]
+    replace_with: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
     """
-    schema_name: NotRequired[pulumi.Input[_builtins.str]]
+    schema_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the schema that contains the substitution column.
     """
-    sql_expression: NotRequired[pulumi.Input[_builtins.str]]
+    sql_expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
     """
-    start_date: NotRequired[pulumi.Input[_builtins.str]]
+    start_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
     """
-    start_length: NotRequired[pulumi.Input[_builtins.int]]
+    start_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
     """
-    start_position: NotRequired[pulumi.Input[_builtins.int]]
+    start_position: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
     """
-    start_value: NotRequired[pulumi.Input[_builtins.float]]
+    start_value: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
     """
-    table_name: NotRequired[pulumi.Input[_builtins.str]]
+    table_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the table that contains the substitution column.
     """
-    user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
+    user_defined_function: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
     """
@@ -3541,29 +3541,29 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict(TypedDict):
 class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 end_value: Optional[pulumi.Input[_builtins.float]] = None,
-                 fixed_number: Optional[pulumi.Input[_builtins.float]] = None,
-                 fixed_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 grouping_columns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 length: Optional[pulumi.Input[_builtins.int]] = None,
-                 library_masking_format_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_processing_function: Optional[pulumi.Input[_builtins.str]] = None,
-                 random_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_with: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sql_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_position: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_value: Optional[pulumi.Input[_builtins.float]] = None,
-                 table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_defined_function: Optional[pulumi.Input[_builtins.str]] = None):
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 end_value: pulumi.Input[Optional[_builtins.float]] = None,
+                 fixed_number: pulumi.Input[Optional[_builtins.float]] = None,
+                 fixed_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 grouping_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 length: pulumi.Input[Optional[_builtins.int]] = None,
+                 library_masking_format_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_processing_function: pulumi.Input[Optional[_builtins.str]] = None,
+                 random_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_with: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sql_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_position: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_value: pulumi.Input[Optional[_builtins.float]] = None,
+                 table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_defined_function: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the format entry.
         :param pulumi.Input[_builtins.str] column_name: (Updatable) The name of the substitution column.
@@ -3656,163 +3656,163 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the substitution column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the format entry.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
         """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
-    def end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="endLength")
-    def end_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def end_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
         """
         return pulumi.get(self, "end_length")
 
     @end_length.setter
-    def end_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def end_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "end_length", value)
 
     @_builtins.property
     @pulumi.getter(name="endValue")
-    def end_value(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def end_value(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
         """
         return pulumi.get(self, "end_value")
 
     @end_value.setter
-    def end_value(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def end_value(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "end_value", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedNumber")
-    def fixed_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def fixed_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The constant number to be used for masking.
         """
         return pulumi.get(self, "fixed_number")
 
     @fixed_number.setter
-    def fixed_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def fixed_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "fixed_number", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedString")
-    def fixed_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fixed_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The constant string to be used for masking.
         """
         return pulumi.get(self, "fixed_string")
 
     @fixed_string.setter
-    def fixed_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fixed_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fixed_string", value)
 
     @_builtins.property
     @pulumi.getter(name="groupingColumns")
-    def grouping_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def grouping_columns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         """
         return pulumi.get(self, "grouping_columns")
 
     @grouping_columns.setter
-    def grouping_columns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def grouping_columns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "grouping_columns", value)
 
     @_builtins.property
     @pulumi.getter
-    def length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         """
         return pulumi.get(self, "length")
 
     @length.setter
-    def length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "length", value)
 
     @_builtins.property
     @pulumi.getter(name="libraryMaskingFormatId")
-    def library_masking_format_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def library_masking_format_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
 
     @library_masking_format_id.setter
-    def library_masking_format_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def library_masking_format_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "library_masking_format_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The pattern that should be used to mask data.
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="postProcessingFunction")
-    def post_processing_function(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_processing_function(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
         return pulumi.get(self, "post_processing_function")
 
     @post_processing_function.setter
-    def post_processing_function(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_processing_function(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_processing_function", value)
 
     @_builtins.property
     @pulumi.getter(name="randomLists")
-    def random_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def random_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         """
         return pulumi.get(self, "random_lists")
 
     @random_lists.setter
-    def random_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def random_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "random_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="regularExpression")
-    def regular_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regular_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
@@ -3823,115 +3823,115 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
-    def regular_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regular_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regular_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="replaceWith")
-    def replace_with(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replace_with(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
     @replace_with.setter
-    def replace_with(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replace_with(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replace_with", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the schema that contains the substitution column.
         """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
-    def schema_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlExpression")
-    def sql_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sql_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
     @sql_expression.setter
-    def sql_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sql_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sql_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
-    def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
 
     @_builtins.property
     @pulumi.getter(name="startLength")
-    def start_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         """
         return pulumi.get(self, "start_length")
 
     @start_length.setter
-    def start_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_length", value)
 
     @_builtins.property
     @pulumi.getter(name="startPosition")
-    def start_position(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_position(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
         """
         return pulumi.get(self, "start_position")
 
     @start_position.setter
-    def start_position(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_position(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_position", value)
 
     @_builtins.property
     @pulumi.getter(name="startValue")
-    def start_value(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def start_value(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
         """
         return pulumi.get(self, "start_value")
 
     @start_value.setter
-    def start_value(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def start_value(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "start_value", value)
 
     @_builtins.property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the table that contains the substitution column.
         """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
-    def table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_name", value)
 
     @_builtins.property
     @pulumi.getter(name="userDefinedFunction")
-    def user_defined_function(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_defined_function(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
         return pulumi.get(self, "user_defined_function")
 
     @user_defined_function.setter
-    def user_defined_function(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_defined_function(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_defined_function", value)
 
 
@@ -3940,11 +3940,11 @@ class MaskingPolicyColumnSourceArgsDict(TypedDict):
     """
     (Updatable) The source of masking columns.
     """
-    sensitive_data_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    sensitive_data_model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
     """
-    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
     """
@@ -3953,8 +3953,8 @@ class MaskingPolicyColumnSourceArgsDict(TypedDict):
 class MaskingPolicyColumnSourceArgs:
     def __init__(__self__, *,
                  column_source: pulumi.Input[_builtins.str],
-                 sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] column_source: (Updatable) The source of masking columns.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
@@ -3980,26 +3980,26 @@ class MaskingPolicyColumnSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="sensitiveDataModelId")
-    def sensitive_data_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_data_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
         """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
-    def sensitive_data_model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_data_model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_data_model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
 
@@ -4124,15 +4124,15 @@ class ReportDefinitionColumnInfoArgsDict(TypedDict):
     """
     (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
     """
-    applicable_operators: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    applicable_operators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of operators that can be supported by column fieldName.
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the data type of the column.
     """
-    is_virtual: NotRequired[pulumi.Input[_builtins.bool]]
+    is_virtual: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies if column is virtual and can only be used as column filter.
     """
@@ -4144,9 +4144,9 @@ class ReportDefinitionColumnInfoArgs:
                  display_order: pulumi.Input[_builtins.int],
                  field_name: pulumi.Input[_builtins.str],
                  is_hidden: pulumi.Input[_builtins.bool],
-                 applicable_operators: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_virtual: Optional[pulumi.Input[_builtins.bool]] = None):
+                 applicable_operators: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_virtual: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the column displayed on UI.
         :param pulumi.Input[_builtins.int] display_order: (Updatable) Specifies the display order of the column.
@@ -4217,38 +4217,38 @@ class ReportDefinitionColumnInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicableOperators")
-    def applicable_operators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def applicable_operators(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of operators that can be supported by column fieldName.
         """
         return pulumi.get(self, "applicable_operators")
 
     @applicable_operators.setter
-    def applicable_operators(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def applicable_operators(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "applicable_operators", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the data type of the column.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isVirtual")
-    def is_virtual(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_virtual(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if column is virtual and can only be used as column filter.
         """
         return pulumi.get(self, "is_virtual")
 
     @is_virtual.setter
-    def is_virtual(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_virtual(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_virtual", value)
 
 
@@ -4327,19 +4327,19 @@ class ReportDefinitionSummaryArgsDict(TypedDict):
     """
     (Updatable) Name of the report summary.
     """
-    count_of: NotRequired[pulumi.Input[_builtins.str]]
+    count_of: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the key or count of object.
     """
-    group_by_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    group_by_field_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
     """
-    is_hidden: NotRequired[pulumi.Input[_builtins.bool]]
+    is_hidden: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
     """
-    scim_filter: NotRequired[pulumi.Input[_builtins.str]]
+    scim_filter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Additional scim filters used to get the specific summary.
 
@@ -4353,10 +4353,10 @@ class ReportDefinitionSummaryArgs:
     def __init__(__self__, *,
                  display_order: pulumi.Input[_builtins.int],
                  name: pulumi.Input[_builtins.str],
-                 count_of: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_by_field_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scim_filter: Optional[pulumi.Input[_builtins.str]] = None):
+                 count_of: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_by_field_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scim_filter: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] display_order: (Updatable) Specifies the order in which the summary must be displayed.
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of the report summary.
@@ -4406,43 +4406,43 @@ class ReportDefinitionSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="countOf")
-    def count_of(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def count_of(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the key or count of object.
         """
         return pulumi.get(self, "count_of")
 
     @count_of.setter
-    def count_of(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def count_of(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "count_of", value)
 
     @_builtins.property
     @pulumi.getter(name="groupByFieldName")
-    def group_by_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_by_field_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
         """
         return pulumi.get(self, "group_by_field_name")
 
     @group_by_field_name.setter
-    def group_by_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_by_field_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_by_field_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
-    def is_hidden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
     @pulumi.getter(name="scimFilter")
-    def scim_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scim_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
 
@@ -4453,36 +4453,36 @@ class ReportDefinitionSummaryArgs:
         return pulumi.get(self, "scim_filter")
 
     @scim_filter.setter
-    def scim_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scim_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scim_filter", value)
 
 
 class SecurityAssessmentCheckArgsDict(TypedDict):
-    category: NotRequired[pulumi.Input[_builtins.str]]
+    category: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The category to which the check belongs to.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A unique identifier for the check.
     """
-    oneline: NotRequired[pulumi.Input[_builtins.str]]
+    oneline: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Provides a recommended approach to take to remediate the check reported.
     """
-    references: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgsDict']]]]
+    references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]]
     """
     Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
     """
-    remarks: NotRequired[pulumi.Input[_builtins.str]]
+    remarks: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
     """
-    suggested_severity: NotRequired[pulumi.Input[_builtins.str]]
+    suggested_severity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
     """
-    title: NotRequired[pulumi.Input[_builtins.str]]
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The short title for the check.
     """
@@ -4490,13 +4490,13 @@ class SecurityAssessmentCheckArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentCheckArgs:
     def __init__(__self__, *,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 oneline: Optional[pulumi.Input[_builtins.str]] = None,
-                 references: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]] = None,
-                 remarks: Optional[pulumi.Input[_builtins.str]] = None,
-                 suggested_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None):
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 oneline: pulumi.Input[Optional[_builtins.str]] = None,
+                 references: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]] = None,
+                 remarks: pulumi.Input[Optional[_builtins.str]] = None,
+                 suggested_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] category: The category to which the check belongs to.
         :param pulumi.Input[_builtins.str] key: A unique identifier for the check.
@@ -4523,86 +4523,86 @@ class SecurityAssessmentCheckArgs:
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The category to which the check belongs to.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the check.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def oneline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oneline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provides a recommended approach to take to remediate the check reported.
         """
         return pulumi.get(self, "oneline")
 
     @oneline.setter
-    def oneline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oneline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oneline", value)
 
     @_builtins.property
     @pulumi.getter
-    def references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]:
+    def references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]:
         """
         Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
         """
         return pulumi.get(self, "references")
 
     @references.setter
-    def references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]):
+    def references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]):
         pulumi.set(self, "references", value)
 
     @_builtins.property
     @pulumi.getter
-    def remarks(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remarks(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         """
         return pulumi.get(self, "remarks")
 
     @remarks.setter
-    def remarks(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remarks(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remarks", value)
 
     @_builtins.property
     @pulumi.getter(name="suggestedSeverity")
-    def suggested_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def suggested_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
         """
         return pulumi.get(self, "suggested_severity")
 
     @suggested_severity.setter
-    def suggested_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def suggested_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "suggested_severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The short title for the check.
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
 
@@ -4673,19 +4673,19 @@ class SecurityAssessmentCheckPatchOperationArgs:
 
 
 class SecurityAssessmentCheckReferenceArgsDict(TypedDict):
-    cis: NotRequired[pulumi.Input[_builtins.str]]
+    cis: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from CIS.
     """
-    gdpr: NotRequired[pulumi.Input[_builtins.str]]
+    gdpr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from GDPR.
     """
-    obp: NotRequired[pulumi.Input[_builtins.str]]
+    obp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from OBP.
     """
-    stig: NotRequired[pulumi.Input[_builtins.str]]
+    stig: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from STIG.
     """
@@ -4693,10 +4693,10 @@ class SecurityAssessmentCheckReferenceArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentCheckReferenceArgs:
     def __init__(__self__, *,
-                 cis: Optional[pulumi.Input[_builtins.str]] = None,
-                 gdpr: Optional[pulumi.Input[_builtins.str]] = None,
-                 obp: Optional[pulumi.Input[_builtins.str]] = None,
-                 stig: Optional[pulumi.Input[_builtins.str]] = None):
+                 cis: pulumi.Input[Optional[_builtins.str]] = None,
+                 gdpr: pulumi.Input[Optional[_builtins.str]] = None,
+                 obp: pulumi.Input[Optional[_builtins.str]] = None,
+                 stig: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cis: Relevant section from CIS.
         :param pulumi.Input[_builtins.str] gdpr: Relevant section from GDPR.
@@ -4714,50 +4714,50 @@ class SecurityAssessmentCheckReferenceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from CIS.
         """
         return pulumi.get(self, "cis")
 
     @cis.setter
-    def cis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cis", value)
 
     @_builtins.property
     @pulumi.getter
-    def gdpr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gdpr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
 
     @gdpr.setter
-    def gdpr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gdpr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gdpr", value)
 
     @_builtins.property
     @pulumi.getter
-    def obp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def obp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
 
     @obp.setter
-    def obp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def obp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "obp", value)
 
     @_builtins.property
     @pulumi.getter
-    def stig(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stig(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from STIG.
         """
         return pulumi.get(self, "stig")
 
     @stig.setter
-    def stig(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stig(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stig", value)
 
 
@@ -4828,19 +4828,19 @@ class SecurityAssessmentFindingPatchOperationArgs:
 
 
 class SecurityAssessmentFindingReferenceArgsDict(TypedDict):
-    cis: NotRequired[pulumi.Input[_builtins.str]]
+    cis: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from CIS.
     """
-    gdpr: NotRequired[pulumi.Input[_builtins.str]]
+    gdpr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from GDPR.
     """
-    obp: NotRequired[pulumi.Input[_builtins.str]]
+    obp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from OBP.
     """
-    stig: NotRequired[pulumi.Input[_builtins.str]]
+    stig: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Relevant section from STIG.
     """
@@ -4848,10 +4848,10 @@ class SecurityAssessmentFindingReferenceArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentFindingReferenceArgs:
     def __init__(__self__, *,
-                 cis: Optional[pulumi.Input[_builtins.str]] = None,
-                 gdpr: Optional[pulumi.Input[_builtins.str]] = None,
-                 obp: Optional[pulumi.Input[_builtins.str]] = None,
-                 stig: Optional[pulumi.Input[_builtins.str]] = None):
+                 cis: pulumi.Input[Optional[_builtins.str]] = None,
+                 gdpr: pulumi.Input[Optional[_builtins.str]] = None,
+                 obp: pulumi.Input[Optional[_builtins.str]] = None,
+                 stig: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cis: Relevant section from CIS.
         :param pulumi.Input[_builtins.str] gdpr: Relevant section from GDPR.
@@ -4869,83 +4869,83 @@ class SecurityAssessmentFindingReferenceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from CIS.
         """
         return pulumi.get(self, "cis")
 
     @cis.setter
-    def cis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cis", value)
 
     @_builtins.property
     @pulumi.getter
-    def gdpr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gdpr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
 
     @gdpr.setter
-    def gdpr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gdpr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gdpr", value)
 
     @_builtins.property
     @pulumi.getter
-    def obp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def obp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
 
     @obp.setter
-    def obp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def obp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "obp", value)
 
     @_builtins.property
     @pulumi.getter
-    def stig(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stig(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Relevant section from STIG.
         """
         return pulumi.get(self, "stig")
 
     @stig.setter
-    def stig(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stig(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stig", value)
 
 
 class SecurityAssessmentStatisticArgsDict(TypedDict):
-    advisories: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgsDict']]]]
+    advisories: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    deferreds: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgsDict']]]]
+    deferreds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    evaluates: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgsDict']]]]
+    evaluates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    high_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgsDict']]]]
+    high_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    low_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgsDict']]]]
+    low_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    medium_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgsDict']]]]
+    medium_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    passes: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgsDict']]]]
+    passes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
@@ -4953,14 +4953,14 @@ class SecurityAssessmentStatisticArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticArgs:
     def __init__(__self__, *,
-                 advisories: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]] = None,
-                 deferreds: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]] = None,
-                 evaluates: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]] = None,
-                 high_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]] = None,
-                 low_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]] = None,
-                 medium_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]] = None,
-                 passes: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 advisories: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]] = None,
+                 deferreds: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]] = None,
+                 evaluates: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]] = None,
+                 high_risks: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]] = None,
+                 low_risks: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]] = None,
+                 medium_risks: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]] = None,
+                 passes: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]] advisories: Statistics showing the number of findings with a particular risk level for each category.
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]] deferreds: Statistics showing the number of findings with a particular risk level for each category.
@@ -4990,131 +4990,131 @@ class SecurityAssessmentStatisticArgs:
 
     @_builtins.property
     @pulumi.getter
-    def advisories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]:
+    def advisories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "advisories")
 
     @advisories.setter
-    def advisories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]):
+    def advisories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]):
         pulumi.set(self, "advisories", value)
 
     @_builtins.property
     @pulumi.getter
-    def deferreds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]:
+    def deferreds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "deferreds")
 
     @deferreds.setter
-    def deferreds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]):
+    def deferreds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]):
         pulumi.set(self, "deferreds", value)
 
     @_builtins.property
     @pulumi.getter
-    def evaluates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]:
+    def evaluates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "evaluates")
 
     @evaluates.setter
-    def evaluates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]):
+    def evaluates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]):
         pulumi.set(self, "evaluates", value)
 
     @_builtins.property
     @pulumi.getter(name="highRisks")
-    def high_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]:
+    def high_risks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "high_risks")
 
     @high_risks.setter
-    def high_risks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]):
+    def high_risks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]):
         pulumi.set(self, "high_risks", value)
 
     @_builtins.property
     @pulumi.getter(name="lowRisks")
-    def low_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]:
+    def low_risks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "low_risks")
 
     @low_risks.setter
-    def low_risks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]):
+    def low_risks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]):
         pulumi.set(self, "low_risks", value)
 
     @_builtins.property
     @pulumi.getter(name="mediumRisks")
-    def medium_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]:
+    def medium_risks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "medium_risks")
 
     @medium_risks.setter
-    def medium_risks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]):
+    def medium_risks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]):
         pulumi.set(self, "medium_risks", value)
 
     @_builtins.property
     @pulumi.getter
-    def passes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]:
+    def passes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]:
         """
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "passes")
 
     @passes.setter
-    def passes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]):
+    def passes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]):
         pulumi.set(self, "passes", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
 
 class SecurityAssessmentStatisticAdvisoryArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5122,14 +5122,14 @@ class SecurityAssessmentStatisticAdvisoryArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticAdvisoryArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -5159,131 +5159,131 @@ class SecurityAssessmentStatisticAdvisoryArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticDeferredArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5291,14 +5291,14 @@ class SecurityAssessmentStatisticDeferredArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticDeferredArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -5328,131 +5328,131 @@ class SecurityAssessmentStatisticDeferredArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticEvaluateArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5460,14 +5460,14 @@ class SecurityAssessmentStatisticEvaluateArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticEvaluateArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -5497,131 +5497,131 @@ class SecurityAssessmentStatisticEvaluateArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticHighRiskArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5629,14 +5629,14 @@ class SecurityAssessmentStatisticHighRiskArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticHighRiskArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -5666,131 +5666,131 @@ class SecurityAssessmentStatisticHighRiskArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticLowRiskArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5798,14 +5798,14 @@ class SecurityAssessmentStatisticLowRiskArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticLowRiskArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -5835,131 +5835,131 @@ class SecurityAssessmentStatisticLowRiskArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticMediumRiskArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -5967,14 +5967,14 @@ class SecurityAssessmentStatisticMediumRiskArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticMediumRiskArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -6004,131 +6004,131 @@ class SecurityAssessmentStatisticMediumRiskArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityAssessmentStatisticPassArgsDict(TypedDict):
-    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    auditing_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Auditing category.
     """
-    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    authorization_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Authorization Control category.
     """
-    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    data_encryption_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Data Encryption category.
     """
-    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    db_configuration_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Database Configuration category.
     """
-    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Fine-Grained Access Control category.
     """
-    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the Privileges and Roles category.
     """
-    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    targets_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of targets in this security assessment.
     """
-    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    user_accounts_findings_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of findings in the User Accounts category.
     """
@@ -6136,14 +6136,14 @@ class SecurityAssessmentStatisticPassArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityAssessmentStatisticPassArgs:
     def __init__(__self__, *,
-                 auditing_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_encryption_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_configuration_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fine_grained_access_control_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 privileges_and_roles_findings_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 targets_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_accounts_findings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 auditing_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_encryption_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_configuration_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fine_grained_access_control_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 privileges_and_roles_findings_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 targets_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_accounts_findings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] auditing_findings_count: The number of findings in the Auditing category.
         :param pulumi.Input[_builtins.int] authorization_control_findings_count: The number of findings in the Authorization Control category.
@@ -6173,115 +6173,115 @@ class SecurityAssessmentStatisticPassArgs:
 
     @_builtins.property
     @pulumi.getter(name="auditingFindingsCount")
-    def auditing_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auditing_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Auditing category.
         """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
-    def auditing_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auditing_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auditing_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationControlFindingsCount")
-    def authorization_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def authorization_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Authorization Control category.
         """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
-    def authorization_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def authorization_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "authorization_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dataEncryptionFindingsCount")
-    def data_encryption_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_encryption_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Data Encryption category.
         """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
-    def data_encryption_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_encryption_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_encryption_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationFindingsCount")
-    def db_configuration_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_configuration_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Database Configuration category.
         """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
-    def db_configuration_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_configuration_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_configuration_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
-    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fine_grained_access_control_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Fine-Grained Access Control category.
         """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
-    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fine_grained_access_control_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fine_grained_access_control_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
-    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def privileges_and_roles_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the Privileges and Roles category.
         """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
-    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def privileges_and_roles_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "privileges_and_roles_findings_count", value)
 
     @_builtins.property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def targets_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of targets in this security assessment.
         """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
-    def targets_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def targets_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "targets_count", value)
 
     @_builtins.property
     @pulumi.getter(name="userAccountsFindingsCount")
-    def user_accounts_findings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_accounts_findings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
-    def user_accounts_findings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_accounts_findings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
 class SecurityPolicyConfigFirewallConfigArgsDict(TypedDict):
-    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    exclude_job: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the firewall is enabled or disabled.
     """
-    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_status_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the firewall configuration was last updated, in the format defined by RFC3339.
     """
-    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    violation_log_auto_purge: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
     """
@@ -6289,10 +6289,10 @@ class SecurityPolicyConfigFirewallConfigArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityPolicyConfigFirewallConfigArgs:
     def __init__(__self__, *,
-                 exclude_job: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 violation_log_auto_purge: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_job: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 violation_log_auto_purge: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         :param pulumi.Input[_builtins.str] status: (Updatable) Specifies whether the firewall is enabled or disabled.
@@ -6310,55 +6310,55 @@ class SecurityPolicyConfigFirewallConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeJob")
-    def exclude_job(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exclude_job(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
         """
         return pulumi.get(self, "exclude_job")
 
     @exclude_job.setter
-    def exclude_job(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exclude_job(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exclude_job", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the firewall is enabled or disabled.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the firewall configuration was last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
-    def time_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="violationLogAutoPurge")
-    def violation_log_auto_purge(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def violation_log_auto_purge(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
         """
         return pulumi.get(self, "violation_log_auto_purge")
 
     @violation_log_auto_purge.setter
-    def violation_log_auto_purge(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def violation_log_auto_purge(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
 class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
-    exclude_datasafe_user: NotRequired[pulumi.Input[_builtins.str]]
+    exclude_datasafe_user: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
 
@@ -6370,7 +6370,7 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
 @pulumi.input_type
 class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
     def __init__(__self__, *,
-                 exclude_datasafe_user: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_datasafe_user: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] exclude_datasafe_user: (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
                
@@ -6383,7 +6383,7 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeDatasafeUser")
-    def exclude_datasafe_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exclude_datasafe_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
 
@@ -6394,7 +6394,7 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
         return pulumi.get(self, "exclude_datasafe_user")
 
     @exclude_datasafe_user.setter
-    def exclude_datasafe_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exclude_datasafe_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exclude_datasafe_user", value)
 
 
@@ -6419,7 +6419,7 @@ class SensitiveDataModelReferentialRelationChildArgsDict(TypedDict):
     """
     The schema name.
     """
-    sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sensitive_type_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
     """
@@ -6432,7 +6432,7 @@ class SensitiveDataModelReferentialRelationChildArgs:
                  object: pulumi.Input[_builtins.str],
                  object_type: pulumi.Input[_builtins.str],
                  schema_name: pulumi.Input[_builtins.str],
-                 sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 sensitive_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] app_name: The application name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
@@ -6511,14 +6511,14 @@ class SensitiveDataModelReferentialRelationChildArgs:
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeIds")
-    def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
         """
         return pulumi.get(self, "sensitive_type_ids")
 
     @sensitive_type_ids.setter
-    def sensitive_type_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_ids", value)
 
 
@@ -6543,7 +6543,7 @@ class SensitiveDataModelReferentialRelationParentArgsDict(TypedDict):
     """
     The schema name.
     """
-    sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sensitive_type_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
     """
@@ -6556,7 +6556,7 @@ class SensitiveDataModelReferentialRelationParentArgs:
                  object: pulumi.Input[_builtins.str],
                  object_type: pulumi.Input[_builtins.str],
                  schema_name: pulumi.Input[_builtins.str],
-                 sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 sensitive_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] app_name: The application name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
@@ -6635,14 +6635,14 @@ class SensitiveDataModelReferentialRelationParentArgs:
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeIds")
-    def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
         """
         return pulumi.get(self, "sensitive_type_ids")
 
     @sensitive_type_ids.setter
-    def sensitive_type_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_ids", value)
 
 
@@ -6651,7 +6651,7 @@ class SensitiveDataModelTablesForDiscoveryArgsDict(TypedDict):
     """
     (Updatable) This contains the name of the schema.
     """
-    table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    table_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) This contains an optional list of the table names.
     """
@@ -6660,7 +6660,7 @@ class SensitiveDataModelTablesForDiscoveryArgsDict(TypedDict):
 class SensitiveDataModelTablesForDiscoveryArgs:
     def __init__(__self__, *,
                  schema_name: pulumi.Input[_builtins.str],
-                 table_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 table_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] schema_name: (Updatable) This contains the name of the schema.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] table_names: (Updatable) This contains an optional list of the table names.
@@ -6683,34 +6683,34 @@ class SensitiveDataModelTablesForDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter(name="tableNames")
-    def table_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def table_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) This contains an optional list of the table names.
         """
         return pulumi.get(self, "table_names")
 
     @table_names.setter
-    def table_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def table_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "table_names", value)
 
 
 class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict(TypedDict):
-    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
-    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-    has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_comment_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_data_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    has_name_pattern_matched: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
 
 @pulumi.input_type
 class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs:
     def __init__(__self__, *,
-                 does_column_lead_to_pii_in_non_tables: Optional[pulumi.Input[_builtins.bool]] = None,
-                 does_column_lead_to_pii_in_same_related_tables: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_comment_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_data_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 has_name_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[pulumi.Input[_builtins.bool]] = None):
+                 does_column_lead_to_pii_in_non_tables: pulumi.Input[Optional[_builtins.bool]] = None,
+                 does_column_lead_to_pii_in_same_related_tables: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_comment_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_data_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 has_name_pattern_matched: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: pulumi.Input[Optional[_builtins.bool]] = None):
         if does_column_lead_to_pii_in_non_tables is not None:
             pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
         if does_column_lead_to_pii_in_same_related_tables is not None:
@@ -6726,61 +6726,61 @@ class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
-    def does_column_lead_to_pii_in_non_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_column_lead_to_pii_in_non_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
 
     @does_column_lead_to_pii_in_non_tables.setter
-    def does_column_lead_to_pii_in_non_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_column_lead_to_pii_in_non_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_column_lead_to_pii_in_non_tables", value)
 
     @_builtins.property
     @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
-    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def does_column_lead_to_pii_in_same_related_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
 
     @does_column_lead_to_pii_in_same_related_tables.setter
-    def does_column_lead_to_pii_in_same_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def does_column_lead_to_pii_in_same_related_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "does_column_lead_to_pii_in_same_related_tables", value)
 
     @_builtins.property
     @pulumi.getter(name="hasCommentPatternMatched")
-    def has_comment_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_comment_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_comment_pattern_matched")
 
     @has_comment_pattern_matched.setter
-    def has_comment_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_comment_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_comment_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="hasDataPatternMatched")
-    def has_data_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_data_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_data_pattern_matched")
 
     @has_data_pattern_matched.setter
-    def has_data_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_data_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_data_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="hasNamePatternMatched")
-    def has_name_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_name_pattern_matched(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "has_name_pattern_matched")
 
     @has_name_pattern_matched.setter
-    def has_name_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_name_pattern_matched(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_name_pattern_matched", value)
 
     @_builtins.property
     @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
-    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
     @is_sensitive_type_from_same_context_found_in_same_or_related_tables.setter
-    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
 class SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict(TypedDict):
-    sensitive_type_id: NotRequired[pulumi.Input[_builtins.str]]
+    sensitive_type_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the sensitive type.
     """
@@ -6788,7 +6788,7 @@ class SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict(TypedDict):
 @pulumi.input_type
 class SensitiveTypeGroupGroupedSensitiveTypeItemArgs:
     def __init__(__self__, *,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] sensitive_type_id: The OCID of the sensitive type.
         """
@@ -6797,14 +6797,14 @@ class SensitiveTypeGroupGroupedSensitiveTypeItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the sensitive type.
         """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
 
@@ -6881,11 +6881,11 @@ class TargetDatabaseConnectionOptionArgsDict(TypedDict):
     * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
     * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
     """
-    datasafe_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    datasafe_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the Data Safe private endpoint.
     """
-    on_prem_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    on_prem_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the on-premises connector.
     """
@@ -6894,8 +6894,8 @@ class TargetDatabaseConnectionOptionArgsDict(TypedDict):
 class TargetDatabaseConnectionOptionArgs:
     def __init__(__self__, *,
                  connection_type: pulumi.Input[_builtins.str],
-                 datasafe_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_prem_connector_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 datasafe_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_prem_connector_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The connection type used to connect to the database. Allowed values:
                * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
@@ -6925,26 +6925,26 @@ class TargetDatabaseConnectionOptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="datasafePrivateEndpointId")
-    def datasafe_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datasafe_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Data Safe private endpoint.
         """
         return pulumi.get(self, "datasafe_private_endpoint_id")
 
     @datasafe_private_endpoint_id.setter
-    def datasafe_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datasafe_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datasafe_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="onPremConnectorId")
-    def on_prem_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_prem_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the on-premises connector.
         """
         return pulumi.get(self, "on_prem_connector_id")
 
     @on_prem_connector_id.setter
-    def on_prem_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_prem_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_prem_connector_id", value)
 
 
@@ -7004,35 +7004,35 @@ class TargetDatabaseDatabaseDetailsArgsDict(TypedDict):
     """
     (Updatable) The infrastructure type the database is running on.
     """
-    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    autonomous_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
     """
-    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
     """
-    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compute instance on which the database is running.
     """
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
     """
-    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    listener_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The port number of the database listener.
     """
-    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    pluggable_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The service name of the database registered as target database.
     """
-    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    vm_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the VM cluster in which the database is running.
     """
@@ -7042,14 +7042,14 @@ class TargetDatabaseDatabaseDetailsArgs:
     def __init__(__self__, *,
                  database_type: pulumi.Input[_builtins.str],
                  infrastructure_type: pulumi.Input[_builtins.str],
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] database_type: (Updatable) The database type.
         :param pulumi.Input[_builtins.str] infrastructure_type: (Updatable) The infrastructure type the database is running on.
@@ -7107,98 +7107,98 @@ class TargetDatabaseDatabaseDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseId")
-    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pluggable_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
-    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pluggable_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
 
@@ -7207,7 +7207,7 @@ class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
     """
     (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
     """
-    exclude: NotRequired[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgsDict']]
+    exclude: NotRequired[pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]]
     """
     (Updatable) Criteria to exclude certain target databases from the target database group.
     """
@@ -7216,7 +7216,7 @@ class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
 class TargetDatabaseGroupMatchingCriteriaArgs:
     def __init__(__self__, *,
                  include: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs'],
-                 exclude: Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']] = None):
+                 exclude: pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgs']] = None):
         """
         :param pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs'] include: (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
         :param pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs'] exclude: (Updatable) Criteria to exclude certain target databases from the target database group.
@@ -7239,14 +7239,14 @@ class TargetDatabaseGroupMatchingCriteriaArgs:
 
     @_builtins.property
     @pulumi.getter
-    def exclude(self) -> Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]:
+    def exclude(self) -> pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]:
         """
         (Updatable) Criteria to exclude certain target databases from the target database group.
         """
         return pulumi.get(self, "exclude")
 
     @exclude.setter
-    def exclude(self, value: Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]):
+    def exclude(self, value: pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]):
         pulumi.set(self, "exclude", value)
 
 
@@ -7279,19 +7279,19 @@ class TargetDatabaseGroupMatchingCriteriaExcludeArgs:
 
 
 class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
-    compartments: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict']]]]
+    compartments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]]
     """
     (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
     """
-    target_database_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    target_database_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of target database OCIDs to be included in the target database group.
 
@@ -7303,10 +7303,10 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
 @pulumi.input_type
 class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
     def __init__(__self__, *,
-                 compartments: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_database_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 compartments: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]] compartments: (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -7328,43 +7328,43 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def compartments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]:
+    def compartments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]:
         """
         (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
         """
         return pulumi.get(self, "compartments")
 
     @compartments.setter
-    def compartments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]):
+    def compartments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]):
         pulumi.set(self, "compartments", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseIds")
-    def target_database_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def target_database_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of target database OCIDs to be included in the target database group.
 
@@ -7375,7 +7375,7 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
         return pulumi.get(self, "target_database_ids")
 
     @target_database_ids.setter
-    def target_database_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def target_database_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_database_ids", value)
 
 
@@ -7384,7 +7384,7 @@ class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict(TypedDict):
     """
     (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
     """
-    is_include_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    is_include_subtree: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
     """
@@ -7393,7 +7393,7 @@ class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict(TypedDict):
 class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[_builtins.str],
-                 is_include_subtree: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_include_subtree: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] id: (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
         :param pulumi.Input[_builtins.bool] is_include_subtree: (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
@@ -7416,59 +7416,59 @@ class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="isIncludeSubtree")
-    def is_include_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_include_subtree(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
         """
         return pulumi.get(self, "is_include_subtree")
 
     @is_include_subtree.setter
-    def is_include_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_include_subtree(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_include_subtree", value)
 
 
 class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
-    database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict']]]]
+    database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]]
     """
     (Updatable) Details of the database for the registration in Data Safe.
     """
-    database_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    database_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique name of the database associated to the peer target database.
     """
-    dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataguard_association_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description of the target database in Data Safe.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
     """
-    key: NotRequired[pulumi.Input[_builtins.int]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The secondary key assigned for the peer target database in Data Safe.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Details about the current state of the peer target database in Data Safe.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Role of the database associated to the peer target database.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the target database in Data Safe.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the database was registered in Data Safe and created as a target database in Data Safe.
     """
-    tls_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]]]
+    tls_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]]
     """
     (Updatable) The details required to establish a TLS enabled connection.
     """
@@ -7476,17 +7476,17 @@ class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseArgs:
     def __init__(__self__, *,
-                 database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]] = None,
-                 database_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.int]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]] = None):
+                 database_details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]] = None,
+                 database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.int]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_configs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] database_unique_name: Unique name of the database associated to the peer target database.
@@ -7525,175 +7525,175 @@ class TargetDatabasePeerTargetDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="databaseDetails")
-    def database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]:
+    def database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]:
         """
         (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
     @database_details.setter
-    def database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]):
+    def database_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]):
         pulumi.set(self, "database_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseUniqueName")
-    def database_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique name of the database associated to the peer target database.
         """
         return pulumi.get(self, "database_unique_name")
 
     @database_unique_name.setter
-    def database_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dataguardAssociationId")
-    def dataguard_association_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataguard_association_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
         """
         return pulumi.get(self, "dataguard_association_id")
 
     @dataguard_association_id.setter
-    def dataguard_association_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataguard_association_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataguard_association_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The secondary key assigned for the peer target database in Data Safe.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Role of the database associated to the peer target database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the target database in Data Safe.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsConfigs")
-    def tls_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]:
+    def tls_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]:
         """
         (Updatable) The details required to establish a TLS enabled connection.
         """
         return pulumi.get(self, "tls_configs")
 
     @tls_configs.setter
-    def tls_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]):
+    def tls_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]):
         pulumi.set(self, "tls_configs", value)
 
 
 class TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict(TypedDict):
-    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    autonomous_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The database type.
     """
-    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
     """
-    infrastructure_type: NotRequired[pulumi.Input[_builtins.str]]
+    infrastructure_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The infrastructure type the database is running on.
     """
-    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compute instance on which the database is running.
     """
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
     """
-    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    listener_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The port number of the database listener.
     """
-    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    pluggable_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The service name of the database registered as target database.
     """
-    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    vm_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the VM cluster in which the database is running.
     """
@@ -7701,16 +7701,16 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict(TypedDict):
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
     def __init__(__self__, *,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         :param pulumi.Input[_builtins.str] database_type: (Updatable) The database type.
@@ -7746,122 +7746,122 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The database type.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def infrastructure_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The infrastructure type the database is running on.
         """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
-    def infrastructure_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def infrastructure_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infrastructure_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseId")
-    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pluggable_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
-    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pluggable_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
 
@@ -7874,35 +7874,35 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict(TypedDict):
     """
     (Updatable) The infrastructure type the database is running on.
     """
-    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    autonomous_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
     """
-    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
     """
-    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compute instance on which the database is running.
     """
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
     """
-    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    listener_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The port number of the database listener.
     """
-    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    pluggable_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The service name of the database registered as target database.
     """
-    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    vm_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the VM cluster in which the database is running.
     """
@@ -7912,14 +7912,14 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
     def __init__(__self__, *,
                  database_type: pulumi.Input[_builtins.str],
                  infrastructure_type: pulumi.Input[_builtins.str],
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] database_type: (Updatable) The database type.
         :param pulumi.Input[_builtins.str] infrastructure_type: (Updatable) The infrastructure type the database is running on.
@@ -7977,98 +7977,98 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseId")
-    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pluggable_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
-    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pluggable_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
 
@@ -8077,19 +8077,19 @@ class TargetDatabasePeerTargetDatabaseDetailArgsDict(TypedDict):
     """
     Details of the database for the registration in Data Safe.
     """
-    dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataguard_association_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The description of the peer target database in Data Safe.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
     """
-    tls_config: NotRequired[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict']]
+    tls_config: NotRequired[pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]]
     """
     The details required to establish a TLS enabled connection.
     """
@@ -8098,10 +8098,10 @@ class TargetDatabasePeerTargetDatabaseDetailArgsDict(TypedDict):
 class TargetDatabasePeerTargetDatabaseDetailArgs:
     def __init__(__self__, *,
                  database_details: pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs'],
-                 dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_config: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']] = None):
+                 dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_config: pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']] = None):
         """
         :param pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs'] database_details: Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
@@ -8133,50 +8133,50 @@ class TargetDatabasePeerTargetDatabaseDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataguardAssociationId")
-    def dataguard_association_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataguard_association_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
         """
         return pulumi.get(self, "dataguard_association_id")
 
     @dataguard_association_id.setter
-    def dataguard_association_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataguard_association_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataguard_association_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsConfig")
-    def tls_config(self) -> Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]:
+    def tls_config(self) -> pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]:
         """
         The details required to establish a TLS enabled connection.
         """
         return pulumi.get(self, "tls_config")
 
     @tls_config.setter
-    def tls_config(self, value: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]):
+    def tls_config(self, value: pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]):
         pulumi.set(self, "tls_config", value)
 
 
@@ -8189,35 +8189,35 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict(TypedDict):
     """
     The infrastructure type the database is running on.
     """
-    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    autonomous_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the Autonomous Database registered as a target database in Data Safe.
     """
-    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the cloud database registered as a target database in Data Safe.
     """
-    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the compute instance on which the database is running.
     """
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
     """
-    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    listener_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number of the database listener.
     """
-    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    pluggable_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the pluggable database registered as a target database in Data Safe.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the database registered as target database.
     """
-    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    vm_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the VM cluster in which the database is running.
     """
@@ -8227,14 +8227,14 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
     def __init__(__self__, *,
                  database_type: pulumi.Input[_builtins.str],
                  infrastructure_type: pulumi.Input[_builtins.str],
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 listener_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] database_type: The database type.
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type the database is running on.
@@ -8292,98 +8292,98 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
-    def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseId")
-    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pluggable_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the pluggable database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
-    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pluggable_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
 
@@ -8392,19 +8392,19 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict(TypedDict):
     """
     Status to represent whether the database connection is TLS enabled or not.
     """
-    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The format of the certificate store.
     """
-    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    key_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Base64 encoded string of key store file content.
     """
-    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    store_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The password to read the trust store and key store files, if they are password protected.
     """
-    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    trust_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Base64 encoded string of trust store file content.
     """
@@ -8413,10 +8413,10 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict(TypedDict):
 class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs:
     def __init__(__self__, *,
                  status: pulumi.Input[_builtins.str],
-                 certificate_store_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_content: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_content: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] status: Status to represent whether the database connection is TLS enabled or not.
         :param pulumi.Input[_builtins.str] certificate_store_type: The format of the certificate store.
@@ -8448,50 +8448,50 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateStoreType")
-    def certificate_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The format of the certificate store.
         """
         return pulumi.get(self, "certificate_store_type")
 
     @certificate_store_type.setter
-    def certificate_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_store_type", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreContent")
-    def key_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded string of key store file content.
         """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
-    def key_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_content", value)
 
     @_builtins.property
     @pulumi.getter(name="storePassword")
-    def store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to read the trust store and key store files, if they are password protected.
         """
         return pulumi.get(self, "store_password")
 
     @store_password.setter
-    def store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStoreContent")
-    def trust_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded string of trust store file content.
         """
         return pulumi.get(self, "trust_store_content")
 
     @trust_store_content.setter
-    def trust_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_content", value)
 
 
@@ -8500,19 +8500,19 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgsDict(TypedDict):
     """
     (Updatable) Status to represent whether the database connection is TLS enabled or not.
     """
-    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The format of the certificate store.
     """
-    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    key_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Base64 encoded string of key store file content.
     """
-    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    store_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password to read the trust store and key store files, if they are password protected.
     """
-    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    trust_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Base64 encoded string of trust store file content.
 
@@ -8525,10 +8525,10 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgsDict(TypedDict):
 class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
     def __init__(__self__, *,
                  status: pulumi.Input[_builtins.str],
-                 certificate_store_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_content: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_content: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
         :param pulumi.Input[_builtins.str] certificate_store_type: (Updatable) The format of the certificate store.
@@ -8564,43 +8564,43 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateStoreType")
-    def certificate_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format of the certificate store.
         """
         return pulumi.get(self, "certificate_store_type")
 
     @certificate_store_type.setter
-    def certificate_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_store_type", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreContent")
-    def key_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of key store file content.
         """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
-    def key_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_content", value)
 
     @_builtins.property
     @pulumi.getter(name="storePassword")
-    def store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password to read the trust store and key store files, if they are password protected.
         """
         return pulumi.get(self, "store_password")
 
     @store_password.setter
-    def store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStoreContent")
-    def trust_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
 
@@ -8611,7 +8611,7 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
         return pulumi.get(self, "trust_store_content")
 
     @trust_store_content.setter
-    def trust_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_content", value)
 
 
@@ -8620,19 +8620,19 @@ class TargetDatabaseTlsConfigArgsDict(TypedDict):
     """
     (Updatable) Status to represent whether the database connection is TLS enabled or not.
     """
-    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    certificate_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The format of the certificate store.
     """
-    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    key_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Base64 encoded string of key store file content.
     """
-    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    store_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password to read the trust store and key store files, if they are password protected.
     """
-    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    trust_store_content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Base64 encoded string of trust store file content.
 
@@ -8645,10 +8645,10 @@ class TargetDatabaseTlsConfigArgsDict(TypedDict):
 class TargetDatabaseTlsConfigArgs:
     def __init__(__self__, *,
                  status: pulumi.Input[_builtins.str],
-                 certificate_store_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 trust_store_content: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_content: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
         :param pulumi.Input[_builtins.str] certificate_store_type: (Updatable) The format of the certificate store.
@@ -8684,43 +8684,43 @@ class TargetDatabaseTlsConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateStoreType")
-    def certificate_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The format of the certificate store.
         """
         return pulumi.get(self, "certificate_store_type")
 
     @certificate_store_type.setter
-    def certificate_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_store_type", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreContent")
-    def key_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of key store file content.
         """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
-    def key_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_content", value)
 
     @_builtins.property
     @pulumi.getter(name="storePassword")
-    def store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password to read the trust store and key store files, if they are password protected.
         """
         return pulumi.get(self, "store_password")
 
     @store_password.setter
-    def store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="trustStoreContent")
-    def trust_store_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trust_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
 
@@ -8731,7 +8731,7 @@ class TargetDatabaseTlsConfigArgs:
         return pulumi.get(self, "trust_store_content")
 
     @trust_store_content.setter
-    def trust_store_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trust_store_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trust_store_content", value)
 
 
@@ -8748,15 +8748,15 @@ class UnifiedAuditPolicyConditionArgsDict(TypedDict):
     """
     (Updatable) The operation status that the policy must be enabled for.
     """
-    attribute_set_id: NotRequired[pulumi.Input[_builtins.str]]
+    attribute_set_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the attribute set.
     """
-    role_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    role_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of roles that the policy must be enabled for.
     """
-    user_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    user_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of users that the unified audit policy is enabled for.
     """
@@ -8767,9 +8767,9 @@ class UnifiedAuditPolicyConditionArgs:
                  entity_selection: pulumi.Input[_builtins.str],
                  entity_type: pulumi.Input[_builtins.str],
                  operation_status: pulumi.Input[_builtins.str],
-                 attribute_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 attribute_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] entity_selection: (Updatable) Specifies whether to include or exclude the specified users or roles.
         :param pulumi.Input[_builtins.str] entity_type: (Updatable) The type of users or roles that the unified audit policy is applied to.
@@ -8826,55 +8826,55 @@ class UnifiedAuditPolicyConditionArgs:
 
     @_builtins.property
     @pulumi.getter(name="attributeSetId")
-    def attribute_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attribute_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the attribute set.
         """
         return pulumi.get(self, "attribute_set_id")
 
     @attribute_set_id.setter
-    def attribute_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attribute_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attribute_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="roleNames")
-    def role_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def role_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of roles that the policy must be enabled for.
         """
         return pulumi.get(self, "role_names")
 
     @role_names.setter
-    def role_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def role_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "role_names", value)
 
     @_builtins.property
     @pulumi.getter(name="userNames")
-    def user_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def user_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of users that the unified audit policy is enabled for.
         """
         return pulumi.get(self, "user_names")
 
     @user_names.setter
-    def user_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def user_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "user_names", value)
 
 
 class UserAssessmentIgnoredTargetArgsDict(TypedDict):
-    lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
-    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the target database or target database group on which user assessment is to be run.
     """
-    user_assessment_id: NotRequired[pulumi.Input[_builtins.str]]
+    user_assessment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class UserAssessmentIgnoredTargetArgs:
     def __init__(__self__, *,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
         """
@@ -8887,32 +8887,32 @@ class UserAssessmentIgnoredTargetArgs:
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database or target database group on which user assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userAssessmentId")
-    def user_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
-    def user_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_assessment_id", value)
 
 

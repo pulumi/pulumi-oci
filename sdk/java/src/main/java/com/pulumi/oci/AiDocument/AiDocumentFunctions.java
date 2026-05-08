@@ -46,8 +46,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -88,8 +88,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -130,8 +130,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -172,8 +172,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -300,8 +300,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -344,8 +344,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -388,8 +388,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -432,8 +432,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -476,8 +476,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -522,8 +522,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -568,8 +568,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -614,8 +614,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -706,8 +706,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -752,8 +752,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -798,8 +798,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -840,8 +840,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -882,8 +882,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -924,8 +924,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -966,8 +966,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1008,8 +1008,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1050,8 +1050,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1092,8 +1092,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1134,8 +1134,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1176,8 +1176,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1218,8 +1218,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1263,8 +1263,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1308,8 +1308,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1353,8 +1353,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1398,8 +1398,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1443,8 +1443,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1488,8 +1488,8 @@ public final class AiDocumentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
      * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

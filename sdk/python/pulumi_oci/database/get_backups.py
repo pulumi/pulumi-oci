@@ -193,7 +193,7 @@ def get_backups(backup_destination_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+    test_backups = oci.database.get_backups(backup_destination_type=backup_backup_destination_type,
         compartment_id=compartment_id,
         database_id=test_database["id"],
         shape_family=backup_shape_family,
@@ -242,16 +242,16 @@ def get_backups(backup_destination_type: Optional[_builtins.str] = None,
         time_expiry_scheduled_less_than=pulumi.get(__ret__, 'time_expiry_scheduled_less_than'),
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
-def get_backups_output(backup_destination_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
-                       shape_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       time_expiry_scheduled_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       time_expiry_scheduled_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_backups_output(backup_destination_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
+                       shape_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       time_expiry_scheduled_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       time_expiry_scheduled_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupsResult]:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -264,7 +264,7 @@ def get_backups_output(backup_destination_type: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+    test_backups = oci.database.get_backups(backup_destination_type=backup_backup_destination_type,
         compartment_id=compartment_id,
         database_id=test_database["id"],
         shape_family=backup_shape_family,

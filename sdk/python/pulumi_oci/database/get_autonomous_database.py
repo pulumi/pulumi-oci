@@ -1945,7 +1945,7 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=test_autonomous_database_oci_database_autonomous_database["id"])
+    test_autonomous_database = oci.database.get_autonomous_database(autonomous_database_id=test_autonomous_database_oci_database_autonomous_database["id"])
     ```
 
 
@@ -2120,7 +2120,7 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
         vanity_url_details=pulumi.get(__ret__, 'vanity_url_details'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         whitelisted_ips=pulumi.get(__ret__, 'whitelisted_ips'))
-def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_database_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseResult]:
     """
     This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -2133,7 +2133,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=test_autonomous_database_oci_database_autonomous_database["id"])
+    test_autonomous_database = oci.database.get_autonomous_database(autonomous_database_id=test_autonomous_database_oci_database_autonomous_database["id"])
     ```
 
 

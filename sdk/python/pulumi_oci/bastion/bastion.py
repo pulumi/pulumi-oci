@@ -22,15 +22,15 @@ class BastionArgs:
                  bastion_type: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  target_subnet_id: pulumi.Input[_builtins.str],
-                 client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dns_proxy_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Bastion resource.
 
@@ -115,136 +115,136 @@ class BastionArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientCidrBlockAllowLists")
-    def client_cidr_block_allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def client_cidr_block_allow_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         """
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @client_cidr_block_allow_lists.setter
-    def client_cidr_block_allow_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def client_cidr_block_allow_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "client_cidr_block_allow_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsProxyStatus")
-    def dns_proxy_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_proxy_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         """
         return pulumi.get(self, "dns_proxy_status")
 
     @dns_proxy_status.setter
-    def dns_proxy_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_proxy_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_proxy_status", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSessionTtlInSeconds")
-    def max_session_ttl_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_session_ttl_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum amount of time that any session on the bastion can remain active.
         """
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @max_session_ttl_in_seconds.setter
-    def max_session_ttl_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_session_ttl_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_session_ttl_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bastion, which can't be changed after creation.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneBookEntry")
-    def phone_book_entry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_book_entry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         """
         return pulumi.get(self, "phone_book_entry")
 
     @phone_book_entry.setter
-    def phone_book_entry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_book_entry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_book_entry", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="staticJumpHostIpAddresses")
-    def static_jump_host_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def static_jump_host_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         """
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @static_jump_host_ip_addresses.setter
-    def static_jump_host_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def static_jump_host_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "static_jump_host_ip_addresses", value)
 
 
 @pulumi.input_type
 class _BastionState:
     def __init__(__self__, *,
-                 bastion_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dns_proxy_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_sessions_allowed: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 bastion_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_sessions_allowed: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Bastion resources.
 
@@ -316,199 +316,199 @@ class _BastionState:
 
     @_builtins.property
     @pulumi.getter(name="bastionType")
-    def bastion_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bastion_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of bastion. Use `standard`.
         """
         return pulumi.get(self, "bastion_type")
 
     @bastion_type.setter
-    def bastion_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bastion_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bastion_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clientCidrBlockAllowLists")
-    def client_cidr_block_allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def client_cidr_block_allow_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         """
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @client_cidr_block_allow_lists.setter
-    def client_cidr_block_allow_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def client_cidr_block_allow_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "client_cidr_block_allow_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsProxyStatus")
-    def dns_proxy_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_proxy_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         """
         return pulumi.get(self, "dns_proxy_status")
 
     @dns_proxy_status.setter
-    def dns_proxy_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_proxy_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_proxy_status", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSessionTtlInSeconds")
-    def max_session_ttl_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_session_ttl_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum amount of time that any session on the bastion can remain active.
         """
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @max_session_ttl_in_seconds.setter
-    def max_session_ttl_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_session_ttl_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_session_ttl_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSessionsAllowed")
-    def max_sessions_allowed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_sessions_allowed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of active sessions allowed on the bastion.
         """
         return pulumi.get(self, "max_sessions_allowed")
 
     @max_sessions_allowed.setter
-    def max_sessions_allowed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_sessions_allowed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_sessions_allowed", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bastion, which can't be changed after creation.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneBookEntry")
-    def phone_book_entry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_book_entry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         """
         return pulumi.get(self, "phone_book_entry")
 
     @phone_book_entry.setter
-    def phone_book_entry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_book_entry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_book_entry", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP address of the created private endpoint.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @private_endpoint_ip_address.setter
-    def private_endpoint_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the bastion.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="staticJumpHostIpAddresses")
-    def static_jump_host_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def static_jump_host_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         """
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @static_jump_host_ip_addresses.setter
-    def static_jump_host_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def static_jump_host_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "static_jump_host_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetSubnetId")
-    def target_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
 
@@ -519,43 +519,43 @@ class _BastionState:
         return pulumi.get(self, "target_subnet_id")
 
     @target_subnet_id.setter
-    def target_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetVcnId")
-    def target_vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         """
         return pulumi.get(self, "target_vcn_id")
 
     @target_vcn_id.setter
-    def target_vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_vcn_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -565,18 +565,18 @@ class Bastion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bastion_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dns_proxy_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bastion_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bastion resource in Oracle Cloud Infrastructure Bastion service.
@@ -604,7 +604,7 @@ class Bastion(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            max_session_ttl_in_seconds=int(bastion_max_session_ttl_in_seconds),
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
             security_attributes=bastion_security_attributes,
@@ -671,7 +671,7 @@ class Bastion(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            max_session_ttl_in_seconds=int(bastion_max_session_ttl_in_seconds),
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
             security_attributes=bastion_security_attributes,
@@ -702,18 +702,18 @@ class Bastion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bastion_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dns_proxy_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bastion_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -759,26 +759,26 @@ class Bastion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bastion_type: Optional[pulumi.Input[_builtins.str]] = None,
-            client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dns_proxy_status: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            max_sessions_allowed: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Bastion':
+            bastion_type: pulumi.Input[Optional[_builtins.str]] = None,
+            client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            max_sessions_allowed: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Bastion':
         """
         Get an existing Bastion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

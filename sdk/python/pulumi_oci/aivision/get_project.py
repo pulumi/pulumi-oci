@@ -191,7 +191,7 @@ def get_project(project_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiVision.get_project(project_id=test_project_oci_ai_vision_project["id"])
+    test_project = oci.aivision.get_project(project_id=test_project_oci_ai_vision_project["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_project(project_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_project_output(project_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_project_output(project_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectResult]:
     """
     This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -228,7 +228,7 @@ def get_project_output(project_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiVision.get_project(project_id=test_project_oci_ai_vision_project["id"])
+    test_project = oci.aivision.get_project(project_id=test_project_oci_ai_vision_project["id"])
     ```
 
 

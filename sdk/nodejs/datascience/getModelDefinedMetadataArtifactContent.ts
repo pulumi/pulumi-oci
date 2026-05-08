@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDefinedMetadataArtifactContent = oci.DataScience.getModelDefinedMetadataArtifactContent({
+ * const testModelDefinedMetadataArtifactContent = oci.datascience.getModelDefinedMetadataArtifactContent({
  *     metadatumKeyName: testKey.name,
  *     modelId: testModel.id,
  *     range: modelDefinedMetadataArtifactContentRange,
@@ -72,7 +72,7 @@ export interface GetModelDefinedMetadataArtifactContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDefinedMetadataArtifactContent = oci.DataScience.getModelDefinedMetadataArtifactContent({
+ * const testModelDefinedMetadataArtifactContent = oci.datascience.getModelDefinedMetadataArtifactContent({
  *     metadatumKeyName: testKey.name,
  *     modelId: testModel.id,
  *     range: modelDefinedMetadataArtifactContentRange,
@@ -103,5 +103,5 @@ export interface GetModelDefinedMetadataArtifactContentOutputArgs {
     /**
      * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7232#section-2.1), section 2.1. Note that only a single range of bytes is supported.
      */
-    range?: pulumi.Input<string>;
+    range?: pulumi.Input<string | undefined>;
 }

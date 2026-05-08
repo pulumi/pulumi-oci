@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
+ * const testDeploymentCertificates = oci.goldengate.getDeploymentCertificates({
  *     deploymentId: testDeployment.id,
  *     state: deploymentCertificateState,
  * });
@@ -80,7 +80,7 @@ export interface GetDeploymentCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
+ * const testDeploymentCertificates = oci.goldengate.getDeploymentCertificates({
  *     deploymentId: testDeployment.id,
  *     state: deploymentCertificateState,
  * });
@@ -103,9 +103,9 @@ export interface GetDeploymentCertificatesOutputArgs {
      * A unique Deployment identifier.
      */
     deploymentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentCertificatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentCertificatesFilterArgs>[] | undefined>;
     /**
      * A filter to return only connections having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

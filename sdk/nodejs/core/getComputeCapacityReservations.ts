@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
+ * const testComputeCapacityReservations = oci.core.getComputeCapacityReservations({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
  *     displayName: computeCapacityReservationDisplayName,
@@ -106,7 +106,7 @@ export interface GetComputeCapacityReservationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
+ * const testComputeCapacityReservations = oci.core.getComputeCapacityReservations({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
  *     displayName: computeCapacityReservationDisplayName,
@@ -132,7 +132,7 @@ export interface GetComputeCapacityReservationsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -140,10 +140,10 @@ export interface GetComputeCapacityReservationsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityReservationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityReservationsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -121,7 +121,7 @@ def get_private_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=compartment_id,
+    test_private_applications = oci.servicecatalog.get_private_applications(compartment_id=compartment_id,
         display_name=private_application_display_name,
         private_application_id=test_private_application["id"])
     ```
@@ -146,10 +146,10 @@ def get_private_applications(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         private_application_collections=pulumi.get(__ret__, 'private_application_collections'),
         private_application_id=pulumi.get(__ret__, 'private_application_id'))
-def get_private_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]]]] = None,
-                                    private_application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_applications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]]]] = None,
+                                    private_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationsResult]:
     """
     This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
@@ -162,7 +162,7 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=compartment_id,
+    test_private_applications = oci.servicecatalog.get_private_applications(compartment_id=compartment_id,
         display_name=private_application_display_name,
         private_application_id=test_private_application["id"])
     ```

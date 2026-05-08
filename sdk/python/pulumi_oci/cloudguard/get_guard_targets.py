@@ -168,11 +168,11 @@ def get_guard_targets(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_targets = oci.CloudGuard.get_guard_targets(compartment_id=compartment_id,
+    test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
         state=target_state)
     ```
 
@@ -205,13 +205,13 @@ def get_guard_targets(access_level: Optional[_builtins.str] = None,
         is_non_security_zone_targets_only_query=pulumi.get(__ret__, 'is_non_security_zone_targets_only_query'),
         state=pulumi.get(__ret__, 'state'),
         target_collections=pulumi.get(__ret__, 'target_collections'))
-def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict']]]]] = None,
-                             is_non_security_zone_targets_only_query: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_guard_targets_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict']]]]] = None,
+                             is_non_security_zone_targets_only_query: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGuardTargetsResult]:
     """
     This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
@@ -238,11 +238,11 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_targets = oci.CloudGuard.get_guard_targets(compartment_id=compartment_id,
+    test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
         state=target_state)
     ```
 

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetwork = oci.Database.getVmClusterNetwork({
+ * const testVmClusterNetwork = oci.database.getVmClusterNetwork({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetworkOciDatabaseVmClusterNetwork.id,
  * });
@@ -130,7 +130,7 @@ export interface GetVmClusterNetworkResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetwork = oci.Database.getVmClusterNetwork({
+ * const testVmClusterNetwork = oci.database.getVmClusterNetwork({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetworkOciDatabaseVmClusterNetwork.id,
  * });

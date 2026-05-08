@@ -25,17 +25,17 @@ class KeyArgs:
                  display_name: pulumi.Input[_builtins.str],
                  key_shape: pulumi.Input['KeyKeyShapeArgs'],
                  management_endpoint: pulumi.Input[_builtins.str],
-                 auto_key_rotation_details: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
-                 restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_key_rotation_details: pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_reference: pulumi.Input[Optional['KeyExternalKeyReferenceArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_from_file: pulumi.Input[Optional['KeyRestoreFromFileArgs']] = None,
+                 restore_from_object_store: pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Key resource.
 
@@ -135,127 +135,127 @@ class KeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoKeyRotationDetails")
-    def auto_key_rotation_details(self) -> Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']]:
+    def auto_key_rotation_details(self) -> pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']]:
         """
         (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         """
         return pulumi.get(self, "auto_key_rotation_details")
 
     @auto_key_rotation_details.setter
-    def auto_key_rotation_details(self, value: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']]):
+    def auto_key_rotation_details(self, value: pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']]):
         pulumi.set(self, "auto_key_rotation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def desired_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
-    def desired_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def desired_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "desired_state", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyReference")
-    def external_key_reference(self) -> Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]:
+    def external_key_reference(self) -> pulumi.Input[Optional['KeyExternalKeyReferenceArgs']]:
         """
         A reference to the key on external key manager.
         """
         return pulumi.get(self, "external_key_reference")
 
     @external_key_reference.setter
-    def external_key_reference(self, value: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]):
+    def external_key_reference(self, value: pulumi.Input[Optional['KeyExternalKeyReferenceArgs']]):
         pulumi.set(self, "external_key_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoRotationEnabled")
-    def is_auto_rotation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_rotation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         """
         return pulumi.get(self, "is_auto_rotation_enabled")
 
     @is_auto_rotation_enabled.setter
-    def is_auto_rotation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_rotation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_rotation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
-    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromFile")
-    def restore_from_file(self) -> Optional[pulumi.Input['KeyRestoreFromFileArgs']]:
+    def restore_from_file(self) -> pulumi.Input[Optional['KeyRestoreFromFileArgs']]:
         """
         (Updatable) Details where key was backed up.
         """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
-    def restore_from_file(self, value: Optional[pulumi.Input['KeyRestoreFromFileArgs']]):
+    def restore_from_file(self, value: pulumi.Input[Optional['KeyRestoreFromFileArgs']]):
         pulumi.set(self, "restore_from_file", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromObjectStore")
-    def restore_from_object_store(self) -> Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']]:
+    def restore_from_object_store(self) -> pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']]:
         """
         (Updatable) Details where key was backed up
         """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
-    def restore_from_object_store(self, value: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']]):
+    def restore_from_object_store(self, value: pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']]):
         pulumi.set(self, "restore_from_object_store", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restore_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
         return pulumi.get(self, "restore_trigger")
 
     @restore_trigger.setter
-    def restore_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restore_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restore_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -265,36 +265,36 @@ class KeyArgs:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
 
 @pulumi.input_type
 class _KeyState:
     def __init__(__self__, *,
-                 auto_key_rotation_details: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_key_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
-                 external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_shape: Optional[pulumi.Input['KeyKeyShapeArgs']] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]] = None,
-                 restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
-                 restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restored_from_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_key_rotation_details: pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_key_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_reference: pulumi.Input[Optional['KeyExternalKeyReferenceArgs']] = None,
+                 external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_shape: pulumi.Input[Optional['KeyKeyShapeArgs']] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_details: pulumi.Input[Optional[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]] = None,
+                 restore_from_file: pulumi.Input[Optional['KeyRestoreFromFileArgs']] = None,
+                 restore_from_object_store: pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Key resources.
 
@@ -374,259 +374,259 @@ class _KeyState:
 
     @_builtins.property
     @pulumi.getter(name="autoKeyRotationDetails")
-    def auto_key_rotation_details(self) -> Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']]:
+    def auto_key_rotation_details(self) -> pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']]:
         """
         (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         """
         return pulumi.get(self, "auto_key_rotation_details")
 
     @auto_key_rotation_details.setter
-    def auto_key_rotation_details(self, value: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']]):
+    def auto_key_rotation_details(self, value: pulumi.Input[Optional['KeyAutoKeyRotationDetailsArgs']]):
         pulumi.set(self, "auto_key_rotation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where you want to create the master encryption key.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentKeyVersion")
-    def current_key_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_key_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
         """
         return pulumi.get(self, "current_key_version")
 
     @current_key_version.setter
-    def current_key_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_key_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_key_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def desired_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
-    def desired_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def desired_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "desired_state", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyReference")
-    def external_key_reference(self) -> Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]:
+    def external_key_reference(self) -> pulumi.Input[Optional['KeyExternalKeyReferenceArgs']]:
         """
         A reference to the key on external key manager.
         """
         return pulumi.get(self, "external_key_reference")
 
     @external_key_reference.setter
-    def external_key_reference(self, value: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]):
+    def external_key_reference(self, value: pulumi.Input[Optional['KeyExternalKeyReferenceArgs']]):
         pulumi.set(self, "external_key_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyReferenceDetails")
-    def external_key_reference_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]:
+    def external_key_reference_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]:
         """
         Key reference data to be returned to the customer as a response.
         """
         return pulumi.get(self, "external_key_reference_details")
 
     @external_key_reference_details.setter
-    def external_key_reference_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]):
+    def external_key_reference_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]):
         pulumi.set(self, "external_key_reference_details", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoRotationEnabled")
-    def is_auto_rotation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_rotation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         """
         return pulumi.get(self, "is_auto_rotation_enabled")
 
     @is_auto_rotation_enabled.setter
-    def is_auto_rotation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_rotation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_rotation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
-    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary", value)
 
     @_builtins.property
     @pulumi.getter(name="keyShape")
-    def key_shape(self) -> Optional[pulumi.Input['KeyKeyShapeArgs']]:
+    def key_shape(self) -> pulumi.Input[Optional['KeyKeyShapeArgs']]:
         """
         The cryptographic properties of a key.
         """
         return pulumi.get(self, "key_shape")
 
     @key_shape.setter
-    def key_shape(self, value: Optional[pulumi.Input['KeyKeyShapeArgs']]):
+    def key_shape(self, value: pulumi.Input[Optional['KeyKeyShapeArgs']]):
         pulumi.set(self, "key_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
-    def management_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
-    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]]:
+    def replica_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]]:
         """
         Key replica details
         """
         return pulumi.get(self, "replica_details")
 
     @replica_details.setter
-    def replica_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]]):
+    def replica_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]]):
         pulumi.set(self, "replica_details", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromFile")
-    def restore_from_file(self) -> Optional[pulumi.Input['KeyRestoreFromFileArgs']]:
+    def restore_from_file(self) -> pulumi.Input[Optional['KeyRestoreFromFileArgs']]:
         """
         (Updatable) Details where key was backed up.
         """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
-    def restore_from_file(self, value: Optional[pulumi.Input['KeyRestoreFromFileArgs']]):
+    def restore_from_file(self, value: pulumi.Input[Optional['KeyRestoreFromFileArgs']]):
         pulumi.set(self, "restore_from_file", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromObjectStore")
-    def restore_from_object_store(self) -> Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']]:
+    def restore_from_object_store(self) -> pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']]:
         """
         (Updatable) Details where key was backed up
         """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
-    def restore_from_object_store(self, value: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']]):
+    def restore_from_object_store(self, value: pulumi.Input[Optional['KeyRestoreFromObjectStoreArgs']]):
         pulumi.set(self, "restore_from_object_store", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restore_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
         return pulumi.get(self, "restore_trigger")
 
     @restore_trigger.setter
-    def restore_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restore_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restore_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredFromKeyId")
-    def restored_from_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_from_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key from which this key was restored.
         """
         return pulumi.get(self, "restored_from_key_id")
 
     @restored_from_key_id.setter
-    def restored_from_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_from_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_from_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key's current lifecycle state.  Example: `ENABLED`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -636,19 +636,19 @@ class _KeyState:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the vault that contains this key.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
 
@@ -658,21 +658,21 @@ class Key(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_key_rotation_details: pulumi.Input[Optional[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_reference: pulumi.Input[Optional[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_shape: pulumi.Input[Optional[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Key resource in Oracle Cloud Infrastructure Kms service.
@@ -760,21 +760,21 @@ class Key(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_key_rotation_details: pulumi.Input[Optional[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_reference: pulumi.Input[Optional[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_shape: pulumi.Input[Optional[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -825,29 +825,29 @@ class Key(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_key_version: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
-            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_rotation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
-            management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyReplicaDetailArgs', 'KeyReplicaDetailArgsDict']]]]] = None,
-            restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
-            restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
-            restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            restored_from_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Key':
+            auto_key_rotation_details: pulumi.Input[Optional[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_key_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_reference: pulumi.Input[Optional[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
+            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_shape: pulumi.Input[Optional[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyReplicaDetailArgs', 'KeyReplicaDetailArgsDict']]]]] = None,
+            restore_from_file: pulumi.Input[Optional[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+            restore_from_object_store: pulumi.Input[Optional[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
+            restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Key':
         """
         Get an existing Key resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

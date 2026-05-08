@@ -115,7 +115,7 @@ def get_invoice_line_computed_usages(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
+    test_invoice_line_computed_usages = oci.onesubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```
@@ -140,10 +140,10 @@ def get_invoice_line_computed_usages(compartment_id: Optional[_builtins.str] = N
         id=pulumi.get(__ret__, 'id'),
         invoice_line_id=pulumi.get(__ret__, 'invoice_line_id'),
         invoiceline_computed_usages=pulumi.get(__ret__, 'invoiceline_computed_usages'))
-def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
-                                            invoice_line_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_invoice_line_computed_usages_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
+                                            invoice_line_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
     """
     This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
@@ -156,7 +156,7 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
+    test_invoice_line_computed_usages = oci.onesubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```

@@ -23,8 +23,8 @@ class ExternalNonContainerDatabaseArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalNonContainerDatabase resource.
 
@@ -70,19 +70,19 @@ class ExternalNonContainerDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 
@@ -93,33 +93,33 @@ class ExternalNonContainerDatabaseArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ExternalNonContainerDatabaseState:
     def __init__(__self__, *,
-                 character_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_configuration: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_packs: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] = None,
-                 stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 character_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_configuration: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_packs: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations_insights_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] = None,
+                 stack_monitoring_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalNonContainerDatabase resources.
 
@@ -191,139 +191,139 @@ class _ExternalNonContainerDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def character_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character set of the external database.
         """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
-    def character_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def character_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "character_set", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConfiguration")
-    def database_configuration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_configuration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database configuration
         """
         return pulumi.get(self, "database_configuration")
 
     @database_configuration.setter
-    def database_configuration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_configuration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
-    def database_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]]:
+    def database_management_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]]:
         """
         The configuration of the Database Management service.
         """
         return pulumi.get(self, "database_management_configs")
 
     @database_management_configs.setter
-    def database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]]):
+    def database_management_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]]):
         pulumi.set(self, "database_management_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database version.
         """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
-    def database_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbId")
-    def db_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         """
         return pulumi.get(self, "db_id")
 
     @db_id.setter
-    def db_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbPacks")
-    def db_packs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_packs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database packs licensed for the external Oracle Database.
         """
         return pulumi.get(self, "db_packs")
 
     @db_packs.setter
-    def db_packs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_packs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_packs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The `DB_UNIQUE_NAME` of the external database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the external database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 
@@ -334,103 +334,103 @@ class _ExternalNonContainerDatabaseState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The national character of the external database.
         """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsConfigs")
-    def operations_insights_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]:
+    def operations_insights_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]:
         """
         The configuration of Operations Insights for the external database
         """
         return pulumi.get(self, "operations_insights_configs")
 
     @operations_insights_configs.setter
-    def operations_insights_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]):
+    def operations_insights_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]):
         pulumi.set(self, "operations_insights_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="stackMonitoringConfigs")
-    def stack_monitoring_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]:
+    def stack_monitoring_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]:
         """
         The configuration of Stack Monitoring for the external database.
         """
         return pulumi.get(self, "stack_monitoring_configs")
 
     @stack_monitoring_configs.setter
-    def stack_monitoring_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]):
+    def stack_monitoring_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]):
         pulumi.set(self, "stack_monitoring_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Oracle Cloud Infrastructure external database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
@@ -440,10 +440,10 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -541,10 +541,10 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -588,26 +588,26 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            character_set: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_configuration: Optional[pulumi.Input[_builtins.str]] = None,
-            database_edition: Optional[pulumi.Input[_builtins.str]] = None,
-            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseDatabaseManagementConfigArgs', 'ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict']]]]] = None,
-            database_version: Optional[pulumi.Input[_builtins.str]] = None,
-            db_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_packs: Optional[pulumi.Input[_builtins.str]] = None,
-            db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
-            operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseOperationsInsightsConfigArgs', 'ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict']]]]] = None,
-            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseStackMonitoringConfigArgs', 'ExternalNonContainerDatabaseStackMonitoringConfigArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalNonContainerDatabase':
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_configuration: pulumi.Input[Optional[_builtins.str]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseDatabaseManagementConfigArgs', 'ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict']]]]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_packs: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            operations_insights_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseOperationsInsightsConfigArgs', 'ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict']]]]] = None,
+            stack_monitoring_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseStackMonitoringConfigArgs', 'ExternalNonContainerDatabaseStackMonitoringConfigArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalNonContainerDatabase':
         """
         Get an existing ExternalNonContainerDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

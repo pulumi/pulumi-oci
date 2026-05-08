@@ -174,15 +174,15 @@ export class ArtifactByPath extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ArtifactByPath resources.
  */
 export interface ArtifactByPathState {
-    artifactId?: pulumi.Input<string>;
+    artifactId?: pulumi.Input<string | undefined>;
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      */
-    artifactPath?: pulumi.Input<string>;
+    artifactPath?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
      *
@@ -190,47 +190,47 @@ export interface ArtifactByPathState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      */
-    sha256?: pulumi.Input<string>;
+    sha256?: pulumi.Input<string | undefined>;
     /**
      * The size of the artifact in bytes.
      */
-    sizeInBytes?: pulumi.Input<string>;
+    sizeInBytes?: pulumi.Input<string | undefined>;
     /**
      * A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The current state of the artifact.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -248,7 +248,7 @@ export interface ArtifactByPathArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
@@ -256,7 +256,7 @@ export interface ArtifactByPathArgs {
     /**
      * A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
      */

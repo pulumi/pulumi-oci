@@ -283,7 +283,7 @@ def get_scheduled_query(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_query = oci.ApmTraces.get_scheduled_query(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_query = oci.apmtraces.get_scheduled_query(apm_domain_id=test_apm_domain["id"],
         scheduled_query_id=test_scheduled_query_oci_apm_traces_scheduled_query["id"])
     ```
 
@@ -318,8 +318,8 @@ def get_scheduled_query(apm_domain_id: Optional[_builtins.str] = None,
         scheduled_query_text=pulumi.get(__ret__, 'scheduled_query_text'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'))
-def get_scheduled_query_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               scheduled_query_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduled_query_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               scheduled_query_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledQueryResult]:
     """
     This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -332,7 +332,7 @@ def get_scheduled_query_output(apm_domain_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_query = oci.ApmTraces.get_scheduled_query(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_query = oci.apmtraces.get_scheduled_query(apm_domain_id=test_apm_domain["id"],
         scheduled_query_id=test_scheduled_query_oci_apm_traces_scheduled_query["id"])
     ```
 

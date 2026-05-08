@@ -399,7 +399,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.DataScience.get_model(model_id=test_model_oci_datascience_model["id"])
+    test_model = oci.datascience.get_model(model_id=test_model_oci_datascience_model["id"])
     ```
 
 
@@ -442,7 +442,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version_label=pulumi.get(__ret__, 'version_label'))
-def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_output(model_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelResult]:
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.
@@ -455,7 +455,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.DataScience.get_model(model_id=test_model_oci_datascience_model["id"])
+    test_model = oci.datascience.get_model(model_id=test_model_oci_datascience_model["id"])
     ```
 
 

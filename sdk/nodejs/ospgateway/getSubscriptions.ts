@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OspGateway.getSubscriptions({
+ * const testSubscriptions = oci.ospgateway.getSubscriptions({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: subscriptionOspHomeRegion,
  * });
@@ -74,7 +74,7 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OspGateway.getSubscriptions({
+ * const testSubscriptions = oci.ospgateway.getSubscriptions({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: subscriptionOspHomeRegion,
  * });
@@ -97,7 +97,7 @@ export interface GetSubscriptionsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OspGateway.GetSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OspGateway.GetSubscriptionsFilterArgs>[] | undefined>;
     /**
      * The home region's public name of the logged in user.
      */

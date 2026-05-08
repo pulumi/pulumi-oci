@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
+ * const testInternalOccAvailabilityCatalogs = oci.capacitymanagement.getInternalOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     catalogState: internalOccAvailabilityCatalogCatalogState,
@@ -116,7 +116,7 @@ export interface GetInternalOccAvailabilityCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
+ * const testInternalOccAvailabilityCatalogs = oci.capacitymanagement.getInternalOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     catalogState: internalOccAvailabilityCatalogCatalogState,
@@ -146,7 +146,7 @@ export interface GetInternalOccAvailabilityCatalogsOutputArgs {
     /**
      * Filter the list of availability catalogs based on the catalog state.
      */
-    catalogState?: pulumi.Input<string>;
+    catalogState?: pulumi.Input<string | undefined>;
     /**
      * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
@@ -154,16 +154,16 @@ export interface GetInternalOccAvailabilityCatalogsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccAvailabilityCatalogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccAvailabilityCatalogsFilterArgs>[] | undefined>;
     /**
      * The OCID of the availability catalog to filter the list of availability catalogs.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The namespace by which we would filter the list.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */

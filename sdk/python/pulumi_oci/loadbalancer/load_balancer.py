@@ -25,18 +25,18 @@ class LoadBalancerArgs:
                  display_name: pulumi.Input[_builtins.str],
                  shape: pulumi.Input[_builtins.str],
                  subnet_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_delete_protection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_request_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_id_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_details: pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']] = None):
         """
         The set of arguments for constructing a LoadBalancer resource.
 
@@ -194,31 +194,31 @@ class LoadBalancerArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipMode")
-    def ip_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
 
@@ -231,12 +231,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "ip_mode")
 
     @ip_mode.setter
-    def ip_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
-    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Applies to IPV6 LB creation only. 
 
@@ -247,12 +247,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
-    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6subnet_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="isDeleteProtectionEnabled")
-    def is_delete_protection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_delete_protection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the load balancer has delete protection enabled.
 
@@ -265,12 +265,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "is_delete_protection_enabled")
 
     @is_delete_protection_enabled.setter
-    def is_delete_protection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_delete_protection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_delete_protection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the load balancer has a VCN-local (private) IP address.
 
@@ -285,12 +285,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private", value)
 
     @_builtins.property
     @pulumi.getter(name="isRequestIdEnabled")
-    def is_request_id_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_request_id_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
 
@@ -305,12 +305,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "is_request_id_enabled")
 
     @is_request_id_enabled.setter
-    def is_request_id_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_request_id_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_request_id_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 
@@ -325,12 +325,12 @@ class LoadBalancerArgs:
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="requestIdHeader")
-    def request_id_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_id_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
 
@@ -347,70 +347,70 @@ class LoadBalancerArgs:
         return pulumi.get(self, "request_id_header")
 
     @request_id_header.setter
-    def request_id_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_id_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_id_header", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIps")
-    def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
+    def reserved_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
         """
         (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
 
     @reserved_ips.setter
-    def reserved_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]):
+    def reserved_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]):
         pulumi.set(self, "reserved_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeDetails")
-    def shape_details(self) -> Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]:
+    def shape_details(self) -> pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']]:
         """
         (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
         return pulumi.get(self, "shape_details")
 
     @shape_details.setter
-    def shape_details(self, value: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]):
+    def shape_details(self, value: pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']]):
         pulumi.set(self, "shape_details", value)
 
 
 @pulumi.input_type
 class _LoadBalancerState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_delete_protection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_request_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_id_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_address_details: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_details: pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LoadBalancer resources.
 
@@ -539,68 +539,68 @@ class _LoadBalancerState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddressDetails")
-    def ip_address_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]]:
+    def ip_address_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]]:
         """
         An array of IP addresses.
         """
         return pulumi.get(self, "ip_address_details")
 
     @ip_address_details.setter
-    def ip_address_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]]):
+    def ip_address_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]]):
         pulumi.set(self, "ip_address_details", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
     @_utilities.deprecated("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of IP addresses. Deprecated: use ip_address_details instead
         *
@@ -608,12 +608,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="ipMode")
-    def ip_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
 
@@ -626,12 +626,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "ip_mode")
 
     @ip_mode.setter
-    def ip_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
-    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Applies to IPV6 LB creation only. 
 
@@ -642,12 +642,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
-    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6subnet_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="isDeleteProtectionEnabled")
-    def is_delete_protection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_delete_protection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the load balancer has delete protection enabled.
 
@@ -660,12 +660,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "is_delete_protection_enabled")
 
     @is_delete_protection_enabled.setter
-    def is_delete_protection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_delete_protection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_delete_protection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the load balancer has a VCN-local (private) IP address.
 
@@ -680,12 +680,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private", value)
 
     @_builtins.property
     @pulumi.getter(name="isRequestIdEnabled")
-    def is_request_id_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_request_id_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
 
@@ -700,12 +700,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "is_request_id_enabled")
 
     @is_request_id_enabled.setter
-    def is_request_id_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_request_id_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_request_id_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
 
@@ -720,12 +720,12 @@ class _LoadBalancerState:
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="requestIdHeader")
-    def request_id_header(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_id_header(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
 
@@ -742,72 +742,72 @@ class _LoadBalancerState:
         return pulumi.get(self, "request_id_header")
 
     @request_id_header.setter
-    def request_id_header(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_id_header(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_id_header", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIps")
-    def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
+    def reserved_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
         """
         (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
 
     @reserved_ips.setter
-    def reserved_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]):
+    def reserved_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]):
         pulumi.set(self, "reserved_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeDetails")
-    def shape_details(self) -> Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]:
+    def shape_details(self) -> pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']]:
         """
         (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
         return pulumi.get(self, "shape_details")
 
     @shape_details.setter
-    def shape_details(self, value: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]):
+    def shape_details(self, value: pulumi.Input[Optional['LoadBalancerShapeDetailsArgs']]):
         pulumi.set(self, "shape_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the load balancer.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetIds")
-    def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
@@ -818,31 +818,31 @@ class _LoadBalancerState:
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
-    def subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def subnet_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subnet_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -852,22 +852,22 @@ class LoadBalancer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_delete_protection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_request_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_id_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -923,9 +923,9 @@ class LoadBalancer(pulumi.CustomResource):
             },
             ip_mode=load_balancer_ip_mode,
             ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
-            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
-            is_private=load_balancer_is_private,
-            is_request_id_enabled=load_balancer_is_request_id_enabled,
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled == "true",
+            is_private=load_balancer_is_private == "true",
+            is_request_id_enabled=load_balancer_is_request_id_enabled == "true",
             network_security_group_ids=load_balancer_network_security_group_ids,
             request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
@@ -933,8 +933,8 @@ class LoadBalancer(pulumi.CustomResource):
             }],
             security_attributes=load_balancer_security_attributes,
             shape_details={
-                "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
-                "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
+                "maximum_bandwidth_in_mbps": int(load_balancer_shape_details_maximum_bandwidth_in_mbps),
+                "minimum_bandwidth_in_mbps": int(load_balancer_shape_details_minimum_bandwidth_in_mbps),
             })
         ```
 
@@ -1080,9 +1080,9 @@ class LoadBalancer(pulumi.CustomResource):
             },
             ip_mode=load_balancer_ip_mode,
             ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
-            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
-            is_private=load_balancer_is_private,
-            is_request_id_enabled=load_balancer_is_request_id_enabled,
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled == "true",
+            is_private=load_balancer_is_private == "true",
+            is_request_id_enabled=load_balancer_is_request_id_enabled == "true",
             network_security_group_ids=load_balancer_network_security_group_ids,
             request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
@@ -1090,8 +1090,8 @@ class LoadBalancer(pulumi.CustomResource):
             }],
             security_attributes=load_balancer_security_attributes,
             shape_details={
-                "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
-                "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
+                "maximum_bandwidth_in_mbps": int(load_balancer_shape_details_maximum_bandwidth_in_mbps),
+                "minimum_bandwidth_in_mbps": int(load_balancer_shape_details_minimum_bandwidth_in_mbps),
             })
         ```
 
@@ -1119,22 +1119,22 @@ class LoadBalancer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_delete_protection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_request_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 request_id_header: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
-                 subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1183,27 +1183,27 @@ class LoadBalancer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]]] = None,
-            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            is_delete_protection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_request_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            request_id_header: Optional[pulumi.Input[_builtins.str]] = None,
-            reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'LoadBalancer':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'LoadBalancer':
         """
         Get an existing LoadBalancer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

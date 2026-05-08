@@ -98,10 +98,10 @@ class DrgRouteDistributionStatementArgs:
 @pulumi.input_type
 class _DrgRouteDistributionStatementState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_criteria: Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_criteria: pulumi.Input[Optional['DrgRouteDistributionStatementMatchCriteriaArgs']] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DrgRouteDistributionStatement resources.
 
@@ -125,43 +125,43 @@ class _DrgRouteDistributionStatementState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Accept: import/export the route "as is"
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="drgRouteDistributionId")
-    def drg_route_distribution_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_route_distribution_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         """
         return pulumi.get(self, "drg_route_distribution_id")
 
     @drg_route_distribution_id.setter
-    def drg_route_distribution_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_route_distribution_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_route_distribution_id", value)
 
     @_builtins.property
     @pulumi.getter(name="matchCriteria")
-    def match_criteria(self) -> Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']]:
+    def match_criteria(self) -> pulumi.Input[Optional['DrgRouteDistributionStatementMatchCriteriaArgs']]:
         """
         (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
         """
         return pulumi.get(self, "match_criteria")
 
     @match_criteria.setter
-    def match_criteria(self, value: Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']]):
+    def match_criteria(self, value: pulumi.Input[Optional['DrgRouteDistributionStatementMatchCriteriaArgs']]):
         pulumi.set(self, "match_criteria", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
 
@@ -172,7 +172,7 @@ class _DrgRouteDistributionStatementState:
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
 
@@ -182,10 +182,10 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_criteria: Optional[pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
@@ -209,7 +209,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                 "attachment_type": drg_route_distribution_statement_statements_match_criteria_attachment_type,
                 "drg_attachment_id": test_drg_attachment["id"],
             },
-            priority=drg_route_distribution_statement_statements_priority)
+            priority=int(drg_route_distribution_statement_statements_priority))
         ```
 
         ## Import
@@ -260,7 +260,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                 "attachment_type": drg_route_distribution_statement_statements_match_criteria_attachment_type,
                 "drg_attachment_id": test_drg_attachment["id"],
             },
-            priority=drg_route_distribution_statement_statements_priority)
+            priority=int(drg_route_distribution_statement_statements_priority))
         ```
 
         ## Import
@@ -287,10 +287,10 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_criteria: Optional[pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,10 +322,10 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-            match_criteria: Optional[pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None) -> 'DrgRouteDistributionStatement':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+            match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None) -> 'DrgRouteDistributionStatement':
         """
         Get an existing DrgRouteDistributionStatement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

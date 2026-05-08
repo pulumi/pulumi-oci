@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeImageCapabilitySchemas = oci.Core.getComputeImageCapabilitySchemas({
+ * const testComputeImageCapabilitySchemas = oci.core.getComputeImageCapabilitySchemas({
  *     compartmentId: compartmentId,
  *     displayName: computeImageCapabilitySchemaDisplayName,
  *     imageId: testImage.id,
@@ -91,7 +91,7 @@ export interface GetComputeImageCapabilitySchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeImageCapabilitySchemas = oci.Core.getComputeImageCapabilitySchemas({
+ * const testComputeImageCapabilitySchemas = oci.core.getComputeImageCapabilitySchemas({
  *     compartmentId: compartmentId,
  *     displayName: computeImageCapabilitySchemaDisplayName,
  *     imageId: testImage.id,
@@ -116,14 +116,14 @@ export interface GetComputeImageCapabilitySchemasOutputArgs {
     /**
      * A filter to return only resources that match the given compartment OCID exactly.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeImageCapabilitySchemasFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeImageCapabilitySchemasFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
 }

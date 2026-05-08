@@ -121,7 +121,7 @@ def get_recipes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recipes = oci.GoldenGate.get_recipes(compartment_id=compartment_id,
+    test_recipes = oci.goldengate.get_recipes(compartment_id=compartment_id,
         display_name=recipe_display_name,
         recipe_type=recipe_recipe_type)
     ```
@@ -146,10 +146,10 @@ def get_recipes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         recipe_summary_collections=pulumi.get(__ret__, 'recipe_summary_collections'),
         recipe_type=pulumi.get(__ret__, 'recipe_type'))
-def get_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict']]]]] = None,
-                       recipe_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recipes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict']]]]] = None,
+                       recipe_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecipesResult]:
     """
     This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
@@ -162,7 +162,7 @@ def get_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_recipes = oci.GoldenGate.get_recipes(compartment_id=compartment_id,
+    test_recipes = oci.goldengate.get_recipes(compartment_id=compartment_id,
         display_name=recipe_display_name,
         recipe_type=recipe_recipe_type)
     ```

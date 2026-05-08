@@ -23,17 +23,17 @@ class QueueArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
-                 channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 purge_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
+                 channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Queue resource.
 
@@ -105,91 +105,91 @@ class QueueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
+    def capabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
         """
         (Updatable) The capability to add on the queue
         """
         return pulumi.get(self, "capabilities")
 
     @capabilities.setter
-    def capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
+    def capabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
         pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")
-    def channel_consumption_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def channel_consumption_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 
     @channel_consumption_limit.setter
-    def channel_consumption_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def channel_consumption_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "channel_consumption_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="customEncryptionKeyId")
-    def custom_encryption_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_encryption_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
     @custom_encryption_key_id.setter
-    def custom_encryption_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_encryption_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_encryption_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deadLetterQueueDeliveryCount")
-    def dead_letter_queue_delivery_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dead_letter_queue_delivery_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         """
         return pulumi.get(self, "dead_letter_queue_delivery_count")
 
     @dead_letter_queue_delivery_count.setter
-    def dead_letter_queue_delivery_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dead_letter_queue_delivery_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dead_letter_queue_delivery_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeTrigger")
-    def purge_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def purge_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
         """
         return pulumi.get(self, "purge_trigger")
 
     @purge_trigger.setter
-    def purge_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def purge_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "purge_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeType")
-    def purge_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
 
@@ -199,68 +199,68 @@ class QueueArgs:
         return pulumi.get(self, "purge_type")
 
     @purge_type.setter
-    def purge_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_type", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionInSeconds")
-    def retention_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The retention period of messages in the queue, in seconds.
         """
         return pulumi.get(self, "retention_in_seconds")
 
     @retention_in_seconds.setter
-    def retention_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The default polling timeout of the messages in the queue, in seconds.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="visibilityInSeconds")
-    def visibility_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def visibility_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 
     @visibility_in_seconds.setter
-    def visibility_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def visibility_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "visibility_in_seconds", value)
 
 
 @pulumi.input_type
 class _QueueState:
     def __init__(__self__, *,
-                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
-                 channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 messages_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
+                 channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Queue resources.
 
@@ -328,139 +328,139 @@ class _QueueState:
 
     @_builtins.property
     @pulumi.getter
-    def capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
+    def capabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
         """
         (Updatable) The capability to add on the queue
         """
         return pulumi.get(self, "capabilities")
 
     @capabilities.setter
-    def capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
+    def capabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
         pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")
-    def channel_consumption_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def channel_consumption_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 
     @channel_consumption_limit.setter
-    def channel_consumption_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def channel_consumption_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "channel_consumption_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customEncryptionKeyId")
-    def custom_encryption_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_encryption_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
     @custom_encryption_key_id.setter
-    def custom_encryption_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_encryption_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_encryption_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deadLetterQueueDeliveryCount")
-    def dead_letter_queue_delivery_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dead_letter_queue_delivery_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         """
         return pulumi.get(self, "dead_letter_queue_delivery_count")
 
     @dead_letter_queue_delivery_count.setter
-    def dead_letter_queue_delivery_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dead_letter_queue_delivery_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dead_letter_queue_delivery_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name of the queue.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any additional details about the current state of the queue.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="messagesEndpoint")
-    def messages_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def messages_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The endpoint to use to consume or publish messages in the queue.
         """
         return pulumi.get(self, "messages_endpoint")
 
     @messages_endpoint.setter
-    def messages_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def messages_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "messages_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeTrigger")
-    def purge_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def purge_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
         """
         return pulumi.get(self, "purge_trigger")
 
     @purge_trigger.setter
-    def purge_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def purge_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "purge_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeType")
-    def purge_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purge_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
 
@@ -470,91 +470,91 @@ class _QueueState:
         return pulumi.get(self, "purge_type")
 
     @purge_type.setter
-    def purge_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purge_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purge_type", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionInSeconds")
-    def retention_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The retention period of messages in the queue, in seconds.
         """
         return pulumi.get(self, "retention_in_seconds")
 
     @retention_in_seconds.setter
-    def retention_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the queue.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The default polling timeout of the messages in the queue, in seconds.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="visibilityInSeconds")
-    def visibility_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def visibility_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 
     @visibility_in_seconds.setter
-    def visibility_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def visibility_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "visibility_in_seconds", value)
 
 
@@ -564,19 +564,19 @@ class Queue(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
-                 channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 purge_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+                 channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
@@ -593,16 +593,16 @@ class Queue(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=queue_display_name,
             capabilities=[{
-                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
-                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled == "true",
+                "primary_consumer_group_dead_letter_queue_delivery_count": int(queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count),
                 "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
                 "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
                 "type": queue_capabilities_type,
             }],
-            channel_consumption_limit=queue_channel_consumption_limit,
+            channel_consumption_limit=int(queue_channel_consumption_limit),
             custom_encryption_key_id=test_key["id"],
-            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
-            purge_trigger=purge_trigger,
+            dead_letter_queue_delivery_count=int(queue_dead_letter_queue_delivery_count),
+            purge_trigger=int(purge_trigger),
             purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -610,9 +610,9 @@ class Queue(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=queue_retention_in_seconds,
-            timeout_in_seconds=queue_timeout_in_seconds,
-            visibility_in_seconds=queue_visibility_in_seconds)
+            retention_in_seconds=int(queue_retention_in_seconds),
+            timeout_in_seconds=int(queue_timeout_in_seconds),
+            visibility_in_seconds=int(queue_visibility_in_seconds))
         ```
 
         ## Import
@@ -664,16 +664,16 @@ class Queue(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=queue_display_name,
             capabilities=[{
-                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
-                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled == "true",
+                "primary_consumer_group_dead_letter_queue_delivery_count": int(queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count),
                 "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
                 "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
                 "type": queue_capabilities_type,
             }],
-            channel_consumption_limit=queue_channel_consumption_limit,
+            channel_consumption_limit=int(queue_channel_consumption_limit),
             custom_encryption_key_id=test_key["id"],
-            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
-            purge_trigger=purge_trigger,
+            dead_letter_queue_delivery_count=int(queue_dead_letter_queue_delivery_count),
+            purge_trigger=int(purge_trigger),
             purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -681,9 +681,9 @@ class Queue(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=queue_retention_in_seconds,
-            timeout_in_seconds=queue_timeout_in_seconds,
-            visibility_in_seconds=queue_visibility_in_seconds)
+            retention_in_seconds=int(queue_retention_in_seconds),
+            timeout_in_seconds=int(queue_timeout_in_seconds),
+            visibility_in_seconds=int(queue_visibility_in_seconds))
         ```
 
         ## Import
@@ -710,19 +710,19 @@ class Queue(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
-                 channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 purge_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 purge_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+                 channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -765,25 +765,25 @@ class Queue(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
-            channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            messages_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            purge_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            purge_type: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None) -> 'Queue':
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+            channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None) -> 'Queue':
         """
         Get an existing Queue resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

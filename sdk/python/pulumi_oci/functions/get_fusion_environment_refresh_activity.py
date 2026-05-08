@@ -226,7 +226,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activity = oci.functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
         refresh_activity_id=test_refresh_activity["id"])
     ```
 
@@ -256,8 +256,8 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[_bui
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_of_restoration_point=pulumi.get(__ret__, 'time_of_restoration_point'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_fusion_environment_refresh_activity_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   refresh_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_refresh_activity_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   refresh_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -270,7 +270,7 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activity = oci.functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
         refresh_activity_id=test_refresh_activity["id"])
     ```
 

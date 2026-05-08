@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportMetadata = oci.FleetAppsManagement.getReportMetadata({
+ * const testReportMetadata = oci.fleetappsmanagement.getReportMetadata({
  *     compartmentId: compartmentId,
  *     reportName: reportName,
  * });
@@ -74,7 +74,7 @@ export interface GetReportMetadataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportMetadata = oci.FleetAppsManagement.getReportMetadata({
+ * const testReportMetadata = oci.fleetappsmanagement.getReportMetadata({
  *     compartmentId: compartmentId,
  *     reportName: reportName,
  * });
@@ -97,9 +97,9 @@ export interface GetReportMetadataOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetReportMetadataFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetReportMetadataFilterArgs>[] | undefined>;
     /**
      * A filter to return data for given report name.
      */
-    reportName?: pulumi.Input<string>;
+    reportName?: pulumi.Input<string | undefined>;
 }

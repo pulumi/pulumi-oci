@@ -24,11 +24,11 @@ class MigrationPlanArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  migration_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategies: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
+                 target_environments: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None):
         """
         The set of arguments for constructing a MigrationPlan resource.
 
@@ -93,84 +93,84 @@ class MigrationPlanArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceMigrationPlanId")
-    def source_migration_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_migration_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source migraiton plan ID to be cloned.
         """
         return pulumi.get(self, "source_migration_plan_id")
 
     @source_migration_plan_id.setter
-    def source_migration_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_migration_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_migration_plan_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def strategies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]:
+    def strategies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]:
         """
         (Updatable) List of strategies for the resources to be migrated.
         """
         return pulumi.get(self, "strategies")
 
     @strategies.setter
-    def strategies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]):
+    def strategies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]):
         pulumi.set(self, "strategies", value)
 
     @_builtins.property
     @pulumi.getter(name="targetEnvironments")
-    def target_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]:
+    def target_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]:
         """
         (Updatable) List of target environments.
         """
         return pulumi.get(self, "target_environments")
 
     @target_environments.setter
-    def target_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]):
+    def target_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]):
         pulumi.set(self, "target_environments", value)
 
 
 @pulumi.input_type
 class _MigrationPlanState:
     def __init__(__self__, *,
-                 calculated_limits: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]] = None,
-                 reference_to_rms_stack: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 calculated_limits: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_plan_stats: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]] = None,
+                 reference_to_rms_stack: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategies: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_environments: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MigrationPlan resources.
 
@@ -226,194 +226,194 @@ class _MigrationPlanState:
 
     @_builtins.property
     @pulumi.getter(name="calculatedLimits")
-    def calculated_limits(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def calculated_limits(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         """
         return pulumi.get(self, "calculated_limits")
 
     @calculated_limits.setter
-    def calculated_limits(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def calculated_limits(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "calculated_limits", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Migration plan identifier
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationId")
-    def migration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the associated migration.
         """
         return pulumi.get(self, "migration_id")
 
     @migration_id.setter
-    def migration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationPlanStats")
-    def migration_plan_stats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]]:
+    def migration_plan_stats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]]:
         """
         Status of the migration plan.
         """
         return pulumi.get(self, "migration_plan_stats")
 
     @migration_plan_stats.setter
-    def migration_plan_stats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]]):
+    def migration_plan_stats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]]):
         pulumi.set(self, "migration_plan_stats", value)
 
     @_builtins.property
     @pulumi.getter(name="referenceToRmsStack")
-    def reference_to_rms_stack(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reference_to_rms_stack(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the referenced ORM job.
         """
         return pulumi.get(self, "reference_to_rms_stack")
 
     @reference_to_rms_stack.setter
-    def reference_to_rms_stack(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reference_to_rms_stack(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reference_to_rms_stack", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceMigrationPlanId")
-    def source_migration_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_migration_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source migraiton plan ID to be cloned.
         """
         return pulumi.get(self, "source_migration_plan_id")
 
     @source_migration_plan_id.setter
-    def source_migration_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_migration_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_migration_plan_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the migration plan.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def strategies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]:
+    def strategies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]:
         """
         (Updatable) List of strategies for the resources to be migrated.
         """
         return pulumi.get(self, "strategies")
 
     @strategies.setter
-    def strategies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]):
+    def strategies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]]):
         pulumi.set(self, "strategies", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetEnvironments")
-    def target_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]:
+    def target_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]:
         """
         (Updatable) List of target environments.
         """
         return pulumi.get(self, "target_environments")
 
     @target_environments.setter
-    def target_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]):
+    def target_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]]):
         pulumi.set(self, "target_environments", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the migration plan was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the migration plan was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -423,14 +423,14 @@ class MigrationPlan(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
+                 target_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -498,14 +498,14 @@ class MigrationPlan(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
+                 target_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -547,22 +547,22 @@ class MigrationPlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            calculated_limits: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]]] = None,
-            reference_to_rms_stack: Optional[pulumi.Input[_builtins.str]] = None,
-            source_migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MigrationPlan':
+            calculated_limits: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_plan_stats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]]] = None,
+            reference_to_rms_stack: pulumi.Input[Optional[_builtins.str]] = None,
+            source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            strategies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MigrationPlan':
         """
         Get an existing MigrationPlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

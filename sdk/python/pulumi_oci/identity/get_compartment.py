@@ -177,7 +177,7 @@ def get_compartment(id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=compartment_id)
+    test_compartment = oci.identity.get_compartment(id=compartment_id)
     ```
 
 
@@ -199,7 +199,7 @@ def get_compartment(id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_compartment_output(id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compartment_output(id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompartmentResult]:
     """
     This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
@@ -219,7 +219,7 @@ def get_compartment_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=compartment_id)
+    test_compartment = oci.identity.get_compartment(id=compartment_id)
     ```
 
 

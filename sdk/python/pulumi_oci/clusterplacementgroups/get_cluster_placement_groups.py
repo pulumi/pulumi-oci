@@ -145,9 +145,9 @@ def get_cluster_placement_groups(ad: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_placement_groups = oci.ClusterPlacementGroups.get_cluster_placement_groups(ad=cluster_placement_group_ad,
+    test_cluster_placement_groups = oci.clusterplacementgroups.get_cluster_placement_groups(ad=cluster_placement_group_ad,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=cluster_placement_group_compartment_id_in_subtree,
+        compartment_id_in_subtree=cluster_placement_group_compartment_id_in_subtree == "true",
         id=cluster_placement_group_id,
         name=cluster_placement_group_name,
         state=cluster_placement_group_state)
@@ -181,13 +181,13 @@ def get_cluster_placement_groups(ad: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_cluster_placement_groups_output(ad: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterPlacementGroupsFilterArgs', 'GetClusterPlacementGroupsFilterArgsDict']]]]] = None,
-                                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cluster_placement_groups_output(ad: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterPlacementGroupsFilterArgs', 'GetClusterPlacementGroupsFilterArgsDict']]]]] = None,
+                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterPlacementGroupsResult]:
     """
     This data source provides the list of Cluster Placement Groups in Oracle Cloud Infrastructure Cluster Placement Groups service.
@@ -200,9 +200,9 @@ def get_cluster_placement_groups_output(ad: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_placement_groups = oci.ClusterPlacementGroups.get_cluster_placement_groups(ad=cluster_placement_group_ad,
+    test_cluster_placement_groups = oci.clusterplacementgroups.get_cluster_placement_groups(ad=cluster_placement_group_ad,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=cluster_placement_group_compartment_id_in_subtree,
+        compartment_id_in_subtree=cluster_placement_group_compartment_id_in_subtree == "true",
         id=cluster_placement_group_id,
         name=cluster_placement_group_name,
         state=cluster_placement_group_state)

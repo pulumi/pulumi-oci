@@ -22,31 +22,31 @@ __all__ = ['InvokeRunArgs', 'InvokeRun']
 class InvokeRunArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_log_config: Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']] = None,
-                 archive_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asynchronous: Optional[pulumi.Input[_builtins.bool]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape_config: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']] = None,
-                 execute: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape_config: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idle_timeout_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 logs_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_duration_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_executors: Optional[pulumi.Input[_builtins.int]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
-                 pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 spark_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_log_config: pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']] = None,
+                 archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape_config: pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']] = None,
+                 execute: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape_config: pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
+                 pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InvokeRun resource.
 
@@ -147,295 +147,295 @@ class InvokeRunArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationLogConfig")
-    def application_log_config(self) -> Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']]:
+    def application_log_config(self) -> pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']]:
         """
         Logging details of Application logs for Data Flow Run.
         """
         return pulumi.get(self, "application_log_config")
 
     @application_log_config.setter
-    def application_log_config(self, value: Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']]):
+    def application_log_config(self, value: pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']]):
         pulumi.set(self, "application_log_config", value)
 
     @_builtins.property
     @pulumi.getter(name="archiveUri")
-    def archive_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def archive_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "archive_uri")
 
     @archive_uri.setter
-    def archive_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def archive_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "archive_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def arguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         """
         return pulumi.get(self, "arguments")
 
     @arguments.setter
-    def arguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def arguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "arguments", value)
 
     @_builtins.property
     @pulumi.getter
-    def asynchronous(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def asynchronous(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         """
         return pulumi.get(self, "asynchronous")
 
     @asynchronous.setter
-    def asynchronous(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def asynchronous(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "asynchronous", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def configuration(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def configuration(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def driver_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VM shape for the driver. Sets the driver cores and memory.
         """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
-    def driver_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def driver_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "driver_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="driverShapeConfig")
-    def driver_shape_config(self) -> Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']]:
+    def driver_shape_config(self) -> pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']]:
         """
         This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
-    def driver_shape_config(self, value: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']]):
+    def driver_shape_config(self, value: pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']]):
         pulumi.set(self, "driver_shape_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def execute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def execute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         """
         return pulumi.get(self, "execute")
 
     @execute.setter
-    def execute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def execute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "execute", value)
 
     @_builtins.property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def executor_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
-    def executor_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def executor_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "executor_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="executorShapeConfig")
-    def executor_shape_config(self) -> Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']]:
+    def executor_shape_config(self) -> pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']]:
         """
         This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
-    def executor_shape_config(self, value: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']]):
+    def executor_shape_config(self, value: pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']]):
         pulumi.set(self, "executor_shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idle_timeout_in_minutes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
-    def idle_timeout_in_minutes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idle_timeout_in_minutes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idle_timeout_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="logsBucketUri")
-    def logs_bucket_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logs_bucket_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "logs_bucket_uri")
 
     @logs_bucket_uri.setter
-    def logs_bucket_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logs_bucket_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logs_bucket_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDurationInMinutes")
-    def max_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_duration_in_minutes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         """
         return pulumi.get(self, "max_duration_in_minutes")
 
     @max_duration_in_minutes.setter
-    def max_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_duration_in_minutes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_duration_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metastore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of Oracle Cloud Infrastructure Hive Metastore.
         """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
-    def metastore_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metastore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metastore_id", value)
 
     @_builtins.property
     @pulumi.getter(name="numExecutors")
-    def num_executors(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_executors(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of executor VMs requested.
         """
         return pulumi.get(self, "num_executors")
 
     @num_executors.setter
-    def num_executors(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_executors(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_executors", value)
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
-    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_parent_rpt_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         """
         return pulumi.get(self, "opc_parent_rpt_url")
 
     @opc_parent_rpt_url.setter
-    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_parent_rpt_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_parent_rpt_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]:
         """
         An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         """
         return pulumi.get(self, "pool_id")
 
     @pool_id.setter
-    def pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sparkVersion")
-    def spark_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spark_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         """
         return pulumi.get(self, "spark_version")
 
     @spark_version.setter
-    def spark_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spark_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spark_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Spark application processing type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warehouse_bucket_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
 
@@ -446,58 +446,58 @@ class InvokeRunArgs:
         return pulumi.get(self, "warehouse_bucket_uri")
 
     @warehouse_bucket_uri.setter
-    def warehouse_bucket_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warehouse_bucket_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
 @pulumi.input_type
 class _InvokeRunState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_log_config: Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']] = None,
-                 archive_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asynchronous: Optional[pulumi.Input[_builtins.bool]] = None,
-                 class_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 data_read_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_written_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape_config: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']] = None,
-                 execute: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape_config: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']] = None,
-                 file_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idle_timeout_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 logs_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_duration_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_executors: Optional[pulumi.Input[_builtins.int]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_principal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
-                 pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_max_host_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_endpoint_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_duration_in_milliseconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 spark_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ocpu: Optional[pulumi.Input[_builtins.int]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_log_config: pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']] = None,
+                 archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+                 class_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 data_read_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_written_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape_config: pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']] = None,
+                 execute: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape_config: pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']] = None,
+                 file_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_principal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
+                 pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_dns_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint_max_host_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_endpoint_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_duration_in_milliseconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ocpu: pulumi.Input[Optional[_builtins.int]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InvokeRun resources.
 
@@ -644,535 +644,535 @@ class _InvokeRunState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationLogConfig")
-    def application_log_config(self) -> Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']]:
+    def application_log_config(self) -> pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']]:
         """
         Logging details of Application logs for Data Flow Run.
         """
         return pulumi.get(self, "application_log_config")
 
     @application_log_config.setter
-    def application_log_config(self, value: Optional[pulumi.Input['InvokeRunApplicationLogConfigArgs']]):
+    def application_log_config(self, value: pulumi.Input[Optional['InvokeRunApplicationLogConfigArgs']]):
         pulumi.set(self, "application_log_config", value)
 
     @_builtins.property
     @pulumi.getter(name="archiveUri")
-    def archive_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def archive_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "archive_uri")
 
     @archive_uri.setter
-    def archive_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def archive_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "archive_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def arguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         """
         return pulumi.get(self, "arguments")
 
     @arguments.setter
-    def arguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def arguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "arguments", value)
 
     @_builtins.property
     @pulumi.getter
-    def asynchronous(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def asynchronous(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         """
         return pulumi.get(self, "asynchronous")
 
     @asynchronous.setter
-    def asynchronous(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def asynchronous(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "asynchronous", value)
 
     @_builtins.property
     @pulumi.getter(name="className")
-    def class_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def class_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The class for the application.
         """
         return pulumi.get(self, "class_name")
 
     @class_name.setter
-    def class_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def class_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "class_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of a compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def configuration(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def configuration(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="dataReadInBytes")
-    def data_read_in_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_read_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data read by the run in bytes.
         """
         return pulumi.get(self, "data_read_in_bytes")
 
     @data_read_in_bytes.setter
-    def data_read_in_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_read_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_read_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="dataWrittenInBytes")
-    def data_written_in_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_written_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data written by the run in bytes.
         """
         return pulumi.get(self, "data_written_in_bytes")
 
     @data_written_in_bytes.setter
-    def data_written_in_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_written_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_written_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def driver_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VM shape for the driver. Sets the driver cores and memory.
         """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
-    def driver_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def driver_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "driver_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="driverShapeConfig")
-    def driver_shape_config(self) -> Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']]:
+    def driver_shape_config(self) -> pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']]:
         """
         This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
-    def driver_shape_config(self, value: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']]):
+    def driver_shape_config(self, value: pulumi.Input[Optional['InvokeRunDriverShapeConfigArgs']]):
         pulumi.set(self, "driver_shape_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def execute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def execute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         """
         return pulumi.get(self, "execute")
 
     @execute.setter
-    def execute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def execute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "execute", value)
 
     @_builtins.property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def executor_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
-    def executor_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def executor_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "executor_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="executorShapeConfig")
-    def executor_shape_config(self) -> Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']]:
+    def executor_shape_config(self) -> pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']]:
         """
         This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
-    def executor_shape_config(self, value: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']]):
+    def executor_shape_config(self, value: pulumi.Input[Optional['InvokeRunExecutorShapeConfigArgs']]):
         pulumi.set(self, "executor_shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="fileUri")
-    def file_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "file_uri")
 
     @file_uri.setter
-    def file_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idle_timeout_in_minutes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
-    def idle_timeout_in_minutes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idle_timeout_in_minutes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idle_timeout_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Spark language.
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The detailed messages about the lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logsBucketUri")
-    def logs_bucket_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logs_bucket_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "logs_bucket_uri")
 
     @logs_bucket_uri.setter
-    def logs_bucket_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logs_bucket_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logs_bucket_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDurationInMinutes")
-    def max_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_duration_in_minutes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         """
         return pulumi.get(self, "max_duration_in_minutes")
 
     @max_duration_in_minutes.setter
-    def max_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_duration_in_minutes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_duration_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metastore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of Oracle Cloud Infrastructure Hive Metastore.
         """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
-    def metastore_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metastore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metastore_id", value)
 
     @_builtins.property
     @pulumi.getter(name="numExecutors")
-    def num_executors(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_executors(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of executor VMs requested.
         """
         return pulumi.get(self, "num_executors")
 
     @num_executors.setter
-    def num_executors(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_executors(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_executors", value)
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
-    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_parent_rpt_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         """
         return pulumi.get(self, "opc_parent_rpt_url")
 
     @opc_parent_rpt_url.setter
-    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_parent_rpt_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_parent_rpt_url", value)
 
     @_builtins.property
     @pulumi.getter(name="opcRequestId")
-    def opc_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         """
         return pulumi.get(self, "opc_request_id")
 
     @opc_request_id.setter
-    def opc_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_principal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the user who created the resource.
         """
         return pulumi.get(self, "owner_principal_id")
 
     @owner_principal_id.setter
-    def owner_principal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_principal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_principal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
-    def owner_user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_user_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]:
         """
         An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         """
         return pulumi.get(self, "pool_id")
 
     @pool_id.setter
-    def pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointDnsZones")
-    def private_endpoint_dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_endpoint_dns_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         """
         return pulumi.get(self, "private_endpoint_dns_zones")
 
     @private_endpoint_dns_zones.setter
-    def private_endpoint_dns_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_endpoint_dns_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_endpoint_dns_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a private endpoint.
         """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
-    def private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointMaxHostCount")
-    def private_endpoint_max_host_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def private_endpoint_max_host_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
         """
         return pulumi.get(self, "private_endpoint_max_host_count")
 
     @private_endpoint_max_host_count.setter
-    def private_endpoint_max_host_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def private_endpoint_max_host_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "private_endpoint_max_host_count", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointNsgIds")
-    def private_endpoint_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_endpoint_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of network security group OCIDs.
         """
         return pulumi.get(self, "private_endpoint_nsg_ids")
 
     @private_endpoint_nsg_ids.setter
-    def private_endpoint_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_endpoint_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_endpoint_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointSubnetId")
-    def private_endpoint_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a subnet.
         """
         return pulumi.get(self, "private_endpoint_subnet_id")
 
     @private_endpoint_subnet_id.setter
-    def private_endpoint_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="runDurationInMilliseconds")
-    def run_duration_in_milliseconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_duration_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The duration of the run in milliseconds.
         """
         return pulumi.get(self, "run_duration_in_milliseconds")
 
     @run_duration_in_milliseconds.setter
-    def run_duration_in_milliseconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_duration_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_duration_in_milliseconds", value)
 
     @_builtins.property
     @pulumi.getter(name="sparkVersion")
-    def spark_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spark_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         """
         return pulumi.get(self, "spark_version")
 
     @spark_version.setter
-    def spark_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spark_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spark_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this run.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="totalOcpu")
-    def total_ocpu(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_ocpu(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of oCPU requested by the run.
         """
         return pulumi.get(self, "total_ocpu")
 
     @total_ocpu.setter
-    def total_ocpu(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_ocpu(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_ocpu", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Spark application processing type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warehouse_bucket_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
 
@@ -1183,7 +1183,7 @@ class _InvokeRunState:
         return pulumi.get(self, "warehouse_bucket_uri")
 
     @warehouse_bucket_uri.setter
-    def warehouse_bucket_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warehouse_bucket_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
@@ -1193,32 +1193,32 @@ class InvokeRun(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
-                 archive_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asynchronous: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
-                 execute: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idle_timeout_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 logs_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_duration_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_executors: Optional[pulumi.Input[_builtins.int]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
-                 pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 spark_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_log_config: pulumi.Input[Optional[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
+                 archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape_config: pulumi.Input[Optional[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
+                 execute: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape_config: pulumi.Input[Optional[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
+                 pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
@@ -1266,7 +1266,7 @@ class InvokeRun(pulumi.CustomResource):
             logs_bucket_uri=invoke_run_logs_bucket_uri,
             max_duration_in_minutes=invoke_run_max_duration_in_minutes,
             metastore_id=metastore_id,
-            num_executors=invoke_run_num_executors,
+            num_executors=int(invoke_run_num_executors),
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[{
                 "name": invoke_run_parameters_name,
@@ -1376,7 +1376,7 @@ class InvokeRun(pulumi.CustomResource):
             logs_bucket_uri=invoke_run_logs_bucket_uri,
             max_duration_in_minutes=invoke_run_max_duration_in_minutes,
             metastore_id=metastore_id,
-            num_executors=invoke_run_num_executors,
+            num_executors=int(invoke_run_num_executors),
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[{
                 "name": invoke_run_parameters_name,
@@ -1416,32 +1416,32 @@ class InvokeRun(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
-                 archive_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 asynchronous: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
-                 execute: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idle_timeout_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 logs_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_duration_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-                 metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_executors: Optional[pulumi.Input[_builtins.int]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
-                 pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 spark_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_log_config: pulumi.Input[Optional[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
+                 archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 driver_shape_config: pulumi.Input[Optional[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
+                 execute: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 executor_shape_config: pulumi.Input[Optional[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+                 metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
+                 pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1508,51 +1508,51 @@ class InvokeRun(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
-            archive_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            asynchronous: Optional[pulumi.Input[_builtins.bool]] = None,
-            class_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            data_read_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-            data_written_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            driver_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
-            execute: Optional[pulumi.Input[_builtins.str]] = None,
-            executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
-            file_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            idle_timeout_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-            language: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            logs_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            max_duration_in_minutes: Optional[pulumi.Input[_builtins.str]] = None,
-            metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
-            num_executors: Optional[pulumi.Input[_builtins.int]] = None,
-            opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-            opc_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_principal_id: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
-            pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_endpoint_max_host_count: Optional[pulumi.Input[_builtins.int]] = None,
-            private_endpoint_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            run_duration_in_milliseconds: Optional[pulumi.Input[_builtins.str]] = None,
-            spark_version: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            total_ocpu: Optional[pulumi.Input[_builtins.int]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None) -> 'InvokeRun':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            application_log_config: pulumi.Input[Optional[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
+            archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+            class_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            data_read_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            data_written_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape_config: pulumi.Input[Optional[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
+            execute: pulumi.Input[Optional[_builtins.str]] = None,
+            executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            executor_shape_config: pulumi.Input[Optional[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
+            file_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+            metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+            num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+            opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_principal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
+            pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_dns_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_max_host_count: pulumi.Input[Optional[_builtins.int]] = None,
+            private_endpoint_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            run_duration_in_milliseconds: pulumi.Input[Optional[_builtins.str]] = None,
+            spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_ocpu: pulumi.Input[Optional[_builtins.int]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None) -> 'InvokeRun':
         """
         Get an existing InvokeRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

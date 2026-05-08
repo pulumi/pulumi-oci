@@ -240,7 +240,7 @@ def get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster = oci.Core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster = oci.core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id: Optional[_buil
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryClusterResult]:
     """
     This data source provides details about a specific Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
@@ -281,7 +281,7 @@ def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster = oci.Core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster = oci.core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
     ```
 
 

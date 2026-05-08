@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
+ * const testPeerRegionForRemotePeerings = oci.core.getPeerRegionForRemotePeerings({});
  * ```
  */
 export function getPeerRegionForRemotePeerings(args?: GetPeerRegionForRemotePeeringsArgs, opts?: pulumi.InvokeOptions): Promise<GetPeerRegionForRemotePeeringsResult> {
@@ -62,7 +62,7 @@ export interface GetPeerRegionForRemotePeeringsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
+ * const testPeerRegionForRemotePeerings = oci.core.getPeerRegionForRemotePeerings({});
  * ```
  */
 export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
@@ -77,5 +77,5 @@ export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemo
  * A collection of arguments for invoking getPeerRegionForRemotePeerings.
  */
 export interface GetPeerRegionForRemotePeeringsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPeerRegionForRemotePeeringsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPeerRegionForRemotePeeringsFilterArgs>[] | undefined>;
 }

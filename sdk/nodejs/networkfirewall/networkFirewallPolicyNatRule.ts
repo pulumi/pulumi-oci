@@ -176,35 +176,35 @@ export interface NetworkFirewallPolicyNatRuleState {
      * (Updatable) action:
      * * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      */
-    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
+    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition | undefined>;
     /**
      * (Updatable) Description of a NAT rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the NAT rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition | undefined>;
     /**
      * The priority order in which this rule should be evaluated
      */
-    priorityOrder?: pulumi.Input<string>;
+    priorityOrder?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.
@@ -213,7 +213,7 @@ export interface NetworkFirewallPolicyNatRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -232,11 +232,11 @@ export interface NetworkFirewallPolicyNatRuleArgs {
     /**
      * (Updatable) Description of a NAT rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the NAT rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -244,7 +244,7 @@ export interface NetworkFirewallPolicyNatRuleArgs {
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition | undefined>;
     /**
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.

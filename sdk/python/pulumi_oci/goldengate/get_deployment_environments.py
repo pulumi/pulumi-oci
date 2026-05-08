@@ -95,7 +95,7 @@ def get_deployment_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_environments = oci.GoldenGate.get_deployment_environments(compartment_id=compartment_id)
+    test_deployment_environments = oci.goldengate.get_deployment_environments(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_deployment_environments(compartment_id: Optional[_builtins.str] = None,
         deployment_environment_collections=pulumi.get(__ret__, 'deployment_environment_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_deployment_environments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict']]]]] = None,
+def get_deployment_environments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentEnvironmentsResult]:
     """
     This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.
@@ -126,7 +126,7 @@ def get_deployment_environments_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_environments = oci.GoldenGate.get_deployment_environments(compartment_id=compartment_id)
+    test_deployment_environments = oci.goldengate.get_deployment_environments(compartment_id=compartment_id)
     ```
 
 

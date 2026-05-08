@@ -105,8 +105,8 @@ def get_scheduler_job_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_counts = oci.FleetAppsManagement.get_scheduler_job_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree)
+    test_scheduler_job_counts = oci.fleetappsmanagement.get_scheduler_job_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree == "true")
     ```
 
 
@@ -126,9 +126,9 @@ def get_scheduler_job_counts(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         scheduler_job_aggregation_collections=pulumi.get(__ret__, 'scheduler_job_aggregation_collections'))
-def get_scheduler_job_counts_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict']]]]] = None,
+def get_scheduler_job_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict']]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerJobCountsResult]:
     """
     This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -141,8 +141,8 @@ def get_scheduler_job_counts_output(compartment_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_counts = oci.FleetAppsManagement.get_scheduler_job_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree)
+    test_scheduler_job_counts = oci.fleetappsmanagement.get_scheduler_job_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree == "true")
     ```
 
 

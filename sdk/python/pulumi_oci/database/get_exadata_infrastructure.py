@@ -776,7 +776,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[_builtins.str
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
-def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_exadata_infrastructure_output(exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInfrastructureResult]:
     """
     This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.

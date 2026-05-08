@@ -124,7 +124,7 @@ def get_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Events.get_rules(compartment_id=compartment_id,
+    test_rules = oci.events.get_rules(compartment_id=compartment_id,
         display_name=rule_display_name,
         state=rule_state)
     ```
@@ -149,10 +149,10 @@ def get_rules(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         rules=pulumi.get(__ret__, 'rules'),
         state=pulumi.get(__ret__, 'state'))
-def get_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRulesResult]:
     """
     This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
@@ -165,7 +165,7 @@ def get_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Events.get_rules(compartment_id=compartment_id,
+    test_rules = oci.events.get_rules(compartment_id=compartment_id,
         display_name=rule_display_name,
         state=rule_state)
     ```

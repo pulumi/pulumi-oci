@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePool = oci.Core.getInstancePool({
+ * const testInstancePool = oci.core.getInstancePool({
  *     instancePoolId: testInstancePoolOciCoreInstancePool.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetInstancePoolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePool = oci.Core.getInstancePool({
+ * const testInstancePool = oci.core.getInstancePool({
  *     instancePoolId: testInstancePoolOciCoreInstancePool.id,
  * });
  * ```

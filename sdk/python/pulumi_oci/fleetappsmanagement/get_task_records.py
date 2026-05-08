@@ -162,7 +162,7 @@ def get_task_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_task_records = oci.FleetAppsManagement.get_task_records(compartment_id=compartment_id,
+    test_task_records = oci.fleetappsmanagement.get_task_records(compartment_id=compartment_id,
         display_name=task_record_display_name,
         id=task_record_id,
         operation=task_record_operation,
@@ -202,14 +202,14 @@ def get_task_records(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         task_record_collections=pulumi.get(__ret__, 'task_record_collections'),
         type=pulumi.get(__ret__, 'type'))
-def get_task_records_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict']]]]] = None,
-                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            operation: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            platform: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_task_records_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict']]]]] = None,
+                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            platform: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTaskRecordsResult]:
     """
     This data source provides the list of Task Records in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -223,7 +223,7 @@ def get_task_records_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_task_records = oci.FleetAppsManagement.get_task_records(compartment_id=compartment_id,
+    test_task_records = oci.fleetappsmanagement.get_task_records(compartment_id=compartment_id,
         display_name=task_record_display_name,
         id=task_record_id,
         operation=task_record_operation,

@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isTrustVerificationDisabled: certificateIsTrustVerificationDisabled,
+ *     isTrustVerificationDisabled: certificateIsTrustVerificationDisabled === "true",
  * });
  * ```
  *
@@ -232,36 +232,36 @@ export interface CertificateState {
      *
      * The example below shows an intermediate certificate appended to a leaf certificate.
      */
-    certificateData?: pulumi.Input<string>;
+    certificateData?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      */
-    extensions?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateExtension>[]>;
+    extensions?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateExtension>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Set to `true` if the SSL certificate is self-signed.
      */
-    isTrustVerificationDisabled?: pulumi.Input<boolean>;
-    issuedBy?: pulumi.Input<string>;
+    isTrustVerificationDisabled?: pulumi.Input<boolean | undefined>;
+    issuedBy?: pulumi.Input<string | undefined>;
     /**
      * The issuer of the certificate.
      */
-    issuerNames?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateIssuerName>[]>;
+    issuerNames?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateIssuerName>[] | undefined>;
     /**
      * The private key of the SSL certificate.
      *
@@ -269,43 +269,43 @@ export interface CertificateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    privateKeyData?: pulumi.Input<string>;
+    privateKeyData?: pulumi.Input<string | undefined>;
     /**
      * Information about the public key and the algorithm used by the public key.
      */
-    publicKeyInfos?: pulumi.Input<pulumi.Input<inputs.Waas.CertificatePublicKeyInfo>[]>;
+    publicKeyInfos?: pulumi.Input<pulumi.Input<inputs.Waas.CertificatePublicKeyInfo>[] | undefined>;
     /**
      * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      */
-    serialNumber?: pulumi.Input<string>;
+    serialNumber?: pulumi.Input<string | undefined>;
     /**
      * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the SSL certificate.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The entity to be secured by the certificate.
      */
-    subjectNames?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateSubjectName>[]>;
+    subjectNames?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateSubjectName>[] | undefined>;
     /**
      * The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      */
-    timeNotValidAfter?: pulumi.Input<string>;
+    timeNotValidAfter?: pulumi.Input<string | undefined>;
     /**
      * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      */
-    timeNotValidBefore?: pulumi.Input<string>;
+    timeNotValidBefore?: pulumi.Input<string | undefined>;
     /**
      * The version of the encoded certificate.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -327,19 +327,19 @@ export interface CertificateArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Set to `true` if the SSL certificate is self-signed.
      */
-    isTrustVerificationDisabled?: pulumi.Input<boolean>;
+    isTrustVerificationDisabled?: pulumi.Input<boolean | undefined>;
     /**
      * The private key of the SSL certificate.
      *

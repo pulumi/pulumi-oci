@@ -264,7 +264,7 @@ def get_migration_plan(migration_plan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
+    test_migration_plan = oci.cloudmigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_migration_plan(migration_plan_id: Optional[_builtins.str] = None,
         target_environments=pulumi.get(__ret__, 'target_environments'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_migration_plan_output(migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_migration_plan_output(migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationPlanResult]:
     """
     This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -307,7 +307,7 @@ def get_migration_plan_output(migration_plan_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
+    test_migration_plan = oci.cloudmigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
     ```
 
 

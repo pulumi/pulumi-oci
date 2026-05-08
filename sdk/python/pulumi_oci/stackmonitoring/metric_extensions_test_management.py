@@ -66,12 +66,12 @@ class MetricExtensionsTestManagementArgs:
 @pulumi.input_type
 class _MetricExtensionsTestManagementState:
     def __init__(__self__, *,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_run_metric_suffix: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_run_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_run_resource_group_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_run_metric_suffix: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_run_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_run_resource_group_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionsTestManagement resources.
 
@@ -101,19 +101,19 @@ class _MetricExtensionsTestManagementState:
 
     @_builtins.property
     @pulumi.getter(name="metricExtensionId")
-    def metric_extension_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_extension_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
-    def metric_extension_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_extension_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_extension_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceIds")
-    def resource_ids(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_ids(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         List of Resource IDs [OCID]. Currently, supports only one resource id per request.
 
@@ -124,55 +124,55 @@ class _MetricExtensionsTestManagementState:
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
-    def resource_ids(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_ids(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="testRunId")
-    def test_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def test_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Test Run Id
         """
         return pulumi.get(self, "test_run_id")
 
     @test_run_id.setter
-    def test_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def test_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "test_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="testRunMetricSuffix")
-    def test_run_metric_suffix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def test_run_metric_suffix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Test Run Metric Suffix
         """
         return pulumi.get(self, "test_run_metric_suffix")
 
     @test_run_metric_suffix.setter
-    def test_run_metric_suffix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def test_run_metric_suffix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "test_run_metric_suffix", value)
 
     @_builtins.property
     @pulumi.getter(name="testRunNamespaceName")
-    def test_run_namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def test_run_namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Test Run Namespace name
         """
         return pulumi.get(self, "test_run_namespace_name")
 
     @test_run_namespace_name.setter
-    def test_run_namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def test_run_namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "test_run_namespace_name", value)
 
     @_builtins.property
     @pulumi.getter(name="testRunResourceGroupName")
-    def test_run_resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def test_run_resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Test Run Resource Group name
         """
         return pulumi.get(self, "test_run_resource_group_name")
 
     @test_run_resource_group_name.setter
-    def test_run_resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def test_run_resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "test_run_resource_group_name", value)
 
 
@@ -182,8 +182,8 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -263,8 +263,8 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -294,12 +294,12 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
-            test_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            test_run_metric_suffix: Optional[pulumi.Input[_builtins.str]] = None,
-            test_run_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-            test_run_resource_group_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'MetricExtensionsTestManagement':
+            metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_metric_suffix: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_resource_group_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'MetricExtensionsTestManagement':
         """
         Get an existing MetricExtensionsTestManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

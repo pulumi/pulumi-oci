@@ -22,10 +22,10 @@ __all__ = ['AutonomousDatabaseBackupArgs', 'AutonomousDatabaseBackup']
 class AutonomousDatabaseBackupArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[_builtins.str],
-                 backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_long_term_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_destination_details: pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseBackup resource.
 
@@ -63,43 +63,43 @@ class AutonomousDatabaseBackupArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationDetails")
-    def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
+    def backup_destination_details(self) -> pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
         """
         Backup destination details
         """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
-    def backup_destination_details(self, value: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
+    def backup_destination_details(self, value: pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
         pulumi.set(self, "backup_destination_details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isLongTermBackup")
-    def is_long_term_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_long_term_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the backup is long-term
         """
         return pulumi.get(self, "is_long_term_backup")
 
     @is_long_term_backup.setter
-    def is_long_term_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_long_term_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_long_term_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
 
@@ -110,38 +110,38 @@ class AutonomousDatabaseBackupArgs:
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
 
 @pulumi.input_type
 class _AutonomousDatabaseBackupState:
     def __init__(__self__, *,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_automatic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_long_term_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_restorable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 source_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_available_till: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_destination_details: pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_restorable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 source_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_available_till: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseBackup resources.
 
@@ -228,199 +228,199 @@ class _AutonomousDatabaseBackupState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationDetails")
-    def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
+    def backup_destination_details(self) -> pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
         """
         Backup destination details
         """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
-    def backup_destination_details(self, value: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
+    def backup_destination_details(self, value: pulumi.Input[Optional['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]):
         pulumi.set(self, "backup_destination_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSizeInTbs")
-    def database_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def database_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The size of the database in terabytes at the time the backup was taken.
         """
         return pulumi.get(self, "database_size_in_tbs")
 
     @database_size_in_tbs.setter
-    def database_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def database_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "database_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def infrastructure_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure type this resource belongs to.
         """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
-    def infrastructure_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def infrastructure_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infrastructure_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutomatic")
-    def is_automatic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_automatic(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the backup is user-initiated or automatic.
         """
         return pulumi.get(self, "is_automatic")
 
     @is_automatic.setter
-    def is_automatic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_automatic(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_automatic", value)
 
     @_builtins.property
     @pulumi.getter(name="isLongTermBackup")
-    def is_long_term_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_long_term_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the backup is long-term
         """
         return pulumi.get(self, "is_long_term_backup")
 
     @is_long_term_backup.setter
-    def is_long_term_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_long_term_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_long_term_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="isRestorable")
-    def is_restorable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_restorable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         """
         return pulumi.get(self, "is_restorable")
 
     @is_restorable.setter
-    def is_restorable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_restorable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_restorable", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_wallet_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
-    def key_store_wallet_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_wallet_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_wallet_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the region in which backup is taken in.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
 
@@ -431,103 +431,103 @@ class _AutonomousDatabaseBackupState:
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInTbs")
-    def size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The backup size in terrabytes (TB).
         """
         return pulumi.get(self, "size_in_tbs")
 
     @size_in_tbs.setter
-    def size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabaseDetails")
-    def source_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]]:
+    def source_database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]]:
         """
         Source Autonomous Database details.
         """
         return pulumi.get(self, "source_database_details")
 
     @source_database_details.setter
-    def source_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]]):
+    def source_database_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailArgs']]]]):
         pulumi.set(self, "source_database_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAvailableTill")
-    def time_available_till(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_available_till(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp until when the backup will be available
         """
         return pulumi.get(self, "time_available_till")
 
     @time_available_till.setter
-    def time_available_till(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_available_till(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_available_till", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup completed.
         """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
-    def time_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup started.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of backup.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
 
@@ -537,11 +537,11 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_long_term_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -565,15 +565,15 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                 "dbrs_policy_id": test_policy["id"],
                 "id": autonomous_database_backup_backup_destination_details_id,
                 "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
-                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
-                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote == "true",
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled == "true",
                 "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
                 "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
                 "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
             },
             display_name=autonomous_database_backup_display_name,
-            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
-            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup == "true",
+            retention_period_in_days=int(autonomous_database_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -625,15 +625,15 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                 "dbrs_policy_id": test_policy["id"],
                 "id": autonomous_database_backup_backup_destination_details_id,
                 "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
-                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
-                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote == "true",
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled == "true",
                 "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
                 "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
                 "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
             },
             display_name=autonomous_database_backup_display_name,
-            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
-            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup == "true",
+            retention_period_in_days=int(autonomous_database_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -660,11 +660,11 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_long_term_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -711,31 +711,31 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_automatic: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_long_term_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_restorable: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            source_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_available_till: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousDatabaseBackup':
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_restorable: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            source_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_available_till: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousDatabaseBackup':
         """
         Get an existing AutonomousDatabaseBackup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

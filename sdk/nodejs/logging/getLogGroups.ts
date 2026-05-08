@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroups = oci.Logging.getLogGroups({
+ * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -87,10 +87,10 @@ export interface GetLogGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroups = oci.Logging.getLogGroups({
+ * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -115,10 +115,10 @@ export interface GetLogGroupsOutputArgs {
     /**
      * Resource name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogGroupsFilterArgs>[] | undefined>;
     /**
      * Specifies whether or not nested compartments should be traversed. Defaults to false.
      */
-    isCompartmentIdInSubtree?: pulumi.Input<boolean>;
+    isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
 }

@@ -477,7 +477,7 @@ def get_security_assessment(security_assessment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
+    test_security_assessment = oci.datasafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
     ```
 
 
@@ -526,7 +526,7 @@ def get_security_assessment(security_assessment_id: Optional[_builtins.str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
         type=pulumi.get(__ret__, 'type'))
-def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_assessment_output(security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentResult]:
     """
     This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -539,7 +539,7 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
+    test_security_assessment = oci.datasafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
     ```
 
 

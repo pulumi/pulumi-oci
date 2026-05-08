@@ -150,11 +150,11 @@ def get_firmware_bundles(compartment_id: Optional[_builtins.str] = None,
         is_default_bundle=pulumi.get(__ret__, 'is_default_bundle'),
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
         platform=pulumi.get(__ret__, 'platform'))
-def get_firmware_bundles_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict']]]]] = None,
-                                is_default_bundle: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                platform: Optional[pulumi.Input[_builtins.str]] = None,
+def get_firmware_bundles_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict']]]]] = None,
+                                is_default_bundle: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                platform: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFirmwareBundlesResult]:
     """
     This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.

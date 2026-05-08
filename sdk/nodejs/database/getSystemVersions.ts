@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersions = oci.Database.getSystemVersions({
+ * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest,
+ *     isLatest: systemVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
@@ -101,10 +101,10 @@ export interface GetSystemVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersions = oci.Database.getSystemVersions({
+ * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest,
+ *     isLatest: systemVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
@@ -130,7 +130,7 @@ export interface GetSystemVersionsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSystemVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSystemVersionsFilterArgs>[] | undefined>;
     /**
      * Specifies gi version query parameter.
      */
@@ -138,13 +138,13 @@ export interface GetSystemVersionsOutputArgs {
     /**
      * If provided, return highest versions from each major version family.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * If provided, filters the results for the specified resource Id.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the given shape.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }

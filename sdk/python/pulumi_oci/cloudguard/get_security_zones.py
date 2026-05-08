@@ -146,10 +146,10 @@ def get_security_zones(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=compartment_id,
+    test_security_zones = oci.cloudguard.get_security_zones(compartment_id=compartment_id,
         display_name=security_zone_display_name,
         id=security_zone_id,
-        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree == "true",
         security_recipe_id=test_security_recipe["id"],
         state=security_zone_state)
     ```
@@ -182,13 +182,13 @@ def get_security_zones(compartment_id: Optional[_builtins.str] = None,
         security_recipe_id=pulumi.get(__ret__, 'security_recipe_id'),
         security_zone_collections=pulumi.get(__ret__, 'security_zone_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_zones_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict']]]]] = None,
-                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              is_required_security_zones_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              security_recipe_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_zones_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict']]]]] = None,
+                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              is_required_security_zones_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              security_recipe_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityZonesResult]:
     """
     This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
@@ -202,10 +202,10 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=compartment_id,
+    test_security_zones = oci.cloudguard.get_security_zones(compartment_id=compartment_id,
         display_name=security_zone_display_name,
         id=security_zone_id,
-        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree == "true",
         security_recipe_id=test_security_recipe["id"],
         state=security_zone_state)
     ```

@@ -44,16 +44,16 @@ import * as utilities from "../utilities";
  *         vnicId: testVnicAttachment.id,
  *     },
  *     pathAnalyzerTestId: testPathAnalyzerTest.id,
- *     protocol: pathAnalysiProtocol,
+ *     protocol: Number(pathAnalysiProtocol),
  *     protocolParameters: {
  *         type: pathAnalysiProtocolParametersType,
- *         destinationPort: pathAnalysiProtocolParametersDestinationPort,
- *         icmpCode: pathAnalysiProtocolParametersIcmpCode,
- *         icmpType: pathAnalysiProtocolParametersIcmpType,
- *         sourcePort: pathAnalysiProtocolParametersSourcePort,
+ *         destinationPort: Number(pathAnalysiProtocolParametersDestinationPort),
+ *         icmpCode: Number(pathAnalysiProtocolParametersIcmpCode),
+ *         icmpType: Number(pathAnalysiProtocolParametersIcmpType),
+ *         sourcePort: Number(pathAnalysiProtocolParametersSourcePort),
  *     },
  *     queryOptions: {
- *         isBiDirectionalAnalysis: pathAnalysiQueryOptionsIsBiDirectionalAnalysis,
+ *         isBiDirectionalAnalysis: pathAnalysiQueryOptionsIsBiDirectionalAnalysis === "true",
  *     },
  *     sourceEndpoint: {
  *         type: pathAnalysiSourceEndpointType,
@@ -196,35 +196,35 @@ export interface PathAnalysiState {
     /**
      * The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      */
-    cacheControl?: pulumi.Input<string>;
+    cacheControl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiDestinationEndpoint>;
+    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiDestinationEndpoint | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      */
-    pathAnalyzerTestId?: pulumi.Input<string>;
+    pathAnalyzerTestId?: pulumi.Input<string | undefined>;
     /**
      * The IP protocol to used for the path analysis.
      */
-    protocol?: pulumi.Input<number>;
+    protocol?: pulumi.Input<number | undefined>;
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalysiProtocolParameters>;
+    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalysiProtocolParameters | undefined>;
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalysiQueryOptions>;
+    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalysiQueryOptions | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiSourceEndpoint>;
+    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiSourceEndpoint | undefined>;
     /**
      * The type of the `PathAnalysis` query.
      *
@@ -232,7 +232,7 @@ export interface PathAnalysiState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -242,35 +242,35 @@ export interface PathAnalysiArgs {
     /**
      * The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      */
-    cacheControl?: pulumi.Input<string>;
+    cacheControl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiDestinationEndpoint>;
+    destinationEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiDestinationEndpoint | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      */
-    pathAnalyzerTestId?: pulumi.Input<string>;
+    pathAnalyzerTestId?: pulumi.Input<string | undefined>;
     /**
      * The IP protocol to used for the path analysis.
      */
-    protocol?: pulumi.Input<number>;
+    protocol?: pulumi.Input<number | undefined>;
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalysiProtocolParameters>;
+    protocolParameters?: pulumi.Input<inputs.VnMonitoring.PathAnalysiProtocolParameters | undefined>;
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalysiQueryOptions>;
+    queryOptions?: pulumi.Input<inputs.VnMonitoring.PathAnalysiQueryOptions | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiSourceEndpoint>;
+    sourceEndpoint?: pulumi.Input<inputs.VnMonitoring.PathAnalysiSourceEndpoint | undefined>;
     /**
      * The type of the `PathAnalysis` query.
      *

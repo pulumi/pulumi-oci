@@ -24,12 +24,12 @@ class TargetAssetArgs:
                  is_excluded_from_execution: pulumi.Input[_builtins.bool],
                  migration_plan_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 block_volumes_performance: Optional[pulumi.Input[_builtins.int]] = None,
-                 ms_license: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]] = None,
-                 test_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]] = None,
-                 user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None):
+                 block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+                 ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]] = None,
+                 test_specs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]] = None,
+                 user_spec: pulumi.Input[Optional['TargetAssetUserSpecArgs']] = None):
         """
         The set of arguments for constructing a TargetAsset resource.
 
@@ -97,100 +97,100 @@ class TargetAssetArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockVolumesPerformance")
-    def block_volumes_performance(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_volumes_performance(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Performance of the block volumes.
         """
         return pulumi.get(self, "block_volumes_performance")
 
     @block_volumes_performance.setter
-    def block_volumes_performance(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_volumes_performance(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_volumes_performance", value)
 
     @_builtins.property
     @pulumi.getter(name="msLicense")
-    def ms_license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ms_license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Microsoft license for the VM configuration.
         """
         return pulumi.get(self, "ms_license")
 
     @ms_license.setter
-    def ms_license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ms_license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ms_license", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredShapeType")
-    def preferred_shape_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_shape_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Preferred VM shape type that you provide.
         """
         return pulumi.get(self, "preferred_shape_type")
 
     @preferred_shape_type.setter
-    def preferred_shape_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_shape_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_shape_type", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendedSpecs")
-    def recommended_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]:
+    def recommended_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]:
         """
         Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "recommended_specs")
 
     @recommended_specs.setter
-    def recommended_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]):
+    def recommended_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]):
         pulumi.set(self, "recommended_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="testSpecs")
-    def test_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]:
+    def test_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]:
         """
         Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "test_specs")
 
     @test_specs.setter
-    def test_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]):
+    def test_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]):
         pulumi.set(self, "test_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="userSpec")
-    def user_spec(self) -> Optional[pulumi.Input['TargetAssetUserSpecArgs']]:
+    def user_spec(self) -> pulumi.Input[Optional['TargetAssetUserSpecArgs']]:
         """
         (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "user_spec")
 
     @user_spec.setter
-    def user_spec(self, value: Optional[pulumi.Input['TargetAssetUserSpecArgs']]):
+    def user_spec(self, value: pulumi.Input[Optional['TargetAssetUserSpecArgs']]):
         pulumi.set(self, "user_spec", value)
 
 
 @pulumi.input_type
 class _TargetAssetState:
     def __init__(__self__, *,
-                 block_volumes_performance: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compatibility_messages: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]] = None,
-                 created_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]] = None,
-                 is_excluded_from_execution: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_assets: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]] = None,
-                 migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ms_license: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]] = None,
-                 time_assessed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None):
+                 block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compatibility_messages: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]] = None,
+                 created_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_costs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]] = None,
+                 is_excluded_from_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_assets: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]] = None,
+                 migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_specs: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]] = None,
+                 time_assessed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_spec: pulumi.Input[Optional['TargetAssetUserSpecArgs']] = None):
         """
         Input properties used for looking up and filtering TargetAsset resources.
 
@@ -258,242 +258,242 @@ class _TargetAssetState:
 
     @_builtins.property
     @pulumi.getter(name="blockVolumesPerformance")
-    def block_volumes_performance(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_volumes_performance(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Performance of the block volumes.
         """
         return pulumi.get(self, "block_volumes_performance")
 
     @block_volumes_performance.setter
-    def block_volumes_performance(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_volumes_performance(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_volumes_performance", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compatibilityMessages")
-    def compatibility_messages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]]:
+    def compatibility_messages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]]:
         """
         Messages about the compatibility issues.
         """
         return pulumi.get(self, "compatibility_messages")
 
     @compatibility_messages.setter
-    def compatibility_messages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]]):
+    def compatibility_messages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]]):
         pulumi.set(self, "compatibility_messages", value)
 
     @_builtins.property
     @pulumi.getter(name="createdResourceId")
-    def created_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Created resource identifier
         """
         return pulumi.get(self, "created_resource_id")
 
     @created_resource_id.setter
-    def created_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedCosts")
-    def estimated_costs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]]:
+    def estimated_costs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]]:
         """
         Cost estimation description
         """
         return pulumi.get(self, "estimated_costs")
 
     @estimated_costs.setter
-    def estimated_costs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]]):
+    def estimated_costs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]]):
         pulumi.set(self, "estimated_costs", value)
 
     @_builtins.property
     @pulumi.getter(name="isExcludedFromExecution")
-    def is_excluded_from_execution(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_excluded_from_execution(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean indicating whether the asset should be migrated.
         """
         return pulumi.get(self, "is_excluded_from_execution")
 
     @is_excluded_from_execution.setter
-    def is_excluded_from_execution(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_excluded_from_execution(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_excluded_from_execution", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationAssets")
-    def migration_assets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]]:
+    def migration_assets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]]:
         """
         Description of the migration asset.
         """
         return pulumi.get(self, "migration_assets")
 
     @migration_assets.setter
-    def migration_assets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]]):
+    def migration_assets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]]):
         pulumi.set(self, "migration_assets", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationPlanId")
-    def migration_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the associated migration plan.
         """
         return pulumi.get(self, "migration_plan_id")
 
     @migration_plan_id.setter
-    def migration_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="msLicense")
-    def ms_license(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ms_license(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Microsoft license for the VM configuration.
         """
         return pulumi.get(self, "ms_license")
 
     @ms_license.setter
-    def ms_license(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ms_license(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ms_license", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredShapeType")
-    def preferred_shape_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_shape_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Preferred VM shape type that you provide.
         """
         return pulumi.get(self, "preferred_shape_type")
 
     @preferred_shape_type.setter
-    def preferred_shape_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_shape_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_shape_type", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendedSpecs")
-    def recommended_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]:
+    def recommended_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]:
         """
         Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "recommended_specs")
 
     @recommended_specs.setter
-    def recommended_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]):
+    def recommended_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]):
         pulumi.set(self, "recommended_specs", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the target asset.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="testSpecs")
-    def test_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]:
+    def test_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]:
         """
         Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "test_specs")
 
     @test_specs.setter
-    def test_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]):
+    def test_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]):
         pulumi.set(self, "test_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAssessed")
-    def time_assessed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_assessed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the assessment was done. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_assessed")
 
     @time_assessed.setter
-    def time_assessed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_assessed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_assessed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the target asset was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the target asset was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of target asset.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="userSpec")
-    def user_spec(self) -> Optional[pulumi.Input['TargetAssetUserSpecArgs']]:
+    def user_spec(self) -> pulumi.Input[Optional['TargetAssetUserSpecArgs']]:
         """
         (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         return pulumi.get(self, "user_spec")
 
     @user_spec.setter
-    def user_spec(self, value: Optional[pulumi.Input['TargetAssetUserSpecArgs']]):
+    def user_spec(self, value: pulumi.Input[Optional['TargetAssetUserSpecArgs']]):
         pulumi.set(self, "user_spec", value)
 
 
@@ -503,15 +503,15 @@ class TargetAsset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_volumes_performance: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_excluded_from_execution: Optional[pulumi.Input[_builtins.bool]] = None,
-                 migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ms_license: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
-                 test_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
+                 block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_excluded_from_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+                 migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
+                 test_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_spec: pulumi.Input[Optional[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -528,17 +528,17 @@ class TargetAsset(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_target_asset = oci.cloudmigrations.TargetAsset("test_target_asset",
-            is_excluded_from_execution=target_asset_is_excluded_from_execution,
+            is_excluded_from_execution=target_asset_is_excluded_from_execution == "true",
             migration_plan_id=test_migration_plan["id"],
             type=target_asset_type,
-            block_volumes_performance=target_asset_block_volumes_performance,
+            block_volumes_performance=int(target_asset_block_volumes_performance),
             ms_license=target_asset_ms_license,
             preferred_shape_type=target_asset_preferred_shape_type,
             user_spec={
                 "agent_config": {
-                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
-                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled == "true",
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled == "true",
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled == "true",
                     "plugins_configs": [{
                         "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
                         "name": target_asset_user_spec_agent_config_plugins_config_name,
@@ -548,8 +548,8 @@ class TargetAsset(pulumi.CustomResource):
                 "capacity_reservation_id": test_capacity_reservation["id"],
                 "compartment_id": compartment_id,
                 "create_vnic_details": {
-                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record == "true",
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "foo-namespace.bar-key": "value",
                     },
@@ -560,7 +560,7 @@ class TargetAsset(pulumi.CustomResource):
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
                     "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
-                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check == "true",
                     "subnet_id": test_subnet["id"],
                     "vlan_id": test_vlan["id"],
                 },
@@ -575,14 +575,14 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {
-                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled == "true",
                 },
                 "ipxe_script": target_asset_user_spec_ipxe_script,
-                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled == "true",
                 "preemptible_instance_config": {
                     "preemption_action": {
                         "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                     },
                 },
                 "shape": target_asset_user_spec_shape,
@@ -644,17 +644,17 @@ class TargetAsset(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_target_asset = oci.cloudmigrations.TargetAsset("test_target_asset",
-            is_excluded_from_execution=target_asset_is_excluded_from_execution,
+            is_excluded_from_execution=target_asset_is_excluded_from_execution == "true",
             migration_plan_id=test_migration_plan["id"],
             type=target_asset_type,
-            block_volumes_performance=target_asset_block_volumes_performance,
+            block_volumes_performance=int(target_asset_block_volumes_performance),
             ms_license=target_asset_ms_license,
             preferred_shape_type=target_asset_preferred_shape_type,
             user_spec={
                 "agent_config": {
-                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
-                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled == "true",
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled == "true",
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled == "true",
                     "plugins_configs": [{
                         "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
                         "name": target_asset_user_spec_agent_config_plugins_config_name,
@@ -664,8 +664,8 @@ class TargetAsset(pulumi.CustomResource):
                 "capacity_reservation_id": test_capacity_reservation["id"],
                 "compartment_id": compartment_id,
                 "create_vnic_details": {
-                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record == "true",
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "foo-namespace.bar-key": "value",
                     },
@@ -676,7 +676,7 @@ class TargetAsset(pulumi.CustomResource):
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
                     "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
-                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check == "true",
                     "subnet_id": test_subnet["id"],
                     "vlan_id": test_vlan["id"],
                 },
@@ -691,14 +691,14 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {
-                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled == "true",
                 },
                 "ipxe_script": target_asset_user_spec_ipxe_script,
-                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled == "true",
                 "preemptible_instance_config": {
                     "preemption_action": {
                         "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                     },
                 },
                 "shape": target_asset_user_spec_shape,
@@ -742,15 +742,15 @@ class TargetAsset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_volumes_performance: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_excluded_from_execution: Optional[pulumi.Input[_builtins.bool]] = None,
-                 migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ms_license: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
-                 test_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
+                 block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_excluded_from_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+                 migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
+                 test_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_spec: pulumi.Input[Optional[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -796,26 +796,26 @@ class TargetAsset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            block_volumes_performance: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compatibility_messages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetCompatibilityMessageArgs', 'TargetAssetCompatibilityMessageArgsDict']]]]] = None,
-            created_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetEstimatedCostArgs', 'TargetAssetEstimatedCostArgsDict']]]]] = None,
-            is_excluded_from_execution: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            migration_assets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetMigrationAssetArgs', 'TargetAssetMigrationAssetArgsDict']]]]] = None,
-            migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ms_license: Optional[pulumi.Input[_builtins.str]] = None,
-            preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-            recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            test_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
-            time_assessed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None) -> 'TargetAsset':
+            block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compatibility_messages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetCompatibilityMessageArgs', 'TargetAssetCompatibilityMessageArgsDict']]]]] = None,
+            created_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_costs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetEstimatedCostArgs', 'TargetAssetEstimatedCostArgsDict']]]]] = None,
+            is_excluded_from_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_assets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetMigrationAssetArgs', 'TargetAssetMigrationAssetArgsDict']]]]] = None,
+            migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+            preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+            recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            test_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
+            time_assessed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            user_spec: pulumi.Input[Optional[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None) -> 'TargetAsset':
         """
         Get an existing TargetAsset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

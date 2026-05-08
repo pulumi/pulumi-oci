@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testErrata = oci.OsManagementHub.getErrata({
+ * const testErrata = oci.osmanagementhub.getErrata({
  *     compartmentId: compartmentId,
  *     names: errataName,
  * });
@@ -113,7 +113,7 @@ export interface GetErrataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testErrata = oci.OsManagementHub.getErrata({
+ * const testErrata = oci.osmanagementhub.getErrata({
  *     compartmentId: compartmentId,
  *     names: errataName,
  * });
@@ -142,26 +142,26 @@ export interface GetErrataOutputArgs {
     /**
      * The severity for a security advisory, otherwise, null.
      */
-    advisorySeverities?: pulumi.Input<pulumi.Input<string>[]>;
+    advisorySeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The advisory type of the erratum.
      */
-    advisoryTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    advisoryTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      */
-    classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    classificationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetErrataFilterArgs>[]>;
-    nameContains?: pulumi.Input<string>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetErrataFilterArgs>[] | undefined>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The erratum name (such as ELSA-2023-34678).
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
-    osFamily?: pulumi.Input<string>;
-    timeIssueDateEnd?: pulumi.Input<string>;
-    timeIssueDateStart?: pulumi.Input<string>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    osFamily?: pulumi.Input<string | undefined>;
+    timeIssueDateEnd?: pulumi.Input<string | undefined>;
+    timeIssueDateStart?: pulumi.Input<string | undefined>;
 }

@@ -134,10 +134,10 @@ def get_file_system_quota_rules(are_violators_only: Optional[_builtins.bool] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rules = oci.FileStorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
+    test_file_system_quota_rules = oci.filestorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
         principal_type=file_system_quota_rule_principal_type,
-        are_violators_only=file_system_quota_rule_are_violators_only,
-        principal_id=test_principal["id"])
+        are_violators_only=file_system_quota_rule_are_violators_only == "true",
+        principal_id=int(test_principal["id"]))
     ```
 
 
@@ -163,11 +163,11 @@ def get_file_system_quota_rules(are_violators_only: Optional[_builtins.bool] = N
         principal_id=pulumi.get(__ret__, 'principal_id'),
         principal_type=pulumi.get(__ret__, 'principal_type'),
         quota_rules=pulumi.get(__ret__, 'quota_rules'))
-def get_file_system_quota_rules_output(are_violators_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict']]]]] = None,
-                                       principal_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                       principal_type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_file_system_quota_rules_output(are_violators_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict']]]]] = None,
+                                       principal_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                       principal_type: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileSystemQuotaRulesResult]:
     """
     This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
@@ -180,10 +180,10 @@ def get_file_system_quota_rules_output(are_violators_only: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rules = oci.FileStorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
+    test_file_system_quota_rules = oci.filestorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
         principal_type=file_system_quota_rule_principal_type,
-        are_violators_only=file_system_quota_rule_are_violators_only,
-        principal_id=test_principal["id"])
+        are_violators_only=file_system_quota_rule_are_violators_only == "true",
+        principal_id=int(test_principal["id"]))
     ```
 
 

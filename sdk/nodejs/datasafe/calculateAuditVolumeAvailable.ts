@@ -127,19 +127,19 @@ export interface CalculateAuditVolumeAvailableState {
     /**
      * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
      */
-    auditCollectionStartTime?: pulumi.Input<string>;
+    auditCollectionStartTime?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the audit.
      */
-    auditProfileId?: pulumi.Input<string>;
+    auditProfileId?: pulumi.Input<string | undefined>;
     /**
      * List of available audit volumes.
      */
-    availableAuditVolumes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CalculateAuditVolumeAvailableAvailableAuditVolume>[]>;
+    availableAuditVolumes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CalculateAuditVolumeAvailableAvailableAuditVolume>[] | undefined>;
     /**
      * Unique name of the database associated to the peer target database.
      */
-    databaseUniqueName?: pulumi.Input<string>;
+    databaseUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The trail locations for which the audit data volume has to be calculated.
      *
@@ -147,7 +147,7 @@ export interface CalculateAuditVolumeAvailableState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trailLocations?: pulumi.Input<pulumi.Input<string>[]>;
+    trailLocations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface CalculateAuditVolumeAvailableArgs {
     /**
      * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
      */
-    auditCollectionStartTime?: pulumi.Input<string>;
+    auditCollectionStartTime?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the audit.
      */
@@ -165,7 +165,7 @@ export interface CalculateAuditVolumeAvailableArgs {
     /**
      * Unique name of the database associated to the peer target database.
      */
-    databaseUniqueName?: pulumi.Input<string>;
+    databaseUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The trail locations for which the audit data volume has to be calculated.
      *
@@ -173,5 +173,5 @@ export interface CalculateAuditVolumeAvailableArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trailLocations?: pulumi.Input<pulumi.Input<string>[]>;
+    trailLocations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

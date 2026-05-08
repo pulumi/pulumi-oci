@@ -29,31 +29,31 @@ class ConnectionArgs:
                  technology_type: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
                  vault_id: pulumi.Input[_builtins.str],
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_sudo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
 
@@ -252,295 +252,295 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
+    def additional_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
         """
         (Updatable) An array of name-value pair attribute entries.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
+    def additional_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_string", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the database being referenced.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the database being referenced.
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the database system being referenced.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP Address of the host.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port to be used for the connection.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationPassword")
-    def replication_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "replication_password")
 
     @replication_password.setter
-    def replication_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_password", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationUsername")
-    def replication_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "replication_username")
 
     @replication_username.setter
-    def replication_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_username", value)
 
     @_builtins.property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Security Type for MySQL.
         """
         return pulumi.get(self, "security_protocol")
 
     @security_protocol.setter
-    def security_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="sshHost")
-    def ssh_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the host the SSH key is valid for.
         """
         return pulumi.get(self, "ssh_host")
 
     @ssh_host.setter
-    def ssh_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_host", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKey")
-    def ssh_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Private SSH key string.
         """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
-    def ssh_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sshSudoLocation")
-    def ssh_sudo_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_sudo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sudo location
         """
         return pulumi.get(self, "ssh_sudo_location")
 
     @ssh_sudo_location.setter
-    def ssh_sudo_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_sudo_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_sudo_location", value)
 
     @_builtins.property
     @pulumi.getter(name="sshUser")
-    def ssh_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "ssh_user")
 
     @ssh_user.setter
-    def ssh_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_user", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
     @ssl_ca.setter
-    def ssl_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_cert")
 
     @ssl_cert.setter
-    def ssl_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_crl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         """
         return pulumi.get(self, "ssl_crl")
 
     @ssl_crl.setter
-    def ssl_crl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_crl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_crl", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
-    def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_key")
 
     @ssl_key.setter
-    def ssl_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SSL modes for MySQL.
         """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
-    def ssl_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure resource ID.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
 
@@ -551,54 +551,54 @@ class ConnectionArgs:
         return pulumi.get(self, "wallet")
 
     @wallet.setter
-    def wallet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet", value)
 
 
 @pulumi.input_type
 class _ConnectionState:
     def __init__(__self__, *,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_sudo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
 
@@ -733,487 +733,487 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
+    def additional_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]:
         """
         (Updatable) An array of name-value pair attribute entries.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
+    def additional_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_string", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines the type of connection. For example, ORACLE.
         """
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the database being referenced.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the database being referenced.
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the database system being referenced.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP Address of the host.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressIps")
-    def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]:
+    def ingress_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]:
         """
         List of ingress IP addresses from where to connect to this connection's privateIp.
         """
         return pulumi.get(self, "ingress_ips")
 
     @ingress_ips.setter
-    def ingress_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]):
+    def ingress_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]]):
         pulumi.set(self, "ingress_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the key used in cryptographic operations.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port to be used for the connection.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
-    def private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationPassword")
-    def replication_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "replication_password")
 
     @replication_password.setter
-    def replication_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_password", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationUsername")
-    def replication_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "replication_username")
 
     @replication_username.setter
-    def replication_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_username", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Security Type for MySQL.
         """
         return pulumi.get(self, "security_protocol")
 
     @security_protocol.setter
-    def security_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="sshHost")
-    def ssh_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the host the SSH key is valid for.
         """
         return pulumi.get(self, "ssh_host")
 
     @ssh_host.setter
-    def ssh_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_host", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKey")
-    def ssh_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Private SSH key string.
         """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
-    def ssh_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sshSudoLocation")
-    def ssh_sudo_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_sudo_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sudo location
         """
         return pulumi.get(self, "ssh_sudo_location")
 
     @ssh_sudo_location.setter
-    def ssh_sudo_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_sudo_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_sudo_location", value)
 
     @_builtins.property
     @pulumi.getter(name="sshUser")
-    def ssh_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "ssh_user")
 
     @ssh_user.setter
-    def ssh_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_user", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
         """
         return pulumi.get(self, "ssl_ca")
 
     @ssl_ca.setter
-    def ssl_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_cert")
 
     @ssl_cert.setter
-    def ssl_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_crl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         """
         return pulumi.get(self, "ssl_crl")
 
     @ssl_crl.setter
-    def ssl_crl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_crl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_crl", value)
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
-    def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_key")
 
     @ssl_key.setter
-    def ssl_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SSL modes for MySQL.
         """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
-    def ssl_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Connection's current lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure resource ID.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="technologyType")
-    def technology_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
         """
         return pulumi.get(self, "technology_type")
 
     @technology_type.setter
-    def technology_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The username (credential) used when creating or updating this resource.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure resource ID.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
 
@@ -1224,7 +1224,7 @@ class _ConnectionState:
         return pulumi.get(self, "wallet")
 
     @wallet.setter
-    def wallet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet", value)
 
 
@@ -1234,39 +1234,39 @@ class Connection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_sudo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
@@ -1309,7 +1309,7 @@ class Connection(pulumi.CustomResource):
             freeform_tags=connection_freeform_tags,
             host=connection_host,
             nsg_ids=connection_nsg_ids,
-            port=connection_port,
+            port=int(connection_port),
             replication_password=connection_replication_password,
             replication_username=connection_replication_username,
             security_protocol=connection_security_protocol,
@@ -1422,7 +1422,7 @@ class Connection(pulumi.CustomResource):
             freeform_tags=connection_freeform_tags,
             host=connection_host,
             nsg_ids=connection_nsg_ids,
-            port=connection_port,
+            port=int(connection_port),
             replication_password=connection_replication_password,
             replication_username=connection_replication_username,
             security_protocol=connection_security_protocol,
@@ -1463,39 +1463,39 @@ class Connection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 replication_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_sudo_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1574,47 +1574,47 @@ class Connection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_string: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_password: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_username: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_host: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_sudo_location: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_user: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_ca: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_cert: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_crl: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_key: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            technology_type: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            wallet: Optional[pulumi.Input[_builtins.str]] = None) -> 'Connection':
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            wallet: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connection':
         """
         Get an existing Connection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

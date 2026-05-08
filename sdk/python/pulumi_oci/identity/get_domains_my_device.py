@@ -578,7 +578,7 @@ def get_domains_my_device(attribute_sets: Optional[Sequence[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+    test_my_device = oci.identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
         my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",
@@ -650,12 +650,12 @@ def get_domains_my_device(attribute_sets: Optional[Sequence[_builtins.str]] = No
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         third_party_factors=pulumi.get(__ret__, 'third_party_factors'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                 my_device_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_device_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                 my_device_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyDeviceResult]:
     """
     This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -668,7 +668,7 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+    test_my_device = oci.identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
         my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",

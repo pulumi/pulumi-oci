@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.ManagementAgent.getNamedCredentials({
+ * const testNamedCredentials = oci.managementagent.getNamedCredentials({
  *     managementAgentId: testManagementAgent.id,
  *     ids: [namedCredentialId],
  *     names: [namedCredentialName],
@@ -106,7 +106,7 @@ export interface GetNamedCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.ManagementAgent.getNamedCredentials({
+ * const testNamedCredentials = oci.managementagent.getNamedCredentials({
  *     managementAgentId: testManagementAgent.id,
  *     ids: [namedCredentialId],
  *     names: [namedCredentialName],
@@ -131,11 +131,11 @@ export function getNamedCredentialsOutput(args: GetNamedCredentialsOutputArgs, o
  * A collection of arguments for invoking getNamedCredentials.
  */
 export interface GetNamedCredentialsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetNamedCredentialsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetNamedCredentialsFilterArgs>[] | undefined>;
     /**
      * Filter list for these Named credentials identifiers (ocid) values.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ManagementAgentID of the agent from which the named credentials are associated.
      */
@@ -143,13 +143,13 @@ export interface GetNamedCredentialsOutputArgs {
     /**
      * Filter list for these name items.
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter list to return only Management Agents in the particular lifecycle state.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter list for these type values.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

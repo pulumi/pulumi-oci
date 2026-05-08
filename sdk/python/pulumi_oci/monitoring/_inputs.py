@@ -36,11 +36,11 @@ __all__ = [
 ]
 
 class AlarmOverrideArgsDict(TypedDict):
-    body: NotRequired[pulumi.Input[_builtins.str]]
+    body: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
     """
-    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 
@@ -52,7 +52,7 @@ class AlarmOverrideArgsDict(TypedDict):
 
     Example: `PT5M`
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 
@@ -74,11 +74,11 @@ class AlarmOverrideArgsDict(TypedDict):
 
     ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
     """
-    rule_name: NotRequired[pulumi.Input[_builtins.str]]
+    rule_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
     """
-    severity: NotRequired[pulumi.Input[_builtins.str]]
+    severity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
     """
@@ -86,11 +86,11 @@ class AlarmOverrideArgsDict(TypedDict):
 @pulumi.input_type
 class AlarmOverrideArgs:
     def __init__(__self__, *,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None):
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] body: (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -137,19 +137,19 @@ class AlarmOverrideArgs:
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 
@@ -164,12 +164,12 @@ class AlarmOverrideArgs:
         return pulumi.get(self, "pending_duration")
 
     @pending_duration.setter
-    def pending_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pending_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 
@@ -194,31 +194,31 @@ class AlarmOverrideArgs:
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
 
@@ -235,7 +235,7 @@ class AlarmSuppressionArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -249,7 +249,7 @@ class AlarmSuppressionArgs:
     def __init__(__self__, *,
                  time_suppress_from: pulumi.Input[_builtins.str],
                  time_suppress_until: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
@@ -298,7 +298,7 @@ class AlarmSuppressionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
@@ -309,7 +309,7 @@ class AlarmSuppressionArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 
@@ -318,15 +318,15 @@ class AlarmSuppressionAlarmSuppressionTargetArgsDict(TypedDict):
     """
     The type of the alarm suppression target.
     """
-    alarm_id: NotRequired[pulumi.Input[_builtins.str]]
+    alarm_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
     """
-    compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    compartment_id_in_subtree: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
     """
@@ -335,9 +335,9 @@ class AlarmSuppressionAlarmSuppressionTargetArgsDict(TypedDict):
 class AlarmSuppressionAlarmSuppressionTargetArgs:
     def __init__(__self__, *,
                  target_type: pulumi.Input[_builtins.str],
-                 alarm_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None):
+                 alarm_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] target_type: The type of the alarm suppression target.
         :param pulumi.Input[_builtins.str] alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
@@ -366,38 +366,38 @@ class AlarmSuppressionAlarmSuppressionTargetArgs:
 
     @_builtins.property
     @pulumi.getter(name="alarmId")
-    def alarm_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alarm_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
         """
         return pulumi.get(self, "alarm_id")
 
     @alarm_id.setter
-    def alarm_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alarm_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alarm_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def compartment_id_in_subtree(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
         """
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @compartment_id_in_subtree.setter
-    def compartment_id_in_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def compartment_id_in_subtree(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "compartment_id_in_subtree", value)
 
 

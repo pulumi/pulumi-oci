@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName,
  *     protectionMode: autonomousContainerDatabaseDataguardAssociationProtectionMode,
- *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds,
- *     isAutomaticFailoverEnabled: autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled,
+ *     fastStartFailOverLagLimitInSeconds: Number(autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds),
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled === "true",
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
@@ -34,19 +34,19 @@ import * as utilities from "../utilities";
  *             dbrsPolicyId: testPolicy.id,
  *             id: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
  *             internetProxy: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
- *             isRemote: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
- *             isRetentionLockEnabled: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+ *             isRemote: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote === "true",
+ *             isRetentionLockEnabled: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled === "true",
  *             remoteRegion: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+ *         recoveryWindowInDays: Number(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
  *     },
  *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
  *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
  *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     peerDbUniqueName: autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName,
- *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays,
+ *     standbyMaintenanceBufferInDays: Number(autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays),
  * });
  * ```
  *
@@ -281,20 +281,20 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
     /**
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      */
-    applyLag?: pulumi.Input<string>;
+    applyLag?: pulumi.Input<string | undefined>;
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
-    applyRate?: pulumi.Input<string>;
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
+    applyRate?: pulumi.Input<string | undefined>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
-    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      *
@@ -302,94 +302,94 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    isAutomaticFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      */
-    migrateTrigger?: pulumi.Input<number>;
+    migrateTrigger?: pulumi.Input<number | undefined>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig>;
+    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      */
-    peerAutonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    peerAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    peerCloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    peerDbUniqueName?: pulumi.Input<string>;
+    peerDbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Autonomous Container Database.
      */
-    peerLifecycleState?: pulumi.Input<string>;
+    peerLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
-    peerRole?: pulumi.Input<string>;
+    peerRole?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
-    standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+    standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
     /**
      * The current state of Autonomous Data Guard.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous DataGuard association was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the last role change action happened.
      */
-    timeLastRoleChanged?: pulumi.Input<string>;
+    timeLastRoleChanged?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      */
-    timeLastSynced?: pulumi.Input<string>;
+    timeLastSynced?: pulumi.Input<string | undefined>;
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      */
-    transportLag?: pulumi.Input<string>;
+    transportLag?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
  */
 export interface AutonomousContainerDatabaseDataguardAssociationArgs {
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -397,7 +397,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
     /**
      * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
-    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      *
@@ -405,19 +405,19 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    isAutomaticFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      */
-    migrateTrigger?: pulumi.Input<number>;
+    migrateTrigger?: pulumi.Input<number | undefined>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig>;
+    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
@@ -425,15 +425,15 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    peerAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    peerCloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    peerDbUniqueName?: pulumi.Input<string>;
+    peerDbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
@@ -441,5 +441,5 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
-    standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+    standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
 }

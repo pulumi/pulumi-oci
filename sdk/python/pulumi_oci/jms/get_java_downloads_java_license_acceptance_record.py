@@ -204,7 +204,7 @@ def get_java_downloads_java_license_acceptance_record(java_license_acceptance_re
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
+    test_java_license_acceptance_record = oci.jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_java_downloads_java_license_acceptance_record(java_license_acceptance_re
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_last_updated=pulumi.get(__ret__, 'time_last_updated'))
-def get_java_downloads_java_license_acceptance_record_output(java_license_acceptance_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_java_downloads_java_license_acceptance_record_output(java_license_acceptance_record_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicenseAcceptanceRecordResult]:
     """
     This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -242,7 +242,7 @@ def get_java_downloads_java_license_acceptance_record_output(java_license_accept
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
+    test_java_license_acceptance_record = oci.jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
     ```
 
 

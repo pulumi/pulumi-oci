@@ -261,7 +261,7 @@ def get_occ_availability_catalog(occ_availability_catalog_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog = oci.CapacityManagement.get_occ_availability_catalog(occ_availability_catalog_id=test_occ_availability_catalog_oci_capacity_management_occ_availability_catalog["id"])
+    test_occ_availability_catalog = oci.capacitymanagement.get_occ_availability_catalog(occ_availability_catalog_id=test_occ_availability_catalog_oci_capacity_management_occ_availability_catalog["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_occ_availability_catalog(occ_availability_catalog_id: Optional[_builtins
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_occ_availability_catalog_output(occ_availability_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_occ_availability_catalog_output(occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogResult]:
     """
     This data source provides details about a specific Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -304,7 +304,7 @@ def get_occ_availability_catalog_output(occ_availability_catalog_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog = oci.CapacityManagement.get_occ_availability_catalog(occ_availability_catalog_id=test_occ_availability_catalog_oci_capacity_management_occ_availability_catalog["id"])
+    test_occ_availability_catalog = oci.capacitymanagement.get_occ_availability_catalog(occ_availability_catalog_id=test_occ_availability_catalog_oci_capacity_management_occ_availability_catalog["id"])
     ```
 
 

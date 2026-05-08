@@ -25,21 +25,21 @@ class ScheduledJobArgs:
                  operations: pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationArgs']]],
                  schedule_type: pulumi.Input[_builtins.str],
                  time_next_execution: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_set_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_subcompartment_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_stage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 recurring_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ScheduledJob resource.
 
@@ -168,175 +168,175 @@ class ScheduledJobArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicSetIds")
-    def dynamic_set_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynamic_set_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
         """
         return pulumi.get(self, "dynamic_set_ids")
 
     @dynamic_set_ids.setter
-    def dynamic_set_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynamic_set_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynamic_set_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isManagedByAutonomousLinux")
-    def is_managed_by_autonomous_linux(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed_by_autonomous_linux(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this scheduled job is managed by the Autonomous Linux service.
         """
         return pulumi.get(self, "is_managed_by_autonomous_linux")
 
     @is_managed_by_autonomous_linux.setter
-    def is_managed_by_autonomous_linux(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed_by_autonomous_linux(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed_by_autonomous_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="isSubcompartmentIncluded")
-    def is_subcompartment_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_subcompartment_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
         """
         return pulumi.get(self, "is_subcompartment_included")
 
     @is_subcompartment_included.setter
-    def is_subcompartment_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_subcompartment_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_subcompartment_included", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStageIds")
-    def lifecycle_stage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def lifecycle_stage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
         """
         return pulumi.get(self, "lifecycle_stage_ids")
 
     @lifecycle_stage_ids.setter
-    def lifecycle_stage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def lifecycle_stage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_stage_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
         """
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="managedCompartmentIds")
-    def managed_compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_compartment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_compartment_ids")
 
     @managed_compartment_ids.setter
-    def managed_compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_compartment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_compartment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupIds")
-    def managed_instance_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instance_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_instance_group_ids")
 
     @managed_instance_group_ids.setter
-    def managed_instance_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instance_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instance_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instance_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_instance_ids")
 
     @managed_instance_ids.setter
-    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instance_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instance_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="recurringRule")
-    def recurring_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recurring_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         """
         return pulumi.get(self, "recurring_rule")
 
     @recurring_rule.setter
-    def recurring_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recurring_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recurring_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="retryIntervals")
-    def retry_intervals(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def retry_intervals(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
         """
         return pulumi.get(self, "retry_intervals")
 
     @retry_intervals.setter
-    def retry_intervals(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def retry_intervals(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "retry_intervals", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
 
@@ -347,39 +347,39 @@ class ScheduledJobArgs:
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
 @pulumi.input_type
 class _ScheduledJobState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_set_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_subcompartment_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_stage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]] = None,
-                 recurring_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_execution: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_execution: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]] = None,
+                 recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_execution: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_execution: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ScheduledJob resources.
 
@@ -477,175 +477,175 @@ class _ScheduledJobState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicSetIds")
-    def dynamic_set_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynamic_set_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
         """
         return pulumi.get(self, "dynamic_set_ids")
 
     @dynamic_set_ids.setter
-    def dynamic_set_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynamic_set_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynamic_set_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isManagedByAutonomousLinux")
-    def is_managed_by_autonomous_linux(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed_by_autonomous_linux(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this scheduled job is managed by the Autonomous Linux service.
         """
         return pulumi.get(self, "is_managed_by_autonomous_linux")
 
     @is_managed_by_autonomous_linux.setter
-    def is_managed_by_autonomous_linux(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed_by_autonomous_linux(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed_by_autonomous_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_restricted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
         """
         return pulumi.get(self, "is_restricted")
 
     @is_restricted.setter
-    def is_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_restricted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_restricted", value)
 
     @_builtins.property
     @pulumi.getter(name="isSubcompartmentIncluded")
-    def is_subcompartment_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_subcompartment_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
         """
         return pulumi.get(self, "is_subcompartment_included")
 
     @is_subcompartment_included.setter
-    def is_subcompartment_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_subcompartment_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_subcompartment_included", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStageIds")
-    def lifecycle_stage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def lifecycle_stage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
         """
         return pulumi.get(self, "lifecycle_stage_ids")
 
     @lifecycle_stage_ids.setter
-    def lifecycle_stage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def lifecycle_stage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_stage_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
         """
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="managedCompartmentIds")
-    def managed_compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_compartment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_compartment_ids")
 
     @managed_compartment_ids.setter
-    def managed_compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_compartment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_compartment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupIds")
-    def managed_instance_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instance_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_instance_group_ids")
 
     @managed_instance_group_ids.setter
-    def managed_instance_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instance_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instance_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instance_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         """
         return pulumi.get(self, "managed_instance_ids")
 
     @managed_instance_ids.setter
-    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instance_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instance_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]]:
+    def operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]]:
         """
         (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
         * UPDATE_PACKAGES
@@ -660,120 +660,120 @@ class _ScheduledJobState:
         return pulumi.get(self, "operations")
 
     @operations.setter
-    def operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]]):
+    def operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationArgs']]]]):
         pulumi.set(self, "operations", value)
 
     @_builtins.property
     @pulumi.getter(name="recurringRule")
-    def recurring_rule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recurring_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         """
         return pulumi.get(self, "recurring_rule")
 
     @recurring_rule.setter
-    def recurring_rule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recurring_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recurring_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="retryIntervals")
-    def retry_intervals(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def retry_intervals(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
         """
         return pulumi.get(self, "retry_intervals")
 
     @retry_intervals.setter
-    def retry_intervals(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def retry_intervals(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "retry_intervals", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleType")
-    def schedule_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of scheduling frequency for the scheduled job.
         """
         return pulumi.get(self, "schedule_type")
 
     @schedule_type.setter
-    def schedule_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the scheduled job.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastExecution")
-    def time_last_execution(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_execution(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_execution")
 
     @time_last_execution.setter
-    def time_last_execution(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_execution(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_execution", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNextExecution")
-    def time_next_execution(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_next_execution(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_next_execution")
 
     @time_next_execution.setter
-    def time_next_execution(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_next_execution(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_next_execution", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
 
@@ -784,19 +784,19 @@ class _ScheduledJobState:
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestIds")
-    def work_request_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def work_request_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
         """
         return pulumi.get(self, "work_request_ids")
 
     @work_request_ids.setter
-    def work_request_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def work_request_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "work_request_ids", value)
 
 
@@ -806,25 +806,25 @@ class ScheduledJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_set_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_subcompartment_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_stage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
-                 recurring_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_execution: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+                 recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_execution: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -847,7 +847,7 @@ class ScheduledJob(pulumi.CustomResource):
                 "install_snap_details": {
                     "name": scheduled_job_operations_install_snap_details_name,
                     "channel": scheduled_job_operations_install_snap_details_channel,
-                    "is_signed": scheduled_job_operations_install_snap_details_is_signed,
+                    "is_signed": scheduled_job_operations_install_snap_details_is_signed == "true",
                     "mode": scheduled_job_operations_install_snap_details_mode,
                     "revision": scheduled_job_operations_install_snap_details_revision,
                 },
@@ -876,7 +876,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
-                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
+                "reboot_timeout_in_mins": int(scheduled_job_operations_reboot_timeout_in_mins),
                 "remove_snap_details": {
                     "name": scheduled_job_operations_remove_snap_details_name,
                     "revision": scheduled_job_operations_remove_snap_details_revision,
@@ -904,8 +904,8 @@ class ScheduledJob(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
-            is_subcompartment_included=scheduled_job_is_subcompartment_included,
+            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
+            is_subcompartment_included=scheduled_job_is_subcompartment_included == "true",
             lifecycle_stage_ids=scheduled_job_lifecycle_stage_ids,
             locations=scheduled_job_locations,
             managed_compartment_ids=scheduled_job_managed_compartment_ids,
@@ -986,7 +986,7 @@ class ScheduledJob(pulumi.CustomResource):
                 "install_snap_details": {
                     "name": scheduled_job_operations_install_snap_details_name,
                     "channel": scheduled_job_operations_install_snap_details_channel,
-                    "is_signed": scheduled_job_operations_install_snap_details_is_signed,
+                    "is_signed": scheduled_job_operations_install_snap_details_is_signed == "true",
                     "mode": scheduled_job_operations_install_snap_details_mode,
                     "revision": scheduled_job_operations_install_snap_details_revision,
                 },
@@ -1015,7 +1015,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
-                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
+                "reboot_timeout_in_mins": int(scheduled_job_operations_reboot_timeout_in_mins),
                 "remove_snap_details": {
                     "name": scheduled_job_operations_remove_snap_details_name,
                     "revision": scheduled_job_operations_remove_snap_details_revision,
@@ -1043,8 +1043,8 @@ class ScheduledJob(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
-            is_subcompartment_included=scheduled_job_is_subcompartment_included,
+            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
+            is_subcompartment_included=scheduled_job_is_subcompartment_included == "true",
             lifecycle_stage_ids=scheduled_job_lifecycle_stage_ids,
             locations=scheduled_job_locations,
             managed_compartment_ids=scheduled_job_managed_compartment_ids,
@@ -1079,25 +1079,25 @@ class ScheduledJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dynamic_set_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_subcompartment_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_stage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
-                 recurring_rule: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_next_execution: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+                 recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_next_execution: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1151,32 +1151,32 @@ class ScheduledJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dynamic_set_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_managed_by_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_subcompartment_included: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_stage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
-            recurring_rule: Optional[pulumi.Input[_builtins.str]] = None,
-            retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_execution: Optional[pulumi.Input[_builtins.str]] = None,
-            time_next_execution: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ScheduledJob':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+            recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+            retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_execution: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_execution: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ScheduledJob':
         """
         Get an existing ScheduledJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

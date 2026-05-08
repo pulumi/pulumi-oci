@@ -25,53 +25,53 @@ class DomainsSettingArgs:
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  setting_id: pulumi.Input[_builtins.str],
-                 account_always_trust_scope: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_forgot_password_flow_return_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_notification_redirect_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_event_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_validation: Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']] = None,
-                 cloud_gate_cors_settings: Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']] = None,
-                 cloud_migration_custom_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_migration_url_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 company_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]] = None,
-                 contact_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 custom_branding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 custom_css_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_html_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_translation: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 diagnostic_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 diagnostic_record_for_search_identifies_returned_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
-                 is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_texts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]] = None,
-                 max_no_of_app_cmva_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_no_of_app_role_members_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 prev_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]] = None,
-                 re_auth_factors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 re_auth_when_changing_my_authentication_factors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_admin_cannot_list_other_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 signing_cert_public_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sub_mapping_attr: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]] = None,
-                 tenant_custom_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]] = None,
-                 terms_of_use_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_always_trust_scope: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_forgot_password_flow_return_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_notification_redirect_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_validation: pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']] = None,
+                 cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]] = None,
+                 contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 diagnostic_record_for_search_identifies_returned_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
+                 is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]] = None,
+                 max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]] = None,
+                 re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_admin_cannot_list_other_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]] = None,
+                 terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsSetting resource.
 
@@ -749,7 +749,7 @@ class DomainsSettingArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountAlwaysTrustScope")
-    def account_always_trust_scope(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_always_trust_scope(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether all the Apps in this customer tenancy should trust each other. A value of true overrides the 'defaultTrustScope' attribute here in Settings, as well as any App-specific 'trustScope' attribute, to force in effect 'trustScope=Account' for every App in this customer tenancy.
 
@@ -765,12 +765,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "account_always_trust_scope")
 
     @account_always_trust_scope.setter
-    def account_always_trust_scope(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_always_trust_scope(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_always_trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedDomains")
-    def allowed_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) One or more email domains allowed in a user's email field. If unassigned, any domain is allowed.
 
@@ -786,12 +786,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "allowed_domains")
 
     @allowed_domains.setter
-    def allowed_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedForgotPasswordFlowReturnUrls")
-    def allowed_forgot_password_flow_return_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_forgot_password_flow_return_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If specified, indicates the set of Urls which can be returned to after successful forgot password flow
 
@@ -809,12 +809,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "allowed_forgot_password_flow_return_urls")
 
     @allowed_forgot_password_flow_return_urls.setter
-    def allowed_forgot_password_flow_return_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_forgot_password_flow_return_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_forgot_password_flow_return_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedNotificationRedirectUrls")
-    def allowed_notification_redirect_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_notification_redirect_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \\"notificationRedirectUrl\\" in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
 
@@ -832,36 +832,36 @@ class DomainsSettingArgs:
         return pulumi.get(self, "allowed_notification_redirect_urls")
 
     @allowed_notification_redirect_urls.setter
-    def allowed_notification_redirect_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_notification_redirect_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_notification_redirect_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="auditEventRetentionPeriod")
-    def audit_event_retention_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def audit_event_retention_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Audit Event retention period. If set, overrides default of 30 days after which Audit Events will be purged
 
@@ -877,24 +877,24 @@ class DomainsSettingArgs:
         return pulumi.get(self, "audit_event_retention_period")
 
     @audit_event_retention_period.setter
-    def audit_event_retention_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def audit_event_retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "audit_event_retention_period", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateValidation")
-    def certificate_validation(self) -> Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']]:
+    def certificate_validation(self) -> pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']]:
         """
         (Updatable) Certificate Validation Config
 
@@ -912,12 +912,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "certificate_validation")
 
     @certificate_validation.setter
-    def certificate_validation(self, value: Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']]):
+    def certificate_validation(self, value: pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']]):
         pulumi.set(self, "certificate_validation", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudGateCorsSettings")
-    def cloud_gate_cors_settings(self) -> Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']]:
+    def cloud_gate_cors_settings(self) -> pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']]:
         """
         (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
 
@@ -936,12 +936,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "cloud_gate_cors_settings")
 
     @cloud_gate_cors_settings.setter
-    def cloud_gate_cors_settings(self, value: Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']]):
+    def cloud_gate_cors_settings(self, value: pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']]):
         pulumi.set(self, "cloud_gate_cors_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudMigrationCustomUrl")
-    def cloud_migration_custom_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_migration_custom_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, indicates the custom SIM Migrator Url which can be used while SIM to Oracle Identity Cloud Service CloudAccount Migration.
 
@@ -959,12 +959,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "cloud_migration_custom_url")
 
     @cloud_migration_custom_url.setter
-    def cloud_migration_custom_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_migration_custom_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_migration_custom_url", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudMigrationUrlEnabled")
-    def cloud_migration_url_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_migration_url_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) CloudAccountMigration: Enable Custom SIM Migrator Url.
 
@@ -982,12 +982,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "cloud_migration_url_enabled")
 
     @cloud_migration_url_enabled.setter
-    def cloud_migration_url_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_migration_url_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_migration_url_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="companyNames")
-    def company_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]:
+    def company_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]:
         """
         (Updatable) Name of the company in different locales
 
@@ -1002,12 +1002,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "company_names")
 
     @company_names.setter
-    def company_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]):
+    def company_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]):
         pulumi.set(self, "company_names", value)
 
     @_builtins.property
     @pulumi.getter(name="contactEmails")
-    def contact_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def contact_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Contact emails used to notify tenants. Can be one or more user or group alias emails.
 
@@ -1023,12 +1023,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "contact_emails")
 
     @contact_emails.setter
-    def contact_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def contact_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "contact_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="customBranding")
-    def custom_branding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def custom_branding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the branding is default or custom
 
@@ -1042,12 +1042,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "custom_branding")
 
     @custom_branding.setter
-    def custom_branding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def custom_branding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "custom_branding", value)
 
     @_builtins.property
     @pulumi.getter(name="customCssLocation")
-    def custom_css_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_css_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Storage URL location where the sanitized custom css is located
 
@@ -1065,12 +1065,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "custom_css_location")
 
     @custom_css_location.setter
-    def custom_css_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_css_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_css_location", value)
 
     @_builtins.property
     @pulumi.getter(name="customHtmlLocation")
-    def custom_html_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_html_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Storage URL location where the sanitized custom html is located
 
@@ -1088,12 +1088,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "custom_html_location")
 
     @custom_html_location.setter
-    def custom_html_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_html_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_html_location", value)
 
     @_builtins.property
     @pulumi.getter(name="customTranslation")
-    def custom_translation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_translation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Custom translations (JSON String)
 
@@ -1111,12 +1111,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "custom_translation")
 
     @custom_translation.setter
-    def custom_translation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_translation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_translation", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustScope")
-    def default_trust_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trust_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) **Deprecated Since: 18.3.6**
 
@@ -1130,12 +1130,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "default_trust_scope")
 
     @default_trust_scope.setter
-    def default_trust_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trust_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticLevel")
-    def diagnostic_level(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def diagnostic_level(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The level of diagnostic logging that is currently in effect. A level of 0 (zero) indicates that diagnostic logging is disabled. A level of 1 (one) indicates that diagnostic logging is enabled.
 
@@ -1152,12 +1152,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "diagnostic_level")
 
     @diagnostic_level.setter
-    def diagnostic_level(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def diagnostic_level(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "diagnostic_level", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticRecordForSearchIdentifiesReturnedResources")
-    def diagnostic_record_for_search_identifies_returned_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def diagnostic_record_for_search_identifies_returned_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Controls whether DiagnosticRecords for external search-operations (against SCIM resource-types in the Admin service) identify returned resources.  If true, indicates that for each successful external search-operation at least one DiagnosticRecord will include at least one identifier for each matching resource that is returned in that search-response.  If false, no DiagnosticRecord should be expected to identify returned resources for a search-operation.  The default value is false.
 
@@ -1175,12 +1175,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "diagnostic_record_for_search_identifies_returned_resources")
 
     @diagnostic_record_for_search_identifies_returned_resources.setter
-    def diagnostic_record_for_search_identifies_returned_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def diagnostic_record_for_search_identifies_returned_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "diagnostic_record_for_search_identifies_returned_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTermsOfUse")
-    def enable_terms_of_use(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_terms_of_use(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if Terms of Use is enabled in UI
 
@@ -1198,12 +1198,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "enable_terms_of_use")
 
     @enable_terms_of_use.setter
-    def enable_terms_of_use(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_terms_of_use(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_terms_of_use", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -1219,12 +1219,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamUpstSessionExpiry")
-    def iam_upst_session_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iam_upst_session_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum duration for IAM User Principal Session Token expiry
 
@@ -1242,12 +1242,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "iam_upst_session_expiry")
 
     @iam_upst_session_expiry.setter
-    def iam_upst_session_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iam_upst_session_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iam_upst_session_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomainsSettingId")
-    def identity_domains_setting_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domains_setting_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 
@@ -1264,12 +1264,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "identity_domains_setting_id")
 
     @identity_domains_setting_id.setter
-    def identity_domains_setting_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domains_setting_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domains_setting_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
         """
         (Updatable) References to various images
 
@@ -1284,12 +1284,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "images")
 
     @images.setter
-    def images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]):
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]):
         pulumi.set(self, "images", value)
 
     @_builtins.property
     @pulumi.getter(name="isHostedPage")
-    def is_hosted_page(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hosted_page(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if 'hosted' option was selected
 
@@ -1307,12 +1307,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "is_hosted_page")
 
     @is_hosted_page.setter
-    def is_hosted_page(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hosted_page(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hosted_page", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tenant issuer.
 
@@ -1330,12 +1330,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "issuer")
 
     @issuer.setter
-    def issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer", value)
 
     @_builtins.property
     @pulumi.getter
-    def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
@@ -1353,12 +1353,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "locale")
 
     @locale.setter
-    def locale(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locale", value)
 
     @_builtins.property
     @pulumi.getter(name="loginTexts")
-    def login_texts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]:
+    def login_texts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]:
         """
         (Updatable) Login text in different locales
 
@@ -1373,12 +1373,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "login_texts")
 
     @login_texts.setter
-    def login_texts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]):
+    def login_texts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]):
         pulumi.set(self, "login_texts", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNoOfAppCmvaToReturn")
-    def max_no_of_app_cmva_to_return(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_no_of_app_cmva_to_return(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum return of CMVA for an App
 
@@ -1396,12 +1396,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "max_no_of_app_cmva_to_return")
 
     @max_no_of_app_cmva_to_return.setter
-    def max_no_of_app_cmva_to_return(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_no_of_app_cmva_to_return(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_no_of_app_cmva_to_return", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNoOfAppRoleMembersToReturn")
-    def max_no_of_app_role_members_to_return(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_no_of_app_role_members_to_return(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum return of members for an AppRole
 
@@ -1419,12 +1419,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "max_no_of_app_role_members_to_return")
 
     @max_no_of_app_role_members_to_return.setter
-    def max_no_of_app_role_members_to_return(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_no_of_app_role_members_to_return(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_no_of_app_role_members_to_return", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1441,12 +1441,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Preferred written or spoken language used for localized user interfaces
 
@@ -1464,12 +1464,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="prevIssuer")
-    def prev_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prev_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Previous Tenant issuer. This is an Oracle Identity Cloud Service internal attribute which is not meant to be directly modified by ID Admin. Even if the request body (Settings) contains this attribute, the actual value will be set according to the Oracle Identity Cloud Service internal logic rather than solely based on the value provided in the request payload.
 
@@ -1487,12 +1487,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "prev_issuer")
 
     @prev_issuer.setter
-    def prev_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prev_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prev_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privacy_policy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Privacy Policy URL
 
@@ -1510,12 +1510,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
-    def privacy_policy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privacy_policy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privacy_policy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeConfigs")
-    def purge_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]:
+    def purge_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]:
         """
         (Updatable) Purge Configs for different Resource Types
 
@@ -1532,12 +1532,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "purge_configs")
 
     @purge_configs.setter
-    def purge_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]):
+    def purge_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]):
         pulumi.set(self, "purge_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="reAuthFactors")
-    def re_auth_factors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def re_auth_factors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \\"password\\".
 
@@ -1553,12 +1553,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "re_auth_factors")
 
     @re_auth_factors.setter
-    def re_auth_factors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def re_auth_factors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "re_auth_factors", value)
 
     @_builtins.property
     @pulumi.getter(name="reAuthWhenChangingMyAuthenticationFactors")
-    def re_auth_when_changing_my_authentication_factors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def re_auth_when_changing_my_authentication_factors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether re-authentication is required or not when a user changes one of their security factors such as password or email. Default is true to ensure more secure behavior.
 
@@ -1576,24 +1576,24 @@ class DomainsSettingArgs:
         return pulumi.get(self, "re_auth_when_changing_my_authentication_factors")
 
     @re_auth_when_changing_my_authentication_factors.setter
-    def re_auth_when_changing_my_authentication_factors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def re_auth_when_changing_my_authentication_factors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "re_auth_when_changing_my_authentication_factors", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAdminCannotListOtherUsers")
-    def service_admin_cannot_list_other_users(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def service_admin_cannot_list_other_users(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) By default, a service admin can list all users in stripe. If true, a service admin cannot list other users.
 
@@ -1610,12 +1610,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "service_admin_cannot_list_other_users")
 
     @service_admin_cannot_list_other_users.setter
-    def service_admin_cannot_list_other_users(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def service_admin_cannot_list_other_users(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "service_admin_cannot_list_other_users", value)
 
     @_builtins.property
     @pulumi.getter(name="signingCertPublicAccess")
-    def signing_cert_public_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def signing_cert_public_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if access on SigningCert is allowed to public or not
 
@@ -1631,12 +1631,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "signing_cert_public_access")
 
     @signing_cert_public_access.setter
-    def signing_cert_public_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def signing_cert_public_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "signing_cert_public_access", value)
 
     @_builtins.property
     @pulumi.getter(name="subMappingAttr")
-    def sub_mapping_attr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sub_mapping_attr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) **Added In:** 20.1.3
 
@@ -1652,12 +1652,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "sub_mapping_attr")
 
     @sub_mapping_attr.setter
-    def sub_mapping_attr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sub_mapping_attr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sub_mapping_attr", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1674,12 +1674,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantCustomClaims")
-    def tenant_custom_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]:
+    def tenant_custom_claims(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]:
         """
         (Updatable) Custom claims associated with the specific tenant
 
@@ -1697,12 +1697,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "tenant_custom_claims")
 
     @tenant_custom_claims.setter
-    def tenant_custom_claims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]):
+    def tenant_custom_claims(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]):
         pulumi.set(self, "tenant_custom_claims", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfUseUrl")
-    def terms_of_use_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def terms_of_use_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Terms of Use URL
 
@@ -1720,12 +1720,12 @@ class DomainsSettingArgs:
         return pulumi.get(self, "terms_of_use_url")
 
     @terms_of_use_url.setter
-    def terms_of_use_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def terms_of_use_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "terms_of_use_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's timezone
 
@@ -1747,80 +1747,80 @@ class DomainsSettingArgs:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _DomainsSettingState:
     def __init__(__self__, *,
-                 account_always_trust_scope: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_forgot_password_flow_return_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_notification_redirect_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_event_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_validation: Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']] = None,
-                 cloud_account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_gate_cors_settings: Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']] = None,
-                 cloud_migration_custom_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_migration_url_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 company_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 csr_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_branding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 custom_css_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_html_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_translation: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_company_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]] = None,
-                 default_images: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]] = None,
-                 default_login_texts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]] = None,
-                 default_trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 diagnostic_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 diagnostic_record_for_search_identifies_returned_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 diagnostic_tracing_upto: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
-                 is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_texts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]] = None,
-                 max_no_of_app_cmva_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_no_of_app_role_members_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]] = None,
-                 migration_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_premises_provisioning: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 prev_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]] = None,
-                 re_auth_factors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 re_auth_when_changing_my_authentication_factors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_admin_cannot_list_other_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_cert_public_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sub_mapping_attr: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_custom_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]] = None,
-                 terms_of_use_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_always_trust_scope: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_forgot_password_flow_return_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_notification_redirect_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_validation: pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']] = None,
+                 cloud_account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']] = None,
+                 cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 csr_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_company_names: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]] = None,
+                 default_images: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]] = None,
+                 default_login_texts: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]] = None,
+                 default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 diagnostic_record_for_search_identifies_returned_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 diagnostic_tracing_upto: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
+                 is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]] = None,
+                 max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]] = None,
+                 migration_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_premises_provisioning: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]] = None,
+                 re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_admin_cannot_list_other_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]] = None,
+                 terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsSetting resources.
 
@@ -2643,7 +2643,7 @@ class _DomainsSettingState:
 
     @_builtins.property
     @pulumi.getter(name="accountAlwaysTrustScope")
-    def account_always_trust_scope(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_always_trust_scope(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether all the Apps in this customer tenancy should trust each other. A value of true overrides the 'defaultTrustScope' attribute here in Settings, as well as any App-specific 'trustScope' attribute, to force in effect 'trustScope=Account' for every App in this customer tenancy.
 
@@ -2659,12 +2659,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "account_always_trust_scope")
 
     @account_always_trust_scope.setter
-    def account_always_trust_scope(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_always_trust_scope(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_always_trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedDomains")
-    def allowed_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) One or more email domains allowed in a user's email field. If unassigned, any domain is allowed.
 
@@ -2680,12 +2680,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "allowed_domains")
 
     @allowed_domains.setter
-    def allowed_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedForgotPasswordFlowReturnUrls")
-    def allowed_forgot_password_flow_return_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_forgot_password_flow_return_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If specified, indicates the set of Urls which can be returned to after successful forgot password flow
 
@@ -2703,12 +2703,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "allowed_forgot_password_flow_return_urls")
 
     @allowed_forgot_password_flow_return_urls.setter
-    def allowed_forgot_password_flow_return_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_forgot_password_flow_return_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_forgot_password_flow_return_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedNotificationRedirectUrls")
-    def allowed_notification_redirect_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_notification_redirect_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \\"notificationRedirectUrl\\" in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
 
@@ -2726,36 +2726,36 @@ class _DomainsSettingState:
         return pulumi.get(self, "allowed_notification_redirect_urls")
 
     @allowed_notification_redirect_urls.setter
-    def allowed_notification_redirect_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_notification_redirect_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_notification_redirect_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="auditEventRetentionPeriod")
-    def audit_event_retention_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def audit_event_retention_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Audit Event retention period. If set, overrides default of 30 days after which Audit Events will be purged
 
@@ -2771,24 +2771,24 @@ class _DomainsSettingState:
         return pulumi.get(self, "audit_event_retention_period")
 
     @audit_event_retention_period.setter
-    def audit_event_retention_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def audit_event_retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "audit_event_retention_period", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateValidation")
-    def certificate_validation(self) -> Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']]:
+    def certificate_validation(self) -> pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']]:
         """
         (Updatable) Certificate Validation Config
 
@@ -2806,12 +2806,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "certificate_validation")
 
     @certificate_validation.setter
-    def certificate_validation(self, value: Optional[pulumi.Input['DomainsSettingCertificateValidationArgs']]):
+    def certificate_validation(self, value: pulumi.Input[Optional['DomainsSettingCertificateValidationArgs']]):
         pulumi.set(self, "certificate_validation", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The attribute to store the cloud account name
 
@@ -2829,12 +2829,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "cloud_account_name")
 
     @cloud_account_name.setter
-    def cloud_account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_account_name", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudGateCorsSettings")
-    def cloud_gate_cors_settings(self) -> Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']]:
+    def cloud_gate_cors_settings(self) -> pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']]:
         """
         (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
 
@@ -2853,12 +2853,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "cloud_gate_cors_settings")
 
     @cloud_gate_cors_settings.setter
-    def cloud_gate_cors_settings(self, value: Optional[pulumi.Input['DomainsSettingCloudGateCorsSettingsArgs']]):
+    def cloud_gate_cors_settings(self, value: pulumi.Input[Optional['DomainsSettingCloudGateCorsSettingsArgs']]):
         pulumi.set(self, "cloud_gate_cors_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudMigrationCustomUrl")
-    def cloud_migration_custom_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_migration_custom_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If specified, indicates the custom SIM Migrator Url which can be used while SIM to Oracle Identity Cloud Service CloudAccount Migration.
 
@@ -2876,12 +2876,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "cloud_migration_custom_url")
 
     @cloud_migration_custom_url.setter
-    def cloud_migration_custom_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_migration_custom_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_migration_custom_url", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudMigrationUrlEnabled")
-    def cloud_migration_url_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_migration_url_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) CloudAccountMigration: Enable Custom SIM Migrator Url.
 
@@ -2899,12 +2899,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "cloud_migration_url_enabled")
 
     @cloud_migration_url_enabled.setter
-    def cloud_migration_url_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_migration_url_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_migration_url_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="companyNames")
-    def company_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]:
+    def company_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]:
         """
         (Updatable) Name of the company in different locales
 
@@ -2919,12 +2919,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "company_names")
 
     @company_names.setter
-    def company_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]):
+    def company_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingCompanyNameArgs']]]]):
         pulumi.set(self, "company_names", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -2941,12 +2941,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="contactEmails")
-    def contact_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def contact_emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Contact emails used to notify tenants. Can be one or more user or group alias emails.
 
@@ -2962,12 +2962,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "contact_emails")
 
     @contact_emails.setter
-    def contact_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def contact_emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "contact_emails", value)
 
     @_builtins.property
     @pulumi.getter(name="csrAccess")
-    def csr_access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def csr_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This value indicates whether Customer Service Representatives can login and have readOnly or readWrite access.  A value of 'none' means CSR cannot login to the services.
 
@@ -2981,12 +2981,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "csr_access")
 
     @csr_access.setter
-    def csr_access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def csr_access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "csr_access", value)
 
     @_builtins.property
     @pulumi.getter(name="customBranding")
-    def custom_branding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def custom_branding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the branding is default or custom
 
@@ -3000,12 +3000,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "custom_branding")
 
     @custom_branding.setter
-    def custom_branding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def custom_branding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "custom_branding", value)
 
     @_builtins.property
     @pulumi.getter(name="customCssLocation")
-    def custom_css_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_css_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Storage URL location where the sanitized custom css is located
 
@@ -3023,12 +3023,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "custom_css_location")
 
     @custom_css_location.setter
-    def custom_css_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_css_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_css_location", value)
 
     @_builtins.property
     @pulumi.getter(name="customHtmlLocation")
-    def custom_html_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_html_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Storage URL location where the sanitized custom html is located
 
@@ -3046,12 +3046,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "custom_html_location")
 
     @custom_html_location.setter
-    def custom_html_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_html_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_html_location", value)
 
     @_builtins.property
     @pulumi.getter(name="customTranslation")
-    def custom_translation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_translation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Custom translations (JSON String)
 
@@ -3069,12 +3069,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "custom_translation")
 
     @custom_translation.setter
-    def custom_translation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_translation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_translation", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultCompanyNames")
-    def default_company_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]]:
+    def default_company_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]]:
         """
         (Updatable) Default name of the Company in different locales
 
@@ -3091,12 +3091,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "default_company_names")
 
     @default_company_names.setter
-    def default_company_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]]):
+    def default_company_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultCompanyNameArgs']]]]):
         pulumi.set(self, "default_company_names", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultImages")
-    def default_images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]]:
+    def default_images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]]:
         """
         (Updatable) References to various images
 
@@ -3113,12 +3113,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "default_images")
 
     @default_images.setter
-    def default_images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]]):
+    def default_images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultImageArgs']]]]):
         pulumi.set(self, "default_images", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultLoginTexts")
-    def default_login_texts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]]:
+    def default_login_texts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]]:
         """
         (Updatable) Default Login text in different locales
 
@@ -3135,12 +3135,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "default_login_texts")
 
     @default_login_texts.setter
-    def default_login_texts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]]):
+    def default_login_texts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingDefaultLoginTextArgs']]]]):
         pulumi.set(self, "default_login_texts", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustScope")
-    def default_trust_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trust_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) **Deprecated Since: 18.3.6**
 
@@ -3154,12 +3154,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "default_trust_scope")
 
     @default_trust_scope.setter
-    def default_trust_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trust_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trust_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -3176,12 +3176,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticLevel")
-    def diagnostic_level(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def diagnostic_level(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The level of diagnostic logging that is currently in effect. A level of 0 (zero) indicates that diagnostic logging is disabled. A level of 1 (one) indicates that diagnostic logging is enabled.
 
@@ -3198,12 +3198,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "diagnostic_level")
 
     @diagnostic_level.setter
-    def diagnostic_level(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def diagnostic_level(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "diagnostic_level", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticRecordForSearchIdentifiesReturnedResources")
-    def diagnostic_record_for_search_identifies_returned_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def diagnostic_record_for_search_identifies_returned_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Controls whether DiagnosticRecords for external search-operations (against SCIM resource-types in the Admin service) identify returned resources.  If true, indicates that for each successful external search-operation at least one DiagnosticRecord will include at least one identifier for each matching resource that is returned in that search-response.  If false, no DiagnosticRecord should be expected to identify returned resources for a search-operation.  The default value is false.
 
@@ -3221,12 +3221,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "diagnostic_record_for_search_identifies_returned_resources")
 
     @diagnostic_record_for_search_identifies_returned_resources.setter
-    def diagnostic_record_for_search_identifies_returned_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def diagnostic_record_for_search_identifies_returned_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "diagnostic_record_for_search_identifies_returned_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticTracingUpto")
-    def diagnostic_tracing_upto(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def diagnostic_tracing_upto(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The end time up to which diagnostic recording is switched on
 
@@ -3243,12 +3243,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "diagnostic_tracing_upto")
 
     @diagnostic_tracing_upto.setter
-    def diagnostic_tracing_upto(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def diagnostic_tracing_upto(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "diagnostic_tracing_upto", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -3265,12 +3265,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTermsOfUse")
-    def enable_terms_of_use(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_terms_of_use(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if Terms of Use is enabled in UI
 
@@ -3288,12 +3288,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "enable_terms_of_use")
 
     @enable_terms_of_use.setter
-    def enable_terms_of_use(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_terms_of_use(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_terms_of_use", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -3309,12 +3309,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamUpstSessionExpiry")
-    def iam_upst_session_expiry(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iam_upst_session_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum duration for IAM User Principal Session Token expiry
 
@@ -3332,12 +3332,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "iam_upst_session_expiry")
 
     @iam_upst_session_expiry.setter
-    def iam_upst_session_expiry(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iam_upst_session_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iam_upst_session_expiry", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -3352,24 +3352,24 @@ class _DomainsSettingState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -3384,12 +3384,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -3406,12 +3406,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -3427,12 +3427,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomainsSettingId")
-    def identity_domains_setting_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domains_setting_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
 
@@ -3449,12 +3449,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "identity_domains_setting_id")
 
     @identity_domains_setting_id.setter
-    def identity_domains_setting_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domains_setting_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domains_setting_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
         """
         (Updatable) References to various images
 
@@ -3469,12 +3469,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "images")
 
     @images.setter
-    def images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]):
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]):
         pulumi.set(self, "images", value)
 
     @_builtins.property
     @pulumi.getter(name="isHostedPage")
-    def is_hosted_page(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hosted_page(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if 'hosted' option was selected
 
@@ -3492,12 +3492,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "is_hosted_page")
 
     @is_hosted_page.setter
-    def is_hosted_page(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hosted_page(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hosted_page", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Tenant issuer.
 
@@ -3515,12 +3515,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "issuer")
 
     @issuer.setter
-    def issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer", value)
 
     @_builtins.property
     @pulumi.getter
-    def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
@@ -3538,12 +3538,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "locale")
 
     @locale.setter
-    def locale(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locale", value)
 
     @_builtins.property
     @pulumi.getter(name="loginTexts")
-    def login_texts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]:
+    def login_texts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]:
         """
         (Updatable) Login text in different locales
 
@@ -3558,12 +3558,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "login_texts")
 
     @login_texts.setter
-    def login_texts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]):
+    def login_texts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]]]):
         pulumi.set(self, "login_texts", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNoOfAppCmvaToReturn")
-    def max_no_of_app_cmva_to_return(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_no_of_app_cmva_to_return(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum return of CMVA for an App
 
@@ -3581,12 +3581,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "max_no_of_app_cmva_to_return")
 
     @max_no_of_app_cmva_to_return.setter
-    def max_no_of_app_cmva_to_return(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_no_of_app_cmva_to_return(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_no_of_app_cmva_to_return", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNoOfAppRoleMembersToReturn")
-    def max_no_of_app_role_members_to_return(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_no_of_app_role_members_to_return(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Limit the maximum return of members for an AppRole
 
@@ -3604,12 +3604,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "max_no_of_app_role_members_to_return")
 
     @max_no_of_app_role_members_to_return.setter
-    def max_no_of_app_role_members_to_return(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_no_of_app_role_members_to_return(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_no_of_app_role_members_to_return", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -3626,12 +3626,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationStatus")
-    def migration_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Migration Status
 
@@ -3649,12 +3649,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "migration_status")
 
     @migration_status.setter
-    def migration_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -3671,12 +3671,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="onPremisesProvisioning")
-    def on_premises_provisioning(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def on_premises_provisioning(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) On-Premises provisioning feature toggle.
 
@@ -3694,12 +3694,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "on_premises_provisioning")
 
     @on_premises_provisioning.setter
-    def on_premises_provisioning(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def on_premises_provisioning(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "on_premises_provisioning", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Preferred written or spoken language used for localized user interfaces
 
@@ -3717,12 +3717,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="prevIssuer")
-    def prev_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prev_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Previous Tenant issuer. This is an Oracle Identity Cloud Service internal attribute which is not meant to be directly modified by ID Admin. Even if the request body (Settings) contains this attribute, the actual value will be set according to the Oracle Identity Cloud Service internal logic rather than solely based on the value provided in the request payload.
 
@@ -3740,12 +3740,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "prev_issuer")
 
     @prev_issuer.setter
-    def prev_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prev_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prev_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def privacy_policy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Privacy Policy URL
 
@@ -3763,12 +3763,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
-    def privacy_policy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def privacy_policy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "privacy_policy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeConfigs")
-    def purge_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]:
+    def purge_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]:
         """
         (Updatable) Purge Configs for different Resource Types
 
@@ -3785,12 +3785,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "purge_configs")
 
     @purge_configs.setter
-    def purge_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]):
+    def purge_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingPurgeConfigArgs']]]]):
         pulumi.set(self, "purge_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="reAuthFactors")
-    def re_auth_factors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def re_auth_factors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \\"password\\".
 
@@ -3806,12 +3806,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "re_auth_factors")
 
     @re_auth_factors.setter
-    def re_auth_factors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def re_auth_factors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "re_auth_factors", value)
 
     @_builtins.property
     @pulumi.getter(name="reAuthWhenChangingMyAuthenticationFactors")
-    def re_auth_when_changing_my_authentication_factors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def re_auth_when_changing_my_authentication_factors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether re-authentication is required or not when a user changes one of their security factors such as password or email. Default is true to ensure more secure behavior.
 
@@ -3829,24 +3829,24 @@ class _DomainsSettingState:
         return pulumi.get(self, "re_auth_when_changing_my_authentication_factors")
 
     @re_auth_when_changing_my_authentication_factors.setter
-    def re_auth_when_changing_my_authentication_factors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def re_auth_when_changing_my_authentication_factors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "re_auth_when_changing_my_authentication_factors", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -3863,12 +3863,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAdminCannotListOtherUsers")
-    def service_admin_cannot_list_other_users(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def service_admin_cannot_list_other_users(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) By default, a service admin can list all users in stripe. If true, a service admin cannot list other users.
 
@@ -3885,24 +3885,24 @@ class _DomainsSettingState:
         return pulumi.get(self, "service_admin_cannot_list_other_users")
 
     @service_admin_cannot_list_other_users.setter
-    def service_admin_cannot_list_other_users(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def service_admin_cannot_list_other_users(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "service_admin_cannot_list_other_users", value)
 
     @_builtins.property
     @pulumi.getter(name="settingId")
-    def setting_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def setting_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the resource
         """
         return pulumi.get(self, "setting_id")
 
     @setting_id.setter
-    def setting_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def setting_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "setting_id", value)
 
     @_builtins.property
     @pulumi.getter(name="signingCertPublicAccess")
-    def signing_cert_public_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def signing_cert_public_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if access on SigningCert is allowed to public or not
 
@@ -3918,12 +3918,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "signing_cert_public_access")
 
     @signing_cert_public_access.setter
-    def signing_cert_public_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def signing_cert_public_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "signing_cert_public_access", value)
 
     @_builtins.property
     @pulumi.getter(name="subMappingAttr")
-    def sub_mapping_attr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sub_mapping_attr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) **Added In:** 20.1.3
 
@@ -3939,12 +3939,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "sub_mapping_attr")
 
     @sub_mapping_attr.setter
-    def sub_mapping_attr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sub_mapping_attr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sub_mapping_attr", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -3961,12 +3961,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -3983,12 +3983,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantCustomClaims")
-    def tenant_custom_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]:
+    def tenant_custom_claims(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]:
         """
         (Updatable) Custom claims associated with the specific tenant
 
@@ -4006,12 +4006,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "tenant_custom_claims")
 
     @tenant_custom_claims.setter
-    def tenant_custom_claims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]):
+    def tenant_custom_claims(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsSettingTenantCustomClaimArgs']]]]):
         pulumi.set(self, "tenant_custom_claims", value)
 
     @_builtins.property
     @pulumi.getter(name="termsOfUseUrl")
-    def terms_of_use_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def terms_of_use_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Terms of Use URL
 
@@ -4029,12 +4029,12 @@ class _DomainsSettingState:
         return pulumi.get(self, "terms_of_use_url")
 
     @terms_of_use_url.setter
-    def terms_of_use_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def terms_of_use_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "terms_of_use_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's timezone
 
@@ -4056,7 +4056,7 @@ class _DomainsSettingState:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
@@ -4066,57 +4066,57 @@ class DomainsSetting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_always_trust_scope: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_forgot_password_flow_return_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_notification_redirect_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_event_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_validation: Optional[pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
-                 cloud_gate_cors_settings: Optional[pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
-                 cloud_migration_custom_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_migration_url_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 company_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
-                 contact_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 csr_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_branding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 custom_css_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_html_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_translation: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 diagnostic_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 diagnostic_record_for_search_identifies_returned_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
-                 is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_texts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
-                 max_no_of_app_cmva_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_no_of_app_role_members_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 prev_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
-                 re_auth_factors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 re_auth_when_changing_my_authentication_factors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_admin_cannot_list_other_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_cert_public_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sub_mapping_attr: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
-                 tenant_custom_claims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
-                 terms_of_use_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_always_trust_scope: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_forgot_password_flow_return_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_notification_redirect_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+                 cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+                 contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 csr_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 diagnostic_record_for_search_identifies_returned_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+                 is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+                 max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+                 re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_admin_cannot_list_other_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+                 terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -4137,86 +4137,86 @@ class DomainsSetting(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
             setting_id="Settings",
-            account_always_trust_scope=setting_account_always_trust_scope,
+            account_always_trust_scope=setting_account_always_trust_scope == "true",
             allowed_domains=["test.com"],
             allowed_forgot_password_flow_return_urls=setting_allowed_forgot_password_flow_return_urls,
             allowed_notification_redirect_urls=setting_allowed_notification_redirect_urls,
             attribute_sets=["all"],
             attributes="",
-            audit_event_retention_period=setting_audit_event_retention_period,
+            audit_event_retention_period=int(setting_audit_event_retention_period),
             authorization=setting_authorization,
             certificate_validation={
-                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled,
-                "crl_enabled": setting_certificate_validation_crl_enabled,
+                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled == "true",
+                "crl_enabled": setting_certificate_validation_crl_enabled == "true",
                 "crl_location": setting_certificate_validation_crl_location,
-                "crl_refresh_interval": setting_certificate_validation_crl_refresh_interval,
-                "ocsp_enabled": setting_certificate_validation_ocsp_enabled,
+                "crl_refresh_interval": int(setting_certificate_validation_crl_refresh_interval),
+                "ocsp_enabled": setting_certificate_validation_ocsp_enabled == "true",
                 "ocsp_responder_url": setting_certificate_validation_ocsp_responder_url,
-                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred,
+                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred == "true",
                 "ocsp_signing_certificate_alias": setting_certificate_validation_ocsp_signing_certificate_alias,
-                "ocsp_timeout_duration": setting_certificate_validation_ocsp_timeout_duration,
-                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed,
+                "ocsp_timeout_duration": int(setting_certificate_validation_ocsp_timeout_duration),
+                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed == "true",
             },
             cloud_gate_cors_settings={
-                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin,
+                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin == "true",
                 "cloud_gate_cors_allowed_origins": ["https://test.com"],
-                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled,
+                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled == "true",
                 "cloud_gate_cors_exposed_headers": setting_cloud_gate_cors_settings_cloud_gate_cors_exposed_headers,
-                "cloud_gate_cors_max_age": setting_cloud_gate_cors_settings_cloud_gate_cors_max_age,
+                "cloud_gate_cors_max_age": int(setting_cloud_gate_cors_settings_cloud_gate_cors_max_age),
             },
             cloud_migration_custom_url=setting_cloud_migration_custom_url,
-            cloud_migration_url_enabled=setting_cloud_migration_url_enabled,
+            cloud_migration_url_enabled=setting_cloud_migration_url_enabled == "true",
             company_names=[{
                 "locale": setting_company_names_locale,
                 "value": setting_company_names_value,
             }],
             contact_emails=["contactEmails@test.com"],
-            custom_branding=setting_custom_branding,
+            custom_branding=setting_custom_branding == "true",
             custom_css_location=setting_custom_css_location,
             custom_html_location=setting_custom_html_location,
             custom_translation=setting_custom_translation,
             default_trust_scope=setting_default_trust_scope,
-            diagnostic_level=setting_diagnostic_level,
-            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources,
-            enable_terms_of_use=setting_enable_terms_of_use,
+            diagnostic_level=int(setting_diagnostic_level),
+            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources == "true",
+            enable_terms_of_use=setting_enable_terms_of_use == "true",
             external_id="externalId",
-            iam_upst_session_expiry=setting_iam_upst_session_expiry,
+            iam_upst_session_expiry=int(setting_iam_upst_session_expiry),
             identity_domains_setting_id=setting_id,
             images=[{
                 "type": setting_images_type,
                 "value": setting_images_value,
                 "display": setting_images_display,
             }],
-            is_hosted_page=setting_is_hosted_page,
+            is_hosted_page=setting_is_hosted_page == "true",
             issuer=setting_issuer,
             locale=setting_locale,
             login_texts=[{
                 "locale": setting_login_texts_locale,
                 "value": setting_login_texts_value,
             }],
-            max_no_of_app_cmva_to_return=setting_max_no_of_app_cmva_to_return,
-            max_no_of_app_role_members_to_return=setting_max_no_of_app_role_members_to_return,
+            max_no_of_app_cmva_to_return=int(setting_max_no_of_app_cmva_to_return),
+            max_no_of_app_role_members_to_return=int(setting_max_no_of_app_role_members_to_return),
             ocid=setting_ocid,
             preferred_language=setting_preferred_language,
             prev_issuer=setting_prev_issuer,
             privacy_policy_url=setting_privacy_policy_url,
             purge_configs=[{
                 "resource_name": "resourceName",
-                "retention_period": setting_purge_configs_retention_period,
+                "retention_period": int(setting_purge_configs_retention_period),
             }],
             re_auth_factors=["password"],
-            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors,
+            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors == "true",
             resource_type_schema_version=setting_resource_type_schema_version,
-            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users,
-            signing_cert_public_access=setting_signing_cert_public_access,
+            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users == "true",
+            signing_cert_public_access=setting_signing_cert_public_access == "true",
             sub_mapping_attr=setting_sub_mapping_attr,
             tags=[{
                 "key": setting_tags_key,
                 "value": setting_tags_value,
             }],
             tenant_custom_claims=[{
-                "all_scopes": setting_tenant_custom_claims_all_scopes,
-                "expression": setting_tenant_custom_claims_expression,
+                "all_scopes": setting_tenant_custom_claims_all_scopes == "true",
+                "expression": setting_tenant_custom_claims_expression == "true",
                 "mode": setting_tenant_custom_claims_mode,
                 "name": setting_tenant_custom_claims_name,
                 "token_type": setting_tenant_custom_claims_token_type,
@@ -4771,86 +4771,86 @@ class DomainsSetting(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
             setting_id="Settings",
-            account_always_trust_scope=setting_account_always_trust_scope,
+            account_always_trust_scope=setting_account_always_trust_scope == "true",
             allowed_domains=["test.com"],
             allowed_forgot_password_flow_return_urls=setting_allowed_forgot_password_flow_return_urls,
             allowed_notification_redirect_urls=setting_allowed_notification_redirect_urls,
             attribute_sets=["all"],
             attributes="",
-            audit_event_retention_period=setting_audit_event_retention_period,
+            audit_event_retention_period=int(setting_audit_event_retention_period),
             authorization=setting_authorization,
             certificate_validation={
-                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled,
-                "crl_enabled": setting_certificate_validation_crl_enabled,
+                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled == "true",
+                "crl_enabled": setting_certificate_validation_crl_enabled == "true",
                 "crl_location": setting_certificate_validation_crl_location,
-                "crl_refresh_interval": setting_certificate_validation_crl_refresh_interval,
-                "ocsp_enabled": setting_certificate_validation_ocsp_enabled,
+                "crl_refresh_interval": int(setting_certificate_validation_crl_refresh_interval),
+                "ocsp_enabled": setting_certificate_validation_ocsp_enabled == "true",
                 "ocsp_responder_url": setting_certificate_validation_ocsp_responder_url,
-                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred,
+                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred == "true",
                 "ocsp_signing_certificate_alias": setting_certificate_validation_ocsp_signing_certificate_alias,
-                "ocsp_timeout_duration": setting_certificate_validation_ocsp_timeout_duration,
-                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed,
+                "ocsp_timeout_duration": int(setting_certificate_validation_ocsp_timeout_duration),
+                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed == "true",
             },
             cloud_gate_cors_settings={
-                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin,
+                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin == "true",
                 "cloud_gate_cors_allowed_origins": ["https://test.com"],
-                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled,
+                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled == "true",
                 "cloud_gate_cors_exposed_headers": setting_cloud_gate_cors_settings_cloud_gate_cors_exposed_headers,
-                "cloud_gate_cors_max_age": setting_cloud_gate_cors_settings_cloud_gate_cors_max_age,
+                "cloud_gate_cors_max_age": int(setting_cloud_gate_cors_settings_cloud_gate_cors_max_age),
             },
             cloud_migration_custom_url=setting_cloud_migration_custom_url,
-            cloud_migration_url_enabled=setting_cloud_migration_url_enabled,
+            cloud_migration_url_enabled=setting_cloud_migration_url_enabled == "true",
             company_names=[{
                 "locale": setting_company_names_locale,
                 "value": setting_company_names_value,
             }],
             contact_emails=["contactEmails@test.com"],
-            custom_branding=setting_custom_branding,
+            custom_branding=setting_custom_branding == "true",
             custom_css_location=setting_custom_css_location,
             custom_html_location=setting_custom_html_location,
             custom_translation=setting_custom_translation,
             default_trust_scope=setting_default_trust_scope,
-            diagnostic_level=setting_diagnostic_level,
-            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources,
-            enable_terms_of_use=setting_enable_terms_of_use,
+            diagnostic_level=int(setting_diagnostic_level),
+            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources == "true",
+            enable_terms_of_use=setting_enable_terms_of_use == "true",
             external_id="externalId",
-            iam_upst_session_expiry=setting_iam_upst_session_expiry,
+            iam_upst_session_expiry=int(setting_iam_upst_session_expiry),
             identity_domains_setting_id=setting_id,
             images=[{
                 "type": setting_images_type,
                 "value": setting_images_value,
                 "display": setting_images_display,
             }],
-            is_hosted_page=setting_is_hosted_page,
+            is_hosted_page=setting_is_hosted_page == "true",
             issuer=setting_issuer,
             locale=setting_locale,
             login_texts=[{
                 "locale": setting_login_texts_locale,
                 "value": setting_login_texts_value,
             }],
-            max_no_of_app_cmva_to_return=setting_max_no_of_app_cmva_to_return,
-            max_no_of_app_role_members_to_return=setting_max_no_of_app_role_members_to_return,
+            max_no_of_app_cmva_to_return=int(setting_max_no_of_app_cmva_to_return),
+            max_no_of_app_role_members_to_return=int(setting_max_no_of_app_role_members_to_return),
             ocid=setting_ocid,
             preferred_language=setting_preferred_language,
             prev_issuer=setting_prev_issuer,
             privacy_policy_url=setting_privacy_policy_url,
             purge_configs=[{
                 "resource_name": "resourceName",
-                "retention_period": setting_purge_configs_retention_period,
+                "retention_period": int(setting_purge_configs_retention_period),
             }],
             re_auth_factors=["password"],
-            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors,
+            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors == "true",
             resource_type_schema_version=setting_resource_type_schema_version,
-            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users,
-            signing_cert_public_access=setting_signing_cert_public_access,
+            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users == "true",
+            signing_cert_public_access=setting_signing_cert_public_access == "true",
             sub_mapping_attr=setting_sub_mapping_attr,
             tags=[{
                 "key": setting_tags_key,
                 "value": setting_tags_value,
             }],
             tenant_custom_claims=[{
-                "all_scopes": setting_tenant_custom_claims_all_scopes,
-                "expression": setting_tenant_custom_claims_expression,
+                "all_scopes": setting_tenant_custom_claims_all_scopes == "true",
+                "expression": setting_tenant_custom_claims_expression == "true",
                 "mode": setting_tenant_custom_claims_mode,
                 "name": setting_tenant_custom_claims_name,
                 "token_type": setting_tenant_custom_claims_token_type,
@@ -4885,57 +4885,57 @@ class DomainsSetting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_always_trust_scope: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_forgot_password_flow_return_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_notification_redirect_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_event_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_validation: Optional[pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
-                 cloud_gate_cors_settings: Optional[pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
-                 cloud_migration_custom_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_migration_url_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 company_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
-                 contact_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 csr_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_branding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 custom_css_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_html_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_translation: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 diagnostic_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 diagnostic_record_for_search_identifies_returned_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
-                 is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 login_texts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
-                 max_no_of_app_cmva_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_no_of_app_role_members_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 prev_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 purge_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
-                 re_auth_factors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 re_auth_when_changing_my_authentication_factors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_admin_cannot_list_other_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_cert_public_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 sub_mapping_attr: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
-                 tenant_custom_claims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
-                 terms_of_use_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_always_trust_scope: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_forgot_password_flow_return_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_notification_redirect_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+                 cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+                 contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 csr_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 diagnostic_record_for_search_identifies_returned_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+                 is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+                 max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+                 re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_admin_cannot_list_other_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+                 terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -5032,73 +5032,73 @@ class DomainsSetting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_always_trust_scope: Optional[pulumi.Input[_builtins.bool]] = None,
-            allowed_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_forgot_password_flow_return_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_notification_redirect_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            audit_event_retention_period: Optional[pulumi.Input[_builtins.int]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_validation: Optional[pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
-            cloud_account_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_gate_cors_settings: Optional[pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
-            cloud_migration_custom_url: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_migration_url_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            company_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            contact_emails: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            csr_access: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_branding: Optional[pulumi.Input[_builtins.bool]] = None,
-            custom_css_location: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_html_location: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_translation: Optional[pulumi.Input[_builtins.str]] = None,
-            default_company_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict']]]]] = None,
-            default_images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict']]]]] = None,
-            default_login_texts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict']]]]] = None,
-            default_trust_scope: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            diagnostic_level: Optional[pulumi.Input[_builtins.int]] = None,
-            diagnostic_record_for_search_identifies_returned_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-            diagnostic_tracing_upto: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-            images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
-            is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
-            issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            locale: Optional[pulumi.Input[_builtins.str]] = None,
-            login_texts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
-            max_no_of_app_cmva_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-            max_no_of_app_role_members_to_return: Optional[pulumi.Input[_builtins.int]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict']]]]] = None,
-            migration_status: Optional[pulumi.Input[_builtins.str]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            on_premises_provisioning: Optional[pulumi.Input[_builtins.bool]] = None,
-            preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-            prev_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            privacy_policy_url: Optional[pulumi.Input[_builtins.str]] = None,
-            purge_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
-            re_auth_factors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            re_auth_when_changing_my_authentication_factors: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_admin_cannot_list_other_users: Optional[pulumi.Input[_builtins.bool]] = None,
-            setting_id: Optional[pulumi.Input[_builtins.str]] = None,
-            signing_cert_public_access: Optional[pulumi.Input[_builtins.bool]] = None,
-            sub_mapping_attr: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_custom_claims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
-            terms_of_use_url: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsSetting':
+            account_always_trust_scope: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_forgot_password_flow_return_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_notification_redirect_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
+            cloud_account_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+            cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            csr_access: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
+            custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
+            default_company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict']]]]] = None,
+            default_images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict']]]]] = None,
+            default_login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict']]]]] = None,
+            default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
+            diagnostic_record_for_search_identifies_returned_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            diagnostic_tracing_upto: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+            is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
+            issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+            max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+            max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict']]]]] = None,
+            migration_status: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            on_premises_provisioning: pulumi.Input[Optional[_builtins.bool]] = None,
+            preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+            prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
+            purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+            re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_admin_cannot_list_other_users: pulumi.Input[Optional[_builtins.bool]] = None,
+            setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+            terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsSetting':
         """
         Get an existing DomainsSetting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

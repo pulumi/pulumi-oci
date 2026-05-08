@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCustomerGroup = oci.CapacityManagement.getOccCustomerGroup({
+ * const testOccCustomerGroup = oci.capacitymanagement.getOccCustomerGroup({
  *     occCustomerGroupId: testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id,
  * });
  * ```
@@ -111,7 +111,7 @@ export interface GetOccCustomerGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCustomerGroup = oci.CapacityManagement.getOccCustomerGroup({
+ * const testOccCustomerGroup = oci.capacitymanagement.getOccCustomerGroup({
  *     occCustomerGroupId: testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id,
  * });
  * ```

@@ -146,10 +146,10 @@ def get_gdp_gdp_pipelines(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         gdp_pipeline_collections=pulumi.get(__ret__, 'gdp_pipeline_collections'),
         id=pulumi.get(__ret__, 'id'))
-def get_gdp_gdp_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 env: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGdpGdpPipelinesFilterArgs', 'GetGdpGdpPipelinesFilterArgsDict']]]]] = None,
+def get_gdp_gdp_pipelines_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 env: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGdpGdpPipelinesFilterArgs', 'GetGdpGdpPipelinesFilterArgsDict']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGdpGdpPipelinesResult]:
     """
     This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.

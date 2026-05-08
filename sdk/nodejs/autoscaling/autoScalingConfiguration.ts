@@ -29,9 +29,9 @@ import * as utilities from "../utilities";
  *     policies: [{
  *         policyType: autoScalingConfigurationPoliciesPolicyType,
  *         capacity: {
- *             initial: autoScalingConfigurationPoliciesCapacityInitial,
- *             max: autoScalingConfigurationPoliciesCapacityMax,
- *             min: autoScalingConfigurationPoliciesCapacityMin,
+ *             initial: Number(autoScalingConfigurationPoliciesCapacityInitial),
+ *             max: Number(autoScalingConfigurationPoliciesCapacityMax),
+ *             min: Number(autoScalingConfigurationPoliciesCapacityMin),
  *         },
  *         displayName: autoScalingConfigurationPoliciesDisplayName,
  *         executionSchedule: {
@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *             timezone: autoScalingConfigurationPoliciesExecutionScheduleTimezone,
  *             type: autoScalingConfigurationPoliciesExecutionScheduleType,
  *         },
- *         isEnabled: autoScalingConfigurationPoliciesIsEnabled,
+ *         isEnabled: autoScalingConfigurationPoliciesIsEnabled === "true",
  *         resourceAction: {
  *             action: autoScalingConfigurationPoliciesResourceActionAction,
  *             actionType: autoScalingConfigurationPoliciesResourceActionActionType,
@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *         rules: [{
  *             action: {
  *                 type: autoScalingConfigurationPoliciesRulesActionType,
- *                 value: autoScalingConfigurationPoliciesRulesActionValue,
+ *                 value: Number(autoScalingConfigurationPoliciesRulesActionValue),
  *             },
  *             displayName: autoScalingConfigurationPoliciesRulesDisplayName,
  *             metric: {
@@ -60,12 +60,12 @@ import * as utilities from "../utilities";
  *                 resourceGroup: autoScalingConfigurationPoliciesRulesMetricResourceGroup,
  *                 threshold: {
  *                     operator: autoScalingConfigurationPoliciesRulesMetricThresholdOperator,
- *                     value: autoScalingConfigurationPoliciesRulesMetricThresholdValue,
+ *                     value: Number(autoScalingConfigurationPoliciesRulesMetricThresholdValue),
  *                 },
  *             },
  *         }],
  *     }],
- *     coolDownInSeconds: autoScalingConfigurationCoolDownInSeconds,
+ *     coolDownInSeconds: Number(autoScalingConfigurationCoolDownInSeconds),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -73,7 +73,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: autoScalingConfigurationIsEnabled,
+ *     isEnabled: autoScalingConfigurationIsEnabled === "true",
  * });
  * ```
  *
@@ -223,49 +223,49 @@ export interface AutoScalingConfigurationState {
      *
      * Each instance pool can have one autoscaling configuration.
      */
-    autoScalingResources?: pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationAutoScalingResources>;
+    autoScalingResources?: pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationAutoScalingResources | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
      *
      * For schedule-based autoscaling policies, this value is not used.
      */
-    coolDownInSeconds?: pulumi.Input<number>;
+    coolDownInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether the autoscaling configuration is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of resources to scale out to.
      */
-    maxResourceCount?: pulumi.Input<number>;
+    maxResourceCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of resources to scale in to.
      */
-    minResourceCount?: pulumi.Input<number>;
+    minResourceCount?: pulumi.Input<number | undefined>;
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      */
-    policies?: pulumi.Input<pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationPolicy>[]>;
+    policies?: pulumi.Input<pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationPolicy>[] | undefined>;
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -287,23 +287,23 @@ export interface AutoScalingConfigurationArgs {
      *
      * For schedule-based autoscaling policies, this value is not used.
      */
-    coolDownInSeconds?: pulumi.Input<number>;
+    coolDownInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether the autoscaling configuration is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      */

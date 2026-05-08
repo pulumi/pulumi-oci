@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
+ * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic,
+ *     isPublic: containerRepositoryIsPublic === "true",
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });
@@ -114,11 +114,11 @@ export interface GetContainerRepositoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
+ * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic,
+ *     isPublic: containerRepositoryIsPublic === "true",
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });
@@ -148,22 +148,22 @@ export interface GetContainerRepositoriesOutputArgs {
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerRepositoriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerRepositoriesFilterArgs>[] | undefined>;
     /**
      * A filter to return resources that match the isPublic value.
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return container images only for the specified container repository OCID.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

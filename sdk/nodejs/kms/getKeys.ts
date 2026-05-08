@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeys = oci.Kms.getKeys({
+ * const testKeys = oci.kms.getKeys({
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: keyLength,
+ *     length: Number(keyLength),
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });
@@ -130,11 +130,11 @@ export interface GetKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeys = oci.Kms.getKeys({
+ * const testKeys = oci.kms.getKeys({
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: keyLength,
+ *     length: Number(keyLength),
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });
@@ -160,7 +160,7 @@ export interface GetKeysOutputArgs {
     /**
      * The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
      */
-    algorithm?: pulumi.Input<string>;
+    algorithm?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -168,12 +168,12 @@ export interface GetKeysOutputArgs {
     /**
      * The curve ID of the keys. (This pertains only to ECDSA keys.)
      */
-    curveId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Kms.GetKeysFilterArgs>[]>;
+    curveId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Kms.GetKeysFilterArgs>[] | undefined>;
     /**
      * The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
      */
-    length?: pulumi.Input<number>;
+    length?: pulumi.Input<number | undefined>;
     /**
      * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
      */
@@ -181,5 +181,5 @@ export interface GetKeysOutputArgs {
     /**
      * A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
 }

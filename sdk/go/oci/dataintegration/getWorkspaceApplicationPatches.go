@@ -32,8 +32,8 @@ import (
 //			_, err := dataintegration.GetWorkspaceApplicationPatches(ctx, &dataintegration.GetWorkspaceApplicationPatchesArgs{
 //				ApplicationKey: workspaceApplicationPatchApplicationKey,
 //				WorkspaceId:    testWorkspace.Id,
-//				Fields:         workspaceApplicationPatchFields,
-//				Identifiers:    workspaceApplicationPatchIdentifier,
+//				Fields:         pulumi.ToArray(workspaceApplicationPatchFields),
+//				Identifiers:    pulumi.ToArray(workspaceApplicationPatchIdentifier),
 //				Name:           pulumi.StringRef(workspaceApplicationPatchName),
 //			}, nil)
 //			if err != nil {

@@ -141,9 +141,9 @@ def get_dynamic_set_managed_instances(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set_managed_instances = oci.OsManagementHub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
+    test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```
@@ -174,12 +174,12 @@ def get_dynamic_set_managed_instances(compartment_id: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_collections=pulumi.get(__ret__, 'managed_instance_collections'))
-def get_dynamic_set_managed_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict']]]]] = None,
+def get_dynamic_set_managed_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDynamicSetManagedInstancesResult]:
     """
     This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
@@ -192,9 +192,9 @@ def get_dynamic_set_managed_instances_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set_managed_instances = oci.OsManagementHub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
+    test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```

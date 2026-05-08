@@ -24,12 +24,12 @@ class ProfileArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  description: pulumi.Input[_builtins.str],
                  levels_configuration: pulumi.Input['ProfileLevelsConfigurationArgs'],
-                 aggregation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
-                 target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None):
+                 aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_compartments: pulumi.Input[Optional['ProfileTargetCompartmentsArgs']] = None,
+                 target_tags: pulumi.Input[Optional['ProfileTargetTagsArgs']] = None):
         """
         The set of arguments for constructing a Profile resource.
 
@@ -97,93 +97,93 @@ class ProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="aggregationIntervalInDays")
-    def aggregation_interval_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def aggregation_interval_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
         """
         return pulumi.get(self, "aggregation_interval_in_days")
 
     @aggregation_interval_in_days.setter
-    def aggregation_interval_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def aggregation_interval_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "aggregation_interval_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name assigned to the profile. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartments")
-    def target_compartments(self) -> Optional[pulumi.Input['ProfileTargetCompartmentsArgs']]:
+    def target_compartments(self) -> pulumi.Input[Optional['ProfileTargetCompartmentsArgs']]:
         """
         (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         """
         return pulumi.get(self, "target_compartments")
 
     @target_compartments.setter
-    def target_compartments(self, value: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']]):
+    def target_compartments(self, value: pulumi.Input[Optional['ProfileTargetCompartmentsArgs']]):
         pulumi.set(self, "target_compartments", value)
 
     @_builtins.property
     @pulumi.getter(name="targetTags")
-    def target_tags(self) -> Optional[pulumi.Input['ProfileTargetTagsArgs']]:
+    def target_tags(self) -> pulumi.Input[Optional['ProfileTargetTagsArgs']]:
         """
         (Updatable) Optional. The tags specified in the profile override for a recommendation.
         """
         return pulumi.get(self, "target_tags")
 
     @target_tags.setter
-    def target_tags(self, value: Optional[pulumi.Input['ProfileTargetTagsArgs']]):
+    def target_tags(self, value: pulumi.Input[Optional['ProfileTargetTagsArgs']]):
         pulumi.set(self, "target_tags", value)
 
 
 @pulumi.input_type
 class _ProfileState:
     def __init__(__self__, *,
-                 aggregation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 levels_configuration: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
-                 target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 levels_configuration: pulumi.Input[Optional['ProfileLevelsConfigurationArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartments: pulumi.Input[Optional['ProfileTargetCompartmentsArgs']] = None,
+                 target_tags: pulumi.Input[Optional['ProfileTargetTagsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Profile resources.
 
@@ -229,155 +229,155 @@ class _ProfileState:
 
     @_builtins.property
     @pulumi.getter(name="aggregationIntervalInDays")
-    def aggregation_interval_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def aggregation_interval_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
         """
         return pulumi.get(self, "aggregation_interval_in_days")
 
     @aggregation_interval_in_days.setter
-    def aggregation_interval_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def aggregation_interval_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "aggregation_interval_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy. The tenancy is the root compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Text describing the profile. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="levelsConfiguration")
-    def levels_configuration(self) -> Optional[pulumi.Input['ProfileLevelsConfigurationArgs']]:
+    def levels_configuration(self) -> pulumi.Input[Optional['ProfileLevelsConfigurationArgs']]:
         """
         (Updatable) A list of configuration levels for each recommendation.
         """
         return pulumi.get(self, "levels_configuration")
 
     @levels_configuration.setter
-    def levels_configuration(self, value: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']]):
+    def levels_configuration(self, value: pulumi.Input[Optional['ProfileLevelsConfigurationArgs']]):
         pulumi.set(self, "levels_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name assigned to the profile. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The profile's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartments")
-    def target_compartments(self) -> Optional[pulumi.Input['ProfileTargetCompartmentsArgs']]:
+    def target_compartments(self) -> pulumi.Input[Optional['ProfileTargetCompartmentsArgs']]:
         """
         (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         """
         return pulumi.get(self, "target_compartments")
 
     @target_compartments.setter
-    def target_compartments(self, value: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']]):
+    def target_compartments(self, value: pulumi.Input[Optional['ProfileTargetCompartmentsArgs']]):
         pulumi.set(self, "target_compartments", value)
 
     @_builtins.property
     @pulumi.getter(name="targetTags")
-    def target_tags(self) -> Optional[pulumi.Input['ProfileTargetTagsArgs']]:
+    def target_tags(self) -> pulumi.Input[Optional['ProfileTargetTagsArgs']]:
         """
         (Updatable) Optional. The tags specified in the profile override for a recommendation.
         """
         return pulumi.get(self, "target_tags")
 
     @target_tags.setter
-    def target_tags(self, value: Optional[pulumi.Input['ProfileTargetTagsArgs']]):
+    def target_tags(self, value: pulumi.Input[Optional['ProfileTargetTagsArgs']]):
         pulumi.set(self, "target_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the profile was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the profile was last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -387,15 +387,15 @@ class Profile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 levels_configuration: Optional[pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_compartments: Optional[pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-                 target_tags: Optional[pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+                 aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
+                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -421,7 +421,7 @@ class Profile(pulumi.CustomResource):
                 }],
             },
             name=profile_name,
-            aggregation_interval_in_days=profile_aggregation_interval_in_days,
+            aggregation_interval_in_days=int(profile_aggregation_interval_in_days),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -492,7 +492,7 @@ class Profile(pulumi.CustomResource):
                 }],
             },
             name=profile_name,
-            aggregation_interval_in_days=profile_aggregation_interval_in_days,
+            aggregation_interval_in_days=int(profile_aggregation_interval_in_days),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -536,15 +536,15 @@ class Profile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 levels_configuration: Optional[pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_compartments: Optional[pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-                 target_tags: Optional[pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+                 aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
+                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -583,19 +583,19 @@ class Profile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aggregation_interval_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            levels_configuration: Optional[pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_compartments: Optional[pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-            target_tags: Optional[pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Profile':
+            aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
+            target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Profile':
         """
         Get an existing Profile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccessRequests = oci.OperatorAccessControl.getAccessRequests({
+ * const testAccessRequests = oci.operatoraccesscontrol.getAccessRequests({
  *     compartmentId: compartmentId,
  *     resourceName: accessRequestResourceName,
  *     resourceType: accessRequestResourceType,
@@ -114,7 +114,7 @@ export interface GetAccessRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccessRequests = oci.OperatorAccessControl.getAccessRequests({
+ * const testAccessRequests = oci.operatoraccesscontrol.getAccessRequests({
  *     compartmentId: compartmentId,
  *     resourceName: accessRequestResourceName,
  *     resourceType: accessRequestResourceType,
@@ -145,25 +145,25 @@ export interface GetAccessRequestsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetAccessRequestsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetAccessRequestsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given ResourceName.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only lists of resources that match the entire given service type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

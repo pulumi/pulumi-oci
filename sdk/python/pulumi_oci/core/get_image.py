@@ -286,7 +286,7 @@ def get_image(image_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
+    test_image = oci.core.get_image(image_id=test_image_oci_core_image["id"])
     ```
 
 
@@ -318,7 +318,7 @@ def get_image(image_id: Optional[_builtins.str] = None,
         size_in_mbs=pulumi.get(__ret__, 'size_in_mbs'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_image_output(image_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_image_output(image_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
     """
     This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
@@ -331,7 +331,7 @@ def get_image_output(image_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
+    test_image = oci.core.get_image(image_id=test_image_oci_core_image["id"])
     ```
 
 

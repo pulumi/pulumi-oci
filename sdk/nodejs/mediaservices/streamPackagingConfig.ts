@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testStreamPackagingConfig = new oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config", {
  *     displayName: streamPackagingConfigDisplayName,
  *     distributionChannelId: testChannel.id,
- *     segmentTimeInSeconds: streamPackagingConfigSegmentTimeInSeconds,
+ *     segmentTimeInSeconds: Number(streamPackagingConfigSegmentTimeInSeconds),
  *     streamPackagingFormat: streamPackagingConfigStreamPackagingFormat,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -207,40 +207,40 @@ export interface StreamPackagingConfigState {
     /**
      * The compartment ID of the lock.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
      */
-    distributionChannelId?: pulumi.Input<string>;
+    distributionChannelId?: pulumi.Input<string | undefined>;
     /**
      * The encryption used by the stream packaging configuration.
      */
-    encryption?: pulumi.Input<inputs.MediaServices.StreamPackagingConfigEncryption>;
+    encryption?: pulumi.Input<inputs.MediaServices.StreamPackagingConfigEncryption | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[] | undefined>;
     /**
      * The duration in seconds for each fragment.
      */
-    segmentTimeInSeconds?: pulumi.Input<number>;
+    segmentTimeInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The current state of the Packaging Configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The output format for the package.
      *
@@ -248,19 +248,19 @@ export interface StreamPackagingConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streamPackagingFormat?: pulumi.Input<string>;
+    streamPackagingFormat?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -270,7 +270,7 @@ export interface StreamPackagingConfigArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
      */
@@ -282,16 +282,16 @@ export interface StreamPackagingConfigArgs {
     /**
      * The encryption used by the stream packaging configuration.
      */
-    encryption?: pulumi.Input<inputs.MediaServices.StreamPackagingConfigEncryption>;
+    encryption?: pulumi.Input<inputs.MediaServices.StreamPackagingConfigEncryption | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[] | undefined>;
     /**
      * The duration in seconds for each fragment.
      */

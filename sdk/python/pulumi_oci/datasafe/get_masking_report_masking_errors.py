@@ -108,7 +108,7 @@ def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaski
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report_masking_errors = oci.DataSafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
+    test_masking_report_masking_errors = oci.datasafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
         step_name=masking_report_masking_error_step_name)
     ```
 
@@ -129,9 +129,9 @@ def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaski
         masking_error_collections=pulumi.get(__ret__, 'masking_error_collections'),
         masking_report_id=pulumi.get(__ret__, 'masking_report_id'),
         step_name=pulumi.get(__ret__, 'step_name'))
-def get_masking_report_masking_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict']]]]] = None,
-                                             masking_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             step_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_report_masking_errors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict']]]]] = None,
+                                             masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             step_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportMaskingErrorsResult]:
     """
     This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
@@ -144,7 +144,7 @@ def get_masking_report_masking_errors_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report_masking_errors = oci.DataSafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
+    test_masking_report_masking_errors = oci.datasafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
         step_name=masking_report_masking_error_step_name)
     ```
 

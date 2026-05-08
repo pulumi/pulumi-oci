@@ -202,7 +202,7 @@ def get_fleet_credential(fleet_credential_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credential = oci.FleetAppsManagement.get_fleet_credential(fleet_credential_id=test_fleet_credential_oci_fleet_apps_management_fleet_credential["id"],
+    test_fleet_credential = oci.fleetappsmanagement.get_fleet_credential(fleet_credential_id=test_fleet_credential_oci_fleet_apps_management_fleet_credential["id"],
         fleet_id=test_fleet["id"])
     ```
 
@@ -230,8 +230,8 @@ def get_fleet_credential(fleet_credential_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         users=pulumi.get(__ret__, 'users'))
-def get_fleet_credential_output(fleet_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_credential_output(fleet_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCredentialResult]:
     """
     This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -244,7 +244,7 @@ def get_fleet_credential_output(fleet_credential_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credential = oci.FleetAppsManagement.get_fleet_credential(fleet_credential_id=test_fleet_credential_oci_fleet_apps_management_fleet_credential["id"],
+    test_fleet_credential = oci.fleetappsmanagement.get_fleet_credential(fleet_credential_id=test_fleet_credential_oci_fleet_apps_management_fleet_credential["id"],
         fleet_id=test_fleet["id"])
     ```
 

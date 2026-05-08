@@ -52,8 +52,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -94,8 +94,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -136,8 +136,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -178,8 +178,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -220,8 +220,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -262,8 +262,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -308,8 +308,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -354,8 +354,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -400,8 +400,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -446,8 +446,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -492,8 +492,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -534,8 +534,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -576,8 +576,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -618,8 +618,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -702,8 +702,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -744,8 +744,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -786,8 +786,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -828,8 +828,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -870,8 +870,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -912,8 +912,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -957,8 +957,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1002,8 +1002,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1047,8 +1047,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1092,8 +1092,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1137,8 +1137,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1184,8 +1184,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1231,8 +1231,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1278,8 +1278,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1325,8 +1325,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1372,8 +1372,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1414,8 +1414,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1456,8 +1456,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1498,8 +1498,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1540,8 +1540,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1582,8 +1582,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1629,8 +1629,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1676,8 +1676,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1723,8 +1723,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1770,8 +1770,8 @@ public final class DisasterRecoveryFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
      * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

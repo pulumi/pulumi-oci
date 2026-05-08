@@ -70,8 +70,8 @@ export class MaskingPoliciesApplyDifferenceToMaskingColumns extends pulumi.Custo
  * Input properties used for looking up and filtering MaskingPoliciesApplyDifferenceToMaskingColumns resources.
  */
 export interface MaskingPoliciesApplyDifferenceToMaskingColumnsState {
-    maskingPolicyId?: pulumi.Input<string>;
-    sdmMaskingPolicyDifferenceId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
+    sdmMaskingPolicyDifferenceId?: pulumi.Input<string | undefined>;
 }
 
 /**

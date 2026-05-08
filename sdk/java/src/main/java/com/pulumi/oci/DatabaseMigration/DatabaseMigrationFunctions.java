@@ -85,8 +85,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -127,8 +127,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -169,8 +169,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -211,8 +211,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -253,8 +253,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -295,8 +295,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -381,8 +381,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -424,8 +424,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -467,8 +467,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -609,8 +609,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -653,8 +653,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -697,8 +697,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -741,8 +741,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -785,8 +785,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -830,8 +830,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -875,8 +875,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -920,8 +920,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -965,8 +965,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1010,8 +1010,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1098,8 +1098,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1142,8 +1142,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1186,8 +1186,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1230,8 +1230,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1272,8 +1272,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1314,8 +1314,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1356,8 +1356,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1398,8 +1398,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1440,8 +1440,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1485,8 +1485,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1530,8 +1530,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1575,8 +1575,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1620,8 +1620,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1667,8 +1667,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1711,8 +1711,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1755,8 +1755,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1799,8 +1799,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1843,8 +1843,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1885,8 +1885,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1930,8 +1930,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1975,8 +1975,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2020,8 +2020,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2065,8 +2065,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2112,8 +2112,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2162,8 +2162,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2212,8 +2212,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2262,8 +2262,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2312,8 +2312,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2362,8 +2362,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2406,8 +2406,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2450,8 +2450,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2494,8 +2494,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2538,8 +2538,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2580,8 +2580,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2623,8 +2623,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2666,8 +2666,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2709,8 +2709,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2752,8 +2752,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2795,8 +2795,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2837,8 +2837,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2879,8 +2879,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2963,8 +2963,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3005,8 +3005,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3047,8 +3047,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3089,8 +3089,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3131,8 +3131,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3173,8 +3173,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3217,8 +3217,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3261,8 +3261,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3305,8 +3305,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3349,8 +3349,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3393,8 +3393,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3437,8 +3437,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3481,8 +3481,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3525,8 +3525,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3569,8 +3569,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3613,8 +3613,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3720,8 +3720,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3762,8 +3762,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3804,8 +3804,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3846,8 +3846,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3888,8 +3888,8 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
      * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

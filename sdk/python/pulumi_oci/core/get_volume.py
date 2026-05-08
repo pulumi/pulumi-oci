@@ -362,7 +362,7 @@ def get_volume(volume_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume = oci.Core.get_volume(volume_id=test_volume_oci_core_volume["id"])
+    test_volume = oci.core.get_volume(volume_id=test_volume_oci_core_volume["id"])
     ```
 
 
@@ -401,7 +401,7 @@ def get_volume(volume_id: Optional[_builtins.str] = None,
         volume_id=pulumi.get(__ret__, 'volume_id'),
         vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'),
         xrc_kms_key_id=pulumi.get(__ret__, 'xrc_kms_key_id'))
-def get_volume_output(volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_volume_output(volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeResult]:
     """
     This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.
@@ -414,7 +414,7 @@ def get_volume_output(volume_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume = oci.Core.get_volume(volume_id=test_volume_oci_core_volume["id"])
+    test_volume = oci.core.get_volume(volume_id=test_volume_oci_core_volume["id"])
     ```
 
 

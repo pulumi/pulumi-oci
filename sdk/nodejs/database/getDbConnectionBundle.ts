@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundle = oci.Database.getDbConnectionBundle({
+ * const testDbConnectionBundle = oci.database.getDbConnectionBundle({
  *     dbConnectionBundleId: testDbConnectionBundleOciDatabaseDbConnectionBundle.id,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetDbConnectionBundleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundle = oci.Database.getDbConnectionBundle({
+ * const testDbConnectionBundle = oci.database.getDbConnectionBundle({
  *     dbConnectionBundleId: testDbConnectionBundleOciDatabaseDbConnectionBundle.id,
  * });
  * ```

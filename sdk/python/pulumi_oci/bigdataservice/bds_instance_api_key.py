@@ -23,8 +23,8 @@ class BdsInstanceApiKeyArgs:
                  key_alias: pulumi.Input[_builtins.str],
                  passphrase: pulumi.Input[_builtins.str],
                  user_id: pulumi.Input[_builtins.str],
-                 default_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceApiKey resource.
 
@@ -102,43 +102,43 @@ class BdsInstanceApiKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultRegion")
-    def default_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
         """
         return pulumi.get(self, "default_region")
 
     @default_region.setter
-    def default_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_region", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identity domain OCID , where user is present. For default domain , this field will be optional.
         """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
 
 @pulumi.input_type
 class _BdsInstanceApiKeyState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 pemfilepath: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 pemfilepath: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceApiKey resources.
 
@@ -183,127 +183,127 @@ class _BdsInstanceApiKeyState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRegion")
-    def default_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
         """
         return pulumi.get(self, "default_region")
 
     @default_region.setter
-    def default_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_region", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identity domain OCID , where user is present. For default domain , this field will be optional.
         """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fingerprint that corresponds to the public API key requested.
         """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="keyAlias")
-    def key_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
         """
         return pulumi.get(self, "key_alias")
 
     @key_alias.setter
-    def key_alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_alias", value)
 
     @_builtins.property
     @pulumi.getter
-    def passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 passphrase used to secure the private key which will be created on user behalf.
         """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
-    def passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "passphrase", value)
 
     @_builtins.property
     @pulumi.getter
-    def pemfilepath(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pemfilepath(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
         """
         return pulumi.get(self, "pemfilepath")
 
     @pemfilepath.setter
-    def pemfilepath(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pemfilepath(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pemfilepath", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the API key.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of your tenancy.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the API key was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the user for whom this new generated API key pair will be created.
 
@@ -314,7 +314,7 @@ class _BdsInstanceApiKeyState:
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
 
@@ -324,12 +324,12 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -429,12 +429,12 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -475,17 +475,17 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_region: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            key_alias: Optional[pulumi.Input[_builtins.str]] = None,
-            passphrase: Optional[pulumi.Input[_builtins.str]] = None,
-            pemfilepath: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            user_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceApiKey':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_region: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            key_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            pemfilepath: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceApiKey':
         """
         Get an existing BdsInstanceApiKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

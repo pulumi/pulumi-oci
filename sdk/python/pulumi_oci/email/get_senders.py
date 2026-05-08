@@ -147,7 +147,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+    test_senders = oci.email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
         email_ip_pool_id=test_email_ip_pool["id"],
@@ -180,12 +180,12 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         senders=pulumi.get(__ret__, 'senders'),
         state=pulumi.get(__ret__, 'state'))
-def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       email_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       email_ip_pool_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_senders_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       email_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       email_ip_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSendersResult]:
     """
     This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
@@ -198,7 +198,7 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+    test_senders = oci.email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
         email_ip_pool_id=test_email_ip_pool["id"],

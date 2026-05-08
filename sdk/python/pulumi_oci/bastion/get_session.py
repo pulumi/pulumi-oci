@@ -240,7 +240,7 @@ def get_session(session_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_session = oci.Bastion.get_session(session_id=test_session_oci_bastion_session["id"])
+    test_session = oci.bastion.get_session(session_id=test_session_oci_bastion_session["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_session(session_id: Optional[_builtins.str] = None,
         target_resource_details=pulumi.get(__ret__, 'target_resource_details'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_session_output(session_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_session_output(session_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSessionResult]:
     """
     This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -281,7 +281,7 @@ def get_session_output(session_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_session = oci.Bastion.get_session(session_id=test_session_oci_bastion_session["id"])
+    test_session = oci.bastion.get_session(session_id=test_session_oci_bastion_session["id"])
     ```
 
 

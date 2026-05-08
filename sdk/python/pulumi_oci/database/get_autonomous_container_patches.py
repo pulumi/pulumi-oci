@@ -118,7 +118,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_patches = oci.database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         autonomous_patch_type=autonomous_container_patch_autonomous_patch_type)
     ```
@@ -143,10 +143,10 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_container_patches_output(autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            autonomous_patch_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerPatchesFilterArgs', 'GetAutonomousContainerPatchesFilterArgsDict']]]]] = None,
+def get_autonomous_container_patches_output(autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            autonomous_patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerPatchesFilterArgs', 'GetAutonomousContainerPatchesFilterArgsDict']]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerPatchesResult]:
     """
     This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
@@ -159,7 +159,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_patches = oci.database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         autonomous_patch_type=autonomous_container_patch_autonomous_patch_type)
     ```

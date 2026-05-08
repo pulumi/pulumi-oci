@@ -27,10 +27,10 @@ class LifecycleEnvironmentArgs:
                  os_family: pulumi.Input[_builtins.str],
                  stages: pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]],
                  vendor_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LifecycleEnvironment resource.
 
@@ -142,71 +142,71 @@ class LifecycleEnvironmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
 
 @pulumi.input_type
 class _LifecycleEnvironmentState:
     def __init__(__self__, *,
-                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]] = None,
-                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
-                 stages: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]] = None,
+                 os_family: pulumi.Input[Optional[_builtins.str]] = None,
+                 stages: pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LifecycleEnvironment resources.
 
@@ -263,175 +263,175 @@ class _LifecycleEnvironmentState:
 
     @_builtins.property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def arch_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CPU architecture of the managed instances in the lifecycle environment.
         """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
-    def arch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def arch_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "arch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]]:
+    def managed_instance_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]]:
         """
         The list of managed instances associated with the lifecycle stage.
         """
         return pulumi.get(self, "managed_instance_ids")
 
     @managed_instance_ids.setter
-    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]]):
+    def managed_instance_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]]):
         pulumi.set(self, "managed_instance_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_family(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operating system of the managed instances in the lifecycle environment.
         """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
-    def os_family(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_family(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_family", value)
 
     @_builtins.property
     @pulumi.getter
-    def stages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]]:
+    def stages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]]:
         """
         (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         """
         return pulumi.get(self, "stages")
 
     @stages.setter
-    def stages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]]):
+    def stages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]]):
         pulumi.set(self, "stages", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the lifecycle environment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
     @time_modified.setter
-    def time_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
 
@@ -442,7 +442,7 @@ class _LifecycleEnvironmentState:
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
-    def vendor_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vendor_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vendor_name", value)
 
 
@@ -452,16 +452,16 @@ class LifecycleEnvironment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
-                 stages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_family: pulumi.Input[Optional[_builtins.str]] = None,
+                 stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -484,7 +484,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
             os_family=lifecycle_environment_os_family,
             stages=[{
                 "display_name": lifecycle_environment_stages_display_name,
-                "rank": lifecycle_environment_stages_rank,
+                "rank": int(lifecycle_environment_stages_rank),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -556,7 +556,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
             os_family=lifecycle_environment_os_family,
             stages=[{
                 "display_name": lifecycle_environment_stages_display_name,
-                "rank": lifecycle_environment_stages_rank,
+                "rank": int(lifecycle_environment_stages_rank),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -599,16 +599,16 @@ class LifecycleEnvironment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
-                 stages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_family: pulumi.Input[Optional[_builtins.str]] = None,
+                 stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -655,21 +655,21 @@ class LifecycleEnvironment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            arch_type: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            location: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LifecycleEnvironmentManagedInstanceIdArgs', 'LifecycleEnvironmentManagedInstanceIdArgsDict']]]]] = None,
-            os_family: Optional[pulumi.Input[_builtins.str]] = None,
-            stages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            vendor_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'LifecycleEnvironment':
+            arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentManagedInstanceIdArgs', 'LifecycleEnvironmentManagedInstanceIdArgsDict']]]]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            vendor_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'LifecycleEnvironment':
         """
         Get an existing LifecycleEnvironment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

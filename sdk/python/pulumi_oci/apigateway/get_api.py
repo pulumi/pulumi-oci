@@ -241,7 +241,7 @@ def get_api(api_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api = oci.ApiGateway.get_api(api_id=test_api_oci_apigateway_api["id"])
+    test_api = oci.apigateway.get_api(api_id=test_api_oci_apigateway_api["id"])
     ```
 
 
@@ -269,7 +269,7 @@ def get_api(api_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         validation_results=pulumi.get(__ret__, 'validation_results'))
-def get_api_output(api_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_api_output(api_id: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiResult]:
     """
     This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
@@ -282,7 +282,7 @@ def get_api_output(api_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api = oci.ApiGateway.get_api(api_id=test_api_oci_apigateway_api["id"])
+    test_api = oci.apigateway.get_api(api_id=test_api_oci_apigateway_api["id"])
     ```
 
 

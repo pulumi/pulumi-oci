@@ -41,8 +41,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -84,8 +84,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -127,8 +127,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -170,8 +170,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -213,8 +213,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -255,8 +255,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -303,8 +303,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -351,8 +351,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -399,8 +399,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -447,8 +447,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -495,8 +495,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -543,8 +543,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -592,8 +592,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -635,8 +635,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -678,8 +678,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -721,8 +721,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -764,8 +764,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -806,8 +806,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -854,8 +854,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -902,8 +902,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -950,8 +950,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -998,8 +998,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1046,8 +1046,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1094,8 +1094,8 @@ public final class ComputeCloudFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
      * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

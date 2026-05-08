@@ -134,7 +134,7 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
+    test_dedicated_vantage_points = oci.apmsynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
         display_name=dedicated_vantage_point_display_name,
         name=dedicated_vantage_point_name,
         status=dedicated_vantage_point_status)
@@ -163,11 +163,11 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
-def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVantagePointsFilterArgs', 'GetDedicatedVantagePointsFilterArgsDict']]]]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dedicated_vantage_points_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVantagePointsFilterArgs', 'GetDedicatedVantagePointsFilterArgsDict']]]]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVantagePointsResult]:
     """
     This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -180,7 +180,7 @@ def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
+    test_dedicated_vantage_points = oci.apmsynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
         display_name=dedicated_vantage_point_display_name,
         name=dedicated_vantage_point_name,
         status=dedicated_vantage_point_status)

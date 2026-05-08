@@ -184,7 +184,7 @@ def get_log_analytics_entity_type(entity_type_name: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_type = oci.LogAnalytics.get_log_analytics_entity_type(entity_type_name=log_analytics_entity_type_name,
+    test_log_analytics_entity_type = oci.loganalytics.get_log_analytics_entity_type(entity_type_name=log_analytics_entity_type_name,
         namespace=log_analytics_entity_type_namespace)
     ```
 
@@ -211,8 +211,8 @@ def get_log_analytics_entity_type(entity_type_name: Optional[_builtins.str] = No
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_log_analytics_entity_type_output(entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                         namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_entity_type_output(entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                         namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityTypeResult]:
     """
     This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -225,7 +225,7 @@ def get_log_analytics_entity_type_output(entity_type_name: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_type = oci.LogAnalytics.get_log_analytics_entity_type(entity_type_name=log_analytics_entity_type_name,
+    test_log_analytics_entity_type = oci.loganalytics.get_log_analytics_entity_type(entity_type_name=log_analytics_entity_type_name,
         namespace=log_analytics_entity_type_namespace)
     ```
 

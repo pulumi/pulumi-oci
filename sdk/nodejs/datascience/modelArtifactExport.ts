@@ -94,12 +94,12 @@ export class ModelArtifactExport extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ModelArtifactExport resources.
  */
 export interface ModelArtifactExportState {
-    artifactSourceType?: pulumi.Input<string>;
-    modelId?: pulumi.Input<string>;
-    namespace?: pulumi.Input<string>;
-    sourceBucket?: pulumi.Input<string>;
-    sourceObjectName?: pulumi.Input<string>;
-    sourceRegion?: pulumi.Input<string>;
+    artifactSourceType?: pulumi.Input<string | undefined>;
+    modelId?: pulumi.Input<string | undefined>;
+    namespace?: pulumi.Input<string | undefined>;
+    sourceBucket?: pulumi.Input<string | undefined>;
+    sourceObjectName?: pulumi.Input<string | undefined>;
+    sourceRegion?: pulumi.Input<string | undefined>;
 }
 
 /**

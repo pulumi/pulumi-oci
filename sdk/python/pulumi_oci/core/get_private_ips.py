@@ -181,21 +181,21 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
     import pulumi_oci as oci
 
     # Filter on Subnet OCID
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
+    test_private_ips_by_subnet = oci.core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on VNIC OCID
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
+    test_private_ips_by_vnic = oci.core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on private IP address and Subnet OCID
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+    test_private_ips_by_ip_address = oci.core.get_private_ips(ip_address=private_ip_ip_address,
         ip_state=private_ip_ip_state,
         lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],
@@ -234,13 +234,13 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
-                           ip_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           ip_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           lifetime: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           vlan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           vnic_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_ips_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
+                           ip_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           ip_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           lifetime: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           vlan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           vnic_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateIpsResult]:
     """
     This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
@@ -269,21 +269,21 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     import pulumi_oci as oci
 
     # Filter on Subnet OCID
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
+    test_private_ips_by_subnet = oci.core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on VNIC OCID
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
+    test_private_ips_by_vnic = oci.core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on private IP address and Subnet OCID
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+    test_private_ips_by_ip_address = oci.core.get_private_ips(ip_address=private_ip_ip_address,
         ip_state=private_ip_ip_state,
         lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],

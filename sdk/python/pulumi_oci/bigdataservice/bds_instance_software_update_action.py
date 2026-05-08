@@ -54,8 +54,8 @@ class BdsInstanceSoftwareUpdateActionArgs:
 @pulumi.input_type
 class _BdsInstanceSoftwareUpdateActionState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_update_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_update_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceSoftwareUpdateAction resources.
 
@@ -68,23 +68,23 @@ class _BdsInstanceSoftwareUpdateActionState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareUpdateKeys")
-    def software_update_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def software_update_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "software_update_keys")
 
     @software_update_keys.setter
-    def software_update_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def software_update_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "software_update_keys", value)
 
 
@@ -94,8 +94,8 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_update_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_update_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
@@ -156,8 +156,8 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_update_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_update_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -183,8 +183,8 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            software_update_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'BdsInstanceSoftwareUpdateAction':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_update_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'BdsInstanceSoftwareUpdateAction':
         """
         Get an existing BdsInstanceSoftwareUpdateAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -22,7 +22,7 @@ class CloudGuardConfigurationArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  reporting_region: pulumi.Input[_builtins.str],
                  status: pulumi.Input[_builtins.str],
-                 self_manage_resources: Optional[pulumi.Input[_builtins.bool]] = None):
+                 self_manage_resources: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a CloudGuardConfiguration resource.
 
@@ -83,24 +83,24 @@ class CloudGuardConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="selfManageResources")
-    def self_manage_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def self_manage_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         """
         return pulumi.get(self, "self_manage_resources")
 
     @self_manage_resources.setter
-    def self_manage_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def self_manage_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "self_manage_resources", value)
 
 
 @pulumi.input_type
 class _CloudGuardConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reporting_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 self_manage_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reporting_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 self_manage_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudGuardConfiguration resources.
 
@@ -124,43 +124,43 @@ class _CloudGuardConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reportingRegion")
-    def reporting_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reporting_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The reporting region
         """
         return pulumi.get(self, "reporting_region")
 
     @reporting_region.setter
-    def reporting_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reporting_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reporting_region", value)
 
     @_builtins.property
     @pulumi.getter(name="selfManageResources")
-    def self_manage_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def self_manage_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         """
         return pulumi.get(self, "self_manage_resources")
 
     @self_manage_resources.setter
-    def self_manage_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def self_manage_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "self_manage_resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of Cloud Guard tenant
 
@@ -171,7 +171,7 @@ class _CloudGuardConfigurationState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -181,10 +181,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reporting_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 self_manage_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reporting_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 self_manage_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -205,7 +205,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             reporting_region=cloud_guard_configuration_reporting_region,
             status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources)
+            self_manage_resources=cloud_guard_configuration_self_manage_resources == "true")
         ```
 
         ## Import
@@ -249,7 +249,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             reporting_region=cloud_guard_configuration_reporting_region,
             status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources)
+            self_manage_resources=cloud_guard_configuration_self_manage_resources == "true")
         ```
 
         ## Import
@@ -272,10 +272,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reporting_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 self_manage_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reporting_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 self_manage_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -305,10 +305,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            reporting_region: Optional[pulumi.Input[_builtins.str]] = None,
-            self_manage_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudGuardConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            reporting_region: pulumi.Input[Optional[_builtins.str]] = None,
+            self_manage_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudGuardConfiguration':
         """
         Get an existing CloudGuardConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

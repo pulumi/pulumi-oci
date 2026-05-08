@@ -22,9 +22,9 @@ __all__ = ['ManagedInstanceInstallWindowsUpdatesManagementArgs', 'ManagedInstanc
 class ManagedInstanceInstallWindowsUpdatesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_id: pulumi.Input[_builtins.str],
-                 windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 windows_update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
+                 windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceInstallWindowsUpdatesManagement resource.
 
@@ -55,48 +55,48 @@ class ManagedInstanceInstallWindowsUpdatesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
-    def windows_update_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def windows_update_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
         """
         return pulumi.get(self, "windows_update_names")
 
     @windows_update_names.setter
-    def windows_update_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def windows_update_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "windows_update_names", value)
 
     @_builtins.property
     @pulumi.getter(name="windowsUpdateTypes")
-    def windows_update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def windows_update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The types of Windows updates to be installed.
         """
         return pulumi.get(self, "windows_update_types")
 
     @windows_update_types.setter
-    def windows_update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def windows_update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "windows_update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceInstallWindowsUpdatesManagementState:
     def __init__(__self__, *,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 windows_update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceInstallWindowsUpdatesManagement resources.
 
@@ -116,50 +116,50 @@ class _ManagedInstanceInstallWindowsUpdatesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "managed_instance_id")
 
     @managed_instance_id.setter
-    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
-    def windows_update_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def windows_update_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
         """
         return pulumi.get(self, "windows_update_names")
 
     @windows_update_names.setter
-    def windows_update_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def windows_update_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "windows_update_names", value)
 
     @_builtins.property
     @pulumi.getter(name="windowsUpdateTypes")
-    def windows_update_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def windows_update_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The types of Windows updates to be installed.
         """
         return pulumi.get(self, "windows_update_types")
 
     @windows_update_types.setter
-    def windows_update_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def windows_update_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "windows_update_types", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -169,10 +169,10 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 windows_update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -268,10 +268,10 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 windows_update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -297,10 +297,10 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            windows_update_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceInstallWindowsUpdatesManagement':
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceInstallWindowsUpdatesManagement':
         """
         Get an existing ManagedInstanceInstallWindowsUpdatesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

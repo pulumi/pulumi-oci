@@ -119,7 +119,7 @@ def get_events(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+    test_audit_events = oci.audit.get_events(compartment_id=compartment_id,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```
@@ -148,10 +148,10 @@ def get_events(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         start_time=pulumi.get(__ret__, 'start_time'))
-def get_events_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      end_time: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
-                      start_time: Optional[pulumi.Input[_builtins.str]] = None,
+def get_events_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
+                      start_time: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventsResult]:
     """
     This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
@@ -165,7 +165,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+    test_audit_events = oci.audit.get_events(compartment_id=compartment_id,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```

@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentCount = oci.ManagementAgent.getManagementAgentCount({
+ * const testManagementAgentCount = oci.managementagent.getManagementAgentCount({
  *     compartmentId: compartmentId,
  *     groupBies: managementAgentCountGroupBy,
- *     hasPlugins: managementAgentCountHasPlugins,
+ *     hasPlugins: managementAgentCountHasPlugins === "true",
  *     installType: managementAgentCountInstallType,
  * });
  * ```
@@ -93,10 +93,10 @@ export interface GetManagementAgentCountResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentCount = oci.ManagementAgent.getManagementAgentCount({
+ * const testManagementAgentCount = oci.managementagent.getManagementAgentCount({
  *     compartmentId: compartmentId,
  *     groupBies: managementAgentCountGroupBy,
- *     hasPlugins: managementAgentCountHasPlugins,
+ *     hasPlugins: managementAgentCountHasPlugins === "true",
  *     installType: managementAgentCountInstallType,
  * });
  * ```
@@ -126,9 +126,9 @@ export interface GetManagementAgentCountOutputArgs {
     /**
      * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
      */
-    hasPlugins?: pulumi.Input<boolean>;
+    hasPlugins?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      */
-    installType?: pulumi.Input<string>;
+    installType?: pulumi.Input<string | undefined>;
 }

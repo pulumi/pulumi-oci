@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Psql.getShapes({
+ * const testShapes = oci.psql.getShapes({
  *     compartmentId: compartmentId,
  *     id: shapeId,
  * });
@@ -74,7 +74,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Psql.getShapes({
+ * const testShapes = oci.psql.getShapes({
  *     compartmentId: compartmentId,
  *     id: shapeId,
  * });
@@ -97,10 +97,10 @@ export interface GetShapesOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetShapesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetShapesFilterArgs>[] | undefined>;
     /**
      * A filter to return the feature by the shape name.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }

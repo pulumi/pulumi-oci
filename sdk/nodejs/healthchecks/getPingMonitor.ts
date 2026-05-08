@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitor = oci.HealthChecks.getPingMonitor({
+ * const testPingMonitor = oci.healthchecks.getPingMonitor({
  *     monitorId: testMonitor.id,
  * });
  * ```
@@ -114,7 +114,7 @@ export interface GetPingMonitorResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitor = oci.HealthChecks.getPingMonitor({
+ * const testPingMonitor = oci.healthchecks.getPingMonitor({
  *     monitorId: testMonitor.id,
  * });
  * ```

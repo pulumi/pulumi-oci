@@ -134,7 +134,7 @@ def get_subscribed_services(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=compartment_id,
+    test_subscribed_services = oci.onesubsription.get_subscribed_services(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         order_line_id=test_order_line["id"],
         status=subscribed_service_status)
@@ -163,11 +163,11 @@ def get_subscribed_services(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         subscribed_services=pulumi.get(__ret__, 'subscribed_services'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscribedServicesFilterArgs', 'GetSubscribedServicesFilterArgsDict']]]]] = None,
-                                   order_line_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscribed_services_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscribedServicesFilterArgs', 'GetSubscribedServicesFilterArgsDict']]]]] = None,
+                                   order_line_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscribedServicesResult]:
     """
     This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
@@ -180,7 +180,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=compartment_id,
+    test_subscribed_services = oci.onesubsription.get_subscribed_services(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         order_line_id=test_order_line["id"],
         status=subscribed_service_status)

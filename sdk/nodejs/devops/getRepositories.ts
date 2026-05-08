@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.DevOps.getRepositories({
+ * const testRepositories = oci.devops.getRepositories({
  *     compartmentId: compartmentId,
  *     name: repositoryName,
  *     projectId: testProject.id,
@@ -108,7 +108,7 @@ export interface GetRepositoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.DevOps.getRepositories({
+ * const testRepositories = oci.devops.getRepositories({
  *     compartmentId: compartmentId,
  *     name: repositoryName,
  *     projectId: testProject.id,
@@ -137,22 +137,22 @@ export interface GetRepositoriesOutputArgs {
     /**
      * The OCID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoriesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * unique project identifier
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycle state matches the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

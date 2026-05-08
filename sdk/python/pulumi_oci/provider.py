@@ -19,22 +19,22 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ocid: Optional[pulumi.Input[_builtins.str]] = None):
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_file_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_auto_retries: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_defined_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_specific_service_endpoint_template_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 retries_config_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ocid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
@@ -93,31 +93,31 @@ class ProviderArgs:
 
     @_builtins.property
     @pulumi.getter
-    def auth(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
     @auth.setter
-    def auth(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth", value)
 
     @_builtins.property
     @pulumi.getter(name="configFileProfile")
-    def config_file_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_file_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         """
         return pulumi.get(self, "config_file_profile")
 
     @config_file_profile.setter
-    def config_file_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_file_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_file_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="disableAutoRetries")
-    def disable_auto_retries(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_auto_retries(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) Disable automatic retries for retriable errors.
         Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
@@ -125,48 +125,48 @@ class ProviderArgs:
         return pulumi.get(self, "disable_auto_retries")
 
     @disable_auto_retries.setter
-    def disable_auto_retries(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_auto_retries(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_auto_retries", value)
 
     @_builtins.property
     @pulumi.getter(name="dualStackEndpointEnabled")
-    def dual_stack_endpoint_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dual_stack_endpoint_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) flags to enable Dual Stack endpoint.
         """
         return pulumi.get(self, "dual_stack_endpoint_enabled")
 
     @dual_stack_endpoint_enabled.setter
-    def dual_stack_endpoint_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dual_stack_endpoint_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dual_stack_endpoint_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreDefinedTags")
-    def ignore_defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ignore_defined_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
         """
         return pulumi.get(self, "ignore_defined_tags")
 
     @ignore_defined_tags.setter
-    def ignore_defined_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ignore_defined_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ignore_defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) A PEM formatted RSA private key for the user.
         A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
@@ -174,24 +174,24 @@ class ProviderArgs:
         return pulumi.get(self, "private_key")
 
     @private_key.setter
-    def private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassword")
-    def private_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The password used to secure the private key.
         """
         return pulumi.get(self, "private_key_password")
 
     @private_key_password.setter
-    def private_key_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_password", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPath")
-    def private_key_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The path to the user's PEM formatted private key.
         A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
@@ -199,48 +199,48 @@ class ProviderArgs:
         return pulumi.get(self, "private_key_path")
 
     @private_key_path.setter
-    def private_key_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_path", value)
 
     @_builtins.property
     @pulumi.getter(name="realmSpecificServiceEndpointTemplateEnabled")
-    def realm_specific_service_endpoint_template_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def realm_specific_service_endpoint_template_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Optional) flags to enable realm specific service endpoint.
         """
         return pulumi.get(self, "realm_specific_service_endpoint_template_enabled")
 
     @realm_specific_service_endpoint_template_enabled.setter
-    def realm_specific_service_endpoint_template_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def realm_specific_service_endpoint_template_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "realm_specific_service_endpoint_template_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Required) The region for API connections (e.g. us-ashburn-1).
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="retriesConfigFile")
-    def retries_config_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def retries_config_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
         """
         return pulumi.get(self, "retries_config_file")
 
     @retries_config_file.setter
-    def retries_config_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def retries_config_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "retries_config_file", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDurationSeconds")
-    def retry_duration_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_duration_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
         The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
@@ -248,40 +248,40 @@ class ProviderArgs:
         return pulumi.get(self, "retry_duration_seconds")
 
     @retry_duration_seconds.setter
-    def retry_duration_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_duration_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_duration_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="testTimeMaintenanceRebootDue")
-    def test_time_maintenance_reboot_due(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def test_time_maintenance_reboot_due(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "test_time_maintenance_reboot_due")
 
     @test_time_maintenance_reboot_due.setter
-    def test_time_maintenance_reboot_due(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def test_time_maintenance_reboot_due(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "test_time_maintenance_reboot_due", value)
 
     @_builtins.property
     @pulumi.getter(name="userOcid")
-    def user_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "user_ocid")
 
     @user_ocid.setter
-    def user_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_ocid", value)
 
 
@@ -291,22 +291,22 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_file_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_auto_retries: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_defined_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_specific_service_endpoint_template_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 retries_config_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the oci package. By default, resources use package-wide configuration
@@ -365,22 +365,22 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_file_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 disable_auto_retries: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_defined_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_specific_service_endpoint_template_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 retries_config_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

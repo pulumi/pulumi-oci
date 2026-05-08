@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabasePdbConversionHistoryEntry = oci.Database.getDatabasePdbConversionHistoryEntry({
+ * const testDatabasePdbConversionHistoryEntry = oci.database.getDatabasePdbConversionHistoryEntry({
  *     databaseId: testDatabase.id,
  *     pdbConversionHistoryEntryId: testPdbConversionHistoryEntry.id,
  * });
@@ -110,7 +110,7 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabasePdbConversionHistoryEntry = oci.Database.getDatabasePdbConversionHistoryEntry({
+ * const testDatabasePdbConversionHistoryEntry = oci.database.getDatabasePdbConversionHistoryEntry({
  *     databaseId: testDatabase.id,
  *     pdbConversionHistoryEntryId: testPdbConversionHistoryEntry.id,
  * });

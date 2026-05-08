@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
+ * const testCloudExadataInfrastructures = oci.database.getCloudExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
  *     displayName: cloudExadataInfrastructureDisplayName,
@@ -100,7 +100,7 @@ export interface GetCloudExadataInfrastructuresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
+ * const testCloudExadataInfrastructures = oci.database.getCloudExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
  *     displayName: cloudExadataInfrastructureDisplayName,
@@ -126,7 +126,7 @@ export interface GetCloudExadataInfrastructuresOutputArgs {
     /**
      * A filter to return only resources that match the given cluster placement group ID exactly.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -134,10 +134,10 @@ export interface GetCloudExadataInfrastructuresOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudExadataInfrastructuresFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudExadataInfrastructuresFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -36,8 +36,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAlarmsEnabled: monitoringTemplateIsAlarmsEnabled,
- *     isSplitNotificationEnabled: monitoringTemplateIsSplitNotificationEnabled,
+ *     isAlarmsEnabled: monitoringTemplateIsAlarmsEnabled === "true",
+ *     isSplitNotificationEnabled: monitoringTemplateIsSplitNotificationEnabled === "true",
  *     messageFormat: monitoringTemplateMessageFormat,
  *     repeatNotificationDuration: monitoringTemplateRepeatNotificationDuration,
  * });
@@ -238,43 +238,43 @@ export interface MonitoringTemplateState {
     /**
      * The OCID of the compartment containing the monitoringTemplate.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
      */
-    destinations?: pulumi.Input<pulumi.Input<string>[]>;
+    destinations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
      */
-    isAlarmsEnabled?: pulumi.Input<boolean>;
+    isAlarmsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
      */
-    isSplitNotificationEnabled?: pulumi.Input<boolean>;
+    isSplitNotificationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) List of members of this monitoring template
      */
-    members?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoringTemplateMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoringTemplateMember>[] | undefined>;
     /**
      * (Updatable) The format to use for alarm notifications.
      */
-    messageFormat?: pulumi.Input<string>;
+    messageFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
      *
@@ -282,39 +282,39 @@ export interface MonitoringTemplateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repeatNotificationDuration?: pulumi.Input<string>;
+    repeatNotificationDuration?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the monitoring template.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The current status of the monitoring template i.e. whether it is Applied or NotApplied.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the monitoringTemplate was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Total Alarm Conditions
      */
-    totalAlarmConditions?: pulumi.Input<number>;
+    totalAlarmConditions?: pulumi.Input<number | undefined>;
     /**
      * Total Applied Alarm Conditions
      */
-    totalAppliedAlarmConditions?: pulumi.Input<number>;
+    totalAppliedAlarmConditions?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -328,11 +328,11 @@ export interface MonitoringTemplateArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
      */
@@ -344,15 +344,15 @@ export interface MonitoringTemplateArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
      */
-    isAlarmsEnabled?: pulumi.Input<boolean>;
+    isAlarmsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
      */
-    isSplitNotificationEnabled?: pulumi.Input<boolean>;
+    isSplitNotificationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) List of members of this monitoring template
      */
@@ -360,7 +360,7 @@ export interface MonitoringTemplateArgs {
     /**
      * (Updatable) The format to use for alarm notifications.
      */
-    messageFormat?: pulumi.Input<string>;
+    messageFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
      *
@@ -368,5 +368,5 @@ export interface MonitoringTemplateArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repeatNotificationDuration?: pulumi.Input<string>;
+    repeatNotificationDuration?: pulumi.Input<string | undefined>;
 }

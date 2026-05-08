@@ -160,7 +160,7 @@ def get_fsu_cycles(collection_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycles = oci.FleetSoftwareUpdate.get_fsu_cycles(compartment_id=compartment_id,
+    test_fsu_cycles = oci.fleetsoftwareupdate.get_fsu_cycles(compartment_id=compartment_id,
         collection_type=fsu_cycle_collection_type,
         display_name=fsu_cycle_display_name,
         fsu_collection_id=test_fsu_collection["id"],
@@ -197,13 +197,13 @@ def get_fsu_cycles(collection_type: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         target_version=pulumi.get(__ret__, 'target_version'))
-def get_fsu_cycles_output(collection_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFsuCyclesFilterArgs', 'GetFsuCyclesFilterArgsDict']]]]] = None,
-                          fsu_collection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          target_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fsu_cycles_output(collection_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFsuCyclesFilterArgs', 'GetFsuCyclesFilterArgsDict']]]]] = None,
+                          fsu_collection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          target_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCyclesResult]:
     """
     This data source provides the list of Fsu Cycles in Oracle Cloud Infrastructure Fleet Software Update service.
@@ -216,7 +216,7 @@ def get_fsu_cycles_output(collection_type: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycles = oci.FleetSoftwareUpdate.get_fsu_cycles(compartment_id=compartment_id,
+    test_fsu_cycles = oci.fleetsoftwareupdate.get_fsu_cycles(compartment_id=compartment_id,
         collection_type=fsu_cycle_collection_type,
         display_name=fsu_cycle_display_name,
         fsu_collection_id=test_fsu_collection["id"],

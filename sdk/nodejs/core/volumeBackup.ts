@@ -222,83 +222,83 @@ export interface VolumeBackupState {
     /**
      * (Updatable) The OCID of the compartment that contains the volume backup.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      */
-    expirationTime?: pulumi.Input<string>;
+    expirationTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The size of the volume, in GBs.
      */
-    sizeInGbs?: pulumi.Input<string>;
+    sizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
-    sizeInMbs?: pulumi.Input<string>;
+    sizeInMbs?: pulumi.Input<string | undefined>;
     /**
      * Details of the volume backup source in the cloud.
      */
-    sourceDetails?: pulumi.Input<inputs.Core.VolumeBackupSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Core.VolumeBackupSourceDetails | undefined>;
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the source volume backup.
      */
-    sourceVolumeBackupId?: pulumi.Input<string>;
+    sourceVolumeBackupId?: pulumi.Input<string | undefined>;
     /**
      * The current state of a volume backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
      */
-    timeRequestReceived?: pulumi.Input<string>;
+    timeRequestReceived?: pulumi.Input<string | undefined>;
     /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
      */
-    uniqueSizeInGbs?: pulumi.Input<string>;
+    uniqueSizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      *
      * @deprecated The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
      */
-    uniqueSizeInMbs?: pulumi.Input<string>;
+    uniqueSizeInMbs?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,33 +308,33 @@ export interface VolumeBackupArgs {
     /**
      * (Updatable) The OCID of the compartment that contains the volume backup.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * Details of the volume backup source in the cloud.
      */
-    sourceDetails?: pulumi.Input<inputs.Core.VolumeBackupSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Core.VolumeBackupSourceDetails | undefined>;
     /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }

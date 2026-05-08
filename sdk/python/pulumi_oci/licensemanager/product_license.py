@@ -25,10 +25,10 @@ class ProductLicenseArgs:
                  display_name: pulumi.Input[_builtins.str],
                  is_vendor_oracle: pulumi.Input[_builtins.bool],
                  license_unit: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProductLicense resource.
 
@@ -108,43 +108,43 @@ class ProductLicenseArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
         """
         (Updatable) The image details associated with the product license.
         """
         return pulumi.get(self, "images")
 
     @images.setter
-    def images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]):
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]):
         pulumi.set(self, "images", value)
 
     @_builtins.property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product license vendor name, for example: Microsoft, RHEL, and so on. 
 
@@ -155,33 +155,33 @@ class ProductLicenseArgs:
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
-    def vendor_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vendor_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vendor_name", value)
 
 
 @pulumi.input_type
 class _ProductLicenseState:
     def __init__(__self__, *,
-                 active_license_record_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
-                 is_over_subscribed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vendor_oracle: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_active_license_unit_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_license_record_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_license_units_consumed: Optional[pulumi.Input[_builtins.float]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_license_record_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
+                 is_over_subscribed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_active_license_unit_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_license_record_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_license_units_consumed: pulumi.Input[Optional[_builtins.float]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProductLicense resources.
 
@@ -253,235 +253,235 @@ class _ProductLicenseState:
 
     @_builtins.property
     @pulumi.getter(name="activeLicenseRecordCount")
-    def active_license_record_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def active_license_record_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of active license records associated with the product license.
         """
         return pulumi.get(self, "active_license_record_count")
 
     @active_license_record_count.setter
-    def active_license_record_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def active_license_record_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "active_license_record_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the product license.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]:
         """
         (Updatable) The image details associated with the product license.
         """
         return pulumi.get(self, "images")
 
     @images.setter
-    def images(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]):
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProductLicenseImageArgs']]]]):
         pulumi.set(self, "images", value)
 
     @_builtins.property
     @pulumi.getter(name="isOverSubscribed")
-    def is_over_subscribed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_over_subscribed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether or not the product license is oversubscribed.
         """
         return pulumi.get(self, "is_over_subscribed")
 
     @is_over_subscribed.setter
-    def is_over_subscribed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_over_subscribed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_over_subscribed", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unlimited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies if the license unit count is unlimited.
         """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
-    def is_unlimited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unlimited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unlimited", value)
 
     @_builtins.property
     @pulumi.getter(name="isVendorOracle")
-    def is_vendor_oracle(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vendor_oracle(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies if the product license vendor is Oracle or a third party.
         """
         return pulumi.get(self, "is_vendor_oracle")
 
     @is_vendor_oracle.setter
-    def is_vendor_oracle(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vendor_oracle(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vendor_oracle", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product license unit.
         """
         return pulumi.get(self, "license_unit")
 
     @license_unit.setter
-    def license_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_unit", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current product license state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current product license status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusDescription")
-    def status_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status description for the current product license status.
         """
         return pulumi.get(self, "status_description")
 
     @status_description.setter
-    def status_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_description", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="totalActiveLicenseUnitCount")
-    def total_active_license_unit_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_active_license_unit_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
         """
         return pulumi.get(self, "total_active_license_unit_count")
 
     @total_active_license_unit_count.setter
-    def total_active_license_unit_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_active_license_unit_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_active_license_unit_count", value)
 
     @_builtins.property
     @pulumi.getter(name="totalLicenseRecordCount")
-    def total_license_record_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_license_record_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of license records associated with the product license.
         """
         return pulumi.get(self, "total_license_record_count")
 
     @total_license_record_count.setter
-    def total_license_record_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_license_record_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_license_record_count", value)
 
     @_builtins.property
     @pulumi.getter(name="totalLicenseUnitsConsumed")
-    def total_license_units_consumed(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_license_units_consumed(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of license units consumed. Updated after each allocation run.
         """
         return pulumi.get(self, "total_license_units_consumed")
 
     @total_license_units_consumed.setter
-    def total_license_units_consumed(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_license_units_consumed(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_license_units_consumed", value)
 
     @_builtins.property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The product license vendor name, for example: Microsoft, RHEL, and so on. 
 
@@ -492,7 +492,7 @@ class _ProductLicenseState:
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
-    def vendor_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vendor_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vendor_name", value)
 
 
@@ -502,14 +502,14 @@ class ProductLicense(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
-                 is_vendor_oracle: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+                 is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
@@ -528,7 +528,7 @@ class ProductLicense(pulumi.CustomResource):
         test_product_license = oci.licensemanager.ProductLicense("test_product_license",
             compartment_id=compartment_id,
             display_name=product_license_display_name,
-            is_vendor_oracle=product_license_is_vendor_oracle,
+            is_vendor_oracle=product_license_is_vendor_oracle == "true",
             license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -590,7 +590,7 @@ class ProductLicense(pulumi.CustomResource):
         test_product_license = oci.licensemanager.ProductLicense("test_product_license",
             compartment_id=compartment_id,
             display_name=product_license_display_name,
-            is_vendor_oracle=product_license_is_vendor_oracle,
+            is_vendor_oracle=product_license_is_vendor_oracle == "true",
             license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -629,14 +629,14 @@ class ProductLicense(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
-                 is_vendor_oracle: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+                 is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -684,26 +684,26 @@ class ProductLicense(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_license_record_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
-            is_over_subscribed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vendor_oracle: Optional[pulumi.Input[_builtins.bool]] = None,
-            license_unit: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_description: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            total_active_license_unit_count: Optional[pulumi.Input[_builtins.int]] = None,
-            total_license_record_count: Optional[pulumi.Input[_builtins.int]] = None,
-            total_license_units_consumed: Optional[pulumi.Input[_builtins.float]] = None,
-            vendor_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProductLicense':
+            active_license_record_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+            is_over_subscribed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_description: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_active_license_unit_count: pulumi.Input[Optional[_builtins.int]] = None,
+            total_license_record_count: pulumi.Input[Optional[_builtins.int]] = None,
+            total_license_units_consumed: pulumi.Input[Optional[_builtins.float]] = None,
+            vendor_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProductLicense':
         """
         Get an existing ProductLicense resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

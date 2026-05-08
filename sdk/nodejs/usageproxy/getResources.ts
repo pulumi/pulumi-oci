@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResources = oci.UsageProxy.getResources({
+ * const testResources = oci.usageproxy.getResources({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     entitlementId: testEntitlement.id,
@@ -83,7 +83,7 @@ export interface GetResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResources = oci.UsageProxy.getResources({
+ * const testResources = oci.usageproxy.getResources({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     entitlementId: testEntitlement.id,
@@ -111,8 +111,8 @@ export interface GetResourcesOutputArgs {
     /**
      * Subscription or entitlement Id.
      */
-    entitlementId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetResourcesFilterArgs>[]>;
+    entitlementId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetResourcesFilterArgs>[] | undefined>;
     /**
      * Service Name.
      */

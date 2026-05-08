@@ -22,7 +22,7 @@ __all__ = ['SecurityAssessmentCheckInitArgs', 'SecurityAssessmentCheck']
 class SecurityAssessmentCheckInitArgs:
     def __init__(__self__, *,
                  security_assessment_id: pulumi.Input[_builtins.str],
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]] = None):
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityAssessmentCheck resource.
 
@@ -49,29 +49,29 @@ class SecurityAssessmentCheckInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
 
 @pulumi.input_type
 class _SecurityAssessmentCheckState:
     def __init__(__self__, *,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 oneline: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]] = None,
-                 references: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]] = None,
-                 remarks: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 suggested_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None):
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 oneline: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]] = None,
+                 references: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]] = None,
+                 remarks: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 suggested_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessmentCheck resources.
 
@@ -107,79 +107,79 @@ class _SecurityAssessmentCheckState:
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The category to which the check belongs to.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the check.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def oneline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oneline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provides a recommended approach to take to remediate the check reported.
         """
         return pulumi.get(self, "oneline")
 
     @oneline.setter
-    def oneline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oneline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oneline", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]:
+    def references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]:
         """
         Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
         """
         return pulumi.get(self, "references")
 
     @references.setter
-    def references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]):
+    def references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]):
         pulumi.set(self, "references", value)
 
     @_builtins.property
     @pulumi.getter
-    def remarks(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remarks(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         """
         return pulumi.get(self, "remarks")
 
     @remarks.setter
-    def remarks(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remarks(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remarks", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
-    def security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,31 +187,31 @@ class _SecurityAssessmentCheckState:
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
-    def security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="suggestedSeverity")
-    def suggested_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def suggested_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
         """
         return pulumi.get(self, "suggested_severity")
 
     @suggested_severity.setter
-    def suggested_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def suggested_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "suggested_severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The short title for the check.
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
 
@@ -221,8 +221,8 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Security Assessment Check resource in Oracle Cloud Infrastructure Data Safe service.
@@ -317,8 +317,8 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -349,15 +349,15 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            oneline: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
-            references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict']]]]] = None,
-            remarks: Optional[pulumi.Input[_builtins.str]] = None,
-            security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            suggested_severity: Optional[pulumi.Input[_builtins.str]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None) -> 'SecurityAssessmentCheck':
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            oneline: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict']]]]] = None,
+            remarks: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            suggested_severity: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> 'SecurityAssessmentCheck':
         """
         Get an existing SecurityAssessmentCheck resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

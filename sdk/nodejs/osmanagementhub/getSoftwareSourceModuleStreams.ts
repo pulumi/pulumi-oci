@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreams = oci.OsManagementHub.getSoftwareSourceModuleStreams({
+ * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest,
+ *     isLatest: softwareSourceModuleStreamIsLatest === "true",
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,
@@ -109,9 +109,9 @@ export interface GetSoftwareSourceModuleStreamsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreams = oci.OsManagementHub.getSoftwareSourceModuleStreams({
+ * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest,
+ *     isLatest: softwareSourceModuleStreamIsLatest === "true",
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,
@@ -134,23 +134,23 @@ export function getSoftwareSourceModuleStreamsOutput(args: GetSoftwareSourceModu
  * A collection of arguments for invoking getSoftwareSourceModuleStreams.
  */
 export interface GetSoftwareSourceModuleStreamsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceModuleStreamsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceModuleStreamsFilterArgs>[] | undefined>;
     /**
      * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The name of a module. This parameter is required if a streamName is specified.
      */
-    moduleName?: pulumi.Input<string>;
+    moduleName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the module name given.
      */
-    moduleNameContains?: pulumi.Input<string>;
+    moduleNameContains?: pulumi.Input<string | undefined>;
     /**
      * The name of the entity to be queried.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */

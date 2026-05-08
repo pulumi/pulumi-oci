@@ -358,7 +358,7 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=sensitive_data_models_sensitive_column_sensitive_column_key,
+    test_sensitive_data_models_sensitive_column = oci.datasafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=sensitive_data_models_sensitive_column_sensitive_column_key,
         sensitive_data_model_id=test_sensitive_data_model["id"])
     ```
 
@@ -399,8 +399,8 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[_b
         status=pulumi.get(__ret__, 'status'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnResult]:
     """
     This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -413,7 +413,7 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=sensitive_data_models_sensitive_column_sensitive_column_key,
+    test_sensitive_data_models_sensitive_column = oci.datasafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=sensitive_data_models_sensitive_column_sensitive_column_key,
         sensitive_data_model_id=test_sensitive_data_model["id"])
     ```
 

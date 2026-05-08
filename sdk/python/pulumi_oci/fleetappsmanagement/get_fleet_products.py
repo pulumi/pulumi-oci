@@ -147,7 +147,7 @@ def get_fleet_products(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_products = oci.FleetAppsManagement.get_fleet_products(fleet_id=test_fleet["id"],
+    test_fleet_products = oci.fleetappsmanagement.get_fleet_products(fleet_id=test_fleet["id"],
         compartment_id=compartment_id,
         display_name=fleet_product_display_name,
         resource_display_name=fleet_product_resource_display_name,
@@ -180,12 +180,12 @@ def get_fleet_products(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_display_name=pulumi.get(__ret__, 'resource_display_name'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
-def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict']]]]] = None,
-                              fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              resource_display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_products_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict']]]]] = None,
+                              fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              resource_display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetProductsResult]:
     """
     This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -198,7 +198,7 @@ def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_products = oci.FleetAppsManagement.get_fleet_products(fleet_id=test_fleet["id"],
+    test_fleet_products = oci.fleetappsmanagement.get_fleet_products(fleet_id=test_fleet["id"],
         compartment_id=compartment_id,
         display_name=fleet_product_display_name,
         resource_display_name=fleet_product_resource_display_name,

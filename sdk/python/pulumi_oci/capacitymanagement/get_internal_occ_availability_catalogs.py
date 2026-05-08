@@ -151,7 +151,7 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+    test_internal_occ_availability_catalogs = oci.capacitymanagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         catalog_state=internal_occ_availability_catalog_catalog_state,
         display_name=internal_occ_availability_catalog_display_name,
@@ -187,13 +187,13 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[_builtins.str
         namespace=pulumi.get(__ret__, 'namespace'),
         occ_availability_catalog_collections=pulumi.get(__ret__, 'occ_availability_catalog_collections'),
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'))
-def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccAvailabilityCatalogsFilterArgs', 'GetInternalOccAvailabilityCatalogsFilterArgsDict']]]]] = None,
-                                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_internal_occ_availability_catalogs_output(catalog_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccAvailabilityCatalogsFilterArgs', 'GetInternalOccAvailabilityCatalogsFilterArgsDict']]]]] = None,
+                                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccAvailabilityCatalogsResult]:
     """
     This data source provides the list of Internal Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
@@ -206,7 +206,7 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+    test_internal_occ_availability_catalogs = oci.capacitymanagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         catalog_state=internal_occ_availability_catalog_catalog_state,
         display_name=internal_occ_availability_catalog_display_name,

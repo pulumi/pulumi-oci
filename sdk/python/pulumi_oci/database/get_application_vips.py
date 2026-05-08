@@ -124,7 +124,7 @@ def get_application_vips(cloud_vm_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+    test_application_vips = oci.database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
         compartment_id=compartment_id,
         state=application_vip_state)
     ```
@@ -149,10 +149,10 @@ def get_application_vips(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationVipsFilterArgs', 'GetApplicationVipsFilterArgsDict']]]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_application_vips_output(cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApplicationVipsFilterArgs', 'GetApplicationVipsFilterArgsDict']]]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationVipsResult]:
     """
     This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
@@ -165,7 +165,7 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+    test_application_vips = oci.database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
         compartment_id=compartment_id,
         state=application_vip_state)
     ```

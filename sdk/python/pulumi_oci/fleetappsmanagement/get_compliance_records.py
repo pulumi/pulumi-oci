@@ -186,8 +186,8 @@ def get_compliance_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_records = oci.FleetAppsManagement.get_compliance_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_compartment_id_in_subtree,
+    test_compliance_records = oci.fleetappsmanagement.get_compliance_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_compartment_id_in_subtree == "true",
         compliance_state=compliance_record_compliance_state,
         entity_id=test_entity["id"],
         product_name=compliance_record_product_name,
@@ -231,15 +231,15 @@ def get_compliance_records(compartment_id: Optional[_builtins.str] = None,
         product_stack=pulumi.get(__ret__, 'product_stack'),
         resource_id=pulumi.get(__ret__, 'resource_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
-def get_compliance_records_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                  compliance_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComplianceRecordsFilterArgs', 'GetComplianceRecordsFilterArgsDict']]]]] = None,
-                                  product_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  product_stack: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  target_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compliance_records_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                  compliance_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComplianceRecordsFilterArgs', 'GetComplianceRecordsFilterArgsDict']]]]] = None,
+                                  product_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  product_stack: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  target_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComplianceRecordsResult]:
     """
     This data source provides the list of Compliance Records in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -252,8 +252,8 @@ def get_compliance_records_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_records = oci.FleetAppsManagement.get_compliance_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_compartment_id_in_subtree,
+    test_compliance_records = oci.fleetappsmanagement.get_compliance_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_compartment_id_in_subtree == "true",
         compliance_state=compliance_record_compliance_state,
         entity_id=test_entity["id"],
         product_name=compliance_record_product_name,

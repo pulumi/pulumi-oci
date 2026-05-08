@@ -133,7 +133,7 @@ def get_imported_models(capabilities: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_models = oci.GenerativeAi.get_imported_models(compartment_id=compartment_id,
+    test_imported_models = oci.generativeai.get_imported_models(compartment_id=compartment_id,
         capabilities=imported_model_capability,
         display_name=imported_model_display_name,
         id=imported_model_id,
@@ -169,13 +169,13 @@ def get_imported_models(capabilities: Optional[Sequence[_builtins.str]] = None,
         imported_model_collections=pulumi.get(__ret__, 'imported_model_collections'),
         state=pulumi.get(__ret__, 'state'),
         vendor=pulumi.get(__ret__, 'vendor'))
-def get_imported_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetImportedModelsFilterArgs', 'GetImportedModelsFilterArgsDict']]]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               vendor: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_imported_models_output(capabilities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImportedModelsFilterArgs', 'GetImportedModelsFilterArgsDict']]]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               vendor: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImportedModelsResult]:
     """
     This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
@@ -188,7 +188,7 @@ def get_imported_models_output(capabilities: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_models = oci.GenerativeAi.get_imported_models(compartment_id=compartment_id,
+    test_imported_models = oci.generativeai.get_imported_models(compartment_id=compartment_id,
         capabilities=imported_model_capability,
         display_name=imported_model_display_name,
         id=imported_model_id,

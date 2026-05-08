@@ -144,8 +144,8 @@ def get_news_reports(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=compartment_id,
-        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
+    test_news_reports = oci.opsi.get_news_reports(compartment_id=compartment_id,
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree == "true",
         news_report_id=test_news_report["id"],
         states=news_report_state,
         statuses=news_report_status)
@@ -177,12 +177,12 @@ def get_news_reports(compartment_id: Optional[_builtins.str] = None,
         news_report_id=pulumi.get(__ret__, 'news_report_id'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]]]] = None,
-                            news_report_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                            statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_news_reports_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]]]] = None,
+                            news_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                            statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNewsReportsResult]:
     """
     This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
@@ -195,8 +195,8 @@ def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=compartment_id,
-        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
+    test_news_reports = oci.opsi.get_news_reports(compartment_id=compartment_id,
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree == "true",
         news_report_id=test_news_report["id"],
         states=news_report_state,
         statuses=news_report_status)

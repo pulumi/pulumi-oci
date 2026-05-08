@@ -24,11 +24,11 @@ class FleetArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  inventory_log: pulumi.Input['FleetInventoryLogArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation_log: pulumi.Input[Optional['FleetOperationLogArgs']] = None):
         """
         The set of arguments for constructing a Fleet resource.
 
@@ -93,87 +93,87 @@ class FleetArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
-    def is_advanced_features_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advanced_features_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @is_advanced_features_enabled.setter
-    def is_advanced_features_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advanced_features_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advanced_features_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="operationLog")
-    def operation_log(self) -> Optional[pulumi.Input['FleetOperationLogArgs']]:
+    def operation_log(self) -> pulumi.Input[Optional['FleetOperationLogArgs']]:
         """
         (Updatable) Custom Log for inventory or operation log.
         """
         return pulumi.get(self, "operation_log")
 
     @operation_log.setter
-    def operation_log(self, value: Optional[pulumi.Input['FleetOperationLogArgs']]):
+    def operation_log(self, value: pulumi.Input[Optional['FleetOperationLogArgs']]):
         pulumi.set(self, "operation_log", value)
 
 
 @pulumi.input_type
 class _FleetState:
     def __init__(__self__, *,
-                 approximate_application_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_installation_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_java_server_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_jre_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_library_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_library_vulnerability_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 approximate_managed_instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_log: Optional[pulumi.Input['FleetInventoryLogArgs']] = None,
-                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_export_setting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 approximate_application_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_installation_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_java_server_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_jre_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_library_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_library_vulnerability_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 approximate_managed_instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_log: pulumi.Input[Optional['FleetInventoryLogArgs']] = None,
+                 is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_export_setting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation_log: pulumi.Input[Optional['FleetOperationLogArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Fleet resources.
 
@@ -238,230 +238,230 @@ class _FleetState:
 
     @_builtins.property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_application_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_application_count")
 
     @approximate_application_count.setter
-    def approximate_application_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_application_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_application_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateInstallationCount")
-    def approximate_installation_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_installation_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_installation_count")
 
     @approximate_installation_count.setter
-    def approximate_installation_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_installation_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_installation_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateJavaServerCount")
-    def approximate_java_server_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_java_server_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_java_server_count")
 
     @approximate_java_server_count.setter
-    def approximate_java_server_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_java_server_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_java_server_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateJreCount")
-    def approximate_jre_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_jre_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_jre_count")
 
     @approximate_jre_count.setter
-    def approximate_jre_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_jre_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_jre_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateLibraryCount")
-    def approximate_library_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_library_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_library_count")
 
     @approximate_library_count.setter
-    def approximate_library_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_library_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_library_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateLibraryVulnerabilityCount")
-    def approximate_library_vulnerability_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_library_vulnerability_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_library_vulnerability_count")
 
     @approximate_library_vulnerability_count.setter
-    def approximate_library_vulnerability_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_library_vulnerability_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_library_vulnerability_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateManagedInstanceCount")
-    def approximate_managed_instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def approximate_managed_instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_managed_instance_count")
 
     @approximate_managed_instance_count.setter
-    def approximate_managed_instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def approximate_managed_instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "approximate_managed_instance_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inventoryLog")
-    def inventory_log(self) -> Optional[pulumi.Input['FleetInventoryLogArgs']]:
+    def inventory_log(self) -> pulumi.Input[Optional['FleetInventoryLogArgs']]:
         """
         (Updatable) Custom Log for inventory or operation log.
         """
         return pulumi.get(self, "inventory_log")
 
     @inventory_log.setter
-    def inventory_log(self, value: Optional[pulumi.Input['FleetInventoryLogArgs']]):
+    def inventory_log(self, value: pulumi.Input[Optional['FleetInventoryLogArgs']]):
         pulumi.set(self, "inventory_log", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
-    def is_advanced_features_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advanced_features_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @is_advanced_features_enabled.setter
-    def is_advanced_features_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advanced_features_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advanced_features_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isExportSettingEnabled")
-    def is_export_setting_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_export_setting_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not export setting is enabled in this Fleet.
         """
         return pulumi.get(self, "is_export_setting_enabled")
 
     @is_export_setting_enabled.setter
-    def is_export_setting_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_export_setting_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_export_setting_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="operationLog")
-    def operation_log(self) -> Optional[pulumi.Input['FleetOperationLogArgs']]:
+    def operation_log(self) -> pulumi.Input[Optional['FleetOperationLogArgs']]:
         """
         (Updatable) Custom Log for inventory or operation log.
         """
         return pulumi.get(self, "operation_log")
 
     @operation_log.setter
-    def operation_log(self, value: Optional[pulumi.Input['FleetOperationLogArgs']]):
+    def operation_log(self, value: pulumi.Input[Optional['FleetOperationLogArgs']]):
         pulumi.set(self, "operation_log", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the Fleet.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -471,14 +471,14 @@ class Fleet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_log: Optional[pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
-                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation_log: Optional[pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+                 is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -514,7 +514,7 @@ class Fleet(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled == "true",
             operation_log={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
@@ -581,7 +581,7 @@ class Fleet(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled == "true",
             operation_log={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
@@ -612,14 +612,14 @@ class Fleet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_log: Optional[pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
-                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation_log: Optional[pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+                 is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -664,25 +664,25 @@ class Fleet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approximate_application_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_installation_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_java_server_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_jre_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_library_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_library_vulnerability_count: Optional[pulumi.Input[_builtins.int]] = None,
-            approximate_managed_instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inventory_log: Optional[pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
-            is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_export_setting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            operation_log: Optional[pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Fleet':
+            approximate_application_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_installation_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_java_server_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_jre_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_library_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_library_vulnerability_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_managed_instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+            is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_export_setting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Fleet':
         """
         Get an existing Fleet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

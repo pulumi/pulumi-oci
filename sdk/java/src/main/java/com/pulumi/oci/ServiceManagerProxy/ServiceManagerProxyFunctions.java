@@ -34,8 +34,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -77,8 +77,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -120,8 +120,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -163,8 +163,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -206,8 +206,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -296,8 +296,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -342,8 +342,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -388,8 +388,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -434,8 +434,8 @@ public final class ServiceManagerProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
      * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

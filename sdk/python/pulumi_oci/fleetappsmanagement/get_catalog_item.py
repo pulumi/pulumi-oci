@@ -345,7 +345,7 @@ def get_catalog_item(catalog_item_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item = oci.FleetAppsManagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
+    test_catalog_item = oci.fleetappsmanagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
     ```
 
 
@@ -382,7 +382,7 @@ def get_catalog_item(catalog_item_id: Optional[_builtins.str] = None,
         time_released=pulumi.get(__ret__, 'time_released'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version_description=pulumi.get(__ret__, 'version_description'))
-def get_catalog_item_output(catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_catalog_item_output(catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogItemResult]:
     """
     This data source provides details about a specific Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -395,7 +395,7 @@ def get_catalog_item_output(catalog_item_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item = oci.FleetAppsManagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
+    test_catalog_item = oci.fleetappsmanagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
     ```
 
 

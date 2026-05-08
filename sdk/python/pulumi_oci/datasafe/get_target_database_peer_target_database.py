@@ -211,7 +211,7 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
+    test_target_database_peer_target_database = oci.datasafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
         target_database_id=test_target_database["id"])
     ```
 
@@ -240,8 +240,8 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[_
         target_database_id=pulumi.get(__ret__, 'target_database_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         tls_configs=pulumi.get(__ret__, 'tls_configs'))
-def get_target_database_peer_target_database_output(peer_target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_database_peer_target_database_output(peer_target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabaseResult]:
     """
     This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -254,7 +254,7 @@ def get_target_database_peer_target_database_output(peer_target_database_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
+    test_target_database_peer_target_database = oci.datasafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
         target_database_id=test_target_database["id"])
     ```
 

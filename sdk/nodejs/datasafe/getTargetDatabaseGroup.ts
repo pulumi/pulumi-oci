@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseGroup = oci.DataSafe.getTargetDatabaseGroup({
+ * const testTargetDatabaseGroup = oci.datasafe.getTargetDatabaseGroup({
  *     targetDatabaseGroupId: testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetTargetDatabaseGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseGroup = oci.DataSafe.getTargetDatabaseGroup({
+ * const testTargetDatabaseGroup = oci.datasafe.getTargetDatabaseGroup({
  *     targetDatabaseGroupId: testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id,
  * });
  * ```

@@ -136,18 +136,18 @@ export interface GetDbmulticloudOracleDbAwsKeysOutputArgs {
     /**
      * A filter to return Oracle DB AWS Key Resource that match the given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAwsKeysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAwsKeysFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB AWS Identity Connector resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
      */
-    oracleDbAwsConnectorId?: pulumi.Input<string>;
+    oracleDbAwsConnectorId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
      */
-    oracleDbAwsKeyId?: pulumi.Input<string>;
+    oracleDbAwsKeyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

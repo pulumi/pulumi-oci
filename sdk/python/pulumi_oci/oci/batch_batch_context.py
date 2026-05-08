@@ -24,14 +24,14 @@ class BatchBatchContextArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  fleets: pulumi.Input[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]],
                  network: pulumi.Input['BatchBatchContextNetworkArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlements: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]] = None,
-                 logging_configuration: Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]] = None,
+                 logging_configuration: pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BatchBatchContext resource.
 
@@ -109,91 +109,91 @@ class BatchBatchContextArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Summarized information about the batch context.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlements(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def entitlements(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
         """
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
-    def entitlements(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def entitlements(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entitlements", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="jobPriorityConfigurations")
-    def job_priority_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]:
+    def job_priority_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]:
         """
         (Updatable) List of job priority configurations related to the batch context.
         """
         return pulumi.get(self, "job_priority_configurations")
 
     @job_priority_configurations.setter
-    def job_priority_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]):
+    def job_priority_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]):
         pulumi.set(self, "job_priority_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingConfiguration")
-    def logging_configuration(self) -> Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]:
+    def logging_configuration(self) -> pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']]:
         """
         (Updatable) Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configuration")
 
     @logging_configuration.setter
-    def logging_configuration(self, value: Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]):
+    def logging_configuration(self, value: pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']]):
         pulumi.set(self, "logging_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -204,28 +204,28 @@ class BatchBatchContextArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _BatchBatchContextState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlements: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleets: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging_configuration: Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']] = None,
-                 network: Optional[pulumi.Input['BatchBatchContextNetworkArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging_configuration: pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']] = None,
+                 network: pulumi.Input[Optional['BatchBatchContextNetworkArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BatchBatchContext resources.
 
@@ -282,139 +282,139 @@ class _BatchBatchContextState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Summarized information about the batch context.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlements(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def entitlements(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
         """
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
-    def entitlements(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def entitlements(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entitlements", value)
 
     @_builtins.property
     @pulumi.getter
-    def fleets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]]:
+    def fleets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]]:
         """
         List of fleet configurations related to the batch context.
         """
         return pulumi.get(self, "fleets")
 
     @fleets.setter
-    def fleets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]]):
+    def fleets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]]]):
         pulumi.set(self, "fleets", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="jobPriorityConfigurations")
-    def job_priority_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]:
+    def job_priority_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]:
         """
         (Updatable) List of job priority configurations related to the batch context.
         """
         return pulumi.get(self, "job_priority_configurations")
 
     @job_priority_configurations.setter
-    def job_priority_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]):
+    def job_priority_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]]]):
         pulumi.set(self, "job_priority_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingConfiguration")
-    def logging_configuration(self) -> Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]:
+    def logging_configuration(self) -> pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']]:
         """
         (Updatable) Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configuration")
 
     @logging_configuration.setter
-    def logging_configuration(self, value: Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]):
+    def logging_configuration(self, value: pulumi.Input[Optional['BatchBatchContextLoggingConfigurationArgs']]):
         pulumi.set(self, "logging_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input['BatchBatchContextNetworkArgs']]:
+    def network(self) -> pulumi.Input[Optional['BatchBatchContextNetworkArgs']]:
         """
         Network configuration of the batch context.
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input['BatchBatchContextNetworkArgs']]):
+    def network(self, value: pulumi.Input[Optional['BatchBatchContextNetworkArgs']]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -425,43 +425,43 @@ class _BatchBatchContextState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -471,17 +471,17 @@ class BatchBatchContext(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlements: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
-                 logging_configuration: Optional[pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
+                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Batch Context resource in Oracle Cloud Infrastructure Batch service.
@@ -500,14 +500,14 @@ class BatchBatchContext(pulumi.CustomResource):
         test_batch_context = oci.oci.BatchBatchContext("test_batch_context",
             compartment_id=compartment_id,
             fleets=[{
-                "max_concurrent_tasks": batch_context_fleets_max_concurrent_tasks,
+                "max_concurrent_tasks": int(batch_context_fleets_max_concurrent_tasks),
                 "name": batch_context_fleets_name,
                 "shape": {
-                    "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
-                    "ocpus": batch_context_fleets_shape_ocpus,
+                    "memory_in_gbs": int(batch_context_fleets_shape_memory_in_gbs),
+                    "ocpus": int(batch_context_fleets_shape_ocpus),
                     "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
                     "type": batch_context_fleets_shape_type,
-                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
+                    "disk_size_in_gbs": int(batch_context_fleets_shape_disk_size_in_gbs),
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -528,13 +528,13 @@ class BatchBatchContext(pulumi.CustomResource):
                 "tag_key": batch_context_job_priority_configurations_tag_key,
                 "tag_namespace": batch_context_job_priority_configurations_tag_namespace,
                 "values": batch_context_job_priority_configurations_values,
-                "weight": batch_context_job_priority_configurations_weight,
+                "weight": int(batch_context_job_priority_configurations_weight),
             }],
             logging_configuration={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
-                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled == "true",
             })
         ```
 
@@ -588,14 +588,14 @@ class BatchBatchContext(pulumi.CustomResource):
         test_batch_context = oci.oci.BatchBatchContext("test_batch_context",
             compartment_id=compartment_id,
             fleets=[{
-                "max_concurrent_tasks": batch_context_fleets_max_concurrent_tasks,
+                "max_concurrent_tasks": int(batch_context_fleets_max_concurrent_tasks),
                 "name": batch_context_fleets_name,
                 "shape": {
-                    "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
-                    "ocpus": batch_context_fleets_shape_ocpus,
+                    "memory_in_gbs": int(batch_context_fleets_shape_memory_in_gbs),
+                    "ocpus": int(batch_context_fleets_shape_ocpus),
                     "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
                     "type": batch_context_fleets_shape_type,
-                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
+                    "disk_size_in_gbs": int(batch_context_fleets_shape_disk_size_in_gbs),
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -616,13 +616,13 @@ class BatchBatchContext(pulumi.CustomResource):
                 "tag_key": batch_context_job_priority_configurations_tag_key,
                 "tag_namespace": batch_context_job_priority_configurations_tag_namespace,
                 "values": batch_context_job_priority_configurations_values,
-                "weight": batch_context_job_priority_configurations_weight,
+                "weight": int(batch_context_job_priority_configurations_weight),
             }],
             logging_configuration={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
-                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled == "true",
             })
         ```
 
@@ -650,17 +650,17 @@ class BatchBatchContext(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entitlements: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
-                 logging_configuration: Optional[pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
+                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -701,21 +701,21 @@ class BatchBatchContext(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            entitlements: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            fleets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            job_priority_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            logging_configuration: Optional[pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-            network: Optional[pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'BatchBatchContext':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
+            network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BatchBatchContext':
         """
         Get an existing BatchBatchContext resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

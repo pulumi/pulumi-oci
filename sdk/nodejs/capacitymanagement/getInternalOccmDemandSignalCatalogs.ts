@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogs = oci.CapacityManagement.getInternalOccmDemandSignalCatalogs({
+ * const testInternalOccmDemandSignalCatalogs = oci.capacitymanagement.getInternalOccmDemandSignalCatalogs({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     displayName: internalOccmDemandSignalCatalogDisplayName,
@@ -90,7 +90,7 @@ export interface GetInternalOccmDemandSignalCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogs = oci.CapacityManagement.getInternalOccmDemandSignalCatalogs({
+ * const testInternalOccmDemandSignalCatalogs = oci.capacitymanagement.getInternalOccmDemandSignalCatalogs({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     displayName: internalOccmDemandSignalCatalogDisplayName,
@@ -118,8 +118,8 @@ export interface GetInternalOccmDemandSignalCatalogsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalCatalogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalCatalogsFilterArgs>[] | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */

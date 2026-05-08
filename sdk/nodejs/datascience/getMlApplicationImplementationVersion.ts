@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationImplementationVersion = oci.DataScience.getMlApplicationImplementationVersion({
+ * const testMlApplicationImplementationVersion = oci.datascience.getMlApplicationImplementationVersion({
  *     mlApplicationImplementationVersionId: testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id,
  * });
  * ```
@@ -124,7 +124,7 @@ export interface GetMlApplicationImplementationVersionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationImplementationVersion = oci.DataScience.getMlApplicationImplementationVersion({
+ * const testMlApplicationImplementationVersion = oci.datascience.getMlApplicationImplementationVersion({
  *     mlApplicationImplementationVersionId: testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id,
  * });
  * ```

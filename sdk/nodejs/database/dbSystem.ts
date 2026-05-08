@@ -562,34 +562,34 @@ export interface DbSystemState {
     /**
      * The availability domain where the DB system is located.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      *
      * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
-    backupSubnetId?: pulumi.Input<string>;
+    backupSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    clusterName?: pulumi.Input<string>;
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of compute servers for the DB system.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -605,49 +605,49 @@ export interface DbSystemState {
      *
      * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions>;
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */
-    dataStoragePercentage?: pulumi.Input<number>;
+    dataStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    databaseEdition?: pulumi.Input<string>;
+    databaseEdition?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    dbHome?: pulumi.Input<inputs.Database.DbSystemDbHome>;
+    dbHome?: pulumi.Input<inputs.Database.DbSystemDbHome | undefined>;
     /**
      * The DB system options.
      */
-    dbSystemOptions?: pulumi.Input<inputs.Database.DbSystemDbSystemOptions>;
+    dbSystemOptions?: pulumi.Input<inputs.Database.DbSystemDbSystemOptions | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
      */
-    diskRedundancy?: pulumi.Input<string>;
+    diskRedundancy?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -659,11 +659,11 @@ export interface DbSystemState {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    faultDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
      *
@@ -671,66 +671,66 @@ export interface DbSystemState {
      *
      * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCache>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCache>[] | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    lastPatchHistoryEntryId?: pulumi.Input<string>;
+    lastPatchHistoryEntryId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The port number configured for the listener on the DB system.
      */
-    listenerPort?: pulumi.Input<number>;
+    listenerPort?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetails>;
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetails | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindow>[] | undefined>;
     /**
      * Memory allocated to the DB system, in gigabytes.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    osPatchAction?: pulumi.Input<string>;
-    osPatchDbNodeId?: pulumi.Input<string>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    osPatchAction?: pulumi.Input<string | undefined>;
+    osPatchDbNodeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
      *
@@ -738,51 +738,51 @@ export interface DbSystemState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    osPatchTrigger?: pulumi.Input<number>;
+    osPatchTrigger?: pulumi.Input<number | undefined>;
     /**
      * The most recent OS Patch Version applied on the DB system.
      */
-    osVersion?: pulumi.Input<string>;
+    osVersion?: pulumi.Input<string | undefined>;
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    pointInTimeDataDiskCloneTimestamp?: pulumi.Input<string>;
+    pointInTimeDataDiskCloneTimestamp?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    primaryDbSystemId?: pulumi.Input<string>;
+    primaryDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
      */
-    privateIpV6?: pulumi.Input<string>;
+    privateIpV6?: pulumi.Input<string | undefined>;
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
-    recoStorageSizeInGb?: pulumi.Input<number>;
+    recoStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    scanDnsName?: pulumi.Input<string>;
+    scanDnsName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    scanDnsRecordId?: pulumi.Input<string>;
+    scanDnsRecordId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    scanIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    scanIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    scanIpv6ids?: pulumi.Input<pulumi.Input<string>[]>;
+    scanIpv6ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
@@ -790,31 +790,31 @@ export interface DbSystemState {
      *
      * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    sourceDbSystemId?: pulumi.Input<string>;
+    sourceDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
      */
-    sparseDiskgroup?: pulumi.Input<boolean>;
+    sparseDiskgroup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      */
-    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the DB system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */
-    storageVolumePerformanceMode?: pulumi.Input<string>;
+    storageVolumePerformanceMode?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      *
@@ -824,36 +824,36 @@ export interface DbSystemState {
      *
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
-    subnetId?: pulumi.Input<string>;
-    subscriptionId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the DB system was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database version of the DB system.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      */
-    vipIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vipIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    vipv6ids?: pulumi.Input<pulumi.Input<string>[]>;
+    vipv6ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the zone the DB system is associated with.
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -867,18 +867,18 @@ export interface DbSystemArgs {
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      *
      * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
-    backupSubnetId?: pulumi.Input<string>;
+    backupSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    clusterName?: pulumi.Input<string>;
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterName?: pulumi.Input<string | undefined>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
@@ -886,11 +886,11 @@ export interface DbSystemArgs {
     /**
      * (Updatable) The number of compute servers for the DB system.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -906,23 +906,23 @@ export interface DbSystemArgs {
      *
      * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions>;
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */
-    dataStoragePercentage?: pulumi.Input<number>;
+    dataStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    databaseEdition?: pulumi.Input<string>;
+    databaseEdition?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
      *
@@ -932,23 +932,23 @@ export interface DbSystemArgs {
     /**
      * The DB system options.
      */
-    dbSystemOptions?: pulumi.Input<inputs.Database.DbSystemDbSystemOptions>;
+    dbSystemOptions?: pulumi.Input<inputs.Database.DbSystemDbSystemOptions | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
      */
-    diskRedundancy?: pulumi.Input<string>;
+    diskRedundancy?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -960,11 +960,11 @@ export interface DbSystemArgs {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    faultDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
      *
@@ -976,30 +976,30 @@ export interface DbSystemArgs {
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindowDetails?: pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetails>;
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetails | undefined>;
     /**
      * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    osPatchAction?: pulumi.Input<string>;
-    osPatchDbNodeId?: pulumi.Input<string>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    osPatchAction?: pulumi.Input<string | undefined>;
+    osPatchDbNodeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
      *
@@ -1007,27 +1007,27 @@ export interface DbSystemArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    osPatchTrigger?: pulumi.Input<number>;
+    osPatchTrigger?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    primaryDbSystemId?: pulumi.Input<string>;
+    primaryDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
      */
-    privateIpV6?: pulumi.Input<string>;
+    privateIpV6?: pulumi.Input<string | undefined>;
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
-    recoStorageSizeInGb?: pulumi.Input<number>;
+    recoStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
@@ -1039,15 +1039,15 @@ export interface DbSystemArgs {
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    sourceDbSystemId?: pulumi.Input<string>;
+    sourceDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
      */
-    sparseDiskgroup?: pulumi.Input<boolean>;
+    sparseDiskgroup?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      */
@@ -1055,7 +1055,7 @@ export interface DbSystemArgs {
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */
-    storageVolumePerformanceMode?: pulumi.Input<string>;
+    storageVolumePerformanceMode?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      *
@@ -1066,9 +1066,9 @@ export interface DbSystemArgs {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId: pulumi.Input<string>;
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
 }

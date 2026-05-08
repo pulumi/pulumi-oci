@@ -260,55 +260,55 @@ export interface CloudListenerState {
     /**
      * The additional details of the cloud listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
-    adrHomeDirectory?: pulumi.Input<string>;
+    adrHomeDirectory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    cloudConnectorId?: pulumi.Input<string>;
+    cloudConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
      */
-    cloudDbHomeId?: pulumi.Input<string>;
+    cloudDbHomeId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
      */
-    cloudDbNodeId?: pulumi.Input<string>;
+    cloudDbNodeId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the listener is a part of.
      */
-    cloudDbSystemId?: pulumi.Input<string>;
+    cloudDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
      */
-    cloudListenerId?: pulumi.Input<string>;
+    cloudListenerId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The name of the cloud listener.
      */
-    componentName?: pulumi.Input<string>;
+    componentName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      */
-    dbaasId?: pulumi.Input<string>;
+    dbaasId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The list of protocol addresses the listener is configured to listen on.
      */
-    endpoints?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerEndpoint>[]>;
+    endpoints?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerEndpoint>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -316,67 +316,67 @@ export interface CloudListenerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the host on which the cloud listener is running.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The listener alias.
      */
-    listenerAlias?: pulumi.Input<string>;
+    listenerAlias?: pulumi.Input<string | undefined>;
     /**
      * The location of the listener configuration file listener.ora.
      */
-    listenerOraLocation?: pulumi.Input<string>;
+    listenerOraLocation?: pulumi.Input<string | undefined>;
     /**
      * The type of listener.
      */
-    listenerType?: pulumi.Input<string>;
+    listenerType?: pulumi.Input<string | undefined>;
     /**
      * The destination directory of the listener log file.
      */
-    logDirectory?: pulumi.Input<string>;
+    logDirectory?: pulumi.Input<string | undefined>;
     /**
      * The Oracle home location of the listener.
      */
-    oracleHome?: pulumi.Input<string>;
+    oracleHome?: pulumi.Input<string | undefined>;
     /**
      * The list of ASMs that are serviced by the listener.
      */
-    servicedAsms?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerServicedAsm>[]>;
+    servicedAsms?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerServicedAsm>[] | undefined>;
     /**
      * The list of databases that are serviced by the listener.
      */
-    servicedDatabases?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerServicedDatabase>[]>;
+    servicedDatabases?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudListenerServicedDatabase>[] | undefined>;
     /**
      * The current lifecycle state of the cloud listener.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cloud listener was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the cloud listener was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The destination directory of the listener trace file.
      */
-    traceDirectory?: pulumi.Input<string>;
+    traceDirectory?: pulumi.Input<string | undefined>;
     /**
      * The listener version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -386,7 +386,7 @@ export interface CloudListenerArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    cloudConnectorId?: pulumi.Input<string>;
+    cloudConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
      */
@@ -394,7 +394,7 @@ export interface CloudListenerArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -402,5 +402,5 @@ export interface CloudListenerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

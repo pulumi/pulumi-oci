@@ -111,7 +111,7 @@ def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=test_listener["name"],
+    test_listener_rules = oci.loadbalancer.get_listener_rules(listener_name=test_listener["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 
@@ -132,9 +132,9 @@ def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterA
         listener_name=pulumi.get(__ret__, 'listener_name'),
         listener_rules=pulumi.get(__ret__, 'listener_rules'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenerRulesFilterArgs', 'GetListenerRulesFilterArgsDict']]]]] = None,
-                              listener_name: Optional[pulumi.Input[_builtins.str]] = None,
-                              load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listener_rules_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListenerRulesFilterArgs', 'GetListenerRulesFilterArgsDict']]]]] = None,
+                              listener_name: pulumi.Input[Optional[_builtins.str]] = None,
+                              load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListenerRulesResult]:
     """
     This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
@@ -153,7 +153,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=test_listener["name"],
+    test_listener_rules = oci.loadbalancer.get_listener_rules(listener_name=test_listener["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 

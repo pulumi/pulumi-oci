@@ -76,10 +76,10 @@ export class PrivateEndpointOutboundConnection extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PrivateEndpointOutboundConnection resources.
  */
 export interface PrivateEndpointOutboundConnectionState {
-    integrationInstanceId?: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    state?: pulumi.Input<string>;
-    subnetId?: pulumi.Input<string>;
+    integrationInstanceId?: pulumi.Input<string | undefined>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    subnetId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -87,7 +87,7 @@ export interface PrivateEndpointOutboundConnectionState {
  */
 export interface PrivateEndpointOutboundConnectionArgs {
     integrationInstanceId: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    state?: pulumi.Input<string>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
     subnetId: pulumi.Input<string>;
 }

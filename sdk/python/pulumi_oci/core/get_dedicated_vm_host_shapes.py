@@ -118,7 +118,7 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
+    test_dedicated_vm_host_shapes = oci.core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_shape_availability_domain,
         instance_shape_name=dedicated_vm_host_shape_instance_shape_name)
     ```
@@ -143,10 +143,10 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'))
-def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict']]]]] = None,
-                                        instance_shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dedicated_vm_host_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict']]]]] = None,
+                                        instance_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostShapesResult]:
     """
     This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
@@ -159,7 +159,7 @@ def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
+    test_dedicated_vm_host_shapes = oci.core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_shape_availability_domain,
         instance_shape_name=dedicated_vm_host_shape_instance_shape_name)
     ```

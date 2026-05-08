@@ -27,17 +27,17 @@ import * as utilities from "../utilities";
  *     type: managementAgentDataSourceType,
  *     url: managementAgentDataSourceUrl,
  *     allowMetrics: managementAgentDataSourceAllowMetrics,
- *     connectionTimeout: managementAgentDataSourceConnectionTimeout,
+ *     connectionTimeout: Number(managementAgentDataSourceConnectionTimeout),
  *     metricDimensions: [{
  *         name: managementAgentDataSourceMetricDimensionsName,
  *         value: managementAgentDataSourceMetricDimensionsValue,
  *     }],
  *     namespace: managementAgentDataSourceNamespace,
  *     proxyUrl: managementAgentDataSourceProxyUrl,
- *     readDataLimitInKilobytes: managementAgentDataSourceReadDataLimitInKilobytes,
- *     readTimeout: managementAgentDataSourceReadTimeout,
+ *     readDataLimitInKilobytes: Number(managementAgentDataSourceReadDataLimitInKilobytes),
+ *     readTimeout: Number(managementAgentDataSourceReadTimeout),
  *     resourceGroup: managementAgentDataSourceResourceGroup,
- *     scheduleMins: managementAgentDataSourceScheduleMins,
+ *     scheduleMins: Number(managementAgentDataSourceScheduleMins),
  * });
  * ```
  *
@@ -239,76 +239,76 @@ export interface ManagementAgentDataSourceState {
     /**
      * (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
      */
-    allowMetrics?: pulumi.Input<string>;
+    allowMetrics?: pulumi.Input<string | undefined>;
     /**
      * Compartment owning this DataSource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
      */
-    connectionTimeout?: pulumi.Input<number>;
-    dataSourceKey?: pulumi.Input<string>;
+    connectionTimeout?: pulumi.Input<number | undefined>;
+    dataSourceKey?: pulumi.Input<string | undefined>;
     /**
      * If the Kubernetes cluster type is Daemon set then this will be set to true.
      */
-    isDaemonSet?: pulumi.Input<boolean>;
+    isDaemonSet?: pulumi.Input<boolean | undefined>;
     /**
      * Unique Management Agent identifier
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
      */
-    metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceMetricDimension>[]>;
+    metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceMetricDimension>[] | undefined>;
     /**
      * Unique name of the DataSource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
      */
-    proxyUrl?: pulumi.Input<string>;
+    proxyUrl?: pulumi.Input<string | undefined>;
     /**
      * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
      */
-    readDataLimit?: pulumi.Input<number>;
+    readDataLimit?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
      */
-    readDataLimitInKilobytes?: pulumi.Input<number>;
+    readDataLimitInKilobytes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
      */
-    readTimeout?: pulumi.Input<number>;
+    readTimeout?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number in minutes. The scraping occurs at the specified interval.
      */
-    scheduleMins?: pulumi.Input<number>;
+    scheduleMins?: pulumi.Input<number | undefined>;
     /**
      * State of the DataSource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the DataSource was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the DataSource data was last received. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
      *
@@ -316,7 +316,7 @@ export interface ManagementAgentDataSourceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -326,7 +326,7 @@ export interface ManagementAgentDataSourceArgs {
     /**
      * (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
      */
-    allowMetrics?: pulumi.Input<string>;
+    allowMetrics?: pulumi.Input<string | undefined>;
     /**
      * Compartment owning this DataSource.
      */
@@ -334,7 +334,7 @@ export interface ManagementAgentDataSourceArgs {
     /**
      * (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
      */
-    connectionTimeout?: pulumi.Input<number>;
+    connectionTimeout?: pulumi.Input<number | undefined>;
     /**
      * Unique Management Agent identifier
      */
@@ -342,35 +342,35 @@ export interface ManagementAgentDataSourceArgs {
     /**
      * (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
      */
-    metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceMetricDimension>[]>;
+    metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceMetricDimension>[] | undefined>;
     /**
      * Unique name of the DataSource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
      */
-    proxyUrl?: pulumi.Input<string>;
+    proxyUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
      */
-    readDataLimitInKilobytes?: pulumi.Input<number>;
+    readDataLimitInKilobytes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
      */
-    readTimeout?: pulumi.Input<number>;
+    readTimeout?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number in minutes. The scraping occurs at the specified interval.
      */
-    scheduleMins?: pulumi.Input<number>;
+    scheduleMins?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
      */

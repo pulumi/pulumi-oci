@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbServers = oci.Database.getDbServers({
+ * const testDbServers = oci.database.getDbServers({
  *     compartmentId: compartmentId,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     displayName: dbServerDisplayName,
@@ -100,7 +100,7 @@ export interface GetDbServersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbServers = oci.Database.getDbServers({
+ * const testDbServers = oci.database.getDbServers({
  *     compartmentId: compartmentId,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     displayName: dbServerDisplayName,
@@ -130,14 +130,14 @@ export interface GetDbServersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
      */
     exadataInfrastructureId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbServersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbServersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

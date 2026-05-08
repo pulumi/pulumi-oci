@@ -38,7 +38,7 @@ class AdvancedClusterFileSystemUnmountArgs:
 @pulumi.input_type
 class _AdvancedClusterFileSystemUnmountState:
     def __init__(__self__, *,
-                 advanced_cluster_file_system_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AdvancedClusterFileSystemUnmount resources.
         """
@@ -47,11 +47,11 @@ class _AdvancedClusterFileSystemUnmountState:
 
     @_builtins.property
     @pulumi.getter(name="advancedClusterFileSystemId")
-    def advanced_cluster_file_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def advanced_cluster_file_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "advanced_cluster_file_system_id")
 
     @advanced_cluster_file_system_id.setter
-    def advanced_cluster_file_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def advanced_cluster_file_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "advanced_cluster_file_system_id", value)
 
 
@@ -61,7 +61,7 @@ class AdvancedClusterFileSystemUnmount(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_cluster_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AdvancedClusterFileSystemUnmount resource with the given unique name, props, and options.
@@ -93,7 +93,7 @@ class AdvancedClusterFileSystemUnmount(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_cluster_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -116,7 +116,7 @@ class AdvancedClusterFileSystemUnmount(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_cluster_file_system_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AdvancedClusterFileSystemUnmount':
+            advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AdvancedClusterFileSystemUnmount':
         """
         Get an existing AdvancedClusterFileSystemUnmount resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

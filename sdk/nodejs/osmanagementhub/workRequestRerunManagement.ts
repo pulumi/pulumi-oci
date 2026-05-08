@@ -120,11 +120,11 @@ export interface WorkRequestRerunManagementState {
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      *
@@ -132,7 +132,7 @@ export interface WorkRequestRerunManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -142,11 +142,11 @@ export interface WorkRequestRerunManagementArgs {
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      *

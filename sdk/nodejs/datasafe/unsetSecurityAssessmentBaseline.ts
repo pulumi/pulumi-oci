@@ -110,7 +110,7 @@ export interface UnsetSecurityAssessmentBaselineState {
     /**
      * The OCID of the security assessment.
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      *
@@ -118,7 +118,7 @@ export interface UnsetSecurityAssessmentBaselineState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -136,5 +136,5 @@ export interface UnsetSecurityAssessmentBaselineArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

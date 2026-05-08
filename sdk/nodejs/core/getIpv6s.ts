@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpv6s = oci.Core.getIpv6s({
+ * const testIpv6s = oci.core.getIpv6s({
  *     ipAddress: ipv6IpAddress,
  *     subnetId: testSubnet.id,
  *     vnicId: testVnicAttachment.id,
@@ -105,7 +105,7 @@ export interface GetIpv6sResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpv6s = oci.Core.getIpv6s({
+ * const testIpv6s = oci.core.getIpv6s({
  *     ipAddress: ipv6IpAddress,
  *     subnetId: testSubnet.id,
  *     vnicId: testVnicAttachment.id,
@@ -127,17 +127,17 @@ export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOu
  * A collection of arguments for invoking getIpv6s.
  */
 export interface GetIpv6sOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpv6sFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpv6sFilterArgs>[] | undefined>;
     /**
      * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the VNIC.
      */
-    vnicId?: pulumi.Input<string>;
+    vnicId?: pulumi.Input<string | undefined>;
 }

@@ -13,7 +13,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPassword = oci.Ocvp.getRetrievePassword({
+ * const testPassword = oci.ocvp.getRetrievePassword({
  *     sddcId: compartmentId,
  *     type: passwordType,
  * });
@@ -66,7 +66,7 @@ export interface GetRetrievePasswordResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPassword = oci.Ocvp.getRetrievePassword({
+ * const testPassword = oci.ocvp.getRetrievePassword({
  *     sddcId: compartmentId,
  *     type: passwordType,
  * });

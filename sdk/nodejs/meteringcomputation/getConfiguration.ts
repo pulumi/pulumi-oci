@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.MeteringComputation.getConfiguration({
+ * const testConfiguration = oci.meteringcomputation.getConfiguration({
  *     tenantId: testTenant.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.MeteringComputation.getConfiguration({
+ * const testConfiguration = oci.meteringcomputation.getConfiguration({
  *     tenantId: testTenant.id,
  * });
  * ```

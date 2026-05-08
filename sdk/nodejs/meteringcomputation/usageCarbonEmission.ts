@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     tenantId: testTenant.id,
  *     timeUsageEnded: usageCarbonEmissionTimeUsageEnded,
  *     timeUsageStarted: usageCarbonEmissionTimeUsageStarted,
- *     compartmentDepth: usageCarbonEmissionCompartmentDepth,
+ *     compartmentDepth: Number(usageCarbonEmissionCompartmentDepth),
  *     emissionCalculationMethod: usageCarbonEmissionEmissionCalculationMethod,
  *     emissionType: usageCarbonEmissionEmissionType,
  *     granularity: usageCarbonEmissionGranularity,
@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         namespace: usageCarbonEmissionGroupByTagNamespace,
  *         value: usageCarbonEmissionGroupByTagValue,
  *     }],
- *     isAggregateByTime: usageCarbonEmissionIsAggregateByTime,
+ *     isAggregateByTime: usageCarbonEmissionIsAggregateByTime === "true",
  *     usageCarbonEmissionFilter: usageCarbonEmissionUsageCarbonEmissionFilter,
  * });
  * ```
@@ -189,47 +189,47 @@ export interface UsageCarbonEmissionState {
     /**
      * The compartment depth level.
      */
-    compartmentDepth?: pulumi.Input<number>;
+    compartmentDepth?: pulumi.Input<number | undefined>;
     /**
      * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      */
-    emissionCalculationMethod?: pulumi.Input<string>;
+    emissionCalculationMethod?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
      */
-    emissionType?: pulumi.Input<string>;
+    emissionType?: pulumi.Input<string | undefined>;
     /**
      * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
      */
-    granularity?: pulumi.Input<string>;
+    granularity?: pulumi.Input<string | undefined>;
     /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
      */
-    groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[]>;
+    groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[] | undefined>;
     /**
      * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
-    isAggregateByTime?: pulumi.Input<boolean>;
+    isAggregateByTime?: pulumi.Input<boolean | undefined>;
     /**
      * A list of carbon emission usage items.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionItem>[] | undefined>;
     /**
      * Tenant ID.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The usage end time.
      */
-    timeUsageEnded?: pulumi.Input<string>;
+    timeUsageEnded?: pulumi.Input<string | undefined>;
     /**
      * The usage start time.
      */
-    timeUsageStarted?: pulumi.Input<string>;
+    timeUsageStarted?: pulumi.Input<string | undefined>;
     /**
      * The filter object for query usage.
      *
@@ -237,7 +237,7 @@ export interface UsageCarbonEmissionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    usageCarbonEmissionFilter?: pulumi.Input<string>;
+    usageCarbonEmissionFilter?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -247,31 +247,31 @@ export interface UsageCarbonEmissionArgs {
     /**
      * The compartment depth level.
      */
-    compartmentDepth?: pulumi.Input<number>;
+    compartmentDepth?: pulumi.Input<number | undefined>;
     /**
      * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      */
-    emissionCalculationMethod?: pulumi.Input<string>;
+    emissionCalculationMethod?: pulumi.Input<string | undefined>;
     /**
      * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
      */
-    emissionType?: pulumi.Input<string>;
+    emissionType?: pulumi.Input<string | undefined>;
     /**
      * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
      */
-    granularity?: pulumi.Input<string>;
+    granularity?: pulumi.Input<string | undefined>;
     /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
      */
-    groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[]>;
+    groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[] | undefined>;
     /**
      * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
-    isAggregateByTime?: pulumi.Input<boolean>;
+    isAggregateByTime?: pulumi.Input<boolean | undefined>;
     /**
      * Tenant ID.
      */
@@ -291,5 +291,5 @@ export interface UsageCarbonEmissionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    usageCarbonEmissionFilter?: pulumi.Input<string>;
+    usageCarbonEmissionFilter?: pulumi.Input<string | undefined>;
 }

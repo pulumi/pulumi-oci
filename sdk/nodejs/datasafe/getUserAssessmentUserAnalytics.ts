@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
+ * const testUserAssessmentUserAnalytics = oci.datasafe.getUserAssessmentUserAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAnalyticAccessLevel,
  *     accountStatus: userAssessmentUserAnalyticAccountStatus,
  *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
@@ -213,12 +213,12 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
+ * const testUserAssessmentUserAnalytics = oci.datasafe.getUserAssessmentUserAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAnalyticAccessLevel,
  *     accountStatus: userAssessmentUserAnalyticAccountStatus,
  *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
@@ -265,62 +265,62 @@ export interface GetUserAssessmentUserAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified account status.
      */
-    accountStatus?: pulumi.Input<string>;
+    accountStatus?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified authentication type.
      */
-    authenticationType?: pulumi.Input<string>;
+    authenticationType?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUserAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUserAnalyticsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeLastLoginGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeLastLoginGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeLastLoginLessThan?: pulumi.Input<string>;
+    timeLastLoginLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordExpiryLessThan?: pulumi.Input<string>;
+    timePasswordExpiryLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordLastChangedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timePasswordLastChangedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordLastChangedLessThan?: pulumi.Input<string>;
+    timePasswordLastChangedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUserCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUserCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUserCreatedLessThan?: pulumi.Input<string>;
+    timeUserCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      */
@@ -328,13 +328,13 @@ export interface GetUserAssessmentUserAnalyticsOutputArgs {
     /**
      * A filter to return only items that match the specified user category.
      */
-    userCategory?: pulumi.Input<string>;
+    userCategory?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user key.
      */
-    userKey?: pulumi.Input<string>;
+    userKey?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user name.
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
 }

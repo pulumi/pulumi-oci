@@ -189,11 +189,11 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_results = oci.datasafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
         confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
-        is_result_applied=discovery_jobs_result_is_result_applied,
+        is_result_applied=discovery_jobs_result_is_result_applied == "true",
         objects=discovery_jobs_result_object,
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)
@@ -234,15 +234,15 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
         objects=pulumi.get(__ret__, 'objects'),
         planned_action=pulumi.get(__ret__, 'planned_action'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      confidence_levels: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      discovery_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobsResultsFilterArgs', 'GetDiscoveryJobsResultsFilterArgsDict']]]]] = None,
-                                      is_result_applied: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      planned_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_discovery_jobs_results_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      confidence_levels: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      discovery_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryJobsResultsFilterArgs', 'GetDiscoveryJobsResultsFilterArgsDict']]]]] = None,
+                                      is_result_applied: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      planned_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobsResultsResult]:
     """
     This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
@@ -255,11 +255,11 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_results = oci.datasafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
         confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
-        is_result_applied=discovery_jobs_result_is_result_applied,
+        is_result_applied=discovery_jobs_result_is_result_applied == "true",
         objects=discovery_jobs_result_object,
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)

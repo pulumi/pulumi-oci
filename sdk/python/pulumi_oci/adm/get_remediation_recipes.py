@@ -126,7 +126,7 @@ def get_remediation_recipes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=compartment_id,
+    test_remediation_recipes = oci.adm.get_remediation_recipes(compartment_id=compartment_id,
         display_name=remediation_recipe_display_name,
         id=remediation_recipe_id,
         state=remediation_recipe_state)
@@ -154,11 +154,11 @@ def get_remediation_recipes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         remediation_recipe_collections=pulumi.get(__ret__, 'remediation_recipe_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_remediation_recipes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRecipesResult]:
     """
     This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
@@ -172,7 +172,7 @@ def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=compartment_id,
+    test_remediation_recipes = oci.adm.get_remediation_recipes(compartment_id=compartment_id,
         display_name=remediation_recipe_display_name,
         id=remediation_recipe_id,
         state=remediation_recipe_state)

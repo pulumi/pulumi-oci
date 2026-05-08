@@ -23,17 +23,17 @@ class IpsecConnectionTunnelManagementArgs:
     def __init__(__self__, *,
                  ipsec_id: pulumi.Input[_builtins.str],
                  tunnel_id: pulumi.Input[_builtins.str],
-                 bgp_session_info: Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
-                 encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_translation_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_can_initiate: Optional[pulumi.Input[_builtins.str]] = None,
-                 phase_one_details: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']] = None,
-                 phase_two_details: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']] = None,
-                 routing: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_secret: Optional[pulumi.Input[_builtins.str]] = None):
+                 bgp_session_info: pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
+                 encryption_domain_config: pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+                 phase_one_details: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']] = None,
+                 phase_two_details: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IpsecConnectionTunnelManagement resource.
 
@@ -111,7 +111,7 @@ class IpsecConnectionTunnelManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="bgpSessionInfo")
-    def bgp_session_info(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]:
+    def bgp_session_info(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]:
         """
         Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 
@@ -120,57 +120,57 @@ class IpsecConnectionTunnelManagementArgs:
         return pulumi.get(self, "bgp_session_info")
 
     @bgp_session_info.setter
-    def bgp_session_info(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]):
+    def bgp_session_info(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]):
         pulumi.set(self, "bgp_session_info", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dpdConfigs")
-    def dpd_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
+    def dpd_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
         return pulumi.get(self, "dpd_configs")
 
     @dpd_configs.setter
-    def dpd_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
+    def dpd_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
         pulumi.set(self, "dpd_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionDomainConfig")
-    def encryption_domain_config(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
+    def encryption_domain_config(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
         """
         Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         """
         return pulumi.get(self, "encryption_domain_config")
 
     @encryption_domain_config.setter
-    def encryption_domain_config(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]):
+    def encryption_domain_config(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]):
         pulumi.set(self, "encryption_domain_config", value)
 
     @_builtins.property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ike_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internet Key Exchange protocol version.
         """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
-    def ike_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ike_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ike_version", value)
 
     @_builtins.property
     @pulumi.getter(name="natTranslationEnabled")
-    def nat_translation_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nat_translation_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
 
@@ -181,24 +181,24 @@ class IpsecConnectionTunnelManagementArgs:
         return pulumi.get(self, "nat_translation_enabled")
 
     @nat_translation_enabled.setter
-    def nat_translation_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nat_translation_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nat_translation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleCanInitiate")
-    def oracle_can_initiate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_can_initiate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
         """
         return pulumi.get(self, "oracle_can_initiate")
 
     @oracle_can_initiate.setter
-    def oracle_can_initiate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_can_initiate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_can_initiate", value)
 
     @_builtins.property
     @pulumi.getter(name="phaseOneDetails")
-    def phase_one_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
+    def phase_one_details(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
         """
         Configuration details for IKE phase one (ISAKMP) configuration parameters. 
 
@@ -207,12 +207,12 @@ class IpsecConnectionTunnelManagementArgs:
         return pulumi.get(self, "phase_one_details")
 
     @phase_one_details.setter
-    def phase_one_details(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]):
+    def phase_one_details(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]):
         pulumi.set(self, "phase_one_details", value)
 
     @_builtins.property
     @pulumi.getter(name="phaseTwoDetails")
-    def phase_two_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]:
+    def phase_two_details(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]:
         """
         Configuration details for IPSec phase two configuration parameters.
 
@@ -221,60 +221,60 @@ class IpsecConnectionTunnelManagementArgs:
         return pulumi.get(self, "phase_two_details")
 
     @phase_two_details.setter
-    def phase_two_details(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]):
+    def phase_two_details(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]):
         pulumi.set(self, "phase_two_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedSecret")
-    def shared_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         """
         return pulumi.get(self, "shared_secret")
 
     @shared_secret.setter
-    def shared_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_secret", value)
 
 
 @pulumi.input_type
 class _IpsecConnectionTunnelManagementState:
     def __init__(__self__, *,
-                 associated_virtual_circuits: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 bgp_session_info: Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
-                 dpd_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 dpd_timeout_in_sec: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_translation_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_can_initiate: Optional[pulumi.Input[_builtins.str]] = None,
-                 phase_one_details: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']] = None,
-                 phase_two_details: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']] = None,
-                 routing: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_virtual_circuits: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bgp_session_info: pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
+                 dpd_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 dpd_timeout_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_domain_config: pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+                 phase_one_details: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']] = None,
+                 phase_two_details: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
 
@@ -360,19 +360,19 @@ class _IpsecConnectionTunnelManagementState:
 
     @_builtins.property
     @pulumi.getter(name="associatedVirtualCircuits")
-    def associated_virtual_circuits(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def associated_virtual_circuits(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
         """
         return pulumi.get(self, "associated_virtual_circuits")
 
     @associated_virtual_circuits.setter
-    def associated_virtual_circuits(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def associated_virtual_circuits(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_virtual_circuits", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpSessionInfo")
-    def bgp_session_info(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]:
+    def bgp_session_info(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]:
         """
         Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 
@@ -381,117 +381,117 @@ class _IpsecConnectionTunnelManagementState:
         return pulumi.get(self, "bgp_session_info")
 
     @bgp_session_info.setter
-    def bgp_session_info(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]):
+    def bgp_session_info(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]):
         pulumi.set(self, "bgp_session_info", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpeIp")
-    def cpe_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         """
         return pulumi.get(self, "cpe_ip")
 
     @cpe_ip.setter
-    def cpe_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dpdConfigs")
-    def dpd_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
+    def dpd_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
         return pulumi.get(self, "dpd_configs")
 
     @dpd_configs.setter
-    def dpd_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
+    def dpd_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
         pulumi.set(self, "dpd_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="dpdMode")
-    def dpd_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dpd_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dead peer detection (DPD) mode set on the Oracle side of the connection.
         """
         return pulumi.get(self, "dpd_mode")
 
     @dpd_mode.setter
-    def dpd_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dpd_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dpd_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="dpdTimeoutInSec")
-    def dpd_timeout_in_sec(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dpd_timeout_in_sec(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         DPD timeout in seconds.
         """
         return pulumi.get(self, "dpd_timeout_in_sec")
 
     @dpd_timeout_in_sec.setter
-    def dpd_timeout_in_sec(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dpd_timeout_in_sec(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dpd_timeout_in_sec", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionDomainConfig")
-    def encryption_domain_config(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
+    def encryption_domain_config(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
         """
         Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         """
         return pulumi.get(self, "encryption_domain_config")
 
     @encryption_domain_config.setter
-    def encryption_domain_config(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]):
+    def encryption_domain_config(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]):
         pulumi.set(self, "encryption_domain_config", value)
 
     @_builtins.property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ike_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internet Key Exchange protocol version.
         """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
-    def ike_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ike_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ike_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ipsecId")
-    def ipsec_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipsec_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the IPSec connection.
         """
         return pulumi.get(self, "ipsec_id")
 
     @ipsec_id.setter
-    def ipsec_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipsec_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipsec_id", value)
 
     @_builtins.property
     @pulumi.getter(name="natTranslationEnabled")
-    def nat_translation_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nat_translation_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
 
@@ -502,24 +502,24 @@ class _IpsecConnectionTunnelManagementState:
         return pulumi.get(self, "nat_translation_enabled")
 
     @nat_translation_enabled.setter
-    def nat_translation_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nat_translation_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nat_translation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleCanInitiate")
-    def oracle_can_initiate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_can_initiate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
         """
         return pulumi.get(self, "oracle_can_initiate")
 
     @oracle_can_initiate.setter
-    def oracle_can_initiate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_can_initiate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_can_initiate", value)
 
     @_builtins.property
     @pulumi.getter(name="phaseOneDetails")
-    def phase_one_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
+    def phase_one_details(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]:
         """
         Configuration details for IKE phase one (ISAKMP) configuration parameters. 
 
@@ -528,12 +528,12 @@ class _IpsecConnectionTunnelManagementState:
         return pulumi.get(self, "phase_one_details")
 
     @phase_one_details.setter
-    def phase_one_details(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]):
+    def phase_one_details(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseOneDetailsArgs']]):
         pulumi.set(self, "phase_one_details", value)
 
     @_builtins.property
     @pulumi.getter(name="phaseTwoDetails")
-    def phase_two_details(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]:
+    def phase_two_details(self) -> pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]:
         """
         Configuration details for IPSec phase two configuration parameters.
 
@@ -542,103 +542,103 @@ class _IpsecConnectionTunnelManagementState:
         return pulumi.get(self, "phase_two_details")
 
     @phase_two_details.setter
-    def phase_two_details(self, value: Optional[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]):
+    def phase_two_details(self, value: pulumi.Input[Optional['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs']]):
         pulumi.set(self, "phase_two_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedSecret")
-    def shared_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         """
         return pulumi.get(self, "shared_secret")
 
     @shared_secret.setter
-    def shared_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_secret", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPSec connection's tunnel's lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tunnel's current state.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
-    def time_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="tunnelId")
-    def tunnel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tunnel_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the IPSec connection's tunnel.
         """
         return pulumi.get(self, "tunnel_id")
 
     @tunnel_id.setter
-    def tunnel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tunnel_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tunnel_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnIp")
-    def vpn_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpn_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         """
         return pulumi.get(self, "vpn_ip")
 
     @vpn_ip.setter
-    def vpn_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpn_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpn_ip", value)
 
 
@@ -648,19 +648,19 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bgp_session_info: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
-                 encryption_domain_config: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_translation_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_can_initiate: Optional[pulumi.Input[_builtins.str]] = None,
-                 phase_one_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-                 phase_two_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
+                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
+                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Ipsec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
@@ -802,19 +802,19 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bgp_session_info: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
-                 encryption_domain_config: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 nat_translation_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_can_initiate: Optional[pulumi.Input[_builtins.str]] = None,
-                 phase_one_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-                 phase_two_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
+                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
+                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -863,29 +863,29 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_virtual_circuits: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            bgp_session_info: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cpe_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
-            dpd_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            dpd_timeout_in_sec: Optional[pulumi.Input[_builtins.int]] = None,
-            encryption_domain_config: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
-            ike_version: Optional[pulumi.Input[_builtins.str]] = None,
-            ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-            nat_translation_enabled: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_can_initiate: Optional[pulumi.Input[_builtins.str]] = None,
-            phase_one_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-            phase_two_details: Optional[pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
-            routing: Optional[pulumi.Input[_builtins.str]] = None,
-            shared_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vpn_ip: Optional[pulumi.Input[_builtins.str]] = None) -> 'IpsecConnectionTunnelManagement':
+            associated_virtual_circuits: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpe_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
+            dpd_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            dpd_timeout_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
+            encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+            ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+            ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+            phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
+            phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+            routing: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpn_ip: pulumi.Input[Optional[_builtins.str]] = None) -> 'IpsecConnectionTunnelManagement':
         """
         Get an existing IpsecConnectionTunnelManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

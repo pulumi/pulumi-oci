@@ -25,9 +25,9 @@ class NetworkFirewallPolicyNatRuleArgs:
                  condition: pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyNatRule resource.
 
@@ -112,53 +112,53 @@ class NetworkFirewallPolicyNatRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of a NAT rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the NAT rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyNatRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional['NetworkFirewallPolicyNatRuleConditionArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyNatRule resources.
 
@@ -199,7 +199,7 @@ class _NetworkFirewallPolicyNatRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) action:
         * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
@@ -207,96 +207,96 @@ class _NetworkFirewallPolicyNatRuleState:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs']]:
+    def condition(self) -> pulumi.Input[Optional['NetworkFirewallPolicyNatRuleConditionArgs']]:
         """
         (Updatable) Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs']]):
+    def condition(self, value: pulumi.Input[Optional['NetworkFirewallPolicyNatRuleConditionArgs']]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of a NAT rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the NAT rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyNatRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The priority order in which this rule should be evaluated
         """
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) NAT type:
         * NATV4 - NATV4 type NAT.
@@ -308,7 +308,7 @@ class _NetworkFirewallPolicyNatRuleState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -318,13 +318,13 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -443,13 +443,13 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -486,15 +486,15 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            position: Optional[pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
-            priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicyNatRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyNatRule':
         """
         Get an existing NetworkFirewallPolicyNatRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

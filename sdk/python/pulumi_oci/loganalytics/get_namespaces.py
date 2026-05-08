@@ -109,8 +109,8 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
-        is_compartment_delete=namespace_is_compartment_delete)
+    test_namespaces = oci.loganalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete == "true")
     ```
 
 
@@ -130,9 +130,9 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_compartment_delete=pulumi.get(__ret__, 'is_compartment_delete'),
         namespace_collections=pulumi.get(__ret__, 'namespace_collections'))
-def get_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
-                          is_compartment_delete: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_namespaces_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
+                          is_compartment_delete: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacesResult]:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
@@ -146,8 +146,8 @@ def get_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
-        is_compartment_delete=namespace_is_compartment_delete)
+    test_namespaces = oci.loganalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete == "true")
     ```
 
 

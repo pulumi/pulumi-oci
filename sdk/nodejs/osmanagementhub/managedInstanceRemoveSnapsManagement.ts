@@ -122,15 +122,15 @@ export interface ManagedInstanceRemoveSnapsManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The array of snaps to remove.
      */
-    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementSnapDetail>[]>;
+    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementSnapDetail>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -148,5 +148,5 @@ export interface ManagedInstanceRemoveSnapsManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRemoveSnapsManagementWorkRequestDetails | undefined>;
 }

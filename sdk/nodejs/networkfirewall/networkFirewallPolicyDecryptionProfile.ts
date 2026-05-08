@@ -23,15 +23,15 @@ import * as utilities from "../utilities";
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyDecryptionProfileType,
  *     description: networkFirewallPolicyDecryptionProfileDescription,
- *     areCertificateExtensionsRestricted: networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted,
- *     isAutoIncludeAltName: networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName,
- *     isExpiredCertificateBlocked: networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked,
- *     isOutOfCapacityBlocked: networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked,
- *     isRevocationStatusTimeoutBlocked: networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked,
- *     isUnknownRevocationStatusBlocked: networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked,
- *     isUnsupportedCipherBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked,
- *     isUnsupportedVersionBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked,
- *     isUntrustedIssuerBlocked: networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked,
+ *     areCertificateExtensionsRestricted: networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted === "true",
+ *     isAutoIncludeAltName: networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName === "true",
+ *     isExpiredCertificateBlocked: networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked === "true",
+ *     isOutOfCapacityBlocked: networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked === "true",
+ *     isRevocationStatusTimeoutBlocked: networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked === "true",
+ *     isUnknownRevocationStatusBlocked: networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked === "true",
+ *     isUnsupportedCipherBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked === "true",
+ *     isUnsupportedVersionBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked === "true",
+ *     isUntrustedIssuerBlocked: networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked === "true",
  * });
  * ```
  *
@@ -194,47 +194,47 @@ export interface NetworkFirewallPolicyDecryptionProfileState {
     /**
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
-    areCertificateExtensionsRestricted?: pulumi.Input<boolean>;
+    areCertificateExtensionsRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The description of the decryption profile. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
-    isAutoIncludeAltName?: pulumi.Input<boolean>;
+    isAutoIncludeAltName?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is expired.
      */
-    isExpiredCertificateBlocked?: pulumi.Input<boolean>;
+    isExpiredCertificateBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      */
-    isOutOfCapacityBlocked?: pulumi.Input<boolean>;
+    isOutOfCapacityBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      */
-    isRevocationStatusTimeoutBlocked?: pulumi.Input<boolean>;
+    isRevocationStatusTimeoutBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      */
-    isUnknownRevocationStatusBlocked?: pulumi.Input<boolean>;
+    isUnknownRevocationStatusBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      */
-    isUnsupportedCipherBlocked?: pulumi.Input<boolean>;
+    isUnsupportedCipherBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL version is not supported.
      */
-    isUnsupportedVersionBlocked?: pulumi.Input<boolean>;
+    isUnsupportedVersionBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      */
-    isUntrustedIssuerBlocked?: pulumi.Input<boolean>;
+    isUntrustedIssuerBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the decryption profile.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      *
@@ -242,15 +242,15 @@ export interface NetworkFirewallPolicyDecryptionProfileState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -260,47 +260,47 @@ export interface NetworkFirewallPolicyDecryptionProfileArgs {
     /**
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
-    areCertificateExtensionsRestricted?: pulumi.Input<boolean>;
+    areCertificateExtensionsRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The description of the decryption profile. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
-    isAutoIncludeAltName?: pulumi.Input<boolean>;
+    isAutoIncludeAltName?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is expired.
      */
-    isExpiredCertificateBlocked?: pulumi.Input<boolean>;
+    isExpiredCertificateBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      */
-    isOutOfCapacityBlocked?: pulumi.Input<boolean>;
+    isOutOfCapacityBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      */
-    isRevocationStatusTimeoutBlocked?: pulumi.Input<boolean>;
+    isRevocationStatusTimeoutBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      */
-    isUnknownRevocationStatusBlocked?: pulumi.Input<boolean>;
+    isUnknownRevocationStatusBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      */
-    isUnsupportedCipherBlocked?: pulumi.Input<boolean>;
+    isUnsupportedCipherBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if SSL version is not supported.
      */
-    isUnsupportedVersionBlocked?: pulumi.Input<boolean>;
+    isUnsupportedVersionBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      */
-    isUntrustedIssuerBlocked?: pulumi.Input<boolean>;
+    isUntrustedIssuerBlocked?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the decryption profile.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      *

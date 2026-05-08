@@ -222,59 +222,59 @@ export interface TriggerState {
     /**
      * (Updatable) The list of actions that are to be performed for this trigger.
      */
-    actions?: pulumi.Input<pulumi.Input<inputs.DevOps.TriggerAction>[]>;
+    actions?: pulumi.Input<pulumi.Input<inputs.DevOps.TriggerAction>[] | undefined>;
     /**
      * The OCID of the compartment that contains the trigger.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the connection resource used to get details for triggered events.
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description about the trigger.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Trigger display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DevOps project to which the trigger belongs to.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the DevOps code repository.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the trigger.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      *
@@ -282,11 +282,11 @@ export interface TriggerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    triggerSource?: pulumi.Input<string>;
+    triggerSource?: pulumi.Input<string | undefined>;
     /**
      * The endpoint that listens to trigger events.
      */
-    triggerUrl?: pulumi.Input<string>;
+    triggerUrl?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -300,23 +300,23 @@ export interface TriggerArgs {
     /**
      * (Updatable) The OCID of the connection resource used to get details for triggered events.
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description about the trigger.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Trigger display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the DevOps project to which the trigger belongs to.
      */
@@ -324,7 +324,7 @@ export interface TriggerArgs {
     /**
      * (Updatable) The OCID of the DevOps code repository.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      *

@@ -349,7 +349,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.DatabaseManagement.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_management_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.databasemanagement.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_management_cloud_exadata_infrastructure["id"])
     ```
 
 
@@ -387,7 +387,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
         version=pulumi.get(__ret__, 'version'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'),
         vm_clusters=pulumi.get(__ret__, 'vm_clusters'))
-def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructureResult]:
     """
     This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
@@ -401,7 +401,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.DatabaseManagement.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_management_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.databasemanagement.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_management_cloud_exadata_infrastructure["id"])
     ```
 
 

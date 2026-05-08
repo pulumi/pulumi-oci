@@ -157,7 +157,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         db_servers=cloud_exadata_infrastructure_un_allocated_resource_db_servers)
     ```
 
@@ -181,8 +181,8 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
         local_storage_in_gbs=pulumi.get(__ret__, 'local_storage_in_gbs'),
         memory_in_gbs=pulumi.get(__ret__, 'memory_in_gbs'),
         ocpus=pulumi.get(__ret__, 'ocpus'))
-def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  db_servers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  db_servers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructureUnAllocatedResourceResult]:
     """
     This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
@@ -195,7 +195,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         db_servers=cloud_exadata_infrastructure_un_allocated_resource_db_servers)
     ```
 

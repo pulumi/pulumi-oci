@@ -95,7 +95,7 @@ def get_target_database_peer_target_databases(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_databases = oci.DataSafe.get_target_database_peer_target_databases(target_database_id=test_target_database["id"])
+    test_target_database_peer_target_databases = oci.datasafe.get_target_database_peer_target_databases(target_database_id=test_target_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_target_database_peer_target_databases(filters: Optional[Sequence[Union['
         id=pulumi.get(__ret__, 'id'),
         peer_target_database_collections=pulumi.get(__ret__, 'peer_target_database_collections'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_database_peer_target_databases_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasePeerTargetDatabasesFilterArgs', 'GetTargetDatabasePeerTargetDatabasesFilterArgsDict']]]]] = None,
-                                                     target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_database_peer_target_databases_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasePeerTargetDatabasesFilterArgs', 'GetTargetDatabasePeerTargetDatabasesFilterArgsDict']]]]] = None,
+                                                     target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabasesResult]:
     """
     This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
@@ -126,7 +126,7 @@ def get_target_database_peer_target_databases_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_databases = oci.DataSafe.get_target_database_peer_target_databases(target_database_id=test_target_database["id"])
+    test_target_database_peer_target_databases = oci.datasafe.get_target_database_peer_target_databases(target_database_id=test_target_database["id"])
     ```
 
 

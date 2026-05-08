@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
+ * const testManagementAgentPlugins = oci.managementagent.getManagementAgentPlugins({
  *     compartmentId: compartmentId,
  *     agentId: managementAgentId,
  *     displayName: managementAgentPluginDisplayName,
@@ -101,7 +101,7 @@ export interface GetManagementAgentPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
+ * const testManagementAgentPlugins = oci.managementagent.getManagementAgentPlugins({
  *     compartmentId: compartmentId,
  *     agentId: managementAgentId,
  *     displayName: managementAgentPluginDisplayName,
@@ -129,7 +129,7 @@ export interface GetManagementAgentPluginsOutputArgs {
     /**
      * The ManagementAgentID of the agent from which the Management Agents to be filtered.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment to which a request will be scoped.
      */
@@ -137,14 +137,14 @@ export interface GetManagementAgentPluginsOutputArgs {
     /**
      * Filter to return only Management Agent Plugins having the particular display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentPluginsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentPluginsFilterArgs>[] | undefined>;
     /**
      * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
-    platformTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    platformTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter to return only Management Agents in the particular lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

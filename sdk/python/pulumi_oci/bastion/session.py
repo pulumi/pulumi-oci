@@ -24,9 +24,9 @@ class SessionArgs:
                  bastion_id: pulumi.Input[_builtins.str],
                  key_details: pulumi.Input['SessionKeyDetailsArgs'],
                  target_resource_details: pulumi.Input['SessionTargetResourceDetailsArgs'],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Session resource.
 
@@ -85,58 +85,58 @@ class SessionArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the session.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         """
         return pulumi.get(self, "key_type")
 
     @key_type.setter
-    def key_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTtlInSeconds")
-    def session_ttl_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def session_ttl_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of time the session can remain active.
         """
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @session_ttl_in_seconds.setter
-    def session_ttl_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def session_ttl_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "session_ttl_in_seconds", value)
 
 
 @pulumi.input_type
 class _SessionState:
     def __init__(__self__, *,
-                 bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bastion_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bastion_public_host_key_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 bastion_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_details: Optional[pulumi.Input['SessionKeyDetailsArgs']] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bastion_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bastion_public_host_key_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 bastion_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_details: pulumi.Input[Optional['SessionKeyDetailsArgs']] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_details: pulumi.Input[Optional['SessionTargetResourceDetailsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Session resources.
 
@@ -186,170 +186,170 @@ class _SessionState:
 
     @_builtins.property
     @pulumi.getter(name="bastionId")
-    def bastion_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bastion_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier (OCID) of the bastion on which to create this session.
         """
         return pulumi.get(self, "bastion_id")
 
     @bastion_id.setter
-    def bastion_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bastion_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bastion_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bastionName")
-    def bastion_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bastion_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bastion that is hosting this session.
         """
         return pulumi.get(self, "bastion_name")
 
     @bastion_name.setter
-    def bastion_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bastion_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bastion_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bastionPublicHostKeyInfo")
-    def bastion_public_host_key_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bastion_public_host_key_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
         """
         return pulumi.get(self, "bastion_public_host_key_info")
 
     @bastion_public_host_key_info.setter
-    def bastion_public_host_key_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bastion_public_host_key_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bastion_public_host_key_info", value)
 
     @_builtins.property
     @pulumi.getter(name="bastionUserName")
-    def bastion_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bastion_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username that the session uses to connect to the target resource.
         """
         return pulumi.get(self, "bastion_user_name")
 
     @bastion_user_name.setter
-    def bastion_user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bastion_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bastion_user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the session.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Optional[pulumi.Input['SessionKeyDetailsArgs']]:
+    def key_details(self) -> pulumi.Input[Optional['SessionKeyDetailsArgs']]:
         """
         Public key details for a bastion session.
         """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
-    def key_details(self, value: Optional[pulumi.Input['SessionKeyDetailsArgs']]):
+    def key_details(self, value: pulumi.Input[Optional['SessionKeyDetailsArgs']]):
         pulumi.set(self, "key_details", value)
 
     @_builtins.property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         """
         return pulumi.get(self, "key_type")
 
     @key_type.setter
-    def key_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_type", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current session state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTtlInSeconds")
-    def session_ttl_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def session_ttl_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of time the session can remain active.
         """
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @session_ttl_in_seconds.setter
-    def session_ttl_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def session_ttl_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "session_ttl_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def ssh_metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The connection message for the session.
         """
         return pulumi.get(self, "ssh_metadata")
 
     @ssh_metadata.setter
-    def ssh_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def ssh_metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the session.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceDetails")
-    def target_resource_details(self) -> Optional[pulumi.Input['SessionTargetResourceDetailsArgs']]:
+    def target_resource_details(self) -> pulumi.Input[Optional['SessionTargetResourceDetailsArgs']]:
         """
         Details about a bastion session's target resource.
         """
         return pulumi.get(self, "target_resource_details")
 
     @target_resource_details.setter
-    def target_resource_details(self, value: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']]):
+    def target_resource_details(self, value: pulumi.Input[Optional['SessionTargetResourceDetailsArgs']]):
         pulumi.set(self, "target_resource_details", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -359,12 +359,12 @@ class Session(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+                 bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -390,12 +390,12 @@ class Session(pulumi.CustomResource):
                 "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
                 "target_resource_id": test_target_resource["id"],
                 "target_resource_operating_system_user_name": test_user["name"],
-                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_port": int(session_target_resource_details_target_resource_port),
                 "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
             },
             display_name=session_display_name,
             key_type=session_key_type,
-            session_ttl_in_seconds=session_session_ttl_in_seconds)
+            session_ttl_in_seconds=int(session_session_ttl_in_seconds))
         ```
 
         ## Import
@@ -446,12 +446,12 @@ class Session(pulumi.CustomResource):
                 "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
                 "target_resource_id": test_target_resource["id"],
                 "target_resource_operating_system_user_name": test_user["name"],
-                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_port": int(session_target_resource_details_target_resource_port),
                 "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
             },
             display_name=session_display_name,
             key_type=session_key_type,
-            session_ttl_in_seconds=session_session_ttl_in_seconds)
+            session_ttl_in_seconds=int(session_session_ttl_in_seconds))
         ```
 
         ## Import
@@ -478,12 +478,12 @@ class Session(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+                 bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -523,20 +523,20 @@ class Session(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bastion_name: Optional[pulumi.Input[_builtins.str]] = None,
-            bastion_public_host_key_info: Optional[pulumi.Input[_builtins.str]] = None,
-            bastion_user_name: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
-            key_type: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            ssh_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Session':
+            bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_public_host_key_info: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+            key_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            ssh_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Session':
         """
         Get an existing Session resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

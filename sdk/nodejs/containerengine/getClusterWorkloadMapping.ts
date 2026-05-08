@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterWorkloadMapping = oci.ContainerEngine.getClusterWorkloadMapping({
+ * const testClusterWorkloadMapping = oci.containerengine.getClusterWorkloadMapping({
  *     clusterId: testCluster.id,
  *     workloadMappingId: testWorkloadMapping.id,
  * });
@@ -96,7 +96,7 @@ export interface GetClusterWorkloadMappingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterWorkloadMapping = oci.ContainerEngine.getClusterWorkloadMapping({
+ * const testClusterWorkloadMapping = oci.containerengine.getClusterWorkloadMapping({
  *     clusterId: testCluster.id,
  *     workloadMappingId: testWorkloadMapping.id,
  * });

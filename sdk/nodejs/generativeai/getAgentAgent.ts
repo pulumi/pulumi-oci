@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgent = oci.GenerativeAi.getAgentAgent({
+ * const testAgent = oci.generativeai.getAgentAgent({
  *     agentId: testAgentOciGenerativeAiAgentAgent.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetAgentAgentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgent = oci.GenerativeAi.getAgentAgent({
+ * const testAgent = oci.generativeai.getAgentAgent({
  *     agentId: testAgentOciGenerativeAiAgentAgent.id,
  * });
  * ```

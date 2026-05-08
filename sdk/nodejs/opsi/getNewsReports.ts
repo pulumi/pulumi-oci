@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReports = oci.Opsi.getNewsReports({
+ * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,
@@ -105,9 +105,9 @@ export interface GetNewsReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReports = oci.Opsi.getNewsReports({
+ * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,
@@ -134,22 +134,22 @@ export interface GetNewsReportsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetNewsReportsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetNewsReportsFilterArgs>[] | undefined>;
     /**
      * Unique Ops Insights news report identifier
      */
-    newsReportId?: pulumi.Input<string>;
+    newsReportId?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource Status
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

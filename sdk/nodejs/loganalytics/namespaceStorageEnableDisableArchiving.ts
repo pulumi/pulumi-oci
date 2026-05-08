@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespaceStorageEnableDisableArchiving = new oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving", {
  *     namespace: namespaceStorageEnableDisableArchivingNamespace,
- *     enableArchivingTenant: enableArchivingTenant,
+ *     enableArchivingTenant: enableArchivingTenant === "true",
  * });
  * ```
  */
@@ -112,15 +112,15 @@ export interface NamespaceStorageEnableDisableArchivingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableArchivingTenant?: pulumi.Input<boolean>;
+    enableArchivingTenant?: pulumi.Input<boolean | undefined>;
     /**
      * A human-readable success string.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -34,8 +34,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -78,8 +78,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -122,8 +122,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -210,8 +210,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -254,8 +254,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -296,8 +296,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -380,8 +380,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -422,8 +422,8 @@ public final class GenericArtifactsContentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
      * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

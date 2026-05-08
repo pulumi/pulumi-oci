@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrail = oci.DataSafe.getAuditTrail({
+ * const testAuditTrail = oci.datasafe.getAuditTrail({
  *     auditTrailId: testAuditTrailOciDataSafeAuditTrail.id,
  * });
  * ```
@@ -155,7 +155,7 @@ export interface GetAuditTrailResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrail = oci.DataSafe.getAuditTrail({
+ * const testAuditTrail = oci.datasafe.getAuditTrail({
  *     auditTrailId: testAuditTrailOciDataSafeAuditTrail.id,
  * });
  * ```

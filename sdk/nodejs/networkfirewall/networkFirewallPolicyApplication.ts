@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkFirewallPolicyApplication = new oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application", {
- *     icmpType: networkFirewallPolicyApplicationIcmpType,
+ *     icmpType: Number(networkFirewallPolicyApplicationIcmpType),
  *     name: networkFirewallPolicyApplicationName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyApplicationType,
  *     description: networkFirewallPolicyApplicationDescription,
- *     icmpCode: networkFirewallPolicyApplicationIcmpCode,
+ *     icmpCode: Number(networkFirewallPolicyApplicationIcmpCode),
  * });
  * ```
  *
@@ -148,27 +148,27 @@ export interface NetworkFirewallPolicyApplicationState {
     /**
      * (Updatable) The description of the application. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    icmpCode?: pulumi.Input<number>;
+    icmpCode?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    icmpType?: pulumi.Input<number>;
+    icmpType?: pulumi.Input<number | undefined>;
     /**
      * Name of the application
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this application belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6
      *
@@ -176,7 +176,7 @@ export interface NetworkFirewallPolicyApplicationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -186,11 +186,11 @@ export interface NetworkFirewallPolicyApplicationArgs {
     /**
      * (Updatable) The description of the application. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    icmpCode?: pulumi.Input<number>;
+    icmpCode?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
@@ -198,7 +198,7 @@ export interface NetworkFirewallPolicyApplicationArgs {
     /**
      * Name of the application
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

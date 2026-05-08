@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityAssociationsList = oci.LogAnalytics.getLogAnalyticsEntityAssociationsList({
+ * const testLogAnalyticsEntityAssociationsList = oci.loganalytics.getLogAnalyticsEntityAssociationsList({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityAssociationsListNamespace,
  *     directOrAllAssociations: logAnalyticsEntityAssociationsListDirectOrAllAssociations,
@@ -81,7 +81,7 @@ export interface GetLogAnalyticsEntityAssociationsListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityAssociationsList = oci.LogAnalytics.getLogAnalyticsEntityAssociationsList({
+ * const testLogAnalyticsEntityAssociationsList = oci.loganalytics.getLogAnalyticsEntityAssociationsList({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityAssociationsListNamespace,
  *     directOrAllAssociations: logAnalyticsEntityAssociationsListDirectOrAllAssociations,
@@ -105,8 +105,8 @@ export interface GetLogAnalyticsEntityAssociationsListOutputArgs {
     /**
      * Indicates whether to return direct associated entities or direct and inferred associated entities.
      */
-    directOrAllAssociations?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityAssociationsListFilterArgs>[]>;
+    directOrAllAssociations?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityAssociationsListFilterArgs>[] | undefined>;
     /**
      * The Log analytics entity OCID.
      */

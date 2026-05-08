@@ -27,11 +27,11 @@ class NamespaceScheduledTaskArgs:
                  namespace: pulumi.Input[_builtins.str],
                  schedules: pulumi.Input['NamespaceScheduledTaskSchedulesArgs'],
                  task_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 saved_search_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 saved_search_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamespaceScheduledTask resource.
 
@@ -146,86 +146,86 @@ class NamespaceScheduledTaskArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for this resource.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def saved_search_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ManagementSavedSearch id [OCID] to be accelerated.
         """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
-    def saved_search_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def saved_search_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "saved_search_id", value)
 
 
 @pulumi.input_type
 class _NamespaceScheduledTaskState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_occurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_search_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_task_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedules: Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional['NamespaceScheduledTaskActionArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_occurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_task_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedules: pulumi.Input[Optional['NamespaceScheduledTaskSchedulesArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceScheduledTask resources.
 
@@ -290,172 +290,172 @@ class _NamespaceScheduledTaskState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']]:
+    def action(self) -> pulumi.Input[Optional['NamespaceScheduledTaskActionArgs']]:
         """
         Action for scheduled task.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']]):
+    def action(self, value: pulumi.Input[Optional['NamespaceScheduledTaskActionArgs']]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for this resource.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Discriminator.
         """
         return pulumi.get(self, "kind")
 
     @kind.setter
-    def kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kind", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="numOccurrences")
-    def num_occurrences(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def num_occurrences(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of execution occurrences.
         """
         return pulumi.get(self, "num_occurrences")
 
     @num_occurrences.setter
-    def num_occurrences(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def num_occurrences(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "num_occurrences", value)
 
     @_builtins.property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def saved_search_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ManagementSavedSearch id [OCID] to be accelerated.
         """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
-    def saved_search_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def saved_search_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "saved_search_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledTaskId")
-    def scheduled_task_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_task_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "scheduled_task_id")
 
     @scheduled_task_id.setter
-    def scheduled_task_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_task_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_task_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedules(self) -> Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']]:
+    def schedules(self) -> pulumi.Input[Optional['NamespaceScheduledTaskSchedulesArgs']]:
         """
         (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
         """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
-    def schedules(self, value: Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']]):
+    def schedules(self, value: pulumi.Input[Optional['NamespaceScheduledTaskSchedulesArgs']]):
         pulumi.set(self, "schedules", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the scheduled task.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="taskStatus")
-    def task_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def task_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         """
         return pulumi.get(self, "task_status")
 
     @task_status.setter
-    def task_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def task_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "task_status", value)
 
     @_builtins.property
     @pulumi.getter(name="taskType")
-    def task_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def task_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Task type.
 
@@ -466,43 +466,43 @@ class _NamespaceScheduledTaskState:
         return pulumi.get(self, "task_type")
 
     @task_type.setter
-    def task_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def task_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "task_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled task was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled task was last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
@@ -512,17 +512,17 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_search_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
-                 task_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedules: pulumi.Input[Optional[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
+                 task_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -544,7 +544,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
             namespace=namespace_scheduled_task_namespace,
             action={
                 "type": namespace_scheduled_task_action_type,
-                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree == "true",
                 "data_type": namespace_scheduled_task_action_data_type,
                 "metric_extraction": {
                     "compartment_id": compartment_id,
@@ -674,7 +674,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
             namespace=namespace_scheduled_task_namespace,
             action={
                 "type": namespace_scheduled_task_action_type,
-                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree == "true",
                 "data_type": namespace_scheduled_task_action_data_type,
                 "metric_extraction": {
                     "compartment_id": compartment_id,
@@ -775,17 +775,17 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 saved_search_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
-                 task_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedules: pulumi.Input[Optional[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
+                 task_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -835,24 +835,24 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            kind: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            num_occurrences: Optional[pulumi.Input[_builtins.str]] = None,
-            saved_search_id: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_task_id: Optional[pulumi.Input[_builtins.str]] = None,
-            schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            task_status: Optional[pulumi.Input[_builtins.str]] = None,
-            task_type: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceScheduledTask':
+            action: pulumi.Input[Optional[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kind: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            num_occurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_task_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedules: pulumi.Input[Optional[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            task_status: pulumi.Input[Optional[_builtins.str]] = None,
+            task_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceScheduledTask':
         """
         Get an existing NamespaceScheduledTask resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpById = oci.Core.getPublicIp({
+ * const testOciCorePublicIpById = oci.core.getPublicIp({
  *     id: testPublicIpId,
  * });
  * ```
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByPrivateIpId = oci.core.getPublicIp({
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
@@ -46,7 +46,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByIp = oci.core.getPublicIp({
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
@@ -170,7 +170,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpById = oci.Core.getPublicIp({
+ * const testOciCorePublicIpById = oci.core.getPublicIp({
  *     id: testPublicIpId,
  * });
  * ```
@@ -180,7 +180,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByPrivateIpId = oci.core.getPublicIp({
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
@@ -190,7 +190,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByIp = oci.core.getPublicIp({
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
@@ -212,13 +212,13 @@ export interface GetPublicIpOutputArgs {
     /**
      * The OCID of the public IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Gets the public IP based on the public IP address (for example, 129.146.2.1).
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * Gets the public IP assigned to the specified private IP. You must specify the OCID of the private IP. If no public IP is assigned, a 404 is returned.
      */
-    privateIpId?: pulumi.Input<string>;
+    privateIpId?: pulumi.Input<string | undefined>;
 }

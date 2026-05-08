@@ -21,7 +21,7 @@ class ConnectionAssignmentArgs:
     def __init__(__self__, *,
                  connection_id: pulumi.Input[_builtins.str],
                  deployment_id: pulumi.Input[_builtins.str],
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ConnectionAssignment resource.
 
@@ -64,7 +64,7 @@ class ConnectionAssignmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to override locks (if any exist).
 
@@ -75,21 +75,21 @@ class ConnectionAssignmentArgs:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
 
 @pulumi.input_type
 class _ConnectionAssignmentState:
     def __init__(__self__, *,
-                 alias_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 alias_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ConnectionAssignment resources.
 
@@ -125,55 +125,55 @@ class _ConnectionAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="aliasName")
-    def alias_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alias_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential store alias.
         """
         return pulumi.get(self, "alias_name")
 
     @alias_name.setter
-    def alias_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alias_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alias_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
-    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
-    def deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to override locks (if any exist).
 
@@ -184,43 +184,43 @@ class _ConnectionAssignmentState:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible lifecycle states for connection assignments.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -230,9 +230,9 @@ class ConnectionAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -251,7 +251,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         test_connection_assignment = oci.goldengate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"],
-            is_lock_override=connection_assignment_is_lock_override)
+            is_lock_override=connection_assignment_is_lock_override == "true")
         ```
 
         ## Import
@@ -296,7 +296,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         test_connection_assignment = oci.goldengate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"],
-            is_lock_override=connection_assignment_is_lock_override)
+            is_lock_override=connection_assignment_is_lock_override == "true")
         ```
 
         ## Import
@@ -323,9 +323,9 @@ class ConnectionAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -357,14 +357,14 @@ class ConnectionAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alias_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ConnectionAssignment':
+            alias_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ConnectionAssignment':
         """
         Get an existing ConnectionAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

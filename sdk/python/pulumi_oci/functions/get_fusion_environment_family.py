@@ -213,7 +213,7 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
+    test_fusion_environment_family = oci.functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[_builti
         system_name=pulumi.get(__ret__, 'system_name'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_fusion_environment_family_output(fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_family_output(fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentFamilyResult]:
     """
     This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -252,7 +252,7 @@ def get_fusion_environment_family_output(fusion_environment_family_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
+    test_fusion_environment_family = oci.functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
     ```
 
 

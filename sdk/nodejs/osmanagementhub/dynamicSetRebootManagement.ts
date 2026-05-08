@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDynamicSetRebootManagement = new oci.osmanagementhub.DynamicSetRebootManagement("test_dynamic_set_reboot_management", {
  *     dynamicSetId: testDynamicSet.id,
  *     managedInstances: dynamicSetRebootManagementManagedInstances,
- *     rebootTimeoutInMins: dynamicSetRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(dynamicSetRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: dynamicSetRebootManagementWorkRequestDetailsDescription,
  *         displayName: dynamicSetRebootManagementWorkRequestDetailsDisplayName,
@@ -123,19 +123,19 @@ export interface DynamicSetRebootManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
      */
-    dynamicSetId?: pulumi.Input<string>;
+    dynamicSetId?: pulumi.Input<string | undefined>;
     /**
      * The list of managed instance OCIDs to be attached/detached.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRebootManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -149,13 +149,13 @@ export interface DynamicSetRebootManagementArgs {
     /**
      * The list of managed instance OCIDs to be attached/detached.
      */
-    managedInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.DynamicSetRebootManagementWorkRequestDetails | undefined>;
 }

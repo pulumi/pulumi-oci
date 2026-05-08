@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubSources = oci.Opsi.getAwrHubSources({
+ * const testAwrHubSources = oci.opsi.getAwrHubSources({
  *     awrHubId: testAwrHub.id,
  *     awrHubSourceId: testAwrHubSource.id,
  *     compartmentId: compartmentId,
@@ -124,7 +124,7 @@ export interface GetAwrHubSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubSources = oci.Opsi.getAwrHubSources({
+ * const testAwrHubSources = oci.opsi.getAwrHubSources({
  *     awrHubId: testAwrHub.id,
  *     awrHubSourceId: testAwrHubSource.id,
  *     compartmentId: compartmentId,
@@ -160,26 +160,26 @@ export interface GetAwrHubSourcesOutputArgs {
     /**
      * Awr Hub source identifier
      */
-    awrHubSourceId?: pulumi.Input<string>;
+    awrHubSourceId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetAwrHubSourcesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetAwrHubSourcesFilterArgs>[] | undefined>;
     /**
      * Awr Hub source database name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      */
-    sourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    sourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Lifecycle states
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource Status
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

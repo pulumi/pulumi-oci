@@ -23,19 +23,19 @@ class SensitiveDataModelArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  target_id: pulumi.Input[_builtins.str],
-                 app_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_schemas: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_sensitive_types: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sample_data_collection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_group_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]] = None):
+                 app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]] = None):
         """
         The set of arguments for constructing a SensitiveDataModel resource.
 
@@ -118,183 +118,183 @@ class SensitiveDataModelArgs:
 
     @_builtins.property
     @pulumi.getter(name="appSuiteName")
-    def app_suite_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_suite_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
         """
         return pulumi.get(self, "app_suite_name")
 
     @app_suite_name.setter
-    def app_suite_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_suite_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_suite_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the sensitive data model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
-    def is_app_defined_relation_discovery_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_app_defined_relation_discovery_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
         """
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @is_app_defined_relation_discovery_enabled.setter
-    def is_app_defined_relation_discovery_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_app_defined_relation_discovery_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_app_defined_relation_discovery_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isIncludeAllSchemas")
-    def is_include_all_schemas(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_include_all_schemas(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         """
         return pulumi.get(self, "is_include_all_schemas")
 
     @is_include_all_schemas.setter
-    def is_include_all_schemas(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_include_all_schemas(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_include_all_schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
-    def is_include_all_sensitive_types(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_include_all_sensitive_types(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all the existing sensitive types should be used by data discovery jobs. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
         """
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @is_include_all_sensitive_types.setter
-    def is_include_all_sensitive_types(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_include_all_sensitive_types(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_include_all_sensitive_types", value)
 
     @_builtins.property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
-    def is_sample_data_collection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sample_data_collection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         """
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @is_sample_data_collection_enabled.setter
-    def is_sample_data_collection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sample_data_collection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sample_data_collection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="schemasForDiscoveries")
-    def schemas_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The schemas to be scanned by data discovery jobs.
         """
         return pulumi.get(self, "schemas_for_discoveries")
 
     @schemas_for_discoveries.setter
-    def schemas_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeGroupIdsForDiscoveries")
-    def sensitive_type_group_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_group_ids_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
         """
         return pulumi.get(self, "sensitive_type_group_ids_for_discoveries")
 
     @sensitive_type_group_ids_for_discoveries.setter
-    def sensitive_type_group_ids_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_group_ids_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_group_ids_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
-    def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_ids_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
         """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @sensitive_type_ids_for_discoveries.setter
-    def sensitive_type_ids_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_ids_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_ids_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="tablesForDiscoveries")
-    def tables_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]:
+    def tables_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]:
         """
         (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
         """
         return pulumi.get(self, "tables_for_discoveries")
 
     @tables_for_discoveries.setter
-    def tables_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]):
+    def tables_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]):
         pulumi.set(self, "tables_for_discoveries", value)
 
 
 @pulumi.input_type
 class _SensitiveDataModelState:
     def __init__(__self__, *,
-                 app_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_schemas: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_sensitive_types: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sample_data_collection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_group_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModel resources.
 
@@ -363,199 +363,199 @@ class _SensitiveDataModelState:
 
     @_builtins.property
     @pulumi.getter(name="appSuiteName")
-    def app_suite_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_suite_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
         """
         return pulumi.get(self, "app_suite_name")
 
     @app_suite_name.setter
-    def app_suite_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_suite_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_suite_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where the sensitive data model should be created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the sensitive data model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
-    def is_app_defined_relation_discovery_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_app_defined_relation_discovery_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
         """
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @is_app_defined_relation_discovery_enabled.setter
-    def is_app_defined_relation_discovery_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_app_defined_relation_discovery_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_app_defined_relation_discovery_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isIncludeAllSchemas")
-    def is_include_all_schemas(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_include_all_schemas(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         """
         return pulumi.get(self, "is_include_all_schemas")
 
     @is_include_all_schemas.setter
-    def is_include_all_schemas(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_include_all_schemas(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_include_all_schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
-    def is_include_all_sensitive_types(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_include_all_sensitive_types(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all the existing sensitive types should be used by data discovery jobs. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
         """
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @is_include_all_sensitive_types.setter
-    def is_include_all_sensitive_types(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_include_all_sensitive_types(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_include_all_sensitive_types", value)
 
     @_builtins.property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
-    def is_sample_data_collection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sample_data_collection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         """
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @is_sample_data_collection_enabled.setter
-    def is_sample_data_collection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sample_data_collection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sample_data_collection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="schemasForDiscoveries")
-    def schemas_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The schemas to be scanned by data discovery jobs.
         """
         return pulumi.get(self, "schemas_for_discoveries")
 
     @schemas_for_discoveries.setter
-    def schemas_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeGroupIdsForDiscoveries")
-    def sensitive_type_group_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_group_ids_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the sensitive type groups to be used by data discovery jobs. All the sensitive types present in sensitive type group will be used for discovery.
         """
         return pulumi.get(self, "sensitive_type_group_ids_for_discoveries")
 
     @sensitive_type_group_ids_for_discoveries.setter
-    def sensitive_type_group_ids_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_group_ids_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_group_ids_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
-    def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sensitive_type_ids_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
         """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @sensitive_type_ids_for_discoveries.setter
-    def sensitive_type_ids_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sensitive_type_ids_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sensitive_type_ids_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the sensitive data model.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tablesForDiscoveries")
-    def tables_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]:
+    def tables_for_discoveries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]:
         """
         (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
         """
         return pulumi.get(self, "tables_for_discoveries")
 
     @tables_for_discoveries.setter
-    def tables_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]):
+    def tables_for_discoveries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]]):
         pulumi.set(self, "tables_for_discoveries", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
 
@@ -566,31 +566,31 @@ class _SensitiveDataModelState:
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -600,21 +600,21 @@ class SensitiveDataModel(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_schemas: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_sensitive_types: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sample_data_collection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_group_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
@@ -644,10 +644,10 @@ class SensitiveDataModel(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled,
-            is_include_all_schemas=sensitive_data_model_is_include_all_schemas,
-            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types,
-            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
+            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled == "true",
+            is_include_all_schemas=sensitive_data_model_is_include_all_schemas == "true",
+            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types == "true",
+            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled == "true",
             schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
             sensitive_type_group_ids_for_discoveries=sensitive_data_model_sensitive_type_group_ids_for_discovery,
             sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery,
@@ -722,10 +722,10 @@ class SensitiveDataModel(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled,
-            is_include_all_schemas=sensitive_data_model_is_include_all_schemas,
-            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types,
-            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
+            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled == "true",
+            is_include_all_schemas=sensitive_data_model_is_include_all_schemas == "true",
+            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types == "true",
+            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled == "true",
             schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
             sensitive_type_group_ids_for_discoveries=sensitive_data_model_sensitive_type_group_ids_for_discovery,
             sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery,
@@ -759,21 +759,21 @@ class SensitiveDataModel(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_schemas: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_include_all_sensitive_types: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sample_data_collection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_group_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -816,25 +816,25 @@ class SensitiveDataModel(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_suite_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_include_all_schemas: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_include_all_sensitive_types: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_sample_data_collection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            sensitive_type_group_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'SensitiveDataModel':
+            app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveDataModel':
         """
         Get an existing SensitiveDataModel resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

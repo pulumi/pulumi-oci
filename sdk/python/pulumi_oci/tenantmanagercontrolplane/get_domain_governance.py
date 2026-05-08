@@ -215,7 +215,7 @@ def get_domain_governance(domain_governance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governance = oci.Tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
+    test_domain_governance = oci.tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_domain_governance(domain_governance_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_domain_governance_output(domain_governance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domain_governance_output(domain_governance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainGovernanceResult]:
     """
     This data source provides details about a specific Domain Governance resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -254,7 +254,7 @@ def get_domain_governance_output(domain_governance_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governance = oci.Tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
+    test_domain_governance = oci.tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
     ```
 
 

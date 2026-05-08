@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackups = oci.Psql.getBackups({
+ * const testBackups = oci.psql.getBackups({
  *     backupId: testBackup.id,
  *     compartmentId: compartmentId,
  *     displayName: backupDisplayName,
@@ -121,7 +121,7 @@ export interface GetBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackups = oci.Psql.getBackups({
+ * const testBackups = oci.psql.getBackups({
  *     backupId: testBackup.id,
  *     compartmentId: compartmentId,
  *     displayName: backupDisplayName,
@@ -154,30 +154,30 @@ export interface GetBackupsOutputArgs {
     /**
      * A unique identifier for the backup.
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetBackupsFilterArgs>[] | undefined>;
     /**
      * A unique identifier for the database system.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
 }

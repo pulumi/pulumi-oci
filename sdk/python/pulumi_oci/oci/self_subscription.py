@@ -26,13 +26,13 @@ class SelfSubscriptionArgs:
                  seller_id: pulumi.Input[_builtins.str],
                  subscription_details: pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs'],
                  tenant_id: pulumi.Input[_builtins.str],
-                 additional_details: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 realm: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 realm: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfSubscription resource.
 
@@ -139,111 +139,111 @@ class SelfSubscriptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]:
         """
         Additional details that are specific for this subscription such as activation details.
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The subscription name. Must be unique within the compartment. This value can be updated.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def realm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The realm from where customer is buying the subscription.
         """
         return pulumi.get(self, "realm")
 
     @realm.setter
-    def realm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realm", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region from where customer is buying the subscription.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of seller in SELF Service.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
 
 @pulumi.input_type
 class _SelfSubscriptionState:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 seller_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_details: Optional[pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs']] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 seller_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_details: pulumi.Input[Optional['SelfSubscriptionSubscriptionDetailsArgs']] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfSubscription resources.
 
@@ -312,175 +312,175 @@ class _SelfSubscriptionState:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]:
         """
         Additional details that are specific for this subscription such as activation details.
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionAdditionalDetailArgs']]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the subscription in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The subscription name. Must be unique within the compartment. This value can be updated.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the marketplace listing in Oracle Cloud Infrastructure.
         """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def realm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The realm from where customer is buying the subscription.
         """
         return pulumi.get(self, "realm")
 
     @realm.setter
-    def realm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realm", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region from where customer is buying the subscription.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="sellerId")
-    def seller_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def seller_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID for the seller in SELF Service.
         """
         return pulumi.get(self, "seller_id")
 
     @seller_id.setter
-    def seller_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def seller_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "seller_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of seller in SELF Service.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the Subscription.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionDetails")
-    def subscription_details(self) -> Optional[pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs']]:
+    def subscription_details(self) -> pulumi.Input[Optional['SelfSubscriptionSubscriptionDetailsArgs']]:
         """
         The details of a subscription
         """
         return pulumi.get(self, "subscription_details")
 
     @subscription_details.setter
-    def subscription_details(self, value: Optional[pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs']]):
+    def subscription_details(self, value: pulumi.Input[Optional['SelfSubscriptionSubscriptionDetailsArgs']]):
         pulumi.set(self, "subscription_details", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
 
@@ -491,55 +491,55 @@ class _SelfSubscriptionState:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
-    def time_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -549,18 +549,18 @@ class SelfSubscription(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 seller_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_details: Optional[pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 seller_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Subscription resource in Oracle Cloud Infrastructure Self service.
@@ -593,7 +593,7 @@ class SelfSubscription(pulumi.CustomResource):
                     "metric_type": subscription_subscription_details_billing_details_metric_type,
                     "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku,
+                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
                 },
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
@@ -609,7 +609,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew,
+                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
             },
             tenant_id=test_tenant["id"],
             additional_details=[{
@@ -693,7 +693,7 @@ class SelfSubscription(pulumi.CustomResource):
                     "metric_type": subscription_subscription_details_billing_details_metric_type,
                     "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku,
+                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
                 },
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
@@ -709,7 +709,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew,
+                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
             },
             tenant_id=test_tenant["id"],
             additional_details=[{
@@ -752,18 +752,18 @@ class SelfSubscription(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 product_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 seller_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_details: Optional[pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 seller_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -812,25 +812,25 @@ class SelfSubscription(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            product_id: Optional[pulumi.Input[_builtins.str]] = None,
-            realm: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            seller_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_details: Optional[pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'SelfSubscription':
+            additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            realm: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            seller_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'SelfSubscription':
         """
         Get an existing SelfSubscription resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

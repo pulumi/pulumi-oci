@@ -159,7 +159,7 @@ def get_protection_capabilities(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+    test_protection_capabilities = oci.waf.get_protection_capabilities(compartment_id=compartment_id,
         display_name=protection_capability_display_name,
         group_tags=protection_capability_group_tag,
         is_latest_versions=protection_capability_is_latest_version,
@@ -196,13 +196,13 @@ def get_protection_capabilities(compartment_id: Optional[_builtins.str] = None,
         key=pulumi.get(__ret__, 'key'),
         protection_capability_collections=pulumi.get(__ret__, 'protection_capability_collections'),
         type=pulumi.get(__ret__, 'type'))
-def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]]]] = None,
-                                       group_tags: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       is_latest_versions: Optional[pulumi.Input[Optional[Sequence[_builtins.bool]]]] = None,
-                                       key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protection_capabilities_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]]]] = None,
+                                       group_tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       is_latest_versions: pulumi.Input[Optional[Optional[Sequence[_builtins.bool]]]] = None,
+                                       key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionCapabilitiesResult]:
     """
     This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
@@ -215,7 +215,7 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+    test_protection_capabilities = oci.waf.get_protection_capabilities(compartment_id=compartment_id,
         display_name=protection_capability_display_name,
         group_tags=protection_capability_group_tag,
         is_latest_versions=protection_capability_is_latest_version,

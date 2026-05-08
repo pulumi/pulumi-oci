@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessCheck = oci.FleetSoftwareUpdate.getFsuReadinessCheck({
+ * const testFsuReadinessCheck = oci.fleetsoftwareupdate.getFsuReadinessCheck({
  *     fsuReadinessCheckId: testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetFsuReadinessCheckResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessCheck = oci.FleetSoftwareUpdate.getFsuReadinessCheck({
+ * const testFsuReadinessCheck = oci.fleetsoftwareupdate.getFsuReadinessCheck({
  *     fsuReadinessCheckId: testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id,
  * });
  * ```

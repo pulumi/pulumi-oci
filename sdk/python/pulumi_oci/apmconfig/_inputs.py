@@ -36,7 +36,7 @@ __all__ = [
 ]
 
 class ConfigConfigArgsDict(TypedDict):
-    config_maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgsDict']]]]
+    config_maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]]
     """
     (Updatable) Map of an agent configuration file.
     """
@@ -44,7 +44,7 @@ class ConfigConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigConfigArgs:
     def __init__(__self__, *,
-                 config_maps: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]] = None):
+                 config_maps: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]] config_maps: (Updatable) Map of an agent configuration file.
         """
@@ -53,27 +53,27 @@ class ConfigConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="configMaps")
-    def config_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]:
+    def config_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]:
         """
         (Updatable) Map of an agent configuration file.
         """
         return pulumi.get(self, "config_maps")
 
     @config_maps.setter
-    def config_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]):
+    def config_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]):
         pulumi.set(self, "config_maps", value)
 
 
 class ConfigConfigConfigMapArgsDict(TypedDict):
-    body: NotRequired[pulumi.Input[_builtins.str]]
+    body: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Base64 encoded agent configuration file.
     """
-    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    content_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
     """
-    file_name: NotRequired[pulumi.Input[_builtins.str]]
+    file_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An agent configuration file name.
     """
@@ -81,9 +81,9 @@ class ConfigConfigConfigMapArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigConfigConfigMapArgs:
     def __init__(__self__, *,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] body: The Base64 encoded agent configuration file.
         :param pulumi.Input[_builtins.str] content_type: (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
@@ -98,47 +98,47 @@ class ConfigConfigConfigMapArgs:
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Base64 encoded agent configuration file.
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An agent configuration file name.
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
 
 class ConfigDimensionArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the dimension.
     """
-    value_source: NotRequired[pulumi.Input[_builtins.str]]
+    value_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The source to populate the dimension. This must not be specified.
     """
@@ -146,8 +146,8 @@ class ConfigDimensionArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigDimensionArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value_source: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_source: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the dimension.
         :param pulumi.Input[_builtins.str] value_source: (Updatable) The source to populate the dimension. This must not be specified.
@@ -159,43 +159,43 @@ class ConfigDimensionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the dimension.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The source to populate the dimension. This must not be specified.
         """
         return pulumi.get(self, "value_source")
 
     @value_source.setter
-    def value_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value_source", value)
 
 
 class ConfigInUseByArgsDict(TypedDict):
-    config_type: NotRequired[pulumi.Input[_builtins.str]]
+    config_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of configuration item.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name by which a configuration entity is displayed to the end user.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
     """
-    options_group: NotRequired[pulumi.Input[_builtins.str]]
+    options_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A string that specifies the group that an OPTIONS item belongs to.
     """
@@ -203,10 +203,10 @@ class ConfigInUseByArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigInUseByArgs:
     def __init__(__self__, *,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 options_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 options_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
@@ -224,67 +224,67 @@ class ConfigInUseByArgs:
 
     @_builtins.property
     @pulumi.getter(name="configType")
-    def config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of configuration item.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
-    def config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="optionsGroup")
-    def options_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def options_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A string that specifies the group that an OPTIONS item belongs to.
         """
         return pulumi.get(self, "options_group")
 
     @options_group.setter
-    def options_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def options_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "options_group", value)
 
 
 class ConfigMetricArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A description of the metric.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the metric. This must be a known metric name.
     """
-    unit: NotRequired[pulumi.Input[_builtins.str]]
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The unit of the metric.
     """
-    value_source: NotRequired[pulumi.Input[_builtins.str]]
+    value_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) This must not be set.
     """
@@ -292,10 +292,10 @@ class ConfigMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigMetricArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 value_source: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_source: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the metric.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the metric. This must be a known metric name.
@@ -313,55 +313,55 @@ class ConfigMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unit of the metric.
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
     @_builtins.property
     @pulumi.getter(name="valueSource")
-    def value_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This must not be set.
         """
         return pulumi.get(self, "value_source")
 
     @value_source.setter
-    def value_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value_source", value)
 
 
 class ConfigOverridesArgsDict(TypedDict):
-    override_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgsDict']]]]
+    override_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]]
     """
     (Updatable)
     """
@@ -369,7 +369,7 @@ class ConfigOverridesArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigOverridesArgs:
     def __init__(__self__, *,
-                 override_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]] = None):
+                 override_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]] override_lists: (Updatable)
         """
@@ -378,23 +378,23 @@ class ConfigOverridesArgs:
 
     @_builtins.property
     @pulumi.getter(name="overrideLists")
-    def override_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]:
+    def override_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "override_lists")
 
     @override_lists.setter
-    def override_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]):
+    def override_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]):
         pulumi.set(self, "override_lists", value)
 
 
 class ConfigOverridesOverrideListArgsDict(TypedDict):
-    agent_filter: NotRequired[pulumi.Input[_builtins.str]]
+    agent_filter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The string that defines the Agent Filter expression.
     """
-    override_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    override_map: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
     """
@@ -402,8 +402,8 @@ class ConfigOverridesOverrideListArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigOverridesOverrideListArgs:
     def __init__(__self__, *,
-                 agent_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 override_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 agent_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 override_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_filter: (Updatable) The string that defines the Agent Filter expression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] override_map: (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
@@ -415,55 +415,55 @@ class ConfigOverridesOverrideListArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentFilter")
-    def agent_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The string that defines the Agent Filter expression.
         """
         return pulumi.get(self, "agent_filter")
 
     @agent_filter.setter
-    def agent_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideMap")
-    def override_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def override_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
         """
         return pulumi.get(self, "override_map")
 
     @override_map.setter
-    def override_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def override_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "override_map", value)
 
 
 class ConfigRuleArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name by which a configuration entity is displayed to the end user.
     """
-    filter_text: NotRequired[pulumi.Input[_builtins.str]]
+    filter_text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The string that defines the Span Filter expression.
     """
-    is_apply_to_error_spans: NotRequired[pulumi.Input[_builtins.bool]]
+    is_apply_to_error_spans: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
     """
-    priority: NotRequired[pulumi.Input[_builtins.int]]
+    priority: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
     """
-    satisfied_response_time: NotRequired[pulumi.Input[_builtins.int]]
+    satisfied_response_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
     """
-    tolerating_response_time: NotRequired[pulumi.Input[_builtins.int]]
+    tolerating_response_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
     """
@@ -471,13 +471,13 @@ class ConfigRuleArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigRuleArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_apply_to_error_spans: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 satisfied_response_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 tolerating_response_time: Optional[pulumi.Input[_builtins.int]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_apply_to_error_spans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 satisfied_response_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 tolerating_response_time: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[_builtins.str] filter_text: (Updatable) The string that defines the Span Filter expression.
@@ -504,86 +504,86 @@ class ConfigRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The string that defines the Span Filter expression.
         """
         return pulumi.get(self, "filter_text")
 
     @filter_text.setter
-    def filter_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_text", value)
 
     @_builtins.property
     @pulumi.getter(name="isApplyToErrorSpans")
-    def is_apply_to_error_spans(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_apply_to_error_spans(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         """
         return pulumi.get(self, "is_apply_to_error_spans")
 
     @is_apply_to_error_spans.setter
-    def is_apply_to_error_spans(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_apply_to_error_spans(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_apply_to_error_spans", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="satisfiedResponseTime")
-    def satisfied_response_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def satisfied_response_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         """
         return pulumi.get(self, "satisfied_response_time")
 
     @satisfied_response_time.setter
-    def satisfied_response_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def satisfied_response_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "satisfied_response_time", value)
 
     @_builtins.property
     @pulumi.getter(name="toleratingResponseTime")
-    def tolerating_response_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def tolerating_response_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
 
     @tolerating_response_time.setter
-    def tolerating_response_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def tolerating_response_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "tolerating_response_time", value)
 
 

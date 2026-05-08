@@ -175,19 +175,19 @@ export interface CertificateState {
      * ...
      * -----END CERTIFICATE-----
      */
-    caCertificate?: pulumi.Input<string>;
+    caCertificate?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      */
-    certificateName?: pulumi.Input<string>;
+    certificateName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * The SSL private key for your certificate, in PEM format.
      *
@@ -201,7 +201,7 @@ export interface CertificateState {
      * ...
      * -----END RSA PRIVATE KEY-----
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
      *
@@ -220,8 +220,8 @@ export interface CertificateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    publicCertificate?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -241,7 +241,7 @@ export interface CertificateArgs {
      * ...
      * -----END CERTIFICATE-----
      */
-    caCertificate?: pulumi.Input<string>;
+    caCertificate?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      */
@@ -253,7 +253,7 @@ export interface CertificateArgs {
     /**
      * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * The SSL private key for your certificate, in PEM format.
      *
@@ -267,7 +267,7 @@ export interface CertificateArgs {
      * ...
      * -----END RSA PRIVATE KEY-----
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
      *
@@ -286,5 +286,5 @@ export interface CertificateArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
 }

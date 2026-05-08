@@ -296,7 +296,7 @@ def get_oci_cache_backup(oci_cache_backup_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backup = oci.Redis.get_oci_cache_backup(oci_cache_backup_id=test_oci_cache_backup_oci_redis_oci_cache_backup["id"])
+    test_oci_cache_backup = oci.redis.get_oci_cache_backup(oci_cache_backup_id=test_oci_cache_backup_oci_redis_oci_cache_backup["id"])
     ```
 
 
@@ -329,7 +329,7 @@ def get_oci_cache_backup(oci_cache_backup_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_oci_cache_backup_output(oci_cache_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oci_cache_backup_output(oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheBackupResult]:
     """
     This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
@@ -342,7 +342,7 @@ def get_oci_cache_backup_output(oci_cache_backup_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backup = oci.Redis.get_oci_cache_backup(oci_cache_backup_id=test_oci_cache_backup_oci_redis_oci_cache_backup["id"])
+    test_oci_cache_backup = oci.redis.get_oci_cache_backup(oci_cache_backup_id=test_oci_cache_backup_oci_redis_oci_cache_backup["id"])
     ```
 
 

@@ -129,9 +129,9 @@ def get_managed_kafka_node_shapes(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         node_shape_collections=pulumi.get(__ret__, 'node_shape_collections'))
-def get_managed_kafka_node_shapes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict']]]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_kafka_node_shapes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict']]]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaNodeShapesResult]:
     """
     This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.

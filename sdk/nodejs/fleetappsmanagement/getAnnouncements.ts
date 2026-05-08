@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ * const testAnnouncements = oci.fleetappsmanagement.getAnnouncements({
  *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,
@@ -87,7 +87,7 @@ export interface GetAnnouncementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ * const testAnnouncements = oci.fleetappsmanagement.getAnnouncements({
  *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,
@@ -115,10 +115,10 @@ export interface GetAnnouncementsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetAnnouncementsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetAnnouncementsFilterArgs>[] | undefined>;
     /**
      * Filter the list of announcements that contains the given summary value.
      */
-    summaryContains?: pulumi.Input<string>;
+    summaryContains?: pulumi.Input<string | undefined>;
 }

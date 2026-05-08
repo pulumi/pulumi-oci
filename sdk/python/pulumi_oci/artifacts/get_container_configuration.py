@@ -92,7 +92,7 @@ def get_container_configuration(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=compartment_id)
+    test_container_configuration = oci.artifacts.get_container_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -108,7 +108,7 @@ def get_container_configuration(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_repository_created_on_first_push=pulumi.get(__ret__, 'is_repository_created_on_first_push'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_container_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_container_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerConfigurationResult]:
     """
     This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
@@ -121,7 +121,7 @@ def get_container_configuration_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=compartment_id)
+    test_container_configuration = oci.artifacts.get_container_configuration(compartment_id=compartment_id)
     ```
 
 

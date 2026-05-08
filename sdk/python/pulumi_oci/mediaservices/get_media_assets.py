@@ -238,7 +238,7 @@ def get_media_assets(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=media_asset_bucket,
+    test_media_assets = oci.mediaservices.get_media_assets(bucket=media_asset_bucket,
         compartment_id=compartment_id,
         display_name=media_asset_display_name,
         distribution_channel_id=test_channel["id"],
@@ -299,19 +299,19 @@ def get_media_assets(bucket: Optional[_builtins.str] = None,
         source_media_workflow_version=pulumi.get(__ret__, 'source_media_workflow_version'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            distribution_channel_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaAssetsFilterArgs', 'GetMediaAssetsFilterArgsDict']]]]] = None,
-                            master_media_asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            media_workflow_job_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            object: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            parent_media_asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            source_media_workflow_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            source_media_workflow_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_media_assets_output(bucket: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            distribution_channel_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaAssetsFilterArgs', 'GetMediaAssetsFilterArgsDict']]]]] = None,
+                            master_media_asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            media_workflow_job_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            object: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            parent_media_asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            source_media_workflow_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            source_media_workflow_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaAssetsResult]:
     """
     This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
@@ -324,7 +324,7 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=media_asset_bucket,
+    test_media_assets = oci.mediaservices.get_media_assets(bucket=media_asset_bucket,
         compartment_id=compartment_id,
         display_name=media_asset_display_name,
         distribution_channel_id=test_channel["id"],

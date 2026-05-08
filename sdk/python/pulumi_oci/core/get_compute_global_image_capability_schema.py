@@ -143,7 +143,7 @@ def get_compute_global_image_capability_schema(compute_global_image_capability_s
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
+    test_compute_global_image_capability_schema = oci.core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
     ```
 
 
@@ -163,7 +163,7 @@ def get_compute_global_image_capability_schema(compute_global_image_capability_s
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_compute_global_image_capability_schema_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_global_image_capability_schema_output(compute_global_image_capability_schema_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemaResult]:
     """
     This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -176,7 +176,7 @@ def get_compute_global_image_capability_schema_output(compute_global_image_capab
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
+    test_compute_global_image_capability_schema = oci.core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
     ```
 
 

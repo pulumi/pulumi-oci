@@ -40,8 +40,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -294,8 +294,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -382,8 +382,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -426,8 +426,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -470,8 +470,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -514,8 +514,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -560,8 +560,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -604,8 +604,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -648,8 +648,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -692,8 +692,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -736,8 +736,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -780,8 +780,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -826,8 +826,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -872,8 +872,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -918,8 +918,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -964,8 +964,8 @@ public final class SchFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Sch.SchFunctions;
      * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

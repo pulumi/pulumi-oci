@@ -239,7 +239,7 @@ def get_container_image_signature(image_signature_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
+    test_container_image_signature = oci.artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_container_image_signature(image_signature_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_container_image_signature_output(image_signature_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_container_image_signature_output(image_signature_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerImageSignatureResult]:
     """
     This data source provides details about a specific Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
@@ -280,7 +280,7 @@ def get_container_image_signature_output(image_signature_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
+    test_container_image_signature = oci.artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
     ```
 
 

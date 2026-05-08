@@ -22,8 +22,8 @@ class RepositoryRefArgs:
                  ref_name: pulumi.Input[_builtins.str],
                  ref_type: pulumi.Input[_builtins.str],
                  repository_id: pulumi.Input[_builtins.str],
-                 commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RepositoryRef resource.
 
@@ -87,40 +87,40 @@ class RepositoryRefArgs:
 
     @_builtins.property
     @pulumi.getter(name="commitId")
-    def commit_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def commit_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Commit ID pointed to by the new branch.
         """
         return pulumi.get(self, "commit_id")
 
     @commit_id.setter
-    def commit_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def commit_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "commit_id", value)
 
     @_builtins.property
     @pulumi.getter(name="objectId")
-    def object_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SHA-1 hash value of the object pointed to by the tag.
         """
         return pulumi.get(self, "object_id")
 
     @object_id.setter
-    def object_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_id", value)
 
 
 @pulumi.input_type
 class _RepositoryRefState:
     def __init__(__self__, *,
-                 commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 full_ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 full_ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositoryRef resources.
 
@@ -156,91 +156,91 @@ class _RepositoryRefState:
 
     @_builtins.property
     @pulumi.getter(name="commitId")
-    def commit_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def commit_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Commit ID pointed to by the new branch.
         """
         return pulumi.get(self, "commit_id")
 
     @commit_id.setter
-    def commit_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def commit_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "commit_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="fullRefName")
-    def full_ref_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def full_ref_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique full reference name inside a repository.
         """
         return pulumi.get(self, "full_ref_name")
 
     @full_ref_name.setter
-    def full_ref_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def full_ref_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "full_ref_name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectId")
-    def object_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SHA-1 hash value of the object pointed to by the tag.
         """
         return pulumi.get(self, "object_id")
 
     @object_id.setter
-    def object_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_id", value)
 
     @_builtins.property
     @pulumi.getter(name="refName")
-    def ref_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ref_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return only resources that match the given reference name.
         """
         return pulumi.get(self, "ref_name")
 
     @ref_name.setter
-    def ref_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ref_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ref_name", value)
 
     @_builtins.property
     @pulumi.getter(name="refType")
-    def ref_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ref_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of reference (BRANCH or TAG).
         """
         return pulumi.get(self, "ref_type")
 
     @ref_type.setter
-    def ref_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ref_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ref_type", value)
 
     @_builtins.property
     @pulumi.getter(name="repositoryId")
-    def repository_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repository_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique repository identifier.
 
@@ -251,7 +251,7 @@ class _RepositoryRefState:
         return pulumi.get(self, "repository_id")
 
     @repository_id.setter
-    def repository_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repository_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repository_id", value)
 
 
@@ -261,11 +261,11 @@ class RepositoryRef(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
@@ -362,11 +362,11 @@ class RepositoryRef(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ref_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ref_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -400,14 +400,14 @@ class RepositoryRef(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            commit_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            full_ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ref_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ref_type: Optional[pulumi.Input[_builtins.str]] = None,
-            repository_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RepositoryRef':
+            commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            full_ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ref_type: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RepositoryRef':
         """
         Get an existing RepositoryRef resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

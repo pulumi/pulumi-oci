@@ -124,15 +124,15 @@ export interface OciCacheBackupExportToObjectStorageState {
     /**
      * The target Object Storage bucket name.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace name.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure Cache Backup identifier.
      */
-    ociCacheBackupId?: pulumi.Input<string>;
+    ociCacheBackupId?: pulumi.Input<string | undefined>;
     /**
      * Optional prefix under which the service will place the exported object(s).
      *
@@ -140,7 +140,7 @@ export interface OciCacheBackupExportToObjectStorageState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -166,5 +166,5 @@ export interface OciCacheBackupExportToObjectStorageArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
 }

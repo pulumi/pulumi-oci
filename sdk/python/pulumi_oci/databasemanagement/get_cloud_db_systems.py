@@ -150,7 +150,7 @@ def get_cloud_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_systems = oci.DatabaseManagement.get_cloud_db_systems(compartment_id=compartment_id,
+    test_cloud_db_systems = oci.databasemanagement.get_cloud_db_systems(compartment_id=compartment_id,
         dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
         deployment_type=cloud_db_system_deployment_type,
         display_name=cloud_db_system_display_name,
@@ -183,12 +183,12 @@ def get_cloud_db_systems(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_cloud_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                dbaas_parent_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict']]]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_db_systems_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                dbaas_parent_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict']]]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemsResult]:
     """
     This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
@@ -201,7 +201,7 @@ def get_cloud_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_systems = oci.DatabaseManagement.get_cloud_db_systems(compartment_id=compartment_id,
+    test_cloud_db_systems = oci.databasemanagement.get_cloud_db_systems(compartment_id=compartment_id,
         dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
         deployment_type=cloud_db_system_deployment_type,
         display_name=cloud_db_system_display_name,

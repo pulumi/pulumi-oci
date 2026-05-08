@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryAuthors = oci.DevOps.getRepositoryAuthors({
+ * const testRepositoryAuthors = oci.devops.getRepositoryAuthors({
  *     repositoryId: testRepository.id,
  *     refName: repositoryAuthorRefName,
  * });
@@ -74,7 +74,7 @@ export interface GetRepositoryAuthorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryAuthors = oci.DevOps.getRepositoryAuthors({
+ * const testRepositoryAuthors = oci.devops.getRepositoryAuthors({
  *     repositoryId: testRepository.id,
  *     refName: repositoryAuthorRefName,
  * });
@@ -93,11 +93,11 @@ export function getRepositoryAuthorsOutput(args: GetRepositoryAuthorsOutputArgs,
  * A collection of arguments for invoking getRepositoryAuthors.
  */
 export interface GetRepositoryAuthorsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryAuthorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryAuthorsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

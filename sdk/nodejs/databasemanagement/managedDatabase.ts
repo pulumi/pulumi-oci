@@ -218,59 +218,59 @@ export interface ManagedDatabaseState {
     /**
      * The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The operating system of database.
      */
-    databasePlatformName?: pulumi.Input<string>;
+    databasePlatformName?: pulumi.Input<string | undefined>;
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
-    databaseStatus?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string | undefined>;
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      */
-    databaseSubType?: pulumi.Input<string>;
+    databaseSubType?: pulumi.Input<string | undefined>;
     /**
      * The type of Oracle Database installation.
      */
-    databaseType?: pulumi.Input<string>;
+    databaseType?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Database version.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The list of feature configurations
      */
-    dbmgmtFeatureConfigs?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig>[]>;
+    dbmgmtFeatureConfigs?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The infrastructure used to deploy the Oracle Database.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether the Oracle Database is part of a cluster.
      */
-    isCluster?: pulumi.Input<boolean>;
+    isCluster?: pulumi.Input<boolean | undefined>;
     /**
      * A list of Managed Database Groups that the Managed Database belongs to.
      */
-    managedDatabaseGroups?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseManagedDatabaseGroup>[]>;
+    managedDatabaseGroups?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabaseManagedDatabaseGroup>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      *
@@ -278,35 +278,35 @@ export interface ManagedDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    managedDatabaseId?: pulumi.Input<string>;
+    managedDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The management option used when enabling Database Management.
      */
-    managementOption?: pulumi.Input<string>;
+    managementOption?: pulumi.Input<string | undefined>;
     /**
      * The name of the Managed Database.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      */
-    parentContainerId?: pulumi.Input<string>;
+    parentContainerId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      */
-    storageSystemId?: pulumi.Input<string>;
+    storageSystemId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Managed Database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The workload type of the Autonomous Database.
      */
-    workloadType?: pulumi.Input<string>;
+    workloadType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -316,11 +316,11 @@ export interface ManagedDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      *

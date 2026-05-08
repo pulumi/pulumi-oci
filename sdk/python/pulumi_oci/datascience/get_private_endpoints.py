@@ -150,7 +150,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+    test_data_science_private_endpoints = oci.datascience.get_private_endpoints(compartment_id=compartment_id,
         created_by=data_science_private_endpoint_created_by,
         data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
         display_name=data_science_private_endpoint_display_name,
@@ -183,12 +183,12 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 data_science_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 data_science_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
     This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
@@ -201,7 +201,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+    test_data_science_private_endpoints = oci.datascience.get_private_endpoints(compartment_id=compartment_id,
         created_by=data_science_private_endpoint_created_by,
         data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
         display_name=data_science_private_endpoint_display_name,

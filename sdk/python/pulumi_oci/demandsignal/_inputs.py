@@ -104,7 +104,7 @@ class OccDemandSignalOccDemandSignalValueArgsDict(TypedDict):
     """
     The Demand Signal Value.
     """
-    comments: NotRequired[pulumi.Input[_builtins.str]]
+    comments: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Space provided for users to make comments regarding the value.
     """
@@ -114,7 +114,7 @@ class OccDemandSignalOccDemandSignalValueArgs:
     def __init__(__self__, *,
                  time_expected: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.float],
-                 comments: Optional[pulumi.Input[_builtins.str]] = None):
+                 comments: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] time_expected: The date of the Demand Signal Value.
         :param pulumi.Input[_builtins.float] value: The Demand Signal Value.
@@ -151,14 +151,14 @@ class OccDemandSignalOccDemandSignalValueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comments(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comments(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Space provided for users to make comments regarding the value.
         """
         return pulumi.get(self, "comments")
 
     @comments.setter
-    def comments(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comments(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comments", value)
 
 
@@ -179,11 +179,11 @@ class OccDemandSignalPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    position: NotRequired[pulumi.Input[_builtins.str]]
+    position: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable)
     """
-    selected_item: NotRequired[pulumi.Input[_builtins.str]]
+    selected_item: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable)
     """
@@ -195,8 +195,8 @@ class OccDemandSignalPatchOperationArgs:
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
                  value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
-                 position: Optional[pulumi.Input[_builtins.str]] = None,
-                 selected_item: Optional[pulumi.Input[_builtins.str]] = None):
+                 position: pulumi.Input[Optional[_builtins.str]] = None,
+                 selected_item: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] from_: (Updatable)
         :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
@@ -264,26 +264,26 @@ class OccDemandSignalPatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def position(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def position(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="selectedItem")
-    def selected_item(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def selected_item(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "selected_item")
 
     @selected_item.setter
-    def selected_item(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def selected_item(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "selected_item", value)
 
 
@@ -296,31 +296,31 @@ class OccMetricAlarmResourceConfigurationArgsDict(TypedDict):
     """
     The type of usage for the resource.
     """
-    compute_hw_generation: NotRequired[pulumi.Input[_builtins.str]]
+    compute_hw_generation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The hardware generation of the compute resource.
     """
-    hw_generation: NotRequired[pulumi.Input[_builtins.str]]
+    hw_generation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The hardware generation of the Exadata system.
     """
-    link_role: NotRequired[pulumi.Input[_builtins.str]]
+    link_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the link in the network.
     """
-    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    node_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of node in the Exadata system.
     """
-    occ_metric_alarm_provider: NotRequired[pulumi.Input[_builtins.str]]
+    occ_metric_alarm_provider: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The provider of the network service.
     """
-    shape: NotRequired[pulumi.Input[_builtins.str]]
+    shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The shape of the compute instance.
     """
-    storage_type: NotRequired[pulumi.Input[_builtins.str]]
+    storage_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of storage resource.
     """
@@ -330,13 +330,13 @@ class OccMetricAlarmResourceConfigurationArgs:
     def __init__(__self__, *,
                  resource: pulumi.Input[_builtins.str],
                  usage_type: pulumi.Input[_builtins.str],
-                 compute_hw_generation: Optional[pulumi.Input[_builtins.str]] = None,
-                 hw_generation: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 occ_metric_alarm_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compute_hw_generation: pulumi.Input[Optional[_builtins.str]] = None,
+                 hw_generation: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 occ_metric_alarm_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] resource: Resources like COMPUTE, STORAGE, EXADATA etc.
         :param pulumi.Input[_builtins.str] usage_type: The type of usage for the resource.
@@ -391,86 +391,86 @@ class OccMetricAlarmResourceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="computeHwGeneration")
-    def compute_hw_generation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_hw_generation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hardware generation of the compute resource.
         """
         return pulumi.get(self, "compute_hw_generation")
 
     @compute_hw_generation.setter
-    def compute_hw_generation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_hw_generation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_hw_generation", value)
 
     @_builtins.property
     @pulumi.getter(name="hwGeneration")
-    def hw_generation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hw_generation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hardware generation of the Exadata system.
         """
         return pulumi.get(self, "hw_generation")
 
     @hw_generation.setter
-    def hw_generation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hw_generation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hw_generation", value)
 
     @_builtins.property
     @pulumi.getter(name="linkRole")
-    def link_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the link in the network.
         """
         return pulumi.get(self, "link_role")
 
     @link_role.setter
-    def link_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_role", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeType")
-    def node_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of node in the Exadata system.
         """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
-    def node_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_type", value)
 
     @_builtins.property
     @pulumi.getter(name="occMetricAlarmProvider")
-    def occ_metric_alarm_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def occ_metric_alarm_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The provider of the network service.
         """
         return pulumi.get(self, "occ_metric_alarm_provider")
 
     @occ_metric_alarm_provider.setter
-    def occ_metric_alarm_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def occ_metric_alarm_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "occ_metric_alarm_provider", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of the compute instance.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of storage resource.
         """
         return pulumi.get(self, "storage_type")
 
     @storage_type.setter
-    def storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_type", value)
 
 

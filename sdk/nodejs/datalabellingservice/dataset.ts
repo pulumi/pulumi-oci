@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     datasetFormatDetails: {
  *         formatType: datasetDatasetFormatDetailsFormatType,
  *         textFileTypeMetadata: {
- *             columnIndex: datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex,
+ *             columnIndex: Number(datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex),
  *             formatType: datasetDatasetFormatDetailsTextFileTypeMetadataFormatType,
  *             columnDelimiter: datasetDatasetFormatDetailsTextFileTypeMetadataColumnDelimiter,
  *             columnName: datasetDatasetFormatDetailsTextFileTypeMetadataColumnName,
@@ -258,51 +258,51 @@ export interface DatasetState {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    additionalProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The annotation format name required for labeling records.
      */
-    annotationFormat?: pulumi.Input<string>;
+    annotationFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment of the resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
-    datasetFormatDetails?: pulumi.Input<inputs.DataLabellingService.DatasetDatasetFormatDetails>;
+    datasetFormatDetails?: pulumi.Input<inputs.DataLabellingService.DatasetDatasetFormatDetails | undefined>;
     /**
      * This allows the customer to specify the source of the dataset.
      */
-    datasetSourceDetails?: pulumi.Input<inputs.DataLabellingService.DatasetDatasetSourceDetails>;
+    datasetSourceDetails?: pulumi.Input<inputs.DataLabellingService.DatasetDatasetSourceDetails | undefined>;
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user provided description of the dataset
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
-    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration | undefined>;
     /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
-    initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
+    initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration | undefined>;
     /**
      * An ordered collection of labels that are unique by name.
      */
-    labelSet?: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet>;
+    labelSet?: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet | undefined>;
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
      *
@@ -310,27 +310,27 @@ export interface DatasetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    labelingInstructions?: pulumi.Input<string>;
+    labelingInstructions?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      */
-    lifecycleSubstate?: pulumi.Input<string>;
+    lifecycleSubstate?: pulumi.Input<string | undefined>;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -356,27 +356,27 @@ export interface DatasetArgs {
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user provided description of the dataset
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
-    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration | undefined>;
     /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
-    initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
+    initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration | undefined>;
     /**
      * An ordered collection of labels that are unique by name.
      */
@@ -388,5 +388,5 @@ export interface DatasetArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    labelingInstructions?: pulumi.Input<string>;
+    labelingInstructions?: pulumi.Input<string | undefined>;
 }

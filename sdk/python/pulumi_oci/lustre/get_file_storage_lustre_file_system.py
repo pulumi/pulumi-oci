@@ -390,7 +390,7 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 
@@ -431,7 +431,7 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
         time_billing_cycle_end=pulumi.get(__ret__, 'time_billing_cycle_end'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_file_storage_lustre_file_system_output(lustre_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_file_storage_lustre_file_system_output(lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageLustreFileSystemResult]:
     """
     This data source provides details about a specific Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -444,7 +444,7 @@ def get_file_storage_lustre_file_system_output(lustre_file_system_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 

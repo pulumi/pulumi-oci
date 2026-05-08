@@ -153,11 +153,11 @@ def get_resource_analytics_resource_analytics_instances(compartment_id: Optional
         id=pulumi.get(__ret__, 'id'),
         resource_analytics_instance_collections=pulumi.get(__ret__, 'resource_analytics_instance_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_resource_analytics_resource_analytics_instances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs', 'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict']]]]] = None,
-                                                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_analytics_resource_analytics_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs', 'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict']]]]] = None,
+                                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAnalyticsResourceAnalyticsInstancesResult]:
     """
     This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.

@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *     region: tableReplicaRegion,
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
- *     maxReadUnits: tableReplicaMaxReadUnits,
- *     maxWriteUnits: tableReplicaMaxWriteUnits,
+ *     maxReadUnits: Number(tableReplicaMaxReadUnits),
+ *     maxWriteUnits: Number(tableReplicaMaxWriteUnits),
  * });
  * ```
  *
@@ -132,19 +132,19 @@ export interface TableReplicaState {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
      */
-    maxReadUnits?: pulumi.Input<number>;
+    maxReadUnits?: pulumi.Input<number | undefined>;
     /**
      * Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
      */
-    maxWriteUnits?: pulumi.Input<number>;
+    maxWriteUnits?: pulumi.Input<number | undefined>;
     /**
      * Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * A table name within the compartment, or a table OCID.
      *
@@ -152,7 +152,7 @@ export interface TableReplicaState {
      * ** IMPORTANT **
      * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
-    tableNameOrId?: pulumi.Input<string>;
+    tableNameOrId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -162,15 +162,15 @@ export interface TableReplicaArgs {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
      */
-    maxReadUnits?: pulumi.Input<number>;
+    maxReadUnits?: pulumi.Input<number | undefined>;
     /**
      * Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
      */
-    maxWriteUnits?: pulumi.Input<number>;
+    maxWriteUnits?: pulumi.Input<number | undefined>;
     /**
      * Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
      */

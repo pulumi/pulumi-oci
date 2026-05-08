@@ -105,7 +105,7 @@ def get_occ_handover_resource_block_details(filters: Optional[Sequence[Union['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_handover_resource_block_details = oci.CapacityManagement.get_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
+    test_occ_handover_resource_block_details = oci.capacitymanagement.get_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
         host_id=test_host["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_occ_handover_resource_block_details(filters: Optional[Sequence[Union['Ge
         id=pulumi.get(__ret__, 'id'),
         occ_handover_resource_block_detail_collections=pulumi.get(__ret__, 'occ_handover_resource_block_detail_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-def get_occ_handover_resource_block_details_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccHandoverResourceBlockDetailsFilterArgs', 'GetOccHandoverResourceBlockDetailsFilterArgsDict']]]]] = None,
-                                                   host_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   occ_handover_resource_block_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_occ_handover_resource_block_details_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccHandoverResourceBlockDetailsFilterArgs', 'GetOccHandoverResourceBlockDetailsFilterArgsDict']]]]] = None,
+                                                   host_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   occ_handover_resource_block_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccHandoverResourceBlockDetailsResult]:
     """
     This data source provides the list of Occ Handover Resource Block Details in Oracle Cloud Infrastructure Capacity Management service.
@@ -141,7 +141,7 @@ def get_occ_handover_resource_block_details_output(filters: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_handover_resource_block_details = oci.CapacityManagement.get_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
+    test_occ_handover_resource_block_details = oci.capacitymanagement.get_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
         host_id=test_host["id"])
     ```
 

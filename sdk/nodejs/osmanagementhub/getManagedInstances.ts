@@ -285,110 +285,110 @@ export interface GetManagedInstancesOutputArgs {
     /**
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
-    advisoryNames?: pulumi.Input<pulumi.Input<string>[]>;
+    advisoryNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only managed instances with the specified version of osmh-agent running.
      */
-    agentVersion?: pulumi.Input<string>;
+    agentVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only instances whose architecture type matches the given architecture.
      */
-    archTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    archTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstancesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstancesFilterArgs>[] | undefined>;
     /**
      * A filter to return only managed instances that are attached to the specified group.
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances that are NOT attached to the specified group.
      */
-    groupNotEqualTo?: pulumi.Input<string>;
+    groupNotEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances that are attached to the specified group or lifecycle environment.
      */
-    isAttachedToGroupOrLifecycleStage?: pulumi.Input<boolean>;
+    isAttachedToGroupOrLifecycleStage?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to list only resources managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only managed instances that are acting as management stations.
      */
-    isManagementStation?: pulumi.Input<boolean>;
+    isManagementStation?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only managed instances with a registration profile attached.
      */
-    isProfileAttached?: pulumi.Input<boolean>;
+    isProfileAttached?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only managed instances that require a reboot to install updates.
      */
-    isRebootRequired?: pulumi.Input<boolean>;
+    isRebootRequired?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only managed instances in a specific lifecycle environment.
      */
-    lifecycleEnvironment?: pulumi.Input<string>;
+    lifecycleEnvironment?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances that aren't in a specific lifecycle environment.
      */
-    lifecycleEnvironmentNotEqualTo?: pulumi.Input<string>;
+    lifecycleEnvironmentNotEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances that are associated with the specified lifecycle environment.
      */
-    lifecycleStage?: pulumi.Input<string>;
+    lifecycleStage?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances that are NOT associated with the specified lifecycle environment.
      */
-    lifecycleStageNotEqualTo?: pulumi.Input<string>;
+    lifecycleStageNotEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose location does not match the given value.
      */
-    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources whose location matches the given value.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    managementStations?: pulumi.Input<pulumi.Input<string>[]>;
+    managementStations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+    osFamilies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    profileNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    profileNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A multi filter to return only managed instances that match the given profile ids.
      */
-    profiles?: pulumi.Input<pulumi.Input<string>[]>;
+    profiles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only managed instances whose status matches the status provided.
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

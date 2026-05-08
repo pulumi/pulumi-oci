@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
+ * const testUnifiedAgentConfigurations = oci.logging.getUnifiedAgentConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });
@@ -111,11 +111,11 @@ export interface GetUnifiedAgentConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
+ * const testUnifiedAgentConfigurations = oci.logging.getUnifiedAgentConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });
@@ -145,22 +145,22 @@ export interface GetUnifiedAgentConfigurationsOutputArgs {
     /**
      * Resource name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetUnifiedAgentConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetUnifiedAgentConfigurationsFilterArgs>[] | undefined>;
     /**
      * The OCID of a group or a dynamic group.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether or not nested compartments should be traversed. Defaults to false.
      */
-    isCompartmentIdInSubtree?: pulumi.Input<boolean>;
+    isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Custom log OCID to list resources with the log as destination.
      */
-    logId?: pulumi.Input<string>;
+    logId?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle state of the log object
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

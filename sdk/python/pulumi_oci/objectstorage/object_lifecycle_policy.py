@@ -23,7 +23,7 @@ class ObjectLifecyclePolicyArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None):
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None):
         """
         The set of arguments for constructing a ObjectLifecyclePolicy resource.
 
@@ -62,24 +62,24 @@ class ObjectLifecyclePolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
         """
         (Updatable) The bucket's set of lifecycle policy rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _ObjectLifecyclePolicyState:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ObjectLifecyclePolicy resources.
 
@@ -99,50 +99,50 @@ class _ObjectLifecyclePolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]:
         """
         (Updatable) The bucket's set of lifecycle policy rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -152,9 +152,9 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -175,7 +175,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             namespace=object_lifecycle_policy_namespace,
             rules=[{
                 "action": object_lifecycle_policy_rules_action,
-                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled == "true",
                 "name": object_lifecycle_policy_rules_name,
                 "time_amount": object_lifecycle_policy_rules_time_amount,
                 "time_unit": object_lifecycle_policy_rules_time_unit,
@@ -228,7 +228,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             namespace=object_lifecycle_policy_namespace,
             rules=[{
                 "action": object_lifecycle_policy_rules_action,
-                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled == "true",
                 "name": object_lifecycle_policy_rules_name,
                 "time_amount": object_lifecycle_policy_rules_time_amount,
                 "time_unit": object_lifecycle_policy_rules_time_unit,
@@ -265,9 +265,9 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -295,10 +295,10 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'ObjectLifecyclePolicy':
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ObjectLifecyclePolicy':
         """
         Get an existing ObjectLifecyclePolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

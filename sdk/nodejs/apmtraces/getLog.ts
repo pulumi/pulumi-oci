@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLog = oci.ApmTraces.getLog({
+ * const testLog = oci.apmtraces.getLog({
  *     apmDomainId: testApmDomain.id,
  *     logKey: logLogKey,
  *     timeLogEndedLessThan: logTimeLogEndedLessThan,
@@ -136,7 +136,7 @@ export interface GetLogResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLog = oci.ApmTraces.getLog({
+ * const testLog = oci.apmtraces.getLog({
  *     apmDomainId: testApmDomain.id,
  *     logKey: logLogKey,
  *     timeLogEndedLessThan: logTimeLogEndedLessThan,

@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *         cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *         computeCount: distributedAutonomousDatabaseCatalogDetailsComputeCount,
  *         dataStorageSizeInGbs: distributedAutonomousDatabaseCatalogDetailsDataStorageSizeInGbs,
- *         isAutoScalingEnabled: distributedAutonomousDatabaseCatalogDetailsIsAutoScalingEnabled,
+ *         isAutoScalingEnabled: distributedAutonomousDatabaseCatalogDetailsIsAutoScalingEnabled === "true",
  *         source: distributedAutonomousDatabaseCatalogDetailsSource,
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
@@ -39,10 +39,10 @@ import * as utilities from "../utilities";
  *         peerCloudAutonomousVmClusterIds: distributedAutonomousDatabaseCatalogDetailsPeerCloudAutonomousVmClusterIds,
  *         peerDetails: [{
  *             cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
- *             fastStartFailOverLagLimitInSeconds: distributedAutonomousDatabaseCatalogDetailsPeerDetailsFastStartFailOverLagLimitInSeconds,
- *             isAutomaticFailoverEnabled: distributedAutonomousDatabaseCatalogDetailsPeerDetailsIsAutomaticFailoverEnabled,
+ *             fastStartFailOverLagLimitInSeconds: Number(distributedAutonomousDatabaseCatalogDetailsPeerDetailsFastStartFailOverLagLimitInSeconds),
+ *             isAutomaticFailoverEnabled: distributedAutonomousDatabaseCatalogDetailsPeerDetailsIsAutomaticFailoverEnabled === "true",
  *             protectionMode: distributedAutonomousDatabaseCatalogDetailsPeerDetailsProtectionMode,
- *             standbyMaintenanceBufferInDays: distributedAutonomousDatabaseCatalogDetailsPeerDetailsStandbyMaintenanceBufferInDays,
+ *             standbyMaintenanceBufferInDays: Number(distributedAutonomousDatabaseCatalogDetailsPeerDetailsStandbyMaintenanceBufferInDays),
  *         }],
  *         vaultId: testVault.id,
  *     }],
@@ -53,10 +53,10 @@ import * as utilities from "../utilities";
  *     dbWorkload: distributedAutonomousDatabaseDbWorkload,
  *     displayName: distributedAutonomousDatabaseDisplayName,
  *     distributedAutonomousDatabaseId: distributedAutonomousDatabaseDistributedAutonomousDatabaseId,
- *     listenerPort: distributedAutonomousDatabaseListenerPort,
+ *     listenerPort: Number(distributedAutonomousDatabaseListenerPort),
  *     ncharacterSet: distributedAutonomousDatabaseNcharacterSet,
- *     onsPortLocal: distributedAutonomousDatabaseOnsPortLocal,
- *     onsPortRemote: distributedAutonomousDatabaseOnsPortRemote,
+ *     onsPortLocal: Number(distributedAutonomousDatabaseOnsPortLocal),
+ *     onsPortRemote: Number(distributedAutonomousDatabaseOnsPortRemote),
  *     prefix: distributedAutonomousDatabasePrefix,
  *     privateEndpointIds: distributedAutonomousDatabasePrivateEndpointIds,
  *     shardDetails: [{
@@ -64,7 +64,7 @@ import * as utilities from "../utilities";
  *         cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *         computeCount: distributedAutonomousDatabaseShardDetailsComputeCount,
  *         dataStorageSizeInGbs: distributedAutonomousDatabaseShardDetailsDataStorageSizeInGbs,
- *         isAutoScalingEnabled: distributedAutonomousDatabaseShardDetailsIsAutoScalingEnabled,
+ *         isAutoScalingEnabled: distributedAutonomousDatabaseShardDetailsIsAutoScalingEnabled === "true",
  *         source: distributedAutonomousDatabaseShardDetailsSource,
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
@@ -73,28 +73,28 @@ import * as utilities from "../utilities";
  *         peerCloudAutonomousVmClusterIds: distributedAutonomousDatabaseShardDetailsPeerCloudAutonomousVmClusterIds,
  *         peerDetails: [{
  *             cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
- *             fastStartFailOverLagLimitInSeconds: distributedAutonomousDatabaseShardDetailsPeerDetailsFastStartFailOverLagLimitInSeconds,
- *             isAutomaticFailoverEnabled: distributedAutonomousDatabaseShardDetailsPeerDetailsIsAutomaticFailoverEnabled,
+ *             fastStartFailOverLagLimitInSeconds: Number(distributedAutonomousDatabaseShardDetailsPeerDetailsFastStartFailOverLagLimitInSeconds),
+ *             isAutomaticFailoverEnabled: distributedAutonomousDatabaseShardDetailsPeerDetailsIsAutomaticFailoverEnabled === "true",
  *             protectionMode: distributedAutonomousDatabaseShardDetailsPeerDetailsProtectionMode,
- *             standbyMaintenanceBufferInDays: distributedAutonomousDatabaseShardDetailsPeerDetailsStandbyMaintenanceBufferInDays,
+ *             standbyMaintenanceBufferInDays: Number(distributedAutonomousDatabaseShardDetailsPeerDetailsStandbyMaintenanceBufferInDays),
  *         }],
  *         shardSpace: distributedAutonomousDatabaseShardDetailsShardSpace,
  *         vaultId: testVault.id,
  *     }],
  *     shardingMethod: distributedAutonomousDatabaseShardingMethod,
- *     chunks: distributedAutonomousDatabaseChunks,
+ *     chunks: Number(distributedAutonomousDatabaseChunks),
  *     dbBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsType,
  *             dbrsPolicyId: testPolicy.id,
  *             id: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsId,
  *             internetProxy: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsInternetProxy,
- *             isRemote: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsIsRemote,
+ *             isRemote: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsIsRemote === "true",
  *             remoteRegion: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: distributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: distributedAutonomousDatabaseDbBackupConfigRecoveryWindowInDays,
+ *         recoveryWindowInDays: Number(distributedAutonomousDatabaseDbBackupConfigRecoveryWindowInDays),
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -102,15 +102,15 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     listenerPortTls: distributedAutonomousDatabaseListenerPortTls,
+ *     listenerPortTls: Number(distributedAutonomousDatabaseListenerPortTls),
  *     patchOperations: [{
  *         operation: distributedAutonomousDatabasePatchOperationsOperation,
  *         selection: distributedAutonomousDatabasePatchOperationsSelection,
  *         value: distributedAutonomousDatabasePatchOperationsValue,
  *     }],
- *     replicationFactor: distributedAutonomousDatabaseReplicationFactor,
+ *     replicationFactor: Number(distributedAutonomousDatabaseReplicationFactor),
  *     replicationMethod: distributedAutonomousDatabaseReplicationMethod,
- *     replicationUnit: distributedAutonomousDatabaseReplicationUnit,
+ *     replicationUnit: Number(distributedAutonomousDatabaseReplicationUnit),
  * });
  * ```
  *
@@ -551,204 +551,204 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
      */
-    caBundleId?: pulumi.Input<string>;
+    caBundleId?: pulumi.Input<string | undefined>;
     /**
      * Collection of catalog for the Globally distributed autonomous database.
      */
-    catalogDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail>[]>;
+    catalogDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
      */
-    changeDbBackupConfigTrigger?: pulumi.Input<number>;
+    changeDbBackupConfigTrigger?: pulumi.Input<number | undefined>;
     /**
      * The character set for the database.
      */
-    characterSet?: pulumi.Input<string>;
+    characterSet?: pulumi.Input<string | undefined>;
     /**
      * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
      */
-    chunks?: pulumi.Input<number>;
+    chunks?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
      */
-    configureGsmWalletTrigger?: pulumi.Input<number>;
+    configureGsmWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
      */
-    configureShardingIsRebalanceRequired?: pulumi.Input<boolean>;
+    configureShardingIsRebalanceRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
      */
-    configureShardingTrigger?: pulumi.Input<number>;
+    configureShardingTrigger?: pulumi.Input<number | undefined>;
     /**
      * Details of Globally distributed autonomous database connection String.
      */
-    connectionStrings?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseConnectionString>[]>;
+    connectionStrings?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseConnectionString>[] | undefined>;
     /**
      * Oracle Database version for the shards and catalog used in Globally distributed autonomous database.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * Backup options for the Distributed Autonomous Database.
      */
-    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig>;
+    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig | undefined>;
     /**
      * The distributed autonomous database deployment type.
      */
-    dbDeploymentType?: pulumi.Input<string>;
+    dbDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * Possible workload types. Currently only OLTP workload type is supported.
      */
-    dbWorkload?: pulumi.Input<string>;
+    dbWorkload?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Globally distributed autonomous database.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
-    downloadedGsmCsrPem?: pulumi.Input<string>;
+    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    downloadedGsmCsrPem?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
-    generateGsmCertificateSigningRequestTriggerCaBundleId?: pulumi.Input<string>;
-    generateWalletDownloadedWalletContentLength?: pulumi.Input<number>;
-    generateWalletDownloadedWalletEtag?: pulumi.Input<string>;
-    generateWalletDownloadedWalletLastModified?: pulumi.Input<string>;
-    generateWalletDownloadedWalletZipBase64?: pulumi.Input<string>;
-    generateWalletPassword?: pulumi.Input<string>;
+    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    generateGsmCertificateSigningRequestTriggerCaBundleId?: pulumi.Input<string | undefined>;
+    generateWalletDownloadedWalletContentLength?: pulumi.Input<number | undefined>;
+    generateWalletDownloadedWalletEtag?: pulumi.Input<string | undefined>;
+    generateWalletDownloadedWalletLastModified?: pulumi.Input<string | undefined>;
+    generateWalletDownloadedWalletZipBase64?: pulumi.Input<string | undefined>;
+    generateWalletPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
      */
-    generateWalletTrigger?: pulumi.Input<number>;
+    generateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * Collection of catalogs associated with the Globally distributed autonomous database.
      */
-    gsmDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetail>[]>;
+    gsmDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetail>[] | undefined>;
     /**
      * The Global service manager image details.
      */
-    latestGsmImages?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage>[]>;
+    latestGsmImages?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage>[] | undefined>;
     /**
      * The lifecycleDetails for the Globally distributed autonomous database.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The listener port number for the Globally distributed autonomous database. The listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
      */
-    listenerPort?: pulumi.Input<number>;
+    listenerPort?: pulumi.Input<number | undefined>;
     /**
      * The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
      */
-    listenerPortTls?: pulumi.Input<number>;
+    listenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * Additional metadata related to Globally distributed autonomous database resources.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseMetadata>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
      */
-    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    moveReplicationUnitTrigger?: pulumi.Input<number | undefined>;
     /**
      * The national character set for the database.
      */
-    ncharacterSet?: pulumi.Input<string>;
+    ncharacterSet?: pulumi.Input<string | undefined>;
     /**
      * Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
      */
-    onsPortLocal?: pulumi.Input<number>;
+    onsPortLocal?: pulumi.Input<number | undefined>;
     /**
      * Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
      */
-    onsPortRemote?: pulumi.Input<number>;
+    onsPortRemote?: pulumi.Input<number | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabasePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabasePatchOperation>[] | undefined>;
     /**
      * Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
      */
-    privateEndpointIds?: pulumi.Input<pulumi.Input<string>[]>;
+    privateEndpointIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
      */
-    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    recreateFailedResourceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
      */
-    replicationFactor?: pulumi.Input<number>;
+    replicationFactor?: pulumi.Input<number | undefined>;
     /**
      * The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      */
-    replicationMethod?: pulumi.Input<string>;
+    replicationMethod?: pulumi.Input<string | undefined>;
     /**
      * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based Globally distributed autonomous database, the value should be at least twice the number of shards.
      */
-    replicationUnit?: pulumi.Input<number>;
+    replicationUnit?: pulumi.Input<number | undefined>;
     /**
      * Collection of shards for the Globally distributed autonomous database.
      */
-    shardDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetail>[]>;
+    shardDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetail>[] | undefined>;
     /**
      * Sharding Methods for the Globally distributed autonomous database.
      */
-    shardingMethod?: pulumi.Input<string>;
+    shardingMethod?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StartDistributedAutonomousDatabase action.
      */
-    startDatabaseTrigger?: pulumi.Input<number>;
+    startDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Distributed Autonomous Database. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StopDistributedAutonomousDatabase action.
      */
-    stopDatabaseTrigger?: pulumi.Input<number>;
+    stopDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
-    uploadCaSignedCertificate?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
+    uploadCaSignedCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
      */
-    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number>;
+    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
      */
-    validateCaBundleTrigger?: pulumi.Input<number>;
-    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails>;
+    validateCaBundleTrigger?: pulumi.Input<number | undefined>;
+    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
@@ -756,7 +756,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateNetworkTrigger?: pulumi.Input<number>;
+    validateNetworkTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -766,7 +766,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
      */
-    caBundleId?: pulumi.Input<string>;
+    caBundleId?: pulumi.Input<string | undefined>;
     /**
      * Collection of catalog for the Globally distributed autonomous database.
      */
@@ -774,11 +774,11 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
      */
-    changeDbBackupConfigTrigger?: pulumi.Input<number>;
+    changeDbBackupConfigTrigger?: pulumi.Input<number | undefined>;
     /**
      * The character set for the database.
      */
@@ -786,7 +786,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
      */
-    chunks?: pulumi.Input<number>;
+    chunks?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
      */
@@ -794,15 +794,15 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
      */
-    configureGsmWalletTrigger?: pulumi.Input<number>;
+    configureGsmWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
      */
-    configureShardingIsRebalanceRequired?: pulumi.Input<boolean>;
+    configureShardingIsRebalanceRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
      */
-    configureShardingTrigger?: pulumi.Input<number>;
+    configureShardingTrigger?: pulumi.Input<number | undefined>;
     /**
      * Oracle Database version for the shards and catalog used in Globally distributed autonomous database.
      */
@@ -810,7 +810,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * Backup options for the Distributed Autonomous Database.
      */
-    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig>;
+    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig | undefined>;
     /**
      * The distributed autonomous database deployment type.
      */
@@ -822,7 +822,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Globally distributed autonomous database.
      */
@@ -830,21 +830,21 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
+    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
-    generateGsmCertificateSigningRequestTriggerCaBundleId?: pulumi.Input<string>;
-    generateWalletPassword?: pulumi.Input<string>;
+    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    generateGsmCertificateSigningRequestTriggerCaBundleId?: pulumi.Input<string | undefined>;
+    generateWalletPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
      */
-    generateWalletTrigger?: pulumi.Input<number>;
+    generateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * The listener port number for the Globally distributed autonomous database. The listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
      */
@@ -852,11 +852,11 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
      */
-    listenerPortTls?: pulumi.Input<number>;
+    listenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
      */
-    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    moveReplicationUnitTrigger?: pulumi.Input<number | undefined>;
     /**
      * The national character set for the database.
      */
@@ -872,7 +872,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabasePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabasePatchOperation>[] | undefined>;
     /**
      * Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
@@ -884,19 +884,19 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
      */
-    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    recreateFailedResourceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
      */
-    replicationFactor?: pulumi.Input<number>;
+    replicationFactor?: pulumi.Input<number | undefined>;
     /**
      * The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      */
-    replicationMethod?: pulumi.Input<string>;
+    replicationMethod?: pulumi.Input<string | undefined>;
     /**
      * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based Globally distributed autonomous database, the value should be at least twice the number of shards.
      */
-    replicationUnit?: pulumi.Input<number>;
+    replicationUnit?: pulumi.Input<number | undefined>;
     /**
      * Collection of shards for the Globally distributed autonomous database.
      */
@@ -908,25 +908,25 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     /**
      * Increment this value to trigger StartDistributedAutonomousDatabase action.
      */
-    startDatabaseTrigger?: pulumi.Input<number>;
+    startDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Distributed Autonomous Database. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StopDistributedAutonomousDatabase action.
      */
-    stopDatabaseTrigger?: pulumi.Input<number>;
-    uploadCaSignedCertificate?: pulumi.Input<string>;
+    stopDatabaseTrigger?: pulumi.Input<number | undefined>;
+    uploadCaSignedCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
      */
-    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number>;
+    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
      */
-    validateCaBundleTrigger?: pulumi.Input<number>;
-    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails>;
+    validateCaBundleTrigger?: pulumi.Input<number | undefined>;
+    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
@@ -934,5 +934,5 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateNetworkTrigger?: pulumi.Input<number>;
+    validateNetworkTrigger?: pulumi.Input<number | undefined>;
 }

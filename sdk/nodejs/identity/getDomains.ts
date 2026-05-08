@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Identity.getDomains({
+ * const testDomains = oci.identity.getDomains({
  *     compartmentId: compartmentId,
  *     displayName: domainDisplayName,
  *     homeRegionUrl: domainHomeRegionUrl,
- *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
  *     licenseType: domainLicenseType,
  *     name: domainName,
  *     state: domainState,
@@ -149,11 +149,11 @@ export interface GetDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Identity.getDomains({
+ * const testDomains = oci.identity.getDomains({
  *     compartmentId: compartmentId,
  *     displayName: domainDisplayName,
  *     homeRegionUrl: domainHomeRegionUrl,
- *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
  *     licenseType: domainLicenseType,
  *     name: domainName,
  *     state: domainState,
@@ -189,34 +189,34 @@ export interface GetDomainsOutputArgs {
     /**
      * The mutable display name of the domain
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDomainsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDomainsFilterArgs>[] | undefined>;
     /**
      * The region specific domain URL
      */
-    homeRegionUrl?: pulumi.Input<string>;
+    homeRegionUrl?: pulumi.Input<string | undefined>;
     /**
      * Indicate if the domain is visible at login screen or not
      */
-    isHiddenOnLogin?: pulumi.Input<boolean>;
+    isHiddenOnLogin?: pulumi.Input<boolean | undefined>;
     /**
      * The domain license type
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The domain type
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The region agnostic domain URL
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }

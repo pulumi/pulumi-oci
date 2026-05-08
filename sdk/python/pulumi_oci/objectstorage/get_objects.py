@@ -202,14 +202,14 @@ def get_objects(bucket: Optional[_builtins.str] = None,
         prefixes=pulumi.get(__ret__, 'prefixes'),
         start=pulumi.get(__ret__, 'start'),
         start_after=pulumi.get(__ret__, 'start_after'))
-def get_objects_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                       delimiter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetObjectsFilterArgs', 'GetObjectsFilterArgsDict']]]]] = None,
-                       namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                       prefix: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       start_after: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_objects_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                       delimiter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetObjectsFilterArgs', 'GetObjectsFilterArgsDict']]]]] = None,
+                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                       prefix: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       start_after: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectsResult]:
     """
     This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.

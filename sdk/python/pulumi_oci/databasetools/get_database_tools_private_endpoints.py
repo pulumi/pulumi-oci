@@ -150,7 +150,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=compartment_id,
+    test_database_tools_private_endpoints = oci.databasetools.get_database_tools_private_endpoints(compartment_id=compartment_id,
         display_name=database_tools_private_endpoint_display_name,
         endpoint_service_id=test_service["id"],
         state=database_tools_private_endpoint_state,
@@ -183,12 +183,12 @@ def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'))
-def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                endpoint_service_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]]]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_tools_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                endpoint_service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]]]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:
     """
     This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
@@ -201,7 +201,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=compartment_id,
+    test_database_tools_private_endpoints = oci.databasetools.get_database_tools_private_endpoints(compartment_id=compartment_id,
         display_name=database_tools_private_endpoint_display_name,
         endpoint_service_id=test_service["id"],
         state=database_tools_private_endpoint_state,

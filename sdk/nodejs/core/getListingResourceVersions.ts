@@ -46,6 +46,6 @@ export function getListingResourceVersionsOutput(args: GetListingResourceVersion
  * A collection of arguments for invoking getListingResourceVersions.
  */
 export interface GetListingResourceVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetListingResourceVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetListingResourceVersionsFilterArgs>[] | undefined>;
     listingId: pulumi.Input<string>;
 }

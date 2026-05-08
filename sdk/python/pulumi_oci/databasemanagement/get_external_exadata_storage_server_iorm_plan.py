@@ -108,7 +108,7 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_iorm_plan = oci.databasemanagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
         id=pulumi.get(__ret__, 'id'),
         plan_objective=pulumi.get(__ret__, 'plan_objective'),
         plan_status=pulumi.get(__ret__, 'plan_status'))
-def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerIormPlanResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
@@ -138,7 +138,7 @@ def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storag
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_iorm_plan = oci.databasemanagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 

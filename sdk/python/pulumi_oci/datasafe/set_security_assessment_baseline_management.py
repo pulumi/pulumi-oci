@@ -66,10 +66,10 @@ class SetSecurityAssessmentBaselineManagementArgs:
 @pulumi.input_type
 class _SetSecurityAssessmentBaselineManagementState:
     def __init__(__self__, *,
-                 assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SetSecurityAssessmentBaselineManagement resources.
 
@@ -91,16 +91,16 @@ class _SetSecurityAssessmentBaselineManagementState:
 
     @_builtins.property
     @pulumi.getter(name="assessmentIds")
-    def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def assessment_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "assessment_ids")
 
     @assessment_ids.setter
-    def assessment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def assessment_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "assessment_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID of the target.
 
@@ -111,28 +111,28 @@ class _SetSecurityAssessmentBaselineManagementState:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
-    def security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
-    def security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target OCID for which SA needs to be set as baseline.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
 
@@ -142,8 +142,8 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Set Security Assessment Baseline management resource in Oracle Cloud Infrastructure Data Safe service.
@@ -225,8 +225,8 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -254,10 +254,10 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SetSecurityAssessmentBaselineManagement':
+            assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SetSecurityAssessmentBaselineManagement':
         """
         Get an existing SetSecurityAssessmentBaselineManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

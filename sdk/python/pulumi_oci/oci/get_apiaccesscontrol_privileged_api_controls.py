@@ -170,12 +170,12 @@ def get_apiaccesscontrol_privileged_api_controls(compartment_id: Optional[_built
         privileged_api_control_collections=pulumi.get(__ret__, 'privileged_api_control_collections'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_apiaccesscontrol_privileged_api_controls_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiControlsFilterArgs', 'GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict']]]]] = None,
-                                                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_apiaccesscontrol_privileged_api_controls_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiControlsFilterArgs', 'GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict']]]]] = None,
+                                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiaccesscontrolPrivilegedApiControlsResult]:
     """
     This data source provides the list of Privileged Api Controls in Oracle Cloud Infrastructure Apiaccesscontrol service.

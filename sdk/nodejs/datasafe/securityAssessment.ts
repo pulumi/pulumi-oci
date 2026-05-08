@@ -300,75 +300,75 @@ export interface SecurityAssessmentState {
     /**
      * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
      */
-    applyTemplateTrigger?: pulumi.Input<number>;
+    applyTemplateTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
      */
-    baseSecurityAssessmentId?: pulumi.Input<string>;
+    baseSecurityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
      */
-    baselineAssessmentId?: pulumi.Input<string>;
+    baselineAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The security checks to be evaluated for type template.
      */
-    checks?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheck>[]>;
+    checks?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheck>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
      */
-    compareToTemplateBaselineTrigger?: pulumi.Input<number>;
+    compareToTemplateBaselineTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the security assessment.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security assessment.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    ignoredAssessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoredAssessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    ignoredTargets?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoredTargets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Indicates whether the assessment is scheduled to run.
      */
-    isAssessmentScheduled?: pulumi.Input<boolean>;
+    isAssessmentScheduled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
-    isBaseline?: pulumi.Input<boolean>;
+    isBaseline?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether or not the security assessment deviates from the baseline.
      */
-    isDeviatedFromBaseline?: pulumi.Input<boolean>;
+    isDeviatedFromBaseline?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the baseline against which the latest security assessment was compared.
      */
-    lastComparedBaselineId?: pulumi.Input<string>;
+    lastComparedBaselineId?: pulumi.Input<string | undefined>;
     /**
      * Details about the current state of the security assessment.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The summary of findings for the security assessment.
      */
-    link?: pulumi.Input<string>;
+    link?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
      *
@@ -376,73 +376,73 @@ export interface SecurityAssessmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeTemplateTrigger?: pulumi.Input<number>;
+    removeTemplateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
      */
-    schedule?: pulumi.Input<string>;
+    schedule?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment that is responsible for creating this scheduled save assessment.
      */
-    scheduleSecurityAssessmentId?: pulumi.Input<string>;
+    scheduleSecurityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the security assessment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
      */
-    statistics?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentStatistic>[]>;
+    statistics?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentStatistic>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the target database group that the group assessment is created for.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target database or target database group on which security assessment is to be run.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Array of database target OCIDs.
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The version of the target database.
      */
-    targetVersion?: pulumi.Input<string>;
+    targetVersion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the template assessment. It will be required while creating the template baseline assessment.
      */
-    templateAssessmentId?: pulumi.Input<string>;
+    templateAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeLastAssessed?: pulumi.Input<string>;
+    timeLastAssessed?: pulumi.Input<string | undefined>;
     /**
      * The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the security assessment was created by system or by a user.
      */
-    triggeredBy?: pulumi.Input<string>;
+    triggeredBy?: pulumi.Input<string | undefined>;
     /**
      * The type of the security assessment
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -452,15 +452,15 @@ export interface SecurityAssessmentArgs {
     /**
      * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
      */
-    applyTemplateTrigger?: pulumi.Input<number>;
+    applyTemplateTrigger?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
      */
-    baseSecurityAssessmentId?: pulumi.Input<string>;
+    baseSecurityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
      */
-    compareToTemplateBaselineTrigger?: pulumi.Input<number>;
+    compareToTemplateBaselineTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      */
@@ -468,23 +468,23 @@ export interface SecurityAssessmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the security assessment.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the security assessment.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates whether the assessment is scheduled to run.
      */
-    isAssessmentScheduled?: pulumi.Input<boolean>;
+    isAssessmentScheduled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
      *
@@ -492,27 +492,27 @@ export interface SecurityAssessmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeTemplateTrigger?: pulumi.Input<number>;
+    removeTemplateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
      */
-    schedule?: pulumi.Input<string>;
+    schedule?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target database or target database group on which security assessment is to be run.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the template assessment. It will be required while creating the template baseline assessment.
      */
-    templateAssessmentId?: pulumi.Input<string>;
+    templateAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The type of the security assessment
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

@@ -25,13 +25,13 @@ class ListenerArgs:
                  load_balancer_id: pulumi.Input[_builtins.str],
                  port: pulumi.Input[_builtins.int],
                  protocol: pulumi.Input[_builtins.str],
-                 connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
-                 hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_route_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None):
+                 connection_configuration: pulumi.Input[Optional['ListenerConnectionConfigurationArgs']] = None,
+                 hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ssl_configuration: pulumi.Input[Optional['ListenerSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a Listener resource.
 
@@ -122,43 +122,43 @@ class ListenerArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionConfiguration")
-    def connection_configuration(self) -> Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]:
+    def connection_configuration(self) -> pulumi.Input[Optional['ListenerConnectionConfigurationArgs']]:
         """
         (Updatable) Configuration details for the connection between the client and backend servers.
         """
         return pulumi.get(self, "connection_configuration")
 
     @connection_configuration.setter
-    def connection_configuration(self, value: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]):
+    def connection_configuration(self, value: pulumi.Input[Optional['ListenerConnectionConfigurationArgs']]):
         pulumi.set(self, "connection_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameNames")
-    def hostname_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hostname_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of hostname resource names.
         """
         return pulumi.get(self, "hostname_names")
 
     @hostname_names.setter
-    def hostname_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hostname_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hostname_names", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pathRouteSetName")
-    def path_route_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_route_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deprecated. Please use `routingPolicies` instead.
 
@@ -169,36 +169,36 @@ class ListenerArgs:
         return pulumi.get(self, "path_route_set_name")
 
     @path_route_set_name.setter
-    def path_route_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_route_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_route_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="routingPolicyName")
-    def routing_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         """
         return pulumi.get(self, "routing_policy_name")
 
     @routing_policy_name.setter
-    def routing_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleSetNames")
-    def rule_set_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def rule_set_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
         """
         return pulumi.get(self, "rule_set_names")
 
     @rule_set_names.setter
-    def rule_set_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def rule_set_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "rule_set_names", value)
 
     @_builtins.property
     @pulumi.getter(name="sslConfiguration")
-    def ssl_configuration(self) -> Optional[pulumi.Input['ListenerSslConfigurationArgs']]:
+    def ssl_configuration(self) -> pulumi.Input[Optional['ListenerSslConfigurationArgs']]:
         """
         (Updatable) The load balancer's SSL handling configuration details.
 
@@ -207,25 +207,25 @@ class ListenerArgs:
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
-    def ssl_configuration(self, value: Optional[pulumi.Input['ListenerSslConfigurationArgs']]):
+    def ssl_configuration(self, value: pulumi.Input[Optional['ListenerSslConfigurationArgs']]):
         pulumi.set(self, "ssl_configuration", value)
 
 
 @pulumi.input_type
 class _ListenerState:
     def __init__(__self__, *,
-                 connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_route_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_configuration: pulumi.Input[Optional['ListenerConnectionConfigurationArgs']] = None,
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ssl_configuration: pulumi.Input[Optional['ListenerSslConfigurationArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
 
@@ -274,67 +274,67 @@ class _ListenerState:
 
     @_builtins.property
     @pulumi.getter(name="connectionConfiguration")
-    def connection_configuration(self) -> Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]:
+    def connection_configuration(self) -> pulumi.Input[Optional['ListenerConnectionConfigurationArgs']]:
         """
         (Updatable) Configuration details for the connection between the client and backend servers.
         """
         return pulumi.get(self, "connection_configuration")
 
     @connection_configuration.setter
-    def connection_configuration(self, value: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]):
+    def connection_configuration(self, value: pulumi.Input[Optional['ListenerConnectionConfigurationArgs']]):
         pulumi.set(self, "connection_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultBackendSetName")
-    def default_backend_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_backend_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         """
         return pulumi.get(self, "default_backend_set_name")
 
     @default_backend_set_name.setter
-    def default_backend_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_backend_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_backend_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameNames")
-    def hostname_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hostname_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of hostname resource names.
         """
         return pulumi.get(self, "hostname_names")
 
     @hostname_names.setter
-    def hostname_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hostname_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hostname_names", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pathRouteSetName")
-    def path_route_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_route_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deprecated. Please use `routingPolicies` instead.
 
@@ -345,60 +345,60 @@ class _ListenerState:
         return pulumi.get(self, "path_route_set_name")
 
     @path_route_set_name.setter
-    def path_route_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_route_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_route_set_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The communication port for the listener.  Example: `80`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="routingPolicyName")
-    def routing_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         """
         return pulumi.get(self, "routing_policy_name")
 
     @routing_policy_name.setter
-    def routing_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleSetNames")
-    def rule_set_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def rule_set_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
         """
         return pulumi.get(self, "rule_set_names")
 
     @rule_set_names.setter
-    def rule_set_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def rule_set_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "rule_set_names", value)
 
     @_builtins.property
     @pulumi.getter(name="sslConfiguration")
-    def ssl_configuration(self) -> Optional[pulumi.Input['ListenerSslConfigurationArgs']]:
+    def ssl_configuration(self) -> pulumi.Input[Optional['ListenerSslConfigurationArgs']]:
         """
         (Updatable) The load balancer's SSL handling configuration details.
 
@@ -407,16 +407,16 @@ class _ListenerState:
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
-    def ssl_configuration(self, value: Optional[pulumi.Input['ListenerSslConfigurationArgs']]):
+    def ssl_configuration(self, value: pulumi.Input[Optional['ListenerSslConfigurationArgs']]):
         pulumi.set(self, "ssl_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -426,17 +426,17 @@ class Listener(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_configuration: Optional[pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_route_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: Optional[pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -456,12 +456,12 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             load_balancer_id=test_load_balancer["id"],
             name=listener_name,
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
                 "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
-                "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
+                "backend_tcp_proxy_protocol_version": int(listener_connection_configuration_backend_tcp_proxy_protocol_version),
             },
             hostname_names=[test_hostname["name"]],
             path_route_set_name=test_path_route_set["name"],
@@ -469,14 +469,14 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration={
                 "certificate_name": test_certificate["name"],
-                "has_session_resumption": listener_ssl_configuration_has_session_resumption,
+                "has_session_resumption": listener_ssl_configuration_has_session_resumption == "true",
                 "certificate_ids": listener_ssl_configuration_certificate_ids,
                 "cipher_suite_name": listener_ssl_configuration_cipher_suite_name,
                 "protocols": listener_ssl_configuration_protocols,
                 "server_order_preference": listener_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": listener_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": listener_ssl_configuration_verify_depth,
-                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(listener_ssl_configuration_verify_depth),
+                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
 
@@ -533,12 +533,12 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             load_balancer_id=test_load_balancer["id"],
             name=listener_name,
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
                 "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
-                "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
+                "backend_tcp_proxy_protocol_version": int(listener_connection_configuration_backend_tcp_proxy_protocol_version),
             },
             hostname_names=[test_hostname["name"]],
             path_route_set_name=test_path_route_set["name"],
@@ -546,14 +546,14 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration={
                 "certificate_name": test_certificate["name"],
-                "has_session_resumption": listener_ssl_configuration_has_session_resumption,
+                "has_session_resumption": listener_ssl_configuration_has_session_resumption == "true",
                 "certificate_ids": listener_ssl_configuration_certificate_ids,
                 "cipher_suite_name": listener_ssl_configuration_cipher_suite_name,
                 "protocols": listener_ssl_configuration_protocols,
                 "server_order_preference": listener_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": listener_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": listener_ssl_configuration_verify_depth,
-                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(listener_ssl_configuration_verify_depth),
+                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
 
@@ -581,17 +581,17 @@ class Listener(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_configuration: Optional[pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
-                 default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_route_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: Optional[pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+                 default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -631,18 +631,18 @@ class Listener(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connection_configuration: Optional[pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
-            default_backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            path_route_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ssl_configuration: Optional[pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'Listener':
+            connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+            default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Listener':
         """
         Get an existing Listener resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -114,15 +114,15 @@ export interface GetCommitmentAggregatedsOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubUsage.GetCommitmentAggregatedsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubUsage.GetCommitmentAggregatedsFilterArgs>[] | undefined>;
     /**
      * Grouping criteria to use for aggregate the computed Usage, either hourly (`HOURLY`), daily (`DAILY`), monthly(`MONTHLY`) or none (`NONE`) to not follow a grouping criteria by date.
      */
-    grouping?: pulumi.Input<string>;
+    grouping?: pulumi.Input<string | undefined>;
     /**
      * Product part number for subscribed service line, called parent product.
      */
-    parentProduct?: pulumi.Input<string>;
+    parentProduct?: pulumi.Input<string | undefined>;
     /**
      * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      */
@@ -138,5 +138,5 @@ export interface GetCommitmentAggregatedsOutputArgs {
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

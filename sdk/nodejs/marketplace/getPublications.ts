@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublications = oci.Marketplace.getPublications({
+ * const testPublications = oci.marketplace.getPublications({
  *     compartmentId: compartmentId,
  *     listingType: publicationListingType,
  *     names: publicationName,
@@ -104,7 +104,7 @@ export interface GetPublicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublications = oci.Marketplace.getPublications({
+ * const testPublications = oci.marketplace.getPublications({
  *     compartmentId: compartmentId,
  *     listingType: publicationListingType,
  *     names: publicationName,
@@ -133,7 +133,7 @@ export interface GetPublicationsOutputArgs {
      * The unique identifier for the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetPublicationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetPublicationsFilterArgs>[] | undefined>;
     /**
      * The type of the listing.
      */
@@ -141,13 +141,13 @@ export interface GetPublicationsOutputArgs {
     /**
      * The name of the publication.
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The operating system of the listing.
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for the publication.
      */
-    publicationId?: pulumi.Input<string>;
+    publicationId?: pulumi.Input<string | undefined>;
 }

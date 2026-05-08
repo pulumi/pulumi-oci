@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRewards = oci.UsageProxy.getSubscriptionRewards({
+ * const testSubscriptionRewards = oci.usageproxy.getSubscriptionRewards({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });
@@ -80,7 +80,7 @@ export interface GetSubscriptionRewardsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRewards = oci.UsageProxy.getSubscriptionRewards({
+ * const testSubscriptionRewards = oci.usageproxy.getSubscriptionRewards({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });
@@ -99,7 +99,7 @@ export function getSubscriptionRewardsOutput(args: GetSubscriptionRewardsOutputA
  * A collection of arguments for invoking getSubscriptionRewards.
  */
 export interface GetSubscriptionRewardsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRewardsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRewardsFilterArgs>[] | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */

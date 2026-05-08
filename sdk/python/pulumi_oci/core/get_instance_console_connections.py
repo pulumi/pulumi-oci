@@ -113,7 +113,7 @@ def get_instance_console_connections(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=compartment_id,
+    test_instance_console_connections = oci.core.get_instance_console_connections(compartment_id=compartment_id,
         instance_id=test_instance["id"])
     ```
 
@@ -134,9 +134,9 @@ def get_instance_console_connections(compartment_id: Optional[_builtins.str] = N
         id=pulumi.get(__ret__, 'id'),
         instance_console_connections=pulumi.get(__ret__, 'instance_console_connections'),
         instance_id=pulumi.get(__ret__, 'instance_id'))
-def get_instance_console_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict']]]]] = None,
-                                            instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_instance_console_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict']]]]] = None,
+                                            instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceConsoleConnectionsResult]:
     """
     This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
@@ -151,7 +151,7 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=compartment_id,
+    test_instance_console_connections = oci.core.get_instance_console_connections(compartment_id=compartment_id,
         instance_id=test_instance["id"])
     ```
 

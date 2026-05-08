@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledAction = oci.Database.getScheduledAction({
+ * const testScheduledAction = oci.database.getScheduledAction({
  *     scheduledActionId: testScheduledActionOciDatabaseScheduledAction.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetScheduledActionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledAction = oci.Database.getScheduledAction({
+ * const testScheduledAction = oci.database.getScheduledAction({
  *     scheduledActionId: testScheduledActionOciDatabaseScheduledAction.id,
  * });
  * ```

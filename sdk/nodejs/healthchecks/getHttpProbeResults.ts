@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
+ * const testHttpProbeResults = oci.healthchecks.getHttpProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,
@@ -98,7 +98,7 @@ export interface GetHttpProbeResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
+ * const testHttpProbeResults = oci.healthchecks.getHttpProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,
@@ -121,7 +121,7 @@ export function getHttpProbeResultsOutput(args: GetHttpProbeResultsOutputArgs, o
  * A collection of arguments for invoking getHttpProbeResults.
  */
 export interface GetHttpProbeResultsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetHttpProbeResultsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.HealthChecks.GetHttpProbeResultsFilterArgs>[] | undefined>;
     /**
      * The OCID of a monitor or on-demand probe.
      */
@@ -129,13 +129,13 @@ export interface GetHttpProbeResultsOutputArgs {
     /**
      * Returns results with a `startTime` equal to or greater than the specified value.
      */
-    startTimeGreaterThanOrEqualTo?: pulumi.Input<number>;
+    startTimeGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * Returns results with a `startTime` equal to or less than the specified value.
      */
-    startTimeLessThanOrEqualTo?: pulumi.Input<number>;
+    startTimeLessThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * Filters results that match the `target`.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }

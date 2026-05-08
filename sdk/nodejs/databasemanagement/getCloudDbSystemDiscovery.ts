@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystemDiscovery = oci.DatabaseManagement.getCloudDbSystemDiscovery({
+ * const testCloudDbSystemDiscovery = oci.databasemanagement.getCloudDbSystemDiscovery({
  *     cloudDbSystemDiscoveryId: testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id,
  * });
  * ```
@@ -121,7 +121,7 @@ export interface GetCloudDbSystemDiscoveryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystemDiscovery = oci.DatabaseManagement.getCloudDbSystemDiscovery({
+ * const testCloudDbSystemDiscovery = oci.databasemanagement.getCloudDbSystemDiscovery({
  *     cloudDbSystemDiscoveryId: testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id,
  * });
  * ```

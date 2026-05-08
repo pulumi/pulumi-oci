@@ -95,7 +95,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
+    test_drg_route_distribution_statements = oci.core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[_b
         drg_route_distribution_statements=pulumi.get(__ret__, 'drg_route_distribution_statements'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_drg_route_distribution_statements_output(drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
+def get_drg_route_distribution_statements_output(drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
@@ -126,7 +126,7 @@ def get_drg_route_distribution_statements_output(drg_route_distribution_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
+    test_drg_route_distribution_statements = oci.core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
     ```
 
 

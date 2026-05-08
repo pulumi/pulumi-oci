@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobs = oci.StackMonitoring.getDiscoveryJobs({
+ * const testDiscoveryJobs = oci.stackmonitoring.getDiscoveryJobs({
  *     compartmentId: compartmentId,
  *     name: discoveryJobName,
  * });
@@ -77,7 +77,7 @@ export interface GetDiscoveryJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobs = oci.StackMonitoring.getDiscoveryJobs({
+ * const testDiscoveryJobs = oci.stackmonitoring.getDiscoveryJobs({
  *     compartmentId: compartmentId,
  *     name: discoveryJobName,
  * });
@@ -100,9 +100,9 @@ export interface GetDiscoveryJobsOutputArgs {
      * The ID of the compartment in which data is listed.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDiscoveryJobsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDiscoveryJobsFilterArgs>[] | undefined>;
     /**
      * A filter to return only discovery jobs that match the entire resource name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

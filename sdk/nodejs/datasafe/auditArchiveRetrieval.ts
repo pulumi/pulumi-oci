@@ -213,51 +213,51 @@ export interface AuditArchiveRetrievalState {
     /**
      * Total count of audit events to be retrieved from the archive for the specified date range.
      */
-    auditEventCount?: pulumi.Input<string>;
+    auditEventCount?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the archival retrieval.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the archive retrieval.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * End month of the archive retrieval, in the format defined by RFC3339.
      */
-    endDate?: pulumi.Input<string>;
+    endDate?: pulumi.Input<string | undefined>;
     /**
      * The Error details of a failed archive retrieval.
      */
-    errorInfo?: pulumi.Input<string>;
+    errorInfo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the archive retrieval.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Start month of the archive retrieval, in the format defined by RFC3339.
      */
-    startDate?: pulumi.Input<string>;
+    startDate?: pulumi.Input<string | undefined>;
     /**
      * The current state of the archive retrieval.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the target associated with the archive retrieval.
      *
@@ -265,19 +265,19 @@ export interface AuditArchiveRetrievalState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      */
-    timeCompleted?: pulumi.Input<string>;
+    timeCompleted?: pulumi.Input<string | undefined>;
     /**
      * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      */
-    timeOfExpiry?: pulumi.Input<string>;
+    timeOfExpiry?: pulumi.Input<string | undefined>;
     /**
      * The date time when archive retrieval was requested, in the format defined by RFC3339.
      */
-    timeRequested?: pulumi.Input<string>;
+    timeRequested?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -291,15 +291,15 @@ export interface AuditArchiveRetrievalArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the archive retrieval.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * End month of the archive retrieval, in the format defined by RFC3339.
      */
@@ -307,7 +307,7 @@ export interface AuditArchiveRetrievalArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Start month of the archive retrieval, in the format defined by RFC3339.
      */

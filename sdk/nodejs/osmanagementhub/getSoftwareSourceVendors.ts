@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
+ * const testSoftwareSourceVendors = oci.osmanagementhub.getSoftwareSourceVendors({
  *     compartmentId: compartmentId,
  *     name: softwareSourceVendorName,
  * });
@@ -79,7 +79,7 @@ export interface GetSoftwareSourceVendorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
+ * const testSoftwareSourceVendors = oci.osmanagementhub.getSoftwareSourceVendors({
  *     compartmentId: compartmentId,
  *     name: softwareSourceVendorName,
  * });
@@ -102,9 +102,9 @@ export interface GetSoftwareSourceVendorsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceVendorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceVendorsFilterArgs>[] | undefined>;
     /**
      * The name of the entity to be queried.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

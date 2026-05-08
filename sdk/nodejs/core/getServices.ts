@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Core.getServices({});
+ * const testServices = oci.core.getServices({});
  * ```
  */
 export function getServices(args?: GetServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetServicesResult> {
@@ -62,7 +62,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Core.getServices({});
+ * const testServices = oci.core.getServices({});
  * ```
  */
 export function getServicesOutput(args?: GetServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServicesResult> {
@@ -77,5 +77,5 @@ export function getServicesOutput(args?: GetServicesOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getServices.
  */
 export interface GetServicesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetServicesFilterArgs>[] | undefined>;
 }

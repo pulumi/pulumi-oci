@@ -95,7 +95,7 @@ def get_managed_my_sql_database_inbound_replications(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_inbound_replications = oci.DatabaseManagement.get_managed_my_sql_database_inbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_inbound_replications = oci.databasemanagement.get_managed_my_sql_database_inbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_managed_my_sql_database_inbound_replications(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         managed_my_sql_database_inbound_replication_collections=pulumi.get(__ret__, 'managed_my_sql_database_inbound_replication_collections'))
-def get_managed_my_sql_database_inbound_replications_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict']]]]] = None,
-                                                            managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_inbound_replications_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict']]]]] = None,
+                                                            managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseInboundReplicationsResult]:
     """
     This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
@@ -126,7 +126,7 @@ def get_managed_my_sql_database_inbound_replications_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_inbound_replications = oci.DatabaseManagement.get_managed_my_sql_database_inbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_inbound_replications = oci.databasemanagement.get_managed_my_sql_database_inbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

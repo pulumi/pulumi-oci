@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNatGateway = oci.Core.getNatGateway({
+ * const testNatGateway = oci.core.getNatGateway({
  *     natGatewayId: testNatGatewayOciCoreNatGateway.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetNatGatewayResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNatGateway = oci.Core.getNatGateway({
+ * const testNatGateway = oci.core.getNatGateway({
  *     natGatewayId: testNatGatewayOciCoreNatGateway.id,
  * });
  * ```

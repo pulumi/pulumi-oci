@@ -184,49 +184,49 @@ export interface PreauthrequestState {
     /**
      * The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
      */
-    accessType?: pulumi.Input<string>;
+    accessType?: pulumi.Input<string | undefined>;
     /**
      * The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
      */
-    accessUri?: pulumi.Input<string>;
+    accessUri?: pulumi.Input<string | undefined>;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
-    bucketListingAction?: pulumi.Input<string>;
+    bucketListingAction?: pulumi.Input<string | undefined>;
     /**
      * The full Path for the object.
      */
-    fullPath?: pulumi.Input<string>;
+    fullPath?: pulumi.Input<string | undefined>;
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      *
      * @deprecated The 'object' field has been deprecated. Please use 'object_name' instead.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      */
-    objectName?: pulumi.Input<string>;
+    objectName?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      */
-    parId?: pulumi.Input<string>;
+    parId?: pulumi.Input<string | undefined>;
     /**
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
      *
@@ -234,7 +234,7 @@ export interface PreauthrequestState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeExpires?: pulumi.Input<string>;
+    timeExpires?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -252,11 +252,11 @@ export interface PreauthrequestArgs {
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
-    bucketListingAction?: pulumi.Input<string>;
+    bucketListingAction?: pulumi.Input<string | undefined>;
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -266,11 +266,11 @@ export interface PreauthrequestArgs {
      *
      * @deprecated The 'object' field has been deprecated. Please use 'object_name' instead.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      */
-    objectName?: pulumi.Input<string>;
+    objectName?: pulumi.Input<string | undefined>;
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
      *

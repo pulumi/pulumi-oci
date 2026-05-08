@@ -438,126 +438,126 @@ export interface DeploymentState {
     /**
      * The availability domain of a placement.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
-    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
+    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule | undefined>;
     /**
      * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
      */
-    byolCpuCoreCountLimit?: pulumi.Input<number>;
+    byolCpuCoreCountLimit?: pulumi.Input<number | undefined>;
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
-    deploymentBackupId?: pulumi.Input<string>;
+    deploymentBackupId?: pulumi.Input<string | undefined>;
     /**
      * Information regarding the deployment diagnostic collection
      */
-    deploymentDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentDeploymentDiagnosticData>[]>;
+    deploymentDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentDeploymentDiagnosticData>[] | undefined>;
     /**
      * The type of the deployment role.
      */
-    deploymentRole?: pulumi.Input<string>;
+    deploymentRole?: pulumi.Input<string | undefined>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * The URL of a resource.
      */
-    deploymentUrl?: pulumi.Input<string>;
+    deploymentUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
      */
-    environmentType?: pulumi.Input<string>;
+    environmentType?: pulumi.Input<string | undefined>;
     /**
      * The fault domain of a placement.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    fqdn?: pulumi.Input<string>;
+    fqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentIngressIp>[]>;
+    ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentIngressIp>[] | undefined>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    isAutoScalingEnabled?: pulumi.Input<boolean>;
+    isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
      */
-    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean>;
+    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * True if all of the aggregate resources are working correctly.
      */
-    isHealthy?: pulumi.Input<boolean>;
+    isHealthy?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the resource is the the latest available version.
      */
-    isLatestVersion?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isLatestVersion?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) True if this object is publicly available.
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      *
      * @deprecated The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
      */
-    isStorageUtilizationLimitExceeded?: pulumi.Input<boolean>;
+    isStorageUtilizationLimitExceeded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Possible GGS lifecycle sub-states.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
      *
@@ -572,67 +572,67 @@ export interface DeploymentState {
      * * Must be a regional subnet.
      * * Must be in the same VCN as subnetId.
      */
-    loadBalancerSubnetId?: pulumi.Input<string>;
+    loadBalancerSubnetId?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[] | undefined>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
-    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration | undefined>;
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
-    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow | undefined>;
     /**
      * Type of the next maintenance.
      */
-    nextMaintenanceActionType?: pulumi.Input<string>;
+    nextMaintenanceActionType?: pulumi.Input<string | undefined>;
     /**
      * Description of the next maintenance.
      */
-    nextMaintenanceDescription?: pulumi.Input<string>;
+    nextMaintenanceDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Deployment Data for creating an OggDeployment
      */
-    oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
+    oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData | undefined>;
     /**
      * (Updatable) An array of local peers of deployment
      */
-    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[]>;
+    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[] | undefined>;
     /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
-    privateIpAddress?: pulumi.Input<string>;
+    privateIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The public IP address representing the access point for the Deployment.
      */
-    publicIpAddress?: pulumi.Input<string>;
+    publicIpAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    sourceDeploymentId?: pulumi.Input<string>;
+    sourceDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * Possible lifecycle states for a Deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The amount of storage being utilized (in bytes)
      */
-    storageUtilizationInBytes?: pulumi.Input<string>;
+    storageUtilizationInBytes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      *
@@ -640,39 +640,39 @@ export interface DeploymentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
      */
-    timeLastBackupScheduled?: pulumi.Input<string>;
+    timeLastBackupScheduled?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
      */
-    timeNextBackupScheduled?: pulumi.Input<string>;
+    timeNextBackupScheduled?: pulumi.Input<string | undefined>;
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeOfNextMaintenance?: pulumi.Input<string>;
+    timeOfNextMaintenance?: pulumi.Input<string | undefined>;
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeOggVersionSupportedUntil?: pulumi.Input<string>;
+    timeOggVersionSupportedUntil?: pulumi.Input<string | undefined>;
     /**
      * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeRoleChanged?: pulumi.Input<string>;
+    timeRoleChanged?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -682,19 +682,19 @@ export interface DeploymentArgs {
     /**
      * The availability domain of a placement.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
-    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
+    backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule | undefined>;
     /**
      * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
      */
-    byolCpuCoreCountLimit?: pulumi.Input<number>;
+    byolCpuCoreCountLimit?: pulumi.Input<number | undefined>;
     /**
      * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -702,23 +702,23 @@ export interface DeploymentArgs {
     /**
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
-    cpuCoreCount?: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
-    deploymentBackupId?: pulumi.Input<string>;
+    deploymentBackupId?: pulumi.Input<string | undefined>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
@@ -726,36 +726,36 @@ export interface DeploymentArgs {
     /**
      * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
      */
-    environmentType?: pulumi.Input<string>;
+    environmentType?: pulumi.Input<string | undefined>;
     /**
      * The fault domain of a placement.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    fqdn?: pulumi.Input<string>;
+    fqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    isAutoScalingEnabled?: pulumi.Input<boolean>;
+    isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
      */
-    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) True if this object is publicly available.
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
      *
@@ -770,43 +770,43 @@ export interface DeploymentArgs {
      * * Must be a regional subnet.
      * * Must be in the same VCN as subnetId.
      */
-    loadBalancerSubnetId?: pulumi.Input<string>;
+    loadBalancerSubnetId?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[] | undefined>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
-    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    maintenanceConfiguration?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceConfiguration | undefined>;
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
-    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.GoldenGate.DeploymentMaintenanceWindow | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Deployment Data for creating an OggDeployment
      */
-    oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
+    oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData | undefined>;
     /**
      * (Updatable) An array of local peers of deployment
      */
-    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[]>;
+    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[] | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    sourceDeploymentId?: pulumi.Input<string>;
+    sourceDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * Possible lifecycle states for a Deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
@@ -818,5 +818,5 @@ export interface DeploymentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

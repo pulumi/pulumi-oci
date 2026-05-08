@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplicas = oci.Core.getVolumeGroupReplicas({
+ * const testVolumeGroupReplicas = oci.core.getVolumeGroupReplicas({
  *     availabilityDomain: volumeGroupReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupReplicaDisplayName,
@@ -102,7 +102,7 @@ export interface GetVolumeGroupReplicasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplicas = oci.Core.getVolumeGroupReplicas({
+ * const testVolumeGroupReplicas = oci.core.getVolumeGroupReplicas({
  *     availabilityDomain: volumeGroupReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupReplicaDisplayName,
@@ -136,10 +136,10 @@ export interface GetVolumeGroupReplicasOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeGroupReplicasFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeGroupReplicasFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

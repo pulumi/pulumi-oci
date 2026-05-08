@@ -24,33 +24,33 @@ import * as utilities from "../utilities";
  *     columnFilters: [{
  *         expressions: reportDefinitionColumnFiltersExpressions,
  *         fieldName: reportDefinitionColumnFiltersFieldName,
- *         isEnabled: reportDefinitionColumnFiltersIsEnabled,
- *         isHidden: reportDefinitionColumnFiltersIsHidden,
+ *         isEnabled: reportDefinitionColumnFiltersIsEnabled === "true",
+ *         isHidden: reportDefinitionColumnFiltersIsHidden === "true",
  *         operator: reportDefinitionColumnFiltersOperator,
  *     }],
  *     columnInfos: [{
  *         displayName: reportDefinitionColumnInfoDisplayName,
- *         displayOrder: reportDefinitionColumnInfoDisplayOrder,
+ *         displayOrder: Number(reportDefinitionColumnInfoDisplayOrder),
  *         fieldName: reportDefinitionColumnInfoFieldName,
- *         isHidden: reportDefinitionColumnInfoIsHidden,
+ *         isHidden: reportDefinitionColumnInfoIsHidden === "true",
  *         applicableOperators: reportDefinitionColumnInfoApplicableOperators,
  *         dataType: reportDefinitionColumnInfoDataType,
- *         isVirtual: reportDefinitionColumnInfoIsVirtual,
+ *         isVirtual: reportDefinitionColumnInfoIsVirtual === "true",
  *     }],
  *     columnSortings: [{
  *         fieldName: reportDefinitionColumnSortingsFieldName,
- *         isAscending: reportDefinitionColumnSortingsIsAscending,
- *         sortingOrder: reportDefinitionColumnSortingsSortingOrder,
+ *         isAscending: reportDefinitionColumnSortingsIsAscending === "true",
+ *         sortingOrder: Number(reportDefinitionColumnSortingsSortingOrder),
  *     }],
  *     compartmentId: compartmentId,
  *     displayName: reportDefinitionDisplayName,
  *     parentId: testParent.id,
  *     summaries: [{
- *         displayOrder: reportDefinitionSummaryDisplayOrder,
+ *         displayOrder: Number(reportDefinitionSummaryDisplayOrder),
  *         name: reportDefinitionSummaryName,
  *         countOf: reportDefinitionSummaryCountOf,
  *         groupByFieldName: reportDefinitionSummaryGroupByFieldName,
- *         isHidden: reportDefinitionSummaryIsHidden,
+ *         isHidden: reportDefinitionSummaryIsHidden === "true",
  *         scimFilter: reportDefinitionSummaryScimFilter,
  *     }],
  *     definedTags: {
@@ -311,111 +311,111 @@ export interface ReportDefinitionState {
     /**
      * Specifies the name of the category that this report belongs to.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      */
-    columnFilters?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnFilter>[]>;
+    columnFilters?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnFilter>[] | undefined>;
     /**
      * (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      */
-    columnInfos?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnInfo>[]>;
+    columnInfos?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnInfo>[] | undefined>;
     /**
      * (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      */
-    columnSortings?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnSorting>[]>;
+    columnSortings?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionColumnSorting>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the report definition.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
-    complianceStandards?: pulumi.Input<pulumi.Input<string>[]>;
+    complianceStandards?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
-    dataSource?: pulumi.Input<string>;
+    dataSource?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the report definition.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the name of the report definition.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Specifies the order in which the summary must be displayed.
      */
-    displayOrder?: pulumi.Input<number>;
+    displayOrder?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
-    isSeeded?: pulumi.Input<boolean>;
+    isSeeded?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the current state of the report definition in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the parent report definition.
      */
-    parentId?: pulumi.Input<string>;
+    parentId?: pulumi.Input<string | undefined>;
     /**
      * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
-    recordTimeSpan?: pulumi.Input<string>;
+    recordTimeSpan?: pulumi.Input<string | undefined>;
     /**
      * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
-    schedule?: pulumi.Input<string>;
+    schedule?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which the scheduled resource will be created.
      */
-    scheduledReportCompartmentId?: pulumi.Input<string>;
+    scheduledReportCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the format of the report ( either .xls or .pdf or .json)
      */
-    scheduledReportMimeType?: pulumi.Input<string>;
+    scheduledReportMimeType?: pulumi.Input<string | undefined>;
     /**
      * The name of the report to be scheduled.
      */
-    scheduledReportName?: pulumi.Input<string>;
+    scheduledReportName?: pulumi.Input<string | undefined>;
     /**
      * Specifies the limit on the number of rows in the report.
      */
-    scheduledReportRowLimit?: pulumi.Input<number>;
+    scheduledReportRowLimit?: pulumi.Input<number | undefined>;
     /**
      * Additional scim filters used to get the specific summary.
      */
-    scimFilter?: pulumi.Input<string>;
+    scimFilter?: pulumi.Input<string | undefined>;
     /**
      * The current state of the report.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      */
-    summaries?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionSummary>[]>;
+    summaries?: pulumi.Input<pulumi.Input<inputs.DataSafe.ReportDefinitionSummary>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies the date and time the report definition was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the report definition was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -441,11 +441,11 @@ export interface ReportDefinitionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the report definition.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the name of the report definition.
      */
@@ -453,7 +453,7 @@ export interface ReportDefinitionArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the parent report definition.
      */

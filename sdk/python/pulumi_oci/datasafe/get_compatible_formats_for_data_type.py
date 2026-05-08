@@ -80,7 +80,7 @@ def get_compatible_formats_for_data_type(opts: Optional[pulumi.InvokeOptions] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_data_type = oci.DataSafe.get_compatible_formats_for_data_type()
+    test_compatible_formats_for_data_type = oci.datasafe.get_compatible_formats_for_data_type()
     ```
     """
     __args__ = dict()
@@ -108,7 +108,7 @@ def get_compatible_formats_for_data_type_output(opts: Optional[Union[pulumi.Invo
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_data_type = oci.DataSafe.get_compatible_formats_for_data_type()
+    test_compatible_formats_for_data_type = oci.datasafe.get_compatible_formats_for_data_type()
     ```
     """
     __args__ = dict()

@@ -119,7 +119,7 @@ def get_protection_rules(actions: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rules = oci.Waas.get_protection_rules(waas_policy_id=test_waas_policy["id"],
+    test_protection_rules = oci.waas.get_protection_rules(waas_policy_id=test_waas_policy["id"],
         actions=protection_rule_action,
         mod_security_rule_ids=test_rule["id"])
     ```
@@ -144,10 +144,10 @@ def get_protection_rules(actions: Optional[Sequence[_builtins.str]] = None,
         mod_security_rule_ids=pulumi.get(__ret__, 'mod_security_rule_ids'),
         protection_rules=pulumi.get(__ret__, 'protection_rules'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'))
-def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
-                                mod_security_rule_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protection_rules_output(actions: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
+                                mod_security_rule_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRulesResult]:
     """
     This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -161,7 +161,7 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rules = oci.Waas.get_protection_rules(waas_policy_id=test_waas_policy["id"],
+    test_protection_rules = oci.waas.get_protection_rules(waas_policy_id=test_waas_policy["id"],
         actions=protection_rule_action,
         mod_security_rule_ids=test_rule["id"])
     ```

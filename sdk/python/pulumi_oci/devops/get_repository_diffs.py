@@ -135,10 +135,10 @@ def get_repository_diffs(base_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
+    test_repository_diffs = oci.devops.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base == "true",
         target_repository_id=test_repository["id"])
     ```
 
@@ -168,12 +168,12 @@ def get_repository_diffs(base_version: Optional[_builtins.str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         target_repository_id=pulumi.get(__ret__, 'target_repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
-def get_repository_diffs_output(base_version: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict']]]]] = None,
-                                is_comparison_from_merge_base: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                target_repository_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_diffs_output(base_version: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict']]]]] = None,
+                                is_comparison_from_merge_base: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                target_repository_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_version: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryDiffsResult]:
     """
     This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
@@ -186,10 +186,10 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
+    test_repository_diffs = oci.devops.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base == "true",
         target_repository_id=test_repository["id"])
     ```
 

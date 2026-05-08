@@ -180,9 +180,9 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=compartment_id,
+    test_security_policies = oci.datasafe.get_security_policies(compartment_id=compartment_id,
         access_level=security_policy_access_level,
-        compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_compartment_id_in_subtree == "true",
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
         security_policy_type=security_policy_security_policy_type,
@@ -221,14 +221,14 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         security_policy_type=pulumi.get(__ret__, 'security_policy_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
-                                 security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 security_policy_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_policies_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
+                                 security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 security_policy_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
     """
     This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -254,9 +254,9 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=compartment_id,
+    test_security_policies = oci.datasafe.get_security_policies(compartment_id=compartment_id,
         access_level=security_policy_access_level,
-        compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_compartment_id_in_subtree == "true",
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
         security_policy_type=security_policy_security_policy_type,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerShapes = oci.LoadBalancer.getShapes({
+ * const testLoadBalancerShapes = oci.loadbalancer.getShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerShapes = oci.LoadBalancer.getShapes({
+ * const testLoadBalancerShapes = oci.loadbalancer.getShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetShapesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer shapes to list.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetShapesFilterArgs>[] | undefined>;
 }

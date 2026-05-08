@@ -214,14 +214,14 @@ def get_domains_users(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_domains_users(idcs_endpoint=test_domain["url"],
-        user_count=user_user_count,
+    test_users = oci.identity.get_domains_users(idcs_endpoint=test_domain["url"],
+        user_count=int(user_user_count),
         user_filter=user_user_filter,
         attribute_sets=[],
         attributes="",
         authorization=user_authorization,
         resource_type_schema_version=user_resource_type_schema_version,
-        start_index=user_start_index)
+        start_index=int(user_start_index))
     ```
 
 
@@ -266,17 +266,17 @@ def get_domains_users(attribute_sets: Optional[Sequence[_builtins.str]] = None,
         user_count=pulumi.get(__ret__, 'user_count'),
         user_filter=pulumi.get(__ret__, 'user_filter'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                             attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                             user_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                             user_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_users_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                             attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                             user_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                             user_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsUsersResult]:
     """
     This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
@@ -289,14 +289,14 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_domains_users(idcs_endpoint=test_domain["url"],
-        user_count=user_user_count,
+    test_users = oci.identity.get_domains_users(idcs_endpoint=test_domain["url"],
+        user_count=int(user_user_count),
         user_filter=user_user_filter,
         attribute_sets=[],
         attributes="",
         authorization=user_authorization,
         resource_type_schema_version=user_resource_type_schema_version,
-        start_index=user_start_index)
+        start_index=int(user_start_index))
     ```
 
 

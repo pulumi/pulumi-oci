@@ -337,7 +337,7 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=test_external_pluggable_database_oci_database_external_pluggable_database["id"])
+    test_external_pluggable_database = oci.database.get_external_pluggable_database(external_pluggable_database_id=test_external_pluggable_database_oci_database_external_pluggable_database["id"])
     ```
 
 
@@ -373,7 +373,7 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[_bu
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
-def get_external_pluggable_database_output(external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_pluggable_database_output(external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalPluggableDatabaseResult]:
     """
     This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -387,7 +387,7 @@ def get_external_pluggable_database_output(external_pluggable_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=test_external_pluggable_database_oci_database_external_pluggable_database["id"])
+    test_external_pluggable_database = oci.database.get_external_pluggable_database(external_pluggable_database_id=test_external_pluggable_database_oci_database_external_pluggable_database["id"])
     ```
 
 

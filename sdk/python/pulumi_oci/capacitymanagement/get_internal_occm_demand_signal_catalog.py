@@ -191,7 +191,7 @@ def get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog = oci.CapacityManagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
+    test_internal_occm_demand_signal_catalog = oci.capacitymanagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id: Optio
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_internal_occm_demand_signal_catalog_output(occm_demand_signal_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_internal_occm_demand_signal_catalog_output(occm_demand_signal_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccmDemandSignalCatalogResult]:
     """
     This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -228,7 +228,7 @@ def get_internal_occm_demand_signal_catalog_output(occm_demand_signal_catalog_id
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog = oci.CapacityManagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
+    test_internal_occm_demand_signal_catalog = oci.capacitymanagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
     ```
 
 

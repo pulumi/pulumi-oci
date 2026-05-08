@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceGateways = oci.Core.getServiceGateways({
+ * const testServiceGateways = oci.core.getServiceGateways({
  *     compartmentId: compartmentId,
  *     state: serviceGatewayState,
  *     vcnId: testVcn.id,
@@ -92,7 +92,7 @@ export interface GetServiceGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceGateways = oci.Core.getServiceGateways({
+ * const testServiceGateways = oci.core.getServiceGateways({
  *     compartmentId: compartmentId,
  *     state: serviceGatewayState,
  *     vcnId: testVcn.id,
@@ -117,13 +117,13 @@ export interface GetServiceGatewaysOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetServiceGatewaysFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetServiceGatewaysFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

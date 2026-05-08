@@ -182,7 +182,7 @@ def get_java_downloads_java_download_records(architecture: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+    test_java_download_records = oci.jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
         architecture=java_download_record_architecture,
         family_version=java_download_record_family_version,
         os_family=java_download_record_os_family,
@@ -227,15 +227,15 @@ def get_java_downloads_java_download_records(architecture: Optional[_builtins.st
         release_version=pulumi.get(__ret__, 'release_version'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_java_downloads_java_download_records_output(architecture: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    family_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadRecordsFilterArgs', 'GetJavaDownloadsJavaDownloadRecordsFilterArgsDict']]]]] = None,
-                                                    os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    package_type_detail: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    release_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_downloads_java_download_records_output(architecture: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadRecordsFilterArgs', 'GetJavaDownloadsJavaDownloadRecordsFilterArgsDict']]]]] = None,
+                                                    os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    package_type_detail: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    release_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadRecordsResult]:
     """
     This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -250,7 +250,7 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+    test_java_download_records = oci.jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
         architecture=java_download_record_architecture,
         family_version=java_download_record_family_version,
         os_family=java_download_record_os_family,

@@ -31,15 +31,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
+ * const testAuditProfiles = oci.datasafe.getAuditProfiles({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAccessLevel,
  *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
  *     auditProfileId: testAuditProfile.id,
- *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree === "true",
  *     displayName: auditProfileDisplayName,
- *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
- *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting === "true",
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled === "true",
  *     state: auditProfileState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
@@ -196,15 +196,15 @@ export interface GetAuditProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
+ * const testAuditProfiles = oci.datasafe.getAuditProfiles({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAccessLevel,
  *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
  *     auditProfileId: testAuditProfile.id,
- *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree === "true",
  *     displayName: auditProfileDisplayName,
- *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
- *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting === "true",
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled === "true",
  *     state: auditProfileState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
@@ -238,15 +238,15 @@ export interface GetAuditProfilesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that have count of audit records collected greater than or equal to the specified value.
      */
-    auditCollectedVolumeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    auditCollectedVolumeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A optional filter to return only resources that match the specified id.
      */
-    auditProfileId?: pulumi.Input<string>;
+    auditProfileId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -254,34 +254,34 @@ export interface GetAuditProfilesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditProfilesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditProfilesFilterArgs>[] | undefined>;
     /**
      * A optional filter to return only resources that match the specified retention configured value.
      */
-    isOverrideGlobalRetentionSetting?: pulumi.Input<boolean>;
+    isOverrideGlobalRetentionSetting?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
      */
-    isPaidUsageEnabled?: pulumi.Input<boolean>;
+    isPaidUsageEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A optional filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A optional filter to return only resources that belong to the specified audit profile type.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
 }

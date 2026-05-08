@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: integrationInstanceDisplayName,
  *     integrationInstanceType: integrationInstanceIntegrationInstanceType,
- *     isByol: integrationInstanceIsByol,
- *     messagePacks: integrationInstanceMessagePacks,
+ *     isByol: integrationInstanceIsByol === "true",
+ *     messagePacks: Number(integrationInstanceMessagePacks),
  *     alternateCustomEndpoints: [{
  *         hostname: integrationInstanceAlternateCustomEndpointsHostname,
  *         certificateSecretId: testSecret.id,
@@ -43,9 +43,9 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAt: integrationInstanceIdcsAt,
- *     isDisasterRecoveryEnabled: integrationInstanceIsDisasterRecoveryEnabled,
- *     isFileServerEnabled: integrationInstanceIsFileServerEnabled,
- *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled,
+ *     isDisasterRecoveryEnabled: integrationInstanceIsDisasterRecoveryEnabled === "true",
+ *     isFileServerEnabled: integrationInstanceIsFileServerEnabled === "true",
+ *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled === "true",
  *     networkEndpointDetails: {
  *         networkEndpointType: integrationInstanceNetworkEndpointDetailsNetworkEndpointType,
  *         allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps,
@@ -60,7 +60,7 @@ import * as utilities from "../utilities";
  *                 allowlistedIps: integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps,
  *             }],
  *         },
- *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
+ *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted === "true",
  *         runtime: {
  *             allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps,
  *             allowlistedHttpVcns: [{
@@ -383,128 +383,128 @@ export interface IntegrationInstanceState {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[]>;
+    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[] | undefined>;
     /**
      * A list of associated attachments to other services
      */
-    attachments?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAttachment>[]>;
+    attachments?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAttachment>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
      */
-    convertInstanceTrigger?: pulumi.Input<number>;
+    convertInstanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
-    customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint>;
+    customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint | undefined>;
     /**
      * Data retention period set for given integration instance
      */
-    dataRetentionPeriod?: pulumi.Input<string>;
+    dataRetentionPeriod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
      */
-    disableProcessAutomationTrigger?: pulumi.Input<number>;
+    disableProcessAutomationTrigger?: pulumi.Input<number | undefined>;
     /**
      * Disaster recovery details for the integration instance created in the region.
      */
-    disasterRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceDisasterRecoveryDetail>[]>;
+    disasterRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceDisasterRecoveryDetail>[] | undefined>;
     /**
      * (Updatable) Integration Instance Identifier.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
-    enableProcessAutomationTrigger?: pulumi.Input<number>;
-    extendDataRetentionTrigger?: pulumi.Input<number>;
+    enableProcessAutomationTrigger?: pulumi.Input<number | undefined>;
+    extendDataRetentionTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */
-    failoverTrigger?: pulumi.Input<number>;
+    failoverTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
-    idcsAt?: pulumi.Input<string>;
+    idcsAt?: pulumi.Input<string | undefined>;
     /**
      * Information for IDCS access
      */
-    idcsInfos?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceIdcsInfo>[]>;
-    instanceDesignTimeUrl?: pulumi.Input<string>;
+    idcsInfos?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceIdcsInfo>[] | undefined>;
+    instanceDesignTimeUrl?: pulumi.Input<string | undefined>;
     /**
      * The Integration Instance URL.
      */
-    instanceUrl?: pulumi.Input<string>;
+    instanceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
-    integrationInstanceType?: pulumi.Input<string>;
+    integrationInstanceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Bring your own license.
      */
-    isByol?: pulumi.Input<boolean>;
+    isByol?: pulumi.Input<boolean | undefined>;
     /**
      * Is Disaster Recovery enabled or not.
      */
-    isDisasterRecoveryEnabled?: pulumi.Input<boolean>;
+    isDisasterRecoveryEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The file server is enabled or not.
      */
-    isFileServerEnabled?: pulumi.Input<boolean>;
+    isFileServerEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    isVisualBuilderEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional details of lifecycleState or substates
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * OCID of LogAnalytics LogGroup, enabled for given integration instance
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of configured message packs
      */
-    messagePacks?: pulumi.Input<number>;
+    messagePacks?: pulumi.Input<number | undefined>;
     /**
      * Base representation of a network endpoint.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails | undefined>;
     /**
      * Base representation for Outbound Connection (Reverse Connection).
      */
-    privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[]>;
+    privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[] | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * "oracle-zpr.sensitivity.value" = "low"
      * "oracle-zpr.sensitivity.mode" = "enforce"
      * }`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Shape
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
@@ -512,23 +512,23 @@ export interface IntegrationInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    stateMessage?: pulumi.Input<string>;
+    stateMessage?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -538,7 +538,7 @@ export interface IntegrationInstanceArgs {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[]>;
+    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -546,27 +546,27 @@ export interface IntegrationInstanceArgs {
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
      */
-    convertInstanceTrigger?: pulumi.Input<number>;
+    convertInstanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
-    customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint>;
+    customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint | undefined>;
     /**
      * Data retention period set for given integration instance
      */
-    dataRetentionPeriod?: pulumi.Input<string>;
+    dataRetentionPeriod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
      */
-    disableProcessAutomationTrigger?: pulumi.Input<number>;
+    disableProcessAutomationTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Integration Instance Identifier.
      */
@@ -574,24 +574,24 @@ export interface IntegrationInstanceArgs {
     /**
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
-    enableProcessAutomationTrigger?: pulumi.Input<number>;
-    extendDataRetentionTrigger?: pulumi.Input<number>;
+    enableProcessAutomationTrigger?: pulumi.Input<number | undefined>;
+    extendDataRetentionTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */
-    failoverTrigger?: pulumi.Input<number>;
+    failoverTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
-    idcsAt?: pulumi.Input<string>;
+    idcsAt?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
@@ -603,19 +603,19 @@ export interface IntegrationInstanceArgs {
     /**
      * Is Disaster Recovery enabled or not.
      */
-    isDisasterRecoveryEnabled?: pulumi.Input<boolean>;
+    isDisasterRecoveryEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The file server is enabled or not.
      */
-    isFileServerEnabled?: pulumi.Input<boolean>;
+    isFileServerEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    isVisualBuilderEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * OCID of LogAnalytics LogGroup, enabled for given integration instance
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -623,18 +623,18 @@ export interface IntegrationInstanceArgs {
     /**
      * Base representation of a network endpoint.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * "oracle-zpr.sensitivity.value" = "low"
      * "oracle-zpr.sensitivity.mode" = "enforce"
      * }`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Shape
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
@@ -642,5 +642,5 @@ export interface IntegrationInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

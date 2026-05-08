@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargets = oci.CloudGuard.getGuardTargets({
+ * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
  *     state: targetState,
  * });
  * ```
@@ -139,12 +139,12 @@ export interface GetGuardTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargets = oci.CloudGuard.getGuardTargets({
+ * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
  *     state: targetState,
  * });
  * ```
@@ -169,7 +169,7 @@ export interface GetGuardTargetsOutputArgs {
     /**
      * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
@@ -177,18 +177,18 @@ export interface GetGuardTargetsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetGuardTargetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetGuardTargetsFilterArgs>[] | undefined>;
     /**
      * Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
      */
-    isNonSecurityZoneTargetsOnlyQuery?: pulumi.Input<boolean>;
+    isNonSecurityZoneTargetsOnlyQuery?: pulumi.Input<boolean | undefined>;
     /**
      * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

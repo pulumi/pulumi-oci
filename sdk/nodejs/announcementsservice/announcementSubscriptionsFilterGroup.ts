@@ -125,11 +125,11 @@ export interface AnnouncementSubscriptionsFilterGroupState {
     /**
      * The OCID of the announcement subscription.
      */
-    announcementSubscriptionId?: pulumi.Input<string>;
+    announcementSubscriptionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionsFilterGroupFilter>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionsFilterGroupFilter>[] | undefined>;
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      *
@@ -137,7 +137,7 @@ export interface AnnouncementSubscriptionsFilterGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -159,5 +159,5 @@ export interface AnnouncementSubscriptionsFilterGroupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

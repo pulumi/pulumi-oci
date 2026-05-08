@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isFreeTier: apmDomainIsFreeTier,
+ *     isFreeTier: apmDomainIsFreeTier === "true",
  * });
  * ```
  *
@@ -167,27 +167,27 @@ export interface ApmDomainState {
     /**
      * (Updatable) The OCID of the compartment corresponding to the APM domain.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The endpoint where the APM agents upload their observations and metrics.
      */
-    dataUploadEndpoint?: pulumi.Input<string>;
+    dataUploadEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the APM domain.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name of the APM domain.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
      *
@@ -195,19 +195,19 @@ export interface ApmDomainState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isFreeTier?: pulumi.Input<boolean>;
+    isFreeTier?: pulumi.Input<boolean | undefined>;
     /**
      * The current lifecycle state of the APM domain.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -221,11 +221,11 @@ export interface ApmDomainArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the APM domain.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display name of the APM domain.
      */
@@ -233,7 +233,7 @@ export interface ApmDomainArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
      *
@@ -241,5 +241,5 @@ export interface ApmDomainArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isFreeTier?: pulumi.Input<boolean>;
+    isFreeTier?: pulumi.Input<boolean | undefined>;
 }

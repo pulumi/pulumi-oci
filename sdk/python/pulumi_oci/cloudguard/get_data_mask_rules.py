@@ -180,7 +180,7 @@ def get_data_mask_rules(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+    test_data_mask_rules = oci.cloudguard.get_data_mask_rules(compartment_id=compartment_id,
         access_level=data_mask_rule_access_level,
         data_mask_rule_status=data_mask_rule_data_mask_rule_status,
         display_name=data_mask_rule_display_name,
@@ -225,15 +225,15 @@ def get_data_mask_rules(access_level: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'),
         target_type=pulumi.get(__ret__, 'target_type'))
-def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               data_mask_rule_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataMaskRulesFilterArgs', 'GetDataMaskRulesFilterArgsDict']]]]] = None,
-                               iam_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_data_mask_rules_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               data_mask_rule_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataMaskRulesFilterArgs', 'GetDataMaskRulesFilterArgsDict']]]]] = None,
+                               iam_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataMaskRulesResult]:
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
@@ -246,7 +246,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+    test_data_mask_rules = oci.cloudguard.get_data_mask_rules(compartment_id=compartment_id,
         access_level=data_mask_rule_access_level,
         data_mask_rule_status=data_mask_rule_data_mask_rule_status,
         display_name=data_mask_rule_display_name,

@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHistories = oci.Optimizer.getHistories({
+ * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
- *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
+ *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -148,10 +148,10 @@ export interface GetHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHistories = oci.Optimizer.getHistories({
+ * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
- *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
+ *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -191,33 +191,33 @@ export interface GetHistoriesOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetHistoriesFilterArgs>[] | undefined>;
     /**
      * Supplement additional resource information in extended metadata response.
      */
-    includeResourceMetadata?: pulumi.Input<boolean>;
+    includeResourceMetadata?: pulumi.Input<boolean | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId?: pulumi.Input<string>;
+    recommendationId?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the recommendation name specified.
      */
-    recommendationName?: pulumi.Input<string>;
+    recommendationName?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the resource type specified.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns recommendations that match the status specified.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

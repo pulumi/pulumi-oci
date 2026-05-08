@@ -131,7 +131,7 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=test_api_key["id"],
+    test_bds_instance_api_key = oci.bigdataservice.get_bds_instance_api_key(api_key_id=test_api_key["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 
@@ -157,11 +157,11 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     user_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_api_keys_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:
     """
     This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -174,7 +174,7 @@ def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=test_api_key["id"],
+    test_bds_instance_api_key = oci.bigdataservice.get_bds_instance_api_key(api_key_id=test_api_key["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 

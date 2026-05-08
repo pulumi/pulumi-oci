@@ -276,7 +276,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse = oci.opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_wallet_rotated=pulumi.get(__ret__, 'time_last_wallet_rotated'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_operations_insights_warehouse_output(operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_operations_insights_warehouse_output(operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResult]:
     """
     This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
@@ -321,7 +321,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse = oci.opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
 
 

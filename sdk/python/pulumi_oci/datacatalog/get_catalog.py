@@ -240,7 +240,7 @@ def get_catalog(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
+    test_catalog = oci.datacatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_catalog(catalog_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_catalog_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_catalog_output(catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogResult]:
     """
     This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -281,7 +281,7 @@ def get_catalog_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
+    test_catalog = oci.datacatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
     ```
 
 

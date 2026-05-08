@@ -223,9 +223,9 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collections = oci.DataSafe.get_sql_collections(compartment_id=compartment_id,
+    test_sql_collections = oci.datasafe.get_sql_collections(compartment_id=compartment_id,
         access_level=sql_collection_access_level,
-        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree == "true",
         db_user_name=test_user["name"],
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],
@@ -284,18 +284,18 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               db_user_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlCollectionsFilterArgs', 'GetSqlCollectionsFilterArgsDict']]]]] = None,
-                               sql_collection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_collections_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               db_user_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlCollectionsFilterArgs', 'GetSqlCollectionsFilterArgsDict']]]]] = None,
+                               sql_collection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionsResult]:
     """
     This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
@@ -321,9 +321,9 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collections = oci.DataSafe.get_sql_collections(compartment_id=compartment_id,
+    test_sql_collections = oci.datasafe.get_sql_collections(compartment_id=compartment_id,
         access_level=sql_collection_access_level,
-        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree == "true",
         db_user_name=test_user["name"],
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],

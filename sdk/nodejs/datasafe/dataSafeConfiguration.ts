@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSafeConfiguration = new oci.datasafe.DataSafeConfiguration("test_data_safe_configuration", {
- *     isEnabled: dataSafeConfigurationIsEnabled,
+ *     isEnabled: dataSafeConfigurationIsEnabled === "true",
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -148,23 +148,23 @@ export interface DataSafeConfigurationState {
     /**
      * (Updatable) A filter to return only resources that match the specified compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Data Safe's NAT Gateway IP Address.
      */
-    dataSafeNatGatewayIpAddress?: pulumi.Input<string>;
+    dataSafeNatGatewayIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details of the tenancy level global settings in Data Safe.
      */
-    globalSettings?: pulumi.Input<pulumi.Input<inputs.DataSafe.DataSafeConfigurationGlobalSetting>[]>;
+    globalSettings?: pulumi.Input<pulumi.Input<inputs.DataSafe.DataSafeConfigurationGlobalSetting>[] | undefined>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *
@@ -172,19 +172,19 @@ export interface DataSafeConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of Data Safe.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeEnabled?: pulumi.Input<string>;
+    timeEnabled?: pulumi.Input<string | undefined>;
     /**
      * The URL of the Data Safe service.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,7 +194,7 @@ export interface DataSafeConfigurationArgs {
     /**
      * (Updatable) A filter to return only resources that match the specified compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *

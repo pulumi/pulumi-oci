@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuotas = oci.Limits.getQuotas({
+ * const testQuotas = oci.limits.getQuotas({
  *     compartmentId: tenancyOcid,
  *     name: quotaName,
  *     state: quotaState,
@@ -90,7 +90,7 @@ export interface GetQuotasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuotas = oci.Limits.getQuotas({
+ * const testQuotas = oci.limits.getQuotas({
  *     compartmentId: tenancyOcid,
  *     name: quotaName,
  *     state: quotaState,
@@ -115,13 +115,13 @@ export interface GetQuotasOutputArgs {
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetQuotasFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetQuotasFilterArgs>[] | undefined>;
     /**
      * name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filters returned quotas based on the given state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

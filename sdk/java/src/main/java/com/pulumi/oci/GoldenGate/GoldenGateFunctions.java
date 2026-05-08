@@ -176,8 +176,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -218,8 +218,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -260,8 +260,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -302,8 +302,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -344,8 +344,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -386,8 +386,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -432,8 +432,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -478,8 +478,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -524,8 +524,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -570,8 +570,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -616,8 +616,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -665,8 +665,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -714,8 +714,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -763,8 +763,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -812,8 +812,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -862,8 +862,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -948,8 +948,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -991,8 +991,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1034,8 +1034,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1077,8 +1077,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1122,8 +1122,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1167,8 +1167,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1212,8 +1212,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1257,8 +1257,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1301,8 +1301,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1343,8 +1343,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1385,8 +1385,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1427,8 +1427,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1469,8 +1469,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1511,8 +1511,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1553,8 +1553,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1595,8 +1595,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1637,8 +1637,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1679,8 +1679,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1721,8 +1721,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1766,8 +1766,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1811,8 +1811,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1856,8 +1856,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1901,8 +1901,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1946,8 +1946,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1989,8 +1989,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2032,8 +2032,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2075,8 +2075,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2118,8 +2118,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2161,8 +2161,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2204,8 +2204,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2247,8 +2247,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2290,8 +2290,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2333,8 +2333,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2376,8 +2376,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2418,8 +2418,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2460,8 +2460,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2502,8 +2502,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2544,8 +2544,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2586,8 +2586,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2630,8 +2630,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2674,8 +2674,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2718,8 +2718,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2762,8 +2762,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2806,8 +2806,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2849,8 +2849,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2892,8 +2892,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2935,8 +2935,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2978,8 +2978,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3021,8 +3021,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3066,8 +3066,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3111,8 +3111,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3156,8 +3156,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3201,8 +3201,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3246,8 +3246,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3288,8 +3288,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3330,8 +3330,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3372,8 +3372,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3414,8 +3414,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3456,8 +3456,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3501,8 +3501,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3546,8 +3546,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3591,8 +3591,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3636,8 +3636,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3681,8 +3681,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3725,8 +3725,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3769,8 +3769,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3813,8 +3813,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3857,8 +3857,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3901,8 +3901,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3951,8 +3951,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4001,8 +4001,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4051,8 +4051,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4101,8 +4101,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4151,8 +4151,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4193,8 +4193,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4235,8 +4235,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4277,8 +4277,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4319,8 +4319,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4361,8 +4361,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4403,8 +4403,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4445,8 +4445,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4487,8 +4487,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4529,8 +4529,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4571,8 +4571,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4613,8 +4613,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4655,8 +4655,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4697,8 +4697,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4739,8 +4739,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4781,8 +4781,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4823,8 +4823,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4865,8 +4865,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4907,8 +4907,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4949,8 +4949,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4991,8 +4991,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5036,8 +5036,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5081,8 +5081,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5126,8 +5126,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5171,8 +5171,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5216,8 +5216,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5259,8 +5259,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5302,8 +5302,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5345,8 +5345,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5388,8 +5388,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5431,8 +5431,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5476,8 +5476,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5521,8 +5521,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5566,8 +5566,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5611,8 +5611,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5656,8 +5656,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5700,8 +5700,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5744,8 +5744,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5788,8 +5788,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5832,8 +5832,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5876,8 +5876,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5920,8 +5920,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5964,8 +5964,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6008,8 +6008,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6052,8 +6052,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6097,8 +6097,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6142,8 +6142,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6187,8 +6187,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6232,8 +6232,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6277,8 +6277,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6321,8 +6321,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6366,8 +6366,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6411,8 +6411,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6456,8 +6456,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6501,8 +6501,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6547,8 +6547,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6593,8 +6593,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6639,8 +6639,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6685,8 +6685,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6731,8 +6731,8 @@ public final class GoldenGateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
      * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

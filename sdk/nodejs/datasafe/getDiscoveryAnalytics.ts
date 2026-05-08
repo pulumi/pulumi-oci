@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
+ * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon,
+ *     isCommon: discoveryAnalyticIsCommon === "true",
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -136,11 +136,11 @@ export interface GetDiscoveryAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
+ * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon,
+ *     isCommon: discoveryAnalyticIsCommon === "true",
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -176,34 +176,34 @@ export interface GetDiscoveryAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDiscoveryAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetDiscoveryAnalyticsFilterArgs>[] | undefined>;
     /**
      * Attribute by which the discovery analytics data should be grouped.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
      */
-    isCommon?: pulumi.Input<boolean>;
+    isCommon?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
      */
-    sensitiveTypeGroupId?: pulumi.Input<string>;
+    sensitiveTypeGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

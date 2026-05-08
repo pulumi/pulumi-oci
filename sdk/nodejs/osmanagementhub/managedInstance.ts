@@ -338,123 +338,123 @@ export interface ManagedInstanceState {
     /**
      * The version of osmh-agent running on the managed instance
      */
-    agentVersion?: pulumi.Input<string>;
+    agentVersion?: pulumi.Input<string | undefined>;
     /**
      * The CPU architecture type of the managed instance.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
      */
-    areSourcesManaged?: pulumi.Input<boolean>;
+    areSourcesManaged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
-    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
+    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings | undefined>;
     /**
      * Number of bug fix type updates available for installation.
      */
-    bugUpdatesAvailable?: pulumi.Input<number>;
+    bugUpdatesAvailable?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Software source name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Number of enhancement type updates available for installation.
      */
-    enhancementUpdatesAvailable?: pulumi.Input<number>;
+    enhancementUpdatesAvailable?: pulumi.Input<number | undefined>;
     /**
      * Number of packages installed on the instance.
      */
-    installedPackages?: pulumi.Input<number>;
+    installedPackages?: pulumi.Input<number | undefined>;
     /**
      * Number of Windows updates installed on the instance.
      */
-    installedWindowsUpdates?: pulumi.Input<number>;
+    installedWindowsUpdates?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the Autonomous Linux service manages the instance.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this managed instance is acting as an on-premises management station.
      */
-    isManagementStation?: pulumi.Input<boolean>;
+    isManagementStation?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      */
-    isRebootRequired?: pulumi.Input<boolean>;
+    isRebootRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The ksplice effective kernel version.
      */
-    kspliceEffectiveKernelVersion?: pulumi.Input<string>;
+    kspliceEffectiveKernelVersion?: pulumi.Input<string | undefined>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    lifecycleEnvironments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceLifecycleEnvironment>[]>;
+    lifecycleEnvironments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceLifecycleEnvironment>[] | undefined>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    lifecycleStages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceLifecycleStage>[]>;
+    lifecycleStages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceLifecycleStage>[] | undefined>;
     /**
      * The location of the managed instance.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceManagedInstanceGroup>[]>;
+    managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceManagedInstanceGroup>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    notificationTopicId?: pulumi.Input<string>;
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * The operating system type of the managed instance.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * Operating system kernel version.
      */
-    osKernelVersion?: pulumi.Input<string>;
+    osKernelVersion?: pulumi.Input<string | undefined>;
     /**
      * Operating system name.
      */
-    osName?: pulumi.Input<string>;
+    osName?: pulumi.Input<string | undefined>;
     /**
      * Operating system version.
      */
-    osVersion?: pulumi.Input<string>;
+    osVersion?: pulumi.Input<string | undefined>;
     /**
      * Number of non-classified (other) updates available for installation.
      */
-    otherUpdatesAvailable?: pulumi.Input<number>;
+    otherUpdatesAvailable?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
      */
-    primaryManagementStationId?: pulumi.Input<string>;
+    primaryManagementStationId?: pulumi.Input<string | undefined>;
     /**
      * The profile that was used to register this instance with the service.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The version of the profile that was used to register this instance with the service.
      */
-    profileVersion?: pulumi.Input<string>;
+    profileVersion?: pulumi.Input<string | undefined>;
     /**
      * Number of scheduled jobs associated with this instance.
      */
-    scheduledJobCount?: pulumi.Input<number>;
+    scheduledJobCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
      *
@@ -462,51 +462,51 @@ export interface ManagedInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    secondaryManagementStationId?: pulumi.Input<string>;
+    secondaryManagementStationId?: pulumi.Input<string | undefined>;
     /**
      * Number of security type updates available for installation.
      */
-    securityUpdatesAvailable?: pulumi.Input<number>;
+    securityUpdatesAvailable?: pulumi.Input<number | undefined>;
     /**
      * The list of software sources currently attached to the managed instance.
      */
-    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceSoftwareSource>[]>;
+    softwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceSoftwareSource>[] | undefined>;
     /**
      * Current status of the managed instance.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeLastBoot?: pulumi.Input<string>;
+    timeLastBoot?: pulumi.Input<string | undefined>;
     /**
      * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeLastCheckin?: pulumi.Input<string>;
+    timeLastCheckin?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeLastSoftwareRefresh?: pulumi.Input<string>;
+    timeLastSoftwareRefresh?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Number of updates available for installation.
      */
-    updatesAvailable?: pulumi.Input<number>;
+    updatesAvailable?: pulumi.Input<number | undefined>;
     /**
      * Number of work requests associated with this instance.
      */
-    workRequestCount?: pulumi.Input<number>;
+    workRequestCount?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -516,11 +516,11 @@ export interface ManagedInstanceArgs {
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
-    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
+    autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings | undefined>;
     /**
      * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
@@ -528,11 +528,11 @@ export interface ManagedInstanceArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    notificationTopicId?: pulumi.Input<string>;
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
      */
-    primaryManagementStationId?: pulumi.Input<string>;
+    primaryManagementStationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
      *
@@ -540,5 +540,5 @@ export interface ManagedInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    secondaryManagementStationId?: pulumi.Input<string>;
+    secondaryManagementStationId?: pulumi.Input<string | undefined>;
 }

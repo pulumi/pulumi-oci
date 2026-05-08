@@ -191,7 +191,7 @@ def get_ml_application(ml_application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application = oci.DataScience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
+    test_ml_application = oci.datascience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_ml_application(ml_application_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_ml_application_output(ml_application_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ml_application_output(ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationResult]:
     """
     This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
@@ -228,7 +228,7 @@ def get_ml_application_output(ml_application_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application = oci.DataScience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
+    test_ml_application = oci.datascience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
     ```
 
 

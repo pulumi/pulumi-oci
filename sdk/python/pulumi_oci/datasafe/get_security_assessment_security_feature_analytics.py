@@ -132,9 +132,9 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
+    test_security_assessment_security_feature_analytics = oci.datasafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree == "true",
         target_id=test_target["id"])
     ```
 
@@ -161,11 +161,11 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[_b
         id=pulumi.get(__ret__, 'id'),
         security_feature_analytics_collections=pulumi.get(__ret__, 'security_feature_analytics_collections'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_assessment_security_feature_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]]]] = None,
-                                                              target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_security_feature_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]]]] = None,
+                                                              target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeatureAnalyticsResult]:
     """
     This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -185,9 +185,9 @@ def get_security_assessment_security_feature_analytics_output(access_level: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
+    test_security_assessment_security_feature_analytics = oci.datasafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree == "true",
         target_id=test_target["id"])
     ```
 

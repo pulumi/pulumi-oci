@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
+ * const testCatalogTypes = oci.datacatalog.getCatalogTypes({
  *     catalogId: testCatalog.id,
  *     externalTypeName: catalogTypeExternalTypeName,
  *     fields: catalogTypeFields,
@@ -147,7 +147,7 @@ export interface GetCatalogTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
+ * const testCatalogTypes = oci.datacatalog.getCatalogTypes({
  *     catalogId: testCatalog.id,
  *     externalTypeName: catalogTypeExternalTypeName,
  *     fields: catalogTypeFields,
@@ -187,34 +187,34 @@ export interface GetCatalogTypesOutputArgs {
     /**
      * Data type as defined in an external system.
      */
-    externalTypeName?: pulumi.Input<string>;
+    externalTypeName?: pulumi.Input<string | undefined>;
     /**
      * Specifies the fields to return in a type summary response.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogTypesFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogTypesFilterArgs>[] | undefined>;
     /**
      * Indicates whether the type is approved for use as a classifying object.
      */
-    isApproved?: pulumi.Input<string>;
+    isApproved?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the type is internal, making it unavailable for use by metadata elements.
      */
-    isInternal?: pulumi.Input<string>;
+    isInternal?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the type can be used for tagging metadata elements.
      */
-    isTag?: pulumi.Input<string>;
+    isTag?: pulumi.Input<string | undefined>;
     /**
      * Immutable resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Indicates the category of this type . For example, data assets or connections.
      */
-    typeCategory?: pulumi.Input<string>;
+    typeCategory?: pulumi.Input<string | undefined>;
 }

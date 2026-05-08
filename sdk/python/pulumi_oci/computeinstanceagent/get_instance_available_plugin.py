@@ -128,7 +128,7 @@ def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```
@@ -155,11 +155,11 @@ def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None
         name=pulumi.get(__ret__, 'name'),
         os_name=pulumi.get(__ret__, 'os_name'),
         os_version=pulumi.get(__ret__, 'os_version'))
-def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         os_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                         os_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_available_plugin_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         os_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                         os_version: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceAvailablePluginResult]:
     """
     This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -172,7 +172,7 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```

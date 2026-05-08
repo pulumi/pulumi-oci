@@ -15,10 +15,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterKubeConfig = oci.ContainerEngine.getClusterKubeConfig({
+ * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: clusterKubeConfigExpiration,
+ *     expiration: Number(clusterKubeConfigExpiration),
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```
@@ -83,10 +83,10 @@ export interface GetClusterKubeConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterKubeConfig = oci.ContainerEngine.getClusterKubeConfig({
+ * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: clusterKubeConfigExpiration,
+ *     expiration: Number(clusterKubeConfigExpiration),
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```
@@ -112,13 +112,13 @@ export interface GetClusterKubeConfigOutputArgs {
     /**
      * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
      */
-    endpoint?: pulumi.Input<string>;
+    endpoint?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. This field is no longer used.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * The version of the kubeconfig token. Supported value 2.0.0
      */
-    tokenVersion?: pulumi.Input<string>;
+    tokenVersion?: pulumi.Input<string | undefined>;
 }

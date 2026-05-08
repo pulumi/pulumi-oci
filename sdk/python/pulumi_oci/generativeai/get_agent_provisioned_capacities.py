@@ -134,7 +134,7 @@ def get_agent_provisioned_capacities(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacities = oci.GenerativeAi.get_agent_provisioned_capacities(compartment_id=compartment_id,
+    test_provisioned_capacities = oci.generativeai.get_agent_provisioned_capacities(compartment_id=compartment_id,
         display_name=provisioned_capacity_display_name,
         provisioned_capacity_id=test_provisioned_capacity["id"],
         state=provisioned_capacity_state)
@@ -163,11 +163,11 @@ def get_agent_provisioned_capacities(compartment_id: Optional[_builtins.str] = N
         provisioned_capacity_collections=pulumi.get(__ret__, 'provisioned_capacity_collections'),
         provisioned_capacity_id=pulumi.get(__ret__, 'provisioned_capacity_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_agent_provisioned_capacities_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict']]]]] = None,
-                                            provisioned_capacity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_provisioned_capacities_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict']]]]] = None,
+                                            provisioned_capacity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentProvisionedCapacitiesResult]:
     """
     This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -180,7 +180,7 @@ def get_agent_provisioned_capacities_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacities = oci.GenerativeAi.get_agent_provisioned_capacities(compartment_id=compartment_id,
+    test_provisioned_capacities = oci.generativeai.get_agent_provisioned_capacities(compartment_id=compartment_id,
         display_name=provisioned_capacity_display_name,
         provisioned_capacity_id=test_provisioned_capacity["id"],
         state=provisioned_capacity_state)

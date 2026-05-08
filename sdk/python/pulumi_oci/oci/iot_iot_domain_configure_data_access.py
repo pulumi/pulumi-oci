@@ -21,9 +21,9 @@ class IotIotDomainConfigureDataAccessArgs:
     def __init__(__self__, *,
                  iot_domain_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 db_allow_listed_identity_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_allowed_identity_domain_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IotIotDomainConfigureDataAccess resource.
 
@@ -76,49 +76,49 @@ class IotIotDomainConfigureDataAccessArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbAllowListedIdentityGroupNames")
-    def db_allow_listed_identity_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_allow_listed_identity_group_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
         """
         return pulumi.get(self, "db_allow_listed_identity_group_names")
 
     @db_allow_listed_identity_group_names.setter
-    def db_allow_listed_identity_group_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_allow_listed_identity_group_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_allow_listed_identity_group_names", value)
 
     @_builtins.property
     @pulumi.getter(name="dbAllowedIdentityDomainHost")
-    def db_allowed_identity_domain_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_allowed_identity_domain_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name of identity domain that is used for authenticating connect to data host via ORDS.
         """
         return pulumi.get(self, "db_allowed_identity_domain_host")
 
     @db_allowed_identity_domain_host.setter
-    def db_allowed_identity_domain_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_allowed_identity_domain_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_allowed_identity_domain_host", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkspaceAdminInitialPassword")
-    def db_workspace_admin_initial_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workspace_admin_initial_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Initial admin password for APEX workspace associated with the IoT domain.
         """
         return pulumi.get(self, "db_workspace_admin_initial_password")
 
     @db_workspace_admin_initial_password.setter
-    def db_workspace_admin_initial_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workspace_admin_initial_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workspace_admin_initial_password", value)
 
 
 @pulumi.input_type
 class _IotIotDomainConfigureDataAccessState:
     def __init__(__self__, *,
-                 db_allow_listed_identity_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_allowed_identity_domain_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainConfigureDataAccess resources.
 
@@ -145,55 +145,55 @@ class _IotIotDomainConfigureDataAccessState:
 
     @_builtins.property
     @pulumi.getter(name="dbAllowListedIdentityGroupNames")
-    def db_allow_listed_identity_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def db_allow_listed_identity_group_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
         """
         return pulumi.get(self, "db_allow_listed_identity_group_names")
 
     @db_allow_listed_identity_group_names.setter
-    def db_allow_listed_identity_group_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def db_allow_listed_identity_group_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_allow_listed_identity_group_names", value)
 
     @_builtins.property
     @pulumi.getter(name="dbAllowedIdentityDomainHost")
-    def db_allowed_identity_domain_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_allowed_identity_domain_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name of identity domain that is used for authenticating connect to data host via ORDS.
         """
         return pulumi.get(self, "db_allowed_identity_domain_host")
 
     @db_allowed_identity_domain_host.setter
-    def db_allowed_identity_domain_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_allowed_identity_domain_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_allowed_identity_domain_host", value)
 
     @_builtins.property
     @pulumi.getter(name="dbWorkspaceAdminInitialPassword")
-    def db_workspace_admin_initial_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_workspace_admin_initial_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Initial admin password for APEX workspace associated with the IoT domain.
         """
         return pulumi.get(self, "db_workspace_admin_initial_password")
 
     @db_workspace_admin_initial_password.setter
-    def db_workspace_admin_initial_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_workspace_admin_initial_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_workspace_admin_initial_password", value)
 
     @_builtins.property
     @pulumi.getter(name="iotDomainId")
-    def iot_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iot_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         """
         return pulumi.get(self, "iot_domain_id")
 
     @iot_domain_id.setter
-    def iot_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iot_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iot_domain_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         configuration type
 
@@ -204,7 +204,7 @@ class _IotIotDomainConfigureDataAccessState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -214,11 +214,11 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_allow_listed_identity_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_allowed_identity_domain_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Iot Domain Configure Data Access resource in Oracle Cloud Infrastructure Iot service.
@@ -307,11 +307,11 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_allow_listed_identity_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_allowed_identity_domain_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -342,11 +342,11 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_allow_listed_identity_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            db_allowed_identity_domain_host: Optional[pulumi.Input[_builtins.str]] = None,
-            db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None,
-            iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IotIotDomainConfigureDataAccess':
+            db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+            iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IotIotDomainConfigureDataAccess':
         """
         Get an existing IotIotDomainConfigureDataAccess resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

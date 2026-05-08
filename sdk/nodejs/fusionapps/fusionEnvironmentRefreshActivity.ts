@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", {
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     sourceFusionEnvironmentId: testFusionEnvironment.id,
- *     isDataMaskingOpted: fusionEnvironmentRefreshActivityIsDataMaskingOpted,
+ *     isDataMaskingOpted: fusionEnvironmentRefreshActivityIsDataMaskingOpted === "true",
  *     timeScheduledStart: fusionEnvironmentRefreshActivityTimeScheduledStart,
  * });
  * ```
@@ -180,56 +180,56 @@ export interface FusionEnvironmentRefreshActivityState {
     /**
      * A friendly name for the refresh activity. Can be changed later.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
-    fusionEnvironmentId?: pulumi.Input<string>;
+    fusionEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * Represents if the customer opted for Data Masking or not during refreshActivity.
      */
-    isDataMaskingOpted?: pulumi.Input<boolean>;
+    isDataMaskingOpted?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
-    refreshActivityId?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
+    refreshActivityId?: pulumi.Input<string | undefined>;
     /**
      * Details of refresh investigation information, each item represents a different issue.
      */
-    refreshIssueDetailsLists?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList>[]>;
+    refreshIssueDetailsLists?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList>[] | undefined>;
     /**
      * Service availability / impact during refresh activity execution up down
      */
-    serviceAvailability?: pulumi.Input<string>;
+    serviceAvailability?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      */
-    sourceFusionEnvironmentId?: pulumi.Input<string>;
+    sourceFusionEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the refreshActivity.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      */
-    timeExpectedFinish?: pulumi.Input<string>;
+    timeExpectedFinish?: pulumi.Input<string | undefined>;
     /**
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the most recent source environment backup used for the environment refresh.
      */
-    timeOfRestorationPoint?: pulumi.Input<string>;
+    timeOfRestorationPoint?: pulumi.Input<string | undefined>;
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -243,7 +243,7 @@ export interface FusionEnvironmentRefreshActivityArgs {
     /**
      * Represents if the customer opted for Data Masking or not during refreshActivity.
      */
-    isDataMaskingOpted?: pulumi.Input<boolean>;
+    isDataMaskingOpted?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      */

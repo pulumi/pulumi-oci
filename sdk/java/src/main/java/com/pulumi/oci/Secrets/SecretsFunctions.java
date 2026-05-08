@@ -35,8 +35,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -81,8 +81,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -127,8 +127,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -173,8 +173,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -219,8 +219,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -264,8 +264,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -306,8 +306,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -348,8 +348,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -390,8 +390,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -432,8 +432,8 @@ public final class SecretsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Secrets.SecretsFunctions;
      * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -21,9 +21,9 @@ class AutonomousVmClusterOrdsCertificateManagementArgs:
     def __init__(__self__, *,
                  autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
                  certificate_generation_type: pulumi.Input[_builtins.str],
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousVmClusterOrdsCertificateManagement resource.
 
@@ -72,31 +72,31 @@ class AutonomousVmClusterOrdsCertificateManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="caBundleId")
-    def ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
         """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
-    def ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityId")
-    def certificate_authority_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_authority_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
         """
         return pulumi.get(self, "certificate_authority_id")
 
     @certificate_authority_id.setter
-    def certificate_authority_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_authority_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_authority_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
 
@@ -107,18 +107,18 @@ class AutonomousVmClusterOrdsCertificateManagementArgs:
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
 
 @pulumi.input_type
 class _AutonomousVmClusterOrdsCertificateManagementState:
     def __init__(__self__, *,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_generation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_generation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousVmClusterOrdsCertificateManagement resources.
 
@@ -145,55 +145,55 @@ class _AutonomousVmClusterOrdsCertificateManagementState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
-    def autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="caBundleId")
-    def ca_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
         """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
-    def ca_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityId")
-    def certificate_authority_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_authority_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
         """
         return pulumi.get(self, "certificate_authority_id")
 
     @certificate_authority_id.setter
-    def certificate_authority_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_authority_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_authority_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateGenerationType")
-    def certificate_generation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_generation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
         """
         return pulumi.get(self, "certificate_generation_type")
 
     @certificate_generation_type.setter
-    def certificate_generation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_generation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_generation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
 
@@ -204,7 +204,7 @@ class _AutonomousVmClusterOrdsCertificateManagementState:
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
-    def certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_id", value)
 
 
@@ -214,11 +214,11 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_generation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_generation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Vm Cluster Ords Certificate Management resource in Oracle Cloud Infrastructure Database service.
@@ -301,11 +301,11 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_generation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_generation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -334,11 +334,11 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_generation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousVmClusterOrdsCertificateManagement':
+            autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_generation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousVmClusterOrdsCertificateManagement':
         """
         Get an existing AutonomousVmClusterOrdsCertificateManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

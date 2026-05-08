@@ -23,7 +23,7 @@ class CalculateAuditVolumeCollectedArgs:
     def __init__(__self__, *,
                  audit_profile_id: pulumi.Input[_builtins.str],
                  time_from_month: pulumi.Input[_builtins.str],
-                 time_to_month: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_to_month: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculateAuditVolumeCollected resource.
 
@@ -66,7 +66,7 @@ class CalculateAuditVolumeCollectedArgs:
 
     @_builtins.property
     @pulumi.getter(name="timeToMonth")
-    def time_to_month(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_to_month(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
 
@@ -77,17 +77,17 @@ class CalculateAuditVolumeCollectedArgs:
         return pulumi.get(self, "time_to_month")
 
     @time_to_month.setter
-    def time_to_month(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_to_month(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_to_month", value)
 
 
 @pulumi.input_type
 class _CalculateAuditVolumeCollectedState:
     def __init__(__self__, *,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 collected_audit_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]] = None,
-                 time_from_month: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_to_month: Optional[pulumi.Input[_builtins.str]] = None):
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 collected_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]] = None,
+                 time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_to_month: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculateAuditVolumeCollected resources.
 
@@ -111,43 +111,43 @@ class _CalculateAuditVolumeCollectedState:
 
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def audit_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def audit_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="collectedAuditVolumes")
-    def collected_audit_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]]:
+    def collected_audit_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]]:
         """
         List of collected audit volumes.
         """
         return pulumi.get(self, "collected_audit_volumes")
 
     @collected_audit_volumes.setter
-    def collected_audit_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]]):
+    def collected_audit_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]]]):
         pulumi.set(self, "collected_audit_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFromMonth")
-    def time_from_month(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_from_month(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_from_month")
 
     @time_from_month.setter
-    def time_from_month(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_from_month(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_from_month", value)
 
     @_builtins.property
     @pulumi.getter(name="timeToMonth")
-    def time_to_month(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_to_month(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
 
@@ -158,7 +158,7 @@ class _CalculateAuditVolumeCollectedState:
         return pulumi.get(self, "time_to_month")
 
     @time_to_month.setter
-    def time_to_month(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_to_month(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_to_month", value)
 
 
@@ -168,9 +168,9 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_from_month: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_to_month: Optional[pulumi.Input[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_to_month: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Calculate Audit Volume Collected resource in Oracle Cloud Infrastructure Data Safe service.
@@ -255,9 +255,9 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_from_month: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_to_month: Optional[pulumi.Input[_builtins.str]] = None,
+                 audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_to_month: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -285,10 +285,10 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            collected_audit_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict']]]]] = None,
-            time_from_month: Optional[pulumi.Input[_builtins.str]] = None,
-            time_to_month: Optional[pulumi.Input[_builtins.str]] = None) -> 'CalculateAuditVolumeCollected':
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            collected_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict']]]]] = None,
+            time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
+            time_to_month: pulumi.Input[Optional[_builtins.str]] = None) -> 'CalculateAuditVolumeCollected':
         """
         Get an existing CalculateAuditVolumeCollected resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

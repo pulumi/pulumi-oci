@@ -87,11 +87,11 @@ class FileStorageLustreFileSystemDateTimeDetailsArgs:
 
 
 class FileStorageLustreFileSystemMaintenanceWindowArgsDict(TypedDict):
-    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    day_of_week: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Day of the week when the maintainence window starts.
     """
-    time_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
     """
@@ -99,8 +99,8 @@ class FileStorageLustreFileSystemMaintenanceWindowArgsDict(TypedDict):
 @pulumi.input_type
 class FileStorageLustreFileSystemMaintenanceWindowArgs:
     def __init__(__self__, *,
-                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) Day of the week when the maintainence window starts.
         :param pulumi.Input[_builtins.str] time_start: (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
@@ -112,39 +112,39 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
 
     @_builtins.property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def day_of_week(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Day of the week when the maintainence window starts.
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def day_of_week(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "day_of_week", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         return pulumi.get(self, "time_start")
 
     @time_start.setter
-    def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
 
 
 class FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict(TypedDict):
-    active_or_next_planned_maintenances: NotRequired[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict']]]]
+    active_or_next_planned_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]]
     """
     A generic object to show date and time in the below specified format
     """
-    finished_maintenances: NotRequired[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict']]]]
+    finished_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]]
     """
     A generic object to show date and time in the below specified format
     """
-    is_maintenance_in_progress: NotRequired[pulumi.Input[_builtins.bool]]
+    is_maintenance_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     whether or not an active maintenance is going on for the LustreFileSystem
     """
@@ -152,9 +152,9 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict(TypedDict):
 @pulumi.input_type
 class FileStorageLustreFileSystemMaintenanceWindowMetadataArgs:
     def __init__(__self__, *,
-                 active_or_next_planned_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]] = None,
-                 finished_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]] = None,
-                 is_maintenance_in_progress: Optional[pulumi.Input[_builtins.bool]] = None):
+                 active_or_next_planned_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]] = None,
+                 finished_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]] = None,
+                 is_maintenance_in_progress: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]] active_or_next_planned_maintenances: A generic object to show date and time in the below specified format
         :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]] finished_maintenances: A generic object to show date and time in the below specified format
@@ -169,47 +169,47 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeOrNextPlannedMaintenances")
-    def active_or_next_planned_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]:
+    def active_or_next_planned_maintenances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]:
         """
         A generic object to show date and time in the below specified format
         """
         return pulumi.get(self, "active_or_next_planned_maintenances")
 
     @active_or_next_planned_maintenances.setter
-    def active_or_next_planned_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]):
+    def active_or_next_planned_maintenances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]):
         pulumi.set(self, "active_or_next_planned_maintenances", value)
 
     @_builtins.property
     @pulumi.getter(name="finishedMaintenances")
-    def finished_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]:
+    def finished_maintenances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]:
         """
         A generic object to show date and time in the below specified format
         """
         return pulumi.get(self, "finished_maintenances")
 
     @finished_maintenances.setter
-    def finished_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]):
+    def finished_maintenances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]):
         pulumi.set(self, "finished_maintenances", value)
 
     @_builtins.property
     @pulumi.getter(name="isMaintenanceInProgress")
-    def is_maintenance_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_maintenance_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         whether or not an active maintenance is going on for the LustreFileSystem
         """
         return pulumi.get(self, "is_maintenance_in_progress")
 
     @is_maintenance_in_progress.setter
-    def is_maintenance_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_maintenance_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_maintenance_in_progress", value)
 
 
 class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict(TypedDict):
-    date: NotRequired[pulumi.Input[_builtins.str]]
+    date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly date. Example: `2025-04-25`
     """
-    time: NotRequired[pulumi.Input[_builtins.str]]
+    time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
     """
@@ -217,8 +217,8 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMai
 @pulumi.input_type
 class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs:
     def __init__(__self__, *,
-                 date: Optional[pulumi.Input[_builtins.str]] = None,
-                 time: Optional[pulumi.Input[_builtins.str]] = None):
+                 date: pulumi.Input[Optional[_builtins.str]] = None,
+                 time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] date: A user-friendly date. Example: `2025-04-25`
         :param pulumi.Input[_builtins.str] time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
@@ -230,35 +230,35 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMai
 
     @_builtins.property
     @pulumi.getter
-    def date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly date. Example: `2025-04-25`
         """
         return pulumi.get(self, "date")
 
     @date.setter
-    def date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date", value)
 
     @_builtins.property
     @pulumi.getter
-    def time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
         """
         return pulumi.get(self, "time")
 
     @time.setter
-    def time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time", value)
 
 
 class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict(TypedDict):
-    date: NotRequired[pulumi.Input[_builtins.str]]
+    date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly date. Example: `2025-04-25`
     """
-    time: NotRequired[pulumi.Input[_builtins.str]]
+    time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
     """
@@ -266,8 +266,8 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArg
 @pulumi.input_type
 class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs:
     def __init__(__self__, *,
-                 date: Optional[pulumi.Input[_builtins.str]] = None,
-                 time: Optional[pulumi.Input[_builtins.str]] = None):
+                 date: pulumi.Input[Optional[_builtins.str]] = None,
+                 time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] date: A user-friendly date. Example: `2025-04-25`
         :param pulumi.Input[_builtins.str] time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
@@ -279,43 +279,43 @@ class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArg
 
     @_builtins.property
     @pulumi.getter
-    def date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly date. Example: `2025-04-25`
         """
         return pulumi.get(self, "date")
 
     @date.setter
-    def date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date", value)
 
     @_builtins.property
     @pulumi.getter
-    def time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
         """
         return pulumi.get(self, "time")
 
     @time.setter
-    def time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time", value)
 
 
 class FileStorageLustreFileSystemRootSquashConfigurationArgsDict(TypedDict):
-    client_exceptions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    client_exceptions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
     """
-    identity_squash: NotRequired[pulumi.Input[_builtins.str]]
+    identity_squash: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
     """
-    squash_gid: NotRequired[pulumi.Input[_builtins.str]]
+    squash_gid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
     """
-    squash_uid: NotRequired[pulumi.Input[_builtins.str]]
+    squash_uid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
     """
@@ -323,10 +323,10 @@ class FileStorageLustreFileSystemRootSquashConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class FileStorageLustreFileSystemRootSquashConfigurationArgs:
     def __init__(__self__, *,
-                 client_exceptions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identity_squash: Optional[pulumi.Input[_builtins.str]] = None,
-                 squash_gid: Optional[pulumi.Input[_builtins.str]] = None,
-                 squash_uid: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_exceptions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identity_squash: pulumi.Input[Optional[_builtins.str]] = None,
+                 squash_gid: pulumi.Input[Optional[_builtins.str]] = None,
+                 squash_uid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] client_exceptions: (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
         :param pulumi.Input[_builtins.str] identity_squash: (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
@@ -344,50 +344,50 @@ class FileStorageLustreFileSystemRootSquashConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientExceptions")
-    def client_exceptions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def client_exceptions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
         """
         return pulumi.get(self, "client_exceptions")
 
     @client_exceptions.setter
-    def client_exceptions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def client_exceptions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "client_exceptions", value)
 
     @_builtins.property
     @pulumi.getter(name="identitySquash")
-    def identity_squash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_squash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
         """
         return pulumi.get(self, "identity_squash")
 
     @identity_squash.setter
-    def identity_squash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_squash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_squash", value)
 
     @_builtins.property
     @pulumi.getter(name="squashGid")
-    def squash_gid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def squash_gid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
         """
         return pulumi.get(self, "squash_gid")
 
     @squash_gid.setter
-    def squash_gid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def squash_gid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "squash_gid", value)
 
     @_builtins.property
     @pulumi.getter(name="squashUid")
-    def squash_uid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def squash_uid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
         """
         return pulumi.get(self, "squash_uid")
 
     @squash_uid.setter
-    def squash_uid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def squash_uid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "squash_uid", value)
 
 

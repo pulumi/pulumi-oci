@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
+ * const testTargetDatabasesColumns = oci.datasafe.getTargetDatabasesColumns({
  *     targetDatabaseId: testTargetDatabase.id,
  *     columnNames: targetDatabasesColumnColumnName,
  *     columnNameContains: targetDatabasesColumnColumnNameContains,
@@ -125,7 +125,7 @@ export interface GetTargetDatabasesColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
+ * const testTargetDatabasesColumns = oci.datasafe.getTargetDatabasesColumns({
  *     targetDatabaseId: testTargetDatabase.id,
  *     columnNames: targetDatabasesColumnColumnName,
  *     columnNameContains: targetDatabasesColumnColumnNameContains,
@@ -159,32 +159,32 @@ export interface GetTargetDatabasesColumnsOutputArgs {
     /**
      * A filter to return only items if column name contains a specific string.
      */
-    columnNameContains?: pulumi.Input<string>;
+    columnNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific datatype.
      */
-    datatypes?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesColumnsFilterArgs>[]>;
+    datatypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesColumnsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items if schema name contains a specific string.
      */
-    schemaNameContains?: pulumi.Input<string>;
+    schemaNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items if table name contains a specific string.
      */
-    tableNameContains?: pulumi.Input<string>;
+    tableNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific table name.
      */
-    tableNames?: pulumi.Input<pulumi.Input<string>[]>;
+    tableNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */

@@ -111,7 +111,7 @@ def get_iam_work_requests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=compartment_id,
+    test_iam_work_requests = oci.identity.get_iam_work_requests(compartment_id=compartment_id,
         resource_identifier=iam_work_request_resource_identifier)
     ```
 
@@ -132,9 +132,9 @@ def get_iam_work_requests(compartment_id: Optional[_builtins.str] = None,
         iam_work_requests=pulumi.get(__ret__, 'iam_work_requests'),
         id=pulumi.get(__ret__, 'id'),
         resource_identifier=pulumi.get(__ret__, 'resource_identifier'))
-def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]]]] = None,
-                                 resource_identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_work_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]]]] = None,
+                                 resource_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestsResult]:
     """
     This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
@@ -150,7 +150,7 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=compartment_id,
+    test_iam_work_requests = oci.identity.get_iam_work_requests(compartment_id=compartment_id,
         resource_identifier=iam_work_request_resource_identifier)
     ```
 

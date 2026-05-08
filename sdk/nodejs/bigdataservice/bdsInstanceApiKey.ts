@@ -177,43 +177,43 @@ export interface BdsInstanceApiKeyState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      */
-    defaultRegion?: pulumi.Input<string>;
+    defaultRegion?: pulumi.Input<string | undefined>;
     /**
      * Identity domain OCID , where user is present. For default domain , this field will be optional.
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * The fingerprint that corresponds to the public API key requested.
      */
-    fingerprint?: pulumi.Input<string>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
      */
-    keyAlias?: pulumi.Input<string>;
+    keyAlias?: pulumi.Input<string | undefined>;
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      */
-    pemfilepath?: pulumi.Input<string>;
+    pemfilepath?: pulumi.Input<string | undefined>;
     /**
      * The current status of the API key.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of your tenancy.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      *
@@ -221,7 +221,7 @@ export interface BdsInstanceApiKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -235,11 +235,11 @@ export interface BdsInstanceApiKeyArgs {
     /**
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      */
-    defaultRegion?: pulumi.Input<string>;
+    defaultRegion?: pulumi.Input<string | undefined>;
     /**
      * Identity domain OCID , where user is present. For default domain , this field will be optional.
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
      */

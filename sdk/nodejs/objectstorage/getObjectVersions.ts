@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
+ * const testObjectVersions = oci.objectstorage.getObjectVersions({
  *     bucket: objectVersionBucket,
  *     namespace: objectVersionNamespace,
  *     delimiter: objectVersionDelimiter,
@@ -134,7 +134,7 @@ export interface GetObjectVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
+ * const testObjectVersions = oci.objectstorage.getObjectVersions({
  *     bucket: objectVersionBucket,
  *     namespace: objectVersionNamespace,
  *     delimiter: objectVersionDelimiter,
@@ -172,16 +172,16 @@ export interface GetObjectVersionsOutputArgs {
     /**
      * When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
      */
-    delimiter?: pulumi.Input<string>;
+    delimiter?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically strictly less than this parameter.
      */
-    end?: pulumi.Input<string>;
+    end?: pulumi.Input<string | undefined>;
     /**
      * Object summary by default includes only the 'name' field. Use this parameter to also include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time), 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields. Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.  For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
      */
-    fields?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetObjectVersionsFilterArgs>[]>;
+    fields?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetObjectVersionsFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -189,13 +189,13 @@ export interface GetObjectVersionsOutputArgs {
     /**
      * The string to use for matching against the start of object names in a list query.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically greater than or equal to this parameter.
      */
-    start?: pulumi.Input<string>;
+    start?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically strictly greater than this parameter.
      */
-    startAfter?: pulumi.Input<string>;
+    startAfter?: pulumi.Input<string | undefined>;
 }

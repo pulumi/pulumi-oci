@@ -124,7 +124,7 @@ def get_cross_connect_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=compartment_id,
+    test_cross_connect_groups = oci.core.get_cross_connect_groups(compartment_id=compartment_id,
         display_name=cross_connect_group_display_name,
         state=cross_connect_group_state)
     ```
@@ -149,10 +149,10 @@ def get_cross_connect_groups(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_cross_connect_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCrossConnectGroupsFilterArgs', 'GetCrossConnectGroupsFilterArgsDict']]]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cross_connect_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCrossConnectGroupsFilterArgs', 'GetCrossConnectGroupsFilterArgsDict']]]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectGroupsResult]:
     """
     This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
@@ -165,7 +165,7 @@ def get_cross_connect_groups_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=compartment_id,
+    test_cross_connect_groups = oci.core.get_cross_connect_groups(compartment_id=compartment_id,
         display_name=cross_connect_group_display_name,
         state=cross_connect_group_state)
     ```

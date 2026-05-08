@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespace = new oci.loganalytics.Namespace("test_namespace", {
  *     compartmentId: compartmentId,
- *     isOnboarded: isOnboarded,
+ *     isOnboarded: isOnboarded === "true",
  *     namespace: namespaceNamespace,
  * });
  * ```
@@ -114,15 +114,15 @@ export interface NamespaceState {
     /**
      * The OCID of the root compartment i.e. OCID of the tenancy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
      */
-    isOnboarded?: pulumi.Input<boolean>;
+    isOnboarded?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

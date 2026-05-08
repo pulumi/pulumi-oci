@@ -203,7 +203,7 @@ def get_sensitive_types_export(sensitive_types_export_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_export = oci.DataSafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
+    test_sensitive_types_export = oci.datasafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_sensitive_types_export(sensitive_types_export_id: Optional[_builtins.str
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_sensitive_types_export_output(sensitive_types_export_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_types_export_output(sensitive_types_export_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypesExportResult]:
     """
     This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
@@ -241,7 +241,7 @@ def get_sensitive_types_export_output(sensitive_types_export_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_export = oci.DataSafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
+    test_sensitive_types_export = oci.datasafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
     ```
 
 

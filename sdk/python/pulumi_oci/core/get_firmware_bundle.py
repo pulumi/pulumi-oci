@@ -165,7 +165,7 @@ def get_firmware_bundle(firmware_bundle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_firmware_bundle = oci.Core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
+    test_firmware_bundle = oci.core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
     ```
 
 
@@ -187,7 +187,7 @@ def get_firmware_bundle(firmware_bundle_id: Optional[_builtins.str] = None,
         platforms=pulumi.get(__ret__, 'platforms'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_firmware_bundle_output(firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_firmware_bundle_output(firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFirmwareBundleResult]:
     """
     This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
@@ -200,7 +200,7 @@ def get_firmware_bundle_output(firmware_bundle_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_firmware_bundle = oci.Core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
+    test_firmware_bundle = oci.core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
     ```
 
 

@@ -321,7 +321,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.DevOps.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
+    test_deployment = oci.devops.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trigger_new_devops_deployment=pulumi.get(__ret__, 'trigger_new_devops_deployment'))
-def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentResult]:
     """
     This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
@@ -369,7 +369,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.DevOps.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
+    test_deployment = oci.devops.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
     ```
 
 

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersionMinorVersions = oci.Database.getSystemVersionMinorVersions({
+ * const testSystemVersionMinorVersions = oci.database.getSystemVersionMinorVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest,
+ *     isLatest: systemVersionMinorVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });
@@ -102,11 +102,11 @@ export interface GetSystemVersionMinorVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersionMinorVersions = oci.Database.getSystemVersionMinorVersions({
+ * const testSystemVersionMinorVersions = oci.database.getSystemVersionMinorVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest,
+ *     isLatest: systemVersionMinorVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });
@@ -133,7 +133,7 @@ export interface GetSystemVersionMinorVersionsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSystemVersionMinorVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSystemVersionMinorVersionsFilterArgs>[] | undefined>;
     /**
      * Specifies gi version query parameter.
      */
@@ -141,7 +141,7 @@ export interface GetSystemVersionMinorVersionsOutputArgs {
     /**
      * If provided, return highest versions from each major version family.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The System major version.
      */
@@ -149,9 +149,9 @@ export interface GetSystemVersionMinorVersionsOutputArgs {
     /**
      * If provided, filters the results for the specified resource Id.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the given shape.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
 }

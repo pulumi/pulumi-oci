@@ -147,7 +147,7 @@ def get_control_assignments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+    test_operator_control_assignments = oci.operatoraccesscontrol.get_control_assignments(compartment_id=compartment_id,
         operator_control_name=test_operator_control["name"],
         resource_name=operator_control_assignment_resource_name,
         resource_type=operator_control_assignment_resource_type,
@@ -180,12 +180,12 @@ def get_control_assignments(compartment_id: Optional[_builtins.str] = None,
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_control_assignments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]]]] = None,
-                                   operator_control_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   resource_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_control_assignments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]]]] = None,
+                                   operator_control_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlAssignmentsResult]:
     """
     This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
@@ -198,7 +198,7 @@ def get_control_assignments_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+    test_operator_control_assignments = oci.operatoraccesscontrol.get_control_assignments(compartment_id=compartment_id,
         operator_control_name=test_operator_control["name"],
         resource_name=operator_control_assignment_resource_name,
         resource_type=operator_control_assignment_resource_type,

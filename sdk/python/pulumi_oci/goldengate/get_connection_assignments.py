@@ -147,7 +147,7 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+    test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,
@@ -180,12 +180,12 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      deployment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]]]] = None,
-                                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]]]] = None,
+                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionAssignmentsResult]:
     """
     This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
@@ -198,7 +198,7 @@ def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+    test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,

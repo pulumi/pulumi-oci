@@ -172,7 +172,7 @@ def get_addon(addon_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
+    test_addon = oci.containerengine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
 
@@ -198,8 +198,8 @@ def get_addon(addon_name: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-def get_addon_output(addon_name: Optional[pulumi.Input[_builtins.str]] = None,
-                     cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_addon_output(addon_name: pulumi.Input[Optional[_builtins.str]] = None,
+                     cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonResult]:
     """
     This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
@@ -212,7 +212,7 @@ def get_addon_output(addon_name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
+    test_addon = oci.containerengine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
 

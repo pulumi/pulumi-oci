@@ -156,11 +156,11 @@ def get_virtual_node_pools(cluster_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'),
         virtual_node_pools=pulumi.get(__ret__, 'virtual_node_pools'))
-def get_virtual_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict']]]]] = None,
-                                  states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_virtual_node_pools_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict']]]]] = None,
+                                  states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualNodePoolsResult]:
     """
     This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.

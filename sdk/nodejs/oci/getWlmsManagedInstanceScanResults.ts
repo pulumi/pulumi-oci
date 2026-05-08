@@ -108,7 +108,7 @@ export function getWlmsManagedInstanceScanResultsOutput(args: GetWlmsManagedInst
  * A collection of arguments for invoking getWlmsManagedInstanceScanResults.
  */
 export interface GetWlmsManagedInstanceScanResultsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceScanResultsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceScanResultsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
@@ -116,9 +116,9 @@ export interface GetWlmsManagedInstanceScanResultsOutputArgs {
     /**
      * The name of the server.
      */
-    serverName?: pulumi.Input<string>;
+    serverName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
      */
-    wlsDomainId?: pulumi.Input<string>;
+    wlsDomainId?: pulumi.Input<string | undefined>;
 }

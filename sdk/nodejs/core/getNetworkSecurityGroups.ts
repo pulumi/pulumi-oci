@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
+ * const testNetworkSecurityGroups = oci.core.getNetworkSecurityGroups({
  *     compartmentId: compartmentId,
  *     displayName: networkSecurityGroupDisplayName,
  *     state: networkSecurityGroupState,
@@ -110,7 +110,7 @@ export interface GetNetworkSecurityGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
+ * const testNetworkSecurityGroups = oci.core.getNetworkSecurityGroups({
  *     compartmentId: compartmentId,
  *     displayName: networkSecurityGroupDisplayName,
  *     state: networkSecurityGroupState,
@@ -139,22 +139,22 @@ export interface GetNetworkSecurityGroupsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      */
-    vlanId?: pulumi.Input<string>;
+    vlanId?: pulumi.Input<string | undefined>;
 }

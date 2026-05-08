@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
+ * const testOpsiConfigurations = oci.opsi.getOpsiConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: opsiConfigurationDisplayName,
  *     opsiConfigTypes: opsiConfigurationOpsiConfigType,
@@ -100,7 +100,7 @@ export interface GetOpsiConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
+ * const testOpsiConfigurations = oci.opsi.getOpsiConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: opsiConfigurationDisplayName,
  *     opsiConfigTypes: opsiConfigurationOpsiConfigType,
@@ -130,14 +130,14 @@ export interface GetOpsiConfigurationsOutputArgs {
     /**
      * Filter to return based on resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOpsiConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOpsiConfigurationsFilterArgs>[] | undefined>;
     /**
      * Filter to return based on configuration type of OPSI configuration.
      */
-    opsiConfigTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    opsiConfigTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter to return based on Lifecycle state of OPSI configuration.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

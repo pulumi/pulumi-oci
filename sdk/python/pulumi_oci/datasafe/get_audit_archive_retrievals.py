@@ -190,10 +190,10 @@ def get_audit_archive_retrievals(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=compartment_id,
+    test_audit_archive_retrievals = oci.datasafe.get_audit_archive_retrievals(compartment_id=compartment_id,
         access_level=audit_archive_retrieval_access_level,
         audit_archive_retrieval_id=test_audit_archive_retrieval["id"],
-        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree == "true",
         display_name=audit_archive_retrieval_display_name,
         state=audit_archive_retrieval_state,
         target_database_group_id=test_target_database_group["id"],
@@ -239,16 +239,16 @@ def get_audit_archive_retrievals(access_level: Optional[_builtins.str] = None,
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'))
-def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        audit_archive_retrieval_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditArchiveRetrievalsFilterArgs', 'GetAuditArchiveRetrievalsFilterArgsDict']]]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        time_of_expiry: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_audit_archive_retrievals_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        audit_archive_retrieval_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditArchiveRetrievalsFilterArgs', 'GetAuditArchiveRetrievalsFilterArgsDict']]]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        time_of_expiry: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditArchiveRetrievalsResult]:
     """
     This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
@@ -261,10 +261,10 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=compartment_id,
+    test_audit_archive_retrievals = oci.datasafe.get_audit_archive_retrievals(compartment_id=compartment_id,
         access_level=audit_archive_retrieval_access_level,
         audit_archive_retrieval_id=test_audit_archive_retrieval["id"],
-        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree == "true",
         display_name=audit_archive_retrieval_display_name,
         state=audit_archive_retrieval_state,
         target_database_group_id=test_target_database_group["id"],

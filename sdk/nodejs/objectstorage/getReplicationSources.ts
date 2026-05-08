@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSources = oci.ObjectStorage.getReplicationSources({
+ * const testReplicationSources = oci.objectstorage.getReplicationSources({
  *     bucket: replicationSourceBucket,
  *     namespace: replicationSourceNamespace,
  * });
@@ -74,7 +74,7 @@ export interface GetReplicationSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSources = oci.ObjectStorage.getReplicationSources({
+ * const testReplicationSources = oci.objectstorage.getReplicationSources({
  *     bucket: replicationSourceBucket,
  *     namespace: replicationSourceNamespace,
  * });
@@ -97,7 +97,7 @@ export interface GetReplicationSourcesOutputArgs {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     bucket: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetReplicationSourcesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetReplicationSourcesFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */

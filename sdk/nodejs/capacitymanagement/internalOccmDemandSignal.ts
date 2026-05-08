@@ -170,33 +170,33 @@ export interface InternalOccmDemandSignalState {
     /**
      * The OCID of the tenancy from which the request to create the demand signal was made.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A short description about the demand signal.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The display name of the demand signal.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The subset of demand signal states available for operators for updating the demand signal.
      *
      * IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the customer group in which the demand signal is created.
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the demand signal. 
      *
@@ -204,23 +204,23 @@ export interface InternalOccmDemandSignalState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    occmDemandSignalId?: pulumi.Input<string>;
+    occmDemandSignalId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the demand signal.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the demand signal was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the demand signal was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -232,7 +232,7 @@ export interface InternalOccmDemandSignalArgs {
      *
      * IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the demand signal. 
      *

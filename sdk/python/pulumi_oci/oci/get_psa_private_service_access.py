@@ -309,7 +309,7 @@ def get_psa_private_service_access(private_service_access_id: Optional[_builtins
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_psa_private_service_access_output(private_service_access_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_psa_private_service_access_output(private_service_access_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPrivateServiceAccessResult]:
     """
     This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.

@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     },
  *     relationType: sensitiveDataModelReferentialRelationRelationType,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  * });
  * ```
  *
@@ -166,23 +166,23 @@ export interface SensitiveDataModelReferentialRelationState {
     /**
      * columnsInfo object has details of column group with schema details.
      */
-    child?: pulumi.Input<inputs.DataSafe.SensitiveDataModelReferentialRelationChild>;
+    child?: pulumi.Input<inputs.DataSafe.SensitiveDataModelReferentialRelationChild | undefined>;
     /**
      * Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
      */
-    isSensitive?: pulumi.Input<boolean>;
+    isSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * columnsInfo object has details of column group with schema details.
      */
-    parent?: pulumi.Input<inputs.DataSafe.SensitiveDataModelReferentialRelationParent>;
+    parent?: pulumi.Input<inputs.DataSafe.SensitiveDataModelReferentialRelationParent | undefined>;
     /**
      * The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    relationType?: pulumi.Input<string>;
+    relationType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the sensitive data model.
      *
@@ -190,11 +190,11 @@ export interface SensitiveDataModelReferentialRelationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the referential relation.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -208,7 +208,7 @@ export interface SensitiveDataModelReferentialRelationArgs {
     /**
      * Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
      */
-    isSensitive?: pulumi.Input<boolean>;
+    isSensitive?: pulumi.Input<boolean | undefined>;
     /**
      * columnsInfo object has details of column group with schema details.
      */

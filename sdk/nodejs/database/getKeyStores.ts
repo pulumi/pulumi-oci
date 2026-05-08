@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyStores = oci.Database.getKeyStores({
+ * const testKeyStores = oci.database.getKeyStores({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetKeyStoresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyStores = oci.Database.getKeyStores({
+ * const testKeyStores = oci.database.getKeyStores({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetKeyStoresOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetKeyStoresFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetKeyStoresFilterArgs>[] | undefined>;
 }

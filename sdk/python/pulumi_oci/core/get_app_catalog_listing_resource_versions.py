@@ -98,7 +98,7 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
+    test_app_catalog_listing_resource_versions = oci.core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'))
-def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]]]] = None,
-                                                     listing_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_catalog_listing_resource_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]]]] = None,
+                                                     listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
     """
     This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
@@ -129,7 +129,7 @@ def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
+    test_app_catalog_listing_resource_versions = oci.core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
     ```
 
 

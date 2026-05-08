@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiValidation = oci.ApiGateway.getApiValidation({
+ * const testApiValidation = oci.apigateway.getApiValidation({
  *     apiId: testApi.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetApiValidationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiValidation = oci.ApiGateway.getApiValidation({
+ * const testApiValidation = oci.apigateway.getApiValidation({
  *     apiId: testApi.id,
  * });
  * ```

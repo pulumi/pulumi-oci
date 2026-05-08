@@ -25,14 +25,14 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceOsPatchActionClusterAdminPassword,
  *     osPatchVersion: bdsInstanceOsPatchActionOsPatchVersion,
- *     isDryRun: isDryRun,
+ *     isDryRun: isDryRun === "true",
  *     patchingConfigs: {
  *         patchingConfigStrategy: bdsInstanceOsPatchActionPatchingConfigStrategy,
- *         batchSize: bdsInstanceOsPatchActionBatchSize,
- *         waitTimeBetweenBatchInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
- *         toleranceThresholdPerBatch: bdsInstanceOsPatchActionToleranceThresholdPerBatch,
- *         waitTimeBetweenDomainInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
- *         toleranceThresholdPerDomain: bdsInstanceOsPatchActionToleranceThresholdPerDomain,
+ *         batchSize: Number(bdsInstanceOsPatchActionBatchSize),
+ *         waitTimeBetweenBatchInSeconds: Number(bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds),
+ *         toleranceThresholdPerBatch: Number(bdsInstanceOsPatchActionToleranceThresholdPerBatch),
+ *         waitTimeBetweenDomainInSeconds: Number(bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds),
+ *         toleranceThresholdPerDomain: Number(bdsInstanceOsPatchActionToleranceThresholdPerDomain),
  *     },
  * });
  * ```
@@ -141,13 +141,13 @@ export interface BdsInstanceOsPatchActionState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded password for the cluster admin user.
      * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
-    isDryRun?: pulumi.Input<boolean>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -155,11 +155,11 @@ export interface BdsInstanceOsPatchActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    osPatchVersion?: pulumi.Input<string>;
+    osPatchVersion?: pulumi.Input<string | undefined>;
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
+    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs | undefined>;
 }
 
 /**
@@ -175,7 +175,7 @@ export interface BdsInstanceOsPatchActionArgs {
      * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
     clusterAdminPassword: pulumi.Input<string>;
-    isDryRun?: pulumi.Input<boolean>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -187,5 +187,5 @@ export interface BdsInstanceOsPatchActionArgs {
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
+    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs | undefined>;
 }

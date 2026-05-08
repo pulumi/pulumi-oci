@@ -124,7 +124,7 @@ def get_zpr_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policies = oci.Zpr.get_zpr_policies(compartment_id=tenancy_ocid,
+    test_zpr_policies = oci.zpr.get_zpr_policies(compartment_id=tenancy_ocid,
         name=zpr_policy_name,
         state=zpr_policy_state)
     ```
@@ -149,10 +149,10 @@ def get_zpr_policies(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         zpr_policies=pulumi.get(__ret__, 'zpr_policies'))
-def get_zpr_policies_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict']]]]] = None,
-                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_zpr_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict']]]]] = None,
+                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZprPoliciesResult]:
     """
     This data source provides the list of Zpr Policies in Oracle Cloud Infrastructure Zpr service.
@@ -165,7 +165,7 @@ def get_zpr_policies_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policies = oci.Zpr.get_zpr_policies(compartment_id=tenancy_ocid,
+    test_zpr_policies = oci.zpr.get_zpr_policies(compartment_id=tenancy_ocid,
         name=zpr_policy_name,
         state=zpr_policy_state)
     ```

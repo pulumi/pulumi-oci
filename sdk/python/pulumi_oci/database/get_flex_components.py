@@ -121,7 +121,7 @@ def get_flex_components(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
+    test_flex_components = oci.database.get_flex_components(compartment_id=compartment_id,
         name=flex_component_name,
         shape=flex_component_shape)
     ```
@@ -146,10 +146,10 @@ def get_flex_components(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         shape=pulumi.get(__ret__, 'shape'))
-def get_flex_components_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_flex_components_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFlexComponentsResult]:
     """
     This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -162,7 +162,7 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
+    test_flex_components = oci.database.get_flex_components(compartment_id=compartment_id,
         name=flex_component_name,
         shape=flex_component_shape)
     ```

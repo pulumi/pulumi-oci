@@ -187,9 +187,9 @@ def get_library_masking_formats(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=compartment_id,
+    test_library_masking_formats = oci.datasafe.get_library_masking_formats(compartment_id=compartment_id,
         access_level=library_masking_format_access_level,
-        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree,
+        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree == "true",
         display_name=library_masking_format_display_name,
         library_masking_format_id=test_library_masking_format["id"],
         library_masking_format_source=library_masking_format_library_masking_format_source,
@@ -240,16 +240,16 @@ def get_library_masking_formats(access_level: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLibraryMaskingFormatsFilterArgs', 'GetLibraryMaskingFormatsFilterArgsDict']]]]] = None,
-                                       library_masking_format_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       library_masking_format_source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_library_masking_formats_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLibraryMaskingFormatsFilterArgs', 'GetLibraryMaskingFormatsFilterArgsDict']]]]] = None,
+                                       library_masking_format_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       library_masking_format_source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLibraryMaskingFormatsResult]:
     """
     This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
@@ -262,9 +262,9 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=compartment_id,
+    test_library_masking_formats = oci.datasafe.get_library_masking_formats(compartment_id=compartment_id,
         access_level=library_masking_format_access_level,
-        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree,
+        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree == "true",
         display_name=library_masking_format_display_name,
         library_masking_format_id=test_library_masking_format["id"],
         library_masking_format_source=library_masking_format_library_masking_format_source,

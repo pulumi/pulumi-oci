@@ -66,8 +66,8 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs:
 @pulumi.input_type
 class _CostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
     def __init__(__self__, *,
-                 cost_anomaly_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None):
+                 cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_costanomalymonitorenabletoggle: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering CostAnomalyMonitorCostanomalymonitorenabletogglesManagement resources.
 
@@ -85,19 +85,19 @@ class _CostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="costAnomalyMonitorId")
-    def cost_anomaly_monitor_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_anomaly_monitor_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique costAnomalyMonitor OCID.
         """
         return pulumi.get(self, "cost_anomaly_monitor_id")
 
     @cost_anomaly_monitor_id.setter
-    def cost_anomaly_monitor_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_anomaly_monitor_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_anomaly_monitor_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableCostanomalymonitorenabletoggle")
-    def enable_costanomalymonitorenabletoggle(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_costanomalymonitorenabletoggle(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -108,7 +108,7 @@ class _CostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
         return pulumi.get(self, "enable_costanomalymonitorenabletoggle")
 
     @enable_costanomalymonitorenabletoggle.setter
-    def enable_costanomalymonitorenabletoggle(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_costanomalymonitorenabletoggle(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_costanomalymonitorenabletoggle", value)
 
 
@@ -118,8 +118,8 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cost_anomaly_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_costanomalymonitorenabletoggle: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Cost Anomaly Monitor Costanomalymonitorenabletoggles Management resource in Oracle Cloud Infrastructure Budget service.
@@ -137,7 +137,7 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
 
         test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management = oci.budget.CostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management",
             cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
-            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
+            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle == "true")
         ```
 
 
@@ -172,7 +172,7 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
 
         test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management = oci.budget.CostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management",
             cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
-            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
+            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle == "true")
         ```
 
 
@@ -191,8 +191,8 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cost_anomaly_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None,
+                 cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_costanomalymonitorenabletoggle: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -218,8 +218,8 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cost_anomaly_monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None) -> 'CostAnomalyMonitorCostanomalymonitorenabletogglesManagement':
+            cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_costanomalymonitorenabletoggle: pulumi.Input[Optional[_builtins.bool]] = None) -> 'CostAnomalyMonitorCostanomalymonitorenabletogglesManagement':
         """
         Get an existing CostAnomalyMonitorCostanomalymonitorenabletogglesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

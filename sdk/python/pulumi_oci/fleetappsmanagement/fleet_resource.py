@@ -23,8 +23,8 @@ class FleetResourceInitArgs:
                  fleet_id: pulumi.Input[_builtins.str],
                  resource_id: pulumi.Input[_builtins.str],
                  tenancy_id: pulumi.Input[_builtins.str],
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a FleetResource resource.
 
@@ -102,52 +102,52 @@ class FleetResourceInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the Resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
 
 @pulumi.input_type
 class _FleetResourceState:
     def __init__(__self__, *,
-                 compartment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compliance_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 percent_compliant: Optional[pulumi.Input[_builtins.float]] = None,
-                 product: Optional[pulumi.Input[_builtins.str]] = None,
-                 product_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compliance_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 percent_compliant: pulumi.Input[Optional[_builtins.float]] = None,
+                 product: pulumi.Input[Optional[_builtins.str]] = None,
+                 product_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FleetResource resources.
 
@@ -219,199 +219,199 @@ class _FleetResourceState:
 
     @_builtins.property
     @pulumi.getter
-    def compartment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource Compartment name.
         """
         return pulumi.get(self, "compartment")
 
     @compartment.setter
-    def compartment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID of the compartment to which the resource belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="complianceState")
-    def compliance_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compliance_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compliance State of the Resource.
         """
         return pulumi.get(self, "compliance_state")
 
     @compliance_state.setter
-    def compliance_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compliance_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compliance_state", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "environment_type")
 
     @environment_type.setter
-    def environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="percentCompliant")
-    def percent_compliant(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def percent_compliant(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The compliance percentage.
         """
         return pulumi.get(self, "percent_compliant")
 
     @percent_compliant.setter
-    def percent_compliant(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def percent_compliant(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "percent_compliant", value)
 
     @_builtins.property
     @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def product(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "product")
 
     @product.setter
-    def product(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def product(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "product", value)
 
     @_builtins.property
     @pulumi.getter(name="productCount")
-    def product_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def product_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of products within the resource.
         """
         return pulumi.get(self, "product_count")
 
     @product_count.setter
-    def product_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def product_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "product_count", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource.
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the Resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the FleetResource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCount")
-    def target_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of targets within the resource.
         """
         return pulumi.get(self, "target_count")
 
     @target_count.setter
-    def target_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_count", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID of the tenancy to which the resource belongs to.
 
@@ -422,43 +422,43 @@ class _FleetResourceState:
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyName")
-    def tenancy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource Tenancy Name.
         """
         return pulumi.get(self, "tenancy_name")
 
     @tenancy_name.setter
-    def tenancy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -468,12 +468,12 @@ class FleetResource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -565,12 +565,12 @@ class FleetResource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -618,26 +618,26 @@ class FleetResource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compliance_state: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            percent_compliant: Optional[pulumi.Input[_builtins.float]] = None,
-            product: Optional[pulumi.Input[_builtins.str]] = None,
-            product_count: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_count: Optional[pulumi.Input[_builtins.int]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'FleetResource':
+            compartment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compliance_state: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            percent_compliant: pulumi.Input[Optional[_builtins.float]] = None,
+            product: pulumi.Input[Optional[_builtins.str]] = None,
+            product_count: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_count: pulumi.Input[Optional[_builtins.int]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'FleetResource':
         """
         Get an existing FleetResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

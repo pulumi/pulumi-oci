@@ -216,7 +216,7 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
+    test_pbf_listing_version = oci.functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[_builtins.str] = No
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggers=pulumi.get(__ret__, 'triggers'))
-def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pbf_listing_version_output(pbf_listing_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingVersionResult]:
     """
     This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
@@ -255,7 +255,7 @@ def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
+    test_pbf_listing_version = oci.functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
     ```
 
 

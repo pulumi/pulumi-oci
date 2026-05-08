@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     logGroupId: testLogAnalyticsLogGroup.id,
  *     namespace: namespaceAssociationNamespace,
  *     sourceName: namespaceAssociationSourceName,
- *     isFromRepublish: namespaceAssociationIsFromRepublish,
+ *     isFromRepublish: namespaceAssociationIsFromRepublish === "true",
  *     associationProperties: [{
  *         name: namespaceAssociationAssociationPropertiesName,
  *         patterns: [{
@@ -245,60 +245,60 @@ export interface NamespaceAssociationState {
     /**
      * The agent unique identifier.
      */
-    agentEntityName?: pulumi.Input<string>;
+    agentEntityName?: pulumi.Input<string | undefined>;
     /**
      * The agent unique identifier.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * A list of association properties.
      */
-    associationProperties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceAssociationAssociationProperty>[]>;
+    associationProperties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceAssociationAssociationProperty>[] | undefined>;
     /**
      * The compartment ID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The entity unique identifier.
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * The entity name.
      */
-    entityName?: pulumi.Input<string>;
+    entityName?: pulumi.Input<string | undefined>;
     /**
      * The entity type display name.
      */
-    entityTypeDisplayName?: pulumi.Input<string>;
+    entityTypeDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The entity type internal name.
      */
-    entityTypeName?: pulumi.Input<string>;
+    entityTypeName?: pulumi.Input<string | undefined>;
     /**
      * The failure message.
      */
-    failureMessage?: pulumi.Input<string>;
+    failureMessage?: pulumi.Input<string | undefined>;
     /**
      * The host name.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * isFromRepublish
      */
-    isFromRepublish?: pulumi.Input<boolean>;
-    lifecycleState?: pulumi.Input<string>;
+    isFromRepublish?: pulumi.Input<boolean | undefined>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The log group compartment.
      */
-    logGroupCompartment?: pulumi.Input<string>;
+    logGroupCompartment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The log group unique identifier.
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * The log group name.
      */
-    logGroupName?: pulumi.Input<string>;
+    logGroupName?: pulumi.Input<string | undefined>;
     /**
      * The Logging Analytics namespace used for the request.
      *
@@ -306,27 +306,27 @@ export interface NamespaceAssociationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The number of times the association will be attempted before failing.
      */
-    retryCount?: pulumi.Input<number>;
+    retryCount?: pulumi.Input<number | undefined>;
     /**
      * The source display name.
      */
-    sourceDisplayName?: pulumi.Input<string>;
+    sourceDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The source name.
      */
-    sourceName?: pulumi.Input<string>;
+    sourceName?: pulumi.Input<string | undefined>;
     /**
      * The source type internal name.
      */
-    sourceTypeName?: pulumi.Input<string>;
+    sourceTypeName?: pulumi.Input<string | undefined>;
     /**
      * The last attempt date.
      */
-    timeLastAttempted?: pulumi.Input<string>;
+    timeLastAttempted?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -336,7 +336,7 @@ export interface NamespaceAssociationArgs {
     /**
      * A list of association properties.
      */
-    associationProperties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceAssociationAssociationProperty>[]>;
+    associationProperties?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceAssociationAssociationProperty>[] | undefined>;
     /**
      * The compartment ID
      */
@@ -348,7 +348,7 @@ export interface NamespaceAssociationArgs {
     /**
      * isFromRepublish
      */
-    isFromRepublish?: pulumi.Input<boolean>;
+    isFromRepublish?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The log group unique identifier.
      */

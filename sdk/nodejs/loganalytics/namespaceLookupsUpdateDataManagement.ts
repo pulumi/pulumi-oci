@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     namespace: namespaceLookupsUpdateDataManagementNamespace,
  *     charEncoding: namespaceLookupsUpdateDataManagementCharEncoding,
  *     expect: namespaceLookupsUpdateDataManagementExpect,
- *     isForce: namespaceLookupsUpdateDataManagementIsForce,
+ *     isForce: namespaceLookupsUpdateDataManagementIsForce === "true",
  * });
  * ```
  *
@@ -138,19 +138,19 @@ export interface NamespaceLookupsUpdateDataManagementState {
     /**
      * The character encoding of the uploaded file.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      */
-    expect?: pulumi.Input<string>;
+    expect?: pulumi.Input<string | undefined>;
     /**
      * is force
      */
-    isForce?: pulumi.Input<boolean>;
+    isForce?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the lookup to operate on.
      */
-    lookupName?: pulumi.Input<string>;
+    lookupName?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
@@ -158,11 +158,11 @@ export interface NamespaceLookupsUpdateDataManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Path to the file containing data for the lookup update.
      */
-    updateLookupFile?: pulumi.Input<string>;
+    updateLookupFile?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -172,15 +172,15 @@ export interface NamespaceLookupsUpdateDataManagementArgs {
     /**
      * The character encoding of the uploaded file.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      */
-    expect?: pulumi.Input<string>;
+    expect?: pulumi.Input<string | undefined>;
     /**
      * is force
      */
-    isForce?: pulumi.Input<boolean>;
+    isForce?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the lookup to operate on.
      */

@@ -23,7 +23,7 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     def __init__(__self__, *,
                  announcement_subscription_id: pulumi.Input[_builtins.str],
                  filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsFilterGroup resource.
 
@@ -66,7 +66,7 @@ class AnnouncementSubscriptionsFilterGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 
@@ -77,16 +77,16 @@ class AnnouncementSubscriptionsFilterGroupArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AnnouncementSubscriptionsFilterGroupState:
     def __init__(__self__, *,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsFilterGroup resources.
 
@@ -107,31 +107,31 @@ class _AnnouncementSubscriptionsFilterGroupState:
 
     @_builtins.property
     @pulumi.getter(name="announcementSubscriptionId")
-    def announcement_subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def announcement_subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the announcement subscription.
         """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
-    def announcement_subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def announcement_subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "announcement_subscription_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]]:
+    def filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]]:
         """
         (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]]):
+    def filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
 
@@ -142,7 +142,7 @@ class _AnnouncementSubscriptionsFilterGroupState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -152,9 +152,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Announcement Subscriptions Filter Group resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -255,9 +255,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,9 +284,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'AnnouncementSubscriptionsFilterGroup':
+            announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AnnouncementSubscriptionsFilterGroup':
         """
         Get an existing AnnouncementSubscriptionsFilterGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

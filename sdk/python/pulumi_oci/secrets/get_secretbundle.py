@@ -193,7 +193,7 @@ def get_secretbundle(secret_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=test_secret["id"],
+    test_secretbundle = oci.secrets.get_secretbundle(secret_id=test_secret["id"],
         secret_version_name=test_secret_version["name"],
         stage=secretbundle_stage,
         version_number=secretbundle_version_number)
@@ -226,10 +226,10 @@ def get_secretbundle(secret_id: Optional[_builtins.str] = None,
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
         version_name=pulumi.get(__ret__, 'version_name'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_secretbundle_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            secret_version_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            stage: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            version_number: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_secretbundle_output(secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            secret_version_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            stage: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            version_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretbundleResult]:
     """
     This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
@@ -243,7 +243,7 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=test_secret["id"],
+    test_secretbundle = oci.secrets.get_secretbundle(secret_id=test_secret["id"],
         secret_version_name=test_secret_version["name"],
         stage=secretbundle_stage,
         version_number=secretbundle_version_number)

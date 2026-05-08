@@ -137,7 +137,7 @@ def get_capture_filters(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+    test_capture_filters = oci.core.get_capture_filters(compartment_id=compartment_id,
         display_name=capture_filter_display_name,
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)
@@ -166,11 +166,11 @@ def get_capture_filters(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_capture_filters_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filter_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict']]]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_capture_filters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filter_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict']]]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaptureFiltersResult]:
     """
     This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
@@ -183,7 +183,7 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+    test_capture_filters = oci.core.get_capture_filters(compartment_id=compartment_id,
         display_name=capture_filter_display_name,
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)

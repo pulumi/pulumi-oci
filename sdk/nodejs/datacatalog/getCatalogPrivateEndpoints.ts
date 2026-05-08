@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogPrivateEndpoints = oci.DataCatalog.getCatalogPrivateEndpoints({
+ * const testCatalogPrivateEndpoints = oci.datacatalog.getCatalogPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: catalogPrivateEndpointDisplayName,
  *     state: catalogPrivateEndpointState,
@@ -90,7 +90,7 @@ export interface GetCatalogPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogPrivateEndpoints = oci.DataCatalog.getCatalogPrivateEndpoints({
+ * const testCatalogPrivateEndpoints = oci.datacatalog.getCatalogPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: catalogPrivateEndpointDisplayName,
  *     state: catalogPrivateEndpointState,
@@ -118,10 +118,10 @@ export interface GetCatalogPrivateEndpointsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

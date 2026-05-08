@@ -23,32 +23,32 @@ class AddressActionVerificationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  osp_home_region: pulumi.Input[_builtins.str],
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressActionVerification resource.
 
@@ -166,307 +166,307 @@ class AddressActionVerificationArgs:
 
     @_builtins.property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address identifier.
         """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
-    def address_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def company_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
-    def company_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def company_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "company_name", value)
 
     @_builtins.property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contributor_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
-    def contributor_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contributor_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contributor_class", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Country of the address.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def county(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def county(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         County of the address.
         """
         return pulumi.get(self, "county")
 
     @county.setter
-    def county(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def county(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "county", value)
 
     @_builtins.property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def department_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
-    def department_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def department_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "department_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contact person email address.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First name of the contact person.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
-    def internal_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_number", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last name of the contact person.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def line1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line1(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 1.
         """
         return pulumi.get(self, "line1")
 
     @line1.setter
-    def line1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line1", value)
 
     @_builtins.property
     @pulumi.getter
-    def line2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 2.
         """
         return pulumi.get(self, "line2")
 
     @line2.setter
-    def line2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line2", value)
 
     @_builtins.property
     @pulumi.getter
-    def line3(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line3(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 3.
         """
         return pulumi.get(self, "line3")
 
     @line3.setter
-    def line3(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line3(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line3", value)
 
     @_builtins.property
     @pulumi.getter
-    def line4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 4.
         """
         return pulumi.get(self, "line4")
 
     @line4.setter
-    def line4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line4", value)
 
     @_builtins.property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def middle_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
-    def middle_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def middle_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "middle_name", value)
 
     @_builtins.property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def municipal_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
-    def municipal_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def municipal_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "municipal_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
-    def phone_country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
-    def phone_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_number", value)
 
     @_builtins.property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def postal_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
-    def postal_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def postal_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "postal_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Province of the address.
         """
         return pulumi.get(self, "province")
 
     @province.setter
-    def province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "province", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the address.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
-    def state_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
-    def street_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street number of the address.
 
@@ -477,44 +477,44 @@ class AddressActionVerificationArgs:
         return pulumi.get(self, "street_number")
 
     @street_number.setter
-    def street_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_number", value)
 
 
 @pulumi.input_type
 class _AddressActionVerificationState:
     def __init__(__self__, *,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 quality: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 verification_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 quality: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 verification_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressActionVerification resources.
 
@@ -619,355 +619,355 @@ class _AddressActionVerificationState:
 
     @_builtins.property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address identifier.
         """
         return pulumi.get(self, "address_key")
 
     @address_key.setter
-    def address_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]]:
+    def addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]]:
         """
         Address details model.
         """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]]):
+    def addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]]):
         pulumi.set(self, "addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the city.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def company_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
     @company_name.setter
-    def company_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def company_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "company_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contributor_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
     @contributor_class.setter
-    def contributor_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contributor_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contributor_class", value)
 
     @_builtins.property
     @pulumi.getter
-    def country(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Country of the address.
         """
         return pulumi.get(self, "country")
 
     @country.setter
-    def country(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country", value)
 
     @_builtins.property
     @pulumi.getter
-    def county(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def county(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         County of the address.
         """
         return pulumi.get(self, "county")
 
     @county.setter
-    def county(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def county(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "county", value)
 
     @_builtins.property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def department_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
     @department_name.setter
-    def department_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def department_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "department_name", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contact person email address.
         """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
-    def email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         First name of the contact person.
         """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
-    def first_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "first_name", value)
 
     @_builtins.property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
     @internal_number.setter
-    def internal_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_number", value)
 
     @_builtins.property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
     @job_title.setter
-    def job_title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_title", value)
 
     @_builtins.property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last name of the contact person.
         """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
-    def last_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def line1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line1(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 1.
         """
         return pulumi.get(self, "line1")
 
     @line1.setter
-    def line1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line1", value)
 
     @_builtins.property
     @pulumi.getter
-    def line2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 2.
         """
         return pulumi.get(self, "line2")
 
     @line2.setter
-    def line2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line2", value)
 
     @_builtins.property
     @pulumi.getter
-    def line3(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line3(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 3.
         """
         return pulumi.get(self, "line3")
 
     @line3.setter
-    def line3(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line3(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line3", value)
 
     @_builtins.property
     @pulumi.getter
-    def line4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address line 4.
         """
         return pulumi.get(self, "line4")
 
     @line4.setter
-    def line4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line4", value)
 
     @_builtins.property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def middle_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
     @middle_name.setter
-    def middle_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def middle_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "middle_name", value)
 
     @_builtins.property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def municipal_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
     @municipal_inscription.setter
-    def municipal_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def municipal_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "municipal_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="ospHomeRegion")
-    def osp_home_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def osp_home_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The home region's public name of the logged in user.
         """
         return pulumi.get(self, "osp_home_region")
 
     @osp_home_region.setter
-    def osp_home_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def osp_home_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "osp_home_region", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
     @phone_country_code.setter
-    def phone_country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
-    def phone_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone_number", value)
 
     @_builtins.property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def postal_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
-    def postal_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def postal_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "postal_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def province(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def province(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Province of the address.
         """
         return pulumi.get(self, "province")
 
     @province.setter
-    def province(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def province(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "province", value)
 
     @_builtins.property
     @pulumi.getter
-    def quality(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def quality(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address quality type.
         """
         return pulumi.get(self, "quality")
 
     @quality.setter
-    def quality(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def quality(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "quality", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the address.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_inscription(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
     @state_inscription.setter
-    def state_inscription(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_inscription(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_inscription", value)
 
     @_builtins.property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
     @street_name.setter
-    def street_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_name", value)
 
     @_builtins.property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street number of the address.
 
@@ -978,19 +978,19 @@ class _AddressActionVerificationState:
         return pulumi.get(self, "street_number")
 
     @street_number.setter
-    def street_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def street_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "street_number", value)
 
     @_builtins.property
     @pulumi.getter(name="verificationCode")
-    def verification_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def verification_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address verification code.
         """
         return pulumi.get(self, "verification_code")
 
     @verification_code.setter
-    def verification_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def verification_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "verification_code", value)
 
 
@@ -1000,34 +1000,34 @@ class AddressActionVerification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None,
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -1193,34 +1193,34 @@ class AddressActionVerification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 company_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-                 country: Optional[pulumi.Input[_builtins.str]] = None,
-                 county: Optional[pulumi.Input[_builtins.str]] = None,
-                 department_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 first_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 job_title: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 line1: Optional[pulumi.Input[_builtins.str]] = None,
-                 line2: Optional[pulumi.Input[_builtins.str]] = None,
-                 line3: Optional[pulumi.Input[_builtins.str]] = None,
-                 line4: Optional[pulumi.Input[_builtins.str]] = None,
-                 middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 province: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 street_number: Optional[pulumi.Input[_builtins.str]] = None,
+                 address_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 company_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 county: pulumi.Input[Optional[_builtins.str]] = None,
+                 department_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_title: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 line1: pulumi.Input[Optional[_builtins.str]] = None,
+                 line2: pulumi.Input[Optional[_builtins.str]] = None,
+                 line3: pulumi.Input[Optional[_builtins.str]] = None,
+                 line4: pulumi.Input[Optional[_builtins.str]] = None,
+                 middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 province: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 street_number: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1275,37 +1275,37 @@ class AddressActionVerification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address_key: Optional[pulumi.Input[_builtins.str]] = None,
-            addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict']]]]] = None,
-            city: Optional[pulumi.Input[_builtins.str]] = None,
-            company_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contributor_class: Optional[pulumi.Input[_builtins.str]] = None,
-            country: Optional[pulumi.Input[_builtins.str]] = None,
-            county: Optional[pulumi.Input[_builtins.str]] = None,
-            department_name: Optional[pulumi.Input[_builtins.str]] = None,
-            email_address: Optional[pulumi.Input[_builtins.str]] = None,
-            first_name: Optional[pulumi.Input[_builtins.str]] = None,
-            internal_number: Optional[pulumi.Input[_builtins.str]] = None,
-            job_title: Optional[pulumi.Input[_builtins.str]] = None,
-            last_name: Optional[pulumi.Input[_builtins.str]] = None,
-            line1: Optional[pulumi.Input[_builtins.str]] = None,
-            line2: Optional[pulumi.Input[_builtins.str]] = None,
-            line3: Optional[pulumi.Input[_builtins.str]] = None,
-            line4: Optional[pulumi.Input[_builtins.str]] = None,
-            middle_name: Optional[pulumi.Input[_builtins.str]] = None,
-            municipal_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-            osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
-            phone_country_code: Optional[pulumi.Input[_builtins.str]] = None,
-            phone_number: Optional[pulumi.Input[_builtins.str]] = None,
-            postal_code: Optional[pulumi.Input[_builtins.str]] = None,
-            province: Optional[pulumi.Input[_builtins.str]] = None,
-            quality: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            state_inscription: Optional[pulumi.Input[_builtins.str]] = None,
-            street_name: Optional[pulumi.Input[_builtins.str]] = None,
-            street_number: Optional[pulumi.Input[_builtins.str]] = None,
-            verification_code: Optional[pulumi.Input[_builtins.str]] = None) -> 'AddressActionVerification':
+            address_key: pulumi.Input[Optional[_builtins.str]] = None,
+            addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict']]]]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            company_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            county: pulumi.Input[Optional[_builtins.str]] = None,
+            department_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+            job_title: pulumi.Input[Optional[_builtins.str]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            line1: pulumi.Input[Optional[_builtins.str]] = None,
+            line2: pulumi.Input[Optional[_builtins.str]] = None,
+            line3: pulumi.Input[Optional[_builtins.str]] = None,
+            line4: pulumi.Input[Optional[_builtins.str]] = None,
+            middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+            municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+            postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+            province: pulumi.Input[Optional[_builtins.str]] = None,
+            quality: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+            street_name: pulumi.Input[Optional[_builtins.str]] = None,
+            street_number: pulumi.Input[Optional[_builtins.str]] = None,
+            verification_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressActionVerification':
         """
         Get an existing AddressActionVerification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

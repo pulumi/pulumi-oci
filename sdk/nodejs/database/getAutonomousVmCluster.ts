@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmCluster = oci.Database.getAutonomousVmCluster({
+ * const testAutonomousVmCluster = oci.database.getAutonomousVmCluster({
  *     autonomousVmClusterId: testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id,
  * });
  * ```
@@ -255,7 +255,7 @@ export interface GetAutonomousVmClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmCluster = oci.Database.getAutonomousVmCluster({
+ * const testAutonomousVmCluster = oci.database.getAutonomousVmCluster({
  *     autonomousVmClusterId: testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id,
  * });
  * ```

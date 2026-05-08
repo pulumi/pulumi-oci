@@ -66,8 +66,8 @@ class GenerateOnPremConnectorConfigurationArgs:
 @pulumi.input_type
 class _GenerateOnPremConnectorConfigurationState:
     def __init__(__self__, *,
-                 on_prem_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None):
+                 on_prem_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenerateOnPremConnectorConfiguration resources.
 
@@ -85,19 +85,19 @@ class _GenerateOnPremConnectorConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="onPremConnectorId")
-    def on_prem_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_prem_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the on-premises connector.
         """
         return pulumi.get(self, "on_prem_connector_id")
 
     @on_prem_connector_id.setter
-    def on_prem_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_prem_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_prem_connector_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
@@ -108,7 +108,7 @@ class _GenerateOnPremConnectorConfigurationState:
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
 
@@ -118,8 +118,8 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 on_prem_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 on_prem_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Generate On Prem Connector Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -201,8 +201,8 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 on_prem_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 on_prem_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -230,8 +230,8 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            on_prem_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None) -> 'GenerateOnPremConnectorConfiguration':
+            on_prem_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None) -> 'GenerateOnPremConnectorConfiguration':
         """
         Get an existing GenerateOnPremConnectorConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

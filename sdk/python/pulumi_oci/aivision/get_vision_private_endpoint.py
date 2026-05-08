@@ -203,7 +203,7 @@ def get_vision_private_endpoint(vision_private_endpoint_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoint = oci.AiVision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
+    test_vision_private_endpoint = oci.aivision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_vision_private_endpoint(vision_private_endpoint_id: Optional[_builtins.s
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vision_private_endpoint_id=pulumi.get(__ret__, 'vision_private_endpoint_id'))
-def get_vision_private_endpoint_output(vision_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vision_private_endpoint_output(vision_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVisionPrivateEndpointResult]:
     """
     This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -241,7 +241,7 @@ def get_vision_private_endpoint_output(vision_private_endpoint_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoint = oci.AiVision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
+    test_vision_private_endpoint = oci.aivision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
     ```
 
 

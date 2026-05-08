@@ -263,7 +263,7 @@ def get_baselineable_metric(baselineable_metric_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
+    test_baselineable_metric = oci.stackmonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_baselineable_metric(baselineable_metric_id: Optional[_builtins.str] = No
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_updated=pulumi.get(__ret__, 'time_last_updated'))
-def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_baselineable_metric_output(baselineable_metric_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricResult]:
     """
     This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -306,7 +306,7 @@ def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
+    test_baselineable_metric = oci.stackmonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
     ```
 
 

@@ -312,7 +312,7 @@ def get_scheduler_definition(scheduler_definition_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition = oci.FleetAppsManagement.get_scheduler_definition(scheduler_definition_id=test_scheduler_definition_oci_fleet_apps_management_scheduler_definition["id"])
+    test_scheduler_definition = oci.fleetappsmanagement.get_scheduler_definition(scheduler_definition_id=test_scheduler_definition_oci_fleet_apps_management_scheduler_definition["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_scheduler_definition(scheduler_definition_id: Optional[_builtins.str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_next_run=pulumi.get(__ret__, 'time_of_next_run'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_scheduler_definition_output(scheduler_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduler_definition_output(scheduler_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionResult]:
     """
     This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -359,7 +359,7 @@ def get_scheduler_definition_output(scheduler_definition_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition = oci.FleetAppsManagement.get_scheduler_definition(scheduler_definition_id=test_scheduler_definition_oci_fleet_apps_management_scheduler_definition["id"])
+    test_scheduler_definition = oci.fleetappsmanagement.get_scheduler_definition(scheduler_definition_id=test_scheduler_definition_oci_fleet_apps_management_scheduler_definition["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceSoftwareUpdates = oci.BigDataService.getBdsInstanceSoftwareUpdates({
+ * const testBdsInstanceSoftwareUpdates = oci.bigdataservice.getBdsInstanceSoftwareUpdates({
  *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetBdsInstanceSoftwareUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceSoftwareUpdates = oci.BigDataService.getBdsInstanceSoftwareUpdates({
+ * const testBdsInstanceSoftwareUpdates = oci.bigdataservice.getBdsInstanceSoftwareUpdates({
  *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetBdsInstanceSoftwareUpdatesOutputArgs {
      * The OCID of the cluster.
      */
     bdsInstanceId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceSoftwareUpdatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceSoftwareUpdatesFilterArgs>[] | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceMetastoreConfigs = oci.BigDataService.getBdsInstanceMetastoreConfigs({
+ * const testBdsInstanceMetastoreConfigs = oci.bigdataservice.getBdsInstanceMetastoreConfigs({
  *     bdsInstanceId: testBdsInstance.id,
  *     bdsApiKeyId: testApiKey.id,
  *     displayName: bdsInstanceMetastoreConfigDisplayName,
@@ -117,7 +117,7 @@ export interface GetBdsInstanceMetastoreConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceMetastoreConfigs = oci.BigDataService.getBdsInstanceMetastoreConfigs({
+ * const testBdsInstanceMetastoreConfigs = oci.bigdataservice.getBdsInstanceMetastoreConfigs({
  *     bdsInstanceId: testBdsInstance.id,
  *     bdsApiKeyId: testApiKey.id,
  *     displayName: bdsInstanceMetastoreConfigDisplayName,
@@ -147,7 +147,7 @@ export interface GetBdsInstanceMetastoreConfigsOutputArgs {
     /**
      * The ID of the API key that is associated with the external metastore in the metastore configuration
      */
-    bdsApiKeyId?: pulumi.Input<string>;
+    bdsApiKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
@@ -155,18 +155,18 @@ export interface GetBdsInstanceMetastoreConfigsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceMetastoreConfigsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceMetastoreConfigsFilterArgs>[] | undefined>;
     /**
      * The OCID of the Data Catalog metastore in the metastore configuration
      */
-    metastoreId?: pulumi.Input<string>;
+    metastoreId?: pulumi.Input<string | undefined>;
     /**
      * The type of the metastore in the metastore configuration
      */
-    metastoreType?: pulumi.Input<string>;
+    metastoreType?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the metastore in the metastore configuration
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

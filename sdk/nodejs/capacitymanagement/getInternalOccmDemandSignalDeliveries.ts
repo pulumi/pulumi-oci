@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalDeliveries = oci.CapacityManagement.getInternalOccmDemandSignalDeliveries({
+ * const testInternalOccmDemandSignalDeliveries = oci.capacitymanagement.getInternalOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     id: internalOccmDemandSignalDeliveryId,
@@ -93,7 +93,7 @@ export interface GetInternalOccmDemandSignalDeliveriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalDeliveries = oci.CapacityManagement.getInternalOccmDemandSignalDeliveries({
+ * const testInternalOccmDemandSignalDeliveries = oci.capacitymanagement.getInternalOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     id: internalOccmDemandSignalDeliveryId,
@@ -120,11 +120,11 @@ export interface GetInternalOccmDemandSignalDeliveriesOutputArgs {
      * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalDeliveriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalDeliveriesFilterArgs>[] | undefined>;
     /**
      * A query parameter to filter the list of demand signals based on it's OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */
@@ -132,5 +132,5 @@ export interface GetInternalOccmDemandSignalDeliveriesOutputArgs {
     /**
      * A query parameter to filter the list of demand signal items based on it's OCID.
      */
-    occmDemandSignalItemId?: pulumi.Input<string>;
+    occmDemandSignalItemId?: pulumi.Input<string | undefined>;
 }

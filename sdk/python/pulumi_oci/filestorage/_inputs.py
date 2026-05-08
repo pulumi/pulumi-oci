@@ -74,31 +74,31 @@ class ExportExportOptionArgsDict(TypedDict):
 
     **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
     """
-    access: NotRequired[pulumi.Input[_builtins.str]]
+    access: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
     """
-    allowed_auths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allowed_auths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Array of allowed NFS authentication types.
     """
-    anonymous_gid: NotRequired[pulumi.Input[_builtins.str]]
+    anonymous_gid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
     """
-    anonymous_uid: NotRequired[pulumi.Input[_builtins.str]]
+    anonymous_uid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
     """
-    identity_squash: NotRequired[pulumi.Input[_builtins.str]]
+    identity_squash: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
     """
-    is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_anonymous_access_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
     """
-    require_privileged_source_port: NotRequired[pulumi.Input[_builtins.bool]]
+    require_privileged_source_port: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
     """
@@ -107,13 +107,13 @@ class ExportExportOptionArgsDict(TypedDict):
 class ExportExportOptionArgs:
     def __init__(__self__, *,
                  source: pulumi.Input[_builtins.str],
-                 access: Optional[pulumi.Input[_builtins.str]] = None,
-                 allowed_auths: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 anonymous_gid: Optional[pulumi.Input[_builtins.str]] = None,
-                 anonymous_uid: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_squash: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_anonymous_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 require_privileged_source_port: Optional[pulumi.Input[_builtins.bool]] = None):
+                 access: pulumi.Input[Optional[_builtins.str]] = None,
+                 allowed_auths: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 anonymous_gid: pulumi.Input[Optional[_builtins.str]] = None,
+                 anonymous_uid: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_squash: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_anonymous_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 require_privileged_source_port: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
                
@@ -158,86 +158,86 @@ class ExportExportOptionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         """
         return pulumi.get(self, "access")
 
     @access.setter
-    def access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedAuths")
-    def allowed_auths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_auths(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Array of allowed NFS authentication types.
         """
         return pulumi.get(self, "allowed_auths")
 
     @allowed_auths.setter
-    def allowed_auths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_auths(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_auths", value)
 
     @_builtins.property
     @pulumi.getter(name="anonymousGid")
-    def anonymous_gid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def anonymous_gid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         """
         return pulumi.get(self, "anonymous_gid")
 
     @anonymous_gid.setter
-    def anonymous_gid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def anonymous_gid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "anonymous_gid", value)
 
     @_builtins.property
     @pulumi.getter(name="anonymousUid")
-    def anonymous_uid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def anonymous_uid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
         """
         return pulumi.get(self, "anonymous_uid")
 
     @anonymous_uid.setter
-    def anonymous_uid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def anonymous_uid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "anonymous_uid", value)
 
     @_builtins.property
     @pulumi.getter(name="identitySquash")
-    def identity_squash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_squash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
         """
         return pulumi.get(self, "identity_squash")
 
     @identity_squash.setter
-    def identity_squash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_squash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_squash", value)
 
     @_builtins.property
     @pulumi.getter(name="isAnonymousAccessAllowed")
-    def is_anonymous_access_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_anonymous_access_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         """
         return pulumi.get(self, "is_anonymous_access_allowed")
 
     @is_anonymous_access_allowed.setter
-    def is_anonymous_access_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_anonymous_access_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_anonymous_access_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="requirePrivilegedSourcePort")
-    def require_privileged_source_port(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def require_privileged_source_port(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         """
         return pulumi.get(self, "require_privileged_source_port")
 
     @require_privileged_source_port.setter
-    def require_privileged_source_port(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def require_privileged_source_port(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "require_privileged_source_port", value)
 
 
@@ -246,15 +246,15 @@ class ExportLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -263,9 +263,9 @@ class ExportLockArgsDict(TypedDict):
 class ExportLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -294,38 +294,38 @@ class ExportLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -334,15 +334,15 @@ class FileSystemLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -351,9 +351,9 @@ class FileSystemLockArgsDict(TypedDict):
 class FileSystemLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -382,47 +382,47 @@ class FileSystemLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class FileSystemSourceDetailArgsDict(TypedDict):
-    parent_file_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    parent_file_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
     """
-    source_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
+    source_snapshot_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
     """
@@ -430,8 +430,8 @@ class FileSystemSourceDetailArgsDict(TypedDict):
 @pulumi.input_type
 class FileSystemSourceDetailArgs:
     def __init__(__self__, *,
-                 parent_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 parent_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[_builtins.str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -443,26 +443,26 @@ class FileSystemSourceDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="parentFileSystemId")
-    def parent_file_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_file_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "parent_file_system_id")
 
     @parent_file_system_id.setter
-    def parent_file_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_file_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_file_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshotId")
-    def source_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
     @source_snapshot_id.setter
-    def source_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot_id", value)
 
 
@@ -471,15 +471,15 @@ class FilesystemSnapshotPolicyLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -488,9 +488,9 @@ class FilesystemSnapshotPolicyLockArgsDict(TypedDict):
 class FilesystemSnapshotPolicyLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -519,38 +519,38 @@ class FilesystemSnapshotPolicyLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -563,35 +563,35 @@ class FilesystemSnapshotPolicyScheduleArgsDict(TypedDict):
     """
     (Updatable) Time zone used for scheduling the snapshot.
     """
-    day_of_month: NotRequired[pulumi.Input[_builtins.int]]
+    day_of_month: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
     """
-    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    day_of_week: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
     """
-    hour_of_day: NotRequired[pulumi.Input[_builtins.int]]
+    hour_of_day: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
     """
-    lock_duration_details: NotRequired[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict']]
+    lock_duration_details: NotRequired[pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]]
     """
     (Updatable) Details for setting a retention date or legal hold.
     """
-    month: NotRequired[pulumi.Input[_builtins.str]]
+    month: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
     """
-    retention_duration_in_seconds: NotRequired[pulumi.Input[_builtins.str]]
+    retention_duration_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
     """
-    schedule_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    schedule_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
     """
-    time_schedule_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_schedule_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
     """
@@ -601,14 +601,14 @@ class FilesystemSnapshotPolicyScheduleArgs:
     def __init__(__self__, *,
                  period: pulumi.Input[_builtins.str],
                  time_zone: pulumi.Input[_builtins.str],
-                 day_of_month: Optional[pulumi.Input[_builtins.int]] = None,
-                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
-                 hour_of_day: Optional[pulumi.Input[_builtins.int]] = None,
-                 lock_duration_details: Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']] = None,
-                 month: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_duration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_schedule_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 day_of_month: pulumi.Input[Optional[_builtins.int]] = None,
+                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
+                 hour_of_day: pulumi.Input[Optional[_builtins.int]] = None,
+                 lock_duration_details: pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']] = None,
+                 month: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_duration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_schedule_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] period: (Updatable) The frequency of scheduled snapshots.
         :param pulumi.Input[_builtins.str] time_zone: (Updatable) Time zone used for scheduling the snapshot.
@@ -666,98 +666,98 @@ class FilesystemSnapshotPolicyScheduleArgs:
 
     @_builtins.property
     @pulumi.getter(name="dayOfMonth")
-    def day_of_month(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def day_of_month(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "day_of_month")
 
     @day_of_month.setter
-    def day_of_month(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def day_of_month(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "day_of_month", value)
 
     @_builtins.property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def day_of_week(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def day_of_week(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "day_of_week", value)
 
     @_builtins.property
     @pulumi.getter(name="hourOfDay")
-    def hour_of_day(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def hour_of_day(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "hour_of_day")
 
     @hour_of_day.setter
-    def hour_of_day(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def hour_of_day(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "hour_of_day", value)
 
     @_builtins.property
     @pulumi.getter(name="lockDurationDetails")
-    def lock_duration_details(self) -> Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]:
+    def lock_duration_details(self) -> pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]:
         """
         (Updatable) Details for setting a retention date or legal hold.
         """
         return pulumi.get(self, "lock_duration_details")
 
     @lock_duration_details.setter
-    def lock_duration_details(self, value: Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]):
+    def lock_duration_details(self, value: pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]):
         pulumi.set(self, "lock_duration_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def month(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def month(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "month")
 
     @month.setter
-    def month(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def month(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "month", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionDurationInSeconds")
-    def retention_duration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def retention_duration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
         """
         return pulumi.get(self, "retention_duration_in_seconds")
 
     @retention_duration_in_seconds.setter
-    def retention_duration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def retention_duration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "retention_duration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulePrefix")
-    def schedule_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
         """
         return pulumi.get(self, "schedule_prefix")
 
     @schedule_prefix.setter
-    def schedule_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="timeScheduleStart")
-    def time_schedule_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_schedule_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
         """
         return pulumi.get(self, "time_schedule_start")
 
     @time_schedule_start.setter
-    def time_schedule_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_schedule_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_schedule_start", value)
 
 
@@ -770,7 +770,7 @@ class FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict(TypedDict):
     """
     (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
     """
-    cool_off_duration: NotRequired[pulumi.Input[_builtins.int]]
+    cool_off_duration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
     """
@@ -780,7 +780,7 @@ class FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs:
     def __init__(__self__, *,
                  lock_duration: pulumi.Input[_builtins.int],
                  lock_mode: pulumi.Input[_builtins.str],
-                 cool_off_duration: Optional[pulumi.Input[_builtins.int]] = None):
+                 cool_off_duration: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] lock_duration: (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
         :param pulumi.Input[_builtins.str] lock_mode: (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
@@ -817,14 +817,14 @@ class FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="coolOffDuration")
-    def cool_off_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cool_off_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
         """
         return pulumi.get(self, "cool_off_duration")
 
     @cool_off_duration.setter
-    def cool_off_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cool_off_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cool_off_duration", value)
 
 
@@ -833,19 +833,19 @@ class MountTargetKerberosArgsDict(TypedDict):
     """
     (Updatable) The Kerberos realm that the mount target will join.
     """
-    backup_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    backup_key_tab_secret_version: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Version of the keytab Secret in the Vault to use as a backup.
     """
-    current_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    current_key_tab_secret_version: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Version of the keytab Secret in the Vault to use.
     """
-    is_kerberos_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_kerberos_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether to enable or disable Kerberos.
     """
-    key_tab_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    key_tab_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
     """
@@ -854,10 +854,10 @@ class MountTargetKerberosArgsDict(TypedDict):
 class MountTargetKerberosArgs:
     def __init__(__self__, *,
                  kerberos_realm: pulumi.Input[_builtins.str],
-                 backup_key_tab_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_key_tab_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_kerberos_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_tab_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_key_tab_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_key_tab_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_kerberos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_tab_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kerberos_realm: (Updatable) The Kerberos realm that the mount target will join.
         :param pulumi.Input[_builtins.int] backup_key_tab_secret_version: (Updatable) Version of the keytab Secret in the Vault to use as a backup.
@@ -889,83 +889,83 @@ class MountTargetKerberosArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupKeyTabSecretVersion")
-    def backup_key_tab_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backup_key_tab_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Version of the keytab Secret in the Vault to use as a backup.
         """
         return pulumi.get(self, "backup_key_tab_secret_version")
 
     @backup_key_tab_secret_version.setter
-    def backup_key_tab_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backup_key_tab_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backup_key_tab_secret_version", value)
 
     @_builtins.property
     @pulumi.getter(name="currentKeyTabSecretVersion")
-    def current_key_tab_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def current_key_tab_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Version of the keytab Secret in the Vault to use.
         """
         return pulumi.get(self, "current_key_tab_secret_version")
 
     @current_key_tab_secret_version.setter
-    def current_key_tab_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def current_key_tab_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "current_key_tab_secret_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isKerberosEnabled")
-    def is_kerberos_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kerberos_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether to enable or disable Kerberos.
         """
         return pulumi.get(self, "is_kerberos_enabled")
 
     @is_kerberos_enabled.setter
-    def is_kerberos_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kerberos_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kerberos_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="keyTabSecretId")
-    def key_tab_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_tab_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
         """
         return pulumi.get(self, "key_tab_secret_id")
 
     @key_tab_secret_id.setter
-    def key_tab_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_tab_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_tab_secret_id", value)
 
 
 class MountTargetLdapIdmapArgsDict(TypedDict):
-    cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    cache_lifetime_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
     """
-    cache_refresh_interval_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    cache_refresh_interval_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
     """
-    group_search_base: NotRequired[pulumi.Input[_builtins.str]]
+    group_search_base: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
     """
-    negative_cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    negative_cache_lifetime_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
     """
-    outbound_connector1id: NotRequired[pulumi.Input[_builtins.str]]
+    outbound_connector1id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
     """
-    outbound_connector2id: NotRequired[pulumi.Input[_builtins.str]]
+    outbound_connector2id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
     """
-    schema_type: NotRequired[pulumi.Input[_builtins.str]]
+    schema_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Schema type of the LDAP account.
     """
-    user_search_base: NotRequired[pulumi.Input[_builtins.str]]
+    user_search_base: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
     """
@@ -973,14 +973,14 @@ class MountTargetLdapIdmapArgsDict(TypedDict):
 @pulumi.input_type
 class MountTargetLdapIdmapArgs:
     def __init__(__self__, *,
-                 cache_lifetime_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 cache_refresh_interval_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 group_search_base: Optional[pulumi.Input[_builtins.str]] = None,
-                 negative_cache_lifetime_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 outbound_connector1id: Optional[pulumi.Input[_builtins.str]] = None,
-                 outbound_connector2id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_search_base: Optional[pulumi.Input[_builtins.str]] = None):
+                 cache_lifetime_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 cache_refresh_interval_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 group_search_base: pulumi.Input[Optional[_builtins.str]] = None,
+                 negative_cache_lifetime_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 outbound_connector1id: pulumi.Input[Optional[_builtins.str]] = None,
+                 outbound_connector2id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_search_base: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] cache_lifetime_seconds: (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
         :param pulumi.Input[_builtins.int] cache_refresh_interval_seconds: (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
@@ -1010,98 +1010,98 @@ class MountTargetLdapIdmapArgs:
 
     @_builtins.property
     @pulumi.getter(name="cacheLifetimeSeconds")
-    def cache_lifetime_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cache_lifetime_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
         """
         return pulumi.get(self, "cache_lifetime_seconds")
 
     @cache_lifetime_seconds.setter
-    def cache_lifetime_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cache_lifetime_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cache_lifetime_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="cacheRefreshIntervalSeconds")
-    def cache_refresh_interval_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cache_refresh_interval_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
         """
         return pulumi.get(self, "cache_refresh_interval_seconds")
 
     @cache_refresh_interval_seconds.setter
-    def cache_refresh_interval_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cache_refresh_interval_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cache_refresh_interval_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="groupSearchBase")
-    def group_search_base(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_search_base(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
         """
         return pulumi.get(self, "group_search_base")
 
     @group_search_base.setter
-    def group_search_base(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_search_base(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_search_base", value)
 
     @_builtins.property
     @pulumi.getter(name="negativeCacheLifetimeSeconds")
-    def negative_cache_lifetime_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def negative_cache_lifetime_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
         """
         return pulumi.get(self, "negative_cache_lifetime_seconds")
 
     @negative_cache_lifetime_seconds.setter
-    def negative_cache_lifetime_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def negative_cache_lifetime_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "negative_cache_lifetime_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundConnector1id")
-    def outbound_connector1id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def outbound_connector1id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
         """
         return pulumi.get(self, "outbound_connector1id")
 
     @outbound_connector1id.setter
-    def outbound_connector1id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def outbound_connector1id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "outbound_connector1id", value)
 
     @_builtins.property
     @pulumi.getter(name="outboundConnector2id")
-    def outbound_connector2id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def outbound_connector2id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
         """
         return pulumi.get(self, "outbound_connector2id")
 
     @outbound_connector2id.setter
-    def outbound_connector2id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def outbound_connector2id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "outbound_connector2id", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaType")
-    def schema_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Schema type of the LDAP account.
         """
         return pulumi.get(self, "schema_type")
 
     @schema_type.setter
-    def schema_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_type", value)
 
     @_builtins.property
     @pulumi.getter(name="userSearchBase")
-    def user_search_base(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_search_base(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
         """
         return pulumi.get(self, "user_search_base")
 
     @user_search_base.setter
-    def user_search_base(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_search_base(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_search_base", value)
 
 
@@ -1110,15 +1110,15 @@ class MountTargetLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1127,9 +1127,9 @@ class MountTargetLockArgsDict(TypedDict):
 class MountTargetLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1158,38 +1158,38 @@ class MountTargetLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1245,15 +1245,15 @@ class OutboundConnectorLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1262,9 +1262,9 @@ class OutboundConnectorLockArgsDict(TypedDict):
 class OutboundConnectorLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1293,38 +1293,38 @@ class OutboundConnectorLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1333,15 +1333,15 @@ class ReplicationLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1350,9 +1350,9 @@ class ReplicationLockArgsDict(TypedDict):
 class ReplicationLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1381,38 +1381,38 @@ class ReplicationLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1421,15 +1421,15 @@ class SnapshotLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1438,9 +1438,9 @@ class SnapshotLockArgsDict(TypedDict):
 class SnapshotLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1469,38 +1469,38 @@ class SnapshotLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1513,7 +1513,7 @@ class SnapshotLockDurationDetailsArgsDict(TypedDict):
     """
     (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
     """
-    cool_off_duration: NotRequired[pulumi.Input[_builtins.int]]
+    cool_off_duration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
     """
@@ -1523,7 +1523,7 @@ class SnapshotLockDurationDetailsArgs:
     def __init__(__self__, *,
                  lock_duration: pulumi.Input[_builtins.int],
                  lock_mode: pulumi.Input[_builtins.str],
-                 cool_off_duration: Optional[pulumi.Input[_builtins.int]] = None):
+                 cool_off_duration: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] lock_duration: (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
         :param pulumi.Input[_builtins.str] lock_mode: (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
@@ -1560,14 +1560,14 @@ class SnapshotLockDurationDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="coolOffDuration")
-    def cool_off_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cool_off_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
         """
         return pulumi.get(self, "cool_off_duration")
 
     @cool_off_duration.setter
-    def cool_off_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cool_off_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cool_off_duration", value)
 
 

@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     contentEncoding: objectContentEncoding,
  *     contentLanguage: objectContentLanguage,
  *     contentType: objectContentType,
- *     deleteAllObjectVersions: objectDeleteAllObjectVersions,
+ *     deleteAllObjectVersions: objectDeleteAllObjectVersions === "true",
  *     metadata: objectMetadata,
  *     storageTier: objectStorageTier,
  *     opcSseKmsKeyId: objectOpcSseKmsKeyId,
@@ -233,78 +233,78 @@ export interface StorageObjectState {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
      */
-    cacheControl?: pulumi.Input<string>;
+    cacheControl?: pulumi.Input<string | undefined>;
     /**
      * The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
      */
-    contentDisposition?: pulumi.Input<string>;
+    contentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
      */
-    contentEncoding?: pulumi.Input<string>;
+    contentEncoding?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
      */
-    contentLanguage?: pulumi.Input<string>;
+    contentLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The content length of the body.
      */
-    contentLength?: pulumi.Input<string>;
+    contentLength?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      *
      * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      */
-    contentMd5?: pulumi.Input<string>;
+    contentMd5?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
      */
-    deleteAllObjectVersions?: pulumi.Input<boolean>;
+    deleteAllObjectVersions?: pulumi.Input<boolean | undefined>;
     /**
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    opcSseKmsKeyId?: pulumi.Input<string>;
+    opcSseKmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
-    sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails>;
-    state?: pulumi.Input<string>;
+    sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      */
-    storageTier?: pulumi.Input<string>;
-    versionId?: pulumi.Input<string>;
-    workRequestId?: pulumi.Input<string>;
+    storageTier?: pulumi.Input<string | undefined>;
+    versionId?: pulumi.Input<string | undefined>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -318,42 +318,42 @@ export interface StorageObjectArgs {
     /**
      * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
      */
-    cacheControl?: pulumi.Input<string>;
+    cacheControl?: pulumi.Input<string | undefined>;
     /**
      * The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
      */
-    contentDisposition?: pulumi.Input<string>;
+    contentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
      */
-    contentEncoding?: pulumi.Input<string>;
+    contentEncoding?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
      */
-    contentLanguage?: pulumi.Input<string>;
+    contentLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      *
      * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      */
-    contentMd5?: pulumi.Input<string>;
+    contentMd5?: pulumi.Input<string | undefined>;
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
      */
-    deleteAllObjectVersions?: pulumi.Input<boolean>;
+    deleteAllObjectVersions?: pulumi.Input<boolean | undefined>;
     /**
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -365,18 +365,18 @@ export interface StorageObjectArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    opcSseKmsKeyId?: pulumi.Input<string>;
+    opcSseKmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
-    sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails>;
+    sourceUriDetails?: pulumi.Input<inputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
     /**
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      */
-    storageTier?: pulumi.Input<string>;
+    storageTier?: pulumi.Input<string | undefined>;
 }

@@ -95,7 +95,7 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_histories = oci.DelegateAccessControl.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request_histories = oci.delegateaccesscontrol.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
         delegated_resource_access_request_id=pulumi.get(__ret__, 'delegated_resource_access_request_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_delegated_resource_access_request_histories_output(delegated_resource_access_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]]]] = None,
+def get_delegated_resource_access_request_histories_output(delegated_resource_access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]]]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestHistoriesResult]:
     """
     This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -126,7 +126,7 @@ def get_delegated_resource_access_request_histories_output(delegated_resource_ac
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_histories = oci.DelegateAccessControl.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request_histories = oci.delegateaccesscontrol.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
     ```
 
 

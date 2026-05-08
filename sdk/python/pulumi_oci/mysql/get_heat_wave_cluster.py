@@ -168,7 +168,7 @@ def get_heat_wave_cluster(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
+    test_heat_wave_cluster = oci.mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
     ```
 
 
@@ -190,7 +190,7 @@ def get_heat_wave_cluster(db_system_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_heat_wave_cluster_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHeatWaveClusterResult]:
     """
     This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -203,7 +203,7 @@ def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
+    test_heat_wave_cluster = oci.mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
     ```
 
 

@@ -119,22 +119,22 @@ export interface GetDistributedDatabaseDistributedDatabasesOutputArgs {
     /**
      * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
      */
-    dbDeploymentType?: pulumi.Input<string>;
+    dbDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedDatabasesFilterArgs>[] | undefined>;
     /**
      * Comma separated names of argument corresponding to which metadata need to be retrived.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that are associated with the given privateEndpointId.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

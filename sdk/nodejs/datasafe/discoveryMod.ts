@@ -35,10 +35,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAppDefinedRelationDiscoveryEnabled: discoveryJobIsAppDefinedRelationDiscoveryEnabled,
- *     isIncludeAllSchemas: discoveryJobIsIncludeAllSchemas,
- *     isIncludeAllSensitiveTypes: discoveryJobIsIncludeAllSensitiveTypes,
- *     isSampleDataCollectionEnabled: discoveryJobIsSampleDataCollectionEnabled,
+ *     isAppDefinedRelationDiscoveryEnabled: discoveryJobIsAppDefinedRelationDiscoveryEnabled === "true",
+ *     isIncludeAllSchemas: discoveryJobIsIncludeAllSchemas === "true",
+ *     isIncludeAllSensitiveTypes: discoveryJobIsIncludeAllSensitiveTypes === "true",
+ *     isSampleDataCollectionEnabled: discoveryJobIsSampleDataCollectionEnabled === "true",
  *     schemasForDiscoveries: discoveryJobSchemasForDiscovery,
  *     sensitiveTypeGroupIdsForDiscoveries: discoveryJobSensitiveTypeGroupIdsForDiscovery,
  *     sensitiveTypeIdsForDiscoveries: discoveryJobSensitiveTypeIdsForDiscovery,
@@ -270,103 +270,103 @@ export interface DiscoveryModState {
     /**
      * (Updatable) The OCID of the compartment where the discovery job resource should be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      */
-    discoveryType?: pulumi.Input<string>;
+    discoveryType?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
      */
-    isAppDefinedRelationDiscoveryEnabled?: pulumi.Input<boolean>;
+    isAppDefinedRelationDiscoveryEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    isIncludeAllSchemas?: pulumi.Input<boolean>;
+    isIncludeAllSchemas?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    isIncludeAllSensitiveTypes?: pulumi.Input<boolean>;
+    isIncludeAllSensitiveTypes?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      */
-    isSampleDataCollectionEnabled?: pulumi.Input<boolean>;
+    isSampleDataCollectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      */
-    schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
      */
-    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
-    sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the discovery job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
      */
-    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[]>;
+    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[] | undefined>;
     /**
      * The OCID of the target database associated with the discovery job.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The total number of columns scanned by the discovery job.
      */
-    totalColumnsScanned?: pulumi.Input<string>;
+    totalColumnsScanned?: pulumi.Input<string | undefined>;
     /**
      * The total number of deleted sensitive columns identified by the discovery job.
      */
-    totalDeletedSensitiveColumns?: pulumi.Input<string>;
+    totalDeletedSensitiveColumns?: pulumi.Input<string | undefined>;
     /**
      * The total number of modified sensitive columns identified by the discovery job.
      */
-    totalModifiedSensitiveColumns?: pulumi.Input<string>;
+    totalModifiedSensitiveColumns?: pulumi.Input<string | undefined>;
     /**
      * The total number of new sensitive columns identified by the discovery job.
      */
-    totalNewSensitiveColumns?: pulumi.Input<string>;
+    totalNewSensitiveColumns?: pulumi.Input<string | undefined>;
     /**
      * The total number of objects (tables and editioning views) scanned by the discovery job.
      */
-    totalObjectsScanned?: pulumi.Input<string>;
+    totalObjectsScanned?: pulumi.Input<string | undefined>;
     /**
      * The total number of schemas scanned by the discovery job.
      */
-    totalSchemasScanned?: pulumi.Input<string>;
+    totalSchemasScanned?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -380,39 +380,39 @@ export interface DiscoveryModArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      */
-    discoveryType?: pulumi.Input<string>;
+    discoveryType?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
      */
-    isAppDefinedRelationDiscoveryEnabled?: pulumi.Input<boolean>;
+    isAppDefinedRelationDiscoveryEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    isIncludeAllSchemas?: pulumi.Input<boolean>;
+    isIncludeAllSchemas?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    isIncludeAllSensitiveTypes?: pulumi.Input<boolean>;
+    isIncludeAllSensitiveTypes?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      */
-    isSampleDataCollectionEnabled?: pulumi.Input<boolean>;
+    isSampleDataCollectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      */
-    schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    schemasForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */
@@ -420,13 +420,13 @@ export interface DiscoveryModArgs {
     /**
      * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
      */
-    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeGroupIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
-    sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
      */
-    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[]>;
+    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[] | undefined>;
 }

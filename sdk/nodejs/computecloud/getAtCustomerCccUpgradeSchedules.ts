@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
+ * const testCccUpgradeSchedules = oci.computecloud.getAtCustomerCccUpgradeSchedules({
  *     accessLevel: cccUpgradeScheduleAccessLevel,
  *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree === "true",
  *     displayName: cccUpgradeScheduleDisplayName,
  *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
  *     state: cccUpgradeScheduleState,
@@ -119,11 +119,11 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
+ * const testCccUpgradeSchedules = oci.computecloud.getAtCustomerCccUpgradeSchedules({
  *     accessLevel: cccUpgradeScheduleAccessLevel,
  *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree === "true",
  *     displayName: cccUpgradeScheduleDisplayName,
  *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
  *     state: cccUpgradeScheduleState,
@@ -152,30 +152,30 @@ export interface GetAtCustomerCccUpgradeSchedulesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    cccUpgradeScheduleId?: pulumi.Input<string>;
+    cccUpgradeScheduleId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and sub-compartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose display name contains the substring.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.GetAtCustomerCccUpgradeSchedulesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.GetAtCustomerCccUpgradeSchedulesFilterArgs>[] | undefined>;
     /**
      * A filter to return resources only when their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

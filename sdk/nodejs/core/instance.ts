@@ -505,7 +505,7 @@ export interface InstanceState {
     /**
      * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
      */
-    agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig>;
+    agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig | undefined>;
     /**
      * Whether Terraform creates and destroys the resource asynchronously. The default value is false.
      * * If `async` is true, all the creation and deletion of instances are asynchronous
@@ -513,51 +513,51 @@ export interface InstanceState {
      *
      * > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
      */
-    async?: pulumi.Input<boolean>;
+    async?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
-    availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig>;
+    availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig | undefined>;
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      */
-    bootVolumeId?: pulumi.Input<string>;
+    bootVolumeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
-    capacityReservationId?: pulumi.Input<string>;
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster placement group of the instance.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      */
-    computeClusterId?: pulumi.Input<string>;
+    computeClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails>;
+    createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails | undefined>;
     /**
      * (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      */
-    dedicatedVmHostId?: pulumi.Input<string>;
+    dedicatedVmHostId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      *
@@ -567,7 +567,7 @@ export interface InstanceState {
      *
      * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      *
@@ -577,31 +577,31 @@ export interface InstanceState {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      *
      * @deprecated The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
      *
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      */
-    instanceConfigurationId?: pulumi.Input<string>;
+    instanceConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional mutable instance options
      */
-    instanceOptions?: pulumi.Input<inputs.Core.InstanceInstanceOptions>;
+    instanceOptions?: pulumi.Input<inputs.Core.InstanceInstanceOptions | undefined>;
     /**
      * This is an advanced option.
      *
@@ -617,19 +617,19 @@ export interface InstanceState {
      *
      * For more information about iPXE, see http://ipxe.org.
      */
-    ipxeScript?: pulumi.Input<string>;
+    ipxeScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to enable AI enterprise on the instance.
      */
-    isAiEnterpriseEnabled?: pulumi.Input<boolean>;
+    isAiEnterpriseEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      */
-    isCrossNumaNode?: pulumi.Input<boolean>;
+    isCrossNumaNode?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      */
-    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -637,21 +637,21 @@ export interface InstanceState {
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      */
-    launchMode?: pulumi.Input<string>;
+    launchMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions>;
+    launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions | undefined>;
     /**
      * Volume attachments to create as part of the launch instance operation.
      *
      * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
      */
-    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[] | undefined>;
     /**
      * (Updatable) List of licensing configurations associated with target launch values.
      */
-    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs>;
+    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs | undefined>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
@@ -687,11 +687,11 @@ export interface InstanceState {
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
      */
-    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails>;
+    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails | undefined>;
     /**
      * (Updatable) The platform configuration requested for the instance.
      *
@@ -704,42 +704,42 @@ export interface InstanceState {
      *
      * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      */
-    platformConfig?: pulumi.Input<inputs.Core.InstancePlatformConfig>;
+    platformConfig?: pulumi.Input<inputs.Core.InstancePlatformConfig | undefined>;
     /**
      * Configuration options for preemptible instances.
      */
-    preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstancePreemptibleInstanceConfig>;
+    preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstancePreemptibleInstanceConfig | undefined>;
     /**
      * (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
-    preserveBootVolume?: pulumi.Input<boolean>;
-    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
+    preserveBootVolume?: pulumi.Input<boolean | undefined>;
+    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean | undefined>;
     /**
      * The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * The public IP address of instance VNIC (if enabled).
      */
-    publicIp?: pulumi.Input<string>;
+    publicIp?: pulumi.Input<string | undefined>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The lifecycle state of the `securityAttributes`
      */
-    securityAttributesState?: pulumi.Input<string>;
+    securityAttributesState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The shape configuration requested for the instance.
      *
@@ -747,37 +747,37 @@ export interface InstanceState {
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      */
-    shapeConfig?: pulumi.Input<inputs.Core.InstanceShapeConfig>;
+    shapeConfig?: pulumi.Input<inputs.Core.InstanceShapeConfig | undefined>;
     /**
      * (Updatable)
      */
-    sourceDetails?: pulumi.Input<inputs.Core.InstanceSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Core.InstanceSourceDetails | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
      *
      * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
-    timeMaintenanceRebootDue?: pulumi.Input<string>;
-    updateOperationConstraint?: pulumi.Input<string>;
+    timeMaintenanceRebootDue?: pulumi.Input<string | undefined>;
+    updateOperationConstraint?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -787,7 +787,7 @@ export interface InstanceArgs {
     /**
      * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
      */
-    agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig>;
+    agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig | undefined>;
     /**
      * Whether Terraform creates and destroys the resource asynchronously. The default value is false.
      * * If `async` is true, all the creation and deletion of instances are asynchronous
@@ -795,11 +795,11 @@ export interface InstanceArgs {
      *
      * > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
      */
-    async?: pulumi.Input<boolean>;
+    async?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
-    availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig>;
+    availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig | undefined>;
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
@@ -807,11 +807,11 @@ export interface InstanceArgs {
     /**
      * (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
-    capacityReservationId?: pulumi.Input<string>;
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster placement group of the instance.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
@@ -819,23 +819,23 @@ export interface InstanceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      */
-    computeClusterId?: pulumi.Input<string>;
+    computeClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails>;
+    createVnicDetails?: pulumi.Input<inputs.Core.InstanceCreateVnicDetails | undefined>;
     /**
      * (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      */
-    dedicatedVmHostId?: pulumi.Input<string>;
+    dedicatedVmHostId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      *
@@ -845,7 +845,7 @@ export interface InstanceArgs {
      *
      * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      *
@@ -855,31 +855,31 @@ export interface InstanceArgs {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      *
      * @deprecated The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
      *
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      */
-    instanceConfigurationId?: pulumi.Input<string>;
+    instanceConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional mutable instance options
      */
-    instanceOptions?: pulumi.Input<inputs.Core.InstanceInstanceOptions>;
+    instanceOptions?: pulumi.Input<inputs.Core.InstanceInstanceOptions | undefined>;
     /**
      * This is an advanced option.
      *
@@ -895,29 +895,29 @@ export interface InstanceArgs {
      *
      * For more information about iPXE, see http://ipxe.org.
      */
-    ipxeScript?: pulumi.Input<string>;
+    ipxeScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to enable AI enterprise on the instance.
      */
-    isAiEnterpriseEnabled?: pulumi.Input<boolean>;
+    isAiEnterpriseEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      */
-    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions>;
+    launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions | undefined>;
     /**
      * Volume attachments to create as part of the launch instance operation.
      *
      * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
      */
-    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[] | undefined>;
     /**
      * (Updatable) List of licensing configurations associated with target launch values.
      */
-    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs>;
+    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs | undefined>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
@@ -953,11 +953,11 @@ export interface InstanceArgs {
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
      */
-    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails>;
+    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails | undefined>;
     /**
      * (Updatable) The platform configuration requested for the instance.
      *
@@ -970,26 +970,26 @@ export interface InstanceArgs {
      *
      * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      */
-    platformConfig?: pulumi.Input<inputs.Core.InstancePlatformConfig>;
+    platformConfig?: pulumi.Input<inputs.Core.InstancePlatformConfig | undefined>;
     /**
      * Configuration options for preemptible instances.
      */
-    preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstancePreemptibleInstanceConfig>;
+    preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstancePreemptibleInstanceConfig | undefined>;
     /**
      * (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
-    preserveBootVolume?: pulumi.Input<boolean>;
-    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
+    preserveBootVolume?: pulumi.Input<boolean | undefined>;
+    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The shape configuration requested for the instance.
      *
@@ -997,23 +997,23 @@ export interface InstanceArgs {
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      */
-    shapeConfig?: pulumi.Input<inputs.Core.InstanceShapeConfig>;
+    shapeConfig?: pulumi.Input<inputs.Core.InstanceShapeConfig | undefined>;
     /**
      * (Updatable)
      */
-    sourceDetails?: pulumi.Input<inputs.Core.InstanceSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Core.InstanceSourceDetails | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
      *
      * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
      */
-    subnetId?: pulumi.Input<string>;
-    updateOperationConstraint?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
+    updateOperationConstraint?: pulumi.Input<string | undefined>;
 }

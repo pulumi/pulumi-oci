@@ -66,8 +66,8 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
 @pulumi.input_type
 class _AnnouncementSubscriptionsActionsChangeCompartmentState:
     def __init__(__self__, *,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsActionsChangeCompartment resources.
 
@@ -85,19 +85,19 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
 
     @_builtins.property
     @pulumi.getter(name="announcementSubscriptionId")
-    def announcement_subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def announcement_subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the announcement subscription.
         """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
-    def announcement_subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def announcement_subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "announcement_subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
 
@@ -108,7 +108,7 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
 
@@ -118,8 +118,8 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Announcement Subscriptions Actions Change Compartment resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -211,8 +211,8 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -238,8 +238,8 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            announcement_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AnnouncementSubscriptionsActionsChangeCompartment':
+            announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AnnouncementSubscriptionsActionsChangeCompartment':
         """
         Get an existing AnnouncementSubscriptionsActionsChangeCompartment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

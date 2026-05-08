@@ -214,14 +214,14 @@ def get_domains_mapped_attributes(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_mapped_attributes = oci.Identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
-        mapped_attribute_count=mapped_attribute_mapped_attribute_count,
+    test_mapped_attributes = oci.identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
+        mapped_attribute_count=int(mapped_attribute_mapped_attribute_count),
         mapped_attribute_filter=mapped_attribute_mapped_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=mapped_attribute_authorization,
         resource_type_schema_version=mapped_attribute_resource_type_schema_version,
-        start_index=mapped_attribute_start_index)
+        start_index=int(mapped_attribute_start_index))
     ```
 
 
@@ -266,17 +266,17 @@ def get_domains_mapped_attributes(attribute_sets: Optional[Sequence[_builtins.st
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_mapped_attributes_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                         attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                         mapped_attribute_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                         mapped_attribute_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_mapped_attributes_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                         attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                         mapped_attribute_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                         mapped_attribute_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMappedAttributesResult]:
     """
     This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
@@ -289,14 +289,14 @@ def get_domains_mapped_attributes_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_mapped_attributes = oci.Identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
-        mapped_attribute_count=mapped_attribute_mapped_attribute_count,
+    test_mapped_attributes = oci.identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
+        mapped_attribute_count=int(mapped_attribute_mapped_attribute_count),
         mapped_attribute_filter=mapped_attribute_mapped_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=mapped_attribute_authorization,
         resource_type_schema_version=mapped_attribute_resource_type_schema_version,
-        start_index=mapped_attribute_start_index)
+        start_index=int(mapped_attribute_start_index))
     ```
 
 

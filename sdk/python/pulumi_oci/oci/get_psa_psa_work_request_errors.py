@@ -95,8 +95,8 @@ def get_psa_psa_work_request_errors(filters: Optional[Sequence[Union['GetPsaPsaW
         id=pulumi.get(__ret__, 'id'),
         work_request_errors=pulumi.get(__ret__, 'work_request_errors'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_psa_psa_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPsaPsaWorkRequestErrorsFilterArgs', 'GetPsaPsaWorkRequestErrorsFilterArgsDict']]]]] = None,
-                                           work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_psa_psa_work_request_errors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaWorkRequestErrorsFilterArgs', 'GetPsaPsaWorkRequestErrorsFilterArgsDict']]]]] = None,
+                                           work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPsaWorkRequestErrorsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -862,7 +862,7 @@ def get_sddc(sddc_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
+    test_sddc = oci.ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
     ```
 
 
@@ -940,7 +940,7 @@ def get_sddc(sddc_id: Optional[_builtins.str] = None,
         vsphere_upgrade_objects=pulumi.get(__ret__, 'vsphere_upgrade_objects'),
         vsphere_vlan_id=pulumi.get(__ret__, 'vsphere_vlan_id'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
-def get_sddc_output(sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sddc_output(sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSddcResult]:
     """
     This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -953,7 +953,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
+    test_sddc = oci.ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
     ```
 
 

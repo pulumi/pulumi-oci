@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActions = oci.Database.getScheduledActions({
+ * const testScheduledActions = oci.database.getScheduledActions({
  *     compartmentId: compartmentId,
  *     displayName: scheduledActionDisplayName,
  *     id: scheduledActionId,
@@ -113,7 +113,7 @@ export interface GetScheduledActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActions = oci.Database.getScheduledActions({
+ * const testScheduledActions = oci.database.getScheduledActions({
  *     compartmentId: compartmentId,
  *     displayName: scheduledActionDisplayName,
  *     id: scheduledActionId,
@@ -147,22 +147,22 @@ export interface GetScheduledActionsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetScheduledActionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetScheduledActionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Scheduled Action id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given scheduling policy id exactly.
      */
-    schedulingPlanId?: pulumi.Input<string>;
+    schedulingPlanId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given service type exactly.
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -47,14 +47,14 @@ import * as utilities from "../utilities";
  *         autonomousDatabaseStandbyTypeForDrDrills: drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
  *         backendSetMappings: [{
  *             destinationBackendSetName: testBackendSet.name,
- *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
+ *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable === "true",
  *             sourceBackendSetName: testBackendSet.name,
  *         }],
  *         backupConfig: {
  *             backupSchedule: drProtectionGroupMembersBackupConfigBackupSchedule,
  *             excludeNamespaces: drProtectionGroupMembersBackupConfigExcludeNamespaces,
  *             imageReplicationVaultSecretId: testSecret.id,
- *             maxNumberOfBackupsRetained: drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
+ *             maxNumberOfBackupsRetained: Number(drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained),
  *             namespaces: drProtectionGroupMembersBackupConfigNamespaces,
  *             replicateImages: drProtectionGroupMembersBackupConfigReplicateImages,
  *         },
@@ -121,11 +121,11 @@ import * as utilities from "../utilities";
  *                 mountTargetId: testMountTarget.id,
  *             },
  *         }],
- *         gtidReconciliationTimeout: drProtectionGroupMembersGtidReconciliationTimeout,
- *         isContinueOnGtidReconciliationTimeout: drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout,
- *         isMovable: drProtectionGroupMembersIsMovable,
- *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
- *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
+ *         gtidReconciliationTimeout: Number(drProtectionGroupMembersGtidReconciliationTimeout),
+ *         isContinueOnGtidReconciliationTimeout: drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout === "true",
+ *         isMovable: drProtectionGroupMembersIsMovable === "true",
+ *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain === "true",
+ *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled === "true",
  *         jumpHostId: testJumpHost.id,
  *         loadBalancerMappings: [{
  *             destinationLoadBalancerId: testLoadBalancer.id,
@@ -133,8 +133,8 @@ import * as utilities from "../utilities";
  *         }],
  *         managedNodePoolConfigs: [{
  *             id: drProtectionGroupMembersManagedNodePoolConfigsId,
- *             maximum: drProtectionGroupMembersManagedNodePoolConfigsMaximum,
- *             minimum: drProtectionGroupMembersManagedNodePoolConfigsMinimum,
+ *             maximum: Number(drProtectionGroupMembersManagedNodePoolConfigsMaximum),
+ *             minimum: Number(drProtectionGroupMembersManagedNodePoolConfigsMinimum),
  *         }],
  *         namespace: drProtectionGroupMembersNamespace,
  *         passwordVaultSecretId: passwordVaultSecretId,
@@ -161,8 +161,8 @@ import * as utilities from "../utilities";
  *         }],
  *         virtualNodePoolConfigs: [{
  *             id: drProtectionGroupMembersVirtualNodePoolConfigsId,
- *             maximum: drProtectionGroupMembersVirtualNodePoolConfigsMaximum,
- *             minimum: drProtectionGroupMembersVirtualNodePoolConfigsMinimum,
+ *             maximum: Number(drProtectionGroupMembersVirtualNodePoolConfigsMaximum),
+ *             minimum: Number(drProtectionGroupMembersVirtualNodePoolConfigsMinimum),
  *         }],
  *         vnicMappings: [
  *             {
@@ -373,15 +373,15 @@ export interface DrProtectionGroupState {
     /**
      * The details for associating a DR protection group with a peer DR protection group.
      */
-    association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation>;
+    association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation | undefined>;
     /**
      * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      *
@@ -389,59 +389,59 @@ export interface DrProtectionGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    disassociateTrigger?: pulumi.Input<number>;
+    disassociateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the DR protection group's current state in more detail.
      */
-    lifeCycleDetails?: pulumi.Input<string>;
+    lifeCycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current sub-state of the DR protection group.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details for creating an object storage log location for a DR protection group.
      */
-    logLocation?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupLogLocation>;
+    logLocation?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupLogLocation | undefined>;
     /**
      * (Updatable) A list of DR protection group members.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMember>[] | undefined>;
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    peerId?: pulumi.Input<string>;
+    peerId?: pulumi.Input<string | undefined>;
     /**
      * The region of the peer DR protection group.  Example: `us-ashburn-1`
      */
-    peerRegion?: pulumi.Input<string>;
+    peerRegion?: pulumi.Input<string | undefined>;
     /**
      * The role of the DR protection group.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The current state of the DR protection group.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -451,7 +451,7 @@ export interface DrProtectionGroupArgs {
     /**
      * The details for associating a DR protection group with a peer DR protection group.
      */
-    association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation>;
+    association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation | undefined>;
     /**
      * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
@@ -459,7 +459,7 @@ export interface DrProtectionGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      *
@@ -467,7 +467,7 @@ export interface DrProtectionGroupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    disassociateTrigger?: pulumi.Input<number>;
+    disassociateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      */
@@ -475,7 +475,7 @@ export interface DrProtectionGroupArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The details for creating an object storage log location for a DR protection group.
      */
@@ -483,5 +483,5 @@ export interface DrProtectionGroupArgs {
     /**
      * (Updatable) A list of DR protection group members.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMember>[] | undefined>;
 }

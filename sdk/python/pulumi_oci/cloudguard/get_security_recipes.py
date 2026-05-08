@@ -126,7 +126,7 @@ def get_security_recipes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+    test_security_recipes = oci.cloudguard.get_security_recipes(compartment_id=compartment_id,
         display_name=security_recipe_display_name,
         id=security_recipe_id,
         state=security_recipe_state)
@@ -154,11 +154,11 @@ def get_security_recipes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         security_recipe_collections=pulumi.get(__ret__, 'security_recipe_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityRecipesFilterArgs', 'GetSecurityRecipesFilterArgsDict']]]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_recipes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityRecipesFilterArgs', 'GetSecurityRecipesFilterArgsDict']]]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityRecipesResult]:
     """
     This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -172,7 +172,7 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+    test_security_recipes = oci.cloudguard.get_security_recipes(compartment_id=compartment_id,
         display_name=security_recipe_display_name,
         id=security_recipe_id,
         state=security_recipe_state)

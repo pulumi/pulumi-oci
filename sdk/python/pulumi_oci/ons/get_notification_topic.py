@@ -191,7 +191,7 @@ def get_notification_topic(topic_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
+    test_notification_topic = oci.ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
 
 
@@ -217,7 +217,7 @@ def get_notification_topic(topic_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         topic_id=pulumi.get(__ret__, 'topic_id'))
-def get_notification_topic_output(topic_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_notification_topic_output(topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotificationTopicResult]:
     """
     This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
@@ -230,7 +230,7 @@ def get_notification_topic_output(topic_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
+    test_notification_topic = oci.ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
 
 

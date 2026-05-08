@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoint = oci.Opsi.getOperationsInsightsPrivateEndpoint({
+ * const testOperationsInsightsPrivateEndpoint = oci.opsi.getOperationsInsightsPrivateEndpoint({
  *     operationsInsightsPrivateEndpointId: testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetOperationsInsightsPrivateEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoint = oci.Opsi.getOperationsInsightsPrivateEndpoint({
+ * const testOperationsInsightsPrivateEndpoint = oci.opsi.getOperationsInsightsPrivateEndpoint({
  *     operationsInsightsPrivateEndpointId: testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id,
  * });
  * ```

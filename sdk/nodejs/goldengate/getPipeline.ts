@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipeline = oci.GoldenGate.getPipeline({
+ * const testPipeline = oci.goldengate.getPipeline({
  *     pipelineId: testPipelineOciGoldenGatePipeline.id,
  * });
  * ```
@@ -156,7 +156,7 @@ export interface GetPipelineResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipeline = oci.GoldenGate.getPipeline({
+ * const testPipeline = oci.goldengate.getPipeline({
  *     pipelineId: testPipelineOciGoldenGatePipeline.id,
  * });
  * ```

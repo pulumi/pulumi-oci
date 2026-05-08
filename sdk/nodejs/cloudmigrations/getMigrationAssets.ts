@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationAssets = oci.CloudMigrations.getMigrationAssets({
+ * const testMigrationAssets = oci.cloudmigrations.getMigrationAssets({
  *     displayName: migrationAssetDisplayName,
  *     migrationAssetId: testMigrationAsset.id,
  *     migrationId: testMigration.id,
@@ -98,7 +98,7 @@ export interface GetMigrationAssetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationAssets = oci.CloudMigrations.getMigrationAssets({
+ * const testMigrationAssets = oci.cloudmigrations.getMigrationAssets({
  *     displayName: migrationAssetDisplayName,
  *     migrationAssetId: testMigrationAsset.id,
  *     migrationId: testMigration.id,
@@ -125,18 +125,18 @@ export interface GetMigrationAssetsOutputArgs {
     /**
      * A filter to return only resources that match the entire given display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationAssetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.GetMigrationAssetsFilterArgs>[] | undefined>;
     /**
      * Unique migration asset identifier
      */
-    migrationAssetId?: pulumi.Input<string>;
+    migrationAssetId?: pulumi.Input<string | undefined>;
     /**
      * Unique migration identifier
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the migration asset.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

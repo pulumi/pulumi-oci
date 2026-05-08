@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourcePackageGroups = oci.OsManagementHub.getSoftwareSourcePackageGroups({
+ * const testSoftwareSourcePackageGroups = oci.osmanagementhub.getSoftwareSourcePackageGroups({
  *     softwareSourceId: testSoftwareSource.id,
  *     compartmentId: compartmentId,
  *     groupTypes: softwareSourcePackageGroupGroupType,
@@ -103,7 +103,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourcePackageGroups = oci.OsManagementHub.getSoftwareSourcePackageGroups({
+ * const testSoftwareSourcePackageGroups = oci.osmanagementhub.getSoftwareSourcePackageGroups({
  *     softwareSourceId: testSoftwareSource.id,
  *     compartmentId: compartmentId,
  *     groupTypes: softwareSourcePackageGroupGroupType,
@@ -131,20 +131,20 @@ export interface GetSoftwareSourcePackageGroupsOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcePackageGroupsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcePackageGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only package groups of the specified type.
      */
-    groupTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    groupTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the entity to be queried.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */

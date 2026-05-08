@@ -68,41 +68,41 @@ class VmClusterRemoveVirtualMachineArgs:
 @pulumi.input_type
 class _VmClusterRemoveVirtualMachineState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_automation_update_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]] = None,
-                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gi_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_local_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sparse_diskgroup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_patch_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 reco_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 sparse_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_automation_update_details: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_collection_options: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]] = None,
+                 data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_management_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmClusterRemoveVirtualMachine resources.
 
@@ -219,391 +219,391 @@ class _VmClusterRemoveVirtualMachineState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain that the VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutomationUpdateDetails")
-    def cloud_automation_update_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]:
+    def cloud_automation_update_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]:
         """
         Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         """
         return pulumi.get(self, "cloud_automation_update_details")
 
     @cloud_automation_update_details.setter
-    def cloud_automation_update_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]):
+    def cloud_automation_update_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]):
         pulumi.set(self, "cloud_automation_update_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpusEnabled")
-    def cpus_enabled(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpus_enabled(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of enabled CPU cores.
         """
         return pulumi.get(self, "cpus_enabled")
 
     @cpus_enabled.setter
-    def cpus_enabled(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpus_enabled(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpus_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]]:
+    def data_collection_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]]:
         """
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]]):
+    def data_collection_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStoragePercentage")
-    def data_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
-    def data_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size, in terabytes, of the DATA disk group.
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_node_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
-    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_node_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_node_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbServers")
-    def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]]:
+    def db_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]]:
         """
         The list of Exacc DB servers for the cluster to be removed.
         """
         return pulumi.get(self, "db_servers")
 
     @db_servers.setter
-    def db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]]):
+    def db_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]]]):
         pulumi.set(self, "db_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
-    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="exascaleDbStorageVaultId")
-    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exascale_db_storage_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @exascale_db_storage_vault_id.setter
-    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exascale_db_storage_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exascale_db_storage_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSystemConfigurationDetails")
-    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]:
+    def file_system_configuration_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]:
         """
         Details of the file system configuration of the VM cluster.
         """
         return pulumi.get(self, "file_system_configuration_details")
 
     @file_system_configuration_details.setter
-    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]):
+    def file_system_configuration_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]):
         pulumi.set(self, "file_system_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="giVersion")
-    def gi_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gi_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Grid Infrastructure software version for the VM cluster.
         """
         return pulumi.get(self, "gi_version")
 
     @gi_version.setter
-    def gi_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gi_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gi_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isLocalBackupEnabled")
-    def is_local_backup_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_local_backup_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         """
         return pulumi.get(self, "is_local_backup_enabled")
 
     @is_local_backup_enabled.setter
-    def is_local_backup_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_local_backup_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_local_backup_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
-    def is_sparse_diskgroup_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sparse_diskgroup_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
         """
         return pulumi.get(self, "is_sparse_diskgroup_enabled")
 
     @is_sparse_diskgroup_enabled.setter
-    def is_sparse_diskgroup_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sparse_diskgroup_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sparse_diskgroup_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lastPatchHistoryEntryId")
-    def last_patch_history_entry_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_patch_history_entry_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         """
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @last_patch_history_entry_id.setter
-    def last_patch_history_entry_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_patch_history_entry_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_patch_history_entry_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The memory allocated in GBs.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="recoStoragePercentage")
-    def reco_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reco_storage_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "reco_storage_percentage")
 
     @reco_storage_percentage.setter
-    def reco_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reco_storage_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reco_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="sparseStoragePercentage")
-    def sparse_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def sparse_storage_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "sparse_storage_percentage")
 
     @sparse_storage_percentage.setter
-    def sparse_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def sparse_storage_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "sparse_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ssh_public_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The public key portion of one or more key pairs used for SSH access to the VM cluster.
         """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
-    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ssh_public_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_public_keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the VM cluster.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageManagementType")
-    def storage_management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_management_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
         """
         return pulumi.get(self, "storage_management_type")
 
     @storage_management_type.setter
-    def storage_management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_management_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_management_type", value)
 
     @_builtins.property
     @pulumi.getter(name="systemVersion")
-    def system_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating system version of the image.
         """
         return pulumi.get(self, "system_version")
 
     @system_version.setter
-    def system_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the VM cluster was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
@@ -614,31 +614,31 @@ class _VmClusterRemoveVirtualMachineState:
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterNetworkId")
-    def vm_cluster_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         return pulumi.get(self, "vm_cluster_network_id")
 
     @vm_cluster_network_id.setter
-    def vm_cluster_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterType")
-    def vm_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The vmcluster type for the VM cluster/Cloud VM cluster.
         """
         return pulumi.get(self, "vm_cluster_type")
 
     @vm_cluster_type.setter
-    def vm_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_type", value)
 
 
@@ -648,8 +648,8 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
@@ -741,8 +741,8 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -801,41 +801,41 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_automation_update_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
-            data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]]] = None,
-            data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs', 'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gi_version: Optional[pulumi.Input[_builtins.str]] = None,
-            is_local_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_sparse_diskgroup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_patch_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            reco_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            sparse_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
-            system_version: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'VmClusterRemoveVirtualMachine':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_automation_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+            data_collection_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]]] = None,
+            data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs', 'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_management_type: pulumi.Input[Optional[_builtins.str]] = None,
+            system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmClusterRemoveVirtualMachine':
         """
         Get an existing VmClusterRemoveVirtualMachine resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

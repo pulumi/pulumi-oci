@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseInboundReplications = oci.DatabaseManagement.getManagedMySqlDatabaseInboundReplications({
+ * const testManagedMySqlDatabaseInboundReplications = oci.databasemanagement.getManagedMySqlDatabaseInboundReplications({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetManagedMySqlDatabaseInboundReplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseInboundReplications = oci.DatabaseManagement.getManagedMySqlDatabaseInboundReplications({
+ * const testManagedMySqlDatabaseInboundReplications = oci.databasemanagement.getManagedMySqlDatabaseInboundReplications({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getManagedMySqlDatabaseInboundReplicationsOutput(args: GetManage
  * A collection of arguments for invoking getManagedMySqlDatabaseInboundReplications.
  */
 export interface GetManagedMySqlDatabaseInboundReplicationsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseInboundReplicationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseInboundReplicationsFilterArgs>[] | undefined>;
     /**
      * The OCID of the Managed MySQL Database.
      */

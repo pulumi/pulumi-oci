@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     schedule: bdsInstanceNodeBackupConfigurationSchedule,
  *     backupType: bdsInstanceNodeBackupConfigurationBackupType,
  *     displayName: bdsInstanceNodeBackupConfigurationDisplayName,
- *     numberOfBackupsToRetain: bdsInstanceNodeBackupConfigurationNumberOfBackupsToRetain,
+ *     numberOfBackupsToRetain: Number(bdsInstanceNodeBackupConfigurationNumberOfBackupsToRetain),
  *     timezone: bdsInstanceNodeBackupConfigurationTimezone,
  * });
  * ```
@@ -173,39 +173,39 @@ export interface BdsInstanceNodeBackupConfigurationState {
     /**
      * (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
      */
-    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeBackupConfigurationLevelTypeDetails>;
+    levelTypeDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceNodeBackupConfigurationLevelTypeDetails | undefined>;
     /**
      * (Updatable) Number of backup copies to retain.
      */
-    numberOfBackupsToRetain?: pulumi.Input<number>;
+    numberOfBackupsToRetain?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
      */
-    schedule?: pulumi.Input<string>;
+    schedule?: pulumi.Input<string | undefined>;
     /**
      * The state of the NodeBackupConfiguration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
      *
@@ -213,7 +213,7 @@ export interface BdsInstanceNodeBackupConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -223,7 +223,7 @@ export interface BdsInstanceNodeBackupConfigurationArgs {
     /**
      * (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
@@ -231,7 +231,7 @@ export interface BdsInstanceNodeBackupConfigurationArgs {
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
      */
@@ -239,7 +239,7 @@ export interface BdsInstanceNodeBackupConfigurationArgs {
     /**
      * (Updatable) Number of backup copies to retain.
      */
-    numberOfBackupsToRetain?: pulumi.Input<number>;
+    numberOfBackupsToRetain?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
      */
@@ -251,5 +251,5 @@ export interface BdsInstanceNodeBackupConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }

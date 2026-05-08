@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     securityContext: {
- *         fsGroup: batchTaskEnvironmentSecurityContextFsGroup,
- *         runAsGroup: batchTaskEnvironmentSecurityContextRunAsGroup,
- *         runAsUser: batchTaskEnvironmentSecurityContextRunAsUser,
+ *         fsGroup: Number(batchTaskEnvironmentSecurityContextFsGroup),
+ *         runAsGroup: Number(batchTaskEnvironmentSecurityContextRunAsGroup),
+ *         runAsUser: Number(batchTaskEnvironmentSecurityContextRunAsUser),
  *     },
  *     volumes: [{
  *         localMountDirectoryPath: batchTaskEnvironmentVolumesLocalMountDirectoryPath,
@@ -202,53 +202,53 @@ export interface BatchBatchTaskEnvironmentState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The batch task environment description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskenvironment20250914115623.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The URL of the ocir image.
      */
-    imageUrl?: pulumi.Input<string>;
+    imageUrl?: pulumi.Input<string | undefined>;
     /**
      * Security context for container runtime configuration.
      *
      * See also [docs](https://docs.oracle.com/en-us/iaas/api/#/en/container-instances/20210415/datatypes/LinuxSecurityContext).
      */
-    securityContext?: pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentSecurityContext>;
+    securityContext?: pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentSecurityContext | undefined>;
     /**
      * The current state of the batch task environment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
      */
-    volumes?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentVolume>[]>;
+    volumes?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentVolume>[] | undefined>;
     /**
      * Container's working directory.
      *
@@ -256,7 +256,7 @@ export interface BatchBatchTaskEnvironmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workingDirectory?: pulumi.Input<string>;
+    workingDirectory?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -270,19 +270,19 @@ export interface BatchBatchTaskEnvironmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The batch task environment description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskenvironment20250914115623.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The URL of the ocir image.
      */
@@ -292,11 +292,11 @@ export interface BatchBatchTaskEnvironmentArgs {
      *
      * See also [docs](https://docs.oracle.com/en-us/iaas/api/#/en/container-instances/20210415/datatypes/LinuxSecurityContext).
      */
-    securityContext?: pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentSecurityContext>;
+    securityContext?: pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentSecurityContext | undefined>;
     /**
      * List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
      */
-    volumes?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentVolume>[]>;
+    volumes?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentVolume>[] | undefined>;
     /**
      * Container's working directory.
      *
@@ -304,5 +304,5 @@ export interface BatchBatchTaskEnvironmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workingDirectory?: pulumi.Input<string>;
+    workingDirectory?: pulumi.Input<string | undefined>;
 }

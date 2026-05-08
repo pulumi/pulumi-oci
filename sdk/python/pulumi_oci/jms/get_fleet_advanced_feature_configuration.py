@@ -177,7 +177,7 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
+    test_fleet_advanced_feature_configuration = oci.jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
 
 
@@ -200,7 +200,7 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[_builtins.str] =
         lcms=pulumi.get(__ret__, 'lcms'),
         performance_tuning_analyses=pulumi.get(__ret__, 'performance_tuning_analyses'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_advanced_feature_configuration_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetAdvancedFeatureConfigurationResult]:
     """
     This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -213,7 +213,7 @@ def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
+    test_fleet_advanced_feature_configuration = oci.jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
 
 

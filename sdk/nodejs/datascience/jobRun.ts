@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     jobId: testJob.id,
  *     projectId: testProject.id,
- *     asynchronous: asynchronous,
+ *     asynchronous: asynchronous === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -40,9 +40,9 @@ import * as utilities from "../utilities";
  *         startupProbeDetails: {
  *             commands: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand,
  *             jobProbeCheckType: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType,
- *             failureThreshold: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold,
- *             initialDelayInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds,
- *             periodInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds,
+ *             failureThreshold: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold),
+ *             initialDelayInSeconds: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *             periodInSeconds: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds),
  *         },
  *     },
  *     jobEnvironmentConfigurationOverrideDetails: {
@@ -55,7 +55,7 @@ import * as utilities from "../utilities";
  *     },
  *     jobInfrastructureConfigurationOverrideDetails: {
  *         jobInfrastructureType: jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
- *         blockStorageSizeInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
@@ -64,8 +64,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     jobLogConfigurationOverrideDetails: {
- *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging,
+ *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -85,9 +85,9 @@ import * as utilities from "../utilities";
  *                 startupProbeDetails: {
  *                     commands: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
  *                     jobProbeCheckType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
- *                     failureThreshold: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *                     initialDelayInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
- *                     periodInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                     failureThreshold: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *                     initialDelayInSeconds: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *                     periodInSeconds: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *                 },
  *             },
  *             jobEnvironmentConfigurationDetails: {
@@ -100,7 +100,7 @@ import * as utilities from "../utilities";
  *             },
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *                 blockStorageSizeInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 blockStorageSizeInGbs: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -108,8 +108,8 @@ import * as utilities from "../utilities";
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,
  *             },
- *             minimumSuccessReplicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
- *             replicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *             minimumSuccessReplicas: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+ *             replicas: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas),
  *         }],
  *         maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
@@ -344,75 +344,75 @@ export interface JobRunState {
     /**
      * If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
      */
-    asynchronous?: pulumi.Input<boolean>;
+    asynchronous?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The job configuration details
      */
-    jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails | undefined>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
+    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
-    jobId?: pulumi.Input<string>;
+    jobId?: pulumi.Input<string | undefined>;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetail>[]>;
+    jobInfrastructureConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetail>[] | undefined>;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails | undefined>;
     /**
      * Logging configuration for resource.
      */
-    jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails | undefined>;
     /**
      * The job node configuration details
      */
-    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
+    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails | undefined>;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
-    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationDetailsList>[]>;
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * The state details of the node group.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Customer logging details for job run.
      */
-    logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunLogDetail>[]>;
+    logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunLogDetail>[] | undefined>;
     /**
      * Collection of NodeGroupDetails
      */
-    nodeGroupDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunNodeGroupDetailsList>[]>;
+    nodeGroupDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunNodeGroupDetailsList>[] | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      *
@@ -420,23 +420,23 @@ export interface JobRunState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The state of the job run.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -446,7 +446,7 @@ export interface JobRunArgs {
     /**
      * If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
      */
-    asynchronous?: pulumi.Input<boolean>;
+    asynchronous?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
@@ -454,23 +454,23 @@ export interface JobRunArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The job configuration details
      */
-    jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails | undefined>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
+    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
@@ -478,19 +478,19 @@ export interface JobRunArgs {
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails | undefined>;
     /**
      * Logging configuration for resource.
      */
-    jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails | undefined>;
     /**
      * The job node configuration details
      */
-    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
+    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      *

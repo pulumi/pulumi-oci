@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
+ * const testDataSciencePrivateEndpoints = oci.datascience.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     createdBy: dataSciencePrivateEndpointCreatedBy,
  *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
@@ -110,7 +110,7 @@ export interface GetPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
+ * const testDataSciencePrivateEndpoints = oci.datascience.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     createdBy: dataSciencePrivateEndpointCreatedBy,
  *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
@@ -142,18 +142,18 @@ export interface GetPrivateEndpointsOutputArgs {
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Resource types in the Data Science service such as notebooks.
      */
-    dataScienceResourceType?: pulumi.Input<string>;
+    dataScienceResourceType?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The lifecycle state of the private endpoint.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

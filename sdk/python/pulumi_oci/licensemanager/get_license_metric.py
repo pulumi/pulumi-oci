@@ -129,8 +129,8 @@ def get_license_metric(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree)
+    test_license_metric = oci.licensemanager.get_license_metric(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree == "true")
     ```
 
 
@@ -151,8 +151,8 @@ def get_license_metric(compartment_id: Optional[_builtins.str] = None,
         total_byol_instance_count=pulumi.get(__ret__, 'total_byol_instance_count'),
         total_license_included_instance_count=pulumi.get(__ret__, 'total_license_included_instance_count'),
         total_product_license_count=pulumi.get(__ret__, 'total_product_license_count'))
-def get_license_metric_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_license_metric_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLicenseMetricResult]:
     """
     This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
@@ -165,8 +165,8 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree)
+    test_license_metric = oci.licensemanager.get_license_metric(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree == "true")
     ```
 
 

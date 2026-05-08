@@ -347,7 +347,7 @@ def get_alert(alert_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert = oci.DataSafe.get_alert(alert_id=test_alert_oci_data_safe_alert["id"])
+    test_alert = oci.datasafe.get_alert(alert_id=test_alert_oci_data_safe_alert["id"])
     ```
 
 
@@ -384,7 +384,7 @@ def get_alert(alert_id: Optional[_builtins.str] = None,
         target_names=pulumi.get(__ret__, 'target_names'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_alert_output(alert_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_alert_output(alert_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertResult]:
     """
     This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
@@ -397,7 +397,7 @@ def get_alert_output(alert_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert = oci.DataSafe.get_alert(alert_id=test_alert_oci_data_safe_alert["id"])
+    test_alert = oci.datasafe.get_alert(alert_id=test_alert_oci_data_safe_alert["id"])
     ```
 
 

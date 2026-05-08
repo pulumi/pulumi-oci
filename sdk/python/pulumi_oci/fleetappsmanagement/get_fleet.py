@@ -324,7 +324,7 @@ def get_fleet(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet = oci.FleetAppsManagement.get_fleet(fleet_id=test_fleet_oci_fleet_apps_management_fleet["id"])
+    test_fleet = oci.fleetappsmanagement.get_fleet(fleet_id=test_fleet_oci_fleet_apps_management_fleet["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_fleet(fleet_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_fleet_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetResult]:
     """
     This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -372,7 +372,7 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet = oci.FleetAppsManagement.get_fleet(fleet_id=test_fleet_oci_fleet_apps_management_fleet["id"])
+    test_fleet = oci.fleetappsmanagement.get_fleet(fleet_id=test_fleet_oci_fleet_apps_management_fleet["id"])
     ```
 
 

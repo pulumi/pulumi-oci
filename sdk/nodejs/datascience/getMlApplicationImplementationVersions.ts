@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationImplementationVersions = oci.DataScience.getMlApplicationImplementationVersions({
+ * const testMlApplicationImplementationVersions = oci.datascience.getMlApplicationImplementationVersions({
  *     mlApplicationImplementationId: testMlApplicationImplementation.id,
  *     state: mlApplicationImplementationVersionState,
  * });
@@ -80,7 +80,7 @@ export interface GetMlApplicationImplementationVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplicationImplementationVersions = oci.DataScience.getMlApplicationImplementationVersions({
+ * const testMlApplicationImplementationVersions = oci.datascience.getMlApplicationImplementationVersions({
  *     mlApplicationImplementationId: testMlApplicationImplementation.id,
  *     state: mlApplicationImplementationVersionState,
  * });
@@ -99,7 +99,7 @@ export function getMlApplicationImplementationVersionsOutput(args: GetMlApplicat
  * A collection of arguments for invoking getMlApplicationImplementationVersions.
  */
 export interface GetMlApplicationImplementationVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationImplementationVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetMlApplicationImplementationVersionsFilterArgs>[] | undefined>;
     /**
      * unique MlApplicationImplementation identifier
      */
@@ -107,5 +107,5 @@ export interface GetMlApplicationImplementationVersionsOutputArgs {
     /**
      * A filter to return only resources matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

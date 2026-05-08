@@ -116,7 +116,7 @@ def get_resource_quotas(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=compartment_id,
+    test_resource_quotas = oci.usageproxy.get_resource_quotas(compartment_id=compartment_id,
         service_name=test_service["name"],
         service_entitlement=resource_quota_service_entitlement)
     ```
@@ -141,10 +141,10 @@ def get_resource_quotas(compartment_id: Optional[_builtins.str] = None,
         resource_quotum_collections=pulumi.get(__ret__, 'resource_quotum_collections'),
         service_entitlement=pulumi.get(__ret__, 'service_entitlement'),
         service_name=pulumi.get(__ret__, 'service_name'))
-def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict']]]]] = None,
-                               service_entitlement: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_resource_quotas_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict']]]]] = None,
+                               service_entitlement: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceQuotasResult]:
     """
     This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
@@ -158,7 +158,7 @@ def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=compartment_id,
+    test_resource_quotas = oci.usageproxy.get_resource_quotas(compartment_id=compartment_id,
         service_name=test_service["name"],
         service_entitlement=resource_quota_service_entitlement)
     ```

@@ -192,7 +192,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_config = oci.bigdataservice.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
         metastore_config_id=test_config["id"])
     ```
 
@@ -220,8 +220,8 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[_builtins.str] =
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             metastore_config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_metastore_config_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             metastore_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigResult]:
     """
     This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -234,7 +234,7 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_config = oci.bigdataservice.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
         metastore_config_id=test_config["id"])
     ```
 

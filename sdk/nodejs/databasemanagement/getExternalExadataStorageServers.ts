@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServers = oci.DatabaseManagement.getExternalExadataStorageServers({
+ * const testExternalExadataStorageServers = oci.databasemanagement.getExternalExadataStorageServers({
  *     compartmentId: compartmentId,
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
  *     displayName: externalExadataStorageServerDisplayName,
@@ -84,7 +84,7 @@ export interface GetExternalExadataStorageServersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServers = oci.DatabaseManagement.getExternalExadataStorageServers({
+ * const testExternalExadataStorageServers = oci.databasemanagement.getExternalExadataStorageServers({
  *     compartmentId: compartmentId,
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
  *     displayName: externalExadataStorageServerDisplayName,
@@ -112,10 +112,10 @@ export interface GetExternalExadataStorageServersOutputArgs {
     /**
      * The optional single value query filter parameter on the entity display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     externalExadataInfrastructureId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalExadataStorageServersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalExadataStorageServersFilterArgs>[] | undefined>;
 }

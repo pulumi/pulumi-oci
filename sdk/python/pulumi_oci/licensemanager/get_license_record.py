@@ -275,7 +275,7 @@ def get_license_record(license_record_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
+    test_license_record = oci.licensemanager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_license_record(license_record_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_license_record_output(license_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_license_record_output(license_record_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLicenseRecordResult]:
     """
     This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -319,7 +319,7 @@ def get_license_record_output(license_record_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
+    test_license_record = oci.licensemanager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
     ```
 
 

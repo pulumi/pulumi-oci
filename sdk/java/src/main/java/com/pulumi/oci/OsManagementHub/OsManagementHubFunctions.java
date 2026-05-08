@@ -202,8 +202,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -286,8 +286,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -328,8 +328,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -370,8 +370,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -412,8 +412,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -458,8 +458,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -504,8 +504,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -596,8 +596,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -642,8 +642,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -687,8 +687,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -732,8 +732,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -777,8 +777,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -822,8 +822,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -867,8 +867,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -912,8 +912,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -958,8 +958,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1048,8 +1048,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1093,8 +1093,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1138,8 +1138,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1182,8 +1182,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1225,8 +1225,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1268,8 +1268,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1311,8 +1311,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1354,8 +1354,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1397,8 +1397,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErratumArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1440,8 +1440,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErratumArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1483,8 +1483,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErratumArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1526,8 +1526,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErratumArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1569,8 +1569,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetErratumArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1612,8 +1612,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1654,8 +1654,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1696,8 +1696,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1738,8 +1738,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1780,8 +1780,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1822,8 +1822,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1874,8 +1874,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1926,8 +1926,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1978,8 +1978,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2030,8 +2030,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2082,8 +2082,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2134,8 +2134,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2186,8 +2186,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2228,8 +2228,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2270,8 +2270,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2312,8 +2312,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2354,8 +2354,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2397,8 +2397,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2448,8 +2448,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2499,8 +2499,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2550,8 +2550,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2601,8 +2601,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2652,8 +2652,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2703,8 +2703,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2753,8 +2753,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2795,8 +2795,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2837,8 +2837,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2879,8 +2879,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3026,8 +3026,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3068,8 +3068,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3110,8 +3110,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3152,8 +3152,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3194,8 +3194,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3236,8 +3236,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3281,8 +3281,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3326,8 +3326,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3371,8 +3371,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3416,8 +3416,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3461,8 +3461,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3506,8 +3506,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3551,8 +3551,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3596,8 +3596,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3641,8 +3641,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3686,8 +3686,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3734,8 +3734,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3782,8 +3782,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3830,8 +3830,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3878,8 +3878,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceAvailableWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3926,8 +3926,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3972,8 +3972,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4018,8 +4018,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4064,8 +4064,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4110,8 +4110,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceErrataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4156,8 +4156,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4198,8 +4198,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4240,8 +4240,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4282,8 +4282,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4324,8 +4324,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4366,8 +4366,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4411,8 +4411,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4456,8 +4456,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4501,8 +4501,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4546,8 +4546,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4592,8 +4592,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4639,8 +4639,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4686,8 +4686,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4733,8 +4733,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4780,8 +4780,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4826,8 +4826,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4871,8 +4871,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4916,8 +4916,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4961,8 +4961,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5006,8 +5006,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5052,8 +5052,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5100,8 +5100,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5148,8 +5148,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5196,8 +5196,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5244,8 +5244,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5291,8 +5291,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5338,8 +5338,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5385,8 +5385,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5432,8 +5432,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5479,8 +5479,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5546,8 +5546,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5612,8 +5612,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5678,8 +5678,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5744,8 +5744,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5810,8 +5810,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5856,8 +5856,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5908,8 +5908,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5960,8 +5960,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6012,8 +6012,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6064,8 +6064,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6116,8 +6116,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6168,8 +6168,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6220,8 +6220,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6267,8 +6267,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6314,8 +6314,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6361,8 +6361,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6408,8 +6408,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6455,8 +6455,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6501,8 +6501,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6547,8 +6547,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6593,8 +6593,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6639,8 +6639,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6685,8 +6685,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6730,8 +6730,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6775,8 +6775,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6820,8 +6820,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6865,8 +6865,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6910,8 +6910,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6955,8 +6955,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7000,8 +7000,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7045,8 +7045,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7090,8 +7090,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7135,8 +7135,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7183,8 +7183,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7231,8 +7231,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7279,8 +7279,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7327,8 +7327,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7438,8 +7438,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7480,8 +7480,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7522,8 +7522,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7564,8 +7564,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7606,8 +7606,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7648,8 +7648,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7693,8 +7693,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7738,8 +7738,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7783,8 +7783,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7828,8 +7828,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationMirrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7874,8 +7874,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7925,8 +7925,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7976,8 +7976,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8027,8 +8027,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8078,8 +8078,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8129,8 +8129,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8180,8 +8180,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetManagementStationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8230,8 +8230,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8272,8 +8272,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8314,8 +8314,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8356,8 +8356,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8398,8 +8398,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8440,8 +8440,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8485,8 +8485,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8530,8 +8530,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8575,8 +8575,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8620,8 +8620,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileAvailableSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8665,8 +8665,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8708,8 +8708,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8751,8 +8751,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8794,8 +8794,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8837,8 +8837,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfileVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8881,8 +8881,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8938,8 +8938,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8995,8 +8995,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9052,8 +9052,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9109,8 +9109,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9166,8 +9166,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9223,8 +9223,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9279,8 +9279,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9321,8 +9321,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9363,8 +9363,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9405,8 +9405,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9447,8 +9447,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9489,8 +9489,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9549,8 +9549,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9609,8 +9609,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9669,8 +9669,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9729,8 +9729,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9789,8 +9789,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9849,8 +9849,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetScheduledJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9909,8 +9909,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9951,8 +9951,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9993,8 +9993,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10035,8 +10035,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10077,8 +10077,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10120,8 +10120,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10173,8 +10173,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10226,8 +10226,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10279,8 +10279,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10332,8 +10332,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackageSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10385,8 +10385,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10433,8 +10433,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10481,8 +10481,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10529,8 +10529,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10577,8 +10577,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10625,8 +10625,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10673,8 +10673,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10720,8 +10720,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10762,8 +10762,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10804,8 +10804,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10846,8 +10846,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10888,8 +10888,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10931,8 +10931,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10977,8 +10977,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11023,8 +11023,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11069,8 +11069,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11115,8 +11115,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceAvailableSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11160,8 +11160,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11202,8 +11202,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11244,8 +11244,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11286,8 +11286,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11328,8 +11328,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceManifestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11370,8 +11370,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11414,8 +11414,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11458,8 +11458,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11502,8 +11502,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11546,8 +11546,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11590,8 +11590,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11635,8 +11635,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11680,8 +11680,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11725,8 +11725,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11770,8 +11770,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11816,8 +11816,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11862,8 +11862,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11908,8 +11908,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11954,8 +11954,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12000,8 +12000,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12046,8 +12046,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12093,8 +12093,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12140,8 +12140,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12187,8 +12187,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12234,8 +12234,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceModuleStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12280,8 +12280,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12323,8 +12323,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12366,8 +12366,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12409,8 +12409,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12452,8 +12452,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12496,8 +12496,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12543,8 +12543,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12590,8 +12590,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12637,8 +12637,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12684,8 +12684,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcePackageGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12730,8 +12730,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12773,8 +12773,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12816,8 +12816,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12859,8 +12859,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12902,8 +12902,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12946,8 +12946,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12992,8 +12992,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13038,8 +13038,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13084,8 +13084,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13130,8 +13130,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceSoftwarePackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13176,8 +13176,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceVendorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13220,8 +13220,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceVendorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13264,8 +13264,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceVendorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13308,8 +13308,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceVendorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13352,8 +13352,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourceVendorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13396,8 +13396,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13453,8 +13453,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13510,8 +13510,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13567,8 +13567,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13624,8 +13624,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13681,8 +13681,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13738,8 +13738,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13794,8 +13794,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13836,8 +13836,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13878,8 +13878,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13920,8 +13920,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13962,8 +13962,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14004,8 +14004,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14049,8 +14049,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14094,8 +14094,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14139,8 +14139,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14184,8 +14184,8 @@ public final class OsManagementHubFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
      * import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

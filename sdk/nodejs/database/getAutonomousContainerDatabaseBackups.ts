@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseBackups = oci.Database.getAutonomousContainerDatabaseBackups({
+ * const testAutonomousContainerDatabaseBackups = oci.database.getAutonomousContainerDatabaseBackups({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote,
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```
@@ -118,12 +118,12 @@ export interface GetAutonomousContainerDatabaseBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseBackups = oci.Database.getAutonomousContainerDatabaseBackups({
+ * const testAutonomousContainerDatabaseBackups = oci.database.getAutonomousContainerDatabaseBackups({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote,
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```
@@ -149,26 +149,26 @@ export interface GetAutonomousContainerDatabaseBackupsOutputArgs {
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseBackupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * call for all remote backups
      */
-    isRemote?: pulumi.Input<boolean>;
+    isRemote?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

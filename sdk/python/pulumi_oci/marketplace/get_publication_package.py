@@ -226,7 +226,7 @@ def get_publication_package(package_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+    test_publication_package = oci.marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
 
@@ -256,8 +256,8 @@ def get_publication_package(package_version: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'),
         version=pulumi.get(__ret__, 'version'))
-def get_publication_package_output(package_version: Optional[pulumi.Input[_builtins.str]] = None,
-                                   publication_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_publication_package_output(package_version: pulumi.Input[Optional[_builtins.str]] = None,
+                                   publication_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicationPackageResult]:
     """
     This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -270,7 +270,7 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+    test_publication_package = oci.marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
 

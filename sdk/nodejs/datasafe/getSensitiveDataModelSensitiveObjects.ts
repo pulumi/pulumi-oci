@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
+ * const testSensitiveDataModelSensitiveObjects = oci.datasafe.getSensitiveDataModelSensitiveObjects({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     objects: sensitiveDataModelSensitiveObjectObject,
  *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,
@@ -97,7 +97,7 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
+ * const testSensitiveDataModelSensitiveObjects = oci.datasafe.getSensitiveDataModelSensitiveObjects({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     objects: sensitiveDataModelSensitiveObjectObject,
  *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,
@@ -120,19 +120,19 @@ export function getSensitiveDataModelSensitiveObjectsOutput(args: GetSensitiveDa
  * A collection of arguments for invoking getSensitiveDataModelSensitiveObjects.
  */
 export interface GetSensitiveDataModelSensitiveObjectsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveObjectsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelSensitiveObjectsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items related to a specific object type.
      */
-    objectTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    objectTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
+ * const testExternalListenerServices = oci.databasemanagement.getExternalListenerServices({
  *     externalListenerId: testExternalListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,
@@ -86,7 +86,7 @@ export interface GetExternalListenerServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
+ * const testExternalListenerServices = oci.databasemanagement.getExternalListenerServices({
  *     externalListenerId: testExternalListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,
@@ -111,7 +111,7 @@ export interface GetExternalListenerServicesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      */
     externalListenerId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalListenerServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalListenerServicesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -119,5 +119,5 @@ export interface GetExternalListenerServicesOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

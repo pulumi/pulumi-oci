@@ -111,7 +111,7 @@ def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connectors = oci.DatabaseManagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
+    test_external_my_sql_database_connectors = oci.databasemanagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
         name=external_my_sql_database_connector_name)
     ```
 
@@ -132,9 +132,9 @@ def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.s
         id=pulumi.get(__ret__, 'id'),
         my_sql_connector_collections=pulumi.get(__ret__, 'my_sql_connector_collections'),
         name=pulumi.get(__ret__, 'name'))
-def get_external_my_sql_database_connectors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict']]]]] = None,
-                                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_my_sql_database_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict']]]]] = None,
+                                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabaseConnectorsResult]:
     """
     This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -147,7 +147,7 @@ def get_external_my_sql_database_connectors_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connectors = oci.DatabaseManagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
+    test_external_my_sql_database_connectors = oci.databasemanagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
         name=external_my_sql_database_connector_name)
     ```
 

@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbVersions = oci.Database.getDbVersions({
+ * const testDbVersions = oci.database.getDbVersions({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     dbSystemShape: dbVersionDbSystemShape,
- *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
- *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported === "true",
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported === "true",
  *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });
@@ -114,12 +114,12 @@ export interface GetDbVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbVersions = oci.Database.getDbVersions({
+ * const testDbVersions = oci.database.getDbVersions({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     dbSystemShape: dbVersionDbSystemShape,
- *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
- *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported === "true",
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported === "true",
  *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });
@@ -150,28 +150,28 @@ export interface GetDbVersionsOutputArgs {
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results to the set of database versions which are supported for the given shape.
      */
-    dbSystemShape?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbVersionsFilterArgs>[]>;
+    dbSystemShape?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbVersionsFilterArgs>[] | undefined>;
     /**
      * If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
      */
-    isDatabaseSoftwareImageSupported?: pulumi.Input<boolean>;
+    isDatabaseSoftwareImageSupported?: pulumi.Input<boolean | undefined>;
     /**
      * If provided, filters the results to the set of database versions which are supported for Upgrade.
      */
-    isUpgradeSupported?: pulumi.Input<boolean>;
+    isUpgradeSupported?: pulumi.Input<boolean | undefined>;
     /**
      * If provided and applicable, return the results based on the shapeAttribute provided
      */
-    shapeAttribute?: pulumi.Input<string>;
+    shapeAttribute?: pulumi.Input<string | undefined>;
     /**
      * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
      * * ASM specifies Oracle Automatic Storage Management
      * * LVM specifies logical volume manager, sometimes called logical disk manager.
      */
-    storageManagement?: pulumi.Input<string>;
+    storageManagement?: pulumi.Input<string | undefined>;
 }

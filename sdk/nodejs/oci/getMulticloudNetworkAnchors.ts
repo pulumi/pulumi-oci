@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */
@@ -156,10 +156,10 @@ export interface GetMulticloudNetworkAnchorsResult {
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */
@@ -189,48 +189,48 @@ export interface GetMulticloudNetworkAnchorsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Service Provider region.
      */
-    externalLocation?: pulumi.Input<string>;
+    externalLocation?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      */
-    id?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
+    id?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    networkAnchorLifecycleState?: pulumi.Input<string>;
+    networkAnchorLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure subnet Id.
      */
-    networkAnchorOciSubnetId?: pulumi.Input<string>;
+    networkAnchorOciSubnetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
      */
-    networkAnchorOciVcnId?: pulumi.Input<string>;
+    networkAnchorOciVcnId?: pulumi.Input<string | undefined>;
     /**
      * Whether to fetch and include the vcn display name, which may introduce additional latency.
      *
      * Note: one of the arguments `compartmentId` or `id` must be specified.
      */
-    shouldFetchVcnName?: pulumi.Input<boolean>;
+    shouldFetchVcnName?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The subscription service name of the Cloud Service Provider.
      */
-    subscriptionServiceName?: pulumi.Input<string>;
+    subscriptionServiceName?: pulumi.Input<string | undefined>;
 }

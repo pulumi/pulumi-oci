@@ -118,7 +118,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entries = oci.database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
         state=db_systems_upgrade_history_entry_state,
         upgrade_action=db_systems_upgrade_history_entry_upgrade_action)
     ```
@@ -143,10 +143,10 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         upgrade_action=pulumi.get(__ret__, 'upgrade_action'))
-def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
-                                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  upgrade_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_systems_upgrade_history_entries_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
+                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  upgrade_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:
     """
     This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
@@ -159,7 +159,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entries = oci.database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
         state=db_systems_upgrade_history_entry_state,
         upgrade_action=db_systems_upgrade_history_entry_upgrade_action)
     ```

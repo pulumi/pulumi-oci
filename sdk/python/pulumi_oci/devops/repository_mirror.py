@@ -51,7 +51,7 @@ class RepositoryMirrorArgs:
 @pulumi.input_type
 class _RepositoryMirrorState:
     def __init__(__self__, *,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositoryMirror resources.
 
@@ -66,7 +66,7 @@ class _RepositoryMirrorState:
 
     @_builtins.property
     @pulumi.getter(name="repositoryId")
-    def repository_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repository_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique repository identifier.
 
@@ -77,7 +77,7 @@ class _RepositoryMirrorState:
         return pulumi.get(self, "repository_id")
 
     @repository_id.setter
-    def repository_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repository_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repository_id", value)
 
 
@@ -87,7 +87,7 @@ class RepositoryMirror(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
@@ -170,7 +170,7 @@ class RepositoryMirror(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class RepositoryMirror(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            repository_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RepositoryMirror':
+            repository_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RepositoryMirror':
         """
         Get an existing RepositoryMirror resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

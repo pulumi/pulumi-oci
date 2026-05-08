@@ -20,9 +20,9 @@ __all__ = ['BdsInstanceExecuteBootstrapScriptActionArgs', 'BdsInstanceExecuteBoo
 class BdsInstanceExecuteBootstrapScriptActionArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[_builtins.str],
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceExecuteBootstrapScriptAction resource.
         """
@@ -45,39 +45,39 @@ class BdsInstanceExecuteBootstrapScriptActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="bootstrapScriptUrl")
-    def bootstrap_script_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bootstrap_script_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bootstrap_script_url")
 
     @bootstrap_script_url.setter
-    def bootstrap_script_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bootstrap_script_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bootstrap_script_url", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
 @pulumi.input_type
 class _BdsInstanceExecuteBootstrapScriptActionState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceExecuteBootstrapScriptAction resources.
         """
@@ -92,38 +92,38 @@ class _BdsInstanceExecuteBootstrapScriptActionState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapScriptUrl")
-    def bootstrap_script_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bootstrap_script_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "bootstrap_script_url")
 
     @bootstrap_script_url.setter
-    def bootstrap_script_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bootstrap_script_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bootstrap_script_url", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
@@ -133,10 +133,10 @@ class BdsInstanceExecuteBootstrapScriptAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a BdsInstanceExecuteBootstrapScriptAction resource with the given unique name, props, and options.
@@ -168,10 +168,10 @@ class BdsInstanceExecuteBootstrapScriptAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -199,10 +199,10 @@ class BdsInstanceExecuteBootstrapScriptAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bootstrap_script_url: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceExecuteBootstrapScriptAction':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceExecuteBootstrapScriptAction':
         """
         Get an existing BdsInstanceExecuteBootstrapScriptAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

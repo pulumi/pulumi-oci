@@ -38,17 +38,17 @@ import * as utilities from "../utilities";
  *     },
  *     logging: {
  *         aggregatedInstanceViewLog: {
- *             enableLogging: mlApplicationImplementationLoggingAggregatedInstanceViewLogEnableLogging,
+ *             enableLogging: mlApplicationImplementationLoggingAggregatedInstanceViewLogEnableLogging === "true",
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
  *         implementationLog: {
- *             enableLogging: mlApplicationImplementationLoggingImplementationLogEnableLogging,
+ *             enableLogging: mlApplicationImplementationLoggingImplementationLogEnableLogging === "true",
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
  *         triggerLog: {
- *             enableLogging: mlApplicationImplementationLoggingTriggerLogEnableLogging,
+ *             enableLogging: mlApplicationImplementationLoggingTriggerLogEnableLogging === "true",
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
@@ -251,55 +251,55 @@ export interface MlApplicationImplementationState {
     /**
      * (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
      */
-    allowedMigrationDestinations?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedMigrationDestinations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
      */
-    applicationComponents?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationApplicationComponent>[]>;
+    applicationComponents?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationApplicationComponent>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where ML Application Implementation is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
      */
-    configurationSchemas?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationConfigurationSchema>[]>;
+    configurationSchemas?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationConfigurationSchema>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * short description of the argument
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration of Logging for ML Application Implementation.
      */
-    logging?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLogging>;
+    logging?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLogging | undefined>;
     /**
      * The OCID of the ML Application implemented by this ML Application Implementation
      */
-    mlApplicationId?: pulumi.Input<string>;
+    mlApplicationId?: pulumi.Input<string | undefined>;
     /**
      * The name of ML Application (based on mlApplicationId)
      */
-    mlApplicationName?: pulumi.Input<string>;
+    mlApplicationName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration of The ML Application Package to upload.
      */
-    mlApplicationPackage?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    mlApplicationPackage?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of ML Application package arguments provided during ML Application package upload.
      */
-    mlApplicationPackageArguments?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationMlApplicationPackageArgument>[]>;
+    mlApplicationPackageArguments?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationMlApplicationPackageArgument>[] | undefined>;
     /**
      * ML Application Implementation name which is unique for given ML Application.
      *
@@ -307,31 +307,31 @@ export interface MlApplicationImplementationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
      */
-    opcMlAppPackageArgs?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    opcMlAppPackageArgs?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
      */
-    packageVersion?: pulumi.Input<string>;
+    packageVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the MlApplicationImplementation.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time of last MlApplicationImplementation update in the format defined by RFC 3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -341,7 +341,7 @@ export interface MlApplicationImplementationArgs {
     /**
      * (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
      */
-    allowedMigrationDestinations?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedMigrationDestinations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where ML Application Implementation is created.
      */
@@ -349,15 +349,15 @@ export interface MlApplicationImplementationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration of Logging for ML Application Implementation.
      */
-    logging?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLogging>;
+    logging?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLogging | undefined>;
     /**
      * The OCID of the ML Application implemented by this ML Application Implementation
      */
@@ -365,7 +365,7 @@ export interface MlApplicationImplementationArgs {
     /**
      * (Updatable) Configuration of The ML Application Package to upload.
      */
-    mlApplicationPackage?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    mlApplicationPackage?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * ML Application Implementation name which is unique for given ML Application.
      *
@@ -373,9 +373,9 @@ export interface MlApplicationImplementationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
      */
-    opcMlAppPackageArgs?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    opcMlAppPackageArgs?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

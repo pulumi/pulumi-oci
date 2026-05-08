@@ -112,8 +112,8 @@ def get_wlms_wls_domain_applicable_patches(filters: Optional[Sequence[Union['Get
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_applicable_patches_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict']]]]] = None,
-                                                  wls_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_wls_domain_applicable_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict']]]]] = None,
+                                                  wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainApplicablePatchesResult]:
     """
     This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.

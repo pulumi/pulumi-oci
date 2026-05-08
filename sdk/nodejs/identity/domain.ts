@@ -51,9 +51,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isHiddenOnLogin: domainIsHiddenOnLogin,
- *     isNotificationBypassed: domainIsNotificationBypassed,
- *     isPrimaryEmailRequired: domainIsPrimaryEmailRequired,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
+ *     isNotificationBypassed: domainIsNotificationBypassed === "true",
+ *     isPrimaryEmailRequired: domainIsPrimaryEmailRequired === "true",
  * });
  * ```
  *
@@ -267,59 +267,59 @@ export interface DomainState {
     /**
      * The admin email address
      */
-    adminEmail?: pulumi.Input<string>;
+    adminEmail?: pulumi.Input<string | undefined>;
     /**
      * The admin first name
      */
-    adminFirstName?: pulumi.Input<string>;
+    adminFirstName?: pulumi.Input<string | undefined>;
     /**
      * The admin last name
      */
-    adminLastName?: pulumi.Input<string>;
+    adminLastName?: pulumi.Input<string | undefined>;
     /**
      * The admin user name
      */
-    adminUserName?: pulumi.Input<string>;
+    adminUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Compartment where domain is created
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Domain entity description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The mutable display name of the domain.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
     /**
      * Region specific domain URL.
      */
-    homeRegionUrl?: pulumi.Input<string>;
+    homeRegionUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      */
-    isHiddenOnLogin?: pulumi.Input<boolean>;
+    isHiddenOnLogin?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      */
-    isNotificationBypassed?: pulumi.Input<boolean>;
+    isNotificationBypassed?: pulumi.Input<boolean | undefined>;
     /**
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      */
-    isPrimaryEmailRequired?: pulumi.Input<boolean>;
+    isPrimaryEmailRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The License type of Domain
      *
@@ -327,31 +327,31 @@ export interface DomainState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * Any additional details about the current state of the Domain.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The regions domain is replication to.
      */
-    replicaRegions?: pulumi.Input<pulumi.Input<inputs.Identity.DomainReplicaRegion>[]>;
+    replicaRegions?: pulumi.Input<pulumi.Input<inputs.Identity.DomainReplicaRegion>[] | undefined>;
     /**
      * The current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The type of the domain.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Region agnostic domain URL.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -361,19 +361,19 @@ export interface DomainArgs {
     /**
      * The admin email address
      */
-    adminEmail?: pulumi.Input<string>;
+    adminEmail?: pulumi.Input<string | undefined>;
     /**
      * The admin first name
      */
-    adminFirstName?: pulumi.Input<string>;
+    adminFirstName?: pulumi.Input<string | undefined>;
     /**
      * The admin last name
      */
-    adminLastName?: pulumi.Input<string>;
+    adminLastName?: pulumi.Input<string | undefined>;
     /**
      * The admin user name
      */
-    adminUserName?: pulumi.Input<string>;
+    adminUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Compartment where domain is created
      */
@@ -381,7 +381,7 @@ export interface DomainArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Domain entity description
      */
@@ -393,7 +393,7 @@ export interface DomainArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      */
@@ -401,15 +401,15 @@ export interface DomainArgs {
     /**
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      */
-    isHiddenOnLogin?: pulumi.Input<boolean>;
+    isHiddenOnLogin?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      */
-    isNotificationBypassed?: pulumi.Input<boolean>;
+    isNotificationBypassed?: pulumi.Input<boolean | undefined>;
     /**
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      */
-    isPrimaryEmailRequired?: pulumi.Input<boolean>;
+    isPrimaryEmailRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The License type of Domain
      *
@@ -421,5 +421,5 @@ export interface DomainArgs {
     /**
      * The current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

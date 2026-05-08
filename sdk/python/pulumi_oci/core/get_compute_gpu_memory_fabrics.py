@@ -177,7 +177,7 @@ def get_compute_gpu_memory_fabrics(availability_domain: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabrics = oci.Core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
+    test_compute_gpu_memory_fabrics = oci.core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_fabric_availability_domain,
         compute_gpu_memory_fabric_health=compute_gpu_memory_fabric_compute_gpu_memory_fabric_health,
         compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],
@@ -222,15 +222,15 @@ def get_compute_gpu_memory_fabrics(availability_domain: Optional[_builtins.str] 
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_gpu_memory_fabrics_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          compute_gpu_memory_fabric_health: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compute_gpu_memory_fabric_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compute_gpu_memory_fabric_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compute_hpc_island_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compute_network_block_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict']]]]] = None,
+def get_compute_gpu_memory_fabrics_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          compute_gpu_memory_fabric_health: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compute_gpu_memory_fabric_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compute_gpu_memory_fabric_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compute_hpc_island_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compute_network_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryFabricsResult]:
     """
     This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
@@ -243,7 +243,7 @@ def get_compute_gpu_memory_fabrics_output(availability_domain: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabrics = oci.Core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
+    test_compute_gpu_memory_fabrics = oci.core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_fabric_availability_domain,
         compute_gpu_memory_fabric_health=compute_gpu_memory_fabric_compute_gpu_memory_fabric_health,
         compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],

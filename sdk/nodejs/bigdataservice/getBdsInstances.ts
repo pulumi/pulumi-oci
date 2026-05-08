@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstances = oci.BigDataService.getBdsInstances({
+ * const testBdsInstances = oci.bigdataservice.getBdsInstances({
  *     compartmentId: compartmentId,
  *     displayName: bdsInstanceDisplayName,
  *     state: bdsInstanceState,
@@ -90,7 +90,7 @@ export interface GetBdsInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstances = oci.BigDataService.getBdsInstances({
+ * const testBdsInstances = oci.bigdataservice.getBdsInstances({
  *     compartmentId: compartmentId,
  *     displayName: bdsInstanceDisplayName,
  *     state: bdsInstanceState,
@@ -118,10 +118,10 @@ export interface GetBdsInstancesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstancesFilterArgs>[] | undefined>;
     /**
      * The state of the cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

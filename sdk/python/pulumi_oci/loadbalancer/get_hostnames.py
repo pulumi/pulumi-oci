@@ -95,7 +95,7 @@ def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
+    test_hostnames = oci.loadbalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'Ge
         hostnames=pulumi.get(__ret__, 'hostnames'),
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict']]]]] = None,
-                         load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_hostnames_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict']]]]] = None,
+                         load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostnamesResult]:
     """
     This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
+    test_hostnames = oci.loadbalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
     ```
 
 

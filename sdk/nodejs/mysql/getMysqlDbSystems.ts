@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
+ * const testMysqlDbSystems = oci.mysql.getMysqlDbSystems({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
- *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
+ *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
  *     state: mysqlDbSystemState,
  * });
  * ```
@@ -139,14 +139,14 @@ export interface GetMysqlDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
+ * const testMysqlDbSystems = oci.mysql.getMysqlDbSystems({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
- *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
+ *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
  *     state: mysqlDbSystemState,
  * });
  * ```
@@ -177,30 +177,30 @@ export interface GetMysqlDbSystemsOutputArgs {
     /**
      * The requested Configuration instance.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * Filter DB Systems by their Database Management configuration.
      */
-    databaseManagements?: pulumi.Input<pulumi.Input<string>[]>;
+    databaseManagements?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resource matching the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlDbSystemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlDbSystemsFilterArgs>[] | undefined>;
     /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      */
-    isHeatWaveClusterAttached?: pulumi.Input<boolean>;
+    isHeatWaveClusterAttached?: pulumi.Input<boolean | undefined>;
     /**
      * Filter instances if they are using the latest revision of the Configuration they are associated with.
      */
-    isUpToDate?: pulumi.Input<boolean>;
+    isUpToDate?: pulumi.Input<boolean | undefined>;
     /**
      * DbSystem Lifecycle State
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

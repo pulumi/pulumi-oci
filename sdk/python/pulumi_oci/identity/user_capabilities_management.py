@@ -20,11 +20,11 @@ __all__ = ['UserCapabilitiesManagementArgs', 'UserCapabilitiesManagement']
 class UserCapabilitiesManagementArgs:
     def __init__(__self__, *,
                  user_id: pulumi.Input[_builtins.str],
-                 can_use_api_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_auth_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_console_password: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_customer_secret_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None):
+                 can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a UserCapabilitiesManagement resource.
 
@@ -65,55 +65,55 @@ class UserCapabilitiesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="canUseApiKeys")
-    def can_use_api_keys(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_api_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use API keys.
         """
         return pulumi.get(self, "can_use_api_keys")
 
     @can_use_api_keys.setter
-    def can_use_api_keys(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_api_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_api_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseAuthTokens")
-    def can_use_auth_tokens(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_auth_tokens(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
         """
         return pulumi.get(self, "can_use_auth_tokens")
 
     @can_use_auth_tokens.setter
-    def can_use_auth_tokens(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_auth_tokens(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_auth_tokens", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseConsolePassword")
-    def can_use_console_password(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_console_password(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can log in to the console.
         """
         return pulumi.get(self, "can_use_console_password")
 
     @can_use_console_password.setter
-    def can_use_console_password(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_console_password(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_console_password", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseCustomerSecretKeys")
-    def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_customer_secret_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SigV4 symmetric keys.
         """
         return pulumi.get(self, "can_use_customer_secret_keys")
 
     @can_use_customer_secret_keys.setter
-    def can_use_customer_secret_keys(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_customer_secret_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_customer_secret_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseSmtpCredentials")
-    def can_use_smtp_credentials(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_smtp_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SMTP passwords.
 
@@ -124,19 +124,19 @@ class UserCapabilitiesManagementArgs:
         return pulumi.get(self, "can_use_smtp_credentials")
 
     @can_use_smtp_credentials.setter
-    def can_use_smtp_credentials(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_smtp_credentials(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_smtp_credentials", value)
 
 
 @pulumi.input_type
 class _UserCapabilitiesManagementState:
     def __init__(__self__, *,
-                 can_use_api_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_auth_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_console_password: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_customer_secret_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserCapabilitiesManagement resources.
 
@@ -166,55 +166,55 @@ class _UserCapabilitiesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="canUseApiKeys")
-    def can_use_api_keys(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_api_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use API keys.
         """
         return pulumi.get(self, "can_use_api_keys")
 
     @can_use_api_keys.setter
-    def can_use_api_keys(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_api_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_api_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseAuthTokens")
-    def can_use_auth_tokens(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_auth_tokens(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
         """
         return pulumi.get(self, "can_use_auth_tokens")
 
     @can_use_auth_tokens.setter
-    def can_use_auth_tokens(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_auth_tokens(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_auth_tokens", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseConsolePassword")
-    def can_use_console_password(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_console_password(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can log in to the console.
         """
         return pulumi.get(self, "can_use_console_password")
 
     @can_use_console_password.setter
-    def can_use_console_password(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_console_password(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_console_password", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseCustomerSecretKeys")
-    def can_use_customer_secret_keys(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_customer_secret_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SigV4 symmetric keys.
         """
         return pulumi.get(self, "can_use_customer_secret_keys")
 
     @can_use_customer_secret_keys.setter
-    def can_use_customer_secret_keys(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_customer_secret_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_customer_secret_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="canUseSmtpCredentials")
-    def can_use_smtp_credentials(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_use_smtp_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SMTP passwords.
 
@@ -225,19 +225,19 @@ class _UserCapabilitiesManagementState:
         return pulumi.get(self, "can_use_smtp_credentials")
 
     @can_use_smtp_credentials.setter
-    def can_use_smtp_credentials(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_use_smtp_credentials(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_use_smtp_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the user.
         """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
 
@@ -247,12 +247,12 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_use_api_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_auth_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_console_password: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_customer_secret_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
@@ -350,12 +350,12 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_use_api_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_auth_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_console_password: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_customer_secret_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -383,12 +383,12 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            can_use_api_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-            can_use_auth_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
-            can_use_console_password: Optional[pulumi.Input[_builtins.bool]] = None,
-            can_use_customer_secret_keys: Optional[pulumi.Input[_builtins.bool]] = None,
-            can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-            user_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UserCapabilitiesManagement':
+            can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UserCapabilitiesManagement':
         """
         Get an existing UserCapabilitiesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

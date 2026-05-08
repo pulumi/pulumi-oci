@@ -27,10 +27,10 @@ class PublicationArgs:
                  package_details: pulumi.Input['PublicationPackageDetailsArgs'],
                  short_description: pulumi.Input[_builtins.str],
                  support_contacts: pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Publication resource.
 
@@ -134,72 +134,72 @@ class PublicationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A long description of the publication to use in the listing.
         """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
-    def long_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "long_description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _PublicationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 icons: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]]] = None,
-                 is_agreement_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input['PublicationPackageDetailsArgs']] = None,
-                 package_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
-                 supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 icons: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationIconArgs']]]] = None,
+                 is_agreement_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional['PublicationPackageDetailsArgs']] = None,
+                 package_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
+                 supported_operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Publication resources.
 
@@ -255,194 +255,194 @@ class _PublicationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def icons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]]]:
+    def icons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PublicationIconArgs']]]]:
         """
         The model for upload data for images and icons.
         """
         return pulumi.get(self, "icons")
 
     @icons.setter
-    def icons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]]]):
+    def icons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationIconArgs']]]]):
         pulumi.set(self, "icons", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgreementAcknowledged")
-    def is_agreement_acknowledged(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agreement_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         """
         return pulumi.get(self, "is_agreement_acknowledged")
 
     @is_agreement_acknowledged.setter
-    def is_agreement_acknowledged(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agreement_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agreement_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         """
         return pulumi.get(self, "listing_type")
 
     @listing_type.setter
-    def listing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_type", value)
 
     @_builtins.property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A long description of the publication to use in the listing.
         """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
-    def long_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "long_description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="packageDetails")
-    def package_details(self) -> Optional[pulumi.Input['PublicationPackageDetailsArgs']]:
+    def package_details(self) -> pulumi.Input[Optional['PublicationPackageDetailsArgs']]:
         """
         A base object for creating a publication package.
         """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
-    def package_details(self, value: Optional[pulumi.Input['PublicationPackageDetailsArgs']]):
+    def package_details(self, value: pulumi.Input[Optional['PublicationPackageDetailsArgs']]):
         pulumi.set(self, "package_details", value)
 
     @_builtins.property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listing's package type.
         """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
-    def package_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the publication to use in the listing.
         """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
-    def short_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "short_description", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the publication.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportContacts")
-    def support_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]]:
+    def support_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportContactArgs']]]]:
         """
         (Updatable) Contact information for getting support from the publisher for the listing.
         """
         return pulumi.get(self, "support_contacts")
 
     @support_contacts.setter
-    def support_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]]):
+    def support_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportContactArgs']]]]):
         pulumi.set(self, "support_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedOperatingSystems")
-    def supported_operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]:
+    def supported_operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]:
         """
         The list of operating systems supported by the listing.
         """
         return pulumi.get(self, "supported_operating_systems")
 
     @supported_operating_systems.setter
-    def supported_operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]):
+    def supported_operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]):
         pulumi.set(self, "supported_operating_systems", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -452,16 +452,16 @@ class Publication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_agreement_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_agreement_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
@@ -479,7 +479,7 @@ class Publication(pulumi.CustomResource):
 
         test_publication = oci.marketplace.Publication("test_publication",
             compartment_id=compartment_id,
-            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged == "true",
             listing_type=publication_listing_type,
             name=publication_name,
             package_details={
@@ -554,7 +554,7 @@ class Publication(pulumi.CustomResource):
 
         test_publication = oci.marketplace.Publication("test_publication",
             compartment_id=compartment_id,
-            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged == "true",
             listing_type=publication_listing_type,
             name=publication_name,
             package_details={
@@ -609,16 +609,16 @@ class Publication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_agreement_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_agreement_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 support_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -666,22 +666,22 @@ class Publication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            icons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationIconArgs', 'PublicationIconArgsDict']]]]] = None,
-            is_agreement_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-            listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-            long_description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
-            package_type: Optional[pulumi.Input[_builtins.str]] = None,
-            short_description: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
-            supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportedOperatingSystemArgs', 'PublicationSupportedOperatingSystemArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Publication':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            icons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PublicationIconArgs', 'PublicationIconArgsDict']]]]] = None,
+            is_agreement_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+            listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            long_description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            package_details: pulumi.Input[Optional[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
+            package_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_description: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            support_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
+            supported_operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PublicationSupportedOperatingSystemArgs', 'PublicationSupportedOperatingSystemArgsDict']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Publication':
         """
         Get an existing Publication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

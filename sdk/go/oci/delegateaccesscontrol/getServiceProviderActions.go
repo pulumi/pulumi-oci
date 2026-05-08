@@ -33,7 +33,7 @@ import (
 //				CompartmentId:               compartmentId,
 //				Name:                        pulumi.StringRef(serviceProviderActionName),
 //				ResourceType:                pulumi.StringRef(serviceProviderActionResourceType),
-//				ServiceProviderServiceTypes: serviceProviderActionServiceProviderServiceType,
+//				ServiceProviderServiceTypes: pulumi.ToArray(serviceProviderActionServiceProviderServiceType),
 //				State:                       pulumi.StringRef(serviceProviderActionState),
 //			}, nil)
 //			if err != nil {

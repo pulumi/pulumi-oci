@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     },
  *     familyMaintenancePolicy: {
  *         concurrentMaintenance: fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance,
- *         isMonthlyPatchingEnabled: fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled,
+ *         isMonthlyPatchingEnabled: fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled === "true",
  *         quarterlyUpgradeBeginTimes: fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes,
  *     },
  *     freeformTags: {
@@ -185,35 +185,35 @@ export interface FusionEnvironmentFamilyState {
     /**
      * (Updatable) The OCID of the compartment where the environment family is located.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    familyMaintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy>;
+    familyMaintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * When set to True, a subscription update is required for the environment family.
      */
-    isSubscriptionUpdateNeeded?: pulumi.Input<boolean>;
+    isSubscriptionUpdateNeeded?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the FusionEnvironmentFamily.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      *
@@ -221,16 +221,16 @@ export interface FusionEnvironmentFamilyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    subscriptionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Environment Specific Guid/ System Name
      */
-    systemName?: pulumi.Input<string>;
+    systemName?: pulumi.Input<string | undefined>;
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
-    timeUpdated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -244,7 +244,7 @@ export interface FusionEnvironmentFamilyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      */
@@ -252,11 +252,11 @@ export interface FusionEnvironmentFamilyArgs {
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    familyMaintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy>;
+    familyMaintenancePolicy?: pulumi.Input<inputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      *
@@ -265,5 +265,5 @@ export interface FusionEnvironmentFamilyArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionIds: pulumi.Input<pulumi.Input<string>[]>;
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }

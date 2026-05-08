@@ -160,11 +160,11 @@ def get_autonomous_container_database_backups(autonomous_container_database_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_backups = oci.Database.get_autonomous_container_database_backups(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_database_backups = oci.database.get_autonomous_container_database_backups(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         display_name=autonomous_container_database_backup_display_name,
         infrastructure_type=autonomous_container_database_backup_infrastructure_type,
-        is_remote=autonomous_container_database_backup_is_remote,
+        is_remote=autonomous_container_database_backup_is_remote == "true",
         state=autonomous_container_database_backup_state)
     ```
 
@@ -197,13 +197,13 @@ def get_autonomous_container_database_backups(autonomous_container_database_id: 
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
         is_remote=pulumi.get(__ret__, 'is_remote'),
         state=pulumi.get(__ret__, 'state'))
-def get_autonomous_container_database_backups_output(autonomous_container_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupsFilterArgsDict']]]]] = None,
-                                                     infrastructure_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     is_remote: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_autonomous_container_database_backups_output(autonomous_container_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupsFilterArgsDict']]]]] = None,
+                                                     infrastructure_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     is_remote: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseBackupsResult]:
     """
     This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
@@ -216,11 +216,11 @@ def get_autonomous_container_database_backups_output(autonomous_container_databa
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_backups = oci.Database.get_autonomous_container_database_backups(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_database_backups = oci.database.get_autonomous_container_database_backups(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         display_name=autonomous_container_database_backup_display_name,
         infrastructure_type=autonomous_container_database_backup_infrastructure_type,
-        is_remote=autonomous_container_database_backup_is_remote,
+        is_remote=autonomous_container_database_backup_is_remote == "true",
         state=autonomous_container_database_backup_state)
     ```
 

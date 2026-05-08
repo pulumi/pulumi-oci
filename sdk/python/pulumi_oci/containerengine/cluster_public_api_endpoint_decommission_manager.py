@@ -21,7 +21,7 @@ class ClusterPublicApiEndpointDecommissionManagerArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[_builtins.str],
                  is_public_api_endpoint_decommissioned: pulumi.Input[_builtins.bool],
-                 rollback_deadline_delay: Optional[pulumi.Input[_builtins.str]] = None):
+                 rollback_deadline_delay: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClusterPublicApiEndpointDecommissionManager resource.
         """
@@ -50,20 +50,20 @@ class ClusterPublicApiEndpointDecommissionManagerArgs:
 
     @_builtins.property
     @pulumi.getter(name="rollbackDeadlineDelay")
-    def rollback_deadline_delay(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rollback_deadline_delay(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "rollback_deadline_delay")
 
     @rollback_deadline_delay.setter
-    def rollback_deadline_delay(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rollback_deadline_delay(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rollback_deadline_delay", value)
 
 
 @pulumi.input_type
 class _ClusterPublicApiEndpointDecommissionManagerState:
     def __init__(__self__, *,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_public_api_endpoint_decommissioned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rollback_deadline_delay: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_public_api_endpoint_decommissioned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rollback_deadline_delay: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterPublicApiEndpointDecommissionManager resources.
         """
@@ -76,29 +76,29 @@ class _ClusterPublicApiEndpointDecommissionManagerState:
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isPublicApiEndpointDecommissioned")
-    def is_public_api_endpoint_decommissioned(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_public_api_endpoint_decommissioned(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_public_api_endpoint_decommissioned")
 
     @is_public_api_endpoint_decommissioned.setter
-    def is_public_api_endpoint_decommissioned(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_public_api_endpoint_decommissioned(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public_api_endpoint_decommissioned", value)
 
     @_builtins.property
     @pulumi.getter(name="rollbackDeadlineDelay")
-    def rollback_deadline_delay(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rollback_deadline_delay(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "rollback_deadline_delay")
 
     @rollback_deadline_delay.setter
-    def rollback_deadline_delay(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rollback_deadline_delay(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rollback_deadline_delay", value)
 
 
@@ -108,9 +108,9 @@ class ClusterPublicApiEndpointDecommissionManager(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_public_api_endpoint_decommissioned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rollback_deadline_delay: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_public_api_endpoint_decommissioned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rollback_deadline_delay: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ClusterPublicApiEndpointDecommissionManager resource with the given unique name, props, and options.
@@ -142,9 +142,9 @@ class ClusterPublicApiEndpointDecommissionManager(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_public_api_endpoint_decommissioned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rollback_deadline_delay: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_public_api_endpoint_decommissioned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rollback_deadline_delay: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -171,9 +171,9 @@ class ClusterPublicApiEndpointDecommissionManager(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_public_api_endpoint_decommissioned: Optional[pulumi.Input[_builtins.bool]] = None,
-            rollback_deadline_delay: Optional[pulumi.Input[_builtins.str]] = None) -> 'ClusterPublicApiEndpointDecommissionManager':
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_public_api_endpoint_decommissioned: pulumi.Input[Optional[_builtins.bool]] = None,
+            rollback_deadline_delay: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClusterPublicApiEndpointDecommissionManager':
         """
         Get an existing ClusterPublicApiEndpointDecommissionManager resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -33,7 +33,7 @@ import (
 //			_, err := osmanagementhub.GetManagedInstanceGroupAvailablePackages(ctx, &osmanagementhub.GetManagedInstanceGroupAvailablePackagesArgs{
 //				ManagedInstanceGroupId: testManagedInstanceGroup.Id,
 //				CompartmentId:          pulumi.StringRef(compartmentId),
-//				DisplayNames:           managedInstanceGroupAvailablePackageDisplayName,
+//				DisplayNames:           pulumi.ToArray(managedInstanceGroupAvailablePackageDisplayName),
 //				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupAvailablePackageDisplayNameContains),
 //				IsLatest:               pulumi.BoolRef(managedInstanceGroupAvailablePackageIsLatest),
 //			}, nil)

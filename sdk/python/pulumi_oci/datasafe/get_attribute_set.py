@@ -227,7 +227,7 @@ def get_attribute_set(attribute_set_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set = oci.DataSafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
+    test_attribute_set = oci.datasafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_attribute_set(attribute_set_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_attribute_set_output(attribute_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_attribute_set_output(attribute_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttributeSetResult]:
     """
     This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
@@ -267,7 +267,7 @@ def get_attribute_set_output(attribute_set_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set = oci.DataSafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
+    test_attribute_set = oci.datasafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
     ```
 
 

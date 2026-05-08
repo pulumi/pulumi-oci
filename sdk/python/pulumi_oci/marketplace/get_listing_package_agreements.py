@@ -118,7 +118,7 @@ def get_listing_package_agreements(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package_agreements = oci.Marketplace.get_listing_package_agreements(listing_id=test_listing["id"],
+    test_listing_package_agreements = oci.marketplace.get_listing_package_agreements(listing_id=test_listing["id"],
         package_version=listing_package_agreement_package_version,
         compartment_id=compartment_id)
     ```
@@ -143,10 +143,10 @@ def get_listing_package_agreements(compartment_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'),
         package_version=pulumi.get(__ret__, 'package_version'))
-def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]]]] = None,
-                                          listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          package_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listing_package_agreements_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]]]] = None,
+                                          listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          package_version: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:
     """
     This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -159,7 +159,7 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package_agreements = oci.Marketplace.get_listing_package_agreements(listing_id=test_listing["id"],
+    test_listing_package_agreements = oci.marketplace.get_listing_package_agreements(listing_id=test_listing["id"],
         package_version=listing_package_agreement_package_version,
         compartment_id=compartment_id)
     ```

@@ -103,7 +103,7 @@ export interface OciCacheConfigSetlistAssociatedOciCacheClusterState {
     /**
      * List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.Redis.OciCacheConfigSetlistAssociatedOciCacheClusterItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.Redis.OciCacheConfigSetlistAssociatedOciCacheClusterItem>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure Cache Config Set identifier.
      *
@@ -111,7 +111,7 @@ export interface OciCacheConfigSetlistAssociatedOciCacheClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ociCacheConfigSetId?: pulumi.Input<string>;
+    ociCacheConfigSetId?: pulumi.Input<string | undefined>;
 }
 
 /**

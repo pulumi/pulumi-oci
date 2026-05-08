@@ -24,24 +24,24 @@ class MigrationArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  database_combination: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
-                 advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: Optional[pulumi.Input['MigrationGgsDetailsArgs']] = None,
-                 hub_details: Optional[pulumi.Input['MigrationHubDetailsArgs']] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
-                 initial_load_settings: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']] = None,
-                 source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
+                 advisor_settings: pulumi.Input[Optional['MigrationAdvisorSettingsArgs']] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ggs_details: pulumi.Input[Optional['MigrationGgsDetailsArgs']] = None,
+                 hub_details: pulumi.Input[Optional['MigrationHubDetailsArgs']] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
+                 initial_load_settings: pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']] = None,
+                 source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Migration resource.
 
@@ -153,253 +153,253 @@ class MigrationArgs:
 
     @_builtins.property
     @pulumi.getter(name="advancedParameters")
-    def advanced_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
+    def advanced_parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
         """
         (Updatable) List of Migration Parameter objects.
         """
         return pulumi.get(self, "advanced_parameters")
 
     @advanced_parameters.setter
-    def advanced_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
+    def advanced_parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
         pulumi.set(self, "advanced_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="advisorSettings")
-    def advisor_settings(self) -> Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]:
+    def advisor_settings(self) -> pulumi.Input[Optional['MigrationAdvisorSettingsArgs']]:
         """
         (Updatable) Optional Pre-Migration advisor settings.
         """
         return pulumi.get(self, "advisor_settings")
 
     @advisor_settings.setter
-    def advisor_settings(self, value: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]):
+    def advisor_settings(self, value: pulumi.Input[Optional['MigrationAdvisorSettingsArgs']]):
         pulumi.set(self, "advisor_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="assessmentId")
-    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "assessment_id")
 
     @assessment_id.setter
-    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
-    def bulk_include_exclude_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bulk_include_exclude_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         """
         return pulumi.get(self, "bulk_include_exclude_data")
 
     @bulk_include_exclude_data.setter
-    def bulk_include_exclude_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bulk_include_exclude_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bulk_include_exclude_data", value)
 
     @_builtins.property
     @pulumi.getter(name="dataTransferMediumDetails")
-    def data_transfer_medium_details(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]:
+    def data_transfer_medium_details(self) -> pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']]:
         """
         (Updatable) Optional additional properties for data transfer.
         """
         return pulumi.get(self, "data_transfer_medium_details")
 
     @data_transfer_medium_details.setter
-    def data_transfer_medium_details(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]):
+    def data_transfer_medium_details(self, value: pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']]):
         pulumi.set(self, "data_transfer_medium_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeObjects")
-    def exclude_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]:
+    def exclude_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]:
         """
         Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         """
         return pulumi.get(self, "exclude_objects")
 
     @exclude_objects.setter
-    def exclude_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]):
+    def exclude_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]):
         pulumi.set(self, "exclude_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ggsDetails")
-    def ggs_details(self) -> Optional[pulumi.Input['MigrationGgsDetailsArgs']]:
+    def ggs_details(self) -> pulumi.Input[Optional['MigrationGgsDetailsArgs']]:
         """
         (Updatable) Optional settings for Oracle GoldenGate processes
         """
         return pulumi.get(self, "ggs_details")
 
     @ggs_details.setter
-    def ggs_details(self, value: Optional[pulumi.Input['MigrationGgsDetailsArgs']]):
+    def ggs_details(self, value: pulumi.Input[Optional['MigrationGgsDetailsArgs']]):
         pulumi.set(self, "ggs_details", value)
 
     @_builtins.property
     @pulumi.getter(name="hubDetails")
-    def hub_details(self) -> Optional[pulumi.Input['MigrationHubDetailsArgs']]:
+    def hub_details(self) -> pulumi.Input[Optional['MigrationHubDetailsArgs']]:
         """
         (Updatable) Details about Oracle GoldenGate Microservices.
         """
         return pulumi.get(self, "hub_details")
 
     @hub_details.setter
-    def hub_details(self, value: Optional[pulumi.Input['MigrationHubDetailsArgs']]):
+    def hub_details(self, value: pulumi.Input[Optional['MigrationHubDetailsArgs']]):
         pulumi.set(self, "hub_details", value)
 
     @_builtins.property
     @pulumi.getter(name="includeObjects")
-    def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
+    def include_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
         """
         Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         """
         return pulumi.get(self, "include_objects")
 
     @include_objects.setter
-    def include_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]):
+    def include_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]):
         pulumi.set(self, "include_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="initialLoadSettings")
-    def initial_load_settings(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']]:
+    def initial_load_settings(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']]:
         """
         (Updatable) Optional settings for Data Pump Export and Import jobs
         """
         return pulumi.get(self, "initial_load_settings")
 
     @initial_load_settings.setter
-    def initial_load_settings(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']]):
+    def initial_load_settings(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']]):
         pulumi.set(self, "initial_load_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContainerDatabaseConnectionId")
-    def source_container_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_container_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_container_database_connection_id")
 
     @source_container_database_connection_id.setter
-    def source_container_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_container_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_container_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabaseConnectionId")
-    def source_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_database_connection_id")
 
     @source_database_connection_id.setter
-    def source_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
-    def source_standby_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_standby_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_standby_database_connection_id")
 
     @source_standby_database_connection_id.setter
-    def source_standby_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_standby_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_standby_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseConnectionId")
-    def target_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "target_database_connection_id")
 
     @target_database_connection_id.setter
-    def target_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_database_connection_id", value)
 
 
 @pulumi.input_type
 class _MigrationState:
     def __init__(__self__, *,
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
-                 advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
-                 executing_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: Optional[pulumi.Input['MigrationGgsDetailsArgs']] = None,
-                 hub_details: Optional[pulumi.Input['MigrationHubDetailsArgs']] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
-                 initial_load_settings: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_migration: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
+                 advisor_settings: pulumi.Input[Optional['MigrationAdvisorSettingsArgs']] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
+                 executing_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ggs_details: pulumi.Input[Optional['MigrationGgsDetailsArgs']] = None,
+                 hub_details: pulumi.Input[Optional['MigrationHubDetailsArgs']] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
+                 initial_load_settings: pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_migration: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Migration resources.
 
@@ -498,331 +498,331 @@ class _MigrationState:
 
     @_builtins.property
     @pulumi.getter(name="advancedParameters")
-    def advanced_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
+    def advanced_parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
         """
         (Updatable) List of Migration Parameter objects.
         """
         return pulumi.get(self, "advanced_parameters")
 
     @advanced_parameters.setter
-    def advanced_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
+    def advanced_parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
         pulumi.set(self, "advanced_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="advisorSettings")
-    def advisor_settings(self) -> Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]:
+    def advisor_settings(self) -> pulumi.Input[Optional['MigrationAdvisorSettingsArgs']]:
         """
         (Updatable) Optional Pre-Migration advisor settings.
         """
         return pulumi.get(self, "advisor_settings")
 
     @advisor_settings.setter
-    def advisor_settings(self, value: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]):
+    def advisor_settings(self, value: pulumi.Input[Optional['MigrationAdvisorSettingsArgs']]):
         pulumi.set(self, "advisor_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="assessmentId")
-    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "assessment_id")
 
     @assessment_id.setter
-    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
-    def bulk_include_exclude_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bulk_include_exclude_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         """
         return pulumi.get(self, "bulk_include_exclude_data")
 
     @bulk_include_exclude_data.setter
-    def bulk_include_exclude_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bulk_include_exclude_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bulk_include_exclude_data", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataTransferMediumDetails")
-    def data_transfer_medium_details(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]:
+    def data_transfer_medium_details(self) -> pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']]:
         """
         (Updatable) Optional additional properties for data transfer.
         """
         return pulumi.get(self, "data_transfer_medium_details")
 
     @data_transfer_medium_details.setter
-    def data_transfer_medium_details(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]):
+    def data_transfer_medium_details(self, value: pulumi.Input[Optional['MigrationDataTransferMediumDetailsArgs']]):
         pulumi.set(self, "data_transfer_medium_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCombination")
-    def database_combination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_combination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         """
         return pulumi.get(self, "database_combination")
 
     @database_combination.setter
-    def database_combination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_combination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_combination", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeObjects")
-    def exclude_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]:
+    def exclude_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]:
         """
         Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         """
         return pulumi.get(self, "exclude_objects")
 
     @exclude_objects.setter
-    def exclude_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]):
+    def exclude_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]]):
         pulumi.set(self, "exclude_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="executingJobId")
-    def executing_job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def executing_job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "executing_job_id")
 
     @executing_job_id.setter
-    def executing_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def executing_job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "executing_job_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ggsDetails")
-    def ggs_details(self) -> Optional[pulumi.Input['MigrationGgsDetailsArgs']]:
+    def ggs_details(self) -> pulumi.Input[Optional['MigrationGgsDetailsArgs']]:
         """
         (Updatable) Optional settings for Oracle GoldenGate processes
         """
         return pulumi.get(self, "ggs_details")
 
     @ggs_details.setter
-    def ggs_details(self, value: Optional[pulumi.Input['MigrationGgsDetailsArgs']]):
+    def ggs_details(self, value: pulumi.Input[Optional['MigrationGgsDetailsArgs']]):
         pulumi.set(self, "ggs_details", value)
 
     @_builtins.property
     @pulumi.getter(name="hubDetails")
-    def hub_details(self) -> Optional[pulumi.Input['MigrationHubDetailsArgs']]:
+    def hub_details(self) -> pulumi.Input[Optional['MigrationHubDetailsArgs']]:
         """
         (Updatable) Details about Oracle GoldenGate Microservices.
         """
         return pulumi.get(self, "hub_details")
 
     @hub_details.setter
-    def hub_details(self, value: Optional[pulumi.Input['MigrationHubDetailsArgs']]):
+    def hub_details(self, value: pulumi.Input[Optional['MigrationHubDetailsArgs']]):
         pulumi.set(self, "hub_details", value)
 
     @_builtins.property
     @pulumi.getter(name="includeObjects")
-    def include_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
+    def include_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]:
         """
         Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         """
         return pulumi.get(self, "include_objects")
 
     @include_objects.setter
-    def include_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]):
+    def include_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]]):
         pulumi.set(self, "include_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="initialLoadSettings")
-    def initial_load_settings(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']]:
+    def initial_load_settings(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']]:
         """
         (Updatable) Optional settings for Data Pump Export and Import jobs
         """
         return pulumi.get(self, "initial_load_settings")
 
     @initial_load_settings.setter
-    def initial_load_settings(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']]):
+    def initial_load_settings(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsArgs']]):
         pulumi.set(self, "initial_load_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional status related to the execution and current state of the Migration.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContainerDatabaseConnectionId")
-    def source_container_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_container_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_container_database_connection_id")
 
     @source_container_database_connection_id.setter
-    def source_container_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_container_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_container_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDatabaseConnectionId")
-    def source_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_database_connection_id")
 
     @source_database_connection_id.setter
-    def source_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
-    def source_standby_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_standby_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_standby_database_connection_id")
 
     @source_standby_database_connection_id.setter
-    def source_standby_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_standby_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_standby_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Migration resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseConnectionId")
-    def target_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_database_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "target_database_connection_id")
 
     @target_database_connection_id.setter
-    def target_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_database_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_database_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastMigration")
-    def time_last_migration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_migration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_last_migration")
 
     @time_last_migration.setter
-    def time_last_migration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_migration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_migration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
 
@@ -833,19 +833,19 @@ class _MigrationState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="waitAfter")
-    def wait_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wait_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can optionally pause a migration after a job phase. This property allows you to optionally specify the phase after which you can pause the migration.
         """
         return pulumi.get(self, "wait_after")
 
     @wait_after.setter
-    def wait_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wait_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wait_after", value)
 
 
@@ -855,27 +855,27 @@ class Migration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-                 advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-                 hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-                 initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
-                 source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+                 source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Migration resource in Oracle Cloud Infrastructure Database Migration service.
@@ -905,8 +905,8 @@ class Migration(pulumi.CustomResource):
                 "value": migration_advanced_parameters_value,
             }],
             advisor_settings={
-                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
-                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors == "true",
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor == "true",
             },
             assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
@@ -939,16 +939,16 @@ class Migration(pulumi.CustomResource):
             display_name=migration_display_name,
             exclude_objects=[{
                 "object": migration_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_exclude_objects_owner,
                 "schema": migration_exclude_objects_schema,
                 "type": migration_exclude_objects_type,
             }],
             freeform_tags=migration_freeform_tags,
             ggs_details={
-                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "acceptable_lag": int(migration_ggs_details_acceptable_lag),
                 "extract": {
-                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_ggs_details_extract_long_trans_duration),
                     "performance_profile": migration_ggs_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -963,10 +963,10 @@ class Migration(pulumi.CustomResource):
                 },
                 "url": migration_hub_details_url,
                 "vault_id": test_vault["id"],
-                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "acceptable_lag": int(migration_hub_details_acceptable_lag),
                 "compute_id": test_compute["id"],
                 "extract": {
-                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_hub_details_extract_long_trans_duration),
                     "performance_profile": migration_hub_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -975,7 +975,7 @@ class Migration(pulumi.CustomResource):
             },
             include_objects=[{
                 "object": migration_include_objects_object,
-                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_include_objects_owner,
                 "schema": migration_include_objects_schema,
                 "type": migration_include_objects_type,
@@ -986,9 +986,9 @@ class Migration(pulumi.CustomResource):
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
                     "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "export_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_export_parallelism_degree),
+                    "import_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_import_parallelism_degree),
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster == "true",
                     "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
                 },
                 "export_directory_object": {
@@ -1000,9 +1000,9 @@ class Migration(pulumi.CustomResource):
                     "name": migration_initial_load_settings_import_directory_object_name,
                     "path": migration_initial_load_settings_import_directory_object_path,
                 },
-                "is_consistent": migration_initial_load_settings_is_consistent,
-                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
-                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "is_consistent": migration_initial_load_settings_is_consistent == "true",
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,
@@ -1012,9 +1012,9 @@ class Migration(pulumi.CustomResource):
                 "tablespace_details": {
                     "target_type": migration_initial_load_settings_tablespace_details_target_type,
                     "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
-                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "extend_size_in_mbs": int(migration_initial_load_settings_tablespace_details_extend_size_in_mbs),
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create == "true",
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file == "true",
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },
@@ -1095,8 +1095,8 @@ class Migration(pulumi.CustomResource):
                 "value": migration_advanced_parameters_value,
             }],
             advisor_settings={
-                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
-                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors == "true",
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor == "true",
             },
             assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
@@ -1129,16 +1129,16 @@ class Migration(pulumi.CustomResource):
             display_name=migration_display_name,
             exclude_objects=[{
                 "object": migration_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_exclude_objects_owner,
                 "schema": migration_exclude_objects_schema,
                 "type": migration_exclude_objects_type,
             }],
             freeform_tags=migration_freeform_tags,
             ggs_details={
-                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "acceptable_lag": int(migration_ggs_details_acceptable_lag),
                 "extract": {
-                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_ggs_details_extract_long_trans_duration),
                     "performance_profile": migration_ggs_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -1153,10 +1153,10 @@ class Migration(pulumi.CustomResource):
                 },
                 "url": migration_hub_details_url,
                 "vault_id": test_vault["id"],
-                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "acceptable_lag": int(migration_hub_details_acceptable_lag),
                 "compute_id": test_compute["id"],
                 "extract": {
-                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_hub_details_extract_long_trans_duration),
                     "performance_profile": migration_hub_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -1165,7 +1165,7 @@ class Migration(pulumi.CustomResource):
             },
             include_objects=[{
                 "object": migration_include_objects_object,
-                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_include_objects_owner,
                 "schema": migration_include_objects_schema,
                 "type": migration_include_objects_type,
@@ -1176,9 +1176,9 @@ class Migration(pulumi.CustomResource):
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
                     "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "export_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_export_parallelism_degree),
+                    "import_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_import_parallelism_degree),
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster == "true",
                     "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
                 },
                 "export_directory_object": {
@@ -1190,9 +1190,9 @@ class Migration(pulumi.CustomResource):
                     "name": migration_initial_load_settings_import_directory_object_name,
                     "path": migration_initial_load_settings_import_directory_object_path,
                 },
-                "is_consistent": migration_initial_load_settings_is_consistent,
-                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
-                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "is_consistent": migration_initial_load_settings_is_consistent == "true",
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,
@@ -1202,9 +1202,9 @@ class Migration(pulumi.CustomResource):
                 "tablespace_details": {
                     "target_type": migration_initial_load_settings_tablespace_details_target_type,
                     "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
-                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "extend_size_in_mbs": int(migration_initial_load_settings_tablespace_details_extend_size_in_mbs),
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create == "true",
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file == "true",
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },
@@ -1238,27 +1238,27 @@ class Migration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-                 advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
-                 database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-                 hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-                 initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
-                 source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+                 database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+                 source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1313,35 +1313,35 @@ class Migration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-            advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
-            assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
-            database_combination: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
-            executing_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-            hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-            include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-            initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_migration: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_after: Optional[pulumi.Input[_builtins.str]] = None) -> 'Migration':
+            advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+            advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+            database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+            executing_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+            hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+            initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_migration: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_after: pulumi.Input[Optional[_builtins.str]] = None) -> 'Migration':
         """
         Get an existing Migration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

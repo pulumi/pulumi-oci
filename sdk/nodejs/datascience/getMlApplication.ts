@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplication = oci.DataScience.getMlApplication({
+ * const testMlApplication = oci.datascience.getMlApplication({
  *     mlApplicationId: testMlApplicationOciDatascienceMlApplication.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetMlApplicationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplication = oci.DataScience.getMlApplication({
+ * const testMlApplication = oci.datascience.getMlApplication({
  *     mlApplicationId: testMlApplicationOciDatascienceMlApplication.id,
  * });
  * ```

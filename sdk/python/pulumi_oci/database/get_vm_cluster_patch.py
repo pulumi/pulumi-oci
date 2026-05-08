@@ -165,7 +165,7 @@ def get_vm_cluster_patch(patch_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
+    test_vm_cluster_patch = oci.database.get_vm_cluster_patch(patch_id=test_patch["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 
@@ -190,8 +190,8 @@ def get_vm_cluster_patch(patch_id: Optional[_builtins.str] = None,
         time_released=pulumi.get(__ret__, 'time_released'),
         version=pulumi.get(__ret__, 'version'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_patch_output(patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchResult]:
     """
     This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
@@ -204,7 +204,7 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
+    test_vm_cluster_patch = oci.database.get_vm_cluster_patch(patch_id=test_patch["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 

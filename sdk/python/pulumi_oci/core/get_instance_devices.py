@@ -121,8 +121,8 @@ def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFil
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=test_instance["id"],
-        is_available=instance_device_is_available,
+    test_instance_devices = oci.core.get_instance_devices(instance_id=test_instance["id"],
+        is_available=instance_device_is_available == "true",
         name=instance_device_name)
     ```
 
@@ -146,10 +146,10 @@ def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFil
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_available=pulumi.get(__ret__, 'is_available'),
         name=pulumi.get(__ret__, 'name'))
-def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]]]] = None,
-                                instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                is_available: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_instance_devices_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]]]] = None,
+                                instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                is_available: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceDevicesResult]:
     """
     This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
@@ -162,8 +162,8 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=test_instance["id"],
-        is_available=instance_device_is_available,
+    test_instance_devices = oci.core.get_instance_devices(instance_id=test_instance["id"],
+        is_available=instance_device_is_available == "true",
         name=instance_device_name)
     ```
 

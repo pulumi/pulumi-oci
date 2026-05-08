@@ -111,7 +111,7 @@ def get_subscription_rewards(filters: Optional[Sequence[Union['GetSubscriptionRe
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=test_subscription["id"],
+    test_subscription_rewards = oci.usageproxy.get_subscription_rewards(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 
@@ -132,9 +132,9 @@ def get_subscription_rewards(filters: Optional[Sequence[Union['GetSubscriptionRe
         reward_collections=pulumi.get(__ret__, 'reward_collections'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRewardsFilterArgs', 'GetSubscriptionRewardsFilterArgsDict']]]]] = None,
-                                    subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_rewards_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRewardsFilterArgs', 'GetSubscriptionRewardsFilterArgsDict']]]]] = None,
+                                    subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRewardsResult]:
     """
     This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
@@ -147,7 +147,7 @@ def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=test_subscription["id"],
+    test_subscription_rewards = oci.usageproxy.get_subscription_rewards(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
 

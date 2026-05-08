@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSslCipherSuites = oci.LoadBalancer.getSslCipherSuites({
+ * const testSslCipherSuites = oci.loadbalancer.getSslCipherSuites({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetSslCipherSuitesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSslCipherSuites = oci.LoadBalancer.getSslCipherSuites({
+ * const testSslCipherSuites = oci.loadbalancer.getSslCipherSuites({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opt
  * A collection of arguments for invoking getSslCipherSuites.
  */
 export interface GetSslCipherSuitesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetSslCipherSuitesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetSslCipherSuitesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */

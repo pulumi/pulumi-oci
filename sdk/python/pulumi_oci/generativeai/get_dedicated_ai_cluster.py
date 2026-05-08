@@ -237,7 +237,7 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
+    test_dedicated_ai_cluster = oci.generativeai.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[_builtins.str] = 
         type=pulumi.get(__ret__, 'type'),
         unit_count=pulumi.get(__ret__, 'unit_count'),
         unit_shape=pulumi.get(__ret__, 'unit_shape'))
-def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedAiClusterResult]:
     """
     This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
@@ -278,7 +278,7 @@ def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
+    test_dedicated_ai_cluster = oci.generativeai.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
     ```
 
 

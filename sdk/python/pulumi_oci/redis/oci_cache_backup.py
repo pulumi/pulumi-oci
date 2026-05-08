@@ -22,12 +22,12 @@ class OciCacheBackupArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  source_cluster_id: pulumi.Input[_builtins.str],
-                 backup_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_to_object_storage_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a OciCacheBackup resource.
 
@@ -99,43 +99,43 @@ class OciCacheBackupArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupSource")
-    def backup_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the backup was created from a replica or primary node
         """
         return pulumi.get(self, "backup_source")
 
     @backup_source.setter
-    def backup_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_source", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Backup description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="exportToObjectStorageTrigger")
-    def export_to_object_storage_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def export_to_object_storage_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
 
@@ -146,56 +146,56 @@ class OciCacheBackupArgs:
         return pulumi.get(self, "export_to_object_storage_trigger")
 
     @export_to_object_storage_trigger.setter
-    def export_to_object_storage_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def export_to_object_storage_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "export_to_object_storage_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Backup retention period in days.
         """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
 
 @pulumi.input_type
 class _OciCacheBackupState:
     def __init__(__self__, *,
-                 backup_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 backup_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_to_object_storage_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 shard_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 software_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 software_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheBackup resources.
 
@@ -264,115 +264,115 @@ class _OciCacheBackupState:
 
     @_builtins.property
     @pulumi.getter(name="backupSizeInGbs")
-    def backup_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def backup_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Backup size in GB.
         """
         return pulumi.get(self, "backup_size_in_gbs")
 
     @backup_size_in_gbs.setter
-    def backup_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def backup_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "backup_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSource")
-    def backup_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the backup was created from a replica or primary node
         """
         return pulumi.get(self, "backup_source")
 
     @backup_source.setter
-    def backup_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_source", value)
 
     @_builtins.property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Backup Type.
         """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
-    def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterMemoryInGbs")
-    def cluster_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cluster_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory allocated to the cluster, in gigabytes.
         """
         return pulumi.get(self, "cluster_memory_in_gbs")
 
     @cluster_memory_in_gbs.setter
-    def cluster_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cluster_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cluster_memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterMode")
-    def cluster_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the cluster is sharded or non-sharded.
         """
         return pulumi.get(self, "cluster_mode")
 
     @cluster_mode.setter
-    def cluster_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Backup description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Backup display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exportToObjectStorageTrigger")
-    def export_to_object_storage_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def export_to_object_storage_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
 
@@ -383,115 +383,115 @@ class _OciCacheBackupState:
         return pulumi.get(self, "export_to_object_storage_trigger")
 
     @export_to_object_storage_trigger.setter
-    def export_to_object_storage_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def export_to_object_storage_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "export_to_object_storage_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Backup retention period in days.
         """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="shardCount")
-    def shard_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def shard_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
         """
         return pulumi.get(self, "shard_count")
 
     @shard_count.setter
-    def shard_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def shard_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "shard_count", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareVersion")
-    def software_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         """
         return pulumi.get(self, "software_version")
 
     @software_version.setter
-    def software_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_version", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceClusterId")
-    def source_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Cloud Infrastructure Cache cluster identifier
         """
         return pulumi.get(self, "source_cluster_id")
 
     @source_cluster_id.setter
-    def source_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -501,15 +501,15 @@ class OciCacheBackup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_to_object_storage_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
@@ -537,7 +537,7 @@ class OciCacheBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period_in_days=oci_cache_backup_retention_period_in_days)
+            retention_period_in_days=int(oci_cache_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -597,7 +597,7 @@ class OciCacheBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period_in_days=oci_cache_backup_retention_period_in_days)
+            retention_period_in_days=int(oci_cache_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -624,15 +624,15 @@ class OciCacheBackup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_to_object_storage_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -677,25 +677,25 @@ class OciCacheBackup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            backup_source: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            export_to_object_storage_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            shard_count: Optional[pulumi.Input[_builtins.int]] = None,
-            software_version: Optional[pulumi.Input[_builtins.str]] = None,
-            source_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'OciCacheBackup':
+            backup_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+            software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            source_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'OciCacheBackup':
         """
         Get an existing OciCacheBackup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -99,7 +99,7 @@ def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=test_user["id"])
+    test_auth_tokens = oci.identity.get_auth_tokens(user_id=test_user["id"])
     ```
 
 
@@ -116,8 +116,8 @@ def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 
         id=pulumi.get(__ret__, 'id'),
         tokens=pulumi.get(__ret__, 'tokens'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]]]] = None,
-                           user_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_auth_tokens_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]]]] = None,
+                           user_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthTokensResult]:
     """
     This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
@@ -131,7 +131,7 @@ def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=test_user["id"])
+    test_auth_tokens = oci.identity.get_auth_tokens(user_id=test_user["id"])
     ```
 
 
